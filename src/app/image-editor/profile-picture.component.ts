@@ -85,7 +85,6 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 
     public dlgResetBtnClick = (): void => {
         this.ImageEditorInstance.reset();
-        this.ImageEditorInstance.select('circle');
     }
 
     public dlgRotateBtnClick = (): void => {

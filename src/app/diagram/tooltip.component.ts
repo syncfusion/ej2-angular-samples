@@ -1,6 +1,6 @@
 
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DiagramComponent, NodeModel, ConnectorModel, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, NodeModel, ConnectorModel, DiagramModule, Diagram, BpmnDiagrams } from '@syncfusion/ej2-angular-diagrams';
 import { NodeConstraints, SnapConstraints, SnapSettingsModel } from '@syncfusion/ej2-diagrams';
 import { ChangeEventArgs as CheckBoxChangeEventArgs } from '@syncfusion/ej2-buttons';
 import { TooltipModel } from '@syncfusion/ej2-angular-popups';
@@ -9,6 +9,7 @@ import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+Diagram.Inject(BpmnDiagrams);
 
 /**
  * Sample for tooltip
@@ -30,7 +31,7 @@ export class TooltipDiagramComponent {
 
     public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
     public tooltip: any = {
-        content: this.getcontent(), position: 'TopLeft', relativeMode: 'Object',
+        content: this.getContent(), position: 'TopLeft', relativeMode: 'Object',
         animation: { open: { effect: 'FadeZoomIn', delay: 0 }, close: { effect: 'FadeZoomOut', delay: 0 } }
     };
     //Initializes diagram nodes
@@ -113,7 +114,7 @@ export class TooltipDiagramComponent {
                 tooltip: { content: 'can log?' },
             },
     ];
-// Initializes diagram connectors
+    //Initializes diagram connectors
     public connectors: ConnectorModel[] = [
         { id: 'connector1', sourceID: 'node1', targetID: 'node2' },
         { id: 'connector2', sourceID: 'node2', targetID: 'node3' },
@@ -141,13 +142,13 @@ export class TooltipDiagramComponent {
         { id: 'connector12', sourceID: 'node10', targetID: 'node12' },
         { id: 'connector13', sourceID: 'node9', targetID: 'node14' },
     ];
-    // FontType Collection
-    public modevalue: { [key: string]: Object }[] = [
+    //Collection of relative modes for tooltip
+    public modeValue: { [key: string]: Object }[] = [
         { type: 'Object', text: 'Object' },
         { type: 'Mouse', text: 'Mouse' },
     ];
 
-    // FontType Collection
+    //Collection of positions for tooltip
     public PositionValue: { [key: string]: Object }[] = [
         { type: 'TopLeft', text: 'Top Left' },
         { type: 'TopCenter', text: 'Top Center' },
@@ -163,7 +164,7 @@ export class TooltipDiagramComponent {
         { type: 'RightBottom', text: 'Right Bottom' },
     ];
 
-    //FontType Collection
+    //Collection of effects for tooltip
     public EffectValue: { [key: string]: Object }[] = [
         { type: 'FadeIn', text: 'Fade In' },
         { type: 'FadeOut', text: 'Fade Out' },
@@ -182,23 +183,21 @@ export class TooltipDiagramComponent {
         { type: 'None', text: 'None' },
     ];
 
-    public contentValue: { [key: string]: Object }[] = [
-        { type: 'HTML Element', text: 'HTML Element' },
-        { type: 'Text', text: 'Text' },
-    ];
-
     public fields: Object = { value: 'type', text: 'text' };
 
-    public getcontent(): HTMLElement {
+    //set content for diagram tooltip
+    public getContent(): HTMLElement {
         let tooltipContent: HTMLElement = document.createElement('div');
         tooltipContent.innerHTML = '<div style="background-color: #f4f4f4; color: black; border-width:1px;border-style: solid;border-color: #d3d3d3; border-radius: 8px;white-space: nowrap;"> <span style="margin: 10px;"> Tooltip !!! </span> </div>';
         return tooltipContent;
     }
 
+    //set default value for connectors.
     public getConnectorDefaults(connector: ConnectorModel): ConnectorModel {
         connector.type = 'Orthogonal';
         return connector;
     }
+    //set default value for Nodes.
     public getNodeDefaults(obj: NodeModel): NodeModel {
         obj.offsetX += 0.5;
         obj.offsetY += 0.5;
@@ -207,6 +206,7 @@ export class TooltipDiagramComponent {
         return obj;
     }
 
+    //Change relative mode for tooltip
     public relativeModeChange(args: any): void {
         if (args.value === 'Mouse') {
             this.diagram.tooltip.relativeMode = 'Mouse';
@@ -215,6 +215,7 @@ export class TooltipDiagramComponent {
         }
     }
 
+    //Change position for tooltip
     public positionChange(args: any): void {
         let nodes: NodeModel[] = this.diagram.nodes;
         for (let i: number = 0; i < nodes.length; i++) {
@@ -225,36 +226,13 @@ export class TooltipDiagramComponent {
         }
     }
 
+    //Change effect for tooltip
     public effectChange(args: any): void {
         this.diagram.tooltip.animation.open.effect = args.value;
         this.diagram.tooltip.animation.close.effect = args.value;
     }
 
-    public htmlChange(args: any): void {
-        let tooltipContent: HTMLDivElement = document.createElement('div');
-        let Description: any = args.value.toString();
-        tooltipContent.innerHTML = '<div style="background-color: #f4f4f4; color: black; border-width:1px;border-style: solid;border-color: #d3d3d3; border-radius: 8px;corner-radius:2px;white-space: nowrap;"> <span style="margin: 10px;"> ' + Description + ' </span>';
-        this.diagram.tooltip.content = tooltipContent;
-        this.diagram.dataBind();
-    }
-
-    public textChange(args: any): void {
-        this.diagram.tooltip.content = args.value.toString();
-        this.diagram.dataBind();
-    }
-
-    public contentChange(args: any): void {
-        let HtmlBlock: HTMLElement = document.getElementById('htmlContentDiv')
-        let textBlock: HTMLElement = document.getElementById('textContentDiv')
-        if (args.value === 'HTML Element') {
-            textBlock.style.display = 'block';
-            HtmlBlock.style.display = 'none';
-        } else {
-            HtmlBlock.style.display = 'block';
-            textBlock.style.display = 'none';
-        }
-    }
-
+    //Change animation for tooltip
     public animationChange(args: any): void {
         this.diagram.tooltip.animation.close.duration = args.value;
         this.diagram.tooltip.animation.open.duration = args.value;
@@ -262,6 +240,7 @@ export class TooltipDiagramComponent {
     public created(): void {
         this.diagram.fitToPage({ mode: 'Width' });
     }
+    //Enable or disable the sticky mode
     public isStickyChange(args: CheckBoxChangeEventArgs): void {
         for (let i: number = 0; i < this.diagram.nodes.length; i++) {
             let node: NodeModel = this.diagram.nodes[i];

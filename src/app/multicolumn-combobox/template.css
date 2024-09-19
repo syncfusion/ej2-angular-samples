@@ -1,10 +1,10 @@
 .control-wrapper.template-multicolumn {
     margin: 0 auto;
-    width: 500px;
+    width: 540px;
 }
 
 @media screen and (max-width: 480px) {
-    .control-wrapper.template-multicolumn {
+    .control-wrapper {
         width: 300px;
     }
 }
@@ -47,12 +47,12 @@
     font-style: normal;
 }
 
-.e-multicolumn-calender::before { 
+.e-multicolumn-calender::before {
     font-family: 'ej2-multicolumntemplate';
     content: "\e960";
 }
 
-.e-multicolumn-userlogin:before { 
+.e-multicolumn-userlogin:before {
     font-family: 'ej2-multicolumntemplate';
     content: "\e702";
 }
@@ -60,12 +60,4 @@
 .e-multicolumn-calender,
 .e-multicolumn-userlogin {
     margin-right: 5px;
-}
-
-.multicolumn-customize .e-table {
-    border-collapse: collapse;
-}
-
-.multicolumn-customize .border-row {
-    border-bottom: 2px solid #e0e0e0;
 }

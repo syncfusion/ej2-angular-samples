@@ -181,6 +181,104 @@ export function createLazyLoadData(): void {
         })
     }
 }
+export let OverallData: Object[] = [
+   {
+      Month: 'January ' + (new Date().getFullYear() - 1),
+      Sales: 51000,
+      MarketingSpend: 9000,
+      NewCustomers: 180,
+      ReturningCustomers: 150,
+      WebTraffic: 200,
+    },
+    {
+      Month: 'February ' + (new Date().getFullYear() - 1),
+      Sales: 46000,
+      MarketingSpend: 9200,
+      NewCustomers: 190,
+      ReturningCustomers: 160,
+      WebTraffic: 320,
+    },
+    {
+      Month: 'March ' + (new Date().getFullYear() - 1),
+      Sales: 45000,
+      MarketingSpend: 9400,
+      NewCustomers: 200,
+      ReturningCustomers: 155,
+      WebTraffic: 190,
+    },
+    {
+      Month: 'April ' + (new Date().getFullYear() - 1),
+      Sales: 48000,
+      MarketingSpend: 9600,
+      NewCustomers: 210,
+      ReturningCustomers: 165,
+      WebTraffic: 100,
+    },
+    {
+      Month: 'May ' + (new Date().getFullYear() - 1),
+      Sales: 49000,
+      MarketingSpend: 9800,
+      NewCustomers: 220,
+      ReturningCustomers: 170,
+      WebTraffic: 230,
+    },
+    {
+      Month: 'June ' + (new Date().getFullYear() - 1),
+      Sales: 52000,
+      MarketingSpend: 9600,
+      NewCustomers: 210,
+      ReturningCustomers: 160,
+      WebTraffic: 300,
+    },
+    {
+      Month: 'July ' + (new Date().getFullYear() - 1),
+      Sales: 48000,
+      MarketingSpend: 9700,
+      NewCustomers: 215,
+      ReturningCustomers: 170,
+      WebTraffic: 175,
+    },
+    {
+      Month: 'August ' + (new Date().getFullYear() - 1),
+      Sales: 50000,
+      MarketingSpend: 9800,
+      NewCustomers: 225,
+      ReturningCustomers: 180,
+      WebTraffic: 190,
+    },
+    {
+      Month: 'September ' + (new Date().getFullYear() - 1),
+      Sales: 45000,
+      MarketingSpend: 9700,
+      NewCustomers: 220,
+      ReturningCustomers: 175,
+      WebTraffic: 120,
+    },
+    {
+      Month: 'October ' + (new Date().getFullYear() - 1),
+      Sales: 46000,
+      MarketingSpend: 10000,
+      NewCustomers: 230,
+      ReturningCustomers: 190,
+      WebTraffic: 160,
+    },
+    {
+      Month: 'November ' + (new Date().getFullYear() - 1),
+      Sales: 50000,
+      MarketingSpend: 9900,
+      NewCustomers: 225,
+      ReturningCustomers: 185,
+      WebTraffic: 230,
+    },
+    {
+      Month: 'December ' + (new Date().getFullYear() - 1),
+      Sales: 47000,
+      MarketingSpend: 10200,
+      NewCustomers: 240,
+      ReturningCustomers: 200,
+      WebTraffic: 145,
+    }
+ ];
 let stringData = JSON.stringify([
    {
       "OrderID":10248,
@@ -10143,6 +10241,548 @@ let stringData = JSON.stringify([
       "ShipCountry":"USA"
    }
 ]);
+export let energyData: any[] = [
+   {
+      "ID": 1,
+      "Month": new Date(1704067200000),
+      "EnergyConsumed": 3400,
+      "EnergyProduced": 3900,
+      "RenewableEnergyPercentage": 32,
+      "EnergyPrice": 52,
+      "CO2Emissions": 660,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Residential",
+      "WeatherCondition": "Snowy"
+  },
+  {
+      "ID": 2,
+      "Month": new Date(1704067200000),
+      "EnergyConsumed": 6800,
+      "EnergyProduced": 7400,
+      "RenewableEnergyPercentage": 34,
+      "EnergyPrice": 57,
+      "CO2Emissions": 1320,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Commercial",
+      "WeatherCondition": "Snowy"
+  },
+  {
+      "ID": 3,
+      "Month": new Date(1704067200000),
+      "EnergyConsumed": 10200,
+      "EnergyProduced": 11400,
+      "RenewableEnergyPercentage": 38,
+      "EnergyPrice": 62,
+      "CO2Emissions": 1980,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Industrial",
+      "WeatherCondition": "Snowy"
+  },
+  {
+      "ID": 4,
+      "Month": new Date(1706745600000),
+      "EnergyConsumed": 3200,
+      "EnergyProduced": 3700,
+      "RenewableEnergyPercentage": 33,
+      "EnergyPrice": 54,
+      "CO2Emissions": 640,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Residential",
+      "WeatherCondition": "Cloudy"
+  },
+  {
+      "ID": 5,
+      "Month": new Date(1706745600000),
+      "EnergyConsumed": 7400,
+      "EnergyProduced": 7000,
+      "RenewableEnergyPercentage": 36,
+      "EnergyPrice": 59,
+      "CO2Emissions": 1280,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Commercial",
+      "WeatherCondition": "Cloudy"
+  },
+  {
+      "ID": 6,
+      "Month": new Date(1706745600000),
+      "EnergyConsumed": 10000,
+      "EnergyProduced": 10600,
+      "RenewableEnergyPercentage": 39,
+      "EnergyPrice": 64,
+      "CO2Emissions": 1920,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Industrial",
+      "WeatherCondition": "Cloudy"
+  },
+  {
+      "ID": 7,
+      "Month": new Date(1709232000000),
+      "EnergyConsumed": 3500,
+      "EnergyProduced": 4000,
+      "RenewableEnergyPercentage": 34,
+      "EnergyPrice": 56,
+      "CO2Emissions": 680,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Residential",
+      "WeatherCondition": "Sunny"
+  },
+  {
+      "ID": 8,
+      "Month": new Date(1709232000000),
+      "EnergyConsumed": 8000,
+      "EnergyProduced": 7600,
+      "RenewableEnergyPercentage": 37,
+      "EnergyPrice": 60,
+      "CO2Emissions": 1400,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Commercial",
+      "WeatherCondition": "Sunny"
+  },
+  {
+      "ID": 9,
+      "Month": new Date(1709232000000),
+      "EnergyConsumed": 10500,
+      "EnergyProduced": 11500,
+      "RenewableEnergyPercentage": 40,
+      "EnergyPrice": 65,
+      "CO2Emissions": 2100,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Industrial",
+      "WeatherCondition": "Sunny"
+  },
+  {
+      "ID": 10,
+      "Month": new Date(1711910400000),
+      "EnergyConsumed": 4200,
+      "EnergyProduced": 4100,
+      "RenewableEnergyPercentage": 35,
+      "EnergyPrice": 57,
+      "CO2Emissions": 720,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Residential",
+      "WeatherCondition": "Rainy"
+  },
+  {
+      "ID": 11,
+      "Month": new Date(1711910400000),
+      "EnergyConsumed": 7200,
+      "EnergyProduced": 7800,
+      "RenewableEnergyPercentage": 38,
+      "EnergyPrice": 62,
+      "CO2Emissions": 1440,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Commercial",
+      "WeatherCondition": "Rainy"
+  },
+  {
+      "ID": 12,
+      "Month": new Date(1711910400000),
+      "EnergyConsumed": 11800,
+      "EnergyProduced": 11900,
+      "RenewableEnergyPercentage": 41,
+      "EnergyPrice": 67,
+      "CO2Emissions": 2160,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Industrial",
+      "WeatherCondition": "Rainy"
+  },
+  {
+      "ID": 13,
+      "Month": new Date(1714588800000),
+      "EnergyConsumed": 3700,
+      "EnergyProduced": 4200,
+      "RenewableEnergyPercentage": 36,
+      "EnergyPrice": 58,
+      "CO2Emissions": 740,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Residential",
+      "WeatherCondition": "Sunny"
+  },
+  {
+      "ID": 14,
+      "Month": new Date(1714588800000),
+      "EnergyConsumed": 8500,
+      "EnergyProduced": 8000,
+      "RenewableEnergyPercentage": 39,
+      "EnergyPrice": 63,
+      "CO2Emissions": 1480,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Commercial",
+      "WeatherCondition": "Sunny"
+  },
+  {
+      "ID": 15,
+      "Month": new Date(1714588800000),
+      "EnergyConsumed": 11000,
+      "EnergyProduced": 12200,
+      "RenewableEnergyPercentage": 42,
+      "EnergyPrice": 69,
+      "CO2Emissions": 2220,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Industrial",
+      "WeatherCondition": "Sunny"
+  },
+  {
+      "ID": 16,
+      "Month": new Date(1717267200000),
+      "EnergyConsumed": 3800,
+      "EnergyProduced": 4300,
+      "RenewableEnergyPercentage": 37,
+      "EnergyPrice": 59,
+      "CO2Emissions": 760,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Residential",
+      "WeatherCondition": "Cloudy"
+  },
+  {
+      "ID": 17,
+      "Month": new Date(1717267200000),
+      "EnergyConsumed": 7600,
+      "EnergyProduced": 8200,
+      "RenewableEnergyPercentage": 40,
+      "EnergyPrice": 64,
+      "CO2Emissions": 1520,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Commercial",
+      "WeatherCondition": "Cloudy"
+  },
+  {
+      "ID": 18,
+      "Month": new Date(1717267200000),
+      "EnergyConsumed": 11500,
+      "EnergyProduced": 12700,
+      "RenewableEnergyPercentage": 43,
+      "EnergyPrice": 70,
+      "CO2Emissions": 2300,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Industrial",
+      "WeatherCondition": "Cloudy"
+  },
+  {
+      "ID": 19,
+      "Month": new Date(1719849600000),
+      "EnergyConsumed": 3900,
+      "EnergyProduced": 4400,
+      "RenewableEnergyPercentage": 38,
+      "EnergyPrice": 61,
+      "CO2Emissions": 780,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Residential",
+      "WeatherCondition": "Hot"
+  },
+  {
+      "ID": 20,
+      "Month": new Date(1719849600000),
+      "EnergyConsumed": 7800,
+      "EnergyProduced": 8400,
+      "RenewableEnergyPercentage": 41,
+      "EnergyPrice": 66,
+      "CO2Emissions": 1560,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Commercial",
+      "WeatherCondition": "Hot"
+  },
+  {
+      "ID": 21,
+      "Month": new Date(1719849600000),
+      "EnergyConsumed": 12000,
+      "EnergyProduced": 13300,
+      "RenewableEnergyPercentage": 45,
+      "EnergyPrice": 73,
+      "CO2Emissions": 2400,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Industrial",
+      "WeatherCondition": "Hot"
+  },
+  {
+      "ID": 22,
+      "Month": new Date(1722528000000),
+      "EnergyConsumed": 5000,
+      "EnergyProduced": 4500,
+      "RenewableEnergyPercentage": 39,
+      "EnergyPrice": 63,
+      "CO2Emissions": 800,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Residential",
+      "WeatherCondition": "Snowy"
+  },
+  {
+      "ID": 23,
+      "Month": new Date(1722528000000), 
+      "EnergyConsumed": 8000,
+      "EnergyProduced": 8600,
+      "RenewableEnergyPercentage": 42,
+      "EnergyPrice": 68,
+      "CO2Emissions": 1600,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Commercial",
+      "WeatherCondition": "Snowy"
+  },
+  {
+      "ID": 24,
+      "Month": new Date(1722528000000),  
+      "EnergyConsumed": 12500,
+      "EnergyProduced": 13900,
+      "RenewableEnergyPercentage": 46,
+      "EnergyPrice": 76,
+      "CO2Emissions": 2500,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Industrial",
+      "WeatherCondition": "Snowy"
+  },
+  {
+      "ID": 25,
+      "Month": new Date(1725206400000), 
+      "EnergyConsumed": 5000,
+      "EnergyProduced": 4600,
+      "RenewableEnergyPercentage": 40,
+      "EnergyPrice": 64,
+      "CO2Emissions": 820,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Residential",
+      "WeatherCondition": "Hot"
+  },
+  {
+      "ID": 26,
+      "Month": new Date(1725206400000),
+      "EnergyConsumed": 8200,
+      "EnergyProduced": 8800,
+      "RenewableEnergyPercentage": 43,
+      "EnergyPrice": 69,
+      "CO2Emissions": 1640,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Commercial",
+      "WeatherCondition": "Hot"
+  },
+  {
+      "ID": 27,
+      "Month": new Date(1725206400000),
+      "EnergyConsumed": 13000,
+      "EnergyProduced": 14400,
+      "RenewableEnergyPercentage": 48,
+      "EnergyPrice": 79,
+      "CO2Emissions": 2600,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Industrial",
+      "WeatherCondition": "Hot"
+  },
+  {
+      "ID": 28,
+      "Month": new Date(1727788800000),
+      "EnergyConsumed": 5000,
+      "EnergyProduced": 4700,
+      "RenewableEnergyPercentage": 41,
+      "EnergyPrice": 65,
+      "CO2Emissions": 840,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Residential",
+      "WeatherCondition": "Rainy"
+  },
+  {
+      "ID": 29,
+      "Month": new Date(1727788800000),
+      "EnergyConsumed": 8400,
+      "EnergyProduced": 9000,
+      "RenewableEnergyPercentage": 44,
+      "EnergyPrice": 70,
+      "CO2Emissions": 1680,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Commercial",
+      "WeatherCondition": "Rainy"
+  },
+  {
+      "ID": 30,
+      "Month": new Date(1727788800000),
+      "EnergyConsumed": 13500,
+      "EnergyProduced": 14900,
+      "RenewableEnergyPercentage": 49,
+      "EnergyPrice": 82,
+      "CO2Emissions": 2700,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Industrial",
+      "WeatherCondition": "Rainy"
+  },
+  {
+      "ID": 31,
+      "Month": new Date(1730467200000),
+      "EnergyConsumed": 4300,
+      "EnergyProduced": 4800,
+      "RenewableEnergyPercentage": 42,
+      "EnergyPrice": 66,
+      "CO2Emissions": 860,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Residential",
+      "WeatherCondition": "Cloudy"
+  },
+  {
+      "ID": 32,
+      "Month": new Date(1730467200000),
+      "EnergyConsumed": 8600,
+      "EnergyProduced": 9200,
+      "RenewableEnergyPercentage": 45,
+      "EnergyPrice": 72,
+      "CO2Emissions": 1720,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Commercial",
+      "WeatherCondition": "Cloudy"
+  },
+  {
+      "ID": 33,
+      "Month": new Date(1730467200000),
+      "EnergyConsumed": 14000,
+      "EnergyProduced": 15400,
+      "RenewableEnergyPercentage": 50,
+      "EnergyPrice": 85,
+      "CO2Emissions": 2800,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Industrial",
+      "WeatherCondition": "Cloudy"
+  },
+  {
+      "ID": 34,
+      "Month": new Date(1733145600000),
+      "EnergyConsumed": 5000,
+      "EnergyProduced": 4900,
+      "RenewableEnergyPercentage": 43,
+      "EnergyPrice": 67,
+      "CO2Emissions": 880,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Residential",
+      "WeatherCondition": "Hot"
+  },
+  {
+      "ID": 35,
+      "Month": new Date(1733145600000),
+      "EnergyConsumed": 8800,
+      "EnergyProduced": 9400,
+      "RenewableEnergyPercentage": 46,
+      "EnergyPrice": 74,
+      "CO2Emissions": 1760,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Commercial",
+      "WeatherCondition": "Hot"
+  },
+  {
+      "ID": 36,
+      "Month": new Date(1733145600000),
+      "EnergyConsumed": 14500,
+      "EnergyProduced": 15900,
+      "RenewableEnergyPercentage": 52,
+      "EnergyPrice": 88,
+      "CO2Emissions": 2900,
+      "Region": "North America",
+      "EnergySource": "Solar",
+      "Unit": "kWh",
+      "UtilityCompany": "EnergyCorp",
+      "ConsumptionCategory": "Industrial",
+      "WeatherCondition": "Hot"
+  }
+]
 let purchaseData: string = JSON.stringify([
     {
         "OrderID": 10248,
@@ -20118,6 +20758,557 @@ export const orderData: Object[] = JSON.parse(stringData, (field, value) => {
     return value;
 });
 
+export let employeeDetail: Object[] = [
+   {
+       "EmployeeID": 'Emp1001',
+       "Name": "John",
+       "MailID": "john@abc.com",
+       "PhoneNumber": '(711) 555-4444',
+       "Designation": "Sales Representative",
+       "Team": "Sales",
+       "SoftwareTeam": "Web-General",
+       "ReportTo": "Vinet",
+       "DateOfJoining": new Date(704692800000),
+       "YearOfExperience": "3 Years",
+       "Location": "Reims",
+       "AssetKit": "Headset, Laptop, Phone",
+       "AssetKitDistribution": new Date(704692800000),
+       "EmployeeAvailability": "Available"
+   },
+   {
+       "EmployeeID": 'Emp1002',
+       "Name": "Suyama",
+       "MailID": "suyama@abc.com",
+       "PhoneNumber": '(206) 555-1189',
+       "Designation": "Marketing Manager",
+       "Team": "Marketing",
+       "SoftwareTeam": "Web-Server",
+       "ReportTo": "Suprd",
+       "DateOfJoining": new Date(713764800000),
+       "YearOfExperience": "1 Year 10 Months",
+       "Location": "Albuquerque",
+       "AssetKit": "Laptop, Projector, Tablet",
+       "AssetKitDistribution": new Date(713764800000),
+       "EmployeeAvailability": "Available"
+   },
+   {
+       "EmployeeID": 'Emp1003',
+       "Name": "Janet",
+       "MailID": "janet@abc.com",
+       "PhoneNumber": '(710) 555-5598',
+       "Designation": "HR Specialist",
+       "Team": "Human Resources",
+       "SoftwareTeam": "Web-General",
+       "ReportTo": "Hanar",
+       "DateOfJoining": new Date(702104400000),
+       "YearOfExperience": "1 Year",
+       "Location": "Barquisimeto",
+       "AssetKit": "Headset, Laptop, Printer",
+       "AssetKitDistribution": new Date(702104400000),
+       "EmployeeAvailability": "Not available"
+   },
+   {
+       "EmployeeID": 'Emp1004',
+       "Name": "Peacock",
+       "MailID": "peacock@abc.com",
+       "PhoneNumber": '(811) 555-7773',
+       "Designation": "Sales Representative",
+       "Team": "Sales",
+       "SoftwareTeam": "Window",
+       "ReportTo": "Vinet",
+       "DateOfJoining": new Date(736401600000),
+       "YearOfExperience": "2 Years",
+       "Location": "Albuquerque",
+       "AssetKit": "Headset, Laptop, Phone",
+       "AssetKitDistribution": new Date(736401600000),
+       "EmployeeAvailability": "Available"
+   },
+   {
+       "EmployeeID": 'Emp1005',
+       "Name": "Leverling",
+       "MailID": "leverling@abc.com",
+       "PhoneNumber": '(712) 555-4848',
+       "Designation": "IT Support",
+       "Team": "IT Department",
+       "SoftwareTeam": "Web-Server",
+       "ReportTo": "Tomsp",
+       "DateOfJoining": new Date(750830400000),
+       "YearOfExperience": "5 Years 3 Months",
+       "Location": "Reims",
+       "AssetKit": "Keyboard, Laptop, Mouse",
+       "AssetKitDistribution": new Date(750830400000),
+       "EmployeeAvailability": "Not available"
+   },
+   {
+       "EmployeeID": 'Emp1006',
+       "Name": "Fuller",
+       "MailID": "fuller@abc.com",
+       "PhoneNumber": '(206) 555-8122',
+       "Designation": "HR Specialist",
+       "Team": "Human Resources",
+       "SoftwareTeam": "Designer",
+       "ReportTo": "Victe",
+       "DateOfJoining": new Date(750830400000),
+       "YearOfExperience": "3 Years 1 Month",
+       "Location": "Barquisimeto",
+       "AssetKit": "Headset, Laptop, Printer",
+       "AssetKitDistribution": new Date(750830400000),
+       "EmployeeAvailability": "Available"
+   },
+   {
+       "EmployeeID": 'Emp1007',
+       "Name": "Buchanan",
+       "MailID": "buchanan@abc.com",
+       "PhoneNumber": '(206) 555-3412',
+       "Designation": "Marketing Manager",
+       "Team": "Marketing",
+       "SoftwareTeam": "Support",
+       "ReportTo": "Hanar",
+       "DateOfJoining": new Date(757486800000),
+       "YearOfExperience": "4 Years",
+       "Location": "Reims",
+       "AssetKit": "Laptop, Projector, Tablet",
+       "AssetKitDistribution": new Date(757486800000),
+       "EmployeeAvailability": "Not available"
+   },
+   {
+       "EmployeeID": 'Emp1008',
+       "Name": "Davolio",
+       "MailID": "davolio@abc.com",
+       "PhoneNumber": '(206) 555-9482',
+       "Designation": "Customer Service",
+       "Team": "Customer Support",
+       "SoftwareTeam": "Web-Server",
+       "ReportTo": "Vinet",
+       "DateOfJoining": new Date(762843600000),
+       "YearOfExperience": "11 Months",
+       "Location": "Albuquerque",
+       "AssetKit": "Headset, Laptop, Phone",
+       "AssetKitDistribution": new Date(762843600000),
+       "EmployeeAvailability": "Not available"
+   },
+   {
+       "EmployeeID": 'Emp1009',
+       "Name": "Robert",
+       "MailID": "robert@abc.com",
+       "PhoneNumber": '(206) 555-9857',
+       "Designation": "Finance Analyst",
+       "Team": "Finance",
+       "SoftwareTeam": "Testing",
+       "ReportTo": "Suprd",
+       "DateOfJoining": new Date(784875600000),
+       "YearOfExperience": "3 Years 5 Months",
+       "Location": "Reims",
+       "AssetKit": "Calculator, Headset, Laptop",
+       "AssetKitDistribution": new Date(784875600000),
+       "EmployeeAvailability": "Available"
+   }
+];
+
+export let taskDetail: Object[] = [
+   {
+       Id: 'Task 1',
+       Title: 'Task - 29001',
+       Status: 'Open',
+       Summary: 'Analyze the new requirements gathered from the customer.',
+       Type: 'Story',
+       Priority: 'Low',
+       Tags: 'Analyze,Customer',
+       Estimate: 3.5,
+       Spent: 2,
+       Assignee: 'John',
+       RankId: 1
+   },
+   {
+       Id: 'Task 2',
+       Title: 'Task - 29002',
+       Status: 'InProgress',
+       Summary: 'Improve application performance',
+       Type: 'Improvement',
+       Priority: 'Normal',
+       Tags: 'Improvement',
+       Estimate: 6,
+       Spent: 12,
+       Assignee: 'Suyama',
+       RankId: 1
+   },
+   {
+       Id: 'Task 3',
+       Title: 'Task - 29003',
+       Status: 'Open',
+       Summary: 'Arrange a web meeting with the customer to get new requirements.',
+       Type: 'Others',
+       Priority: 'Critical',
+       Tags: 'Meeting',
+       Estimate: 5.5,
+       Spent: 0,
+       Assignee: 'Janet',
+       RankId: 2
+   },
+   {
+       Id: 'Task 4',
+       Title: 'Task - 29004',
+       Status: 'InProgress',
+       Summary: 'Fix the issues reported in the IE browser.',
+       Type: 'Bug',
+       Priority: 'Critical',
+       Tags: 'IE',
+       Estimate: 2.5,
+       Spent: 1.5,
+       Assignee: 'Janet',
+       RankId: 2
+   },
+   {
+       Id: 'Task 5',
+       Title: 'Task - 29005',
+       Status: 'InProgress',
+       Summary: 'Fix the issues reported by the customer.',
+       Type: 'Bug',
+       Priority: 'Low',
+       Tags: 'Customer',
+       Estimate: 3.5,
+       Spent: 4.5,
+       Assignee: 'Peacock',
+       RankId: 1
+   },
+   {
+       Id: 'Task 6',
+       Title: 'Task - 29007',
+       Status: 'Testing',
+       Summary: 'Validate new requirements',
+       Type: 'Improvement',
+       Priority: 'Low',
+       Tags: 'Validation',
+       Estimate: 1.5,
+       Spent: 3.75,
+       Assignee: 'Fuller',
+       RankId: 1
+   },
+   {
+       Id: 'Task 7',
+       Title: 'Task - 29009',
+       Status: 'InProgress',
+       Summary: 'Fix the issues reported in Safari browser.',
+       Type: 'Bug',
+       Priority: 'Critical',
+       Tags: 'Fix,Safari',
+       Estimate: 1.5,
+       Spent: 0.25,
+       Assignee: 'John',
+       RankId: 2
+   },
+   {
+       Id: 'Task 8',
+       Title: 'Task - 29010',
+       Status: 'Close',
+       Summary: 'Test the application in the IE browser.',
+       Type: 'Story',
+       Priority: 'Low',
+       Tags: 'Review,IE',
+       Estimate: 5.5,
+       Spent: 5.5,
+       Assignee: 'Leverling',
+       RankId: 3
+   },
+   {
+       Id: 'Task 9',
+       Title: 'Task - 29011',
+       Status: 'Close',
+       Summary: 'Validate the issues reported by the customer.',
+       Type: 'Story',
+       Priority: 'High',
+       Tags: 'Validation,Fix',
+       Estimate: 1,
+       Spent: 0.5,
+       Assignee: 'Buchanan',
+       RankId: 1
+   },
+   {
+       Id: 'Task 10',
+       Title: 'Task - 29015',
+       Status: 'Open',
+       Summary: 'Show the retrieved data from the server in grid control.',
+       Type: 'Story',
+       Priority: 'High',
+       Tags: 'Database,SQL',
+       Estimate: 5.5,
+       Spent: 0,
+       Assignee: 'Leverling',
+       RankId: 4
+   },
+   {
+       Id: 'Task 11',
+       Title: 'Task - 29016',
+       Status: 'InProgress',
+       Summary: 'Fix cannot open user’s default database SQL error.',
+       Priority: 'Critical',
+       Type: 'Bug',
+       Tags: 'Database,Sql2008',
+       Estimate: 2.5,
+       Spent: 3.75,
+       Assignee: 'Davolio',
+       RankId: 4
+   },
+   {
+       Id: 'Task 12',
+       Title: 'Task - 29017',
+       Status: 'Testing',
+       Summary: 'Fix the issues reported in data binding.',
+       Type: 'Story',
+       Priority: 'Normal',
+       Tags: 'Databinding',
+       Estimate: 3.5,
+       Spent: 3.5,
+       Assignee: 'Janet',
+       RankId: 4
+   },
+   {
+       Id: 'Task 13',
+       Title: 'Task - 29018',
+       Status: 'Close',
+       Summary: 'Analyze SQL server 2008 connection.',
+       Type: 'Story',
+       Priority: 'Critical',
+       Tags: 'Grid,Sql',
+       Estimate: 2,
+       Spent: 4,
+       Assignee: 'Suyama',
+       RankId: 4
+   },
+   {
+       Id: 'Task 14',
+       Title: 'Task - 29019',
+       Status: 'Validate',
+       Summary: 'Validate databinding issues.',
+       Type: 'Story',
+       Priority: 'Low',
+       Tags: 'Validation',
+       Estimate: 1.5,
+       Spent: 1.5,
+       Assignee: 'Leverling',
+       RankId: 1
+   },
+   {
+       Id: 'Task 15',
+       Title: 'Task - 29020',
+       Status: 'Close',
+       Summary: 'Analyze grid control.',
+       Type: 'Story',
+       Priority: 'High',
+       Tags: 'Analyze',
+       Estimate: 2.5,
+       Spent: 5.5,
+       Assignee: 'Leverling',
+       RankId: 5
+   },
+   {
+       Id: 'Task 16',
+       Title: 'Task - 29021',
+       Status: 'Close',
+       Summary: 'Stored procedure for initial data binding of the grid.',
+       Type: 'Others',
+       Priority: 'Critical',
+       Tags: 'Databinding',
+       Estimate: 1.5,
+       Spent: 1.25,
+       Assignee: 'Robert',
+       RankId: 6
+   },
+   {
+       Id: 'Task 17',
+       Title: 'Task - 29022',
+       Status: 'Close',
+       Summary: 'Analyze stored procedures.',
+       Type: 'Story',
+       Priority: 'Critical',
+       Tags: 'Procedures',
+       Estimate: 5.5,
+       Spent: 6.5,
+       Assignee: 'Janet',
+       RankId: 7
+   },
+   {
+       Id: 'Task 18',
+       Title: 'Task - 29023',
+       Status: 'InProgress',
+       Summary: 'Validate editing issues.',
+       Type: 'Story',
+       Priority: 'Critical',
+       Tags: 'Editing',
+       Estimate: 1,
+       Spent: 0.75,
+       Assignee: 'Davolio',
+       RankId: 1
+   },
+   {
+       Id: 'Task 19',
+       Title: 'Task - 29024',
+       Status: 'Open',
+       Summary: 'Test editing functionality.',
+       Type: 'Story',
+       Priority: 'Normal',
+       Tags: 'Editing,Test',
+       Estimate: 0.5,
+       Spent: 0,
+       Assignee: 'Robert',
+       RankId: 5
+   },
+   {
+       Id: 'Task 20',
+       Title: 'Task - 29025',
+       Status: 'Open',
+       Summary: 'Enhance editing functionality.',
+       Type: 'Improvement',
+       Priority: 'High',
+       Tags: 'Editing',
+       Estimate: 3.5,
+       Spent: 0,
+       Assignee: 'Suyama',
+       RankId: 5
+   },
+   {
+       Id: 'Task 21',
+       Title: 'Task - 29101',
+       Status: 'Close',
+       Summary: 'Bug fixes for existing application',
+       Type: 'Story',
+       Priority: 'Low',
+       Tags: 'Analyze,Customer',
+       Estimate: 5.5,
+       Spent: 7.5,
+       Assignee: 'John',
+       RankId: 1
+   },
+   {
+       Id: 'Task 22',
+       Title: 'Task - 29032',
+       Status: 'InProgress',
+       Summary: 'Arrange web meeting with customer to get login page requirement',
+       Type: 'Story',
+       Priority: 'Low',
+       Tags: 'Analyze',
+       Estimate: 6,
+       Spent: 8,
+       Assignee: 'John',
+       RankId: 1
+   },
+   {
+       Id: 'Task 23',
+       Title: 'Task - 29033',
+       Status: 'Close',
+       Summary: 'Arrange web meeting with customer to get editing requirements',
+       Type: 'Story',
+       Priority: 'High',
+       Tags: 'Bug,Customer',
+       Estimate: 4.5,
+       Spent: 2,
+       Assignee: 'Peacock',
+       RankId: 1,
+   },
+   {
+       Id: 'Task 24',
+       Title: 'Task - 29035',
+       Status: 'Open',
+       Summary: 'Fix the issues reported in Safari browser.',
+       Type: 'Story',
+       Priority: 'Low',
+       Tags: 'Bug',
+       Estimate: 1.5,
+       Spent: 3,
+       Assignee: 'Buchanan',
+       RankId: 1,
+   },
+   {
+       Id: 'Task 25',
+       Title: 'Task - 29036',
+       Status: 'Open',
+       Summary: 'Fix the issues reported by the customer.',
+       Type: 'Story',
+       Priority: 'Medium',
+       Tags: 'Story',
+       Estimate: 5.5,
+       Spent: 7,
+       Assignee: 'Fuller',
+       RankId: 1,
+       Color: '#02897B',
+       ClassName: 'e-story, e-low, e-nancy-davloio',
+   },
+   {
+       Id: 'Task 26',
+       Title: 'Task - 29037',
+       Status: 'Open',
+       Summary: 'Fix the issues reported in Safari browser.',
+       Type: 'Story',
+       Priority: 'High',
+       Tags: 'Bug,Customer',
+       Estimate: 2.5,
+       Spent: 2,
+       Assignee: 'Davolio',
+       RankId: 1,
+       Color: '#02897B',
+       ClassName: 'e-story, e-low, e-nancy-davloio',
+   },
+   {
+       Id: 'Task 27',
+       Title: 'Task - 29038',
+       Status: 'InProgress',
+       Summary: 'Check Login page validation.',
+       Type: 'Story',
+       Priority: 'Low',
+       Tags: 'Analyze,Customer',
+       Estimate: 6.5,
+       Spent: 8,
+       Assignee: 'Janet',
+       RankId: 1,
+       Color: '#02897B',
+       ClassName: 'e-story, e-low, e-nancy-davloio',
+   },
+   {
+       Id: 'Task 28',
+       Title: 'Task - 29039',
+       Status: 'Open',
+       Summary: 'Fix the issues reported in data binding.',
+       Type: 'improvement',
+       Priority: 'Medium',
+       Tags: 'Bug,Customer',
+       Estimate: 4.5,
+       Spent: 2,
+       Assignee: 'Peacock',
+       RankId: 1,
+       Color: '#02897B',
+       ClassName: 'e-story, e-low, e-nancy-davloio',
+   },
+   {
+       Id: 'Task 29',
+       Title: 'Task - 29040',
+       Status: 'InProgress',
+       Summary: 'Test editing functionality.',
+       Type: 'Story',
+       Priority: 'Medium',
+       Tags: 'Analyze,Customer',
+       Estimate: 4,
+       Spent: 4,
+       Assignee: 'Robert',
+       RankId: 1,
+       Color: '#02897B',
+       ClassName: 'e-story, e-low, e-nancy-davloio',
+   },
+   {
+       Id: 'Task 30',
+       Title: 'Task - 29041',
+       Status: 'Close',
+       Summary: 'Check Login page validation.',
+       Type: 'Bug',
+       Priority: 'Low',
+       Tags: 'Analyze,Customer',
+       Estimate: 4.5,
+       Spent: 4,
+       Assignee: 'Fuller',
+       RankId: 1,
+       Color: '#02897B',
+       ClassName: 'e-story, e-low, e-nancy-davloio',
+   }
+];
 export const categoryData: Object[] = [
     {
         "CategoryName": "Beverages",
@@ -25284,3 +26475,1119 @@ export const getTradeData: object[] = [
       Revenue: 640000,
    },
 ];
+
+export interface Meeting {
+   Id: number;
+   Subject: string;
+   StartTime: Date;
+   EndTime: Date;
+   IsReadonly: boolean;
+}
+export interface Details {
+   EmployeeID: number;
+   Meetings: Meeting[];
+}
+export let detailEmployeeData: Object[] = [];
+
+const customerNames: string[] = [
+   'Vins et alcools Chevalier', 'Toms Spezialitäten', 'Hanari Carnes', 'Victuailles en stock', 'Suprêmes délices',
+   'Hanari Carnes', 'Chop-suey Chinese', 'Richter Supermarkt', 'Wellington Importadora', 'HILARION-Abastos',
+   'Ernst Handel', 'Centro comercial Moctezuma', 'Ottilies Käseladen', 'Que Delícia', 'Rattlesnake Canyon Grocery',
+   'Ernst Handel', 'Folies gourmandes', 'Blondesddsl père et fils', 'Wartian Herkku', 'Frankenversand',
+   'Groseri-Deli', 'White Clover Markets', 'Wartian Herkku', 'Split Rail Beer & Ale', 'Rattlesnake Canyon Grocery',
+   'QUICK', 'Vins et alcools Chevalier', 'Magazzini Alimentari Riuniti', 'Tortuga Restaurante', 'Morgenstern Gesundkost',
+   'Berglunds snabbköp', 'Lehmanns Marktstand', 'Berglunds snabbköp', 'Romero y tomillo', 'Romero y tomillo',
+   'LILA-Supermercado', 'Lehmanns Marktstand', 'QUICK', 'QUICK', 'Ricardo Adocicados', 'Reggiani Caseifici',
+   'B’s Beverages', 'Comércio Mineiro', 'Que Delícia', 'Tradição Hipermercados', 'Tortuga Restaurante',
+   'Rattlesnake Canyon Grocery', 'Vins et alcools Chevalier', 'LILA-Supermercado', 'Blondesddsl père et fils',
+   'Hungry Owl All-Night Grocers', 'Ricardo Adocicados', 'Magazzini Alimentari Riuniti', 'Die Wandernde Kuh',
+   'Suprêmes délices', 'Godos Cocina Típica', 'Tortuga Restaurante', 'Old World Delicatessen', 'Romero y tomillo',
+   'Lonesome Pine Restaurant', 'Ana Trujillo Emparedados y helados', 'Hungry Owl All-Night Grocers', 'The Big Cheese',
+   'Du monde entier', 'Die Wandernde Kuh', 'QUICK', 'Rattlesnake Canyon Grocery', 'Island Trading',
+   'Rattlesnake Canyon Grocery', 'Lonesome Pine Restaurant', 'Island Trading', 'Tortuga Restaurante',
+   'Wartian Herkku', 'Island Trading', 'Pericles Comidas clásicas', 'Königlich Essen', 'Save-a-lot Markets',
+   'Königlich Essen', 'Bólido Comidas preparadas', 'Folies gourmandes', 'Furia Bacalhau e Frutos do Mar',
+   'Split Rail Beer & Ale', 'LILA-Supermercado', 'Bon app\'', 'Mère Paillarde', 'Wartian Herkku', 'Victuailles en stock',
+   'Hungry Owl All-Night Grocers', 'Princesa Isabel Vinhos', 'Frankenversand', 'Old World Delicatessen',
+   'Mère Paillarde', 'Bon app\'', 'Simons bistro', 'Frankenversand', 'Lehmanns Marktstand', 'White Clover Markets',
+   'QUICK', 'Rattlesnake Canyon Grocery', 'Familia Arquibaldo'
+];
+
+export function createDetailEmployeeData(): void {
+   if (detailEmployeeData.length) {
+       return;
+   }
+   let FirstName: string[] = ['VINET', 'TOMSP', 'HANAR', 'VICTE', 'SUPRD', 'HANAR', 'CHOPS', 'RICSU', 'WELLI', 'HILAA', 'ERNSH', 'CENTC',
+       'OTTIK', 'QUEDE', 'RATTC', 'ERNSH', 'FOLKO', 'BLONP', 'WARTH', 'FRANK', 'GROSR', 'WHITC', 'WARTH', 'SPLIR', 'RATTC', 'QUICK', 'VINET',
+       'MAGAA', 'TORTU', 'MORGK', 'BERGS', 'LEHMS', 'BERGS', 'ROMEY', 'ROMEY', 'LILAS', 'LEHMS', 'QUICK', 'QUICK', 'RICAR', 'REGGC', 'BSBEV',
+       'COMMI', 'QUEDE', 'TRADH', 'TORTU', 'RATTC', 'VINET', 'LILAS', 'BLONP', 'HUNGO', 'RICAR', 'MAGAA', 'WANDK', 'SUPRD', 'GODOS', 'TORTU',
+       'OLDWO', 'ROMEY', 'LONEP', 'ANATR', 'HUNGO', 'THEBI', 'DUMON', 'WANDK', 'QUICK', 'RATTC', 'ISLAT', 'RATTC', 'LONEP', 'ISLAT', 'TORTU',
+       'WARTH', 'ISLAT', 'PERIC', 'KOENE', 'SAVEA', 'KOENE', 'BOLID', 'FOLKO', 'FURIB', 'SPLIR', 'LILAS', 'BONAP', 'MEREP', 'WARTH', 'VICTE',
+       'HUNGO', 'PRINI', 'FRANK', 'OLDWO', 'MEREP', 'BONAP', 'SIMOB', 'FRANK', 'LEHMS', 'WHITC', 'QUICK', 'RATTC', 'FAMIA'];
+   let LastName: string[] = ['BLAKE', 'JONES', 'SMITH', 'TAYLOR', 'EVANS', 'WILSON', 'THOMAS', 'ROBINSON', 'WALKER', 'WHITE', 'ROBERTS', 'GREEN',
+       'HALL', 'WOOD', 'CLARKE', 'BROWN', 'LEE', 'TURNER', 'MARTIN', 'COOPER', 'KING', 'HILL', 'WRIGHT', 'MITCHELL', 'BELL', 'MOORE', 'WARD',
+       'HUGHES', 'PRICE', 'JENKINS', 'MURPHY', 'GRIFFITHS', 'KELLY', 'BAILEY', 'SIMMONS', 'HARRIS', 'ELLIS', 'RICHARDS', 'MORRIS', 'EDWARDS',
+       'ALLEN', 'PHILLIPS', 'EVANS', 'LEE', 'CLARKE', 'MORGAN', 'COX', 'RICHARDSON', 'WOOD', 'WATSON', 'JACKSON', 'JOHNSON', 'GRAY', 'MILLER',
+       'JAMES', 'WILLIAMS', 'DAVIS', 'SCOTT', 'NELSON', 'REED', 'ADAMS', 'BAKER', 'MURRAY', 'KNIGHT', 'STEVENS', 'GRAHAM', 'WEST', 'HENDERSON',
+       'SPENCER', 'CHAPMAN', 'PARKER', 'CAMPBELL', 'BARNES', 'YOUNG', 'BROOKS', 'ROSS', 'COLEMAN', 'HARRISON', 'HOLMES', 'FOSTER', 'PEARSON',
+       'KENNEDY', 'ELLIS', 'BROOKS', 'MASON', 'DAY', 'PERRY', 'SIMPSON', 'FORD', 'COLLINS', 'HOWARD', 'MARSHALL', 'OWEN', 'BISHOP', 'RILEY'];
+   let ReportingPerson: string[] = ['NELSON PERRY',
+       'JANE DOE',
+       'JOHN SMITH',
+       'EMILY BROWN',
+       'MICHAEL JOHNSON',
+       'SARAH WILLIAMS',
+       'DAVID MARTIN',
+       'LAURA TAYLOR',
+       'BRIAN WILSON',
+       'AMY THOMAS',
+       'MATTHEW ANDERSON',
+       'OLIVIA GARCIA',
+       'ROBERT RODRIGUEZ',
+       'MELISSA MARTINEZ',
+       'DANIEL LEE',
+       'JENNIFER GONZALEZ',
+       'CHARLES HERNANDEZ',
+       'MELANIE YOUNG',
+       'ANDREW WRIGHT',
+       'ANGELA HALL'
+   ];
+
+   let employeeID: string = 'Emp100';
+
+   for (let i: number = 0; i < 20000; i++) {
+       let firstName: string = FirstName[i % FirstName.length];
+       let lastName: string = LastName[i % LastName.length];
+       let email: string = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@sales.com`;
+       let reportingPerson: string = ReportingPerson[Math.floor(Math.random() * ReportingPerson.length)];
+       let currentDate: Date = new Date();
+
+       detailEmployeeData.push({
+           'EmployeeID': employeeID + (i + 1),
+           'FirstName': firstName,
+           'LastName': lastName,
+           'Email': email,
+           'ReportingPerson': reportingPerson,
+           'Meetings': []
+       });
+
+       for (let j: number = 0; j < 3; j++) {
+           const customerIndex: number = Math.floor(Math.random() * customerNames.length);
+           const startDate: Date = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), Math.floor(Math.random() * 8) + 8, 0);
+           const endDate: Date = new Date(startDate.getTime() + Math.floor(Math.random() * 2 + 1) * 60 * 60 * 1000);
+           (detailEmployeeData[i] as Details).Meetings.push(
+               {
+                   Id: j,
+                   Subject: `Meeting with ${customerNames[customerIndex]}.`,
+                   StartTime: startDate,
+                   EndTime: endDate,
+                   IsReadonly: startDate < new Date() ? true : false
+               }
+           );
+           const nextDate: Date = new Date(currentDate);
+           nextDate.setDate(currentDate.getDate() + 1);
+           currentDate = nextDate;
+       }
+   }
+}
+
+createDetailEmployeeData();
+
+export let detailSalesData: Object[] = [];
+
+createDetailEmployeeData();
+
+function getPastYearRandomDate() {
+   const today = new Date();
+   const pastYear = new Date();
+   pastYear.setFullYear(today.getFullYear() - 1);
+   const previousMonth: Date = new Date(today.getFullYear(), today.getMonth(), 0);
+   const randomTimestamp: number = Math.random() * (previousMonth.getTime() - pastYear.getTime()) + pastYear.getTime();
+   const randomDate: Date = new Date(randomTimestamp);
+   return randomDate;
+}
+
+function getRandomNumber(min: number, max: number) {
+   min = Math.ceil(min);
+   max = Math.floor(max);
+   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+export function createDetailSalesData(): void {
+   if (detailSalesData.length) {
+       return;
+   }
+   let product: string[] = ['Chai', 'Chang', 'Aniseed Syrup', 'Chef Anton\'s Cajun Seasoning', 'Chef Anton\'s Gumbo Mix', 'Grandma\'s Boysenberry Spread',
+       'Uncle Bob\'s Organic Dried Pears', 'Northwoods Cranberry Sauce', 'Mishi Kobe Niku', 'Ikura', 'Queso Cabrales', 'Queso Manchego La Pastora', 'Konbu',
+       'Tofu', 'Genen Shouyu', 'Pavlova', 'Alice Mutton', 'Carnarvon Tigers', 'Teatime Chocolate Biscuits', 'Sir Rodney\'s Marmalade', 'Sir Rodney\'s Scones',
+       'Gustaf\'s Knäckebröd', 'Tunnbröd', 'Guaraná Fantástica', 'NuNuCa Nuß-Nougat-Creme', 'Gumbär Gummibärchen', 'Schoggi Schokolade', 'Rössle Sauerkraut',
+       'Thüringer Rostbratwurst', 'Nord-Ost Matjeshering', 'Gorgonzola Telino', 'Mascarpone Fabioli', 'Geitost', 'Sasquatch Ale', 'Steeleye Stout', 'Inlagd Sill',
+       'Gravad lax', 'Côte de Blaye', 'Chartreuse verte', 'Boston Crab Meat', 'Jack\'s New England Clam Chowder', 'Singaporean Hokkien Fried Mee', 'Ipoh Coffee',
+       'Gula Malacca', 'Rogede sild', 'Spegesild', 'Zaanse koeken', 'Chocolade', 'Maxilaku', 'Valkoinen suklaa', 'Manjimup Dried Apples', 'Filo Mix', 'Perth Pasties',
+       'Tourtière', 'Pâté chinois', 'Gnocchi di nonna Alice', 'Ravioli Angelo', 'Escargots de Bourgogne', 'Raclette Courdavault', 'Camembert Pierrot', 'Sirop d\'érable',
+       'Tarte au sucre', 'Vegie-spread', 'Wimmers gute Semmelknödel', 'Louisiana Fiery Hot Pepper Sauce', 'Louisiana Hot Spiced Okra', 'Laughing Lumberjack Lager', 'Scottish Longbreads',
+       'Gudbrandsdalsost', 'Outback Lager', 'Flotemysost', 'Mozzarella di Giovanni', 'Röd Kaviar', 'Longlife Tofu', 'Rhönbräu Klosterbier', 'Lakkalikööri', 'Original Frankfurter grüne Soße'];
+
+   let EmployeeID: string = 'Emp100';
+
+   let productID: number[] = [];
+
+   for (let id = 1; id <= product.length; id++) {
+       productID.push(id);
+   }
+
+   for (let i: number = 0; i < 10000; i++) {
+       let count: number = getRandomNumber(30, 100);
+       for (let j: number = 0; j < count; j++) {
+           let productIndex: number = Math.floor(Math.random() * product.length);
+           const OrderDate: Date = getPastYearRandomDate();
+           let startDate: Date = new Date(OrderDate.getFullYear(), OrderDate.getMonth(), OrderDate.getDate(), Math.floor(Math.random() * 8) + 8, 0);
+           let endDate: Date = new Date(startDate.getTime() + Math.floor(Math.random() * 2 + 1) * 60 * 60 * 1000);
+           let customerIndex: number = Math.floor(Math.random() * customerNames.length);
+           detailSalesData.push({
+               'EmployeeID': EmployeeID + (i + 1),
+               'ProductName': product[productIndex],
+               'ProductID': productID[productIndex],
+               'Quantity': getRandomNumber(100, 500),
+               'OrderDate': OrderDate,
+               'Price': getRandomNumber(50, 100),
+               'Meeting': {
+                   Id: j + 1,
+                   Subject: `Meeting with ${customerNames[customerIndex]}.`,
+                   StartTime: startDate,
+                   EndTime: endDate,
+                   IsReadonly: true
+               }
+           });
+       }
+   }
+}
+
+export let pizzaData: Object[] = [
+   {
+      "Id": 1,
+      "Title": "Mexican Green Wave",
+      "Type": "Vegetarian",
+      "Size": "Small",
+      "Description": "Stromboli sandwich with chili sauce.",
+      "Tags": ['Onions', 'Pepper', 'Cheese'],
+      "ImageURL": "Mexican_Green_Wave.jpg",
+      "Price": "$4.79",
+      "OriginalPrice": "$6.58",
+  },
+  {
+      "Id": 2,
+      "Title": "Fresh Veggie",
+      "Type": "Vegetarian",
+      "Size": "Medium",
+      "Description": "Veggie with Onions and Capsicum.",
+      "Tags": ['Onions', 'Capsicum'],
+      "ImageURL": "Fresh_Veggie.jpg",
+      "Price": "$11.99",
+  },
+  {
+      "Id": 3,
+      "Title": "Peppy Paneer",
+      "Type": "Vegetarian",
+      "Size": "Large",
+      "Description": "It's made using toppings of tomato, mozzarella cheese and fresh basil.",
+      "Tags": ['Onions', 'Pepper', 'Cheese'],
+      "ImageURL": "Peppy_Paneer.jpg",
+      "Price": "$14.99",
+      "OriginalPrice": "$16.08",
+  },
+  {
+      "Id": 4,
+      "Title": "Margherita",
+      "Type": "Vegetarian",
+      "Size": "Small",
+      "Description": "Lebanese Pizza topped with tomato sauce.",
+      "Tags": ['Onions', 'Pepper', 'Cheese'],
+      "ImageURL": "Margherit.jpg",
+      "Price": "$4.79",
+      "OriginalPrice": "$7.56",
+  },
+  {
+      "Id": 5,
+      "Title": "Indian Tandoori Paneer",
+      "Type": "Vegetarian",
+      "Size": "Medium",
+      "Description": "Tandoori Paneer with capsicum, red paprika and mint.",
+      "Tags": ['Paneer', 'Capsicum'],
+      "ImageURL": "IndianTandooriPaneer.jpg",
+      "Price": "$11.99",
+  },
+  {
+      "Id": 6,
+      "Title": "Pepper Barbecue Chicken",
+      "Type": "Non-Vegetarian",
+      "Size": "Medium",
+      "Description": "Pepper Barbecue Chicken with cheese.",
+      "Tags": ['Pepper', 'Chicken', 'Cheese'],
+      "ImageURL": "Pepper_Barbeque.jpg",
+      "Price": "$11.99",
+  },
+  {
+      "Id": 7,
+      "Title": "Chicken Sausage",
+      "Type": "Non-Vegetarian",
+      "Size": "Large",
+      "Description": "Chicken Sausage with cheese.",
+      "Tags": ['Cheese', 'Chicken'],
+      "ImageURL": "Chicken_Sausage.jpg",
+      "Price": "$14.99",
+  },
+  {
+      "Id": 8,
+      "Title": "Chicken Golden Delight",
+      "Type": "Non-Vegetarian",
+      "Size": "Large",
+      "Description": "Barbeque chicken with a topping of golden corn loaded with extra cheese.",
+      "Tags": ['Onions', 'BBQ', 'Prawn'],
+      "ImageURL": "Chicken_Golden_Delight.jpg",
+      "Price": "$14.99",
+      "OriginalPrice": "$17.99",
+  },
+  {
+      "Id": 9,
+      "Title": "Pepper Barbecue and Onion",
+      "Type": "Non-Vegetarian",
+      "Size": "Medium",
+      "Description": "Pepper Barbecue chicken with Onion.",
+      "Tags": ['Pepper', 'Chicken'],
+      "ImageURL": "Pepper_Barbeque_Onion.jpg",
+      "Price": "$11.99",
+  },
+  {
+      "Id": 10,
+      "Title": "Chicken Fiesta",
+      "Type": "Non-Vegetarian",
+      "Size": "Small",
+      "Description": "Grilled Chicken Rashers with Peri-Peri chicken, Onion and Capsicum.",
+      "Tags": ['Chicken', 'Capsicum'],
+      "ImageURL": "chunky-chicken.png",
+      "Price": "$4.79",
+      "OriginalPrice": "$9.58",
+  },
+  {
+      "Id": 11,
+      "Title": "Double Cheese Margherita",
+      "Type": "Vegetarian",
+      "Size": "Medium",
+      "Description": "Margherita with chili sauce and double Cheese.",
+      "Tags": ['Onions', 'Pepper'],
+      "ImageURL": "Double_Cheese_Margherita.jpg",
+      "Price": "$11.99",
+  },
+  {
+      "Id": 12,
+      "Title": "Veggie Paradise",
+      "Type": "Vegetarian",
+      "Size": "Large",
+      "Description": "Veggie Delight with Goldern Corn, Black Olives, Capsicum and red Paprika.",
+      "Tags": ['Corn', 'Capsicum'],
+      "ImageURL": "Veggie_Paradise.jpg",
+      "Price": "$14.99",
+      "OriginalPrice": "$15.62",
+  },
+  {
+      "Id": 13,
+      "Title": "Cheese and Corn",
+      "Type": "Vegetarian",
+      "Size": "Large",
+      "Description": "Cheese with golden corn.",
+      "Tags": ['Cheese', 'Corn'],
+      "ImageURL": "Corn_Cheese.jpg",
+      "Price": "$14.99",
+  },
+  {
+      "Id": 14,
+      "Title": "Chicken Tikka",
+      "Type": "Non-Vegetarian",
+      "Size": "Medium",
+      "Description": "Tandoori masala with Chicken Tikka, Onion, red paprika and mint.",
+      "Tags": ['Chicken', 'Tikka', 'Paprika'],
+      "ImageURL": "IndianChickenTikka.jpg",
+      "Price": "$11.99",
+      "OriginalPrice": "$12.02",
+  },
+  {
+      "Id": 15,
+      "Title": "Chicken Dominator",
+      "Type": "Non-Vegetarian",
+      "Size": "Small",
+      "Description": "Double Pepper Barbecue Chicken with Peri-Peri Chicken, Chicken Tikka, Grilled and Rashers.",
+      "Tags": ['Pepper', 'Chicken'],
+      "ImageURL": "Dominator.jpg",
+      "Price": "$4.79",
+      "OriginalPrice": "$6.30",
+  },
+  {
+      "Id": 16,
+      "Title": "Deluxe Veggie",
+      "Type": "Vegetarian",
+      "Size": "Medium",
+      "Description": "Onions and Capsicum those delectable mushrooms with paneer and golden corn to top it all.",
+      "Tags": ['Mushrooms', 'Corn'],
+      "ImageURL": "Deluxe_Veggie.jpg",
+      "Price": "$11.99",
+  },
+  {
+      "Id": 17,
+      "Title": "Farm House",
+      "Type": "Vegetarian",
+      "Size": "Large",
+      "Description": "Crunchy, crisp capsicum, succulent mushrooms and fresh tomatoes.",
+      "Tags": ['Capsicum', 'Mushrooms'],
+      "ImageURL": "Farmhouse.jpg",
+      "Price": "$14.99",
+  },
+  {
+      "Id": 18,
+      "Title": "Veg Extravanganza",
+      "Type": "Vegetarian",
+      "Size": "Large",
+      "Description": "Pizza with corn, olives, onions, capsicum, tomatoes and jalapeno with cheese to go all around.",
+      "Tags": ['Corn', 'Mushrooms'],
+      "ImageURL": "Veg_Extravaganz.jpg",
+      "Price": "$14.99",
+      "OriginalPrice": "$19.58",
+  },
+  {
+      "Id": 19,
+      "Title": "Margherita",
+      "Type": "Vegetarian",
+      "Size": "Small",
+      "Description": "Lebanese Pizza topped with tomato sauce.",
+      "Tags": ['Onions', 'Pepper', 'Cheese'],
+      "ImageURL": "Margherit.jpg",
+      "Price": "$4.79",
+      "OriginalPrice": "$7.77",
+  },
+  {
+      "Id": 20,
+      "Title": "Pepper Barbecue and Onion",
+      "Type": "Non-Vegetarian",
+      "Size": "Medium",
+      "Description": "Pepper Barbecue chicken with Onion.",
+      "Tags": ['Onions', 'Pepper', 'Chicken'],
+      "ImageURL": "Pepper_Barbeque_Onion.jpg",
+      "Price": "$11.99",
+  },
+  {
+      "Id": 21,
+      "Title": "Veggie Paradise",
+      "Type": "Vegetarian",
+      "Size": "Large",
+      "Description": "Veggie Delight with Goldern Corn, Black Olives, Capsicum and red Paprika.",
+      "Tags": ['Corn', 'Capsicum', 'Pepper'],
+      "ImageURL": "Veggie_Paradise.jpg",
+      "Price": "$14.99",
+      "OriginalPrice": "$15.34",
+  },
+  {
+      "Id": 22,
+      "Title": "Chicken Dominator",
+      "Type": "Non-Vegetarian",
+      "Size": "Small",
+      "Description": "Double Pepper Barbecue Chicken with Peri-Peri Chicken, Chicken Tikka, Grilled and Rashers.",
+      "Tags": ['Pepper', 'Chicken'],
+      "ImageURL": "Dominator.jpg",
+      "Price": "$4.79",
+  }
+];
+
+export let productData: Object[] = [
+   {
+      'ProductID': 1,
+      'ProductName': 'Chai',
+      'SupplierID': 1,
+      'QuantityPerUnit': '10 boxes x 20 bags',
+      'UnitPrice': 18.00,
+      'UnitsInStock': 39,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 2,
+      'ProductName': 'Chang',
+      'SupplierID': 1,
+      'QuantityPerUnit': '24 - 12 oz bottles',
+      'UnitPrice': 19.00,
+      'UnitsInStock': 17,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 3,
+      'ProductName': 'Aniseed Syrup',
+      'SupplierID': 1,
+      'QuantityPerUnit': '12 - 550 ml bottles',
+      'UnitPrice': 10.00,
+      'UnitsInStock': 13,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 4,
+      'ProductName': 'Chef Anton\'s Cajun Seasoning',
+      'SupplierID': 2,
+      'QuantityPerUnit': '48 - 6 oz jars',
+      'UnitPrice': 22.00,
+      'UnitsInStock': 53,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 5,
+      'ProductName': 'Chef Anton\'s Gumbo Mix',
+      'SupplierID': 2,
+      'QuantityPerUnit': '36 boxes',
+      'UnitPrice': 21.35,
+      'UnitsInStock': 0,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 6,
+      'ProductName': 'Grandma\'s Boysenberry Spread',
+      'SupplierID': 3,
+      'QuantityPerUnit': '12 - 8 oz jars',
+      'UnitPrice': 25.00,
+      'UnitsInStock': 120,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 7,
+      'ProductName': 'Uncle Bob\'s Organic Dried Pears',
+      'SupplierID': 3,
+      'QuantityPerUnit': '12 - 1 lb pkgs.',
+      'UnitPrice': 30.00,
+      'UnitsInStock': 15,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 8,
+      'ProductName': 'Northwoods Cranberry Sauce',
+      'SupplierID': 3,
+      'QuantityPerUnit': '12 - 12 oz jars',
+      'UnitPrice': 40.00,
+      'UnitsInStock': 6,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 9,
+      'ProductName': 'Mishi Kobe Niku',
+      'SupplierID': 4,
+      'QuantityPerUnit': '18 - 500 g pkgs.',
+      'UnitPrice': 97.00,
+      'UnitsInStock': 29,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 10,
+      'ProductName': 'Ikura',
+      'SupplierID': 4,
+      'QuantityPerUnit': '12 - 200 ml jars',
+      'UnitPrice': 31.00,
+      'UnitsInStock': 31,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 11,
+      'ProductName': 'Queso Cabrales',
+      'SupplierID': 5,
+      'QuantityPerUnit': '1 kg pkg.',
+      'UnitPrice': 21.00,
+      'UnitsInStock': 22,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 12,
+      'ProductName': 'Queso Manchego La Pastora',
+      'SupplierID': 5,
+      'QuantityPerUnit': '10 - 500 g pkgs.',
+      'UnitPrice': 38.00,
+      'UnitsInStock': 86,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 13,
+      'ProductName': 'Konbu',
+      'SupplierID': 6,
+      'QuantityPerUnit': '2 kg box',
+      'UnitPrice': 6.00,
+      'UnitsInStock': 24,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 14,
+      'ProductName': 'Tofu',
+      'SupplierID': 6,
+      'QuantityPerUnit': '40 - 100 g pkgs.',
+      'UnitPrice': 23.25,
+      'UnitsInStock': 35,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 15,
+      'ProductName': 'Genen Shouyu',
+      'SupplierID': 6,
+      'QuantityPerUnit': '24 - 250 ml bottles',
+      'UnitPrice': 15.50,
+      'UnitsInStock': 39,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 16,
+      'ProductName': 'Pavlova',
+      'SupplierID': 7,
+      'QuantityPerUnit': '32 - 500 g boxes',
+      'UnitPrice': 17.45,
+      'UnitsInStock': 29,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 17,
+      'ProductName': 'Alice Mutton',
+      'SupplierID': 7,
+      'QuantityPerUnit': '20 - 1 kg tins',
+      'UnitPrice': 39.00,
+      'UnitsInStock': 0,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 18,
+      'ProductName': 'Carnarvon Tigers',
+      'SupplierID': 7,
+      'QuantityPerUnit': '16 kg pkg.',
+      'UnitPrice': 62.50,
+      'UnitsInStock': 42,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 19,
+      'ProductName': 'Teatime Chocolate Biscuits',
+      'SupplierID': 8,
+      'QuantityPerUnit': '10 boxes x 12 pieces',
+      'UnitPrice': 9.20,
+      'UnitsInStock': 25,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 20,
+      'ProductName': 'Sir Rodney\'s Marmalade',
+      'SupplierID': 8,
+      'QuantityPerUnit': '30 gift boxes',
+      'UnitPrice': 81.00,
+      'UnitsInStock': 40,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 21,
+      'ProductName': 'Sir Rodney\'s Scones',
+      'SupplierID': 8,
+      'QuantityPerUnit': '24 pkgs. x 4 pieces',
+      'UnitPrice': 10.00,
+      'UnitsInStock': 3,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 22,
+      'ProductName': 'Gustaf\'s Knäckebröd',
+      'SupplierID': 9,
+      'QuantityPerUnit': '24 - 500 g pkgs.',
+      'UnitPrice': 21.00,
+      'UnitsInStock': 104,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 23,
+      'ProductName': 'Tunnbröd',
+      'SupplierID': 9,
+      'QuantityPerUnit': '12 - 250 g pkgs.',
+      'UnitPrice': 9.00,
+      'UnitsInStock': 61,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 24,
+      'ProductName': 'Guaraná Fantástica',
+      'SupplierID': 10,
+      'QuantityPerUnit': '12 - 355 ml cans',
+      'UnitPrice': 4.50,
+      'UnitsInStock': 20,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 25,
+      'ProductName': 'NuNuCa Nuß-Nougat-Creme',
+      'SupplierID': 11,
+      'QuantityPerUnit': '20 - 450 g glasses',
+      'UnitPrice': 14.00,
+      'UnitsInStock': 76,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 26,
+      'ProductName': 'Gumbär Gummibärchen',
+      'SupplierID': 11,
+      'QuantityPerUnit': '100 - 250 g bags',
+      'UnitPrice': 31.23,
+      'UnitsInStock': 15,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 27,
+      'ProductName': 'Schoggi Schokolade',
+      'SupplierID': 11,
+      'QuantityPerUnit': '100 - 100 g pieces',
+      'UnitPrice': 43.90,
+      'UnitsInStock': 49,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 28,
+      'ProductName': 'Rössle Sauerkraut',
+      'SupplierID': 12,
+      'QuantityPerUnit': '25 - 825 g cans',
+      'UnitPrice': 45.60,
+      'UnitsInStock': 26,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 29,
+      'ProductName': 'Thüringer Rostbratwurst',
+      'SupplierID': 12,
+      'QuantityPerUnit': '50 bags x 30 sausgs.',
+      'UnitPrice': 123.79,
+      'UnitsInStock': 0,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 30,
+      'ProductName': 'Nord-Ost Matjeshering',
+      'SupplierID': 13,
+      'QuantityPerUnit': '10 - 200 g glasses',
+      'UnitPrice': 25.89,
+      'UnitsInStock': 10,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 31,
+      'ProductName': 'Gorgonzola Telino',
+      'SupplierID': 14,
+      'QuantityPerUnit': '12 - 100 g pkgs',
+      'UnitPrice': 12.50,
+      'UnitsInStock': 0,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 32,
+      'ProductName': 'Mascarpone Fabioli',
+      'SupplierID': 14,
+      'QuantityPerUnit': '24 - 200 g pkgs.',
+      'UnitPrice': 32.00,
+      'UnitsInStock': 9,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 33,
+      'ProductName': 'Geitost',
+      'SupplierID': 15,
+      'QuantityPerUnit': '500 g',
+      'UnitPrice': 2.50,
+      'UnitsInStock': 112,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 34,
+      'ProductName': 'Sasquatch Ale',
+      'SupplierID': 16,
+      'QuantityPerUnit': '24 - 12 oz bottles',
+      'UnitPrice': 14.00,
+      'UnitsInStock': 111,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 35,
+      'ProductName': 'Steeleye Stout',
+      'SupplierID': 16,
+      'QuantityPerUnit': '24 - 12 oz bottles',
+      'UnitPrice': 18.00,
+      'UnitsInStock': 20,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 36,
+      'ProductName': 'Inlagd Sill',
+      'SupplierID': 17,
+      'QuantityPerUnit': '24 - 250 g  jars',
+      'UnitPrice': 19.00,
+      'UnitsInStock': 112,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 37,
+      'ProductName': 'Gravad lax',
+      'SupplierID': 17,
+      'QuantityPerUnit': '12 - 500 g pkgs.',
+      'UnitPrice': 26.00,
+      'UnitsInStock': 11,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 38,
+      'ProductName': 'Côte de Blaye',
+      'SupplierID': 18,
+      'QuantityPerUnit': '12 - 75 cl bottles',
+      'UnitPrice': 263.50,
+      'UnitsInStock': 17,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 39,
+      'ProductName': 'Chartreuse verte',
+      'SupplierID': 18,
+      'QuantityPerUnit': '750 cc per bottle',
+      'UnitPrice': 18.00,
+      'UnitsInStock': 69,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 40,
+      'ProductName': 'Boston Crab Meat',
+      'SupplierID': 19,
+      'QuantityPerUnit': '24 - 4 oz tins',
+      'UnitPrice': 18.40,
+      'UnitsInStock': 123,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 41,
+      'ProductName': 'Jack\'s New England Clam Chowder',
+      'SupplierID': 19,
+      'QuantityPerUnit': '12 - 12 oz cans',
+      'UnitPrice': 9.65,
+      'UnitsInStock': 85,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 42,
+      'ProductName': 'Singaporean Hokkien Fried Mee',
+      'SupplierID': 20,
+      'QuantityPerUnit': '32 - 1 kg pkgs.',
+      'UnitPrice': 14.00,
+      'UnitsInStock': 26,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 43,
+      'ProductName': 'Ipoh Coffee',
+      'SupplierID': 20,
+      'QuantityPerUnit': '16 - 500 g tins',
+      'UnitPrice': 46.00,
+      'UnitsInStock': 17,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 44,
+      'ProductName': 'Gula Malacca',
+      'SupplierID': 20,
+      'QuantityPerUnit': '20 - 2 kg bags',
+      'UnitPrice': 19.45,
+      'UnitsInStock': 27,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 45,
+      'ProductName': 'Rogede sild',
+      'SupplierID': 21,
+      'QuantityPerUnit': '1k pkg.',
+      'UnitPrice': 9.50,
+      'UnitsInStock': 5,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 46,
+      'ProductName': 'Spegesild',
+      'SupplierID': 21,
+      'QuantityPerUnit': '4 - 450 g glasses',
+      'UnitPrice': 12.00,
+      'UnitsInStock': 95,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 47,
+      'ProductName': 'Zaanse koeken',
+      'SupplierID': 22,
+      'QuantityPerUnit': '10 - 4 oz boxes',
+      'UnitPrice': 9.50,
+      'UnitsInStock': 36,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 48,
+      'ProductName': 'Chocolade',
+      'SupplierID': 22,
+      'QuantityPerUnit': '10 pkgs.',
+      'UnitPrice': 12.75,
+      'UnitsInStock': 15,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 49,
+      'ProductName': 'Maxilaku',
+      'SupplierID': 23,
+      'QuantityPerUnit': '24 - 50 g pkgs.',
+      'UnitPrice': 20.00,
+      'UnitsInStock': 10,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 50,
+      'ProductName': 'Valkoinen suklaa',
+      'SupplierID': 23,
+      'QuantityPerUnit': '12 - 100 g bars',
+      'UnitPrice': 16.25,
+      'UnitsInStock': 65,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 51,
+      'ProductName': 'Manjimup Dried Apples',
+      'SupplierID': 24,
+      'QuantityPerUnit': '50 - 300 g pkgs.',
+      'UnitPrice': 53.00,
+      'UnitsInStock': 20,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 52,
+      'ProductName': 'Filo Mix',
+      'SupplierID': 24,
+      'QuantityPerUnit': '16 - 2 kg boxes',
+      'UnitPrice': 7.00,
+      'UnitsInStock': 38,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 53,
+      'ProductName': 'Perth Pasties',
+      'SupplierID': 24,
+      'QuantityPerUnit': '48 pieces',
+      'UnitPrice': 32.80,
+      'UnitsInStock': 0,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 54,
+      'ProductName': 'Tourtière',
+      'SupplierID': 25,
+      'QuantityPerUnit': '16 pies',
+      'UnitPrice': 7.45,
+      'UnitsInStock': 21,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 55,
+      'ProductName': 'Pâté chinois',
+      'SupplierID': 25,
+      'QuantityPerUnit': '24 boxes x 2 pies',
+      'UnitPrice': 24.00,
+      'UnitsInStock': 115,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 56,
+      'ProductName': 'Gnocchi di nonna Alice',
+      'SupplierID': 26,
+      'QuantityPerUnit': '24 - 250 g pkgs.',
+      'UnitPrice': 38.00,
+      'UnitsInStock': 21,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 57,
+      'ProductName': 'Ravioli Angelo',
+      'SupplierID': 26,
+      'QuantityPerUnit': '24 - 250 g pkgs.',
+      'UnitPrice': 19.50,
+      'UnitsInStock': 36,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 58,
+      'ProductName': 'Escargots de Bourgogne',
+      'SupplierID': 27,
+      'QuantityPerUnit': '24 pieces',
+      'UnitPrice': 13.25,
+      'UnitsInStock': 62,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 59,
+      'ProductName': 'Raclette Courdavault',
+      'SupplierID': 28,
+      'QuantityPerUnit': '5 kg pkg.',
+      'UnitPrice': 55.00,
+      'UnitsInStock': 79,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 60,
+      'ProductName': 'Camembert Pierrot',
+      'SupplierID': 28,
+      'QuantityPerUnit': '15 - 300 g rounds',
+      'UnitPrice': 34.00,
+      'UnitsInStock': 19,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 61,
+      'ProductName': 'Sirop d\'érable',
+      'SupplierID': 29,
+      'QuantityPerUnit': '24 - 500 ml bottles',
+      'UnitPrice': 28.50,
+      'UnitsInStock': 113,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 62,
+      'ProductName': 'Tarte au sucre',
+      'SupplierID': 29,
+      'QuantityPerUnit': '48 pies',
+      'UnitPrice': 49.30,
+      'UnitsInStock': 17,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 63,
+      'ProductName': 'Vegie-spread',
+      'SupplierID': 7,
+      'QuantityPerUnit': '15 - 625 g jars',
+      'UnitPrice': 43.90,
+      'UnitsInStock': 24,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 64,
+      'ProductName': 'Wimmers gute Semmelknödel',
+      'SupplierID': 12,
+      'QuantityPerUnit': '20 bags x 4 pieces',
+      'UnitPrice': 33.25,
+      'UnitsInStock': 22,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 65,
+      'ProductName': 'Louisiana Fiery Hot Pepper Sauce',
+      'SupplierID': 2,
+      'QuantityPerUnit': '32 - 8 oz bottles',
+      'UnitPrice': 21.05,
+      'UnitsInStock': 76,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 66,
+      'ProductName': 'Louisiana Hot Spiced Okra',
+      'SupplierID': 2,
+      'QuantityPerUnit': '24 - 8 oz jars',
+      'UnitPrice': 17.00,
+      'UnitsInStock': 4,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 67,
+      'ProductName': 'Laughing Lumberjack Lager',
+      'SupplierID': 16,
+      'QuantityPerUnit': '24 - 12 oz bottles',
+      'UnitPrice': 14.00,
+      'UnitsInStock': 52,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 68,
+      'ProductName': 'Scottish Longbreads',
+      'SupplierID': 8,
+      'QuantityPerUnit': '10 boxes x 8 pieces',
+      'UnitPrice': 12.50,
+      'UnitsInStock': 6,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 69,
+      'ProductName': 'Gudbrandsdalsost',
+      'SupplierID': 15,
+      'QuantityPerUnit': '10 kg pkg.',
+      'UnitPrice': 36.00,
+      'UnitsInStock': 26,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 70,
+      'ProductName': 'Outback Lager',
+      'SupplierID': 7,
+      'QuantityPerUnit': '24 - 355 ml bottles',
+      'UnitPrice': 15.00,
+      'UnitsInStock': 15,
+      'Discontinued': false
+   },
+   {
+      'ProductID': 71,
+      'ProductName': 'Flotemysost',
+      'SupplierID': 15,
+      'QuantityPerUnit': '10 - 500 g pkgs.',
+      'UnitPrice': 21.50,
+      'UnitsInStock': 26,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 72,
+      'ProductName': 'Mozzarella di Giovanni',
+      'SupplierID': 14,
+      'QuantityPerUnit': '24 - 200 g pkgs.',
+      'UnitPrice': 34.80,
+      'UnitsInStock': 14,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 73,
+      'ProductName': 'Röd Kaviar',
+      'SupplierID': 17,
+      'QuantityPerUnit': '24 - 150 g jars',
+      'UnitPrice': 15.00,
+      'UnitsInStock': 101,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 74,
+      'ProductName': 'Longlife Tofu',
+      'SupplierID': 4,
+      'QuantityPerUnit': '5 kg pkg.',
+      'UnitPrice': 10.00,
+      'UnitsInStock': 4,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 75,
+      'ProductName': 'Rhönbräu Klosterbier',
+      'SupplierID': 12,
+      'QuantityPerUnit': '24 - 0.5 l bottles',
+      'UnitPrice': 7.75,
+      'UnitsInStock': 125,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 76,
+      'ProductName': 'Lakkalikööri',
+      'SupplierID': 23,
+      'QuantityPerUnit': '500 ml',
+      'UnitPrice': 18.00,
+      'UnitsInStock': 57,
+      'Discontinued': true
+   },
+   {
+      'ProductID': 77,
+      'ProductName': 'Original Frankfurter grüne Soße',
+      'SupplierID': 12,
+      'QuantityPerUnit': '12 boxes',
+      'UnitPrice': 13.00,
+      'UnitsInStock': 32,
+      'Discontinued': false
+   }];

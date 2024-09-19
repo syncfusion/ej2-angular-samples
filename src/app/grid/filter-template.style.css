@@ -1,0 +1,10 @@
+.e-cus-label {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 5px;
+    text-align: start;
+}
+
+.e-grid .e-gridheader tr th:first-child.e-filterbarcell.e-fltrtemp {
+    padding-left: 6px;
+}

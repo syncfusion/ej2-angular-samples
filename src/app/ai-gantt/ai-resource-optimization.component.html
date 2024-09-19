@@ -1,0 +1,20 @@
+<div id='container'>
+    <ejs-gantt #ganttDefault height="430px" [dataSource]="data" [taskFields]="taskSettings"
+        [resourceFields]="resourceSettings" [resources]="resource" [editSettings]="editSetting" [readOnly]="false"
+        [allowSelection]="true" [highlightWeekends]="true" [treeColumnIndex]="1" [rowHeight]="40"
+        [labelSettings]="labelSettings" [splitterSettings]="splitterSettings" [toolbar]="toolbar"
+        (toolbarClick)="toolbarClick($event)" [labelSettings]="labelSetting" [selectionSettings]="selectionSettings"
+        [tooltipSettings]="tooltipSettings" [timelineSettings]="timelineSettings" [viewType]="viewType"
+        [showOverAllocation]="true" [allowSorting]="true" [allowReordering]="true" [allowSelection]="true"
+        [enableContextMenu]="true">
+        <e-columns>
+            <e-column field='TaskID' headerText='Task ID' [visible]="false"></e-column>
+            <e-column field='TaskName' headerText='Event Name' [width]="250"></e-column>
+            <e-column field='Duration'></e-column>
+            <e-column field='StartDate' headerText='Start Date'></e-column>
+            <e-column field='EndDate' headerText='End Date'></e-column>
+        </e-columns>
+    </ejs-gantt>
+    <div id="csfooter" style="width: 100%; height: 66px; background-color: #F0FFFF;min-height: 120px; padding: 15px;">
+    </div>
+</div>

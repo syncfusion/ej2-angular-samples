@@ -45,12 +45,14 @@
       color: #fff;
   }
 
-  .bootstrap5 .schedule-overview .overview-content .right-panel .control-panel {
+  .bootstrap5 .schedule-overview .overview-content .right-panel .control-panel,
+  .bootstrap5\.3 .schedule-overview .overview-content .right-panel .control-panel {
       background-color: #f8f9fa;
       color: #212529;
   }
 
-  .bootstrap5-dark .schedule-overview .overview-content .right-panel .control-panel {
+  .bootstrap5-dark .schedule-overview .overview-content .right-panel .control-panel,
+  .bootstrap5\.3-dark .schedule-overview .overview-content .right-panel .control-panel {
       background-color: #343a40;
       color: #fff;
   }
@@ -297,6 +299,7 @@
   .template .text-child {
       font-size: 14px;
       line-height: 23px !important;
+      font-weight: normal;
   }
 
   @media (max-width: 481px) {

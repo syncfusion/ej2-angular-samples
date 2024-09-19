@@ -32,7 +32,7 @@ export class EmptyRecordTemplateComponent implements OnInit {
             return './assets/grid/images/emptyRecordTemplate_light.svg';
         }
     }
-
+    
     ngOnInit(): void {
         this.data = [];        
         this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };

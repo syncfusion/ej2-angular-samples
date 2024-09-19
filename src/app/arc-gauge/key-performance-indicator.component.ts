@@ -90,7 +90,7 @@ export class KeyPerformanceComponent {
     // custom code start
     this.selectedTheme = this.selectedTheme ? this.selectedTheme : 'Material';
     args.gauge.theme = <GaugeTheme>(this.selectedTheme.charAt(0).toUpperCase() +
-      this.selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
+      this.selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
       if (this.selectedTheme == 'tailwind') {
         args.gauge.axes[0].annotations[0].angle = 96;
         args.gauge.axes[0].annotations[0].radius = "-34%";

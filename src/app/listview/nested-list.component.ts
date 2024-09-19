@@ -87,6 +87,8 @@ export class NestedListViewComponent {
     //Set header title
     public headerTitle: string = 'Folders';
 
+    public animation: Object  = { duration: 0};
+
     constructor( @Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['listview.css'];
     }

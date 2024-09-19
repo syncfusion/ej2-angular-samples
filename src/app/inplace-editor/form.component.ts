@@ -73,7 +73,9 @@ export class FormInplaceEditorComponent implements OnInit {
 
     ngOnInit(): void {
         this.scrollParent = <HTMLElement>document.querySelector('.sb-right-pane');
-        this.scrollParent.addEventListener('scroll', this.hidePopup.bind(this));
+        if(this.scrollParent){
+            this.scrollParent.addEventListener('scroll', this.hidePopup.bind(this));
+        }
     }
 
     commentCreated(): void {

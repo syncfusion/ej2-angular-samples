@@ -35,6 +35,7 @@ export class FormulasController {
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold', backgroundColor: '#279377', color: '#fff', textAlign: 'center', verticalAlign: 'middle', fontSize: '14px' }, 'A1:F1');
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold', backgroundColor: '#EEEEEE' }, 'A12:F15');
         this.spreadsheetObj.numberFormat('0.00', 'F2:F11');
+        this.spreadsheetObj.numberFormat('m/d/yyyy', 'A2:A11');
         this.spreadsheetObj.setRowHeight(40, 0);
     }
 }

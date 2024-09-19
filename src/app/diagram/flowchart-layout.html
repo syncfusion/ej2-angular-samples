@@ -1,0 +1,145 @@
+<style>
+    /* Container for diagram and property panel */
+    .control-section {
+        width: 75%;
+        float: left; /* Keep the diagram section on the left */
+        border-right: 1px solid #D5D5D5;
+    }
+    .property-panel-header {
+        font-size: larger;
+    }
+    /* Diagram content style */
+    .content-wrapper {
+        width: 100%;
+        background: white;
+        border: 1px solid #D5D5D5;
+    }
+
+    /* Property panel style */
+    .property-section {
+        width: 24%; /* Adjusted to fill the remaining space */
+        float: right; /* Ensure the property panel is on the right */
+        padding: 10px;
+        background: white;
+    }
+
+    /* Align labels and inputs within the property panel */
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 8px;
+    }
+
+    .property-panel-content .row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .property-panel-content label {
+        flex: 1;
+        font-weight: normal;
+    }
+
+    .property-panel-content input {
+        flex: 2;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .flow-diagram-container{
+        border: 1px solid #D5D5D5;
+    }
+    .input-element {
+        margin-left: 10px;
+        width: 45%;
+    }
+</style>
+
+<div>
+
+<div class="control-section">
+<div class="content-wrapper" style="width:100%;background: white">
+    <ejs-diagram #diagram id="diagram" [getConnectorDefaults]='getConnectorDefaults' 
+            [getNodeDefaults]='getNodeDefaults' [layout]=layout width="100%" height="680px"
+            [dataSourceSettings]="dataSourceSettings" [rulerSettings]="rulerSettings"
+            [tool]="tool">
+    </ejs-diagram>
+</div>
+    <div id="action-description">
+        <p>
+            This sample illustrates the flowchart layout algorithm that is used to automatically arrange the flow shapes.
+        </p>
+    </div>
+    <div id="description">
+        <p>
+            This sample illustrates the flowchart layout algorithm that is used to automatically arrange the flow shapes.
+        </p>
+        <p>
+            This example shows how to generate a flowchart layout from an external data source. The spacing between
+            the objects
+            can also be customized in the chart. The
+            <code>horizontalSpacing</code> and
+            <code>verticalSpacing</code> properties of
+            <code>layout</code> can be used to customize the space between objects in a tree. The
+            <code>orientation</code> property of
+            <code>layout</code> can be used to change the orientation of the chart. The
+            <code>flowchartLayoutSettings</code> property of
+            <code>layout</code> can be used to configure the flow chart layout settings. The 
+            <code>yesBranchDirection</code> and <code>noBranchDirection</code> properties of the flowchartLayoutSettings is used to define the flow direction of the yes and no branch connectors.
+        </p>
+    
+        <p style="font-weight: 500">Injecting Module</p>
+        <p>
+            The diagram component’s features are segregated into individual feature-wise modules. To generate diagrams from
+            an external
+            data source, inject
+            <code>DataBinding</code> module using
+            <code>Diagram.Inject(DataBinding)</code> method. To automatically arrange the objects in a flowchart layout
+            format, inject
+            <code>FlowchartLayout</code> module using
+            <code>Diagram.Inject(FlowchartLayout)</code> method.
+        </p>
+        <br>
+    </div>
+</div>
+<div class="property-section">
+    <div class="property-panel-header">
+       Properties
+    </div>
+    <div class="row property-panel-content">
+        <div class="row">
+            <label>Orientation</label>
+            <div class="input-element">
+            <ejs-dropdownlist #orientation id="orientation" [dataSource]="orientationDataSource" value="Top to bottom" (change)="orientationChange($event)"></ejs-dropdownlist>
+            </div>
+        </div>
+        <div class="row">
+            <label>Yes branch direction</label>
+            <div class="input-element">
+            <ejs-dropdownlist #yesBranchDirection id="yesBranchDirection" [dataSource]="branchDataSource" value="Left in flow" (change)="yesBranchChange($event)"></ejs-dropdownlist>
+              </div>
+        </div>
+        <div class="row">
+            <label>No branch direction</label>
+            <div class="input-element">
+            <ejs-dropdownlist #noBranchDirection id="noBranchDirection" [dataSource]="branchDataSource" value="Right in flow" (change)="noBranchChange($event)"></ejs-dropdownlist>
+              </div>
+        </div>
+        <div class="row">
+            <label>Horizontal spacing</label>
+            <div class="input-element">
+            <ejs-numerictextbox #horizontalSpacing id="horizontalSpacing" value="50" step="1" min="20" max="120" format='###.##' style="width: 100%;" (change)='horizontalSpacingChange($event)'>
+            </ejs-numerictextbox>
+            </div>
+        </div>
+        <div class="row">
+            <label>Vertical spacing</label>
+            <div class="input-element">
+            <ejs-numerictextbox #verticalSpacing id="verticalSpacing" value="50" step="1" min="30" max="120" format='###.##' style="width: 100%;" (change)='verticalSpacingChange($event)'>
+            </ejs-numerictextbox>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

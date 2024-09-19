@@ -1,14 +1,26 @@
-#otp-container {
-    width: 240px;
-    height: 250px;
-    margin: 60px auto;
+.col-lg-8.control-section.otp-wrapper {
     display: flex;
+    align-items: center;
     justify-content: center;
+}
+
+.col-lg-4.property-section.otp-property-panel {
+    border-left: 1px solid #D7D7D7;
+}
+
+.sb-property-border.otp-wrapper {
+    border: none;
+}
+
+#otp-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
 }
 
 .form-container {
     height: 220px;
-    min-width: 300px;
     padding: 1rem 3rem;
     box-shadow: 0 1px 3px #d4d4d5, 0 0 0 1px #d4d4d5;
     border-radius: 4px;
@@ -41,4 +53,10 @@
 .property-panel-content td {
     padding: 10px 0px;
     width: 35%;
+}
+
+@media (max-width: 1200px) {
+    .col-lg-4.property-section.otp-property-panel {
+        border: none;
+    }
 }

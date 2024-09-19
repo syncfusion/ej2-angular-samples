@@ -24,7 +24,7 @@ export class IFrameComponent {
     private hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
 
     public tools: ToolbarModule = {
-        items: ['Bold', 'Italic', 'Underline', 'StrikeThrough', 'SuperScript', 'SubScript', '|',
+        items: ['Bold', 'Italic', 'Underline', 'StrikeThrough', 'InlineCode', 'SuperScript', 'SubScript', '|',
             'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
             'LowerCase', 'UpperCase', '|',
             'Formats', 'Alignments', 'Blockquote', '|', 'NumberFormatList', 'BulletFormatList', '|',

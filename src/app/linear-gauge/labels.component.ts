@@ -161,10 +161,14 @@ export class LabelsComponent {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
+            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
         // custom code end
-        if (args.gauge.theme === 'Fluent2Dark') {
-            args.gauge.axes[0].pointers[3].color  = '#292827';
+        if (args.gauge.element.id === 'textLabels') {
+            if (args.gauge.theme === 'Fluent2Dark' || args.gauge.theme == 'Fluent2HighContrast') {
+                args.gauge.axes[0].pointers[3].color  = '#292827';
+            } else if (args.gauge.theme === 'Bootstrap5Dark'){
+                args.gauge.axes[0].pointers[3].color = '#343A40'
+            }
         }
     }
 

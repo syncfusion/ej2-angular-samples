@@ -34,24 +34,24 @@ export class NetworkShapesDiagramComponent {
         { id: 'port3', offset: { x: 0.5, y: 0.1 } },
         { id: 'port4', offset: { x: 0.5, y: 0.92 } }
     ];
-    private portrc: PointPortModel[] = [
-        { id: 'port1', offset: { x: 0.05, y: 0.5 } },
-        { id: 'port2', offset: { x: 1, y: 0.5 } },
-        { id: 'port3', offset: { x: 0.85, y: 0.1 } },
-        { id: 'port4', offset: { x: 0.6, y: 0.97 } }
-    ];
-    private porthmi: PointPortModel[] = [
-        { id: 'port1', offset: { x: 0.34, y: 0.5 } },
-        { id: 'port2', offset: { x: 0.75, y: 0.5 } },
-        { id: 'port3', offset: { x: 0.5, y: 0.05 } },
-        { id: 'port4', offset: { x: 0.6, y: 0.9 } }
-    ];
     private port2: PointPortModel[] = [
         { id: 'port1', offset: { x: 0.45, y: 0.5 } },
         { id: 'port2', offset: { x: 0.97, y: 0.5 } },
         { id: 'port3', offset: { x: 0.5, y: 0.97 } }
     ];
-    private portmo: PointPortModel[] = [
+    private port3: PointPortModel[] = [
+        { id: 'port1', offset: { x: 0.05, y: 0.5 } },
+        { id: 'port2', offset: { x: 1, y: 0.5 } },
+        { id: 'port3', offset: { x: 0.85, y: 0.1 } },
+        { id: 'port4', offset: { x: 0.6, y: 0.97 } }
+    ];
+    private port4: PointPortModel[] = [
+        { id: 'port1', offset: { x: 0.34, y: 0.5 } },
+        { id: 'port2', offset: { x: 0.75, y: 0.5 } },
+        { id: 'port3', offset: { x: 0.5, y: 0.05 } },
+        { id: 'port4', offset: { x: 0.6, y: 0.9 } }
+    ];
+    private port5: PointPortModel[] = [
         { id: 'port1', offset: { x: 0.02, y: 0.6 } },
         { id: 'port2', offset: { x: 0.98, y: 0.625 } },
         { id: 'port3', offset: { x: 0.5, y: 0.3 } },
@@ -80,37 +80,37 @@ export class NetworkShapesDiagramComponent {
             id: 'modem1', offsetX: 450, offsetY: 125,
             shape: { type: 'Native', content: template3 },
             annotations: [{ content: 'Modem', margin: { right: 25 }, offset: { x: 0, y: 0.5 } }],
-            ports: this.portmo
+            ports: this.port5
         },
         {
             id: 'modem2', offsetX: 525, offsetY: 175,
             shape: { type: 'Native', content: template3 },
             annotations: [{ content: 'Modem1', margin: { bottom: 10 }, offset: { x: 0.5, y: 0 } }],
-            ports: this.portmo
+            ports: this.port5
         },
         {
             id: 'RemoteController1', offsetX: 600, offsetY: 125,
             shape: { type: 'Native', content: template4 },
             annotations: [{ content: 'Remote Controller', margin: { bottom: 10 }, offset: { x: 0.5, y: 0 } }],
-            ports: this.portrc
+            ports: this.port3
         },
         {
             id: 'modem3', offsetX: 350, offsetY: 205,
             shape: { type: 'Native', content: template3 },
             annotations: [{ content: 'Modem4', margin: { left: 35 }, offset: { x: 1, y: 0.5 } }],
-            ports: this.portmo
+            ports: this.port5
         },
         {
             id: 'modem4', offsetX: 450, offsetY: 245,
             shape: { type: 'Native', content: template3 },
             annotations: [{ content: 'Modem2', offset: { x: 0.5, y: 1.3 } }],
-            ports: this.portmo
+            ports: this.port5
         },
         {
             id: 'modem5', offsetX: 350, offsetY: 330,
             shape: { type: 'Native', content: template3 },
             annotations: [{ content: 'Modem3', margin: { right: 25 }, offset: { x: 0, y: 0.5 } }],
-            ports: this.portmo
+            ports: this.port5
         },
         {
             id: 'WorkStation3', offsetX: 600, offsetY: 250,
@@ -128,19 +128,19 @@ export class NetworkShapesDiagramComponent {
             id: 'RemoteController2', offsetX: 80, offsetY: 400,
             shape: { type: 'Native', content: template4 },
             annotations: [{ content: 'Control Logic', margin: { top: 8 }, offset: { x: 0.5, y: 1 } }],
-            ports: this.portrc
+            ports: this.port3
         },
         {
             id: 'RemoteController3', offsetX: 500, offsetY: 400,
             shape: { type: 'Native', content: template4 },
             annotations: [{ content: 'Control Logic', margin: { top: 8 }, offset: { x: 0.5, y: 1 } }],
-            ports: this.portrc
+            ports: this.port3
         },
         {
             id: 'AnalogIO', offsetX: 160, offsetY: 500,
             shape: { type: 'Native', content: template5 },
             annotations: [{ content: 'Analog IO', margin: { top: 13 }, offset: { x: 0.5, y: 1 } }],
-            ports: this.porthmi
+            ports: this.port4
         },
         {
             id: 'sensor', offsetX: 260, offsetY: 500,
@@ -152,19 +152,19 @@ export class NetworkShapesDiagramComponent {
             id: 'DeviceDriver1', offsetX: 360, offsetY: 500,
             shape: { type: 'Native', content: template7 },
             annotations: [{ content: 'DriverA', offset: { x: 0.5, y: 1.3 } }],
-            ports: this.porthmi
+            ports: this.port4
         },
         {
             id: 'DeviceDriver2', offsetX: 460, offsetY: 500,
             shape: { type: 'Native', content: template7 },
             annotations: [{ content: 'DriverB', offset: { x: 0.5, y: 1.3 } }],
-            ports: this.porthmi
+            ports: this.port4
         },
         {
             id: 'DeviceDriver3', offsetX: 550, offsetY: 500,
             shape: { type: 'Native', content: template7 },
             annotations: [{ content: 'DriverC', offset: { x: 0.5, y: 1.3 } }],
-            ports: this.porthmi
+            ports: this.port4
         },
         {
             id: 'HMI', offsetX: 625, offsetY: 450,
@@ -206,87 +206,87 @@ export class NetworkShapesDiagramComponent {
 //Initializes connectors for diagram
     public connectors: ConnectorModel[] = [
         {
-            id: 'connectora', sourceID: 'Server1', targetID: 'WorkStation1',
+            id: 'connector11', sourceID: 'Server1', targetID: 'WorkStation1',
             targetPortID: 'port1'
         },
         {
-            id: 'connectorawork', sourceID: 'WorkStation1', targetID: 'WorkStation2',
+            id: 'connector12', sourceID: 'WorkStation1', targetID: 'WorkStation2',
             sourcePortID: 'port2', targetPortID: 'port1'
         },
         {
-            id: 'connectoraworkm', sourceID: 'WorkStation2', targetID: 'modem1', type: 'Orthogonal',
+            id: 'connector13', sourceID: 'WorkStation2', targetID: 'modem1', type: 'Orthogonal',
             segments: [{ type: 'Orthogonal', length: 25 }],
             targetPortID: 'port3', sourcePortID: 'port2'
         },
         {
-            id: 'connectorm1m2', sourceID: 'modem2', targetID: 'modem1', type: 'Orthogonal',
+            id: 'connector14', sourceID: 'modem2', targetID: 'modem1', type: 'Orthogonal',
             segments: [{ type: 'Orthogonal', length: 25 }],
             sourcePortID: 'port1', targetPortID: 'port4'
         },
         {
-            id: 'connectorm2m3', sourceID: 'modem2', targetID: 'RemoteController1', type: 'Orthogonal',
+            id: 'connector15', sourceID: 'modem2', targetID: 'RemoteController1', type: 'Orthogonal',
             segments: [{ type: 'Orthogonal', length: 25 }],
             sourcePortID: 'port2', targetPortID: 'port4'
         },
         {
-            id: 'connectorws2m3', sourceID: 'WorkStation2', targetID: 'modem3',
+            id: 'connector16', sourceID: 'WorkStation2', targetID: 'modem3',
             sourcePortID: 'port3', targetPortID: 'port3'
         },
         {
-            id: 'connectorws2m4', sourceID: 'modem4', targetID: 'modem3', type: 'Orthogonal',
+            id: 'connector17', sourceID: 'modem4', targetID: 'modem3', type: 'Orthogonal',
             segments: [{ type: 'Orthogonal', length: 25 }],
             sourcePortID: 'port1', targetPortID: 'port4'
         },
         {
-            id: 'connectorm3m4', sourceID: 'modem5', targetID: 'modem3',
+            id: 'connector18', sourceID: 'modem5', targetID: 'modem3',
             sourcePortID: 'port3', targetPortID: 'port4'
         },
         {
-            id: 'connectorm4ws3', sourceID: 'modem5', targetID: 'WorkStation4',
+            id: 'connector19', sourceID: 'modem5', targetID: 'WorkStation4',
             sourcePortID: 'port2', targetPortID: 'port1'
         },
         {
-            id: 'connectorm4m5', sourceID: 'modem4', targetID: 'WorkStation3',
+            id: 'connector20', sourceID: 'modem4', targetID: 'WorkStation3',
             sourcePortID: 'port2', targetPortID: 'port1'
         },
         {
-            id: 'connectorr2r3', sourceID: 'RemoteController2', targetID: 'RemoteController3',
+            id: 'connector21', sourceID: 'RemoteController2', targetID: 'RemoteController3',
             targetPortID: 'port1'
         },
         {
-            id: 'connectorr2r3qq', sourceID: 'Server1', targetID: 'RemoteController2',
+            id: 'connector22', sourceID: 'Server1', targetID: 'RemoteController2',
             sourcePortID: 'port4'
         },
         {
-            id: 'connectorm3se1', sourceID: 'modem3', targetID: 'Server1', type: 'Orthogonal',
+            id: 'connector23', sourceID: 'modem3', targetID: 'Server1', type: 'Orthogonal',
             segments: [{ type: 'Orthogonal', length: 25 }],
             sourcePortID: 'port1', targetPortID: 'port4'
         },
         {
-            id: 'connectorws2aio1', sourceID: 'RemoteController2', targetID: 'AnalogIO',
+            id: 'connector24', sourceID: 'RemoteController2', targetID: 'AnalogIO',
             type: 'Orthogonal', sourcePortID: 'port2', targetPortID: 'port3'
         },
         {
-            id: 'connectorb', sourceID: 'RemoteController2', targetID: 'sensor', type: 'Orthogonal',
+            id: 'connector25', sourceID: 'RemoteController2', targetID: 'sensor', type: 'Orthogonal',
             segments: [{ type: 'Orthogonal', length: 25 }],
             sourcePortID: 'port2', targetPortID: 'port3'
         },
         {
-            id: 'connectord1', sourceID: 'RemoteController2', targetID: 'DeviceDriver1', type: 'Orthogonal',
+            id: 'connector26', sourceID: 'RemoteController2', targetID: 'DeviceDriver1', type: 'Orthogonal',
             segments: [{ type: 'Orthogonal', length: 25 }],
             sourcePortID: 'port2', targetPortID: 'port3'
         },
         {
-            id: 'connectord2', sourceID: 'RemoteController2', targetID: 'DeviceDriver2', type: 'Orthogonal',
+            id: 'connector27', sourceID: 'RemoteController2', targetID: 'DeviceDriver2', type: 'Orthogonal',
             segments: [{ type: 'Orthogonal', length: 25 }],
             sourcePortID: 'port2', targetPortID: 'port3'
         },
         {
-            id: 'connectordh1d3', sourceID: 'HMI', targetID: 'DeviceDriver3', type: 'Orthogonal',
+            id: 'connector28', sourceID: 'HMI', targetID: 'DeviceDriver3', type: 'Orthogonal',
             sourcePortID: 'port1', targetPortID: 'port3'
         },
         {
-            id: 'connectordh1d2', sourceID: 'HMI', type: 'Orthogonal', targetID: 'DeviceDriver2',
+            id: 'connector29', sourceID: 'HMI', type: 'Orthogonal', targetID: 'DeviceDriver2',
             sourcePortID: 'port1', targetPortID: 'port3'
         }
     ];
@@ -310,8 +310,10 @@ export class NetworkShapesDiagramComponent {
         };
     }
 
+    //Function to disable snapsettings
     public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
 
+    //Sets the default values of nodes
     public getNodeDefaults(node: NodeModel): NodeModel {
         node.style.strokeColor = '#5C90DF';
         node.style.fill = 'transparent';
@@ -381,6 +383,7 @@ export class NetworkShapesDiagramComponent {
         return node;
     }
 
+    //Sets the default values of connectors
     public getConnectorDefaults(connector: ConnectorModel): ConnectorModel {
         connector.targetDecorator = { shape: 'Arrow', width: 8, height: 8, style: { fill: '#5C90DF', strokeColor: '#5C90DF' } };
         connector.style.strokeColor = '#5C90DF';
@@ -395,6 +398,7 @@ export class NetworkShapesDiagramComponent {
     public expandMode: ExpandMode = 'Multiple';
 
 
+    // initializes the network symbols to the UML Shapes in the symbol palette.
     private symbols: NodeModel[] = [
         //add the flow shapes to the symbol palette
         { id: 'server', shape: { type: 'Native', content: template1 } },
@@ -422,6 +426,7 @@ export class NetworkShapesDiagramComponent {
     private targetDecorator: DecoratorModel = { shape: 'Arrow', style: { strokeColor: '#757575', fill: '#757575' } };
     private style: StrokeStyleModel = { strokeWidth: 2, strokeColor: '#757575' };
 
+    // initializes the connector symbols to the UML Shapes in the symbol palette.
     private connectorSymbols: ConnectorModel[] = [
         {
             id: 'link11', type: 'Straight', sourcePoint: this.sourcePoint, targetPoint: this.targetPoint,
@@ -433,15 +438,17 @@ export class NetworkShapesDiagramComponent {
         }
     ];
 
+    // Initializes the palettes to be displayed in the symbol palette.
     public palettes: PaletteModel[] = [
         { id: 'network', expanded: true, symbols: this.symbols, title: 'Network Shapes' },
         { id: 'connectors', expanded: true, symbols: this.connectorSymbols, title: 'Connectors' }
     ];
 
-    public getSymbolInfo(symbol: NodeModel): SymbolInfo {
+    public getSymbolInfo(): SymbolInfo {
         return { fit: true };
     }
 
+    //Sets the default values of symbols
     public getSymbolDefaults(symbol: NodeModel): void {
         if (symbol.id === 'arrow1') {
             symbol.width = 75; symbol.height = 60;
@@ -469,6 +476,7 @@ export class NetworkShapesDiagramComponent {
 
     public id: number = 0;
 
+    //Used to add svg image to pallate 
     public onUploadSuccess(arg: any): void {
         let file1: any = arg.file;
         let file: any = file1.rawFile;
@@ -484,6 +492,7 @@ export class NetworkShapesDiagramComponent {
         this.uploadObj.clearAll();
     }
 
+    // Disables posting raw files
     public onFileRemove(args: RemovingEventArgs): void {
         args.postRawFile = false;
     }

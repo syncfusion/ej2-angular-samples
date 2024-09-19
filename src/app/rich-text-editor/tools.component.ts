@@ -1,20 +1,18 @@
 /**
  * Rich Text Editor Overview Sample
  */
-import { Component,ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NgStyle } from '@angular/common';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, EmojiPickerService, VideoService, AudioService, FormatPainterService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, CountService, ToolbarSettingsModel, ImageSettingsModel, ActionBeginEventArgs} from '@syncfusion/ej2-angular-richtexteditor';
-import { RichTextEditorComponent, TableService, FileManagerService } from '@syncfusion/ej2-angular-richtexteditor';
-import { FileManagerSettingsModel, QuickToolbarSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, EmojiPickerService, VideoService, AudioService, FormatPainterService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, CountService, ToolbarSettingsModel, ImageSettingsModel, ActionBeginEventArgs } from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorComponent, TableService, FileManagerService, SlashMenuService, ImportExportService } from '@syncfusion/ej2-angular-richtexteditor';
+import { FileManagerSettingsModel, QuickToolbarSettingsModel, SlashMenuSettingsModel, ExportPdfModel, ExportWordModel, ImportWordModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, addClass, removeClass, Browser } from '@syncfusion/ej2-base';
-import { isNullOrUndefined } from '@syncfusion/ej2-base';
 import * as CodeMirror from 'codemirror';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/css/css.js';
 import 'codemirror/mode/htmlmixed/htmlmixed.js';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-import { AsyncSettingsModel, UploaderComponent, UploaderModule } from '@syncfusion/ej2-angular-inputs';
 import { MentionComponent, MentionModule } from '@syncfusion/ej2-angular-dropdowns';
 
 @Component({
@@ -22,22 +20,19 @@ import { MentionComponent, MentionModule } from '@syncfusion/ej2-angular-dropdow
     templateUrl: 'tools.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['over-view.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, FileManagerService, EmojiPickerService, VideoService, AudioService, FormatPainterService, QuickToolbarService, PasteCleanupService, CountService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, FileManagerService, EmojiPickerService, VideoService, AudioService, FormatPainterService, QuickToolbarService, PasteCleanupService, CountService, SlashMenuService, ImportExportService],
     standalone: true,
-    imports: [SBActionDescriptionComponent, RichTextEditorModule, SBDescriptionComponent, UploaderModule, MentionModule, NgStyle]
+    imports: [SBActionDescriptionComponent, RichTextEditorModule, SBDescriptionComponent, MentionModule, NgStyle]
 })
 export class FullFeatureComponent {
 
     @ViewChild('toolsRTE')
     public rteObj: RichTextEditorComponent;
 
-    @ViewChild('uploadObj')
-    public uploadObj: UploaderComponent;
-
     @ViewChild('editorMention')
     public mention: MentionComponent;
 
-    public emailData: { [key: string]: Object }[] =  [
+    public emailData: { [key: string]: Object }[] = [
         { name: "Selma Rose", initial: 'SR', email: "selma@gmail.com", color: '#FAFDFF', bgColor: '#01579B' },
         { name: "Maria", initial: 'MA', email: "maria@gmail.com", color: '#004378', bgColor: '#ADDBFF' },
         { name: "Russo Kay", initial: 'RK', email: "russo@gmail.com", color: '#F9DEDC', bgColor: '#8C1D18' },
@@ -54,39 +49,14 @@ export class FullFeatureComponent {
         { name: "William", initial: 'WA', email: "william@gmail.com", color: '#FFFFFF', bgColor: '#163E02' }
     ];
 
-    public fields : Object = { text: 'name' };
+    public fields: Object = { text: 'name' };
 
     private hostUrl: string = 'https://services.syncfusion.com/angular/production/';
 
-    public asyncSettings: AsyncSettingsModel = {
-        saveUrl: this.hostUrl + 'api/RichTextEditor/ImportFromWord'
-    };
-
-    public tools: ToolbarSettingsModel =  {
+    public tools: ToolbarSettingsModel = {
         items: [
-            'Undo', 'Redo', '|',
-            {
-                tooltipText: "Import from Word",
-                template:
-                    `<button class="e-tbar-btn e-control e-btn e-lib e-icon-btn" tabindex="-1" id="custom_tbarbtn_1" style="width:100%">
-                  <span class="e-icons e-rte-import-doc e-btn-icon"></span></button>`,
-                click: this.importContentFromWord.bind(this)
-            },
-            {
-                tooltipText: "Export to Word",
-                template:
-                    `<button class="e-tbar-btn e-control e-btn e-lib e-icon-btn" tabindex="-1" id="custom_tbarbtn_2" style="width:100%">
-                  <span class="e-icons e-rte-export-doc e-btn-icon"></span></button>`,
-                click: this.exportContentToWord.bind(this)
-            },
-            {
-                tooltipText: "Export to PDF",
-                template:
-                    `<button class="e-tbar-btn e-control e-btn e-lib e-icon-btn" tabindex="-1" id="custom_tbarbtn_3" style="width:100%">
-                  <span class="e-icons e-rte-export-pdf e-btn-icon"></span></button>`,
-                click: this.exportContentToPDF.bind(this)
-            }, '|',
-            'Bold', 'Italic', 'Underline', 'StrikeThrough', 'SuperScript', 'SubScript', '|',
+            'Undo', 'Redo', '|', 'ImportWord', 'ExportWord', 'ExportPdf', '|',
+            'Bold', 'Italic', 'Underline', 'StrikeThrough', 'InlineCode', 'SuperScript', 'SubScript', '|',
             'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
             'LowerCase', 'UpperCase', '|',
             'Formats', 'Alignments', 'Blockquote', '|', 'NumberFormatList', 'BulletFormatList', '|',
@@ -118,7 +88,37 @@ export class FullFeatureComponent {
     };
 
     public placeholder: string = 'Type something or use @ to tag a user...';
-
+    public slashMenuSettings: SlashMenuSettingsModel = {
+        enable: true,
+        items: ['Paragraph', 'Heading 1', 'Heading 2', 'Heading 3', 'Heading 4', 'OrderedList', 'UnorderedList',
+            'CodeBlock', 'Blockquote', 'Link', 'Image', 'Video', 'Audio', 'Table', 'Emojipicker',
+        ]
+    };
+    public importWord: ImportWordModel = {
+        serviceUrl: this.hostUrl + 'api/RichTextEditor/ImportFromWord',
+    };
+    public exportWord: ExportWordModel = {
+        serviceUrl: this.hostUrl + 'api/RichTextEditor/ExportToDocx',
+        fileName: 'RichTextEditor.docx',
+        stylesheet: `
+        .e-rte-content {
+            font-size: 1em;
+            font-weight: 400;
+            margin: 0;
+        }
+    `
+    };
+    public exportPdf: ExportPdfModel = {
+        serviceUrl: this.hostUrl + 'api/RichTextEditor/ExportToPdf',
+        fileName: 'RichTextEditor.pdf',
+        stylesheet: `
+        .e-rte-content{
+            font-size: 1em;
+            font-weight: 400;
+            margin: 0;
+        }
+    `
+    };
     public codeMirror: any;
 
     public mirrorConversion(e?: any): void {
@@ -177,103 +177,6 @@ export class FullFeatureComponent {
         if (e.targetItem && (e.targetItem === 'SourceCode' || e.targetItem === 'Preview')) {
             this.mirrorConversion(e);
         }
-        if (e.requestType === 'SourceCode') {
-            this.rteObj.getToolbar().querySelector('#custom_tbarbtn_1').parentElement.classList.add('e-overlay');
-            this.rteObj.getToolbar().querySelector('#custom_tbarbtn_2').parentElement.classList.add('e-overlay');
-            this.rteObj.getToolbar().querySelector('#custom_tbarbtn_3').parentElement.classList.add('e-overlay');
-        } else if (e.requestType === 'Preview') {
-            this.rteObj.getToolbar().querySelector('#custom_tbarbtn_1').parentElement.classList.remove('e-overlay');
-            this.rteObj.getToolbar().querySelector('#custom_tbarbtn_2').parentElement.classList.remove('e-overlay');
-            this.rteObj.getToolbar().querySelector('#custom_tbarbtn_3').parentElement.classList.remove('e-overlay');
-        }
-    }
-
-    public quickToolbarOpenHandler(args: any): void {
-        if (!isNullOrUndefined(args.targetElement) && args.targetElement.nodeName === 'IMG') {
-            this.rteObj.getToolbar().querySelector('#custom_tbarbtn_1').parentElement.classList.add('e-overlay');
-            this.rteObj.getToolbar().querySelector('#custom_tbarbtn_2').parentElement.classList.add('e-overlay');
-            this.rteObj.getToolbar().querySelector('#custom_tbarbtn_3').parentElement.classList.add('e-overlay');
-        }
-    }
-
-    public quickToolbarCloseHandler(args: any): void {
-        if (!isNullOrUndefined(args.element) && args.element.classList.contains('e-rte-image-popup')) {
-            this.rteObj.getToolbar().querySelector('#custom_tbarbtn_1').parentElement.classList.remove('e-overlay');
-            this.rteObj.getToolbar().querySelector('#custom_tbarbtn_2').parentElement.classList.remove('e-overlay');
-            this.rteObj.getToolbar().querySelector('#custom_tbarbtn_3').parentElement.classList.remove('e-overlay');
-        }
-    }
-
-    public importContentFromWord(): void {
-        this.uploadObj.element.click();
-    }
-
-    public exportContentToWord(): void {
-        const rteHtmlData = this.rteObj.getHtml();
-        const html = `<html><head></head><body>${rteHtmlData}</body></html>`;
-        fetch(this.hostUrl + 'api/RichTextEditor/ExportToDocx', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ html: html }) // Wrap HTML in a JSON object
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                const filename: string = 'Result.docx';
-                // Create a Blob from the response and initiate the download
-                return response.blob().then(blob => ({ blob, filename }));
-            })
-            .then(({ blob, filename }) => {
-                const url = window.URL.createObjectURL(blob);       // Create a Blob URL from the response and initiate the download    
-                const a = document.createElement('a');              // Create an anchor element
-                a.href = url;
-                a.download = filename;
-                document.body.appendChild(a);                       // Append the anchor element to the document
-                a.click();                                          // Trigger a click on the anchor element to initiate the download
-                document.body.removeChild(a);                       // Remove the anchor element from the document
-                window.URL.revokeObjectURL(url);                    // Revoke the object URL to free up resources
-            })
-            .catch(error => {
-                console.error('Fetch error:', error);
-            });
-    }
-
-    public exportContentToPDF(): void {
-        const rteHtmlData = this.rteObj.getHtml();
-        const html = `<html><head></head><body>${rteHtmlData}</body></html>`;
-        fetch(this.hostUrl + 'api/RichTextEditor/ExportToPdf', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ html: html }) // Wrap HTML in a JSON object
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.blob();
-            })
-            .then(blob => {
-                const url: string = window.URL.createObjectURL(blob);       // Create a Blob URL from the response and initiate the download
-                const a: HTMLAnchorElement = document.createElement('a');   // Create an anchor element
-                a.href = url;
-                a.download = 'Sample.pdf';
-                document.body.appendChild(a);             // Append the anchor element to the document
-                a.click();                                // Trigger a click on the anchor element to initiate the download
-                document.body.removeChild(a);             // Remove the anchor element from the document
-                window.URL.revokeObjectURL(url);          // Revoke the object URL to free up resources
-            })
-            .catch(error => {
-                console.error('Fetch error:', error);
-            });
-    }
-
-    public onUploadSuccess(args: any): void {
-        this.rteObj.executeCommand('insertHTML', args.e.currentTarget.response, { undo: true });
     }
 
     public actionBeginHandler(e: ActionBeginEventArgs): void {

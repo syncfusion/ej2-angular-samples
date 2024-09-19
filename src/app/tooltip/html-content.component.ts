@@ -27,11 +27,15 @@ export class HtmlContentComponent {
     }
 
     public onClick(args: any) {
-        if (args && !args.target.parentNode.parentNode.classList.contains('e-tooltip')) {
-            if (this.control && document.getElementsByClassName('e-tooltip-wrap').length > 0) {
-                this.control.close();
-            }
-        }
+        if (args) {
+          const parentNode = args.target.parentNode;
+          const grandParentNode = parentNode?.parentNode;
+          if (grandParentNode && !grandParentNode.classList.contains('e-tooltip')) {
+              if (this.control && document.getElementsByClassName('e-tooltip-wrap').length > 0) {
+                  this.control.close();
+              }
+          }
+      }
     }
 
     public onScroll() {

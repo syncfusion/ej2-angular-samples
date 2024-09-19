@@ -26,43 +26,49 @@ export class StackedHeaderComponent implements OnInit {
         this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };
         this.orderidrules = { required: true, number: true };
         this.orderColumns = [
+            { 
+                field: 'CustomerID',
+                headerText: 'Customer Name',
+                width: 160,
+                minWidth:30
+            },
             {
                 field: 'OrderDate',
                 headerText: 'Order Date',
-                format: 'yMd',
-                width: 130,
                 textAlign: 'Right',
-                minWidth: 10,
+                width: 140,
+                format: 'yMd',
+                minWidth: 50,
                 editType: 'datepickeredit'
             },
-            {
-                field: 'Freight',
-                headerText: 'Freight ($)',
-                width: 120,
-                format: 'C1',
-                textAlign: 'Right',
-                minWidth: 10,
-                editType: 'numericedit', 
-                validationRules: { required: true, min: 0 }
-            }
         ];
 
         this.shipColumns = [
             {
                 field: 'ShippedDate',
                 headerText: 'Shipped Date',
-                format: 'yMd',
                 textAlign: 'Right',
-                width: 150,
-                minWidth: 10,
+                format: 'yMd',
+                width: 160,
+                minWidth: 40,
                 editType: 'datepickeredit'
             },
             {
                 field: 'ShipCountry',
                 headerText: 'Ship Country',
-                width: 150,
-                minWidth: 10,
+                width: 140,
+                minWidth: 60,
                 editType: 'dropdownedit'
+            },
+            {
+                field: 'Freight',
+                headerText: 'Freight Charges($)',
+                textAlign: 'Right', 
+                width: 200,
+                format: 'C2',
+                minWidth: 40,
+                editType: 'numericedit',
+                validationRules: { required: true, min: 0 }
             }
         ];
     }

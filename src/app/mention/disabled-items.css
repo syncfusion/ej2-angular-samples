@@ -1,0 +1,55 @@
+#disabledMention {
+    min-height: 100px;
+    border: 1px solid #D7D7D7;
+    width: 600px;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+#mention-controls {
+    margin: 0 auto;
+    width: 600px;
+}
+
+.mention-listItems {
+    padding-left: 12px;
+    vertical-align: middle;
+    width: 80%;
+}
+
+#disabledMention_popup .e-dropdownbase .e-list-item {
+    line-height: 25px;
+    text-indent: 8px;
+}
+
+.mentionEmpImage {
+    width: 44px;
+    float: left;
+}
+
+.person {
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+#disabledMention_popup .e-dropdownbase .e-list-item * {
+    display: block;
+}
+
+div#disabledMention[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: #555;
+}
+
+.disabled-size {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 1010px) {
+    #disabledMention,
+    #mention-controls,#mention-controls table{
+        width: 100%;
+    }
+}

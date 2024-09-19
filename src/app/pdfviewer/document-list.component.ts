@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, OnInit,ViewChild} from '@angular/core';
-import { PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService, PageOrganizerService, PdfViewerModule } from '@syncfusion/ej2-angular-pdfviewer';
+import { PdfViewerComponent, LoadEventArgs, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService, PageOrganizerService, PdfViewerModule } from '@syncfusion/ej2-angular-pdfviewer';
 import { SwitchComponent, SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { pdfdata } from './grid-datasource';
 import { GridComponent, CommandColumnService, CommandModel, CommandClickEventArgs, GridModule } from '@syncfusion/ej2-angular-grids';
@@ -41,6 +41,7 @@ export class DocumentListComponent implements OnInit {
    
     public document: string = '';
     public resource:string = "https://cdn.syncfusion.com/ej2/23.2.6/dist/ej2-pdfviewer-lib";
+    public mode:any;
     ngOnInit(): void {
         // ngOnInit function
         this.data = pdfdata;
@@ -55,16 +56,25 @@ export class DocumentListComponent implements OnInit {
         }
     }
 
+    public documentLoaded(e: LoadEventArgs): void {
+        if (this.mode === 'View') {
+            this.pdfviewerControl.enablePageOrganizer = false;
+        }
+        else {
+            this.pdfviewerControl.enablePageOrganizer = true;
+        }
+    }
+
     openViewer(args: CommandClickEventArgs): void{
-        let mode = args.target.title;
+        this.mode = args.target.title;
         this.dialog.header = args.rowData['FileName'];
-        if (mode === 'View') {
+        if (this.mode === 'View') {
             this.pdfviewerControl.enableStickyNotesAnnotation = false;
             this.pdfviewerControl.enableAnnotationToolbar = false;
             this.pdfviewerControl.isAnnotationToolbarVisible = false;
             this.pdfviewerControl.toolbarSettings = { showTooltip: true, toolbarItems: ['OpenOption', 'PageNavigationTool', 'MagnificationTool', 'PanTool', 'SearchOption', 'PrintOption'] };
             this.pdfviewerControl.annotationSettings = {
-                isLock: true,
+                isLock: true, author: 'Guest',
             };
             this.pdfviewerControl.textFieldSettings = {
                 isReadOnly: true,
@@ -96,7 +106,7 @@ export class DocumentListComponent implements OnInit {
             this.pdfviewerControl.enableAnnotationToolbar = true;
             this.pdfviewerControl.toolbarSettings = { showTooltip: true, toolbarItems: ['OpenOption', 'UndoRedoTool', 'PageNavigationTool', 'MagnificationTool', 'PanTool', 'SelectionTool', 'CommentTool', 'SubmitForm', 'SearchOption', 'AnnotationEditTool', 'FormDesignerEditTool', 'PrintOption', 'DownloadOption'] };
             this.pdfviewerControl.annotationSettings = {
-                isLock: false,
+                isLock: false, author: 'Guest',
             };
             this.pdfviewerControl.textFieldSettings = {
                 isReadOnly: false,

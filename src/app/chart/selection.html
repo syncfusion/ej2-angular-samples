@@ -6,7 +6,7 @@
 
     <div class="control-section col-md-8 sb-property-border">
         <ejs-chart #chart style='display:block; width: 92%' [primaryXAxis]='primaryXAxis' [chartArea]='chartArea' [primaryYAxis]='primaryYAxis'
-            [legendSettings]='legend' [title]='title' selectionMode='Point' highlightMode='' (load)='load($event)'>
+            [legendSettings]='legend' [title]='title' selectionMode='Point' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Column' xName='x' yName='y' name='Age 0-14' width=2
                     [animation]='animation'> </e-series>
@@ -124,7 +124,6 @@
         <li><code>DragY</code> - Rectangular selection with respect to vertical axis.</li>
         <li><code>Lasso</code> - Select free form of selection area points.</li>
     </ul>
-    <br>
     <p style="font-weight: 500">Injecting Module</p>
     <p>
         Chart component features are segregated into individual feature-wise modules. To use selection feature, we need

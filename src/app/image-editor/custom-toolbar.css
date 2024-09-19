@@ -203,7 +203,12 @@
 .fluent-dark .customToolbar .e-toolbar .e-toolbar-item .e-tbar-btn:focus {
     border: none !important;
 }
- 
+
+.bootstrap5\.3-dark .customToolbar #edit,
+.fluent2-highcontrast .customToolbar #edit,
+.fabric-dark .customToolbar #edit,
+.highcontrast .customToolbar #edit,
+.bootstrap5-dark .customToolbar #edit,
 .fluent-dark .customToolbar #edit,
 .tailwind-dark .customToolbar #edit,
 .material-dark .customToolbar #edit,
@@ -325,22 +330,25 @@
 	border: none !important;
 }
 
-.fluent2-dark .customToolbar .e-toolbar .e-toolbar-items.e-tbar-pos .e-toolbar-center,
+.fluent2-dark .customToolbar .e-toolbar .e-toolbar-items .e-tbar-pos .e-toolbar-center,
 .fluent2 .customToolbar .e-toolbar .e-toolbar-items.e-tbar-pos .e-toolbar-center {
-	margin: 0 auto !important; /* stylelint-disable-line declaration-no-important */
+    margin: 0 auto !important; /* stylelint-disable-line declaration-no-important */
 }
-
 .fluent2 .customToolbar .e-toolbar {
-	border: 1px solid #80808054 !important; /* stylelint-disable-line declaration-no-important */
+    border: 1px solid #80808054 !important;
 }
-
 .fluent2-dark .customToolbar .e-toolbar {
-	border: 1px solid #ffffff30 !important;
+    border: 1px solid #ffffff30 !important;
 }
-
 .fluent2 .customToolbar #top-toolbar .e-toolbar-center,
 .fluent2 .customToolbar #bottom-toolbar .e-toolbar-center,
 .fluent2-dark .customToolbar #top-toolbar .e-toolbar-center,
-.fluent2-dark .customToolbar #bottom-toolbar .e-toolbar-center{
-    margin: 0 4px !important;
+.fluent2-dark .customToolbar #bottom-toolbar .e-toolbar-center {
+    margin: 0 auto !important;
+}
+.fluent2-dark .customToolbar #bottom-toolbar {
+	border: none !important;
+}
+.fluent2 .customToolbar #bottom-toolbar {
+	border: none !important;
 }

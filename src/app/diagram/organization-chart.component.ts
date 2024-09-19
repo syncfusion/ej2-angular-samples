@@ -1,8 +1,8 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ChangeEventArgs as NumericChangeEventArgs } from '@syncfusion/ej2-inputs';
-import { DiagramComponent, Diagram, NodeModel, ConnectorModel, LayoutOrientation, LayoutAnimation, TreeInfo, SnapSettingsModel, SubTreeOrientation, SubTreeAlignments, DiagramTools, Node, DataBinding, HierarchicalTree, SnapConstraints, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, Diagram, NodeModel, ConnectorModel, LayoutOrientation, LayoutAnimation, TreeInfo, SnapSettingsModel, SubTreeOrientation, SubTreeAlignments, DiagramTools, Node, DataBinding, HierarchicalTree, ConnectorConstraints, SnapConstraints, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import {localBindData} from'./overview-data';
+import { localBindData } from './diagram-data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -32,6 +32,7 @@ export class OrganizationalChartDiagramComponent {
     public diagram: DiagramComponent;
     public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
     public tool: DiagramTools = DiagramTools.ZoomPan;
+    //configures data
     public data: Object = {
         id: 'Id', parentId: 'Manager',
         dataSource: new DataManager(localBindData),
@@ -42,6 +43,7 @@ export class OrganizationalChartDiagramComponent {
             };
         }
     };
+    //Configures automatic layout
     public layout: Object = {
         type: 'OrganizationalChart',
         getLayoutInfo: (node: Node, options: TreeInfo) => {
@@ -63,32 +65,26 @@ export class OrganizationalChartDiagramComponent {
         obj.expandIcon = { height: 10, width: 10, shape: 'None', fill: 'lightgray', offset: { x: .5, y: 1 } };
         obj.expandIcon.verticalAlignment = 'Center';
         obj.expandIcon.margin = { left: 0, right: 0, top: 0, bottom: 0 };
-        obj.collapseIcon.offset = { x: .5, y: 1 };
+        obj.collapseIcon = { height: 10, width: 10, shape: 'None', fill: 'lightgray', offset: { x: .5, y: 1 } };
         obj.collapseIcon.verticalAlignment = 'Center';
         obj.collapseIcon.margin = { left: 0, right: 0, top: 0, bottom: 0 };
-        obj.collapseIcon.height = 10;
-        obj.collapseIcon.width = 10;
-        obj.collapseIcon.shape = 'None';
-        obj.collapseIcon.fill = 'lightgray';
         obj.width = 120;
         obj.height = 30;
         return obj;
     };
-    public connDefaults(connector: any, diagram: Diagram): ConnectorModel {
+    public connectorDefaults(connector: any, diagram: Diagram): ConnectorModel {
         connector.targetDecorator.shape = 'None';
         connector.type = 'Orthogonal';
-        connector.constraints = 0;
+        connector.constraints = ConnectorConstraints.None;;
         connector.cornerRadius = 0;
         return connector;
     }
     ngOnInit(): void {
         document.getElementById('pattern').onclick = this.documentClick.bind(this);
-        document.getElementById('orientation').onclick =
-          this.orientation.bind(this);
+        document.getElementById('orientation').onclick = this.orientation.bind(this);
     }
      //To change orientation
      private orientation(args: any) {
-      debugger
         let target: HTMLElement = args.target as HTMLElement;
         let selectedElement: HTMLCollection = document.getElementsByClassName(
           'e-selected-orientation-style'
@@ -185,13 +181,13 @@ export class OrganizationalChartDiagramComponent {
           this.diagram.doLayout();
         }
       }
-
-    public onhSpacingChange(args: NumericChangeEventArgs): void {
+    //To change horizontal spacing
+    public onHorizontalSpacingChange(args: NumericChangeEventArgs): void {
         this.diagram.layout.horizontalSpacing = Number(args.value);
         this.diagram.dataBind();
     }
-
-    public onvSpacingChange(args: NumericChangeEventArgs): void {
+    //To change vertical spacing
+    public onVerticalSpacingChange(args: NumericChangeEventArgs): void {
         this.diagram.layout.verticalSpacing = Number(args.value);
         this.diagram.dataBind();
     }

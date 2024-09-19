@@ -13,12 +13,8 @@
    HierarchicalTree,
    SnapConstraints,
    SnapSettingsModel,
-   TextModel,
-   LayoutOrientation,
- DiagramTools,
+   DiagramTools,
  } from '@syncfusion/ej2-diagrams';
- import { ChangeEventArgs as CheckBoxChangeEventArgs } from '@syncfusion/ej2-buttons';
- import { ChangeEventArgs as NumericChangeEventArgs } from '@syncfusion/ej2-inputs';
  import { DataManager, Query } from '@syncfusion/ej2-data';
 import { TreeViewComponent, TreeViewModule } from '@syncfusion/ej2-angular-navigations';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -53,8 +49,9 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     public index : number = 1;
     public targetNodeId : string;
     public elementNodeId : string;
-    public addBtnDisabled : boolean = true;
-    public deleteBtnDisabled : boolean = true;
+    public addButtonDisabled : boolean = true;
+    public deleteButtonDisabled : boolean = true;
+    //Collection of data
     public data1: object[] = [
      { Name: "Plant Manager", Id: "1", hasChild: true, expanded: true },
      { Name: "Production Manager", Id: "2", ParentId: "1", hasChild: true, expanded: true },
@@ -88,6 +85,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
          nodeModel.id = (data as any).Id;
       },
     };
+    //Set the snap constraints
     public snapSettings: SnapSettingsModel = {
       constraints: SnapConstraints.None,
     };
@@ -107,24 +105,29 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
      node.constraints = NodeConstraints.Default | NodeConstraints.AllowDrop;
      return node;
     }
-  
-    public connDefaults( obj: ConnectorModel, diagram: Diagram): ConnectorModel {
+    //Sets the default values of a connector
+    public connectorDefaults( obj: ConnectorModel, diagram: Diagram): ConnectorModel {
      obj.type = 'Orthogonal';
      obj.style = { strokeColor: 'CornflowerBlue' };
      obj.targetDecorator = { shape: 'Arrow', height: 10, width: 10, style: { fill: 'CornflowerBlue', strokeColor: 'white' } };
      return obj;
     }
- 
+    //enable or disable the add and delete button
     public selectionChange(args : ISelectionChangeEventArgs){
      if (args.state === 'Changed') {
          if (args.type === "Addition") {
-             this.deleteBtnDisabled = false;
-             this.addBtnDisabled = false;
+             this.deleteButtonDisabled = false;
+             this.addButtonDisabled = false;
          } else {
-           this.deleteBtnDisabled = true;
-           this.addBtnDisabled = true;
+           this.deleteButtonDisabled = true;
+           this.addButtonDisabled = true;
          }
-     }
+         var selectedItems = this.diagram.selectedItems.nodes.concat(this.diagram.selectedItems.connectors as any);
+                if(selectedItems.length==0)
+                {
+                    this.treeview.selectedNodes=[];
+                }
+        }
     }
     public addButton(){
      this.add();
@@ -135,13 +138,13 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
        this.remove();
    }
     }
- 
+    //click event handler
     public click(args : IClickEventArgs){
      if(args.element && (args.element as any).sourceID === undefined && (args.element as any).shape !==undefined) {
      this.treeview.selectedNodes = [(args.element as any).data.Id];
      }
     }
- 
+    //Drag a node from the palette into the diagram
     public dragEnter(args : any) {
      let lable = '';
      if (args.dragData) {
@@ -155,7 +158,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
      };
      args.dragItem = node;
     }
- 
+    //Drop a node from the palette into the diagram 
      public drop(args : any) {
      let connector;
      let tempData;
@@ -197,9 +200,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
        }, 0);
  
  }
- 
+//Change the annotation of the node
  public textEdit(args : any) {
-    debugger;
     let data:any = this.data1;
     let treeObj = this.treeview;
      setTimeout(function () {
@@ -211,12 +213,12 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
          }
      }, 0);
  }
- 
+ //Enable the add and delete button
  public nodeSelected(args : any) {
-     this.deleteBtnDisabled = false;
-     this.addBtnDisabled = false;
+     this.deleteButtonDisabled = false;
+     this.addButtonDisabled = false;
  }
- 
+ //node click event
  public nodeClicked(args : any) {
      let node = this.diagram.getObject(this.treeview.selectedNodes[0]);
      this.diagram.select([node]);
@@ -228,13 +230,13 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
          this.add();
      }
  }
- 
+ //node edited event
  public nodeEdited(args : any) {
      let node = this.diagram.getObject(args.nodeData.id);
      (node as any).annotations[0].content = args.newText;
      this.treeview.selectedNodes = [args.nodeData.id];
  }
- 
+ //Remove node
  public remove() {
      let nodeId;
      if (this.diagram.selectedItems.nodes.length > 0) {
@@ -255,7 +257,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
      this.diagram.doLayout();
  
  }
- 
+ //Remove sub child node
  public removeSubChild(node, canDelete) {
      let childNode;
      let connector;
@@ -304,7 +306,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
          }
      }
  }
- 
+ //Add function
  public add() {
      let nodeId: string;
      if (this.diagram.selectedItems.nodes.length > 0) {
@@ -315,6 +317,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
          this.addNode(nodeId);
      }
  }
+ //Add node Function
  public addNode(nodeId:string) {
      this.targetNodeId = nodeId ? nodeId : this.treeview.selectedNodes[0];
      let tempData = this.data1.filter((a: any) => a.Id === this.targetNodeId);

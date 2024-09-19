@@ -1,0 +1,119 @@
+.event-calendar-control-section .sidebar-content {
+    display: flex;
+}
+
+.event-calendar-control-section .unplanned-text-container {
+    writing-mode: vertical-rl;
+    margin: auto;
+}
+
+.event-calendar-control-section .unplanned-container {
+    width: 50px;
+    display: block;
+    text-align: center;
+    padding: 12px 0;
+}
+
+.event-calendar-control-section .unplanned-events-toolbar h4 {
+    font-size: 16px;
+}
+
+.event-calendar-control-section .unplanned-container div {
+    padding: 6px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.event-calendar-control-section #plannedOpen {
+    width: inherit;
+}
+
+.calendar-edit-dialog .dialog-content {
+    display: flex;
+}
+
+.calendar-edit-dialog .dialog-content .calendar-name,
+.event-calendar-control-section .schedule-container {
+    flex-grow: 1;
+}
+
+.event-calendar-control-section .table-content {
+    padding: 10px;
+}
+
+.event-calendar-control-section .calendar-list-container {
+    padding-top: 10px;
+}
+
+.event-calendar-control-section .e-grid .e-headercelldiv {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.event-calendar-control-section .selected-date-calendar.e-calendar {
+    max-width: inherit;
+}
+
+.event-calendar-control-section .selected-date-calendar.e-calendar .e-btn.e-today.e-flat.e-primary,
+.event-calendar-control-section .selected-date-calendar.e-calendar .e-css.e-btn.e-today.e-flat.e-primary {
+    display: none;
+}
+
+.event-calendar-control-section .control-wrapper {
+    border: 1px solid #D7D7D7;
+}
+
+.event-calendar-control-section .event-calendar-toolbar.e-toolbar {
+    border-bottom: 1px solid #D7D7D7;
+}
+
+.event-calendar-control-section .event-calendar-toolbar.e-toolbar .e-toolbar-item.e-create .e-tbar-btn.e-btn {
+    background-color: #0f6cbd;
+}
+
+.event-calendar-control-section .event-calendar-toolbar.e-toolbar .e-toolbar-item.e-create .e-tbar-btn.e-btn .e-btn-icon,
+.event-calendar-control-section .event-calendar-toolbar.e-toolbar .e-toolbar-item.e-create .e-tbar-btn.e-btn .e-tbar-btn-text {
+    color: white;
+}
+
+.event-calendar-control-section .e-list-header,
+.event-calendar-control-section .e-list-header .calendars-list-header,
+.event-calendar-control-section .calendar-list-item.e-checkbox.e-checkbox-left {
+    display: flex;
+    align-items: center;
+}
+
+.event-calendar-control-section .e-list-header .e-headertemplate-text,
+.event-calendar-control-section .e-list-header .e-headertemplate-text .header-text {
+    flex-grow: 1;
+    font-size: 16px;
+}
+
+.event-calendar-control-section .e-list-header .e-headertemplate-text .header-icon:hover {
+    cursor: pointer;
+}
+
+.event-calendar-control-section .calendar-list-item .calendar-name {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+}
+
+.event-calendar-control-section .calendar-list-item .calendar-buttons {
+    display: none;
+}
+
+.event-calendar-control-section .calendar-list-item:hover .calendar-buttons {
+    display: flex;
+}
+
+.event-calendar-control-section .calendar-list-item #calendar-edit-btn,
+.event-calendar-control-section .calendar-list-item #calendar-delete-btn {
+    padding: 0 6px;
+}
+
+.event-calendar-control-section .e-sidebar {
+    z-index: 1 !important;
+}

@@ -21,6 +21,9 @@ import { SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { DocumentListComponent } from './document-list.component';
 import { OrganizePagesComponent } from './organize-pages.component';
 import { MultiFormatViewerComponent } from './multi-format-viewer.component';
+import { ESigningFormDesignerComponent } from './esigning-form-designer.component';
+import { ESigningPdfFormsComponent } from './esigning-pdf-forms.component';
+import { RedactionComponent } from './redaction.component';
 
 export const pdfViewerAppRoutes: Object[] = [
     // tslint:disable-next-line:max-line-length
@@ -34,6 +37,8 @@ export const pdfViewerAppRoutes: Object[] = [
     // tslint:disable-next-line:max-line-length
     { path: ':theme/pdfviewer/organize-pages', component: OrganizePagesComponent , name: 'Organize Pages',type: 'update', order: '09', category: 'Editor', description: 'This sample demonstrates the page organization features of the PDF Viewer component, allowing users to effortlessly insert, delete, rearrange, copy, undo, redo, and rotate pages.'},
     // tslint:disable-next-line:max-line-length
+    { path: ':theme/pdfviewer/redaction', component: RedactionComponent , name: 'Redaction',type: 'new', order: '09', category: 'Editor', description: 'This PDF viewer sample facilitates the permanent removal of sensitive or confidential data from PDF files.'},
+    // tslint:disable-next-line:max-line-length
     { path: ':theme/pdfviewer/custom-toolbar', component: CustomToolbarComponent, name: 'Toolbar', order: '10', category: 'Customization', description: 'The PDF Viewer component is used to  view and print pdf documents in web applications.' },
     // tslint:disable-next-line:max-line-length
     { path: ':theme/pdfviewer/custom-context-menu', component: CustomContextMenuComponent, name: 'Context Menu', order: '10', category: 'Customization', description: 'The PDF Viewer component supports custom options for users who use to add custom options in context menu.' },
@@ -43,8 +48,12 @@ export const pdfViewerAppRoutes: Object[] = [
     { path: ':theme/pdfviewer/form-filling', component: FormFillingComponent, name: 'Form Filling', order: '12', category: 'PDF Form', description: 'The PdfViewer component is used to  view and print pdf documents in web applications.' },
      // tslint:disable-next-line:max-line-length
      { path: ':theme/pdfviewer/form-designer', component: FormDesignerComponent , name: 'Form Designer', order: '12', category: 'PDF Form', description: 'This sample demonstrates the creation of the supported Form fields in the PDF Viewer such as Textbox, Password, Checkbox, Radio Button, Drop Down, List box, Signature, and Initial. We can also customize these fields and can include new fields through the user interaction by switching to the designer mode.'},
-     // tslint:disable-next-line:max-line-length
-    { path: ':theme/pdfviewer/annotations', component: AnnotationsComponent , name: 'Annotations', order: '13', category: 'Annotation', description: 'This sample demonstrates the creation of different types of annotations such as Text Markup, Shapes, Measurements, Free text, Stamps, Handwritten signature, ink, and sticky notes in the PDF Viewer. And also we can customize the added annotations or we can include new annotations through user interaction from the PDF Viewer.'},
+    // tslint:disable-next-line:max-line-length
+    { path: ':theme/pdfviewer/esigning-form-designer', component: ESigningFormDesignerComponent , name: 'eSigning Form Designer', order: '12', type: 'new', category: 'PDF Form', hideOnDevice: true, description: 'This sample enables the design of a PDF form that accommodates signatures from two different users. The form includes distinct fields for each user: when the first user is selected, specific fields can be added that apply only to that user. Upon switching the user via the dropdown menu, new fields can be added for the second user. The fields for each user are distinguishable by different background colors.'},
+    // tslint:disable-next-line:max-line-length
+    { path: ':theme/pdfviewer/esigning-pdf-forms', component: ESigningPdfFormsComponent , name: 'eSigning PDF Forms', order: '12', type: 'new', category: 'PDF Form', description: 'This sample enables the design of a PDF form that accommodates signatures from two different users. The form includes distinct fields for each user: when the first user is selected, specific fields can be added that apply only to that user. Upon switching the user via the dropdown menu, new fields can be added for the second user. The fields for each user are distinguishable by different background colors.'},
+    // tslint:disable-next-line:max-line-length
+    { path: ':theme/pdfviewer/annotations', component: AnnotationsComponent , name: 'Annotations', type: 'update', order: '13', category: 'Annotation', description: 'This sample demonstrates the creation of different types of annotations such as Text Markup, Shapes, Measurements, Free text, Stamps, Handwritten signature, ink, and sticky notes in the PDF Viewer. And also we can customize the added annotations or we can include new annotations through user interaction from the PDF Viewer.'},
      // tslint:disable-next-line:max-line-length
     { path: ':theme/pdfviewer/hand-written', component: HandwrittenComponent , name: 'Handwritten Signature', order: '14', category: 'Signature', description: 'This sample demonstrates the Handwritten signature and initial support of the PDF Viewer. The signature or initial support reduces the paperwork of reviewing the contents and it is verified digitally.'},
     // tslint:disable-next-line:max-line-length
@@ -52,5 +61,3 @@ export const pdfViewerAppRoutes: Object[] = [
 ];
 
 export const PdfViewerSampleModule: ModuleWithProviders<any> = RouterModule.forChild(pdfViewerAppRoutes);
-
-

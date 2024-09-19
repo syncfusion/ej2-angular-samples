@@ -1,86 +1,91 @@
-    .rowphoto img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50px;
-        box-shadow: inset 0 0 1px #e0e0e0, inset 0 0 14px rgba(0,0,0,0.2);
-    }
-    
-    @media screen and (max-width: 600px) and (min-width: 320px) {
-        .rowphoto img {
-            width: 50px;
-            height: 50px;
-        }
-    }
-    
-    @media screen and (max-width: 800px) and (min-width: 600px) {
-        .rowphoto img {
-            width: 70px;
-            height: 70px;
-        }
-    }
-    
-    .rowphoto,
-    .details {
-        border-color: #e0e0e0;
-        border-style: solid;
-    }
-    
-    .material-dark .rowphoto,
-    .material-dark .details {
-        border-color: #616161;
+.e-pizza-info-container {
+    display: flex;
+    padding: 10px 100px 10px 30px;
+}
+
+.e-flex-grow {
+    flex-grow: 1;
+}
+
+.e-pizza-image-layout {
+    margin-right: 30px;
+}
+
+.e-pizza-image {
+    width: 100px;
+    height: 100px;
+}
+
+.e-pizza-info-layout {
+    text-wrap: pretty;
+}
+
+.e-info-text-separator {
+    margin-bottom: 10px;
+}
+
+.e-pizza-title {
+    font-weight: 700;
+}
+
+.e-pizza-size {
+    font-weight: 300;
+    margin-left: 10px;
+}
+
+.e-pizza-price-layout {
+    text-align: center;
+    margin-left: 30px;
+}
+
+.e-pizza-price-text {
+    font-weight: 300;
+}
+
+.e-pizza-price {
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.e-pizza-original-price {
+    text-decoration: line-through;
+}
+
+.e-chip-list {
+    padding-left: 0px;
+}
+
+.e-chip.e-outline {
+    margin-left: 0px;
+}
+
+.e-pizza-price-min-layout {
+    display: none;
+    margin-top: 20px;
+}
+
+.e-grid .e-headercell.e-pizza-cell .e-headertext {
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.details {
+    border-color: #e0e0e0;
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+    padding-left: 18px;
+}
+
+@media only screen and (max-width: 1050px) {
+    .e-pizza-info-container {
+        padding: 10px 15%;
     }
 
-    .fabric-dark .rowphoto,
-    .fabric-dark .details {
-        border-color: #414040;
+    .e-pizza-price-layout {
+        display: none;
     }
 
-    .bootstrap-dark .rowphoto,
-    .bootstrap-dark .details {
-        border-color: #484848;
+    .e-pizza-price-min-layout {
+        display: block;
     }
-
-    .tailwind-dark .rowphoto,
-    .tailwind-dark .details {
-        border-color: #4b5563;
-    }
-
-    .bootstrap5-dark .rowphoto,
-    .bootstrap5-dark .details {
-        border-color: rgb(68, 76, 84);
-    }
-
-    .highcontrast .rowphoto,
-    .highcontrast .details {
-        border-color: #969696;
-    }
-    
-    .rowphoto {
-        border-width: 1px 0px 0px 0px;
-        text-align: center;
-    }
-    
-    .details {
-        border-width: 1px 0px 0px 0px;
-        padding-left: 18px;
-    }
-
-    .e-bigger .details {
-        padding-left: 25px;
-    }
-
-    .e-device .details {
-        padding-left: 8px;
-    }
-    
-    .details > table {
-        width: 100%;
-    }
-    
-    .CardHeader {
-        font-weight: bolder;
-    }
-    
-    td {
-        padding: 2px 2px 3px 4px;
-    }
+}

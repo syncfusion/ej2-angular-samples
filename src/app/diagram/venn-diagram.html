@@ -7,12 +7,14 @@
 <div class="control-section">
     <ejs-diagram #diagram id="diagram" width="100%" height="700px" [tool]=tool [snapSettings]=snapSettings (created)='create($event)'>
         <e-nodes>
+            <!-- Node 1 -->
             <e-node id='node1' [height]=400 [width]=400 [offsetX]=450 [offsetY]=232 [shape]=shape [style]=style1>
                 <e-node-annotations>
                     <e-node-annotation content='Data Science' [offset]=offset1>
                     </e-node-annotation>
                 </e-node-annotations>
             </e-node>
+            <!-- Node 2 -->
             <e-node id='node2' [height]=200 [width]=200 [shape]=shape [style]='style2' [offsetX]=508 [offsetY]=202>
                 <e-node-annotations>
                     <e-node-annotation content='Trignometry' [offset]=offset2 horizontalAlignment='Left'>
@@ -21,12 +23,14 @@
                     </e-node-annotation>
                 </e-node-annotations>
             </e-node>
+            <!-- Node 3 -->
             <e-node id='node3' [height]=200 [width]=200 [shape]=shape [style]=style3 [offsetX]=437 [offsetY]=286>
                 <e-node-annotations>
                     <e-node-annotation content='Expertise Knowledge' [offset]=offset4 verticalAlignment='Top'>
                     </e-node-annotation>
                 </e-node-annotations>
             </e-node>
+             <!-- Node 4 -->
             <e-node id='node4' [height]=200 [width]=200 [shape]=shape [style]='style4' [offsetX]=381 [offsetY]=202>
                 <e-node-annotations>
                     <e-node-annotation content='Programming' [offset]=offset2 horizontalAlignment='Right'>

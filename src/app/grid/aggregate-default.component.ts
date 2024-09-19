@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { orderData } from './data';
+import { OverallData } from './data';
 import { AggregateService, SortService, FilterService, ToolbarService, EditService, GridModule, PageService } from '@syncfusion/ej2-angular-grids';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -13,20 +13,11 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 })
 export class AggregateComponent implements OnInit {
     public data: Object[];
-    public pageOption: Object = {pageCount: 5};
     public filterSettings: Object;
-    public toolbar: string[];
-    public editSettings: Object;
-    public orderidrules: Object;
-    public customeridrules: Object;
-    public freightrules: Object;
+    public gridLines:string;
     public ngOnInit(): void {
-        this.data = orderData;
+        this.data = OverallData;
         this.filterSettings = { type: 'Excel' };
-        this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
-        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };
-        this.orderidrules = { required: true, number: true };
-        this.customeridrules = { required: true, minLength: 5 };
-        this.freightrules = { required: true, min: 0 };
+        this.gridLines = 'Vertical';
     }
 }

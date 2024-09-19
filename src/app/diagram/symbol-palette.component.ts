@@ -25,6 +25,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 export class SymbolPaletteDiagramComponent {
     @ViewChild('symbolpalette')
     public palette: SymbolPalette;
+    //Collection of expand options
     public expandOptions: { [key: string]: Object }[] = [
         { mode: 'Single', text: 'Single' },
         { mode: 'Multiple', text: 'Multiple' },
@@ -34,8 +35,8 @@ export class SymbolPaletteDiagramComponent {
     public symbolMargin: MarginModel = { left: 15, right: 15, top: 15, bottom: 15 };
     public expandMode: ExpandMode = 'Multiple';
     public enableAnimation: any = true;
-    //Initialize the flowshapes for the symbol palatte
-    private flowshapes: NodeModel[] = [
+    //Initialize the flowShapes for the symbol palatte
+    private flowShapes: NodeModel[] = [
         { id: 'Terminator', shape: { type: 'Flow', shape: 'Terminator' } },
         { id: 'Process', shape: { type: 'Flow', shape: 'Process' } },
         { id: 'Sort', shape: { type: 'Flow', shape: 'Sort' } },
@@ -45,6 +46,7 @@ export class SymbolPaletteDiagramComponent {
         { id: 'DirectData', shape: { type: 'Flow', shape: 'DirectData' } },
         { id: 'SequentialData', shape: { type: 'Flow', shape: 'SequentialData' } }
     ];
+    //Initialize the basicshapes for the symbol palatte
     private basicShapes: NodeModel[] = [
         { id: 'Rectangle', shape: { type: 'Basic', shape: 'Rectangle' } },
         { id: 'Ellipse', shape: { type: 'Basic', shape: 'Ellipse' } },
@@ -79,16 +81,16 @@ export class SymbolPaletteDiagramComponent {
             style: { strokeWidth: 2, strokeColor: '#757575' }, targetDecorator: { shape: 'None' }
         }
     ];
-
+    //Initializes the palette
     public palettes: PaletteModel[] = [
-        { id: 'flow', expanded: true, symbols: this.flowshapes, iconCss: 'shapes', title: 'Flow Shapes' },
-        { id: 'basic', expanded: true, symbols: this.basicShapes, iconCss: 'shapes', title: 'Basic Shapes' },
-        { id: 'connectors', expanded: true, symbols: this.connectorSymbols, iconCss: 'shapes', title: 'Connectors' }];
+        { id: 'flow', expanded: true, symbols: this.flowShapes, iconCss: 'e-ddb-icons e-flow', title: 'Flow Shapes' },
+        { id: 'basic', expanded: true, symbols: this.basicShapes, iconCss: 'e-ddb-icons e-basic', title: 'Basic Shapes' },
+        { id: 'connectors', expanded: true, symbols: this.connectorSymbols, iconCss: 'e-ddb-icons e-diagram-connector', title: 'Connectors' }];
 
     public getSymbolInfo(symbol: NodeModel): SymbolInfo {
         return { fit: true };
     }
-
+    //Set Node default value
     public getSymbolDefaults(symbol: NodeModel): void {
         if (symbol.id === 'Terminator' || symbol.id === 'Process') {
             symbol.width = 80;
@@ -101,18 +103,19 @@ export class SymbolPaletteDiagramComponent {
         symbol.style = { strokeWidth: 2, strokeColor: '#757575' };
     }
 
-
-
+    //Change the expandMode of the Symbolpallete.
     public onExpandChange(args: DropDownChangeEventArgs): void {
         this.symbolPropertyChange('expandMode', args.value);
     }
+    //Enable or disable the animation of the symbol palette.
     public onAnimationChange(args: CheckBoxChangeEventArgs): void {
         this.symbolPropertyChange('animation', args.checked);
     }
-
-    public onsizechange(args: NumericChangeEventArgs): void {
+    //Change the size of the Symbol.
+    public onSizeChange(args: NumericChangeEventArgs): void {
         this.symbolPropertyChange('size', args.value);
     }
+    //Add or Remove the Text for Symbol palette item.
     public onItemTextChange(args: CheckBoxChangeEventArgs): void {
         if (args.checked) {
             this.palette.getSymbolInfo = (symbol: Symbol): SymbolInfo => {
@@ -128,7 +131,24 @@ export class SymbolPaletteDiagramComponent {
         }
         this.palette.dataBind();
     }
-
+    //Add or Remove the Header icon for Symbol palette item.
+    public onHeaderIconChange(args: CheckBoxChangeEventArgs): void {
+        for(let i: number = 0;i<this.palette.palettes.length;i++){
+            if (args.checked) {
+                if (i === 0) {
+                    this.palette.palettes[i].iconCss = 'e-ddb-icons e-flow';
+                } else if (i === 1) {
+                    this.palette.palettes[i].iconCss = 'e-ddb-icons e-basic';
+                } else if (i === 2) {
+                    this.palette.palettes[i].iconCss = 'e-ddb-icons e-diagram-connector';
+                }
+            } else {
+                this.palette.palettes[i].iconCss = '';
+            }
+        }
+        this.palette.dataBind();
+    }
+    //Change property of the symbol palette
     private symbolPropertyChange(propertyName: string, propertyValue: Object): void {
         switch (propertyName) {
             case 'expandMode':

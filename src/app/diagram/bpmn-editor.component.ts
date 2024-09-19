@@ -1,5 +1,14 @@
+/**
+ * BPMN Editor sample
+ */
+
+// Importing needed dependencies for diagram
 import { Component, ViewEncapsulation, ViewChild ,Inject} from '@angular/core';
-import { DiagramComponent, MarginModel, Diagram, NodeModel, BpmnDiagrams, SnapSettingsModel, BpmnLoops, SnapConstraints, SymbolPalette, BpmnShape, BpmnDataObjects, BpmnGateways, BpmnTasks, BpmnTriggers, BpmnBoundary, NodeConstraints, BpmnShapeModel, ConnectorModel, BpmnGatewayModel, ContextMenuSettingsModel, IDragEnterEventArgs, DiagramBeforeMenuOpenEventArgs, BpmnEvents, PaletteModel, SymbolPaletteModule, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, MarginModel, Diagram, NodeModel, BpmnDiagrams, SnapSettingsModel,
+    BpmnLoops, SnapConstraints, SymbolPalette, BpmnShape, BpmnDataObjects, BpmnGateways, BpmnTasks,
+    BpmnTriggers, BpmnBoundary, NodeConstraints, BpmnShapeModel, ConnectorModel, BpmnGatewayModel,
+    ContextMenuSettingsModel, IDragEnterEventArgs, DiagramBeforeMenuOpenEventArgs, BpmnEvents,
+    PaletteModel, SymbolPaletteModule, DiagramModule, Segments} from '@syncfusion/ej2-angular-diagrams';
 import { MenuEventArgs, ExpandMode } from '@syncfusion/ej2-navigations';
 import { paletteIconClick } from './script/diagram-common';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -7,181 +16,145 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 SymbolPalette.Inject(BpmnDiagrams);
 Diagram.Inject(BpmnDiagrams);
 
+/**
+ * Component for displaying a BPMN Editor  sample.
+ * Manages the presentation and behavior of the diagram using Syncfusion's Angular Diagram component.
+ */
 @Component({
-    selector: 'control-content',
-    templateUrl: 'bpmn-editor.html',
-    styleUrls: ['diagram-common.style.css'],
-    encapsulation: ViewEncapsulation.None,
-    standalone: true,
-    imports: [SBActionDescriptionComponent, SymbolPaletteModule, DiagramModule, SBDescriptionComponent]
+    selector: 'control-content', // Angular component selector
+    templateUrl: 'bpmn-editor.html', // HTML template file for the component
+    styleUrls: ['diagram-common.style.css'],  // CSS styles specific to the component
+    encapsulation: ViewEncapsulation.None, // No view encapsulation
+    standalone: true,  // Indicates it's a standalone component
+    imports: [SBActionDescriptionComponent, SymbolPaletteModule, DiagramModule, SBDescriptionComponent]   // Importing necessary Angular modules and components
 })
 
+/**
+ * Represents a diagram component of BPMN Editor .
+ */
 export class BPMNShapesDiagramComponent {
-
-    @ViewChild('diagram')
+  // Reference to the diagram component
+  @ViewChild('diagram')
     public diagram: DiagramComponent;
     public expandMode: ExpandMode = 'Multiple';
+    // Constructor to inject source files
     constructor(@Inject('sourceFiles') private sourceFiles: any) {​​​​​​​
         sourceFiles.files = ['diagram-common.style.css'];
     }​​​​​​​
-    public nodes: NodeModel[] = [
-        {
-            id: 'start', width: 40, height: 40, offsetX: 35, offsetY: 180, shape: {
-                type: 'Bpmn', shape: 'Event',
-                event: { event: 'Start' }
-            }
-        },
-        {
-            id: 'subProcess', width: 520, height: 250, offsetX: 355, offsetY: 180,
-            constraints: NodeConstraints.Default | NodeConstraints.AllowDrop,
-            shape: {
-                shape: 'Activity', type: 'Bpmn',
-                activity: {
-                    activity: 'SubProcess', subProcess: {
-                        type: 'Transaction', collapsed: false,
-                        processes: ['processesStart', 'service', 'compensation', 'processesTask',
-                            'error', 'processesEnd', 'user', 'subProcessesEnd']
-                    }
-                }
-            }
-        },
-        {
-            id: 'hazardEnd', width: 40, height: 40, offsetX: 305, offsetY: 370, shape: {
-                type: 'Bpmn', shape: 'Event',
-                event: { event: 'End' },
-            }, annotations: [{
-                id: 'label2', content: 'Hazard',
-                style: { fill: 'white', color: 'black' }, verticalAlignment: 'Top', margin: { top: 20 }
-            }]
-        },
-        {
-            id: 'cancelledEnd', width: 40, height: 40, offsetX: 545, offsetY: 370, shape: {
-                type: 'Bpmn', shape: 'Event',
-                event: { event: 'End' },
-            }, annotations: [{
-                id: 'cancelledEndLabel2', content: 'Cancelled',
-                style: { fill: 'white', color: 'black' }, verticalAlignment: 'Top', margin: { top: 20 }
-            }]
-        },
-        {
-            id: 'end', width: 40, height: 40, offsetX: 665, offsetY: 180, shape: {
-                type: 'Bpmn', shape: 'Event',
-                event: { event: 'End' }
-            },
-        },
-        {
-            id: 'processesStart', width: 30, height: 30, shape: {
-                type: 'Bpmn', shape: 'Event',
-                event: { event: 'Start' }
-            }, margin: { left: 40, top: 80 }
-        },
-        {
-            id: 'service', style: { fill: '#6FAAB0' }, width: 95, height: 70,
-            shape: {
-                type: 'Bpmn', shape: 'Activity', activity: {
-                    activity: 'Task', task: { type: 'Service', loop: 'ParallelMultiInstance' }
-                }
-            }, annotations: [{
-                id: 'serviceLabel2', content: 'Book hotel', offset: { x: 0.50, y: 0.50 },
-                style: { color: 'white', }
-            }], margin: { left: 110, top: 20 },
-        },
-        {
-            id: 'compensation', width: 30, height: 30,
-            shape: {
-                type: 'Bpmn', shape: 'Event',
-                event: { event: 'Intermediate', trigger: 'Compensation' }
-            }, margin: { left: 170, top: 100 }
-        },
-        {
-            id: 'processesTask', style: { fill: '#F6B53F' }, width: 95, height: 70,
-            shape: {
-                type: 'Bpmn', shape: 'Activity', activity: {
-                    activity: 'Task', task: {
-                        type: 'Service',
-                    },
-                },
-            }, annotations: [{
-                id: 'serviceLabel2', content: 'Charge credit card', offset: { x: 0.50, y: 0.60 },
-                style: { color: 'white' }
-            }], margin: { left: 290, top: 20 },
-        },
-        {
-            id: 'error', width: 30, height: 30,
-            shape: {
-                type: 'Bpmn', shape: 'Event',
-                event: {
-                    event: 'Intermediate', trigger: 'Error'
-                }
-            }, margin: { left: 350, top: 100 }
-        },
-        {
-            id: 'processesEnd', width: 30, height: 30, shape: {
-                type: 'Bpmn', shape: 'Event',
-                event: { event: 'End' }
-            }, margin: { left: 440, top: 80 }
-        },
-        {
-            id: 'user', style: { fill: '#E94649' }, width: 90, height: 80,
-            shape: {
-                type: 'Bpmn', shape: 'Activity', activity: {
-                    activity: 'Task', task: {
-                        type: 'User', compensation: true,
-                    },
-                },
-            }, annotations: [{
-                id: 'serviceLabel2', content: 'Cancel hotel reservation', offset: { x: 0.50, y: 0.60 },
-                style: { color: 'white' }
-            }], margin: { left: 240, top: 160 },
-        },
-        {
-            id: 'subProcessesEnd', width: 30, height: 30, shape: {
-                type: 'Bpmn', shape: 'Event',
-                event: { event: 'End' }
-            }, margin: { left: 440, top: 210 }
-        },
-    ];
     public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
 
-    public connectors: ConnectorModel[] = [
-        { id: 'connector1', sourceID: 'start', targetID: 'subProcess' },
-        { id: 'connector2', sourceID: 'subProcess', sourcePortID: 'success', targetID: 'end' },
-        {
-            id: 'connector3', sourceID: 'subProcess', sourcePortID: 'failure', targetID: 'hazardEnd', type: 'Orthogonal',
-            segments: [{ type: 'Orthogonal', length: 50, direction: 'Bottom' }],
-            annotations: [{
-                id: 'connector3Label2', content: 'Booking system failure', offset: 0.50,
-                style: { fill: 'white' }
-            }]
-        },
-        {
-            id: 'connector4', sourceID: 'subProcess', sourcePortID: 'cancel', targetID: 'cancelledEnd', type: 'Orthogonal',
-            segments: [{ type: 'Orthogonal', length: 50, direction: 'Bottom' }],
-        },
-        { id: 'connector5', sourceID: 'processesStart', targetID: 'service', type: 'Orthogonal', },
-        { id: 'connector6', sourceID: 'service', targetID: 'processesTask' },
-        { id: 'connector7', sourceID: 'processesTask', targetID: 'processesEnd', type: 'Orthogonal', },
-        {
-            id: 'connector8', sourceID: 'compensation', targetID: 'user', type: 'Orthogonal',
-            shape: {
-                type: 'Bpmn',
-                flow: 'Association',
-                association: 'Directional'
-            }, style: {
-                strokeDashArray: '2,2'
-            },
-            segments: [{ type: 'Orthogonal', length: 30, direction: 'Bottom' },
-            { type: 'Orthogonal', length: 80, direction: 'Right' }]
-        },
-        {
-            id: 'connector9', sourceID: 'error', targetID: 'subProcessesEnd', type: 'Orthogonal',
-            annotations: [{
-                id: 'connector9Label2', content: 'Cannot charge card', offset: 0.50,
-                style: { fill: 'white', color: 'black' }
-            }],
-            segments: [{ type: 'Orthogonal', length: 50, direction: 'Bottom' }]
+
+    // Function to initialize a node
+    private createNode(id: string, width: number, height: number, offsetX: number, offsetY: number,
+        shape: any, annotations: any[] = [], margin: any = {}, style: any = {}, constraints: any = NodeConstraints.Default): NodeModel {
+        return {
+            id: id,
+            width: width,
+            height: height,
+            offsetX: offsetX,
+            offsetY: offsetY,
+            shape: shape,
+            annotations,
+            margin: margin,
+            style: style,
+            constraints: constraints
         }
-    ];
+    };
+    
+  //Initializes the nodes for the diagram.
+  public nodes: NodeModel[] = [    
+  
+    this.createNode('start', 40, 40, 35, 180, { type: 'Bpmn', shape: 'Event', event: { event: 'Start' } }),
+  
+    this.createNode('subProcess', 520, 250, 355, 180, { shape: 'Activity', type: 'Bpmn', activity: { activity: 'SubProcess',
+    subProcess: { type: 'Transaction', collapsed: false, processes: ['processesStart', 'service', 'compensation', 
+    'error','processesTask', 'processesEnd', 'user', 'subProcessesEnd']}}},[],{},{},
+    NodeConstraints.Default | NodeConstraints.AllowDrop,
+  ),
+    
+    this.createNode('hazardEnd', 40, 40, 305, 370, { type: 'Bpmn', shape: 'Event', event: { event: 'End' } }, [
+      { id: 'label2', content: 'Hazard', verticalAlignment: 'Top', style: { fill: 'white', color: 'black' }, margin: { top: 20 } }
+    ]),
+    
+    this.createNode('cancelledEnd', 40, 40, 545, 370, { type: 'Bpmn', shape: 'Event', event: { event: 'End' } }, [
+      { id: 'cancelledEndLabel2', content: 'Cancelled', verticalAlignment: 'Top', style: { fill: 'white', color: 'black' }, margin: { top: 20 } }
+    ]),
+    
+    this.createNode('end', 40, 40, 665, 180, { type: 'Bpmn', shape: 'Event', event: { event: 'End' } }),
+    
+    this.createNode('processesStart', 30, 30, 0, 0, { type: 'Bpmn', shape: 'Event', event: { event: 'Start' } }, [], { left: 40, top: 80 }),
+    
+    this.createNode('service', 95, 70, 0, 0, {
+      type: 'Bpmn', shape: 'Activity', activity: { activity: 'Task', task: { type: 'Service', loop: 'ParallelMultiInstance' } } },
+      [{ id: 'serviceLabel2', content: 'Book hotel', style: { color: 'white' }, offset: { x: 0.5, y: 0.5 } }],
+      { left: 110, top: 20 }, { fill: '#6FAAB0' }
+    ),
+    
+    this.createNode('compensation', 30, 30, 0, 0, { type: 'Bpmn', shape: 'Event', event: { event: 'Intermediate', trigger: 'Compensation' } }, [], { left: 170, top: 100 }),
+    
+    this.createNode('processesTask', 95, 70, 0, 0, {
+      type: 'Bpmn', shape: 'Activity', activity: { activity: 'Task', task: { type: 'Service' } } }, 
+      [{ id: 'serviceLabel2', content: 'Charge credit card', style: { color: 'white' }, offset: { x: 0.5, y: 0.6 } } ],
+      { left: 290, top: 20 }, { fill: '#F6B53F' }
+    ),
+    
+    this.createNode('error', 30, 30, 0, 0, { type: 'Bpmn', shape: 'Event', event: { event: 'Intermediate', trigger: 'Error' } }, [], { left: 350, top: 100 }),
+    
+    this.createNode('processesEnd', 30, 30, 0, 0, { type: 'Bpmn', shape: 'Event', event: { event: 'End' } },[], { left: 440, top: 80 }),
+    
+    this.createNode('user', 90, 80, 0, 0, {
+      type: 'Bpmn', shape: 'Activity', activity: { activity: 'Task', task: { type: 'User', compensation: true } } }, 
+      [ { id: 'serviceLabel2', content: 'Cancel hotel reservation', style: { color: 'white' }, offset: { x: 0.5, y: 0.6 } } ], 
+      { left: 30, top: 160 }, { fill: '#E94649' }
+    ),
+    
+    this.createNode('subProcessesEnd', 30, 30, 0, 0, { type: 'Bpmn', shape: 'Event', event: { event: 'End' } }, [], { left: 440, top: 210 }),
+  ];
+
+
+    // Function to create a connector
+    private createConnector(id: string, sourceID: string, targetID: string, sourcePortID = " ", targetPortID = "", type: Segments = "Orthogonal",
+        segments: any[] = [], annotations: any[] = [], shape: any = {}, style: any = {}): ConnectorModel {
+        return {
+            id: id,
+            sourceID: sourceID,
+            targetID: targetID,
+            sourcePortID: sourcePortID,
+            targetPortID: targetPortID,
+            type: type,
+            segments: segments,
+            annotations: annotations,
+            shape: shape,
+            style: style
+        }
+    };
+    
+    //Initializes the connectors for the diagram.
+    public connectors: ConnectorModel[] = [
+    this.createConnector('connector1', 'start', 'subProcess'),
+    this.createConnector('connector2', 'subProcess', 'end', 'success'),
+    this.createConnector('connector3', 'subProcess', 'hazardEnd', 'failure',"", 'Orthogonal', 
+      [{ type: 'Orthogonal', length: 50, direction: 'Bottom' }],
+      [{ id: 'connector3Label2', content: 'Booking system failure', offset: 0.50, style: { fill: 'white' }}]
+    ),
+    this.createConnector('connector4', 'subProcess', 'cancelledEnd', 'cancel',"", 'Orthogonal', 
+      [{ type: 'Orthogonal', length: 50, direction: 'Bottom' }]
+    ),
+    this.createConnector('connector5', 'processesStart', 'service', "", "", 'Orthogonal'),
+    this.createConnector('connector6', 'service', 'processesTask'),
+    this.createConnector('connector7', 'processesTask', 'processesEnd', "", "", 'Orthogonal'),
+    this.createConnector('connector8', 'compensation', 'user', "", "", 'Orthogonal', 
+      [{ type: 'Orthogonal', length: 30, direction: 'Bottom' },{ type: 'Orthogonal', length: 80, direction: 'Left' }],
+      [],{ type: 'Bpmn', flow: 'Association', association: 'Directional'},{ strokeDashArray: '2,2'}
+    ),
+    this.createConnector('connector9', 'error', 'subProcessesEnd', null, null, 'Orthogonal', 
+      [{ type: 'Orthogonal', length: 50, direction: 'Bottom' }],
+      [{ id: 'connector9Label2', content: 'Cannot charge card', offset: 0.5,
+        style: { fill: 'white', color: 'black' } } ]
+    )
+  ];
+
+    //Initializes the bpmn shapes for the symbol pallete.
     public bpmnShapes: NodeModel[] = [
         {
             id: 'Start', width: 35, height: 35, shape: {
@@ -254,6 +227,9 @@ export class BPMNShapesDiagramComponent {
             },
         },
     ];
+
+    
+    //Initializes the context menu for shapes.
     public contextMenu: ContextMenuSettingsModel = {
     show: true, items: [
         {
@@ -349,6 +325,8 @@ export class BPMNShapesDiagramComponent {
     ],
     showCustomMenuOnly: true,
     };
+
+
     public diagramCreate(args: Object): void {
         this.diagram.fitToPage();
         paletteIconClick();
@@ -356,86 +334,12 @@ export class BPMNShapesDiagramComponent {
     public symbolMargin: MarginModel = {
         left: 15, right: 15, top: 15, bottom: 15
     };
-    public contextMenuClick(args: MenuEventArgs): void {
-      if (this.diagram.selectedItems.nodes.length > 0) {
-        let bpmnShape: BpmnShapeModel = this.diagram.selectedItems.nodes[0].shape as BpmnShapeModel;
-        if (args.item.iconCss.indexOf('e-adhocs') > -1) {
-            bpmnShape.activity.subProcess.adhoc = args.item.id === 'AdhocNone' ? false : true;
-        }
-        if (args.item.iconCss.indexOf('e-event') > -1) {
-            bpmnShape.event.event = (args.item.id as BpmnEvents);
-        }
-        if (args.item.iconCss.indexOf('e-trigger') > -1) {
-            bpmnShape.event.trigger = (args.item.text as BpmnTriggers);
-        }
-        if (args.item.iconCss.indexOf('e-loop') > -1) {
-            let loop: string = (args.item.id === 'LoopNone' as BpmnLoops) ? 'None' : args.item.id;
-            if (bpmnShape.activity.activity === 'Task') {
-                bpmnShape.activity.task.loop = loop as BpmnLoops;
-            }
-            if (bpmnShape.activity.activity === 'SubProcess') {
-                bpmnShape.activity.subProcess.loop = loop as BpmnLoops;
-            }
-        }
-        if (args.item.iconCss.indexOf('e-compensation') > -1) {
-            let compensation: boolean = (args.item.id === 'CompensationNone') ? false : true;
-            if (bpmnShape.activity.activity === 'Task') {
-                bpmnShape.activity.task.compensation = compensation;
-            }
-            if (bpmnShape.activity.activity === 'SubProcess') {
-                bpmnShape.activity.subProcess.compensation = compensation;
-            }
-        }
-        if (args.item.iconCss.indexOf('e-call') > -1) {
-            let compensation: boolean = (args.item.id === 'CallNone') ? false : true;
-            if (bpmnShape.activity.activity === 'Task') {
-                bpmnShape.activity.task.call = compensation;
-            }
-        }
-        if (args.item.id === 'CollapsedSubProcess' || args.item.id === 'ExpandedSubProcess') {
-            if (args.item.id === 'ExpandedSubProcess') {
-                bpmnShape.activity.activity = 'SubProcess';
-                bpmnShape.activity.subProcess.collapsed = false;
-            } else {
-                bpmnShape.activity.activity = 'SubProcess';
-                bpmnShape.activity.subProcess.collapsed = true;
-            }
-        }
-        if (args.item.iconCss.indexOf('e-boundry') > -1) {
-            let call: string = args.item.id;
-            if (args.item.id !== 'Default') {
-                call = (args.item.id === 'BoundryEvent') ? 'Event' : 'Call';
-            }
-            bpmnShape.activity.subProcess.boundary = call as BpmnBoundary;
-        }
-        if (args.item.iconCss.indexOf('e-data') > -1) {
-            let call: string = args.item.id === 'DataObjectNone' ? 'None' : args.item.id;
-            bpmnShape.dataObject.type = call as BpmnDataObjects;
-        }
-        if (args.item.iconCss.indexOf('e-collection') > -1) {
-            let call: boolean = (args.item.id === 'Collectioncollection') ? true : false;
-            bpmnShape.dataObject.collection = call;
-        }
-        if (args.item.iconCss.indexOf('e-task') > -1) {
-            let task: string = args.item.id === 'TaskNone' ? 'None' : args.item.id;
-            if (bpmnShape.activity.activity === 'Task') {
-                bpmnShape.activity.task.type = task as BpmnTasks;
-            }
-        }
-        if (args.item.iconCss.indexOf('e-gate') > -1) {
-            let task: string = args.item.id.replace('Gateway', '');
-            if (bpmnShape.shape === 'Gateway') {
-                bpmnShape.gateway.type = task as BpmnGateways;
-            }
-        }
-        this.diagram.dataBind();
-    }
 
 
-    }
-
+    // Define the function getConnectors
     public getConnectors(): ConnectorModel[] {
 
+        //Initializes the Connector shapes for the symbol pallete.
         let connectorSymbols: ConnectorModel[] = [
             {
                 id: 'Link1', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
@@ -463,6 +367,85 @@ export class BPMNShapesDiagramComponent {
         ];
         return connectorSymbols;
     }
+
+    //function context menu click
+    public contextMenuClick(args: MenuEventArgs): void {
+        if (this.diagram.selectedItems.nodes.length > 0) {
+            let bpmnShape: BpmnShapeModel = this.diagram.selectedItems.nodes[0].shape as BpmnShapeModel;
+            if (args.item.iconCss.indexOf('e-adhocs') > -1) {
+                bpmnShape.activity.subProcess.adhoc = args.item.id === 'AdhocNone' ? false : true;
+            }
+            if (args.item.iconCss.indexOf('e-event') > -1) {
+                bpmnShape.event.event = (args.item.id as BpmnEvents);
+            }
+            if (args.item.iconCss.indexOf('e-trigger') > -1) {
+                bpmnShape.event.trigger = (args.item.text as BpmnTriggers);
+            }
+            if (args.item.iconCss.indexOf('e-loop') > -1) {
+                let loop: string = (args.item.id === 'LoopNone' as BpmnLoops) ? 'None' : args.item.id;
+                if (bpmnShape.activity.activity === 'Task') {
+                    bpmnShape.activity.task.loop = loop as BpmnLoops;
+                }
+                if (bpmnShape.activity.activity === 'SubProcess') {
+                    bpmnShape.activity.subProcess.loop = loop as BpmnLoops;
+                }
+            }
+            if (args.item.iconCss.indexOf('e-compensation') > -1) {
+                let compensation: boolean = (args.item.id === 'CompensationNone') ? false : true;
+                if (bpmnShape.activity.activity === 'Task') {
+                    bpmnShape.activity.task.compensation = compensation;
+                }
+                if (bpmnShape.activity.activity === 'SubProcess') {
+                    bpmnShape.activity.subProcess.compensation = compensation;
+                }
+            }
+            if (args.item.iconCss.indexOf('e-call') > -1) {
+                let compensation: boolean = (args.item.id === 'CallNone') ? false : true;
+                if (bpmnShape.activity.activity === 'Task') {
+                    bpmnShape.activity.task.call = compensation;
+                }
+            }
+            if (args.item.id === 'CollapsedSubProcess' || args.item.id === 'ExpandedSubProcess') {
+                if (args.item.id === 'ExpandedSubProcess') {
+                    bpmnShape.activity.activity = 'SubProcess';
+                    bpmnShape.activity.subProcess.collapsed = false;
+                } else {
+                    bpmnShape.activity.activity = 'SubProcess';
+                    bpmnShape.activity.subProcess.collapsed = true;
+                }
+            }
+            if (args.item.iconCss.indexOf('e-boundry') > -1) {
+                let call: string = args.item.id;
+                if (args.item.id !== 'Default') {
+                    call = (args.item.id === 'BoundryEvent') ? 'Event' : 'Call';
+                }
+                bpmnShape.activity.subProcess.boundary = call as BpmnBoundary;
+            }
+            if (args.item.iconCss.indexOf('e-data') > -1) {
+                let call: string = args.item.id === 'DataObjectNone' ? 'None' : args.item.id;
+                bpmnShape.dataObject.type = call as BpmnDataObjects;
+            }
+            if (args.item.iconCss.indexOf('e-collection') > -1) {
+                let call: boolean = (args.item.id === 'Collectioncollection') ? true : false;
+                bpmnShape.dataObject.collection = call;
+            }
+            if (args.item.iconCss.indexOf('e-task') > -1) {
+                let task: string = args.item.id === 'TaskNone' ? 'None' : args.item.id;
+                if (bpmnShape.activity.activity === 'Task') {
+                    bpmnShape.activity.task.type = task as BpmnTasks;
+                }
+            }
+            if (args.item.iconCss.indexOf('e-gate') > -1) {
+                let task: string = args.item.id.replace('Gateway', '');
+                if (bpmnShape.shape === 'Gateway') {
+                    bpmnShape.gateway.type = task as BpmnGateways;
+                }
+            }
+            this.diagram.dataBind();
+        }
+    }
+
+    // Define a function to handle opening the context menu
     public contextMenuOpen(args: DiagramBeforeMenuOpenEventArgs) {
         let hiddenId: string[] = [];
         if (args.element.className !== 'e-menu-parent e-ul ') {
@@ -573,21 +556,23 @@ export class BPMNShapesDiagramComponent {
         }
         args.hiddenItems = hiddenId;
     }
+
+    // Function to handle drag enter from palette to diagram
     public dragEnter(args: IDragEnterEventArgs) {
-        let obj: NodeModel = args.element as NodeModel;
-        if (obj instanceof Node) {
-            if (!(obj.shape as BpmnShape).activity.subProcess.collapsed) {
-                (obj.shape as BpmnShape).activity.subProcess.transaction.cancel.visible = true;
-                (obj.shape as BpmnShape).activity.subProcess.transaction.failure.visible = true;
-                (obj.shape as BpmnShape).activity.subProcess.transaction.success.visible = true;
+        let node: NodeModel = args.element as NodeModel;
+        if (node instanceof Node) {
+            if (!(node.shape as BpmnShape).activity.subProcess.collapsed) {
+                (node.shape as BpmnShape).activity.subProcess.transaction.cancel.visible = true;
+                (node.shape as BpmnShape).activity.subProcess.transaction.failure.visible = true;
+                (node.shape as BpmnShape).activity.subProcess.transaction.success.visible = true;
             } else {
-                let oWidth: number = obj.width;
-                let oHeight: number = obj.height;
-                let ratio: number = 100 / obj.width;
-                obj.width = 100;
-                obj.height *= ratio;
-                obj.offsetX += (obj.width - oWidth) / 2;
-                obj.offsetY += (obj.height - oHeight) / 2;
+                let nodeWidth: number = node.width;
+                let nodeHeight: number = node.height;
+                let ratio: number = 100 / node.width;
+                node.width = 100;
+                node.height *= ratio;
+                node.offsetX += (node.width - nodeWidth) / 2;
+                node.offsetY += (node.height - nodeHeight) / 2;
             }
         }
     }

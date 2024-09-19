@@ -35,7 +35,7 @@ span.questionSide {
 }
 
 .bootstrap-dark .forum .header, .bootstrap5-dark .forum .header, .fluent-dark .forum .header, .fluent2-dark .forum .header, .material3-dark .forum .header,
-.fabric-dark .forum .header, .material-dark .forum .header, .tailwind-dark .forum .header, .highcontrast .forum .header {
+.fabric-dark .forum .header, .material-dark .forum .header, .tailwind-dark .forum .header, .highcontrast .forum .header, .fluent2-highcontrast .forum .header, .bootstrap5\.3-dark .forum .header {
     color: #fff;
 }
 
@@ -64,7 +64,7 @@ span.questionSide {
     font-size: 12px;
 }
 
-.bootstrap-dark .e-like span, .bootstrap5-dark .e-like span, .fluent-dark .e-like span,.material3-dark .e-like span,
+.bootstrap-dark .e-like span, .bootstrap5-dark .e-like span,.bootstrap5\.3-dark .e-like span, .fluent-dark .e-like span,.material3-dark .e-like span,
 	.fabric-dark .e-like span, .material-dark .e-like span, .tailwind-dark .e-like span, .highcontrast .e-like span {
         color: #ff4b86;
     }
@@ -76,7 +76,7 @@ span.questionSide {
 
 }
 
-.bootstrap-dark .e-dislike span, .bootstrap5-dark .e-dislike span, .fluent-dark .e-dislike span,.material3-dark .e-dislike span,
+.bootstrap-dark .e-dislike span, .bootstrap5-dark .e-dislike span,.bootstrap5\.3-dark .e-dislike span, .fluent-dark .e-dislike span,.material3-dark .e-dislike span,
 	.fabric-dark .e-dislike span, .material-dark .e-dislike span, .tailwind-dark .e-dislike span, .highcontrast .e-dislike span {
         color: #BFBFBF;
     }
@@ -95,12 +95,12 @@ span.questionSide {
     color: #000000;
 }
 
-.bootstrap-dark .forum .explain, .bootstrap5-dark .forum .explain, .fluent-dark .forum .explain, .fluent2-dark .forum .explain,.material3-dark .forum .explain,
+.bootstrap-dark .forum .explain, .bootstrap5-dark .forum .explain, .bootstrap5\.3-dark .forum .explain,.fluent-dark .forum .explain, .fluent2-dark .forum .explain,.material3-dark .forum .explain,
 .fabric-dark .forum .explain, .material-dark .forum .explain, .tailwind-dark .forum .explain, .highcontrast .forum .explain {
     color: #fff;
 }
 
-.bootstrap-dark .detailsQuestion, .bootstrap5-dark .detailsQuestion, .fluent-dark .detailsQuestion,.material3-dark .detailsQuestion,
+.bootstrap-dark .detailsQuestion, .bootstrap5-dark .detailsQuestion,.bootstrap5\.3-dark .detailsQuestion, .fluent-dark .detailsQuestion,.material3-dark .detailsQuestion,
 	.fabric-dark .detailsQuestion, .material-dark .detailsQuestion, .tailwind-dark .detailsQuestion, .highcontrast .detailsQuestion {
         color: #BFBFBF;
     }
@@ -117,6 +117,7 @@ span.questionSide {
 
 .bootstrap-dark .tag, 
 .bootstrap5-dark .tag, 
+.bootstrap5\.3-dark .tag, 
 .fluent-dark .tag,
 .fluent2-dark .tag,
 .material3-dark .tag,
@@ -148,7 +149,7 @@ span.questionSide {
     width: 63px;
 }
 
-.bootstrap-dark .answerCount, .bootstrap5-dark .answerCount, .fluent-dark .answerCount,.material3-dark .answerCount,
+.bootstrap-dark .answerCount, .bootstrap5-dark .answerCount,.bootstrap5\.3-dark .answerCount, .fluent-dark .answerCount,.material3-dark .answerCount,
 	.fabric-dark .answerCount, .material-dark .answerCount, .tailwind-dark .answerCount, .highcontrast .answerCount {
         color: #BFBFBF;
     }
@@ -244,7 +245,7 @@ span.questionSide {
     overflow-wrap: break-word;
 }
 
-.bootstrap-dark .forum .posting, .bootstrap5-dark .forum .posting, .fluent-dark .forum .posting, .fluent2-dark .forum .posting, .material3-dark .forum .posting,
+.bootstrap-dark .forum .posting, .bootstrap5-dark .forum .posting,.bootstrap5\.3-dark .forum .posting, .fluent-dark .forum .posting, .fluent2-dark .forum .posting, .material3-dark .forum .posting,
 .fabric-dark .forum .posting, .material-dark .forum .posting, .tailwind-dark .forum .posting, .highcontrast .forum .posting {
     color: #fff;
 }
@@ -255,7 +256,7 @@ span.questionSide {
     font-size: 13px;
 }
 
-.bootstrap-dark .forum .authorname, .bootstrap5-dark .forum .authorname, .fluent-dark .forum .authorname,.fluent2-dark .forum .authorname, .material3-dark .forum .authorname,
+.bootstrap-dark .forum .authorname, .bootstrap5-dark .forum .authorname,.bootstrap5\.3-dark .forum .authorname, .fluent-dark .forum .authorname,.fluent2-dark .forum .authorname, .material3-dark .forum .authorname,
 .fabric-dark .forum .authorname, .material-dark .forum .authorname, .tailwind-dark .forum .authorname, .highcontrast .forum .authorname {
     color: #fff;
 }
@@ -273,7 +274,7 @@ span.questionSide {
 
 }
 
-.bootstrap-dark .detailsAnswer, .bootstrap5-dark .detailsAnswer, .fluent-dark .detailsAnswer,.material3-dark .detailsAnswer,
+.bootstrap-dark .detailsAnswer, .bootstrap5-dark .detailsAnswer,.bootstrap5\.3-dark .detailsAnswer, .fluent-dark .detailsAnswer,.material3-dark .detailsAnswer,
 .fabric-dark .detailsAnswer, .material-dark .detailsAnswer, .tailwind-dark .detailsAnswer, .highcontrast .detailsAnswer {
     color: #BFBFBF;
 }

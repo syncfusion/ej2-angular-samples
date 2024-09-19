@@ -1,4 +1,10 @@
 .fluent2 #drag,
-    .fluent2-dark #drag {
-        padding: 5px;
-    }
+.fluent2-dark #drag, .fluent2-highcontrast #drag {
+    padding: 5px;
+}
+
+.e-bigger  {
+    #drag {
+    margin: 5px 5px 0px 5px !important;
+  }
+}

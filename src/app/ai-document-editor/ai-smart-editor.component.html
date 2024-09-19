@@ -1,0 +1,114 @@
+<div id='container' style="height: 100%;width: 100%;">
+  <div id="documenteditor_titlebar" class="e-de-ctn-title"></div>
+  <ejs-documenteditorcontainer #container id='DocumentEditor' [enableToolbar]="true" height="98vh" width="100%"
+    serviceUrl="https://services.syncfusion.com/js/production/api/documenteditor/"
+    (created)="documenedContainercreated()" (customContextMenuSelect)="onCustomContextMenuSelect($event)">
+
+  </ejs-documenteditorcontainer>
+  <ejs-dialog #dialog id="dialog" header="AI Rephrase" [showCloseIcon]="true" [buttons]="buttonSettings"
+    [visible]="false" target="#DocumentEditor" width="50%" height="auto" [isModal]="true" (close)="onclose()"
+    (beforeOpen)="onBeforeOpen()" (open)="onOpen($event)">
+    <ng-template #content>
+      <!-- help: https://ej2.syncfusion.com/angular/documentation/splitter/split-panes/#horizontal-layout -->
+      <ejs-splitter height="auto" orientation="Vertical" width="100%">
+        <e-panes>
+          <e-pane size="auto" [collapsible]='true'>
+            <ng-template #content>
+              <div>
+                <div id="e-de-qus-parent">
+                  <div #qdiv id="e-de-qus-div"></div>
+                  <ejs-toolbar id="e-de-qus-toolbar" prefixIcon="e-icons e-chevron-left">
+                    <e-items>
+                      <e-item prefixIcon="e-icons e-chevron-left" align="Center"
+                        (click)="moveToPreviousPara()"></e-item>
+                      <e-item prefixIcon="e-icons e-chevron-right" align="Center" (click)="moveToNextPara()"></e-item>
+
+                    </e-items>
+                  </ejs-toolbar>
+                  <div id="e-de-qus-toolbar"></div>
+                </div>
+              </div>
+            </ng-template>
+          </e-pane>
+          <e-pane  size="auto" [collapsible]='true'>
+            <ng-template #content>
+              <div>
+                <div #editable id="e-de-editable-div" contenteditable="true"
+                  style="height: 100px; padding: 5px;background: #f9fafb;"></div>
+              </div>
+            </ng-template>
+          </e-pane>
+
+        </e-panes>
+      </ejs-splitter>
+      <ejs-toolbar #toolbar id="toolbar" (created)="onToolbarCreated()">
+        <!-- 1st Toolbar -->
+        <e-items>
+          <e-item prefixIcon="e-icons e-chevron-left" (click)="moveToPrevious()"></e-item>
+          <e-item type="Input" align="Left" cssClass="page-count">
+            <ng-template #template>
+              <div>
+                <input type="text" id="numeric" style="width: 20px; padding-left: 10px;">
+                <span class="total-page"> of 3 </span>
+              </div>
+            </ng-template>
+          </e-item>
+          <e-item prefixIcon="e-icons e-chevron-right" (click)="moveToNext()"></e-item>
+          <e-item text="Rewrite" align="Right" (click)="onRewriteClick()"></e-item>
+          <e-item prefixIcon="e-icons e-settings" (click)="onSettingsClick()"></e-item>
+
+          <!-- 2nd Toolbar -->
+
+          <e-item prefixIcon="e-icons e-close" (click)="onCloseSecndaryToolbar()"></e-item>
+          <e-item type="Input" align="Left">
+            <ng-template #template>
+              <ejs-combobox [width]="'125px'" (change)="onToneChange($event)" [value]="toneValue"
+                [dataSource]="toneList" [popupWidth]="'125px'" [showClearButton]="false"
+                [readonly]="false"></ejs-combobox>
+            </ng-template>
+          </e-item>
+          <e-item type="Input" align="Left">
+            <ng-template #template>
+              <ejs-combobox [width]="'200px'" (change)="onFormatChange($event)" [value]="formatValue"
+                [dataSource]="formatValueList" [popupWidth]="'200px'" [showClearButton]="false"
+                [readonly]="false"></ejs-combobox>
+            </ng-template>
+          </e-item>
+          <e-item type="Input" align="Left">
+            <ng-template #template>
+              <ejs-combobox [width]="'100px'" (change)="onLengthChange($event)" [value]="lengthValue"
+                [dataSource]="lengthList" [popupWidth]="'100px'" [showClearButton]="false"
+                [readonly]="false"></ejs-combobox>
+            </ng-template>
+          </e-item>
+          <e-item text="Rewrite" (click)="onRewriteClick()"></e-item>
+
+          <!-- 3rd Toolbar -->
+
+          <e-item type="Input" align="Left">
+            <ng-template #template>
+              <ejs-combobox [width]="'160px'" (change)="onLanguageChange($event)" [value]="'French'"
+                [dataSource]="languageList" [popupWidth]="'160px'" [showClearButton]="false"
+                [readonly]="false"></ejs-combobox>
+            </ng-template>
+          </e-item>
+          <e-item text="Translate" (click)="onTranslateClick()"></e-item>
+
+
+          <!-- 4th Toolbar -->
+
+          <e-item type="Input" align="Left">
+            <ng-template #template>
+              <ejs-multiselect [width]="'250px'" (change)="ValueChangeHandler($event)" [dataSource]="grammer"
+                [fields]="{ text: 'name', value: 'name' }" placeholder="e.g. Spelling Errors" mode="CheckBox"
+                showSelectAll="true" selectAllText="Select All" showDropDownIcon="true" enableSelectionOrder="true"
+                filterBarPlaceholder="Search grammar suggestion"></ejs-multiselect>
+            </ng-template>
+          </e-item>
+          <e-item text="Rewrite" align="Right" (click)="onGrammerCheckClick()"></e-item>
+        </e-items>
+      </ejs-toolbar>
+    </ng-template>
+  </ejs-dialog>
+
+</div>

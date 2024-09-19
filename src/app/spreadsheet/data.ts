@@ -5,7 +5,7 @@ export function getDefaultData(): Object[] {
       "Model": "Taurus",
       "Color": "Aquamarine",
       "Payment Mode": "Debit Card",
-      "Delivery Date": "07/11/2015",
+      "Delivery Date": "07-11-2015",
       "Amount": "8529.22"
     },
     {
@@ -13,7 +13,7 @@ export function getDefaultData(): Object[] {
       "Model": "Sparrow",
       "Color": "Pink",
       "Payment Mode": "Cash On Delivery",
-      "Delivery Date": "7/13/2016",
+      "Delivery Date": "07-13-2016",
       "Amount": "17866.19"
     },
     {
@@ -21,7 +21,7 @@ export function getDefaultData(): Object[] {
       "Model": "Grand Cherokee",
       "Color": "Blue",
       "Payment Mode": "Net Banking",
-      "Delivery Date": "09/04/2015",
+      "Delivery Date": "09-04-2015",
       "Amount": "13853.09"
     },
     {
@@ -29,7 +29,7 @@ export function getDefaultData(): Object[] {
       "Model": "GTO",
       "Color": "Aquamarine",
       "Payment Mode": "Credit Card",
-      "Delivery Date": "12/15/2017",
+      "Delivery Date": "12-15-2017",
       "Amount": "2338.74"
     },
     {
@@ -37,7 +37,7 @@ export function getDefaultData(): Object[] {
       "Model": "LX",
       "Color": "Yellow",
       "Payment Mode": "Credit Card",
-      "Delivery Date": "10/08/2014",
+      "Delivery Date": "10-08-2014",
       "Amount": "9578.45"
     },
     {
@@ -45,7 +45,7 @@ export function getDefaultData(): Object[] {
       "Model": "Catera",
       "Color": "Green",
       "Payment Mode": "Cash On Delivery",
-      "Delivery Date": "7/01/2017",
+      "Delivery Date": "07-01-2017",
       "Amount": "19141.62"
     },
     {
@@ -53,7 +53,7 @@ export function getDefaultData(): Object[] {
       "Model": "7 Series",
       "Color": "Goldenrod",
       "Payment Mode": "Credit Card",
-      "Delivery Date": "12/20/2015",
+      "Delivery Date": "12-20-2015",
       "Amount": "6543.30"
     },
     {
@@ -61,7 +61,7 @@ export function getDefaultData(): Object[] {
       "Model": "Corvette",
       "Color": "Red",
       "Payment Mode": "Credit Card",
-      "Delivery Date": "11/24/2014",
+      "Delivery Date": "11-24-2014",
       "Amount": "13035.06"
     },
     {
@@ -69,7 +69,7 @@ export function getDefaultData(): Object[] {
       "Model": "Regal",
       "Color": "Indigo",
       "Payment Mode": "Debit Card",
-      "Delivery Date": "05/12/2014",
+      "Delivery Date": "05-12-2014",
       "Amount": "18488.80"
     },
     {
@@ -77,7 +77,7 @@ export function getDefaultData(): Object[] {
       "Model": "S4",
       "Color": "Fuscia",
       "Payment Mode": "Net Banking",
-      "Delivery Date": "12/30/2014",
+      "Delivery Date": "12-30-2014",
       "Amount": "12317.04"
     },
     {
@@ -85,7 +85,7 @@ export function getDefaultData(): Object[] {
       "Model": "TL",
       "Color": "Aquamarine",
       "Payment Mode": "Credit Card",
-      "Delivery Date": "12/18/2013",
+      "Delivery Date": "12-18-2013",
       "Amount": "6230.13"
     },
     {
@@ -93,7 +93,7 @@ export function getDefaultData(): Object[] {
       "Model": "Club Wagon",
       "Color": "Pink",
       "Payment Mode": "Cash On Delivery",
-      "Delivery Date": "02/02/2015",
+      "Delivery Date": "02-02-2015",
       "Amount": "9709.49"
     },
     {
@@ -101,7 +101,7 @@ export function getDefaultData(): Object[] {
       "Model": "V8 Vantage",
       "Color": "Crimson",
       "Payment Mode": "Debit Card",
-      "Delivery Date": "11/19/2014",
+      "Delivery Date": "11-19-2014",
       "Amount": "9766.10"
     },
     {
@@ -109,7 +109,7 @@ export function getDefaultData(): Object[] {
       "Model": "Caravan",
       "Color": "Violet",
       "Payment Mode": "Net Banking",
-      "Delivery Date": "02/08/2014",
+      "Delivery Date": "02-08-2014",
       "Amount": "7685.49"
     },
     {
@@ -117,7 +117,7 @@ export function getDefaultData(): Object[] {
       "Model": "Bravada",
       "Color": "Violet",
       "Payment Mode": "Debit Card",
-      "Delivery Date": "08/05/2016",
+      "Delivery Date": "08-05-2016",
       "Amount": "18012.45"
     },
     {
@@ -125,7 +125,7 @@ export function getDefaultData(): Object[] {
       "Model": "Colorado",
       "Color": "Pink",
       "Payment Mode": "Credit Card",
-      "Delivery Date": "05/30/2016",
+      "Delivery Date": "05-30-2016",
       "Amount": "2785.49"
     },
     {
@@ -133,7 +133,7 @@ export function getDefaultData(): Object[] {
       "Model": "4Runner",
       "Color": "Red",
       "Payment Mode": "Debit Card",
-      "Delivery Date": "12/10/2016",
+      "Delivery Date": "12-10-2016",
       "Amount": "9967.74"
     },
     {
@@ -141,7 +141,7 @@ export function getDefaultData(): Object[] {
       "Model": "TSX",
       "Color": "Pink",
       "Payment Mode": "Cash On Delivery",
-      "Delivery Date": "10/23/2014",
+      "Delivery Date": "10-23-2014",
       "Amount": "5584.33"
     },
     {
@@ -149,7 +149,7 @@ export function getDefaultData(): Object[] {
       "Model": "Pathfinder",
       "Color": "Red",
       "Payment Mode": "Net Banking",
-      "Delivery Date": "12/24/2015",
+      "Delivery Date": "12-24-2015",
       "Amount": "5286.53"
     },
     {
@@ -157,7 +157,7 @@ export function getDefaultData(): Object[] {
       "Model": "Charger",
       "Color": "Violet",
       "Payment Mode": "Debit Card",
-      "Delivery Date": "11/20/2013",
+      "Delivery Date": "11-20-2013",
       "Amount": "13511.91"
     },
     {
@@ -165,7 +165,7 @@ export function getDefaultData(): Object[] {
       "Model": "Bonneville",
       "Color": "Crimson",
       "Payment Mode": "Credit Card",
-      "Delivery Date": "11/19/2013",
+      "Delivery Date": "11-19-2013",
       "Amount": "6498.19"
     },
     {
@@ -173,7 +173,7 @@ export function getDefaultData(): Object[] {
       "Model": "B-Series",
       "Color": "Blue",
       "Payment Mode": "Net Banking",
-      "Delivery Date": "10/30/2014",
+      "Delivery Date": "10-30-2014",
       "Amount": "10359.67"
     },
     {
@@ -181,7 +181,7 @@ export function getDefaultData(): Object[] {
       "Model": "Voyager",
       "Color": "Turquoise",
       "Payment Mode": "Credit Card",
-      "Delivery Date": "04/06/2018",
+      "Delivery Date": "04-06-2018",
       "Amount": "8118.39"
     },
     {
@@ -189,7 +189,7 @@ export function getDefaultData(): Object[] {
       "Model": "Grand Prix",
       "Color": "Orange",
       "Payment Mode": "Cash On Delivery",
-      "Delivery Date": "10/13/2016",
+      "Delivery Date": "10-13-2016",
       "Amount": "10204.37"
     },
     {
@@ -197,7 +197,7 @@ export function getDefaultData(): Object[] {
       "Model": "Sunbird",
       "Color": "Red",
       "Payment Mode": "Net Banking",
-      "Delivery Date": "10/22/2013",
+      "Delivery Date": "10-22-2013",
       "Amount": "6528.06"
     },
     {
@@ -205,7 +205,7 @@ export function getDefaultData(): Object[] {
       "Model": "Mirage",
       "Color": "Crimson",
       "Payment Mode": "Debit Card",
-      "Delivery Date": "9/12/2014",
+      "Delivery Date": "09-12-2014",
       "Amount": "5619.25"
     },
     {
@@ -213,7 +213,7 @@ export function getDefaultData(): Object[] {
       "Model": "XK",
       "Color": "Orange",
       "Payment Mode": "Debit Card",
-      "Delivery Date": "05/12/2016",
+      "Delivery Date": "05-12-2016",
       "Amount": "5091.43"
     },
     {
@@ -221,7 +221,7 @@ export function getDefaultData(): Object[] {
       "Model": "Accord",
       "Color": "Orange",
       "Payment Mode": "Debit Card",
-      "Delivery Date": "09/03/2018",
+      "Delivery Date": "09-03-2018",
       "Amount": "14566.08"
     },
     {
@@ -229,7 +229,7 @@ export function getDefaultData(): Object[] {
       "Model": "Range Rover Sport",
       "Color": "Orange",
       "Payment Mode": "Credit Card",
-      "Delivery Date": "2/22/2018",
+      "Delivery Date": "02-22-2018",
       "Amount": "5284.87"
     }];
 }
@@ -239,167 +239,167 @@ export function orderDetails(): Object[] {
     {
       "Order ID": 10248,
       "Customer Name": "Paul Henriot",
-      "Order Date": "7/4/1996",
+      "Order Date": "07-04-1996",
       "Address": "59 rue de l Abbaye",
       "City": "Reims",
       "Postal Code": "51100",
       "Country": "France",
       "Status": "Delivered",
-      "Freight": "$32.38"
+      "Freight": "32.38"
     },
     {
       "Order ID": 10249,
       "Customer Name": "Karin Josephs",
-      "Order Date": "7/5/1996",
+      "Order Date": "07-05-1996",
       "Address": "Luisenstr. 48",
       "City": "Münster",
       "Postal Code": "44087",
       "Country": "Germany",
       "Status": "Delivered",
-      "Freight": "$11.61"
+      "Freight": "11.61"
     },
     {
       "Order ID": 10250,
       "Customer Name": "Mario Pontes",
-      "Order Date": "7/8/1996",
+      "Order Date": "07-08-1996",
       "Address": "Rua do Paço, 67",
       "City": "Rio de Janeiro",
       "Postal Code": "05454876",
       "Country": "Brazil",
       "Status": "Shipped",
-      "Freight": "$65.83"
+      "Freight": "65.83"
     },
     {
       "Order ID": 10251,
       "Customer Name": "Mary Saveley",
-      "Order Date": "7/4/1996",
+      "Order Date": "07-04-1996",
       "Address": "2, rue du Commerce",
       "City": "Lyon",
       "Postal Code": "69004",
       "Country": "France",
       "Status": "Delivered",
-      "Freight": "$41.34"
+      "Freight": "41.34"
     },
     {
       "Order ID": 10252,
       "Customer Name": "Pascale Cartrain",
-      "Order Date": "7/8/1996",
+      "Order Date": "07-08-1996",
       "Address": "Boulevard Tirou, 255",
       "City": "Charleroi",
       "Postal Code": "6000",
       "Country": "Belgium",
       "Status": "Shipped",
-      "Freight": "$51.3"
+      "Freight": "51.3"
     },
     {
       "Order ID": 10253,
       "Customer Name": "Carlos Hernández",
-      "Order Date": "7/1/1996",
+      "Order Date": "07-01-1996",
       "Address": "Rua do Paço, 67",
       "City": "Rio de Janeiro",
       "Postal Code": "05454876",
       "Country": "Brazil",
       "Status": "Cancelled",
-      "Freight": "$58.17"
+      "Freight": "58.17"
     },
     {
       "Order ID": 10254,
       "Customer Name": "Yang Wang",
-      "Order Date": "7/18/1996",
+      "Order Date": "07-18-1996",
       "Address": "Hauptstr. 31",
       "City": "Bern",
       "Postal Code": "3012",
       "Country": "Switzerland",
       "Status": "Pending",
-      "Freight": "$22.98"
+      "Freight": "22.98"
     },
     {
       "Order ID": 10255,
       "Customer Name": "Antonio Moreno",
-      "Order Date": "7/7/1996",
+      "Order Date": "07-07-1996",
       "Address": "Starenweg 5",
       "City": "Genève",
       "Postal Code": "1204",
       "Country": "Switzerland",
       "Status": "Delivered",
-      "Freight": "$148.33"
+      "Freight": "148.33"
     },
     {
       "Order ID": 10256,
       "Customer Name": "Paula Parente",
-      "Order Date": "7/10/1996",
+      "Order Date": "07-10-1996",
       "Address": "Rua do Mercado, 12",
       "City": "Resende",
       "Postal Code": "08737363",
       "Country": "Brazil",
       "Status": "Shipped",
-      "Freight": "$13.97"
+      "Freight": "13.97"
     },
     {
       "Order ID": 10257,
       "Customer Name": "Michael Holz",
-      "Order Date": "7/9/1996",
+      "Order Date": "07-09-1996",
       "Address": "Carrera 22 con Ave. Carlos Soublette",
       "City": "San Cristóbal",
       "Postal Code": "5022",
       "Country": "Venezuela",
       "Status": "Delivered",
-      "Freight": "$81.91"
+      "Freight": "81.91"
     },
     {
       "Order ID": 10258,
       "Customer Name": "Roland Mendel",
-      "Order Date": "7/3/1996",
+      "Order Date": "07-03-1996",
       "Address": "Kirchgasse 6",
       "City": "Graz",
       "Postal Code": "8010",
       "Country": "Austria",
       "Status": "Cancelled",
-      "Freight": "$140.51"
+      "Freight": "140.51"
     },
     {
       "Order ID": 10259,
       "Customer Name": "Francisco Chang",
-      "Order Date": "7/22/1996",
+      "Order Date": "07-22-1996",
       "Address": "Sierras de Granada 9993",
       "City": "México D.F.",
       "Postal Code": "05022",
       "Country": "Mexico",
       "Status": "Pending",
-      "Freight": "$3.25"
+      "Freight": "3.25"
     },
     {
       "Order ID": 10260,
       "Customer Name": "Henriette Pfalzheim",
-      "Order Date": "7/12/1996",
+      "Order Date": "07-12-1996",
       "Address": "Mehrheimerstr. 369",
       "City": "Köln",
       "Postal Code": "50739",
       "Country": "Germany",
       "Status": "Delivered",
-      "Freight": "$55.09"
+      "Freight": "55.09"
     },
     {
       "Order ID": 10261,
       "Customer Name": "Bernardo Batista",
-      "Order Date": "7/15/1996",
+      "Order Date": "07-15-1996",
       "Address": "Rua da Panificadora, 12",
       "City": "Rio de Janeiro",
       "Postal Code": "02389673",
       "Country": "Brazil",
       "Status": "Shipped",
-      "Freight": "$3.05"
+      "Freight": "3.05"
     },
     {
       "Order ID": 10262,
       "Customer Name": "Paula Wilson",
-      "Order Date": "7/8/1996",
+      "Order Date": "07-08-1996",
       "Address": "2817 Milton Dr.",
       "City": "Albuquerque",
       "Postal Code": "87110",
       "Country": "USA",
       "Status": "Delivered",
-      "Freight": "$48.29"
+      "Freight": "48.29"
     }];
 }
 
@@ -408,7 +408,7 @@ export function grossPay(): Object[] {
       {
           "EMPLOYEE ID": "1001",
           "EMPLOYEE NAME": "Vin Disel",
-          "DATE": "4/5/2021",
+          "DATE": "04-05-2021",
           "WEEKDAY": "Mon",
           "TIME IN": "8:00 AM",
           "TIME OUT": "10:00 PM",
@@ -418,7 +418,7 @@ export function grossPay(): Object[] {
       },{
           "EMPLOYEE ID": "1002",
           "EMPLOYEE NAME": "Steve",
-          "DATE": "4/6/2021",
+          "DATE": "04-06-2021",
           "WEEKDAY": "Tue",
           "TIME IN": "8:00 AM",
           "TIME OUT": "6:00 PM",
@@ -429,7 +429,7 @@ export function grossPay(): Object[] {
       {
           "EMPLOYEE ID": "1003",
           "EMPLOYEE NAME": "Paul Waulker",
-          "DATE": "4/6/2021",
+          "DATE": "04-06-2021",
           "WEEKDAY": "Tue",
           "TIME IN": "11:00 AM",
           "TIME OUT": "4:00 PM",
@@ -440,7 +440,7 @@ export function grossPay(): Object[] {
       {
           "EMPLOYEE ID": "1004",
           "EMPLOYEE NAME": "John",
-          "DATE": "4/8/2021",
+          "DATE": "04-08-2021",
           "WEEKDAY": "Thu",
           "TIME IN": "8:00 AM",
           "TIME OUT": "4:00 PM",
@@ -451,7 +451,7 @@ export function grossPay(): Object[] {
       {
           "EMPLOYEE ID": "1005",
           "EMPLOYEE NAME": "Sam",
-          "DATE": "4/9/2021",
+          "DATE": "04-09-2021",
           "WEEKDAY": "Fri",
           "TIME IN": "7:00 AM",
           "TIME OUT": "6:00 PM",
@@ -462,7 +462,7 @@ export function grossPay(): Object[] {
       {
           "EMPLOYEE ID": "1006",
           "EMPLOYEE NAME": "Chistoper",
-          "DATE": "4/12/2021",
+          "DATE": "04-12-2021",
           "WEEKDAY": "Mon",
           "TIME IN": "10:00 AM",
           "TIME OUT": "6:00 PM",
@@ -473,7 +473,7 @@ export function grossPay(): Object[] {
       {
           "EMPLOYEE ID": "1007",
           "EMPLOYEE NAME": "Adrew",
-          "DATE": "4/13/2021",
+          "DATE": "04-13-2021",
           "WEEKDAY": "Tue",
           "TIME IN": "10:00 AM",
           "TIME OUT": "7:00 PM",
@@ -484,7 +484,7 @@ export function grossPay(): Object[] {
       {
           "EMPLOYEE ID": "1004",
           "EMPLOYEE NAME": "John",
-          "DATE": "4/14/2021",
+          "DATE": "04-14-2021",
           "WEEKDAY": "Wed",
           "TIME IN": "8:00 AM",
           "TIME OUT": "4:00 PM",
@@ -495,7 +495,7 @@ export function grossPay(): Object[] {
       {
           "EMPLOYEE ID": "1009",
           "EMPLOYEE NAME": "Bravo",
-          "DATE": "4/14/2021",
+          "DATE": "04-14-2021",
           "WEEKDAY": "Wed",
           "TIME IN": "11:00 AM",
           "TIME OUT": "8:00 PM",
@@ -506,7 +506,7 @@ export function grossPay(): Object[] {
       {
           "EMPLOYEE ID": "1002",
           "EMPLOYEE NAME": "Steve",
-          "DATE": "4/15/2021",
+          "DATE": "04-15-2021",
           "WEEKDAY": "Thu",
           "TIME IN": "9:00 AM",
           "TIME OUT": "8:00 PM",
@@ -644,7 +644,7 @@ export function hyperlinkStock(): Object[] {
 export function formulaData(): Object[] {
   return [
     {
-        "Date": "8-1-2019",
+        "Date": "08-01-2019",
         "Open": "2625.75",
         "Close": "2640.75",
         "High (+)": "2642.75",
@@ -652,7 +652,7 @@ export function formulaData(): Object[] {
         "Profit": "=C2-B2"
     },
     {
-        "Date": "8-2-2019",
+        "Date": "08-02-2019",
         "Open": "2640.75",
         "Close": "2638.75",
         "High (+)": "2640.75",
@@ -660,7 +660,7 @@ export function formulaData(): Object[] {
         "Profit": "=C3-B3"
     },
     {
-        "Date": "8-3-2019",
+        "Date": "08-03-2019",
         "Open": "2638.75",
         "Close": "2697.65",
         "High (+)": "2698.25",
@@ -668,7 +668,7 @@ export function formulaData(): Object[] {
         "Profit": "=C4-B4"
     },
     {
-        "Date": "8-4-2019",
+        "Date": "08-04-2019",
         "Open": "2697.65",
         "Close": "2700.25",
         "High (+)": "2700.25",
@@ -676,7 +676,7 @@ export function formulaData(): Object[] {
         "Profit": "=C5-B5"
     },
     {
-        "Date": "8-5-2019",
+        "Date": "08-05-2019",
         "Open": "2700.25",
         "Close": "2730.25",
         "High (+)": "2732.25",
@@ -684,7 +684,7 @@ export function formulaData(): Object[] {
         "Profit": "=C6-B6"
     },
     {
-        "Date": "8-6-2019",
+        "Date": "08-06-2019",
         "Open": "2730.25",
         "Close": "2730.25",
         "High (+)": "2730.25",
@@ -692,7 +692,7 @@ export function formulaData(): Object[] {
         "Profit": "=C7-B7"
     },
     {
-        "Date": "8-7-2019",
+        "Date": "08-07-2019",
         "Open": "2730.25",
         "Close": "2778.75",
         "High (+)": "2780.25",
@@ -700,7 +700,7 @@ export function formulaData(): Object[] {
         "Profit": "=C8-B8"
     },
     {
-        "Date": "8-8-2019",
+        "Date": "08-08-2019",
         "Open": "2778.75",
         "Close": "2800.67",
         "High (+)": "2802.27",
@@ -708,7 +708,7 @@ export function formulaData(): Object[] {
         "Profit": "=C9-B9"
     },
     {
-        "Date": "8-9-2019",
+        "Date": "08-09-2019",
         "Open": "2800.67",
         "Close": "2840.80",
         "High (+)": "2848.78",
@@ -716,7 +716,7 @@ export function formulaData(): Object[] {
         "Profit": "=C10-B10"
     },
     {
-        "Date": "8-10-2019",
+        "Date": "08-10-2019",
         "Open": "2840.80",
         "Close": "2863.80",
         "High (+)": "2863.30",
@@ -913,8 +913,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Liuka Tewkesberry",
        "Gender":"Female",
        "Department":"Human Resources",
-       "Date of Joining":"08/22/2018",
-       "Salary":"$32940.53",
+       "Date of Joining":"08-22-2018",
+       "Salary":"32940.53",
        "City":"Valencia"
     },
     {
@@ -922,8 +922,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Maurine McGreal",
        "Gender":"Female",
        "Department":"Accounting",
-       "Date of Joining":"02/19/2016",
-       "Salary":"$12769.67",
+       "Date of Joining":"02-19-2016",
+       "Salary":"12769.67",
        "City":"Thị Xã Lai Châu"
     },
     {
@@ -931,8 +931,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Abby Marcum",
        "Gender":"Male",
        "Department":"Legal",
-       "Date of Joining":"03/12/2019",
-       "Salary":"$18565.98",
+       "Date of Joining":"03-12-2019",
+       "Salary":"18565.98",
        "City":"Lachute"
     },
     {
@@ -940,8 +940,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Colet Dreghorn",
        "Gender":"Male",
        "Department":"Marketing",
-       "Date of Joining":"11/02/2018",
-       "Salary":"$36075.62",
+       "Date of Joining":"11-02-2018",
+       "Salary":"36075.62",
        "City":"Cincinnati"
     },
     {
@@ -949,8 +949,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Morey Ilyin",
        "Gender":"Male",
        "Department":"Sales",
-       "Date of Joining":"07/13/2018",
-       "Salary":"$19845.66",
+       "Date of Joining":"07-13-2018",
+       "Salary":"19845.66",
        "City":"Liudu"
     },
     {
@@ -958,8 +958,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Justus Eilert",
        "Gender":"Male",
        "Department":"Services",
-       "Date of Joining":"08/30/2016",
-       "Salary":"$25054.73",
+       "Date of Joining":"08-30-2016",
+       "Salary":"25054.73",
        "City":"Kitamilo"
     },
     {
@@ -967,8 +967,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Lorelle Whyberd",
        "Gender":"Female",
        "Department":"Marketing",
-       "Date of Joining":"09/16/2010",
-       "Salary":"$21552.49",
+       "Date of Joining":"09-16-2010",
+       "Salary":"21552.49",
        "City":"Qandala"
     },
     {
@@ -976,8 +976,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Hans Sponer",
        "Gender":"Male",
        "Department":"Legal",
-       "Date of Joining":"11/25/2019",
-       "Salary":"$12751.78",
+       "Date of Joining":"11-25-2019",
+       "Salary":"12751.78",
        "City":"Parakou"
     },
     {
@@ -985,8 +985,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Esme Beaglehole",
        "Gender":"Female",
        "Department":"Engineering",
-       "Date of Joining":"11/24/2017",
-       "Salary":"$34244.64",
+       "Date of Joining":"11-24-2017",
+       "Salary":"34244.64",
        "City":"Saint-Ambroise"
     },
     {
@@ -994,8 +994,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Fernandina Grindrod",
        "Gender":"Female",
        "Department":"Marketing",
-       "Date of Joining":"01/21/2019",
-       "Salary":"$25722.37",
+       "Date of Joining":"01-21-2019",
+       "Salary":"25722.37",
        "City":"Huashi"
     },
     {
@@ -1003,8 +1003,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Glen Lambrechts",
        "Gender":"Male",
        "Department":"Human Resources",
-       "Date of Joining":"09/25/2019",
-       "Salary":"$47190.81",
+       "Date of Joining":"09-25-2019",
+       "Salary":"47190.81",
        "City":"Krajan Nglinggis"
     },
     {
@@ -1012,8 +1012,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Judy Crick",
        "Gender":"Female",
        "Department":"Human Resources",
-       "Date of Joining":"10/22/2013",
-       "Salary":"$14168.85",
+       "Date of Joining":"10-22-2013",
+       "Salary":"14168.85",
        "City":"Jianchang"
     },
     {
@@ -1021,8 +1021,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Megen McSherry",
        "Gender":"Female",
        "Department":"Engineering",
-       "Date of Joining":"10/19/2016",
-       "Salary":"$49673.94",
+       "Date of Joining":"10-19-2016",
+       "Salary":"49673.94",
        "City":"Talisayan"
     },
     {
@@ -1030,8 +1030,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Aloysius Blunden",
        "Gender":"Male",
        "Department":"Services",
-       "Date of Joining":"06/16/2010",
-       "Salary":"$23992.84",
+       "Date of Joining":"06-16-2010",
+       "Salary":"23992.84",
        "City":"Italó"
     },
     {
@@ -1039,8 +1039,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Colene Game",
        "Gender":"Female",
        "Department":"Training",
-       "Date of Joining":"10/18/2015",
-       "Salary":"$21768.47",
+       "Date of Joining":"10-18-2015",
+       "Salary":"21768.47",
        "City":"Podbrdo"
     },
     {
@@ -1048,8 +1048,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Bruce Pook",
        "Gender":"Male",
        "Department":"Services",
-       "Date of Joining":"08/15/2019",
-       "Salary":"$46169.78",
+       "Date of Joining":"08-15-2019",
+       "Salary":"46169.78",
        "City":"Drawsko"
     },
     {
@@ -1057,8 +1057,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Reggie Gethins",
        "Gender":"Female",
        "Department":"Training",
-       "Date of Joining":"05/03/2014",
-       "Salary":"$48793.33",
+       "Date of Joining":"05-03-2014",
+       "Salary":"48793.33",
        "City":"Baiqiao"
     },
     {
@@ -1066,8 +1066,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Happy Terrell",
        "Gender":"Female",
        "Department":"Product Management",
-       "Date of Joining":"01/07/2010",
-       "Salary":"$11971.89",
+       "Date of Joining":"01-07-2010",
+       "Salary":"11971.89",
        "City":"Bandar-e Lengeh"
     },
     {
@@ -1075,8 +1075,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Dermot Swithenby",
        "Gender":"Male",
        "Department":"Business Development",
-       "Date of Joining":"05/31/2017",
-       "Salary":"$14627.52",
+       "Date of Joining":"05-31-2017",
+       "Salary":"14627.52",
        "City":"Da’an"
     },
     {
@@ -1084,8 +1084,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Dusty Naulls",
        "Gender":"Female",
        "Department":"Engineering",
-       "Date of Joining":"05/17/2012",
-       "Salary":"$49569.60",
+       "Date of Joining":"05-17-2012",
+       "Salary":"49569.60",
        "City":"Kelowna"
     },
     {
@@ -1093,8 +1093,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Boycey Gemlbett",
        "Gender":"Male",
        "Department":"Accounting",
-       "Date of Joining":"08/19/2014",
-       "Salary":"$11400.60",
+       "Date of Joining":"08-19-2014",
+       "Salary":"11400.60",
        "City":"Quezon"
     },
     {
@@ -1102,8 +1102,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Gregoire Craik",
        "Gender":"Male",
        "Department":"Support",
-       "Date of Joining":"01/07/2015",
-       "Salary":"$28536.96",
+       "Date of Joining":"01-07-2015",
+       "Salary":"28536.96",
        "City":"Sacramento"
     },
     {
@@ -1111,8 +1111,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Paquito Keetch",
        "Gender":"Male",
        "Department":"Legal",
-       "Date of Joining":"07/20/2017",
-       "Salary":"$10948.94",
+       "Date of Joining":"07-20-2017",
+       "Salary":"10948.94",
        "City":"Xieshui"
     },
     {
@@ -1120,8 +1120,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Siouxie Lippini",
        "Gender":"Female",
        "Department":"Engineering",
-       "Date of Joining":"02/08/2012",
-       "Salary":"$42688.51",
+       "Date of Joining":"02-08-2012",
+       "Salary":"42688.51",
        "City":"Bigoudine"
     },
     {
@@ -1129,8 +1129,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Valerye Russell",
        "Gender":"Female",
        "Department":"Services",
-       "Date of Joining":"07/17/2012",
-       "Salary":"$32651.96",
+       "Date of Joining":"07-17-2012",
+       "Salary":"32651.96",
        "City":"Pichilemu"
     },
     {
@@ -1138,8 +1138,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Patience Ludman",
        "Gender":"Female",
        "Department":"Training",
-       "Date of Joining":"09/25/2018",
-       "Salary":"$17589.61",
+       "Date of Joining":"09-25-2018",
+       "Salary":"17589.61",
        "City":"Binjiang"
     },
     {
@@ -1147,8 +1147,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Helene Borsay",
        "Gender":"Female",
        "Department":"Services",
-       "Date of Joining":"01/19/2018",
-       "Salary":"$34017.42",
+       "Date of Joining":"01-19-2018",
+       "Salary":"34017.42",
        "City":"Chengkan"
     },
     {
@@ -1156,8 +1156,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Garrek Fatharly",
        "Gender":"Male",
        "Department":"Business Development",
-       "Date of Joining":"08/22/2018",
-       "Salary":"$49775.81",
+       "Date of Joining":"08-22-2018",
+       "Salary":"49775.81",
        "City":"San Antonio Oeste"
     },
     {
@@ -1165,8 +1165,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Fulton Culverhouse",
        "Gender":"Male",
        "Department":"Product Management",
-       "Date of Joining":"01/11/2014",
-       "Salary":"$36633.61",
+       "Date of Joining":"01-11-2014",
+       "Salary":"36633.61",
        "City":"Borlänge"
     },
     {
@@ -1174,8 +1174,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Lavena Yandle",
        "Gender":"Female",
        "Department":"Accounting",
-       "Date of Joining":"08/31/2016",
-       "Salary":"$25835.58",
+       "Date of Joining":"08-31-2016",
+       "Salary":"25835.58",
        "City":"Borino"
     },
     {
@@ -1183,8 +1183,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Sophia Cowwell",
        "Gender":"Female",
        "Department":"Product Management",
-       "Date of Joining":"08/06/2011",
-       "Salary":"$46836.53",
+       "Date of Joining":"08-06-2011",
+       "Salary":"46836.53",
        "City":"Fécamp"
     },
     {
@@ -1192,8 +1192,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Dode Bowmen",
        "Gender":"Female",
        "Department":"Sales",
-       "Date of Joining":"02/21/2010",
-       "Salary":"$27575.10",
+       "Date of Joining":"02-21-2010",
+       "Salary":"27575.10",
        "City":"Karangwaru"
     },
     {
@@ -1201,8 +1201,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Peggi Grishelyov",
        "Gender":"Female",
        "Department":"Accounting",
-       "Date of Joining":"12/08/2012",
-       "Salary":"$41712.59",
+       "Date of Joining":"12-08-2012",
+       "Salary":"41712.59",
        "City":"San Antonio"
     },
     {
@@ -1210,8 +1210,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Ailsun Porker",
        "Gender":"Female",
        "Department":"Services",
-       "Date of Joining":"11/23/2016",
-       "Salary":"$46533.06",
+       "Date of Joining":"11-23-2016",
+       "Salary":"46533.06",
        "City":"Mayisyan"
     },
     {
@@ -1219,8 +1219,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Licha McKee",
        "Gender":"Female",
        "Department":"Research and Development",
-       "Date of Joining":"08/29/2018",
-       "Salary":"$31008.69",
+       "Date of Joining":"08-29-2018",
+       "Salary":"31008.69",
        "City":"Wenqiao"
     },
     {
@@ -1228,8 +1228,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Ives Tunn",
        "Gender":"Male",
        "Department":"Product Management",
-       "Date of Joining":"08/31/2018",
-       "Salary":"$27791.30",
+       "Date of Joining":"08-31-2018",
+       "Salary":"27791.30",
        "City":"Tabia"
     },
     {
@@ -1237,8 +1237,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Cathy Bugdale",
        "Gender":"Female",
        "Department":"Training",
-       "Date of Joining":"04/23/2016",
-       "Salary":"$31759.16",
+       "Date of Joining":"04-23-2016",
+       "Salary":"31759.16",
        "City":"Azul"
     },
     {
@@ -1246,8 +1246,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Waverley Gingedale",
        "Gender":"Male",
        "Department":"Accounting",
-       "Date of Joining":"09/04/2011",
-       "Salary":"$27893.84",
+       "Date of Joining":"09-04-2011",
+       "Salary":"27893.84",
        "City":"Frýdek-Místek"
     },
     {
@@ -1255,8 +1255,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Cooper Capes",
        "Gender":"Male",
        "Department":"Sales",
-       "Date of Joining":"01/02/2016",
-       "Salary":"$26407.41",
+       "Date of Joining":"01-02-2016",
+       "Salary":"26407.41",
        "City":"Ash Sharyah"
     },
     {
@@ -1264,8 +1264,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Shayna Potebury",
        "Gender":"Female",
        "Department":"Human Resources",
-       "Date of Joining":"10/23/2012",
-       "Salary":"$35332.31",
+       "Date of Joining":"10-23-2012",
+       "Salary":"35332.31",
        "City":"Baluk"
     },
     {
@@ -1273,8 +1273,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Doro Gaitone",
        "Gender":"Female",
        "Department":"Sales",
-       "Date of Joining":"02/04/2012",
-       "Salary":"$22904.55",
+       "Date of Joining":"02-04-2012",
+       "Salary":"22904.55",
        "City":"Wulingyuan"
     },
     {
@@ -1282,8 +1282,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Chantal Ventam",
        "Gender":"Female",
        "Department":"Training",
-       "Date of Joining":"07/02/2014",
-       "Salary":"$25515.12",
+       "Date of Joining":"07-02-2014",
+       "Salary":"25515.12",
        "City":"Xinshui"
     },
     {
@@ -1291,8 +1291,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Tobie Brodeur",
        "Gender":"Male",
        "Department":"Training",
-       "Date of Joining":"08/11/2015",
-       "Salary":"$24508.84",
+       "Date of Joining":"08-11-2015",
+       "Salary":"24508.84",
        "City":"Xin’an"
     },
     {
@@ -1300,8 +1300,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Feodor MacDermid",
        "Gender":"Male",
        "Department":"Human Resources",
-       "Date of Joining":"06/02/2019",
-       "Salary":"$14844.80",
+       "Date of Joining":"06-02-2019",
+       "Salary":"14844.80",
        "City":"Rantauambacang"
     },
     {
@@ -1309,8 +1309,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Allyce Decker",
        "Gender":"Female",
        "Department":"Support",
-       "Date of Joining":"04/14/2017",
-       "Salary":"$39356.65",
+       "Date of Joining":"04-14-2017",
+       "Salary":"39356.65",
        "City":"Saint Paul"
     },
     {
@@ -1318,8 +1318,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Ricard Connock",
        "Gender":"Male",
        "Department":"Product Management",
-       "Date of Joining":"11/25/2010",
-       "Salary":"$27421.61",
+       "Date of Joining":"11-25-2010",
+       "Salary":"27421.61",
        "City":"Lokorae"
     },
     {
@@ -1327,8 +1327,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Minerva Greenham",
        "Gender":"Female",
        "Department":"Support",
-       "Date of Joining":"05/23/2014",
-       "Salary":"$48300.27",
+       "Date of Joining":"05-23-2014",
+       "Salary":"48300.27",
        "City":"Pakemitan"
     },
     {
@@ -1336,8 +1336,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Cyb Gallant",
        "Gender":"Female",
        "Department":"Accounting",
-       "Date of Joining":"11/25/2010",
-       "Salary":"$36518.72",
+       "Date of Joining":"11-25-2010",
+       "Salary":"36518.72",
        "City":"Berëzovyy"
     },
     {
@@ -1345,8 +1345,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Harman Free",
        "Gender":"Male",
        "Department":"Human Resources",
-       "Date of Joining":"07/15/2012",
-       "Salary":"$35939.87",
+       "Date of Joining":"07-15-2012",
+       "Salary":"35939.87",
        "City":"Watodei"
     },
     {
@@ -1354,8 +1354,8 @@ export function sortAndFilterData(): object[] {
        "Employee Name":"Kylie Phettis",
        "Gender":"Female",
        "Department":"Marketing",
-       "Date of Joining":"03/18/2011",
-       "Salary":"$26038.56",
+       "Date of Joining":"03-18-2011",
+       "Salary":"26038.56",
        "City":"Huangzhai"
     }];
 }
@@ -1369,7 +1369,7 @@ export function conditionalFormatData(): object[] {
       "Purchase Price": "169.50",
       "Selling Price": "172.00",
       "Profit": "=E3-D3",
-      "Last Updated": "5/25/2019",
+      "Last Updated": "05-25-2019",
       "Rating": "4.5"
   },
   {
@@ -1379,7 +1379,7 @@ export function conditionalFormatData(): object[] {
       "Purchase Price": "21.80",
       "Selling Price": "23.00",
       "Profit": "=E4-D4",
-      "Last Updated": "7/28/2019",
+      "Last Updated": "07-28-2019",
       "Rating": "4.0"
   },
   {
@@ -1389,7 +1389,7 @@ export function conditionalFormatData(): object[] {
       "Purchase Price": "26.80",
       "Selling Price": "29.00",
       "Profit": "=E5-D5",
-      "Last Updated": "3/30/2020",
+      "Last Updated": "03-30-2020",
       "Rating": "4.25"
   },
   {
@@ -1399,7 +1399,7 @@ export function conditionalFormatData(): object[] {
       "Purchase Price": "23.50",
       "Selling Price": "25.00",
       "Profit": "=E6-D6",
-      "Last Updated": "8/20/2019",
+      "Last Updated": "08-20-2019",
       "Rating": "3.5"
   },
   {
@@ -1409,7 +1409,7 @@ export function conditionalFormatData(): object[] {
       "Purchase Price": "56.50",
       "Selling Price": "59.00",
       "Profit": "=E7-D7",
-      "Last Updated": "2/2/2020",
+      "Last Updated": "02-02-2020",
       "Rating": "4.5"
   },
   {
@@ -1419,7 +1419,7 @@ export function conditionalFormatData(): object[] {
       "Purchase Price": "22.50",
       "Selling Price": "25.00",
       "Profit": "=E8-D8",
-      "Last Updated": "11/11/2019",
+      "Last Updated": "11-11-2019",
       "Rating": "5.0"
   },
   {
@@ -1429,7 +1429,7 @@ export function conditionalFormatData(): object[] {
       "Purchase Price": "175.00",
       "Selling Price": "177.00",
       "Profit": "=E9-D9",
-      "Last Updated": "4/13/2019",
+      "Last Updated": "04-13-2019",
       "Rating": "4.75"
   },
   {
@@ -1439,7 +1439,7 @@ export function conditionalFormatData(): object[] {
       "Purchase Price": "32.00",
       "Selling Price": "35.00",
       "Profit": "=E10-D10",
-      "Last Updated": "2/14/2020",
+      "Last Updated": "02-14-2020",
       "Rating": "4.4"
   },
   {
@@ -1449,7 +1449,7 @@ export function conditionalFormatData(): object[] {
       "Purchase Price": "18.90",
       "Selling Price": "19.00",
       "Profit": "=E11-D11",
-      "Last Updated": "6/10/2019",
+      "Last Updated": "06-10-2019",
       "Rating": "3.9"
   },
   {
@@ -1459,7 +1459,7 @@ export function conditionalFormatData(): object[] {
       "Purchase Price": "33.90",
       "Selling Price": "35.00",
       "Profit": "=E12-D12",
-      "Last Updated": "5/28/2019",
+      "Last Updated": "05-28-2019",
       "Rating": "3.75"
   },
   {
@@ -1469,7 +1469,7 @@ export function conditionalFormatData(): object[] {
       "Purchase Price": "153.50",
       "Selling Price": "155.00",
       "Profit": "=E13-D13",
-      "Last Updated": "12/18/2019",
+      "Last Updated": "12-18-2019",
       "Rating": "3.9"
   },
   {
@@ -1479,7 +1479,7 @@ export function conditionalFormatData(): object[] {
       "Purchase Price": "201.25",
       "Selling Price": "204.00",
       "Profit": "=E14-D14",
-      "Last Updated": "3/13/2020",
+      "Last Updated": "03-13-2020",
       "Rating": "4.35"
   },
   {
@@ -1489,7 +1489,7 @@ export function conditionalFormatData(): object[] {
       "Purchase Price": "182.25",
       "Selling Price": "185.00",
       "Profit": "=E15-D15",
-      "Last Updated": "8/26/2019",
+      "Last Updated": "08-26-2019",
       "Rating": "4.0"
   },
   {
@@ -1499,7 +1499,7 @@ export function conditionalFormatData(): object[] {
       "Purchase Price": "34.80",
       "Selling Price": "38.00",
       "Profit": "=E16-D16",
-      "Last Updated": "1/12/2020",
+      "Last Updated": "01-12-2020",
       "Rating": "4.2"
   },
   {
@@ -1509,7 +1509,7 @@ export function conditionalFormatData(): object[] {
       "Purchase Price": "104.800",
       "Selling Price": "108.00",
       "Profit": "=E17-D17",
-      "Last Updated": "4/12/2019",
+      "Last Updated": "04-12-2019",
       "Rating": "3.25"
   },
   {
@@ -1519,7 +1519,7 @@ export function conditionalFormatData(): object[] {
       "Purchase Price": "19.00",
       "Selling Price": "21.00",
       "Profit": "=E18-D18",
-      "Last Updated": "11/22/2019",
+      "Last Updated": "11-22-2019",
       "Rating": "3.85"
   }];
 }
@@ -2019,7 +2019,7 @@ export function printData(): object[] {
         "Mail ID": "sarah.johnson@example.com",
         "Model": "Taurus",
         "No. of cars": 2,
-        "Delivery Date": "7/11/2020",
+        "Delivery Date": "07-11-2020",
         "Amount": "8529.22"
     },
     {
@@ -2027,7 +2027,7 @@ export function printData(): object[] {
         "Mail ID": "michael.smith@example.com",
         "Model": "Sparrow",
         "No. of cars": 1,
-        "Delivery Date": "7/13/2021",
+        "Delivery Date": "07-13-2021",
         "Amount": "17866.19"
     },
     {
@@ -2035,7 +2035,7 @@ export function printData(): object[] {
         "Mail ID": "emily.davis@example.com",
         "Model": "Grand Cherokee",
         "No. of cars": 1,
-        "Delivery Date": "9/4/2020",
+        "Delivery Date": "09-04-2020",
         "Amount": "13853.09"
     },
     {
@@ -2043,7 +2043,7 @@ export function printData(): object[] {
         "Mail ID": "john.anderson@example.com",
         "Model": "GTO",
         "No. of cars": 3,
-        "Delivery Date": "12/15/2022",
+        "Delivery Date": "12-15-2022",
         "Amount": "2338.74"
     },
     {
@@ -2051,7 +2051,7 @@ export function printData(): object[] {
         "Mail ID": "jessica.martinez@example.com",
         "Model": "LX",
         "No. of cars": 2,
-        "Delivery Date": "10/8/2019",
+        "Delivery Date": "10-8-2019",
         "Amount": "9578.45"
     },
     {
@@ -2059,7 +2059,7 @@ export function printData(): object[] {
         "Mail ID": "daniel.thompson@example.com",
         "Model": "Catera",
         "No. of cars": 1,
-        "Delivery Date": "7/1/2022",
+        "Delivery Date": "07-01-2022",
         "Amount": "19141.62"
     },
     {
@@ -2067,7 +2067,7 @@ export function printData(): object[] {
         "Mail ID": "samantha.harris@example.com",
         "Model": "Series 7",
         "No. of cars": 3,
-        "Delivery Date": "12/20/2020",
+        "Delivery Date": "12-20-2020",
         "Amount": "6543.30"
     },
     {
@@ -2075,7 +2075,7 @@ export function printData(): object[] {
         "Mail ID": "christopher.wilson@example.com",
         "Model": "Corvette",
         "No. of cars": 2,
-        "Delivery Date": "11/24/2019",
+        "Delivery Date": "11-24-2019",
         "Amount": "13035.06"
     },
     {
@@ -2083,7 +2083,7 @@ export function printData(): object[] {
         "Mail ID": "ashley.brown@example.com",
         "Model": "Regal",
         "No. of cars": 1,
-        "Delivery Date": "5/12/2019",
+        "Delivery Date": "05-12-2019",
         "Amount": "18488.80"
     },
     {
@@ -2091,7 +2091,7 @@ export function printData(): object[] {
         "Mail ID": "matthew.taylor@example.com",
         "Model": "S4",
         "No. of cars": 2,
-        "Delivery Date": "12/30/2019",
+        "Delivery Date": "12-30-2019",
         "Amount": "12317.04"
     },
     {
@@ -2099,7 +2099,7 @@ export function printData(): object[] {
         "Mail ID": "olivia.garcia@example.com",
         "Model": "TL",
         "No. of cars": 3,
-        "Delivery Date": "12/18/2023",
+        "Delivery Date": "12-18-2023",
         "Amount": "6230.13"
     },
     {
@@ -2107,7 +2107,7 @@ export function printData(): object[] {
         "Mail ID": "david.hernandez@example.com",
         "Model": "Club Wagon",
         "No. of cars": 2,
-        "Delivery Date": "2/2/2020",
+        "Delivery Date": "02-02-2020",
         "Amount": "9709.49"
     },
     {
@@ -2115,7 +2115,7 @@ export function printData(): object[] {
         "Mail ID": "emma.moore@example.com",
         "Model": "V8 Vantage",
         "No. of cars": 2,
-        "Delivery Date": "11/19/2019",
+        "Delivery Date": "11-19-2019",
         "Amount": "9766.10"
     },
     {
@@ -2123,7 +2123,7 @@ export function printData(): object[] {
         "Mail ID": "andrew.lewis@example.com",
         "Model": "Caravan",
         "No. of cars": 3,
-        "Delivery Date": "2/8/2019",
+        "Delivery Date": "02-08-2019",
         "Amount": "7685.49"
     },
     {
@@ -2131,7 +2131,7 @@ export function printData(): object[] {
         "Mail ID": "elizabeth.clark@example.com",
         "Model": "Bravada",
         "No. of cars": 1,
-        "Delivery Date": "8/5/2021",
+        "Delivery Date": "08-05-2021",
         "Amount": "18012.45"
     },
     {
@@ -2139,7 +2139,7 @@ export function printData(): object[] {
         "Mail ID": "james.walker@example.com",
         "Model": "Colorado",
         "No. of cars": 3,
-        "Delivery Date": "5/30/2021",
+        "Delivery Date": "05-30-2021",
         "Amount": "2785.49"
     },
     {
@@ -2147,7 +2147,7 @@ export function printData(): object[] {
         "Mail ID": "ava.rodriguez@example.com",
         "Model": "Runner",
         "No. of cars": 3,
-        "Delivery Date": "12/10/2021",
+        "Delivery Date": "12-10-2021",
         "Amount": "9967.74"
     },
     {
@@ -2155,7 +2155,7 @@ export function printData(): object[] {
         "Mail ID": "ryan.white@example.com",
         "Model": "TSX",
         "No. of cars": 3,
-        "Delivery Date": "10/23/2019",
+        "Delivery Date": "10-23-2019",
         "Amount": "5584.33"
     },
     {
@@ -2163,7 +2163,7 @@ export function printData(): object[] {
         "Mail ID": "madison.lee@example.com",
         "Model": "Pathfinder",
         "No. of cars": 2,
-        "Delivery Date": "12/24/2020",
+        "Delivery Date": "12-24-2020",
         "Amount": "5286.53"
     },
     {
@@ -2171,7 +2171,7 @@ export function printData(): object[] {
         "Mail ID": "nicholas.martin@example.com",
         "Model": "Charger",
         "No. of cars": 2,
-        "Delivery Date": "11/20/2023",
+        "Delivery Date": "11-20-2023",
         "Amount": "13511.91"
     },
     {
@@ -2179,7 +2179,7 @@ export function printData(): object[] {
         "Mail ID": "sophia.hall@example.com",
         "Model": "Bonneville",
         "No. of cars": 2,
-        "Delivery Date": "11/19/2023",
+        "Delivery Date": "11-19-2023",
         "Amount": "6498.19"
     },
     {
@@ -2187,7 +2187,7 @@ export function printData(): object[] {
         "Mail ID": "joshua.young@example.com",
         "Model": "B-Series",
         "No. of cars": 2,
-        "Delivery Date": "10/30/2019",
+        "Delivery Date": "10-30-2019",
         "Amount": "10359.67"
     },
     {
@@ -2195,7 +2195,7 @@ export function printData(): object[] {
         "Mail ID": "isabella.king@example.com",
         "Model": "Voyager",
         "No. of cars": 3,
-        "Delivery Date": "4/6/2023",
+        "Delivery Date": "04-06-2023",
         "Amount": "8118.39"
     },
     {
@@ -2203,7 +2203,7 @@ export function printData(): object[] {
         "Mail ID": "joseph.allen@example.com",
         "Model": "Grand Prix",
         "No. of cars": 1,
-        "Delivery Date": "10/13/2021",
+        "Delivery Date": "10-13-2021",
         "Amount": "10204.37"
     },
     {
@@ -2211,7 +2211,7 @@ export function printData(): object[] {
         "Mail ID": "charlotte.scott@example.com",
         "Model": "Sunbird",
         "No. of cars": 3,
-        "Delivery Date": "10/22/2023",
+        "Delivery Date": "10-22-2023",
         "Amount": "6528.06"
     },
     {
@@ -2219,7 +2219,7 @@ export function printData(): object[] {
         "Mail ID": "william.green@example.com",
         "Model": "Mirage",
         "No. of cars": 2,
-        "Delivery Date": "9/12/2019",
+        "Delivery Date": "09-12-2019",
         "Amount": "5619.25"
     },
     {
@@ -2227,7 +2227,7 @@ export function printData(): object[] {
         "Mail ID": "amelia.adams@example.com",
         "Model": "XK",
         "No. of cars": 1,
-        "Delivery Date": "5/12/2021",
+        "Delivery Date": "05-12-2021",
         "Amount": "5091.43"
     },
     {
@@ -2235,7 +2235,7 @@ export function printData(): object[] {
         "Mail ID": "ethan.carter@example.com",
         "Model": "Accord",
         "No. of cars": 1,
-        "Delivery Date": "9/3/2023",
+        "Delivery Date": "09-03-2023",
         "Amount": "14566.08"
     },
     {
@@ -2243,7 +2243,7 @@ export function printData(): object[] {
         "Mail ID": "mia.turner@example.com",
         "Model": "Range Rover Sport",
         "No. of cars": 2,
-        "Delivery Date": "2/22/2023",
+        "Delivery Date": "02-22-2023",
         "Amount": "5284.87"
     },
     {
@@ -2251,7 +2251,7 @@ export function printData(): object[] {
         "Mail ID": "alexander.baker@example.com",
         "Model": "Runner",
         "No. of cars": 3,
-        "Delivery Date": "12/25/2023",
+        "Delivery Date": "12-25-2023",
         "Amount": "5524.25"
     },
     {
@@ -2259,7 +2259,7 @@ export function printData(): object[] {
         "Mail ID": "chloe.hill@example.com",
         "Model": "TSX",
         "No. of cars": 3,
-        "Delivery Date": "2/25/2023",
+        "Delivery Date": "02-25-2023",
         "Amount": "2543.25"
     },
     {
@@ -2267,7 +2267,7 @@ export function printData(): object[] {
         "Mail ID": "benjamin.nelson@example.com",
         "Model": "Pathfinder",
         "No. of cars": 2,
-        "Delivery Date": "11/19/2023",
+        "Delivery Date": "11-19-2023",
         "Amount": "8524.35"
     },
     {
@@ -2275,7 +2275,7 @@ export function printData(): object[] {
         "Mail ID": "grace.mitchell@example.com",
         "Model": "Charger",
         "No. of cars": 2,
-        "Delivery Date": "10/30/2019",
+        "Delivery Date": "10-30-2019",
         "Amount": "9542.35"
     },
     {
@@ -2283,7 +2283,7 @@ export function printData(): object[] {
         "Mail ID": "jacob.perez@example.com",
         "Model": "Bonneville",
         "No. of cars": 3,
-        "Delivery Date": "4/6/2023",
+        "Delivery Date": "04-06-2023",
         "Amount": "8872.52"
     },
     {
@@ -2291,7 +2291,7 @@ export function printData(): object[] {
         "Mail ID": "avery.roberts@example.com",
         "Model": "B-Series",
         "No. of cars": 1,
-        "Delivery Date": "10/13/2021",
+        "Delivery Date": "10-13-2021",
         "Amount": "12884.52"
     },
     {
@@ -2299,7 +2299,7 @@ export function printData(): object[] {
         "Mail ID": "ethan.thomas@example.com",
         "Model": "Voyager",
         "No. of cars": 1,
-        "Delivery Date": "10/22/2023",
+        "Delivery Date": "10-22-2023",
         "Amount": "19352.24"
     },
     {
@@ -2307,7 +2307,7 @@ export function printData(): object[] {
         "Mail ID": "lily.phillips@example.com",
         "Model": "Grand Prix",
         "No. of cars": 2,
-        "Delivery Date": "9/12/2019",
+        "Delivery Date": "09-12-2019",
         "Amount": "8546.24"
     },
     {
@@ -2315,7 +2315,7 @@ export function printData(): object[] {
         "Mail ID": "samuel.davis@example.com",
         "Model": "Sunbird",
         "No. of cars": 3,
-        "Delivery Date": "2/8/2019",
+        "Delivery Date": "02-08-2019",
         "Amount": "8844.25"
     },
     {
@@ -2323,7 +2323,7 @@ export function printData(): object[] {
         "Mail ID": "zoey.campbell@example.com",
         "Model": "Mirage",
         "No. of cars": 2,
-        "Delivery Date": "8/5/2021",
+        "Delivery Date": "08-05-2021",
         "Amount": "9635.25"
     },
     {
@@ -2331,7 +2331,7 @@ export function printData(): object[] {
         "Mail ID": "daniel.cooper@example.com",
         "Model": "XK",
         "No. of cars": 3,
-        "Delivery Date": "5/30/2021",
+        "Delivery Date": "05-30-2021",
         "Amount": "7854.24"
     },
     {
@@ -2339,7 +2339,7 @@ export function printData(): object[] {
         "Mail ID": "madeline.collins@example.com",
         "Model": "Accord",
         "No. of cars": 1,
-        "Delivery Date": "12/10/2021",
+        "Delivery Date": "12-10-2021",
         "Amount": "14297.36"
     },
     {
@@ -2347,7 +2347,7 @@ export function printData(): object[] {
         "Mail ID": "nathan.edwards@example.com",
         "Model": "Range Rover Sport",
         "No. of cars": 2,
-        "Delivery Date": "12/24/2020",
+        "Delivery Date": "12-24-2020",
         "Amount": "8745.35"
     },
     {
@@ -2355,7 +2355,7 @@ export function printData(): object[] {
         "Mail ID": "evelyn.stewart@example.com",
         "Model": "Runner",
         "No. of cars": 1,
-        "Delivery Date": "11/20/2023",
+        "Delivery Date": "11-20-2023",
         "Amount": "17825.52"
     },
     {
@@ -2363,7 +2363,7 @@ export function printData(): object[] {
         "Mail ID": "alexander.rivera@example.com",
         "Model": "TSX",
         "No. of cars": 1,
-        "Delivery Date": "12/20/2020",
+        "Delivery Date": "12-20-2020",
         "Amount": "15994.34"
     },
     {
@@ -2371,7 +2371,7 @@ export function printData(): object[] {
         "Mail ID": "sophia.henderson@example.com",
         "Model": "Pathfinder",
         "No. of cars": 2,
-        "Delivery Date": "8/30/2019",
+        "Delivery Date": "08-30-2019",
         "Amount": "9154.34"
     },
     {
@@ -2379,7 +2379,7 @@ export function printData(): object[] {
         "Mail ID": "isaac.morris@example.com",
         "Model": "Charger",
         "No. of cars": 3,
-        "Delivery Date": "12/13/2023",
+        "Delivery Date": "12-13-2023",
         "Amount": "13082.34"
     },
     {
@@ -2387,7 +2387,7 @@ export function printData(): object[] {
         "Mail ID": "claire.rogers@example.com",
         "Model": "Bonneville",
         "No. of cars": 3,
-        "Delivery Date": "10/1/2019",
+        "Delivery Date": "10-1-2019",
         "Amount": "7963.35"
     },
     {
@@ -2395,7 +2395,7 @@ export function printData(): object[] {
         "Mail ID": "luke.flores@example.com",
         "Model": "B-Series",
         "No. of cars": 3,
-        "Delivery Date": "10/31/2023",
+        "Delivery Date": "10-31-2023",
         "Amount": "6734.35"
     },
     {
@@ -2403,7 +2403,7 @@ export function printData(): object[] {
         "Mail ID": "aubrey.long@example.com",
         "Model": "Voyager",
         "No. of cars": 1,
-        "Delivery Date": "8/21/2019",
+        "Delivery Date": "08-21-2019",
         "Amount": "12864.35"
     },
     {
@@ -2411,7 +2411,7 @@ export function printData(): object[] {
         "Mail ID": "julian.coleman@example.com",
         "Model": "Grand Prix",
         "No. of cars": 2,
-        "Delivery Date": "7/7/2021",
+        "Delivery Date": "07-07-2021",
         "Amount": "7985.36"
     },
     {
@@ -2419,7 +2419,7 @@ export function printData(): object[] {
         "Mail ID": "leah.reed@example.com",
         "Model": "Sunbird",
         "No. of cars": 1,
-        "Delivery Date": "2/3/2022",
+        "Delivery Date": "02-03-2022",
         "Amount": "19245.36"
     },
     {
@@ -2427,7 +2427,7 @@ export function printData(): object[] {
         "Mail ID": "gabriel.bell@example.com",
         "Model": "Mirage",
         "No. of cars": 3,
-        "Delivery Date": "1/23/2021",
+        "Delivery Date": "01-23-2021",
         "Amount": "7835.36"
     },
     {
@@ -2435,7 +2435,7 @@ export function printData(): object[] {
         "Mail ID": "natalie.ward@example.com",
         "Model": "XK",
         "No. of cars": 1,
-        "Delivery Date": "8/6/2020",
+        "Delivery Date": "08-06-2020",
         "Amount": "16324.35"
     },
     {
@@ -2443,7 +2443,7 @@ export function printData(): object[] {
         "Mail ID": "lucas.brooks@example.com",
         "Model": "Accord",
         "No. of cars": 2,
-        "Delivery Date": "11/1/2019",
+        "Delivery Date": "11-01-2019",
         "Amount": "8845.34"
     },
     {
@@ -2451,7 +2451,7 @@ export function printData(): object[] {
         "Mail ID": "hailey.mitchell@example.com",
         "Model": "Range Rover Sport",
         "No. of cars": 1,
-        "Delivery Date": "8/17/2023",
+        "Delivery Date": "08-17-2023",
         "Amount": "12684.35"
     },
     {
@@ -2459,7 +2459,7 @@ export function printData(): object[] {
         "Mail ID": "jackson.ward@example.com",
         "Model": "Runner",
         "No. of cars": 1,
-        "Delivery Date": "3/3/2019",
+        "Delivery Date": "03-03-2019",
         "Amount": "15093.36"
     }];
 }

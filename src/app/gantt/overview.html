@@ -3,61 +3,323 @@
         product towards its release and make it easier to monitor the scheduling of the dependent items.</p>
 </div>
 <div class="control-section">
-    <ejs-gantt id="overviewSample" #gantt height="430px" [dataSource]="data" [taskFields]="taskSettings"
-        [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [treeColumnIndex]="1" height="450px"
-        width="100%" [allowResizing]="true" [allowSelection]="true" [highlightWeekends]="true"
-        [gridLines]="gridLines" showColumnMenu=true [projectStartDate]="projectStartDate" [taskbarHeight]="24" [rowHeight]="36"
-        [projectEndDate]="projectEndDate" [eventMarkers]="eventMarkers" [toolbar]="toolbar" [allowFiltering]="true"
-        [resourceFields]="resourceFields" [resources]="resources" [allowSorting]="true" [allowResizing]="true"
-        [splitterSettings]="splitterSettings" (load)="load()">
-
-        <e-columns>
-            <e-column field='TaskId' headerText='Task Id' width='180' [visible]='false'></e-column>
-            <e-column field='TaskName' headerText='Product Release' width='180'></e-column>
-            <e-column field='resources' headerText='Assignee' [allowSorting]='false' width='140'>
-                <ng-template #template let-data>
-                    <div class="image" *ngIf=data.ganttProperties.resourceNames>
-                        <img src="https://ej2.syncfusion.com/angular/demos/assets/gantt/images/{{data.ganttProperties.resourceNames}}.png"
-                            style="height:25px;width:25px" />
-                        <div style="display:inline-block;width:100%;position:relative;left:5px;">
-                            {{data.ganttProperties.resourceNames}}</div>
-                    </div>
-                </ng-template>
-            </e-column>
-            <e-column field='Status' headerText='Status' minWidth="100" width="130">
-                <ng-template #template let-data>
-                    <div class="Status" *ngIf=data.taskData.Status>
-                        <div [style]="Status(data.taskData.Status)">
-                            <div [style]="StatusContent(data.taskData.Status)">{{data.taskData.Status}}</div>
+    <div id="gantt-sidebar-parent">
+        <ng-container *ngIf="isSideBar">
+            <ejs-sidebar #sidebar id="ganttsidebar" isOpen="sidebarToggle" width="282px" type="Over" position="Right"
+                target="#sidebar-gantt">
+                <div class="gantt-title-header">
+                    <div class="gantt-title">Project Settings</div>
+                    <span class="e-closed" (click)="closeSidebar()" style="cursor: pointer;font-size: 20px;"></span>
+                </div>
+                <ul class="settings-list" style="margin: 15px 15px; padding-left: 5px;">
+                    <label for="rowHeightSlider" class="gantt-labels-style">Row height :</label>
+                    <li class="gantt-list-fields"
+                        style="padding: 20px; padding-bottom: 0px; margin-bottom: 0px;padding-top: 5px;">
+                        <div id="rowHeightSlider">
+                            <ejs-slider id="default" #slider [value]="valueofSlider" [min]="min" [max]="max" [step]="step"
+                                [ticks]="ticks" [tooltip]="tooltip" [width]="sliderWidth" (change)="onChanged($event)">
+                            </ejs-slider>
                         </div>
-                    </div>
-                </ng-template>
-            </e-column>
-            <e-column field='Priority' headerText='Priority' minWidth='80' width='130'>
-                <ng-template #template let-data>
-                    <div class="Priority" *ngIf=data.taskData.Priority>
-                        <div [style]="Priority(data.taskData.Priority)">
-                            <div [style]="PriorityContent(data.taskData.Priority)">{{data.taskData.Priority}}</div>
+                    </li>
+    
+                    <!-- grid lines -->
+                    <li class="gantt-list-fields">
+                        <label for="showGridLines" class="gantt-labels-style">Show Grid Lines :</label>
+                        <div class="gantt-switch" style="margin-left: 20px;">
+                            <ejs-switch id="showGridLinesSwitch" class="checked" (change)="gridLinesChange($event)">
+                            </ejs-switch>
                         </div>
-                    </div>
-                </ng-template>
-            </e-column>
-            <e-column field='Work' headerText='Planned Hours' width='120'></e-column>
-            <e-column field='TimeLog' headerText='Work Log' width='120'></e-column>
-        </e-columns>
+                    </li>
+    
+                    <!-- event markers -->
+                    <li class="gantt-list-fields">
+                        <label for="showGridLines" class="gantt-labels-style">Show event markers :</label>
+                        <div class="gantt-switch" style="margin-left: 20px;">
+                            <ejs-switch id="showEventSwitch" class="checked" [checked]="true"
+                                (change)="showEventMarkers($event)">
+                            </ejs-switch>
+                        </div>
+                    </li>
+    
+                    <!-- dependecny -->
+                    <li class="gantt-list-fields">
+                        <label for="dependencyLines" class="gantt-labels-style">Show dependencies :</label>
+                        <div class="gantt-switch" style="margin-left: 20px;">
+                            <ejs-switch id="dependencyLines" class="checkeddependency" [checked]="true"
+                                (change)="dependencyChange($event)">
+                            </ejs-switch>
+                        </div>
+                    </li>
+    
+                    <!-- tasklabels -->
+                    <li class="gantt-list-fields">
+                        <label for="taskLabelChange" class="gantt-labels-style">Show task labels :</label>
+                        <div class="gantt-switch" style="margin-left: 20px;">
+                            <ejs-switch id="taskLabelChange" class="checked" [checked]="true"
+                                (change)="taskLabelChange($event)">
+                            </ejs-switch>
+                        </div>
+                    </li>
+    
+                    <li class="gantt-list-fields gantt-section-header">
+                        <label class="scheduling">Scheduling Settings</label>
+                    </li>
+    
+                    <!-- working days -->
+                    <li class="gantt-list-field gantt-stack-container">
+                        <label for="workDays" class="gantt-labels-style">Working days :</label>
+                        <div style="padding-left: 10px;">
+                            <ejs-multiselect id="checklist" #WorkingDaysObj style="padding: 2px" [dataSource]="dropDownData"
+                                (select)="select($event)" (removed)="remove($event)" [value]="workWeek"
+                                [fields]="dropDownFields" [mode]="mode" [showDropDownIcon]="true"
+                                popupHeight="350px"></ejs-multiselect>
+                        </div>
+                    </li>
+    
+                    <!-- duration unit -->
+                    <li class="gantt-list-field gantt-stack-container">
+                        <label for="durationUnit" class="gantt-labels-style">Duration unit:</label>
+                        <div style="padding-left: 10px;">
+                            <ejs-dropdownlist id="games" #sample [dataSource]="durationUnit"
+                                (change)="changeDuration($event)" [value]="durationValue" [fields]="durationFields"
+                                [popupHeight]="'220px'">
+                            </ejs-dropdownlist>
+                        </div>
+                    </li>
+    
+                    <!-- unit width -->
+                    <li class="gantt-list-field gantt-stack-container">
+                        <label for="unitWidth" class="gantt-labels-style">Timeline width:</label>
+                        <div style="padding-left: 10px;">
+                            <ejs-numerictextbox id="unitWidth" [min]="10" [value]="33" (change)="onChangeUnit($event)">
+                            </ejs-numerictextbox>
+                        </div>
+                    </li>
+    
+                    <li class="gantt-list-fields gantt-section-header">
+                        <label class="scheduling">View Settings</label>
+                    </li>
+    
+                    <!-- view type -->
+                    <li class="gantt-list-field gantt-stack-container">
+                        <label for="viewType" class="gantt-labels-style">View type:</label>
+                        <div style="padding-left: 10px;">
+                            <ejs-dropdownlist id="viewType" [dataSource]="viewTypeData" [placeholder]="'View Type'"
+                                [fields]="viewFields" (change)="typeChange($event)">
+                            </ejs-dropdownlist>
+                        </div>
+                    </li>
+    
+                    <!-- view  mode -->
+                    <li class="gantt-list-field gantt-stack-container">
+                        <label for="viewMode" class="gantt-labels-style">View mode:</label>
+                        <div style="padding-left: 10px;">
+                            <ejs-dropdownlist id="viewMode" [dataSource]="viewModeData" [placeholder]="'View'"
+                                [fields]="modeFields" (change)="modeChange($event)">
+                            </ejs-dropdownlist>
+                        </div>
+                    </li>
+                </ul>
+            </ejs-sidebar>
+        </ng-container>
+    </div>
 
-    </ejs-gantt>
-<style>
-    #overviewSample .e-gantt-child-taskbar,
-    #overviewSample .e-gantt-parent-taskbar {
-        border-radius: 10px ;
-    }
-    .fluent2 #overviewSample .e-toolbar-items .e-toolbar-right .e-template .e-input-group,
-    .fluent2-dark #overviewSample .e-toolbar-items .e-toolbar-right .e-template .e-input-group,
-    .fluent2-highcontrast #overviewSample .e-toolbar-items .e-toolbar-right .e-template .e-input-group {
-         width: 99px !important;
-    }
-</style>
+    <div>
+        <div style="padding: 16px">
+            <button ejs-button id="updatecell" (click)="triggerSidebar()" class="settings-button">
+                <span class="e-settings-icon"></span>
+                Settings
+            </button>
+        </div>
+        <div id='sidebar-gantt'>
+            <ejs-gantt id="overviewSample" #gantt [dataSource]="data" [taskFields]="taskSettings"
+                [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [treeColumnIndex]="1" height="450px"
+                width="100%" [allowResizing]="true" [allowSelection]="true" [highlightWeekends]="true"
+                [gridLines]="gridLines" [allowExcelExport]="true" [allowPdfExport]="true"
+                (toolbarClick)="toolbarClick($event)" showColumnMenu=true [projectStartDate]="projectStartDate"
+                [taskbarHeight]="24" [rowHeight]="36" [projectEndDate]="projectEndDate" [eventMarkers]="eventMarkers"
+                [toolbar]="toolbar" [allowFiltering]="true" [resourceFields]="resourceFields" [resources]="resources"
+                [allowSorting]="true" [allowResizing]="true" [splitterSettings]="splitterSettings" (load)="load()"
+                (pdfQueryCellInfo)="pdfQueryCellInfo($event)">
+    
+                <e-columns>
+                    <e-column field='TaskId' headerText='Task Id' width='180' [visible]='false'></e-column>
+                    <e-column field='TaskName' headerText='Product Release' width='180'></e-column>
+                    <e-column field='resources' headerText='Assignee' [allowSorting]='false' width='140'>
+                        <ng-template #template let-data>
+                            <div class="image" *ngIf=data.ganttProperties.resourceNames>
+                                <img src="https://ej2.syncfusion.com/angular/demos/assets/gantt/images/{{data.ganttProperties.resourceNames}}.png"
+                                    style="height:25px;width:25px" />
+                                <div style="display:inline-block;width:100%;position:relative;left:5px;">
+                                    {{data.ganttProperties.resourceNames}}</div>
+                            </div>
+                        </ng-template>
+                    </e-column>
+                    <e-column field='Status' headerText='Status' minWidth="100" width="130">
+                        <ng-template #template let-data>
+                            <div class="Status" *ngIf=data.taskData.Status>
+                                <div [style]="Status(data.taskData.Status)">
+                                    <div [style]="StatusContent(data.taskData.Status)">{{data.taskData.Status}}</div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </e-column>
+                    <e-column field='Priority' headerText='Priority' minWidth='80' width='130'>
+                        <ng-template #template let-data>
+                            <div class="Priority" *ngIf=data.taskData.Priority>
+                                <div [style]="Priority(data.taskData.Priority)">
+                                    <div [style]="PriorityContent(data.taskData.Priority)">{{data.taskData.Priority}}</div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </e-column>
+                    <e-column field='Work' headerText='Planned Hours' width='120'></e-column>
+                    <e-column field='TimeLog' headerText='Work Log' width='120'></e-column>
+                </e-columns>
+    
+            </ejs-gantt>
+        </div>
+    </div>
+
+
+    <style>
+        #overviewSample .e-gantt-child-taskbar,
+        #overviewSample .e-gantt-parent-taskbar {
+            border-radius: 10px;
+        }
+
+        .settings-button {
+            position: absolute;
+            top: 11px;
+            right: 14px;
+            z-index: 20;
+            padding: 5px;
+            display: flex;
+        }
+
+        .settings-button .e-settings-icon {
+            margin-right: 5px;
+        }
+
+        /* settings icon */
+        .e-settings-icon::before {
+            font-family: 'e-icons' !important;
+            content: '\e880';
+            font-size: 15px;
+        }
+
+        /* cancel icon */
+        .e-closed::before {
+            font-family: 'e-icons' !important;
+            content: '\e7e7';
+            font-size: 15px;
+        }
+
+        .highcontrast .e-closed::before {
+            content: '\e7fc';
+            font-family: 'e-icons';
+            font-size: 15px;
+        }
+
+        .highcontrast .e-settings-icon::before {
+            content: '\e679';
+            font-family: 'e-icons';
+        }
+
+        #ganttsidebar {
+            padding-left: 1px !important;
+            padding-right: 1px !important;
+        }
+
+       .gantt-title-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            width: 262px;
+            height: 57px;
+            color: #fff;
+            background-color: #56697f;
+            position: -webkit-sticky;
+            /* Safari */
+            position: sticky;
+            top: 0;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            z-index: 1000;
+        }
+
+       .gantt-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+       .content {
+            margin-top: 20px;
+        }
+
+       .gantt-list-fields {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+       .labels {
+            font-weight: 400;
+            font-size: 14px;
+            padding: 12px;
+        }
+
+       .scheduling {
+            color: #837c7c;
+            font-size: 16px !important;
+            height: inherit;
+            font-weight: 600;
+        }
+
+       .list-fields .vertical-align {
+            display: flex;
+            flex-direction: column;
+        }
+
+       .gantt-section-header {
+            font-weight: 400;
+            font-size: 14px;
+            padding-left: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #837c7c;
+            margin: 10px 0 5px 0;
+            /* Adjusted to reduce the gap */
+        }
+
+       .gantt-switch {
+            margin-bottom: 8px;
+        }
+
+       .gantt-list-field {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+       .gantt-stack-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+       .gantt-labels-style {
+            font-weight: 400;
+            font-size: 14px;
+            margin-bottom: 5px;
+            text-align: left;
+            padding: 10px;
+        }
+        #overviewSample .e-tbar-btn-text{
+            display: none;
+        }
+    </style>
     <div style="float: right; margin: 10px;">Source:
         <a href="https://en.wikipedia.org/wiki/Construction" target='_blank'>https://en.wikipedia.org/</a>
     </div>

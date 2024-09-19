@@ -1,6 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { orderDetails } from './data';
-import { RowDDService, SelectionService, GridModule, SortService, PageService, FilterService, ToolbarService, EditService } from '@syncfusion/ej2-angular-grids';
+import { RowDDService, SelectionService, GridModule, SortService, PageService, FilterService, ToolbarService, EditService, GridComponent } from '@syncfusion/ej2-angular-grids';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
@@ -27,6 +27,7 @@ export class DragAndDropComponent implements OnInit {
     public orderidrules: Object;
     public customeridrules: Object;
     public freightrules: Object;
+    @ViewChild('DestGrid') public destGrid: GridComponent;
 
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['drag-and-drop.style.css'];
@@ -44,5 +45,14 @@ export class DragAndDropComponent implements OnInit {
         this.orderidrules = { required: true, number: true };
         this.customeridrules = { required: true, minLength: 5 };
         this.freightrules = { required: true, min: 0 };
+    }
+    rowDragStart(args: any) {
+        if (this.destGrid.isEdit) {
+            if (this.destGrid.editModule.formObj.validate()) {
+                this.destGrid.endEdit();
+            } else {
+                this.destGrid.closeEdit();
+            }
+        }
     }
 }

@@ -1,0 +1,44 @@
+<div id="action-description">
+    <p>This sample demonstrates how to implement a mail merge in the Rich Text Editor sample by inserting placeholders into the editor using custom toolbar item, which are then replaced with actual data to create personalized content.</p>
+</div>
+<div class="control-section">
+    <ejs-richtexteditor id="mailMergeEditor" #mailMergeEditor [value]="rteValue" [toolbarSettings]="tools"
+        (actionBegin)="onActionBegin($event)" (actionComplete)="OnActionComplete($event)" [saveInterval]="1">
+    </ejs-richtexteditor>
+    <button class="e-control e-lib e-btn e-formats-tbar-btn e-rte-elements e-tbar-btn" tabindex="-1"
+        id="merge_data" style="width:100%" (click)="onClickHandler()">
+        <span style="display:inline-flex"><span class="e-tbar-btn-text">Merge Data</span></span>
+    </button>
+    <button
+        class="e-rte-dropdown-btn e-control e-dropdown-btn e-lib e-btn e-rte-dropdown-popup e-rte-dropdown-items e-formats-tbar-btn e-rte-elements e-tbar-btn"
+        id="insertField" ejs-dropdownbutton [items]="items"
+        [content]="dropdownContent" (select)="onItemSelect($event)"></button>
+    <ejs-mention #mentionObj [dataSource]="mergeData" target="#mailMergeEditor" [mentionChar]="mentionChar"
+        [fields]='fieldsData' [suggestionCount]="8" [allowSpaces]="true" popupWidth='250px' popupHeight='200px'>
+        <ng-template #displayTemplate let-data>
+            <span> {{ "{{"+ data.value + "}}" }} </span>
+        </ng-template>
+    </ejs-mention>
+</div>
+<div id="description">
+    <p> The mail merge in the Rich Text Editor sample enables users to insert placeholders for personalized content. These placeholders are replaced with actual data when generating the final content, making it easy
+        to create customized letters, invoices, and more.</p>
+    <p>The following configurations are used in this sample:</p>
+    <ul>
+        <li>The <code>Button</code> and <code>DropDownButton</code> components are configured in the custom toolbar of
+            the Rich Text Editor.</li>
+        <li>The <code>Button</code> click action performs the merge of the editor placeholder content.</li>
+        <li>The <code>DropDownButton</code> component provides a list of available fields, such as "First Name" or
+            "Email Address." A selected field from this dropdown is inserted into the editor as a placeholder.</li>
+        <li>The <code>Mention</code> component allows insertion of merge fields by pressing the mention character, such
+            as <code>{{</code>, in the editor and selecting an item. These chips make it easy to see and select fields
+            directly within the content.</li>
+    </ul>
+    <p><b>Injecting Modules</b></p>
+    <p>Rich Text Editor features are divided into individual modules. In this demo, we have used the following
+        injectable services: <code>ToolbarService</code>, <code>LinkService</code>, <code>ImageService</code>,
+        <code>HtmlEditorService</code>, <code>QuickToolbarService</code>, <code>TableService</code>, and
+        <code>PasteCleanupService</code>. These services are included in the <code>&#64;NgModule.providers</code>
+        section of your Angular module.
+    </p>
+</div>

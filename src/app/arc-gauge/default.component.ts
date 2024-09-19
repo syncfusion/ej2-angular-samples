@@ -203,7 +203,7 @@ export class DefaultComponent {
     let selectedTheme: string = location.hash.split('/')[1];
     selectedTheme = selectedTheme ? selectedTheme : 'Material';
     args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
-      selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
+      selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
     if (selectedTheme == 'tailwind') {
       args.gauge.axes[0].annotations[0].radius = "91%";
       args.gauge.axes[0].annotations[1].radius = "79%";

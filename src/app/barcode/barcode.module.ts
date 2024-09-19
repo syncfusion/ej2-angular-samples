@@ -110,6 +110,7 @@ export const barcodeAppRoutes: Object[] = [
         path: ':theme/barcode/qrCode', component: QrCodeComponent,
         name: 'QR Code', order: '01', category: 'Getting Started',
         description: 'This sample visualizes the processing of an order placed using credit card with built-in flow shapes.',
+        type: 'update'
     },
     {
         path: ':theme/barcode/datamatrix', component: DataMatrixComponent,

@@ -32,20 +32,18 @@ export class UmlClassDiagramComponent {
   public diagram: DiagramComponent;
 
   public expandMode: ExpandMode = 'Multiple';
+  // Initialize the palettes displayed in the symbol palette
   public palettes: PaletteModel[] = [
     {
       id: 'UmlActivity', expanded: true, title: 'UML Classifier Nodes', symbols: [
       {
           id: 'class',
-          style: {
-              fill: '#26A0DA',
-          },
           borderColor: 'white',
           shape: {
               type: 'UmlClassifier',
               classShape: {
                   attributes: [
-                      { name: 'accepted', type: 'Date', style: { color: "red", fontFamily: "Arial", textDecoration: 'Underline',  italic: true },isSeparator: true },
+                      { name: 'accepted', type: 'Date', isSeparator: true },
                       { name: 'sickness', type: 'History' },
                       { name: 'prescription', type: 'String[*]' },
                       { name: 'allergies', type: 'String[*]' }
@@ -58,9 +56,7 @@ export class UmlClassDiagramComponent {
       },
       {
           id: 'Interface',
-          style: {
-              fill: '#26A0DA',
-          }, borderColor: 'white',
+           borderColor: 'white',
           shape: {
               type: 'UmlClassifier',
               interfaceShape: {
@@ -87,9 +83,7 @@ export class UmlClassDiagramComponent {
       },
       {
           id: 'Enumeration',
-          style: {
-              fill: '#26A0DA',
-          }, borderColor: 'white',
+           borderColor: 'white',
           shape: {
               type: 'UmlClassifier',
               enumerationShape: {
@@ -314,7 +308,7 @@ export class UmlClassDiagramComponent {
     ]
   }
   ];
-
+ //Initialize nodes for the diagram.
   public nodes: NodeModel[] = [
     {
       id: 'Patient',
@@ -431,7 +425,7 @@ export class UmlClassDiagramComponent {
     this.createNode('Technologist', 1015, 535, 'Technologist'),
     this.createNode('SurgicalTechnologist', 1015, 630, 'SurgicalTechnologist')
   ];
-
+ //Initialize connector for the diagram.
   public connectors: ConnectorModel[] = [
     this.createConnector('connect1', 'Patient', 'Person'),
     this.createConnector('connect2', 'Person', 'Hospital'),
@@ -452,39 +446,35 @@ export class UmlClassDiagramComponent {
   ];
 
   // Set the default values of nodes.
-  public getNodeDefaults(obj: NodeModel): NodeModel {
-    obj.style = { fill: '#26A0DA', strokeColor: 'white' };
-    return obj;
-  }
-  public created(): void {
-    this.diagram.fitToPage();
-  }
-  // Set the default values of connectors.
-  public getConnectorDefaults(connector: ConnectorModel): ConnectorModel {
-  return connector;
-  }
-  public dragEnter(arg: IDragEnterEventArgs): void {
-    if(arg.element instanceof Connector){
-      arg.element.targetPoint.x += 100;
-      arg.element.targetPoint.y += 20
-    }
-     
-}
-  // Set an annoation style at runtime.
-  public setNodeTemplate(node: NodeModel): void {
+  public getNodeDefaults(node: NodeModel): NodeModel {
+    node.style = { fill: '#26A0DA', strokeColor: 'white' };
     if (node.annotations.length > 0) {
       for (let i: number = 0; i < node.annotations.length; i++) {
         node.annotations[i].style.color = 'white';
       }
     }
+    return node;
   }
+  public created(): void {
+    this.diagram.fitToPage();
+  }
+    // Set the default values of connectors.
+    public getConnectorDefaults(connector: ConnectorModel): ConnectorModel {
+      return connector;
+      }
+      public dragEnter(arg: IDragEnterEventArgs): void {
+        if(arg.element instanceof Connector){
+          arg.element.targetPoint.x += 100;
+          arg.element.targetPoint.y += 20
+        }
+      }
   public getSymbolDefaults(symbol: NodeModel): void {
     symbol.width = 100;
     symbol.height = 100;
   }
 
 
-  // Create a connector.
+  // Create and return a connector object with specified properties during initial rendering.
   public createConnector( id: string, sourceID: string, targetID: string ): ConnectorModel {
     let connector: ConnectorModel = {};
     connector.id = id;
@@ -493,7 +483,7 @@ export class UmlClassDiagramComponent {
     return connector;
   }
 
-  // Create class Diagram shapes.
+  // Create and return a node object with specified properties during initial rendering.
   public createNode(id: string, offsetX: number, offsetY: number, className: string): NodeModel {
     let node: NodeModel = {};
     node.id = id;

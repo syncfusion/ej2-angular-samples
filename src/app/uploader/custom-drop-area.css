@@ -52,7 +52,8 @@
 .bootstrap5-dark .dropControl_wrapper .sample_wrapper #dropArea #drop a,
 .tailwind-dark .dropControl_wrapper .sample_wrapper #dropArea #drop a,
 .fluent-dark .dropControl_wrapper .sample_wrapper #dropArea #drop a,
-.fluent2-dark .dropControl_wrapper .sample_wrapper #dropArea #drop a {
+.fluent2-dark .dropControl_wrapper .sample_wrapper #dropArea #drop a,
+.fluent2-highcontrast .dropControl_wrapper .sample_wrapper #dropArea #drop a {
     color: #fff;
 }
 
@@ -113,7 +114,8 @@ span.dropText {
 }
 
 .fluent-dark .dropArea_wrap,
-.fluent2-dark .dropArea_wrap {
+.fluent2-dark .dropArea_wrap,
+.fluent2-highcontrast .dropArea_wrap {
     background-color: #212529;
 }
 

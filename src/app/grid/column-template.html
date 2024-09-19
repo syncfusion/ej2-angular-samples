@@ -1,36 +1,80 @@
 <div id="action-description">
-    <p>This sample demonstrates usage of template columns in Grid. In this sample, we have shown custom images in the Employee
+    <p>This sample demonstrates the usage of template columns in a Grid. In this sample, custom images are shown in the Employee
         Image column.
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid #grid [dataSource]='data' [allowSorting]='true'>
+    <ejs-grid #grid [dataSource]='data' [height]='400' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings'>
         <e-columns>
-            <e-column headerText='Employee Image' width='150' textAlign='Center'>
+            <e-column headerText='Image' width='180' textAlign='Center'>
                 <ng-template #template let-data>
                     <div class="image">
-                        <img src="./assets/grid/images/{{data.EmployeeID}}.png" alt="{{data.EmployeeID}}"/>
+                        <img src="./assets/grid/images/{{data.EmployeeID.replace('Emp100', '')}}.png" alt="{{data.EmployeeID}}"/>
                     </div>
                 </ng-template>
             </e-column>
-            <e-column field='EmployeeID' headerText='Employee ID' width='125' textAlign='Right'></e-column>
-            <e-column field='FirstName' headerText='Name' width='120'></e-column>
-            <e-column field='Title' headerText='Title' width='170'></e-column>
-            <e-column field='HireDate' headerText='Hire Date' width='135' textAlign='Right' format='yMd'></e-column>
-            <e-column field='ReportsTo' headerText='Reports To' width='120' textAlign='Right'></e-column>
+            <e-column field='EmployeeID' headerText='ID' width='160'></e-column>
+            <e-column field='Name' headerText='Name' width='120'></e-column>
+            <e-column field='MailID' headerText='Email ID' width='150'>
+                <ng-template #template let-data>
+                    <div>
+                    <a href="mailto:{{data.MailID}}">{{data.MailID}}</a></div>
+                </ng-template>
+            </e-column>
+            <e-column field='DateOfJoining' headerText='Date Joined' width='170' textAlign='Right' format='yMd'></e-column>
+            <e-column field='Designation' headerText='Designation' width='160'></e-column>
+            <e-column field='Team' headerText='Team(s)' width='160'></e-column>
+            <e-column field='ReportTo' headerText='Reporter' width='120'></e-column>
+            <e-column field='EmployeeAvailability' headerText='Availability' width='200'>
+                <ng-template #template let-data>                       
+                    <div *ngIf="data.EmployeeAvailability === 'Available';else login" class="statustemp e-availablecolor">                                          
+                            <span class="statustxt e-availablecolor">{{data.EmployeeAvailability}}</span>           
+                    </div>
+                    <ng-template #login>
+                        <div class="statustemp e-notavailablecolor">
+                            <span class="statustxt e-notavailablecolor">{{data.EmployeeAvailability}}</span>
+                        </div>
+                        </ng-template>
+                </ng-template>               
+            </e-column>
+            <e-column field='YearOfExperience' headerText='Experience' width='200'></e-column>
+            <e-column field='AssetKit' headerText='Asset Kit' width='180' [filter]= 'filter'>
+                <ng-template #template let-data>
+                    <div class="asset">
+                        <ejs-chiplist id="asset" [chips]="data.AssetKit.split(',')"></ejs-chiplist>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='AssetKitDistribution' headerText='Assigned Date' width='170' format='yMd' textAlign='Right'></e-column>
+            <e-column field='Location' headerText='Location' width='150'>
+                <ng-template #template let-data>
+                    <div>
+                        <span class="e-location e-icons"></span>{{data.Location}}
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='PhoneNumber' headerText='Contact No' width='150' textAlign='Right'></e-column>
         </e-columns>
 
     </ejs-grid>
 
     <div id="description">
         <p>
-            The Grid provides a way to use a custom layout for each cell using column template feature. The
+            The Grid creates a custom layout for each cell using the column template feature. The 
             <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/grid/column/#template">columns->template
-        </a></code> property accepts the template for the cell.
+            href="https://ej2.syncfusion.com/angular/documentation/api/grid/column/#template">columns->template
+            </a></code> property accepts either string or HTML element`s ID value, which will be used 
+            as the template for the cell.  
         </p>
         <p>
-            In this demo, using column template, we have presented <strong>Employee Image</strong> column as template column.
+            The column template feature allows the customization of grid cells. In this demo, the Grid showcases the <strong>Employee Image</strong>
+            column with employee photos, <strong>Mail ID</strong> column with link tags, <strong>Location</strong> column with location icons, <strong>Asset Kit</strong> column with Syncfusion Chip components and <strong>Employee Availability</strong> column with HTML span elements, using green to indicate available and red to indicate for not available.
+        </p>
+        <p>
+            More information on the column template can be found in this
+            <a target="_blank" 
+            href="https://ej2.syncfusion.com/angular/documentation/grid/columns/column-template">
+            documentation section</a>.
         </p>
     </div>
 </div>

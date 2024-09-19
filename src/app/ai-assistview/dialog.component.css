@@ -1,0 +1,128 @@
+
+.dialog-aiassistview {
+    width: 50vw;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.dialog-aiassistview .banner-content .e-assistview-icon:before {
+    font-size: 35px;
+}
+
+.dialog-aiassistview .banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+    text-align: center;
+}
+
+.dialog-aiassistview .left-content .header {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 15px 5px;
+}
+
+.dialog-aiassistview .e-card:hover {
+    background: none;
+}
+
+.dialog-aiassistview .left-content .content {
+    height: 80%;
+    justify-content: flex-start;
+    border: none;
+    box-shadow: none;
+    padding-left: 3px; 
+    background: inherit;
+}
+
+.dialog-aiassistview .right-content .content {
+    height: 100%;
+    justify-content: flex-start;
+    border: none;
+    box-shadow: none;
+    margin-top: 20px;
+    font-size: 12px;
+    overflow: auto;
+    line-height: 25px;
+    background: inherit;
+}
+
+.dialog-aiassistview .note-title {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    padding: 5px 10px;
+}
+
+.dialog-aiassistview .note-title .heading,
+.dialog-aiassistview .note-title .sub-heading {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 25px;
+}
+
+.dialog-aiassistview .note-title .heading {
+    font-weight: 400;
+}
+
+.dialog-aiassistview .note-title .sub-heading {
+    font-size: 10px;
+    line-height: 15px;
+}
+
+.dialog-aiassistview .note-title .heading.e-skeleton {
+    height: 13px;
+    width: 100%;
+    margin-bottom: 7px;
+}
+
+.dialog-aiassistview .note-title .sub-heading.e-skeleton {
+    height: 12px;
+    width: 80%;
+}
+
+.dialog-aiassistview hr {
+    margin: 0 0 0 2px;
+}
+
+.dialog-aiassistview .right-content {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0 15px 20px;
+    gap: 5px;
+}
+
+.dialog-aiassistview .right-content .heading {
+    font-size: 20px;
+}
+
+.dialog-aiassistview .right-content .date-info {
+    font-size: 10px;
+}
+
+.dialog-aiassistview #fabElem {
+    z-index: 9999;
+}
+
+.dialog-aiassistview .custom-dialog .e-dlg-content {
+    padding: 0;
+}
+
+.dialog-aiassistview .custom-aiassistview {
+    border: none;
+}
+
+body[class*="fluent2-highcontrast"] .dialog-aiassistview .e-card {
+    color: #8c8c8c;
+}
+
+@media only screen and (max-width: 850px) {
+    .dialog-aiassistview {
+        width: 100%;
+    }
+}

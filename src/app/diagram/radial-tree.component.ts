@@ -6,7 +6,7 @@ import {
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
-import {radialTree} from'./overview-data';
+import { radialTree } from './diagram-data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -34,13 +34,15 @@ export class RadialTreeDiagramComponent {
         //sets the fields to bind
         id: 'Id', parentId: 'ReportingPerson',
         dataSource: new DataManager(radialTree),
-        //binds the data with the nodes
+        //binds the data to the nodes
         doBinding: (nodeModel: NodeModel, data: DataInfo, diagram: Diagram) => {
+            //Set the styling for the annotation 
             nodeModel.annotations = [{
                 content: data.Name,
                 style: data.Id === 'parent' ? { color: 'white', fontSize: 50 } : { color: 'black', fontSize: 20 }
             }];
-            nodeModel.constraints = NodeConstraints.Default & ~NodeConstraints.InheritTooltip | NodeConstraints.Tooltip;
+            nodeModel.constraints = NodeConstraints.Default | NodeConstraints.Tooltip;
+           //Set properties for the tooltip
             nodeModel.tooltip = {
                 content: data.Name + '<br/>' + data.Designation, relativeMode: 'Object',
                 position: 'TopCenter', showTipPointer: true,
@@ -63,6 +65,7 @@ export class RadialTreeDiagramComponent {
             }
         }
     };
+    //Configures automatic layout
     public layout: Object = {
         type: 'RadialTree', verticalSpacing: 30, horizontalSpacing: 20,
         root: 'Category'
@@ -72,8 +75,9 @@ export class RadialTreeDiagramComponent {
         this.diagram.fitToPage();
         this.diagram.dataBind();
     }
-
+    //Disables all interactions except zoom and pan.
     public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
+   // Handles click events to perform ZoomIn, ZoomOut, and Reset based on the selected option.
     public onItemClick(args: ClickEventArgs): void {
         switch (args.item.text) {
             case 'Zoom In':

@@ -8,6 +8,8 @@
 </div>
 <div class="control-section">
 <style>
+    /* CSS styles for layout and mobile responsiveness */
+    
     #umlActivityDiagram .sb-mobile-palette {
         width: 210px;
         height: 100%;
@@ -77,7 +79,6 @@
 
     .e-ddb-icons1 {
         font-family: 'e-ddb-icons1';
-        speak: none;
         font-size: 16px;
         font-style: normal;
         font-weight: normal;
@@ -115,7 +116,7 @@
                         </e-node-annotation>
                     </e-node-annotations>
                 </e-node>
-                <e-node id='node2' [height]=10 [width]=70 [shape]=forkNode [offsetX]=300 [offsetY]=170>
+                <e-node id='ForkNode' [height]=10 [width]=70 [shape]=forkNode [offsetX]=300 [offsetY]=170>
                 </e-node>
                 <e-node id='Determine' [height]=40 [width]=105 [shape]=action [offsetX]=190 [offsetY]=250>
                     <e-node-annotations>
@@ -129,7 +130,7 @@
                         </e-node-annotation>
                     </e-node-annotations>
                 </e-node>
-                <e-node id='node5' [height]=50 [width]=50 [shape]=decision [offsetX]=190 [offsetY]=350>
+                <e-node id='Decision' [height]=50 [width]=50 [shape]=decision [offsetX]=190 [offsetY]=350>
                 </e-node>
                 <e-node id='transfer_sales' [height]=40 [width]=105 [shape]=action [offsetX]=100 [offsetY]=450>
                     <e-node-annotations>
@@ -143,9 +144,9 @@
                         </e-node-annotation>
                     </e-node-annotations>
                 </e-node>
-                <e-node id='node8' [height]=50 [width]=50 [shape]=mergeNode [offsetX]=190 [offsetY]=540>
+                <e-node id='MergeNode' [height]=50 [width]=50 [shape]=mergeNode [offsetX]=190 [offsetY]=540>
                 </e-node>
-                <e-node id='node9' [height]=10 [width]=70 [shape]=joinNode [offsetX]=300 [offsetY]=630>
+                <e-node id='JoinNode' [height]=10 [width]=70 [shape]=joinNode [offsetX]=300 [offsetY]=630>
                 </e-node>
                 <e-node id='CloseCall' [height]=40 [width]=105 [shape]=action [offsetX]=300 [offsetY]=710>
                     <e-node-annotations>
@@ -153,50 +154,50 @@
                         </e-node-annotation>
                     </e-node-annotations>
                 </e-node>
-                <e-node id='node11' [height]=40 [width]=40 [shape]=finalNode [offsetX]=300 [offsetY]=800>
+                <e-node id='FinalNode' [height]=40 [width]=40 [shape]=finalNode [offsetX]=300 [offsetY]=800>
                 </e-node>
             </e-nodes>
             <e-connectors>
                 <e-connector id='connector1' sourceID='Start' targetID='ReceiveCall'>
                 </e-connector>
-                <e-connector id='connector2' sourceID='ReceiveCall' targetID='node2'>
+                <e-connector id='connector2' sourceID='ReceiveCall' targetID='ForkNode'>
                 </e-connector>
-                <e-connector id='connector3' sourceID='node2' targetID='Determine' sourcePortID='port1' targetPortID='portTop'
+                <e-connector id='connector3' sourceID='ForkNode' targetID='Determine' sourcePortID='port1' targetPortID='portTop'
                     [segments]='segments1'>
                 </e-connector>
-                <e-connector id='connector4' sourceID='node2' targetID='Log' sourcePortID='port2' targetPortID='portTop'
+                <e-connector id='connector4' sourceID='ForkNode' targetID='Log' sourcePortID='port2' targetPortID='portTop'
                     [segments]='segments2'>
                 </e-connector>
-                <e-connector id='connector5' sourceID='Determine' targetID='node5'>
+                <e-connector id='connector5' sourceID='Determine' targetID='Decision'>
                 </e-connector>
-                <e-connector id='connector6' sourceID='node5' targetID='transfer_sales' sourcePortID='portLeft'
+                <e-connector id='connector6' sourceID='Decision' targetID='transfer_sales' sourcePortID='portLeft'
                     targetPortID='portTop' [shape]=objectFlow>
                     <e-connector-annotations>
                         <e-connector-annotation content='Type = New Customer'>
                         </e-connector-annotation>
                     </e-connector-annotations>
                 </e-connector>
-                <e-connector id='connector7' sourceID='node5' targetID='transfer_desk' sourcePortID='portRight'
+                <e-connector id='connector7' sourceID='Decision' targetID='transfer_desk' sourcePortID='portRight'
                     targetPortID='portTop' [shape]=objectFlow>
                     <e-connector-annotations>
                         <e-connector-annotation content='Type = Existing Customer'>
                         </e-connector-annotation>
                     </e-connector-annotations>
                 </e-connector>
-                <e-connector id='connector8' sourceID='transfer_sales' targetID='node8' sourcePortID='portBottom'
+                <e-connector id='connector8' sourceID='transfer_sales' targetID='MergeNode' sourcePortID='portBottom'
                     targetPortID='portLeft' [segments]='segments3'>
                 </e-connector>
-                <e-connector id='connector9' sourceID='transfer_desk' targetID='node8' sourcePortID='portBottom'
+                <e-connector id='connector9' sourceID='transfer_desk' targetID='MergeNode' sourcePortID='portBottom'
                     targetPortID='portRight' [segments]='segments3'>
                 </e-connector>
-                <e-connector id='connector10' sourceID='node8' targetID='node9' sourcePortID='portBottom' targetPortID='port3'>
+                <e-connector id='connector10' sourceID='MergeNode' targetID='JoinNode' sourcePortID='portBottom' targetPortID='port3'>
                 </e-connector>
-                <e-connector id='connector11' sourceID='Log' targetID='node9' sourcePortID='portBottom' targetPortID='port4'
+                <e-connector id='connector11' sourceID='Log' targetID='JoinNode' sourcePortID='portBottom' targetPortID='port4'
                     [segments]='segments4'>
                 </e-connector>
-                <e-connector id='connector12' sourceID='node9' targetID='CloseCall'>
+                <e-connector id='connector12' sourceID='JoinNode' targetID='CloseCall'>
                 </e-connector>
-                <e-connector id='connector13' sourceID='CloseCall' targetID='node11'>
+                <e-connector id='connector13' sourceID='CloseCall' targetID='FinalNode'>
                 </e-connector>
             </e-connectors>
         </ejs-diagram>

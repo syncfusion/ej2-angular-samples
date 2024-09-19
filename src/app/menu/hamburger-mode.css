@@ -86,12 +86,22 @@
     overflow: hidden;
 }
 
-.fluent2-dark .layout #container,
-.fluent2-highcontrast .layout #container {
-    background-color: black;
-}
-
 #header {
     width: 100%;
     background-color: #7b8cfb;
+}
+
+.bootstrap5-dark .layout #container,
+.fluent-dark .layout #container,
+.material-dark .layout #container,
+.bootstrap5\.3-dark .layout #container,
+.fluent2-dark .layout #container,
+.fluent2-highcontrast .layout #container,
+.material3-dark .layout #container,
+.bootstrap-dark .layout #container,
+.fluent-dark .layout #container,
+.tailwind-dark .layout #container,
+.highcontrast-dark .layout #container,
+.highcontrast .layout #container {
+    background-color: black;
 }

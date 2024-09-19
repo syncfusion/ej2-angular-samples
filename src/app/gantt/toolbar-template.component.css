@@ -23,7 +23,11 @@
 .fluent #ToolbarTemplate .e-quickfilter::before,.fluent2 #ToolbarTemplate .e-quickfilter::before,
 .fluent2-highcontrast #ToolbarTemplate .e-quickfilter::before,.fluent2-dark #ToolbarTemplate .e-quickfilter::before,
 .fluent-dark #ToolbarTemplate .e-quickfilter::before,
-.tailwind #ToolbarTemplate  .e-quickfilter::before, .tailwind-dark #ToolbarTemplate .e-quickfilter::before  {
+.tailwind #ToolbarTemplate  .e-quickfilter::before, .tailwind-dark #ToolbarTemplate .e-quickfilter::before,
+.bootstrap5\.3 #ToolbarTemplate .e-quickfilter::before,
+.bootstrap5\.3-dark-lite #ToolbarTemplate .e-quickfilter::before,
+.bootstrap5\.3-dark #ToolbarTemplate .e-quickfilter::before, 
+.bootstrap5\.3-lite #ToolbarTemplate .e-quickfilter::before {
     content: '\e7f7';
     font-family: 'e-icons';
 }

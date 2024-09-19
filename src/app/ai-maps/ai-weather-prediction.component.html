@@ -1,0 +1,15 @@
+<ejs-maps #maps id='container' style="display:block;" [height]="height" [annotations]="annotations"
+    [zoomSettings]="zoomSettings" [margin]="margin" [centerPosition]="centerPosition" (loaded)="onMapsLoaded()">
+    <e-layers>
+        <e-layer [urlTemplate]="urlTemplate" [tooltipSettings]="tooltipSettings"
+            [markerSettings]="markerSettings"></e-layer>
+    </e-layers>
+</ejs-maps>
+<div style="display:flex; justify-content: center; align-items: center;">
+    <button #tomorrowButton ejs-button style="margin: 5px;" (click)="getWeatherData(tomorrow)">Tomorrow</button>
+    <button #secondDayButton ejs-button style="margin: 5px;"
+        (click)="getWeatherData(secondDay)">{{secondDayText}}</button>
+    <button #thirdDayButton ejs-button style="margin: 5px;" (click)="getWeatherData(thirdDay)">{{thirdDayText}}</button>
+    <button #fourthDay ejs-button style="margin: 5px;" (click)="getWeatherData(fourth)">{{fourthDayText}}</button>
+    <button #fifthDayButton ejs-button style="margin: 5px;" (click)="getWeatherData(fifthDay)">{{fifthDayText}}</button>
+</div>

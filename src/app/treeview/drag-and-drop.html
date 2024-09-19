@@ -22,7 +22,7 @@
             <div class="tree-list">
                <ejs-listview class="e-droppable" id="list"  #list="" [dataSource]=[] cssClass="custom-list"  >
                  <ng-template #template let-dataSource="">
-                   <div><span>{{dataSource.text}}</span><span id="{{dataSource.iconId}}" class="{{dataSource.class}}"></span></div>
+                   <div class="dropped-list-view-item"><span>{{dataSource.text}}</span><span id="{{dataSource.iconId}}" class="{{dataSource.class}}"></span></div>
                  </ng-template>
                </ejs-listview>
             </div>
@@ -38,7 +38,7 @@
 </div>
 
 <div id="description">
-    <p>The <code>TreeView</code> component allows users to drag any node and drop it on any other node in the same or different tree using <code>allowDragAndDrop</code> property. Additionally, it supports dropping a tree node to an external container using <code>nodeDragStop</code> event of the TreeView</p>
+    <p>The <code>TreeView</code> component allows users to drag any node and drop it on any other node in the same or different tree using <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/treeview#allowdraganddrop">allowDragAndDrop</a> property. Additionally, it supports dropping a tree node to an external container using <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/treeview#nodedragstop">nodeDragStop</a> event of the TreeView</p>
     <p>For more information, you can refer to the <a href="https://ej2.syncfusion.com/angular/documentation/treeview/drag-and-drop/" target="_blank">Drag and Drop</a> section from the documentation.</p>
 </div>
 
@@ -47,13 +47,14 @@
         min-height: 288px;
         border: 0;
     }
-    .material-dark .custom-delete::before, .fabric-dark .custom-delete::before, 
+    .material-dark .custom-delete::before, .fabric-dark .custom-delete::before,
     .bootstrap-dark .custom-delete::before, .tailwind-dark .custom-delete::before,
-    .bootstrap5-dark .custom-delete::before, .material3-dark .custom-delete::before {
+    .bootstrap5-dark .custom-delete::before, .material3-dark .custom-delete::before, .fluent2-highcontrast .custom-delete::before, .fluent2-dark .custom-delete::before,
+    .fluent-dark .custom-delete::before, .bootstrap5\.3-dark .custom-delete::before {
         color: rgba(255, 255, 255, 0.54);
     }
-    .bootstrap5 .custom-delete,
-    .bootstrap5-dark .custom-delete {
+    .bootstrap5 .custom-delete, .bootstrap5-dark .custom-delete,
+    .bootstrap5\.3 .custom-delete, .bootstrap5\.3-dark .custom-delete {
         margin-top: 3px;
     }
 	.e-bigger #list, .e-bigger #tree1, .e-bigger #tree2 {
@@ -92,15 +93,12 @@
     .e-rtl .custom-delete {
         float: left;
     }
-    .fluent2 #list.e-listview .e-list-item,
-    .fluent2-dark #list.e-listview .e-list-item,
-    .fluent2-high-contrast #list.e-listview .e-list-item {
-        padding: 7px 12px;
-    }
     .highcontrast .custom-delete::before {
         color: #fff;
     }
-    .highcontrast .e-active.e-list-item .custom-delete::before {
+    .highcontrast .e-active.e-list-item .custom-delete::before,
+    .fluent2-highcontrast .e-active.e-list-item .custom-delete::before,
+    .fluent2-highcontrast .e-hover.e-list-item .custom-delete::before {
 	    color: #000;
 	}
     .bootstrap4.e-bigger #list, .bootstrap4.e-bigger #tree1, .bootstrap4.e-bigger #tree2 {
@@ -163,4 +161,15 @@
         margin-top: 10px;
         margin-bottom: 10px;
     }
+
+  .fluent2 #list .dropped-list-view-item,
+  .fluent2-dark #list .dropped-list-view-item,
+  .fluent2-highcontrast #list .dropped-list-view-item {
+      padding: 6px;
+  }
+
+  .fluent2 .custom-delete, .fluent2-dark .custom-delete,
+  .fluent2-highcontrast .custom-delete {
+      margin-top: 1px;
+  }
 </style>

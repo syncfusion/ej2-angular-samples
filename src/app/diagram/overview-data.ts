@@ -1640,7 +1640,7 @@ export let data: Object[] = [
         "ReportingPerson": 83
     },
     {
-        "Id": 34,
+        "Id": 85,
         "Name": "Matti Kenna",
         "Designation": "Project Trainee",
         "ImageUrl": "./assets/diagram/employees/image15.png",
@@ -1649,7 +1649,7 @@ export let data: Object[] = [
         "ReportingPerson": 84
     },
     {
-        "Id": 35,
+        "Id": 86,
         "Name": "Zbyszek Yang",
         "Designation": "Project Trainee",
         "ImageUrl": "./assets/diagram/employees/image21.png",
@@ -1658,7 +1658,7 @@ export let data: Object[] = [
         "ReportingPerson": 84
     },
     {
-        "Id": 85,
+        "Id": 87,
         "Name": "Nancy",
         "Designation": "Project Lead",
         "ImageUrl": "./assets/diagram/employees/image17.png",
@@ -1667,7 +1667,7 @@ export let data: Object[] = [
         "ReportingPerson": 74
     },
     {
-        "Id": 86,
+        "Id": 88,
         "Name": "Robert King",
         "Designation": "Senior S/w Engg",
         "ImageUrl": "./assets/diagram/employees/image23.png",
@@ -1676,7 +1676,7 @@ export let data: Object[] = [
         "ReportingPerson": 85
     },
     {
-        "Id": 87,
+        "Id": 89,
         "Name": "Laura Callahan",
         "Designation": "CSR",
         "ImageUrl": "./assets/diagram/employees/image20.png",
@@ -1685,7 +1685,7 @@ export let data: Object[] = [
         "ReportingPerson": 88
     },
     {
-        "Id": 88,
+        "Id": 90,
         "Name": "Anne",
         "Designation": "CSR",
         "ImageUrl": "./assets/diagram/employees/image24.png",
@@ -1694,7 +1694,7 @@ export let data: Object[] = [
         "ReportingPerson": 86
     },
     {
-        "Id": 89,
+        "Id": 91,
         "Name": "Georg Pipps",
         "Designation": "Senior S/w Engg",
         "ImageUrl": "./assets/diagram/employees/image26.png",
@@ -1703,7 +1703,7 @@ export let data: Object[] = [
         "ReportingPerson": "parent"
     },
     {
-        "Id": 30,
+        "Id": 92,
         "Name": "Isabel Castro",
         "Designation": "Project Trainee",
         "ImageUrl": "./assets/diagram/employees/image27.png",
@@ -1712,7 +1712,7 @@ export let data: Object[] = [
         "ReportingPerson": 89
     },
     {
-        "Id": 34,
+        "Id": 93,
         "Name": "Nardo Batista",
         "Designation": "Project Trainee",
         "ImageUrl": "./assets/diagram/employees/image28.png",
@@ -1721,7 +1721,7 @@ export let data: Object[] = [
         "ReportingPerson": 88
     },
     {
-        "Id": 90,
+        "Id": 94,
         "Name": "Rene Phillips",
         "Designation": "Project Trainee",
         "ImageUrl": "./assets/diagram/employees/image22.png",
@@ -1730,7 +1730,7 @@ export let data: Object[] = [
         "ReportingPerson": 89
     },
     {
-        "Id": 91,
+        "Id": 95,
         "Name": "Lúcia Carvalho",
         "Designation": "Project Trainee",
         "ImageUrl": "./assets/diagram/employees/image25.png",
@@ -1739,7 +1739,7 @@ export let data: Object[] = [
         "ReportingPerson": 89
     },
     {
-        "Id": 92,
+        "Id": 96,
         "Name": "Horst Kloss",
         "Designation": "Project Trainee",
         "ImageUrl": "./assets/diagram/employees/image29.png",
@@ -1748,13 +1748,13 @@ export let data: Object[] = [
         "ReportingPerson": 89
     },
     {
-        "Id": 93,
+        "Id": 97,
         "Name": "Simon Roel",
         "Designation": "Project Lead",
         "ImageUrl": "./assets/diagram/employees/image28.png",
         "IsExpand": "true",
         "RatingColor": "#93B85A",
-        "ReportingPerson": 98
+        "ReportingPerson": 89
     }
 ]
 export let mindMap: object[] = [

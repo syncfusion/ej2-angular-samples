@@ -35,7 +35,8 @@ import { CircularGaugeSampleModule } from '../circular-gauge/circular-gauge.modu
 import { LinearGaugeSampleModule } from '../linear-gauge/linear-gauge.module';
 import { MaskedTextBoxSampleModule } from '../maskedtextbox/maskedtextbox.module';
 import { MultiSelectSampleModule } from '../multi-select/multi-select.module';
-import { MultiColumnComboBoxSampleModule } from '../multicolumn-combobox/multicolumn-combobox.module';
+import { MultiColumnComboBoxSampleModule } from '../multicolumn-combobox/multi-combobox.module';
+import { AIAssistSampleModule } from '../ai-assistview/aiassistview.module';
 import { MenuModule } from '../context-menu/context-menu.module';
 import { MenuSampleModule } from '../menu/menu.module';
 import { TabSampleModule } from '../tab/tab.module';
@@ -59,6 +60,7 @@ import { ColorPickerSampleModule } from '../color-picker/color-picker.module';
 import { PivotTableSampleModule } from '../pivot-table/pivot-table.module';
 import { DocumentEditorSampleModule } from '../document-editor/document-editor.module';
 import { RTESampleModule } from '../rich-text-editor/rich-text-editor.module';
+import { MDESampleModule } from '../mark-down-editor/markdown-editor.module';
 import { FormValidatorModule } from '../form-validator/form-validator.module';
 import { PdfViewerSampleModule } from '../pdfviewer/pdfviewer.module';
 import { QueryBuilderSampleModule } from '../query-builder/query-builder.module';
@@ -85,11 +87,55 @@ import { StepperSampleModule } from '../stepper/stepper.module';
 import { ThreeDimensionChartSampleModule } from '../three-dimension-chart/three-dimension-chart.module';
 import { ThreeDimensionCircularChartSampleModule } from '../three-dimension-circular-chart/three-dimension-circular-chart.module';
 import { TimelineSampleModule } from '../timeline/timeline.module';
+import { SmartPasteSampleModule } from '../ai-smart-paste/smartpaste.module';
+import { SmartTextAreaSampleModule } from '../ai-smart-textarea/smarttextarea.module';
+import { AIGridSampleModule } from '../ai-grid/aigrid.module';
+import { AIGanttSampleModule } from '../ai-gantt/aigantt.module';
+import { AISpreadsheetSampleModule } from '../ai-spreadsheet/aispreadsheet.module';
+import { AIQueryBuilderSampleModule } from '../ai-querybuilder/aiquerybuilder.module';
+import { AIComboBoxSampleModule } from '../ai-combo-box/aicombobox.module';
+import { AIImageEditorSampleModule } from '../ai-image-editor/aiimageeditor.module';
+import { AIPivotTableSampleModule } from '../ai-pivot-table/aipivottable.module';
+import { AIMapsSampleModule } from '../ai-maps/aimaps.module';
+import { AISchedulerSampleModule } from '../ai-schedule/aischedule.module';
+import { AIDiagramSampleModule } from '../ai-diagram/aidiagram.module';
+import { AIDocumentEditorSampleModule } from '../ai-document-editor/aidocumenteditor.module';
+import { AIRichTextEditorSampleModule } from '../ai-rich-text-editor/airichtexteditor.module';
 
 
 const appRoutes: any = [
+    //SmartPasteButton
+    { path: 'ai-smart-paste', loadChildren: import('../ai-smart-paste/smartpaste.module').then(m => m.SmartPasteSampleModule) },
+    { path: ':theme/ai-smart-paste/:sample', redirectTo: 'fluent2/ai-smart-paste/default' },
+    //SmartTextArea
+    { path: 'ai-smart-textarea', loadChildren: import('../ai-smart-textarea/smarttextarea.module').then(m => m.SmartTextAreaSampleModule) },
+    { path: ':theme/ai-smart-textarea/:sample', redirectTo: 'fluent2/ai-smart-textarea/default' },
+    //AI Data Grid
+    { path: 'ai-grid', loadChildren: import('../ai-grid/aigrid.module').then(m => m.AIGridSampleModule) },
+    //AI Gantt
+    { path: 'ai-gantt', loadChildren: import('../ai-gantt/aigantt.module').then(m => m.AIGanttSampleModule) },
+    // AI Diagram
+    { path: 'ai-diagram', loadChildren: import('../ai-diagram/aidiagram.module').then(m => m.AIDiagramSampleModule) },
+    //AI Spreadsheet
+    { path: 'ai-spreadsheet', loadChildren: import('../ai-spreadsheet/aispreadsheet.module').then(m => m.AISpreadsheetSampleModule) },
+    //AI Query Builder
+    { path: 'ai-querybuilder', loadChildren: import('../ai-querybuilder/aiquerybuilder.module').then(m => m.AIQueryBuilderSampleModule) },
+    //AI ComboBox
+    { path: 'ai-combo-box', loadChildren: import('../ai-combo-box/aicombobox.module').then(m => m.AIComboBoxSampleModule) },
+    // AI Image Editor
+    { path: 'ai-image-editor', loadChildren: import('../ai-image-editor/aiimageeditor.module').then(m => m.AIImageEditorSampleModule) },
+    // AI Pivot Table
+    { path: 'ai-pivot-table', loadChildren: import('../ai-pivot-table/aipivottable.module').then(m => m.AIPivotTableSampleModule) },
+    // AI Rich Text Editor
+    { path: 'ai-rich-text-editor', loadChildren: import('../ai-rich-text-editor/airichtexteditor.module').then(m => m.AIRichTextEditorSampleModule) },
+    // AI Maps
+    { path: 'ai-maps', loadChildren: import('../ai-maps/aimaps.module').then(m => m.AIMapsSampleModule) },
+    // AI Document Editor
+    { path: 'ai-document-editor', loadChildren: import('../ai-document-editor/aidocumenteditor.module').then(m => m.AIDocumentEditorSampleModule) },
+    // AI Scheduler
+    { path: 'ai-schedule', loadChildren: import('../ai-schedule/aischedule.module').then(m => m.AISchedulerSampleModule) },
     // Grids
-    { path: 'grid', loadChildren: import('../grid/grid.module').then(m=>m.GridSampleModule) },
+    { path: 'grid', loadChildren: import('../grid/grid.module').then(m => m.GridSampleModule) },
     { path: '', redirectTo: 'material/grid/over-view', pathMatch: 'full' },
     { path: '**', redirectTo: 'material/grid/over-view' },
     { path: 'treegrid', loadChildren: import('../treegrid/treegrid.module').then(m=>m.TreeGridSampleModule) },
@@ -97,6 +143,9 @@ const appRoutes: any = [
     { path: ':theme/pivot-table/:sample', redirectTo: 'material/pivot-table/default' },
     { path: 'spreadsheet', loadChildren: import('../spreadsheet/spreadsheet.module').then(m=>m.SpreadsheetSampleModule) },
     { path: ':theme/spreadsheet/:sample', redirectTo: 'material/spreadsheet/default' },
+    //Interactive chat
+    { path: 'ai-assistview', loadChildren: import('../ai-assistview/aiassistview.module').then(m=>m.AIAssistSampleModule) },
+    { path: ':theme/ai-assistview/:sample', redirectTo: 'material/ai-assistview/default' },
     // Data visualization
     { path: 'chart', loadChildren: import('../chart/chart.module').then(m=>m.ChartSampleModule) },
     { path: '', redirectTo: 'material/chart/overview-chart', pathMatch: 'full' },
@@ -129,6 +178,8 @@ const appRoutes: any = [
     { path: ':theme/pdfviewer/:sample', redirectTo: 'material/pdfviewer/default' },
     { path: 'rich-text-editor', loadChildren: import('../rich-text-editor/rich-text-editor.module').then(m=>m.RTESampleModule) },
     { path: ':theme/rich-text-editor/:sample', redirectTo: 'material/rich-text-editor/default' },
+    { path: 'mark-down-editor', loadChildren: import('../mark-down-editor/markdown-editor.module').then(m=>m.MDESampleModule) },
+    { path: ':theme/mark-down-editor/:sample', redirectTo: 'material/mark-down-editor/overview' },
     { path: 'document-editor', loadChildren: import('../document-editor/document-editor.module').then(m=>m.DocumentEditorSampleModule) },
     { path: ':theme/document-editor/:sample', redirectTo: 'material/document-editor/default' },
     { path: 'image-editor', loadChildren: import('../image-editor/image-editor.module').then(m=>m.ImageEditorSampleModule) },
@@ -157,7 +208,7 @@ const appRoutes: any = [
     { path: 'list-box', loadChildren: import('../list-box/list-box.module').then(m=>m.ListBoxSampleModule) },
     { path: ':theme/list-box/:sample', redirectTo: 'material/list-box/default' },
     { path: 'mention', loadChildren: import('../mention/mention.module').then(m=>m.MentionSampleModule) },
-    { path: 'multicolumn-combobox', loadChildren: import('../multicolumn-combobox/multicolumn-combobox.module').then(m=>m.MultiColumnComboBoxSampleModule) },
+    { path: 'multicolumn-combobox', loadChildren: import('../multicolumn-combobox/multi-combobox.module').then(m=>m.MultiColumnComboBoxSampleModule) },
     { path: ':theme/multicolumn-combobox/:sample', redirectTo: 'material/multicolumn-combobox/default' },
     // Navigation
     { path: ':theme/accordion/:sample', redirectTo: 'material/accordion/default' },
@@ -218,40 +269,70 @@ const appRoutes: any = [
 
 @NgModule({
     imports: [
+        // Smart Components
+        SmartPasteSampleModule,
+        SmartTextAreaSampleModule,
+        //AI Data Grid
+        AIGridSampleModule,
+        // AI Gantt
+        AIGanttSampleModule,
+        // AI Diagram
+        AIDiagramSampleModule,
+        // AI Spreadsheet
+        AISpreadsheetSampleModule,
+        // AI Query Builder
+        AIQueryBuilderSampleModule,
+        // AI ComboBox
+        AIComboBoxSampleModule,
+        // AI Image Editor
+        AIImageEditorSampleModule,
+        // AI Pivot Table
+        AIPivotTableSampleModule,
+        // AI Rich Text Editor
+        AIRichTextEditorSampleModule,
+        // AI Maps
+        AIMapsSampleModule,
+        // AI Scheduler
+        AISchedulerSampleModule,
+        // Document Editor
+        AIDocumentEditorSampleModule,
         // Grids
         GridSampleModule,
-        TreeGridSampleModule,
         PivotTableSampleModule,
+        TreeGridSampleModule,
         SpreadsheetSampleModule,
         // Data visualization
         ChartSampleModule,
-        ArcGaugeSampleModule,
-        CircularGaugeSampleModule,
-        LinearGaugeSampleModule,
-        DiagramSampleModule,
-        StockChartSampleModule,
-        MapsSampleModule,
-        RangeNavigatorSampleModule,
-        SparklineSampleModule,
-        SmithchartSampleModule,
-        BarcodeSampleModule,
-        TreemapSampleModule,
-        HeatmapSampleModule,
-        BulletChartSampleModule,
-        KanbanSampleModule,
         ThreeDimensionChartSampleModule,
         ThreeDimensionCircularChartSampleModule,
-        // Editors
+        StockChartSampleModule,
+        ArcGaugeSampleModule,
+        CircularGaugeSampleModule,
+        DiagramSampleModule,
+        HeatmapSampleModule,
+        LinearGaugeSampleModule,
+        MapsSampleModule,
+        RangeNavigatorSampleModule,
+        SmithchartSampleModule,
+        BarcodeSampleModule,
+        SparklineSampleModule,
+        TreemapSampleModule,
+        BulletChartSampleModule,
+        KanbanSampleModule,
+        // Forms
+        FormValidatorModule,
+        QueryBuilderSampleModule,
+        // Editors & Viewers
+        PdfViewerSampleModule,
+        RTESampleModule,
+        MDESampleModule,
+        DocumentEditorSampleModule,
+        ImageEditorSampleModule,
+        //Buttons
         ButtonSampleModule,
         ChipsSampleModule,
         FloatingActionButtonSampleModule,
         SpeedDialSampleModule,
-        DocumentEditorSampleModule,
-        ImageEditorSampleModule,
-        FormValidatorModule,
-        RTESampleModule,
-        InplaceEditorSampleModule,
-        SignatureSampleModule,
         // Dropdowns
         AutoCompleteSampleModule,
         ComboBoxSampleModule,
@@ -261,58 +342,57 @@ const appRoutes: any = [
         ListBoxSampleModule,
         MentionSampleModule,
         MultiColumnComboBoxSampleModule,
+        AIAssistSampleModule,
+        // Inputs
+        TextboxesModule,
+        TextAreasModule,
+        MaskedTextBoxSampleModule,
+        NumericModule,
+        ColorPickerSampleModule,
+        UploaderSampleModule,
+        SliderSampleModule,
+        SignatureSampleModule,
+        InplaceEditorSampleModule,
+        RatingSampleModule,
+        OtpInputSampleModule,
         // calendars
         ScheduleSampleModule,
-        GanttSampleModule,
         CalendarSampleModule,
         DatePickerSampleModule,
         DateRangePickerSampleModule,
         DateTimePickerSampleModule,
         TimePickerSampleModule,
+        GanttSampleModule,
         // Navigation
         AccordionSampleModule,
         AppBarSampleModule,
         BreadcrumbSampleModule,
         CarouselSampleModule,
         MenuModule,
-        FileSampleModule,
         MenuSampleModule,
         SidebarSampleModule,
         TabSampleModule,
         ToolbarSampleModule,
         TreeViewSampleModule,
+        FileSampleModule,
         RibbonSampleModule,
         StepperSampleModule,
         // Notifications
-        MessageSampleModule,
         BadgeModule,
+        MessageSampleModule,
         ToastSampleModule,
         ProgressBarSampleModule,
         SkeletonSampleModule,
-        // Inputs
-        MaskedTextBoxSampleModule,
-        NumericModule,
-        SliderSampleModule,
-        TextboxesModule,
-        TextAreasModule,
-        UploaderSampleModule,
-        ColorPickerSampleModule,
-        RatingSampleModule,
-        OtpInputSampleModule,
         // layouts
         AvatarSampleModule,
         CardSampleModule,
-        DashboardLayoutSampleModule,
         DialogSampleModule,
         PredefinedDialogsSampleModule,
         ListViewSampleModule,
-        splitterSampleModule,
         TooltipSampleModule,
+        splitterSampleModule,
+        DashboardLayoutSampleModule,
         TimelineSampleModule,
-        // Forms
-        QueryBuilderSampleModule,
-        // Viewer
-        PdfViewerSampleModule,
         RouterModule.forRoot(appRoutes)
     ],
 

@@ -1,16 +1,17 @@
 <div id="action-description">
-    <p>This example demonstrates the sorting support in the MultiColumn ComboBox.</p>
+    <p>This example demonstrates the sorting support of the MultiColumn ComboBox.</p>
 </div>
 
 <div class="control-section">
     <div class='control-wrapper'>
         <div style='padding-top:60px;'>
-            <ejs-multicolumncombobox id='sorting' #sorting [dataSource]='orderData' [fields]='fields' [allowSorting]='true' [sortOrder]='sortOrder' [sortType]='sortType' [placeholder]='waterMark' popupHeight='230px'>
+            <ejs-multicolumncombobox id='sorting' #sorting [dataSource]='workDetails' [fields]='fields' [allowSorting]='true' [sortOrder]='sortOrder' [sortType]='sortType' [placeholder]='waterMark' popupHeight='230px'>
                 <e-columns>
-                    <e-column field='OrderID' header='Order ID' width='110'></e-column>
-                    <e-column field='CustomerID' header='Customer ID' width='130'></e-column>
-                    <e-column field='Freight' header='Freight' width='90'></e-column>
-                    <e-column field='ShipCountry' header='Ship Country' width='140'></e-column>
+                    <e-column field='Name' header='Name' width="100"/>
+                    <e-column field='YearOfJoining' header='Year Of Joining' width="100"/>                        
+                    <e-column field='Status' header='Status' width="60"/>
+                    <e-column field='Location' header='Location' width="90"/>
+                    <e-column field='Experience' header='Experience in Year' width="120"/>
                 </e-columns>
             </ejs-multicolumncombobox>
         </div>
@@ -18,5 +19,5 @@
 </div>
 
 <div id="description">
-    <p>In this sample, you can click the column header to sort/unsort the column. Any field can be selected from the Fields dropdown list and its order can be changed to display headers either in ascending or descending order. Sorting can be enabled using the <code>allowSorting</code> property and the sort order can be customized using the <code>sortOrder</code> property in the MultiColumn ComboBox.</p>
+    <p>In this sample, you can click the column header to sort/unsort the column any field can be selected from the Fields dropdown list and its order can be changed to display headers either in ascending or descending order. It can be enabled using the <code>allowSorting</code> property and it can be configured using order options inside the <code>sortOrder</code> in the MultiColumn combobox.</p>
 </div>

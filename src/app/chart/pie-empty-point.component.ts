@@ -27,8 +27,11 @@ export class PieEmptyPointChartComponent {
       // custom code start
     public load(args: IAccLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
         args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        if(selectedTheme === 'bootstrap5-dark'){
+            args.chart.series[0].emptyPointSettings.fill = '#FF7F7F';
+        }
     };
       // custom code end
     //Initializing Tooltip

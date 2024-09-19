@@ -48,20 +48,25 @@
     padding: 10px;
     height: 60px;
 }
-body[class*="-dark"] .em-name {
+body[class*="-dark"] .em-name,
+body[class*="highcontrast"] .em-name {
     color: #fff !important;
 }
 /** custom source code styles **/
-body[class*="-dark"] .rte-code-mirror .cm-tag {
+body[class*="-dark"] .rte-code-mirror .cm-tag,
+body[class*="highcontrast"] .rte-code-mirror .cm-tag {
     color: #00ff00;
 }
-body[class*="-dark"] .rte-code-mirror .cm-string {
+body[class*="-dark"] .rte-code-mirror .cm-string,
+body[class*="highcontrast"] .rte-code-mirror .cm-string {
     color: blue;
 }
-body[class*="-dark"] .rte-code-mirror .cm-attribute {
+body[class*="-dark"] .rte-code-mirror .cm-attribute,
+body[class*="highcontrast"] .rte-code-mirror .cm-attribute {
     color: #f00;
 }
-body[class*="-dark"] .rte-code-mirror .CodeMirror-gutters, body[class*="-dark"] .rte-code-mirror .CodeMirror{
+body[class*="-dark"] .rte-code-mirror .CodeMirror-gutters, body[class*="-dark"] .rte-code-mirror .CodeMirror,
+body[class*="highcontrast"] .rte-code-mirror .CodeMirror-gutters, body[class*="highcontrast"] .rte-code-mirror .CodeMirror {
     background-color: transparent;
     color: #fff;
 }

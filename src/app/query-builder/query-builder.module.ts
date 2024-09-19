@@ -62,7 +62,6 @@ export const QueryBuilderAppRoutes: Object[] = [
         component: DragDropComponent,
         order: '01',
         name: 'Drag and Drop',
-        type: 'new',
         category: 'Query Builder'
     },
     {
@@ -70,7 +69,6 @@ export const QueryBuilderAppRoutes: Object[] = [
         component: SeparateConnectorComponent,
         order: '01',
         name: 'Separate Connector',
-        type: 'new',
         category: 'Query Builder'
     },
     {

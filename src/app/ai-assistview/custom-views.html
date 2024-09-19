@@ -1,0 +1,23 @@
+<div class="control-section">
+    <div class="views-aiassistview">
+        <div id="aiAssistView" ejs-aiassistview #viewsAIAssistView (created)="onCreate()">
+            <e-views>
+                <e-view type="Assist" name="Prompt" [viewTemplate]="promptViewContent()"></e-view>
+                <e-view type="Custom" name="Response" [viewTemplate]="responseViewContent()" iconCss="e-icons e-comment-show"></e-view>
+                <e-view type="Custom" name="Custom" [viewTemplate]="viewTemplate" iconCss="e-icons e-comment-show"></e-view>
+            </e-views>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the different view available for the AI AssistView component.</p>
+</div>
+<div id="description">
+    <p>In this example, the AI AssistView component is configured with three distinct views using the <code>views</code> property. Each view displays its own unique content:</p>
+    <ul>
+        <li>The <code>prompt</code> view includes a textarea with a <code>Generate</code> button and displays a list of suggestions</li>
+        <li>The <code>response</code> view shows the generated response with a copy option.</li>
+        <li>The <code>custom</code> view allows to display the custom content.</li>
+    </ul>
+</div>

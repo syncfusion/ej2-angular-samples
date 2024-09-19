@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { hierarchyOrderdata, customerData, employeeData } from './data';
-import { GridModel, HierarchyGridPrintMode, DetailRowService, SortService, GridModule, ToolbarService } from '@syncfusion/ej2-angular-grids';
+import { GridModel, HierarchyGridPrintMode, DetailRowService, SortService, GridModule, ToolbarService, EditService, FilterService } from '@syncfusion/ej2-angular-grids';
 import { removeClass, addClass } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -10,9 +10,10 @@ import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
     selector: 'ej2-grid-hierarchyprint',
     templateUrl: 'print.html',
     styleUrls: ['./grid-lines.style.css'],
-    providers: [DetailRowService, SortService, ToolbarService],
+    providers: [DetailRowService, SortService, ToolbarService, EditService, FilterService],
     standalone: true,
-    imports: [ToolbarModule, GridModule, SBActionDescriptionComponent, SBDescriptionComponent]
+    imports: [ToolbarModule, GridModule, SBActionDescriptionComponent, SBDescriptionComponent],
+    encapsulation: ViewEncapsulation.None,
 })
 export class PrintComponent implements OnInit {
     public data: Object[] = [];
@@ -23,6 +24,7 @@ export class PrintComponent implements OnInit {
     public editSettings: Object;
     public employeeidrules: Object;
     public firstnamerules: Object;
+    public gridCssClass: string;
 
     ngOnInit(): void {
         this.data = employeeData;
@@ -53,6 +55,9 @@ export class PrintComponent implements OnInit {
                 ]
             }
         };
+        this.gridCssClass = document.querySelector('.fluent2-highcontrast')
+            ? 'e-print-fluent2-highcontrast'
+            : '';
     }
     public onClicked(e: HTMLElement): void {
         let element: HTMLElement = e;

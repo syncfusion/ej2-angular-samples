@@ -1,0 +1,63 @@
+.anomaly-cell {
+    background-color: #B8595A;
+}
+
+.fluent-dark .anomaly-cell,
+.fluent2-dark .anomaly-cell,
+.tailwind-dark .anomaly-cell,
+.material-dark .anomaly-cell,
+.material3-dark .anomaly-cell,
+.fabric-dark .anomaly-cell,
+.bootstrap-dark .anomaly-cell,
+.bootstrap4-dark .anomaly-cell,
+.bootstrap5-dark .anomaly-cell,
+.highcontrast .anomaly-cell {
+    background-color: #55241E;
+}
+
+.e-grid .e-rowcell.anomaly-cell:not(.e-editedbatchcell):not(.e-updatedtd) {
+    color: #FFFFFF;
+}
+
+.fluent-dark .e-grid .e-rowcell.anomaly-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.fluent2-dark .e-grid .e-rowcell.anomaly-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.tailwind-dark .e-grid .e-rowcell.anomaly-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.material-dark .e-grid .e-rowcell.anomaly-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.material3-dark .e-grid .e-rowcell.anomaly-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.fabric-dark .e-grid .e-rowcell.anomaly-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap-dark .e-grid .e-rowcell.anomaly-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap4-dark .e-grid .e-rowcell.anomaly-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap5-dark .e-grid .e-rowcell.anomaly-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.highcontrast .e-grid .e-rowcell.anomaly-cell:not(.e-editedbatchcell):not(.e-updatedtd) {
+    color: #FF9CA0;
+}
+
+.normal-cell {
+    background-color: #AAF38C;
+}
+
+.fluent-dark .normal-cell,
+.fluent2-dark .normal-cell,
+.tailwind-dark .normal-cell,
+.material-dark .normal-cell,
+.material3-dark .normal-cell,
+.fabric-dark .normal-cell,
+.bootstrap-dark .normal-cell,
+.bootstrap4-dark .normal-cell,
+.bootstrap5-dark .normal-cell,
+.highcontrast .normal-cell {
+    background-color: #315C35;
+}
+
+.fluent-dark .e-grid .e-rowcell.normal-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.fluent2-dark .e-grid .e-rowcell.normal-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.tailwind-dark .e-grid .e-rowcell.normal-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.material-dark .e-grid .e-rowcell.normal-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.material3-dark .e-grid .e-rowcell.normal-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.fabric-dark .e-grid .e-rowcell.normal-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap-dark .e-grid .e-rowcell.normal-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap4-dark .e-grid .e-rowcell.normal-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap5-dark .e-grid .e-rowcell.normal-cell:not(.e-editedbatchcell):not(.e-updatedtd),
+.highcontrast .e-grid .e-rowcell.normal-cell:not(.e-editedbatchcell):not(.e-updatedtd) {
+    color: #38FF9C;
+}

@@ -77,7 +77,7 @@ export class ProgressBarSemiComponent {
     public annotationColors: string[] = ['#e91e63', '#0078D6', '#317ab9', '#007bff', '#4F46E5', '#FFD939', '#9A9A9A', '#22D3EE', '#0D6EFD', '#6750A4', '#D0BCFF', '#0F6CBD', '#1AEBFF', '#115EA3'];
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
         args.progressBar.theme = <ProgressTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
         switch (selectedTheme) {
@@ -126,6 +126,9 @@ export class ProgressBarSemiComponent {
                 break;
             case "fluent2-dark":
                 args.progressBar.annotations[0].content = this.annotationElementContent(this.annotationColors[13], args.progressBar.element.id);
+                break;
+            case "fluent2-highcontrast":
+                args.progressBar.annotations[0].content = this.annotationElementContent(this.annotationColors[12], args.progressBar.element.id);
                 break;
             default:
                 args.progressBar.annotations[0].content =

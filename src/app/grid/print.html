@@ -8,7 +8,7 @@
             </e-items>
         </ejs-toolbar>
         <br/>
-        <ejs-grid [dataSource]='data' [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbar' [childGrid]="childGrid" [allowSorting]='true' [hierarchyPrintMode]="hierarchyPrintMode">
+        <ejs-grid [dataSource]='data' [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbar' [childGrid]="childGrid" [allowSorting]='true' [hierarchyPrintMode]="hierarchyPrintMode" [cssClass]="gridCssClass">
             <e-columns>
                 <e-column field='EmployeeID' headerText='Employee ID' width='120' textAlign='Right' isPrimaryKey='true' [validationRules]='employeeidrules'></e-column>
                 <e-column field='FirstName' headerText='Name' width='150' [validationRules]='firstnamerules'></e-column>

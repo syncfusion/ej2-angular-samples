@@ -266,7 +266,23 @@ export class RightToLeftComponent implements OnInit {
                     'Multiline': 'متعدد الأسطر',
                     'Initial': 'أولي',
                     'Export XFDF': 'تصدير التعليق التوضيحي إلى ملف XFDF',
-                    'Import XFDF': 'استيراد التعليقات التوضيحية من ملف XFDF'
+                    'Import XFDF': 'استيراد التعليقات التوضيحية من ملف XFDF',
+                    'Organize Pages': 'تنظيم الصفحات',
+                    'Insert Right': 'أدخل الحق',
+                    'Insert Left': 'أدخل اليسار',
+                    'Total': 'المجموع',
+                    'Pages': 'الصفحات',
+                    'Rotate Right': 'تدوير لليمين',
+                    'Rotate Left': 'استدر يسارا',
+                    'Delete Page': 'حذف الصفحة',
+                    'Delete Pages': 'حذف الصفحات',
+                    'Copy Page': 'انسخ الصفحة',
+                    'Copy Pages': 'نسخ الصفحات',
+                    'Save': 'يحفظ',
+                    'Save As': 'حفظ باسم',
+                    'Select All': 'اختر الكل',
+                    'Import Document': 'استيراد المستند',
+                    'Match any word': 'تطابق أي كلمة'
                 }
             }
         });

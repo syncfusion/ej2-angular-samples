@@ -1,0 +1,113 @@
+<div class="container">
+    <link href="https://ej2.syncfusion.com/javascript/demos/src/diagram/styles/diagram-common.css" rel="stylesheet" />
+    <div class="main">
+        <div class="diagram-upload-file">
+            <ejs-uploader id="fileupload" name="UploadFiles" [asyncSettings]="asyncSettings"
+                (success)="onUploadSuccess($event)" [showFileList]="false">
+            </ejs-uploader>
+        </div>
+        <div class="db-toolbar-editor">
+            <div class="db-toolbar-container">
+                <ejs-toolbar id="toolbarEditor" [width]="'100%'" [height]="49" (clicked)="toolbarClick($event)">
+                    <e-items>
+                        <e-item prefixIcon="e-icons e-circle-add" tooltipText="New Diagram"></e-item>
+                        <e-item prefixIcon="e-icons e-folder-open" tooltipText="Open Diagram"></e-item>
+                        <e-item prefixIcon="e-icons e-save" tooltipText="Save Diagram"></e-item>
+                        <e-item prefixIcon="e-icons e-print" tooltipText="Print Diagram"></e-item>
+                        <e-item type="Input" tooltipText="Export Diagram">
+                            <ng-template #template>
+                                <button ejs-dropdownbutton id="exportBtn" [items]="exportItems"
+                                    [iconCss]="'e-ddb-icons e-export'" (select)="onselectExport($event)">
+                                </button>
+                            </ng-template>
+                        </e-item>
+                        <e-item type="Separator"></e-item>
+                        <e-item prefixIcon="e-icons e-pan" tooltipText="Pan Tool"
+                            cssClass="tb-item-start pan-item"></e-item>
+                        <e-item prefixIcon="e-icons e-mouse-pointer" tooltipText="Select Tool"
+                            cssClass="tb-item-middle tb-item-selected"></e-item>
+                        <e-item type="Separator"></e-item>
+                        <e-item cssClass="tb-item-end tb-zoom-dropdown-btn" align="Right">
+                            <ng-template #template>
+                                <button ejs-dropdownbutton id="btnZoomIncrement" [items]="zoomMenuItems"
+                                    [content]="zoomContent" (select)="zoomChange($event)">
+                                </button>
+                            </ng-template>
+                        </e-item>
+                    </e-items>
+                </ejs-toolbar>
+            </div>
+        </div>
+        <div class="sb-mobile-palette-bar">
+            <div id="palette-icon" role="button" class="e-ddb-icons1 e-toggle-palette"></div>
+        </div>
+        <div style="margin-top: 5px;border-top: 0.5px solid #b0b0b0;" id="palette-space" class="sb-mobile-palette">
+            <ejs-symbolpalette id="symbolpalette" [expandMode]="'Multiple'" [palettes]="palettes" [width]="'100%'"
+                [height]="'900px'" [symbolHeight]="60" [symbolWidth]="60"
+                [symbolMargin]="{ left: 15, right: 15, top: 15, bottom: 15 }" [getNodeDefaults]="getSymbolDefaults"
+                [getSymbolInfo]="getSymbolInfo">
+            </ejs-symbolpalette>
+        </div>
+        <div style="margin-top: 5px;border: 0.5px solid #b0b0b0;" id="diagram-space" class="sb-mobile-diagram">
+            <ejs-diagram #diagram id="diagram" width="100%" height="900px" [rulerSettings]="{ showRulers: true }"
+                [tool]="diagramTools" [snapSettings]="{ horizontalGridlines: gridlines, verticalGridlines: gridlines }"
+                [scrollSettings]="{ scrollLimit: 'Infinity' }" [layout]="{
+    type: 'Flowchart',
+    orientation: 'TopToBottom',
+    flowchartLayoutSettings: {
+      yesBranchDirection: 'LeftInFlow',
+      noBranchDirection: 'RightInFlow',
+      yesBranchValues: ['Yes', 'True'],
+      noBranchValues: ['No', 'False']
+    },
+    verticalSpacing: 50,
+    horizontalSpacing: 50
+  }" [dataSourceSettings]="{
+    id: 'id',
+    parentId: 'parentId',
+    dataManager: dataManager
+  }" (scrollChange)="onScrollChange($event)" [getNodeDefaults]="getNodeDefaults"
+                [getConnectorDefaults]="getConnectorDefaults" (dragEnter)="dragEnter($event)">
+            </ejs-diagram>
+        </div>
+    </div>
+    <div id='container'>
+        <ejs-dialog #dialog id='dialog' target='#container'
+            header='<span class="e-icons e-assist-chat" style="color: black;width:20px; font-size: 16px;"></span> AI Assist'
+            showCloseIcon='true' isModal='true' [visible]='false' [width]="'540px'" [height]="'310px'">
+            <p style="margin-bottom: 10px; font-weight: bold;">Suggested Prompts</p>
+
+            <button ejs-button id="btn2" cssClass="e-primary" (click)="onBtnClick('Flowchart for online shopping')"
+                style="flex: 1; overflow: visible; border-radius: 8px; margin-bottom: 10px">
+                Flowchart for online shopping
+            </button>
+
+            <button ejs-button id="btn1" cssClass="e-primary"
+                (click)="onBtnClick('Flowchart for Mobile banking registration')"
+                style="flex: 1; overflow: visible; border-radius: 8px; margin-bottom: 10px">
+                Flowchart for Mobile banking registration
+            </button>
+
+            <button ejs-button id="btn3" cssClass="e-primary" (click)="onBtnClick('Flowchart for Bus ticket booking')"
+                style="flex: 1; overflow: visible; border-radius: 8px; margin-bottom: 10px">
+                Flowchart for Bus ticket booking
+            </button>
+
+            <div style="display: flex; align-items: center; margin-top: 20px;">
+                <ejs-textbox #textBox id="textBox" placeholder="Please enter your prompt here..." style="flex: 1;"
+                    (input)="onTextBoxChange($event)"></ejs-textbox>
+
+                <button ejs-button id="db-send" (click)="onSendClick()" iconCss='e-icons e-send' cssClass="e-primary"
+                    style="margin-left: 5px; height: 32px; width: 32px;"></button>
+            </div>
+        </ejs-dialog>
+    </div>
+    <button ejs-button id="ai-assist" [isPrimary]="true" content="AI Assist" iconCss="e-icons e-assist-chat"
+        (click)="showDialog()"></button>
+
+    <!-- Loading indicator container -->
+    <div id="loadingContainer" class="loading-container">
+        <div class="loading-indicator"></div>
+        <div class="loading-text">Generating Flowchart...</div>
+    </div>
+</div>

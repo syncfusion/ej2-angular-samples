@@ -1,0 +1,51 @@
+<div id="action-description">
+  <p>This sample demonstrates the integration of the QueryBuilder component for complex filtering in the Gantt Chart.</p>
+</div>
+<div class="control-section">
+  <div class="content-wrapper">
+    <div id="ganttsidebar-parent" style="overflow: hidden; height: 460px;">
+      <button ejs-button id="filter-btn" (click)="triggerSidebar()">
+        <span class="e-quickfilter" style="padding: 3px;"></span>
+        Advanced Filters
+      </button>
+      <ejs-gantt #gantt id="AdvancedFiltering" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
+                 [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" [height]="height"
+                 [includeWeekend]="includeWeekend" [allowFiltering]="allowFiltering"
+                 [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" (rowSelected)="onRowSelect()">
+      </ejs-gantt>
+
+      <ng-container *ngIf="isSideBar">
+        <ejs-sidebar #sidebar id="gantttsidebar" isOpen="sidebarToggle" width="65%" type="Over" position="Right" target="#ganttsidebar-parent">
+          <div class="ganttsidebar-header">
+            <div class="title">Advanced Filters</div>
+            <button id="close" class="e-close" (click)="handleClose()"></button>
+          </div>
+          <ejs-querybuilder #querybuilder id="ganttquerybuilder" [dataSource]="data" allowValidation="true"
+                            [columns]="[
+                              { field: 'TaskID', label: 'Task ID', type: 'number' },
+                              { field: 'TaskName', label: 'Task Name', type: 'string' },
+                              { field: 'StartDate', label: 'Start Date', type: 'date', format: 'MM/dd/yyyy' },
+                              { field: 'Duration', label: 'Duration', type: 'number' },
+                              { field: 'EndDate', label: 'End Date', type: 'date', format: 'MM/dd/yyyy' },
+                              { field: 'Progress', label: 'Progress', type: 'number' },
+                              { field: 'Predecessor', label: 'Predecessor', type: 'string' }
+                            ]" (ruleChange)="updateRule($event)" (created)="created()">
+          </ejs-querybuilder>
+          <div class="ganttbtn-container">
+            <button ejs-button type="button" id="apply" class="e-control e-btn apply-btn" [isPrimary]="true" (click)="onApplyClick()">Apply</button>
+            <button ejs-button type="button" id="clear" class="e-control e-btn clear-btn" (click)="onClearClick()">Clear</button>
+          </div>
+        </ejs-sidebar>
+      </ng-container>
+    </div>
+  </div>
+</div>
+<div id="description">
+  <p>
+    In this example, the process involves retrieving the complex query from the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/query-builder/getting-started">QueryBuilder</a> component and subsequently integrating it into the Gantt Chart by updating its <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#query">Query</a> Property. The QueryBuilder component tool is located in a <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/sidebar/getting-started">SideBar</a> component that appears when you click on the toolbar.
+  </p>
+</div>
+
+
+
+

@@ -1,7 +1,12 @@
+/**
+ * Symmetric Layout sample
+ */
+
+// Importing needed dependencies for diagram
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { DiagramComponent, Node, NodeModel, SnapConstraints, Diagram, ConnectorModel, SnapSettingsModel, DataBinding, BasicShapeModel, SymmetricLayout, DiagramTools, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import  {symmetricData} from'./overview-data';
+import  { data } from './diagram-data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
@@ -9,44 +14,54 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(DataBinding, SymmetricLayout);
 
 /**
- * Sample for Symmetric layout
+ * Component for displaying a Symmetric Layout sample.
+ * Manages the presentation and behavior of the diagram using Syncfusion's Angular Diagram component.
  */
 @Component({
-    selector: 'control-content',
-    templateUrl: 'symmetric-layout.html',
-    styleUrls: ['diagram-style.css'],
-    encapsulation: ViewEncapsulation.None,
-    standalone: true,
-    imports: [SBActionDescriptionComponent, DiagramModule, NumericTextBoxModule, ButtonModule, SBDescriptionComponent]
+    selector: 'control-content', // Angular component selector
+    templateUrl: 'symmetric-layout.html',  // HTML template file for the component
+    styleUrls: ['diagram-style.css'],  // CSS styles specific to the component
+    encapsulation: ViewEncapsulation.None,  // No view encapsulation
+    standalone: true,  // Indicates it's a standalone component
+    imports: [SBActionDescriptionComponent, DiagramModule, NumericTextBoxModule, ButtonModule, SBDescriptionComponent]  // Importing necessary Angular modules and components
 })
-export class SymmetricLayoutDiagramComponent {
-  @ViewChild('diagram') public diagram: DiagramComponent;
 
+/**
+ * Represents a diagram component with symmetric layout.
+ */
+export class SymmetricLayoutDiagramComponent {
+  // Reference to the diagram component
+  @ViewChild('diagram') 
+  public diagram: DiagramComponent;
+  
+  // Spring layout parameters
   public springlength: number = 80;
   public springfactor: number = 0.8;
   public maxiteration: number = 500;
 
-  public nodeDefaults(obj: NodeModel): NodeModel {
-    obj.height = 20;
-    obj.width = 20;
-    obj.style = { fill: 'transparent', strokeWidth: 2 };
-    return obj;
+  //Set the default values of Node
+  public nodeDefaults(node: NodeModel): NodeModel {
+    node.height = 20;
+    node.width = 20;
+    node.style = { fill: 'transparent', strokeWidth: 2 };
+    return node;
+  }
+//Set the default values of Connectors
+  public connDefaults(connector: ConnectorModel): void {
+    connector.targetDecorator.shape = 'None';
+    connector.type = 'Straight';
   }
 
-  public connDefaults(obj: ConnectorModel): void {
-    obj.targetDecorator.shape = 'None';
-    obj.type = 'Straight';
-  }
-
-  public setNodeTemplate(obj: Node, diagram: Diagram): void {
+  //Funtion to add the Template of the Node.
+  public setNodeTemplate(node: Node): void {
     let shape: BasicShapeModel = { type: 'Basic', shape: 'Ellipse' };
     if (
-      !(obj.data as EmployeeInfo).Type ||
-      (obj.data as EmployeeInfo).Type === 'Server'
+      !(node.data as EmployeeInfo).Type ||
+      (node.data as EmployeeInfo).Type === 'Server'
     ) {
-      obj.width = 30;
-      obj.height = 30;
-      obj.shape = {
+      node.width = 30;
+      node.height = 30;
+      node.shape = {
         type: 'Native',
         content:
           '<svg width="50" height="65"><g id="Server2_shape" fill="transparent" stroke="transparent" stroke-width="1"' +
@@ -66,26 +81,33 @@ export class SymmetricLayoutDiagramComponent {
           '<polygon fill="#656666" points="11.9,18.4 11.9,19.5 16.7,22.4 16.7,21.2  "></polygon></g></g></g></svg>'
       };
     } else {
-      obj.shape = shape;
-      obj.style = { fill: 'orange' };
+      node.shape = shape;
+      node.style = { fill: 'orange' };
     }
   }
-
+ // Tool settings
   public tool: DiagramTools = DiagramTools.ZoomPan;
-  public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
 
-  public data: Object = { id: 'Id', parentId: 'Source', dataSource: new DataManager(symmetricData) };
+        //Set the constraints of the SnapSettings
+
+  public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
+// Add Data source for the diagram
+  public data: Object = { id: 'Id', parentId: 'Source', dataSource: new DataManager(data) };
+  
+  // Layout configuration
   public layout: Object = {
     type: 'SymmetricalLayout', springLength: 80, springFactor: 0.8, maxIteration: 500, margin: { left: 20, top: 20 }
   };
+  // Button click handlers
   public btnClick(args: MouseEvent): void {
     this.diagram.layout.springLength = this.springlength;
     this.diagram.layout.springFactor = this.springfactor;
     this.diagram.layout.maxIteration = this.maxiteration;
-    this.diagram.dataBind();
+    this.diagram.doLayout();
   }
 }
 
+// Interface to define properties of EmployeeInfo
 export interface EmployeeInfo {
   Type: string;
 }

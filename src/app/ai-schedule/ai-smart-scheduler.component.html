@@ -1,0 +1,228 @@
+<div #container>
+    <ejs-tab #tabobj (selected)="selected($event)" [animation]="animation">
+        <e-tabitems>
+            <e-tabitem [header]='headerText[0]'>
+                <ng-template #content>
+                    <div class="control-section">
+                        <div class="row card-item">
+                            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6"
+                                style="margin-bottom: 15px; margin-top: 15px">
+                                <div tabindex="0" class="e-card" id="basic">
+                                    <div class="e-card-header">
+                                        <div class="e-card-header-caption">
+                                            <div class="e-card-header-title">
+                                                Discussion on Ticket 429519
+                                            </div>
+                                        </div>
+                                        <div id="first-card-button">
+                                            <button ejs-button iconCss="e-icons e-timeline-work-week"
+                                                (click)="handleButtonClick(cardContent1)">Schedule
+                                                Appointment</button>
+                                        </div>
+                                    </div>
+                                    <div class="e-card-content">
+                                        <div>
+                                            <span>Hi John,</span><br /><br />
+                                            <span>We have scheduled the meeting for tomorrow (24th Jan) at 12
+                                                PM IST at Mathura Towers and this meeting is scheduled to
+                                                discuss the issue related to the ticket 429519 only.
+                                            </span>
+                                            <span>For any other issues, please create a new ticket or update
+                                                the respective tickets and our technical team will follow up
+                                                with the details in those tickets.</span>
+                                            <br /><br />
+                                            <p>
+                                                "Note: Screen sharing is to see the issue at your end and
+                                                debug directly, if needed. We request you to contact your IT
+                                                team and get prior approval/disable firewall settings to
+                                                share the controls. This will help to minimize the
+                                                resolution time."
+                                            </p>
+                                            <br />
+                                            <span>Regards,</span> <br />
+                                            <span>Sabitha</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row card-item">
+                            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6"
+                                style="margin-bottom: 15px; margin-top: 15px">
+                                <div tabindex="0" class="e-card" id="basic">
+                                    <div class="e-card-header">
+                                        <div class="e-card-header-caption">
+                                            <div class="e-card-header-title">
+                                                Exciting Updates and Demo Invitation from Syncfusion
+                                            </div>
+                                        </div>
+                                        <div id="second-card-button">
+                                            <button ejs-button iconCss="e-icons e-timeline-work-week"
+                                                (click)="handleButtonClick(cardContent2)">Schedule
+                                                Appointment</button>
+                                        </div>
+                                    </div>
+                                    <div class="e-card-content">
+                                        <div>
+                                            <br />
+                                            <span>
+                                                <strong>You:</strong> Hi Alex, I hope you're doing well! I’m
+                                                reaching out from Syncfusion Software Pvt Ltd. We've
+                                                recently made some exciting updates to our UI components and
+                                                I'd love to share them with you.</span><br /><br />
+                                            <span><strong>Recipient:</strong> Hi Andrew, I'm doing well,
+                                                thanks! What kind of updates have you made?</span><br />
+                                            <br />
+                                            <span>
+                                                <strong>You:</strong> We've enhanced key components such as
+                                                the Scheduler, Carousel, Tab, Toolbar, Accordion, and
+                                                Appbar. Additionally, we've improved accessibility to meet
+                                                WCAG 2.2 standards and enhanced security with XSS
+                                                prevention. These updates aim to provide a more robust and
+                                                secure experience for our users. </span><br /><br />
+                                            <span>
+                                                <strong>Recipient:</strong> That sounds fantastic! I’d be
+                                                interested in seeing these updates in action. </span><br /><br />
+                                            <span>
+                                                <strong>You:</strong> Wonderful! I’d love to schedule a demo
+                                                to showcase these new features. Are you available for a
+                                                session on Wednesday, August 7th at 11 AM, or Friday, August
+                                                9th at 2 PM? The demo will be held at our Morrisville
+                                                office. </span><br /><br />
+                                            <span>
+                                                <strong>Recipient:</strong> Friday, August 9th at 2 PM works
+                                                for me. </span><br /><br />
+                                            <span>
+                                                <strong>You:</strong> Perfect! I’ll send a calendar invite
+                                                for Friday, August 9th at 2 PM at our Morrisville office.
+                                            </span><br /><br />
+                                            <span> <strong>Recipient:</strong> Great, see you then! </span><br /><br />
+                                            <span>
+                                                <strong>You:</strong> See you on Friday! Have a great day.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row card-item">
+                            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6"
+                                style="margin-bottom: 15px; margin-top: 15px">
+                                <div tabindex="0" class="e-card" id="basic">
+                                    <div class="e-card-header">
+                                        <div class="e-card-header-caption">
+                                            <div class="e-card-header-title">
+                                                Meeting to discuss on Ticket 603027
+                                            </div>
+                                        </div>
+                                        <div id="third-card-button">
+                                            <button ejs-button iconCss="e-icons e-timeline-work-week"
+                                                (click)="handleButtonClick(cardContent3)">Schedule
+                                                Appointment</button>
+                                        </div>
+                                    </div>
+                                    <div class="e-card-content">
+                                        <div>
+                                            <span>Hi Liji,</span><br /><br />
+                                            <span>We have scheduled the meeting for today at 3 PM IST in
+                                                Chennai and this meeting is scheduled to discuss the issue
+                                                related to the ticket 603027 only.
+                                            </span>
+                                            <span>For any other issues, please create a new ticket or update
+                                                the respective tickets and our technical team will follow up
+                                                with the details in those tickets.</span>
+                                            <br /><br />
+                                            <br />
+                                            <span>Regards,</span> <br />
+                                            <span>Ram</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </e-tabitem>
+            <e-tabitem [header]='headerText[1]'>
+                <ng-template #content>
+                    <ejs-schedule #scheduleObj width='100%' height='750px' [selectedDate]='selectedDate'
+                        [eventSettings]='eventSettings' [currentView]="view"
+                        (eventRendered)="onEventRendered($event)"></ejs-schedule>
+                </ng-template>
+            </e-tabitem>
+        </e-tabitems>
+    </ejs-tab>
+    <div></div>
+    <ejs-dialog #dialog id="editor_dialog" showCloseIcon='true' (open)="open()" [width]='width' [height]="height"
+        [target]='targetElement' [showCloseIcon]="true" [isModal]="true" [visible]="false">
+        <ng-template #content>
+            <div class="dialogContent">
+                <form id="formId" class="form-horizontal schedule-form" novalidate="">
+                    <div class="form-group">
+                        <div class="e-float-input">
+                            <input class="e-input" type="text" id="subject" name="Subject"
+                                data-smartpaste-description="Subject must be the core content of the input" />
+                            <span class="e-float-line"></span>
+                            <label class="e-float-text" for="subject">Subject</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="e-float-input">
+                            <input class="e-input" type="text" id="location" name="Location"
+                                data-smartpaste-description="Check if there is any location given in the input, if there is any location then add it, if not ignore it" />
+                            <span class="e-float-line"></span>
+                            <label class="e-float-text" for="location">Location</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="e-float-input">
+                            <ejs-datetimepicker #daterange1 [value]="value2" [format]="format2"></ejs-datetimepicker>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="e-float-input">
+                            <ejs-datetimepicker #daterange2 [value]="value1" [format]="format1"></ejs-datetimepicker>
+                        </div>
+                    </div>
+
+                    <div class="form-group description">
+                        <div class="e-float-input">
+                            <textarea rows="4" id="description" name="Description"
+                                data-smartpaste-description="Description must be the summary of the entire input"></textarea>
+                            <span class="e-float-line"></span>
+                            <label class="e-float-text" for="description">Description</label>
+                        </div>
+                    </div>
+                    <div class="row button-group">
+                        <div>
+                            <button #smart ejs-smart-paste-button type="button" id="smart-paste"
+                                class="smart-schedule-button" (created)="onCreated()">Smart Paste</button>
+                        </div>
+
+                        <div style="display: inline-block;">
+                            <button ejs-button id="saveButton" cssClass="samplebtn e-primary" disabled="true"
+                                type="button" style="margin-right: 10px; " data-ripple="true"
+                                (click)="attachEvent($event)">Save</button>
+                        </div>
+                        <div style="float: right;">
+                            <button ejs-button id="cancelButton" cssClass="samplebtn" type="reset" data-ripple="true"
+                                (click)="dialoghide()">cancel</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </ng-template>
+        <ng-template #header>
+            <div>Event Scheduler</div>
+        </ng-template>
+    </ejs-dialog>
+</div>
+
+<ejs-toast #toast [title]="toastTitle" [content]="toastContent" [position]="position" cssClass="e-toast-success">
+
+</ejs-toast>
+</div>

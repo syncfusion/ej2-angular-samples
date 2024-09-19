@@ -31,5 +31,7 @@ export class SortinAndFilteringComponent {
             // Filtered D(Department  field) column with value 'Services'
             this.spreadsheetObj.applyFilter([{ field: 'D', operator: 'equal', value: 'Services' }], 'A1:G51');
         });
+        this.spreadsheetObj.numberFormat('m/d/yyyy', 'E2:E51');
+        this.spreadsheetObj.numberFormat('$#,##0.00', 'F2:F51');
     }
 }

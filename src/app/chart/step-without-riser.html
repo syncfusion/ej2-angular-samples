@@ -1,0 +1,36 @@
+<div id="action-description">
+    <p>
+        This Step Area Chart example visualizes the sales data of a product over a 50-year period using the default step
+        area series without risers. </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer'
+            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' (load)='load($event)'
+            [tooltip]='tooltip' [legendSettings]="legendSettings">
+            <e-series-collection>
+                <e-series [dataSource]='data' type='StepArea' xName='x' yName='y' name='Product Sales' width=2
+                    [border]='border' step="Center" opacity=0.1 noRisers=true [marker]='marker'> </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure a step area chart without vertical risers. The
+        <code>noRisers</code> feature allows the series to appear as a continuous flow without showing vertical lines
+        between points. This approach can be useful for highlighting trends without the distraction of risers.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use step area series, we need
+        to inject
+        <code>StepAreaSeriesService</code> into the <code>&#64;NgModule.providers</code> section.
+    </p>
+    <p>
+        More information about the step area series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/step-area"
+            aria-label="Navigate to the documentation for Step Area Chart in Angular Chart component">documentation
+            section</a>.
+    </p>
+</div>

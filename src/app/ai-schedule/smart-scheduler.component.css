@@ -1,0 +1,41 @@
+
+.control-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-item {
+    width: 75%;
+}
+
+.schedule-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.smart-schedule-button{
+    display: none;
+}
+
+.schedule-form .form-group.description, 
+.schedule-form .button-group {
+    grid-column: 1 / 3; 
+}
+
+.row.button-group {
+    display: flex;
+    justify-content: end;
+}
+
+.samplebtn {
+    height:40px;
+    width: 85px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+}
+
+.e-dlg-container {
+    height: 140vh !important;
+}

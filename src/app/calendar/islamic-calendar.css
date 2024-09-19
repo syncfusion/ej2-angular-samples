@@ -17,7 +17,10 @@
 }
 
 body.fluent-dark #selected,
+body.fluent2-dark #selected,
+body.fluent2-highcontrast #selected,
 body.bootstrap5-dark #selected,
+body.bootstrap5.3-dark #selected,
 body.tailwind-dark #selected,
 body.material-dark #selected,
 body.material3-dark #selected,
@@ -66,6 +69,7 @@ body.highcontrast #selected {
 .fabric-dark .sf-icon-cup:before,
 .bootstrap-dark .sf-icon-cup:before,
 .bootstrap5-dark .sf-icon-cup:before,
+.bootstrap5.3-dark .sf-icon-cup:before,
 .tailwind-dark .sf-icon-cup:before {
     color: #ff7500;
 }
@@ -76,6 +80,7 @@ body.highcontrast #selected {
 .fabric-dark .sf-icon-start:before,
 .bootstrap-dark .sf-icon-start:before,
 .bootstrap5-dark .sf-icon-start:before,
+.bootstrap5.3-dark .sf-icon-start:before,
 .tailwind-dark .sf-icon-start:before {
     color: #ff7500;
 }

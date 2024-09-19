@@ -3,6 +3,11 @@
     .e-symbolpalette {
         display: block;
     }
+    .diagram-property-tab .row {
+                margin-left: 0px;
+                margin-right: 0px;
+                padding-top: 8px;
+            }
 </style>
 <div id="action-description">
     <p>
@@ -11,7 +16,7 @@
   </div>
 <div class="col-lg-10 control-section">
             <div class="content-wrapper" style="width:100%;background: white">
-                <ejs-diagram #diagram id="diagram" width="100%" height="700px" [nodes]="nodes" [connectors]="connectors"  (created)="created($event)" (selectionChange)="selectionChange($event)" [getCustomTool]="getCustomTool"
+                <ejs-diagram #diagram id="diagram" width="100%" height="550px" [getConnectorDefaults]='connectorDefaults' [getNodeDefaults]='nodeDefaults' [nodes]="nodes" [connectors]="connectors"  (created)="created($event)" (selectionChange)="selectionChange($event)" [getCustomTool]="getCustomTool"
                 [selectedItems]="selectedItems" [contextMenuSettings]="contextMenuSettings">
                 </ejs-diagram>
             </div>
@@ -20,23 +25,23 @@
                 <div class="property-panel-header">
                     <span>Diagram Constraints</span>
                 </div>
-                <div class="row property-panel-content">
-                    <div class="row" style="padding-top: 8px">
+                <div class="row property-panel-content diagram-property-tab">
+                    <div class="row">
                         <ejs-checkbox #checkbox label="Zooming" [checked]="true" (change)="zoomingChange($event)"></ejs-checkbox>
                     </div>
-                    <div class="row" style="padding-top: 8px">
+                    <div class="row">
                         <ejs-checkbox #checkbox label="Undo/Redo" [checked]="true" (change)="undoRedoChange($event)"></ejs-checkbox>
                     </div>
-                    <div class="row" style="padding-top: 8px">
+                    <div class="row">
                         <ejs-checkbox #checkbox label="Editing" [checked]="true" (change)="editingChange($event)"></ejs-checkbox>
                     </div>
-                    <div class="row" style="padding-top: 8px">
-                        <ejs-checkbox #checkbox label="Context Menu" [checked]="true" (change)="contextChange($event)"></ejs-checkbox>
+                    <div class="row">
+                        <ejs-checkbox #checkbox label="Context Menu" [checked]="true" (change)="contextMenuChange($event)"></ejs-checkbox>
                     </div>
-                    <div class="row" style="padding-top: 8px">
-                        <ejs-checkbox #checkbox label="Selectable" [checked]="true" (change)="selectableChange($event)"></ejs-checkbox>
+                    <div class="row">
+                        <ejs-checkbox #checkbox label="Selectable" [checked]="true" (change)="elementSelectableChange($event)"></ejs-checkbox>
                     </div>
-                    <div class="row" style="padding-top: 8px">
+                    <div class="row">
                         <ejs-checkbox #checkbox label="Draggable" [checked]="true" (change)="draggableChange($event)"></ejs-checkbox>
                     </div>
                 </div>

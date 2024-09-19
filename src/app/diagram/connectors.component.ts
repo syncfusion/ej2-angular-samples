@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { DiagramComponent, NodeModel, HierarchicalTree, ConnectorModel, StackPanel, TextElement, Segments, ConnectorConstraints, NodeConstraints, PointPortModel, PortVisibility, BasicShapeModel, LayoutModel, ConnectorEditing, DecoratorShapes, SegmentThumbShapes, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { Diagram, SnapConstraints, SnapSettingsModel, randomId } from '@syncfusion/ej2-diagrams';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
+import { ColorPickerModule, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(HierarchicalTree,ConnectorEditing);
@@ -18,18 +18,19 @@ Diagram.Inject(HierarchicalTree,ConnectorEditing);
     styleUrls: ['diagram-style.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [SBActionDescriptionComponent, DiagramModule, DropDownListModule, ColorPickerModule, SBDescriptionComponent]
+    imports: [SBActionDescriptionComponent, DiagramModule, DropDownListModule, ColorPickerModule, SBDescriptionComponent, NumericTextBoxModule]
 })
 
 export class ConnectorDiagramComponent {
     @ViewChild('diagram')
     public diagram: DiagramComponent;
-
+    //Configrues hierarchical tree layout
     public layout: LayoutModel = {
         type: 'HierarchicalTree', orientation: 'LeftToRight',
         verticalSpacing: 75, margin: { left: 90, right: 0, top: 0, bottom: 0 }
     }
-    public decoratorshape = [
+    //Shape collection of the decorators.
+    public decoratorShape = [
         { shape: 'None', text: 'None' },
         { shape: 'Square', text: 'Square' },
         { shape: 'Circle', text: 'Circle' },
@@ -42,6 +43,15 @@ export class ConnectorDiagramComponent {
         { shape: 'OutdentedArrow', text: 'Outdented Arrow' },
         { shape: 'DoubleArrow', text: 'Double Arrow' }
     ];
+
+    public selectionChange() {
+        if (this.diagram.selectedItems.connectors.length > 0) {
+            (document.getElementById('segmentDecoratorSize') as any).ej2_instances[0].enabled = true;
+        }
+        else{
+            (document.getElementById('segmentDecoratorSize') as any).ej2_instances[0].enabled = false;
+        }
+    }
     public shape: BasicShapeModel = { type: 'Basic', shape: 'Rectangle', cornerRadius: 10 };
     public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
 
@@ -51,9 +61,10 @@ export class ConnectorDiagramComponent {
     public setNodeTemplate: Function = this.nodeTemplate.bind(this);
 
     ngOnInit(): void {
-        document.getElementById('appearance').onclick = this.documentClick.bind(this);
+        document.getElementById('appearance').onclick = this.connectorTypeClick.bind(this);
     }
 
+    //set default value for Nodes.
     private nodeDefaults(node: NodeModel, diagram: Diagram): NodeModel {
         let obj: NodeModel = {};
         if (node.id !== 'node1') {
@@ -68,6 +79,7 @@ export class ConnectorDiagramComponent {
         return obj;
     };
 
+    //set default value for Connectors.
     private connectorDefaults(obj: ConnectorModel): void {
         obj.type = 'Bezier';
         obj.style.strokeColor = '#6f409f';
@@ -85,6 +97,7 @@ export class ConnectorDiagramComponent {
         this.diagram.fitToPage();
     }
 
+    //Customize the content of the node
     private nodeTemplate(node: NodeModel): StackPanel {
         if (node.id === 'node6') {
             let canvas: StackPanel = new StackPanel();
@@ -102,6 +115,7 @@ export class ConnectorDiagramComponent {
         return null;
     };
 
+    //creation of Port for Node.
     private getPorts(obj: NodeModel): PointPortModel[] {
         if (obj.id === 'node2') {
             let node2Ports: PointPortModel[] = [
@@ -126,6 +140,7 @@ export class ConnectorDiagramComponent {
         }
     }
 
+    //creation of the TextElement.
     private getTextElement(text: string, color: string): TextElement {
         let textElement: TextElement = new TextElement();
         textElement.id = randomId();
@@ -141,7 +156,8 @@ export class ConnectorDiagramComponent {
         return textElement;
     }
 
-    private documentClick(args: MouseEvent): void {
+    //Event to change the connector type.
+    private connectorTypeClick(args: MouseEvent): void {
         let target: HTMLElement = args.target as HTMLElement;
         // custom code start
         let selectedElement: HTMLCollection = document.getElementsByClassName('e-selected-style');
@@ -178,10 +194,10 @@ export class ConnectorDiagramComponent {
                 case 'bezierConnectorWithDasharray':
                     this.applyConnectorStyle(true, false, false, 'Bezier');
                     break;
-                case 'cornerRadious':
+                case 'cornerRadius':
                     this.applyConnectorStyle(false, false, true, 'Orthogonal');
                     break;
-                case 'sourceDecorator':
+                case 'sourceDecorators':
                     this.applyConnectorStyle(false, true, false, 'Straight');
                     break;
                 case 'sourceDecoratorWithDasharray':
@@ -193,23 +209,24 @@ export class ConnectorDiagramComponent {
             // custom code end
         }
     };
-    private applyConnectorStyle(dashedLine: boolean, sourceDec: boolean, isRounded: boolean, type: Segments, strokeWidth?: number): void {
+    //Connector style customization
+    private applyConnectorStyle(dashedLine: boolean, sourceDecorator: boolean, isRounded: boolean, type: Segments, strokeWidth?: number): void {
         for (let i: number = 0; i < this.diagram.connectors.length; i++) {
             this.diagram.connectors[i].style.strokeWidth = strokeWidth ? strokeWidth : 2;
             this.diagram.connectors[i].type = type;
             this.diagram.connectors[i].cornerRadius = isRounded ? 5 : 0;
             this.diagram.connectors[i].style.strokeDashArray = dashedLine ? '5,5' : '';
-            if (sourceDec) {
+            if (sourceDecorator) {
                 this.diagram.connectors[i].sourceDecorator = {
                     style: {
                         strokeColor: this.diagram.connectors[i].style.strokeColor,
                         fill: this.diagram.connectors[i].style.strokeColor, strokeWidth: 2
                     }, shape: 'Circle'
                 };
-                (document.getElementById('sourceDecorator2') as any).value='Circle';
+                (document.getElementById('sourceDecorator') as any).ej2_instances[0].value='Circle';
             } else {
                 this.diagram.connectors[i].sourceDecorator = { shape: 'None' };
-                (document.getElementById('sourceDecorator2') as any).value='None';
+                (document.getElementById('sourceDecorator') as any).ej2_instances[0].value='None';
             }
             this.diagram.connectors[i].targetDecorator = {
                 style: {
@@ -217,10 +234,12 @@ export class ConnectorDiagramComponent {
                     fill: this.diagram.connectors[i].style.strokeColor, strokeWidth: 2
                 }, shape: 'Arrow'
             };
+            (document.getElementById('targetDecorator') as any).ej2_instances[0].value='Arrow';
             this.diagram.dataBind();
-            (document.getElementById('targetDecorator') as any).value='Arrow';
+            this.diagram.updateSelector();
         }
     }
+    //set connector color
     public colorChange(args: any) {
         for(let i=0;i<this.diagram.connectors.length;i++)
         {
@@ -232,7 +251,8 @@ export class ConnectorDiagramComponent {
         }
         this.diagram.dataBind();
     }
-    public srcDecShapeChange(args:any) {
+    //Change Source decorator shape
+    public sourceDecoratorShapeChange(args:any) {
         for (let i = 0; i < this.diagram.connectors.length; i++) {
             this.diagram.connectors[i].sourceDecorator = {
                 shape: args.itemData.shape,
@@ -245,7 +265,8 @@ export class ConnectorDiagramComponent {
         this.diagram.dataBind();
 
     }
-    public tarDecShapeChange(args:any) {
+    //Change target decorator shape
+    public targetDecoratorShapeChange(args:any) {
         for (let i = 0; i < this.diagram.connectors.length; i++) {
             this.diagram.connectors[i].targetDecorator = {
                 shape: args.itemData.shape,
@@ -257,10 +278,36 @@ export class ConnectorDiagramComponent {
             this.diagram.dataBind();
         }
     }
-    public segDecShapeChange(args:any) {
+    //Change segment decorator shape
+    public segmentDecoratorShapeChange(args:any) {
         for (let i = 0; i < this.diagram.connectors.length; i++) {
             this.diagram.segmentThumbShape = args.itemData.shape;
         }
+        this.diagram.dataBind();
+    }
+     //Change Source decorator size
+     public sourceDecoratorSizeChange(args:any) {
+        for (let i = 0; i < this.diagram.connectors.length; i++) {
+            this.diagram.connectors[i].sourceDecorator.width = args.value;
+            this.diagram.connectors[i].sourceDecorator.height = args.value;
+        }
+        this.diagram.dataBind();
+
+    }
+    //Change target decorator size
+    public targetDecoratorSizeChange(args:any) {
+        for (let i = 0; i < this.diagram.connectors.length; i++) {
+            this.diagram.connectors[i].targetDecorator.width = args.value;
+            this.diagram.connectors[i].targetDecorator.height = args.value;
+        }
+        this.diagram.dataBind();
+    }
+    //Change segment decorator size
+    public segmentDecoratorSizeChange(args:any) {
+        let connector = this.diagram.selectedItems.connectors[0];
+        this.diagram.segmentThumbSize = args.value;
+        this.diagram.clearSelection();
+        this.diagram.select([this.diagram.nameTable[connector.id]]);
         this.diagram.dataBind();
     }
 }

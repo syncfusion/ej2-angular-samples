@@ -67,7 +67,8 @@ font-size: 13px;
 .e-userimg.sf-icon-FeMale::before{
   content: '\e701';      
 }
-:host-context(.highcontrast) /deep/ #overviewgrid td.e-rowcell.e-selectionbackground.e-active {
+:host-context(.highcontrast) /deep/ #overviewgrid td.e-rowcell.e-selectionbackground.e-active,
+:host-context(.fluent2-highcontrast) /deep/ #overviewgrid td.e-rowcell.e-selectionbackground.e-active {
   background-color: transparent;
   color: white;
 }
@@ -222,3 +223,12 @@ td.e-rowcell .statustxt.e-inactivecolor {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px #ffa600;
 }
+
+@-moz-document url-prefix() {     
+  #overviewgrid.e-grid.e-grid-min-height .e-rowcell {       
+      line-height: 0!important;
+} }
+@-moz-document url-prefix() {    
+  #overviewgrid.e-grid.e-grid-min-height .e-rowcell {         
+      line-height: 0!important;
+} }

@@ -15,8 +15,6 @@ import { MultiColumnComboBoxComponent, MultiColumnComboBoxModule } from '@syncfu
     imports: [SBActionDescriptionComponent, MultiColumnComboBoxModule, SBDescriptionComponent]
 })
 export class RemotetMultiComboBoxComponent {
-    @ViewChild('sample')
-    public multicomboBoxObj: MultiColumnComboBoxComponent;
     // define the remote data
     public data: DataManager = new DataManager({
         url: 'https://services.syncfusion.com/angular/production/api/Employees',
@@ -27,6 +25,6 @@ export class RemotetMultiComboBoxComponent {
     public fields: Object = { text: 'FirstName', value: 'EmployeeID' };
     // bind the Query instance to query property
     public query: Query = new Query().select(['FirstName', 'EmployeeID', 'Designation', 'Country']).take(10).requiresCount();
-    // set the placeholder to MultiColumn ComboBox input element
+    // set the placeholder to ComboBox input element
     public waterMark: string = 'Select a name';
 }

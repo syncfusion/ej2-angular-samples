@@ -1,8 +1,14 @@
 <div class="col-lg-12 control-section">
     <div class="sample_container badge-accordion">
-        <ejs-accordion id="accordion" (created)="onCreated()">
+        <ejs-accordion id="accordion">
             <e-accordionitems>
-                <e-accordionitem header='Robert' iconCss='e-people e-acrdn-icons' [expanded]=true>
+                <e-accordionitem iconCss='e-people e-acrdn-icons' [expanded]=true>
+                    <ng-template #header>
+                        <div>
+                            <span>Robert</span>
+                            <span class="e-badge e-badge-success">7 new</span>
+                        </div>
+                    </ng-template>
                     <ng-template #content>
                         <div>
                           <ul>
@@ -14,7 +20,13 @@
                         </div>
                     </ng-template>
                 </e-accordionitem>
-                <e-accordionitem header='Kevin' iconCss='e-people e-acrdn-icons'>
+                <e-accordionitem iconCss='e-people e-acrdn-icons'>
+                    <ng-template #header>
+                        <div>
+                            <span>Kevin</span>
+                            <span class="e-badge e-badge-success">27 new</span>
+                        </div>
+                    </ng-template>
                     <ng-template #content>
                         <div>
                           <ul>
@@ -26,7 +38,13 @@
                         </div>
                     </ng-template>
                 </e-accordionitem>
-                <e-accordionitem header='Eric' iconCss='e-people e-acrdn-icons'>
+                <e-accordionitem iconCss='e-people e-acrdn-icons'>
+                    <ng-template #header>
+                        <div>
+                            <span>Eric</span>
+                            <span class="e-badge e-badge-success">2 new</span>
+                        </div>
+                    </ng-template>
                     <ng-template #content>
                         <div>
                           <ul>
@@ -38,7 +56,13 @@
                         </div>
                     </ng-template>
                 </e-accordionitem>
-                <e-accordionitem header='Peter' iconCss='e-people e-acrdn-icons'>
+                <e-accordionitem iconCss='e-people e-acrdn-icons'>
+                    <ng-template #header>
+                        <div>
+                            <span>Peter</span>
+                            <span class="e-badge e-badge-success">14 new</span>
+                        </div>
+                    </ng-template>
                     <ng-template #content>
                         <div>
                           <ul>

@@ -8,8 +8,14 @@
 .bootstrap5 #ganttUnscheduled .e-add-icon:before,.bootstrap5-dark #ganttUnscheduled .e-add-icon:before,
 .tailwind #ganttUnscheduled .e-add-icon:before,.tailwind-dark #ganttUnscheduled .e-add-icon:before,
 .fluent #ganttUnscheduled .e-add-icon:before, .fluent-dark #ganttUnscheduled .e-add-icon:before,
-.material3-dark #Unscheduled .e-add-icon:before ,.material3 #Unscheduled .e-add-icon:before
-.fluent2 #Unscheduled .e-add-icon:before,.fluent2-highcontrast #Unscheduled .e-add-icon:before,
-.fluent2-dark #Unscheduled .e-add-icon:before{
-    content: "\e836"
+.material3-dark #ganttUnscheduled .e-add-icon:before ,.material3 #ganttUnscheduled .e-add-icon:before,
+.fluent2 #ganttUnscheduled .e-add-icon:before,.fluent2-highcontrast #ganttUnscheduled .e-add-icon:before,
+.fluent2-dark #ganttUnscheduled .e-add-icon:before,
+.bootstrap5\.3 #ganttUnscheduled .e-add-icon:before,
+.bootstrap5\.3-dark-lite #ganttUnscheduled .e-add-icon:before,
+.bootstrap5\.3-dark #ganttUnscheduled .e-add-icon:before, 
+.bootstrap5\.3-lite #ganttUnscheduled .e-add-icon:before{
+    content: "\e836";
+    font-size: '16px';
+    font-family: 'e-icons';
 }

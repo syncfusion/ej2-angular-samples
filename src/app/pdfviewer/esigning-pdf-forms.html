@@ -1,0 +1,149 @@
+<div id="action-description">
+    <p>This sample enables two different users to sign the document. The first user must fill out and sign their designated fields, which are visible only to them. Once the first user has completed their section, the second user can be selected to fill out and sign their own fields. After both users have signed, the document can be finalized.
+        has context menu</p>
+</div>
+<div id="e-pv-e-sign-control" class="e-pv-e-sign-control control-section">
+    <ejs-toolbar class="e-pv-e-sign-toolbar-section">
+        <e-items>
+            <e-item tooltipText="User-dropdown" align="Left">
+                <ng-template #template>
+                    <ejs-dropdownlist #userMenu id="e-pv-e-sign-employees" [dataSource]="userDetails" index = 0
+                        [fields]="fields" (select)="userChange($event)" [popupHeight]="height">
+                        <ng-template #itemTemplate let-data>
+                            <div style="display: flex; height: 50px; width: 200px;">
+                                <img class="e-pv-e-sign-empImage" height="30px" width="30px"
+                                    style="margin: 10px 6px; border-radius: 50%"
+                                    [ngStyle]="{'border': '1px solid ' + (data.Mail === 'andrew@mycompany.com' ? 'red' : 'green')}"
+                                    src="./assets/pdf-viewer/employees/{{data.Eimg}}.png"
+                                    alt="{{data.Eimg}}" />
+                                <div>
+                                    <div class="e-pv-e-sign-ename">{{data.Name}}</div>
+                                    <div class="e-pv-e-sign-ejob">{{data.Mail}}</div>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template #valueTemplate let-data>
+                            <div style="display: flex;">
+                                <img id="user-img" class="e-pv-e-sign-valueTemp" style="margin: 3px 6px; border-radius: 50%"
+                                    [ngStyle]="{'border': '1px solid ' + currentUserBorderColor}"
+                                    src="./assets/pdf-viewer/employees/{{data.Eimg}}.png"
+                                    height="30px" width="30px" alt="{{data.Eimg}}" />
+                                <div>
+                                    <div class="e-pv-e-sign-name" style="margin-top: 3px;">
+                                        {{data.Name}}
+                                    </div>
+                                    <div class="e-pv-e-sign-job">{{data.Mail}}</div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ejs-dropdownlist>
+                </ng-template>
+            </e-item>
+            <e-item tooltipText="Finish Signing" showTextOn="Overflow" align="Right">
+                <ng-template #template>
+                    <button ejs-button #btnElement cssClass="e-outline" id="e-pv-e-sign-finishSigning"
+                        disabled="true" (click)="finishSigning($event)">
+                        Finish Signing
+                    </button>
+                </ng-template>
+            </e-item>
+        </e-items>
+    </ejs-toolbar>
+    <ejs-pdfviewer #pdfviewer id="pdfViewer" [enableNavigationToolbar]="false" [enableToolbar]="false" [enableAnnotationToolbar]="false"
+        [documentPath]='document' (documentLoad)="documentLoad($event)" [serviceUrl]="service"    
+        (formFieldPropertiesChange)="fieldChange($event)" [resourceUrl]='resource' [downloadFileName]="fileName"
+        (downloadEnd)="downloadEnd($event)" style="height:640px;display:block">
+    </ejs-pdfviewer>
+    <div id='dialog-target'>
+        <ejs-dialog id="modalDialog" #modalDialog [minHeight]="'50px'" [isModal]="true"
+            [width]="width" [buttons]="buttons" [animationSettings]="animationSettings"
+            [content]="content" [visible]="status">
+        </ejs-dialog>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        More information on the PDF Viewer instantiation can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/pdfviewer/getting-started">
+            documentation section</a>.
+    </p>
+</div>
+
+<style>
+    #e-pv-e-sign-control {
+        font-family: Roboto;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        letter-spacing: 0.24px;
+    }
+
+    .e-pv-e-sign-toolbar-section {
+        z-index: 1001;
+        width: 100% !important;
+        height: 48px !important;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+    }
+
+    #e-pv-e-sign-finishSigning {
+        width: 115px !important;
+        height: 28px;
+        min-height: 0;
+        padding: 0;
+        font-size: 12px;
+        flex-shrink: 0;
+        border-radius: 16px;
+        border: 1px solid;
+    }
+
+    #e-pv-e-sign-employees {
+        width: 185px;
+        position: absolute;
+        left: 0px;
+    }
+
+    #e-pv-e-sign-employees .e-input-group {
+        border: none;
+    }
+
+    #e-pv-e-sign-employees .e-input-group:not(.e-float-icon-left):not(.e-float-input).e-input-focus::before,
+    #e-pv-e-sign-employees .e-input-group:not(.e-float-icon-left):not(.e-float-input).e-input-focus::after {
+        width: 0px;
+    }
+
+    .e-pv-e-sign-name,
+    .e-pv-e-sign-ename {
+        margin-top: 10px;
+        font-size: 14px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+    }
+
+    .e-pv-e-sign-job,
+    .e-pv-e-sign-ejob {
+        font-size: 12px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 12px;
+        letter-spacing: 0.2px;
+    }
+
+    .e-pv-e-sign-ename,
+    .e-pv-e-sign-ejob {
+        position: relative;
+        right: 15px;
+    }
+
+    #e-pv-e-sign-employees .e-input-group .e-control-wrapper .e-ddl e-lib .-keyboard .e-valid-input {
+        border: none !important;
+    }
+
+    #e-pv-e-sign-employees_popup {
+        width: 200px !important;
+        margin-top: 8px;
+    }
+</style>

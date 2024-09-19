@@ -22,12 +22,15 @@
                       <ng-template #template>
                           <div class=''><input type='text' class='e-input-group e-pv-current-page-number' id='currentPage' value="0"
                                   (keypress)='onCurrentPageBoxKeypress($event)' (click)='onCurrentPageBoxClicked($event)' /></div>
-                          <div style='margin-left: 6px'><span class='e-pv-total-page-number' id='totalPage'>of 0</span></div>
+                          <div [style.margin]="'0px 6px'"><span class='e-pv-total-page-number' id='totalPage'>of 0</span></div>
                       </ng-template>
                   </e-item>
+                  <e-item type="Separator" tooltipText="separator" align="Center"></e-item>
                   <e-item prefixIcon='e-icons e-mouse-pointer' (click)='textSelection($event)'  id='text_selection_tool'  tooltipText='Text Selection tool' align="Center"></e-item>
                   <e-item prefixIcon='e-icons e-pan' (click)='panMode($event)'  id='pan_mode' tooltipText='Pan Mode'  align='Center'></e-item>
+                  <e-item type="Separator" tooltipText="separator" align="Center"></e-item>
                   <e-item prefixIcon="e-icons e-annotation-edit" (click)='openEditAnnotation($event)' tooltipText="Edit Annotation" id="edit_annotation"  align="Center" ></e-item>
+                  <e-item type="Separator" tooltipText="separator" align="Center"></e-item>
                   <e-item prefixIcon="e-icons e-split-vertical" (click)='addEditFormFields($event)' tooltipText="Add and Edit Form Fields" id="add_form_field"  align="Center" ></e-item>                    
                   <e-item prefixIcon="e-icons e-search" (click)='findText($event)' tooltipText="Find Text" id="find_text"  align="Right" ></e-item>
                   <e-item prefixIcon='e-icons e-print' tooltipText='Print' (click)='printClicked($event)' align='Right'></e-item>
@@ -45,7 +48,7 @@
               <e-item prefixIcon="e-icons e-arrow-right-up" (click)='addArrow($event)' tooltipText="Add Arrow" id="arrow" align="Center"></e-item>
               <e-item prefixIcon="e-icons e-rectangle" (click)='addRectangle($event)' tooltipText="Add Rectangle" id="rectangle" align="Center"></e-item>
               <e-item prefixIcon="e-icons e-circle" (click)='addCircle($event)' tooltipText="Add Circle" id="circle" align="Center"></e-item>
-              <e-item prefixIcon="e-icons e-pentagan" (click)='addPoligon($event)' tooltipText="Add Polygon" id="polygon" align="Center"></e-item>
+              <e-item prefixIcon="e-icons e-pentagon" (click)='addPoligon($event)' tooltipText="Add Polygon" id="polygon" align="Center"></e-item>
               <e-item type="Separator" tooltipText="separator" align="Center"></e-item>
               <e-item prefixIcon="e-icons e-length" (click)='distance($event)'  tooltipText="Calibrate Distance" id="calibrate_distance" align="Center"></e-item>
               <e-item prefixIcon="e-icons e-perimeter" (click)='perimeter($event)' tooltipText="Calibrate Perimeter" id="calibrate_perimeter" align="Center"></e-item>
@@ -73,7 +76,7 @@
           <div class="e-pv-search-bar" id="container_search_box" [style.top]="'97px'" [style.right]="'0px'">
             <div class="e-pv-search-bar-elements" id="container_search_box_elements">
               <div class="e-input-group e-pv-search-input" id="container_search_input_container">
-                <input class="e-input" id="container_search_input" type="text" placeholder="Find in document" (keypress)="searchInputKeypressed($event)"  />
+                <input class="e-input" id="container_search_input" type="text" placeholder="Find in document" (keypress)="searchInputKeypressed($event)" (input)="inputChange()" />
                 <span class="e-input-group-icon e-input-search-group-icon e-icons e-search" id="container_search_box-icon" style="top: 4px;" (click)="initiateTextSearch()"></span>
                 <span class="e-input-group-icon e-input-search-group-icon e-icons e-close" id="container_close_search_box-icon" [style.display]="'none'" style="top: 4px;" (click)="clearTextSearch()" ></span>
               </div>

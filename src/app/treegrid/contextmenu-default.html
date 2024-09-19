@@ -3,12 +3,12 @@
     [contextMenuItems]="contextMenuItems" [editSettings]='editing' [toolbar]="toolbar">
         <e-columns>
             <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='80' [edit]='editparams' textAlign='Right' editType='numericedit'></e-column>
-            <e-column field='taskName' headerText='Task Name' width='190'></e-column>
-            <e-column field='startDate' headerText='Start Date' width='90' format="yMd" textAlign='Right' editType='datepickeredit'></e-column>
-            <e-column field='endDate' headerText='End Date' width='90' format="yMd" textAlign='Right' editType='datepickeredit'></e-column>
-            <e-column field='duration' headerText='Duration' width='85'  [edit]='editparams' textAlign='Right' editType='numericedit'></e-column>
-            <e-column field='progress' headerText='Progress' width='90' textAlign='Right'  [edit]='editparams' editType='numericedit'></e-column>
-            <e-column field='priority' headerText='Priority' width='80' textAlign='Left'   editType='stringedit'></e-column>
+            <e-column field='taskName' headerText='Task Name' width='200'></e-column>
+            <e-column field='startDate' headerText='Start Date' width='120' format="yMd" textAlign='Right' editType='datepickeredit'></e-column>
+            <e-column field='endDate' headerText='End Date' width='110' format="yMd" textAlign='Right' editType='datepickeredit'></e-column>
+            <e-column field='duration' headerText='Duration' width='100'  [edit]='editparams' textAlign='Right' editType='numericedit'></e-column>
+            <e-column field='progress' headerText='Progress' width='110' textAlign='Right'  [edit]='editparams' editType='numericedit'></e-column>
+            <e-column field='priority' headerText='Priority' width='110' textAlign='Left'   editType='stringedit'></e-column>
 
         </e-columns>
     </ejs-treegrid>

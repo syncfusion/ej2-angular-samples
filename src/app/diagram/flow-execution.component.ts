@@ -26,9 +26,11 @@ export class FlowExecutionDiagramComponent {
     public diagram: DiagramComponent;
     public snapSettings = { constraints: SnapConstraints.None };
 
+    //Initialize the connectors object with basic properties.
     public createConnector(
         name: string, source: string, target: string, content: string, type?: Segments,
         direction?: Direction, targePort?: string, length?: number): ConnectorModel {
+
         let connector: ConnectorModel = {};
         connector.id = name;
         connector.sourceID = source;
@@ -58,7 +60,8 @@ export class FlowExecutionDiagramComponent {
         }
         return connector;
     }
-
+    
+    //Initialize the node object with basic properties.
     public createNodes(
         name: string, offsetX: number, offsetY: number, shape: string, content: string,
         width: number, height: number, ports?: PointPortModel[]): NodeModel {
@@ -105,12 +108,14 @@ export class FlowExecutionDiagramComponent {
         this.createConnector('connector8', 'node7', 'node9', ''),
         this.createConnector('connector10', 'node4', 'node5', '', 'Orthogonal', 'Bottom', 'port', 220)
     ];
+
     public highLightedObjects: string[] = [];
     public currentButton: string = 'unhighlightAll';
     public buttonChange(args: ChangeEventArgs): void {
         this.currentButton = (args.event.srcElement as any).defaultValue;
         this.applyChanges((args.event.srcElement as any).defaultValue);
     }
+    //Function to apply changes based on selection.
     public applyChanges(id: string): void {
         this.unhighlight();
         switch (id) {
@@ -137,39 +142,44 @@ export class FlowExecutionDiagramComponent {
                 break;
         }
     }
+    // Function to display outgoing connectors.
     public linkedIn(): void {
         if (this.diagram.selectedItems.nodes.length) {
             let node: string[] = (this.diagram.selectedItems.nodes[0] as Node).inEdges;
             for (let i: number = 0; i < node.length; i++) {
                 let index: number = this.diagram.connectors.indexOf(this.diagram.nameTable[node[i]]);
                 this.highLightedObjects.push(node[i]);
-                this.diagram.connectors[index].style.strokeColor = '#1413F8';
-                this.diagram.connectors[index].targetDecorator.style.strokeColor = '#1413F8';
-                this.diagram.connectors[index].targetDecorator.style.fill = '#1413F8';
+                let connector = this.diagram.connectors[index];
+                connector.style.strokeColor = '#1413F8';
+                connector.targetDecorator.style.strokeColor = '#1413F8';
+                connector.targetDecorator.style.fill = '#1413F8';
                 this.diagram.dataBind();
             }
         }
     }
 
+    // Function to display outgoing connectors.
     public linksOut(): void {
         if (this.diagram.selectedItems.nodes.length) {
             let node: string[] = (this.diagram.selectedItems.nodes[0] as Node).outEdges;
             for (let i: number = 0; i < node.length; i++) {
                 let index: number = this.diagram.connectors.indexOf(this.diagram.nameTable[node[i]]);
                 this.highLightedObjects.push(node[i]);
-                this.diagram.connectors[index].style.strokeColor = '#1413F8';
-                this.diagram.connectors[index].targetDecorator.style.strokeColor = '#1413F8';
-                this.diagram.connectors[index].targetDecorator.style.fill = '#1413F8';
+                let connector = this.diagram.connectors[index];
+                connector.style.strokeColor = '#1413F8';
+                connector.targetDecorator.style.strokeColor = '#1413F8';
+                connector.targetDecorator.style.fill = '#1413F8';
                 this.diagram.dataBind();
             }
         }
     }
-
+    // Function to display both the incoming and outgoing connectors.
     public linksConnector(): void {
         this.linksOut();
         this.linkedIn();
     }
 
+    // Function to display incoming nodes.
     public nodesIn(): void {
         if (this.diagram.selectedItems.nodes.length) {
             let node: string[] = (this.diagram.selectedItems.nodes[0] as Node).inEdges;
@@ -183,6 +193,7 @@ export class FlowExecutionDiagramComponent {
         }
     }
 
+    // Function to display the outgoing nodes.
     public nodesOut(): void {
         if (this.diagram.selectedItems.nodes.length) {
             let node: string[] = (this.diagram.selectedItems.nodes[0] as Node).outEdges;
@@ -196,13 +207,13 @@ export class FlowExecutionDiagramComponent {
         }
     }
 
-
+    // Function to display both the incoming and outgoing nodes.
     public nodesConnect(): void {
         this.nodesOut();
         this.nodesIn();
     }
 
-
+    //Function to display the flow of execution.
     public nodeReachable(): void {
         if (this.diagram.selectedItems.nodes.length) {
             let connectors: string[] = (this.diagram.selectedItems.nodes[0] as Node).outEdges;
@@ -210,14 +221,16 @@ export class FlowExecutionDiagramComponent {
             for (let i: number = 0; i < nodeList.length; i++) {
                 let index: number = this.diagram.connectors.indexOf(this.diagram.nameTable[nodeList[i]]);
                 this.highLightedObjects.push(nodeList[i]);
-                this.diagram.connectors[index].style.strokeColor = '#1413F8';
-                this.diagram.connectors[index].targetDecorator.style.strokeColor = '#1413F8';
-                this.diagram.connectors[index].targetDecorator.style.fill = '#1413F8';
+                let connector = this.diagram.connectors[index];
+                connector.style.strokeColor = '#1413F8';
+                connector.targetDecorator.style.strokeColor = '#1413F8';
+                connector.targetDecorator.style.fill = '#1413F8';
                 this.diagram.dataBind();
             }
         }
     }
 
+    //Function to find the connected nodes.
     public foundNode(list: string[], nodeList: string[]): string[] {
         for (let i: number = 0; i < list.length; i++) {
             let connector: ConnectorModel = this.diagram.nameTable[list[i]];
@@ -236,6 +249,7 @@ export class FlowExecutionDiagramComponent {
         return nodeList;
     }
 
+    //Function to unhighlight the highlighted objects.
     public unhighlight(): void {
         for (let i: number = this.highLightedObjects.length - 1; i >= 0; i--) {
             if (this.diagram.nameTable[this.highLightedObjects[i]] instanceof Node) {
@@ -244,9 +258,10 @@ export class FlowExecutionDiagramComponent {
                 this.diagram.dataBind();
             } else {
                 let index: number = this.diagram.connectors.indexOf(this.diagram.nameTable[this.highLightedObjects[i]]);
-                this.diagram.connectors[index].style.strokeColor = '#8D8D8D';
-                this.diagram.connectors[index].targetDecorator.style.strokeColor = '#8D8D8D';
-                this.diagram.connectors[index].targetDecorator.style.fill = '#8D8D8D';
+                let connector = this.diagram.connectors[index];
+                connector.style.strokeColor = '#8D8D8D';
+                connector.targetDecorator.style.strokeColor = '#8D8D8D';
+                connector.targetDecorator.style.fill = '#8D8D8D';
                 this.diagram.dataBind();
             }
         }

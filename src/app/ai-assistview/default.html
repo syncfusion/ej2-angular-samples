@@ -1,0 +1,19 @@
+<div class="control-section">
+    <div class="default-aiassistview">
+        <div id="aiAssistView" ejs-aiassistview #defaultAIAssistView [bannerTemplate]="bannerTemplate" [promptSuggestions]="suggestions" [toolbarSettings]="toolbarSettings" (promptRequest)="promptRequest($event)"></div>
+    </div>
+    <ng-template #bannerTemplate>
+        <div class="banner-content">
+            <div class="e-icons e-assistview-icon"></div>
+            <h3>AI Assistance</h3>
+            <i>To get started, provide input or choose a suggestion.</i>
+        </div>
+    </ng-template>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the default functionalities of the AI AssistView component. The AI AssistView creates an interface through which users can interact with AI-driven suggestions and prompts.</p>
+</div>
+<div id="description">
+    <p>In this example, the <code>bannerTemplate</code> customizes the banner content, and <code>toolbarSettings</code> adds custom toolbar items like a right-aligned <code>Refresh</code> button. The <code>promptSuggestions</code> provides AI prompt suggestions, and <code>promptRequest</code> handles prompt requests when triggered.</p>
+</div>

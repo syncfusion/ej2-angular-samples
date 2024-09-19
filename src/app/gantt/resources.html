@@ -1,35 +1,80 @@
 <div id="action-description">
     <p>This sample demonstrates the options to allocate one or more resources to tasks based on the task requirement.
-        The Work is the total labor hours necessary to complete a task. 
-        Work can be mapped from the data source field using the property <code>work</code> and when the work value is mapped from the data source, 
+        The Work is the total labor hours necessary to complete a task.
+        Work can be mapped from the data source field using the property <code>work</code> and when the work value is mapped from the data source,
         the end date and duration of the task will be calculated automatically based on the work and resource unit values from the data source.
-        Work can be measured in hours, days and minutes. It is measured in ‘hours’ scale by default and this can be changed by using the <code>workUnit</code> property.
+        Work can be measured in hours, days and minutes. It is measured in ‘hours’ scale by default and this can be changed by using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#workunit">workUnit</a> property.
     </p>
 </div>
 <div class="control-section">
     <ejs-gantt id="resources" height="430px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns" [treeColumnIndex]="1"
-        [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" [editSettings]="editSettings" 
+        [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" [editSettings]="editSettings"
         height="450px" [allowSelection]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
-        [toolbar]="toolbar" [resourceFields] = "resourceFields"
-        [resources]="resources" workUnit="Hour">
-    </ejs-gantt> 
+        [toolbar]="toolbar" [resourceFields] = "resourceFields" (queryTaskbarInfo)="queryTaskbarInfo($event)"
+        [resources]="resources" workUnit="Hour" [addDialogFields]="addDialogFields" [editDialogFields]="editDialogFields" (actionBegin)="actionBegin($event)">
+        <e-columns>
+          <e-column field='TaskID' [visible]='false'></e-column>
+          <e-column field='TaskName' headerText='Task Name' width='180'></e-column>
+          <e-column field='resources' headerText='Resources' width= '190' editType= 'dropdownedit' [edit]= 'this.editParams()'>
+            <ng-template #template let-data>
+              <div>
+                <div class="text" *ngIf="data.ganttProperties.resourceNames">
+                  <div *ngIf="data.ganttProperties.resourceNames === 'Rose Fuller'">
+                    <div style="width: 110px; height: 24px; border-radius: 100px; background-color: #1c5d8e; display: flex; align-items: center; justify-content: center;">
+                      <span style="color: white; font-weight: 500;">{{data.ganttProperties.resourceNames}}</span>
+                    </div>
+                  </div>
+
+                  <div *ngIf="data.ganttProperties.resourceNames === 'Fuller King'">
+                    <div style="width: 110px; height: 24px; border-radius: 100px; background-color: #4a7537; display: flex; align-items: center; justify-content: center;">
+                      <span style="color: white; font-weight: 500;">{{data.ganttProperties.resourceNames}}</span>
+                    </div>
+                  </div>
+
+                  <div *ngIf="data.ganttProperties.resourceNames === 'Van Jack'">
+                    <div style="width: 110px; height: 24px; border-radius: 100px; background-color: #b24531; display: flex; align-items: center; justify-content: center;">
+                      <span style="color: white; font-weight: 500;">{{data.ganttProperties.resourceNames}}</span>
+                    </div>
+                  </div>
+
+                  <div *ngIf="data.ganttProperties.resourceNames === 'Bergs Anton'">
+                    <div style="width: 110px; height: 24px; border-radius: 100px; background-color: #a53576; display: flex; align-items: center; justify-content: center;">
+                      <span style="color: white; font-weight: 500;">{{data.ganttProperties.resourceNames}}</span>
+                    </div>
+                  </div>
+
+                  <div *ngIf="data.ganttProperties.resourceNames === 'Tamer Vinet'">
+                    <div style="width: 110px; height: 24px; border-radius: 100px; background-color: #635688; display: flex; align-items: center; justify-content: center;">
+                      <span style="color: white; font-weight: 500;">{{data.ganttProperties.resourceNames}}</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </ng-template>
+          </e-column>
+          <e-column field='work' width='110'></e-column>
+          <e-column field='Duration' width='100'></e-column>
+          <e-column field='taskType' headerText='Task Type' width='110'></e-column>
+      </e-columns>
+    </ejs-gantt>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to allocate single or multiple resources for the task. Based on the task complexity and the resource availability, you can plan and allocate the resources to task in the project. In this demo, there is a set of predefined resources and those IDs are assigned to the task. Resource information can be shown in Gantt chart by using the <code>labelSettings</code> property.</p>
-        
-        <p>Resources can be mapped using <code>resourceFields:</code></p>
+        In this example, you can see how to allocate single or multiple resources for the task. Based on the task complexity and the resource availability, you can plan and allocate the resources to task in the project. In this demo, there is a set of predefined resources and those IDs are assigned to the task. Resource information can be shown in Gantt chart by using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#labelsettings">labelSetting</a> property.</p>
+
+        <p>Resources can be mapped using <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#resourcefields">resourceFields:</a></p>
         <p><code>id</code>: To map resource ID</p>
         <p><code>name</code>: To map resource name</p>
         <p><code>unit</code>: To map resource unit</p>
-        
-        <p>The work, duration and resource unit fields of a task depends upon each other values and will change automatically on editing any one of these fields. But we can also set these field’s values as constant using the <code>taskType</code> property. The following values can be set to the type property:</p>
-        
+
+        <p>The work, duration and resource unit fields of a task depends upon each other values and will change automatically on editing any one of these fields. But we can also set these field’s values as constant using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#tasktype">taskType</a> property. The following values can be set to the type property:</p>
+
         <p><code>FixedDuration</code>: Duration task field will remain constant while updating resource unit or work field.</p>
         <p><code>FixedWork</code>: Work field will remain constant while updating resource unit or duration fields.</p>
         <p><code>FixedUnit</code>: Resource units will remain constant while updating duration or work field.</p>
     <p>
         Gantt component features are segregated into individual feature-wise modules. To use a selection, markers, toolbar and edit inject the
         <code>SelectionService</code> , <code>DayMarkersService</code> , <code>ToolbarService</code> , <code>EditService</code> into the <code>&#64;NgModule.providers</code> section respectively.
-    </p>    
+    </p>
 </div>

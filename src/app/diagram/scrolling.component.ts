@@ -40,36 +40,27 @@ export class ScrollingComponent {
   public directdata: FlowShapeModel = { type: 'Flow', shape: 'DirectData' };
 
   public margin: MarginModel = { left: 25, right: 25 };
-  public connAnnotStyle: TextStyleModel = { fill: 'white' };
+  public connectorAnnotationStyle: TextStyleModel = { fill: 'white' };
   public strokeStyle: StrokeStyleModel = { strokeDashArray: '2,2' };
 
   public segments: OrthogonalSegmentModel = [{ type: 'Orthogonal', direction: 'Top', length: 120 }];
   public segments1: OrthogonalSegmentModel = [
     { type: 'Orthogonal', direction: 'Right', length: 100 }
   ];
-
-  public nodeDefaults(node: NodeModel): NodeModel {
-    let obj: NodeModel = {};
-    if (obj.width === undefined) {
-      obj.width = 145;
-    } else {
-      let ratio: number = 100 / obj.width;
-      obj.width = 100;
-      obj.height *= ratio;
-    }
-    obj.style = { fill: '#357BD2', strokeColor: 'white' };
-    obj.annotations = [{ style: { color: 'white', fill: 'transparent' } }];
-    return obj;
+  //Sets the default values of a Connector.
+  public connectorDefaults(connector: Connector): ConnectorModel {
+    //set styles for connector
+    var color = '#757575';
+    connector.style.strokeWidth = 1;
+    connector.style.strokeColor = color;
+    connector.targetDecorator.style.fill = color;
+    connector.targetDecorator.style.strokeColor = color;
+    return connector;
   }
-  public connDefaults(obj: Connector): void {
-    if (obj.id.indexOf('connector') !== -1) {
-      obj.type = 'Orthogonal';
-      obj.targetDecorator = { shape: 'Arrow', width: 10, height: 10 };
-    }
-  }
+   //Disable the scrollable area
   public created(): void {
-    var element2 = document.getElementById('scrollableDiv');
-    element2.className = "disabledbutton";
+    var ScrollElement = document.getElementById('scrollableDiv');
+    ScrollElement.className = "disabledbutton";
     this.diagram.rulerSettings = {
       showRulers : true
     }
@@ -83,25 +74,26 @@ export class ScrollingComponent {
     horizontalGridlines: { lineColor: '#e0e0e0', lineIntervals: this.interval },
     verticalGridlines: { lineColor: '#e0e0e0', lineIntervals: this.interval }
   };
-
+ //Sets the Node style for DragEnter element.
   public dragEnter(args: IDragEnterEventArgs): void {
     let obj: NodeModel = args.element as NodeModel;
     if (obj && obj.width && obj.height) {
-      let oWidth: number = obj.width;
-      let oHeight: number = obj.height;
+      let nodeWidth: number = obj.width;
+      let nodeHeight: number = obj.height;
       let ratio: number = 100 / obj.width;
       obj.width = 100;
       obj.height *= ratio;
-      obj.offsetX += (obj.width - oWidth) / 2;
-      obj.offsetY += (obj.height - oHeight) / 2;
+      obj.offsetX += (obj.width - nodeWidth) / 2;
+      obj.offsetY += (obj.height - nodeHeight) / 2;
       obj.style = { fill: '#357BD2', strokeColor: 'white' };
+      obj.annotations = [{ style: { color: 'white', fill: 'transparent' } }];
     }
   }
 
   //SymbolPalette Properties
   public symbolMargin: MarginModel = { left: 15, right: 15, top: 15, bottom: 15 };
   public expandMode: ExpandMode = 'Single';
-  //Initialize the flowshapes for the symbol palatte
+  //Initialize the basicShapes for the symbol palatte
   private basicShapes: NodeModel[] = [
     {
       id: 'rectangle', shape: { type: 'Basic', shape: 'Rectangle' }
@@ -140,7 +132,7 @@ export class ScrollingComponent {
       id: 'parallelogram', shape: { type: 'Basic', shape: 'Parallelogram' }
   },
   ]
-
+//Initialize the flowshapes for the symbol palatte
   private flowshapes: NodeModel[] = [
     { id: 'terminator1', shape: { type: 'Flow', shape: 'Terminator' } },
     { id: 'process1', shape: { type: 'Flow', shape: 'Process' } },
@@ -171,43 +163,36 @@ export class ScrollingComponent {
    //Initializes connector symbols for the symbol palette
    private connectorSymbols: ConnectorModel[] = [
     {
-      id: 'Link1',
+      id: 'orthogonal',
+      type: 'Orthogonal',
+      sourcePoint: { x: 0, y: 0 },
+      targetPoint: { x: 60, y: 60 }
+    },
+    {
+      id: 'orthogonalConnector',
       type: 'Orthogonal',
       sourcePoint: { x: 0, y: 0 },
       targetPoint: { x: 60, y: 60 },
-      targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} },
-      style: { strokeWidth: 1, strokeColor: '#757575' }
-    },
-    {
-      id: 'link3',
-      type: 'Orthogonal',
-      sourcePoint: { x: 0, y: 0 },
-      targetPoint: { x: 60, y: 60 },
-      style: { strokeWidth: 1, strokeColor: '#757575' },
       targetDecorator: { shape: 'None' }
     },
     {
-      id: 'Link21',
+      id: 'straight',
       type: 'Straight',
       sourcePoint: { x: 0, y: 0 },
-      targetPoint: { x: 60, y: 60 },
-      targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} },
-      style: { strokeWidth: 1, strokeColor: '#757575' }
+      targetPoint: { x: 60, y: 60 }
     },
     {
-      id: 'link23',
+      id: 'straightConnector',
       type: 'Straight',
       sourcePoint: { x: 0, y: 0 },
       targetPoint: { x: 60, y: 60 },
-      style: { strokeWidth: 1, strokeColor: '#757575' },
       targetDecorator: { shape: 'None' }
     },
     {
-      id: 'link33',
+      id: 'bezier',
       type: 'Bezier',
       sourcePoint: { x: 0, y: 0 },
       targetPoint: { x: 60, y: 60 },
-      style: { strokeWidth: 1, strokeColor: '#757575' },
       targetDecorator: { shape: 'None' }
     }
   ];
@@ -242,12 +227,12 @@ export class ScrollingComponent {
 
   public getSymbolDefaults(symbol: NodeModel): void {
     var obj = symbol;
-    if (obj.id === 'terminator' || obj.id === 'process') {
+    if (obj.id === 'terminator1' || obj.id === 'process1') {
         obj.width = 80;
         obj.height = 40;
     }
-    else if (obj.id === 'decision' || obj.id === 'document' || obj.id === 'preDefinedProcess' ||
-        obj.id === 'paperTap' || obj.id === 'directData' || obj.id === 'multiDocument' || obj.id === 'data') {
+    else if (obj.id === 'decision1' || obj.id === 'document1' || obj.id === 'preDefinedProcess1' ||
+        obj.id === 'paperTap1' || obj.id === 'directData1' || obj.id === 'multiDocument1' || obj.id === 'data1') {
         obj.width = 50;
         obj.height = 40;
     }
@@ -257,13 +242,14 @@ export class ScrollingComponent {
     }
     obj.style.strokeColor = '#757575';
   }
+   //Sets the scroll limit
 public  scrollLimitDatasource = [
     { text: 'Infinity', value: 'Infinity' }, { text: 'Diagram', value: 'Diagram' },
     { text: 'Limited', value: 'Limited' }
 ];
   
 public value: string = 'Infinity';
-
+ //Initializes a checkbox to enable or disable autoscroll
 public canAutoScrollFn(args:any){
   let autoScrollArea = document.getElementById('autoScrollDiv');
   if(args.checked){
@@ -277,39 +263,42 @@ public canAutoScrollFn(args:any){
 }
 
 public scrollableArea = new Rect(0, 0, 1500, 1500);
-
-public scrollLimitChange(args){
+//Initializes a dropdown for scrollLimit
+public scrollLimitChange(args:any){
   var element = document.getElementById('scrollableDiv');
   element.className = args.value === "Limited" ? "" : "disabledbutton";
   this.diagram.scrollSettings.scrollLimit = args.value;
 }
-
-public scrollableX(args){
+// Sets the horizontal scroll position of the diagram's scrollable area.
+public scrollableX(args:any){
   this.diagram.scrollSettings.scrollableArea.x = Number(args.value);
 }
-public scrollableY(args){
+// Sets the vertical scroll position of the diagram's scrollable area.
+public scrollableY(args:any){
   this.diagram.scrollSettings.scrollableArea.y = Number(args.value);
 }
-public scrollableWidth(args){
+// Sets the width of the diagram's scrollable area.
+public scrollableWidth(args:any){
   this.diagram.scrollSettings.scrollableArea.width = Number(args.value);
 }
-public scrollableHeight(args){
+// Sets the height of the diagram's scrollable area.
+public scrollableHeight(args:any){
   this.diagram.scrollSettings.scrollableArea.height = Number(args.value);
 }
-
-public autoScrollLeft(args){
+// Sets the left auto-scroll border based on the provided value.
+public autoScrollLeft(args:any){
   this.diagram.scrollSettings.autoScrollBorder.left = Number(args.value);
 }
-
-public autoScrollTop(args){
+// Sets the top auto-scroll border based on the provided value.
+public autoScrollTop(args:any){
   this.diagram.scrollSettings.autoScrollBorder.top = Number(args.value);
 }
-
-public autoScrollRight(args){
+// Sets the right auto-scroll border based on the provided value.
+public autoScrollRight(args:any){
   this.diagram.scrollSettings.autoScrollBorder.right = Number(args.value);
 }
-
-public autoScrollBottom(args){
+// Sets the bottom auto-scroll border based on the provided value.
+public autoScrollBottom(args:any){
   this.diagram.scrollSettings.autoScrollBorder.bottom = Number(args.value);
 }
 public scrollSettings : ScrollSettingsModel = {

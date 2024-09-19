@@ -1,16 +1,18 @@
 <div id="action-description">
-    <p>This sample demonstrates keyboard navigations support in the MultiColumn Combobox.</p>
+    <p>This sample demonstrates keyboard navigations support in the MultColumn Combobox component.
+    </p>
 </div>
 
 <div class="control-section">
     <div class='control-wrapper'>
         <div style='padding-top:60px;'>
-            <ejs-multicolumncombobox id='keyboard' #keyboard [dataSource]='orderData' [fields]='fields' [placeholder]='waterMark' popupHeight='230px'>
+            <ejs-multicolumncombobox id='keyboard' #keyboard [dataSource]='bookDetails' [fields]='fields' [placeholder]='waterMark' popupHeight='230px'>
                 <e-columns>
-                    <e-column field='OrderID' header='Order ID' width='110'></e-column>
-                    <e-column field='CustomerID' header='Customer ID' width='130'></e-column>
-                    <e-column field='Freight' header='Freight' width='90'></e-column>
-                    <e-column field='ShipCountry' header='Ship Country' width='140'></e-column>
+                    <e-column field='Title' header='Title' width="180"/>
+                        <e-column field='Author' header='Author' width="150"/>
+                        <e-column field='Genre' header='Genre' width="100"/>
+                        <e-column field='PublishedYear' header='Published Year' width="120"/>
+                        <e-column field='Price' header='Price' width="80"/>
                 </e-columns>
             </ejs-multicolumncombobox>
         </div>

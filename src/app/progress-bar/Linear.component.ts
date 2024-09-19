@@ -74,11 +74,11 @@ export class ProgressBarLinearComponent {
     public load(args: ILoadedEventArgs): void {
         let div: HTMLCollection = document.getElementsByClassName('progressbar-label');
         let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
         args.progressBar.theme = <ProgressTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
         if (args.progressBar.theme === 'HighContrast' || args.progressBar.theme === 'Bootstrap5Dark' || args.progressBar.theme === 'BootstrapDark' || args.progressBar.theme === 'FabricDark'
-        || args.progressBar.theme === 'TailwindDark' || args.progressBar.theme === 'MaterialDark' || args.progressBar.theme === 'FluentDark' || args.progressBar.theme === 'Material3Dark' || args.progressBar.theme === 'Fluent2Dark') {
+        || args.progressBar.theme === 'TailwindDark' || args.progressBar.theme === 'MaterialDark' || args.progressBar.theme === 'FluentDark' || args.progressBar.theme === 'Material3Dark' || args.progressBar.theme === 'Fluent2Dark' || args.progressBar.theme === 'Fluent2HighContrast') {
                 for (let i = 0; i < div.length; i++) {
                     div[i].setAttribute('style', 'color:white');
                 }
@@ -115,6 +115,10 @@ export class ProgressBarLinearComponent {
             args.progressBar.secondaryProgressColor = '#b1afe9'
         } else if (selectedTheme === 'fluent2') {
             args.progressBar.secondaryProgressColor = '#0F6CBD';
+        } else if (selectedTheme === 'fluent2-highcontrast') {
+            args.progressBar.secondaryProgressColor = '#1AEBFF';
+        } else if (selectedTheme === 'fluent2-dark') {
+            args.progressBar.secondaryProgressColor = '#115EA3';
         }
     }
 }

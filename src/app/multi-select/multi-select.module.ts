@@ -31,7 +31,7 @@ export const multiselectAppRoutes: Object[] = [
 		category: 'MultiSelect Dropdown' },
     { path: ':theme/multi-select/object-value-binding', component: ObjectMultiselectComponent, name: 'Object Value Binding', description: 'This example demonstrates how to bind with data source in the Angular multiselect component.', order: '01',
 		category: 'MultiSelect Dropdown' },
-    { path: ':theme/multi-select/disabled-items', component: DisabledItemsMultiSelectComponent, name: 'Disabled Items', type : 'new', description: 'This example showcases the disabled items of Angular multiselect component.', order: '01',
+    { path: ':theme/multi-select/disabled-items', component: DisabledItemsMultiSelectComponent, name: 'Disabled Items', description: 'This example showcases the disabled items of Angular multiselect component.', order: '01',
 		category: 'MultiSelect Dropdown' },
     { path: ':theme/multi-select/grouping', component: GroupMultiSelectComponent, name: 'Grouping', description: 'This example demonstrates how to group based on the different categories with individual header and icon support using the Angular multiselect component.', order: '01',
 		category: 'MultiSelect Dropdown' },

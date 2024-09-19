@@ -13,7 +13,8 @@
 }
 
 .tailwind-dark .e-schedule-event-tooltip .tooltip-wrap .image,
-.bootstrap5-dark .e-schedule-event-tooltip .tooltip-wrap .image {
+.bootstrap5-dark .e-schedule-event-tooltip .tooltip-wrap .image,
+.bootstrap5\.3-dark .e-schedule-event-tooltip .tooltip-wrap .image {
   background-color: #1F294A;
 }
 
@@ -29,6 +30,10 @@
   background-color: #313033;
 }
 
+.fluent2 .e-schedule-event-tooltip .tooltip-wrap .image {
+  background-color: #242424;
+}
+
 .e-schedule-event-tooltip .tooltip-wrap .content-area {
   padding-left: 6px;
   font-size: 12px;
@@ -39,7 +44,7 @@
   background-image: url('/assets/schedule/images/maintenance.png');
 }
 
-.fabric .e-schedule-event-tooltip .tooltip-wrap .maintenance, .fluent .e-schedule-event-tooltip .tooltip-wrap .maintenance, .highcontrast .e-schedule-event-tooltip .tooltip-wrap .maintenance, .fluent2 .e-schedule-event-tooltip .tooltip-wrap .maintenance {
+.fabric .e-schedule-event-tooltip .tooltip-wrap .maintenance, .fluent .e-schedule-event-tooltip .tooltip-wrap .maintenance, .highcontrast .e-schedule-event-tooltip .tooltip-wrap .maintenance {
   background-image: url('/assets/schedule/images/maintenance1.png');
 }
 
@@ -47,7 +52,7 @@
   background-image: url('/assets/schedule/images/public-event.png');
 }
 
-.fabric .e-schedule-event-tooltip .tooltip-wrap .public-event, .fluent .e-schedule-event-tooltip .tooltip-wrap .public-event, .highcontrast .e-schedule-event-tooltip .tooltip-wrap .public-event, .fluent2 .e-schedule-event-tooltip .tooltip-wrap .public-event {
+.fabric .e-schedule-event-tooltip .tooltip-wrap .public-event, .fluent .e-schedule-event-tooltip .tooltip-wrap .public-event, .highcontrast .e-schedule-event-tooltip .tooltip-wrap .public-event {
   background-image: url('/assets/schedule/images/public-event1.png');
 }
 
@@ -55,7 +60,7 @@
   background-image: url('/assets/schedule/images/family-event.png');
 }
 
-.fabric .e-schedule-event-tooltip .tooltip-wrap .family-event, .fluent .e-schedule-event-tooltip .tooltip-wrap .family-event, .highcontrast .e-schedule-event-tooltip .tooltip-wrap .family-event, .fluent2 .e-schedule-event-tooltip .tooltip-wrap .family-event {
+.fabric .e-schedule-event-tooltip .tooltip-wrap .family-event, .fluent .e-schedule-event-tooltip .tooltip-wrap .family-event, .highcontrast .e-schedule-event-tooltip .tooltip-wrap .family-event {
   background-image: url('/assets/schedule/images/family-event1.png');
 }
 
@@ -63,7 +68,7 @@
   background-image: url('/assets/schedule/images/commercial-event.png');
 }
 
-.fabric .e-schedule-event-tooltip .tooltip-wrap .commercial-event, .fluent .e-schedule-event-tooltip .tooltip-wrap .commercial-event, .highcontrast .e-schedule-event-tooltip .tooltip-wrap .commercial-event, .fluent2 .e-schedule-event-tooltip .tooltip-wrap .commercial-event {
+.fabric .e-schedule-event-tooltip .tooltip-wrap .commercial-event, .fluent .e-schedule-event-tooltip .tooltip-wrap .commercial-event, .highcontrast .e-schedule-event-tooltip .tooltip-wrap .commercial-event {
   background-image: url('/assets/schedule/images/commercial-event1.png');
 }
 

@@ -114,6 +114,16 @@
 .fluent-dark #contentText .e-input-group.e-control-wrapper.e-ddl:hover,
 .fluent-dark #contentText .e-input-group.e-ddl.e-input-focus,
 .fluent-dark #contentText .e-input-group.e-ddl.e-input-focus::before,
-.fluent-dark #contentText .e-input-group.e-ddl.e-input-focus::after {
+.fluent-dark #contentText .e-input-group.e-ddl.e-input-focus::after,
+.fluent2-dark #contentText .e-input-group.e-control-wrapper.e-ddl,
+.fluent2-dark #contentText .e-input-group.e-control-wrapper.e-ddl:hover,
+.fluent2-dark #contentText .e-input-group.e-ddl.e-input-focus,
+.fluent2-dark #contentText .e-input-group.e-ddl.e-input-focus::before,
+.fluent2-dark #contentText .e-input-group.e-ddl.e-input-focus::after,
+.fluent2-highcontrast #contentText .e-input-group.e-control-wrapper.e-ddl,
+.fluent2-highcontrast #contentText .e-input-group.e-control-wrapper.e-ddl:hover,
+.fluent2-highcontrast #contentText .e-input-group.e-ddl.e-input-focus,
+.fluent2-highcontrast #contentText .e-input-group.e-ddl.e-input-focus::before,
+.fluent2-highcontrast #contentText .e-input-group.e-ddl.e-input-focus::after {
     border-bottom: 1px dashed #f0f0f0;
 }

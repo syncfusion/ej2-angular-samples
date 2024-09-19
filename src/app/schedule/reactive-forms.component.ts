@@ -38,7 +38,18 @@ export class ReactiveFormsComponent {
       EndTime: new FormControl(data.EndTime, Validators.required),
       Description: new FormControl(data.Description, [Validators.required, Validators.minLength(20)]),
       Type: new FormControl((data.Type))
-    });
+    }, { validators: this.timeValidator });
+  }
+
+  timeValidator(form: FormGroup) {
+    const startTime = form.get('StartTime').value;
+    const endTime = form.get('EndTime').value;
+  
+    if (startTime > endTime) {
+      return { timeInvalid: true };
+    }
+  
+    return null;
   }
 
   onPopupOpen(args: PopupOpenEventArgs): void {

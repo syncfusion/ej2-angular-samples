@@ -28,7 +28,8 @@ export class WaterfallChartComponent {
     public primaryXAxis: Object = {
         valueType: 'Category',
         majorGridLines: { width: 0 },
-        labelRotation: Browser.isDevice ? -45 : 0,
+        labelRotation: Browser.isDevice ? -90 : 0,
+        interval: 1,
         labelIntersectAction: Browser.isDevice ? 'None' : 'Rotate45', majorTickLines: { width: 0 },
         minorTickLines: { width: 0 },
         
@@ -61,18 +62,23 @@ export class WaterfallChartComponent {
         dataLabel: { visible: true, font: { color: '#ffffff' } }
     };
     public border: object = {
-        color:'black' , width: 1
+        color:'black' , width: 0.2
     }
     public connector: Object = {
-        color: '#5F6A6A', width: 1.5
+        width: 0.8, color: '#5F6A6A', dashArray: '1,2'
     };
+    public cornerRadius: Object = {
+        topLeft: 3, bottomLeft: 3, bottomRight: 3, topRight: 3
+      }
     public sum: number[] = [7];
     public intermediate: number[] = [4];
-   
+    public onTextRender(args: ITextRenderEventArgs): void {
+        args.series.marker.dataLabel.font.size = Browser.isDevice ? '8px' : '12px';
+    }
      // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
     };
      // custom code end

@@ -18,107 +18,64 @@
         (clicked)="toolbarClick($event)"
       >
         <e-items>
-          <e-item
-            prefixIcon="e-icons e-group-1"
-            tooltipText="Group"
-            type="Button"
-            disabled="true"
-          ></e-item>
-          <e-item
-            prefixIcon="e-icons e-ungroup-1"
-            tooltipText="UnGroup"
-            type="Button"
-            disabled="true"
-          ></e-item>
-          <e-item type="Separator"></e-item>
-  
-          <e-item
-            prefixIcon="e-icons e-bring-forward"
-            tooltipText="Bring Forward"
-            type="Button"
-            disabled="true"
-          ></e-item>
-          <e-item
-            prefixIcon="e-icons e-bring-to-front"
-            tooltipText="Bring To Front"
-            type="Button"
-            disabled="true"
-          ></e-item>
-          <e-item
-            prefixIcon="e-icons e-send-backward"
-            tooltipText="Send Backward"
-            type="Button"
-            disabled="true"
-          ></e-item>
-          <e-item
-            prefixIcon="e-icons e-send-to-back"
-            tooltipText="Send To Back"
-            type="Button"
-            disabled="true"
-          ></e-item>
-          <e-item type="Separator">
+          <e-item id="Group" prefixIcon="e-icons e-group-1" tooltipText="Group" type="Button" disabled="true"></e-item>
+
+          <e-item id="UnGroup" prefixIcon="e-icons e-ungroup-1" tooltipText="UnGroup" type="Button" disabled="true"></e-item>
+
+          <e-item id="Separator1" type="Separator"></e-item>
+        
+          <e-item id="BringForward" prefixIcon="e-icons e-bring-forward" tooltipText="Bring Forward" type="Button"
+            disabled="true"></e-item>
+
+          <e-item id="BringToFront" prefixIcon="e-icons e-bring-to-front" tooltipText="Bring To Front" type="Button"
+            disabled="true"></e-item>
+
+          <e-item id="SendBackward" prefixIcon="e-icons e-send-backward" tooltipText="Send Backward" type="Button"
+            disabled="true"></e-item>
+
+          <e-item id="SendToBack" prefixIcon="e-icons e-send-to-back" tooltipText="Send To Back" type="Button"
+            disabled="true"></e-item>
+
+          <e-item id="Separator2" type="Separator">
             <ng-template #template>
               <div style="margin-left:1px;"></div>
             </ng-template>
           </e-item>
-          <e-item tooltipText="Font Style" type="Input" disabled="true">
+
+          <e-item id="FontStyle" tooltipText="Font Style" type="Input" disabled="true">
             <ng-template #template>
-              <ejs-combobox
-                id="games"
-                #sample
-                [dataSource]="fontTypeList"
-                (select)="fontFamily($event)"
-                [(value)]="value"
-              ></ejs-combobox>
+              <ejs-combobox id="games" #sample [dataSource]="fontTypeList" (select)="fontFamily($event)"
+                [(value)]="value"></ejs-combobox>
             </ng-template>
           </e-item>
-          <e-item type="Separator">
+
+          <e-item id="Separator3" type="Separator">
             <ng-template #template>
               <div style="margin-left:1px;"></div>
             </ng-template>
           </e-item>
-          <e-item tooltipText="Font Size" disabled="true">
+
+          <e-item id="FontSize" tooltipText="Font Size" disabled="true">
             <ng-template #template>
-              <ejs-numerictextbox
-              id="range"
-              value="12"
-              format="##.##"
-              [step]="2"
-              [min]="1"
-              [max]="30"
-              width="90px"
-              (change)="fontSizeChange($event)"
-            ></ejs-numerictextbox>
+              <ejs-numerictextbox id="range" value="12" format="##.##" [step]="2" [min]="1" [max]="30" width="110px"
+                (change)="fontSizeChange($event)"></ejs-numerictextbox>
             </ng-template>
           </e-item>
-          <e-item
-            prefixIcon="e-icons e-bold"
-            tooltipText="Bold"
-            type="Button"
-            disabled="true"
-          ></e-item>
-          <e-item
-            prefixIcon="e-icons e-italic"
-            tooltipText="Italic"
-            type="Button"
-            disabled="true"
-          ></e-item>
-          <e-item
-            prefixIcon="e-icons e-underline"
-            tooltipText="Underline"
-            type="Button"
-            disabled="true"
-          ></e-item>
-          <e-item disabled="true">
+
+          <e-item id="Bold" prefixIcon="e-icons e-bold" tooltipText="Bold" type="Button" disabled="true"></e-item>
+          
+          <e-item id="Italic" prefixIcon="e-icons e-italic" tooltipText="Italic" type="Button" disabled="true"></e-item>
+          
+          <e-item id="Underline" prefixIcon="e-icons e-underline" tooltipText="Underline" type="Button"
+            disabled="true">
+          </e-item>
+          
+          <e-item id="FontColor" disabled="true">
             <ng-template #template>
-              <input
-                ejs-colorpicker
-                id="color-picker"
-                type="color"
-                (change)="colorChange($event)"
-              />
+              <input ejs-colorpicker id="color-picker" type="color" (change)="colorChange($event)" />
             </ng-template>
           </e-item>
+
         </e-items>
       </ejs-toolbar>
       </div>

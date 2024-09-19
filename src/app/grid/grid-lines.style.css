@@ -10,3 +10,14 @@
     border-color: rgba(0, 0, 0, 0.12);
     color: #212121;
 }
+
+.e-print-fluent2-highcontrast.e-grid.e-print-grid-layout,
+.e-print-fluent2-highcontrast.e-grid.e-print-grid-layout .e-childgrid,
+.e-print-fluent2-highcontrast.e-grid.e-print-grid-layout .e-rowcell,
+.e-print-fluent2-highcontrast.e-grid.e-print-grid-layout .e-gridheader,
+.e-print-fluent2-highcontrast.e-grid.e-print-grid-layout .e-detailindentcell,
+.e-print-fluent2-highcontrast.e-grid.e-print-grid-layout .e-detailcell,
+.e-print-fluent2-highcontrast.e-grid.e-print-grid-layout .e-detailrowcollapse,
+.e-print-fluent2-highcontrast.e-grid.e-print-grid-layout .e-detailrowexpand {
+  border-color: gray;
+}

@@ -1,0 +1,68 @@
+<div class="control-section">
+  <div class="col-lg-9 content-wrapper">
+    <ejs-schedule
+      #scheduleObj width="100%" cssClass="schedule-holiday-calendar" height="100%" [selectedDate]="selectedDate" [eventSettings]="eventSettings" [rowAutoHeight]="true"
+      (eventRendered)="onEventRendered($event)" (cellClick)="clickOnHoliday($event)" (cellDoubleClick)="clickOnHoliday($event)"
+      (dragStop)="onEventDragOrResize($event)" (resizeStop)="onEventDragOrResize($event)" (actionBegin)="onActionBegin($event)" >
+      <e-views>
+        <e-view option="Month"></e-view>
+      </e-views>
+    </ejs-schedule>
+    <ejs-toast
+      #toastpos id="toastpos" [position]="toastPosition" [target]="target" title="Information!" cssClass="e-toast-info"  icon="e-info toast-icons"></ejs-toast>
+  </div>
+  <div class="col-lg-3 property-section">
+    <div class="property-panel-section">
+      <div class="property-panel-header"></div>
+      <div class="property-panel-content">
+        <div id="property-panel" class="property-panel-table" title="">
+          <table style="width: 100%">
+            <tbody>
+              <tr style="height: 50px">
+                <td style="width: 100%;">
+                  <div>
+                    <ejs-checkbox #holidayCheckbox label="Holiday events" [checked]="holidayListCollection" (change)="updateHolidayListCollection($event)"></ejs-checkbox>
+                  </div>
+                </td>
+              </tr>
+              <tr style="height: 50px">
+                <td style="width: 100%;">
+                  <div>
+                    <ejs-checkbox #eventCheckbox label="Scheduling event on holiday" [checked]="holidayEventCollection" (change)="updateHolidayEventCollection($event)"></ejs-checkbox>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="action-description">
+  <p>
+    This demo illustrates how to add and remove holiday events and perform CRUD operations on holiday dates in the
+    schedule.
+  </p>
+</div>
+
+<div id="description">
+  <p>
+    This sample demonstrates how to perform CRUD operations on holiday dates in a calendar. If a user wants to
+    schedule an appointment on a holiday, they should check the <code>Scheduling event on holiday</code> checkbox.
+    This will enable them to add an appointment on a holiday date.If a holiday list is displayed in the calendar, the
+    <code>Holiday events</code> checkbox will be checked. The holiday list is highlighted in a different color.
+  </p>
+  <ul>
+    <li>
+      When an action is performed to drag and resize an event, if the <code>Scheduling event on holiday</code>
+      checkbox is checked, the appointment can be scheduled on holiday dates. If it is unchecked, the appointment
+      cannot have CRUD actions performed on it, and a warning message will be displayed.
+    </li>
+    <li>If a recurring event is added on a holiday date and the <code>Scheduling event on holiday</code> checkbox is
+      checked, it allows the event to occur on that dates. If the checkbox is unchecked, it prevents the event from
+      occurring, based on the dates in the holiday collection
+    </li>.
+  </ul>
+</div>

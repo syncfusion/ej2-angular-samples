@@ -7,9 +7,9 @@
     <div class="col-lg-8 control-section">
       
         <div class="content-wrapper" style="width: 100%;">
-            <ejs-diagram #diagram id="diagram" width="100%" height="645px" [nodes]="nodes" [connectors]="connectors" [getNodeDefaults]='nodeDefaults' [getConnectorDefaults]='connDefaults'
+            <ejs-diagram #diagram id="diagram" width="100%" height="645px" [nodes]="nodes" [connectors]="connectors" [getNodeDefaults]='nodeDefaults' [getConnectorDefaults]='connectorDefaults'
                 [snapSettings]='snapSettings' (created)="created($event)" (selectionChange)="selectionChange($event)" [getCustomTool]="getCustomTool"
-                [selectedItems]="selectedItems" [scrollSettings] = "scrollSettings" [rulerSettings] = "rulerSettings" [drawingObject]="drawingObject">
+                [selectedItems]="selectedItems" [scrollSettings] = "scrollSettings"  [drawingObject]="drawingObject">
             </ejs-diagram>
         </div>
     </div>

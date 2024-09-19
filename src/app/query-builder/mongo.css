@@ -166,26 +166,17 @@ ejs-querybuilder {
     .e-query-preview .copy-tooltip {
        display: block !important;
     }
-  }
+}
 
-  .highcontrast .e-query-preview .e-sql-content,
-  .highcontrast .e-query-preview .e-mongo-content,
-  .fluent2-dark .e-query-preview .e-sql-content,
-  .fluent2-dark .e-query-preview .e-mongo-content,
-  .fluent2-highcontrast .e-query-preview .e-sql-content,
-  .fluent2-highcontrast .e-query-preview .e-mongo-content {
-    height: 140px;
-  }
-
-  .highcontrast .fluent2-dark .e-query-preview .e-copy-tooltip,
-  .fluent2-dark .e-query-preview .e-copy-tooltip,
-  .fluent2-highcontrast .e-query-preview .e-copy-tooltip {
-    background-color: black;
-    color: white;
-  }
-
-  .highcontrast .mongo-text-area,
-  .fluent2-dark .mongo-text-area,
-  .fluent2-highcontrast .mongo-text-area {
-    background-color: #1f1f1f;
-  }
+.material-dark .e-query-preview #content-area,
+.material3-dark .e-query-preview #content-area,
+.bootstrap5\.3-dark .e-query-preview #content-area,
+.bootstrap5-dark .e-query-preview #content-area,
+.bootstrap-dark .e-query-preview #content-area,
+.highcontrast .e-query-preview #content-area,
+.fluent-dark .e-query-preview #content-area,
+.tailwind-dark .e-query-preview #content-area,
+.fluent2-dark .e-query-preview #content-area,
+.fluent2-highcontrast .e-query-preview #content-area {
+  color: white;
+}

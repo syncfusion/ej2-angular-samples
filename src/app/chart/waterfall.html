@@ -6,9 +6,9 @@
 <div class="control-section">
     <div>
         <ejs-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [legendSettings]='legendSettings' [chartArea]='chartArea'
-             (load)='load($event)' >
+             (load)='load($event)' (textRender)="onTextRender($event)" >
             <e-series-collection>
-                <e-series [dataSource]='dataSource' type='Waterfall' xName='x' yName='y' [connector]='connector' [intermediateSumIndexes]='intermediate' [sumIndexes]='sum' [border]= 'border' [marker]='marker' negativeFillColor='#e56590'> </e-series>
+                <e-series [dataSource]='dataSource' type='Waterfall' xName='x' yName='y' [connector]='connector' [intermediateSumIndexes]='intermediate' [sumIndexes]='sum' [border]= 'border' [marker]='marker' negativeFillColor='#e56590' columnWidth=0.5 [cornerRadius]='cornerRadius'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
@@ -18,7 +18,6 @@
         In this example, you can see how to render and configure the Waterfall type series. You can use <code>border</code>, <code>fill</code> properities to customize the data appearance.
         <code>dataLabel</code> is used to represent individual data and its value.
     </p>
-    <br>
     <p style="font-weight: 500">Injecting Module</p>
     <p>
         Chart component features are segregated into individual feature-wise modules. To use Waterfall feature, we need to inject
@@ -31,7 +30,7 @@
 </div>
 <style>
     #chartcontainer_Series_0_Connector_ {
-        stroke-dasharray: 10px 10px;
+        stroke-dasharray: 1px 2px;
         stroke-linejoin: round;
         stroke-linecap: round;
         -webkit-animation: dash 1s linear infinite;
@@ -40,13 +39,13 @@
     
     @-webkit-keyframes dash {
         100% {
-            stroke-dashoffset: -20px;
+            stroke-dashoffset: -3px;
         }
     }
     
     @keyframes dash {
         100% {
-            stroke-dashoffset: -20px;
+            stroke-dashoffset: -3px;
         }
     }
 </style>

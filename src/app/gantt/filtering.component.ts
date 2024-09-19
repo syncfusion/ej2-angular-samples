@@ -77,10 +77,10 @@ export class GanttFilteringComponent implements OnInit {
             rightLabel: 'TaskName',
         };
         this.dayWorkingTime = [{ from: 0, to: 24 }];
-        this.projectStartDate = new Date('07/16/1969 01:00:00 AM');
-        this.projectEndDate = new Date('07/25/1969');
+        this.projectStartDate = new Date('07/16/2024 01:00:00 AM');
+        this.projectEndDate = new Date('07/25/2024');
     }
-    
+
     change (e: ChangeEventArgs) : void {
         let type: any = <string>e.value;
         this.gantt.filterSettings.type = type;
@@ -94,8 +94,8 @@ export class GanttFilteringComponent implements OnInit {
     public onActionComplete(args: any): void {
         if (args.requestType == "filterafteropen" && (args.columnName === "StartDate" || args.columnName === "EndDate")
             && this.gantt.filterSettings.type === "Menu") {
-            args.filterModel.dlgDiv.querySelector('.e-datetimepicker').ej2_instances[0].min = new Date(1969, 5, 1);
-            args.filterModel.dlgDiv.querySelector('.e-datetimepicker').ej2_instances[0].max = new Date(1969, 8, 30);
+            args.filterModel.dlgDiv.querySelector('.e-datetimepicker').ej2_instances[0].min = new Date(2024, 5, 1);
+            args.filterModel.dlgDiv.querySelector('.e-datetimepicker').ej2_instances[0].max = new Date(2024, 8, 30);
             args.filterModel.dlgDiv.querySelector('.e-datetimepicker').ej2_instances[0].showTodayButton = false;
             args.filterModel.dlgDiv.querySelector('.e-datetimepicker').ej2_instances[0].dataBind();
         }

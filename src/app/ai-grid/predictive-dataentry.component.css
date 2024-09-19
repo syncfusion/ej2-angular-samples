@@ -1,0 +1,82 @@
+.e-inactivecolor {
+    background-color: indianred;
+    width: 100%;
+}
+
+.fluent-dark .e-inactivecolor,
+.fluent2-dark .e-inactivecolor,
+.tailwind-dark .e-inactivecolor,
+.material-dark .e-inactivecolor,
+.material3-dark .e-inactivecolor,
+.fabric-dark .e-inactivecolor,
+.bootstrap-dark .e-inactivecolor,
+.bootstrap4-dark .e-inactivecolor,
+.bootstrap5-dark .e-inactivecolor,
+.highcontrast .e-inactivecolor {
+    background-color: #55241E;
+}
+
+.e-grid .e-rowcell.e-inactivecolor:not(.e-editedbatchcell):not(.e-updatedtd) {
+    color: #FFFFFF;
+}
+
+.fluent-dark .e-grid .e-rowcell.e-inactivecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.fluent2-dark .e-grid .e-rowcell.e-inactivecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.tailwind-dark .e-grid .e-rowcell.e-inactivecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.material-dark .e-grid .e-rowcell.e-inactivecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.material3-dark .e-grid .e-rowcell.e-inactivecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.fabric-dark .e-grid .e-rowcell.e-inactivecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap-dark .e-grid .e-rowcell.e-inactivecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap4-dark .e-grid .e-rowcell.e-inactivecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap5-dark .e-grid .e-rowcell.e-inactivecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.highcontrast .e-grid .e-rowcell.e-inactivecolor:not(.e-editedbatchcell):not(.e-updatedtd) {
+    color: #FF9CA0;
+}
+
+.e-activecolor {
+    background-color: lightgreen;
+    width: 100%;
+}
+
+.fluent-dark .e-activecolor,
+.fluent2-dark .e-activecolor,
+.tailwind-dark .e-activecolor,
+.material-dark .e-activecolor,
+.material3-dark .e-activecolor,
+.fabric-dark .e-activecolor,
+.bootstrap-dark .e-activecolor,
+.bootstrap4-dark .e-activecolor,
+.bootstrap5-dark .e-activecolor,
+.highcontrast .e-activecolor {
+    background-color: #315C35;
+}
+
+.fluent-dark .e-grid .e-rowcell.e-activecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.fluent2-dark .e-grid .e-rowcell.e-activecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.tailwind-dark .e-grid .e-rowcell.e-activecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.material-dark .e-grid .e-rowcell.e-activecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.material3-dark .e-grid .e-rowcell.e-activecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.fabric-dark .e-grid .e-rowcell.e-activecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap-dark .e-grid .e-rowcell.e-activecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap4-dark .e-grid .e-rowcell.e-activecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.bootstrap5-dark .e-grid .e-rowcell.e-activecolor:not(.e-editedbatchcell):not(.e-updatedtd),
+.highcontrast .e-grid .e-rowcell.e-activecolor:not(.e-editedbatchcell):not(.e-updatedtd) {
+    color: #38FF9C;
+}
+
+.e-PredictiveColumn {
+    background-color: lightblue
+}
+
+.fluent-dark .e-PredictiveColumn,
+.fluent2-dark .e-PredictiveColumn,
+.tailwind-dark .e-PredictiveColumn,
+.material-dark .e-PredictiveColumn,
+.material3-dark .e-PredictiveColumn,
+.fabric-dark .e-PredictiveColumn,
+.bootstrap-dark .e-PredictiveColumn,
+.bootstrap4-dark .e-PredictiveColumn,
+.bootstrap5-dark .e-PredictiveColumn,
+.highcontrast .e-PredictiveColumn {
+    background-color: #001F3F;
+}

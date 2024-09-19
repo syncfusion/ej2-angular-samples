@@ -1,0 +1,59 @@
+<div class="control-section">
+    <div class="template-aiassistview">
+        <div ejs-aiassistview id="aiAssistView" #templateAiAssistView [promptSuggestionsHeader]="promptSuggestionsHeader" [promptSuggestions]="suggestion" [toolbarSettings]="toolbarSettings" (promptRequest)="promptRequest($event)" (created)="created()">
+            <ng-template #bannerTemplate>
+                <div class="banner-content">
+                    <h3><span class="e-icons e-assistview-icon"></span>AI Assistance</h3>
+                    <div id="bannerCarousel">
+                        <ejs-carousel #carousel width="100%" height="60%" [buttonsVisibility]='buttonsVisibility' [showIndicators]='showIndicators' [partialVisible]="partialVisible" [dataSource]="dataSource">
+                            <ng-template #itemTemplate let-data>
+                                <div class="carousel-template">
+                                    <img src="{{data.imagePath}}" alt="{{data.title}}"/>
+                                    <div class="e-card">
+                                        <div class="e-card-header">
+                                            {{data.suggestion}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </ejs-carousel>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #promptItemTemplate let-data>
+                <div class="promptItemContent">
+                    <div class="prompt-header">You
+                        <span class="e-icons e-user"></span>
+                    </div>
+                    <div class="content">{{cleanPrompt(data.prompt)}}</div>
+                </div>
+            </ng-template>
+            <ng-template #responseItemTemplate let-data>
+                <div class="responseItemContent">
+                    <div class="response-header">
+                        <span class="e-icons e-assistview-icon"></span>
+                        AI AssistView
+                    </div>
+                    <div class="content" [innerHTML]='data.response'></div>
+                </div>
+            </ng-template>
+            <ng-template #promptSuggestionItemTemplate let-data>
+                <div class='suggestion-item active'>
+                    <span class="e-icons e-circle-info"></span>
+                    <div class="content">{{data.promptSuggestion}}</div>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the template functionality of the AI AssistView component.</p>
+</div>
+<div id="description">
+    <p>In this example, the AI AssistView component uses customizable templates for the banner, prompts, responses, and suggestions. We have used the <code>bannerViewTemplate</code>, <code>promptItemTemplate</code>, <code>responseItemTemplate</code> and <code>promptSuggestionItemTemplate</code> to define the structure and appearance of these elements.
+    </p>
+    <p>
+        By using the <code>executePrompt</code> method you can trigger the prompt request externally and generate the output based on the <code>promptRequest</code> data returned. If found, the response will be displayed and suggestions updated.
+    </p>
+</div>

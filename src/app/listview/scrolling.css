@@ -20,3 +20,11 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.bootstrap5 #listview-scrolling .rating-content .e-rating-container .e-rating-item-container.e-rating-selected .e-rating-icon,
+.bootstrap5-dark #listview-scrolling .rating-content .e-rating-container .e-rating-item-container.e-rating-selected .e-rating-icon,
+.bootstrap5\.3  #listview-scrolling .rating-content .e-rating-container .e-rating-item-container.e-rating-selected .e-rating-icon,
+.bootstrap5\.3-dark #listview-scrolling .rating-content .e-rating-container .e-rating-item-container.e-rating-selected .e-rating-icon {
+    background: darkblue;
+    background-clip: text;
+}

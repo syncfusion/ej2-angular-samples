@@ -43,6 +43,7 @@ import { HierarchyDiagramComponent } from './hierarchical-tree.component';
 import { OrganizationalChartDiagramComponent } from './organization-chart.component';
 import { RadialTreeDiagramComponent } from './radial-tree.component';
 import { MindMapDiagramComponent } from './mind-map.component';
+import { FlowchartLayoutDiagramComponent } from './flowchart-layout.component';
 import { SymmetricLayoutDiagramComponent } from './symmetric-layout.component';
 import { ComplexHierarchicalTreeDiagramComponent } from './complex-hierarchical-tree.component';
 import { AccumulationChartModule } from '@syncfusion/ej2-angular-charts';
@@ -101,7 +102,8 @@ export const diagramAppRoutes: Object[] = [
     {
         path: ':theme/diagram/connectors', component: ConnectorDiagramComponent,
         name: 'Connectors', category: 'Getting Started', order: '01',
-        description: 'This sample visualizes the data flow in a marketing process using predefined shapes and connectors. Different types of connectors and decorators are used to customize the appearance, path, and direction of the data flow.'
+        description: 'This sample visualizes the data flow in a marketing process using predefined shapes and connectors. Different types of connectors and decorators are used to customize the appearance, path, and direction of the data flow.',
+        type: "update"
     },
     {
         path: ':theme/diagram/line-routing', component: LineRoutingComponent,
@@ -202,7 +204,8 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/quick-commands', component: UserHandlediagramComponent,
         name: 'User Handles',
         category: 'Interactive Features', order: '02',
-        description: 'This sample visualizes a simple flow diagram along with options to execute the frequently used commands using user handles.'
+        description: 'This sample visualizes a simple flow diagram along with options to execute the frequently used commands using user handles.',
+        type: "update"
     },
     {
         path: ':theme/diagram/overview', component: OverviewDiagramComponent,
@@ -215,6 +218,13 @@ export const diagramAppRoutes: Object[] = [
         name: 'Organizational Chart',
         category: 'Automatic Layouts', order: '03',
         description: 'This sample illustrates a simple business management structure that is built from an external data source. Hierarchical tree layout algorithm is used to build organizational charts. Customizing the orientation and structure of the organizational chart is illustrated in this example.'
+    },
+    {
+        path: ':theme/diagram/flowchart-layout', component: FlowchartLayoutDiagramComponent,
+        name: 'Flowchart Layout',
+        category: 'Automatic Layouts', order: '03',
+        description: 'This sample illustrates the flowchart layout algorithm that is used to automatically arrange the flow shapes.',
+        type:'new'
     },
     {
         path: ':theme/diagram/mind-map', component: MindMapDiagramComponent,
@@ -288,7 +298,8 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/serialization', component: SerializationDiagramComponent,
         name: 'Serialization',
         category: 'Save and Restore', order: '06',
-        description: 'This sample visualizes building diagrams interactively and editing the saved diagrams. Symbol Palette is used to easily build diagrams.'
+        description: 'This sample visualizes building diagrams interactively and editing the saved diagrams. Symbol Palette is used to easily build diagrams.',
+        type: "update"
     },
     {
         path: ':theme/diagram/print-export', component: PrintExportDiagramComponent,

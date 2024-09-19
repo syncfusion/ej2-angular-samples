@@ -62,8 +62,9 @@ export class MultiFormatViewerComponent implements OnInit {
   public linear: ProgressBar;
   public resource: string = 'https://cdn.syncfusion.com/ej2/23.2.6/dist/ej2-pdfviewer-lib';
   public dropElement: any;
-  public extensions: any = ['doc','docx','rtf','docm','dotm','dotx','dot','xls','xlsx','pptx','pptm','potx','potm','jpeg','png','bmp','pdf'];
-  public allowedExtensions: string = '.doc, .docx, .rtf, .docm, .dotm, .dotx, .dot, .xls, .xlsx, .pptx, .pptm, .potx, .potm .jpeg, .png, .bmp, .pdf';
+  public extensions: any = ['doc','docx','rtf','docm','dotm','dotx','dot','xls','xlsx','pptx','pptm','potx','potm','jpeg','png','bmp','pdf','jpg'];
+  public allowedExtensions: string = '.doc, .docx, .rtf, .docm, .dotm, .dotx, .dot, .xls, .xlsx, .pptx, .pptm, .potx, .potm .jpeg, .png, .bmp, .pdf, .jpg';
+  public zoomMode = "FitToPage";
   public toolbarSettings = {
     showTooltip: true,
     toolbarItems: [
@@ -130,7 +131,6 @@ export class MultiFormatViewerComponent implements OnInit {
       this.linear.value = 0;
       this.linear.refresh();
     },1000);
-    this.pdfviewerControl.magnification.fitToPage();
   }
 
   onSelect(args) {

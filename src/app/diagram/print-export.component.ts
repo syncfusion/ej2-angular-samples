@@ -35,9 +35,10 @@ export class PrintExportDiagramComponent {
 
     public margin: MarginModel = { left: 15, right: 15, bottom: 15, top: 15 };
     public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
-
+    public annotationTextStyle: DiagramModule = { fill: 'white' };
     public exportTypes: ItemModel[] = [
-        { text: 'JPG' }, { text: 'PNG' },
+        { text: 'JPG' },
+        { text: 'PNG' },
         { text: 'SVG' }
     ];
 
@@ -52,27 +53,31 @@ export class PrintExportDiagramComponent {
         this.diagram.fitToPage();
         this.diagram.dataBind();
     }
+    // Export the diagram object based on the format.
+    public onSelectExportFormat(args: MenuEventArgs): void {
+        const exportOptions: IExportOptions = {
+            format: args.item.text as FileFormats,
+            mode: 'Download',
+            region: 'PageSettings',
+            multiplePage: this.multiplePage,
+            fileName: 'Export',
+            pageHeight: 500,
+            pageWidth: 500
+        };
 
-    public onSelect(args: MenuEventArgs): void {
-        let exportOptions: IExportOptions = {};
-        exportOptions.format = args.item.text as FileFormats;
-        exportOptions.mode = 'Download';
-        exportOptions.region = 'PageSettings';
-        exportOptions.multiplePage = this.multiplePage;
-        exportOptions.fileName = 'Export';
-        exportOptions.pageHeight = 400;
-        exportOptions.pageWidth = 400;
         this.diagram.exportDiagram(exportOptions);
     }
-
-    public toolbarEditorClick(args: ClickEventArgs): void {
-        let printOptions: IExportOptions = {};
+    // Click event to perform printing the diagram objects.
+    public onItemClick(args: ClickEventArgs): void {
         if (args.item.text === 'Print') {
-            printOptions.mode = 'Data';
-            printOptions.region = 'PageSettings';
-            printOptions.multiplePage = this.multiplePage;
-            printOptions.pageHeight = 400;
-            printOptions.pageWidth = 400;
+            const printOptions: IExportOptions = {
+                mode: 'Data',
+                region: 'PageSettings',
+                multiplePage: this.multiplePage,
+                pageHeight: 500,
+                pageWidth: 500
+            };
+
             this.diagram.print(printOptions);
         }
     }

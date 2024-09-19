@@ -42,6 +42,7 @@
 
     #toastcustom .e-toast-template {
         display: inline-flex;
+        flex: 1;
     }
 
     #toastcustom .e-toast-icon.e-toast-image {
@@ -161,17 +162,22 @@
         color: white !important;
     }
 
-    .bootstrap5 .e-toast-container .e-toast .e-toast-close-icon {
+    .bootstrap5 .e-toast-container .e-toast .e-toast-close-icon,
+    .bootstrap5.3 .e-toast-container .e-toast .e-toast-close-icon {
         color: #000;
     }
 
     .bootstrap5 #toastcustom.e-toast-container .e-toast .e-toast-message,
-    .bootstrap5-dark #toastcustom.e-toast-container .e-toast .e-toast-message {
+    .bootstrap5-dark #toastcustom.e-toast-container .e-toast .e-toast-message,
+    .bootstrap5.3 #toastcustom.e-toast-container .e-toast .e-toast-message,
+    .bootstrap5.3-dark #toastcustom.e-toast-container .e-toast .e-toast-message {
         margin-left: 95px;
     }
 
     .bootstrap5 #template_toast,
-    .bootstrap5-dark #template_toast {
+    .bootstrap5-dark #template_toast,
+    .bootstrap5.3 #template_toast,
+    .bootstrap5.3-dark #template_toast {
         padding: 10px;
     }
 
@@ -179,9 +185,12 @@
     .material3-dark #snoozedropDown .e-input-group.e-control-wrapper,
     .bootstrap-dark #snoozedropDown .e-input-group.e-control-wrapper,
     .bootstrap5-dark #snoozedropDown .e-input-group.e-control-wrapper,
+    .bootstrap5.3-dark #snoozedropDown .e-input-group.e-control-wrapper,
     .fabric-dark #snoozedropDown .e-input-group.e-control-wrapper,
     .tailwind-dark #snoozedropDown .e-input-group.e-control-wrapper,
-    .fluent-dark #snoozedropDown .e-input-group.e-control-wrapper {
+    .fluent-dark #snoozedropDown .e-input-group.e-control-wrapper,
+    .fluent2-dark #snoozedropDown .e-input-group.e-control-wrapper,
+    .fluent2-highcontrast #snoozedropDown .e-input-group.e-control-wrapper {
         background: transparent;
     }
     
@@ -190,7 +199,9 @@
     }
 
     .fluent #toastcustom .e-toast-close-icon,
-    .fluent-dark #toastcustom .e-toast-close-icon
+    .fluent-dark #toastcustom .e-toast-close-icon,
+    .fluent2-dark #toastcustom .e-toast-close-icon,
+    .fluent2-highcontrast #toastcustom .e-toast-close-icon
     {
         color: #000;
     }

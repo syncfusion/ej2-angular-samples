@@ -26,7 +26,7 @@ export class TreemapRTLComponent {
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
         args.treemap.theme = <TreeMapTheme>(theme.charAt(0).toUpperCase() +
-        theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i,  'Contrast');
+        theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
     }
     tooltipRendering = (args: ITreeMapTooltipRenderEventArgs) => {
         //tslint:disable-next-line

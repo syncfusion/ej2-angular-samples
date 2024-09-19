@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SpreadsheetComponent, getFormatFromType, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
 import { grossPay } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -21,7 +21,7 @@ export class DataValidationComponent {
     }
     @ViewChild('spreadsheet')
     public spreadsheetObj: SpreadsheetComponent;
-    currencyFormat: string = getFormatFromType('Currency');
+    currencyFormat: string = '$#,##0.00';
     public grossPay: Object[] = grossPay();
     created() {
         this.spreadsheetObj.merge('A1:I2');
@@ -29,6 +29,7 @@ export class DataValidationComponent {
         this.spreadsheetObj.cellFormat({ textAlign: 'center', verticalAlign: 'middle'}, 'A3:I13');
         this.spreadsheetObj.cellFormat({ backgroundColor: '#B3FFB3', fontWeight : "bold"}, 'A3:I3');
         this.spreadsheetObj.numberFormat('$#,##0.00', 'H4:I13');
+        this.spreadsheetObj.numberFormat('m/d/yyyy', 'C4:C13');
         this.spreadsheetObj.wrap('H3:I3');
         //Add Data validation to range.
         this.spreadsheetObj.addDataValidation({ type: 'WholeNumber', operator: 'LessThan', value1: '9', ignoreBlank: false }, 'G4:G13');

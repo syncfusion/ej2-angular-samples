@@ -26,8 +26,11 @@
 .tailwind-dark #inline-control h4 {
     color: rgba(255, 255, 255, 0.64);
 }
-.fluent-dark #colorpicker-control h4 {
-    color: rgba(255, 255, 255, 0.64);
+.fluent-dark #colorpicker-control h4,
+.fluent2-dark #colorpicker-control h4,
+.fluent2-highcontrast #colorpicker-control h4,
+.bootstrap5\.3-dark #colorpicker-control h4 {
+    color: #fff;
 }
 .e-bigger #inline-control h4 {
     font-size: 20px;

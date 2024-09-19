@@ -3,9 +3,9 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid [dataSource]="data" [allowPaging]='true' [allowResizing]="true" [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbar'>
+    <ejs-grid [dataSource]="data" [allowPaging]='true' [allowResizing]="true" [allowSorting]='true' [allowMultiSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbar'>
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='120' textAlign="Center" minWidth=10  isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='130' textAlign="Center" minWidth=10  isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
             <e-column headerText='Order Details' [columns]='orderColumns'></e-column>
             <e-column headerText='Ship Details' [columns]='shipColumns'></e-column>
         </e-columns>

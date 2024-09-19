@@ -71,7 +71,7 @@ export class OverviewComponent implements AfterViewChecked {
   public dayEndHourValue: Date = new Date(new Date().setHours(23, 59, 59));
   public workStartHourValue: Date = new Date(new Date().setHours(9, 0, 0));
   public workEndHourValue: Date = new Date(new Date().setHours(18, 0, 0));
-  public liveTimeInterval: NodeJS.Timeout;
+  public liveTimeInterval: any;
   public weekDays: Record<string, any>[] = [
     { text: 'Sunday', value: 0 },
     { text: 'Monday', value: 1 },

@@ -211,7 +211,7 @@ export class AppleWatchComponent {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
+            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
         /* custom code end */
     }
 
@@ -220,7 +220,7 @@ export class AppleWatchComponent {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
+            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
         if (selectedTheme === 'highcontrast') {
             args.gauge.axes[0].annotations[0].content = '<div id="red_annotation"><img alt="Red arrow" style="width:17px;height:17px;" src="./assets/circular-gauge/images/image4.svg" /></div>';
         }
@@ -232,7 +232,7 @@ export class AppleWatchComponent {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
+            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
         if (selectedTheme === 'highcontrast') {
             args.gauge.axes[0].annotations[0].content = '<div id="green_annotation"><img alt="Green arrow" style="width:15px;height:15px;" src="./assets/circular-gauge/images/image5.svg" /></div>';
         }
@@ -244,7 +244,7 @@ export class AppleWatchComponent {
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
         args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast');
+            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
         if (selectedTheme === 'highcontrast') {
             args.gauge.axes[0].annotations[0].content = '<div id="blue_annotation"><img alt="Blue arrow" style="width:17px;height:17px;" src="./assets/circular-gauge/images/image6.svg" /></div>';
         }

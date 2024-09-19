@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { DataManager } from '@syncfusion/ej2-data';
 import { Diagram, NodeModel, ConnectorModel, PointPortModel, DiagramTools, DataBinding, HierarchicalTree, SnapConstraints, SnapSettingsModel, ShapeAnnotationModel, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
-import {artificialIntelligence} from'./overview-data';
+import { artificialIntelligence } from './diagram-data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
@@ -25,7 +25,7 @@ export class RTLTreeDiagramComponent {
 
     public tool: DiagramTools = DiagramTools.ZoomPan;
     public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
-
+    //Configure the data source
     public data: Object = {
         id: 'Name', parentId: 'Category',
         dataSource: new DataManager(artificialIntelligence),
@@ -34,6 +34,7 @@ export class RTLTreeDiagramComponent {
             nodeModel.annotations = [{ content: data[nameKey] }];
         }
     };
+    //Configures the layout
     public layout: Object = {
         type: 'HierarchicalTree', orientation: 'RightToLeft',
         verticalAlignment: 'Center', horizontalAlignment: 'Center', verticalSpacing: 100,
@@ -41,8 +42,8 @@ export class RTLTreeDiagramComponent {
     };
 
     public getNodeDefaults: Function = this.nodeDefaults.bind(this);
-    public getConnectorDefaults: Function = this.connDefaults.bind(this);
-
+    public getConnectorDefaults: Function = this.connectorDefaults.bind(this);
+    //Sets the default values of a Node
     private nodeDefaults(obj: NodeModel): NodeModel {
         obj.width = 120;
         obj.style = { fill: '#034d6d', strokeWidth: 1 };
@@ -72,15 +73,15 @@ export class RTLTreeDiagramComponent {
         }
         return obj;
     };
-
-    public connDefaults(connector: ConnectorModel): ConnectorModel {
+    //Sets the default values of a connector
+    public connectorDefaults(connector: ConnectorModel): ConnectorModel {
         connector.sourcePortID = 'port1';
         connector.type = 'Bezier';
         connector.targetPortID = 'port2';
         connector.targetDecorator = { shape: 'None' };
         return connector;
     };
-
+    //Create and add ports for Node.
     private getPorts(root: boolean): PointPortModel[] {
         let ports: PointPortModel[] = [
             {

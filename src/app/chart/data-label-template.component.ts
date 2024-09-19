@@ -46,12 +46,12 @@ export class DataLabelComponent {
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
-    public bootstrap5Man: string = '<div style="background-color:#6355C7;border-radius: 3px;">' +
+    public bootstrap5Man: string = '<div style="background-color:#FD7E14;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Male Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
-    public bootstrap5Women: string = '<div style="background-color:#FFB400;border-radius: 3px;">' +
+    public bootstrap5Women: string = '<div style="background-color:#6610F2;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
@@ -116,12 +116,12 @@ export class DataLabelComponent {
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
-    public bootstrap5darkMan: string = '<div style="background-color:#8F80F4;border-radius: 3px;">' +
+    public bootstrap5darkMan: string = '<div style="background-color:#FD7E14;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Male Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
-    public bootstrap5darkWomen: string = '<div style="background-color:#FFD46D;border-radius: 3px;">' +
+    public bootstrap5darkWomen: string = '<div style="background-color:#6610F2;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
@@ -182,6 +182,16 @@ export class DataLabelComponent {
     + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
     '${point.y} </span></div></div>';
     public fluent2DarkWomen: string = '<div style="background-color:#2A72D5;border-radius: 3px;">' +
+    '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+    '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
+    + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+    '${point.y} </span></div></div>';
+    public fluent2HighContrastMan: string = '<div style="background-color:#9BB449;border-radius: 3px;">' +
+    '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Male Icon"/>' +
+    '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
+    + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+    '${point.y} </span></div></div>';
+    public fluent2HighContrastWomen: string = '<div style="background-color:#2A72D5;border-radius: 3px;">' +
     '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
     '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
     + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
@@ -270,6 +280,8 @@ export class DataLabelComponent {
             args.template = args.series.name === 'Boys' ? this.fluent2Man : this.fluent2Women;
         } else if (this.theme === <ChartTheme>'Fluent2Dark') {
             args.template = args.series.name === 'Boys' ? this.fluent2DarkMan : this.fluent2DarkWomen;
+        } else if (this.theme === <ChartTheme>'Fluent2HighContrast') {
+            args.template = args.series.name === 'Boys' ? this.fluent2HighContrastMan : this.fluent2HighContrastWomen;
         } else {
             args.template = args.series.name === 'Boys' ? this.bootstrapdarkMan : this.bootstrapdarkWomen;
         }
@@ -283,7 +295,7 @@ export class DataLabelComponent {
       // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
         this.theme = args.chart.theme;
     };

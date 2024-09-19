@@ -131,6 +131,7 @@ text-align: center;
 }
 
 .fluent-dark #control_wrapper,
-.fluent2-dark #control_wrapper { 
+.fluent2-dark #control_wrapper,
+.fluent2-highcontrast #control_wrapper { 
   background: #212529;
 }

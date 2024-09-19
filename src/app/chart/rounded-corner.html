@@ -1,0 +1,36 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the company's budget distribution over a year using a donut chart with rounded corners.
+    </p>
+</div>
+<div class="control-section">
+    <div>
+        <ejs-accumulationchart id="container" #pie style='display:block; width: 92%' align='center'
+            [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" [enableSmartLabels]='enableSmartLabels'
+            [enableAnimation]='enableAnimation' (load)='load($event)' [enableBorderOnMouseMove]='false'
+            (pointRender)='pointRender($event)' [annotations]='annotations'>
+            <e-accumulation-series-collection>
+                <e-accumulation-series [dataSource]='data' xName='x' yName='y' innerRadius="50%" [dataLabel]="dataLabel"
+                 [border]='border' borderRadius='8'>
+                </e-accumulation-series>
+            </e-accumulation-series-collection>
+        </ejs-accumulationchart>
+    </div>
+</div>
+<div id="description">
+    <p>In this example, you can see how to render and configure a donut chart with customized corners for each slice. By
+        specifying a value for <code>borderRadius</code>, you can create rounded corners for each slice, giving the chart a modern and
+        polished look.</p>
+    <p>
+        <code>Tooltips</code> are enabled in this example. To see the tooltip in action, hover over a slice or tap on it in touch-enabled devices.
+    </p>
+    <p>
+        More information about the pie series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/pie-dough-nut/#various-radius-pie-chart" aria-label="Navigate to the documentation for Various Radius Pie Chart in Angular Accumulation Chart component">documentation section</a>.
+    </p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

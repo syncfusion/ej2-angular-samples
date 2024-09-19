@@ -99,6 +99,10 @@ export class QrCodeComponent {
     this.barcode.mode = args.checked ? 'SVG' : 'Canvas';
   }
 
+  public showLogo(args: CheckBoxChangeEventArgs) {
+    this.barcode.logo.imageSource = args.checked ? 'https://www.syncfusion.com/web-stories/wp-content/uploads/sites/2/2022/02/cropped-Syncfusion-logo.png' : '';
+  }
+
   public bgColorChange(args: ColorPickerEventArgs) {
     this.barcode.backgroundColor = args.currentValue.hex;
   }

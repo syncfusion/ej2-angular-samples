@@ -18,31 +18,31 @@
         (clicked)="toolbarClick($event)"
       >
         <e-items>
-            <e-item prefixIcon='e-cut e-icons' tooltipText='Cut' disabled=true></e-item>
-            <e-item prefixIcon='e-copy e-icons' tooltipText='Copy' disabled=true></e-item>
-            <e-item prefixIcon='e-icons e-paste' tooltipText='Paste' disabled=true></e-item>
-            <e-item prefixIcon='e-icons e-undo tb-icons' tooltipText='Undo' disabled=true></e-item>
-            <e-item prefixIcon='e-icons e-redo tb-icons' tooltipText='Redo' disabled=true></e-item>
+            <e-item prefixIcon='e-cut e-icons' tooltipText='Cut' disabled=true, id="cut"></e-item>
+            <e-item prefixIcon='e-copy e-icons' tooltipText='Copy' disabled=true, id="copy"></e-item>
+            <e-item prefixIcon='e-icons e-paste' tooltipText='Paste' disabled=true, id="paste"></e-item>
+            <e-item prefixIcon='e-icons e-undo tb-icons' tooltipText='Undo' disabled=true, id="undo"></e-item>
+            <e-item prefixIcon='e-icons e-redo tb-icons' tooltipText='Redo' disabled=true, id="redo"></e-item>
           <e-item type="Separator"></e-item>
-          <e-item prefixIcon='sf-icon-align-left-1' tooltipText='Align Left' disabled=true></e-item>
-          <e-item prefixIcon='sf-icon-align-center-1' tooltipText='Align Center' disabled=true></e-item>
-          <e-item prefixIcon='sf-icon-align-right-1' tooltipText='Align Right' disabled=true></e-item>
-          <e-item prefixIcon='sf-icon-align-top-1' tooltipText='Align Top' disabled=true></e-item>
-          <e-item prefixIcon='sf-icon-align-middle-1' tooltipText='Align Middle' disabled=true></e-item>
-          <e-item prefixIcon='sf-icon-align-bottom-1' tooltipText='Align Bottom' disabled=true></e-item>
+          <e-item prefixIcon='sf-icon-align-left-1' tooltipText='Align Left' disabled=true, id="align_left"></e-item>
+          <e-item prefixIcon='sf-icon-align-center-1' tooltipText='Align Center' disabled=true, id="align_center"></e-item>
+          <e-item prefixIcon='sf-icon-align-right-1' tooltipText='Align Right' disabled=true, id="align_right"></e-item>
+          <e-item prefixIcon='sf-icon-align-top-1' tooltipText='Align Top' disabled=true, id="align_top"></e-item>
+          <e-item prefixIcon='sf-icon-align-middle-1' tooltipText='Align Middle' disabled=true, id="align_middle"></e-item>
+          <e-item prefixIcon='sf-icon-align-bottom-1' tooltipText='Align Bottom' disabled=true, id="align_bottom"></e-item>
           <e-item type="Separator"></e-item>
-          <e-item prefixIcon='e-icons e-transform-right' tooltipText='Rotate Right' disabled=true></e-item>
-          <e-item prefixIcon='e-icons e-transform-left' tooltipText='Rotate Left' disabled=true></e-item>
+          <e-item prefixIcon='e-icons e-transform-right' tooltipText='Rotate Right' disabled=true, id="transform_right"></e-item>
+          <e-item prefixIcon='e-icons e-transform-left' tooltipText='Rotate Left' disabled=true, id="transform_left"></e-item>
           <e-item type="Separator"></e-item>
-          <e-item prefixIcon='e-icons e-flip-vertical' tooltipText='Flip Vertical' disabled=true></e-item>
-          <e-item prefixIcon='e-icons e-flip-horizontal' tooltipText='Flip Horizontal' disabled=true></e-item>
+          <e-item prefixIcon='e-icons e-flip-vertical' tooltipText='Flip Vertical' disabled=true, id="flip_vertical"></e-item>
+          <e-item prefixIcon='e-icons e-flip-horizontal' tooltipText='Flip Horizontal' disabled=true, id="flip_horizontal"></e-item>
           <e-item type="Separator"></e-item>
-          <e-item prefixIcon='sf-icon-distribute-horizontal' tooltipText='Distribute Objects Horizontally' disabled=true></e-item>
-          <e-item prefixIcon='sf-icon-distribute-vertical' tooltipText='Distribute Objects Vertically' disabled=true></e-item>
+          <e-item prefixIcon='sf-icon-distribute-horizontal' tooltipText='Distribute Objects Horizontally' disabled=true, id="distribute_horizontal"></e-item>
+          <e-item prefixIcon='sf-icon-distribute-vertical' tooltipText='Distribute Objects Vertically' disabled=true, id="distribute_vertical"></e-item>
           <e-item type="Separator"></e-item>
-          <e-item prefixIcon='sf-icon-same-width' tooltipText='Same Width' disabled=true></e-item>
-          <e-item prefixIcon='sf-icon-same-height' tooltipText='Same Height' disabled=true></e-item>
-          <e-item prefixIcon='sf-icon-same-size' tooltipText='Same Size' disabled=true></e-item>
+          <e-item prefixIcon='sf-icon-same-width' tooltipText='Same Width' disabled=true, id="same_width"></e-item>
+          <e-item prefixIcon='sf-icon-same-height' tooltipText='Same Height' disabled=true, id="same_height"></e-item>
+          <e-item prefixIcon='sf-icon-same-size' tooltipText='Same Size' disabled=true, id="same_size"></e-item>
         </e-items>
       </ejs-toolbar>
             <div class="content-wrapper">

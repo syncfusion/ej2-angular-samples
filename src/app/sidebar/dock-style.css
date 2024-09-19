@@ -39,19 +39,6 @@
     padding: 3px;
 }
 
-.fluent2 .dockSidebar.e-close .e-listview .e-list-icon.sb-icons,
-.fluent2-dark .dockSidebar.e-close .e-listview .e-list-icon.sb-icons,
-.fluent2-highcontrast .dockSidebar.e-close .e-listview .e-list-icon.sb-icons {
-    padding: 6px;
-    margin-left: 6px;
-}
-
-.fluent2 .dockSidebar.e-close .e-listview .e-list-text,
-.fluent2-dark .dockSidebar.e-close .e-listview .e-list-text,
-.fluent2-highcontrast .dockSidebar.e-close .e-listview .e-list-text {
-    padding: 0;
-}
-
 .bootstrap4 .dockSidebar .e-listview .e-list-icon.sb-icons,
 .material .dockSidebar .e-listview .e-list-icon.sb-icons,
 .material-dark .dockSidebar .e-listview .e-list-icon.sb-icons,
@@ -65,6 +52,8 @@
 .tailwind-dark .dockSidebar .e-listview .e-list-icon.sb-icons,
 .bootstrap5 .dockSidebar .e-listview .e-list-icon.sb-icons,
 .bootstrap5-dark .dockSidebar .e-listview .e-list-icon.sb-icons,
+.bootstrap5\.3 .dockSidebar .e-listview .e-list-icon.sb-icons,
+.bootstrap5\.3-dark .dockSidebar .e-listview .e-list-icon.sb-icons,
 .fluent .dockSidebar .e-listview .e-list-icon.sb-icons,
 .fluent-dark .dockSidebar .e-listview .e-list-icon.sb-icons {
     margin-right: 8px;
@@ -87,7 +76,7 @@
 .fluent2.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons,
 .fluent2-dark.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons,
 .fluent2-highcontrast.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons {
-    margin: 6px;
+    margin: 8px;
 }
 
 .highcontrast.e-bigger .dockSidebar .e-listview .e-list-icon.sb-icons {
@@ -155,7 +144,8 @@
 .tailwind .dockToolbar.e-toolbar,
 .fluent2 .dockToolbar.e-toolbar,
 .highcontrast .dockToolbar.e-toolbar,
-.bootstrap5 .dockToolbar.e-toolbar {
+.bootstrap5 .dockToolbar.e-toolbar,
+.bootstrap5\.3 .dockToolbar.e-toolbar {
     border-bottom: 1px solid #eaeaeae0;
 }
 
@@ -165,7 +155,8 @@
 .fluent2-dark .dockToolbar.e-toolbar,
 .fluent2-highcontrast .dockToolbar.e-toolbar,
 .tailwind-dark .dockToolbar.e-toolbar,
-.bootstrap5-dark .dockToolbar.e-toolbar {
+.bootstrap5-dark .dockToolbar.e-toolbar,
+.bootstrap5\.3-dark .dockToolbar.e-toolbar {
     border-bottom: 1px solid #eaeaea63;
 }
 
@@ -174,7 +165,8 @@
 .fabric .dockSidebar,
 .tailwind .dockSidebar,
 .highcontrast .dockSidebar,
-.bootstrap5 .dockSidebar {
+.bootstrap5 .dockSidebar,
+.bootstrap5\.3 .dockSidebar {
     border-right: 1px solid #eaeaeae0;
 }
 
@@ -182,7 +174,8 @@
 .material-dark .dockSidebar,
 .fabric-dark .dockSidebar,
 .tailwind-dark .dockSidebar,
-.bootstrap5-dark .dockSidebar {
+.bootstrap5-dark .dockSidebar,
+.bootstrap5\.3-dark .dockSidebar {
     border-right: 1px solid #eaeaea63;
 }
 
@@ -271,7 +264,9 @@
 }
 
 .bootstrap5 .e-folder-name,
-.bootstrap5-dark .e-folder-name {
+.bootstrap5-dark .e-folder-name,
+.bootstrap5\.3 .e-folder-name,
+.bootstrap5\.3-dark .e-folder-name {
     margin-top: -2px;
 }
 
@@ -315,6 +310,8 @@
 /* Specifies the sample level styles for Toolbar alignment for bigger mode*/
 .bootstrap5.e-bigger .dockToolbar.e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child,
 .bootstrap5-dark.e-bigger .dockToolbar.e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child,
+.bootstrap5\.3.e-bigger .dockToolbar.e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child,
+.bootstrap5\.3-dark.e-bigger .dockToolbar.e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child,
 .bootstrap-dark.e-bigger .dockToolbar.e-toolbar .e-toolbar-items .e-toolbar-item:first-child,
 .highcontrast.e-bigger .dockToolbar.e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child {
     margin-left: 4px;
@@ -329,4 +326,10 @@
 .tailwind.e-bigger .dockToolbar.e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child,
 .tailwind-dark.e-bigger .dockToolbar.e-toolbar .e-toolbar-items:not(.e-tbar-pos) .e-toolbar-item:first-child {
     margin-left: 8px;
+}
+
+.fluent2 .dockSidebar.e-close .e-listview .e-list-text,
+.fluent2-dark .dockSidebar.e-close .e-listview .e-list-text,
+.fluent2-highcontrast .dockSidebar.e-close .e-listview .e-list-text {
+    padding: 0;
 }

@@ -1,0 +1,29 @@
+<div id='container'>
+  <div>
+    <ng-template #toolbarTemplate>
+      <div id='toolbar-template'>
+        <button id='calculate_Grade' class='e-btn e-primary' (click)="CalculateGrade()">Calculate Grade</button>
+      </div>
+    </ng-template>
+    <ejs-grid #grid [dataSource]='gridData' [toolbar]='toolbar' (queryCellInfo)='CustomizeCell($event)'
+      [enableHover]='false'>
+      <e-columns>
+        <e-column field="StudentID" isPrimaryKey="true" headerText="Student ID" textAlign="Right"
+          width="100"></e-column>
+        <e-column field="StudentName" headerText="Student Name" width="100"></e-column>
+        <e-column field="FirstYearGPA" textAlign="Center" headerText="First Year GPA" width="100"></e-column>
+        <e-column field="SecondYearGPA" headerText="Second Year GPA" headerTextAlign="Center" textAlign="Center"
+          width="100"></e-column>
+        <e-column field="ThirdYearGPA" headerText="Third Year GPA" headerTextAlign="Center " textAlign="Center"
+          width="100"></e-column>
+        <e-column field="FinalYearGPA" headerText="Final Year GPA" [visible]="false" headerTextAlign="Center"
+          textAlign="Center" width="100"></e-column>
+        <e-column field="TotalGPA" headerText="Total GPA" [visible]="false" headerTextAlign="Center" textAlign="Center"
+          width="100"></e-column>
+        <e-column field="TotalGrade" headerText="Total Grade" [visible]="false" headerTextAlign="Center"
+          textAlign="Center" width="100"></e-column>
+      </e-columns>
+
+    </ejs-grid>
+  </div>
+</div>

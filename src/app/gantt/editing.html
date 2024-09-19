@@ -17,8 +17,8 @@
     <ejs-gantt id="ganttDefault" height="430px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
         [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [treeColumnIndex]="1"
         height="450px" [allowSelection]="true" dateFormat="MMM dd, y" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
-        [gridLines]="gridLines" [eventMarkers]="eventMarkers" [editSettings]="editSettings"
-        [toolbar]="toolbar" [resourceFields] = "resourceFields" 
+        [gridLines]="gridLines" [eventMarkers]="eventMarkers" [editSettings]="editSettings"  (actionBegin)="actionBegin($event)"
+        [toolbar]="toolbar" [resourceFields] = "resourceFields"
         [resources]="resources" [splitterSettings]="splitterSettings">
     </ejs-gantt>
     <div style="float: right; margin: 10px;">Source:
@@ -27,8 +27,7 @@
 </div>
 <div id="description">
     <p>
-        This CRUD operations can be configured in Gantt chart using <code>editSettings</code> and
-        <code>allowTaskbarEditing</code>. Gantt chart has two modes to manipulate the datasource
+        This CRUD operations can be configured in Gantt chart using <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#editsettings">editSettings</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#allowtaskbardraganddrop">allowTaskbarEditing</a>. Gantt chart has two modes to manipulate the datasource
         <li><code>Auto</code></li>
         <li><code>Dialog</code></li>
         
@@ -37,6 +36,8 @@
         state. On the chart side, you can edit the tasks using edit dialog by double clicking on the taskbars and you
         can edit the dependency connector lines using drag and drop action with connector line points available on the
         either side of taskbar. It is possible to connect parent-parent, child-child, child-parent and parent-child dependency relationships.
+        <br>
+        In this sample <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/columnModel/#validationrules">column.validation</a> has been enabled for the columns. It uses the Form Validator control to define validation rules, displaying error messages for invalid field values.
     </p>
             
     <p>

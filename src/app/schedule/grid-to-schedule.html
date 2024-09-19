@@ -1,0 +1,56 @@
+<div class="control-section">
+  <div>
+    <div class="content-wrapper grid-to-schedule">
+      <div class="schedule-container">
+        <div class="schedule-content">
+          <h5 style="text-align: center; margin: 0;position: relative; bottom: 10px;"> Task Management</h5>
+          <ejs-schedule #scheduleObj id="Schedule" width="100%" height="100%" rowAutoHeight="true" cssClass="grid-schedule"
+            [selectedDate]="selectedDate" [group]="group" (dataBound)="onDataBound()" [eventSettings]="eventSettings"
+            [eventDragArea]="'.content-wrapper'" (dragStop)="handleDragStop($event)">
+            <e-resources>
+              <e-resource field="TaskId" title="Employee" [dataSource]="employeesData" name="Employees" textField="text" idField="id" colorField="color">
+              </e-resource>
+            </e-resources>
+            <e-views>
+              <e-view option="TimelineDay"></e-view>
+            </e-views>
+          </ejs-schedule>
+        </div>
+        <div class="grid-content">
+          <h5 style="text-align: center; margin: 0; position: relative; bottom: 10px;"> Unplanned Tasks</h5>
+          <ejs-grid
+            id="Grid" #gridObj [dataSource]="gridData" width="450px" height="100%" cssClass="drag-grid" [allowSelection]="true" [allowRowDragAndDrop]="true"
+            [editSettings]="editSettings" [rowDropSettings]="rowDropSettings" (rowDrop)="onRowDrop($event)" (rowDrag)="onRowDrag($event)"
+          >
+            <e-columns>
+              <e-column field="Task" headerText="Task" width="50"></e-column>
+              <e-column field="Duration" headerText="Duration" width="30"></e-column>
+            </e-columns>
+          </ejs-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="action-description">
+  <p>
+    This example illustrates how to drag and drop events between the DataGrid and the Scheduler.
+  </p>
+</div>
+
+<div id="description">
+  <p>
+    In this example, the DataGrid's <code>allowRowDragAndDrop</code> and <code>rowDropSettings</code> are used to drag
+    and drop items from the DataGrid to the Scheduler. The <code>rowDrop</code> event of the DataGrid is triggered when an
+    item is dropped to the Scheduler. Within the <code>rowDrop</code> event, the <code>addEvent</code> method
+    is used to add the dropped item to the target Scheduler, and the <code>deleteRecord</code> method is used to remove
+    the dragged item from the DataGrid.<br>
+  
+    For Scheduler to DataGrid, <code>eventDragArea</code> is used to drag a range of events. The <code>dragStop</code>
+    event of the Scheduler is triggered when an item is dropped from the Scheduler to the
+    DataGrid. Within the <code>dragStop</code> event, the DataGrid's <code>addRecord</code> method is used to add the
+    dropped event to the target DataGrid, and the <code>deleteEvent</code> method is used to remove the dragged event from
+    the Scheduler.
+  </p>
+</div>

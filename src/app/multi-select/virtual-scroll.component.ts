@@ -3,7 +3,7 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MultiSelectComponent, VirtualScroll, MultiSelectModule, DropDownListComponent, DropDownListModule, visualMode } from '@syncfusion/ej2-angular-dropdowns';
-import { Query, DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
+import { Query, DataManager, UrlAdaptor } from '@syncfusion/ej2-data';
 import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -75,8 +75,8 @@ export class VirtualScrollMultiSelectComponent {
     public checkBox : string = 'CheckBox';
     // bind the DataManager instance to dataSource property
     public customerData: DataManager = new DataManager({
-        url: 'https://services.syncfusion.com/angular/production/api/orders',
-        adaptor: new WebApiAdaptor,
+        url: 'https://services.syncfusion.com/angular/production/api/VirtualDropdownData',
+        adaptor: new UrlAdaptor,
         crossDomain: true
     });
     public onChange(): void {

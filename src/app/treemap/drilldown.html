@@ -27,7 +27,7 @@
                         <div class="property-text">Drill Down View</div>
                     </td>
                     <td style="width: 70%;">
-                        <div class="drilldownCheckBox">
+                        <div class="drilldownCheckBox drillCheckBox">
                             <input type="checkbox" id="drillView"/>
                         </div>
                     </td>
@@ -43,7 +43,7 @@
                         <div class="property-text">Enable Bread Crumb</div>
                     </td>
                     <td>
-                        <div class="drilldownCheckBox">
+                        <div class="drilldownCheckBox drillCheckBox">
                             <input type="checkbox" id="breadCrumb" />
                         </div>
                     </td>
@@ -113,8 +113,11 @@
         </div>
     </div>
     <style>
-        .drilldownCheckBox {
+        .drilldownCheckBox, .drillCheckBox {
             margin-left: 20px;
+        }
+        .e-view.fluent2-highcontrast #property .drillCheckBox {
+            margin-left: 11px;
         }
         .e-view.fluent2 #property .drilldownCheckBox {
             margin-left: 16px;

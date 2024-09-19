@@ -1,4 +1,4 @@
-import { Component, Inject, ViewChild} from '@angular/core';
+import { Component, Inject, ViewChild, ViewEncapsulation} from '@angular/core';
 import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { EmitType, detach } from '@syncfusion/ej2-base';
 import { TextAreaComponent, TextBoxComponent, NumericTextBoxComponent, TextAreaModule, TextBoxModule, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
@@ -13,6 +13,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     styleUrls: ['api.css'],
     templateUrl: 'api.html',
     standalone: true,
+    encapsulation: ViewEncapsulation.None,
     imports: [TextAreaModule, TextBoxModule, CheckBoxModule, NumericTextBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ApiTextAreaController {

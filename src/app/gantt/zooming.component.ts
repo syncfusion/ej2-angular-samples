@@ -13,8 +13,6 @@ export class GanttZoomingComponent implements OnInit {
     public data: object[];
     public taskSettings: object;
     public labelSettings: object;
-    public projectStartDate: Date;
-    public projectEndDate: Date;
     public toolbar: string[];
     public columns: object[];
     public splitterSettings: object;
@@ -31,8 +29,6 @@ export class GanttZoomingComponent implements OnInit {
             child: 'subtasks'
         };
         this.toolbar = ['ZoomIn', 'ZoomOut', 'ZoomToFit'];
-        this.projectStartDate = new Date('03/24/2024');
-        this.projectEndDate = new Date('07/06/2024');
         this.labelSettings = {
             leftLabel: 'TaskName'
         };

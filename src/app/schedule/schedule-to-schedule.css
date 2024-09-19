@@ -1,0 +1,21 @@
+.content-wrapper.multiple-schedulers .schedule-container {
+    display: flex;
+}
+
+#first-schedule {
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .content-wrapper.multiple-schedulers .schedule-container {
+        flex-direction: column;
+    }
+
+    #first-schedule {
+        margin-right: 0;
+    }
+
+    #second-schedule {
+        margin-top: 10px;
+    }
+}

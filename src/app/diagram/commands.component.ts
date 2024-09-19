@@ -1,13 +1,11 @@
-import { Component, ViewEncapsulation, ViewChild,Inject } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { ToolbarComponent, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import {
-  Diagram, NodeModel, UndoRedo, ConnectorModel, PointPortModel, Connector, FlowShapeModel,
-  SymbolInfo, IDragEnterEventArgs, SnapSettingsModel, MarginModel, TextStyleModel, StrokeStyleModel,
-  OrthogonalSegmentModel, Node, PaletteModel, NodeConstraints, IHistoryChangeArgs, ISelectionChangeEventArgs
+  Diagram, NodeModel, UndoRedo, Connector,
+  NodeConstraints, IHistoryChangeArgs, ISelectionChangeEventArgs
 } from '@syncfusion/ej2-diagrams';
 import { ClickEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
-import { paletteIconClick } from './script/diagram-common';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(UndoRedo);
@@ -16,12 +14,12 @@ Diagram.Inject(UndoRedo);
  */
 
 @Component({
-    selector: 'control-content',
-    templateUrl: 'commands.html',
-    styleUrls: ['commands.component.css'],
-    encapsulation: ViewEncapsulation.None,
-    standalone: true,
-    imports: [SBActionDescriptionComponent, ToolbarModule, DiagramModule, SBDescriptionComponent]
+  selector: 'control-content',
+  templateUrl: 'commands.html',
+  styleUrls: ['commands.component.css'],
+  encapsulation: ViewEncapsulation.None,
+  standalone: true,
+  imports: [SBActionDescriptionComponent, ToolbarModule, DiagramModule, SBDescriptionComponent]
 })
 export class CommandComponent {
   @ViewChild('diagram')
@@ -31,200 +29,164 @@ export class CommandComponent {
   @ViewChild('toolbar')
   public toolbar: ToolbarComponent;
 
-  constructor() {​​​​​​​
-    
-}​​​​​​​
+  constructor() {
 
-public created(): void {
-  this.diagram.rulerSettings = {
-    showRulers : true
-  };
-}
-public nodes: NodeModel[] = [
-  {
-      shape: { type: 'Text', content: 'Select the below shapes' }, constraints: NodeConstraints.PointerEvents,
-      style: { fontSize: 10, fill: 'None', fontFamily: 'sans-serif', strokeWidth: 0 }, offsetX: 150, offsetY: 40
-  },
-  {
-      id: 'node1', width: 60, height: 40, offsetX: 150, offsetY: 100, style: { fill: '#DAEBFF', strokeColor: 'white' },
-  },
-  {
-      id: 'node2', width: 80, height: 40, offsetX: 150, offsetY: 170, style: { fill: '#F5E0F7', strokeColor: 'white' },
-  },
-  {
-      id: 'node3', width: 100, height: 40, offsetX: 150, offsetY: 240, style: { fill: '#E0E5BB', strokeColor: 'white' },
-  },
-  {
-      shape: { type: 'Text', content: 'Try Alignment Commandss(AlignRight, AlignLeft \n and AlignCenter)' }, constraints: NodeConstraints.PointerEvents,
-      style: { fontSize: 10, fill: 'None', fontFamily: 'sans-serif', strokeWidth: 0 }, offsetX: 150, offsetY: 310
-  },
-  {
-      shape: { type: 'Text', content: 'Select the below shapes' }, constraints: NodeConstraints.PointerEvents,
-      style: { fontSize: 10, fill: 'None', fontFamily: 'sans-serif', strokeWidth: 0 }, offsetX: 150, offsetY: 380
-  },
-  {
-      id: 'node4', width: 40, height: 60, offsetX: 80, offsetY: 470, style: { fill: '#DAEBFF', strokeColor: 'white' },
-  },
-  {
-      id: 'node5', width: 40, height: 80, offsetX: 160, offsetY: 470, style: { fill: '#F5E0F7', strokeColor: 'white' },
-  },
-  {
-      id: 'node6', width: 40, height: 100, offsetX: 240, offsetY: 470, style: { fill: '#E0E5BB', strokeColor: 'white' },
-  },
-  {
-      shape: { type: 'Text', content: 'Try Alignment Commandss(AlignTop, AlignBottom \n and AlignMiddle)' }, constraints: NodeConstraints.PointerEvents,
-      style: { fontSize: 10, fill: 'None', fontFamily: 'sans-serif', strokeWidth: 0 }, offsetX: 150, offsetY: 550
-  },
-  {
-      shape: { type: 'Text', content: 'Select the below shapes' }, constraints: NodeConstraints.PointerEvents,
-      style: { fontSize: 10, fill: 'None', fontFamily: 'sans-serif', strokeWidth: 0 }, offsetX: 550, offsetY: 40
-  },
-  {
-      id: 'node7', width: 80, height: 40, offsetX: 475, offsetY: 100, style: { fill: '#DAEBFF', strokeColor: 'white' },
-  },
-  {
-      id: 'node8', width: 80, height: 40, offsetX: 625, offsetY: 100, style: { fill: '#F5E0F7', strokeColor: 'white' },
-  },
-  {
-      id: 'node9', width: 80, height: 40, offsetX: 595, offsetY: 180, style: { fill: '#E0E5BB', strokeColor: 'white' },
-  },
-  {
-      shape: { type: 'Text', content: 'Try SpaceAcross Commands' }, constraints: NodeConstraints.PointerEvents,
-      style: { fontSize: 10, fill: 'None', fontFamily: 'sans-serif', strokeWidth: 0 }, offsetX: 550, offsetY: 240
-  },
-  {
-      shape: { type: 'Text', content: 'Select the below shapes' }, constraints: NodeConstraints.PointerEvents,
-      style: { fontSize: 10, fill: 'None', fontFamily: 'sans-serif', strokeWidth: 0 }, offsetX: 550, offsetY: 320
-  },
-  {
-      id: 'node10', width: 80, height: 40, offsetX: 475, offsetY: 400, style: { fill: '#DAEBFF', strokeColor: 'white' },
-  },
-  {
-      id: 'node11', width: 80, height: 40, offsetX: 475, offsetY: 500, style: { fill: '#F5E0F7', strokeColor: 'white' },
-  },
-  {
-      id: 'node12', width: 80, height: 40, offsetX: 625, offsetY: 430, style: { fill: '#E0E5BB', strokeColor: 'white' },
-  },
-  {
-      shape: { type: 'Text', content: 'Try SpaceAcross Commands' }, constraints: NodeConstraints.PointerEvents,
-      style: { fontSize: 10, fill: 'None', fontFamily: 'sans-serif', strokeWidth: 0 }, offsetX: 550, offsetY: 550
-  },
-  {
-      shape: { type: 'Text', content: 'Select the below shapes' }, constraints: NodeConstraints.PointerEvents,
-      style: { fontSize: 10, fill: 'None', fontFamily: 'sans-serif', strokeWidth: 0 }, offsetX: 950, offsetY: 40
-  },
-  {
+  }
+
+  public created(): void {
+    this.diagram.rulerSettings = {
+      showRulers: true
+    };
+  }
+  public createTextNode(content: string, offsetX: number, offsetY: number): NodeModel {
+    return {
+      shape: { type: 'Text', content: content },
+      constraints: NodeConstraints.PointerEvents,
+      style: { fontSize: 10, fill: 'None', fontFamily: 'sans-serif', strokeWidth: 0 },
+      offsetX: offsetX,
+      offsetY: offsetY
+    };
+  }
+
+  public CreateNode(id: string, width: number, height: number, fill: string, offsetX: number, offsetY: number): NodeModel {
+    return {
+      id: id,
+      width: width,
+      height: height,
+      offsetX: offsetX,
+      offsetY: offsetY,
+      style: { fill: fill, strokeColor: 'white' }
+    };
+  }
+  public nodes: NodeModel[] = [
+    this.createTextNode('Select the below shapes', 150, 40),
+    this.CreateNode('node1', 60, 40, '#DAEBFF', 150, 100),
+    this.CreateNode('node2', 80, 40, '#F5E0F7', 150, 170),
+    this.CreateNode('node3', 100, 40, '#E0E5BB', 150, 240),
+    this.createTextNode('Try Alignment Commands (AlignRight, AlignLeft\nand AlignCenter)', 150, 310),
+    this.createTextNode('Select the below shapes', 150, 380),
+    this.CreateNode('node4', 40, 60, '#DAEBFF', 80, 470),
+    this.CreateNode('node5', 40, 80, '#F5E0F7', 160, 470),
+    this.CreateNode('node6', 40, 100, '#E0E5BB', 240, 470),
+    this.createTextNode('Try Alignment Commands (AlignTop, AlignBottom\nand AlignMiddle)', 150, 550),
+    this.createTextNode('Select the below shapes', 550, 40),
+    this.CreateNode('node7', 80, 40, '#DAEBFF', 475, 100),
+    this.CreateNode('node8', 80, 40, '#F5E0F7', 625, 100),
+    this.CreateNode('node9', 80, 40, '#E0E5BB', 595, 180),
+    this.createTextNode('Try SpaceAcross Commands', 550, 240),
+    this.createTextNode('Select the below shapes', 550, 320),
+    this.CreateNode('node10', 80, 40, '#DAEBFF', 475, 400),
+    this.CreateNode('node11', 80, 40, '#F5E0F7', 475, 500),
+    this.CreateNode('node12', 80, 40, '#E0E5BB', 625, 430),
+    this.createTextNode('Try SpaceAcross Commands', 550, 550),
+    this.createTextNode('Select the below shapes', 950, 40),
+    {
       id: 'RightTriangle', width: 100, height: 100, offsetX: 950, offsetY: 120, style: { fill: '#E0E5BB', strokeColor: 'white' },
       shape: { type: 'Basic', shape: 'RightTriangle' },
-  },
-  {
-      shape: { type: 'Text', content: 'Try Flip Commands' }, constraints: NodeConstraints.PointerEvents,
-      style: { fontSize: 10, fill: 'None', fontFamily: 'sans-serif', strokeWidth: 0 }, offsetX: 950, offsetY: 240
-  },
-  {
-      shape: { type: 'Text', content: 'Select the below shapes' }, constraints: NodeConstraints.PointerEvents,
-      style: { fontSize: 10, fill: 'None', fontFamily: 'sans-serif', strokeWidth: 0 }, offsetX: 950, offsetY: 300
-  },
-  {
-      id: 'node14', width: 60, height: 20, offsetX: 950, offsetY: 350, style: { fill: '#DAEBFF', strokeColor: 'white' },
-  },
-  {
-      id: 'node15', width: 80, height: 40, offsetX: 950, offsetY: 420, style: { fill: '#F5E0F7', strokeColor: 'white' },
-  },
-  {
-      id: 'node16', width: 100, height: 50, offsetX: 950, offsetY: 500, style: { fill: '#E0E5BB', strokeColor: 'white' },
-  },
-  {
-      shape: { type: 'Text', content: 'Try Sizing Commands' }, constraints: NodeConstraints.PointerEvents,
-      style: { fontSize: 10, fill: 'None', fontFamily: 'sans-serif', strokeWidth: 0 }, offsetX: 950, offsetY: 550
-  }
-];
+    },
+    this.createTextNode('Try Flip Commands', 950, 240),
+    this.createTextNode('Select the below shapes', 950, 300),
+    this.CreateNode('node14', 60, 20, '#DAEBFF', 950, 350),
+    this.CreateNode('node15', 80, 40, '#F5E0F7', 950, 420),
+    this.CreateNode('node16', 100, 50, '#E0E5BB', 950, 500),
+    this.createTextNode('Try Sizing Commands (Same width, Same height, Same size)', 950, 550)
+  ];
 
-
-public selectionChange(args : ISelectionChangeEventArgs) {
-  if (args.state === 'Changed') {
+  //Handle selection change in the diagram.
+  public selectionChange(args: ISelectionChangeEventArgs) {
+    if (args.state === 'Changed') {
       if (args.type === 'Addition') {
-          if (args.newValue.length > 0) {
-              this.onClickDisable(false, args.newValue);
-          }
+        if (args.newValue.length > 0) {
+          this.onClickDisable(false, args.newValue);
+        }
       } else {
-          this.onClickDisable(true, args.newValue);
+        this.onClickDisable(true, args.newValue);
       }
-  }
-}
-public historyChange(args : IHistoryChangeArgs): void {
-  debugger
-  if (this.diagram.historyManager.undoStack.length > 0) {
-      this.toolbar.items[3].disabled = false;
-  } else {
-     this.toolbar.items[3].disabled = true;
-  }
-  // Check if redo stack is empty or not
-  if (this.diagram.historyManager.redoStack.length > 0) {
-     this.toolbar.items[4].disabled = false;
-  } else {
-     this.toolbar.items[4].disabled = true;
-  }
-}
-
-
-public onClickDisable(args, selectedItems){
-  if (args === false) {
-    this.toolbar.items[0].disabled = false;
-    this.toolbar.items[1].disabled = false;
-    this.toolbar.items[13].disabled = false;
-    this.toolbar.items[14].disabled = false;
-    if (selectedItems.length === 1) {
-      this.toolbar.items[16].disabled = selectedItems[0].id === "RightTriangle" ? false : true;
-      this.toolbar.items[17].disabled = selectedItems[0].id === "RightTriangle" ? false : true;
-        this.disableCommonItems(true);
-    } else if (selectedItems.length > 1) {
-        this.disableCommonItems(false);
     }
-} else {
-  this.toolbar.items[0].disabled = true;
-  this.toolbar.items[1].disabled = true;
-  this.toolbar.items[13].disabled = true;
-  this.toolbar.items[14].disabled = true;
-  this.toolbar.items[16].disabled = true;
-  this.toolbar.items[17].disabled = true;
-    this.disableCommonItems(true);
-}
-}
-public disableCommonItems(args) {
-  this.toolbar.items[6].disabled = args;
-  this.toolbar.items[7].disabled = args;
-  this.toolbar.items[8].disabled = args;
-  this.toolbar.items[9].disabled = args;
-  this.toolbar.items[10].disabled = args;
-  this.toolbar.items[11].disabled = args;
-  this.toolbar.items[19].disabled = args;
-  this.toolbar.items[20].disabled = args;
-  this.toolbar.items[22].disabled = args;
-  this.toolbar.items[23].disabled = args;
-  this.toolbar.items[24].disabled = args;
-}
-public toolbarClick(args : ClickEventArgs){
-  var item = (args as any).item.tooltipText;
-  switch(item)
-  {
+  }
+
+  public historyChange(args: IHistoryChangeArgs): void {
+    const undoItem = this.toolbar.items.find(item => item.id === 'undo');
+    if (undoItem) {
+      undoItem.disabled = this.diagram.historyManager.undoStack.length > 0 ? false : true;
+    }
+    const redoItem = this.toolbar.items.find(item => item.id === 'redo');
+    if (redoItem) {
+      redoItem.disabled = this.diagram.historyManager.redoStack.length > 0 ? false : true;
+    }
+  }
+
+  //Enable or disable toolbar items based on selection state.
+  public onClickDisable(args, selectedItems) {
+    if (args === false) {
+      const itemIds = ['cut', 'copy', 'transform_right', 'transform_left'];
+      itemIds.forEach(itemId => {
+        const item = this.toolbar.items.find(item => item.id === itemId);
+        if (item) {
+          item.disabled = false;
+        }
+      });
+      if (selectedItems.length === 1) {
+        var index = this.toolbar.items.findIndex(item => item.id === 'flip_vertical');
+        if (index !== -1) {
+          this.toolbar.items[index].disabled = selectedItems[0].id === "RightTriangle" ? false : true;
+        }
+        var index = this.toolbar.items.findIndex(item => item.id === 'flip_horizontal');
+        if (index !== -1) {
+          this.toolbar.items[index].disabled = selectedItems[0].id === "RightTriangle" ? false : true;
+        }
+        this.disableCommonItems(true);
+      } else if (selectedItems.length > 1) {
+        this.disableCommonItems(false);
+      }
+    } else {
+      const itemIds = ['cut', 'copy', 'align_right', 'transform_right', 'transform_left', 'flip_vertical', 'flip_horizontal'];
+      itemIds.forEach(itemId => {
+        const item = this.toolbar.items.find(item => item.id === itemId);
+        if (item) {
+          item.disabled = true;
+        }
+      });
+      this.disableCommonItems(true);
+    }
+  }
+  //Function to disable common toolbat items
+  public disableCommonItems(args) {
+    const itemIds = ['align_left', 'align_center', 'align_right', 'align_top', 'align_middle', 'align_bottom', 'distribute_horizontal', 'distribute_vertical', 'same_width', 'same_height', 'same_size'];
+    itemIds.forEach(itemId => {
+      const item = this.toolbar.items.find(item => item.id === itemId);
+      if (item) {
+        item.disabled = args;
+      }
+    });
+  }
+  // Handle toolbar item click events
+  public toolbarClick(args: ClickEventArgs) {
+    var item = (args as any).item.tooltipText;
+    switch (item) {
       case 'Cut':
         this.diagram.cut();
-        this.toolbar.items[2].disabled = false;
+        var pasteIndex = this.toolbar.items.findIndex(item => item.id === 'paste');
+        if (pasteIndex !== -1) {
+          this.toolbar.items[pasteIndex].disabled = false;
+        }
         break;
       case 'Copy':
         this.diagram.copy();
-        this.toolbar.items[2].disabled = false;
+        var pasteIndex = this.toolbar.items.findIndex(item => item.id === 'paste');
+        if (pasteIndex !== -1) {
+          this.toolbar.items[pasteIndex].disabled = false;
+        }
         break;
       case 'Paste':
         this.diagram.paste();
-      break;
+        break;
       case 'Undo':
         this.diagram.undo();
         break;
       case 'Redo':
         this.diagram.redo();
-      break;
+        break;
       case 'Align Left':
       case 'Align Right':
       case 'Align Top':
@@ -262,16 +224,16 @@ public toolbarClick(args : ClickEventArgs){
       case 'Same Size':
         this.diagram.sameSize('Size', this.diagram.selectedItems.nodes);
         break;
+    }
+    this.diagram.dataBind();
   }
-  this.diagram.dataBind();
-}
-public flipObjects(flipType) {
-  var selectedObjects = this.diagram.selectedItems.nodes.concat(this.diagram.selectedItems.connectors as any);
-  for (let i : number = 0; i < selectedObjects.length; i++) {
+  public flipObjects(flipType) {
+    var selectedObjects = this.diagram.selectedItems.nodes.concat(this.diagram.selectedItems.connectors as any);
+    for (let i: number = 0; i < selectedObjects.length; i++) {
       selectedObjects[i].flip = flipType === 'Flip Horizontal' ? 'Horizontal' : 'Vertical';
+    }
+    this.diagram.dataBind();
   }
-  this.diagram.dataBind();
-}
 
 }
 

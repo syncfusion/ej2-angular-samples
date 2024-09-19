@@ -1,0 +1,89 @@
+<div id="action-description">
+    <p>This sample demonstrates the Grid header template feature. In this sample, custom icons are shown in the column headers.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-grid #grid id="gridheadersample" [dataSource]='data' [height]='400'>
+        <e-columns>
+            <e-column headerText='Image' width='180' textAlign='Center'>
+                <ng-template #template let-data>
+                    <div class="image">
+                        <img src="./assets/grid/images/{{data.EmployeeID.replace('Emp100', '')}}.png" alt="{{data.EmployeeID}}"/>
+                    </div>
+                </ng-template>
+                <ng-template #headerTemplate let-data>
+                    <div>
+                      <span class="e-icon-userlogin e-icons employee"></span>Image
+                    </div>
+                  </ng-template>
+            </e-column>
+            <e-column field='EmployeeID' headerText='ID' width='160'></e-column>
+            <e-column field='Name' headerText='Name' width='120'></e-column>
+            <e-column field='MailID' headerText='Email ID' width='150'>
+                <ng-template #template let-data>
+                    <a href="mailto:{{data.MailID}}">{{data.MailID}}</a>
+                </ng-template>
+                <ng-template #headerTemplate let-data>
+                    <div>
+                      <span class="e-mail e-icons"></span>Email ID
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='AssetKit' headerText='Asset Kit' width='180'>
+                <ng-template #template let-data>
+                    <div class="asset">
+                        <ejs-chiplist id="asset" [chips]="data.AssetKit.split(',')"></ejs-chiplist>
+                    </div>
+                </ng-template>
+                <ng-template #headerTemplate let-data>
+                    <div>
+                      <span class="e-description e-icons"></span>Asset Kit
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='AssetKitDistribution' headerText='Assigned Date' width='170' format='yMd' textAlign='Right'>
+                <ng-template #headerTemplate let-data>
+                    <div>
+                      <span class="e-icon-calender e-icons"></span>Assigned Date
+                    </div>
+                  </ng-template>
+            </e-column>
+            <e-column field='Location' headerText='Location' width='150'>
+                <ng-template #template let-data>
+                    <div>
+                        <span class="e-location e-icons"></span>{{data.Location}}
+                    </div>
+                </ng-template>
+                <ng-template #headerTemplate let-data>
+                    <div>
+                      <span class="e-location e-icons"></span>Location
+                    </div>
+                  </ng-template>
+            </e-column>
+            <e-column field='PhoneNumber' headerText='Contact No' width='150' textAlign='Right'>
+                <ng-template #headerTemplate let-data>
+                    <div>
+                      <span class="e-phone e-icons"></span>Contact No
+                    </div>
+                </ng-template>
+            </e-column>
+        </e-columns>
+    </ejs-grid>
+
+    <div id="description">
+        <p>
+            The <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/grid/column/#headertemplate">header template
+            </a></code> feature enhances your column headers by incorporating custom icons or text alongside the header text. 
+            This allows for a more visually appealing and informative presentation of your data. In this demonstration, you will see how custom icons are integrated
+            into the column headers, which include <strong>Employee Image</strong>, <strong>MailID</strong>, <strong>Phone Number</strong>, <strong>Location</strong>, <strong>Asset Kit</strong>, and <strong>Assigned Date</strong>. These header icons represent the column's content, 
+            making it easy to identify and understand at a glance.
+        </p>
+        <p>
+            More information on the header template can be found in this
+            <a target="_blank" 
+            href="https://ej2.syncfusion.com/angular/documentation/grid/columns/column-headers#header-template">
+            documentation section</a>.
+        </p>
+      
+   </div>
+</div>

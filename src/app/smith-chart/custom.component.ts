@@ -81,7 +81,7 @@ export class SmithchartCustomComponent {
     // custom code start
     public load = (args: ISmithchartLoadEventArgs) => {
         let theme: string = location.hash.split('/')[1];
-        theme = theme ? theme : 'Material';
+        theme = theme ? theme : 'Fluent2';
         args.smithchart.theme = <SmithchartTheme>(theme.charAt(0).toUpperCase() + theme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
     }
     // custom code end

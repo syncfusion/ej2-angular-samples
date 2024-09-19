@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { AnimationModel } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { IBulletLoadedEventArgs, ChartTheme, BulletTooltipSettingsModel } from '@syncfusion/ej2-charts';
-import { fabricColors, bootstrapColors, highContrastColors, materialColors, bootstarp5Colors, bootstarp5DarkColors, bootstrapDarkColors, tailwindColors, tailwindDarkColors, material3Colors, material3DarkColors, defaultColors, fluentColors, fluent2Colors, fluent2DarkColors } from './theme-color'
+import { fabricColors, bootstrapColors, highContrastColors, materialColors, bootstarp5Colors, bootstarp5DarkColors, bootstrapDarkColors, tailwindColors, tailwindDarkColors, material3Colors, material3DarkColors, defaultColors, fluentColors, fluent2Colors, fluent2HighContrastColors } from './theme-color'
 import { BulletChartAllModule } from '@syncfusion/ej2-angular-charts';
 /**
  * Local data Source sample
@@ -76,7 +76,7 @@ export class BulletChartMultipleDataComponent {
 
     public load = (args: IBulletLoadedEventArgs) => {
         let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
         args.bulletChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/light/i, 'Light').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
         let color: string[] = [];
@@ -126,8 +126,9 @@ export class BulletChartMultipleDataComponent {
             case "Fluent2":
                 color = fluent2Colors;
                 break;
+            case "Fluent2HighContrast":
             case "Fluent2Dark":
-                color = fluent2DarkColors;
+                color = fluent2HighContrastColors;
                 break;
             default:
                 color = defaultColors;

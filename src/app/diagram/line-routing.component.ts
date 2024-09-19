@@ -22,6 +22,7 @@ export class LineRoutingComponent {
   public connectors: ConnectorModel[];
   public constraints: DiagramConstraints;
   public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
+  // Used to set default values of nodes
   public getNodeDefaults(node: NodeModel): NodeModel {
     node.height = 50;
     if (node.id === 'decision') {
@@ -31,6 +32,7 @@ export class LineRoutingComponent {
     node.style = { strokeColor: 'transparent' };
     return node;
   }
+   // Used to set default values of connector
   public getConnectorDefaults(connector: ConnectorModel): ConnectorModel {
     connector.type = 'Orthogonal';
     connector.style = { strokeColor: '#707070 ', strokeWidth: 1.25 };
@@ -42,6 +44,7 @@ export class LineRoutingComponent {
   }
   ngOnInit(): void {
     this.constraints = DiagramConstraints.Default | (DiagramConstraints.Bridging | DiagramConstraints.LineRouting);
+    //Initialize the diagram nodes
     this.nodes = [
       {
         id: 'start', offsetX: 115, offsetY: 110, shape: { type: 'Flow', shape: 'Terminator' },
@@ -84,6 +87,7 @@ export class LineRoutingComponent {
         ],
       }
     ];
+    //Initialize the diagram connectors
     this.connectors = [
       { id: 'Connector1', sourceID: 'start', targetID: 'process', },
       { id: 'Connector2', sourceID: 'process', targetID: 'document' },

@@ -83,14 +83,30 @@ ejs-querybuilder {
     }
 }
 
+.bootstrap5\.3-dark .json-content-area,
+.tailwind-dark .json-content-area,
+.material3-dark .json-content-area,
+.bootstrap5-dark .json-content-area,
 .highcontrast .json-content-area,
+.material-dark .json-content-area,
+.fabric-dark .json-content-area,
+.bootstrap-dark .json-content-area,
+.fluent-dark .json-content-area,
 .fluent2-dark .json-content-area,
 .fluent2-highcontrast .json-content-area {
-    background-color: #1f1f1f;
+    background: black;
 }
 
-.fluent2-dark .e-query-json-preview .copy-tooltip,
-.fluent2-highcontrast .e-query-json-preview .copy-tooltip {
-    background-color: black;
+.material-dark .e-query-preview .e-icons.copycode,
+.material3-dark .e-query-preview .e-icons.copycode,
+.bootstrap5\.3-dark .e-query-preview .e-icons.copycode,
+.bootstrap5-dark .e-query-preview .e-icons.copycode,
+.bootstrap-dark .e-query-preview .e-icons.copycode,
+.highcontrast .e-query-preview .e-icons.copycode,
+.fluent-dark .e-query-preview .e-icons.copycode,
+.tailwind-dark .e-query-preview .e-icons.copycode,
+.fluent-dark .e-query-preview .e-icons.copycode,
+.fluent2-dark .e-query-preview .e-icons.copycode,
+.fluent2-highcontrast .e-query-preview .e-icons.copycode {
     color: white;
 }

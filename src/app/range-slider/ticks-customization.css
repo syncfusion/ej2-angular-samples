@@ -197,6 +197,22 @@
     top: 8px;
 }
 
+.bootstrap5\.3 #slider_wrapper #ticks_slider .e-scale .e-tick.e-custom::before, .bootstrap5\.3-dark #slider_wrapper #ticks_slider .e-scale .e-tick.e-custom::before {
+    line-height: 2.3;
+    left: calc(50% - 6px);
+}
+.bootstrap5\.3 #slider_wrapper #ticks_slider .e-scale .e-tick.e-custom.e-first-tick::before, .bootstrap5\.3-dark #slider_wrapper #ticks_slider .e-scale .e-tick.e-custom.e-first-tick::before {
+    left: calc(0% - 6px);
+}
+
+.bootstrap5\.3 #slider_wrapper #ticks_slider .e-scale .e-tick.e-custom.e-last-tick::before, .bootstrap5\.3-dark #slider_wrapper #ticks_slider .e-scale .e-tick.e-custom.e-last-tick::before {
+    left: calc(100% - 6px);
+}
+
+.bootstrap5\.3.e-bigger #slider_wrapper #ticks_slider .e-scale .e-tick.e-custom::before, .bootstrap5\.3-dark.e-bigger #slider_wrapper #ticks_slider .e-scale .e-tick.e-custom::before {
+    line-height: 3;
+}
+
 @media (max-width:550px){
     .e-bigger .e-control-wrapper.e-slider-container .e-scale .e-tick .e-tick-value{
         font-size: 10px;

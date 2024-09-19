@@ -27,7 +27,7 @@ export const comboboxAppRoutes: Object[] = [
     	category: 'ComboBox' },
     { path: ':theme/combo-box/object-value-binding', component: ObjectComboBoxComponent, name: 'Oject Value Binding', description: 'This example demonstrates how to bind with data source in the Angular combo box component.', order: '01',
     category: 'ComboBox' },
-    { path: ':theme/combo-box/disabled-items', component: DisabledItemsComboBoxComponent, name: 'Disabled Items', type : 'new', description: 'This example showcases the disabled items of Angular combo box component.', order: '01',
+    { path: ':theme/combo-box/disabled-items', component: DisabledItemsComboBoxComponent, name: 'Disabled Items', description: 'This example showcases the disabled items of Angular combo box component.', order: '01',
     	category: 'ComboBox' },
     { path: ':theme/combo-box/custom-value', component: CustomValueComboBoxComponent, name: 'Custom Value', description: 'This example demonstrates the addition of a new value that is not present in the predefined list of the Angular combo box component.', order: '01',
 		category: 'ComboBox' },

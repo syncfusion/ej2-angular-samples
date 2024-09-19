@@ -1,0 +1,131 @@
+.custom-row-0,
+.custom-row-1,
+.custom-row-2 {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    padding: 12px 24px;
+}
+
+.e-rte-dropdown-btn-text {
+    padding-left: 4px;
+}
+
+.cuscol-0,
+.cuscol-1,
+.cuscol-2 {
+    padding: 0.5rem;
+}
+
+.no-results-found {
+    text-align: center;
+}
+
+.no-results-found img {
+    display: block;
+    margin: 0 auto;
+}
+
+.e-custom {
+    margin-right: 0.5rem;
+    border-radius: 25px !important;
+}
+
+.custom-dialog-rte .skeleton-rectangle {
+    border-radius: 4px;
+}
+
+@media (max-width: 767px) {
+
+    .cuscol-0,
+    .cuscol-1,
+    .cuscol-2 {
+        justify-content: center !important;
+    }
+
+    .custom-row-0,
+    .custom-row-1,
+    .custom-row-2 {
+        flex-direction: column !important;
+    }
+
+    .cuscol-1 {
+        border-right: none !important;
+    }
+
+    .cuscol-0 {
+        border-right: none !important;
+    }
+
+    .custom-dialog-rte .e-dialog .e-dlg-content {
+        overflow-y: auto !important;
+    }
+
+    .custom-dialog-rte .e-dialog .e-dlg-content .e-richtexteditor {
+        height: 100px !important;
+    }
+
+    .cuscol-noresult {
+        padding-bottom: 20px !important;
+    }
+
+    .e-chip-list {
+        padding: 5px !important;
+    }
+
+    .cuscol {
+        padding-right: 0.2rem !important;
+        width: auto !important;
+    }
+
+    .custom-row-1 {
+        height: auto !important;
+    }
+}
+
+.cuscol-1 {
+    display: flex;
+    flex-direction: row !important;
+}
+
+.cuscol-2 {
+    display: flex;
+    flex-direction: column !important;
+}
+
+.sentiment {
+    color: #000 !important;
+}
+
+.custom-dialog-rte .e-dialog .e-dlg-content {
+    padding: 0px !important;
+    overflow-y: hidden;
+}
+
+.custom-dialog-rte .e-dialog .e-dlg-header-content {
+    padding: 10px !important;
+    border-bottom: 1px solid #dee2e6 !important;
+}
+
+.custom-dialog-rte .e-dialog .e-footer-content {
+    padding: 0px !important;
+}
+
+.custom-dialog-rte .e-dialog .e-dlg-content .e-richtexteditor.e-rte-tb-expand .e-rte-content,
+.e-richtexteditor.e-rte-tb-expand .e-source-content {
+    border: 0;
+    border-bottom: 1px solid #dee2e6;
+    border-top: 0px solid #dee2e6 !important;
+}
+
+.custom-dialog-rte .dialog-content .custom-row-0 {
+    border-top: 0px solid #ddd !important;
+}
+
+.e-control.e-btn {
+    margin: 0 5px;
+}
+
+.e-dlg-container {
+    height: 100vh !important;
+}

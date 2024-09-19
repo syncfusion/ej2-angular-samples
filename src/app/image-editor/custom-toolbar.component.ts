@@ -39,6 +39,7 @@ export class CustomToolbarComponent {
         'custom': ['#ffffff', '#000000', '#e91e63', '#9c27b0', '#673ab7', '#2196f3', '#03a9f4', '#00bcd4',
         '#009688', '#8bc34a', '#cddc39', '#ffeb3b']
     };
+    toolbars = ['filter', 'rectangle', 'ellipse', 'line', 'text', 'edittext', 'freehanddraw'];
 
     fileOpened() {
         this.imageData = this.imageEditorObj.getImageData();
@@ -53,7 +54,7 @@ export class CustomToolbarComponent {
     }
     shapeChanging(args: any) {
         if (args.action === 'select') {
-            this.isShapeSelected = this.isShapeSelected ? false : true;
+            this.isShapeSelected = true;
             this.updateToolbar(args, true);
         } else if (args.action === 'insert') {
             this.activeObjIndex = args.currentShapeSettings.id;
@@ -62,7 +63,7 @@ export class CustomToolbarComponent {
     }
 
     shapeChange(args: any) {
-        if (args.action === 'apply' && !this.isShapeCustomizing) {
+        if (args.action === 'apply' && !this.isShapeCustomizing && !this.isShapeSelected) {
             this.isTextEditing = false;
             let proxy: any = this;
             setTimeout(function() {
@@ -72,7 +73,7 @@ export class CustomToolbarComponent {
     }
 
     click() {
-        if (this.currentToolbar === 'filter') {
+        if (this.toolbars.indexOf(this.currentToolbar) !== -1) {
             this.refreshToolbar('main');
         }
     }
@@ -613,5 +614,4 @@ export class CustomToolbarComponent {
         }
     }
 }
-
 

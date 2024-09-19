@@ -7,10 +7,10 @@
         <ejs-grid [dataSource]='data' allowResizing= 'true' [allowSorting]='true' height= '400' width= '850' autoFit= 'true' [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbar'>
             <e-columns>
                 <e-column field='OrderID' headerText='Order ID' minWidth='100' width='150' maxWidth='200' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
-                <e-column field='CustomerName' headerText='Customer Name' minWidth='100' width='150' [validationRules]='customeridrules'></e-column>
+                <e-column field='CustomerName' headerText='Customer Name' minWidth='115' width='150' [validationRules]='customeridrules'></e-column>
                 <e-column field='Freight' headerText='Freight' minWidth='100' width='120' format='C2' textAlign='Right' editType='numericedit' [validationRules]='freightrules'></e-column>
                 <e-column field='ShippedDate' headerText='Shipped Date' [allowResizing] = 'false' width='150' format="yMd" textAlign='Right' editType='datepickeredit'></e-column>
-                <e-column field='ShipCountry' headerText='Ship Country' minWidth='100'  width='150' editType='dropdownedit'></e-column>
+                <e-column field='ShipCountry' headerText='Ship Country' minWidth='115'  width='150' editType='dropdownedit'></e-column>
             </e-columns>
         </ejs-grid>
     </div>

@@ -1,0 +1,73 @@
+<div class="control-section">
+    <div class="dialog-aiassistview">
+        <ejs-splitter id="splitter" height="600px">
+            <e-panes>
+                <e-pane size="22%" [resizable]=false>
+                    <ng-template #content>
+                        <div class="left-content">
+                            <div class="header">Quick Notes</div>
+                            <hr/>
+                            <div class="content e-card">
+                                <div class="note-title">
+                                    <div class="heading">Planning and Requirements</div>
+                                    <div class="sub-heading">Outline the process of gathering input from stakeholders</div>
+                                </div>
+                                <div class="note-title e-skeleton e-skeleton-text">
+                                    <div class="heading">Meeting with Stakeholders</div>
+                                    <div class="sub-heading">Discuss strategies for conducting productive meetings with stakeholders</div>
+                                </div>
+                                <div class="note-title">
+                                    <div class="heading">Risk Management and Problem-Solving</div>
+                                    <div class="sub-heading">Offer tips on how to proactively manage challenges, including regular</div>
+                                </div>
+                                <div class="note-title">
+                                    <div class="heading e-skeleton e-skeleton-text"></div>
+                                    <div class="sub-heading e-skeleton e-skeleton-text"></div>
+                                </div>
+                                <div class="note-title">
+                                    <div class="heading e-skeleton e-skeleton-text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </e-pane>
+                <e-pane size="78%" [resizable]=false>
+                    <ng-template #content>
+                        <div class="right-content">
+                            <div class="heading">Meeting with Stakeholders</div>
+                            <hr />
+                            <div class="date-info">Tuesday, August 27, 2024</div>
+                            <div class="content e-card" contenteditable="true">
+                                <i><mark>(Open AI Assist, generate a response, and click 'Copy' from the toolbar item to get it updated here.)</mark></i>
+                                Discuss strategies for conducting productive meetings with stakeholders. <br />
+                                Highlight the significance of setting clear agendas, defining outcomes, and maintaining open communication. <br />
+                            </div>
+                        </div>
+                    </ng-template>
+                </e-pane>
+            </e-panes>
+        </ejs-splitter>
+    </div>
+    <ejs-dialog id="dialogElem" #Dialog target=".dialog-aiassistview" width="440px" height="100%" [visible]="false" cssClass="custom-dialog">
+        <div ejs-aiassistview #dialogAIAssistView id="aiAssistView" [promptSuggestions]="suggestions" (promptRequest)="promptRequest($event)" [toolbarSettings]="assistViewToolbarSettings" [responseToolbarSettings]="responseToolbarSettings" cssClass="custom-aiassistview">
+            <ng-template #bannerTemplate>
+                <div class="banner-content">
+                    <div class="e-icons e-assistview-icon"></div>
+                    <h3>AI Assistance</h3>
+                    <i>To get started, provide input or choose a suggestion.</i>
+                </div>
+            </ng-template>
+        </div>
+    </ejs-dialog>
+    <button ejs-fab id="fabElem" iconCss='e-icons e-assistview-icon' content='AI Assist' target='.dialog-aiassistview' (click)="dialogOpenClose()"></button>
+</div>
+
+<div id="action-description">
+    <p>This example showcases the integration of AI AssistView within the Syncfusion dialog component, allowing you to display generated responses in the notes view.</p>
+</div>
+<div id="description">
+    <p>In this example, the AI AssistView is shown inside a dialog component, which opens with a floating action button (FAB) click.
+        It uses predefined <code>promptSuggestions</code> that are displayed based on user configuration and a custom toolbar item as a close icon to close the dialog.
+        The <code>promptRequest</code> event finds matching prompts and displays the responses.
+    </p>
+</div>

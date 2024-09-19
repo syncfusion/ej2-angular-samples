@@ -66,7 +66,9 @@ export class DropdownsInplaceEditorComponent implements OnInit {
     public scrollParent: HTMLElement = document.querySelector('.sb-right-pane') as HTMLElement;
 
     ngOnInit(): void {
-        this.scrollParent.addEventListener('scroll', this.hidePopup.bind(this));
+        if(this.scrollParent){
+            this.scrollParent.addEventListener('scroll', this.hidePopup.bind(this));
+        }
     }
 
     changeMode(e: ChangeEventArgs): void {

@@ -14,8 +14,6 @@ import { MultiColumnComboBoxComponent, MultiColumnComboBoxModule } from '@syncfu
     imports: [SBActionDescriptionComponent, MultiColumnComboBoxModule, SBDescriptionComponent]
 })
 export class VirtualMultiComboBoxComponent {
-    @ViewChild('virtualization')
-    public multicomboBoxObj: MultiColumnComboBoxComponent;
     //Generate large datas
     public records: { [key: string]: Object }[] = [];
     constructor() {
@@ -37,12 +35,8 @@ export class VirtualMultiComboBoxComponent {
     }
     // maps the appropriate column to fields property
     public fields: Object = { text: 'Engineer', value: 'TaskID'};
-    // set the placeholder to MultiColumn ComboBox input element
+    // set the placeholder to ComboBox input element
     public waterMark: string = 'Select an engineer';
-    // set the height of the popup element
-    public height: string = '230px';
-    // set the width of the popup element
-    public width: string = '550px';
     // set the gridSettings to MultiColumn ComboBox input element
     public gridSettings: Object = { rowHeight: 40 };
 }

@@ -33,6 +33,7 @@ export class NumberFormattingController {
         this.spreadsheetObj.cellFormat({ backgroundColor: '#1E88E5', color: '#F5F5F5' }, 'A1:E2');
         this.spreadsheetObj.cellFormat({ backgroundColor: '#BBDEFB' }, 'A3:E3');
         this.spreadsheetObj.cellFormat({ backgroundColor: '#B3E5FC' }, 'A15:E17');
+        // Apply format to the specified range in the active sheet.
         this.spreadsheetObj.numberFormat('$#,##0.00', 'D4:E14');
         this.spreadsheetObj.numberFormat('$#,##0.00', 'E15:E17');
         this.spreadsheetObj.numberFormat('[Red][<=350]$#,##0.00;[Blue][>350]$#,##0.00', 'E4:E14');

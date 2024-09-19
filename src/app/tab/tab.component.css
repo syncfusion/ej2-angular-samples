@@ -42,6 +42,18 @@
 .template-container:hover {
     background: #eee;
 }
+.bootstrap-dark #tab_orientation .e-content .e-item .template-container:hover,
+.bootstrap5-dark #tab_orientation .e-content .e-item .template-container:hover,
+.tailwind-dark #tab_orientation .e-content .e-item .template-container:hover,
+.fabric-dark #tab_orientation .e-content .e-item .template-container:hover,
+.material-dark #tab_orientation .e-content .e-item .template-container:hover,
+.material3-dark #tab_orientation .e-content .e-item .template-container:hover,
+.fluent-dark #tab_orientation .e-content .e-item .template-container:hover,
+.fluent2-dark #tab_orientation .e-content .e-item .template-container:hover,
+.fluent2-highcontrast-dark #tab_orientation .e-content .e-item .template-container:hover,
+.highcontrast-dark #tab_orientation .e-content .e-item .template-container:hover {
+  background: #292827;
+}
 .left {
     display: inline-block;
     vertical-align: top;

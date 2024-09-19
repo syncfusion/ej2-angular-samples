@@ -6,7 +6,7 @@
     #EventLog b {
         color:  #018607;
     }
-    .material3-dark #EventLog b, .fluent-dark #EventLog b, .bootstrap5-dark #EventLog b, .bootstrap-dark #EventLog b, .tailwind-dark #EventLog b, .highcontrast #EventLog b, .material-dark #EventLog b, .fabric-dark #EventLog b {
+    .material3-dark #EventLog b, .fluent-dark #EventLog b, .bootstrap5-dark #EventLog b,.bootstrap5\.3-dark #EventLog b, .bootstrap-dark #EventLog b, .tailwind-dark #EventLog b, .highcontrast #EventLog b, .material-dark #EventLog b, .fabric-dark #EventLog b {
         color: #21A32E;
     }
 

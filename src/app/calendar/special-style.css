@@ -17,7 +17,10 @@
 }
 
 body.fluent-dark #selected,
+body.fluent2-dark #selected,
+body.fluent2-highcontrast #selected,
 body.bootstrap5-dark #selected,
+body.bootstrap5.3-dark #selected,
 body.tailwind-dark #selected,
 body.material-dark #selected,
 body.material3-dark #selected,
@@ -65,7 +68,11 @@ body.tailwind #selected {
 .tailwind-dark .e-customStyle span.e-icons.highlight,
 .tailwind-dark .e-customStyle span.e-icons.highlight:before,
 .fluent-dark .e-customStyle span.e-icons.highlight,
-.fluent-dark .e-customStyle span.e-icons.highlight:before {
+.fluent-dark .e-customStyle span.e-icons.highlight:before,
+.fluent2-dark .e-customStyle span.e-icons.highlight,
+.fluent2-dark .e-customStyle span.e-icons.highlight:before,
+.fluent2-highcontrast .e-customStyle span.e-icons.highlight,
+.fluent2-highcontrast .e-customStyle span.e-icons.highlight:before {
     color: #ff7500;
 }
 

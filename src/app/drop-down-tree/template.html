@@ -17,7 +17,7 @@
                         <div class="ejob">{{data.job}}</div>
                         <span class="e-badge icons">
                             <span class={{data.status}}></span>
-                        </span>  
+                        </span>
                     </div>
                 </div>
             </ng-template>
@@ -38,7 +38,12 @@
                                 Away
                             </span>
                         </span>
-                    </div>        
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #valueTemplate let-data>
+                <div>
+                    <div> {{data.name}} - {{data.job}} </div>
                 </div>
             </ng-template>
         </ejs-dropdowntree>
@@ -51,8 +56,9 @@
     </p>
     <p>This sample uses the following list of templates in the Dropdown Tree</p>
     <ul>
-        <li><code>ItemTemplate</code> - To customize the list item's content.</li>
-        <li><code>HeaderTemplate</code> - To customize the header element.</li>
-        <li><code>FooterTemplate</code> - To customize the footer element.</li>
+        <li><a target="_blank" href="https://helpej2.syncfusion.com/angular/documentation/api/drop-down-tree#itemtemplate">ItemTemplate</a> - To customize the list item's content.</li>
+        <li><a target="_blank" href="https://helpej2.syncfusion.com/angular/documentation/api/drop-down-tree#headertemplate">HeaderTemplate</a> - To customize the header element.</li>
+        <li><a target="_blank" href="https://helpej2.syncfusion.com/angular/documentation/api/drop-down-tree#footertemplate">FooterTemplate</a> - To customize the footer element.</li>
+        <li><code>valueTemplate</code> - To customize the selected item's element.</li>
     </ul>
 </div>

@@ -1,0 +1,100 @@
+<div class="control-section">
+    <ejs-grid #grid [dataSource]="data" [allowPaging]="true" [allowFiltering]="true" [allowSorting]="true"
+        [filterSettings]="filterSettings" gridLines="Both" (dataBound)="dataBound()" [pageSettings]="pageSettings"
+        (keyPressed)="keyPressed($event)">
+        <e-columns>
+            <e-column field="ProductID" headerText="Product ID" width="120" textAlign="Right" [isPrimaryKey]="true">
+                <ng-template #filterTemplate let-data>
+                    <div>
+                        <div class="e-cus-label">Id</div>
+                        <ejs-numerictextbox #productIDTxtObj format="N">
+                        </ejs-numerictextbox>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field="ProductName" headerText="Product Name" width="220">
+                <ng-template #filterTemplate let-data>
+                    <div>
+                        <div class="e-cus-label">Name</div>
+                        <ejs-textbox #ProductNameTxtObj>
+                        </ejs-textbox>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field="UnitPrice" headerText="Price" format="C2" width="200" textAlign="Right">
+                <ng-template #filterTemplate let-data>
+                    <div style="display: flex;">
+                        <div style="margin-right: 5px;">
+                            <div class="e-cus-label">Min</div>
+                            <ejs-numerictextbox #minTextBox format="N">
+                            </ejs-numerictextbox>
+                        </div>
+                        <div>
+                            <div class="e-cus-label">Max</div>
+                            <ejs-numerictextbox #maxTextBox format="N">
+                            </ejs-numerictextbox>
+                        </div>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field="UnitsInStock" headerText="Stock" format="N" width="120" textAlign="Right"></e-column>
+            <e-column field="Discontinued" headerText="Discontinued" width="150" displayAsCheckBox="true"
+                type="boolean">
+                <ng-template #filterTemplate let-data>
+                    <div>
+                        <div class="e-cus-label">Status</div>
+                        <ejs-dropdownlist #StatusDDObj [dataSource]="ddData" value="Both" (change)="discontinuedChange($event)">
+                        </ejs-dropdownlist>
+                    </div>
+                </ng-template></e-column>
+        </e-columns>
+    </ejs-grid>
+
+    <div id="action-description">
+        <p>
+            This sample illustrates the Grid's filtering bar feature, utilizing custom components in the filter cells
+            through the
+            <code><a target="_blank" class="code"
+                href="https://helpej2.syncfusion.com/angular/documentation/api/grid/column/#filtertemplate">filterTemplate</a></code>
+            feature. This functionality allows users to filter records based on specified
+            criteria, displaying a reduced set of data. To enable filtering, set the
+            <code><a target="_blank" class="code"
+                href="https://helpej2.syncfusion.com/angular/documentation/api/grid#allowfiltering">allowFiltering</a></code>
+            property to <code>true</code>,
+            which renders a filter bar row next to the header. Users can then filter data by entering text into the
+            cells of
+            this row.
+        </p>
+    </div>
+
+    <div id="description">
+        <p>
+            The
+            <code><a target="_blank" class="code"
+                href="https://helpej2.syncfusion.com/documentation/api/grid/column/#filtertemplate">filterTemplate</a></code>
+            feature in the Syncfusion EJ2 TypeScript Grid allows customization of the controls in
+            the filter bar. By default, a text box appears in the filter bar cell. In this demo, the Grid showcases
+            various
+            custom input components: a custom input component for the ID, Name and Price columns, and a Syncfusion
+            DropDownList for the Discontinued column, all achieved through
+            the filter template feature. You can customize the filter components in the filter cells by using the
+            <code><a target="_blank" class="code"
+                href="https://helpej2.syncfusion.com/documentation/api/grid/column/#filtertemplate">filterTemplate</a></code>
+            property for each column. The Unit Stock column uses the default filter bar cell with
+            operator functionality.
+        </p>
+
+        <br>
+        <p style="font-weight: 500">Injecting Module:</p>
+        <p>
+            Grid features are segregated into individual feature-wise modules. To utilize the filtering feature, we need
+            to inject
+            <code> FilterService </code> into the <code>&#64;NgModule.providers</code> section. For more details on
+            configuring filters, refer to the
+            relevant
+            <a target="_blank"
+                href="https://ej2.syncfusion.com/documentation/grid/filtering/filter-bar#filter-bar-template-with-custom-control">
+                documentation section</a>.
+        </p>
+    </div>
+</div>

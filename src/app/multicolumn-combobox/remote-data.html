@@ -1,16 +1,16 @@
 <div id="action-description">
-    <p>This sample demonstrates the remote data-binding supported in the MultiColumn ComboBox.</p>
+    <p>This sample demonstrates the remote data-binding support in the MultiColumn ComboBox.</p>
 </div>
 
 <div class="control-section">
     <div class='control-wrapper'>
         <div style='padding-top:60px;'>
-            <ejs-multicolumncombobox id='order' #remote [dataSource]='data' [allowSorting]='false' [fields]='fields' [query]='query' [placeholder]='waterMark' popupHeight='230px'>
+            <ejs-multicolumncombobox id='order' [dataSource]='data' [fields]='fields' [query]='query' [placeholder]='waterMark' [allowSorting]='false' popupHeight='230px'>
                 <e-columns>
-                    <e-column field='EmployeeID' header='Employee ID' width='120'></e-column>
-                    <e-column field='FirstName' header='Name' width='130'></e-column>
-                    <e-column field='Designation' header='Designation' width='120'></e-column>
-                    <e-column field='Country' header='Country' width='90'></e-column>
+                    <e-column field='EmployeeID' header='Employee ID' width='120'/>
+                    <e-column field='FirstName' header='Name' width='130'/>
+                    <e-column field='Designation' header='Designation' width='120'/>
+                    <e-column field='Country' header='Country' width='90'/>
                 </e-columns>
             </ejs-multicolumncombobox>
         </div>
@@ -18,8 +18,10 @@
 </div>
 
 <div id="description">
-    <p>The MultiColumn ComboBox loads the remote data services through the <code>dataSource</code> property. It supports data types such as <code>JavaScript object arrays</code> or <code>DataManager</code>.</p>
-    <p>The <code>DataManager</code>, act as an interface between service endpoint and MultiColumn ComboBox will require the following minimal information to interact with the service endpoint properly.</p>
+    <p>The MultiColumn ComboBox loads the data remote data services through the <code>dataSource</code> property. It supports the data type of <code>array</code> or <code>DataManager</code>.</p>
+    <p>The DataManager, that act as an interface between service endpoint and MultiColumn ComboBox will require the following minimal
+        information to interact with the service endpoint properly.
+    </p>
     <ul>
         <li><code>DataManager->url</code> - Defines the service endpoint to fetch data.</li>
         <li><code>DataManager->adaptor</code> - Defines the adaptor option. By default, <code>ODataAdaptor</code> is used for
@@ -35,5 +37,5 @@
         <li><code>WebApiAdaptor</code> - Use this to interact with Web API created under OData standards.</li>
         <li><code>WebMethodAdaptor</code> - Use this to interact with web methods.</li>
     </ul>
-    <p>In this sample, remote data is bound to a collection of employees data as an instance of <code>DataManager</code> and <code>WebApiAdaptor</code>.</p>
+    <p>In this sample, remote data is bound to a collection of employees data as an instance of <code>DataManager</code></p>
 </div>

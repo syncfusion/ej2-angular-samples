@@ -1,0 +1,24 @@
+
+.default-aiassistview {
+    height: 600px;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.default-aiassistview .banner-content .e-assistview-icon:before {
+    font-size: 35px;
+}
+
+.default-aiassistview .banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 330px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 750px) {
+    .default-aiassistview {
+        width: 100%;
+    }
+}

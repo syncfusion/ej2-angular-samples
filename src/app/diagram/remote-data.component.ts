@@ -1,9 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import {
     Diagram, NodeModel, ConnectorModel, SnapConstraints,
-    DataBinding, HierarchicalTree, TreeInfo, DiagramTools,SnapSettingsModel
+    DataBinding, HierarchicalTree, DiagramTools,SnapSettingsModel
 } from '@syncfusion/ej2-diagrams';
-import { DataManager, Query } from '@syncfusion/ej2-data';
+import { DataManager } from '@syncfusion/ej2-data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -25,16 +25,16 @@ export interface DataInfo {
     imports: [SBActionDescriptionComponent, DiagramModule, SBDescriptionComponent]
 })
 export class RemoteDataDiagramComponent {
-
-    public nodeDefaults(obj: NodeModel): NodeModel {
-        obj.width = 80;
-        obj.height = 40;
+    // Default settings for nodes
+    public nodeDefaults(node: NodeModel): NodeModel {
+        node.width = 80;
+        node.height = 40;
         //Initialize shape
-        obj.shape = { type: 'Basic', shape: 'Rectangle' };
-        obj.style = { fill: '#048785', strokeColor: 'Transparent' };
-        return obj;
+        node.shape = { type: 'Basic', shape: 'Rectangle' };
+        node.style = { fill: '#048785', strokeColor: 'Transparent' };
+        return node;
     };
-
+    // Data source and binding configuration
     public data: Object = {
         id: 'Id', parentId: 'ParentId',
         dataSource: new DataManager(
@@ -49,31 +49,19 @@ export class RemoteDataDiagramComponent {
             }];
         }
     };
-
+    // Default settings for connectors
     public connDefaults(connector: ConnectorModel): void {
         connector.type = 'Orthogonal';
         connector.style.strokeColor = '#048785';
         connector.targetDecorator.shape = 'None';
     };
-
+    // Enable zoom and pan tools for the diagram
     public tool: DiagramTools = DiagramTools.ZoomPan;
+    // Disable all snap constraints by default
     public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
-
+    // Configure the layout settings for the diagram
     public layout: Object = {
         type: 'HierarchicalTree', margin: { left: 0, right: 0, top: 100, bottom: 0 },
         verticalSpacing: 40,
-        getLayoutInfo: (node: NodeModel, options: TreeInfo) => {
-            if (options.level === 3) {
-                node.style.fill = '#3c418d';
-            }
-            if (options.level === 2) {
-                node.style.fill = '#108d8d';
-                options.type = 'Center';
-                options.orientation = 'Horizontal';
-            }
-            if (options.level === 1) {
-                node.style.fill = '#822b86';
-            }
-        }
     };
 }

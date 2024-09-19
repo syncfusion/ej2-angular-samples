@@ -18,6 +18,7 @@ Diagram.Inject(DataBinding, MindMap, HierarchicalTree);
 
 export class UserHandlediagramComponent {
   @ViewChild('diagram') public diagram: DiagramComponent;
+  // FlowShapeModel definitions for different shapes used in the diagram.
   public terminator: FlowShapeModel = { type: 'Flow', shape: 'Terminator' };
   public process: FlowShapeModel = { type: 'Flow', shape: 'Process' };
   public decision: FlowShapeModel = { type: 'Flow', shape: 'Decision' };
@@ -49,6 +50,7 @@ export class UserHandlediagramComponent {
     constraints: SelectorConstraints.UserHandle,
     userHandles: this.handles
   };
+  //set default property for nodes
   public getNodeDefaults(node: Node): NodeModel {
     let obj: NodeModel = {
       style: { fill: '#578CA9', strokeColor: 'none' },
@@ -56,12 +58,11 @@ export class UserHandlediagramComponent {
     };
     return obj;
   }
-
   ngOnInit(): void {
     document.getElementById('alignment').onclick = this.documentClick.bind(this);
     document.getElementById('pattern').onclick = this.documentPatternClick.bind(this);
   }
-
+  //Change the postion of the UserHandle
   private documentClick(args: MouseEvent): void {
     let target: HTMLElement = args.target as HTMLElement;
     if (target.className === 'image-pattern-style' || target.className === 'image-pattern-style e-selected-style') {
@@ -85,6 +86,7 @@ export class UserHandlediagramComponent {
     }
     this.diagram.dataBind();
   }
+   //Change the appearence of the UserHandle
   private documentPatternClick(args: MouseEvent): void {
     let target: HTMLElement = args.target as HTMLElement;
     if (target.className === 'image-pattern-style' || target.className === 'image-pattern-style e-selected-style') {
@@ -116,9 +118,18 @@ export class UserHandlediagramComponent {
     }
     return tool;
   }
+
+  //Defines the click event for fixedUserHandle
+  public fixedUserHandleClick(args){
+    this.diagram.select([ this.diagram.nameTable['Decision']]);
+    this.diagram.remove();
+  }
+
+  public fixedUserHandleOffset = {x : 1.1, y : 0.5 };
+
 }
 
-//Defines the clone tool used to copy Node/Connector
+//Defines the clone tool used to copy node or connector
 class CloneTool extends MoveTool {
   public diagram: Diagram = null;
   public mouseDown(args: MouseEventArgs): void {
@@ -132,7 +143,14 @@ class CloneTool extends MoveTool {
     }
     newObject.id += randomId();
     this.diagram.paste([newObject]);
-    args.source = this.diagram.nodes[this.diagram.nodes.length - 1] as IElement;
+    if(this.diagram.selectedItems.connectors.length > 0)
+    {
+      args.source = this.diagram.connectors[this.diagram.connectors.length - 1] as IElement;
+    }
+    else
+    {
+      args.source = this.diagram.nodes[this.diagram.nodes.length - 1] as IElement;
+    }
     args.sourceWrapper = args.source.wrapper;
     super.mouseDown(args);
     this.inAction = true;

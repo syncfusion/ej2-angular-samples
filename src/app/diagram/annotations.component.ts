@@ -34,6 +34,7 @@ export class AnnotationDiagramComponent {
 
     public decorator: DecoratorModel = { shape: 'None' };
 
+     //FontType Collection
     public fontType: { [key: string]: Object }[] = [
         { type: 'Arial', text: 'Arial' },
         { type: 'Aharoni', text: 'Aharoni' },
@@ -41,8 +42,9 @@ export class AnnotationDiagramComponent {
         { type: 'Fantasy', text: 'Fantasy' },
         { type: 'Times New Roman', text: 'Times New Roman' },
         { type: 'Segoe UI', text: 'Cubic Bezier' },
-        { type: '"Verdana") ', text: 'Cubic Bezaier' }
+        { type: 'Verdana', text: 'Verdana' }
     ];
+    //Template Collection
     public templateList: { [key: string]: Object }[] = [
         { value: 'none', text: 'None' },
         { value: 'industry', text: 'Industry Competitors' },
@@ -57,27 +59,29 @@ export class AnnotationDiagramComponent {
 
     public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
 
-    public nodeDefaults(node: NodeModel): NodeModel {
-        let obj: NodeModel = {
-            width: 150, height: 50, style: { fill: '#D5EDED', strokeColor: '#7DCFC9', strokeWidth: 1 },
+    //Defines the default node properties
+    public nodeDefaults(node: NodeModel): void {
+         node = { width: 150, height: 50, style: { fill: '#D5EDED', strokeColor: '#7DCFC9', strokeWidth: 1 },
             shape: { cornerRadius: 5 },
         };
-        return obj;
     };
 
-    public connDefaults(obj: ConnectorModel): void {
-        obj.type = 'Orthogonal';
-        obj.constraints = ConnectorConstraints.Default &~ ConnectorConstraints.Select ;
+    //Defines the default connector properties
+    public connectorDefaults(connector: ConnectorModel): void {
+        connector.type = 'Orthogonal';
+        connector.constraints = ConnectorConstraints.Default &~ ConnectorConstraints.Select ;
     };
 
     ngOnInit(): void {
         document.getElementById('appearance').onclick = this.documentClick.bind(this);
     }
 
+    //Function to set diagram fit to page
     public created(): void {
         this.diagram.fitToPage();
     }
 
+    //Function to set the existing property in property panel
     public selectionChange(arg: ISelectionChangeEventArgs): void {
         if (arg.state === 'Changed') {
             // custom code start
@@ -86,26 +90,25 @@ export class AnnotationDiagramComponent {
                 selectedElement[0].classList.remove('e-selected-style');
             }
             // custom code end
+            //Checks whether new node is selected or not
             if (arg.newValue[0]) {
                 let node: NodeModel = arg.newValue[0] as NodeModel;
                 let annotation: ShapeAnnotationModel = node.annotations[0];
                 if (annotation.offset.x === 0 && annotation.offset.y === 0) {
-                    this.updatePosition('left');
+                    this.updateAnnotationPosition('left');
                 } else if (annotation.offset.x === 1 && annotation.offset.y === 0) {
-                    this.updatePosition('right');
-                } else if (annotation.offset.x === 1 && annotation.offset.y === 0) {
-                    this.updatePosition('right');
+                    this.updateAnnotationPosition('right');
                 } else if (annotation.offset.x === 0 && annotation.offset.y === 1) {
-                    this.updatePosition('bottoml');
+                    this.updateAnnotationPosition('bottomLeft');
                 } else if (annotation.offset.x === 1 && annotation.offset.y === 1) {
-                    this.updatePosition('bottomr');
+                    this.updateAnnotationPosition('bottomRight');
                 } else if (annotation.offset.x === 0.5 && annotation.offset.y === 0.5) {
-                    this.updatePosition('center');
+                    this.updateAnnotationPosition('center');
                 } else if (annotation.offset.x === 0.5 && annotation.offset.y === 1) {
-                    this.updatePosition('bottomcenter_top');
+                    this.updateAnnotationPosition('bottomCenter');
                 }
             }
-            this.enableOptions(arg);
+            this.enablePropertyPanel(arg);
         }
     };
 
@@ -113,6 +116,7 @@ export class AnnotationDiagramComponent {
         this.diagram.select([this.diagram.nodes[0]]);
     }
 
+    //Function to remove css property when nothing is selected
     private documentClick(args: MouseEvent): void {
         let target: HTMLElement = args.target as HTMLElement;
         // custom code start
@@ -122,17 +126,17 @@ export class AnnotationDiagramComponent {
         }
         // custom code end
         if (target.className === 'image-pattern-style') {
-            this.updatePosition(target.id);
+            this.updateAnnotationPosition(target.id);
         }
     };
-    private updatePosition(id: string): void {
+    //Update the Annotation Position based on the selection
+    private updateAnnotationPosition(id: string): void {
         let target: HTMLElement = document.getElementById(id);
         if (target) {
             for (let i: number = 0; i < this.diagram.selectedItems.nodes.length; i++) {
                 node = this.diagram.selectedItems.nodes[i];
                 //we can refactor this code using a method
-                for (let j: number = 0; j < node.annotations.length; j++) {
-                    let annotation: ShapeAnnotationModel = node.annotations[j];
+                    let annotation: ShapeAnnotationModel = node.annotations[0];
                     switch (target.id) {
                         case 'topLeft':
                             this.setAnnotationPosition(annotation, 0, 0, 'Top', 'Left');
@@ -156,34 +160,34 @@ export class AnnotationDiagramComponent {
                     // custom code start
                     target.classList.add('e-selected-style');
                     // custom code end
-                }
             }
         }
     }
+    //set the Annotation Position
     private setAnnotationPosition(
         //it is in dedicated line here.
         annotation: ShapeAnnotationModel, offsetX: number, offsetY: number,
-        vAlignment: VerticalAlignment, hAlignment: HorizontalAlignment): void {
+        verticalAlignment: VerticalAlignment, horizontalAlignment: HorizontalAlignment): void {
         annotation.offset.x = offsetX;
         annotation.offset.y = offsetY;
-        annotation.verticalAlignment = vAlignment;
-        annotation.horizontalAlignment = hAlignment;
-        if (vAlignment === 'Top' && hAlignment === 'Left') {
+        annotation.verticalAlignment = verticalAlignment;
+        annotation.horizontalAlignment = horizontalAlignment;
+        if (verticalAlignment === 'Top' && horizontalAlignment === 'Left') {
             annotation.margin = { left: 3, top: 3 };
-        } else if (vAlignment === 'Top' && hAlignment === 'Right') {
+        } else if (verticalAlignment === 'Top' && horizontalAlignment === 'Right') {
             annotation.margin = { right: 3, top: 3 };
-        } else if (vAlignment === 'Bottom' && hAlignment === 'Left') {
+        } else if (verticalAlignment === 'Bottom' && horizontalAlignment === 'Left') {
             annotation.margin = { left: 3, bottom: 3 };
-        } else if (vAlignment === 'Bottom' && hAlignment === 'Right') {
+        } else if (verticalAlignment === 'Bottom' && horizontalAlignment === 'Right') {
             annotation.margin = { right: 3, bottom: 3 };
         }
     }
 
+    //Apply the appearence of the Annotation 
     private applyAnnotationStylenotationStyle(propertyName: string, propertyValue: string): void {
         for (let i: number = 0; i < this.diagram.selectedItems.nodes.length; i++) {
             node = this.diagram.selectedItems.nodes[i];
-            for (let j: number = 0; j < node.annotations.length; j++) {
-                let textStyle: TextStyleModel = node.annotations[j].style;
+                let textStyle: TextStyleModel = node.annotations[0].style;
                 if (propertyName === 'fontsize') {
                     textStyle.fontSize = Number(propertyValue);
                 } else if (propertyName === 'underline') {
@@ -198,51 +202,57 @@ export class AnnotationDiagramComponent {
                     textStyle.color = propertyValue;
                 } else if (propertyName === 'template') {
                     if (propertyValue === 'none') {
-                        node.annotations[j].template = '';
-                        node.annotations[j].width = undefined;
-                        node.annotations[j].height = undefined;
+                        node.annotations[0].template = '';
+                        node.annotations[0].width = undefined;
+                        node.annotations[0].height = undefined;
                     } else {
-                        node.annotations[j].width = 25;
-                        node.annotations[j].height = 25;
-                        node.annotations[j].template =
+                        node.annotations[0].width = 25;
+                        node.annotations[0].height = 25;
+                        node.annotations[0].template =
                             '<img src="./assets/diagram/Images/annotation/' + propertyValue + '.svg" style="width:100%;height:100%" />';
                     }
                 } else if (propertyName === 'interaction') {
-                    node.annotations[j].constraints = node.annotations[j].constraints ^ AnnotationConstraints.Interaction;
+                    node.annotations[0].constraints = node.annotations[0].constraints ^ AnnotationConstraints.Interaction;
                 }
                 this.diagram.dataBind();
-            }
         }
     }
 
+     //Button used to apply for Bold of the Annotation
     public btnBoldClick(): void {
         this.applyAnnotationStylenotationStyle('bold', '');
     }
 
+    //Button used to apply for Italic of the Annotation
     public btnItalicClick(): void {
         this.applyAnnotationStylenotationStyle('italic', '');
     }
 
+     //Button used to apply for Underline of the Annotation
     public btnUnderlineClick(): void {
         this.applyAnnotationStylenotationStyle('underline', '');
     }
 
+    //Colorpicker used to apply for Color of the Annotation
     public onFontColorChange(args: ColorPickerEventArgs): void {
         this.applyAnnotationStylenotationStyle('color', args.currentValue.rgba);
     }
 
+    //NumericTextBox used to apply for Fontsize of the Annotation
     public onFontSizeChange(args: ChangeEventArgs): void {
         if (args.event) {
             this.applyAnnotationStylenotationStyle('fontsize', args.value.toString());
         }
     }
 
+     //Function used to apply for fontFamily of the Annotation
     public onFontFamilyChange(args: DropDownChangeEventArgs): void {
         if (args.element) {
             this.applyAnnotationStylenotationStyle('fontfamily', args.value.toString());
         }
     }
 
+    //Function used to apply for template for nodes
     public onLabelTemplateChange(args: DropDownChangeEventArgs): void {
         this.applyAnnotationStylenotationStyle('template', args.value.toString());
     }
@@ -252,8 +262,9 @@ export class AnnotationDiagramComponent {
         this.applyAnnotationStylenotationStyle('interaction', '');
     }
 
-    private enableOptions(arg: ISelectionChangeEventArgs): void {
-        let appearance: HTMLElement = document.getElementById('propertypanel');
+    //Enable or disable the property panel
+    private enablePropertyPanel(arg: ISelectionChangeEventArgs): void {
+        let appearance: HTMLElement = document.getElementById('propertyPanel');
         let selectedElement: HTMLCollection = document.getElementsByClassName('e-remove-selection');
         if (arg.newValue) {
             if (arg.newValue[0] instanceof Node && selectedElement.length) {

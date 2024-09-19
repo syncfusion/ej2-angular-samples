@@ -58,7 +58,6 @@ export class APIComponent {
 
     button_onChange(args: ChangeEventArgs) {
         this.slider.showButtons = args.checked;
-        this.slider.dataBind();
     }
     orientation_onChange(args: ChangeEventArgs) {
         args.checked ? this.slider.orientation = 'Vertical' : this.slider.orientation = 'Horizontal';
@@ -68,12 +67,10 @@ export class APIComponent {
     }
     disabled_onChange(args: ChangeEventArgs) {
         this.slider.enabled = !args.checked;
-        this.slider.dataBind();
     }
 
     buttonM_onChange(args: ChangeEventArgs) {
         this.slider.showButtons = args.checked;
-        this.slider.dataBind();
     }
     orientationM_onChange(args: ChangeEventArgs) {
         args.checked ? this.slider.orientation = 'Vertical' : this.slider.orientation = 'Horizontal';
@@ -83,7 +80,6 @@ export class APIComponent {
     }
     disabledM_onChange(args: ChangeEventArgs) {
         this.slider.enabled = !args.checked;
-        this.slider.dataBind();
     }
 
     ngOnInit() {

@@ -47,12 +47,15 @@
   .tailwind .row.material,
   .bootstrap5 .row.material,
   .bootstrap5-dark .row.material,
+  .bootstrap5\.3 .row.material,
+  .bootstrap5\.3-dark .row.material,
   .tailwind-dark .row.material,
   .fabric-dark .row.material,
   .bootstrap-dark .row.material,
   .fluent .row.material,
   .fluent-dark .row.material,
-  .fluent2-dark .row.material {
+  .fluent2-dark .row.material,
+  .fluent2-highcontrast .row.material {
       display: none;
   }
   

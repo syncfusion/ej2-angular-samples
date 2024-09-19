@@ -14,8 +14,6 @@ import { MultiColumnComboBoxComponent, MultiColumnComboBoxModule } from '@syncfu
     imports: [SBActionDescriptionComponent, MultiColumnComboBoxModule, SBDescriptionComponent]
 })
 export class TemplateMultiComboBoxComponent {
-    @ViewChild('template')
-    public multicomboBoxObj: MultiColumnComboBoxComponent;
     // define the JSON of data
     public empData: Object[] = [
         { Name: "Andrew Fuller", Eimg: "7", Designation: "Team Lead", Country: "England", DateofJoining: "12/10/2010" },
@@ -30,7 +28,7 @@ export class TemplateMultiComboBoxComponent {
     ];
     // maps the appropriate column to fields property
     public fields: Object = { text: 'Name', value: 'Eimg' };
-    // set the placeholder to MultiColumn ComboBox input element
+    // set the placeholder to ComboBox input element
     public waterMark: string = 'Select an employee';
     // set the gridSettings to MultiColumn ComboBox input element
     public gridSettings: Object = { rowHeight: 40 };

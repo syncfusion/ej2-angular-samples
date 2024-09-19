@@ -33,6 +33,8 @@ export class PrintController {
     public saveUrl = 'https://services.syncfusion.com/angular/production/api/spreadsheet/save';
     created() {
         this.spreadsheetObj.numberFormat('$#,##0.00', 'Car Sales!F3:F59');
+        // The default format code for the date format is 'm/d/yyyy'.
+        this.spreadsheetObj.numberFormat('m/d/yyyy', 'Car Sales!E3:E58');
     }
     ngAfterViewInit(): void {
         let printType: PrintType = <PrintType>'ActiveSheet';

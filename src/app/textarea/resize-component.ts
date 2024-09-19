@@ -1,4 +1,4 @@
-import { Component, ViewChild} from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation} from '@angular/core';
 import { DropDownListComponent, ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { TextAreaComponent, TextAreaModule } from '@syncfusion/ej2-angular-inputs';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -12,6 +12,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     styleUrls: ['resize.css'],
     templateUrl: 'resize.html',
     standalone: true,
+    encapsulation: ViewEncapsulation.None,
     imports: [TextAreaModule, DropDownListModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ResizeTextAreaController {

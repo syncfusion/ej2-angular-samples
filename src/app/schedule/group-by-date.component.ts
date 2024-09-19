@@ -1,10 +1,10 @@
-import { Component, ViewChild, ViewEncapsulation } from "@angular/core";
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { resourceData } from './data';
 import { extend } from '@syncfusion/ej2-base';
 import { ScheduleComponent, EventSettingsModel, GroupModel, DayService, MonthService, WeekService, AgendaService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
-import { ChangeEventArgs, CheckBoxModule } from "@syncfusion/ej2-angular-buttons";
-import { SBDescriptionComponent } from "../common/dp.component";
-import { SBActionDescriptionComponent } from "../common/adp.component";
+import { ChangeEventArgs, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     // tslint:disable-next-line:component-selector

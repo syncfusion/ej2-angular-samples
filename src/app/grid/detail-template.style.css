@@ -22,3 +22,13 @@
             height: 70px;
         }       
     }
+    
+    .image img {
+        height: 55px;
+        width: 55px;
+        border-radius: 50px;
+        box-shadow: inset 0 0 1px #e0e0e0, inset 0 0 14px rgba(68, 66, 66, 0.2);
+    }
+    .e-grid .e-detailrow .e-detailcell .e-tab .e-content {
+        overflow-y: auto;
+    }

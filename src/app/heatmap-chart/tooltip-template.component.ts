@@ -84,11 +84,11 @@ export class HeatmapTooltipComponent {
         // custom code start
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.heatmap.theme = <HeatMapTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
+        args.heatmap.theme = <HeatMapTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
         // custom code end
     };
     public tooltipRender(args: ITooltipEventArgs): void {
-        if (args.heatmap.theme.indexOf('Dark') > -1 || args.heatmap.theme.indexOf('Highcontrast') > -1) {
+        if (args.heatmap.theme.indexOf('Dark') > -1 || args.heatmap.theme.indexOf('HighContrast') > -1) {
             args.heatmap.tooltipSettings.template = '<div style=" border-radius: 5px;fontFamily: inherit; padding-left: 10px;padding-right: 10px;padding-bottom: 6px;padding-top: 6px;background:white; border: 1px #919191;" ><span style="color:black;font-size: 12px">In ${yLabel}, the ${xLabel} produced ${value} million barrels per day.<span></div>';
 
         }

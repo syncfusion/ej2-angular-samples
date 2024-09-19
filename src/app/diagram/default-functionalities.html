@@ -14,71 +14,71 @@
     <div style="width: 100%">
         <ejs-toolbar #toolbar overflowMode='Scrollable' id="toolbar_scrollable" (clicked) = "clicked($event)">
             <e-items>
-                <e-item prefixIcon='e-icons e-circle-add' tooltipText='New Diagram'></e-item>
-                <e-item prefixIcon='e-icons e-folder-open' tooltipText='Open Diagram'>
+                <e-item prefixIcon='e-icons e-circle-add' tooltipText='New Diagram'  id='New_Diagram' ></e-item>
+                <e-item prefixIcon='e-icons e-folder-open' tooltipText='Open Diagram' id='Open_diagram'>
                 </e-item>
-                <e-item prefixIcon='e-icons e-save' tooltipText='Save Diagram'></e-item>
-                <e-item prefixIcon='e-print e-icons' tooltipText='Print Diagram'></e-item>
-                <e-item type='Input' tooltipText='Export Diagram'>
+                <e-item prefixIcon='e-icons e-save' tooltipText='Save Diagram' id='Save' ></e-item>
+                <e-item prefixIcon='e-print e-icons' tooltipText='Print Diagram' id='Print'></e-item>
+                <e-item type='Input' tooltipText='Export Diagram' id='Export'>
                     <ng-template #template>
                         <ejs-splitbutton [items]='items' iconCss="e-export e-icons" (select)='addDisabled($event)'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
                 <e-item type='Separator'></e-item>
-                <e-item prefixIcon='e-cut e-icons' tooltipText='Cut' cssClass="tb-item-middle tb-item-lock-category" disabled=true></e-item>
-                <e-item prefixIcon='e-copy e-icons' tooltipText='Copy' cssClass="tb-item-middle tb-item-lock-category" disabled=true></e-item>
-                <e-item prefixIcon='e-icons e-paste' tooltipText='Paste' disabled=true></e-item>
+                <e-item prefixIcon='e-cut e-icons' tooltipText='Cut' cssClass="tb-item-middle tb-item-lock-category" disabled=true  id='Cut'></e-item>
+                <e-item prefixIcon='e-copy e-icons' tooltipText='Copy' cssClass="tb-item-middle tb-item-lock-category" disabled=true  id='Copy'></e-item>
+                <e-item prefixIcon='e-icons e-paste' tooltipText='Paste' disabled=true  id='Paste'></e-item>
                 <e-item type='Separator'></e-item>
-                <e-item prefixIcon='e-icons e-undo tb-icons' tooltipText='Undo' disabled=true></e-item>
-                <e-item prefixIcon='e-icons e-redo tb-icons' tooltipText='Redo' disabled=true></e-item>
+                <e-item prefixIcon='e-icons e-undo tb-icons' tooltipText='Undo' disabled=true id='Undo'></e-item>
+                <e-item prefixIcon='e-icons e-redo tb-icons' tooltipText='Redo' disabled=true  id='Redo'></e-item>
                 <e-item type='Separator'></e-item>
-                <e-item prefixIcon='e-pan e-icons' tooltipText='Pan Tool' cssClass ='tb-item-start pan-item'></e-item>
-                <e-item prefixIcon='e-mouse-pointer e-icons' tooltipText='Select Tool' cssClass ='tb-item-middle tb-item-selected'></e-item>
-                <e-item  tooltipText='Draw Connectors'>
+                <e-item prefixIcon='e-pan e-icons' tooltipText='Pan Tool' cssClass ='tb-item-start pan-item' id='Pan_tool'></e-item>
+                <e-item prefixIcon='e-mouse-pointer e-icons' tooltipText='Select Tool' cssClass ='tb-item-middle tb-item-selected' id='Select_tool'></e-item>
+                <e-item  tooltipText='Draw Connectors' id='Draw_con'>
                     <ng-template #template>
                         <ejs-splitbutton [items]='conTypeItems' iconCss="e-ddb-icons e-diagram-connector e-icons" (select)='onConnectorSelect($event)'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
-                <e-item  tooltipText='Draw Shapes' >
+                <e-item  tooltipText='Draw Shapes' id='Draw_shapes'>
                     <ng-template #template>
                         <ejs-splitbutton [items]='shapesItems' iconCss="e-shapes e-icons" (select)='onShapesSelect($event)'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
-                <e-item prefixIcon='e-caption e-icons' tooltipText='Text Tool' cssClass='tb-item-end'></e-item>
+                <e-item prefixIcon='e-caption e-icons' tooltipText='Text Tool' cssClass='tb-item-end' id='Text_tool'></e-item>
                 <e-item type='Separator'></e-item>
-                <e-item disabled=true  prefixIcon= 'e-icons e-lock' tooltipText= 'Lock' cssClass='tb-item-middle tb-item-lock-category'></e-item>
-                <e-item disabled=true  prefixIcon= 'e-trash e-icons' tooltipText= 'Delete'cssClass='tb-item-middle tb-item-lock-category'></e-item>
+                <e-item disabled=true  prefixIcon= 'e-icons e-lock' tooltipText= 'Lock' cssClass='tb-item-middle tb-item-lock-category' id='Lock' ></e-item>
+                <e-item disabled=true  prefixIcon= 'e-trash e-icons' tooltipText= 'Delete'cssClass='tb-item-middle tb-item-lock-category' id='Delete'></e-item>
                 <e-item type='Separator'></e-item>
-                <e-item disabled=true  type= 'Input' tooltipText= 'Align Objects'>
+                <e-item disabled=true  type= 'Input' tooltipText= 'Align Objects' id='Align_objects'>
                     <ng-template #template>
                         <ejs-splitbutton [items]='alignItems' iconCss="sf-icon-align-center-1" (select)='onSelectAlignObjects($event)'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
-                <e-item disabled=true  type= 'Input' tooltipText= 'Distribute Objects'>
+                <e-item disabled=true  type= 'Input' tooltipText= 'Distribute Objects' id='Distribute_objects' >
                     <ng-template #template>
                         <ejs-splitbutton [items]='distributeItems' iconCss="sf-icon-distribute-vertical" (select)='onSelectDistributeObjects($event)'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
                 <e-item type='Separator'></e-item>
-                <e-item disabled=true  type= 'Input' tooltipText= 'Order Commands'>
+                <e-item disabled=true  type= 'Input' tooltipText= 'Order Commands'  id='Order' >
                     <ng-template #template>
                         <ejs-splitbutton [items]='orderItems' iconCss="e-icons e-order" (select)='onSelectOrder($event)'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
                 <e-item type='Separator'></e-item>
-                <e-item disabled=true  type= 'Input' tooltipText= 'Group/Ungroup' >
+                <e-item disabled=true  type= 'Input' tooltipText= 'Group/Ungroup'  id='Group'  >
                     <ng-template #template>
                         <ejs-splitbutton [items]='groupItems' iconCss="e-icons e-group-1" (select)='onSelectGroup($event)'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
                 <e-item type='Separator'></e-item>
-                <e-item disabled=true  type= 'Input' tooltipText= 'Rotate' >
+                <e-item disabled=true  type= 'Input' tooltipText= 'Rotate' id='Rotate'>
                     <ng-template #template>
                         <ejs-splitbutton [items]='rotateItems' iconCss="e-icons e-repeat" (select)='onSelectRotate($event)'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
                 <e-item type='Separator'></e-item>
-                <e-item disabled=true  type= 'Input' tooltipText= 'Flip' >
+                <e-item disabled=true  type= 'Input' tooltipText= 'Flip' id='Flip' >
                     <ng-template #template>
                         <ejs-splitbutton [items]='flipItems' iconCss="e-icons e-flip-horizontal" (select)='onSelectFlip($event)'></ejs-splitbutton>
                     </ng-template>
@@ -86,7 +86,7 @@
                 <e-item type='Separator'></e-item>
                 <e-item>
                     <ng-template #template>
-                        <ejs-splitbutton [items]='zoomMenuItems' [content]="zoomContent()" (select)='zoomChange($event)'></ejs-splitbutton>
+                        <ejs-splitbutton [items]='zoomMenuItems' [content]="zoomContent()" (select)='zoomChange($event)' id='Zoom'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
               
@@ -96,12 +96,12 @@
             <div id="palette-icon" style="float: right;" role="button" class="e-ddb-icons1 e-toggle-palette"></div>
         </div>
         <div id="palette-space" class="sb-mobile-palette">
-            <ejs-symbolpalette id="symbolpalette" [expandMode]='expandMode' [palettes]='palettes' width="100%" height="700px" [symbolHeight]=60 [symbolWidth]=60 [symbolMargin]='symbolMargin' [getSymbolInfo]='getSymbolInfo' [getNodeDefaults]='getSymbolDefaults'>
+            <ejs-symbolpalette id="symbolpalette" [expandMode]='expandMode' [palettes]='palettes' width="100%" height="700px" [symbolHeight]=60 [symbolWidth]=60 [symbolMargin]='symbolMargin' [getSymbolInfo]='getSymbolInfo' [getNodeDefaults]='getSymbolDefaults' [enableSearch]='true'>
             </ejs-symbolpalette>
         </div>
         <div id="diagram-space" class="sb-mobile-diagram">
             <div class="content-wrapper">
-                <ejs-diagram #diagram id="diagram" width="100%" height="700px" [snapSettings]='snapSettings' (created)="created()" [getConnectorDefaults]='connDefaults' [getNodeDefaults]='nodeDefaults' (dragEnter)="dragEnter($event)" (created)="diagramCreate($event)" (selectionChange)="selectionChange($event)" (historyChange)="historyChange($event)" [drawingObject] ="drawingObject">
+                <ejs-diagram #diagram id="diagram" width="100%" height="700px" [snapSettings]='snapSettings' (created)="created()" [getConnectorDefaults]='connectorDefaults' [getNodeDefaults]='nodeDefaults' (dragEnter)="dragEnter($event)" (created)="diagramCreate($event)" (selectionChange)="selectionChange($event)" (historyChange)="historyChange($event)" [drawingObject] ="drawingObject">
                     <e-nodes>
                         <e-node id='NewIdea' [height]=60 [offsetX]=300 [offsetY]=80 [shape]='terminator'>
                             <e-node-annotations>
@@ -133,7 +133,7 @@
                                 </e-node-annotation>
                             </e-node-annotations>
                         </e-node>
-                        <e-node id='node11' [height]=60 [offsetX]=530 [offsetY]=330 [shape]='process'>
+                        <e-node id='Payment_method' [height]=60 [offsetX]=530 [offsetY]=330 [shape]='process'>
                             <e-node-annotations>
                                 <e-node-annotation content='Enter payment method'>
                                 </e-node-annotation>
@@ -145,7 +145,7 @@
                                 </e-node-annotation>
                             </e-node-annotations>
                         </e-node>
-                        <e-node id='node12' [height]=60 [offsetX]=480 [offsetY]=630 [shape]='process'>
+                        <e-node id='Reconcile_entries' [height]=60 [offsetX]=480 [offsetY]=630 [shape]='process'>
                             <e-node-annotations>
                                 <e-node-annotation content='Reconcile the entries'>
                                 </e-node-annotation>
@@ -163,7 +163,7 @@
                                 </e-node-annotation>
                             </e-node-annotations>
                         </e-node>
-                        <e-node id='node10' [height]=70 [offsetX]=475 [offsetY]=530 [shape]='directdata'>
+                        <e-node id='Database' [height]=70 [offsetX]=475 [offsetY]=530 [shape]='directdata'>
                             <e-node-annotations>
                                 <e-node-annotation content='Customer Database' [margin]='margin'>
                                 </e-node-annotation>
@@ -193,23 +193,23 @@
                         </e-connector>
                         <e-connector id='connector7' sourceID='transaction_completed' targetID='Data'>
                         </e-connector>
-                        <e-connector id='connector8' sourceID='transaction_completed' targetID='node10'>
+                        <e-connector id='connector8' sourceID='transaction_completed' targetID='Database'>
                         </e-connector>
-                        <e-connector id='connector9' sourceID='node11' targetID='Meeting' [segments]='segments' type= 'Orthogonal'>
+                        <e-connector id='connector9' sourceID='Payment_method' targetID='Meeting' [segments]='segments' type= 'Orthogonal'>
                         </e-connector>
-                        <e-connector id='connector10' sourceID='End' targetID='node11' [segments]='segments1' type= 'Orthogonal'>
+                        <e-connector id='connector10' sourceID='End' targetID='Payment_method' [segments]='segments1' type= 'Orthogonal'>
                             <e-connector-annotations>
                                 <e-connector-annotation content='No' [style]=connAnnotStyle>
                                 </e-connector-annotation>
                             </e-connector-annotations>
                         </e-connector>
-                        <e-connector id='connector11' sourceID='Project' targetID='node11' type='Orthogonal'>
+                        <e-connector id='connector11' sourceID='Project' targetID='Payment_method' type='Orthogonal'>
                             <e-connector-annotations>
                                 <e-connector-annotation content='No' [style]=connAnnotStyle>
                                 </e-connector-annotation>
                             </e-connector-annotations>
                         </e-connector>
-                        <e-connector id='connector12' sourceID='transcation_entered' targetID='node12' [style]=strokeStyle>
+                        <e-connector id='connector12' sourceID='transcation_entered' targetID='Reconcile_entries' [style]=strokeStyle>
                         </e-connector>
                     </e-connectors>
                 </ejs-diagram>

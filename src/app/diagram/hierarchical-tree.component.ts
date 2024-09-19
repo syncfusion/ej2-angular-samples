@@ -11,7 +11,7 @@ import {
 import { ChangeEventArgs as CheckBoxChangeEventArgs } from '@syncfusion/ej2-buttons';
 import { ChangeEventArgs as NumericChangeEventArgs } from '@syncfusion/ej2-inputs';
 import { DataManager } from '@syncfusion/ej2-data';
-import {hierarchicalTree} from'./overview-data';
+import { hierarchicalTree } from './diagram-data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
@@ -40,7 +40,7 @@ export class HierarchyDiagramComponent {
         id: 'Name', parentId: 'Category',
         dataSource: new DataManager(hierarchicalTree),
         //binds the data with the nodes
-        doBinding: (nodeModel: NodeModel, data: object, diagram: Diagram) => {
+        doBinding: (nodeModel: NodeModel, data: object) => {
             nodeModel.shape = { type: 'Text', content: (data as EmployeeInfo).Name };
         }
     };
@@ -67,15 +67,13 @@ export class HierarchyDiagramComponent {
         obj.collapseIcon.height = 10;
         obj.collapseIcon.width = 10;
         obj.collapseIcon.padding.top = 5;
-        obj.collapseIcon.shape = 'None';
         obj.collapseIcon.fill = 'lightgray';
         return obj;
     };
 
-    public connDefaults(connector: any, diagram: Diagram): ConnectorModel {
+    public connectorDefaults(connector: any): ConnectorModel {
         connector.targetDecorator.shape = 'None';
         connector.type = 'Orthogonal';
-        connector.constraints = 0;
         connector.cornerRadius = 5;
         connector.style.strokeColor = '#6d6d6d';
         return connector;
@@ -95,9 +93,9 @@ export class HierarchyDiagramComponent {
         // custom code end
         if (target.className === 'image-pattern-style') {
             let id: string = target.id;
-            let orientation1: string = id.substring(0, 1).toUpperCase()+id.substring(1,id.length);
-            this.diagram.layout.orientation = orientation1 as LayoutOrientation;
-            this.diagram.layout.orientation = orientation1 as LayoutOrientation;
+            let orientation: string = id.substring(0, 1).toUpperCase()+id.substring(1,id.length);
+            this.diagram.layout.orientation = orientation as LayoutOrientation;
+            this.diagram.layout.orientation = orientation as LayoutOrientation;
             this.diagram.doLayout();
             // custom code start
             target.classList.add('e-selected-style');
@@ -106,16 +104,21 @@ export class HierarchyDiagramComponent {
         }
     };
 
-    onhSpacingChange(args: NumericChangeEventArgs): void {
+     //Function to set horizontal spacing between nodes
+    onhorizontalSpacingChange(args: NumericChangeEventArgs): void {
         this.diagram.layout.horizontalSpacing = Number(args.value);
+        this.diagram.doLayout();
         this.diagram.dataBind();
     }
 
-    onvSpacingChange(args: NumericChangeEventArgs): void {
+    //Function to set vertical spacing between nodes
+    onverticalSpacingChange(args: NumericChangeEventArgs): void {
         this.diagram.layout.verticalSpacing = Number(args.value);
+        this.diagram.doLayout();
         this.diagram.dataBind();
     }
 
+    // Function to enable expand and collapse icon
     onExpandChange(args: CheckBoxChangeEventArgs): void {
         for (let node of this.diagram.nodes) {
             if (args.checked) {

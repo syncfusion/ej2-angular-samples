@@ -18,7 +18,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 export class ReminderComponent implements OnDestroy {
   @ViewChild('scheduleObj') public scheduleObj: ScheduleComponent;
   @ViewChild('toastObj') private toastOj: ToastComponent;
-  public reminderInterval: NodeJS.Timeout = setInterval(this.refreshEventReminder.bind(this), 5000);
+  public reminderInterval: any = setInterval(this.refreshEventReminder.bind(this), 5000);
   public data: Record<string, any>[] = getReminderEvents();
   public eventSettings: EventSettingsModel = { dataSource: this.data };
   public timeOut = 0;

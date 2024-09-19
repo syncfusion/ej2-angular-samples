@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SpreadsheetComponent, getFormatFromType, ChartModel, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent, ChartModel, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
 import { GDPData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -29,7 +29,7 @@ export class ChartController {
          // Formatting cells dynamically using cellFormat method
          this.spreadsheetObj.cellFormat({ backgroundColor: '#e56590', color: '#fff', fontWeight: 'bold', textAlign: 'center' }, 'A3:E3');
          // Applying currency format to the specified range.
-         this.spreadsheetObj.numberFormat(getFormatFromType('Currency'), 'B4:E10');
+         this.spreadsheetObj.numberFormat('$#,##0.00', 'B4:E10');
          // Merging the cells from A1 to E1
          this.spreadsheetObj.merge('A1:E1');
     }

@@ -1,0 +1,20 @@
+<div id='container'>
+    <ejs-grid #grid id="semantic-grid" [dataSource]='machineDataList' [toolbar]='toolbar' [enableHover]='false'
+        [enableStickyHeader]='true' [allowTextWrap]='true' [enableAltRow]='true' (created)='created()' [rowHeight]='75'
+        [height]='450'>
+        <e-columns>
+            <e-column field="RecordID" headerText="Record ID" textAlign="Right" width="90"></e-column>
+            <e-column field="PatientID" headerText="Patient ID" textAlign="Right" width="90"></e-column>
+            <e-column field="Symptoms" headerText="Symptoms" width="140"></e-column>
+            <e-column field="Diagnosis" headerText="Diagnosis" width="100"></e-column>
+            <e-column field="DoctorDetails" headerText="Doctor Information" width="140"></e-column>
+        </e-columns>
+    </ejs-grid>
+</div>
+<ng-template #toolbarTemplate>
+    <div id='toolbar-template'>
+        <ejs-textbox #textbox id='smart_search_input' placeholder='Search here' [width]="200"></ejs-textbox>
+        <button id='smart_search_button' style="margin-left: 20px;" class="e-btn e-primary"
+            (click)="smartSearch()">Smart Search</button>
+    </div>
+</ng-template>

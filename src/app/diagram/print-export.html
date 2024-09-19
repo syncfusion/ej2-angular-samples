@@ -59,11 +59,11 @@
     </p>
 </div>
 <div class="control-section diagram-print-export">
-    <ejs-toolbar id='toolbarEditor' #toolbarEditor overflowMode='Scrollable' (clicked)='toolbarEditorClick($event)'>
+    <ejs-toolbar id='toolbarEditor' #toolbarEditor overflowMode='Scrollable' (clicked)='onItemClick($event)'>
         <e-items>
             <e-item>
                 <ng-template #template>
-                    <button ejs-dropdownbutton [items]='exportTypes' iconCss='e-ddb-icons e-export' content='Export' (select)='onSelect($event)'></button>
+                    <button ejs-dropdownbutton [items]='exportTypes' iconCss='e-ddb-icons e-export' content='Export' (select)='onSelectExportFormat($event)'></button>
                 </ng-template>
             </e-item>
             <e-item type='Button' text='Print' prefixIcon='e-ddb-icons  e-print'>
@@ -157,55 +157,55 @@
                 </e-connector>
                 <e-connector id='flowChartConnector2' sourceID='censusNode2' targetID='booksNode3'>
                     <e-connector-annotations>
-                        <e-connector-annotation content='No'>
+                        <e-connector-annotation content='No' [style]='annotationTextStyle'>
                         </e-connector-annotation>
                     </e-connector-annotations>
                 </e-connector>
                 <e-connector id='flowChartConnector3' sourceID='booksNode3' targetID='nontraditionalNode6'>
                     <e-connector-annotations>
-                        <e-connector-annotation content='No'>
+                        <e-connector-annotation content='No' [style]='annotationTextStyle'>
                         </e-connector-annotation>
                     </e-connector-annotations>
                 </e-connector>
                 <e-connector id='flowChartConnector4' sourceID='censusNode2' targetID='recordNode4'>
                     <e-connector-annotations>
-                        <e-connector-annotation content='Yes'>
+                        <e-connector-annotation content='Yes' [style]='annotationTextStyle'>
                         </e-connector-annotation>
                     </e-connector-annotations>
                 </e-connector>
                 <e-connector id='flowChartConnector5' sourceID='booksNode3' targetID='traditionalNode5'>
                     <e-connector-annotations>
-                        <e-connector-annotation content='Yes'>
+                        <e-connector-annotation content='Yes' [style]='annotationTextStyle'>
                         </e-connector-annotation>
                     </e-connector-annotations>
                 </e-connector>
                 <e-connector id='RadialConnector1' sourceID='Radial1' targetID='Radial2'>
                     <e-connector-annotations>
-                        <e-connector-annotation content='Yes'>
+                        <e-connector-annotation content='Yes' [style]='annotationTextStyle'>
                         </e-connector-annotation>
                     </e-connector-annotations>
                 </e-connector>
                 <e-connector id='RadialConnector2' sourceID='Radial1' targetID='Radial3'>
                     <e-connector-annotations>
-                        <e-connector-annotation content='Yes'>
+                        <e-connector-annotation content='Yes' [style]='annotationTextStyle'>
                         </e-connector-annotation>
                     </e-connector-annotations>
                 </e-connector>
                 <e-connector id='RadialConnector3' sourceID='Radial1' targetID='Radial4'>
                     <e-connector-annotations>
-                        <e-connector-annotation content='Yes'>
+                        <e-connector-annotation content='Yes' [style]='annotationTextStyle'>
                         </e-connector-annotation>
                     </e-connector-annotations>
                 </e-connector>
                 <e-connector id='RadialConnector4' sourceID='Radial1' targetID='Radial5'>
                     <e-connector-annotations>
-                        <e-connector-annotation content='Yes'>
+                        <e-connector-annotation content='Yes' [style]='annotationTextStyle'>
                         </e-connector-annotation>
                     </e-connector-annotations>
                 </e-connector>
                 <e-connector id='RadialConnector5' sourceID='Radial1' targetID='Radial6'>
                     <e-connector-annotations>
-                        <e-connector-annotation content='Yes'>
+                        <e-connector-annotation content='Yes' [style]='annotationTextStyle'>
                         </e-connector-annotation>
                     </e-connector-annotations>
                 </e-connector>

@@ -1,0 +1,39 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates how the data source for the donut chart can dynamically update at regular intervals
+        over a span of years.
+    </p>
+</div>
+<div class="control-section">
+    <div>
+        <ejs-accumulationchart id="donut-container" #pie style='display:block; width: 92%' align='center'
+            [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" [enableAnimation]='enableAnimation'
+            (load)='load($event)' [enableBorderOnMouseMove]='false' [titleStyle]='titleStyle' (textRender)='textRender($event)'
+            [centerLabel]="centerLabel">
+            <e-accumulation-series-collection>
+                <e-accumulation-series [dataSource]='updatedData' xName='x' yName='y' innerRadius="65%" [radius]='radius'
+                    [dataLabel]="dataLabel">
+                </e-accumulation-series>
+            </e-accumulation-series-collection>
+        </ejs-accumulationchart>
+    </div>
+</div>
+<div id="description">
+    <p>In this example, you can see how to render and configure a donut chart that displays the average stock market
+        prices of leading tech giants, with each entry featuring the company name and corresponding stock price. The
+        donut chart updates dynamically using the
+        <code>setData</code> method to show the progression of stock prices from 2010 to 2020.</p>
+    <p>
+    <p> 
+        More information about the donut series can be found in this
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/pie-dough-nut/#various-radius-pie-chart"
+            aria-label="Navigate to the documentation for Various Radius Pie Chart in Angular Accumulation Chart component">documentation
+            section</a>.
+    </p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

@@ -10,12 +10,10 @@
         <div id='content' class='box-form' style="margin: 0 auto; max-width:750px; padding:25px">
             <form [formGroup]="rteForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
-                    <ejs-richtexteditor #fromRTE formControlName="name" (created)="rteCreated()">
+                    <ejs-richtexteditor #fromRTE formControlName="name" (created)="rteCreated()" saveInterval=1>
                     </ejs-richtexteditor>
-                    <div *ngIf="rteForm.invalid && rteForm.controls.name.touched" class="alert alert-danger">
-                        <div *ngIf="rteForm.controls.name.errors.required">
+                    <div *ngIf="rteForm.invalid && rteForm.controls.name.touched && rteForm.controls.name.errors.required" class="alert alert-danger">
                             Value is required.
-                        </div>
                     </div>
                 </div>
                 <div class="form-group">

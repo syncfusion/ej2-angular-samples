@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
 import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsViewService, FileManagerModule } from '@syncfusion/ej2-angular-filemanager';
-import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListModule, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 
 /**
@@ -22,6 +22,10 @@ export class DefaultFileController {
     }
     @ViewChild('fileObj')
     public fileObj: FileManagerComponent;
+    @ViewChild('enableDdl')
+    public enableDropDownList: DropDownListComponent;
+    @ViewChild('disableDdl')
+    public disableDropDownList: DropDownListComponent;
     public ajaxSettings: object;
     public toolbarSettings: object;
     public contextMenuSettings: object;
@@ -52,22 +56,32 @@ export class DefaultFileController {
         if (args.event.currentTarget.id == 'toolbar') {
             this.fileObj.toolbarSettings.visible = args.checked;
         }
-        if (args.event.currentTarget.id == 'multiSelect') {
-            this.fileObj.allowMultiSelection = args.checked;
-        }
         if (args.event.currentTarget.id == 'fileExtension') {
             this.fileObj.showFileExtension = args.checked;
         }
         if (args.event.currentTarget.id == 'thumbnail') {
             this.fileObj.showThumbnail = args.checked;
         }
+        if (args.event.currentTarget.id == 'rangeSelection') {
+            this.fileObj.enableRangeSelection = args.checked;
+        }
     }
-    itemChange(args: any) {
-        var changedItem = args.itemData.value;
-        if (args.element.id == 'enable') {
-            this.fileObj.enableToolbarItems([changedItem]);
-        } else {
-            this.fileObj.disableToolbarItems([changedItem]);
+  
+    onDisableItemChange(args: any) {
+        if (args.itemData != null) {
+            this.fileObj.disableToolbarItems([args.itemData.value]);
+            if (args.value === this.enableDropDownList.value) {
+                this.enableDropDownList.value = null;
+            }
+        }
+    }
+  
+    onEnableItemChange(args: any) {
+        if (args.itemData != null) {
+            this.fileObj.enableToolbarItems([args.itemData.value]);
+            if (args.value === this.disableDropDownList.value) {
+                this.disableDropDownList.value = null;
+            }
         }
     }
 }

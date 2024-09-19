@@ -1,39 +1,66 @@
 <div class="control-section">
-    <ejs-grid [dataSource]="data" [allowPaging]="true" [pageSettings]='pageOption' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbar'>
+    <ejs-grid id="default-aggregate-grid" [dataSource]="data" [allowSorting]='true' [enableHover]='false' [allowMultiSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings'
+        height=300 [gridLines]="gridLines">
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='150'  isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
-            <e-column field='CustomerName' headerText='Customer Name' width='150' [validationRules]='customeridrules'></e-column>
-            <e-column field='Freight' headerText='Freight' width='150' format='C2' textAlign='Right' editType='numericedit' [validationRules]='freightrules'></e-column>
-            <e-column field='OrderDate' headerText='Order Date' width='150' format="yMd" textAlign='Right' editType='datepickeredit'></e-column>
-            <e-column field='ShipCountry' headerText='Ship Country' width='150' editType='dropdownedit'></e-column>
+            <e-column field='Month' headerText='Time Stamp' width='140' isPrimaryKey='true' clipMode='EllipsisWithTooltip'></e-column>
+            <e-column field='Sales' headerText='Sales' textAlign='Right' width='150' format='C2'></e-column>
+            <e-column field='MarketingSpend' headerText='Marketing Spend' textAlign='Right' width='190' format='C2'
+                editType='numericedit' clipMode='EllipsisWithTooltip'></e-column>
+            <e-column field='NewCustomers' headerText='New Customers' width='180' textAlign='Right' clipMode='EllipsisWithTooltip'></e-column>
+            <e-column field='ReturningCustomers' headerText='Returning Customers' width='220'
+                textAlign='Right' clipMode='EllipsisWithTooltip'></e-column>
+            <e-column field='WebTraffic' headerText='Web Traffic' textAlign='Right' width='160' clipMode='EllipsisWithTooltip'></e-column>
         </e-columns>
         <e-aggregates>
             <e-aggregate>
                 <e-columns>
-                    <e-column type="Sum" field="Freight" format="C2">
-                        <ng-template #footerTemplate let-data>Sum: {{data.Sum}}</ng-template>
+                    <e-column type="Sum" field="Sales" format="C2">
+                        <ng-template #footerTemplate let-data>Total: {{data.Sum}}</ng-template>
+                    </e-column>
+                    <e-column type="Sum" field="MarketingSpend" format="C2">
+                        <ng-template #footerTemplate let-data>Total: {{data.Sum}}</ng-template>
+                    </e-column>
+                    <e-column type="Sum" field="NewCustomers" format="N2">
+                        <ng-template #footerTemplate let-data>New Customers: {{data.Sum}}</ng-template>
+                    </e-column>
+                    <e-column type="Sum" field="ReturningCustomers" format="N2">
+                        <ng-template #footerTemplate let-data>Returning Customers: {{data.Sum}}</ng-template>
                     </e-column>
                 </e-columns>
             </e-aggregate>
             <e-aggregate>
                 <e-columns>
-                    <e-column type="Average" field="Freight" format="C2">
+                    <e-column type="Average" field="Sales" format="C2">
                         <ng-template #footerTemplate let-data>Average: {{data.Average}}</ng-template>
+                    </e-column>
+                    <e-column type="Average" field="MarketingSpend" format="C2">
+                        <ng-template #footerTemplate let-data>Average: {{data.Average}}</ng-template>
+                    </e-column>
+                    <e-column type="Max" field="WebTraffic">
+                        <ng-template #footerTemplate let-data>Max: {{data.Max}}</ng-template>
+                    </e-column>
+                </e-columns>
+            </e-aggregate>
+            <e-aggregate>
+                <e-columns>
+                    <e-column type="Min" field="WebTraffic">
+                        <ng-template #footerTemplate let-data>Min: {{data.Min}}</ng-template>
                     </e-column>
                 </e-columns>
             </e-aggregate>
         </e-aggregates>
     </ejs-grid>
     <div id="action-description">
-        <p>This sample demonstrates aggregate functionality of the Grid. In this sample, the aggregate value for the column “Freight” is displayed in column footer.</p>
+        <p>This sample demonstrates the aggregate functionality of the Grid. In this sample, the aggregate values for the columns
+            are displayed in the column footer.</p>
     </div>
     <div id="description">
-        <p>The Grid supports aggregates which will be displayed at the footer, group footer and group caption of the Grid. The
-            aggregate configurations can be provided by the <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/grid#aggregates">
-        aggregates
-        </a></code> property.</p>
-        <p>The built-in aggregates are,</p>
+        <p>The Grid supports displaying aggregates in its footer, group footer and group caption.
+            The aggregate configurations can be provided by the <code><a target="_blank" class="code"
+                    href="http://ej2.syncfusion.com/angular/documentation/api/grid/#aggregates">
+                    aggregates
+                </a></code> property.</p>
+        <p>Built-in aggregates:</p>
         <ul>
             <li><code>Sum</code></li>
             <li><code>Average</code></li>
@@ -43,33 +70,39 @@
             <li><code>TrueCount</code></li>
             <li><code>FalseCount</code></li>
             <li><code>Custom</code> - Requires the <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/grid/aggregateColumn/#customaggregate">
-        customAggregate
-        </a></code> property to perform aggregation. The custom aggregate value can be accessed inside template using the
-                key <code>custom</code></li>
+                        href="http://ej2.syncfusion.com/angular/documentation/api/grid/aggregateColumn/#customaggregate">
+                        customAggregate
+                    </a></code> property to perform aggregation.
+                The custom aggregate value can be accessed inside template using the key <code>custom</code>.</li>
         </ul>
         <p>
             In this demo, the <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/grid/aggregateColumn/#footertemplate">
-        footerTemplate</a></code> property is used to display four different aggregates in the Grid footer. In the first
-            aggregate row, the <code>sum</code> aggregate type is used by setting the <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/grid/aggregateColumn/#type">
-        type</a></code> and <code><a target="_blank" class="code"
- href="https://ej2.syncfusion.com/angular/documentation/api/grid/aggregateColumn/#field">
-        field</a></code> property as <strong><i>Freight</i></strong> which will be used to perform the aggregation. The
-            aggregate value is accessed inside the <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/grid/aggregateColumn/#footertemplate">
-        footerTemplate</a></code> using its <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/grid/aggregateColumn/#type">
-        type</a></code> name (<code>sum</code>). The aggregate value will be formatted based on its <code><a target="_blank" class="code"
- href="https://ej2.syncfusion.com/angular/documentation/api/grid/aggregateColumn/#format">
-        format</a></code> value(<strong><i>C2</i></strong>) before being displayed.
+                    href="http://ej2.syncfusion.com/angular/documentation/api/grid/aggregateColumn/#footertemplate">
+                    footerTemplate</a></code> property is used to display four different aggregates (<code>Sum</code>, <code>Average</code>, <code>Max</code> and <code>Min</code>) in the Grid footer.
+                    Each aggregate type is specified using the <code><a target="_blank"
+                    class="code" href="http://ej2.syncfusion.com/angular/documentation/api/grid/aggregateColumn/#type">
+                    type</a></code> and <code><a target="_blank" class="code"
+                    href="http://ej2.syncfusion.com/angular/documentation/api/grid/aggregateColumn/#field">
+                    field</a></code> properties accessed in the footerTemplate with its type name.
+            The aggregate value will be formatted based on its <code><a target="_blank" class="code"
+                    href="http://ej2.syncfusion.com/angular/documentation/api/grid/aggregateColumn/#format">
+                    format</a></code> value (<strong><i>N2</i></strong> or <strong><i>C2</i></strong>) before being displayed.
         </p>
 
         <p style="font-weight: 500">Injecting Module:</p>
         <p>
-            Grid component features are segregated into individual feature-wise modules. To use aggregate feature, we need to inject
+            Grid component features are segregated into individual feature-wise modules. To use aggregate feature, we
+            need to inject
             <code>AggregateService</code> into the <code>&#64;NgModule.providers</code> section.
+        </p>
+        <p>
+            More information on the stacked header configuration can be found in this
+            <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/grid/aggregateDirective/#columns">documentation section</a>.
         </p>
     </div>
 </div>
+<style>
+    #default-aggregate-grid.e-grid tr.e-altrow .e-rowcell:not(.e-selectionbackground.e-active) {
+        background-color: rgb(228 228 228 / 15%);
+    }
+</style>

@@ -1,6 +1,12 @@
 .control-wrapper {
     margin: 0 auto;
-    width: 500px;
+    width: 520px;
+}
+
+@media screen and (max-width: 480px) {
+    .control-wrapper {
+        width: 300px;
+    }
 }
 
 .property-section .right-side {
@@ -8,12 +14,6 @@
 }
 
 .property-section .left-side {
-    margin-left: 10px; 
-    width: 140px;
-}
-
-@media screen and (max-width: 480px) {
-    .control-wrapper {
-        width: 300px;
-    }
+    padding: 5px;
+    width: 25%
 }

@@ -1,8 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DiagramComponent, NodeModel, ConnectorModel, PaletteModel, SnapSettingsModel, SnapConstraints, SymbolPaletteComponent, PointPortModel, PortVisibility, PortConstraints, ContextMenuSettingsModel, IDragEnterEventArgs, DiagramBeforeMenuOpenEventArgs, SwimLaneModel, Node, SymbolInfo, LaneModel, randomId, cloneObject, ShapeStyleModel, HeaderModel, SymbolPaletteModule, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, NodeModel, ConnectorModel, PaletteModel, SnapSettingsModel, SnapConstraints, SymbolPaletteComponent, PointPortModel, PortVisibility, PortConstraints, ContextMenuSettingsModel, IDragEnterEventArgs, DiagramBeforeMenuOpenEventArgs, SwimLaneModel, Node, SymbolInfo, LaneModel, randomId, cloneObject, ShapeStyleModel, HeaderModel, SymbolPaletteModule, DiagramModule,SelectorModel, SelectorConstraints } from '@syncfusion/ej2-angular-diagrams';
 import { MenuEventArgs } from '@syncfusion/ej2-splitbuttons';
 import { ExpandMode } from '@syncfusion/ej2-navigations';
-import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
@@ -24,7 +23,7 @@ let pathData: string = 'M 120 24.9999 C 120 38.8072 109.642 50 96.8653 50 L 23.1
 })
 
 export class SwimLaneDiagramComponent {
-
+    //Create and add ports for node.
     public port: PointPortModel[] = [
         { id:'Port1', offset: { x: 0, y: 0.5 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Default | PortConstraints.Draw },
         { id:'Port2',offset: { x: 0.5, y: 0 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Default | PortConstraints.Draw },
@@ -206,52 +205,22 @@ export class SwimLaneDiagramComponent {
         {
             id: 'flow', expanded: true, title: 'Flow Shapes', symbols: [
                 {
-                    id: 'Terminator', addInfo: { tooltip: 'Terminator' }, width: 50, height: 60, shape: { type: 'Flow', shape: 'Terminator' }, style: { strokeWidth: 1, strokeColor: '#757575' }, ports: [
-                        { offset: { x: 0, y: 0.5 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 0.5, y: 0 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 1, y: 0.5 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 0.5, y: 1 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw }
-                    ]
+                    id: 'Terminator', addInfo: { tooltip: 'Terminator' }, width: 50, height: 60, shape: { type: 'Flow', shape: 'Terminator' },ports: this.port
                 },
                 {
-                    id: 'Process',  addInfo: { tooltip: 'Process' }, width: 50, height: 60, shape: { type: 'Flow', shape: 'Process' }, style: { strokeWidth: 1, strokeColor: '#757575' }, ports: [
-                        { offset: { x: 0, y: 0.5 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 0.5, y: 0 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 1, y: 0.5 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 0.5, y: 1 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw }
-                    ]
+                    id: 'Process',  addInfo: { tooltip: 'Process' }, width: 50, height: 60, shape: { type: 'Flow', shape: 'Process' }, ports: this.port
                 },
                 {
-                    id: 'Decision', addInfo: { tooltip: 'Decision' }, width: 50, height: 50, shape: { type: 'Flow', shape: 'Decision' }, style: { strokeWidth: 1, strokeColor: '#757575' }, ports: [
-                        { offset: { x: 0, y: 0.5 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 0.5, y: 0 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 1, y: 0.5 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 0.5, y: 1 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw }
-                    ]
+                    id: 'Decision', addInfo: { tooltip: 'Decision' }, width: 50, height: 50, shape: { type: 'Flow', shape: 'Decision' }, ports: this.port
                 },
                 {
-                    id: 'Document', addInfo: { tooltip: 'Document' }, width: 50, height: 50, shape: { type: 'Flow', shape: 'Document' }, style: { strokeWidth: 1, strokeColor: '#757575' }, ports: [
-                        { offset: { x: 0, y: 0.5 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 0.5, y: 0 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 1, y: 0.5 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 0.5, y: 1 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw }
-                    ]
+                    id: 'Document', addInfo: { tooltip: 'Document' }, width: 50, height: 50, shape: { type: 'Flow', shape: 'Document' },  ports: this.port
                 },
                 {
-                    id: 'Predefinedprocess', addInfo: { tooltip: 'Predefined process' }, width: 50, height: 50, shape: { type: 'Flow', shape: 'PreDefinedProcess' }, ports: [
-                        { offset: { x: 0, y: 0.5 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 0.5, y: 0 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 1, y: 0.5 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 0.5, y: 1 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw }
-                    ], style: { strokeWidth: 1, strokeColor: '#757575' }
+                    id: 'Predefinedprocess', addInfo: { tooltip: 'Predefined process' }, width: 50, height: 50, shape: { type: 'Flow', shape: 'PreDefinedProcess' }, ports: this.port
                 },
                 {
-                    id: 'Data', addInfo: { tooltip: 'Data' }, width: 50, height: 50, shape: { type: 'Flow', shape: 'Data' }, ports: [
-                        { offset: { x: 0, y: 0.5 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 0.5, y: 0 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 1, y: 0.5 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw },
-                        { offset: { x: 0.5, y: 1 }, visibility: PortVisibility.Connect | PortVisibility.Hover, constraints: PortConstraints.Draw }
-                    ], style: { strokeWidth: 1, strokeColor: '#757575' }
+                    id: 'Data', addInfo: { tooltip: 'Data' }, width: 50, height: 50, shape: { type: 'Flow', shape: 'Data' }, ports: this.port
                 },
             ]
         },
@@ -265,8 +234,8 @@ export class SwimLaneDiagramComponent {
                         type: 'SwimLane', lanes: [
                             {
                                 id: 'lane1',
-                                style: { strokeColor: '#757575' }, height: 60, width: 150,
-                                header: { width: 50, height: 50, style: { strokeColor: '#757575', fontSize: 11 } },
+                                height: 60, width: 150,
+                                header: { width: 50, height: 50, style: {fontSize: 11 } },
                             }
                         ],
                         orientation: 'Horizontal', isLane: true
@@ -282,59 +251,56 @@ export class SwimLaneDiagramComponent {
                         lanes: [
                             {
                                 id: 'lane1',
-                                style: { strokeColor: '#757575' }, height: 150, width: 60,
-                                header: { width: 50, height: 50, style: { strokeColor: '#757575', fontSize: 11 } },
+                                 height: 150, width: 60,
+                                header: { width: 50, height: 50, style: {  fontSize: 11 } },
                             }
                         ],
                         orientation: 'Vertical', isLane: true
                     },
                     height: 140,
                     width: 60,
-                    // style: { fill: '#f5f5f5' },
                     offsetX: 70,
                     offsetY: 30,
                 }, {
                     id: 'Verticalphase', addInfo: { tooltip: 'Vertical phase' },
                     shape: {
                         type: 'SwimLane',
-                        phases: [{ style: { strokeWidth: 1, strokeDashArray: '3,3', strokeColor: '#757575' }, }],
+                        phases: [{ style: { strokeDashArray: '3,3'}, }],
                         annotations: [{ text: '' }],
                         orientation: 'Vertical', isPhase: true
                     },
                     height: 60,
                     width: 140,
-                    style: {strokeColor: '#757575'}
                 }, {
                     id: 'Horizontalphase', addInfo: { tooltip: 'Horizontal phase' },
                     shape: {
                         type: 'SwimLane',
-                        phases: [{ style: { strokeWidth: 1, strokeDashArray: '3,3', strokeColor: '#757575' }, }],
+                        phases: [{ style: {strokeDashArray: '3,3'} }],
                         annotations: [{ text: '' }],
                         orientation: 'Horizontal', isPhase: true
                     },
                     height: 60,
                     width: 140,
-                    style: {strokeColor: '#757575'}
                 }
             ]
         },
         {
             id: 'connectors', expanded: true, symbols: [
                 {
-                    id: 'Link1', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-                    targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} }, style: { strokeWidth: 1, strokeColor: '#757575' }
+                    id: 'orthogonal', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
+                    
                 },
                 {
-                    id: 'Link2', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
-                    targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} }, style: { strokeWidth: 1, strokeDashArray: '4 4', strokeColor: '#757575' }
+                    id: 'orthogonaldashed', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 40, y: 40 },
+                     style: { strokeDashArray: '4 4' }
                 },
                 {
-                    id: 'Link21', type: 'Straight', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 60, y: 60 },
-                    targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} }, style: { strokeWidth: 1, strokeColor: '#757575' }
+                    id: 'straight', type: 'Straight', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 60, y: 60 },
+                  
                 },
                 {
-                    id: 'Link22', type: 'Straight', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 60, y: 60 },
-                    targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} }, style: { strokeWidth: 1, strokeDashArray: '4 4', strokeColor: '#757575' }
+                    id: 'straightdashed', type: 'Straight', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 60, y: 60 },
+                  style: {strokeDashArray: '4 4'}
                 }
             ], title: 'Connectors'
         }
@@ -343,24 +309,28 @@ export class SwimLaneDiagramComponent {
     @ViewChild('diagram')
     public diagram: DiagramComponent;
     public palete: SymbolPaletteComponent;
-    public interval = [1, 9, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75];
-    public gridlines = { lineColor: '#e0e0e0', lineIntervals: this.interval };
-
+    public selectedItems: SelectorModel;
+    //Disable the rotate constrains for selected nodes
+    ngOnInit(): void {
+        this.selectedItems = { constraints: SelectorConstraints.All & ~SelectorConstraints.Rotate };
+    }
     public snapSettings: SnapSettingsModel = {
-        horizontalGridlines: this.gridlines,
-        verticalGridlines: this.gridlines,
         constraints: SnapConstraints.All & ~SnapConstraints.ShowLines
     }
     public created(): void {
         this.diagram.fitToPage();
     }
+    //Define custom menu items
     public contextMenuSettings: ContextMenuSettingsModel = {
         show: true, items: [
             {
-                text: 'Clone', id: 'Clone', target: '.e-diagramcontent',
+                text: 'Clone', id: 'Clone', target: '.e-diagramcontent', iconCss: 'e-icons e-copy'
             },
             {
-                text: 'Cut', id: 'Cut', target: '.e-diagramcontent',
+                text: 'Cut', id: 'Cut', target: '.e-diagramcontent', iconCss: 'e-icons e-cut'
+            },
+            {
+                text: 'Paste', id: 'Paste', target: '.e-diagramcontent', iconCss: 'e-icons e-paste'
             },
             {
                 text: 'InsertLaneBefore', id: 'InsertLaneBefore', target: '.e-diagramcontent',
@@ -370,32 +340,32 @@ export class SwimLaneDiagramComponent {
             }],
         showCustomMenuOnly: true,
     };
-
+    //Set the default values of a Connector.
     public getConnectorDefaults(connector: ConnectorModel): ConnectorModel {
-        if (connector.id.indexOf("Link21") !== -1) {
-         connector.type = 'Straight';
-        } else if(connector.id.indexOf("Link22") !== -1) {
-         connector.type = 'Straight';
-        } else {
-         connector.type = 'Orthogonal';
+        if ((connector.id.indexOf("straight") !== -1) || (connector.id.indexOf("straightdashed") !== -1)) {
+            connector.type = 'Straight';
         }
-        connector.style.strokeColor = '#717171';
-        connector.sourceDecorator.style.strokeColor = '#717171';
-        connector.targetDecorator.style.strokeColor = '#717171';
-        connector.sourceDecorator.style.fill = '#717171';
-        connector.targetDecorator.style.fill = '#717171';
+        else {
+            connector.type = 'Orthogonal';
+        }
+        var color = '#717171';
+        //set styles for connector
+        connector.targetDecorator.style.strokeColor = color;
+        connector.targetDecorator.style.fill = color;
+        connector.style.strokeColor = color;
+        connector.style.strokeWidth = 1;
         return connector;
-    }
-
+    }    
     public getSymbolInfo(symbol: NodeModel): SymbolInfo {
        return { tooltip: symbol.addInfo ? symbol.addInfo['tooltip'] : symbol.id };
     }
-
+     //Set the default values of a node.
     public getNodeDefaults(node: NodeModel) {
         node.style.strokeColor = '#717171';
+        node.style.strokeWidth = 1;
         return node;
     }
-
+   //Set the node style for the DragEnter element.
     public dragEnter(arg: IDragEnterEventArgs): void {
         if (arg.element instanceof Node) {
             let shape: SwimLaneModel = arg.element.shape as SwimLaneModel;
@@ -410,7 +380,7 @@ export class SwimLaneDiagramComponent {
             }
         }
     }
-
+    //Open the context menu 
     public contextMenuOpen(args: DiagramBeforeMenuOpenEventArgs): void {
         for (let item of args.items) {
             if ((this.diagram.selectedItems.connectors.length + this.diagram.selectedItems.nodes.length) > 0) {
@@ -424,7 +394,7 @@ export class SwimLaneDiagramComponent {
             }
         }
     }
-
+ //Handle click event for menu items.
     public contextMenuClick(args: MenuEventArgs): void {
         if (args.item.id === 'InsertLaneBefore' || args.item.id === 'InsertLaneAfter') {
             if (this.diagram.selectedItems.nodes.length > 0 && (this.diagram.selectedItems.nodes[0] as Node).isLane) {
@@ -467,6 +437,7 @@ export class SwimLaneDiagramComponent {
             this.diagram.cut();
         } else if (args.item.id === 'Clone') {
             this.diagram.copy();
+        }else if (args.item.id === 'Paste') {
             this.diagram.paste();
         }
     }

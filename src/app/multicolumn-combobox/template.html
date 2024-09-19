@@ -4,8 +4,8 @@
 
 <div class="control-section">
     <div class='control-wrapper template-multicolumn'>
-        <div style='padding-top:60px;'>
-            <ejs-multicolumncombobox cssClass='multicolumn-customize' id='template' #template [dataSource]='empData' [fields]='fields' [placeholder]='waterMark' popupHeight='230px' [gridSettings]="gridSettings">
+        <div style='padding-top:55px;'>
+            <ejs-multicolumncombobox id='template' #template cssClass='multicolumn-customize' [dataSource]='empData' [fields]='fields' [placeholder]='waterMark' popupHeight='230px' [gridSettings]="gridSettings">
                 <e-columns>
                     <e-column field='Eimg' width='90'>
                         <ng-template #headerTemplate let-data>
@@ -15,11 +15,11 @@
                         </ng-template>
                         <ng-template #template let-data>
                             <div>
-                                <div><img class="empImage" src="./assets/auto-complete/Employees/{{data.Eimg}}.png" alt="employee"/> </div>
+                                <div><img class="empImage" src="./assets/auto-complete/Employees/{{data.Eimg}}.png" alt="employee"> </div>
                             </div>
                         </ng-template>
                     </e-column>
-                    <e-column field='Name' width='160'>
+                    <e-column field='Name' header='Employee Name' width='160'>
                         <ng-template #headerTemplate let-data>
                             <div>
                                 <div class="header"> <span class="e-icons e-multicolumn-userlogin"></span> <span>Employee info</span> </div>
@@ -31,7 +31,7 @@
                             </div>
                         </ng-template>
                     </e-column>
-                    <e-column field='DateofJoining' width='165'>
+                    <e-column field='DateofJoining' header='Date Of Joining' width='130'>
                         <ng-template #headerTemplate let-data>
                             <div>
                                 <div class="header"> <span class="e-icons e-multicolumn-calender"></span> <span>Date of joining</span> </div>
@@ -43,7 +43,7 @@
                             </div>
                         </ng-template>
                     </e-column>
-                    <e-column field='Country' width='100'>
+                    <e-column field='Country' header='Country' width='100'>
                         <ng-template #headerTemplate let-data>
                             <div>
                                 <div class="header"> <span>Country</span> </div>

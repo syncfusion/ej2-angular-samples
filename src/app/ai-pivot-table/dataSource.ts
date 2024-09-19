@@ -1,0 +1,245 @@
+/**
+ * Pivot Table datasource
+ */
+export let pivotData: Object[] = [{
+    "In_Stock": 34,
+    "Sold": 51,
+    "Amount": 383,
+    "Country": "France",
+    "Product_Categories": "Accessories",
+    "Products": "Bottles and Cages",
+    "Order_Source": "Retail Outlets",
+    "Year": "FY 2022",
+    "Quarter": "Q1"
+  },
+  {
+    "In_Stock": 4,
+    "Sold": 423,
+    "Amount": 3595.5,
+    "Country": "France",
+    "Product_Categories": "Accessories",
+    "Products": "Bottles and Cages",
+    "Order_Source": "Sales Person",
+    "Year": "FY 2022",
+    "Quarter": "Q2"
+  },
+  {
+    "In_Stock": 38,
+    "Sold": 234,
+    "Amount": 1813.5,
+    "Country": "France",
+    "Product_Categories": "Accessories",
+    "Products": "Bikes",
+    "Order_Source": "Teleshopping",
+    "Year": "FY 2022",
+    "Quarter": "Q1"
+  },
+  {
+    "In_Stock": 42,
+    "Sold": 127,
+    "Amount": 952.5,
+    "Country": "France",
+    "Product_Categories": "Accessories",
+    "Products": "Bikes",
+    "Order_Source": "App Store",
+    "Year": "FY 2022",
+    "Quarter": "Q2"
+  },
+  {
+    "In_Stock": 36,
+    "Sold": 89,
+    "Amount": 668,
+    "Country": "France",
+    "Product_Categories": "Accessories",
+    "Products": "Road Bikes",
+    "Order_Source": "Retail Outlets",
+    "Year": "FY 2023",
+    "Quarter": "Q1"
+  },
+  {
+    "In_Stock": 17,
+    "Sold": 340,
+    "Amount": 2890,
+    "Country": "France",
+    "Product_Categories": "Accessories",
+    "Products": "Road Bikes",
+    "Order_Source": "Sales Person",
+    "Year": "FY 2023",
+    "Quarter": "Q2"
+  },
+  {
+    "In_Stock": 22,
+    "Sold": 379,
+    "Amount": 2937.25,
+    "Country": "France",
+    "Product_Categories": "Accessories",
+    "Products": "Bottles and Cages",
+    "Order_Source": "Teleshopping",
+    "Year": "FY 2023",
+    "Quarter": "Q1"
+  },
+  {
+    "In_Stock": 12,
+    "Sold": 269,
+    "Amount": 2017.5,
+    "Country": "France",
+    "Product_Categories": "Accessories",
+    "Products": "Bottles and Cages",
+    "Order_Source": "App Store",
+    "Year": "FY 2023",
+    "Quarter": "Q2"
+  },
+  {
+    "In_Stock": 28,
+    "Sold": 15,
+    "Amount": 113,
+    "Country": "Germany",
+    "Product_Categories": "Accessories",
+    "Products": "Bottles and Cages",
+    "Order_Source": "Retail Outlets",
+    "Year": "FY 2022",
+    "Quarter": "Q1"
+  },
+  {
+    "In_Stock": 46,
+    "Sold": 369,
+    "Amount": 3136.5,
+    "Country": "Germany",
+    "Product_Categories": "Accessories",
+    "Products": "Helmets",
+    "Order_Source": "Sales Person",
+    "Year": "FY 2022",
+    "Quarter": "Q1"
+  },
+  {
+    "In_Stock": 16,
+    "Sold": 410,
+    "Amount": 3177.5,
+    "Country": "Germany",
+    "Product_Categories": "Accessories",
+    "Products": "Helmets",
+    "Order_Source": "Teleshopping",
+    "Year": "FY 2023",
+    "Quarter": "Q1"
+  },
+  {
+    "In_Stock": 18,
+    "Sold": 99,
+    "Amount": 742.5,
+    "Country": "Germany",
+    "Product_Categories": "Accessories",
+    "Products": "Bottles and Cages",
+    "Order_Source": "App Store",
+    "Year": "FY 2023",
+    "Quarter": "Q2"
+  },
+  {
+    "In_Stock": 50,
+    "Sold": 50,
+    "Amount": 375.5,
+    "Country": "Germany",
+    "Product_Categories": "Accessories",
+    "Products": "Bottles and Cages",
+    "Order_Source": "Retail Outlets",
+    "Year": "FY 2024",
+    "Quarter": "Q2"
+  },
+  {
+    "In_Stock": 31,
+    "Sold": 129,
+    "Amount": 1096.5,
+    "Country": "Germany",
+    "Product_Categories": "Accessories",
+    "Products": "Bottles and Cages",
+    "Order_Source": "Sales Person",
+    "Year": "FY 2024",
+    "Quarter": "Q1"
+  },
+  {
+    "In_Stock": 23,
+    "Sold": 404,
+    "Amount": 3131,
+    "Country": "Germany",
+    "Product_Categories": "Accessories",
+    "Products": "Bottles and Cages",
+    "Order_Source": "Teleshopping",
+    "Year": "FY 2024",
+    "Quarter": "Q2"
+  }, 
+  {
+    "In_Stock": 34,
+    "Sold": 51,
+    "Amount": 383,
+    "Country": "USA",
+    "Product_Categories": "Accessories",
+    "Products": "Bottles and Cages",
+    "Order_Source": "Retail Outlets",
+    "Year": "FY 2022",
+    "Quarter": "Q1"
+  },
+  {
+    "In_Stock": 4,
+    "Sold": 423,
+    "Amount": 3595.5,
+    "Country": "USA",
+    "Product_Categories": "Accessories",
+    "Products": "Bottles and Cages",
+    "Order_Source": "Sales Person",
+    "Year": "FY 2022",
+    "Quarter": "Q2"
+  },
+  {
+    "In_Stock": 38,
+    "Sold": 234,
+    "Amount": 1813.5,
+    "Country": "USA",
+    "Product_Categories": "Accessories",
+    "Products": "Bikes",
+    "Order_Source": "Teleshopping",
+    "Year": "FY 2023",
+    "Quarter": "Q1"
+  },
+  {
+    "In_Stock": 42,
+    "Sold": 127,
+    "Amount": 952.5,
+    "Country": "USA",
+    "Product_Categories": "Accessories",
+    "Products": "Bikes",
+    "Order_Source": "App Store",
+    "Year": "FY 2024",
+    "Quarter": "Q2"
+  },
+  {
+    "In_Stock": 36,
+    "Sold": 89,
+    "Amount": 668,
+    "Country": "USA",
+    "Product_Categories": "Accessories",
+    "Products": "Road Bikes",
+    "Order_Source": "Retail Outlets",
+    "Year": "FY 2023",
+    "Quarter": "Q1"
+  },
+  {
+    "In_Stock": 17,
+    "Sold": 340,
+    "Amount": 2890,
+    "Country": "USA",
+    "Product_Categories": "Accessories",
+    "Products": "Road Bikes",
+    "Order_Source": "Sales Person",
+    "Year": "FY 2023",
+    "Quarter": "Q2"
+  },
+  {
+    "In_Stock": 22,
+    "Sold": 379,
+    "Amount": 2937.25,
+    "Country": "USA",
+    "Product_Categories": "Accessories",
+    "Products": "Bottles and Cages",
+    "Order_Source": "Teleshopping",
+    "Year": "FY 2023",
+    "Quarter": "Q1"
+  },]

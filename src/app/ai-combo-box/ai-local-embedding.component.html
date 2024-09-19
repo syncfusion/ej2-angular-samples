@@ -1,0 +1,8 @@
+<div class="control-container" style="margin: 50px; text-align: center;">
+    <!--!-->
+    <p style="font-weight: 600">Select a Product</p>
+    <ejs-combobox id='combo-box-local' [dataSource]='countries' [fields]='fields' placeholder='Select a product'
+        popupHeight='300px' width='250px' [allowFiltering]='true' (created)="onCreated()"
+        (filtering)='onFiltering($event)'>
+    </ejs-combobox>
+</div>

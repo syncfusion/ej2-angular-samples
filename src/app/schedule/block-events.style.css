@@ -43,4 +43,22 @@
 
 .schedule-block-events.e-schedule .employee-designation {
   font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: normal;
+  overflow: hidden;
+}
+
+
+@media (max-width: 550px) {
+  .e-schedule .e-day-view .employee-image {
+      display: none;
+  }
+
+  .e-schedule .e-day-view .employee-name {
+      font-size: 14px;
+  }
+
+  .e-schedule .e-day-view .employee-designation {
+      display: none;
+  }
 }

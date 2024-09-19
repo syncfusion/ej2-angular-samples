@@ -1,0 +1,28 @@
+<div>
+    <ejs-pivotview #pivotview id='pivotTable' [dataSourceSettings]='dataSourceSettings' [width]="'100%'" [height]='500'
+        (cellTemplate)='getCellContent($event)' (toolbarRender)='toolbarRender($event)'
+        [displayOption]='{ view: "Both" }' [chartSettings]='chartSettings' [toolbar]='toolbarOptions'
+        [allowConditionalFormatting]='true' [allowPdfExport]='true' [showToolbar]='true' [allowCalculatedField]='true'
+        [showFieldList]='true'>
+
+    </ejs-pivotview>
+    <ejs-dialog #pivotDialog [isModal]="true" [visible]='false' minHeight="300px" id="pivotDialog"
+        [showCloseIcon]='true' header='AI Assist' [target]="'#pivotTable'" [buttons]="buttons">
+
+        <div id="dialogContent">
+            <div>
+                <p class="category-title">Pick a Suggested Query:</p>
+                <div class="chip-container">
+                    <ejs-chiplist #chip [chips]="[
+          { text: 'Predictive Analytics & Modeling' },
+          { text: 'Intelligent Report Aggregation' },
+          { text: 'Adaptive Filter Suggestions' }
+      ]" selection="Single" [selectedChips]="[0]" (click)="onChipSelectionChange()"></ejs-chiplist>
+                </div>
+
+                <p class="category-title">Prompt:</p>
+                <div class="inline" id="inlineContent"></div>
+            </div>
+        </div>
+    </ejs-dialog>
+</div>

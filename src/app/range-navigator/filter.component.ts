@@ -10,7 +10,7 @@ import { RangeNavigatorModule, ChartAllModule } from '@syncfusion/ej2-angular-ch
  */
 
 let selectedTheme: string = location.hash.split('/')[1];
-selectedTheme = selectedTheme ? selectedTheme : 'Material';
+selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
 
 @Component({
     selector: 'control-content',

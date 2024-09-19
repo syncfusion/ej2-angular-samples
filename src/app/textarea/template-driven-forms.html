@@ -1,4 +1,4 @@
-<div class="control-section">
+<div id="textarea-template" class="control-section">
     <div class="col-lg-12">
 			<h4 class="form-title">Feedback Form</h4>
     <div class="control_wrapper" id="control_wrapper" style="margin: 25px auto;">
@@ -17,7 +17,7 @@
                     </span>
                 </div>
                 <div class="form-group template">
-                    <ejs-textarea id="comment" name="comment" [(ngModel)]="UserDetails.comment" #comment="ngModel" placeholder="Comments" floatLabelType="Auto" [ngClass]="{'e-success': comment.valid}" required></ejs-textarea>
+                    <ejs-textarea id="comment" name="comment" [(ngModel)]="UserDetails.comment" #comment="ngModel" placeholder="Comments" floatLabelType="Auto" rows="5" cols="400" [ngClass]="{'e-success': comment.valid}" required></ejs-textarea>
                     <span class="e-error" *ngIf="comment.errors && comment.errors.required && (comment.dirty || comment.touched)" >
                         * Enter your comments
                     </span>  

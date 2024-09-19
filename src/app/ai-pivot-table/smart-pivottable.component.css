@@ -1,0 +1,92 @@
+
+.prompt-box {
+    width: -webkit-fill-available;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    resize: none;
+}
+
+#pivotDialog {
+    max-width: 500px;
+}
+
+.e-toolbar-item.e-separator {
+    border: 1px solid #000000 !important
+}
+
+#pivotDialog_dialog-header {
+    border-bottom: 1px solid lightgrey;
+}
+
+.e-custom-class {
+    background-color: yellow !important;
+}
+
+.category-title {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.AI-dialog {
+    max-height: 350px !important;
+    max-width: 500px !important;
+}
+
+.inlinecss.e-ddl .e-input-group-icon.e-ddl-icon {
+    display: none;
+}
+
+.inlinecss.e-ddl .e-control.e-dropdownlist.e-input {
+    font-size: 16px;
+    font-weight: 500;
+    margin: -7px 0px 0px 0px;
+    padding: 0px;
+}
+
+#contentText .e-input-group.e-control-wrapper.e-ddl::before,
+#contentText .e-input-group.e-control-wrapper.e-ddl::after {
+    content: none;
+}
+
+#contentText .e-input-group.e-control-wrapper.e-ddl,
+#contentText .e-input-group.e-control-wrapper.e-ddl:hover,
+#contentText .e-input-group.e-ddl.e-input-focus,
+#contentText .e-input-group.e-ddl.e-input-focus::before,
+#contentText .e-input-group.e-ddl.e-input-focus::after {
+    border-width: 0px;
+    border: none;
+    border-bottom: 1px dashed black;
+    box-shadow: none;
+}
+
+#contentText .e-multi-select-wrapper {
+    padding: 0px !important;
+}
+
+#contentText .e-multiselect.e-input-group {
+    max-width: 200px !important;
+    margin-right: 10px;
+}
+
+#contentText .product-class.e-control-wrapper {
+    border-width: 0px;
+    border: none;
+    border-bottom: 1px dashed black;
+    box-shadow: none;
+    max-width: 150px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+#yearInput,
+#aggregateInput {
+    text-align: right !important;
+}
+
+#filterInput {
+    font-weight: 900;
+    padding-left: 10px;
+}

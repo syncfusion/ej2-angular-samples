@@ -1,49 +1,46 @@
 <div id="action-description">
-    <p>This sample demonstrates the Grid component with the row template feature. In this sample, we have rendered each Grid
-        row using the template.
+    <p>
+        The Grid utilizes the row template feature to design a custom layout for its rows.
+        The <code><a target="_blank" class="code"
+            href="https://ej2.syncfusion.com/angular/documentation/api/grid#rowtemplate">rowTemplate</a></code> property can accept either a string or the ID of an HTML element, which is used as
+        the template for each row.
     </p>
 </div>
 <div class="control-section">
     <ejs-grid #grid [dataSource]='data' height=335 width='auto'>
         <e-columns>
-            <e-column field='Employee Image' headerText='Employee Image' width='150' textAlign='Center'></e-column>
-            <e-column field='Employee Details' headerText='Employee Details' width='300' textAlign='Left'></e-column>
+            <e-column headerText='PIZZA MENU' textAlign='Center' field='Title' [customAttributes]="{ class: 'e-pizza-cell' }"></e-column>
         </e-columns>
         <ng-template #rowTemplate let-data>
             <tr>
-                <td class="rowphoto">
-                    <img src="./assets/grid/images/{{data.EmployeeID}}.png" alt="{{data.EmployeeID}}" />
-                </td>
                 <td class="details">
-                    <table class="CardTable" cellpadding="3" cellspacing="2">
-                        <colgroup>
-                            <col width="50%">
-                            <col width="50%">
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <td class="CardHeader">First Name </td>
-                                <td>{{data.FirstName}} </td>
-                            </tr>
-                            <tr>
-                                <td class="CardHeader">Last Name</td>
-                                <td>{{data.LastName}} </td>
-                            </tr>
-                            <tr>
-                                <td class="CardHeader">Title</td>
-
-                                <td>{{data.Title}}</td>
-                            </tr>
-                            <tr>
-                                <td class="CardHeader">Birth Date</td>
-                                <td>{{format(data.BirthDate)}}</td>
-                            </tr>
-                            <tr>
-                                <td class="CardHeader">Hire Date</td>
-                                <td>{{format(data.HireDate)}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="e-pizza-info-container">
+                        <div class="e-pizza-image-layout">
+                            <img class="e-pizza-image" src="./assets/grid/images/pizza/{{data.ImageURL}}"
+                                alt="{{data.Title}}" />
+                        </div>
+                        <div class="e-pizza-info-layout">
+                            <div class="e-info-text-separator"><span class="e-pizza-title">{{data.Title}}</span><span
+                                    class="e-pizza-size">({{data.Size}} size)</span></div>
+                            <div class="e-info-text-separator"><span>{{data.Description}}</span></div>
+                            <div class="e-info-text-separator">
+                                <ejs-chiplist [chips]="data.Tags" cssClass="e-outline"></ejs-chiplist>
+                            </div>
+                            <div class="e-pizza-price-min-layout e-info-text-separator">
+                                <span class="e-pizza-price-text">Buy at&nbsp;</span>
+                                <span class="e-pizza-price">{{data.Price}}</span>
+                                <span *ngIf="data.OriginalPrice">(<span
+                                        class="e-pizza-original-price">{{data.OriginalPrice}}</span>)</span>
+                            </div>
+                        </div>
+                        <div class="e-flex-grow"></div>
+                        <div class="e-pizza-price-layout">
+                            <div class="e-info-text-separator"><span class="e-pizza-price-text">Buy at</span></div>
+                            <div class="e-info-text-separator"><span class="e-pizza-price">{{data.Price}}</span></div>
+                            <div *ngIf="data.OriginalPrice" class="e-info-text-separator"><span
+                                    class="e-pizza-original-price">{{data.OriginalPrice}}</span></div>
+                        </div>
+                    </div>
                 </td>
             </tr>
         </ng-template>
@@ -51,16 +48,13 @@
 
 
     <div id="description">
-        <p>
-            The Grid provides a way to use a custom layout for its rows using template feature. The
-            <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/grid#rowtemplate">rowTemplate
-        </a></code> property accepts the template for the row.
-        </p>
-        <p>
-            In this demo, we have presented Employee Information with Employee Photo in the first column and employee
-            details like Name, Address etc. in the second column.
-        </p>
-
+    <p>
+        In this demo, various types of pizza are displayed along with their ingredients, additional toppings,
+        prices, and discount offers, all presented within a custom layout in the Grid.
+    </p>
+    <p>
+        For more details on the row template feature, refer to this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/grid/row/row-template">
+            documentation section</a>.
+    </p>
     </div>
 </div>

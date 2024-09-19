@@ -1,0 +1,39 @@
+<div id="action-description">
+    <p>
+        This sample visualizes a company's revenue and profits using the waterfall series chart.
+    </p>
+</div>
+<div class="control-section">
+    <div>
+        <ejs-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;"
+            [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [legendSettings]='legend'
+            [tooltip]='tooltip' [chartArea]='chartArea' isTransposed=true (load)='load($event)'
+            (legendRender)='legendRender($event)' selectionMode='None'>
+            <e-series-collection>
+                <e-series [dataSource]='dataSource' type='Waterfall' xName='x' name="Increases" yName='y'
+                    [connector]='connector' [border]='border' [marker]='marker' negativeFillColor='#e56590'
+                    columnWidth="0.5" [cornerRadius]='cornerRadius' [sumIndexes]='sum' > </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id='description'>
+    <p>
+        In this example, you can see how to render and configure a horizontal waterfall chart. The waterfall chart illustrates the gradual change in an entity's quantitative value due to increments or decrements.
+    </p>
+    <p>
+        <code>Tooltips</code> are enabled in this example, to see them in action, hover over a point or tap on a point on touch-enabled devices.
+    </p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use Waterfall feature, we need
+        to inject
+        <code>WaterfallSeriesService</code> into the <code>&#64;NgModule.providers</code> section.
+    </p>
+    <p>
+        More information about the waterfall series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/waterfall"
+            aria-label="Navigate to the documentation for Waterfall Chart in Angular Chart component">documentation
+            section</a>.
+    </p>
+</div>

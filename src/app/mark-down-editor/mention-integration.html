@@ -1,0 +1,41 @@
+<div id="action-description">
+    <p>This example shows how to integrate &#64;mention component within Markdown Editor component. Type <code>&#64;</code> character and select a user from the suggestion list.</p>
+</div>
+
+<div class="control-section">
+    <div class="sample-container">
+        <div class="default-section">
+            <ejs-richtexteditor [value]='value' id='mdDefault' #mdDefault height='250px' [formatter]='formatter'
+                [toolbarSettings]='tools' [editorMode]='mode' (created)='onCreate()'>
+            </ejs-richtexteditor>
+            <ejs-mention #editorMention id='editorMention' [dataSource]='emailData' [fields]='fields' [allowSpaces]="true" 
+        popupWidth='250px' popupHeight='200px' sortOrder='Ascending' target='#mdDefault_editable-content' >
+        <ng-template #displayTemplate let-data>
+            [{{ data.name }}](mailto:${{data.email}})
+        </ng-template>
+        <ng-template #itemTemplate let-data>
+            <div class="editor-mention-item-template">
+                <div class="em-header">
+                    <div class="em-avatar" [ngStyle]="{ 'background-color': data.bgColor, 'color': data.color} ">
+                        <div class="em-initial">{{data.initial}}</div>
+                    </div>
+                </div>
+                <div class="em-content">
+                  <div class="em-name">{{data.name}}</div>
+                  <div class="em-email">{{data.email}}</div>
+                </div>
+              </div>
+        </ng-template>
+    </ejs-mention>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p> The &#64;Mention is a component used to display a list of items that users can select or tag from the suggested list. In this demo, configured the following properties with popup dimensions.</p>
+    <ul>
+        <li><code>allowSpaces</code> - Allows to search a word with space.</li>
+        <li><code>suggestionCount</code> - Control the items in suggestion list.</li>
+        <li><code>itemTemplate</code> - Used to display the customized appearance in suggestion list.</li>
+    </ul>
+</div>

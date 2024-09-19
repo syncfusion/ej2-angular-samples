@@ -28,3 +28,14 @@
 .bg-fade2 {
     color: rgba(0, 0, 0, 0.87);
 }
+
+.update-btn {
+    margin-left: 10px;
+}
+
+/* Mobile mode */
+@media (max-width: 688px) {
+    .update-btn {
+        margin: 10px 10px 0 0;
+    }
+}

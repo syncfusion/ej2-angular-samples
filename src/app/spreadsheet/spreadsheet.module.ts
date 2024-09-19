@@ -104,12 +104,12 @@ export const spreadsheetAppRoutes: Object[] = [
     },
     {
         path: ':theme/spreadsheet/notes', component: NotesController,
-        name: 'Notes', type: 'new', category: 'Review', order: '09',
+        name: 'Notes', category: 'Review', order: '09',
         description: 'This demo for Angular Spreadsheet control showcases notes feature.'
     },
     {
         path: ':theme/spreadsheet/print', component: PrintController,
-        name: 'Print', type: 'new', category: 'Printing', order: '08',
+        name: 'Print', category: 'Printing', order: '08',
         description: 'This example demonstrates the printing functionalities of the Angular Spreadsheet.'
     }
 ];

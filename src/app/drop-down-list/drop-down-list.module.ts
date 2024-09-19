@@ -26,7 +26,7 @@ export const dropdownlistAppRoutes: Object[] = [
 		category: 'Dropdown List' },
     { path: ':theme/drop-down-list/object-value-binding', component: ObjectDropDownListComponent, name: 'Object Value Binding', description: 'This example demonstrates how to bind with data source in the Angular drop-down list component.', order: '01',
 		category: 'Dropdown List' },
-    { path: ':theme/drop-down-list/disabled-items', component: DisabledItemsDropDownListComponent, name: 'Disabled Items', type : 'new', description: 'This example showcases the disabled items of Angular drop-down list component.', order: '01',
+    { path: ':theme/drop-down-list/disabled-items', component: DisabledItemsDropDownListComponent, name: 'Disabled Items', description: 'This example showcases the disabled items of Angular drop-down list component.', order: '01',
 		category: 'Dropdown List' },
     { path: ':theme/drop-down-list/template', component: TemplateDropDownListComponent, name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular drop-down list component pop-up list using the template.', order: '01',
 		category: 'Dropdown List' },

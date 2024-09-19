@@ -19,7 +19,7 @@ import { SBDescriptionComponent } from '../common/dp.component';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-
+// Inject required modules and services into the Diagram component
 Diagram.Inject(UndoRedo, DiagramContextMenu, Snapping);
 
 /**
@@ -37,24 +37,28 @@ Diagram.Inject(UndoRedo, DiagramContextMenu, Snapping);
 export class EventsDiagramComponent {
     @ViewChild('diagram')
     public diagram: DiagramComponent;
-
+    // Symbol default settings
     public getSymbolDefaults(symbol: NodeModel): void {
         symbol.width = 50;
         symbol.height = 50;
         symbol.constraints = NodeConstraints.Default | NodeConstraints.AllowDrop;
         symbol.style.strokeColor = '#757575';
     }
-
+    // connector default settings
+    public getConnectorDefaults(symbol: ConnectorModel): void {
+        symbol.style = { strokeWidth: 1 , strokeColor: '#757575' };
+    }
+    // Snap settings for the diagram
     public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
-
+    // Margin for symbols in the symbol palette
     public symbolMargin: MarginModel = { left: 15, right: 15, top: 15, bottom: 15 };
-
+     // Expand mode for the symbol palette
     public expandMode: ExpandMode = 'Multiple';
-
+    // Symbol fit information for the symbol palette
     public getSymbolInfo(symbol: NodeModel): SymbolInfo {
         return { fit: true };
     }
-
+    // Event handlers for various diagram events
     public dragEnter(args: IDragEnterEventArgs): void {
         this.getEventDetails(args);
     }
@@ -160,7 +164,7 @@ export class EventsDiagramComponent {
     public contextMenuClick(args: MenuEventArgs): void {
         this.getEventDetails(args);
     }
-
+      // Data for the ListView used to display event names and checkboxes
     public data: { [key: string]: Object }[] = [
         { text: 'Drag enter', id: 'dragEnter' },
         { text: 'Drag leave', id: 'dragLeave' },
@@ -209,35 +213,35 @@ export class EventsDiagramComponent {
     public connectorSymbols: ConnectorModel[] = [
         {
             id: 'Link1', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 60, y: 60 },
-            targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} }, style: { strokeWidth: 1, strokeColor: '#757575' }
+            targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} }
         },
         {
             id: 'link3', type: 'Orthogonal', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 60, y: 60 },
-            style: { strokeWidth: 1, strokeColor: '#757575' }, targetDecorator: { shape: 'None' }
+            targetDecorator: { shape: 'None' }
         },
         {
             id: 'Link21', type: 'Straight', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 60, y: 60 },
-            targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} }, style: { strokeWidth: 1, strokeColor: '#757575' }
+            targetDecorator: { shape: 'Arrow', style: {strokeColor: '#757575', fill: '#757575'} }
         },
         {
             id: 'link23', type: 'Straight', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 60, y: 60 },
-            style: { strokeWidth: 1, strokeColor: '#757575' }, targetDecorator: { shape: 'None' }
+            targetDecorator: { shape: 'None' }
         },
         {
             id: 'link33', type: 'Bezier', sourcePoint: { x: 0, y: 0 }, targetPoint: { x: 60, y: 60 },
-            style: { strokeWidth: 1, strokeColor: '#757575' }, targetDecorator: { shape: 'None' }
+            targetDecorator: { shape: 'None' }
         },
     ];
-
+    // Palettes for the symbol palette
     public palettes: PaletteModel[] = [
         { id: 'basic', expanded: true, symbols: this.basicShapes, iconCss: 'e-ddb-icons e-basic', title: 'Basic Shapes' },
         { id: 'connectors', expanded: true, symbols: this.connectorSymbols, iconCss: 'e-ddb-icons e-diagram-connector', title: 'Connectors' }
     ];
-
+    // Context menu settings for the diagram
     public contextMenu: ContextMenuSettingsModel = {
         show: true,
     }
-
+    // Function to get event details based on selected items
     public getEventDetails(args: any): void {
         let listView: any = document.getElementById('listview-def');
         if (listView && listView.ej2_instances) {
@@ -248,12 +252,10 @@ export class EventsDiagramComponent {
                 if (elementName) {
                     this.eventInformation(args);
                 }
-            } else {
-                this.eventInformation(args);
             }
         }
     }
-
+    // Function to check if the event name matches any selected item
     public getName(selectedItems: any, args: any): boolean {
         for (let i: number = 0; i < selectedItems.data.length; i++) {
             let eventName: string = selectedItems.data[i].id;
@@ -267,17 +269,18 @@ export class EventsDiagramComponent {
         this.clearEventLog();
 
     }
+    // Method to clear the event log
     public clearEventLog(): void {
         let data: HTMLElement = document.getElementById('EventLog');
         data.innerHTML = '';
     }
+    // Function to display event information in the event log
     public eventInformation(args: any): void {
         let span: HTMLElement = document.createElement('span');
         span.innerHTML = 'Diagram ' + args.name.bold() + ' event called' + '<hr>';
         let log: HTMLElement = document.getElementById('EventLog');
         log.insertBefore(span, log.firstChild);
     }
-
 
     onClick = (args: MouseEvent) => {
         let data: HTMLElement = document.getElementById('EventLog');

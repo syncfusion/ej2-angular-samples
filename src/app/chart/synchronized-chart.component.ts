@@ -274,7 +274,7 @@ export class SynchronizedChartsComponent {
 
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
         let themeColor: string[] = [];
@@ -284,8 +284,8 @@ export class SynchronizedChartsComponent {
         let bootstrapColors: string[] = ['#a16ee5', '#f7ce69', '#55a5c2', '#7ddf1e'];
         let highContrastColors: string[] = ['#79ECE4', '#E98272', '#DFE6B6', '#C6E773'];
         let bootstrap4Colors: string[] = ['#a16ee5', '#f7ce69', '#55a5c2', '#7ddf1e'];
-        let bootstrap5Colors: string[] = ['#6355C7', '#FFB400', '#2196F5', '#F7523F'];
-        let bootstrap5DarkColors: string[] = ['#8F80F4', '#FFD46D', '#6CBDFF', '#FF7F71'];
+        let bootstrap5Colors: string[] = ['#FD7E14', '#6610F2', '#6F42C1', '#D63384'];
+        let bootstrap5DarkColors: string[] = ['#FD7E14', '#6610F2', '#6F42C1', '#D63384'];
         let fluentColors: string[] = ['#1AC9E6', '#DA4CB2', '#EDBB40', '#AF4BCF'];
         let tailwindColors: string[] = ['#5A61F6', '#65A30D', '#334155', '#14B8A6'];
         let tailwindDarkColors: string[] = ['#8B5CF6', '#22D3EE', '#F87171', '#4ADE80'];
@@ -293,7 +293,7 @@ export class SynchronizedChartsComponent {
         let material3Colors: string[] = ['#6355C7', '#00AEE0', '#FFB400', '#F7523F'];
         let material3DarkColors: string[] = ['#4EAAFF', '#FA4EAB', '#FFF500', '#17EA58'];
         let fluent2Colors: string[] = ['#6200EE', '#09AF74', '#0076E5', '#CB3587'];
-        let fluent2DarkColors: string[] = ['#9BB449', '#2A72D5', '#43B786', '#3F579A'];
+        let fluent2HighContrastColors: string[] = ['#9BB449', '#2A72D5', '#43B786', '#3F579A'];
         // check the theme
         if (args.chart.theme === 'MaterialDark') {
             themeColor = materialDarkColors;
@@ -343,8 +343,8 @@ export class SynchronizedChartsComponent {
         else if (args.chart.theme === 'Fluent2') {
             themeColor = fluent2Colors;
         }
-        else if (args.chart.theme === 'Fluent2Dark') {
-            themeColor = fluent2DarkColors;
+        else if (args.chart.theme === 'Fluent2HighContrast' || args.chart.theme === 'Fluent2Dark') {
+            themeColor = fluent2HighContrastColors;
         }
         else {
             themeColor = fluentColors;

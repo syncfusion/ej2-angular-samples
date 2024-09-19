@@ -1,0 +1,70 @@
+<div id="wrapper-container">
+    <div class="magic-eraser">
+        <div class="upper-div">
+            <label>Magic Eraser</label>
+            <button (click)="removebtn()" ejs-button id="remove-btn" iconCss='e-icons e-close'
+                cssClass='e-small e-round' [isPrimary]="true"></button>
+        </div>
+        <div class="lower-div">
+            <img src="./assets/ai-image-editor/object-remover.gif" style="width:130px;height:130px;" />
+            <br><span>Select the object to be removed</span>
+        </div>
+        <button ejs-button="remove-button" id="eraseBtn" cssClass='e-primary' (click)="eraseOnClick()"
+            class="remove-button">Remove</button>
+    </div>
+    <div class="bg-changer">
+        <div class="upper-div">
+            <label>Change Background</label>
+            <button ejs-button (click)="bgRemoveBtnClick()" iconCss="e-icons e-close" cssClass="e-small e-round"
+                [isPrimary]="true" id="bg-change-remove-btn" aria-label="button"></button>
+        </div>
+        <div class="lower-div">
+            <div class="col-lg-12 control-section">
+                <div id="colorpicker-control">
+                    <span style="margin-bottom: 10px;">New Color</span>
+                    <br>
+                    <input ejs-colorpicker id="color-picker" type="color">
+                </div>
+            </div>
+            <br><span>Preset Colors</span>
+            <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+
+                <input ejs-colorpicker #colorpicker id="circle-palette" type="color" mode="Palette" [columns]="6"
+                    [inline]="true" [showButtons]="false" [presetColors]="presetColors" (change)="change($event)"
+                    (beforeTileRender)="beforeTileRender($event)">
+            </div>
+            <span>Custom Background</span><br>
+            <ejs-textbox #outlined id="outlined" placeholder="Example: Waterfalls, Mountains, etc.."
+                cssClass=" e-outline"></ejs-textbox>
+        </div>
+        <button ejs-button (click)="backgrounchanger()" class="bg-change-button" id="bgChangeBtn"
+            cssClass="e-primary">Apply</button>
+    </div>
+    <div id="sidebar-wrapper" class="control-section">
+        <div>
+            <ejs-toolbar [cssClass]="'defaultToolbar'" id="defaultToolbar" [height]="'50px'" [items]="items"
+                (clicked)="ToolbarClicked($event)">
+                <ng-template #template let-data>
+                    <div *ngIf="data.cssClass === 'e-folder'" class="e-folder">
+                        <div class="e-folder-name">AI Image Editor</div>
+                    </div>
+                </ng-template>
+            </ejs-toolbar>
+        </div>
+        <div class="maincontent">
+            <div id="controlWrapper">
+                <ejs-imageeditor #imageEditor id="imageEditor" (fileOpened)="onFileOpened()" (created)="onCreated()">
+                </ejs-imageeditor>
+            </div>
+        </div>
+    </div>
+    <div>
+        <ejs-sidebar #imageediorsideBar id="imageediorsideBar" width="200px" target=".maincontent" position='Left'
+            type='Push'>
+            <ejs-treeview #treeView id="defaultTree" cssClass="image-editor-tree"
+                [fields]="{ dataSource: treeData, id: 'id', text: 'name', selected: 'selected', parentID: 'pid', hasChildren: 'hasChild', expanded: 'expanded' }"
+                (nodeSelected)="OnSelect($event)">
+            </ejs-treeview>
+        </ejs-sidebar>
+    </div>
+</div>

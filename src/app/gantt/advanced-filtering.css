@@ -1,0 +1,76 @@
+#filter-btn {
+  padding: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#gantttsidebar {
+  height: 453px !important;
+  border: 1px solid rgb(204, 202, 200) !important;
+}
+.e-bigger {
+  .e-gantt {
+    .e-sidebar {
+      width: 100% !important;
+    }
+  }
+}
+.ganttsidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+.ganttsidebar-header {
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+#ganttquerybuilder {
+  .e-group-container {
+    border: 0.5px solid rgb(204, 202, 200);
+    border-radius: 5px;
+    margin: 12px;
+  }
+}
+.ganttsidebar-header {
+  .e-close {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+.ganttbtn-container {
+  padding: 10px;
+  float: right;
+}
+.ganttbtn-container #apply {
+  margin: 6px;
+}
+.ganttsidebar-header {
+  .e-close::before {
+    font-family: 'e-icons' !important;
+    content: '\e7e7';
+    font-size: 15px;
+  }
+}
+.ganttsidebar-header {
+  .highcontrast .e-close::before {
+    content: '\e7fc';
+    font-family: 'e-icons';
+    font-size: 15px;
+  }
+}
+.e-quickfilter::before {
+  font-family: 'e-icons' !important;
+  content: '\e7f7';
+  font-size: 15px;
+}
+.highcontrast .e-quickfilter::before {
+  content: '\e21c';
+  font-family: 'e-icons';
+}

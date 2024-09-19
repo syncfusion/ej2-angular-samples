@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { categoryData } from './data';
-import { AggregateService, GroupService, GridComponent, SortService, GridModule, PageService, FilterService } from '@syncfusion/ej2-angular-grids';
+import { energyData } from './data';
+import { AggregateService, GroupService, GridComponent, SortService, GridModule, PageService, FilterService, ColumnModel } from '@syncfusion/ej2-angular-grids';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
@@ -14,24 +14,20 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 })
 export class AggregateGroupComponent implements OnInit {
     public data: Object[];
-    public pageOption: Object = { pageCount: 5 };
     public filterSettings: Object;
-    public groupSettings: { [x: string]: Object } = { showDropArea: false, columns: ['CategoryName'] };
-    public refresh: Boolean;
+    public energyColumns: ColumnModel[];
+    public gridLines:string;
+    public groupSettings: { [x: string]: Object } = { showDropArea: false, columns: ['ConsumptionCategory'], showGroupedColumn:true };
     @ViewChild('grid')
     public grid: GridComponent;
 
     public ngOnInit(): void {
-        this.data = categoryData;
+        this.data = energyData;
         this.filterSettings = { type: 'Excel'};
-    }
-    dataBound() {
-        if (this.refresh) {
-            this.grid.groupColumn('CategoryName');
-            this.refresh = false;
-        }
-    }
-    load() {
-        this.refresh = (<any>this.grid).refreshing;
+        this.gridLines = 'Vertical';
+        this.energyColumns = [
+            { field: 'EnergyConsumed', headerText: 'Consumed', width: 150, textAlign: 'Right', clipMode:'EllipsisWithTooltip'},
+            { field: 'EnergyProduced', headerText: 'Produced', width: 300, textAlign: 'Right', clipMode:'EllipsisWithTooltip'},
+        ]
     }
 }

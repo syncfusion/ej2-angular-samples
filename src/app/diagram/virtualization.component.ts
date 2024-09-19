@@ -34,33 +34,40 @@ export class VirtualizationComponent {
     public virtualData: any = new DataManager(this.dataVirtualization());
 
     ngOnInit(): void {
+        // Sets the diagram constraints to include default constraints and virtualization
         this.constraints = DiagramConstraints.Default | DiagramConstraints.Virtualization;
     }
     public data: Object = {
-        //sets the fields to bind
+        // Sets the fields to bind the data
         dataSource: this.virtualData,
         parentId: "Parent",
         id: "Name"
     };
+    // Method to generate and return virtualized hierarchical data
     public dataVirtualization() {
-        let i: number = 0, j, k, name, parentName;
+        let i: number = 0;
         let data = [];
-        parentName = virtualizationData[0].Name;
+        // Get the first parent's name from the data
+        let parentName = virtualizationData[0].Name;
+        // Add the first parent to the data array
         data.push({ 'Name': parentName, 'Parent': "" })
         i++;
-        for (j = 1; j < 100; j++) {
-            name = virtualizationData[i].Name
+        // Loop to create a hierarchical structure
+        for (let j = 1; j < 100; j++) {
+            let name = virtualizationData[i].Name
             data.push({ 'Name': name, 'Parent': parentName })
             i++;
-            for (k = 0; k < 2; k++) {
+            // Add two child nodes for each parent
+            for (let k = 0; k < 2; k++) {
                 data.push({ 'Name': virtualizationData[i].Name, 'Parent': name })
                 i++;
             }
         }
         return data;
     }
+    // Snap settings for the diagram, disabling snap constraints
     public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
-
+    // Layout settings for the hierarchical tree diagram
     public layout: Object = {
         type: 'HierarchicalTree',
             margin: { left: 10, top: 10 },
@@ -69,28 +76,31 @@ export class VirtualizationComponent {
             orientation: 'TopToBottom',
     };
 
-    //Defines the default node and connector properties
-    public nodeDefaults(obj: any): NodeModel {
-        obj.shape = { type: 'Text', content: obj.data.Name,shape: 'Rectangle', cornerRadius: 5 };
-    obj.style = { fill: '#659be5', strokeColor: 'none', color: 'white', strokeWidth: 2 };
-    obj.backgroundColor = '#659be5';
-    obj.margin = { left: 5, right: 5, bottom: 5, top: 5 };
-    obj.width = 80;
-    obj.height = 30;
-    return obj;
+    // Defines the default properties for nodes in the diagram
+    public nodeDefaults(node: any): NodeModel {
+        node.shape = { type: 'Text', content: node.data.Name,shape: 'Rectangle', cornerRadius: 5 };
+        node.style = { fill: '#659be5', strokeColor: 'none', color: 'white', strokeWidth: 2 };
+        node.backgroundColor = '#659be5';
+        node.margin = { left: 5, right: 5, bottom: 5, top: 5 };
+        node.width = 80;
+        node.height = 30;
+        return node;
     };
+    // Event handler for when the diagram is created
     public created(): void {
+        // Fit the diagram to the page with custom bounds and margins
         this.diagram.fitToPage({ mode: 'Page', region: 'CustomBounds', margin: { left: 50, right: 50 }, customBounds: this.bound });
     }
+    // Defines the default properties for connectors in the diagram
     public connDefaults(connector: ConnectorModel): ConnectorModel {
         connector.type = 'Orthogonal';
-    connector.cornerRadius = 7;
-    connector.targetDecorator.height = 7;
-    connector.targetDecorator.width = 7;
-    connector.style.strokeColor = '#6d6d6d';
+        connector.cornerRadius = 7;
+        connector.targetDecorator.height = 7;
+        connector.targetDecorator.width = 7;
+        connector.style.strokeColor = '#6d6d6d';
         return connector;
     }
-
+    // Event handler for item click events
     public onItemClick(args: ClickEventArgs): void {
         switch (args.item.text) {
             case 'Zoom In':

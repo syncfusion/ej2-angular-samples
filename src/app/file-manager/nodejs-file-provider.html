@@ -3,11 +3,13 @@
   </ejs-filemanager>
 </div>
 <div id="action-description">
-  <p>This sample demonstrates how to utilize the <a target="_blank" href="https://github.com/SyncfusionExamples/ej2-filemanager-node-filesystem">NodeJS file system provider</a> with File Manager component. The <code>ej2-filemanager-node-filesystem</code> is an NPM package for file system provider which is available in npmjs, refer this <a target="_blank" href="https://www.npmjs.com/package/@syncfusion/ej2-filemanager-node-filesystem">link</a> to download package.</p>
+  <p>This sample demonstrates how to utilize the <a target="_blank" href="https://github.com/SyncfusionExamples/ej2-filemanager-node-filesystem">NodeJS file system provider</a> with the File Manager component. It supports all basic file operations such as create, rename, delete, cut, copy, paste, upload, download, and more. The <code>ej2-filemanager-node-filesystem</code> is an NPM package for file system provider which is available in npmjs, refer this <a target="_blank" href="https://www.npmjs.com/package/@syncfusion/ej2-filemanager-node-filesystem">link</a> to download package.</p>
 </div>
 
 <div id="description">
-  <p>The File Manager component is used to explore a file system through a web application, similar to the windows explorer for windows. It supports all the basic file operations such as create, rename, delete and so on.</p>
-
-  <p><b>Note: </b>File Manager’s upload functionality is restricted in online demo. To work with upload functionality, please download <a target="_blank" href="https://github.com/SyncfusionExamples/ej2-filemanager-node-filesystem">NodeJS File Provider</a> from the GitHub repository.</p>
+  <p>Check out the project from this <a target="_blank" href="https://github.com/SyncfusionExamples/ej2-filemanager-node-filesystem">link</a>. Open the root folder and run the command <code>npm install</code> to install the necessary packages.</p>
+  <p>After installing the packages, set the root folder directory of the file system in the <code>package.json</code> file under the <code>scripts</code> section, like this: <code> "start": "node filesystem-server.js -d D:/Files" </code>.</p>
+  <p>Set the port on which the project will be hosted and the root directory of the file system. For example: <code>set PORT=3000 && node filesystem-server.js -d D:/Files</code>. </p>
+  <p>Finally, map the <a href="https://ej2.syncfusion.com/javascript/documentation/api/file-manager/#ajaxsettings" target="_blank"> ajaxSettings </a> property to the appropriate file operation methods in the <code>filesystem-server.js</code> file. This will allow users to manage the physical file system using the NodeJS file system provider.</p>
+  <p><b>Note: </b>File Manager’s upload functionality is restricted in online demos for security reasons. To work with upload functionality, please download <a target="_blank" href="https://github.com/SyncfusionExamples/ej2-filemanager-node-filesystem">NodeJS File Provider</a> from the GitHub repository.</p>
 </div>

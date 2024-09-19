@@ -3,7 +3,7 @@
  */
 import { Component, ViewChild, NgModule, ViewEncapsulation } from '@angular/core';
 import { ComboBoxComponent, VirtualScroll, ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
-import { Query, DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
+import { Query, DataManager, UrlAdaptor } from '@syncfusion/ej2-data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
@@ -51,8 +51,8 @@ export class VirtualScrollComboBoxComponent {
     }
     // bind the DataManager instance to dataSource property
     public customerData: DataManager = new DataManager({
-        url: 'https://services.syncfusion.com/js/production/api/orders',
-        adaptor: new WebApiAdaptor,
+        url: 'https://services.syncfusion.com/js/production/api/VirtualDropdownData',
+        adaptor: new UrlAdaptor,
         crossDomain: true
     });
     // maps the appropriate column to fields property

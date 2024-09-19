@@ -4,6 +4,7 @@ import { MentionModule } from '@syncfusion/ej2-angular-dropdowns';
 import { DefaultMentionComponent } from './default.component';
 import { MultipleListMentionComponent } from './multiple-list.component';
 import { TemplateMentionComponent } from './template.component';
+import { DisabledItemsMentionComponent } from './disabled-items.component';
 
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
@@ -14,6 +15,8 @@ export const mentionAppRoutes: Object[] = [
     { path: ':theme/mention/multiple-list', component: MultipleListMentionComponent, name: 'Multiple List', description: 'This example demonstrates the multiple list functionalities of Syncfusion TypeScript Mention component with minimum configuration.', order: '01',
       category: 'Mention' },
     { path: ':theme/mention/template', component: TemplateMentionComponent, name: 'Template', description: 'This example demonstrates the template functionalities of Syncfusion TypeScript Mention component with minimum configuration.', order: '01',
+		category: 'Mention' },
+    { path: ':theme/mention/disabled-items', component: DisabledItemsMentionComponent, name: 'Disabled Items', type : 'new', description: 'This example demonstrates the disabled items functionalities of Syncfusion TypeScript Mention component with minimum configuration.', order: '01',
 		category: 'Mention' }
 ];
 

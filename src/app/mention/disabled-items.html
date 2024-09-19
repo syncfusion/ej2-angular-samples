@@ -1,0 +1,36 @@
+<div id="action-description">
+    <p>This sample showcases the disabled items of the Mention component. Type the <code>&#64;</code> character in the editable element and you will notice that the disabled items are greyed out and cannot be selected.</p>
+</div>
+
+<div class="col-lg-12 control-section">
+    <div id="mention-controls">
+        <table>
+            <tr>
+                <td>
+                    <label class="disabled-size">Compose your content</label>
+                    <div id="disabledMention" placeHolder="Type @ and tag user"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<ejs-mention [dataSource]='emailData' [target]='disabledTarget' [fields]='disabledFields' [popupWidth]="popupWidth" [popupHeight]="popupHeight">
+    <ng-template #itemTemplate let-data>
+        <div class="mention-listItems">
+            <img class="mentionEmpImage" src="./assets/mention/Employees/{{data.Eimg}}.png" alt="employee"/>
+            <span class="person">{{data.Name}}</span>
+            <span class="email">{{data.EmailId}}</span>
+        </div>
+    </ng-template>
+    <ng-template #displayTemplate let-data>
+        {{data.Name}}
+    </ng-template>
+    <ng-template #noRecordsTemplate>
+        No item related to the search
+    </ng-template>
+</ejs-mention>
+
+<div id="description">
+    <p>The Mention provides options for individual items to be in either an enabled or disabled state for specific scenarios. Once an item is disabled, it cannot be select a particular item. To configure the disabled item columns, use the <b>fields.disabled</b> property.</p>
+</div>

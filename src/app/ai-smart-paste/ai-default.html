@@ -1,0 +1,84 @@
+<div class="control-section">
+    <form class="form-container container bug-form-container"
+        style="max-width: 900px; line-height: 35px; background-color: #f3f4f6;">
+        <div class="single-row-group">
+            <label for="bug-name" class="e-form-label">Bug Name</label>
+            <ejs-textbox id="bug-name" name="bug-name" formControlName="bugName" cssClass="form-input"></ejs-textbox>
+        </div>
+        <div class="row-group">
+            <div>
+                <label for="reporter-name" class="e-form-label">Reporter</label>
+                <ejs-textbox id="reporter-name" name="reporter-name" formControlName="reporterName"
+                    cssClass="form-input"></ejs-textbox>
+            </div>
+            <div>
+                <label for="submitted-date" class="e-form-label">Submitted Date</label>
+                <ejs-textbox id="submitted-date" name="submit-date" formControlName="submittedDate"
+                    cssClass="form-input"></ejs-textbox>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bug-description" class="e-form-label">Bug Description</label>
+            <ejs-textarea id="bug-description" formControlName="bugDescription" cssClass="form-textarea"
+                multiline="true" placeholder="Describe a little about the bug."></ejs-textarea>
+        </div>
+        <div class="row-group">
+            <div style="display: flex; flex-direction: column;">
+                <label for="reproduce-steps" class="e-form-label">Reproduce Steps</label>
+                <ejs-textbox id="reproduce-steps" name="reproduce-steps" formControlName="reproduceSteps"
+                    cssClass="form-textarea" multiline="true"></ejs-textbox>
+            </div>
+            <div>
+                <label class="form-label">Bug Priority</label>
+                <div class="row">
+                    <ejs-radiobutton id="radio1" label="Low" name="bugPriority" formControlName="bugPriority"
+                        value="Low"></ejs-radiobutton>
+                </div>
+                <div class="row">
+                    <ejs-radiobutton id="radio2" label="Medium" name="bugPriority" formControlName="bugPriority"
+                        value="Medium" [checked]="true"></ejs-radiobutton>
+                </div>
+                <div class="row">
+                    <ejs-radiobutton id="radio3" label="High" name="bugPriority" formControlName="bugPriority"
+                        value="High"></ejs-radiobutton>
+                </div>
+            </div>
+        </div>
+        <div>
+            <label for="browser" class="form-label">Select the browser</label>
+            <ejs-combobox id="browser" name="browser" formControlName="browser" [dataSource]="browsers"
+                placeholder="Choose the browser"></ejs-combobox>
+        </div>
+        <div class="form-footer">
+            <button ejs-button type="reset" id="reset" cssClass="form-button" (click)="onReset()">Reset</button>
+            <button #smart ejs-smart-paste-button type="button" id="smart-paste" cssClass="form-button"
+                (created)="onCreated()">Smart Paste</button>
+        </div>
+    </form>
+
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-section">
+            <div class="property-panel-content">
+                <h4>Choose a preset below</h4>
+                <div class="chip-container">
+                    <ejs-chiplist #chipList [chips]="bugPresets" selection="Single" [selectedChips]="[0]"
+                        (click)="onChipClick($event)"></ejs-chiplist>
+                </div>
+                <div #copyContent id="bug-report-text">Hi, this is Alice. On July 3rd, I've come across a bug where the
+                    dropdown menu in the navigation bar doesn't close after selecting an item. I just navigated to the
+                    homepage, opened the dropdown menu in the navigation bar, clicked an item in the dropdown and then
+                    the issue occurred which happens only on Chrome. Though this doesn't seem like a serious/important
+                    bug, kindly look into it and resolve it. Regards, J Alice Abraham</div>
+                <button #copybutton ejs-button id="copy-btn" (click)="onCopy()">Copy</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="action-description">
+        <p>This example demonstrates how the <code>SmartPasteButton</code> component can automatically fill out forms using data from the user's clipboard.</p>
+        <p>To explore this and more Syncfusion Angular Smart AI integrations locally, check out our <a target='_blank' href='https://github.com/syncfusion/smart-ai-samples/tree/master/angular' aria-label="Navigate to explore the syncfusion Angular AI Demos repository">GitHub repository</a>.</p>
+    </div>
+    <div id='description'>
+        <p>In this example, clicking the Smart Paste button retrieves data from the clipboard and automatically fills in the form fields. This streamlines the data entry process by removing the need for manual input.</p>
+    </div>
+</div>

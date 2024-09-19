@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SpreadsheetComponent, getFormatFromType, CellStyleModel, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent, CellStyleModel, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
 import { hyperlinkCart, hyperlinkStock } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -23,7 +23,7 @@ export class HyperlinkComponent {
     public spreadsheet: SpreadsheetComponent;
     public hyperlinkCart: Object[] = hyperlinkCart();
     public hyperlinkStock: Object[] = hyperlinkStock();
-    currencyFormat: string = getFormatFromType('Currency');
+    currencyFormat: string = '$#,##0.00';
     public styles: CellStyleModel = { fontWeight: 'bold', textAlign: 'center', backgroundColor: '#279377', color: '#ffffff' };
     created() {
         this.spreadsheet.merge('Cart!A1:F2');

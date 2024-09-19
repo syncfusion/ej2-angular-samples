@@ -28,12 +28,16 @@
 .fabric-dark .content-value,
 .bootstrap-dark .content-value,
 .bootstrap5-dark .content-value,
+.bootstrap5.3-dark .content-value,
 .tailwind-dark .content-value {
     border: 1px solid rgb(150, 150, 150);
 }
 
 body.fluent-dark #selected,
+body.fluent2-dark #selected,
+body.fluent2-highcontrast #selected,
 body.bootstrap5-dark #selected,
+body.bootstrap5.3-dark #selected,
 body.tailwind-dark #selected,
 body.material-dark #selected,
 body.material3-dark #selected,

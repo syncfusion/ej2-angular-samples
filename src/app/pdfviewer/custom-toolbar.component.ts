@@ -43,6 +43,7 @@ export class CustomToolbarComponent implements OnInit {
     public selectedFormField: any;
     public matchCase = false;
     public isInkEnabled = false;
+    public searchActive = false;
 
     public menuItems: MenuItemModel[] = [{
         iconCss: 'e-icons e-stamp',
@@ -250,6 +251,7 @@ export class CustomToolbarComponent implements OnInit {
     }
 
     public documentLoaded(e: LoadEventArgs): void {
+        document.addEventListener('click', this.checkSearchActive.bind(this));
         document.getElementById('totalPage').textContent = 'of ' + this.pdfviewerControl.pageCount;
         (document.getElementById('currentPage') as HTMLInputElement).value = this.pdfviewerControl.currentPageNumber.toString();
         this.updatePageNavigation();
@@ -580,6 +582,7 @@ export class CustomToolbarComponent implements OnInit {
       if (this.searchText !== (document.getElementById('container_search_input') as HTMLInputElement).value || this.prevMatchCase !== this.matchCase) {
         this.pdfviewerControl.textSearchModule.cancelTextSearch();
         this.searchText = (document.getElementById('container_search_input') as HTMLInputElement).value;
+        this.searchActive = true;
         this.pdfviewerControl.textSearchModule.searchText(this.searchText, this.matchCase);
         this.prevMatchCase = this.matchCase;
       }
@@ -601,10 +604,29 @@ export class CustomToolbarComponent implements OnInit {
 
   public previousTextSearch(): void {
     this.pdfviewerControl.textSearchModule.searchPrevious();
+    this.searchActive = true;
+  }
+
+  public checkSearchActive() {
+    if(!this.searchActive) {
+      this.pdfviewerControl.textSearchModule.clearAllOccurrences();
+    }
+  }
+
+  public inputChange(): void {
+    this.pdfviewerControl.textSearchModule.clearAllOccurrences();
+    this.searchActive = false;
+    if((document.getElementById('container_search_input') as HTMLInputElement).value == '') {
+      const textsearchcloseElement = document.getElementById('container_close_search_box-icon') as HTMLElement;
+      const textsearchElement = document.getElementById('container_search_box-icon') as HTMLElement;
+      textsearchcloseElement.style.display = 'none';
+      textsearchElement.style.display = 'block';
+    }
   }
 
   public nextTextSearch(): void {
     this.pdfviewerControl.textSearchModule.searchNext();
+    this.searchActive = true;
   }
 
   public checkBoxChanged(event: Event): void {
@@ -688,6 +710,7 @@ export class CustomToolbarComponent implements OnInit {
         let upoadedFiles: any = args.target.files;
         if (args.target.files[0] !== null) {
             let uploadedFile: File = upoadedFiles[0];
+            let filename = upoadedFiles[0].name;
             if (uploadedFile) {
                 let reader: FileReader = new FileReader();
                 reader.readAsDataURL(uploadedFile);
@@ -697,6 +720,8 @@ export class CustomToolbarComponent implements OnInit {
                 reader.onload = (e: any): void => {
                     let uploadedFileUrl: string = e.currentTarget.result;
                     proxy.pdfviewerControl.documentPath = uploadedFileUrl;
+                    proxy.pdfviewerControl.fileName = filename;
+                    proxy.pdfviewerControl.downloadFileName = filename;
                 };
             }
         }

@@ -114,7 +114,7 @@ export class OverViewChartComponent {
   public endAngle: number = 270;
   public accumulationload(args: IAccLoadedEventArgs): void {
     let selectedTheme: string = location.hash.split('/')[1];
-    selectedTheme = selectedTheme ? selectedTheme : 'Material';
+    selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
     args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
   };  
 
@@ -189,7 +189,7 @@ export class OverViewChartComponent {
 
   public load(args: ILoadedEventArgs ): void {
     let selectedTheme: string = location.hash.split('/')[1];
-    selectedTheme = selectedTheme ? selectedTheme : 'Material';
+    selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
     args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
     args.chart.series[0].fill = 'url(#' +'gradient-chart)';
     args.chart.series[1].fill = 'url(#' +'gradient-chart1)';
@@ -197,7 +197,7 @@ export class OverViewChartComponent {
 
 public pointRender(args: IAccPointRenderEventArgs): void {
   let selectedTheme: string = location.hash.split('/')[1];
-  selectedTheme = selectedTheme ? selectedTheme : 'Material';
+  selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
   if (selectedTheme.indexOf('dark') > -1 )
   {
     if(selectedTheme.indexOf('material') > -1 )

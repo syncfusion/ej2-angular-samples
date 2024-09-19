@@ -1,0 +1,31 @@
+<div class="control-section">
+    <div class="content-wrapper">
+        <div class="example-label">Select a role</div>
+
+        <div style="width: 80%;">
+        <ejs-dropdownlist id="smart-dropdown"  placeholder="Select a role" id='dropdownlist' [dataSource]='rolesData'
+            value="Maintainer of an open-source project replying to GitHub issues" popupHeight="200px"
+            (change)="dropDownChange($event)"></ejs-dropdownlist>
+        </div>
+        <br />
+        <div style="width:80%;">
+        <ejs-smarttextarea  id="smart-textarea" #textareaObj  placeholder="Enter your queries here" floatLabelType="Auto" rows="5"
+     
+            userRole="Employee communicating with internal team" [UserPhrases]="defaultPreset"
+            [aiSuggestionHandler]="serverAIRequest"
+            ></ejs-smarttextarea>
+            </div>  
+    </div>
+
+    <div id="action-description">
+        <p>
+            This example demonstrates how the Smart TextArea provides sentence-level autocompletion suggestions based on its configuration and the user's current input.
+        </p>
+        <p>To explore this and more Syncfusion Angular Smart AI integrations locally, check out our <a target='_blank' href='https://github.com/syncfusion/smart-ai-samples/blob/master/angular' aria-label="Navigate to explore the syncfusion Angular AI Demos repository">GitHub repository</a>.</p>   
+    </div>
+    <div id="description">
+        <p>
+            The Smart TextArea uses AI to offer real-time sentence suggestions based on the user's input and role, helping users complete sentences more quickly and accurately.
+        </p>
+    </div>
+</div>

@@ -64,8 +64,8 @@ const sourceHeader: String = '<li class="nav-item {2}" role="presentation"><a cl
 const sourcecontent: String = '<div class="tab-pane {2}" id="{0}" role="tabpanel" {4}><pre><code class="{3}">{1}</code></pre></div>';
 const plnk: string = '<li class="plnk" style="float:right"><a id="plnkr">Open in Plunker</a></li>\n' +
     '<li class="open"><a id="openNew" target="_blank" aria-label="Open new sample"><div class="openIcon e-icons"></div></a></li>';
-const themes: string[] = ['material3', 'bootstrap5', 'fluent2', 'tailwind', 'highcontrast', 'fluent', 'material3-dark', 'bootstrap5-dark', 'fluent2-dark', 'tailwind-dark', 'fluent-dark'];
-const darkIgnore = ['highcontrast'];
+const themes: string[] = ['material3', 'bootstrap5', 'fluent2', 'tailwind', 'fluent2-highcontrast', 'highcontrast', 'fluent', 'material3-dark', 'bootstrap5-dark',  'fluent2-dark', 'tailwind-dark', 'fluent-dark'];
+const darkIgnore = ['highcontrast', 'fluent2-highcontrast'];
 let selectedTheme: string;
 let themeFlag: boolean = true;
 let slideFlag: boolean = false;
@@ -163,7 +163,7 @@ export class SBController {
                         let elementList = demoSection.getElementsByClassName('e-control e-lib');
                         for (let i = 0; i < elementList.length; i++) {
                             let instance = (elementList[i] as any).ej2_instances;
-                            if (instance && instance[0] && typeof instance[0].refresh === 'function') {
+                            if (instance && instance[0] && typeof instance[0].refresh === 'function' && this.currentControl !== 'Rich Text Editor') {
                                 if (instance[0].getModuleName() !== 'split-btn' && instance[0].getModuleName() !== 'checkbox' && instance[0].getModuleName() !== 'radio' && instance[0].getModuleName() !== 'switch') {
                                     instance[0].refresh();
                                 }
@@ -380,6 +380,16 @@ export class SBController {
     }
 
     ngOnInit(): void {
+        if (this.isInitialRender) {
+            let mT: string = localStorage.getItem('pointer') || 'mouse';
+            if (Browser.isDevice) {
+                mT = 'touch';
+            }
+            if (mT) {
+                this.setMouseOrTouch(select('#' + mT).innerHTML.toLowerCase(), false);
+                localStorage.removeItem('pointer');
+            }
+        }
         this.router.events.pipe(
             filter((event: NavigationStart) => event instanceof NavigationStart)
         )
@@ -407,6 +417,9 @@ export class SBController {
                     document.getElementById(theme).classList.add('active-theme'); 
                 }
                 loadTheme(theme);       
+            }
+            if (event.navigationTrigger === 'popstate') {
+                location.reload();
             }
         });
 
@@ -466,14 +479,6 @@ export class SBController {
                 this.setThemeItemActive(location.hash.split('/')[1]);
                 this.setSbLink();
                 // this.hideShowSBLoader(true);
-                let mT: string = localStorage.getItem('pointer') || 'mouse';
-                if (Browser.isDevice) {
-                    mT = 'touch';
-                }
-                if (mT) {
-                    this.setMouseOrTouch(select('#' + mT).innerHTML.toLowerCase(), false);
-                    localStorage.removeItem('pointer');
-                }
                 this.isInitialRender = false;
                 this.prevSampleName = this.sampleName;
                 this.prevControlName = this.currentControl;
@@ -518,6 +523,12 @@ export class SBController {
             }
             else if (sb === 'blazor') {
                 ele['href'] = 'https://blazor.syncfusion.com/demos/';
+            }
+            else if (sb === 'vue' && location.href.includes('grid/over-view')) {
+                ele['href'] = ((link) ? ('http://' + link[1] + '/' + (link[3] ? (link[3] + '/') : '')) : ('https://ej2.syncfusion.com/')) + 'vue/demos/#/' + selectedTheme + '/grid/grid-overview.html';
+            }
+              else if (sb === 'react' && location.href.includes('grid/over-view')) {
+                ele['href'] = ((link) ? ('http://' + link[1] + '/' + (link[3] ? (link[3] + '/') : '')) : ('https://ej2.syncfusion.com/')) + 'react/demos/#/' + selectedTheme + '/grid/overview';
             }
             else {
                 ele['href'] = ((link) ? ('http://' + link[1] + '/' + (link[3] ? (link[3] + '/') : '')) :
@@ -868,7 +879,7 @@ export class SBController {
     }
 
     setThemeItemActive(theme: string) {
-        if (!document.body.classList.contains(theme)) {
+        if (!document.body.classList.contains(theme.includes('bootstrap5') ? theme.replace('bootstrap5', 'bootstrap5.3') : theme)) {
             this.isContentLoaded = false;
             this.hideShowSBLoader();
         }
@@ -878,13 +889,13 @@ export class SBController {
             actElement.classList.remove('active')
         }
         if(!theme.includes('-dark')){
-          select('#' + theme).classList.add('active');   
-        }
-        else{
-          select('#'+theme.replace('-dark','')).classList.add('active');
-        }
+            select('#' + theme).classList.add('active');  
+          }
+          else{
+            select('#'+theme.replace('-dark','')).classList.add('active');
+         }
         this.themeDropDown.value = theme; 
-        document.body.classList.add(theme);
+        document.body.classList.add(theme.includes('bootstrap5') ? theme.replace('bootstrap5', 'bootstrap5.3') : theme);
     }
 
     setMouseOrTouch(str: string, reload?: boolean): void {
@@ -1053,9 +1064,14 @@ export class SBController {
     updateSourceCode(path: string): void {
         let pathArray: string[] = path.split('/');
         pathArray = pathArray.slice(2);
+        const isAISamples: boolean = /ai-(?!assistview\b)[a-z-]+/.test(pathArray[0]);
+        const desktopSettings: HTMLElement = select('.sb-desktop-setting') as HTMLElement;
+        if (!Browser.isDevice && desktopSettings) {
+            desktopSettings.style.display = isAISamples ? 'none' : '';
+        }
         const localPath: string = './source/' + pathArray.join('/');
         const items: object[] = [];
-        const observableCollection = [localPath + '.html', localPath + '.component.ts', localPath + '-stackb.json'];
+        const observableCollection = isAISamples ? [localPath + '.component.ts'] : [localPath + '.html', localPath + '.component.ts', localPath + '-stackb.json'];
         if (this.sourceFiles.files.length) {
             let splitPath: string[] = localPath.split('/');
             splitPath.splice(splitPath.length - 1)[0];
@@ -1206,6 +1222,7 @@ export class SBController {
 }
 
 function loadTheme(theme: string): void {
+    theme = theme.includes('bootstrap5') ? theme.replace('bootstrap5', 'bootstrap5.3') : theme;
     selectedTheme = theme;
     let isMobile: boolean = window.matchMedia('(max-width:550px)').matches;
     if (darkIgnore.indexOf(theme) !== -1) {

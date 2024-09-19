@@ -19,13 +19,13 @@
     top: 100px;
 }
 
-#value {
+#tooltipContentValue {
     height: 34px;
     width: 136px;
     padding-left: 10px;
 }
 
-.highcontrast #value {
+.highcontrast #tooltipContentValue {
     border: 1px solid;
     border-width: 1px;
     color: #fff;

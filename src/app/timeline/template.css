@@ -145,6 +145,10 @@
     cursor: default;
   }
   
+  body.fluent2-highcontrast .custom-timeline .template-container .indicator {
+    color: #424242;
+  }
+  
   .custom-timeline .progress-line::after {
     content: '';
     position: absolute;
@@ -173,12 +177,12 @@
   }
 
   /* Generic dark theme modifications */
-  body[class$="-dark"] .custom-timeline .template-container .indicator,
+  body[class*="-dark"] .custom-timeline .template-container .indicator,
   .highcontrast .custom-timeline .template-container .indicator {
-    color: #000;
+      color: #000;
   }
-  
-  body[class$="-dark"] .custom-timeline .template-container .mention-group:hover,
+
+  body[class*="-dark"] .custom-timeline .template-container .mention-group:hover,
   .highcontrast .custom-timeline .template-container .mention-group:hover {
-    background-color: #545353;
+      background-color: #545353;
   }

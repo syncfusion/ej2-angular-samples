@@ -1,0 +1,129 @@
+<div class="control-section event-calendar-control-section">
+  <div class="control-wrapper">
+    <div class="toolbar-container">
+      <ejs-toolbar cssClass="event-calendar-toolbar" (clicked)="toolbarClick($event)">
+        <e-items>
+          <e-item prefixIcon="e-menu" tooltipText="Menu" cssClass="e-menu-btn"></e-item>
+          <e-item prefixIcon="e-chevron-left" tooltipText="Previous" cssClass="e-previous"></e-item>
+          <e-item prefixIcon="e-chevron-right" tooltipText="Next" cssClass="e-next"></e-item>
+          <e-item [text]="dateRange" cssClass="e-date-range"></e-item>
+          <e-item prefixIcon="e-plus" text="Create" align="Right" cssClass="e-create"></e-item>
+          <e-item type="Separator" align="Right"></e-item>
+          <e-item text="Today" align="Right" cssClass="e-today"></e-item>
+          <e-item type="Separator" align="Right"></e-item>
+          <e-item text="Day" align="Right" cssClass="e-day"></e-item>
+          <e-item text="Week" align="Right" cssClass="e-week"></e-item>
+          <e-item text="Month" align="Right" cssClass="e-month"></e-item>
+          <e-item text="Agenda" align="Right" cssClass="e-agenda"></e-item>
+          <e-item text="Timeline" align="Right" cssClass="e-timeline"></e-item>
+          <e-item text="Year" align="Right" cssClass="e-year"></e-item>
+        </e-items>
+      </ejs-toolbar>
+    </div>
+    <ejs-sidebar #leftSidebar id="sidebar-left" #sidebar width="300px" target=".main-content">
+      <div class="table-content">
+        <ejs-calendar #calendarObj id="calendar" cssClass="selected-date-calendar" [value]="selectedDate"
+          (change)="onCalendarChange($event)"></ejs-calendar>
+        <div class="calendar-list-container">
+          <ejs-listview #calendarsList id="listview-def" height="240px" [dataSource]="calendars"
+            [fields]="calendarFields" [showCheckBox]="true" [showHeader]="true"
+            (actionComplete)="listViewActionComplete()" (select)="listViewSelect($event)">
+            <ng-template #headerTemplate let-data="">
+              <div class="calendars-list-header">
+                <div class="header-text">Calendars</div>
+                <div class="header-icon e-icons e-plus" (click)="showAddCalendarDialog()"></div>
+              </div>
+            </ng-template>
+            <ng-template #template let-data="">
+              <div class="calendar-list-item">
+                <div class="calendar-name" [attr.title]="data.name">{{data.name}}</div>
+                <div class="calendar-buttons" *ngIf="data.id !== 1">
+                  <span id="calendar-edit-btn" [attr.data-calendar-id]="data.id" class="e-icons e-edit"
+                    (click)="calendarEditClick($event)"></span>
+                  <span id="calendar-delete-btn" [attr.data-calendar-id]="data.id" class="e-icons e-trash"
+                    (click)="calendarDeleteClick($event)"></span>
+                </div>
+              </div>
+            </ng-template>
+          </ejs-listview>
+        </div>
+      </div>
+    </ejs-sidebar>
+    <ejs-sidebar #rightSidebar id="sidebar-right" #sidebar width="300px" target=".main-content" position="Right"
+      type="Push" [isOpen]="false" (close)="rightSidebarClose()">
+      <ejs-toolbar cssClass="unplanned-events-toolbar">
+        <e-items>
+          <e-item prefixIcon="e-exit-full-screen" tooltipText="Open/Close Sidebar" cssClass="e-exit"
+            (click)="collapseRightSidebar()"></e-item>
+          <e-item>
+            <ng-template #template>
+              <h4 id="headerText">Unplanned Events</h4>
+            </ng-template>
+          </e-item>
+        </e-items>
+      </ejs-toolbar>
+      <ejs-grid #gridObj cssClass="unplanned-events-grid" [dataSource]="unPlannedData">
+        <e-columns>
+          <e-column field="Subject" headerText="Event" textAlign="Left" width="120"></e-column>
+          <e-column field="StartTime" headerText="Date" format="dd MMMM yyyy" width="140"></e-column>
+        </e-columns>
+      </ejs-grid>
+    </ejs-sidebar>
+    <div class="main-content">
+      <div class="sidebar-content">
+        <div class="schedule-container">
+          <ejs-schedule #scheduleObj id="Schedule" height="650px" [selectedDate]="selectedDate"
+            [currentView]="currentView" [eventSettings]="eventSettings" [showHeaderBar]="false"
+            (actionComplete)="scheduleActionComplete($event)" (eventRendered)="onEventRendered($event)"
+            (popupOpen)="schedulePopupOpen($event)">
+            <e-resources>
+              <e-resource field="ResourceId" title="Resources" [dataSource]="scheduleResources" name="Resources"
+                textField="name" idField="id" colorField="color"></e-resource>
+            </e-resources>
+            <e-views>
+              <e-view option="Day"></e-view>
+              <e-view option="Week"></e-view>
+              <e-view option="Month"></e-view>
+              <e-view option="Agenda"></e-view>
+              <e-view option="TimelineMonth" [group]="timelineGroup"></e-view>
+              <e-view option="Year"></e-view>
+            </e-views>
+          </ejs-schedule>
+        </div>
+        <div class="unplanned-container">
+          <div id="plannedOpen" class="e-icons e-chevron-left-double" (click)="showRightSidebar($event)"></div>
+          <div class="unplanned-text-container">Unplanned events</div>
+        </div>
+      </div>
+    </div>
+    <ejs-dialog #dialogObj id="dialog" width="320px" cssClass="calendar-edit-dialog" [buttons]="dlgButtons"
+      [animationSettings]="animationSettings" [showCloseIcon]="true" [visible]="false" [isModal]="true"
+      header="New Calendar" (beforeOpen)="beforeDialogOpen()">
+      <ng-template #content>
+        <div>Calendar Name</div>
+        <div class="dialog-content">
+          <ejs-textbox #calendarName placeholder="Enter the calendar name" cssClass="e-outline" class="calendar-name"
+            floatLabelType="Never"></ejs-textbox>
+          <input ejs-colorpicker #calendarColor class="calendar-color" type="color" />
+        </div>
+      </ng-template>
+    </ejs-dialog>
+  </div>
+</div>
+
+<div id="action-description">
+  <p>This demo showcases the way to organize and filter multiple types of events such as Personal, Birthdays, Work,
+    and Holidays in the scheduler.
+  </p>
+</div>
+
+<div id="description">
+  <p>In this example the multiple type of appointments such as Personal, Birthdays, Work,
+    and Holidays organized with filter option in a single scheduler. It helps the user to view a
+    specific or multiple type of appointments at one place.</p>
+  <p>The left sidebar helps the user to navigate between the scheduler dates and filter the appointments based
+    on their type.</p>
+  <p>The Schedule component is configured to show the appointments in colors based on their type to identify
+    the appointment type.</p>
+  <p>The right sidebar displays the list of unplanned events, which can be useful for the user to plan them later.</p>
+</div>

@@ -11,7 +11,7 @@
             <form (ngSubmit)="onSubmit()" #rteForm="ngForm">
                 <div class="form-group">
                     <ejs-richtexteditor #fromRTE #name='ngModel' [(value)]='value' required name="name"
-                        [(ngModel)]="value" (created)="rteCreated()"></ejs-richtexteditor>
+                        [(ngModel)]="value" (created)="rteCreated()" saveInterval=1></ejs-richtexteditor>
                     <div *ngIf="(name.invalid && name.touched)" class="alert alert-danger">
                         <div *ngIf="name.errors.required">
                             Value is required.

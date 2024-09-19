@@ -22,20 +22,15 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 export class DrawingToolDiagramComponent {
     @ViewChild('diagram')
     public diagram: DiagramComponent;
-
     public rulerSettings: RulerSettingsModel = { showRulers: true, dynamicGrid: true }
     public continuousDraw: boolean = true;
-
-    private interval: number[] = [1, 9, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25,
-        9.75, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75];
+    private interval: number[] = [1, 9, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25,9.75, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75];
     private horizontalGridlines: GridlinesModel = { lineColor: '#e0e0e0', lineIntervals: this.interval };
     private verticalGridlines: GridlinesModel = { lineColor: '#e0e0e0', lineIntervals: this.interval };
-
-    public snapSettings: SnapSettingsModel = {
-        snapObjectDistance: 5, horizontalGridlines: this.horizontalGridlines, verticalGridlines: this.verticalGridlines
-    };
+    public snapSettings: SnapSettingsModel = {snapObjectDistance: 5, horizontalGridlines: this.horizontalGridlines, verticalGridlines: this.verticalGridlines};
 
     ngOnInit(): void {
+    // Attach click event handler
         document.getElementById('appearance').onclick = this.documentClick.bind(this);
     }
 
@@ -66,74 +61,45 @@ export class DrawingToolDiagramComponent {
     // custom code end
 
     public documentClick(args: MouseEvent): void {
-        let target: HTMLElement = args.target as HTMLElement;
-        // custom code start
-        let selectedElement: HTMLCollection = document.getElementsByClassName('e-selected-style');
-        if (selectedElement.length && target.id !== '' && target.id !== 'checked') {
-            selectedElement[0].classList.remove('e-selected-style');
+        const target: HTMLElement = args.target as HTMLElement;
+        const selectedElement: Element = document.querySelector('.e-selected-style');
+
+        // Remove 'e-selected-style' class if target is not 'checked' or has no id
+        if (selectedElement && target.id !== '' && target.id !== 'checked') {
+            selectedElement.classList.remove('e-selected-style');
         }
-        // custom code end
-        let drawingObject: NodeModel | ConnectorModel = null;
-        if (target.className === 'image-pattern-style') {
-            switch (target.id) {
-                case 'shape1':
-                    drawingObject = { shape: { type: 'Basic', shape: 'Rectangle' } };
-                    break;
-                case 'shape2':
-                    drawingObject = { shape: { type: 'Basic', shape: 'Ellipse' } };
-                    break;
-                case 'shape3':
-                    drawingObject = { shape: { type: 'Basic', shape: 'Hexagon' } };
-                    break;
-                case 'shape4':
-                    drawingObject = { shape: { type: 'Basic', shape: 'Pentagon' } };
-                    break;
-                case 'shape5':
-                    drawingObject = { shape: { type: 'Basic', shape: 'Triangle' } };
-                    break;
-                case 'straight':
-                    drawingObject = { type: 'Straight' };
-                    break;
-                case 'ortho':
-                    drawingObject = { type: 'Orthogonal' };
-                    break;
-                case 'cubic':
-                    drawingObject = { type: 'Bezier' };
-                    break;
-                case 'freehand':
-                    drawingObject = { type: 'Freehand' };
-                    break;
-                case 'path':
-                    drawingObject = {
-                        shape: {
-                            type: 'Path',
-                            data: 'M540.3643,137.9336L546.7973,159.7016L570.3633,159.7296L550.7723,171.9366L558.9053,194.9966L540.3643,' +
-                                '179.4996L521.8223,194.9966L529.9553,171.9366L510.3633,159.7296L533.9313,159.7016L540.3643,137.9336z'
-                        }
-                    };
-                    break;
-                case 'image':
-                    drawingObject = { shape: { type: 'Image', source: './assets/diagram/employees/Clayton.png' } };
-                    break;
-                case 'svg':
-                    drawingObject = { shape: { type: 'Native', content: this.getNativeContent() } };
-                    break;
-                case 'text':
-                    drawingObject = { shape: { type: 'Text' } };
-                    break;
-            }
-            if (drawingObject) {
-                this.diagram.drawingObject = drawingObject;
-                // custom code start
-                target.classList.add('e-selected-style');
-                // custom code end
-            }
+
+        const drawingObject = this.getDrawingObject(target.id);
+        if (drawingObject) {
+            this.diagram.drawingObject = drawingObject;
+            target.classList.add('e-selected-style');
         }
+
         this.diagram.tool = this.continuousDraw ? DiagramTools.ContinuousDraw : DiagramTools.DrawOnce;
         this.diagram.dataBind();
-    };
+    }
+    //  method for  shape IDs to drawing objects
+    private getDrawingObject(id: string): NodeModel | ConnectorModel | null {
+        switch (id) {
+            case 'shape1': return { shape: { type: 'Basic', shape: 'Rectangle' } };
+            case 'shape2': return { shape: { type: 'Basic', shape: 'Ellipse' } };
+            case 'shape3': return { shape: { type: 'Basic', shape: 'Hexagon' } };
+            case 'shape4': return { shape: { type: 'Basic', shape: 'Pentagon' } };
+            case 'shape5': return { shape: { type: 'Basic', shape: 'Triangle' } };
+            case 'straight': return { type: 'Straight' };
+            case 'ortho': return { type: 'Orthogonal' };
+            case 'cubic': return { type: 'Bezier' };
+            case 'freehand': return { type: 'Freehand' };
+            case 'path': return { shape: { type: 'Path', data: 'M540.3643,137.9336L546.7973,159.7016L570.3633,159.7296L550.7723,171.9366L558.9053,194.9966L540.3643,179.4996L521.8223,194.9966L529.9553,171.9366L510.3633,159.7296L533.9313,159.7016L540.3643,137.9336z' } };
+            case 'image': return { shape: { type: 'Image', source: './assets/diagram/employees/Clayton.png' } };
+            case 'svg': return { shape: { type: 'Native', content: this.getNativeContent() } };
+            case 'text': return { shape: { type: 'Text' } };
+            default: return null;
+        }
+    }
 
     public diagramCreate(args: Object): void {
+    // Initialize diagram with default drawing object and tool
         this.diagram.drawingObject = { shape: { type: 'Basic', shape: 'Rectangle' } };
         this.diagram.tool = DiagramTools.ContinuousDraw;
 

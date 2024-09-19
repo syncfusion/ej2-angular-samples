@@ -6,7 +6,7 @@ import {
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
 import { ChangeEventArgs as NumericChangeEventArgs } from '@syncfusion/ej2-inputs';
-import {multiParentData} from'./overview-data';
+import { multiParentData } from './diagram-data';
 import { ChangeEventArgs as CheckBoxChangeEventArgs } from '@syncfusion/ej2-buttons';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
@@ -34,12 +34,13 @@ export class ComplexHierarchicalTreeDiagramComponent {
     @ViewChild('diagram')
     public diagram: DiagramComponent;
 
+    //Sets the default values of nodes.
     public nodeDefaults(obj: NodeModel): NodeModel {
         obj.width = 40; obj.height = 40;
-        //Initialize shape
         obj.shape = { type: 'Basic', shape: 'Rectangle', cornerRadius: 7 };
         return obj;
     };
+    //Configures data source
     public data: Object = {
         id: 'Name', parentId: 'ReportingPerson',
         dataSource: new DataManager(multiParentData),
@@ -52,7 +53,8 @@ export class ComplexHierarchicalTreeDiagramComponent {
     public created(): void {
         this.diagram.fitToPage();
     };
-    public connDefaults(connector: ConnectorModel): void {
+    //Sets the default values of connectors
+    public connectorDefaults(connector: ConnectorModel): void {
         connector.type = 'Orthogonal';
         connector.cornerRadius = 7;
         connector.targetDecorator.height = 7;
@@ -60,8 +62,8 @@ export class ComplexHierarchicalTreeDiagramComponent {
         connector.style.strokeColor = '#6d6d6d';
     };
 
+    //Disables all interactions except zoom/pan
     public tool: DiagramTools = DiagramTools.ZoomPan;
-
     public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
 
     public layout: LayoutModel = {
@@ -74,15 +76,12 @@ export class ComplexHierarchicalTreeDiagramComponent {
     ngOnInit(): void {
         document.getElementById('appearance').onclick = this.documentClick.bind(this);
     }
+    //To handle connectoroverlaping 
     public onChange(args: CheckBoxChangeEventArgs): void {
-        if (args.checked) {
-            this.diagram.layout.connectionPointOrigin = ConnectionPointOrigin.DifferentPoint;
-             }
-             else {
-                this.diagram.layout.connectionPointOrigin = ConnectionPointOrigin.SamePoint;
-             }
-         
+
+        this.diagram.layout.connectionPointOrigin = args.checked ? ConnectionPointOrigin.DifferentPoint : ConnectionPointOrigin.SamePoint;  
     }
+
     public documentClick(args: MouseEvent): void {
         let target: HTMLElement = args.target as HTMLElement;
         // custom code start
@@ -104,21 +103,23 @@ export class ComplexHierarchicalTreeDiagramComponent {
         }
     };
 
+    //To handle left margin of the layout.
     public onMarginLeftChange(args: NumericChangeEventArgs): void {
         this.diagram.layout.margin.left = args.value;
         this.diagram.dataBind();
     }
-
+    //To handle top margin of the layout.
     public onMarginTopChange(args: NumericChangeEventArgs): void {
+        this.diagram.layout.verticalAlignment = 'Top';
         this.diagram.layout.margin.top = args.value;
         this.diagram.dataBind();
     }
-
+    //To handle horizontalspacing of the layout.
     public onhSpacingChange(args: NumericChangeEventArgs): void {
         this.diagram.layout.horizontalSpacing = Number(args.value);
         this.diagram.dataBind();
     }
-
+    //To handle verticalspacing of the layout.
     public onvSpacingChange(args: NumericChangeEventArgs): void {
         this.diagram.layout.verticalSpacing = Number(args.value);
         this.diagram.dataBind();

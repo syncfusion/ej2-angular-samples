@@ -44,7 +44,7 @@ export class CellFormatController {
         showGridLines: false
     }];
     created() {
-        // Applying cell formatting dynamically using cellFormat method
+        // Applying cell formatting dynamically using cellFormat method.
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold', backgroundColor: '#4b5366', color: '#ffffff', fontSize: '12pt' }, 'A1:I1');
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textIndent: '2pt' }, 'B2:B16');
         this.spreadsheetObj.cellFormat({ fontStyle: 'italic', textIndent: '2pt' }, 'D2:D16');
@@ -52,10 +52,13 @@ export class CellFormatController {
         this.spreadsheetObj.cellFormat({ textIndent: '2pt' }, 'G1:G16');
         this.spreadsheetObj.cellFormat({ textAlign: 'center', fontWeight: 'bold' }, 'H2:H16');
         this.spreadsheetObj.cellFormat({ fontFamily: 'Helvetica New', verticalAlign: 'middle' }, 'A1:I16');
-        // Applying border to a range
+        // Applying border to a range.
         this.spreadsheetObj.setBorder({ border: '1px solid #e0e0e0' }, 'A1:I16', 'Outer');
         this.spreadsheetObj.setBorder({ border: '1px solid #e0e0e0' }, 'A2:I15', 'Horizontal');
-
+        // Applying display format to a range.
+        this.spreadsheetObj.numberFormat('m/d/yyyy', 'C2:C16');
+        // Applying currency format to a range.
+        this.spreadsheetObj.numberFormat('$#,##0.00', 'I2:I16');
     }
     beforeCellRender(args: CellRenderEventArgs) {
         if (!this.spreadsheetObj.isOpen && this.spreadsheetObj.sheets[this.spreadsheetObj.activeSheetIndex].name === 'Order Details') {

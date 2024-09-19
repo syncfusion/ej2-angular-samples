@@ -31,11 +31,12 @@ export class ConstraintComponent {
   constructor() {​​​​​​​
     
 }​​​​​​​
-  public created(args) {
+  public created(args: any) {
     this.diagram.rulerSettings = {
       showRulers : true
     }
   }
+  //Initializes the nodes for the diagram
   public nodes : NodeModel[] = [
     {
         id:"textNode1",
@@ -43,7 +44,7 @@ export class ConstraintComponent {
         offsetX:340,
         offsetY: 50,
         // Size of the node
-        width: 500,
+        width: 550,
         height: 50,
         //Sets type of the node
         shape: { type: 'Text', content: 'Use Node Constraints to restrict end-users from performing certain operations on Node.' },
@@ -56,9 +57,7 @@ export class ConstraintComponent {
         id:"rectangle",
         offsetX:80,
         offsetY:160,
-        width: 80,
         height: 65,
-        // style: { fill: '#6BA5D7', strokeColor: 'white' },
         shape: { type: 'Basic', shape: 'Rectangle' },
         annotations: [{ content: 'Selection = False', }],
         constraints: NodeConstraints.Default & ~ NodeConstraints.Select
@@ -67,9 +66,7 @@ export class ConstraintComponent {
         id:"ellipse",
         offsetX:190,
         offsetY:160,
-        width: 80,
         height: 80,
-        // style: { fill: '#6BA5D7', strokeColor: 'white' },
         shape: { type: 'Basic', shape: 'Ellipse',cornerRadius: 10 },
         annotations: [{ content: 'Dragging = False' }],
         constraints:  NodeConstraints.Default & ~ NodeConstraints.Drag
@@ -79,9 +76,7 @@ export class ConstraintComponent {
         id:"heptagon",
         offsetX:295,
         offsetY:160,
-        width: 80,
         height: 80,
-        // style: { fill: '#6BA5D7', strokeColor: 'white' },
         shape: { type: 'Basic', shape: 'Heptagon' },
         annotations: [{ content: 'Delete = False' }],
         constraints: NodeConstraints.Default & ~ NodeConstraints.Delete
@@ -90,10 +85,8 @@ export class ConstraintComponent {
         id:"directData",
         offsetX:410,
         offsetY:160,
-        width: 80,
         height: 80,
         rotateAngle:-45,
-        // style: { fill: '#6BA5D7', strokeColor: 'white' },
         shape: { type: 'Flow', shape: 'DirectData' },
         annotations: [{ content: 'Rotate = False' }],
         constraints: NodeConstraints.Default &~ NodeConstraints.Rotate
@@ -102,9 +95,7 @@ export class ConstraintComponent {
         id:"Plus",
         offsetX:530,
         offsetY:160,
-        width: 80,
         height: 80,
-        // style: { fill: '#6BA5D7', strokeColor: 'white' },
         shape: { type: 'Basic', shape: 'Plus' },
         annotations: [{ content: 'TextEdit = False',constraints: AnnotationConstraints.ReadOnly }],
     },
@@ -112,9 +103,7 @@ export class ConstraintComponent {
         id:"decision",
         offsetX:630,
         offsetY:160,
-        width: 80,
         height: 80,
-        // style: { fill: '#6BA5D7', strokeColor: 'white' },
         shape: { type: 'Flow', shape: 'Decision' },
         annotations: [{ content: 'Resizing = False' }],
        constraints:NodeConstraints.Default & ~ NodeConstraints.Resize
@@ -140,17 +129,6 @@ public connectors : ConnectorModel[] = [
     type: 'Orthogonal',
     annotations: [{ content: 'Selection = False' , horizontalAlignment: 'Right' , verticalAlignment: 'Bottom' }],
      constraints: ConnectorConstraints.Default & ~ ConnectorConstraints.Select,
-     style: {
-        strokeColor: '#6BA5D7',
-        fill: '#6BA5D7',
-        strokeWidth: 2
-    },
-    targetDecorator: {
-        style: {
-            fill: '#6BA5D7',
-            strokeColor: '#6BA5D7'
-        }
-    },
     sourcePoint: {
         x: 40,
         y: 350
@@ -165,17 +143,6 @@ public connectors : ConnectorModel[] = [
     type: 'Orthogonal',
     annotations: [{ content: 'Dragging = True',horizontalAlignment: 'Right' , verticalAlignment: 'Bottom'  }],
     constraints: ConnectorConstraints.Default | ~ConnectorConstraints.Drag,
-     style: {
-        strokeColor: '#6BA5D7',
-        fill: '#6BA5D7',
-        strokeWidth: 2
-    },
-    targetDecorator: {
-        style: {
-            fill: '#6BA5D7',
-            strokeColor: '#6BA5D7'
-        }
-    },
     sourcePoint: {
         x: 140,
         y: 350
@@ -190,17 +157,6 @@ public connectors : ConnectorModel[] = [
     type: 'Orthogonal',
     annotations: [{ content: 'Delete = False',horizontalAlignment: 'Right' , verticalAlignment: 'Bottom'  }],
     constraints: (ConnectorConstraints.Default | ConnectorConstraints.DragSegmentThumb) &~(ConnectorConstraints.Delete | ConnectorConstraints.Drag),
-     style: {
-        strokeColor: '#6BA5D7',
-        fill: '#6BA5D7',
-        strokeWidth: 2
-    },
-    targetDecorator: {
-        style: {
-            fill: '#6BA5D7',
-            strokeColor: '#6BA5D7'
-        }
-    },
     sourcePoint: {
         x: 250,
         y: 350
@@ -215,17 +171,6 @@ public connectors : ConnectorModel[] = [
     type: 'Orthogonal',
     annotations: [{ content: 'EndThumb = False' ,horizontalAlignment: 'Right' , verticalAlignment: 'Bottom' }],
     constraints:(SelectorConstraints.All ) &~ ( SelectorConstraints.ConnectorSourceThumb | SelectorConstraints.ConnectorTargetThumb),
-     style: {
-        strokeColor: '#6BA5D7',
-        fill: '#6BA5D7',
-        strokeWidth: 2
-    },
-    targetDecorator: {
-        style: {
-            fill: '#6BA5D7',
-            strokeColor: '#6BA5D7'
-        }
-    },
     sourcePoint: {
         x: 360,
         y: 350
@@ -240,17 +185,6 @@ public connectors : ConnectorModel[] = [
     type: 'Orthogonal',
     annotations: [{ content: 'EndDraggable = False',horizontalAlignment: 'Right' , verticalAlignment: 'Bottom'  }],
     constraints: (ConnectorConstraints.Default | ConnectorConstraints.DragSegmentThumb) &~(ConnectorConstraints.DragSourceEnd | ConnectorConstraints.DragTargetEnd),
-     style: {
-        strokeColor: '#6BA5D7',
-        fill: '#6BA5D7',
-        strokeWidth: 2
-    },
-    targetDecorator: {
-        style: {
-            fill: '#6BA5D7',
-            strokeColor: '#6BA5D7'
-        }
-    },
     sourcePoint: {
         x: 460,
         y: 350
@@ -265,17 +199,6 @@ public connectors : ConnectorModel[] = [
     type: 'Orthogonal',
     annotations: [{ content: 'SegmentThumb = False',horizontalAlignment: 'Right' , verticalAlignment: 'Bottom'  }],
     constraints: ConnectorConstraints.Default &~ ConnectorConstraints.Drag,
-     style: {
-        strokeColor: '#6BA5D7',
-        fill: '#6BA5D7',
-        strokeWidth: 2
-    },
-    targetDecorator: {
-        style: {
-            fill: '#6BA5D7',
-            strokeColor: '#6BA5D7'
-        }
-    },
     sourcePoint: {
         x: 580,
         y: 350
@@ -293,69 +216,101 @@ public handles: UserHandleModel[] = [
 }
 ];
 
-public selectedItems: SelectorModel = {
-  userHandles: this.handles
+//Defines the default node properties
+public nodeDefaults(nodes: NodeModel): void {
+  if(nodes.id !== "textNode1" && nodes.id !== "textNode2") {
+    nodes.width = 80;
+    nodes.style.fill = '#C7E6FF';
+    nodes.style.strokeColor = '#1587FF';
+    }
 };
-public contextMenuSettings: ContextMenuSettingsModel = {show:true};
+
+//Defines the default connector properties
+public connectorDefaults(connectors: ConnectorModel): void {
+  connectors.style.strokeColor = '#6BA5D7';
+  connectors.style.fill = '#6BA5D7';
+  connectors.style.strokeWidth = 2;
+  connectors.targetDecorator.style.strokeColor = '#6BA5D7';
+  connectors.targetDecorator.style.fill = '#6BA5D7';
+};
+
+// Define selectedItems property with initial configuration
+public selectedItems: SelectorModel = {
+  userHandles: this.handles // Assuming this.handles is defined elsewhere
+};
+// Define contextMenuSettings property with initial configuration to show the context menu
+public contextMenuSettings: ContextMenuSettingsModel = {
+  show: true // Show the context menu
+};
+// Define getCustomTool function as a method bound to the current instance ('this')
 public getCustomTool: Function = this.getTool.bind(this);
 
+// Method used to delete objects using user handle
 public getTool(action: string) { 
-  if (action == "delete") {
-      this.diagram.remove();
+  if (action === "delete") {
+    this.diagram.remove(); // Assuming this.diagram is your diagram instance and has a 'remove' method
   }
-  };
+}
 
-public zoomingChange(args){
+//Function used to enable zooming of diagram
+public zoomingChange(args: any){
   this.diagram.constraints = this.diagram.constraints ^ DiagramConstraints.Zoom;
 }
-public undoRedoChange(args){
+//Function used to enable undo redo in diagram
+public undoRedoChange(args: any){
   this.diagram.constraints = this.diagram.constraints ^ DiagramConstraints.UndoRedo ;
   this.diagram.dataBind();
 }
 
-public editingChange(args){
-    for (let i: number = 0; i < this.diagram.nodes.length; i++) {
-        var node = this.diagram.nodes[i];
-        for (let j: number = 0; j < node.annotations.length; j++) {
-          if (node.annotations[j].content) {
-            if (args.checked) {
-              if (node.id !== 'Plus') {
-                node.annotations[j].constraints =
-                  node.annotations[j].constraints ^
-                  AnnotationConstraints.ReadOnly;
-              }
-            } else {
-              node.annotations[j].constraints =
-                node.annotations[j].constraints | AnnotationConstraints.ReadOnly;
-            }
-          }
+// Function used to enable or disable editing for annotations in the diagram
+public editingChange(args: { checked: any; }) {
+  // Loop through all nodes in the diagram
+  for (let i: number = 0; i < this.diagram.nodes.length; i++) {
+    let node = this.diagram.nodes[i];
+    // Check if the node has annotations and content
+    if (node.annotations.length > 0 && node.annotations[0].content) {
+      // Enable or disable editing based on the checkbox state
+      if (args.checked) {
+        // Enable editing if not 'Plus' node
+        if (node.id !== 'Plus') {
+          node.annotations[0].constraints =
+            node.annotations[0].constraints ^ AnnotationConstraints.ReadOnly; // Toggle ReadOnly constraint off
         }
+      } else {
+        // Disable editing
+        node.annotations[0].constraints =
+          node.annotations[0].constraints | AnnotationConstraints.ReadOnly; // Apply ReadOnly constraint
       }
-      for (let x: number = 0; x < this.diagram.connectors.length; x++) {
-        var connector = this.diagram.connectors[x];
-        for (let y: number = 0; y < connector.annotations.length; y++) {
-          if (connector.annotations[y].content) {
-            if (args.checked) {
-              if (connector.id === 'select') {
-                connector.constraints =
-                  connector.constraints & ~(ConnectorConstraints.Select);
-              } else {
-                connector.annotations[y].constraints =
-                  connector.annotations[y].constraints ^
-                  AnnotationConstraints.ReadOnly;
-              }
-            } else {
-              connector.annotations[y].constraints =
-                connector.annotations[y].constraints ^
-                AnnotationConstraints.ReadOnly;
-            }
-          }
+    }
+  }
+  // Loop through all connectors in the diagram
+  for (let x: number = 0; x < this.diagram.connectors.length; x++) {
+    let connector = this.diagram.connectors[x];
+    // Check if the connector has annotations and content
+    if (connector.annotations.length > 0 && connector.annotations[0].content) {
+      // Enable or disable editing based on the checkbox state
+      if (args.checked) {
+        // Disable selection for specific 'select' connector
+        if (connector.id === 'select') {
+          connector.constraints =
+            connector.constraints & ~(ConnectorConstraints.Select); // Toggle off Select constraint
+        } else {
+          connector.annotations[0].constraints =
+            connector.annotations[0].constraints ^ AnnotationConstraints.ReadOnly; // Toggle ReadOnly constraint off
         }
+      } else {
+        // Enable editing
+        connector.annotations[0].constraints =
+          connector.annotations[0].constraints ^ AnnotationConstraints.ReadOnly; // Toggle ReadOnly constraint off
       }
-      this.diagram.dataBind();
+    }
+  }
+  // Commit changes to the diagram
+  this.diagram.dataBind();
 }
 
-public contextChange(args){
+//Function used to enable context menu on right click
+public contextMenuChange(args: { checked: any; }){
   if (args.checked) {
   this.diagram.contextMenuSettings.show = true;
   this.diagram.refresh();
@@ -366,44 +321,48 @@ else {
   this.diagram.dataBind();
 }
 
-public selectableChange(args){
-  for (let i : number = 0; i < this.diagram.nodes.length; i++) {
+// Function used to enable or disable selection in the diagram
+public elementSelectableChange(args: { checked: any; }) {
+  // Loop through all nodes in the diagram
+  for (let i: number = 0; i < this.diagram.nodes.length; i++) {
     let node = this.diagram.nodes[i];
+    // Check if the checkbox is checked
     if (args.checked) {
-        node.constraints  = node.constraints | NodeConstraints.Select;
-    } 
-    else 
-    {
-        node.constraints = node.constraints &~  NodeConstraints.Select;
+      // Enable selection for the node
+      node.constraints = node.constraints | NodeConstraints.Select;
+    } else {
+      // Disable selection for the node
+      node.constraints = node.constraints & ~NodeConstraints.Select;
     }
+    // Commit changes to the diagram
     this.diagram.dataBind();
-}
-for (let j : number = 0; j < this.diagram.connectors.length; j++) {
-  let connector = this.diagram.connectors[j];
-  if (args.checked) {
-      if(connector.id ==="select"){
-          connector.constraints= connector.constraints^ ConnectorConstraints.Select;
-      }
-      else{
-          connector.constraints  = connector.constraints | ConnectorConstraints.Select;
-      }
-  } 
-  else
-  {
-      if(connector.id ==="endThumb"){
-          connector.constraints= connector.constraints ^ ConnectorConstraints.Select;
-      }
-      else
-      {
-      connector.constraints = connector.constraints &~ ConnectorConstraints.Select;
-      }
   }
-  this.diagram.dataBind();
+  // Loop through all connectors in the diagram
+  for (let j: number = 0; j < this.diagram.connectors.length; j++) {
+    let connector = this.diagram.connectors[j];
+    // Check if the checkbox is checked
+    if (args.checked) {
+      // Enable selection for the connector, except for specific cases
+      if (connector.id === "select") {
+        connector.constraints = connector.constraints ^ ConnectorConstraints.Select; // Toggle select for 'select' id connector
+      } else {
+        connector.constraints = connector.constraints | ConnectorConstraints.Select;
+      }
+    } else {
+      // Disable selection for the connector, except for specific cases
+      if (connector.id === "endThumb") {
+        connector.constraints = connector.constraints ^ ConnectorConstraints.Select; // Toggle select for 'endThumb' id connector
+      } else {
+        connector.constraints = connector.constraints & ~ConnectorConstraints.Select;
+      }
+    }
+    // Commit changes to the diagram
+    this.diagram.dataBind();
+  }
 }
 
-}
-
-public draggableChange(args){
+//Function used to enable dragging intractions in diagram
+public draggableChange(args: { checked: any; }){
   for (let i:number = 0; i < this.diagram.nodes.length; i++) {
     let nodes = this.diagram.nodes[i];
     if (args.checked) {
@@ -419,6 +378,7 @@ public draggableChange(args){
     }
     this.diagram.dataBind();
 }
+//Looping diagram connectors
 for (let j : number = 0; j < this.diagram.connectors.length; j++) {
   let connectors = this.diagram.connectors[j];
     if (args.checked) {
@@ -430,39 +390,59 @@ for (let j : number = 0; j < this.diagram.connectors.length; j++) {
     this.diagram.dataBind();
 }
 }
-public selectionChange(args : ISelectionChangeEventArgs){
-  if(args.state === 'Changing')
-  {
-      if(args.type === 'Addition')
-      {
-          if(args.newValue[0].id === "endThumb")
-      {
-        this.diagram.selectedItems.constraints =(SelectorConstraints.All ) &~ ( SelectorConstraints.ConnectorSourceThumb | SelectorConstraints.ConnectorTargetThumb) ;
-          args.newValue[0].constraints = (ConnectorConstraints.Default  | ConnectorConstraints.DragSegmentThumb) &~ (ConnectorConstraints.Drag);
-      }
-      else{
+// Define the selectionChange method for handling selection events
+public selectionChange(args: ISelectionChangeEventArgs) {
+  // Check if the selection state is 'Changing'
+  if (args.state === 'Changing') {
+    // Handle addition type of selection change
+    if (args.type === 'Addition') {
+      // Check if the newly added item is 'endThumb'
+      if (args.newValue[0].id === "endThumb") {
+        // Adjust selected items constraints for 'endThumb' scenario
+        this.diagram.selectedItems.constraints =
+          (SelectorConstraints.All) &
+          ~(SelectorConstraints.ConnectorSourceThumb |
+            SelectorConstraints.ConnectorTargetThumb);
+
+        // Modify constraints for the 'endThumb' specific item
+        args.newValue[0].constraints =
+          (ConnectorConstraints.Default |
+            ConnectorConstraints.DragSegmentThumb) &
+          ~(ConnectorConstraints.Drag);
+      } else {
+        // Set default constraints for other selections
         this.diagram.selectedItems.constraints = SelectorConstraints.All;
-          }
       }
-      else
-      {
-        this.diagram.selectedItems.constraints = SelectorConstraints.All;
+    } else {
+      // Set default constraints for other types of selection changes
+      this.diagram.selectedItems.constraints = SelectorConstraints.All;
+    }
+  }
+
+  // Check if the selection state is 'Changed'
+  if (args.state === "Changed") {
+    // Handle selection change when newValue is a Node instance
+    if (args.newValue.length > 0 && args.newValue[0] instanceof Node) {
+      this.diagram.selectedItems = {
+        constraints: SelectorConstraints.All | SelectorConstraints.UserHandle,
+        userHandles: this.handles  // Assuming handles is defined somewhere
+      };
+    } else {
+      // Handle selection change for connectors or other cases
+      if (args.newValue.length > 0 && args.newValue[0].id !== "endThumb") {
+        this.diagram.selectedItems = {
+          constraints: SelectorConstraints.All & ~SelectorConstraints.UserHandle
+        };
+      } else {
+        this.diagram.selectedItems = {
+          constraints: SelectorConstraints.All & ~(
+            SelectorConstraints.UserHandle |
+            SelectorConstraints.ConnectorSourceThumb |
+            SelectorConstraints.ConnectorTargetThumb
+          )
+        };
       }
-                  
-  }  
-  if(args.state === "Changed")
-  {
-      if(args.newValue.length>0 && args.newValue[0] instanceof Node){
-        this.diagram.selectedItems = { constraints: SelectorConstraints.All|SelectorConstraints.UserHandle, userHandles: this.handles };
-          }
-          else{
-              if(args.newValue.length>0 && args.newValue[0].id !== "endThumb"){
-                this.diagram.selectedItems = { constraints: SelectorConstraints.All &~ SelectorConstraints.UserHandle };
-              }
-              else{
-                this.diagram.selectedItems = { constraints: SelectorConstraints.All &~(SelectorConstraints.UserHandle|SelectorConstraints.ConnectorSourceThumb | SelectorConstraints.ConnectorTargetThumb)   };
-              }
-          }
+    }
   }
 }
 

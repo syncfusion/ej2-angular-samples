@@ -23,7 +23,7 @@
             <div>Work Start Time</div>
           </td>
           <td style="width: 70%;">
-            <div style="width: 75%;">
+            <div>
               <ejs-numerictextbox #StartTimeObj id='WorkStartTime' [value]="8" [min]="0" [max]="24" [step]="0.5" [showSpinButton]="true" (change)="change1($event)" style="width: 100%;"></ejs-numerictextbox>
             </div>
           </td>
@@ -33,7 +33,7 @@
             <div>Work End Time</div>
           </td>
           <td style="width: 70%;">
-            <div style="width: 75%;">
+            <div>
               <ejs-numerictextbox #EndTimeObj id='WorkEndTime' [value]="17" [min]="0" [max]="24" [step]="0.5" [showSpinButton]="true" (change)="change1($event)" style="width: 100%;"></ejs-numerictextbox>
             </div>
           </td>
@@ -55,7 +55,7 @@
             <div>Working Days</div>
           </td>
           <td style="width: 70%;">
-            <div style="width: 75%;">
+            <div>
               <ejs-dropdownlist id="dropdown" #WorkingDaysObj [dataSource]="dropDownData" (select)="select($event)" [value]="workWeek" [fields]="dropDownFields" popupHeight="350px" style="width: 100%;"></ejs-dropdownlist>
             </div>
           </td>
@@ -65,7 +65,7 @@
             <div>Work Start Time</div>
           </td>
           <td style="width: 70%;">
-            <div style="width: 75%;">
+            <div>
               <ejs-numerictextbox #StartTime id='WorkStart' [value]="8" [min]="0" [max]="24" [step]="0.5" [showSpinButton]="true" (change)="change2($event)" style="width: 100%;"></ejs-numerictextbox>
             </div>
           </td>
@@ -75,7 +75,7 @@
             <div>Work End Time</div>
           </td>
           <td style="width: 70%;">
-            <div style="width: 75%;">
+            <div>
               <ejs-numerictextbox #EndTime id='WorkEnd' [value]="17" [min]="0" [max]="24" [step]="0.5" [showSpinButton]="true" (change)="change2($event)" style="width: 100%;"></ejs-numerictextbox>
             </div>
           </td>

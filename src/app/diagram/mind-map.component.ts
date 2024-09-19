@@ -1,14 +1,15 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { DiagramComponent, Diagram, ConnectorModel, Connector, Node, HierarchicalTree, DataBinding, PointPortModel, randomId, SnapSettingsModel, PortVisibility, MindMap, UserHandleModel, SelectorConstraints, ToolBase, MouseEventArgs, SnapConstraints, NodeModel, ISelectionChangeEventArgs, DiagramTools, NodeConstraints, SelectorModel, MarginModel, VerticalAlignment, HorizontalAlignment, Side, TextModel, ConnectorConstraints, PointPort, DiagramModule, ScrollSettingsModel } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, Diagram, ConnectorModel, Connector, Node, HierarchicalTree, DataBinding, PointPortModel, randomId, SnapSettingsModel, PortVisibility, MindMap, UserHandleModel, SelectorConstraints, ToolBase, MouseEventArgs,DiagramConstraints, SnapConstraints, NodeModel, ISelectionChangeEventArgs, DiagramTools, NodeConstraints, SelectorModel, MarginModel, VerticalAlignment, HorizontalAlignment, Side, TextModel, ConnectorConstraints, PointPort, DiagramModule, ScrollSettingsModel, UndoRedo } from '@syncfusion/ej2-angular-diagrams';
 
 import { DataManager } from '@syncfusion/ej2-data';
-import {mindMap} from'./overview-data';
+import { mindMap } from './diagram-data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+// Inject required diagram features
 Diagram.Inject(DataBinding, MindMap, HierarchicalTree);
 
 /**
- * Sample for Mind Map Tree
+ *  Sample component for Mind Map Tree using Syncfusion Diagram.
  */
 @Component({
     selector: 'control-content',
@@ -20,26 +21,32 @@ Diagram.Inject(DataBinding, MindMap, HierarchicalTree);
 })
 export class MindMapDiagramComponent {
   @ViewChild('diagram') public diagram: DiagramComponent;
+  // Diagram tool settings
   public tool: DiagramTools = DiagramTools.SingleSelect |
     DiagramTools.MultipleSelect;
   public scrollSettings?: ScrollSettingsModel;
-    ngOnInit(): void {
+  public constraints: DiagramConstraints;
+  ngOnInit(): void {
+    this.constraints= DiagramConstraints.Default &~(DiagramConstraints.UndoRedo)
       // Defines the pageSettings for the diagram
       this.scrollSettings = {
           //Sets the scroll limit
           padding: { right: 50, left: 50 }
       }
-    }
+  }
+  // Data binding setup
   public items: DataManager = new DataManager(mindMap);
   public data: Object = { id: 'id', parentId: 'parentId', dataSource: this.items, root: '1' };
+  // Layout configuration
   public layout: Object = {
     type: 'MindMap',orientation:'Horizontal', horizontalSpacing: 50,
     getBranch: (node: NodeModel, nodes: NodeModel[]) => {
       return ((node as Node).data as EmployeeInfo).branch;
     }
   };
-
+  // Snap settings
   public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None };
+  // Lifecycle hook to create the diagram
   public create(args: Object): void {
     this.diagram.fitToPage();
   }
@@ -47,7 +54,7 @@ export class MindMapDiagramComponent {
   public getNodeDefaults: Function = this.nodeDefaults.bind(this);
   public getConnDefaults: Function = this.getConnectorDefaults.bind(this);
   public getCustomTool: Function = this.getTool.bind(this);
-  //Tool for Userhandles.
+   // Tool function to retrieve specific tool based on action
   public getTool(action: string): ToolBase {
     let tool: ToolBase;
     if (action === 'leftHandle') {
@@ -65,7 +72,7 @@ export class MindMapDiagramComponent {
     }
     return tool;
   }
-
+  // Function to define default node properties
   private nodeDefaults(obj: NodeModel): NodeModel {
     obj.constraints = NodeConstraints.Default & ~NodeConstraints.Drag;
     let empInfo: EmployeeInfo = obj.data as EmployeeInfo;
@@ -85,6 +92,7 @@ export class MindMapDiagramComponent {
       obj.annotations = [{ content: empInfo.Label, offset: { x: 0.5, y: 0 }, verticalAlignment: 'Bottom' }];
       (obj.shape as TextModel).margin = { left: 0, right: 0, top: 0, bottom: 0 };
     }
+    // Initialize ports for the node
     let port: PointPortModel[] = this.getPort();
     for (let i: number = 0; i < port.length; i++) {
       obj.ports.push(new PointPort(obj, 'ports', port[i], true));
@@ -180,14 +188,14 @@ export class MindMapDiagramComponent {
   //set the value for UserHandle element.
   private applyHandle(
     handle: UserHandleModel, side: Side, offset: number, margin: MarginModel,
-    halignment: HorizontalAlignment, valignment: VerticalAlignment): void {
+    HorizontalAlignment: HorizontalAlignment, VerticalAlignment: VerticalAlignment): void {
     handle.side = side;
     handle.offset = offset;
     handle.margin = margin;
-    handle.horizontalAlignment = halignment;
-    handle.verticalAlignment = valignment;
+    handle.horizontalAlignment = HorizontalAlignment;
+    handle.verticalAlignment = VerticalAlignment;
   }
-
+  //Function to create ports for nodes
   private getPort(): PointPortModel[] {
     let port: PointPortModel[] = [
       { id: 'port1', offset: { x: 0, y: 0.5 }, visibility: PortVisibility.Hidden, style: { fill: 'black' } },
@@ -196,7 +204,7 @@ export class MindMapDiagramComponent {
     return port;
   }
 }
-
+// Function to add a new node
 function addNode(): NodeModel {
   let obj: NodeModel = {};
   obj.id = randomId();
@@ -204,7 +212,7 @@ function addNode(): NodeModel {
   (obj.data as EmployeeInfo).Label = 'Node';
   return obj;
 }
-
+// Function to add a new connector
 function addConnector(source: NodeModel, target: NodeModel): ConnectorModel {
   let connector: ConnectorModel = {};
   connector.id = randomId();
@@ -212,7 +220,7 @@ function addConnector(source: NodeModel, target: NodeModel): ConnectorModel {
   connector.targetID = target.id;
   return connector;
 }
-
+// Class for handling left extension tool
 class LeftExtendTool extends ToolBase {
   public diagram: Diagram = null;
   //mouseDown event
@@ -235,17 +243,17 @@ class LeftExtendTool extends ToolBase {
           }
           let connector: ConnectorModel = addConnector(selectedObject[0], node);
           this.diagram.clearSelection();
-          let nd: Node = this.diagram.add(node) as Node;
+          let newNode: Node = this.diagram.add(node) as Node;
           this.diagram.add(connector);
           this.diagram.doLayout();
-          this.diagram.bringIntoView(nd.wrapper.bounds);
-          this.diagram.startTextEdit(nd);
+          this.diagram.bringIntoView(newNode.wrapper.bounds);
+          this.diagram.startTextEdit(newNode);
         }
       }
     }
   }
 }
-
+// Class for handling right extension tool
 class RightExtendTool extends ToolBase {
   public diagram: Diagram = null;
   //mouseDown event
@@ -268,17 +276,17 @@ class RightExtendTool extends ToolBase {
           }
           let connector: ConnectorModel = addConnector(selectedObject[0], node);
           this.diagram.clearSelection();
-          let nd: Node = this.diagram.add(node) as Node;
+          let newNode: Node = this.diagram.add(node) as Node;
           this.diagram.add(connector);
           this.diagram.doLayout();
-          this.diagram.bringIntoView(nd.wrapper.bounds);
-          this.diagram.startTextEdit(nd);
+          this.diagram.bringIntoView(newNode.wrapper.bounds);
+          this.diagram.startTextEdit(newNode);
         }
       }
     }
   }
 }
-
+// Class for handling delete tool
 class DeleteClick extends ToolBase {
   public diagram: Diagram = null;
   //mouseDown event
@@ -313,7 +321,7 @@ class DeleteClick extends ToolBase {
     this.diagram.remove(node);
   }
 }
-
+// Interface for defining employee information
 export interface EmployeeInfo {
   branch: string;
   color: string;

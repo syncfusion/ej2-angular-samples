@@ -24,6 +24,7 @@ export class GanttEditingComponent implements OnInit {
     public eventMarkers: object[];
     public toolbar: string[];
     public splitterSettings: object;
+    public startDate :any;
     public ngOnInit(): void {
         this.data = editingData;
         this.taskSettings = {
@@ -51,11 +52,12 @@ export class GanttEditingComponent implements OnInit {
         };
         this.toolbar = ['Add', 'Edit', 'Update', 'Delete', 'Cancel', 'ExpandAll', 'CollapseAll', 'Indent', 'Outdent'];
         this.columns =  [
-            { field: 'TaskID', width:80 },
-            { field: 'TaskName', headerText: 'Job Name', width: '250', clipMode: 'EllipsisWithTooltip' },
+            { field: 'TaskID', width: 80 },
+            { field: 'TaskName', headerText: 'Job Name', width: '250', clipMode: 'EllipsisWithTooltip', validationRules: { required: true, minLength: [5, 'Task name should have a minimum length of 5 characters'], } },
             { field: 'StartDate' },
-            { field: 'Duration' },
-            { field: 'Progress' },
+            { field: 'EndDate', validationRules: { date: true, required: [this.customFn.bind(this), 'Please enter a value greater than the start date.'] } },
+            { field: 'Duration', validationRules: { required: true} },
+            { field: 'Progress', validationRules: { required: true, min: 0, max: 100 } },
             { field: 'Predecessor' }
         ];
         this.timelineSettings = {
@@ -85,5 +87,25 @@ export class GanttEditingComponent implements OnInit {
         this.splitterSettings = {
             position: "35%"
         };
+        
+    }
+    actionBegin(args): void {
+        if (args.columnName === "EndDate"){
+            this.startDate = args.rowData.ganttProperties.startDate;
+        }
+    }
+    public customFn(args) {
+      var endDate;
+      var gantt = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
+      if (args.element && args.value) {
+        endDate = new Date(args.value);
+        if(!this.startDate && gantt.editModule.dialogModule['beforeOpenArgs']) {
+          this.startDate = gantt.editModule.dialogModule['beforeOpenArgs'].rowData['ganttProperties'].startDate;
+          endDate = (gantt.editModule.dialogModule['beforeOpenArgs'].rowData['ganttProperties'].endDate);
+        }
+        this.startDate.setHours(0, 0, 0, 0);
+        endDate.setHours(0, 0, 0, 0);
+      }
+      return this.startDate <= endDate;
     }
 }

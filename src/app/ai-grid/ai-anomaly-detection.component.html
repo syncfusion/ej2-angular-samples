@@ -1,0 +1,20 @@
+<div id='container'>
+    <ng-template #toolbarTemplate>
+        <button id='anomaly' class="e-btn e-primary" (click)="detectAnomaly()">Detect Anomaly Data</button>
+    </ng-template>
+    <ejs-grid #grid [dataSource]="machineDb" [toolbar]="toolbarOptions" (queryCellInfo)="customizeCell($event)"
+        enableHover="false" rowHeight="75" height="450" allowTextWrap="true">
+        <e-columns>
+            <e-column field='MachineID' isPrimaryKey='true' headerText='Machine ID' textAlign='Right'
+                width='85'></e-column>
+            <e-column field='Temperature' headerText='Temperature (C)' textAlign='Right' width='120'></e-column>
+            <e-column field='Pressure' headerText='Pressure (psi)' textAlign='Right' width='100'></e-column>
+            <e-column field='Voltage' headerText='Voltage (V)' textAlign='Right' width='100'></e-column>
+            <e-column field='MotorSpeed' headerText='Motor Speed (rpm)' textAlign='Right' width='140'></e-column>
+            <e-column field='ProductionRate' headerText='Production Rate (units/hr)' textAlign='Right'
+                width='140'></e-column>
+            <e-column field='AnomalyDescription' visible='false' headerText='Anomaly Description'
+                width='290'></e-column>
+        </e-columns>
+    </ejs-grid>
+</div>

@@ -7,6 +7,10 @@
 resize: none;
 }
 
+#textarea-template .e-multi-line-input {
+  max-width: 100%;
+}
+
 .e-error {
   padding-top: 7px;
 }
@@ -25,6 +29,7 @@ background: #f9f9f9;
 .bootstrap4-dark #control_wrapper,
 .fluent-dark #control_wrapper,
 .fluent2-dark #control_wrapper,
+.fluent2-highcontrast #control_wrapper,
 .fabric-dark #control_wrapper,
 .tailwind-dark #control_wrapper,
 .material-dark #control_wrapper {

@@ -1,10 +1,10 @@
 .control-wrapper {
     margin: 0 auto;
-    width: 500px;
+    width: 650px;
 }
 
 @media screen and (max-width: 480px) {
     .control-wrapper {
         width: 300px;
-    }
+  }
 }

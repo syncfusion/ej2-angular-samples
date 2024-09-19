@@ -1,16 +1,17 @@
 <div id="action-description">
-    <p>This sample demonstrates the built-in support to filter the <code>datasource</code> in the MultiColumn ComboBox.</p>
+    <p>This sample demonstrates the built-in support to filter the datasource when <code>allowFiltering</code>is enabled in the MultiColumn ComboBox.</p>
 </div>
 
 <div class="control-section">
     <div class='control-wrapper'>
         <div style='padding-top:60px;'>
-            <ejs-multicolumncombobox id='filtering' #filtering [dataSource]='orderData' [fields]='fields' (filtering)='onFiltering($event)' [allowFiltering]='true' [placeholder]='waterMark' popupHeight='200px'>
+            <ejs-multicolumncombobox id='filtering' #filtering [dataSource]='workDetails' [fields]='fields' (filtering)='onFiltering($event)' [allowFiltering]='true' [placeholder]='waterMark' popupHeight='230px' >
                 <e-columns>
-                    <e-column field='OrderID' header='Order ID' width='110'></e-column>
-                    <e-column field='CustomerID' header='Customer ID' width='130'></e-column>
-                    <e-column field='Freight' header='Freight' width='90'></e-column>
-                    <e-column field='ShipCountry' header='Ship Country' width='140'></e-column>
+                    <e-column field='Name' header='Name' width="100"/>
+                    <e-column field='YearOfJoining' header='Year Of Joining' width="120"/>
+                    <e-column field='Status' header='Status' width="90"/>
+                    <e-column field='Location' header='Location' width="100"/>
+                    <e-column field='Experience' header='Experience in Year' width="150"/>
                 </e-columns>
             </ejs-multicolumncombobox>
         </div>
@@ -18,5 +19,9 @@
 </div>
 
 <div id="description">
-    <p>This sample illustrates to query the datasource and pass the resulted data when characters are typed in the search box triggers the <code>filtering</code> event and using the <code>updateData</code> method to display the list items in the MultiColumn ComboBox.</p>
+    <p>
+        In this sample, the employees data is filtered based on <code>Name</code> column, which illustrates how employees details are filtered dynamically based on typed characters. 
+    </p>
+    <p>This sample illustrates that, query the data source and pass the resulted data when characters are typed in the search box triggers the <code>filtering</code>
+        event, you can filter down the data source and return the resulted data to MultiColumn ComboBox via <code> updateData</code>method to display its list of employees.</p>
 </div>

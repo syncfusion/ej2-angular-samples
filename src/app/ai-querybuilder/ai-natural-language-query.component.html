@@ -1,0 +1,55 @@
+<div id="container">
+  <ejs-tab id="tab_default" #tabDefault (created)="tabCreated()">
+    <e-tabitems>
+      <e-tabitem [header]="headerText[0]">
+        <ng-template #content>
+          <div id="prompt-ui">
+            <div id="customTbarDialog">
+              <span class="e-text">Instruct AI</span>
+              <textarea id="text-area" aria-label="ai assistant query box"
+                placeholder="find all users who lives in los angeles and have over 1000 credits"></textarea>
+            </div>
+          </div>
+        </ng-template>
+      </e-tabitem>
+      <e-tabitem [header]="headerText[1]">
+        <ng-template #content>
+          <div id="querybuilder-ui">
+            <ejs-querybuilder #querybuilder [dataSource]="users">
+              <e-columns>
+                <e-column field="id" label="ID" type="number"></e-column>
+                <e-column field="name" label="Name" type="string"></e-column>
+                <e-column field="email" label="Email" type="string"></e-column>
+                <e-column field="address" label="Address" type="string"></e-column>
+                <e-column field="city" label="City" type="string"></e-column>
+                <e-column field="state" label="State" type="string"></e-column>
+                <e-column field="credits" label="Credits" type="number"></e-column>
+              </e-columns>
+            </ejs-querybuilder>
+          </div>
+        </ng-template>
+      </e-tabitem>
+    </e-tabitems>
+  </ejs-tab>
+
+  <div class="e-custom-elem">
+    <button ejs-button id="submit" (click)="generateQuery()" class="e-control e-btn">Generate Query</button>
+  </div>
+  <div class="e-custom-elem">
+    <span class="e-text">Results from your AI generated Query</span>
+    <div style="margin-top: 10px;">
+      <ejs-grid id="grid" #grid (created)="gridCreated()" [dataSource]="users" [allowSelection]="true"
+        [allowPaging]="true" [pageSettings]="{ pageSize: 10 }" width="100%">
+        <e-columns>
+          <e-column field="id" headerText="Task ID" width="120" textAlign="Right"></e-column>
+          <e-column field="name" headerText="Name" width="140"></e-column>
+          <e-column field="email" headerText="Email" width="140" textAlign="Right"></e-column>
+          <e-column field="address" headerText="Address" width="130"></e-column>
+          <e-column field="city" headerText="City" width="120"></e-column>
+          <e-column field="state" headerText="State" width="130"></e-column>
+          <e-column field="credits" headerText="Credits" width="130"></e-column>
+        </e-columns>
+      </ejs-grid>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
-import { SpreadsheetComponent, getFormatFromType, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent, SpreadsheetModule } from '@syncfusion/ej2-angular-spreadsheet';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 /**
@@ -23,5 +23,5 @@ export class CellDataBindingController {
     public styles = { fontWeight: 'bold', textAlign: 'center' };
     public styles2 = { fontWeight: 'bold', textAlign: 'right' };
     public styles3 = { fontWeight: 'bold' };
-    currencyFormat: string = getFormatFromType('Currency');
+    currencyFormat: string = '$#,##0.00';
 }

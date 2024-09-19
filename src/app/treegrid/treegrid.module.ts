@@ -141,7 +141,7 @@ export const treegridRouteConfig: Object[] = [
     order: '04', category: 'Rows' },
     { 'path': ':theme/treegrid/rowdrag-drop', component: DragAndDropBetweenComponent, 'name': 'Drag and Drop',
     description: 'This demo for Essential JS 2 Tree Grid component shows how the rows can be dragged between the Tree Grid using the row drag-and-drop feature.',
-    order: '04', category: 'Rows',type:"new"},
+    order: '04', category: 'Rows'},
     { 'path': ':theme/treegrid/drag-drop', component: DragDropComponent, 'name': 'Drag and Drop within Tree Grid',
     description: 'This demo for Essential JS 2 Tree Grid component shows how the rows can be dragged within the Tree Grid using the row drag-and-drop feature.',
     order: '04', category: 'Rows'},

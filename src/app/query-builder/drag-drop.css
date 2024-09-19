@@ -166,22 +166,4 @@ ejs-querybuilder {
     .e-query-preview .copy-tooltip {
        display: block !important;
     }
-  }
-
-  .highcontrast .e-query-preview .e-sql-content,
-  .fluent2-dark .e-query-preview .e-sql-content,
-  .fluent2-highcontrast .e-query-preview .e-sql-content {
-    height: 140px;
-  }
-
-  .highcontrast .e-query-preview .e-json-content,
-  .fluent2-dark .e-query-preview .e-json-content,
-  .fluent2-highcontrast .e-query-preview .e-json-content {
-    height: 150px;
-  }
-
-  .fluent2-dark .e-query-preview .e-copy-tooltip,
-  .fluent2-highcontrast .e-query-preview .e-copy-tooltip {
-    background-color: black;
-    color: white;
-  }
+}

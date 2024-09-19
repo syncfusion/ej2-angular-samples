@@ -8,6 +8,38 @@
   margin-top: 20px;
 }
 
+.e-bigger .badge-accordion  #accordion .e-acrdn-header-content .e-badge.e-badge-success {
+  float: right;
+  margin-top: -2px;
+}
+
+.badge-accordion  #accordion .e-acrdn-header-content .e-badge.e-badge-success {
+  float: right;
+  margin-top: 2px;
+}
+.highcontrast .badge-accordion  #accordion .e-acrdn-header-content .e-badge.e-badge-success {
+  margin-top: 11px;
+}
+.material .badge-accordion  #accordion .e-acrdn-header-content .e-badge.e-badge-success,
+.material-dark .badge-accordion  #accordion .e-acrdn-header-content .e-badge.e-badge-success {
+  margin-top: 8px;
+}
+.fabric .badge-accordion  #accordion .e-acrdn-header-content .e-badge.e-badge-success,
+.fabric-dark .badge-accordion  #accordion .e-acrdn-header-content .e-badge.e-badge-success,
+.bootstrap .badge-accordion  #accordion .e-acrdn-header-content .e-badge.e-badge-success,
+.bootstrap-dark .badge-accordion  #accordion .e-acrdn-header-content .e-badge.e-badge-success {
+  margin-top: 10px;
+}
+.e-bigger.bootstrap4 .badge-accordion  #accordion .e-acrdn-header-content .e-badge.e-badge-success {
+  margin-top: 2px;
+}
+.badge-accordion  #accordion .e-acrdn-header-content {
+  width: 270px;
+}
+.e-bigger .badge-accordion  #accordion .e-acrdn-header-content {
+  width: 260px;
+}
+
 .tailwind .sample_container.badge-accordion  #accordion .e-toggle-icon {
   top: 7px;
 }

@@ -1,18 +1,18 @@
-<div class="control-section">
+<div class="control-section diagram-scroll">
 <script src="script/diagram-common.ts"></script>
 <style>
-    .e-symbolpalette {
+    .diagram-scroll .e-symbolpalette {
         display: block;
     }
 </style>
 
 <div style="width: 100%;">
     <div id="palette-space" style="width:22%;float:left">
-        <ejs-symbolpalette id="symbolpalette" [expandMode]='expandMode' [palettes]='palettes' width="100%" height="700px" [symbolHeight]=60 [symbolWidth]=60 [symbolMargin]='symbolMargin' [getSymbolInfo]='getSymbolInfo' [getNodeDefaults]='getSymbolDefaults' [expandMode]="expandMode">
+        <ejs-symbolpalette id="symbolpalette" [expandMode]='expandMode' [palettes]='palettes' width="100%" height="700px" [symbolHeight]=60 [symbolWidth]=60 [getConnectorDefaults]='connectorDefaults' [symbolMargin]='symbolMargin' [getSymbolInfo]='getSymbolInfo' [getNodeDefaults]='getSymbolDefaults' [expandMode]="expandMode">
         </ejs-symbolpalette>
     </div>
     <div id="diagram-space" style="width:55%;float:left">
-        <ejs-diagram #diagram id="diagram" width="100%" height="700px" [snapSettings]='snapSettings' (created)="created()" [getConnectorDefaults]='connDefaults' [getNodeDefaults]='nodeDefaults' (dragEnter)="dragEnter($event)" (created)="diagramCreate($event)" [scrollSettings] = "scrollSettings">
+        <ejs-diagram #diagram id="diagram" width="100%" height="700px" [snapSettings]='snapSettings' (created)="created()" [getConnectorDefaults]='connectorDefaults' (dragEnter)="dragEnter($event)" (created)="diagramCreate($event)" [scrollSettings] = "scrollSettings">
         </ejs-diagram>
     </div>
     <div id="properties" style="width:22%;float:right">
@@ -85,7 +85,7 @@
                 <div class="col-xs-6 db-col-left">
                     <span style="font-weight:550;font-size:14px;">Enable AutoScroll</span>
                 </div>
-                <div class="col-xs-6 db-col-right" style="padding-top: 10px;">
+                <div class="col-xs-6 db-col-right">
                     <div class="db-text-input">
                         <ejs-checkbox id='autoScroll' #sample [checked]='true' (change)='canAutoScrollFn($event)' ></ejs-checkbox>
                         </div>

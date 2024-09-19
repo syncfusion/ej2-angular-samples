@@ -1,81 +1,124 @@
 <div id="action-description">
-    <p>This sample demonstrates the Grid component with the detail template feature. Click the expand button
-        in each Grid row to show the detailed information about a row.
+    <p>This sample demonstrates the Grid component's with the detail template feature. It lets users click the expand button
+      in each grid row to display detailed information about that row.
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid #grid [dataSource]='data' id='Grid' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings'>
+    <ejs-grid #grid [dataSource]='data' id='Grid' [height]='600' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' (detailDataBound)='detailDataBound($event)'>
         <ng-template #detailTemplate let-data>
-            <table class="detailtable" width="100%">
-                <colgroup>
-                    <col width="35%">
-                    <col width="35%">
-                    <col width="30%">
-                </colgroup>
-                <tbody>
-                    <tr>
-                        <td rowspan="4" style="text-align: center;">
-                            <img class='photo' src="./assets/grid/images/{{data.EmployeeID}}.png" alt="{{data.EmployeeID}}" />
-                        </td>
-                        <td>
-                            <span style="font-weight: 500;">First Name: </span> {{data.FirstName}}
-                        </td>
-                        <td>
-                            <span style="font-weight: 500;">Postal Code: </span> {{data.PostalCode}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span style="font-weight: 500;">Last Name: </span> {{data.LastName}}
-                        </td>
-                        <td>
-                            <span style="font-weight: 500;">City: </span> {{data.City}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span style="font-weight: 500;">Title: </span> {{data.Title}}
-                        </td>
-                        <td>
-                            <span style="font-weight: 500;">Phone: </span> {{data.HomePhone}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span style="font-weight: 500;">Address: </span> {{data.Address}}
-                        </td>
-                        <td>
-                            <span style="font-weight: 500;">HireDate: </span> {{format(data.HireDate)}}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div>
+            <p style="text-align: center; font-size: 17px"><b>Sprint</b></p>
+            <ejs-tab id="element" #element>
+                <e-tabitems>
+                    <e-tabitem [header]='headerText[0]'>
+                        <ng-template #content>
+                            <div style="padding-top: 20px; padding-bottom: 20px;">
+                                <ejs-kanban #kanbanObj cssClass='kanban-swimlane' keyField="Status" [dataSource]='taskDetail' [cardSettings]='cardSettings' >
+                                <e-columns>
+                                    <e-column headerText='Open' keyField='Open'></e-column>
+                                    <e-column headerText='In Progress' keyField='InProgress'></e-column>
+                                    <e-column headerText='Testing' keyField='Testing'></e-column>
+                                    <e-column headerText='Done' keyField='Close'></e-column>
+                                </e-columns>
+                                <ng-template #cardSettingsTemplate let-data>
+                                    <div class="card-template">
+                                        <table class="card-template-wrap" style="width: 100%">
+                                          <tbody>
+                                            <tr>
+                                              <td class="e-title">
+                                                <div class="e-card-header">
+                                                  <div class="e-card-header-caption">
+                                                    <div class="e-card-header-title e-tooltip-text">
+                                                      {{data.Id}}
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <table
+                                                  class="card-template-wrap">
+                                                  <tbody>
+                                                    <tr class='e-tooltip-text'>
+                                                      <td>
+                                                        <div class="e-card-content">
+                                                          {{data.Summary}}
+                                                        </div>
+                                                        <span class="e-card-content"><b>Estimated hour:</b> {{data.Estimate}}</span>
+                                                      </td>
+                              
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table >
+                                      </div >
+                                </ng-template>
+                            </ejs-kanban>
+                            </div>
+                        </ng-template>
+                    </e-tabitem>
+                    <e-tabitem [header]='headerText[1]'>
+                        <ng-template #content>
+                            <div>
+                                <ejs-chart height="302px" [tooltip]="{ enable: true }" [primaryXAxis]="{ valueType: 'Category', title: 'Month' }" title="Sales">
+                                    <e-series-collection>
+                                        <e-series [dataSource]='salesData' type="Line" xName="taskid" yName="estimatedHours" name="Estimated Hours" [marker]="{ visible: true, width: 10, height: 10 }"></e-series>
+                                        <e-series [dataSource]='salesData' type="Line" xName="taskid" yName="spentHours" name="Spent Hours" [marker]="{ visible: true, width: 10, height: 10 }"></e-series>
+                                    </e-series-collection>
+                                </ejs-chart>
+                                </div>
+                        </ng-template>
+                    </e-tabitem>
+                </e-tabitems>
+            </ejs-tab>
+            </div>
         </ng-template>
         <e-columns>
-            <e-column field='EmployeeID' headerText='Employee ID' width='125' textAlign='Right'></e-column>
-            <e-column field='FirstName' headerText='Name' width='120'></e-column>
-            <e-column field='Title' headerText='Title' width='170'></e-column>
-            <e-column field='HireDate' headerText='Hire Date' width='135' textAlign='Right' format='yMd'></e-column>
-            <e-column field='ReportsTo' headerText='Reports To' width='120' textAlign='Right'></e-column>
+            <e-column headerText='Image' width='180' textAlign='Center'>
+                <ng-template #template let-data>
+                    <div class="image">
+                        <img src="./assets/grid/images/{{data.EmployeeID.replace('Emp100', '')}}.png" alt="{{data.EmployeeID}}"/>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='EmployeeID' headerText='ID' [isPrimaryKey]='true' width='120'></e-column>
+            <e-column field='Name' headerText='Name' width='120'></e-column>
+            <e-column field='MailID' headerText='Email ID' width='180'>
+              <ng-template #template let-data>
+                  <div class='url'>
+                      <a href="mailto:{{data.MailID}}">{{ data.MailID }}</a>
+                  </div>
+              </ng-template>
+          </e-column>
+            <e-column field='SoftwareTeam' headerText='Team(s)' width='200'></e-column>
+            <e-column field='ReportTo' headerText='Reporter' width='200'></e-column>
         </e-columns>
 
     </ejs-grid>
-
-
     <div id="description">
         <p>
-            The detail row template provides an additional information about a data row which can show or hide by clicking
-            on expand or collapse button. The <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/grid#detailtemplate">
-        detailTemplate</a></code> property accepts the template for the detail row.
+          This additional information can be shown or hidden by clicking on the expand or collapse button. The 
+          <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/grid#detailtemplate">
+          detailTemplate</a></code> property accepts either a string or HTML element`s ID value, which will be used as the template for the detail row.
         </p>
         <p>
-            In this demo, we have presented Employee Information with image in the detail row.
+          In this demonstration, the parent row provides information about employees name, ID, team and reporter names. In each employee row with 
+          a details view, when expanding the details, you can see the sprint report of that employee. In the details row with two tabs, the first tab contains 
+          <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/demos/#/fluent2/kanban/overview">
+          Syncfusion Kanban component</a></code> used to list assigned tasks and their current statuses, and the second tab contains <code><a target="_blank" class="code" 
+          href="https://ej2.syncfusion.com/angular/demos/#/fluent2/chart/overview.html"> Syncfusion Chart Component</a></code> used to 
+          display the burndown chart of employee task estimated time vs actual spend time.
         </p>
         <br/>
         <p style="font-weight: 500">Injecting Module:</p>
         <p>
-            Grid features are segregated into individual feature-wise modules. To use detail template feature, we need to inject <code>DetailRowService</code>            into the <code>&#64;NgModule.providers</code> section.
+            Features of the Grid component are segregated into individual feature-wise modules. To use the detail template feature, inject the <code>DetailRowService</code> into the <code>&#64;NgModule.providers</code> section.
         </p>
+        <p>
+          More information on the detail template can be found in this
+          <a target="_blank" 
+          href="https://ej2.syncfusion.com/angular/documentation/grid/row/detail-template">
+          documentation section</a>.
+      </p>
     </div>
 </div>

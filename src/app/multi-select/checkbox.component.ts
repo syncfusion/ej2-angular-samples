@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
-import { MultiSelectComponent, MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import { MultiSelectComponent, MultiSelectModule, CheckBoxSelectionService } from '@syncfusion/ej2-angular-dropdowns';
 import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -10,7 +10,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     styleUrls: ['checkbox.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [SBActionDescriptionComponent, MultiSelectModule, CheckBoxModule, SBDescriptionComponent]
+    imports: [SBActionDescriptionComponent, MultiSelectModule, CheckBoxModule, SBDescriptionComponent],
+    providers: [CheckBoxSelectionService],
 })
 export class CheckboxMultiSelectComponent implements OnInit {
     @ViewChild('checkbox')

@@ -12,10 +12,10 @@ import { expenseData, startDate, endDate} from './complexShapes.data';
 import { Query, DataManager, Predicate } from '@syncfusion/ej2-data';
 import { RangeEventArgs } from '@syncfusion/ej2-calendars';
 import { DateRangePickerComponent, DateRangePickerModule } from "@syncfusion/ej2-angular-calendars";
-import { SBDescriptionComponent } from "../common/dp.component";
+import { SBDescriptionComponent } from '../common/dp.component';
 import { CircularGaugeModule } from "@syncfusion/ej2-angular-circulargauge";
-import { NgIf, CurrencyPipe } from "@angular/common";
-import { SBActionDescriptionComponent } from "../common/adp.component";
+import { NgIf, CurrencyPipe } from '@angular/common';
+import { SBActionDescriptionComponent } from '../common/adp.component';
 import { CommonModule } from '@angular/common';
 /**
  * Sample for ComplexShapes
@@ -89,6 +89,7 @@ export class ComplexShapesDiagramComponent {
     public pieRenderingData: Object[] = [];
     public accanimation: Object;
     public showWaitingPopup: boolean = false;
+    //Initialization method called when Angular initializes the component
     public ngOnInit(): void {
         this.startDate = startDate;
         this.back = '#F5F5F5';
@@ -99,7 +100,7 @@ export class ComplexShapesDiagramComponent {
             { label: 'Last 3 Months', start: new Date('9/1/2017'), end: new Date('11/30/2017') },
             { label: 'All Time', start: new Date('6/1/2017'), end: new Date('11/30/2017') }
         ];
-
+        // Initialization of chart properties, axes, and other configurations
         this.primaryXAxis = {
             labelFormat: 'MMM',
             valueType: 'DateTime',
@@ -166,6 +167,10 @@ export class ComplexShapesDiagramComponent {
         this.accanimation = { enable: false };
 
     }
+     /**
+     * Method executed when chart is loaded
+     * @param args Event arguments
+     */
     public onChartLoaded(args: ILoadedEventArgs): void {
         if (this.initialRender) {
             this.initialRender = false;
@@ -184,6 +189,7 @@ export class ComplexShapesDiagramComponent {
         this.updateChartData();
         this.refreshPieChart()
     }
+    // Method to handle date range change
     public onDateRangeChange(args: RangeEventArgs): void {
         this.startDate = args.startDate;
         this.endDate = args.endDate;
@@ -211,7 +217,7 @@ export class ComplexShapesDiagramComponent {
     public colExpenseDS: any = [];
     public tempIncomeDS: any = {};
     public tempExpenseDS: any = {};
-
+    // Function to combine objects and arrays
     public objectAssign(e: any): object[] {
         let result: Object[] = [];
         let obj: any;
@@ -221,6 +227,7 @@ export class ComplexShapesDiagramComponent {
         }
         return result;
     }
+    // Function to get data for column chart (income)( bar & line chart)
     public getColumnChartIncomeDS(e: any): Object[] {
         this.colIncomeDS = [];
         this.tempIncomeDS = [];
@@ -240,7 +247,7 @@ export class ComplexShapesDiagramComponent {
         }
         return this.colIncomeDS;
     }
-
+    // Function to get data for column chart (expense) ( bar & line chart)
     public getColumnChartExpenseDS(e: any): Object[] {
         this.colExpenseDS = [];
         this.tempExpenseDS = [];
@@ -260,7 +267,7 @@ export class ComplexShapesDiagramComponent {
         }
         return this.colExpenseDS;
     }
-
+    // Function to prepare data for the line chart
     public getLineChartDS(): Object[] {
         this.lineD = [];
         this.lineDS = [];
@@ -288,7 +295,7 @@ export class ComplexShapesDiagramComponent {
         }
         return this.lineDS;
     }
-    // custom code end
+    // Method to update chart data based on expense data
     public updateChartData(): void {
         new DataManager(<JSON[]>expenseData).executeQuery(new Query()
             .where(this.predicate.and('TransactionType', 'equal', 'Expense')))
@@ -313,12 +320,12 @@ export class ComplexShapesDiagramComponent {
             return '6px';
         }
     }
-
+    // Event handler when the accumulation chart (pie chart) is loaded
     public acconChartLoaded(args: IAccLoadedEventArgs): void {
         this.createLegendData('pie');
         this.enableLegend = true;
     }
-
+    // Event handler for customizing text during rendering of pie chart labels
     public onTextRender(args: IAccTextRenderEventArgs): void {
         args.series.dataLabel.font.size = this.getFontSize(this.pie.initialClipRect.width);
         this.pie.animateSeries = true;
@@ -326,12 +333,12 @@ export class ComplexShapesDiagramComponent {
             args.text = 'Others';
         }
     }
-
+    // Event handler executed after animation completes in the pie chart
     public onAnimateCompleted(args: IAccAnimationCompleteEventArgs): void {
         let element: HTMLElement = document.getElementById('total-expense_datalabel_Series_0');
         if (!isNOU(element)) { element.style.visibility = 'visible'; }
     }
-// custom code end
+     // Method to calculate total expenses and prepare data for pie chart
     public getTotalExpense(): void {
         this.tempData = <IExpenseData[]>this.dataSource;
         this.expTotal = 0;
@@ -377,7 +384,10 @@ export class ComplexShapesDiagramComponent {
             this.groupValue = null;
         }
     }
-
+     /**
+     * Method to create legend data for pie chart
+     * @param initiate Initialization flag
+     */
     public createLegendData(initiate: string): void {
         if (this.pie && (initiate === 'pieUpdate' || this.pieLegendData.length === 0)) {
             this.pieLegendData = [];
@@ -393,22 +403,25 @@ export class ComplexShapesDiagramComponent {
             this.pieRenderData.push(data);
         }
     }
-// custom code start
+     /**
+     * Method executed when grid data is bound
+     * @param args Event arguments
+     */
     public onGridDataBound(args: Object): void {
         this.showWaitingPopup = false;
     }
-
+    // Method executed when grid is loaded
     public onGridLoad(args: any): void {
         /** While the legend grid loads, it gets the data from pie chart and process to this */
         this.createLegendData('pie');
         this.showWaitingPopup = true;
     }
-
+    // Method to refresh pie chart data
     public refreshPieChart(): void {
         this.getTotalExpense();
         this.createLegendData('pieUpdate');
     }
-
+    // Method to update pie chart based on container width
     public updatePieChart(): void {
         let pieContainerObj: HTMLElement = document.getElementById('totalExpense');
         if (!isNOU(pieContainerObj) && pieContainerObj.offsetWidth < 480) {
@@ -417,10 +430,12 @@ export class ComplexShapesDiagramComponent {
             this.enableChartLabel();
         }
     }
+    // Method to disable data labels in the pie chart
     public disableChartLabel(): void {
         this.pie.series[0].dataLabel.visible = false;
         this.pie.refresh();
     }
+    // Method to enable data labels in the pie chart
     public enableChartLabel(): void {
         this.pie.series[0].dataLabel.visible = true;
         this.pie.refresh();
@@ -461,7 +476,9 @@ export class ComplexShapesDiagramComponent {
     }
 
 }
-// custom code start
+/**
+ * Interface for expense data structure
+ */
 export interface IExpenseData {
     Amount: number;
     Category: string;

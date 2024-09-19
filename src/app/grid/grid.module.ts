@@ -17,6 +17,7 @@ import { ReorderComponent } from './column/reorder.component';
 import { SortComponent } from './sorting.component';
 import { PageComponent } from './paging.component';
 import { FilterComponent } from './filtering.component';
+import { FilterTemplateComponent } from './filter-template.component';
 import { FilteringMenuComponent } from './filter-menu.component';
 import { SelectionComponent } from './selection.component';
 import { SelectionApiComponent } from './selection-api.component';
@@ -33,6 +34,7 @@ import { AggregateComponent } from './aggregate-default.component';
 import { AggregateGroupComponent } from './aggregate-group.component';
 import { ReactiveAggregateComponent } from './reactive-aggregate.component';
 import { ColumnTemplateComponent } from './column-template.component';
+import { HeaderTemplateComponent } from './header-template.component';
 import { RowTemplateComponent } from './row-template.component';
 import { DetailTemplateComponent } from './detail-template.component';
 import { HierarchyComponent } from './hierarchy.component';
@@ -96,12 +98,16 @@ export const gridRouteConfig: Object[] = [
     },
 
     {
-        'path': ':theme/grid/column-template', component: ColumnTemplateComponent, name: 'Column Template', description: 'This demo for Essential JS 2 grid component shows the usage of template columns in grid.', order: '03',
+        'path': ':theme/grid/column-template', component: ColumnTemplateComponent, name: 'Column Template', 'type': 'update', description: 'This demo for Essential JS 2 grid component shows the usage of template columns in grid.', order: '03',
+        category: 'Columns'
+    },
+    {
+        'path': ':theme/grid/header-template', component: HeaderTemplateComponent, name: 'Header Template', 'type': 'update', description: 'This demo for Essential JS 2 grid component shows the usage of template header in grid.', order: '03',
         category: 'Columns'
     },
     {
         'path': ':theme/grid/column/stacked-header', component: StackedHeaderComponent,
-        name: 'Stacked Header', description: 'This demo for Essential JS 2 grid component shows the usage of the stacked header feature.', order: '03', category: 'Columns'
+        name: 'Stacked Header', 'type': 'update', description: 'This demo for Essential JS 2 grid component shows the usage of the stacked header feature.', order: '03', category: 'Columns'
     },
     {
         'path': ':theme/grid/column/foreign-key', component: ForeignKeyColumnComponent, name: 'Foreign Key Column', order: '03',description: 'This demo for Essential JS 2 grid component demonstrates the usage of a foreign key column and performing actions such as filtering, sorting, and editing in the foreign key column.',
@@ -113,7 +119,7 @@ export const gridRouteConfig: Object[] = [
         category: 'Columns'
     },
     {
-        'path': ':theme/grid/column/column-menu', component: ColumnMenuComponent, name: 'Column Menu', order: '03',description: 'This demo for Essential JS 2 grid component shows the usage of the various column functionalities of the column menu feature.',
+        'path': ':theme/grid/column/column-menu', component: ColumnMenuComponent, name: 'Column Menu', 'type': 'update', order: '03',description: 'This demo for Essential JS 2 grid component shows the usage of the various column functionalities of the column menu feature.',
         category: 'Columns'
     },
     { 'path': ':theme/grid/column/auto-wrap', component: AutoWrapComponent, name: 'AutoWrap Column cells', description: 'This demo for Essential JS 2 grid component shows how the grid cell content is autowrapped to show large cell content.', order: '03', category: 'Columns' },
@@ -129,10 +135,10 @@ export const gridRouteConfig: Object[] = [
 
     {
         'path': ':theme/grid/row-template', component: RowTemplateComponent,
-        name: 'Row Template', description: 'This demo for Essential JS 2 grid component shows the usage of the row template feature.', order: '04', category: 'Rows'
+        name: 'Row Template', 'type': 'update', description: 'This demo for Essential JS 2 grid component shows the usage of the row template feature.', order: '04', category: 'Rows'
     },
     {
-        'path': ':theme/grid/detail-template', component: DetailTemplateComponent, name: 'Detail Template', order: '04',description: 'This demo for Essential JS 2 grid component shows the usage of the detail template feature.',
+        'path': ':theme/grid/detail-template', component: DetailTemplateComponent, name: 'Detail Template', 'type': 'update', order: '04',description: 'This demo for Essential JS 2 grid component shows the usage of the detail template feature.',
         category: 'Rows'
     },
     {
@@ -179,6 +185,7 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/sorting', component: SortComponent, name: 'Sorting', description: 'This demo for Essential JS 2 grid component shows the grid multisorting feature. Using this feature, grid rows can be sorted by two or more columns.', order: '06', category: 'Sorting' },
 
     { 'path': ':theme/grid/filtering', component: FilterComponent, name: 'Default Filtering', description: 'This demo for Essential JS 2 grid component shows how to place a filter bar row in the header to filter grid rows.', order: '07', category: 'Filtering' },
+    { 'path': ':theme/grid/filter-template', component: FilterTemplateComponent, name: 'Filter Template', 'type': 'new', description: 'This demo for Essential JS 2 grid control shows how to filter a data using custom component in the filter bar.', order: '07', category: 'Filtering' },
     {
         'path': ':theme/grid/filter-menu', component: FilteringMenuComponent,  name: 'Filter Menu',
         description: 'This demo for Essential JS 2 grid component demonstrates a way of filtering rows using a menu, check box, and Excel filter UI.', order: '07', category: 'Filtering'
@@ -191,11 +198,11 @@ export const gridRouteConfig: Object[] = [
 
     {
         'path': ':theme/grid/aggregate-default', component: AggregateComponent,
-        name: 'Default Aggregate', description: 'This demo for Essential JS 2 grid component shows how the row values can be aggregated and shown in a column footer.', order: '10', category: 'Aggregate'
+        name: 'Default Aggregate', 'type': 'update', description: 'This demo for Essential JS 2 grid component shows how the row values can be aggregated and shown in a column footer.', order: '10', category: 'Aggregate'
     },
     {
         'path': ':theme/grid/aggregate-group', component: AggregateGroupComponent,
-        name: 'Group and Caption Aggregate', description: 'This demo for Essential JS 2 grid component shows how the row values can be aggregated for each group of items and shown in a group caption and footer.', order: '10', category: 'Aggregate'
+        name: 'Group and Caption Aggregate', 'type': 'update', description: 'This demo for Essential JS 2 grid component shows how the row values can be aggregated for each group of items and shown in a group caption and footer.', order: '10', category: 'Aggregate'
     },
     {
         'path': ':theme/grid/reactive-aggregate', component: ReactiveAggregateComponent,
@@ -231,9 +238,9 @@ export const gridRouteConfig: Object[] = [
         category: 'Scrolling'
     },
 
-    { 'path': ':theme/grid/lazy-load-grouping-with-paging', component: LazyLoadGroupingWithPagingComponent, name: 'Grouping with Paging', 'type': 'update', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature.', order: '14', category: 'Lazy Load Grouping' },
-    { 'path': ':theme/grid/lazy-load-grouping-with-infinite-scrolling', component: LazyLoadGroupingWithInfiniteScrollingComponent, name: 'Grouping with Infinite Scrolling', 'type': 'update', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature with infinite scrolling', order: '14', category: 'Lazy Load Grouping' },
-    { 'path': ':theme/grid/lazy-load-grouping-with-virtual-scrolling', component: LazyLoadGroupingWithVirtualScrollingComponent, name: 'Grouping with Virtual Scrolling', 'type': 'update', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature with virtual scrolling', order: '14', category: 'Lazy Load Grouping' },
+    { 'path': ':theme/grid/lazy-load-grouping-with-paging', component: LazyLoadGroupingWithPagingComponent, name: 'Grouping with Paging', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature.', order: '14', category: 'Lazy Load Grouping' },
+    { 'path': ':theme/grid/lazy-load-grouping-with-infinite-scrolling', component: LazyLoadGroupingWithInfiniteScrollingComponent, name: 'Grouping with Infinite Scrolling', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature with infinite scrolling', order: '14', category: 'Lazy Load Grouping' },
+    { 'path': ':theme/grid/lazy-load-grouping-with-virtual-scrolling', component: LazyLoadGroupingWithVirtualScrollingComponent, name: 'Grouping with Virtual Scrolling', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature with virtual scrolling', order: '14', category: 'Lazy Load Grouping' },
  
     {
         'path': ':theme/grid/default-exporting', component: ExportingComponent, name: 'Default Exporting', description: 'This demo for Essential JS 2 grid component shows the client-side exporting of grid content to Excel, PDF, and CSV formats.', order: '15',

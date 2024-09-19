@@ -39,11 +39,13 @@
               <e-item tooltipText='Timeline Views'>
                 <ng-template #template>
                   <div class="template">
-                    <div class="icon-child">
-                      <ejs-checkbox #viewSwitch id="timeline_views" [checked]="false"
-                        (change)="onTimelineViewChange($event)"></ejs-checkbox>
-                    </div>
-                    <div class="text-child">Timeline Views</div>
+                    <label>
+                      <div class="icon-child">
+                        <ejs-checkbox #viewSwitch id="timeline_views" [checked]="false"
+                          (change)="onTimelineViewChange($event)"></ejs-checkbox>
+                      </div>
+                      <div class="text-child">Timeline Views</div>
+                    </label>
                   </div>
                 </ng-template>
               </e-item>
@@ -51,33 +53,39 @@
               <e-item tooltipText='Resource Grouping'>
                 <ng-template #template>
                   <div class="template">
-                    <div class="icon-child">
-                      <ejs-checkbox #groupSwitch id="grouping" [checked]="true" (change)="onGroupingChange($event)">
-                      </ejs-checkbox>
-                    </div>
-                    <div class="text-child">Grouping</div>
+                    <label>
+                      <div class="icon-child">
+                        <ejs-checkbox #groupSwitch id="grouping" [checked]="true" (change)="onGroupingChange($event)">
+                        </ejs-checkbox>
+                      </div>
+                      <div class="text-child">Grouping</div>
+                    </label>
                   </div>
                 </ng-template>
               </e-item>
               <e-item tooltipText='Time Slots'>
                 <ng-template #template>
                   <div class="template">
-                    <div class="icon-child">
-                      <ejs-checkbox #gridlinesSwitch id="gridlines" [checked]="true" (change)="onGridlinesChange($event)">
-                      </ejs-checkbox>
-                    </div>
-                    <div class="text-child">Time Slots</div>
+                    <label>
+                      <div class="icon-child">
+                        <ejs-checkbox #gridlinesSwitch id="gridlines" [checked]="true" (change)="onGridlinesChange($event)">
+                        </ejs-checkbox>
+                      </div>
+                      <div class="text-child">Time Slots</div>
+                    </label>
                   </div>
                 </ng-template>
               </e-item>
               <e-item tooltipText='Auto Fit Rows'>
                 <ng-template #template>
                   <div class="template">
-                    <div class="icon-child">
-                      <ejs-checkbox #rowHeightSwitch id="row_auto_height" [checked]="false"
-                        (change)="onRowAutoHeightChange($event)"></ejs-checkbox>
-                    </div>
-                    <div class="text-child">Auto Fit Rows</div>
+                    <label>
+                      <div class="icon-child">
+                        <ejs-checkbox #rowHeightSwitch id="row_auto_height" [checked]="false"
+                          (change)="onRowAutoHeightChange($event)"></ejs-checkbox>
+                      </div>
+                      <div class="text-child">Auto Fit Rows</div>
+                    </label>
                   </div>
                 </ng-template>
               </e-item>

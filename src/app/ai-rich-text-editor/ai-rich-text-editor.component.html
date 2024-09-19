@@ -1,0 +1,127 @@
+<div id='container' class='e-rte-custom-tbar-section'>
+    <ejs-richtexteditor #defaultRTE id='defaultRTE' height="550" [saveInterval]="0" [autoSaveOnIdle]="true"
+        [toolbarSettings]="toolbarSettings" (created)="onCreate()" (toolbarClick)="onToolbarClick($event)">
+        <ng-template #valueTemplate>
+            <h2><span>Integrate AI with the Editor</span></h2>
+            <p>Integrate the AI Assist into the rich text editor by capturing the content from the editor, sending it to
+                the AI service, and displaying the results or suggestions back in the editor.</p>
+            <h3>Summarize</h3>
+            <p>This function condenses the selected content into a brief summary, capturing the main points succinctly.
+            </p>
+            <h3>Elaborate</h3>
+            <p>This function expands the selected content, adding additional details and context.</p>
+            <h3>Rephrase</h3>
+            <p>This function rewrites the selected content to convey the same meaning using different words or
+                structures. It also enables rephrase options and disables language selection.</p>
+            <h3>Correct Grammar</h3>
+            <p>This function reviews and corrects the grammar of the selected content, ensuring it adheres to standard
+                grammatical rules.</p>
+            <h3>Translate</h3>
+            <p>This function translates the selected content into the specified language, enabling language selection
+                and disabling rephrase options.</p>
+        </ng-template>
+
+    </ejs-richtexteditor>
+    <ejs-dialog #dialog id="dialog" class="modal" [visible]="false" header="AI Assist" target="#container"
+        [showCloseIcon]="true" [isModal]="true" height="100%" width="80%" cssClass="e-rte-elements custom-dialog-rte"
+        zIndex="1000" (close)="closeDialog()" (overlayClick)="onOverlayClick()" (open)="dialogShow()">
+        <ng-template #footerTemplate>
+            <div id="dialog-footer-content">
+                <div class="custom-row-0">
+                    <div class="cuscol-0" style="width: 100%; align-items: center; justify-content: left;">
+                        <div style="text-align: right;">
+                            <button ejs-button #regenerateButton content="Regenerate" isPrimary="true"
+                                disabled="false"></button>
+                        </div>
+                    </div>
+                    <div class="cuscol-1"
+                        style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+                        <div style="text-align: right; width: 100%;">
+                            <button ejs-button #sentimentButton content="😊 Neutral" disabled="false"
+                                cssClass="sentiment"></button>
+                            <button ejs-button #copyButton content="Copy" disabled="false"></button>
+                            <button ejs-button #replaceButton content="Replace" isPrimary="true"
+                                disabled="false"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #content>
+            <div class="dialog-content" style="height: 100%">
+                <div class="custom-row-0">
+                    <div class="cuscol-0" style="width: 100%; align-items: center; justify-content: left;">
+                        <div style="width: 75%; text-align: left;">
+                            <ejs-dropdownlist #queryCategory id="queryCategory" [dataSource]="queryList" index="0"
+                                [fields]="{ text: 'Text', value: 'ID' }" (select)="onQuerySelect($event)">
+                                Rephrase
+                            </ejs-dropdownlist>
+                        </div>
+                    </div>
+                    <div class="cuscol-1" style="justify-content: space-between; align-items: center; width: 100%;">
+                        <div id="language" style="width: 100%; display: none;">
+                            <div style="display: flex; justify-content: right; align-items: center;">
+                                <div style="text-align: end; padding-right: 20px;">
+                                    <span>Target Language</span>
+                                </div>
+                                <div style="text-align: right;">
+                                    <ejs-dropdownlist #languageCategory id="language-Category"
+                                        [dataSource]="languageList" [fields]="{ text: 'Text', value: 'ID' }"
+                                        (select)="onLanguageSelect($event)">
+                                    </ejs-dropdownlist>
+                                </div>
+                            </div>
+                        </div>
+                        <ejs-chiplist id="chips-container" #chipList [chips]="['Standard', 'Fluent', 'Professional']"
+                            selection="Single" cssClass="e-outline" [selectedChips]="[0]" (click)="onChipClick($event)">
+                        </ejs-chiplist>
+                    </div>
+                </div>
+                <div class="custom-row-1" style="height: 74%;">
+                    <div class="cuscol-0"
+                        style="width: 100%; height: 100%; align-items: center; justify-content: left;">
+                        <div style="text-align: left;">
+                            <ejs-richtexteditor #leftRte id="leftRte" height="310" [toolbarSettings]="{ enable: false }"
+                                placeholder="Analysis of AI Support" cssClass="e-outline">
+                            </ejs-richtexteditor>
+                        </div>
+                    </div>
+                    <div class="cuscol-1"
+                        style="display: flex; justify-content: space-between; width: 100%; height: 100%;">
+                        <div style="text-align: left; width: 100%;">
+                            <ejs-richtexteditor #rightRte id="rightRte" height="310" style="display: none"
+                                [toolbarSettings]="{ enable: false }" placeholder="Analysis of AI Support"
+                                cssClass="e-outline">
+                            </ejs-richtexteditor>
+                            <div class="no-results-found" id="no-results-found"
+                                style="display: none; height: 244px; align-content: center;">
+                                <img height="50" width="50"
+                                    src="https://storage.googleapis.com/cdn-bolddesk/agent-angular-app/images/light/no-records-warning.svg">
+                                <div>No results found</div>
+                            </div>
+                            <div id="skeletonId" style="display: none;">
+                                <ejs-skeleton #skeletonId1 shape="Rectangle" height="20px"
+                                    width="100%"></ejs-skeleton><br />
+                                <ejs-skeleton #skeletonId2 shape="Rectangle" height="20px"
+                                    width="90%"></ejs-skeleton><br />
+                                <ejs-skeleton #skeletonId3 shape="Rectangle" height="20px"
+                                    width="70%"></ejs-skeleton><br />
+                                <ejs-skeleton #skeletonId4 shape="Rectangle" height="20px"
+                                    width="50%"></ejs-skeleton><br />
+                                <ejs-skeleton #skeletonId5 shape="Rectangle" height="20px"
+                                    width="30%"></ejs-skeleton><br />
+                                <ejs-skeleton #skeletonId6 shape="Rectangle" height="20px"
+                                    width="10%"></ejs-skeleton><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </ejs-dialog>
+
+    <ejs-toast #toastObj id="toast_default" [showCloseButton]="true" [timeOut]="0"
+        content="An error occurred during the AI process, Please try again." [position]="{ X: 'Right', Y: 'Top' }">
+    </ejs-toast>
+
+</div>

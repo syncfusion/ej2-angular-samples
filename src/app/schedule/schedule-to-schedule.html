@@ -1,0 +1,46 @@
+<div class="control-section">
+  <div class="col-lg-12 content-wrapper multiple-schedulers">
+    <div class="schedule-container">
+
+      <ejs-schedule #firstScheduleObj id="first-schedule"  width="100%" height="500px" rowAutoHeight="true" [selectedDate]="selectedDate" [eventSettings]="firstScheduleEventSettings"
+      [group]="group" [eventDragArea]="'.content-wrapper'" (dragStop)="DragEventFromFirstSchedule($event)">
+      <e-views>
+        <e-view option="Month"></e-view>
+      </e-views>
+      <e-resources>
+        <e-resource field='TaskId' title='Employee' [dataSource]='firstEmployeesData'
+        name='Employees' textField='text' idField='id' colorField='color'></e-resource>
+      </e-resources>
+    </ejs-schedule>
+
+    <ejs-schedule #secondScheduleObj id="second-schedule" width="100%" height="500px" rowAutoHeight="true" [selectedDate]="selectedDate" [eventDragArea]="'.content-wrapper'" [eventSettings]="secondEventSettings"
+    [group]="group" (dragStop)="DragEventFromSecondSchedule($event)">
+      <e-views>
+        <e-view option="Month"></e-view>
+      </e-views>
+      <e-resources>
+        <e-resource field='TaskId' title='Employee' [dataSource]='secondEmployeesData'
+        name='Employees' textField='text' idField='id' colorField='color'></e-resource>
+      </e-resources>
+    </ejs-schedule>
+
+    </div>
+  </div>
+</div>
+
+<div id="action-description">
+  <p>
+    This example illustrates how to drag and drop events among multiple Scheduler. You can drag
+    events from one Scheduler to another.
+  </p>
+</div>
+
+<div id="description">
+  <p>
+    In this example, <code>eventDragArea</code> is used to drag a range of events from one Scheduler to another. The
+    <code>dragStop</code> event of the Scheduler is triggered when an item is dropped from one Scheduler onto
+    another. Within the <code>dragStop</code> event, the <code>addEvent</code> method is used to add the dropped event to
+    the target Scheduler, and the <code>deleteEvent</code> method is used to remove the dragged event from the source
+    Scheduler.
+  </p>
+</div>

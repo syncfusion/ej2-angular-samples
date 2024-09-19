@@ -27,7 +27,7 @@ export class DonutComponent {
      };
     public SetTheme(args: IPointRenderEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
         let seriesColor = ['#FFE066', "#FAB666", "#F68F6A", "#F3646A", "#CC555A", "#9C4649"];
         if (selectedTheme === 'fluent' || selectedTheme === 'bootstrap5') {
             args.fill = seriesColor[args.point.index % 10];

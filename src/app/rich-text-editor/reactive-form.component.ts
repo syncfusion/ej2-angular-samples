@@ -29,7 +29,7 @@ export class FormComponent implements OnInit {
 
     ngOnInit(): void {
         this.rteForm = new FormGroup({
-            'name': new FormControl(null, Validators.required)
+            'name': new FormControl(null, [Validators.required, this.contentValidator()])
         });
     }
 
@@ -39,5 +39,28 @@ export class FormComponent implements OnInit {
 
     onSubmit(): void {
         alert('Form submitted successfully');
+        this.rteForm.reset();
+    }
+
+    contentValidator() {
+        return (control: FormControl) => {
+            const content = control.value || '';
+            const textContent = this.removeHtmlTags(content).replace(/\s+/g, '');
+            const imgElements = this.countImageTags(content);
+            const adjustedLength = textContent.length + imgElements;
+            return adjustedLength >= 20 ? null : { minLength: true };
+        };
+    }
+
+    removeHtmlTags(input: string): string {
+        const div = document.createElement('div');
+        div.innerHTML = input;
+        return div.textContent || div.innerText || '';
+    }
+
+    countImageTags(input: string): number {
+        const div = document.createElement('div');
+        div.innerHTML = input;
+        return div.getElementsByTagName('img').length;
     }
 }

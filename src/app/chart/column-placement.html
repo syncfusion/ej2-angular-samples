@@ -1,6 +1,7 @@
 <div id="action-description">
     <p>
-        This sample shows four series of columns in which each column is rendered with a different width and placed behind the previous column.
+        This column chart demonstrates the dynamic sorting of data in real-time. The chart visualizes nitrogen
+        fertilizer use per hectare of cropland, updating every few seconds to show sorted data from different datasets.
     </p>
 </div>
 <div class="control-section">
@@ -22,12 +23,10 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the column chart. The column chart is used to compare the frequency, count, total, or average of data in different categories. The <code>EnableSideBySidePlacement</code> property is used to enable and disable side-by-side positioning. <code>DataLabel</code> is used to present details about individual data points.
+        In this example, you can observe how the column chart updates dynamically with sorted data using the
+        <code>setData</code> method. The data is sourced from multiple datasets, and the chart updates and sorts its
+        data periodically to reflect the latest information.
     </p>
-    <p>
-        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch-enabled devices.
-    </p>
-    <br>
     <p style="font-weight: 500">Injecting Module</p>
     <p>
         Chart component features are segregated into individual feature-wise modules. To use column feature, we need to inject

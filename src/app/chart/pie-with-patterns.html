@@ -1,0 +1,35 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the Mobile Browser Market Share using a pie chart with various patterns.
+    </p>
+</div>
+<div class="control-section">
+    <div>
+        <ejs-accumulationchart id="container" #pie style='display:block; width: 92%' align='center'
+            [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='load($event)'
+            [enableBorderOnMouseMove]='false' (pointRender)='pointRender($event)'>
+            <e-accumulation-series-collection>
+                <e-accumulation-series [dataSource]='data' xName='x' yName='y' [dataLabel]="dataLabel" [border]='border'
+                applyPattern=true>
+                </e-accumulation-series>
+            </e-accumulation-series-collection>
+        </ejs-accumulationchart>
+    </div>
+</div>
+<div id="description">
+    <p>In this example, you can see how to render and configure a pie chart with different patterns. The pie chart is a
+        circular graphic ideal for displaying categories as a proportion or percentage of the whole. You can apply different
+        patterns to the pie slices using the <code>applyPattern</code> property in the series and the <code>pointRender</code> event.</p>
+    <p>
+        More information about the pie series can be found in this
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/pie-dough-nut/#various-radius-pie-chart"
+            aria-label="Navigate to the documentation for Various Radius Pie Chart in Angular Accumulation Chart component">documentation
+            section</a>.
+    </p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

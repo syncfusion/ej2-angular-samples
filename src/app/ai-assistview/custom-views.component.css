@@ -1,0 +1,84 @@
+
+.views-aiassistview {
+    width: max(50%, 500px);
+    margin: 30px auto;
+}
+
+.views-aiassistview .view-container {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.views-aiassistview .view-container:not(.response-view) {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.views-aiassistview .view-container .generate-btn,
+.views-aiassistview .view-container .suggestions li {
+    width: fit-content;
+}
+
+.views-aiassistview .view-container .suggestions {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.views-aiassistview .view-container .suggestions li {
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.views-aiassistview .response-view {
+    flex-direction: column-reverse;
+    max-height: 450px;
+}
+
+.views-aiassistview .view-container .responseItemContent {
+    padding: 10px 10px;
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.views-aiassistview .view-container .responseItemContent .response-header {
+    font-style: italic;
+}
+
+.views-aiassistview .view-container .responseItemContent span {
+    font-size: 20px;
+    margin-top: 3px;
+}
+
+.views-aiassistview .view-container .responseItemContent:hover {
+    background: none;
+}
+
+.views-aiassistview .view-container .default-response {
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 750px) {
+    .views-aiassistview,
+    .views-aiassistview .view-container .generate-btn,
+    .views-aiassistview .view-container .suggestions li {
+        width: 100%;
+    }
+
+    .views-aiassistview .view-container {
+        width: 90%;
+    }
+
+    .views-aiassistview .view-container .suggestions li {
+        padding: 0px 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+    }
+}

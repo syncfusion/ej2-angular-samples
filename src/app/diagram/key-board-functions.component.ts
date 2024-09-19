@@ -10,7 +10,7 @@ import {
 } from '@syncfusion/ej2-diagrams';
 import { SnapConstraints } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
-import {keyBoardData} from'./overview-data';
+import { keyBoardData } from './diagram-data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(UndoRedo, DiagramContextMenu, HierarchicalTree, DataBinding);
@@ -33,7 +33,7 @@ let shape: BasicShapeModel = { type: 'Basic', shape: 'Ellipse', cornerRadius: 10
 export class KeyBoardDiagramComponent {
     @ViewChild('diagram')
     public diagram: DiagramComponent;
-
+    // Sets the default properties for nodes
     public nodeDefaults(node: NodeModel): NodeModel {
         if (!node.children) {
             node.width = 70;
@@ -42,9 +42,11 @@ export class KeyBoardDiagramComponent {
         }
         return node;
     };
+    // Data binding settings for the diagram
     public data: Object = {
         id: 'id', parentId: 'ancestor', dataSource: new DataManager(keyBoardData),
         doBinding: (nodeModel: NodeModel, data: DataInfo) => {
+            // Set annotations and styles for each node based on the data
             nodeModel.annotations = [{ content: data.id, style: { color: 'white' } }];
             nodeModel.style = { strokeColor: 'transparent', fill: data.fill };
         }
@@ -135,24 +137,24 @@ export class KeyBoardDiagramComponent {
 
     //Navigation for Child Node or parent Node
     private navigateLevels(isParent: boolean): void {
-        let node: Node = this.diagram.selectedItems.nodes[0] as Node;
-        if (node) {
-            let connectorId: string = isParent ? node.outEdges[0] : node.inEdges[0];
+        let selectedNode: Node = this.diagram.selectedItems.nodes[0] as Node;
+        if (selectedNode) {
+            let connectorId: string = isParent ? selectedNode.outEdges[0] : selectedNode.inEdges[0];
             let altNode: NodeModel[] = isParent ? this.getNode(connectorId, false) : this.getNode(connectorId, true);
             this.selectNode(altNode);
         }
     }
     //Navigate to left or right Sibling Node 
     private navigateToSiblings(isRightSibling: boolean): void {
-        let child: Node = this.diagram.selectedItems.nodes[0] as Node;
-        if (child) {
-            let connectorId: string = child.inEdges[0];
+        let selectedNode: Node = this.diagram.selectedItems.nodes[0] as Node;
+        if (selectedNode) {
+            let connectorId: string = selectedNode.inEdges[0];
             let altConnectorId: string = '';
-            let parent: NodeModel[] = this.getNode(connectorId, true);
-            if (parent && parent.length > 0) {
-                for (let i: number = 0; i < (parent[0] as Node).outEdges.length; i++) {
-                    if ((parent[0] as Node).outEdges[i] === connectorId) {
-                        altConnectorId = isRightSibling ? (parent[0] as Node).outEdges[i + 1] : (parent[0] as Node).outEdges[i - 1];
+            let parentNode: NodeModel = this.getNode(connectorId, true)[0];
+            if (parentNode) {
+                for (let i: number = 0; i < (parentNode as Node).outEdges.length; i++) {
+                    if ((parentNode as Node).outEdges[i] === connectorId) {
+                        altConnectorId = isRightSibling ? (parentNode as Node).outEdges[i + 1] : (parentNode as Node).outEdges[i - 1];
                     }
                 }
                 let sibling: NodeModel[] = this.getNode(altConnectorId, false);
@@ -160,7 +162,7 @@ export class KeyBoardDiagramComponent {
             }
         }
     }
-    //Get node elements
+    // Get node elements by connector ID
     private getNode(name: string, isParent: boolean): NodeModel[] {
         let node: NodeModel[] = [];
         let connector: ConnectorModel = this.diagram.getObject(name) as ConnectorModel;
@@ -169,7 +171,7 @@ export class KeyBoardDiagramComponent {
         }
         return node;
     }
-    //draw selector.
+    // Select and highlight the specified node
     private selectNode(node: NodeModel[]): void {
         if (node && node.length > 0) {
             this.diagram.clearSelection();

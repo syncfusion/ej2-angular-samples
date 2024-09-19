@@ -6,31 +6,11 @@
 </div>
 <div class="col-lg-8 control-section" style="border-right: 1px solid #D7D7D7">
     <style>
-  
-
-        #tooltipDiagramSection .row {
-            margin-left: 0px;
-            margin-right: 0px;
-        }
-
-        #tooltipDiagramSection .row-header {
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-        #tooltipDiagramSection .e-selected-style {
-            border-color: #006CE6;
-            border-width: 2px;
-        }
-
-        #tooltipDiagramSection .e-checkbox-wrapper .e-label {
-            font-size: 12px;
-        }
 
         #tooltipPropertySection .property-panel-header {
             margin-left: 10px;
         }
-        td{
+        #tooltipPropertySection td{
             width: 50%;
             padding-top: 5px;
         }
@@ -58,7 +38,7 @@
             </td>
             <td>
                 <div style="margin-left:15px">
-                    <ejs-dropdownlist id="mode" #mode [index]="dropdownIndex" [dataSource]="modevalue" [fields]="fields" popupWidth='150' width='85%' placeholder='select a relative mode'
+                    <ejs-dropdownlist id="mode" #mode [index]="dropdownIndex" [dataSource]="modeValue" [fields]="fields" popupWidth='150' width='85%'
                         (change)="relativeModeChange($event)">
                     </ejs-dropdownlist>
                 </div>
@@ -72,7 +52,7 @@
             </td>
             <td>
                 <div style="margin-left:15px">
-                    <ejs-dropdownlist id="position" #position [index]="dropdownIndex" [dataSource]="PositionValue" [fields]="fields" popupWidth='150' width='85%' placeholder='select a position'
+                    <ejs-dropdownlist id="position" #position [index]="dropdownIndex" [dataSource]="PositionValue" [fields]="fields" popupWidth='150' width='85%'
                         (change)="positionChange($event)">
                     </ejs-dropdownlist>
                 </div>
@@ -87,7 +67,7 @@
             </td>
             <td>
                 <div style="margin-left:15px">
-                    <ejs-numerictextbox id="duration" value="1000" min="1000" max="6000" step="100" width="85%" (change)="animationChange"></ejs-numerictextbox>
+                    <ejs-numerictextbox id="duration" value="1000" min="1000" max="6000" step="100" width="85%" (change)="animationChange($event)"></ejs-numerictextbox>
                 </div>
             </td>
         </tr>
@@ -99,7 +79,7 @@
             </td>
             <td>
                 <div style="margin-left:15px">
-                    <ejs-dropdownlist id="effect" #effect [dataSource]="EffectValue" [index]="dropdownIndex" [fields]="fields" popupWidth='150' width='85%' placeholder='select a effect type'
+                    <ejs-dropdownlist id="effect" #effect [dataSource]="EffectValue" [index]="dropdownIndex" [fields]="fields"  popupWidth='150' width='85%'
                         (change)="effectChange($event)">
                     </ejs-dropdownlist>
                 </div>

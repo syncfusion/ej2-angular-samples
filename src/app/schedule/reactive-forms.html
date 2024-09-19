@@ -47,6 +47,9 @@
               <span>StartTime is required</span>
               }
             </div>
+            <div class="e-error" *ngIf="appointmentForm.errors?.timeInvalid && (StartTime?.dirty || StartTime?.touched || EndTime?.dirty || EndTime?.touched)">
+              <span>Start time must be less than end time</span>
+            </div>
           </div>
         </div>
 
@@ -60,6 +63,9 @@
               @if (EndTime?.errors?.['required']) {
               <span>EndTime is required</span>
               }
+            </div>
+            <div class="e-error" *ngIf="appointmentForm.errors?.timeInvalid && (StartTime?.dirty || StartTime?.touched || EndTime?.dirty || EndTime?.touched)">
+              <span>End time must be greater than start time</span>
             </div>
           </div>
         </div>

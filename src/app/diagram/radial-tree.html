@@ -8,7 +8,6 @@
 
     .diagram-radial-tree .e-ddb-icons {
         font-family: 'e-ddb-icons';
-        speak: none;
         font-size: 55px;
         font-style: normal;
         font-weight: normal;
@@ -38,6 +37,7 @@
     </p>
 </div>
 <div class="diagram-radial-tree" style="padding-bottom: 0px">
+    <!--create and add ZoomIn,ZoomOut and Reset options to the ToolBar-->
     <ejs-toolbar id='toolbar' (clicked)="onItemClick($event)">
         <e-items>
             <e-item text='Zoom In' tooltipText='Zoom In' prefixIcon='e-ddb-icons e-zoomin'></e-item>
@@ -52,6 +52,7 @@
 </div>
 <div class="col-lg-8 control-section" style="width: 100%;">
     <div class="content-wrapper">
+        <!-- Template reference variable for the diagram component instance -->
         <ejs-diagram #diagram id="diagram" width="100%" height="600px" [tool]=tool [layout]='layout' [snapSettings]=snapSettings
             (created)="create($event)" [dataSourceSettings]='data'>
         </ejs-diagram>

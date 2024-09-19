@@ -74,7 +74,6 @@
 
         .e-ddb-icons1 {
             font-family: 'e-ddb-icons1';
-            speak: none;
             font-size: 16px;
             font-style: normal;
             font-weight: normal;
@@ -106,7 +105,7 @@
             <div id='dropArea'>
                 <button ejs-button id="browse" [isPrimary]="true">IMPORT SVG FILES</button>
                 <div style="display: none;">
-                    <ejs-uploader #templateupload id='templatefileupload'  [asyncSettings]='asyncSettings' [dropArea]='dropElement' (success)='onUploadSuccess($event)' (removing)='onFileRemove($event)'></ejs-uploader>
+                    <ejs-uploader #templateupload id='templatefileupload' allowedExtensions=".svg" [asyncSettings]='asyncSettings' [dropArea]='dropElement' (success)='onUploadSuccess($event)' (removing)='onFileRemove($event)'></ejs-uploader>
                 </div>
             </div>
         </div>

@@ -1,0 +1,20 @@
+.e-row.e-altrow {
+    background-color: #FAFAFA;
+}
+
+.fluent-dark .e-row.e-altrow,
+.fluent2-dark .e-row.e-altrow,
+.tailwind-dark .e-row.e-altrow,
+.material-dark .e-row.e-altrow,
+.material3-dark .e-row.e-altrow,
+.fabric-dark .e-row.e-altrow,
+.bootstrap-dark .e-row.e-altrow,
+.bootstrap4-dark .e-row.e-altrow,
+.bootstrap5-dark .e-row.e-altrow,
+.highcontrast .e-row.e-altrow {
+    background-color: #353839;
+}
+
+#smart_search_button {
+    margin-left: 8px;
+}

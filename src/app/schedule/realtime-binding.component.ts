@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { View, EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService, NavigatingEventArgs, ActionEventArgs, ScheduleComponent, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
-import { HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
+import { HttpTransportType, HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
 import { scheduleData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -25,8 +25,8 @@ export class RealTimeBindingComponent implements OnInit, OnDestroy {
   public connection: HubConnection;
 
   public ngOnInit(): void {
-    const url = 'https://ej2.syncfusion.com/aspnetcore/scheduleHub/';
-    this.connection = new HubConnectionBuilder().withUrl(url, { withCredentials: false }).withAutomaticReconnect().build();
+    const url = 'https://ej2.syncfusion.com/aspnetcore/schedulehub/';
+    this.connection = new HubConnectionBuilder().withUrl(url, { withCredentials: false, skipNegotiation: true, transport: HttpTransportType.WebSockets }).withAutomaticReconnect().build();
     this.connection.on('ReceiveData', (action: string, data: View | Record<string, any>[]) => {
       if (action === 'view') {
         this.scheduleObj.currentView = data as View;

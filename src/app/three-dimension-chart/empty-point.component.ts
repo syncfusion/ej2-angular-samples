@@ -5,7 +5,7 @@ import { Chart3DPointRenderEventArgs, Chart3DAllModule } from '@syncfusion/ej2-a
 import {
     pointFabricColors, pointMaterialDarkColors, pointMaterialColors, pointBootstrap5DarkColors, pointBootstrap5Colors,
     pointBootstrapColors, pointHighContrastColors, pointFluentDarkColors, pointFluentColors, pointTailwindDarkColors,
-    pointTailwindColors, pointMaterial3Colors, pointMaterial3DarkColors, pointFluent2Colors, pointFluent2DarkColors
+    pointTailwindColors, pointMaterial3Colors, pointMaterial3DarkColors, pointFluent2Colors, pointFluent2HighContrastColors
 } from './theme-color';
 
 /**
@@ -54,7 +54,7 @@ export class EmptyPointColumnComponent {
 
     public load(args: Chart3DLoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
     };
@@ -95,8 +95,8 @@ export class EmptyPointColumnComponent {
             args.fill = pointMaterial3DarkColors[args.point.index % 10];
         } else if (selectedTheme === 'fluent2') {
             args.fill = pointFluent2Colors[args.point.index % 10];
-        } else if (selectedTheme === 'fluent2-dark') {
-            args.fill = pointFluent2DarkColors[args.point.index % 10];
+        } else if (selectedTheme === 'fluent2-highcontrast' || selectedTheme === 'fluent2-dark') {
+            args.fill = pointFluent2HighContrastColors[args.point.index % 10];
         }
     };
     constructor() {

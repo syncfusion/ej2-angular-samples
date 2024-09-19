@@ -12,6 +12,7 @@ import { GanttEditingComponent } from './editing.component';
 import { GanttContextMenuComponent } from './context-menu.component';
 import { GanttExportingComponent } from './exporting.component';
 import { GanttFilteringComponent } from './filtering.component';
+import { GanttAdvancedFilteringComponent } from './advanced-filtering.component';
 import { GanttEventsComponent } from './events.component';
 import { GanttKeyboardInteractionsComponent } from './keyboard-interactions.component';
 import { GanttLocalDataComponent } from './local-data.component';
@@ -59,32 +60,32 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/overview', component: GanttOverviewComponent,
         description: 'This example demonstrates the simple Gantt chart with summary task, child tasks, milestone tasks, dependencies with event markers of project',
-        name: 'Overview', order: '01', category: 'Gantt'
+        name: 'Overview', order: '01', category: 'Gantt Chart',type: "update"
     },
     {
         path: ':theme/gantt/default', component: GanttDefaultComponent,
         description: 'This example demonstrates the simple Gantt chart with summary task, child tasks, milestone tasks, dependencies with event markers of project',
-        name: 'Default Functionalities', order: '01', category: 'Gantt'
+        name: 'Default Functionalities', order: '01', category: 'Gantt Chart'
     },
     {
         path: ':theme/gantt/editing', component: GanttEditingComponent,
         description: 'This example demonstrates the cell editing, dialog editing, taskbar editing and dependency editing support in Gantt',
-        name: 'Editing', order: '01', category: 'Gantt'
+        name: 'Editing', order: '01', category: 'Gantt Chart', type: "update"
     },
     {
         path: ':theme/gantt/virtual-scroll', component: GanttVirtualScrollComponent,
         description: 'This example illustrates binding large data and smooth scrolling with large data using the Virtual Scroll feature in the Syncfusion Gantt chart.',
-        name: 'Virtual Scrolling', order: '01', category: 'Gantt'
+        name: 'Virtual Scrolling', order: '01', category: 'Gantt Chart'
     },
     {
         path: ':theme/gantt/undo-redo', component: GanttUndoRedoComponent,
         description: 'This sample demonstrates the undo-redo feature in the Gantt Chart provides users with the ability to reverse or redo their recent actions within the Gantt Chart.',
-        name: 'Undo Redo', order: '01', category: 'Gantt'
+        name: 'Undo Redo', order: '01', category: 'Gantt Chart'
     },
     {
         path: ':theme/gantt/loading-animation', component: GanttLoadingAnimationComponent,
         description: 'This demo for Essential JS 2 gantt component shows the loading indicator when gantt loading, refreshing and performing other action.',
-        name: 'Loading Animation', order: '01', category: 'Gantt'
+        name: 'Loading Animation', order: '01', category: 'Gantt Chart'
     },
     {
         path: ':theme/gantt/local-data', component: GanttLocalDataComponent,
@@ -117,7 +118,7 @@ export const GanttAppRoutes: Object[] = [
         name: 'Workweek', order: '03', category: 'Scheduling Concepts'
     },
     {
-        path: ':theme/gantt/working-time-range', component: GanttWorkingTimeRangeComponent, type: "update",
+        path: ':theme/gantt/working-time-range', component: GanttWorkingTimeRangeComponent,
         description: 'This example demonstrates how to customize the working time of a day for the whole project. We can define working time in different intervals.',
         name: 'Working Time Range', order: '03', category: 'Scheduling Concepts'
     },
@@ -164,7 +165,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/zooming', component: GanttZoomingComponent,
         description: 'This example demonstrates the zooming support of the Gantt chart timeline and ZoomToFit support of the Gantt chart.',
-        name: 'Zooming', order: '04', category: 'Timeline'
+        name: 'Zooming', order: '04', category: 'Timeline',type: "update"
     },
     {
         path: ':theme/gantt/column-template', component: ColumnTemplateComponent ,
@@ -229,7 +230,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/timeline-template', component: GanttTimelineTemplateComponent,
         description: 'This sample explains the way of rendering timeline template by mapping template elements to the timelineTemplate property.',
-        name: 'Timeline Template', order: '08', category: 'Templates',type: "new"
+        name: 'Timeline Template', order: '08', category: 'Templates'
     },
     {
         path: ':theme/gantt/tasklabel-template', component: GanttTasklabelTemplateComponent,
@@ -247,6 +248,16 @@ export const GanttAppRoutes: Object[] = [
         name: 'Toolbar Template', order: '08', category: 'Templates'
     },
     {
+      path: ':theme/gantt/filtering', component: GanttFilteringComponent,
+      description: 'This example demonstrates the filtering support with filter menu option for various types of columns in Gantt',
+      name: 'Default Filtering', order: '10', category: 'Filtering'
+    },
+    {
+      path: ':theme/gantt/advanced-filtering', component: GanttAdvancedFilteringComponent,
+      description: 'This sample demonstrates the integration of the QueryBuilder component for complex filtering in the Gantt',
+      name: 'Advanced Filtering', order: '10', category: 'Filtering',type: "new"
+    },
+    {
         path: ':theme/gantt/selection', component: GanttSelectionComponent,
         description: 'This example demonstrates the various selection support of row and cell with different type in Syncfusion Essential JS2 Gantt',
         name: 'Selection', order: '09', category: 'Miscellaneous'
@@ -260,11 +271,6 @@ export const GanttAppRoutes: Object[] = [
         path: ':theme/gantt/exporting', component: GanttExportingComponent,
         description: 'This demo explains how to export Gantt content to Excel and CSV documents using the Syncfusion Gantt component.',
         name: 'Exporting', order: '09', category: 'Miscellaneous'
-    },
-    {
-        path: ':theme/gantt/filtering', component: GanttFilteringComponent,
-        description: 'This example demonstrates the filtering support with filter menu option for various types of columns in Gantt',
-        name: 'Filtering', order: '09', category: 'Miscellaneous'
     },
     {
         path: ':theme/gantt/drag-and-drop', component: GanttDragAndDropComponent,

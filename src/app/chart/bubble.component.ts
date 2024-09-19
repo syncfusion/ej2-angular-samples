@@ -84,10 +84,8 @@ export class BubbleChartComponent {
         "rgba(185, 155, 79, 0.5)", "rgba(64, 124, 146, 0.5)", "rgba(94, 167, 22, 0.5)", "rgba(185, 28, 82, 0.5)"];
         let bubblePointHighContrastColors: string[] = ["rgba(121, 236, 228, 0.5)", "rgba(233, 130, 114, 0.5)", "rgba(223, 230, 182, 0.5)", "rgba(198, 231, 115, 0.5)", "rgba(186, 152, 255, 0.5)", "rgba(250, 131, 195, 0.5)", "rgba(0, 194, 122, 0.5)",
         "rgba(67, 172, 239, 0.5)", "rgba(214, 129, 239, 0.5)", "rgba(216, 188, 110, 0.5)"];
-        let bubblePointBootstrap5Colors: string[] = ['rgba(99, 85, 199, 0.5)', 'rgba(255, 180, 0, 0.5)', 'rgba(33, 150, 245, 0.5)','rgba(247, 82, 63, 0.5)','rgba(150, 60, 112, 0.5)',
-            'rgba(75, 224, 188, 0.5)', 'rgba(253, 116, 0, 0.5)', 'rgba(201, 228, 34, 0.5)', 'rgba(222, 61, 138, 0.5)', 'rgba(22, 47, 136, 0.5)'];
-        let bubblePointBootstrap5DarkColors: string[] = ['rgba(143, 128, 244, 0.5)', 'rgba(255, 212, 109, 0.5)', 'rgba(108, 189, 255, 0.5)', 'rgba(255, 127, 113, 0.5)', 'rgba(255, 109, 179, 0.5)', 'rgba(99, 245, 210, 0.5)', 'rgba(252, 170, 101, 0.5)', 
-            'rgba(236, 255, 119, 0.5)', 'rgba(239, 142, 255, 0.5)', 'rgba(95, 130, 253, 0.5)'];
+        let bubblePointBootstrap5Colors: string[] = ['rgba(253, 126, 20, 0.5)', 'rgba(102, 16, 242, 0.5)', 'rgba(111, 66, 193, 0.5)', 'rgba(214, 51, 132, 0.5)', 'rgba(220, 53, 69, 0.5)', 'rgba(255, 193, 7, 0.5)', 'rgba(25, 135, 84, 0.5)', 'rgba(13, 202, 240, 0.5)','rgba(253, 126, 20, 0.5)', 'rgba(102, 16, 242, 0.5)', 'rgba(111, 66, 193, 0.5)', 'rgba(214, 51, 132, 0.5)', 'rgba(220, 53, 69, 0.5)'];
+        let bubblePointBootstrap5DarkColors: string[] = ['rgba(253, 126, 20, 0.5)', 'rgba(102, 16, 242, 0.5)', 'rgba(111, 66, 193, 0.5)', 'rgba(214, 51, 132, 0.5)', 'rgba(220, 53, 69, 0.5)', 'rgba(255, 193, 7, 0.5)', 'rgba(25, 135, 84, 0.5)', 'rgba(13, 202, 240, 0.5)','rgba(253, 126, 20, 0.5)', 'rgba(102, 16, 242, 0.5)', 'rgba(111, 66, 193, 0.5)', 'rgba(214, 51, 132, 0.5)', 'rgba(220, 53, 69, 0.5)']
         let bubblePointFluentColors: string[] = ['rgba(26, 201, 230, 0.5)', 'rgba(218, 76, 178, 0.5)', 'rgba(237, 187, 64, 0.5)', 'rgba(175, 75, 207, 0.5)', 'rgba(255, 114, 102, 0.5)', 'rgba(27, 213, 101, 0.5)', 'rgba(238, 153, 61, 0.5)', 
             'rgba(88, 135, 255, 0.5)', 'rgba(236, 84, 141, 0.5)', 'rgba(125, 57, 192, 0.5)'];
         let bubblePointFluentDarkColors: string[] = ['rgba(26, 201, 230, 0.5)', 'rgba(218, 76, 178, 0.5)', 'rgba(237, 187, 64, 0.5)', 'rgba(175, 75, 207, 0.5)', 'rgba(255, 114, 102, 0.5)', 'rgba(27, 213, 101, 0.5)', 'rgba(238, 153, 61, 0.5)', 
@@ -102,6 +100,8 @@ export class BubbleChartComponent {
 "rgba(16, 124, 16, 0.5)", "rgba(193, 156, 0, 0.5)"];
         let bubbleFluent2DarkColors: string[] = ["rgba(155, 180, 73, 0.5)", "rgba(42, 114, 213, 0.5)", "rgba(67, 183, 134, 0.5)", "rgba(63, 87, 154, 0.5)", "rgba(88, 78, 198, 0.5)", "rgba(232, 95, 156, 0.5)", "rgba(110, 122, 137, 0.5)", "rgba(234, 98, 102, 0.5)",
 "rgba(11, 106, 11, 0.5)", "rgba(193, 156, 0, 0.5)"];
+        let bubbleFluent2HighContrastColors: string[] = ["rgba(155, 180, 73, 0.5)", "rgba(42, 114, 213, 0.5)", "rgba(67, 183, 134, 0.5)", "rgba(63, 87, 154, 0.5)", "rgba(88, 78, 198, 0.5)", "rgba(232, 95, 156, 0.5)", "rgba(110, 122, 137, 0.5)", "rgba(234, 98, 102, 0.5)",
+"rgba(11, 106, 11, 0.5)", "rgba(193, 156, 0, 0.5)"];
 
         let pointMaterialColors: string[] = ["#00bdae", "#404041", "#357cd2", "#e56590", "#f8b883", "#70ad47", "#dd8abd", "#7f84e8", "#7bb4eb",
         "#ea7a57", "#404041", "#00bdae"];
@@ -113,10 +113,8 @@ export class BubbleChartComponent {
         "#b91c52"];
         let pointHighContrastColors: string[] = ["#79ECE4", "#E98272", "#DFE6B6", "#C6E773", "#BA98FF", "#FA83C3", "#00C27A", "#43ACEF", "#D681EF",
         "#D8BC6E"];
-        let pointBootstrap5Colors: string[] = ['#6355C7', '#FFB400', '#2196F5', '#F7523F', '#963C70', '#4BE0BC', '#FD7400', '#C9E422', '#DE3D8A', 
-        '#162F88'];
-        let pointBootstrap5DarkColors: string[] = ['#8F80F4', '#FFD46D', '#6CBDFF', '#FF7F71', '#FF6DB3', '#63F5D2', '#FCAA65', '#ECFF77', '#EF8EFF', 
-        '#5F82FD'];
+        let pointBootstrap5Colors: string[] = ['#FD7E14', '#6610F2', '#6F42C1', '#D63384', '#DC3545', '#FFC107', '#198754', '#0DCAF0','#FD7E14', '#6610F2'];
+        let pointBootstrap5DarkColors: string[] = ['#FD7E14', '#6610F2', '#6F42C1', '#D63384', '#DC3545', '#FFC107', '#198754', '#0DCAF0','#FD7E14', '#6610F2'];
         let pointFluentColors: string[] = ['#1AC9E6', '#DA4CB2', '#EDBB40', '#AF4BCF', '#FF7266', '#1BD565', '#EE993D', '#5887FF', '#EC548D', 
         '#7D39C0'];
         let pointFluentDarkColors: string[] =  ['#1AC9E6', '#DA4CB2', '#EDBB40', '#AF4BCF', '#FF7266', '#1BD565', '#EE993D', '#5887FF', '#EC548D', 
@@ -130,6 +128,8 @@ export class BubbleChartComponent {
         let pointFluent2Colors: string[] = ['#6200EE', '#09AF74', '#0076E5', '#CB3587', '#E7910F', '#0364DE', '#66CD15', '#F3A93C', '#107C10',
             '#C19C00'];
         let pointFluent2DarkColors: string[] = ['#9BB449', '#2A72D5', '#43B786', '#3F579A', '#584EC6', '#E85F9C', '#6E7A89', '#EA6266',
+            '#0B6A0B', '#C19C00'];
+        let pointFluent2HighContrastColors: string[] = ['#9BB449', '#2A72D5', '#43B786', '#3F579A', '#584EC6', '#E85F9C', '#6E7A89', '#EA6266',
             '#0B6A0B', '#C19C00'];
         let selectedTheme: string = location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
@@ -202,7 +202,10 @@ export class BubbleChartComponent {
             args.fill = bubbleFluent2Colors[args.point.index % 10];
             args.border.color = pointFluent2Colors[args.point.index % 10];
         }
-      
+        else if (selectedTheme === 'fluent2-highcontrast') {
+            args.fill = bubbleFluent2HighContrastColors[args.point.index % 10];
+            args.border.color = pointFluent2HighContrastColors[args.point.index % 10];
+        }
         else if (selectedTheme === 'fluent2-dark') {
             args.fill = bubbleFluent2DarkColors[args.point.index % 10];
             args.border.color = pointFluent2DarkColors[args.point.index % 10];
@@ -221,7 +224,7 @@ export class BubbleChartComponent {
      // custom code start
     public load(args: ILoadedEventArgs): void {
         let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Material';
+        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
         args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
     };
      // custom code end

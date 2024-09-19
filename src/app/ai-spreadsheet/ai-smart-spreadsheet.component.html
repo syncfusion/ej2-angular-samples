@@ -1,0 +1,9 @@
+<ejs-spreadsheet #spreadsheet [sheets]="sheet" [height]="height" (created)="created()"> </ejs-spreadsheet>
+
+<ejs-sidebar #sidebar [width]="width" [target]="target" [position]="position" [closeOnDocumentClick]="false"
+    [showBackdrop]="false" style="visibility: hidden">
+    <div id="defaultAIAssistView" style="border: none;">
+        <button ejs-button #closebutton id="close" cssClass="close-btn"
+            style="float: right;font-size: 24px; border: none; background: none;" (click)="btnClick()">&times;</button>
+    </div>
+</ejs-sidebar>

@@ -28,6 +28,9 @@ export class DefaultController {
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center', verticalAlign: 'middle' }, 'A1:F1');
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold' }, 'E31:F31');
         this.spreadsheetObj.cellFormat({ textAlign: 'right' }, 'E31');
+        // Apply format to the specified range in the active sheet.
         this.spreadsheetObj.numberFormat('$#,##0.00', 'F2:F31');
+        // The default format code for the date format is 'm/d/yyyy'.
+        this.spreadsheetObj.numberFormat('m/d/yyyy', 'E2:E30');
     }
 }

@@ -11,3 +11,15 @@
     padding: 5px;
     width: 25%
 }
+
+.fluent-dark .auto-dropdowns,
+.fluent2-dark .auto-dropdowns,
+.material-dark .auto-dropdowns,
+.material3-dark .auto-dropdowns,
+.bootstrap-dark .auto-dropdowns,
+.bootstrap5-dark .auto-dropdowns,
+.bootstrap5.3-dark .auto-dropdowns,
+.highcontrast .auto-dropdowns,
+.fluent2-highcontrast .auto-dropdowns {
+    background: #1f1f1f;
+}
