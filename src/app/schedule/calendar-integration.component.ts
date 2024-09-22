@@ -16,7 +16,7 @@ export class CalendarIntegrationComponent {
   public readonly = true;
   public currentView: View = 'Month';
   private calendarId = 'en.usa%23holiday@group.v.calendar.google.com';
-  private publicKey = 'AIzaSyBgbX_tgmVanBP4yafDPPXxWr70sjbKAXM';
+  private publicKey = '';
   private dataManger: DataManager = new DataManager({
     url: 'https://www.googleapis.com/calendar/v3/calendars/' + this.calendarId + '/events?key=' + this.publicKey,
     adaptor: new WebApiAdaptor(),
