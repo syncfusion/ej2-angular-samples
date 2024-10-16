@@ -59,7 +59,7 @@
     "@angular/compiler-cli": "17.1.2",
     "@types/jasmine": "4.3.0",
     "child_process": "1.0.2",
-    "codemirror": "5.37.0",
+     "codemirror": "5.58.2",
     "elasticlunr": "0.9.5",
     "fuse.js": "6.6.2",
     "gulp": "4.0.2",
