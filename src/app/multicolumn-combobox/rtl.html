@@ -5,12 +5,13 @@
 <div class="control-section">
     <div class='control-wrapper'>
         <div style='padding-top:60px;'>
-            <ejs-multicolumncombobox id='rtl' #rtl [dataSource]='bookDetails' [fields]='fields' [enableRtl]='true' [placeholder]='waterMark' popupHeight='230px'>
+            <label>Select a title</label>
+            <ejs-multicolumncombobox id='rtl' #rtl [dataSource]='datasource' [fields]='fields' [enableRtl]='true' [placeholder]='waterMark' popupHeight='210px'popupWidth='650px'>
                 <e-columns>
-                    <e-column field='Title' header='Title' width="200"/>
-                    <e-column field='Author' header='Author' width="150"/>
+                    <e-column field='Title' header='Title' width="190"/>
+                    <e-column field='Author' header='Author' width="145"/>
                     <e-column field='Genre' header='Genre' width="100"/>
-                    <e-column field='PublishedYear' header='Published Year' width="125"/>
+                    <e-column field='PublishedYear' header='Published Year' width="120"/>
                     <e-column field='Price' header='Price' width="80"/>
                 </e-columns>
             </ejs-multicolumncombobox>

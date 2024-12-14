@@ -14,7 +14,9 @@
 .bootstrap5\.3 #ganttUnscheduled .e-add-icon:before,
 .bootstrap5\.3-dark-lite #ganttUnscheduled .e-add-icon:before,
 .bootstrap5\.3-dark #ganttUnscheduled .e-add-icon:before, 
-.bootstrap5\.3-lite #ganttUnscheduled .e-add-icon:before{
+.bootstrap5\.3-lite #ganttUnscheduled .e-add-icon:before,
+.tailwind3 #ganttUnscheduled .e-add-icon:before,
+.tailwind3-dark #ganttUnscheduled .e-add-icon:before {
     content: "\e836";
     font-size: '16px';
     font-family: 'e-icons';

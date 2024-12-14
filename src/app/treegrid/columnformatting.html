@@ -15,22 +15,22 @@
                 <div class="property-panel-header">Properties </div>
                 <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
                     <tr style="height: 50px">
-                        <td style="width: 20%">
+                        <td>
                             <div style="padding-top: 10px">Column</div>
                         </td>
-                        <td style="width: 80%;padding-right: 10px">
+                        <td style="width: 100%;padding-right: 10px">
                             <div>
-                                <ejs-dropdownlist #dropdown1 id='ddlelement'  width= '140px' [dataSource]='d1data' [fields]='ddlfields' value='price'  (change)="onChange($event)"></ejs-dropdownlist>
+                                <ejs-dropdownlist #dropdown1 id='ddlelement' [dataSource]='d1data' [fields]='ddlfields' value='price'  (change)="onChange($event)" width='135px'></ejs-dropdownlist>
                                 </div>
                         </td>
                     </tr>
                     <tr style="height: 50px">
-                        <td style="width: 30%">
+                        <td>
                             <div>Format</div>
                         </td>
-                        <td style="width: 70%;padding: 10px 10px 10px 0px">
+                        <td style="width: 100%;padding: 10px 10px 10px 0px">
                             <div>
-                                    <ejs-dropdownlist #dropdown2 id='element'  width= '140px' [dataSource]='d2data' [fields]='fields' value='n2' (change)="change($event)"></ejs-dropdownlist>
+                                    <ejs-dropdownlist #dropdown2 id='element' [dataSource]='d2data' [fields]='fields' value='n2' (change)="change($event)" width='135px'></ejs-dropdownlist>
                                 </div>
                         </td>
                     </tr>

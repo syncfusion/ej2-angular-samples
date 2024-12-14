@@ -1,0 +1,56 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the file restriction feature in the Image Editor component, allowing customization of
+        file extensions, minimum and maximum file sizes, and drag-and-drop functionality.
+    </p>
+</div>
+<div class="col-lg-12 control-section">
+    <div style="text-align: center;">
+        <div class="e-img-editor-dropdown-container">
+            <label>Size As</label><br />
+            <button ejs-dropdownbutton id="dropdownbtn" [content]="defaultUnit" [items]="units" (select)="onSelect($event)" (beforeItemRender)="beforeItemRender($event)">
+            </button>
+        </div>
+        <div class="e-img-editor-numeric-textbox-container">
+            <label for="minFileSize">Minimum Size</label>
+            <br />
+            <ejs-numerictextbox id="minFileSize" [value]="minFileSize" [min]="1" style="width: 180px"
+                (change)="updateMinFileSize($event)"></ejs-numerictextbox>
+        </div>
+        <div class="e-img-editor-numeric-textbox-container">
+            <label for="maxFileSize">Maximum Size</label>
+            <br />
+            <ejs-numerictextbox id="maxFileSize" [value]="maxFileSize" [min]="1"
+                style="width: 180px" (change)="updateMaxFileSize($event)"></ejs-numerictextbox>
+        </div>
+        <div class="e-img-editor-dropdown-container">
+            <label for="allowedExtensions">Allowed Extensions</label><br />
+            <ejs-multiselect id="allowedExtensions" [dataSource]="fileExtensionsList" [fields]="fields"
+                [value]="allowedExtensions" mode="CheckBox" [showSelectAll]="true" style="width: 180px"
+                (change)="updateAllowedExtensions($event)"></ejs-multiselect>
+        </div>
+    </div>
+    <div class="e-img-editor-sample">
+        <ejs-imageeditor id="image-editor" [uploadSettings]="uploadSettings" (created)="onCreated"></ejs-imageeditor>
+    </div>
+</div>
+<div id="description">
+    <p>
+        This sample highlights the enhanced configuration capabilities of the Image Editor component through the
+        <b>uploadSettings</b> property. The following features are included:
+    </p>
+    <ul>
+        <li><b>File Extensions</b>: Use a multi-select dropdown with checkboxes to dynamically choose the allowed file
+            extensions. Supported values include <code>jpeg</code>, <code>jpg</code>, <code>png</code>,
+            <code>svg</code>, and <code>webp</code>.</li>
+        <li><b>File Size</b>: Numeric textboxes to set minimum and maximum file sizes dynamically.</li>
+        <li><b>Dynamic Updates</b>: Changes made to the numeric textboxes or the dropdown options immediately reflect in the component's <code>uploadSettings</code>.</li>
+        <li><b>Upload Settings</b>: Predefined settings include:
+            <ul>
+                <li><b>Allowed Extensions</b>: <code>.jpeg</code>, <code>.png</code>, <code>.svg</code>, <code>.webp</code></li>
+                <li><b>Minimum File Size</b>: 1 KB</li>
+                <li><b>Maximum File Size</b>: 100 KB</li>
+            </ul>
+        </li>
+    </ul>
+</div>

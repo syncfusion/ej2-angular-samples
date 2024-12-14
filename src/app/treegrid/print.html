@@ -1,36 +1,46 @@
 <div class="control-section">
-        <ejs-treegrid [dataSource]='data' height='410' childMapping='subtasks' [treeColumnIndex]='1'  [toolbar]='toolbar'>
-            <e-columns>
-                <e-column field='taskID' headerText='Task ID' width='70' textAlign='Right'></e-column>
-                <e-column field='taskName' headerText='Task Name' width='200'></e-column>
-                <e-column field='startDate' headerText='Start Date' width='90' format="yMd" textAlign='Right'></e-column>
-                <e-column field='endDate' headerText='End Date' width='90' format="yMd" textAlign='Right'></e-column>
-                <e-column field='duration' headerText='Duration' width='80' textAlign='Right'></e-column>
-                <e-column field='progress' headerText='Progress' width='80' textAlign='Right'></e-column>
-                <e-column field='priority' headerText='Priority' width='90'></e-column>
+    <ejs-treegrid #treegridprint [dataSource]='data' height='410' childMapping='subtasks' [treeColumnIndex]='1'
+        [toolbar]='toolbar' (load)='onLoad()'>
+        <e-columns>
+            <e-column field='taskID' headerText='Task ID' width='70' textAlign='Right'></e-column>
+            <e-column field='taskName' headerText='Task Name' width='200'></e-column>
+            <e-column field='startDate' headerText='Start Date' width='90' format="yMd" textAlign='Right'></e-column>
+            <e-column field='endDate' headerText='End Date' width='90' format="yMd" textAlign='Right'></e-column>
+            <e-column field='duration' headerText='Duration' width='80' textAlign='Right'></e-column>
+            <e-column field='progress' headerText='Progress' width='80' textAlign='Right'></e-column>
+            <e-column field='priority' headerText='Priority' width='90'></e-column>
 
-            </e-columns>
-        </ejs-treegrid>
-    </div>
+        </e-columns>
+    </ejs-treegrid>
+</div>
 <div id="action-description">
-        <p>This sample demonstrates the option to print the Tree Grid. Click the print button from the toolbar item to print Tree Grid.</p>
-    </div>
+    <p>This sample demonstrates the option to print the Tree Grid. Click the print button from the toolbar item to print
+        Tree Grid.</p>
+</div>
 <div id="description">
-        <p>The Tree Grid can be printed using the <code>print</code> method. While printing the pager and 
+    <p>The Tree Grid can be printed using the <code>print</code> method. While printing the pager and
         scrollbar will be removed if they are enabled in Tree Grid.</p>
-        <p>By default, all pages will be printed. 
-            We can print current page alone by setting the <code>printMode</code>property
-            value as <code>currentpage</code>.</p>
-        <p>In this demo, click the print icon to print Tree Grid.</p>
-        <p style="font-weight: 500">Injecting Module:</p>
-        <p>
-            Tree Grid component features are segregated into individual feature-wise modules. To use searching feature, we need to inject
-            <code>ToolbarService</code>, <code>PageService</code>, <code>ExcelExportService</code>, <code>PdfExportService</code> into the <code>&#64;NgModule.providers</code> section.
-        </p>
-        <p>More information on the print feature can be found in this 
-            <a target="_blank" 
-            href="https://ej2.syncfusion.com/angular/documentation/treegrid/print">
+    <p>By default, all pages will be printed.
+        We can print current page alone by setting the <code>printMode</code>property
+        value as <code>currentpage</code>.</p>
+    <p>In this demo, click the print icon to print Tree Grid.</p>
+    <p style="font-weight: 500">Injecting Module:</p>
+    <p>
+        Tree Grid component features are segregated into individual feature-wise modules. To use searching feature, we
+        need to inject
+        <code>ToolbarService</code>, <code>PageService</code>, <code>ExcelExportService</code>,
+        <code>PdfExportService</code> into the <code>&#64;NgModule.providers</code> section.
+    </p>
+    <p>More information on the print feature can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/treegrid/print">
             documentation section</a>.
-        </p>
-    </div>
-    
+    </p>
+</div>
+
+<style type="text/css" class="cssStyles">
+    .e-print-fluent2-highcontrast.e-treegrid.e-print-grid-layout,
+    .e-print-fluent2-highcontrast.e-treegrid.e-print-grid-layout .e-gridheader,
+    .e-print-fluent2-highcontrast.e-treegrid.e-print-grid-layout .e-rowcell {
+        border-color: gray !important;
+    }
+</style>

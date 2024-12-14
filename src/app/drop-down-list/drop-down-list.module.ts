@@ -6,6 +6,7 @@ import { GroupAndIconDropDownListComponent } from './grouping-icon.component';
 import { DataBindingDropDownListComponent } from './data-binding.component';
 import { DisabledItemsDropDownListComponent } from './disabled-items.component';
 import { TemplateDropDownListComponent } from './template.component';
+import { ResizeDropDownListComponent } from './resize.component';
 import { CascadingDropDownListComponent } from './cascading.component';
 import { FilteringDropDownListComponent } from './filtering.component';
 import { DiacriticsFilteringDropDownListComponent } from './diacritics-filtering.component';
@@ -30,6 +31,8 @@ export const dropdownlistAppRoutes: Object[] = [
 		category: 'Dropdown List' },
     { path: ':theme/drop-down-list/template', component: TemplateDropDownListComponent, name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular drop-down list component pop-up list using the template.', order: '01',
 		category: 'Dropdown List' },
+    { path: ':theme/drop-down-list/resize', component: ResizeDropDownListComponent, type: "new", name: 'Popup Resize', description: 'This demo showcases the custom resizing functionality of Dropdown List, You can adjust the size of the popup based on your preferences, allowing for better control over its appearance', order: '01',
+      category: 'Dropdown List' },
     { path: ':theme/drop-down-list/virtual-scroll', component: VirtualScrollDropDownListComponent, name: 'Virtualization', description: 'This example demonstrates how to utilize the virtualization support of Angular drop-down list component.', order: '01',
 		category: 'Dropdown List' },
     { path: ':theme/drop-down-list/filtering', component: FilteringDropDownListComponent, name: 'Filtering', description: 'This example demonstrates how the filtering functionalities works based on the typed characters in the Angular drop-down list component.', order: '01',
@@ -41,9 +44,9 @@ export const dropdownlistAppRoutes: Object[] = [
         path: ':theme/drop-down-list/diacritics-filtering', component: DiacriticsFilteringDropDownListComponent, description: 'This example demonstrates how to achieve the diacritics filter functionalities in the Angular drop-down list component.', order: '01',
         name: 'Diacritics Filtering', category: 'Dropdown List'
     },
-    { path: ':theme/drop-down-list/template-driven', component: TemplateDrivenDropDownListComponent, name: 'Template Driven', description: 'This demo explains the template-driven forms support of the Syncfusion angular drop-down list component.', order: '02',
+    { path: ':theme/drop-down-list/template-driven', component: TemplateDrivenDropDownListComponent, name: 'Template Driven', description: 'This demo explains the template-driven forms support of the Syncfusion<sup>®</sup> angular drop-down list component.', order: '02',
       category: 'Form Support' },
-    { path: ':theme/drop-down-list/reactive-form', component: ReactiveFormDropDownListComponent, name: 'Reactive Form', description: 'This demo explains the reactive forms support of the Syncfusion angular drop-down list component.', order: '02',
+    { path: ':theme/drop-down-list/reactive-form', component: ReactiveFormDropDownListComponent, name: 'Reactive Form', description: 'This demo explains the reactive forms support of the Syncfusion<sup>®</sup> angular drop-down list component.', order: '02',
 		category: 'Form Support' }
 
 ];

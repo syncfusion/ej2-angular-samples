@@ -12,26 +12,26 @@
         </div>
     </div>
     <div class="col-lg-3 property-section">
-        <div class="property-panel-section">
+        <div class="property-panel-section property-content">
                     <div class="property-panel-header">Properties </div>
             <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
                 <tr style="height: 50px">
-                    <td style="width: 20%">
+                    <td id="column">
                         <div style="padding-top: 10px">Column</div>
                     </td>
                     <td style="width: 80%;padding-right: 10px">
-                        <div>
-                                <ejs-dropdownlist #dropdown1 id='ddlelement'  width= '140px' [dataSource]='d1data' [fields]='ddlfields' value='taskID'  (change)="onChange($event)"></ejs-dropdownlist>
+                        <div style="padding-left:5px">
+                                <ejs-dropdownlist #dropdown1 id='ddlelement'  width= '125px' [dataSource]='d1data' [fields]='ddlfields' value='taskID'  (change)="onChange($event)"></ejs-dropdownlist>
                         </div>
                     </td>
                 </tr>
                 <tr style="height: 50px">
-                    <td style="width: 50%">
+                    <td id="alignment">
                         <div>Cell Alignment</div>
                     </td>
-                    <td style="width: 50%;padding: 10px 10px 10px 0px">
-                        <div>
-                            <ejs-dropdownlist #dropdown2 id='element'  width= '140px' [dataSource]='d2data' [fields]='fields' value='Right'  (change)="change($event)"></ejs-dropdownlist>
+                    <td style="width: 80%;padding: 10px 10px 10px 0px">
+                        <div style="padding-left:5px">
+                            <ejs-dropdownlist #dropdown2 id='element'  width= '125px' [dataSource]='d2data' [fields]='fields' value='Right'  (change)="change($event)"></ejs-dropdownlist>
                         </div>
                     </td>
                 </tr>
@@ -65,3 +65,18 @@
                 More information about Cell Alignment can be found in this documentation section.
             </p>
     </div>
+
+    <style>
+        @media (min-width: 990px) and (max-width: 1300px){
+            .property-section .property-panel-section.property-content{
+                padding-left: 0px;
+    
+                #property{
+                    width:130% !important;
+                }
+                 #column, #alignment {
+                    width:35%;
+                 }
+            }
+        }
+    </style>

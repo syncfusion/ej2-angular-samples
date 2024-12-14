@@ -10,25 +10,25 @@
         </ejs-treegrid>
     </div>
     <div class="col-lg-3 property-section">
-        <div class="property-panel-section">
+        <div class="property-panel-section reorder-proprtypanel">
                     <div class="property-panel-header">Properties </div>
             <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
                 <tr style="height: 50px">
-                    <td style="width: 30%">
+                    <td>
                         <div style="padding-top: 10px">Column</div>
                     </td>
-                    <td style="width: 30%;padding-right: 10px">
-                        <div>
+                    <td style="width: 100%;padding-right: 10px">
+                        <div id="dropdowndata">
                                 <ejs-dropdownlist #dropdown1 id='ddlelement' width= '140px' [dataSource]='d1data' [fields]='ddlfields' value='taskID' (change)="onChange($event)" ></ejs-dropdownlist>
                             </div>
                     </td>
                 </tr>
                 <tr style="height: 50px">
-                    <td style="width: 30%">
+                    <td>
                         <div>Column Index</div>
                     </td>
-                    <td style="width: 30%;padding: 10px 10px 10px 0px">
-                        <div>
+                    <td style="width: 100%;padding: 10px 10px 10px 0px">
+                        <div id="dropdowndata">
                                 <ejs-dropdownlist #dropdown2 id='element' width= '140px' [dataSource]='d2data' [fields]='fields' value='0'  (change)="change($event)" ></ejs-dropdownlist>
                             </div>
                     </td>
@@ -36,6 +36,16 @@
             </table>
         </div>
     </div>
+    <style>
+        @media (min-width: 990px) and (max-width: 1300px){
+            .reorder-proprtypanel{
+                padding-left: 0px;
+            }
+           #dropdowndata{
+            padding-left: 10px;
+           }
+        }
+    </style>
     <div id="action-description">
         <p>This sample demonstrates reordering feature of the Tree Grid columns. Select column name and index from properties panel to reorder the columns. You can also 
             reorder columns by simply drag and drop in the desired column position.</p>

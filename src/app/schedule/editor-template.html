@@ -1,6 +1,6 @@
 <div class="control-section">
   <ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
-    (actionBegin)="onActionBegin($event)" (eventRendered)="onEventRendered($event)" (popupClose)="onPopupClose()"
+    (actionBegin)="onActionBegin($event)" (eventRendered)="onEventRendered($event)" (popupClose)="onPopupClose()" (popupOpen)="onPopupOpen($event)"
     [showQuickInfo]="showQuickInfo">
     <e-views>
       <e-view option="Day"></e-view>
@@ -38,7 +38,7 @@
             <td class="e-textlabel">From</td>
             <td colspan="4">
               <ejs-datetimepicker id="StartTime" class="e-field" data-name="StartTime" format="M/dd/yy h:mm a"
-                (change)="onDateChange($event)" [showClearButton]="false" [value]="startDateParser(data.startTime || data.StartTime)">
+                (change)="onDateChange($event)" [showClearButton]="false" [(ngModel)]="startDate">
               </ejs-datetimepicker>
             </td>
           </tr>
@@ -46,7 +46,7 @@
             <td class="e-textlabel">To</td>
             <td colspan="4">
               <ejs-datetimepicker id="EndTime" class="e-field" data-name="EndTime" format="M/dd/yy h:mm a"
-                (change)="onDateChange($event)" [showClearButton]="false" [value]="endDateParser(data.endTime || data.EndTime)">
+                (change)="onDateChange($event)" [showClearButton]="false" [(ngModel)]="endDate">
               </ejs-datetimepicker>
             </td>
           </tr>

@@ -7,12 +7,12 @@ _:-ms-fullscreen, :root .highcontrast .e-userimg.sf-icon-FeMale::before{
   color: black;
 }
 #Emptext{
-top: -12px;
+top: -14px;
 left: 41px;
 position: relative;
 }
 #overviewgrid.e-rtl #Emptext{
-  top: -12px;
+  top: -14px;
   left: -41px;
   position: relative;
 }
@@ -46,6 +46,12 @@ background-color:#e3165b;
 }
 :host-context(.fluent)  /deep/ .empimg{
   background-color:#106EBE; 
+}
+:host-context(.tailwind3)  /deep/ .empimg{
+  background-color:rgba(79, 70, 229); 
+}
+:host-context(.tailwind3-dark)  /deep/ .empimg{
+  background-color:rgba(79, 70, 229);
 }
 
 .e-userimg.sf-icon-Male::before,

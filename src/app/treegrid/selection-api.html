@@ -19,7 +19,7 @@
                 </td>
             </tr>
             <tr>
-                <td style="width: 30%">
+                <td>
                     <div style="padding-top: 8px">Start</div>
     
                 </td>
@@ -30,11 +30,11 @@
                 </td>
             </tr>
             <tr>
-                <td style="width: 30%">
+                <td>
                     <div style="padding-top: 8px">To</div>
                 </td>
                 <td style="width: 70%;padding-right: 10px">
-                    <div>
+                    <div id='numerictextbox'>
                             <ejs-numerictextbox #numerictext2  min="0" max="11" format= '##' [value]="2" ></ejs-numerictextbox>
                         </div>
                 </td>
@@ -62,7 +62,16 @@
         </table>
     </div>
 </div>
-
+<style>
+    @media (min-width: 990px) and (max-width: 1300px) {
+    .property-section {
+        #numericbox .e-numeric.e-input-group,
+        #numerictextbox .e-numeric.e-input-group {
+            width:110px;
+        }
+    }
+}
+</style>    
 
             <div id="action-description">
                 <p>This sample demonstrates the selection functionality of the Tree Grid, you can select multiple row by entering start and end index then click the select row button.

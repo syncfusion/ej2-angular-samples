@@ -1,17 +1,17 @@
 <div class="control-section">
     <div class="col-lg-8">
-    <ejs-grid #grid [dataSource]='data' height='400' [frozenRows]='2' [frozenColumns]='1' [allowSelection]='false' [enableHover]='false' [allowResizing]='true' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbar' [allowMultiSorting]='false' allowPaging='true'>
+    <ejs-grid #grid [dataSource]='data' height='400' [frozenRows]='2' [frozenColumns]='1' [allowSelection]='false' [enableHover]='false' [allowResizing]='true' [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [allowMultiSorting]='false' allowPaging='true'>
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
-            <e-column field='Freight' headerText='Freight' width='125' format='C2' editType='numericedit' [validationRules]='freightrules'></e-column>
-            <e-column field='CustomerID' headerText='Customer ID' width='150' [validationRules]='customeridrules'></e-column>
-            <e-column field='CustomerName' headerText='Customer Name' width='180' [validationRules]='customeridrules'></e-column>
-            <e-column field='OrderDate' headerText='Order Date' width='150' format="yMd" textAlign='Right' editType='datepickeredit'></e-column>
-            <e-column field='ShippedDate' headerText='Shipped Date' width='180' format="yMd" textAlign='Right' editType='datepickeredit'></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' isPrimaryKey='true'></e-column>
+            <e-column field='Freight' headerText='Freight' width='125' format='C2'></e-column>
+            <e-column field='CustomerID' headerText='Customer ID' width='150'></e-column>
+            <e-column field='CustomerName' headerText='Customer Name' width='180'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='150' format="yMd" textAlign='Right'></e-column>
+            <e-column field='ShippedDate' headerText='Shipped Date' width='180' format="yMd" textAlign='Right'></e-column>
             <e-column field='ShipName' headerText='Ship Name' width='300'></e-column>
             <e-column field='ShipAddress' headerText='Ship Address' width='270'></e-column>
             <e-column field='ShipCity' headerText='Ship City' width='250'></e-column>
-            <e-column field='ShipCountry' headerText='Ship Country' width='250' editType='dropdownedit'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='250'></e-column>
         </e-columns>
     </ejs-grid>
     </div>

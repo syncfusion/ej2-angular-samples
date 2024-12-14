@@ -11,46 +11,47 @@
         [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" [editSettings]="editSettings"
         height="450px" [allowSelection]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
         [toolbar]="toolbar" [resourceFields] = "resourceFields" (queryTaskbarInfo)="queryTaskbarInfo($event)"
-        [resources]="resources" workUnit="Hour" [addDialogFields]="addDialogFields" [editDialogFields]="editDialogFields" (actionBegin)="actionBegin($event)">
+        [resources]="resources" workUnit="Hour" [addDialogFields]="addDialogFields" [editDialogFields]="editDialogFields" (actionBegin)="actionBegin($event)" (actionComplete)="actionComplete($event)"
+        (cellEdit)="cellEdit($event)">
         <e-columns>
           <e-column field='TaskID' [visible]='false'></e-column>
           <e-column field='TaskName' headerText='Task Name' width='180'></e-column>
-          <e-column field='resources' headerText='Resources' width= '190' editType= 'dropdownedit' [edit]= 'this.editParams()'>
+          <e-column field='resources' headerText='Resources' width='190' editType= 'dropdownedit' [edit]= 'this.editParams()'>
             <ng-template #template let-data>
-              <div>
-                <div class="text" *ngIf="data.ganttProperties.resourceNames">
-                  <div *ngIf="data.ganttProperties.resourceNames === 'Rose Fuller'">
-                    <div style="width: 110px; height: 24px; border-radius: 100px; background-color: #1c5d8e; display: flex; align-items: center; justify-content: center;">
-                      <span style="color: white; font-weight: 500;">{{data.ganttProperties.resourceNames}}</span>
-                    </div>
+            <div>
+              <div class="text" *ngIf="data.ganttProperties.resourceNames">
+                <div *ngIf="data.ganttProperties.resourceNames.split('[')[0].includes('Rose Fuller')">
+                  <div style="width: 150px; height: 24px; border-radius: 100px; background-color: #1c5d8e; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: white; font-weight: 500;">{{data.ganttProperties.resourceNames}}</span>
                   </div>
-
-                  <div *ngIf="data.ganttProperties.resourceNames === 'Fuller King'">
-                    <div style="width: 110px; height: 24px; border-radius: 100px; background-color: #4a7537; display: flex; align-items: center; justify-content: center;">
-                      <span style="color: white; font-weight: 500;">{{data.ganttProperties.resourceNames}}</span>
-                    </div>
-                  </div>
-
-                  <div *ngIf="data.ganttProperties.resourceNames === 'Van Jack'">
-                    <div style="width: 110px; height: 24px; border-radius: 100px; background-color: #b24531; display: flex; align-items: center; justify-content: center;">
-                      <span style="color: white; font-weight: 500;">{{data.ganttProperties.resourceNames}}</span>
-                    </div>
-                  </div>
-
-                  <div *ngIf="data.ganttProperties.resourceNames === 'Bergs Anton'">
-                    <div style="width: 110px; height: 24px; border-radius: 100px; background-color: #a53576; display: flex; align-items: center; justify-content: center;">
-                      <span style="color: white; font-weight: 500;">{{data.ganttProperties.resourceNames}}</span>
-                    </div>
-                  </div>
-
-                  <div *ngIf="data.ganttProperties.resourceNames === 'Tamer Vinet'">
-                    <div style="width: 110px; height: 24px; border-radius: 100px; background-color: #635688; display: flex; align-items: center; justify-content: center;">
-                      <span style="color: white; font-weight: 500;">{{data.ganttProperties.resourceNames}}</span>
-                    </div>
-                  </div>
-
                 </div>
+
+                <div *ngIf="data.ganttProperties.resourceNames.split('[')[0].includes('Fuller King')">
+                  <div style="width: 150px; height: 24px; border-radius: 100px; background-color: #4a7537; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: white; font-weight: 500;">{{data.ganttProperties.resourceNames}}</span>
+                  </div>
+                </div>
+
+                <div *ngIf="data.ganttProperties.resourceNames.split('[')[0].includes('Van Jack')">
+                  <div style="width: 150px; height: 24px; border-radius: 100px; background-color: #b24531; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: white; font-weight: 500;">{{data.ganttProperties.resourceNames}}</span>
+                  </div>
+                </div>
+
+                <div *ngIf="data.ganttProperties.resourceNames.split('[')[0].includes('Bergs Anton')">
+                  <div style="width: 150px; height: 24px; border-radius: 100px; background-color: #a53576; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: white; font-weight: 500;">{{data.ganttProperties.resourceNames}}</span>
+                  </div>
+                </div>
+
+                <div *ngIf="data.ganttProperties.resourceNames.split('[')[0].includes('Tamer Vinet')">
+                  <div style="width: 150px; height: 24px; border-radius: 100px; background-color: #635688; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: white; font-weight: 500;">{{data.ganttProperties.resourceNames}}</span>
+                  </div>
+                </div>
+
               </div>
+            </div>
             </ng-template>
           </e-column>
           <e-column field='work' width='110'></e-column>

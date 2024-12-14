@@ -15,7 +15,7 @@ export const floatingActionButtonAppRoutes: Object[] = [
         component: OverviewFABComponent,
         name: 'Overview',
         category: 'Floating Action Button',
-        description: 'This example demonstrates the overview usage of the Syncfusion Floating Action Button (FAB).',
+        description: 'This example demonstrates the overview usage of the Syncfusion<sup>®</sup> Floating Action Button (FAB).',
         sourceFiles: [
             {displayName: 'overview.component.ts', path: './src/floating-action-button/overview.component.ts'},
             {displayName: 'overview.html', path: './src/floating-action-button/overview.html'},
@@ -27,7 +27,7 @@ export const floatingActionButtonAppRoutes: Object[] = [
         component: DefaultFABComponent,
         name: 'Default Functionalities',
         category: 'Floating Action Button',
-        description: 'This example demonstrates the default functionalities - icon, only label & icon with label of the Syncfusion Floating Action Button (FAB).',
+        description: 'This example demonstrates the default functionalities - icon, only label & icon with label of the Syncfusion<sup>®</sup> Floating Action Button (FAB).',
         sourceFiles: [
             {displayName: 'default.component.ts', path: './src/floating-action-button/default.component.ts'},
             {displayName: 'default.html', path: './src/floating-action-button/default.html'},
@@ -51,7 +51,7 @@ export const floatingActionButtonAppRoutes: Object[] = [
         component: StylesFABComponent,
         name: 'Styles',
         category: 'Floating Action Button',
-        description: 'This example demonstrates the available types of the Syncfusion Floating Action Button (FAB).',
+        description: 'This example demonstrates the available types of the Syncfusion<sup>®</sup> Floating Action Button (FAB).',
         sourceFiles: [
             {displayName: 'styles.component.ts', path: './src/floating-action-button/styles.component.ts'},
             {displayName: 'styles.html', path: './src/floating-action-button/styles.html'},

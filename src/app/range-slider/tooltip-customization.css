@@ -94,3 +94,10 @@
 .e-tooltip-wrap.e-tooltip-cutomization .e-arrow-tip-inner.e-tip-bottom {
   color: #ffd939;
 }
+
+body.tailwind3 .sliderwrap .e-tick-after.e-scale.e-h-scale .e-tick,
+body.tailwind3-dark .sliderwrap .e-tick-after.e-scale.e-h-scale .e-tick,
+body.tailwind3.e-bigger .sliderwrap .e-tick-after.e-scale.e-h-scale .e-tick
+body.tailwind3-dark.e-bigger .sliderwrap .e-tick-after.e-scale.e-h-scale .e-tick {
+    top: 0px;
+}

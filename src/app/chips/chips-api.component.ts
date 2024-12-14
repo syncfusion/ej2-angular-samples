@@ -1,5 +1,4 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import  data from './data.json';
 import { ChipList } from '@syncfusion/ej2-buttons';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -19,8 +18,20 @@ import { ChipListModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons'
 
 export class ApiChipsComponent {
     @ViewChild('chip') chip: ChipList;
-    public ddlData = data.ddlData;
-    public avatarData = data.avatarData;   
+    public ddlData: Object[] = [
+        { id: '1', text: 'Default' },
+        { id: '2', text: 'Primary' },
+        { id: '3', text: 'Success' },
+        { id: '4', text: 'Danger' },
+        { id: '5', text: 'Warning' },
+        { id: '6', text: 'Info' },
+      ];
+    public avatarData: Object[] = [
+        { id: '1', text: 'None' },
+        { id: '2', text: 'Icon' },
+        { id: '3', text: 'Image' },
+        { id: '4', text: 'Letter' },
+      ];   
     outlineCss = '';
     colorCss = '';
     iconHandler(e): void {

@@ -26,5 +26,5 @@ export class RemotetMultiComboBoxComponent {
     // bind the Query instance to query property
     public query: Query = new Query().select(['FirstName', 'EmployeeID', 'Designation', 'Country']).take(10).requiresCount();
     // set the placeholder to ComboBox input element
-    public waterMark: string = 'Select a name';
+    public waterMark: string = 'eg. Andrew';
 }

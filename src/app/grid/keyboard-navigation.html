@@ -3,7 +3,7 @@
         <e-columns>
             <e-column field='OrderID'  isPrimaryKey='true' headerText='Order ID' width='120' textAlign='Right'></e-column>
             <e-column field='CustomerName' headerText='Customer Name' width='150' textAlign='Left'></e-column>
-            <e-column field='OrderDate' headerText='Order Date' width='130' type='date' format='yMd' editType='datepickeredit' textAlign='Right'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='130' type='date' format='yMd' editType='datepickeredit' textAlign='Right' [allowGrouping]="false"></e-column>
             <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right'></e-column>
             <e-column field='ShipCountry' textAlign='Left' headerText='Ship Country' editType='dropdownedit' width='170'></e-column>
         </e-columns>

@@ -51,7 +51,7 @@ export class RemoteComponent implements OnInit {
         } as GridSettings;
 
         this.remoteData = new DataManager({
-            url: 'https://bi.syncfusion.com/northwindservice/api/orders',
+            url: 'https://ej2services.syncfusion.com/angular/development/api/order',
             adaptor: new WebApiAdaptor,
             crossDomain: true
         });
@@ -68,7 +68,7 @@ export class RemoteComponent implements OnInit {
         };
 
         this.csvReport = {
-            url: 'https://bi.syncfusion.com/productservice/api/sales',
+            url: 'https://ej2services.syncfusion.com/angular/development/api/product',
             type: 'CSV',
             expandAll: false,
             enableSorting: true,

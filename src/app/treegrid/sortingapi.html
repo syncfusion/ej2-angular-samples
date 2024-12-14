@@ -10,44 +10,57 @@
          </ejs-treegrid>
     </div>
 </div>
+<style>
+    @media (min-width: 990px) and (max-width: 1300px) {
+        .property-panel-section{
+            padding-left:0px;
+        }
+    }
+</style>
 <div class="col-lg-3 property-section">
     <div class="property-panel-section">
                 <div class="property-panel-header">Properties </div>
-        <table id="property" title="Properties" style="width: 100%">
+        <table id="property" title="Properties" style="width: auto">
             <tr>
-                <td style="width: 30%">
+                <td style="width:50%">
                     <div>Column</div>
                 </td>
-                <td style="width: 70%;padding-right: 10px">
+                <td style="width: 70%;padding-right: 10px; padding-left:10%">
                     <div id='columnddl'>
                             <ejs-dropdownlist #dropdown1 id='ddlelement' width= '140px' [dataSource]='d1data' [fields]='ddlfields' value='taskID' placeholder = 'Column'></ejs-dropdownlist>
                     </div>
                 </td>
             </tr>
             <tr>
-                <td style="width: 30%;padding-top: 10px">
+                <td style="padding-top: 10px; width:50%">
                     <div>Direction</div>
                 </td>
-                <td style="width: 70%;padding-right: 10px;padding-top: 10px">
+                <td style="width: 70%;padding-right: 10px;padding-top: 10px; padding-left:10%">
                     <div>
                         <ejs-dropdownlist #dropdown2 id='element' width= '140px' [dataSource]='d2data' [fields]='fields' value='Ascending' placeholder = 'Direction' ></ejs-dropdownlist>
                     </div>
                 </td>
             </tr>
             <tr>
-                <td style="width: 30%;padding-top: 25px">
-                    <div>
-                        <button ejs-button style='margin-right:16px' cssClass="btn btn-default" content="Sort" id="Sort" (click)="onClicked()"></button>
-                    </div>
-    
+                <td colspan="2" style="padding-top: 10px; text-align: center;">
+                  <div style="display: flex; align-items: center; gap: 16px;">
+                    <button
+                      ejs-button
+                      cssClass="btn btn-default"
+                      content="Sort"
+                      id="Sort"
+                      (click)="onClicked()"
+                    ></button>
+                    <button
+                      ejs-button
+                      cssClass="btn btn-default"
+                      content="Clear"
+                      id="Clear"
+                      (click)="clicked($event)"
+                    ></button>
+                  </div>
                 </td>
-                <td style="width: 70%; padding-top: 25px">
-                    <div>
-
-                        <button ejs-button cssClass="btn btn-default" style='margin-right:16px' content="Clear" id="clear" (click)="clicked($event)"></button>
-                    </div>
-                </td>
-            </tr>
+              </tr>
         </table>
     </div>
 </div>

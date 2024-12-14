@@ -91,7 +91,7 @@ export class DrawingToolDiagramComponent {
             case 'cubic': return { type: 'Bezier' };
             case 'freehand': return { type: 'Freehand' };
             case 'path': return { shape: { type: 'Path', data: 'M540.3643,137.9336L546.7973,159.7016L570.3633,159.7296L550.7723,171.9366L558.9053,194.9966L540.3643,179.4996L521.8223,194.9966L529.9553,171.9366L510.3633,159.7296L533.9313,159.7016L540.3643,137.9336z' } };
-            case 'image': return { shape: { type: 'Image', source: './assets/diagram/employees/Clayton.png' } };
+            case 'image': return { shape: { type: 'Image', source: '//ej2.syncfusion.com/demos/src/diagram/employees/image16.png' } };
             case 'svg': return { shape: { type: 'Native', content: this.getNativeContent() } };
             case 'text': return { shape: { type: 'Text' } };
             default: return null;

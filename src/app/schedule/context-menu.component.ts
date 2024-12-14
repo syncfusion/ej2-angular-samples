@@ -100,8 +100,8 @@ export class ScheduleContextMenuComponent {
       case 'Add':
       case 'AddRecurrence':
         const selectedCells: Element[] = this.scheduleObj.getSelectedElements();
-        const activeCellsData: CellClickEventArgs =
-          this.scheduleObj.getCellDetails(selectedCells.length > 0 ? selectedCells : this.selectedTarget);
+        const isRightClickInSelectedCells: boolean = selectedCells.some((cell: Element) => cell === this.selectedTarget);
+        const activeCellsData: CellClickEventArgs = this.scheduleObj.getCellDetails(isRightClickInSelectedCells ? selectedCells : [this.selectedTarget]);
         if (selectedMenuItem === 'Add') {
           this.scheduleObj.openEditor(activeCellsData, 'Add');
         } else {

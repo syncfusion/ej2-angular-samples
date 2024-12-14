@@ -1,0 +1,130 @@
+<div class="control-section">
+    <div>
+        <div style="width: 100%; height: 30px">
+            <button id="togglebtn" #toggleBtn style="float: right; width: 75px"
+                class="e-btn e-outline e-flat e-primary e-btn-icons" ejs-button iconCss="edit" [isToggle]="true"
+                (click)="onClick()">
+                Edit
+            </button>
+        </div>
+
+        <div style="padding: 5px; margin-top: 5px; text-align: end">
+            <div class="add-widget-button e-control e-btn e-lib" id="dialogBtn" (click)="addWidget()">
+                <b>Add New Widget</b>
+            </div>
+        </div>
+    </div>
+
+    <ejs-dashboardlayout id="defaultLayout" #default_dashboard [cellAspectRatio]="cellAspectRatio" columns="2"
+        [allowResizing]="false" [cellSpacing]="cellSpacing" [allowDragging]="false"
+        (resizeStop)="onPanelResizeStop($event)">
+        <e-panels>
+            <e-panel [sizeX]="1" [sizeY]="1" [row]="0" [col]="0">
+                <ng-template #header>
+                    <div><b>Bar Chart</b></div>
+                </ng-template>
+                <ng-template #content>
+                    <div id="barchart" style="height:100%; width:100%">
+                        <ejs-chart style="display:block;" id="colChart" #colchart [chartArea]="chartArea" width="100%"
+                            height="100%" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis"
+                            (load)="load($event)">
+                            <e-series-collection>
+                                <e-series [dataSource]="data" type="Column" xName="x" yName="y" name="Jan" width="2"
+                                    [marker]="marker" fill="#00bdae">
+                                </e-series>
+                                <e-series [dataSource]="data1" type="Column" xName="x" yName="y" name="Feb" width="2"
+                                    [marker]="marker" fill="#e36593">
+                                </e-series>
+                                <e-series [dataSource]="data2" type="Column" xName="x" yName="y" name="Mar" width="2"
+                                    [marker]="marker" fill="#357cd2">
+                                </e-series>
+                            </e-series-collection>
+                        </ejs-chart>
+                    </div>
+                </ng-template>
+            </e-panel>
+            <e-panel [sizeX]="1" [sizeY]="1" [row]="0" [col]="1">
+                <ng-template #header>
+                    <div><b>Pie Chart</b></div>
+                </ng-template>
+                <ng-template #content>
+                    <div id="pie" style="height:100%; width:100%">
+                        <ejs-accumulationchart id="pie" (load)="piechartLoad($event)" #pie width="100%" height="100%"
+                            [legendSettings]="legendSettings" [tooltip]="tooltip"
+                            (animationComplete)="animationComplete($event)" (textRender)="textRender($event)"
+                            [enableSmartLabels]="enablesmartlabel" selectionMode="Point">
+                            <e-accumulation-series-collection>
+                                <e-accumulation-series name="Earnings" [dataSource]="pieData" xName="x" yName="y"
+                                    [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%" radius="100%"
+                                    [dataLabel]="dataLabel" [palettes]="palettes">
+                                </e-accumulation-series>
+                            </e-accumulation-series-collection>
+                        </ejs-accumulationchart>
+                    </div>
+                </ng-template>
+            </e-panel>
+            <e-panel [sizeX]="2" [sizeY]="1" [row]="1" [col]="0">
+                <ng-template #header>
+                    <div><b>Spline Chart</b></div>
+                </ng-template>
+                <ng-template #content>
+                    <div id="pie" style="height:100%; width:100%">
+                        <ejs-chart style="height:100%; width:100%; text-align: center" #splineChart id="visitorsChart"
+                            style="display:block;" [chartArea]="chartArea" [width]="widthValue" [height]="heightValue"
+                            [primaryXAxis]="lineprimaryXAxis" [primaryYAxis]="lineprimaryYAxis"
+                            [legendSettings]="linelegendSettings" (load)="load($event)">
+                            <e-series-collection>
+                                <e-series [dataSource]="splineData1" type="SplineArea" xName="x" yName="y" name="Jan"
+                                    [border]="lineborder" fill="rgb(239, 183, 202)" opacity="0.5">
+                                </e-series>
+                                <e-series [dataSource]="splineData2" type="SplineArea" xName="x" yName="y" name="Feb"
+                                    [border]="lineborder" fill="rgb(0, 189, 174)" opacity="0.5">
+                                </e-series>
+                            </e-series-collection>
+                        </ejs-chart>
+                    </div>
+                </ng-template>
+            </e-panel>
+        </e-panels>
+    </ejs-dashboardlayout>
+</div>
+
+<!-- Dialog box to add dynamic components as a panel content -->
+<ejs-dialog #template id="modalDialog" [isModal]="isModal" [width]="width" [header]="dialogHeader"
+    [animationSettings]="animationSettings" [visible]="isVisible" [showCloseIcon]="showCloseIcon">
+    <ng-template #content>
+        <div id="dialogcontent">
+            <div>
+                <div id="bartemplate">
+                    <p class="dialog-text">Barchart (1x1)</p>
+                </div>
+                <div id="pietemplate">
+                    <p class="dialog-text">Piechart (1x1)</p>
+                </div>
+                <div id="splinetemplate">
+                    <p class="dialog-text">Splinechart (2x1)</p>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</ejs-dialog>
+
+<div id="action-description">
+    <p>
+        The following sample demonstrates about using the dashboard layout as an editable layout.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        The above sample demonstrates a editable dashboard layout. Initially the DashboardLayout component doesn't
+        allow to <a href="https://ej2.syncfusion.com/angular/documentation/api/dashboard-layout#allowdragging"
+            target="_blank">drag</a>,
+        <a href="https://ej2.syncfusion.com/angular/documentation/api/dashboard-layout#allowresizing"
+            target="_blank">resize</a> or reorder the panels. After clicking the edit button,
+        the layout becomes editable which allows to drag and reorder the
+        panels as per the requirement and also you can add new panels to the layout with predefined templates by
+        clicking the add new button and reorder them by dragging and placing in the required position. Drag and resizing
+        of the panles are not applicable in mobile resolution.
+    </p>
+</div>

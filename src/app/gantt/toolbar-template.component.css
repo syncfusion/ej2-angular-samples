@@ -27,7 +27,11 @@
 .bootstrap5\.3 #ToolbarTemplate .e-quickfilter::before,
 .bootstrap5\.3-dark-lite #ToolbarTemplate .e-quickfilter::before,
 .bootstrap5\.3-dark #ToolbarTemplate .e-quickfilter::before, 
-.bootstrap5\.3-lite #ToolbarTemplate .e-quickfilter::before {
+.bootstrap5\.3-lite #ToolbarTemplate .e-quickfilter::before,
+.tailwind3 #ToolbarTemplate  .e-quickfilter::before,
+.tailwind3-dark #ToolbarTemplate .e-quickfilter::before,
+.material3-dark #ToolbarTemplate .e-quickfilter::before,
+.material3 #ToolbarTemplate .e-quickfilter::before {
     content: '\e7f7';
     font-family: 'e-icons';
 }

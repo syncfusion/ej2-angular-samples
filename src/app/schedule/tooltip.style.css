@@ -13,6 +13,7 @@
 }
 
 .tailwind-dark .e-schedule-event-tooltip .tooltip-wrap .image,
+.tailwind3-dark .e-schedule-event-tooltip .tooltip-wrap .image,
 .bootstrap5-dark .e-schedule-event-tooltip .tooltip-wrap .image,
 .bootstrap5\.3-dark .e-schedule-event-tooltip .tooltip-wrap .image {
   background-color: #1F294A;

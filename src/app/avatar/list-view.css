@@ -57,6 +57,12 @@ body.tailwind-dark #letterAvatarList .e-list-item{
     border: 0;
 }
 
+#letterAvatarList .e-avatar.e-avatar-small {
+    height: 32px;
+    width: 32px;
+    line-height: 18px;
+}
+
 .material3 #letterAvatarList .e-list-item,
 .material3-dark #letterAvatarList .e-list-item,
 .tailwind #letterAvatarList .e-list-item {

@@ -32,6 +32,38 @@
     padding-top: 8px;
 }
 
+.fluent .e-bigger #adaptivebrowser.e-grid .e-summarycell,
+.fluent-dark .e-bigger #adaptivebrowser.e-grid .e-summarycell {
+    height: 27px;
+}
+
+.fluent2 .e-bigger #adaptivebrowser.e-grid .e-summarycell,
+.fluent2-dark .e-bigger #adaptivebrowser.e-grid .e-summarycell,
+.fluent2-highcontrast .e-bigger #adaptivebrowser.e-grid .e-summarycell {
+    height: 33px;
+}
+
+.bootstrap5\.3 .e-bigger #adaptivebrowser.e-grid .e-summarycell,
+.bootstrap5\.3-dark .e-bigger #adaptivebrowser.e-grid .e-summarycell {
+    height: 35px;
+}
+
+.tailwind .e-bigger #adaptivebrowser.e-grid .e-summarycell,
+.tailwind-dark .e-bigger #adaptivebrowser.e-grid .e-summarycell,
+.tailwind3 .e-bigger #adaptivebrowser.e-grid .e-summarycell,
+.tailwind3-dark .e-bigger #adaptivebrowser.e-grid .e-summarycell {
+    height: 35px;
+}
+
+.highcontrast .e-bigger #adaptivebrowser.e-grid .e-summarycell {
+    height: 37px;
+}
+
+.material3 .e-bigger #adaptivebrowser.e-grid .e-summarycell,
+.material3-dark .e-bigger #adaptivebrowser.e-grid .e-summarycell {
+    height: 41px;
+}
+
 /* Render the mobile pager by default */
 @media (max-width: 3840px) {
     .e-adaptive-demo .e-pager {
@@ -92,6 +124,7 @@
         
         .e-pager.e-adaptive div.e-parentmsgbar {
             margin: 0;
+            overflow: hidden;
         }
     }
     .e-adaptive-demo .e-pager div.e-parentmsgbar {
@@ -122,6 +155,23 @@
         box-sizing: border-box;
         display: inline-block;
         padding: 1% 5%;
+    }
+
+    /* The screen of the mac os */
+    .e-adaptive-demo .e-mac-safari .e-pager .e-mfirst,
+    .e-adaptive-demo .e-mac-safari .e-pager .e-mprev,
+    .e-adaptive-demo .e-mac-safari .e-pager .e-mnext,
+    .e-adaptive-demo .e-mac-safari .e-pager .e-mlast {
+        padding: 3px !important;
+    }
+
+    .e-adaptive-demo .e-mac-safari .e-pager .e-mprev,
+    .e-adaptive-demo .e-mac-safari .e-pager .e-mnext {
+         margin: 0 2px !important;
+    }
+
+    .e-adaptive-demo .e-mac-safari .e-pager .e-mlast {
+        margin-left: 0 !important;
     }
     .e-adaptive-demo .e-pager .e-mfirst {
         margin-right: 4px;

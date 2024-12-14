@@ -117,30 +117,30 @@ export class GanttOverviewComponent implements OnInit {
         };
         this.eventMarkers = [
             {
-                day: '04/04/2024',
+                day: new Date('04/04/2024'),
                 cssClass: 'e-custom-event-marker',
                 label: 'Q-1 Release'
             },
             {
-                day: '06/30/2024',
+                day: new Date('06/30/2024'),
                 cssClass: 'e-custom-event-marker',
                 label: 'Q-2 Release'
             },
             {
-                day: '09/29/2024',
+                day: new Date('09/29/2024'),
                 cssClass: 'e-custom-event-marker',
                 label: 'Q-3 Release'
             }
         ];
         this.holidays = [{
-            from: "01/01/2024",
-            to: "01/01/2024",
+            from: new Date("01/01/2024"),
+            to: new Date("01/01/2024"),
             label: "New Year holiday",
             cssClass: "e-custom-holiday"
         },
         {
-            from: "12/25/2023",
-            to: "12/26/2023",
+            from: new Date("12/25/2023"),
+            to: new Date("12/26/2023"),
             label: "Christmas holidays",
             cssClass: "e-custom-holiday"
         }],
@@ -153,13 +153,14 @@ export class GanttOverviewComponent implements OnInit {
         this.projectEndDate = new Date('10/26/2024');
     }
     load(): void {
-        let themeCollection: any = ['bootstrap5', 'bootstrap', 'bootstrap4', 'fluent', 'fabric', 'fusionnew', 'material3', 'material', 'highcontrast', 'tailwind'];
-        let check: any = themeCollection.indexOf(this.theme);
+        let themeCollection: any = ['bootstrap5', 'bootstrap', 'bootstrap4', 'fluent', 'fabric', 'fusionnew', 'material3', 'material', 'highcontrast', 'tailwind','fluent2','tailwind3','bootstrap5.3'];
         let cls: any = document.body.className.split(' ');
         this.theme = cls.indexOf('bootstrap5') > 0 ? 'bootstrap5' : cls.indexOf('bootstrap') > 0 ? 'bootstrap' : cls.indexOf('tailwind') > 0 ? 'tailwind' :
             cls.indexOf('fluent') > 0 ? 'fluent' : cls.indexOf('fabric') > 0 ? 'fabric' :
                 cls.indexOf('material3') > 0 ? 'material3' : cls.indexOf('bootstrap4') > 0 ? 'bootstrap4' : cls.indexOf('material') > 0 ? 'material' :
-                    cls.indexOf('fusionnew') > 0 ? 'fusionnew' : cls.indexOf('highcontrast') > 0 ? 'highcontrast' : ''
+                    cls.indexOf('fusionnew') > 0 ? 'fusionnew' : cls.indexOf('highcontrast') > 0 ? 'highcontrast' : cls.indexOf('bootstrap5.3') > 0 ? 'bootstrap5.3' :
+                    cls.indexOf('fluent2') > 0 ? 'fluent2' : cls.indexOf('tailwind3') > 0 ? 'tailwind3' : '';
+        let check: any = themeCollection.indexOf(this.theme);
         if (check >= 0) {
             this.CurrentTheme = true;
         }
@@ -304,7 +305,7 @@ export class GanttOverviewComponent implements OnInit {
     tooltip: Object = {
         isVisible: true,
         placement: 'Before',
-        showOn: 'Focus'
+        showOn:"Hover"
     };
     sliderWidth = 190;
     onChanged(args: any) {

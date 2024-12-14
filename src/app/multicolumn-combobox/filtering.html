@@ -2,19 +2,35 @@
     <p>This sample demonstrates the built-in support to filter the datasource when <code>allowFiltering</code>is enabled in the MultiColumn ComboBox.</p>
 </div>
 
-<div class="control-section">
+<div class="col-lg-8 control-section">
     <div class='control-wrapper'>
         <div style='padding-top:60px;'>
-            <ejs-multicolumncombobox id='filtering' #filtering [dataSource]='workDetails' [fields]='fields' (filtering)='onFiltering($event)' [allowFiltering]='true' [placeholder]='waterMark' popupHeight='230px' >
+            <label>Select an employee</label>
+            <ejs-multicolumncombobox id='filtering' #filtering [dataSource]='datasource' [fields]='fields' [allowFiltering]='true' [filterType]='filterType' [placeholder]='waterMark' popupHeight='220px' popupWidth='630px' >
                 <e-columns>
                     <e-column field='Name' header='Name' width="100"/>
-                    <e-column field='YearOfJoining' header='Year Of Joining' width="120"/>
-                    <e-column field='Status' header='Status' width="90"/>
+                    <e-column field='Department' header='Department' width="125"/>
+                    <e-column field='Role' header='Role' width="140"/>
                     <e-column field='Location' header='Location' width="100"/>
-                    <e-column field='Experience' header='Experience in Year' width="150"/>
+                    <e-column field='Experience' header='Experience in Years' width="145"/>
                 </e-columns>
             </ejs-multicolumncombobox>
         </div>
+    </div>
+</div>
+<div class="col-lg-4 property-section">
+    <div class="property-panel-header"> Properties </div>
+    <div class="property-panel-content">
+        <table class="property-panel-table">
+            <tbody>
+                <tr>
+                    <td> Choose filter type </td>
+                    <td style="padding-right: 10px">
+                        <ejs-dropdownlist id='filterType' #filterType [dataSource]='mccbDropdownListData' [index]=0 (change)='change($event)' placeholder='Select a filter type' popupHeight='200px' popupWidth='300px'></ejs-dropdownlist>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 
@@ -22,6 +38,5 @@
     <p>
         In this sample, the employees data is filtered based on <code>Name</code> column, which illustrates how employees details are filtered dynamically based on typed characters. 
     </p>
-    <p>This sample illustrates that, query the data source and pass the resulted data when characters are typed in the search box triggers the <code>filtering</code>
-        event, you can filter down the data source and return the resulted data to MultiColumn ComboBox via <code> updateData</code>method to display its list of employees.</p>
+    <p>The <code>MultiColumn ComboBox</code> supports filtering, which allows users to search for and select items by typing keywords. The available items are dynamically filtered based on the input, ensuring quick access to the desired data.</p>
 </div>

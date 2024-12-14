@@ -1,0 +1,55 @@
+<div class="control-section chat-integration">
+    <div class="integration-chatui">
+        <ejs-splitter id="splitter" height='100%' width='100%'>
+            <e-panes>
+                <e-pane size="auto" [resizable]='false' cssClass="chat-leftContent">
+                    <ng-template #content>
+                                <div class="chat-options-container">
+                                    <button ejs-button id="activitybtn" cssClass="e-flat" iconCss="e-icons e-stamp" class="chat_options" iconPosition="Top"><span>Activity</span></button>
+                                    <button ejs-button id="chatbtn" cssClass="e-flat" iconCss="e-icons e-comment-show" class="chat_options chat_interactable" iconPosition="Top"><span>Chat</span></button>
+                                    <button ejs-button id="calendarbtn" cssClass="e-flat" iconCss="e-icons e-month" class="chat_options" iconPosition="Top"><span>Calendar</span></button>
+                                    <button ejs-button id="teamsbtn" cssClass="e-flat" iconCss="e-icons e-people" class="chat_options" iconPosition="Top"><span>Teams</span></button>
+                                </div>
+                                <div id="toggle-chat-list" class="toggle-chat-listview e-card">
+                                    <ejs-listview id="listview_template" #listView [dataSource]='data' cssClass="e-list-template" headerTitle='Chats' showHeader='true' (actionComplete)="onActionComplete()" (select)="onChatItemSelected($event)">
+                                        <ng-template #template let-item>
+                                            <div class="clearfix desc e-list-wrapper e-list-multi-line e-list-avatar">
+                                              <img *ngIf="item.imgSrc" class="e-avatar" [src]="'./assets/chat-ui/images/' + item.imgSrc + '.png'" alt="image" style="border-radius: 50%;" />
+                                              <span class="e-list-item-header">{{ item.title }}</span>
+                                              <div *ngIf="item.message" class="chat_message" style="font-size: 12px;">
+                                                {{ item.message }}
+                                              </div>
+                                            </div>
+                                        </ng-template>
+                                    </ejs-listview>
+                                </div>
+                        </ng-template>
+                </e-pane>
+                <e-pane size="80%" [resizable]='false' cssClass="chat-rightContent">
+                    <ng-template #content>
+                            <div id="integration-chat" ejs-chatui #chatUI [user]="currentUser" [messages]="currentMessages" [headerText]="headerText" [headerIconCss]="headerIconCss" [headerToolbar]="headerToolbar" (messageSend)="onMessageSend($event)">
+                                <ng-template #emptyChatTemplate>
+                                    <div class="emptychat-content">
+                                        <h3><span class="e-icons e-comment-show"></span></h3>
+                                        <div class="emptyChatText">No conversations yet</div>
+                                    </div>
+                                </ng-template>
+                            </div>
+                    </ng-template>
+                </e-pane>
+            </e-panes>
+        </ejs-splitter>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This example demonstrates how to design a chat application using the Chat UI component, with dynamic switching between users' messages. The Chat UI component is customized using various properties and includes a header toolbar for additional functionality.</p>
+</div>
+<div id="description">
+    <p>
+        This example demonstrates how to use the Chat UI component to display chat messages for multiple users. The chat interface allows switching between users' conversations, with bot responses triggered by user input. A header toolbar is included, and a splitter layout displays the chat alongside a list view for easy navigation.
+    </p>
+    <p>
+        The chat UI dynamically updates to reflect the selected user's conversation, providing an interactive experience with seamless switching between different chats. The responsive design ensures that the interface adapts to various screen sizes, making it user-friendly across devices.
+    </p>
+</div>

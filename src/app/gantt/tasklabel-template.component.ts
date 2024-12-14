@@ -30,7 +30,7 @@ export class GanttTasklabelTemplateComponent implements OnInit {
           span.className = 'labelClass';
           span.innerHTML = resources[i];
           img.src =
-            'https://ej2.syncfusion.com/angular/demos/assets/gantt/images/' +
+            'assets/gantt/images/' +
             resources[i] +
             '.png';
           img.height = 40;

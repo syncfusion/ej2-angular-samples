@@ -8,6 +8,7 @@ import { DialogModule } from '@syncfusion/ej2-angular-popups';
 import { DefaultImageEditorComponent } from './default.component';
 import { ProfilePictureImageEditorComponent } from './profile-picture.component';
 import { CustomToolbarComponent } from './custom-toolbar.component';
+import { FileRestrictComponent } from './file-restrict.component';
 
 export const ImageEditorAppRoutes: Object[] = [
     {
@@ -15,8 +16,7 @@ export const ImageEditorAppRoutes: Object[] = [
         component: DefaultImageEditorComponent,
         order: '01',
         name: 'Default Functionalities',
-        category: 'Image Editor',
-        type: 'update'
+        category: 'Image Editor'
     },
     {
         path: ':theme/image-editor/profile-picture',
@@ -30,6 +30,14 @@ export const ImageEditorAppRoutes: Object[] = [
         component: CustomToolbarComponent,
         order: '01',
         name: 'Custom Toolbar',
+        category: 'Image Editor'
+    },
+    {
+        path: ':theme/image-editor/file-restrict',
+        component: FileRestrictComponent,
+        order: '01',
+        type: 'new',
+        name: 'File Restrict',
         category: 'Image Editor'
     }
 ];

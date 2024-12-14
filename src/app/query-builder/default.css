@@ -110,3 +110,12 @@ ejs-querybuilder {
 .fluent2-highcontrast .e-query-preview .e-icons.copycode {
     color: white;
 }
+
+.tailwind3-dark .json-content-area,
+.tailwind3-dark .e-query-json-preview .e-text-area-content {
+    background: transparent;
+}
+
+.tailwind3-dark .e-query-json-preview .e-pre-content {
+    color: white;
+}

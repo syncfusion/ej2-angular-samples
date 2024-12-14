@@ -1,12 +1,12 @@
 <div class="control-section">
-    <div className="fab-grid-container custom-index">
+    <div id="fabTarget" className="fab-grid-container custom-index">
         <ejs-grid #Grid id="Grid" [dataSource]="orders" [editSettings]="editSettings">
         </ejs-grid>
     </div>
 
     <!-- Default Fab component -->
-    <button ejs-fab #fab id="fab" title="Add Record" (click)="fabClick() " iconCss='fab-icons fab-icon-add'
-        target='#Grid'></button>
+    <button ejs-fab #fab id="fab" title="Add Record" (click)="fabClick() " iconCss='e-icons e-plus'
+        target='#fabTarget'></button>
 </div>
 <div id="action-description">
     <p>This sample demonstrates the usage of the Floating Action Button (FAB) component to add a new record to a

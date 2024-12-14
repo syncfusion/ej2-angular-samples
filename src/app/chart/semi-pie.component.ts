@@ -51,7 +51,7 @@ export class SemiPieComponent {
     public enableAnimation: boolean = false;
     public startAngle: number = 270;
     public endAngle: number = 90;
-    public tooltip: Object = { enable: true, format: "<b>${point.x}</b><br>Browser Share: <b>${point.tooltip}</b>", header:'' };
+    public tooltip: Object = { enable: true, format: "<b>${point.x}</b><br>Browser Share: <b>${point.tooltip}</b>", header:'', enableHighlight: true };
     constructor() {
         //code
     };

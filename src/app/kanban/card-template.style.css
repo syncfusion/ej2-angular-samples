@@ -9,7 +9,7 @@
 .kanban-card-template .e-card .e-size {
   color: #795704;
     }
-    .fluent-dark .e-kanban .e-size, .bootstrap5-dark .e-kanban .e-size, .tailwind-dark .e-kanban .e-sized, .material-dark .e-kanban .e-size, .fabric-dark .e-kanban .e-size, .bootstrap-dark .e-kanban .e-size, .highcontrast .e-kanban .e-size, .material3-dark .e-kanban .e-size {
+    .fluent-dark .e-kanban .e-size, .bootstrap5-dark .e-kanban .e-size,.bootstrap5\.3-dark .e-kanban .e-size, .tailwind-dark .e-kanban .e-sized, .tailwind3-dark .e-kanban .e-sized, .material-dark .e-kanban .e-size, .fabric-dark .e-kanban .e-size, .bootstrap-dark .e-kanban .e-size, .highcontrast .e-kanban .e-size, .material3-dark .e-kanban .e-size {
         color: #b8860b;
 }
 
@@ -104,7 +104,7 @@
 .kanban-card-template .e-card .e-readyText {
   color: #018607;
     }
-    .fluent-dark .e-kanban .e-readyText, .bootstrap5-dark .e-kanban .e-readyText, .tailwind-dark .e-kanban .e-readyText, .material-dark .e-kanban .e-readyText, .fabric-dark .e-kanban .e-readyText, .bootstrap-dark .e-kanban .e-readyText, .highcontrast .e-kanban .e-readyText, .material3-dark .e-kanban .e-readyText {
+    .fluent-dark .e-kanban .e-readyText, .bootstrap5-dark .e-kanban .e-readyText,.bootstrap5\.3-dark .e-kanban .e-readyText, .tailwind-dark .e-kanban .e-readyText, .tailwind3-dark .e-kanban .e-readyText, .material-dark .e-kanban .e-readyText, .fabric-dark .e-kanban .e-readyText, .bootstrap-dark .e-kanban .e-readyText, .highcontrast .e-kanban .e-readyText, .material3-dark .e-kanban .e-readyText {
         color:#21A32E;
 }
 
@@ -112,14 +112,14 @@
   color: #527708;
   animation: blinker 1.5s linear infinite;
 }
-.fluent-dark .e-kanban .e-preparingText, .bootstrap5-dark .e-kanban .e-preparingText, .tailwind-dark .e-kanban .e-preparingText, .material-dark .e-kanban .e-preparingText, .fabric-dark .e-kanban .e-preparingText, .bootstrap-dark .e-kanban .e-preparingText, .highcontrast .e-kanban .e-preparingText, .material3-dark .e-kanban .e-preparingText {
+.fluent-dark .e-kanban .e-preparingText, .bootstrap5-dark .e-kanban .e-preparingText,.bootstrap5\.3-dark .e-kanban .e-preparingText, .tailwind-dark .e-kanban .e-preparingText, .tailwind3-dark .e-kanban .e-preparingText, .material-dark .e-kanban .e-preparingText, .fabric-dark .e-kanban .e-preparingText, .bootstrap-dark .e-kanban .e-preparingText, .highcontrast .e-kanban .e-preparingText, .material3-dark .e-kanban .e-preparingText {
   color: #99d126;
 }
 
 .kanban-card-template .e-card .e-deliveredText {
   color: #c80e0e;
 }
-.fluent-dark .e-kanban .e-deliveredText, .bootstrap5-dark .e-kanban .e-deliveredText, .tailwind-dark .e-kanban .e-deliveredText, .material-dark .e-kanban .e-deliveredText, .fabric-dark .e-kanban .e-deliveredText, .bootstrap-dark .e-kanban .e-deliveredText, .highcontrast .e-kanban .e-deliveredText, .material3-dark .e-kanban .e-deliveredText {
+.fluent-dark .e-kanban .e-deliveredText, .bootstrap5-dark .e-kanban .e-deliveredText,.bootstrap5\.3-dark .e-kanban .e-deliveredText, .tailwind-dark .e-kanban .e-deliveredText, .tailwind3-dark .e-kanban .e-deliveredText, .material-dark .e-kanban .e-deliveredText, .fabric-dark .e-kanban .e-deliveredText, .bootstrap-dark .e-kanban .e-deliveredText, .highcontrast .e-kanban .e-deliveredText, .material3-dark .e-kanban .e-deliveredText {
   color:#dc7c7c;
 }
 

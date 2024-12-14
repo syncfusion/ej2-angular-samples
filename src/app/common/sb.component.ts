@@ -64,7 +64,7 @@ const sourceHeader: String = '<li class="nav-item {2}" role="presentation"><a cl
 const sourcecontent: String = '<div class="tab-pane {2}" id="{0}" role="tabpanel" {4}><pre><code class="{3}">{1}</code></pre></div>';
 const plnk: string = '<li class="plnk" style="float:right"><a id="plnkr">Open in Plunker</a></li>\n' +
     '<li class="open"><a id="openNew" target="_blank" aria-label="Open new sample"><div class="openIcon e-icons"></div></a></li>';
-const themes: string[] = ['material3', 'bootstrap5', 'fluent2', 'tailwind', 'fluent2-highcontrast', 'highcontrast', 'fluent', 'material3-dark', 'bootstrap5-dark',  'fluent2-dark', 'tailwind-dark', 'fluent-dark'];
+const themes: string[] = ['material3', 'bootstrap5', 'fluent2', 'tailwind3', 'tailwind', 'fluent2-highcontrast', 'highcontrast', 'fluent', 'material3-dark', 'bootstrap5-dark',  'fluent2-dark', 'tailwind3-dark', 'tailwind-dark', 'fluent-dark'];
 const darkIgnore = ['highcontrast', 'fluent2-highcontrast'];
 let selectedTheme: string;
 let themeFlag: boolean = true;
@@ -196,7 +196,7 @@ export class SBController {
             }
         });
         
-        let theme: string = location.hash ? location.hash.split('/')[1] : 'fluent2';
+        let theme: string = location.hash ? location.hash.split('/')[1] : 'tailwind3';
         this.themeDropDown = new DropDownList({
             index: themes.indexOf(theme.split('-')[0]),
             change: (e: any) => { this.switchTheme(e.value); }
@@ -409,7 +409,7 @@ export class SBController {
                     theme = location.hash.split('/')[1];
                     theme = themes.indexOf(theme) !== -1 ? theme : selectedTheme;
                 }
-                theme = themes.indexOf(theme) !== -1 ? theme : 'fluent2';
+                theme = themes.indexOf(theme) !== -1 ? theme : 'tailwind3';
                 if(this.isDarkTheme) {
                     document.getElementById(theme.split('-dark')[0]).classList.add('active-theme');
                 }
@@ -465,7 +465,7 @@ export class SBController {
             .subscribe((event: any) => {
                 let hash: string[] = location.hash.split('/');
                 if (!document.querySelector('.active-theme')) {
-                    document.getElementById(hash[1] || 'fluent2').classList.add('active-theme');
+                    document.getElementById(hash[1] || 'tailwind3').classList.add('active-theme');
                 }
                 if(this.isDarkTheme){
                     hash[1] = document.querySelector('.active-theme').id + '-dark';
@@ -513,6 +513,7 @@ export class SBController {
         let href: string = location.href;
         let link: string[] = href.match(urlRegex);
         let sample: string[] = href.match(sampleRegex);
+        let selectedThemes = selectedTheme === "bootstrap5.3" ? "bootstrap5" : selectedTheme === "bootstrap5.3-dark" ? "bootstrap5-dark" : selectedTheme;
         for (let sb of sbArray) {
             let ele: HTMLFormElement = (select('#' + sb) as HTMLFormElement);
             if (sb === 'asp_core' || sb === 'asp_mvc') {
@@ -525,10 +526,10 @@ export class SBController {
                 ele['href'] = 'https://blazor.syncfusion.com/demos/';
             }
             else if (sb === 'vue' && location.href.includes('grid/over-view')) {
-                ele['href'] = ((link) ? ('http://' + link[1] + '/' + (link[3] ? (link[3] + '/') : '')) : ('https://ej2.syncfusion.com/')) + 'vue/demos/#/' + selectedTheme + '/grid/grid-overview.html';
+                ele['href'] = ((link) ? ('http://' + link[1] + '/' + (link[3] ? (link[3] + '/') : '')) : ('https://ej2.syncfusion.com/')) + 'vue/demos/#/' + selectedThemes + '/grid/grid-overview.html';
             }
               else if (sb === 'react' && location.href.includes('grid/over-view')) {
-                ele['href'] = ((link) ? ('http://' + link[1] + '/' + (link[3] ? (link[3] + '/') : '')) : ('https://ej2.syncfusion.com/')) + 'react/demos/#/' + selectedTheme + '/grid/overview';
+                ele['href'] = ((link) ? ('http://' + link[1] + '/' + (link[3] ? (link[3] + '/') : '')) : ('https://ej2.syncfusion.com/')) + 'react/demos/#/' + selectedThemes + '/grid/overview';
             }
             else {
                 ele['href'] = ((link) ? ('http://' + link[1] + '/' + (link[3] ? (link[3] + '/') : '')) :
@@ -1154,8 +1155,12 @@ export class SBController {
     }
 
     createOpenNewButton(): void {
+        let samplePath = this.router.url.split('/').splice(2);
+        if (samplePath.length === 3) {
+            samplePath.splice(1, 1);
+        }
         (select('#openNew') as HTMLFormElement)['href'] =
-            location.href.split('#')[0] + this.router.url.split('/').splice(2).join('/');
+            location.href.split('#')[0] + samplePath.join('/');
     }
 
     plunker(results: string): void {

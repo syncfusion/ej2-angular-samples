@@ -14,7 +14,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 export class AggregateComponent implements OnInit {
     public data: Object[];
     public filterSettings: Object;
-    public gridLines:string;
+    public gridLines: string;
     public ngOnInit(): void {
         this.data = OverallData;
         this.filterSettings = { type: 'Excel' };

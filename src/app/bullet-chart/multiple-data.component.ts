@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { AnimationModel } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { IBulletLoadedEventArgs, ChartTheme, BulletTooltipSettingsModel } from '@syncfusion/ej2-charts';
-import { fabricColors, bootstrapColors, highContrastColors, materialColors, bootstarp5Colors, bootstarp5DarkColors, bootstrapDarkColors, tailwindColors, tailwindDarkColors, material3Colors, material3DarkColors, defaultColors, fluentColors, fluent2Colors, fluent2HighContrastColors } from './theme-color'
+import { fabricColors, bootstrapColors, highContrastColors, materialColors, bootstarp5Colors, bootstarp5DarkColors, bootstrapDarkColors, tailwindColors, tailwindDarkColors, material3Colors, material3DarkColors, defaultColors, fluentColors, fluent2Colors, fluent2HighContrastColors, tailwind3Colors, tailwind3DarkColors } from './theme-color'
 import { BulletChartAllModule } from '@syncfusion/ej2-angular-charts';
 /**
  * Local data Source sample
@@ -106,6 +106,12 @@ export class BulletChartMultipleDataComponent {
                 break;
             case 'TailwindDark':
                 color = tailwindDarkColors;
+                break;
+            case 'Tailwind3':
+                color = tailwind3Colors;
+                break;
+            case 'Tailwind3Dark':
+                color = tailwind3DarkColors;
                 break;
             case 'Bootstrap5':
                 color = bootstarp5Colors

@@ -76,6 +76,16 @@ export class DataLabelComponent {
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
+    public tailwind3Man: string = '<div style="background-color:#2F4074;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Male Icon"/>' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y} </span></div></div>';
+    public tailwind3Women: string = '<div style="background-color:#03B4B4;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y} </span></div></div>';
     public materialdarkMan: string = '<div style="background-color:#9ECB08;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Male Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
@@ -112,6 +122,16 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
     public tailwinddarkWomen: string = '<div style="background-color:#22D3EE;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y} </span></div></div>';
+    public tailwind3darkMan: string = '<div style="background-color:#8029F1;border-radius: 3px;">' +
+        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Male Icon"/>' +
+        '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
+        + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
+        '${point.y} </span></div></div>';
+    public tailwind3darkWomen: string = '<div style="background-color:#1ABC9C;border-radius: 3px;">' +
         '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
@@ -282,6 +302,10 @@ export class DataLabelComponent {
             args.template = args.series.name === 'Boys' ? this.fluent2DarkMan : this.fluent2DarkWomen;
         } else if (this.theme === <ChartTheme>'Fluent2HighContrast') {
             args.template = args.series.name === 'Boys' ? this.fluent2HighContrastMan : this.fluent2HighContrastWomen;
+        } else if (this.theme === <ChartTheme>'Tailwind3') {
+            args.template = args.series.name === 'Boys' ? this.tailwind3Man : this.tailwind3Women;
+        } else if (this.theme === <ChartTheme>'Tailwind3Dark') {
+            args.template = args.series.name === 'Boys' ? this.tailwind3darkMan : this.tailwind3darkWomen;
         } else {
             args.template = args.series.name === 'Boys' ? this.bootstrapdarkMan : this.bootstrapdarkWomen;
         }

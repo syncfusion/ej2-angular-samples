@@ -92,7 +92,9 @@ margin-top: -32px;
 .fluent-dark.e-bigger #reactive .upload-area button#browse,
 .fluent.e-bigger #reactive .upload-area button#browse,
 .tailwind-dark.e-bigger #reactive .upload-area button#browse,
+.tailwind3-dark.e-bigger #reactive .upload-area button#browse,
 .tailwind.e-bigger #reactive .upload-area button#browse,
+.tailwind3.e-bigger #reactive .upload-area button#browse,
 .bootstrap5.e-bigger #reactive .upload-area button#browse,
 .bootstrap5-dark.e-bigger #reactive .upload-area button#browse {
     margin-top: -41px;

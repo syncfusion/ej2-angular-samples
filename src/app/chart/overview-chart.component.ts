@@ -96,7 +96,7 @@ export class OverViewChartComponent {
     enable: true
   };
   public border: Object = { width:3 };
-  public pieTooltipSetting: Object = { enable: true, format: '${point.x}' };
+  public pieTooltipSetting: Object = { enable: true, format: '${point.x}', enableHighlight: true };
   public palettes: string[] = ["#61EFCD", "#CDDE1F", "#FEC200", "#CA765A", "#2485FA", "#F57D7D", "#C152D2",
     "#8854D9", "#3D4EB8", "#00BCD7", "#4472c4", "#ed7d31", "#ffc000", "#70ad47", "#5b9bd5", "#c1c1c1", "#6f6fe2", "#e269ae", "#9e480e", "#997300"];
 

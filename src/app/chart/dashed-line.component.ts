@@ -153,7 +153,11 @@ export class DashedLineChartComponent {
             this.AnnotationColor = 'light';
         } else if (selectedTheme === 'fluent2-highcontrast' || selectedTheme === 'fluent2-dark') {
             this.AnnotationColor = 'dark';
-        }
+        } else if (selectedTheme === 'tailwind3-dark') {
+            this.AnnotationColor = 'dark'
+          } else if (selectedTheme === 'tailwind3') {
+            this.AnnotationColor = 'light'
+          }
         else
         {
             this.AnnotationColor = "light";  

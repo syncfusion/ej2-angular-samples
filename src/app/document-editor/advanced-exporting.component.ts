@@ -41,7 +41,7 @@ export class ExportComponent {
   public dropdown: DropDownButton = new DropDownButton(this.data);
   
   dataSource: { [key: string]: Object }[] = [
-    { class: 'data', text: 'Syncfusion Document Text (*.sfdt)', id: 'sfdt', category: 'Client side exporting' },
+    { class: 'data', text: 'Syncfusion® Document Text (*.sfdt)', id: 'sfdt', category: 'Client side exporting' },
     { class: 'data', text: 'Word Document (*.docx)', id: 'docx', category: 'Client side exporting' },
     { class: 'data', text: 'Word Template (*.dotx)', id: 'dotx', category: 'Client side exporting' },
     { class: 'data', text: 'Plain Text (*.txt)', id: 'text', category: 'Client side exporting' },

@@ -43,7 +43,7 @@ export class InsertSpecialCharactersComponent {
             {
                 tooltipText: 'Insert Symbol',
                 template: '<button class="e-tbar-btn e-btn" tabindex="-1" id="custom_tbar"  style="width:100%">'
-                    + '<div class="e-tbar-btn-text" style="font-weight: 500;"> Ω</div></button>'
+                    + '<div class="e-tbar-btn-text" style="font-weight: 400;"> Ω</div></button>'
             }, '|', 'Undo', 'Redo'
         ]
     };

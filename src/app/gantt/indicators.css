@@ -23,7 +23,9 @@
     .bootstrap5\.3 #Indicators .okIcon::before,
     .bootstrap5\.3-dark-lite #Indicators .okIcon::before,
     .bootstrap5\.3-dark #Indicators .okIcon::before, 
-    .bootstrap5\.3-lite #Indicators .okIcon::before{
+    .bootstrap5\.3-lite #Indicators .okIcon::before,
+    .tailwind3 #Indicators .okIcon::before,
+    .tailwind3-dark #Indicators .okIcon::before{
     content: '\e72b';
     }
     .bootstrap5 #Indicators .description::before,
@@ -35,7 +37,9 @@
     .bootstrap5\.3 #Indicators .description::before,
     .bootstrap5\.3-dark-lite #Indicators .description::before,
     .bootstrap5\.3-dark #Indicators .description::before, 
-    .bootstrap5\.3-lite #Indicators .description::before{
+    .bootstrap5\.3-lite #Indicators .description::before,
+    .tailwind3 #Indicators .description::before,
+    .tailwind3-dark #Indicators .description::before{
     content: '\e7c0';
     }
     .fabric #Indicators .description::before,

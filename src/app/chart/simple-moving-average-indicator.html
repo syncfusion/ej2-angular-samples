@@ -9,7 +9,7 @@
         [legendSettings]='legendSettings' [indicators]='indicators' (load)='load($event)'>
             <e-series-collection>
                 <e-series [dataSource]='data1' type='Candle' xName='period' high='high' low='low' open='open' close='close' volume='volume' name='Apple Inc'
-                [animation]='animation'> </e-series>
+                [animation]='animation' bearFillColor='#2ecd71' bullFillColor='#e74c3d'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>

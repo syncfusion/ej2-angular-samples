@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { timelineTemplateData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
+import { Internationalization } from '@syncfusion/ej2-base';
 import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
@@ -20,19 +21,54 @@ export class GanttTimelineTemplateComponent implements OnInit {
     public timelineSettings: object;
     public columns: object[];
     public splitterSettings: object;
-  public weekDate(dateString: any) {
-    const date = new Date(dateString);
-    const options: any = { weekday: 'short' };
-    return date.toLocaleDateString('en-US', options);
-  }
+
+    // Create an Internationalization instance
+    public intlObj = new Internationalization();
+
+    public weekDate(dateString: any) {
+      const gantt = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
+      const date = gantt.locale === 'ar' ? this.parseArabicDate(dateString) : this.parseDateString(dateString);
+      return this.intlObj.formatDate(date, { skeleton: 'E' });
+    }
     public formatDate(dateString: any) {
-      const date = new Date(dateString);
-      const options: any = { day: 'numeric' };
-      return date.toLocaleDateString('en-US', options);
+      const gantt = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
+      const date = gantt.locale === 'ar' ? this.parseArabicDate(dateString) : this.parseDateString(dateString);
+      return this.intlObj.formatDate(date, { skeleton: 'd' });
     }
-    public imageString(value: any){
-      return "assets/gantt/images/"+ value.toLowerCase() +".svg" ;
+    public imageString(date: any) {
+      const gantt = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
+      const imageDate = gantt.locale === 'ar' ? this.parseArabicDate(date) : this.parseDateString(date);
+      return 'assets/gantt/images/'+ imageDate.getDay() +'.svg' ;
     }
+
+    public convertArabicNumeralsToWestern(arabicNumerals: any) {
+      const arabicToWesternMap: { [key: string]: string }  = { '٠': '0', '١': '1', '٢': '2', '٣': '3', '٤': '4', '٥': '5', '٦': '6', '٧': '7', '٨': '8', '٩': '9' };
+      return arabicNumerals.replace(/[\u0660-\u0669]/g, (match: string) => arabicToWesternMap[match]);
+    }
+
+    public parseArabicDate(arabicDateString: any) {
+      // To convert the 'arabicDateString' Arabic Date to ISO Date format
+      const normalizedDate = this.convertArabicNumeralsToWestern(arabicDateString);
+      const parts = normalizedDate.split('/'); // Assuming "DD/MM/YYYY" format
+      const day = parseInt(parts[0], 10);
+      const month = parseInt(parts[1], 10) - 1; // Months are zero-based
+      const year = parseInt(parts[2], 10);
+      return new Date(year, month, day);
+    }
+
+    public parseDateString(dateString: any) {
+      // Check if the date string is in the format "DD.MM.YYYY"
+      if (dateString.includes('.')) {
+        const parts = dateString.split('.');
+        const day = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10) - 1;
+        const year = parseInt(parts[2], 10);
+        return new Date(year, month, day);
+      }
+      // Fallback to default date parsing
+      return new Date(dateString);
+    }
+
     public ngOnInit(): void {
       this.data = timelineTemplateData;
       this.taskSettings = {

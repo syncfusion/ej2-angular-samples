@@ -14,7 +14,7 @@
 .property-section #EventLog b {
   color:#018607;
     }
-    .fluent-dark .e-kanban #EventLog b, .bootstrap5-dark .e-kanban #EventLog b, .tailwind-dark .e-kanban #EventLog b, .material-dark .e-kanban #EventLog b, .fabric-dark .e-kanban #EventLog b, .bootstrap-dark .e-kanban #EventLog b, .highcontrast .e-kanban #EventLog b, .material3-dark .e-kanban #EventLog b {
+    .fluent-dark .e-kanban #EventLog b, .bootstrap5-dark .e-kanban #EventLog b,.bootstrap5\.3-dark .e-kanban #EventLog b, .tailwind-dark .e-kanban #EventLog b, .tailwind3-dark .e-kanban #EventLog b, .material-dark .e-kanban #EventLog b, .fabric-dark .e-kanban #EventLog b, .bootstrap-dark .e-kanban #EventLog b, .highcontrast .e-kanban #EventLog b, .material3-dark .e-kanban #EventLog b {
         color:#21A32E;
 }
 

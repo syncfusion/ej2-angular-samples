@@ -31,7 +31,7 @@ import { HeatmapColorAndSizeAttributesComponent } from './color-and-size-attribu
 export const heatmapAppRoutes: Object[] = [
     {
         path: ':theme/heatmap-chart/default-functionalities', component: HeatmapDefaultComponent,
-        description: 'This demo for Essential JS2 Heatmap control shows the heat map control displayed with minimum configuration.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control shows the heat map control displayed with minimum configuration.',
         name: 'Default Functionalities', order: '01', category: 'Heatmap Chart',
         sourceFiles: [
             {displayName: 'default-functionalities.component.ts', path: './src/heatmap-chart/default-functionalities.component.ts'},
@@ -40,7 +40,7 @@ export const heatmapAppRoutes: Object[] = [
     },
     {
         path: ':theme/heatmap-chart/calendar-heatmap', component: HeatmapCalendarComponent,
-        description: 'This demo for Essential JS2 Heatmap control for displays the time series data and displays the axis labels at specific time interval.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control for displays the time series data and displays the axis labels at specific time interval.',
         name: 'Calendar Heatmap', order: '01', category: 'Heatmap Chart',
         sourceFiles: [
             {displayName: 'calendar-heatmap.component.ts', path: './src/heatmap-chart/calendar-heatmap.component.ts'},
@@ -49,7 +49,7 @@ export const heatmapAppRoutes: Object[] = [
     },
     {
         path: ':theme/heatmap-chart/bubble-types', component: HeatmapBubbleTypesComponent,
-        description: 'This demo for Essential JS2 Heatmap control shows  Size, Color and SizeAndColor bubble heat map type.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control shows  Size, Color and SizeAndColor bubble heat map type.',
         name: 'Bubble Types', order: '02', category: 'Bubble Heatmap',
         sourceFiles: [
             {displayName: 'bubble-types.component.ts', path: './src/heatmap-chart/bubble-types.component.ts'},
@@ -58,32 +58,32 @@ export const heatmapAppRoutes: Object[] = [
     },
     {
         path: ':theme/heatmap-chart/color-and-size-attributes', component: HeatmapColorAndSizeAttributesComponent,
-        description: 'This demo for Essential JS2 Heatmap control shows how to bind the multiple data to bubble heat map.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control shows how to bind the multiple data to bubble heat map.',
         name: 'Color and Size Attributes', order: '02', category: 'Bubble Heatmap'
     },
     {
         path: ':theme/heatmap-chart/row', component: HeatmapArrayRowComponent,
-        description: 'This demo for Essential JS2 Heatmap control demonstrates how to bind the data to heat map with series of array for each columns.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control demonstrates how to bind the data to heat map with series of array for each columns.',
         name: 'Row', order: '03', category: 'Data Binding'
     },
     {
         path: ':theme/heatmap-chart/cell', component: HeatmapArrayCellComponent,
-        description: 'This demo for Essential JS2 Heatmap control demonstrates how to bind the array data with values for each cell to heatmap.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control demonstrates how to bind the array data with values for each cell to heatmap.',
         name: 'Cell', order: '03', category: 'Data Binding'
     },
     {
         path: ':theme/heatmap-chart/json-row', component: HeatmapRowJsonComponent,
-        description: 'This demo for Essential JS2 Heatmap control demonstrates how to bind the JSON object with data for each columns to heatmap.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control demonstrates how to bind the JSON object with data for each columns to heatmap.',
         name: 'JSON Row', order: '03', category: 'Data Binding'
     },
     {
         path: ':theme/heatmap-chart/json-cell', component: HeatmapCellJsonComponent,
-        description: 'This demo for Essential JS2 Heatmap control demonstrates how to bind the JSON object with data for each cell to heat map.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control demonstrates how to bind the JSON object with data for each cell to heat map.',
         name: 'JSON Cell', order: '03', category: 'Data Binding'
     },
     {
         path: ':theme/heatmap-chart/empty-points', component: HeatmapEmptyPointComponent,
-        description: 'This demo for Essential JS2 Heatmap control shows the usage of empty points or null points in heat map.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control shows the usage of empty points or null points in heat map.',
         name: 'Empty Points', order: '04', category: 'Features',
         sourceFiles: [
             {displayName: 'empty-points.component.ts', path: './src/heatmap-chart/empty-points.component.ts'},
@@ -92,7 +92,7 @@ export const heatmapAppRoutes: Object[] = [
     },
     {
         path: ':theme/heatmap-chart/inversed-axis', component: HeatmapInversedComponent,
-        description: 'This demo for Essential JS2 Heatmap control shows how to inverse the axis in heat map',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control shows how to inverse the axis in heat map',
         name: 'Inversed Axis', order: '04', category: 'Features',
         sourceFiles: [
             {displayName: 'inversed.component.ts', path: './src/heatmap-chart/inversed.component.ts'},
@@ -101,7 +101,7 @@ export const heatmapAppRoutes: Object[] = [
     },
     {
         path: ':theme/heatmap-chart/opposed-axis', component: HeatmapOpposedComponent,
-        description: 'This demo for Essential JS2 Heatmap control shows how to place the axis opposite to the default position in heatmap.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control shows how to place the axis opposite to the default position in heatmap.',
         name: 'Opposed Axis', order: '04', category: 'Features',
         sourceFiles: [
             {displayName: 'opposed.component.ts', path: './src/heatmap-chart/opposed.component.ts'},
@@ -110,12 +110,12 @@ export const heatmapAppRoutes: Object[] = [
     },
     {
         path: ':theme/heatmap-chart/label-template', component: LabelTemplateComponent,
-        description: 'This demo for Essential JS2 Heatmap control demonstrates how to bind the JSON object with data for each cell to heat map.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control demonstrates how to bind the JSON object with data for each cell to heat map.',
         name: 'Label Template', order: '04', category: 'Features'
     },
     {
         path: ':theme/heatmap-chart/multi-level-labels', component: HeatmapMultilevelLabelComponent,
-        description: 'This demo for Essential JS2 Heatmap control shows how to group the axis labels',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control shows how to group the axis labels',
         name: 'Multi Level Labels', order: '04', category: 'Features',
         sourceFiles: [
             {displayName: 'multi-level-labels.component.ts', path: './src/heatmap-chart/multi-level-labels.component.ts'},
@@ -124,7 +124,7 @@ export const heatmapAppRoutes: Object[] = [
     },
     {
         path: ':theme/heatmap-chart/cell-selection', component: HeatmapCellSelectionComponent,
-        description: 'This demo for Essential JS2 Heatmap control shows how to select the cell.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control shows how to select the cell.',
         name: 'Selection', order: '04', category: 'Features',
         sourceFiles: [
             {displayName: 'cell-selection.component.ts', path: './src/heatmap-chart/cell-selection.component.ts'},
@@ -133,7 +133,7 @@ export const heatmapAppRoutes: Object[] = [
     },
     {
         path: ':theme/heatmap-chart/legend-placement', component: HeatmapLegendComponent,
-        description: 'This demo for Essential JS2 Heatmap control shows how to place the heatmap legend in different positions.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control shows how to place the heatmap legend in different positions.',
         name: 'Legend Placement', order: '04', category: 'Features',
         sourceFiles: [
             {displayName: 'legend-placement.component.ts', path: './src/heatmap-chart/legend-placement.component.ts'},
@@ -142,7 +142,7 @@ export const heatmapAppRoutes: Object[] = [
     },
     {
         path: ':theme/heatmap-chart/large-data', component: HeatmapLargeDataComponent,
-        description: 'This demo for Essential JS2 Heatmap control shows how to bind the large data in heat map using canvas rendering mode.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control shows how to bind the large data in heat map using canvas rendering mode.',
         name: 'Large Data', order: '04', category: 'Features',
         sourceFiles: [
             {displayName: 'large-data.component.ts', path: './src/heatmap-chart/large-data.component.ts'},
@@ -151,7 +151,7 @@ export const heatmapAppRoutes: Object[] = [
     },    
     {
         path: ':theme/heatmap-chart/palette-mode', component: HeatmapPaletteComponent,
-        description: 'This demo for Essential JS2 Heatmap control demonstrates applying gradient colors or solid colors for the heatmap cells.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control demonstrates applying gradient colors or solid colors for the heatmap cells.',
         name: 'Palette Mode', order: '04', category: 'Features',
         sourceFiles: [
             {displayName: 'palette-mode.component.ts', path: './src/heatmap-chart/palette-mode.component.ts'},
@@ -160,7 +160,7 @@ export const heatmapAppRoutes: Object[] = [
     },
     {
         path: ':theme/heatmap-chart/color-range', component: HeatmapColorRangeComponent,
-        description: 'This demo for Essential JS2 Heatmap control demonstrates applying color range for the heatmap cells.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control demonstrates applying color range for the heatmap cells.',
         name: 'Color Range', order: '04', category: 'Features',
         sourceFiles: [
             {displayName: 'color-range.component.ts', path: './src/heatmap-chart/color-range.component.ts'},
@@ -169,7 +169,7 @@ export const heatmapAppRoutes: Object[] = [
     },
     {
         path: ':theme/heatmap-chart/render-mode', component: HeatmapRenderModeComponent,
-        description: 'This demo for Essential JS2 Heatmap shows switching the rendering mode of the heatmap cells between SVG and canvas rendering logics.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap shows switching the rendering mode of the heatmap cells between SVG and canvas rendering logics.',
         name: 'Rendering Mode', order: '04', category: 'Features',
         sourceFiles: [
             {displayName: 'render-mode.component.ts', path: './src/heatmap-chart/render-mode.component.ts'},
@@ -178,7 +178,7 @@ export const heatmapAppRoutes: Object[] = [
     },
     {
         path: ':theme/heatmap-chart/tooltip-template', component: HeatmapTooltipComponent,
-        description: 'This demo for Essential JS2 Heatmap control shows the usage of tooltip template in heat map.',
+        description: 'This demo for Essential<sup>®</sup> JS2 Heatmap control shows the usage of tooltip template in heat map.',
         name: 'Tooltip Template', order: '04', category: 'Features',
         sourceFiles: [
             {displayName: 'tooltip-template.component.ts', path: './src/heatmap-chart/tooltip-template.component.ts'},

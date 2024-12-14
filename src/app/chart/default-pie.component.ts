@@ -1,5 +1,4 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 import { AccumulationChartComponent, AccumulationChart, IAccLoadedEventArgs, AccumulationTheme, AccumulationChartAllModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -59,6 +58,7 @@ export class DefaultPieComponent {
     public enableAnimation: boolean = true;
     public tooltip: Object = { 
         enable: true,
+        enableHighlight: true,
         format: '<b>${point.x}</b><br>Browser Share: <b>${point.y}%</b>',
         header:'',
 

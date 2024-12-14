@@ -9,6 +9,7 @@ import { GroupAndIconAutoCompleteComponent } from './grouping-icon.component';
 import { DataBindingAutoCompleteComponent } from './data-binding.component';
 import { DisabledItemsAutoCompleteComponent } from './disabled-items.component';
 import { TemplateAutoCompleteComponent } from './template.component';
+import { CustomResizeAutoCompleteComponent } from './resize.component';
 import { HighlightAutoCompleteComponent } from './highlight.component';
 import { CustomFilteringAutoCompleteComponent } from './custom-filtering.component';
 import { DiacriticsFilteringAutoCompleteComponent } from './diacritics-filtering.component';
@@ -42,6 +43,10 @@ export const autoCompleteAppRoutes: Object[] = [
         name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular autocomplete component pop-up list using template.', category: 'AutoComplete'
     },
     {
+        path: ':theme/auto-complete/resize', component: CustomResizeAutoCompleteComponent, order: '01',
+        name: 'Popup Resize', type: "new" , description: 'This demo showcases the custom resizing functionality of AutoComplete, You can adjust the size of the popup based on your preferences, allowing for better control over its appearance.', category: 'AutoComplete'
+    },
+    {
         path: ':theme/auto-complete/virtual-scroll', component: VirtualScrollAutoCompleteComponent, order: '01',
         name: 'Virtualization', description: 'This example demonstrates how to utilize the virtualization support of Angular autocomplete component.', category: 'AutoComplete'
     },
@@ -59,11 +64,11 @@ export const autoCompleteAppRoutes: Object[] = [
     },
     {
         path: ':theme/auto-complete/template-driven', component: TemplateDrivenAutoCompleteComponent, order: '02',
-        name: 'Template Driven', description: 'This demo explains the template-driven forms support of the Syncfusion angular autocomplete component.', category: 'Form Support'
+        name: 'Template Driven', description: 'This demo explains the template-driven forms support of the Syncfusion<sup>®</sup> angular autocomplete component.', category: 'Form Support'
     },
     {
         path: ':theme/auto-complete/reactive-form', component: ReactiveFormAutoCompleteComponent, order: '02',
-        name: 'Reactive Form', description: 'This demo explains the reactive forms support of the Syncfusion angular autocomplete component.', category: 'Form Support'
+        name: 'Reactive Form', description: 'This demo explains the reactive forms support of the Syncfusion<sup>®</sup> angular autocomplete component.', category: 'Form Support'
     }
 ];
 

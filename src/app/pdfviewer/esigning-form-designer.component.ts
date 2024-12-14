@@ -35,8 +35,7 @@ export class ESigningFormDesignerComponent implements OnInit {
   public borderStyle:string = this.isMobile ? 'none' : '1px solid #C4C7C5';
   public fileName: string = "eSign_designMode.pdf";
   public document: string = 'https://cdn.syncfusion.com/content/PDFViewer/Fill+and+Sign.pdf';
-  public resource: string = "https://cdn.syncfusion.com/ej2/23.2.6/dist/ej2-pdfviewer-lib";
-  public service = "https://services.syncfusion.com/angular/production/api/pdfviewer";
+  public resource: string = "https://cdn.syncfusion.com/ej2/27.2.2/dist/ej2-pdfviewer-lib";
   public currentUser: string = 'andrew@mycompany.com';
   public userColor: string = '#ffefef';
   public currentUserBorderColor: string = 'red';

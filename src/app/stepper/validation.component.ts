@@ -28,7 +28,7 @@ export class StepperValidationComponent implements OnInit {
     public isFeedbackTextValid: boolean = false;
     public isUserNavigatingReverse: boolean = false;
     public isCurrentStepValid: boolean = false;
-    public regex: RegExp = new RegExp('^[A-Za-z0-9._%+-]{1,}@[A-Za-z0-9._%+-]{1,}');
+    public regex: RegExp = new RegExp('^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$');
 
     ngOnInit(): void {
         (window as any).onNextStep = () => { this.stepperObj.nextStep(); };

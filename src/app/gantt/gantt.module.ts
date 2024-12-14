@@ -60,7 +60,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/overview', component: GanttOverviewComponent,
         description: 'This example demonstrates the simple Gantt chart with summary task, child tasks, milestone tasks, dependencies with event markers of project',
-        name: 'Overview', order: '01', category: 'Gantt Chart',type: "update"
+        name: 'Overview', order: '01', category: 'Gantt Chart'
     },
     {
         path: ':theme/gantt/default', component: GanttDefaultComponent,
@@ -70,11 +70,11 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/editing', component: GanttEditingComponent,
         description: 'This example demonstrates the cell editing, dialog editing, taskbar editing and dependency editing support in Gantt',
-        name: 'Editing', order: '01', category: 'Gantt Chart', type: "update"
+        name: 'Editing', order: '01', category: 'Gantt Chart'
     },
     {
         path: ':theme/gantt/virtual-scroll', component: GanttVirtualScrollComponent,
-        description: 'This example illustrates binding large data and smooth scrolling with large data using the Virtual Scroll feature in the Syncfusion Gantt chart.',
+        description: 'This example illustrates binding large data and smooth scrolling with large data using the Virtual Scroll feature in the Syncfusion<sup>®</sup> Gantt chart.',
         name: 'Virtual Scrolling', order: '01', category: 'Gantt Chart'
     },
     {
@@ -165,21 +165,21 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/zooming', component: GanttZoomingComponent,
         description: 'This example demonstrates the zooming support of the Gantt chart timeline and ZoomToFit support of the Gantt chart.',
-        name: 'Zooming', order: '04', category: 'Timeline',type: "update"
+        name: 'Zooming', order: '04', category: 'Timeline'
     },
     {
         path: ':theme/gantt/column-template', component: ColumnTemplateComponent ,
-        description: 'This demo explains how to define template columns in Syncfusion  Essential JS2 Gantt component.',
+        description: 'This demo explains how to define template columns in Syncfusion<sup>®</sup>  Essential JS2 Gantt component.',
         name: 'Column Template', order: '05', category: 'Columns'
     },
     {
         path: ':theme/gantt/header-template', component: HeaderTemplateComponent ,
-        description: 'This demo explains how to customize column headers to show additional HTML elements, such as icons, images, etc. in Syncfusion Essential JS2 Gantt component.',
+        description: 'This demo explains how to customize column headers to show additional HTML elements, such as icons, images, etc. in Syncfusion<sup>®</sup> Essential JS2 Gantt component.',
         name: 'Header Template', order: '05', category: 'Columns'
     },
     {
         path: ':theme/gantt/reorder', component: ColumnReorderComponent ,
-        description: 'This demo explains how to reorder the columns of gantt by simple drag and drop of columns using Syncfusion Essential JS2 Gantt component.',
+        description: 'This demo explains how to reorder the columns of gantt by simple drag and drop of columns using Syncfusion<sup>®</sup> Essential JS2 Gantt component.',
         name: 'Reorder', order: '05', category: 'Columns'
     },
     {
@@ -189,12 +189,12 @@ export const GanttAppRoutes: Object[] = [
     },
     {
         path: ':theme/gantt/column-menu', component: GanttColumnMenuComponent,
-        description: 'This demo explains the default functionalities of the Column Menu in Syncfusion Essential JS2 Gantt.',
+        description: 'This demo explains the default functionalities of the Column Menu in Syncfusion<sup>®</sup> Essential JS2 Gantt.',
         name: 'Column Menu', order: '05', category: 'Columns'
     },
     {
         path: ':theme/gantt/show-hide-column', component: ShowHideComponent ,
-        description: 'This demo explains how to hide or show the columns of gantt dynamically using Syncfusion Essential JS2 Gantt methods.',
+        description: 'This demo explains how to hide or show the columns of gantt dynamically using Syncfusion<sup>®</sup> Essential JS2 Gantt methods.',
         name: 'Show or Hide Column', order: '05', category: 'Columns'
     },
     {
@@ -214,12 +214,12 @@ export const GanttAppRoutes: Object[] = [
     },
     {
         path: ':theme/gantt/sorting', component: GanttSortingComponent,
-        description: 'This demo demonstrates how to sort multiple columns of Gantt by holding the CTRL key and clicking the column headers of Syncfusion Essential JS2 Gantt.',
+        description: 'This demo demonstrates how to sort multiple columns of Gantt by holding the CTRL key and clicking the column headers of Syncfusion<sup>®</sup> Essential JS2 Gantt.',
         name: 'Default Sorting', order: '07', category: 'Sorting'
     },
     {
         path: ':theme/gantt/sorting-api', component: GanttSortingAPIComponent,
-        description: 'This demo demonstrates how to sort columns and clear sorted columns dynamically using the sortColumn and clearSorting method of Syncfusion Essential JS2 Gantt.',
+        description: 'This demo demonstrates how to sort columns and clear sorted columns dynamically using the sortColumn and clearSorting method of Syncfusion<sup>®</sup> Essential JS2 Gantt.',
         name: 'Sorting API', order: '07', category: 'Sorting'
     },
     {
@@ -234,17 +234,17 @@ export const GanttAppRoutes: Object[] = [
     },
     {
         path: ':theme/gantt/tasklabel-template', component: GanttTasklabelTemplateComponent,
-        description: 'This demo explains how to render label template for the left, right, and task labels in Syncfusion Essential JS2 Gantt.',
+        description: 'This demo explains how to render label template for the left, right, and task labels in Syncfusion<sup>®</sup> Essential JS2 Gantt.',
         name: 'Task Label Template', order: '08', category: 'Templates'
     },
     {
         path: ':theme/gantt/tooltip-template', component: GanttTooltipTemplateComponent,
-        description: 'This demo explains how to render tooltip template for taskbar and baseline in Syncfusion Essential JS2 Gantt.',
+        description: 'This demo explains how to render tooltip template for taskbar and baseline in Syncfusion<sup>®</sup> Essential JS2 Gantt.',
         name: 'Tooltip Template', order: '08', category: 'Templates', hideOnDevice: true
     },
     {
         path: ':theme/gantt/toolbar-template', component: GanttToolbarTemplateComponent,
-        description: 'This demo explains how to render custom toolbar elements in a toolbar, by which any custom operation can be performed in Syncfusion Essential JS2 Gantt.',
+        description: 'This demo explains how to render custom toolbar elements in a toolbar, by which any custom operation can be performed in Syncfusion<sup>®</sup> Essential JS2 Gantt.',
         name: 'Toolbar Template', order: '08', category: 'Templates'
     },
     {
@@ -255,21 +255,21 @@ export const GanttAppRoutes: Object[] = [
     {
       path: ':theme/gantt/advanced-filtering', component: GanttAdvancedFilteringComponent,
       description: 'This sample demonstrates the integration of the QueryBuilder component for complex filtering in the Gantt',
-      name: 'Advanced Filtering', order: '10', category: 'Filtering',type: "new"
+      name: 'Advanced Filtering', order: '10', category: 'Filtering'
     },
     {
         path: ':theme/gantt/selection', component: GanttSelectionComponent,
-        description: 'This example demonstrates the various selection support of row and cell with different type in Syncfusion Essential JS2 Gantt',
+        description: 'This example demonstrates the various selection support of row and cell with different type in Syncfusion<sup>®</sup> Essential JS2 Gantt',
         name: 'Selection', order: '09', category: 'Miscellaneous'
     },
     {
         path: ':theme/gantt/context-menu', component: GanttContextMenuComponent,
-        description: 'This demo explains the usage of context menu and the default context menu items in Syncfusion Gantt component.',
+        description: 'This demo explains the usage of context menu and the default context menu items in Syncfusion<sup>®</sup> Gantt component.',
         name: 'Context Menu', order: '09', category: 'Miscellaneous'
     },
     {
         path: ':theme/gantt/exporting', component: GanttExportingComponent,
-        description: 'This demo explains how to export Gantt content to Excel and CSV documents using the Syncfusion Gantt component.',
+        description: 'This demo explains how to export Gantt content to Excel and CSV documents using the Syncfusion<sup>®</sup> Gantt component.',
         name: 'Exporting', order: '09', category: 'Miscellaneous'
     },
     {
@@ -279,22 +279,22 @@ export const GanttAppRoutes: Object[] = [
     },
     {
         path: ':theme/gantt/split-tasks', component: GanttSplitTasksComponent,
-        description: 'This demo explains how to interrupt the already scheduled tasks using the Syncfusion TypeScript Gantt control.',
+        description: 'This demo explains how to interrupt the already scheduled tasks using the Syncfusion<sup>®</sup> TypeScript Gantt control.',
         name: 'Split Tasks', order: '09', category: 'Miscellaneous'
     },
     {
         path: ':theme/gantt/grid-lines', component: GanttGridLinesComponent,
-        description: 'This demo explains how to customize the grid lines in Gantt by selecting values from dropdown using Syncfusion Essential JS2 Gantt.',
+        description: 'This demo explains how to customize the grid lines in Gantt by selecting values from dropdown using Syncfusion<sup>®</sup> Essential JS2 Gantt.',
         name: 'Gridlines', order: '09', category: 'Miscellaneous'
     },
     {
         path: ':theme/gantt/events', component: GanttEventsComponent,
-        description: 'This demo demonstrates the basic functionalities of the events that are available in the Syncfusion Essential JS2 Gantt.',
+        description: 'This demo demonstrates the basic functionalities of the events that are available in the Syncfusion<sup>®</sup> Essential JS2 Gantt.',
         name: 'Events', order: '09', category: 'Miscellaneous'
     },
     {
         path: ':theme/gantt/keyboard-interactions', component: GanttKeyboardInteractionsComponent,
-        description: 'This demo demonstrates the key combinations used to perform corresponding Gantt actions in Syncfusion Essential JS2 Gantt.',
+        description: 'This demo demonstrates the key combinations used to perform corresponding Gantt actions in Syncfusion<sup>®</sup> Essential JS2 Gantt.',
         name: 'Keyboard Navigation', order: '09', category: 'Miscellaneous', hideOnDevice: true
     },
 ];

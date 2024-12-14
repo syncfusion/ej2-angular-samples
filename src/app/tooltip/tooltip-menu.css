@@ -189,3 +189,10 @@
 .tailwind .e-tooltip-menu-settings.e-tooltip-wrap.e-popup .e-arrow-tip-outer.e-tip-top {
     border-bottom: 6px solid rgba(0, 0, 0, .15);
 }
+
+.fluent2 #tooltipMenu-list .e-list-icon, 
+.fluent2-dark #tooltipMenu-list .e-list-icon,
+.fluent2-highcontrast #tooltipMenu-list .e-list-icon {
+    padding-left: 10px;
+    margin-top: 4px;
+}

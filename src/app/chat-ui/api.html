@@ -1,0 +1,85 @@
+<div class="col-lg-8 control-section sb-property-border">
+    <div class="api-chatui"> 
+        <div id="chatui" ejs-chatui #chatUI [messages]="messages" [user]="user" [headerText]="headerText" [headerIconCss]="headerIconCss" showTimeBreak="true" timeStampFormat="MM/dd hh:mm a"></div>
+    </div>
+</div>
+
+<div class="col-lg-4 property-section chat-property-section">
+    <div class="property-panel-header"> Properties </div>
+    <div class="property-panel-content">
+        <table class="property-panel-table">
+            <tbody>
+                <tr>
+                    <td>
+                        <div>Timestamp format</div>
+                    </td>
+                    <td style="padding-right: 10px">
+                        <ejs-dropdownlist id="chat_dateformats" placeholder='Format' width='180px' value='MM/dd hh:mm a'
+                                        [dataSource]="timeStampFormatOptions" (change)="onTimeStampFormatChange($event)">
+                        </ejs-dropdownlist>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>Show timestamp</div>
+                    </td>
+                    <td style="padding-right: 10px">
+                        <ejs-switch id="chatTimestamp" [checked]="true" (change)="onTimeStampSwitchChange($event)"></ejs-switch>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>Show timebreak</div>
+                    </td>
+                    <td style="padding-right: 10px">
+                        <ejs-switch id="chatTimebreak" [checked]="true" (change)="onTimeBreakSwitchChange($event)"></ejs-switch>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>Show header</div>
+                    </td>
+                    <td style="padding-right: 10px">
+                        <ejs-switch id="chatHeader" [checked]="true" (change)="onHeaderSwitchChange($event)"></ejs-switch>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>Show footer</div>
+                    </td>
+                    <td style="padding-right: 10px">
+                        <ejs-switch id="chatFooter" [checked]="true" (change)="onFooterSwitchChange($event)"></ejs-switch>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>Typing users</div>
+                    </td>
+                    <td style="padding-right: 10px">
+                        <ejs-multiselect id="chat_typingUsers" placeholder='Typing users...' [dataSource]="typingUserOptions"
+                                        (select)="onTypingUsersSelect($event)" (removed)="onTypingUsersRemove($event)">
+                        </ejs-multiselect>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the properties available in the Chat UI component, showcasing how various features can be customized through the property pane. It highlights the flexibility of the control, allowing users to adjust timestamps, headers, footers, time breaks, and more.</p>
+</div>
+<div id="description">
+    <p>In this sample, the following APIs and properties are demonstrated for customization:</p>
+    <ul>
+        <li><code>timeStampFormat</code>: Allows users to change the timestamp format by selecting an option from the property pane.</li>
+        <li><code>showTimeStamp</code>: Controls whether the timestamp is displayed in the chat, toggled via the property pane.</li>
+        <li><code>showTimeBreak</code>: Enables or disables the display of time breaks in the chat interface.</li>
+        <li><code>showHeader</code>: Lets users toggle the visibility of the chat header.</li>
+        <li><code>showFooter</code>: Toggles the visibility of the chat footer.</li>
+        <li><code>typingUsers</code>: Allows users to manage the list of users who are typing, updated through the multi-select options in the property pane.</li>
+    </ul>
+    <p>
+        These properties can be adjusted via the property pane for a highly flexible and customizable chat experience.
+    </p>
+</div>

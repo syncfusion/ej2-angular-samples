@@ -74,7 +74,7 @@ export class TitleBar {
         this.print = this.addButton('e-de-icon-Print ' + iconCss, printText, btnStyles, 'de-print', printToolTip, false) as Button;
         this.open = this.addButton('e-de-icon-Open ' + iconCss, openText, btnStyles, 'de-open', documentTileText, false) as Button;
         let items: ItemModel[] = [
-            { text: 'Syncfusion Document Text (*.sfdt)', id: 'sfdt' },
+            { text: 'Syncfusion® Document Text (*.sfdt)', id: 'sfdt' },
             { text: 'Word Document (*.docx)', id: 'word' },
             { text: 'Word Template (*.dotx)', id: 'dotx' },
             { text: 'Plain Text (*.txt)', id: 'txt' },

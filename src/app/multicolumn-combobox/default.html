@@ -8,13 +8,14 @@
     <div class="col-lg-8 control-section">
         <div class="control-wrapper">
             <div style='padding-top:50px;'>
-                <ejs-multicolumncombobox id='default' #default [dataSource]='employeeData' (change)='onChange($event)' [fields]='fields' [(value)]='value' [placeholder]='waterMark' popupHeight='230px'>
+                <label>Select a product</label>
+                <ejs-multicolumncombobox id='default' #default [dataSource]="datasource" (change)='onChange($event)' [fields]='fields' [(value)]='value' [placeholder]='waterMark' popupHeight='220px' popupWidth='520px' showClearButton='true'>
                     <e-columns>
-                        <e-column field='Name' header='Name' width="90"/>
-                        <e-column field='Position' header='Position' width="85"/>
-                        <e-column field='Department' header='Department' width="98"/>
-                        <e-column field='PhoneNo' header='Phone No' width="100"/>
-                        <e-column field='Location' header='Location' width="98"/>
+                        <e-column field='Name' header='Name ID' width="110"/>
+                        <e-column field='Price' header='Price' width="70"/>
+                        <e-column field='Availability' header='Availability' width="98"/>
+                        <e-column field='Category' header='Category' width="95"/>
+                        <e-column field='Rating' header='Rating' width="70"/>
                     </e-columns>
                 </ejs-multicolumncombobox>
             </div>
@@ -27,7 +28,7 @@
                 <table id="property" title="Properties" style="width: 100%; margin:10px">
                     <tr>
                         <td class="left-side" style="padding:5px; width:25%">Value</td>
-                        <td class="right-side">:<input type='text' id='values' [(value)]='value' class='e-input' style='margin-left:10px; width:140px'></td>
+                        <td class="right-side">:<input type='text' aria-label="value" id='values' [(ngModel)]='value' class='e-input' style='margin-left:10px; width:140px'></td>
                     </tr>
                     <tr>
                         <td class="left-side" style="padding:20px 5px; width:25%">Text</td>

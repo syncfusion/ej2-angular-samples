@@ -1,0 +1,71 @@
+/* custom code start */
+/* template support css*/
+.e-contextMenu-template .menu-wrapper{
+    display: flex;
+    align-items: center;
+    padding: 2px;
+}
+
+.e-contextMenu-template .menu-wrapper .text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.e-contextMenu-template .menu-wrapper .text {
+    font-weight: 600;
+}
+
+.e-contextMenu-template .menu-wrapper .description {
+    font-size: 0.8em;
+}
+
+.e-contextMenu-template .menu-wrapper .icon-right {
+    padding: 8px 8px 8px 0px;
+    font-size: 1.5em;
+}
+
+.e-contextMenu-template .e-caret {
+    margin-top: -34px !important;
+}
+
+.e-contextMenu-template .e-menu-item {
+    height: auto !important;
+    line-height: unset !important;
+}
+
+.contextmenu-control {
+    margin: 5% 25%;
+    width: auto;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+}
+
+#contextmenutarget {
+    border: 1px dashed;
+    height: 250px;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 700px) {
+    .contextmenu-control {
+        margin: 5% 10%;
+        width: auto;
+    }
+    #contextmenutarget {
+        font-size: 12px;
+    }
+}
+
+.e-contextMenu-template .e-menu-item .e-previous {
+    margin-right: 0 !important;
+}
+
+/* custom code end */

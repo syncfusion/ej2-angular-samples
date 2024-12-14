@@ -1,0 +1,231 @@
+#dialogBtn {
+    display: none;
+}
+
+.e-chart {
+    height: inherit !important;
+    width: inherit !important;
+}
+
+.templateContent {
+    height: calc(100% - 35px);
+    width: 100%;
+}
+
+.full-size {
+    height: 100%;
+    width: 100%;
+}
+
+#spline-chartcontainer_Series_0_Point_2_Symbol {
+    -webkit-animation: opac 1s ease-out infinite;
+    animation: opac 1s ease-out infinite;
+}
+
+#spline-chartcontainer_Series_2_Point_0_Symbol {
+    -webkit-animation: opac 1s ease-out infinite;
+    animation: opac 1s ease-in-out infinite;
+}
+
+@keyframes opac {
+    0% {
+        stroke-opacity: 1;
+        stroke-width: 0px;
+    }
+
+    100% {
+        stroke-opacity: 0;
+        stroke-width: 10px;
+    }
+}
+
+.e-btn,
+.e-css.e-btn {
+    display: block;
+}
+
+.dialog-text {
+    height: 35px;
+    border: 1px solid #80808029;
+    vertical-align: middle;
+    line-height: 35px;
+    border-radius: 4px;
+    padding-left: 12px;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+
+.e-dlg-content #dialogcontent {
+    display: block;
+}
+
+#dialogcontent {
+    display: none;
+}
+
+@media (max-width: 650px) {
+    #togglebtn {
+        width: 90px !important;
+    }
+}
+
+.add-widget-button {
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.e-dashboardlayout.e-control .e-panel:hover span {
+    display: block;
+}
+
+.e-dashboardlayout.e-control .e-panel .e-panel-container .e-panel-header {
+    padding: 10px;
+    border-bottom: 2px solid #e6e9ed !important;
+    height: 35px;
+    padding: 0 15px 0 15px;
+    line-height: 35px;
+}
+
+.material .sb-demo-section .container-fluid,
+.fabric .sb-demo-section .container-fluid,
+.bootstrap4 .sb-demo-section .container-fluid,
+.bootstrap .sb-demo-section .container-fluid {
+    background: #e5e5e5;
+}
+
+.tailwind .sb-demo-section .container-fluid {
+    background: #f9fafb;
+}
+
+.e-panel-content {
+    height: calc(100% - 37px) !important;
+    overflow: hidden;
+    width: 100%;
+}
+
+.e-dashboardlayout.e-control .e-panel,
+.e-dashboardlayout.e-control .e-panel:hover,
+.e-dashboardlayout.e-control .e-panel:active {
+    border: 1px solid #bbb;
+}
+
+.e-dialog .e-dlg-header-content {
+    border-bottom: none;
+    padding: 18px 18px 18px 20px;
+}
+
+.edit::before {
+    content: '\e501';
+    font-family: 'e-sb-icons';
+    /* color: #e3165b; */
+    margin-left: -7px;
+    vertical-align: middle;
+}
+
+.save::before {
+    content: '\e500';
+    font-family: 'e-sb-icons';
+    /* color: #e3165b; */
+    margin-left: -7px;
+    vertical-align: middle;
+}
+
+/* custom code start*/
+@font-face {
+    font-family: 'e-sb-icons';
+    src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAAKAIAAAwAgT1MvMjttR/MAAAEoAAAAVmNtYXDlEOVaAAABjAAAADhnbHlmAM1kuQAAAcwAAAD8aGVhZBRipc8AAADQAAAANmhoZWEIUQQEAAAArAAAACRobXR4DAAAAAAAAYAAAAAMbG9jYQA6AH4AAAHEAAAACG1heHABEQA4AAABCAAAACBuYW1lWD3y/QAAAsgAAAIlcG9zdNvk7cwAAATwAAAANQABAAAEAAAAAFwEAAAAAAAD9AABAAAAAAAAAAAAAAAAAAAAAwABAAAAAQAApr5cCV8PPPUACwQAAAAAANioMG8AAAAA2KgwbwAAAAAD9AP0AAAACAACAAAAAAAAAAEAAAADACwABAAAAAAAAgAAAAoACgAAAP8AAAAAAAAAAQQAAZAABQAAAokCzAAAAI8CiQLMAAAB6wAyAQgAAAIABQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUGZFZABA5QDlAQQAAAAAXAQAAAAAAAABAAAAAAAABAAAAAQAAAAEAAAAAAAAAgAAAAMAAAAUAAMAAQAAABQABAAkAAAABAAEAAEAAOUB//8AAOUA//8AAAABAAQAAAABAAIAAAAAADoAfgAEAAAAAAP0A/MAAwALABkAIwAAAREhEQEVMzUzFSE1IxEhETMVMxEjESERIxEjERUhESM1IzUhAx79xAEeR0j+m0gB9I9HR/02SEcD6EdI/KcBcf7iAR4CPI+P19f+4gEeSPzuAWb+mgNa/KZHA1lIRwAAAAMAAAAAA/QD9AADAAgAKwAACQEnCQEDJQEnNwcXPwc1Lw8PBgLH/ko2Abb9uT4BGQJC2m0/2z8HBgUFAwMCAQIEBQcICQoLDA0NDw8PEA0NDQwLCwsCkf5KNgG2/l7+5z4CQ9puP9s/CgsLCwwNDQ0QDw8PDQ0MCwoJCAcFBAIBAQEDAwUFBgAAABIA3gABAAAAAAAAAAEAAAABAAAAAAABAAcAAQABAAAAAAACAAcACAABAAAAAAADAAcADwABAAAAAAAEAAcAFgABAAAAAAAFAAsAHQABAAAAAAAGAAcAKAABAAAAAAAKACwALwABAAAAAAALABIAWwADAAEECQAAAAIAbQADAAEECQABAA4AbwADAAEECQACAA4AfQADAAEECQADAA4AiwADAAEECQAEAA4AmQADAAEECQAFABYApwADAAEECQAGAA4AvQADAAEECQAKAFgAywADAAEECQALACQBIyBlai1pY29uUmVndWxhcmVqLWljb25lai1pY29uVmVyc2lvbiAxLjBlai1pY29uRm9udCBnZW5lcmF0ZWQgdXNpbmcgU3luY2Z1c2lvbiBNZXRybyBTdHVkaW93d3cuc3luY2Z1c2lvbi5jb20AIABlAGoALQBpAGMAbwBuAFIAZQBnAHUAbABhAHIAZQBqAC0AaQBjAG8AbgBlAGoALQBpAGMAbwBuAFYAZQByAHMAaQBvAG4AIAAxAC4AMABlAGoALQBpAGMAbwBuAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAHUAcwBpAG4AZwAgAFMAeQBuAGMAZgB1AHMAaQBvAG4AIABNAGUAdAByAG8AIABTAHQAdQBkAGkAbwB3AHcAdwAuAHMAeQBuAGMAZgB1AHMAaQBvAG4ALgBjAG8AbQAAAAACAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMBAgEDAQQABHNhdmUEZWRpdAAAAAAA) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^='sf-icon-'],
+[class*=' sf-icon-'] {
+    font-family: 'e-sb-icons' !important;
+    speak: none;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fabric #togglebtn,
+.fabric-dark #togglebtn,
+.highcontrast #togglebtn {
+    padding: 0 13px;
+}
+
+.bootstrap5-dark .dialog-text,
+.highcontrast .dialog-text,
+.tailwind-dark .dialog-text,
+.fabric-dark .dialog-text,
+.bootstrap-dark .dialog-text {
+    border: 1px solid #ffffff;
+}
+
+.e-bigger.fluent #togglebtn.e-btn .e-btn-icon.e-icon-left,
+.e-bigger.material3-dark #togglebtn.e-btn .e-btn-icon.e-icon-left,
+.e-bigger.material3 #togglebtn.e-btn .e-btn-icon.e-icon-left,
+.e-bigger.material3-dark #togglebtn.e-btn .e-btn-icon.e-icon-left {
+    margin-left: -0.5em;
+    width: 1em;
+}
+
+.e-bigger.bootstrap5 #togglebtn.e-btn .e-btn-icon.e-icon-left,
+.e-bigger.bootstrap5-dark #togglebtn.e-btn .e-btn-icon.e-icon-left,
+.e-bigger.material #togglebtn.e-btn .e-btn-icon.e-icon-left,
+.e-bigger.material-dark #togglebtn.e-btn .e-btn-icon.e-icon-left,
+.material3 #togglebtn.e-btn .e-btn-icon.e-icon-left,
+.material3-dark #togglebtn.e-btn .e-btn-icon.e-icon-left,
+.e-bigger.fabric #togglebtn.e-btn .e-btn-icon.e-icon-left,
+.e-bigger.fabric-dark #togglebtn.e-btn .e-btn-icon.e-icon-left,
+.e-bigger.bootstrap4 #togglebtn.e-btn .e-btn-icon.e-icon-left,
+.e-bigger.bootstrap #togglebtn.e-btn .e-btn-icon.e-icon-left,
+.e-bigger.bootstrap-dark #togglebtn.e-btn .e-btn-icon.e-icon-left,
+.e-bigger.highcontrast #togglebtn.e-btn .e-btn-icon.e-icon-left {
+    margin-left: 0em;
+    width: 1em;
+}
+
+.tailwind #togglebtn.e-btn .e-btn-icon.e-icon-left,
+.e-bigger.tailwind #togglebtn.e-btn .e-btn-icon.e-icon-left,
+.e-bigger.tailwind-dark #togglebtn.e-btn .e-btn-icon.e-icon-left {
+    margin-left: -0.3em;
+    width: 1em;
+}
+
+.e-bigger.bootstrap4 #togglebtn.e-btn .e-btn-icon.e-icon-left {
+    margin-left: -0.2em;
+    width: 1.3em;
+}
+
+#pie,
+#colChart,
+#pieChart {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 650px) {
+
+    #pieChart,
+    #colChart,
+    #pie {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+.piecontent .content {
+    display: inline-block;
+    padding: 4px;
+    width: 31%;
+    font-size: 13px;
+    text-align: center;
+}

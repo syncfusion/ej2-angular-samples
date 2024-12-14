@@ -44,7 +44,7 @@ export const stockChartAppRoutes: Object[] = [
     },
     {
         path: ':theme/stock-chart/spline-area', component: SplineAreaComponent,
-        name: 'Spline Area', order: '01', category: 'Stock Chart'
+        name: 'Spline Area', type: 'update',  order: '01', category: 'Stock Chart'
     },
     {
         path: ':theme/stock-chart/inversed-area', component: InversedAreaComponent,

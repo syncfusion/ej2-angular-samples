@@ -88,7 +88,7 @@ export class GroupingPieComponent {
     public clubvalue: string = '9';
     public startAngle: number = 0;
     public endAngle: number = 360;
-    public tooltip: Object = { enable: true, header:'', format:'<b>${point.x}</b><br> Gold Medals: <b>${point.y}</b>' };
+    public tooltip: Object = { enable: true, header:'', format:'<b>${point.x}</b><br> Gold Medals: <b>${point.y}</b>', enableHighlight: true };
     public title: string = 'Rio Olympic Gold Medals';
     public groupMode: DropDownList;
     ngOnInit(): void {

@@ -33,7 +33,7 @@
                     <e-item prefixIcon="e-icons white-out" tooltipText="White out" cssClass="e-pv-redact-sb-white-out-container"
                         text="Whiteout" (click)="addWhiteout($event)"></e-item>
                     <e-item type="Separator"></e-item>
-                    <e-item prefixIcon="e-icons e-redact" cssClass="e-pv-redact-sb-redaction-container" text="Redact" tooltipTex="Redaction"
+                    <e-item prefixIcon="e-icons e-redact" cssClass="e-pv-redact-sb-redaction-container" text="Redact"
                         id="redacticon" (click)="redaction()" [disabled]="true"></e-item>
                 </e-items>
             </ejs-toolbar>
@@ -42,19 +42,19 @@
         <div id="e-pv-redact-sb-toolbar-secondary" class="e-pv-secondary-toolbar">
             <ejs-toolbar #secondaryToolbar>
                 <e-items>
-                    <e-item prefixIcon="e-icons e-chevron-left" cssClas="e-pv-redact-sb-previous-container" id="previousPage" tooltipText="Previous Page"
+                    <e-item prefixIcon="e-icons e-chevron-left" cssClas="e-pv-redact-sb-previous-container" id="previousPage"
                         (click)="previousClicked($event)" [disabled]="true"></e-item>
 
                     <e-item>
                         <ng-template #template>
                                 <div>
-                                    <span id="e-pv-redact-sb-currentPage" title="Current Page">1 &ensp;</span>
-                                    <span id="e-pv-redact-sb-totalPage" title="Total Page">/ 1</span>
+                                    <span id="e-pv-redact-sb-currentPage">1 &ensp;</span>
+                                    <span id="e-pv-redact-sb-totalPage">/ 1</span>
                                 </div>
                         </ng-template>
                     </e-item>
 
-                    <e-item prefixIcon="e-icon e-chevron-right" cssClass="e-pv-redact-sb-next-container" id="nextPage" tooltipText="Next Page"
+                    <e-item prefixIcon="e-icon e-chevron-right" cssClass="e-pv-redact-sb-next-container" id="nextPage"
                         (click)="nextClicked($event)" [disabled]="true"></e-item>
 
                     <e-item type="Separator"></e-item>
@@ -62,7 +62,7 @@
                     <e-item cssClass="percentage">
                         <ng-template #template>
                             <ejs-combobox id='comboelement' [dataSource]='data' value="100%" [showClearButton]='false'
-                                (change)="zoomValueChange($event)" width="90px" tooltipText="Zoom">
+                                (change)="zoomValueChange($event)" width="90px">
                             </ejs-combobox>
                         </ng-template>
                     </e-item>
@@ -70,7 +70,7 @@
             </ejs-toolbar>
         </div>
         <!--pdfviewer-->
-        <ejs-pdfviewer #pdfviewer id='pdfViewer' [documentPath]='document' [serviceUrl]='service'
+        <ejs-pdfviewer #pdfviewer id='pdfViewer' [documentPath]='document' [resourceUrl]='resource'
             (pageChange)='pageChanged($event)' (documentLoad)='documentLoaded($event)'
             (annotationAdd)='annotationAdd($event)' (annotationRemove)='annotationRemove($event)' [enableAnnotationToolbar] ="false" [enableCommentPanel] = "false" [enableToolbar]=false
             [enableNavigationToolbar]=false (created)='onLoad($event)' style="height:640px; display: block">
@@ -79,7 +79,7 @@
 
         <!--dialog box-->
         <div class="control-section template">
-            <ejs-dialog id="e-pv-redact-sb-dialog" #dialogComponent [showCloseIcon]='showCloseIcon' [target]='target'
+            <ejs-dialog id="e-pv-redact-sb-dialog" #dialogComponent [height]='height' [showCloseIcon]='showCloseIcon' [target]='target'
                 [width]='width' [visible]='visible' [isModal]='isModal'>
                 <ng-template #footerTemplate>
                     <button id="cancelButton" #cancelButton class="e-control e-btn e-primary" data-ripple="true"

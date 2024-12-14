@@ -1,0 +1,99 @@
+.template-chatui {
+    height: 500px;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.template-chatui .chat-bot {
+    background-image: url('src/app/chat-ui/images/bot.png');
+    background-color: unset;
+}
+
+.template-chatui .emptyChatText {
+    font-size: 16px;
+    font-style: italic;
+}
+
+.template-chatui .emptychat-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    width: 90%;
+    margin: 0 auto;
+    height: 380px;
+}
+
+.template-chatui .e-right .message-items {
+    border-radius: 16px 16px 2px 16px;
+}
+
+.template-chatui .e-left .message-items {
+    border-radius: 16px 16px 16px 2px;
+}
+
+.template-chatui .message-user {
+    height: 30px;
+    width: 30px;
+    margin-right: 3px;
+}
+
+.template-chatui .e-left .message-template,
+.template-chatui .e-right .message-template {
+    display: flex;
+    align-items: flex-end;
+}
+.template-chatui .message-items.e-card {
+    line-height: 20px;
+    box-shadow: none;
+    background: none;
+}
+
+.template-chatui .message-items.e-card:hover {
+    background-color: unset;
+}
+.template-chatui .e-left .message-template {
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.template-chatui .e-right .message-template {
+    flex-direction: column;
+    padding: 5px;
+}
+
+.template-chatui .message-text {
+    margin: 5px;
+    padding: 4px;
+    font-size: 14px;
+}
+
+.template-chatui .message-suggestions {
+    margin: 10px 30px;
+    display: flex;
+    gap: 5px;
+}
+
+.template-chatui .suggestion-button {
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 5px 12px;
+    font-size: 13px;
+}
+
+@media only screen and (max-width: 850px) {
+    .template-chatui {
+        width: 70%;
+    }
+    .template-chatui .message-suggestions {
+        flex-direction: column;
+        width: 80%;
+    }
+    .template-chatui .message-suggestions .suggestion-button {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

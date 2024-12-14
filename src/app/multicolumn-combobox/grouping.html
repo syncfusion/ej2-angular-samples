@@ -5,13 +5,14 @@
 <div class="control-section">
     <div class='control-wrapper'>
         <div style='padding-top:60px;'>
-            <ejs-multicolumncombobox id='grouping' #grouping [dataSource]='employeeData' [fields]='fields' [placeholder]='waterMark' popupHeight='230px'>
+            <label>Select a product</label>
+            <ejs-multicolumncombobox id='grouping' #grouping [dataSource]='datasource' [fields]='fields' [placeholder]='waterMark' popupHeight='210px' popupWidth='450px' >
                 <e-columns>
-                    <e-column field='Name' header='Name ID' width="90"/>
-                        <e-column field='Position' header='Position' width="85"/>
-                        <e-column field='Department' header='Department' width="98"/>
-                        <e-column field='PhoneNo' header='Phone No' width="105"/>
-                        <e-column field='Location' header='Location' width="98"/>
+                    <e-column field='Name' header='Name ID' width="110"/>
+                    <e-column field='Price' header='Price' width="70"/>
+                    <e-column field='Availability' header='Availability' width="98"/>
+                    <e-column field='Category' header='Category' width="95"/>
+                    <e-column field='Rating' header='Rating' width="70"/>
                 </e-columns>
             </ejs-multicolumncombobox>
         </div>
@@ -19,6 +20,6 @@
 </div>
 
 <div id="description">
-    <p>In this sample, the employee data is grouped against <code>Position</code> column, which illustrates how the employee details are grouped based on its category.
+    <p>In this sample, the employee data is grouped against <code>Category</code> column, which illustrates how the employee details are grouped based on its category.
     </p>
 </div>

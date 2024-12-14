@@ -1437,10 +1437,6 @@ export class PatternsComponent {
     this.selectedTheme = this.selectedTheme ? this.selectedTheme : 'Material';
     args.gauge.theme = <GaugeTheme>(this.selectedTheme.charAt(0).toUpperCase() +
       this.selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
-    if (this.selectedTheme == 'tailwind') {
-        args.gauge.axes[0].annotations[0].angle = 188;
-        args.gauge.axes[0].annotations[0].radius = "10%";
-    }
     if (this.selectedTheme.indexOf('dark') > -1 || this.selectedTheme.indexOf('contrast') > -1) {
       args.gauge.axes[0].annotations[0].content = '<div class="gaugeOneText" style="font-size:30px;color:white;font-family:inherit;">38</div>';
     }
@@ -1455,14 +1451,6 @@ export class PatternsComponent {
     this.selectedTheme = this.selectedTheme ? this.selectedTheme : 'Material';
     args.gauge.theme = <GaugeTheme>(this.selectedTheme.charAt(0).toUpperCase() +
       this.selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
-      if (this.selectedTheme == 'tailwind') {
-        args.gauge.axes[0].annotations[0].angle = 12;
-        args.gauge.axes[0].annotations[0].radius = "18%";
-        args.gauge.axes[0].annotations[1].angle = 258;
-        args.gauge.axes[0].annotations[1].radius = "102%";
-        args.gauge.axes[0].annotations[2].angle = 102;
-        args.gauge.axes[0].annotations[2].radius = "105%";
-      }
       if (this.selectedTheme.indexOf('dark') > -1 || this.selectedTheme.indexOf('contrast') > -1) {
         args.gauge.axes[0].annotations[0].content = '<div style="font-size:25px;color:white;font-family:inherit;">75%</div>';
         args.gauge.axes[0].annotations[1].content = '<div style="font-size:22px;color:white;font-family:inherit;">0%</div>';
@@ -1481,10 +1469,6 @@ export class PatternsComponent {
     this.selectedTheme = this.selectedTheme ? this.selectedTheme : 'Material';
     args.gauge.theme = <GaugeTheme>(this.selectedTheme.charAt(0).toUpperCase() +
       this.selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
-    if (this.selectedTheme == 'tailwind') {
-        args.gauge.axes[0].annotations[0].angle = 194;
-        args.gauge.axes[0].annotations[0].radius = "8%";
-    }
     if (this.selectedTheme.indexOf('dark') > -1 || this.selectedTheme.indexOf('contrast') > -1) {
       args.gauge.axes[0].annotations[0].content = '<div class="gaugeThreeText" style="font-size:30px;color:white;font-family:inherit;"> 450 </div>';
       args.gauge.axes[0].annotations[1].content = '<div style="font-size:12px;color:white;font-family:inherit;"> 300 </div>';
@@ -1505,10 +1489,6 @@ export class PatternsComponent {
     this.selectedTheme = this.selectedTheme ? this.selectedTheme : 'Material';
     args.gauge.theme = <GaugeTheme>(this.selectedTheme.charAt(0).toUpperCase() +
       this.selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
-    if (this.selectedTheme == 'tailwind') {
-        args.gauge.axes[0].annotations[0].angle = 170;
-        args.gauge.axes[0].annotations[0].radius = "12%";
-    }
     if (this.selectedTheme.indexOf('dark') > -1 || this.selectedTheme.indexOf('contrast') > -1) {
       args.gauge.axes[0].annotations[0].content = '<div class="gaugeFourText" style="font-size:30px;color:white;font-family:inherit;">21%</div>';
     }
@@ -1523,10 +1503,6 @@ export class PatternsComponent {
     this.selectedTheme = this.selectedTheme ? this.selectedTheme : 'Material';
     args.gauge.theme = <GaugeTheme>(this.selectedTheme.charAt(0).toUpperCase() +
       this.selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
-    if (this.selectedTheme == 'tailwind') {
-        args.gauge.axes[0].annotations[0].angle = 170;
-        args.gauge.axes[0].annotations[0].radius = "12%";
-    }
     if (this.selectedTheme.indexOf('dark') > -1 || this.selectedTheme.indexOf('contrast') > -1) {
       args.gauge.axes[0].annotations[0].content = '<div class="gaugeFiveText" style="font-size:30px;color:white;font-family:inherit;">54%</div>';
     }
@@ -1541,10 +1517,6 @@ export class PatternsComponent {
     this.selectedTheme = this.selectedTheme ? this.selectedTheme : 'Material';
     args.gauge.theme = <GaugeTheme>(this.selectedTheme.charAt(0).toUpperCase() +
       this.selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
-    if (this.selectedTheme == 'tailwind') {
-        args.gauge.axes[0].annotations[0].angle = 180;
-        args.gauge.axes[0].annotations[0].radius = "6%";
-    }
     if (this.selectedTheme.indexOf('dark') > -1 || this.selectedTheme.indexOf('contrast') > -1) {
       args.gauge.axes[0].annotations[0].content = '<div class="annotationText" style="color:white;font-family:inherit;">80% <br/> <div> Completed </div> </div>'
     }

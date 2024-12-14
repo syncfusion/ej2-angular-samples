@@ -803,6 +803,15 @@
             "dialog": "Dialog"
         }
     },
+    "chat-ui": {
+        "ControlName": "Chat UI",
+        "Samples": {
+            "default": "Default Functionalities",
+            "template": "Template",
+            "api": "API",
+            "chat-integration": "Use Case"
+        }
+    },
     "pager": {
         "ControlName": "Pager",
         "Samples": {
@@ -954,8 +963,8 @@
             "template-driven": "Template Driven"
         }
     },
-    "mark-down-editor": {
-        "ControllerName": "Markdown Editor",
+    "markdown-editor": {
+        "ControlName": "Markdown Editor",
         "Samples":{
             "overview": "Overview",
             "default-functionalities": "Default Functionalities",

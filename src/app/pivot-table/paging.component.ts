@@ -87,7 +87,7 @@ export class PagingComponent implements OnInit {
         } as GridSettings;
 
         this.remoteData = new DataManager({
-            url: 'https://bi.syncfusion.com/northwindservice/api/orders',
+            url: 'https://ej2services.syncfusion.com/angular/development/api/order',
             adaptor: new WebApiAdaptor,
             crossDomain: true
         });

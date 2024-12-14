@@ -63,7 +63,7 @@ export class ColumnTemplateComponent implements OnInit {
                         placeholder: 'Select a value',
                         popupHeight: '200px',
                         allowFiltering: true,
-                        mode: 'Delimiter',
+                        mode: 'Box',
                     });
                     this.dropInstance.appendTo(flValInput);
                 },

@@ -55,7 +55,8 @@ export class PieRadiusComponent {
         enable: true,
         header: '',
         format: '<b>${point.x}</b><br>Area in square km: <b>${point.y}</b><br>Population density per square km: <b>${point.tooltip}</b>',
-        name: 'Radius'
+        name: 'Radius',
+        enableHighlight: true
     };
     public title: string = 'Pie with different Radius';
     constructor() {

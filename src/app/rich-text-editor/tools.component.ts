@@ -109,7 +109,7 @@ export class FullFeatureComponent {
     `
     };
     public exportPdf: ExportPdfModel = {
-        serviceUrl: this.hostUrl + 'api/RichTextEditor/ExportToPdf',
+        serviceUrl: 'https://ej2services.syncfusion.com/angular/development/api/RichTextEditor/ExportToPdf',
         fileName: 'RichTextEditor.pdf',
         stylesheet: `
         .e-rte-content{

@@ -20,19 +20,19 @@ export class DefaultSpeedDialComponent {
     public items: SpeedDialItemModel[] = [
         {
             title:'Home',
-            iconCss:'speeddial-icons speeddial-icon-house'
+            iconCss:'e-icons e-home'
         },
         {
             title:'People',
-            iconCss:'speeddial-icons speeddial-icon-people'
+            iconCss:'e-icons e-people'
         },
         {
             title:'Search',
-            iconCss:'speeddial-icons speeddial-icon-search'
+            iconCss:'e-icons e-search'
         },
         {
             title:'Message',
-            iconCss:'speeddial-icons speeddial-icon-message'
+            iconCss:'e-icons e-comment-show'
         }
     ];
 }

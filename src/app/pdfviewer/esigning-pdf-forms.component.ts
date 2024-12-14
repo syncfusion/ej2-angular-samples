@@ -34,9 +34,8 @@ export class ESigningPdfFormsComponent implements OnInit {
   @ViewChild('modalDialog', { static: false }) public modalDialog: DialogComponent;
 
   public fileName: string = "eSign_designMode.pdf";
-  public service = "https://services.syncfusion.com/angular/production/api/pdfviewer";
   public document: string = 'https://cdn.syncfusion.com/content/pdf/eSign_filling.pdf';
-  public resource: string = "https://cdn.syncfusion.com/ej2/23.2.6/dist/ej2-pdfviewer-lib";
+  public resource: string = "https://cdn.syncfusion.com/ej2/27.2.2/dist/ej2-pdfviewer-lib";
   public currentUser: string = 'andrew@mycompany.com';
   public currentUserBorderColor: string = 'red';
   public andrewBackground: string = '#ffefef';
@@ -273,18 +272,68 @@ export class ESigningPdfFormsComponent implements OnInit {
     this.updateUserFormField();
   }
 
-  public finishSigning(args: any) {
+  public finishSigning(args: any): void {
     for (const formField of this.pdfviewerControl.formFieldCollections) {
       this.pdfviewerControl?.formDesignerModule.updateFormField(formField, { backgroundColor: this.finishedBackground } as TextFieldSettings);
     }
-    this.pdfviewerControl.serverActionSettings.download = "FlattenDownload";
-    this.pdfviewerControl.download();
-    this.pdfviewerControl.serverActionSettings.download = "Download";
+    const url: string = "https://ej2services.syncfusion.com/angular/development/api/pdfviewer/FlattenDownload";
+    this.pdfviewerControl.saveAsBlob().then((blob) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onload = (e: ProgressEvent<FileReader>) => {
+        const base64String = e.target?.result;
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
+        const requestData = JSON.stringify({ base64String });
+        xhr.onload = () => {
+          if (xhr.status === 200) {
+            const responseBase64 = xhr.responseText.split('base64,')[1];
+            if (responseBase64) {
+              const blob = this.createBlobFromBase64(responseBase64, 'application/pdf');
+              const blobUrl = URL.createObjectURL(blob);
+              this.downloadDocument(blobUrl);
+              this.pdfviewerControl.load(xhr.responseText, null);
+              (document.getElementById('e-pv-e-sign-finishSigning') as any).disabled = true;
+              this.userMenu.enabled = false;
+            } else {
+              console.error('Invalid base64 response.');
+            }
+          } else {
+            console.error('Download failed:', xhr.statusText);
+          }
+        };
+        xhr.onerror = () => {
+          console.error('An error occurred during the download:', xhr.statusText);
+        };
+        xhr.send(requestData);
+      };
+    }).catch((error) => {
+      console.error('Error saving Blob:', error);
+    });
   }
 
-  public downloadEnd = (args: any) => {
-    this.pdfviewerControl.load(args.downloadDocument, null);
-    (document.getElementById('e-pv-e-sign-finishSigning') as any).disabled = true;
-    this.userMenu.enabled = false;
+  public createBlobFromBase64(base64String: string, contentType: string): Blob {
+    const sliceSize = 512;
+    const byteCharacters = atob(base64String);
+    const byteArrays: Uint8Array[] = [];
+    for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+      const slice = byteCharacters.slice(offset, offset + sliceSize);
+      const byteNumbers = Array.from(slice, char => char.charCodeAt(0));
+      byteArrays.push(new Uint8Array(byteNumbers));
+    }
+    return new Blob(byteArrays, { type: contentType });
+  }
+
+  public downloadDocument(blobUrl: string): void {
+    const anchorElement = document.createElement('a');
+    anchorElement.href = blobUrl;
+    anchorElement.target = '_parent';
+    const downloadFileName = this.pdfviewerControl.fileName || 'downloadedFile.pdf';
+    anchorElement.download = downloadFileName.endsWith('.pdf') ? downloadFileName : `${downloadFileName}.pdf`;
+    document.body.appendChild(anchorElement);
+    anchorElement.click();
+    document.body.removeChild(anchorElement);
+    URL.revokeObjectURL(blobUrl);
   }
 }

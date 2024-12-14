@@ -1,7 +1,7 @@
 <div class="control-section">
     <div class="content-wrapper">
         <div id="dropArea" class="viewer-file-droparea" style="height: auto; overflow: auto; margin-bottom: 25px;">
-            <button ejs-button id="browse">Browse...</button>
+            <button ejs-button class="e-control e-btn e-lib" id="browse">Browse...</button>
             <div>
                 <p style="margin: 15px;">OR</p>
                 <p id="drop">Drop files (Word, Excel, PowerPoint, Image, PDF)</p>
@@ -41,7 +41,7 @@
                     <ejs-switch cssClass="buttonSwitch" id="checked" (change)="change($event)" [checked]="true"></ejs-switch>
                 </div>
             </div>
-            <ejs-pdfviewer #pdfviewer id="pdfViewer" [zoomMode]="zoomMode" [toolbarSettings]="toolbarSettings" [resourceUrl]='resource' 
+            <ejs-pdfviewer #pdfviewer id="pdfViewer" class="e-pv-multi-format-pdfviewer" [zoomMode]="zoomMode" [toolbarSettings]="toolbarSettings" [resourceUrl]='resource' 
             (documentLoad)="documentLoaded()" (ajaxRequestSuccess)="ajaxRequestSuccess($event)" style="height:640px;"></ejs-pdfviewer>
         </div>
     </div>
@@ -84,5 +84,13 @@
     #pdfViewer_viewerContainer{
         left: 0px !important;
         width: 100% !important;
+    }
+
+    .e-pv-multi-format-pdfviewer .e-pv-text-search-bar {
+        top: 40px !important;
+    }
+
+    .e-bigger .e-pv-multi-format-pdfviewer .e-pv-text-search-bar {
+        top: 48px !important;
     }
 </style>

@@ -26,10 +26,12 @@
 
 .bootstrap5 #defaultDialog.e-dialog .e-footer-content,
 .bootstrap5-dark #defaultDialog.e-dialog .e-footer-content,
-.bootstrap5.3 #defaultDialog.e-dialog .e-footer-content,
-.bootstrap5.3-dark #defaultDialog.e-dialog .e-footer-content,
+.bootstrap5\.3 #defaultDialog.e-dialog .e-footer-content,
+.bootstrap5\.3-dark #defaultDialog.e-dialog .e-footer-content,
 .tailwind #defaultDialog.e-dialog .e-footer-content,
+.tailwind3 #defaultDialog.e-dialog .e-footer-content,
 .tailwind-dark #defaultDialog.e-dialog .e-footer-content,
+.tailwind3-dark #defaultDialog.e-dialog .e-footer-content,
 .bootstrap4 #defaultDialog.e-dialog .e-footer-content,
 .bootstrap #defaultDialog.e-dialog .e-footer-content
  {

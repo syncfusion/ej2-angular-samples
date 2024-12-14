@@ -1,0 +1,20 @@
+<main>
+    <div class="control-section">
+        <div align='center'>
+            <ejs-maps id='container' style="display:block;" [layers]='layers' (load)="load($event)" [zoomSettings]="zoomSettings" [titleSettings]="titleSettings" format='n' useGroupingSeparator="true">
+            </ejs-maps>
+        </div>       
+    </div>
+    
+    <section id="action-description" aria-label="Description of Maps sample">
+        <p>
+            This sample showcases popular attractions from multiple countries, displayed as markers and marker clusters on an OpenStreetMap. The marker clusters are enabled for each country, with distinct settings representing each country on the map.
+        </p>
+    </section>
+    
+    <section id="description" aria-label="Description of the Maps features demonstrated in this sample">
+        <p>
+            In this example, markers represent popular attractions from around the world, with each set as a separate data source for each country. The marker cluster feature is enabled for these markers to provide a clearer and more organized view. To do so, enable the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/maps/markerClusterSettingsModel/#allowclustering">allowClustering</a> property within <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/maps/markerClusterSettingsModel">clusterSettings</a>, which groups nearby markers together. Each cluster displays a tooltip with details such as the name, state, and country of the attraction. The <code>clusterSettings</code> can be further customized with options like <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/maps/markerClusterSettingsModel/#shape">shape</a>, <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/maps/markerClusterSettingsModel/#width">width</a>, <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/maps/markerClusterSettingsModel/#height">height</a>, and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/maps/markerClusterSettingsModel/#labelstyle">labelStyle</a> to adjust the appearance of the cluster. Additionally, the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/maps/markerClusterSettingsModel/#allowclusterexpand">allowClusterExpand</a> property is enabled, allowing users to expand a cluster by clicking on it, revealing the individual markers in an equidistant layout.
+        </p>
+    </section>
+</main>

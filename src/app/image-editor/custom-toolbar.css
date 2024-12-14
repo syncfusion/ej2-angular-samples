@@ -203,12 +203,7 @@
 .fluent-dark .customToolbar .e-toolbar .e-toolbar-item .e-tbar-btn:focus {
     border: none !important;
 }
-
-.bootstrap5\.3-dark .customToolbar #edit,
-.fluent2-highcontrast .customToolbar #edit,
-.fabric-dark .customToolbar #edit,
-.highcontrast .customToolbar #edit,
-.bootstrap5-dark .customToolbar #edit,
+ 
 .fluent-dark .customToolbar #edit,
 .tailwind-dark .customToolbar #edit,
 .material-dark .customToolbar #edit,

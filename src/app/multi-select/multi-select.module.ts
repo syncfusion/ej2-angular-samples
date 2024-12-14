@@ -8,6 +8,7 @@ import { GroupMultiSelectComponent } from './grouping.component';
 import { DataBindingMultiSelectComponent } from './data-binding.component';
 import { DisabledItemsMultiSelectComponent } from './disabled-items.component';
 import { TemplateMultiSelectComponent } from './template.component';
+import { ResizeMultiSelectComponent } from './resize.component';
 import { FilteringMultiSelectComponent } from './filtering.component';
 import { CustomTagMultiSelectComponent } from './custom-value.component';
 import { ChipCustomizeMultiSelectComponent } from './chip-customization.component';
@@ -39,6 +40,8 @@ export const multiselectAppRoutes: Object[] = [
 		category: 'MultiSelect Dropdown' },
     { path: ':theme/multi-select/template', component: TemplateMultiSelectComponent, name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular multiselect component pop-up list using the template.',order: '01',
 		category: 'MultiSelect Dropdown' },
+    { path: ':theme/multi-select/resize', component: ResizeMultiSelectComponent,  type: "new" , name: 'Popup Resize', description: 'This demo showcases the custom resizing functionality of Multiselect, You can adjust the size of the popup based on your preferences, allowing for better control over its appearance',order: '01',
+      category: 'MultiSelect Dropdown' },
     { path: ':theme/multi-select/filtering', component: FilteringMultiSelectComponent, name: 'Filtering', description: 'This example demonstrates how the filtering functionalities works based on the typed characters in the Angular multiselect component.', order: '01',
 		category: 'MultiSelect Dropdown' },
     { path: ':theme/multi-select/custom-value', component: CustomTagMultiSelectComponent, name: 'Custom Values', description: 'This example demonstrates the addition of a new value that is not present in the predefined list of the Angular multiselect component.', order: '01',
@@ -64,11 +67,11 @@ export const multiselectAppRoutes: Object[] = [
         name: 'Selection Limit', category: 'MultiSelect Dropdown'
     },
     {
-        path: ':theme/multi-select/template-driven', component: TemplateDrivenMultiSelectComponent, description: 'This demo explains the template-driven forms support of the Syncfusion angular multiselect component.', order: '02',
+        path: ':theme/multi-select/template-driven', component: TemplateDrivenMultiSelectComponent, description: 'This demo explains the template-driven forms support of the Syncfusion<sup>®</sup> angular multiselect component.', order: '02',
         name: 'Template Driven', category: 'Form Support'
     },
     {
-        path: ':theme/multi-select/reactive-form', component: ReactiveFormMultiSelectComponent, description: 'This demo explains the reactive forms support of the Syncfusion angular multiselect component.', order: '02',
+        path: ':theme/multi-select/reactive-form', component: ReactiveFormMultiSelectComponent, description: 'This demo explains the reactive forms support of the Syncfusion<sup>®</sup> angular multiselect component.', order: '02',
         name: 'Reactive Form', category: 'Form Support'
     },
 ];

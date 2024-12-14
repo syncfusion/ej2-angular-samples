@@ -17,26 +17,25 @@ export class VirtualMultiComboBoxComponent {
     //Generate large datas
     public records: { [key: string]: Object }[] = [];
     constructor() {
-        let names = ["John", "Alice", "Bob", "Mario Pontes", "Yang Wang", "Michael", "Nancy", "Robert King"];
-        let hours = [8, 12, 16];
-        let status = ["Pending", "Completed", "In Progress"];
-        let designation = ["Engineer", "Manager", "Tester"];
+        let names = ["John Doe", "Jane Smith", "Alice Johnson", "Bob Brown", "Emily Davis"];
+        let departments = ["HR", "IT", "Finance", "Marketing", "Sales"];
+        let roles = ["Manager", "Developer", "Analyst", "Consultant", "Executive"];
+        let locations = ["New York", "San Francisco", "London", "Berlin", "Tokyo"];
         let result: { [key: string]: Object }[] = [];
         for (let i = 0; i < 150; i++) {
             result.push({
-                TaskID: i + 1,
-                Engineer: names[Math.floor(Math.random() * names.length)],
-                Designation: designation[Math.floor(Math.random() * designation.length)],
-                Estimation: hours[Math.floor(Math.random() * hours.length)],
-                Status: status[Math.floor(Math.random() * status.length)]
+                Name: names[Math.floor(Math.random() * names.length)],
+                Department: departments[Math.floor(Math.random() * departments.length)],
+                Role: roles[Math.floor(Math.random() * roles.length)],
+                Location: locations[Math.floor(Math.random() * locations.length)]
             });
         }
         this.records = result;
     }
     // maps the appropriate column to fields property
-    public fields: Object = { text: 'Engineer', value: 'TaskID'};
+    public fields: Object = { text: 'Name', value: 'Name'};
     // set the placeholder to ComboBox input element
-    public waterMark: string = 'Select an engineer';
+    public waterMark: string = 'e.g. Alice Johnson';
     // set the gridSettings to MultiColumn ComboBox input element
     public gridSettings: Object = { rowHeight: 40 };
 }

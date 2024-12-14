@@ -1,0 +1,147 @@
+    /* csslint ignore:start */
+    .markdown-preview .heading {
+        float: left;
+        width: 100%;
+        position: relative;
+        box-sizing: border-box;
+        padding: 0px;
+        padding-left:0px;
+        padding-right:0px;
+      }
+      
+    .markdown-preview .title {
+        color: #333333;
+        letter-spacing: 1px;
+        padding-left: 10px;
+        text-align: center;
+        margin: 15px 0;
+    }
+    .markdown-preview .title-head {
+        text-align: center
+    }
+    #mdPreview.e-richtexteditor textarea.e-content {
+        float: left;
+        border-right: 1px solid rgba(0, 0, 0, 0.12);
+    }
+    #mdPreview.e-richtexteditor .e-rte-content .e-content{
+        min-height: 150px;
+    }
+
+    #mdPreview.e-richtexteditor .e-rte-content {
+        overflow: hidden;
+    }
+
+    .e-icon-btn.e-active .e-md-preview::before {
+        content: '\e350';
+    }
+
+    .e-icon-btn .e-md-preview::before {
+        content: '\e345';
+    }
+   .bootstrap4 .e-icon-btn.e-active .e-md-preview::before {
+        content: '\e790';
+    }
+
+    .bootstrap4 .e-icon-btn .e-md-preview::before {
+        content: '\e787';
+    }
+
+    .tailwind .e-icon-btn .e-md-preview::before,
+    .tailwind-dark .e-icon-btn .e-md-preview::before,
+    .tailwind3 .e-icon-btn .e-md-preview::before,
+    .tailwind3-dark .e-icon-btn .e-md-preview::before,
+    .bootstrap5 .e-icon-btn .e-md-preview::before,
+    .bootstrap5\.3 .e-icon-btn .e-md-preview::before,
+    .bootstrap5\.3-dark .e-icon-btn .e-md-preview::before,
+    .bootstrap5-dark .e-icon-btn .e-md-preview::before,
+    .fluent .e-icon-btn .e-md-preview::before,
+    .fluent-dark .e-icon-btn .e-md-preview::before,
+    .fluent2 .e-icon-btn .e-md-preview::before,
+    .fluent2-dark .e-icon-btn .e-md-preview::before,
+    .fluent2-highcontrast .e-icon-btn .e-md-preview::before,
+    .material3 .e-icon-btn .e-md-preview::before,
+    .material3-dark .e-icon-btn .e-md-preview::before {
+        content: '\e7de';
+    }
+    
+    .fluent .e-icon-btn.e-active .e-md-preview::before,
+    .fluent-dark .e-icon-btn.e-active .e-md-preview::before,
+    .fluent2 .e-icon-btn.e-active .e-md-preview::before,
+    .fluent2-dark .e-icon-btn.e-active .e-md-preview::before,
+    .fluent2-highcontrast .e-icon-btn.e-active .e-md-preview::before,
+    .bootstrap5 .e-icon-btn.e-active .e-md-preview::before,
+    .bootstrap5\.3 .e-icon-btn.e-active .e-md-preview::before,
+    .bootstrap5\.3-dark .e-icon-btn.e-active .e-md-preview::before,
+    .bootstrap5-dark .e-icon-btn.e-active .e-md-preview::before,
+    .tailwind .e-icon-btn.e-active .e-md-preview::before,
+    .tailwind-dark .e-icon-btn.e-active .e-md-preview::before,
+    .tailwind3 .e-icon-btn.e-active .e-md-preview::before,
+    .tailwind3-dark .e-icon-btn.e-active .e-md-preview::before,
+    .material3 .e-icon-btn.e-active .e-md-preview::before,
+    .material3-dark .e-icon-btn.e-active .e-md-preview::before {
+        content: '\e80e';
+    }
+
+    #mdPreview .e-rte-content .e-content.e-pre-source {
+        width: 100%;
+    }
+
+    .highcontrast #mdPreview.e-richtexteditor textarea.e-content {
+        border-right: 1px solid #fff;
+    }
+
+    .sb-content.e-view.hide-header {
+        top: 0 !important;
+    }
+    
+    .sb-header.e-view.hide-header {
+        display: none;
+    }
+
+    .editor-mention-item-template {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      .em-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .em-avatar {
+        width: 32px;
+        height: 32px;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 12px;
+        font-weight: 500;
+        text-indent: 0px;
+        line-height: 13px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .em-name {
+        color: rgb(16, 24, 40);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 14px;
+        margin-bottom: 5px;
+      }
+      .em-email {
+        color: gray;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14px;
+      }
+      #mdDefault_editable-content_popup li {
+        padding: 10px;
+        height: 60px;
+      }
+      body[class*='-dark'] .em-name {
+        color: #fff !important;
+      }
+/* csslint ignore:end */

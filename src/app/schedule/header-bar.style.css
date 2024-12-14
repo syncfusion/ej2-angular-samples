@@ -83,12 +83,16 @@
   background-color: #000;
 }
 
-.tailwind-dark .e-profile-wrapper {
+.tailwind-dark .e-profile-wrapper,
+.tailwind3-dark .e-profile-wrapper {
   background-color: #374151;
   border: 0.5px solid #4b5563;
 }
 
-.tailwind .e-profile-wrapper .destination, .tailwind-dark .e-profile-wrapper .destination {
+.tailwind .e-profile-wrapper .destination,
+.tailwind3 .e-profile-wrapper .destination,
+.tailwind-dark .e-profile-wrapper .destination,
+.tailwind3-dark .e-profile-wrapper .destination {
   font-size: 11px;
 }
 

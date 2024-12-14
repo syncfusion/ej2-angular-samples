@@ -28,8 +28,7 @@ export const avatarAppRoutes: Object[] = [
     { path: ':theme/avatar/list-view', component: ListViewAvatarComponent, order: '02', name: 'Listview', category: 'Integration', description: 'This example demonstrates how to integrate Syncfusion avatar with listview to display profile image or letters in mobile contact Angular application.', sourceFiles: [
         {displayName: 'list-view.component.ts', path: './src/avatar/list-view.component.ts'},
         {displayName: 'list-view.html', path: './src/avatar/list-view.html'},
-        {displayName: 'list-view.css', path: './src/avatar/list-view.css'},
-        {displayName: 'dataSource.json', path: './src/avatar/dataSource.json'}
+        {displayName: 'list-view.css', path: './src/avatar/list-view.css'}
     ] },
     { path: ':theme/avatar/card', component: CardAvatarComponent, order: '02', name: 'Card', category: 'Integration', description: 'This example demonstrates how to create employee business cards with roles & responsibilities using Syncfusion avatar & card components in Angular application', sourceFiles: [
         {displayName: 'card.component.ts', path: './src/avatar/card.component.ts'},

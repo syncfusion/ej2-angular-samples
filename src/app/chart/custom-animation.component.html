@@ -1,0 +1,44 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the almond yield per hectare data for different countries using a spline series in the chart. 
+        The data points are enhanced with tooltip and the animation delay is configured to provide a smooth, staggered effect.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart style='display:block' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' [width]='width' [legendSettings]='legend'>
+            <e-series-collection>
+                <e-series [dataSource]='seriesData' type='Spline' xName='x' yName='y1' name='United States' width=3 [animation]='animation1' > </e-series>
+                <e-series [dataSource]='seriesData' type='Spline' xName='x' yName='y2' name='China'  width=3 [animation]='animation2'> </e-series>
+                <e-series [dataSource]='seriesData' type='Spline' xName='x' yName='y3' name='Afghanistan'  width=3 [animation]='animation3'> </e-series>
+                <e-series [dataSource]='seriesData' type='Spline' xName='x' yName='y4' name='Yemen' width=3  [animation]='animation4'> </e-series>
+                <e-series [dataSource]='seriesData' type='Spline' xName='x' yName='y' name='Australia'  width=3 [animation]='animation5'> </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure a spline chart with multiple series representing almond
+        yield across different countries over time. Spline charts are ideal for visualizing smooth trends in data over equal
+        intervals, particularly time-dependent data.
+        The <code>width</code> and <code>animation</code> properties are used to customize the appearance and behavior of
+        the spline. The staggered animations enhance the visual experience by introducing each spline in sequence.
+    </p>
+    <p>
+        <code>Tooltips</code> are enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled
+        devices.
+    </p>
+    <br>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use spline series, we need to inject
+        <code>SplineSeriesService</code> into the
+        <code>&#64;NgModule.providers</code> section.
+    </p>
+    <p>
+        More information about the line series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/line" aria-label="Navigate to the documentation for Line Chart in Angular Chart component">documentation section</a>.
+    </p>
+</div>

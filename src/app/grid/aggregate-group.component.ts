@@ -16,8 +16,8 @@ export class AggregateGroupComponent implements OnInit {
     public data: Object[];
     public filterSettings: Object;
     public energyColumns: ColumnModel[];
-    public gridLines:string;
     public groupSettings: { [x: string]: Object } = { showDropArea: false, columns: ['ConsumptionCategory'], showGroupedColumn:true };
+    public gridLines: string;
     @ViewChild('grid')
     public grid: GridComponent;
 

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild,Inject } from '@angular/core';
-import { DiagramComponent, MarginModel, SymbolPaletteModule, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent, MarginModel, SymbolPaletteModule, DiagramModule, Snapping } from '@syncfusion/ej2-angular-diagrams';
 import {
     Diagram, UndoRedo, ConnectorBridging, SnapConstraints,
     NodeModel, ConnectorModel, PathAnnotationModel, DecoratorModel, PointModel,
@@ -10,7 +10,7 @@ import { ExpandMode } from '@syncfusion/ej2-navigations';
 import { paletteIconClick } from './script/diagram-common';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-Diagram.Inject(UndoRedo, ConnectorBridging);
+Diagram.Inject(UndoRedo, ConnectorBridging, Snapping);
 
 /**
  * Default Logic gates sample

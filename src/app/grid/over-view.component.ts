@@ -59,6 +59,13 @@ export class OverViewComponent implements OnInit {
 
     }
 
+    public softwareValue(args: any):number {
+        if (args <= 20) {
+            args = args + 30;
+        }
+        return args;
+    }
+
     ngAfterViewInit(args: any): void {
         this.gridInstance.on('data-ready', function () {
             this.dReady = true;

@@ -1,36 +1,268 @@
-<div id="action-description">
-    <p>
-        This sample depicts the crosshair behavior in the charts. To view the crosshair and its tooltip, hover over the chart or tap on it in touch-enabled devices.
-    </p>
-</div>
 <div class="control-section">
     <div align='center'>
-        <ejs-chart id='chartcontainer' style='display:block;' [chartArea]='chartArea' [width]='width' align='center' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [axes]='axes' [title]='title' [crosshair]='crosshairLabel' (load)='load($event)' [zoomSettings]='zoomSettings' [legendSettings]='legend'>
+        <ejs-chart #chart id='container' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+                   [chartArea]='chartArea' [width]='width' [tooltip]='tooltip' [legendSettings]='legend'
+                   [crosshair]='crosshair' [title]='title' (load)='load($event)'>
             <e-series-collection>
-                <e-series [dataSource]='series1' type='Line' xName='xDate' yName='High' width=2 [border]='border' [marker]='marker'>
-                </e-series>
-                <e-series [dataSource]='series2' type='HiloOpenClose' xName='xDate' yAxisName='yAxis' high='High' low='Low' open='Open' close='Close'
-                    bearFillColor='#2ecd71' bullFillColor='#e74c3d'>
+                <e-series [dataSource]='chartData' type='SplineArea' xName='time' yName='value' 
+                          name='Stock Value' width=2 >
                 </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
+<div id="action-description">
+    <p>
+        This sample depicts the crosshair behavior in the charts. To view the crosshair and its tooltip, hover over the chart or tap on it in touch-enabled devices.    </p>
+</div>
 <div id="description">
-    <p>
-        The crosshair is used to inspect or focus on an individual data point using a vertical and a horizontal line. You can enable the crosshair using the Enable property in the ChartCrosshairSettings class and customize its tooltip by using the ChartAxisCrosshairTooltip in the axis.
+    <p>The crosshair is used to inspect or focus on an individual data point using a vertical and a horizontal line. You can enable the crosshair using the <a target="_blank" href="https://ej2.syncfusion.com/documentation/api/chart/crosshairSettings/#enable" aria-label="Navigate to the enable property reference for TypeScript Chart CrosshairSettings">enable</a> property in the <code>chartCrosshairSettings</code> class and customize its tooltip by using the <code>chartAxisCrosshairTooltip</code> in the axis.
     </p>
     <p>
-        Hover the chart area to view crosshair and its tooltip. Touch and hold to enable crosshair in touch enabled devices.
+        The <code>snapToData</code> property snaps the crosshair to the nearest data point instead of following the exact mouse position, providing a more precise focus on data points.
     </p>
-    <p style="font-weight: 500">Injecting Module</p>
+    <p style="font-weight: 500"><b>Injecting Module</b></p>
     <p>
-        Chart component features are segregated into individual feature-wise modules. To use crosshair feature, we need to inject
+        Chart component features are segregated into individual feature-wise modules. To use Crosshair, we need to inject
         <code>CrosshairService</code> into the <code>&#64;NgModule.providers</code> section.
     </p>
     <p>
-        More information on the crosshair can be found in this
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/cross-hair-and-track-ball/#crosshair" aria-label="Navigate to the documentation for Crosshair in Angular Chart component">documentation section</a>.
+        More information on the Crosshair can be found in this 
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/cross-hair-and-track-ball/" aria-label="Navigate to the documentation for Crosshair in Angular Chart component">documentation section</a>.
     </p>
 </div>
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+
+    #material-gradient-chart stop {
+        stop-color: #00bdae;
+    }
+
+    #fabric-gradient-chart stop {
+        stop-color: #4472c4;
+    }
+
+    #bootstrap-gradient-chart stop {
+        stop-color: #a16ee5;
+    }
+
+    #bootstrap4-gradient-chart stop {
+        stop-color: #a16ee5;
+    }
+
+    #fluent-gradient-chart stop {
+        stop-color: #1AC9E6;
+    }
+    #fluent-dark-gradient-chart stop {
+        stop-color: #1AC9E6;
+    }
+
+    #highcontrast-gradient-chart stop {
+        stop-color: #79ECE4;
+    }
+
+    #tailwind-gradient-chart stop {
+        stop-color: #5A61F6;
+    }
+
+    #tailwind3-gradient-chart stop {
+        stop-color: #2F4074;
+    }
+
+    #bootstrap5-gradient-chart stop {
+        stop-color: #FD7E14;
+    }
+
+    #material-dark-gradient-chart stop {
+        stop-color: #9ECB08;
+    }
+
+    #fabric-dark-gradient-chart stop {
+        stop-color: #4472c4;
+    }
+
+    #bootstrap-dark-gradient-chart stop {
+        stop-color: #a16ee5;
+    }
+
+    #tailwind-dark-gradient-chart stop {
+        stop-color: #8B5CF6;
+    }
+
+    #tailwind3-dark-gradient-chart stop {
+        stop-color: #8029F1;
+    }
+
+    #bootstrap5-dark-gradient-chart stop {
+        stop-color: #FD7E14;
+    }
+
+    #material3-gradient-chart stop {
+        stop-color: #6355C7;
+    }
+
+    #material3-dark-gradient-chart stop {
+        stop-color: #4EAAFF;
+    }
+
+    #fluent2-gradient-chart stop {
+        stop-color: #6200EE;
+    }
+
+    #fluent2-highcontrast-gradient-chart stop {
+        stop-color: #9BB449;
+    }
+
+    #fluent2-dark-gradient-chart stop {
+        stop-color: #9BB449;
+    }
+
+    .chart-gradient stop[offset="0"] {
+        stop-opacity: 0.50;
+    }
+
+    .chart-gradient stop[offset="0.3"] {
+        stop-opacity: 0.40;
+    }
+    .chart-gradient stop[offset="0.6"] {
+        stop-opacity: 0.2;
+    }
+
+    .chart-gradient stop[offset="1"] {
+        stop-opacity: 0;
+    }
+
+</style>
+<svg style="height: 0">
+	<defs>
+        <linearGradient id="material-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="fabric-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="bootstrap-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="bootstrap4-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="highcontrast-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="tailwind-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="tailwind3-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="bootstrap5-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="material-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="fabric-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="bootstrap-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="tailwind-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="tailwind3-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="bootstrap5-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="fluent-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+		</linearGradient>
+        <linearGradient id="fluent-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+		</linearGradient>
+        <linearGradient id="material3-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="material3-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="fluent2-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+            
+        </linearGradient>
+        <linearGradient id="fluent2-highcontrast-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="fluent2-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="0.3"></stop>
+            <stop offset="0.6"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+    </defs>
+</svg>

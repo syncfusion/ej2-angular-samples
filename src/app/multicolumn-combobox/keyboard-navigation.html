@@ -6,13 +6,13 @@
 <div class="control-section">
     <div class='control-wrapper'>
         <div style='padding-top:60px;'>
-            <ejs-multicolumncombobox id='keyboard' #keyboard [dataSource]='bookDetails' [fields]='fields' [placeholder]='waterMark' popupHeight='230px'>
+            <label>Select a product</label>
+            <ejs-multicolumncombobox id='keyboard' #keyboard [dataSource]='datasource' [fields]='fields' [placeholder]='waterMark' popupHeight='210px' popupWidth='530px'>
                 <e-columns>
-                    <e-column field='Title' header='Title' width="180"/>
-                        <e-column field='Author' header='Author' width="150"/>
-                        <e-column field='Genre' header='Genre' width="100"/>
-                        <e-column field='PublishedYear' header='Published Year' width="120"/>
-                        <e-column field='Price' header='Price' width="80"/>
+                        <e-column field='ProductID' header='Product ID' width="100"/>
+                        <e-column field='ProductName' header='Product Name' width="200"/>
+                        <e-column field='UnitPrice' header='UnitPrice' width="90"/>
+                        <e-column field='UnitsInStock' header='Units In Stock' width="120"/>
                 </e-columns>
             </ejs-multicolumncombobox>
         </div>

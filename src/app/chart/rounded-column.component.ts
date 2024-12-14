@@ -104,6 +104,19 @@ export class RoundedColumnChartComponent {
                     args.fill = "grey";
             }
         }
+        else if (location.hash.indexOf("tailwind3") > -1)
+            {
+                if (location.hash.indexOf("dark") > -1)
+                {
+                    if (args.series.yName == "Rate")
+                        args.fill = "#f9fafb";
+                }
+                else
+                {
+                    if (args.series.yName == "Rate")
+                        args.fill = "grey";
+                }
+            }
         else if (location.hash.indexOf("highcontrast") > -1)
         {
             if (args.series.yName == "Rate")

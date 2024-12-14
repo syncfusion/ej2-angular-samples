@@ -58,7 +58,8 @@ export class LineChartComponent {
     public pentagonMarker: Object = { visible: true, height: 7, width: 7 , shape: 'Pentagon' , isFilled: true };
 
     public tooltip: Object = {
-        enable: true
+        enable: true,
+        enableHighlight: true
     };
     public legend: Object = {
         visible: true,

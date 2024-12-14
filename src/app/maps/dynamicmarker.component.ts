@@ -135,7 +135,7 @@ export class MapsDynamicMarkerComponent {
             dynamicMarker[markerIndex].shape = (this.markerShape !== 'Image') ? this.markerShape as MarkerType : 'Image';
             dynamicMarker[markerIndex].height = (this.markerShape !== 'Image') ? 12 : 20;
             dynamicMarker[markerIndex].width = (this.markerShape !== 'Image') ? 12 : 20;
-            dynamicMarker[markerIndex].imageUrl = (this.markerShape !== 'Image') ? '' : './assets/maps/images/ballon.png';
+            dynamicMarker[markerIndex].imageUrl = (this.markerShape !== 'Image') ? '' : 'https://ej2.syncfusion.com/angular/demos/assets/maps/images/ballon.png';
         }
     };
     public addLine: any = (lineArgs: any, lineWidth: number, connectiveLine?: boolean) => {

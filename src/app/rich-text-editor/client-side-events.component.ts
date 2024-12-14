@@ -3,7 +3,7 @@
  */
 import { Component, ViewChild, ViewEncapsulation, ElementRef } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, FormatPainterService, EmojiPickerService, FileManagerService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, FormatPainterService, EmojiPickerService, FileManagerService, FileManagerSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { ActionBeginEventArgs, ActionCompleteEventArgs } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, RichTextEditorModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
@@ -36,7 +36,19 @@ export class EventsComponent {
             '|', 'EmojiPicker', 'Print', '|',
             'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
     };
-
+    public fileManagerSettings: FileManagerSettingsModel = {
+        enable: true,
+        path: '/Pictures/Food',
+        ajaxSettings: {
+          url: 'https://ej2-aspcore-service.azurewebsites.net/api/FileManager/FileOperations',
+          getImageUrl:
+            'https://ej2-aspcore-service.azurewebsites.net/api/FileManager/GetImage',
+          uploadUrl:
+            'https://ej2-aspcore-service.azurewebsites.net/api/FileManager/Upload',
+          downloadUrl:
+            'https://ej2-aspcore-service.azurewebsites.net/api/FileManager/Download',
+        },
+      };
     // Display event log
     appendElement(html: string): void {
         const span: HTMLElement = document.createElement('span');

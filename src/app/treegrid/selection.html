@@ -14,34 +14,34 @@
                         <div class="property-panel-header">Properties </div>
                 <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
                     <tr>
-                        <td style="width: 30%">
+                        <td>
                             <div style="padding-top: 7px">Selection Type</div>
                         </td>
-                        <td style="width: 70%;padding-right: 10px">
+                        <td style="width: 60%;padding-right: 10px">
                             <div>
                                     <ejs-dropdownlist #dropdown1 id='element1' width= '110px' [dataSource]='d1data' [fields]='fields1' value='Multiple'(change)="change1($event)"></ejs-dropdownlist>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td style="width: 30%">
+                        <td>
                             <div>
                                 Selection Mode
                             </div>
                         </td>
-                        <td style="width: 70%">
-                            <div style="padding-right: 10px;padding-bottom: 10px">
+                        <td style="width: 60%">
+                            <div style="padding-right: 10px;">
                                     <ejs-dropdownlist #dropdown2 id='element2' width= '110px' [dataSource]='d2data' [fields]='fields2' value='Row' (change)="change2($event)" ></ejs-dropdownlist>
                             </div>
                         </td>
                     </tr>
                     <tr id='cellselection' style='display: none'>
-                        <td style="width: 30%;">
+                        <td>
                             <div>
                                Cell Selection Mode
                             </div>
                         </td>
-                        <td style="width: 70%;">
+                        <td style="width: 60%;">
                             <div style="padding-right: 10px;padding-bottom: 10px">
                                     <ejs-dropdownlist #dropdown3 id='element3' width= '110px' [dataSource]='d3data' [fields]='fields3' value='Flow' (change)="change3($event)"></ejs-dropdownlist>
                             </div>

@@ -8,6 +8,8 @@
 }
 .tailwind #defaulttoast .e-meeting::before,
 .tailwind-dark #defaulttoast .e-meeting::before,
+.tailwind3 #defaulttoast .e-meeting::before,
+.tailwind3-dark #defaulttoast .e-meeting::before,
 .bootstrap5 #defaulttoast .e-meeting::before,
 .bootstrap5-dark #defaulttoast .e-meeting::before {
   content: "\e7e9";

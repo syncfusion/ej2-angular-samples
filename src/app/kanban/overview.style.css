@@ -110,7 +110,9 @@
 }
 .fluent-dark .kanban-overview.e-kanban .e-card .e-card-tag-field ,
 .bootstrap5-dark .kanban-overview.e-kanban .e-card .e-card-tag-field ,
+.bootstrap5\.3-dark .kanban-overview.e-kanban .e-card .e-card-tag-field ,
 .tailwind-dark .kanban-overview.e-kanban .e-card .e-card-tag-field ,
+.tailwind3-dark .kanban-overview.e-kanban .e-card .e-card-tag-field ,
 .material-dark .kanban-overview.e-kanban .e-card .e-card-tag-field ,
 .fabric-dark .kanban-overview.e-kanban .e-card .e-card-tag-field ,
 .bootstrap-dark .kanban-overview.e-kanban .e-card .e-card-tag-field ,
@@ -120,7 +122,9 @@
 }
 .fluent-dark .kanban-overview.e-kanban .e-card-avatar,
 .bootstrap5-dark .kanban-overview.e-kanban .e-card-avatar,
+.bootstrap5\.3-dark .kanban-overview.e-kanban .e-card-avatar,
 .tailwind-dark .kanban-overview.e-kanban .e-card-avatar,
+.tailwind3-dark .kanban-overview.e-kanban .e-card-avatar,
 .material-dark .kanban-overview.e-kanban .e-card-avatar,
 .fabric-dark .kanban-overview.e-kanban .e-card-avatar,
 .bootstrap-dark .kanban-overview.e-kanban .e-card-avatar,

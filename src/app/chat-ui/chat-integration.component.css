@@ -1,0 +1,152 @@
+.integration-chatui {
+    width: 85%;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.integration-chatui .chat-leftContent {
+    display: flex;
+}
+.integration-chatui .chat-options-container {
+    display: flex;
+    flex-direction: column;
+    background: whitesmoke;
+    overflow: hidden;
+}
+.integration-chatui .toggle-chat-listview.e-card:hover {
+    background: none;
+}
+
+.integration-chatui .toggle-chat-listview {
+    border: none;
+    justify-content: flex-start;
+    border-radius: unset;
+    line-height: 20px;
+    box-shadow: none;
+}
+.integration-chatui .chat_options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    border-radius: 0;
+    pointer-events: none;
+}
+
+.integration-chatui .chat_options .e-icon-top,
+.integration-chatui .e-headertext {
+    font-size: 20px !important;
+}
+
+.integration-chatui .e-list-header {
+    font-size: 25px;
+    margin: 8px 0 8px 5px;
+    border-bottom: 0;
+    background: unset;
+}
+.integration-chatui .e-list-container li {
+    border: none;
+}
+.integration-chatui .e-list-container {
+    border-top: 1px solid #d0d0d0;
+}
+
+.integration-chatui .e-splitter .e-split-bar.e-split-bar-horizontal:not(.e-resizable-split-bar), 
+.integration-chatui .e-splitter .e-split-bar-horizontal.e-last-bar,
+.integration-chatui .e-list-template li {
+    margin: 0;
+    border-radius: 0;
+}
+
+.integration-chatui .chat_message {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.integration-chatui .chat_user1_avatar {
+    background-image: url('src/app/chat-ui/images/andrew.png');
+}
+
+.integration-chatui .chat_user2_avatar {
+    background-image: url('src/app/chat-ui/images/charlie.png');
+}
+
+.integration-chatui .chat_user3_avatar {
+    background-image: url('src/app/chat-ui/images/laura.png');
+}
+
+.integration-chatui .chat_user4_avatar {
+    background-image: url('src/app/chat-ui/images/reena.png');
+}
+
+.integration-chatui .chat_team_avatar {
+    background-image: url('src/app/chat-ui/images/calendar.png');
+}
+
+.integration-chatui .chat_bot_avatar {
+    background-image: url('src/app/chat-ui/images/bot.png');
+}
+.integration-chatui .e-header-icon {
+    background-color: unset;
+}
+.integration-chatui #listview_template {
+    border-right: 0;
+    border-bottom: 0;
+    border-top: 0;
+    border-radius: 0;
+    height: 100%;
+}
+
+#chatbtn {
+    border-left: 2px solid #0f6cbd;
+}
+#integration-chat {
+    border: none;
+}
+@font-face {
+    font-family: 'Chatdemo';
+    src:
+    url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAAKAIAAAwAgT1MvMj1tSfUAAAEoAAAAVmNtYXDnE+dkAAABlAAAADxnbHlmqS+qEQAAAdwAAAMcaGVhZCnJluEAAADQAAAANmhoZWEIUQQGAAAArAAAACRobXR4FAAAAAAAAYAAAAAUbG9jYQGCAkYAAAHQAAAADG1heHABEQCsAAABCAAAACBuYW1lChZRfQAABPgAAAIxcG9zdNaOJHIAAAcsAAAAbAABAAAEAAAAAFwEAAAAAAAD9AABAAAAAAAAAAAAAAAAAAAABQABAAAAAQAAt5KxUl8PPPUACwQAAAAAAONbqPgAAAAA41uo+AAAAAAD9AP0AAAACAACAAAAAAAAAAEAAAAFAKAAAgAAAAAAAgAAAAoACgAAAP8AAAAAAAAAAQQAAZAABQAAAokCzAAAAI8CiQLMAAAB6wAyAQgAAAIABQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUGZFZABA5wDnAwQAAAAAXAQAAAAAAAABAAAAAAAABAAAAAQAAAAEAAAABAAAAAQAAAAAAAACAAAAAwAAABQAAwABAAAAFAAEACgAAAAEAAQAAQAA5wP//wAA5wD//wAAAAEABAAAAAEAAgADAAQAAAAAAKYAuADcAY4AAgAAAAAD6QP0ADIAjAAAAQcfCzM/BBcHLxo1NycPBhUfHjM/Bi8IKwEPAy8IPwM1LwkjDwEBWUgIJh8dIxsdICImGQcEBQUPFFW9cB4sLScsMCMkJiglH0swHhMSCREPDAYEBAQCAoQVC20pCAMBAQICAwQFBQcHBxETExUWIClOLC8uKyknJCIfHSYfHxgFCAkHigQDAQECBAUH3gUFBgYFBgU3NQ8cJiMgJR4jFT4CAgEBAQIDlQUDCAgICAcGAu2PDzkoIiUaGxsaGxADAQEFCzR1lAgQExQZHxcbHiEhHVE5JhwcDx0fHxAQDxAQEBB3QAlgKAoGBgcSExISExISERIRIiEgHx0oL1MpKCQgHBkWEg8NDwoIBAIEBrUHCAgJCAcHBYkDAgEBAiMfChQeHx4mIy0ffAUFBQYFBQUF3QcDBAMBAgMAAAABAAAAAAP0AzMABwAANyE1FxEHNSEMAwTk5Pz8zO6yAfCy7gACAAAAAAP0AzMACQATAAABFTM3EScjFSERAyE1FzMRIwc1IQKyenR0ev2uVAL6pkhIpv0GAuOvWv7hWq8Byf3puYQB/oS5AAABAAAAAAPzA/MAnwAAEw8JHyozPxAvDysBDwojLxc1PwovDiMPBYkDUgkIBgYEAwICAQECAwQFBgcICQkLCwwNDg4PEBAjJigoFBUUFRUVFRQVFRUVFRUUFRQUFBQUFBMTExMSElEIBQMDAwEBAQEBAQMDAwUFVAYGBwYHBwcHBwgHBw8MWAsMCwsWFhYVFRUVFBUUFBMUFBISERAPDQsKCQYEAgIFB1AFAwMDAQEBAQEBAwMDBVkGBgcGBwcHBw4HBwYGBQPhA1ESExITExQTFBQUFBUUFRUUFRUVFRUVFBUVFRQUKScmJBEQDw8NDQ0LCwkJCAcGBQQEAgEBAgQEBQcICVEJBwYHBwcHCAcHBwcGBgYGVAUFBAMCAgECAgIHCU4EBAICAwIFBggKDA0OEBESExQUFBQUFRQVFRUVFhYXFxdaBwYHBwcHBwgHBwYHBgZdBQUEAwICAQECAgIEAwAAAAAAEgDeAAEAAAAAAAAAAQAAAAEAAAAAAAEACAABAAEAAAAAAAIABwAJAAEAAAAAAAMACAAQAAEAAAAAAAQACAAYAAEAAAAAAAUACwAgAAEAAAAAAAYACAArAAEAAAAAAAoALAAzAAEAAAAAAAsAEgBfAAMAAQQJAAAAAgBxAAMAAQQJAAEAEABzAAMAAQQJAAIADgCDAAMAAQQJAAMAEACRAAMAAQQJAAQAEAChAAMAAQQJAAUAFgCxAAMAAQQJAAYAEADHAAMAAQQJAAoAWADXAAMAAQQJAAsAJAEvIENoYXRkZW1vUmVndWxhckNoYXRkZW1vQ2hhdGRlbW9WZXJzaW9uIDEuMENoYXRkZW1vRm9udCBnZW5lcmF0ZWQgdXNpbmcgU3luY2Z1c2lvbiBNZXRybyBTdHVkaW93d3cuc3luY2Z1c2lvbi5jb20AIABDAGgAYQB0AGQAZQBtAG8AUgBlAGcAdQBsAGEAcgBDAGgAYQB0AGQAZQBtAG8AQwBoAGEAdABkAGUAbQBvAFYAZQByAHMAaQBvAG4AIAAxAC4AMABDAGgAYQB0AGQAZQBtAG8ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAdQBzAGkAbgBnACAAUwB5AG4AYwBmAHUAcwBpAG8AbgAgAE0AZQB0AHIAbwAgAFMAdAB1AGQAaQBvAHcAdwB3AC4AcwB5AG4AYwBmAHUAcwBpAG8AbgAuAGMAbwBtAAAAAAIAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQECAQMBBAEFAQYADnBob25lLWNhbGxzLXdmD3ZpZGVvLXJlY29yZC0wMw92aWRlby1yZWNvcmQtMDQNdGVsZXBob25lLS0wMwAA) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="sf-icon-"], [class*=" sf-icon-"] {
+    font-family: 'Chatdemo' !important;
+}
+
+.integration-chatui .sf-icon-phone-call:before { content: "\e703"; }
+body[class*="-dark"] .integration-chatui .chat-options-container,
+body[class*="high"] .integration-chatui .chat-options-container {
+    background: #000;
+}
+@media only screen and (max-width: 1200px) {
+    .integration-chatui {
+        height: 600px;
+        width: 100%;
+    }
+    .integration-chatui .chat_options .e-btn-icon + span {
+        display: none;
+    }
+    .chat-integration.control-section {
+        height: 650px;
+    }
+    .integration-chatui .toggle-chat-listview {
+        position: absolute;
+        top: 0;
+        width: 300px;
+        left: 46px;
+        height: 100%;
+        z-index: 2000;
+        border: none;
+        border-radius: unset;
+        display: none;
+    }
+    .integration-chatui .chat_options.chat_interactable {
+        pointer-events: auto;
+    }
+    .integration-chatui .toggle-chat-listview.e-card:hover {
+        background: #f6f6f6;
+    }
+}

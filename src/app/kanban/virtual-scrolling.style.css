@@ -168,7 +168,9 @@
     padding: 4.5px 2.4px !important;
 }
 .tailwind #KanbanVirtualScrolling .e-card-avatar, .tailwind #KanbanVirtualScrolling .e-story-points,
-.tailwind-dark #KanbanVirtualScrolling .e-card-avatar, .tailwind-dark #KanbanVirtualScrolling .e-story-points {
+.tailwind-dark #KanbanVirtualScrolling .e-card-avatar, .tailwind-dark #KanbanVirtualScrolling .e-story-points,
+.tailwind3 #KanbanVirtualScrolling .e-card-avatar, .tailwind3 #KanbanVirtualScrolling .e-story-points,
+.tailwind3-dark #KanbanVirtualScrolling .e-card-avatar, .tailwind3-dark #KanbanVirtualScrolling .e-story-points {
     padding: 4.75px 3.5px !important;    
 }
 .bootstrap4 #KanbanVirtualScrolling .e-card-avatar, .bootstrap4 #KanbanVirtualScrolling .e-story-points {

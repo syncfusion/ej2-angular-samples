@@ -16,7 +16,7 @@ export class PolygonComponent {
         // custom code start
         let theme: string = location.hash.split('/')[1];
         theme = theme ? theme : 'Material';
-        args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() + theme.slice(1));
+        args.maps.theme = <MapsTheme>(theme.charAt(0).toUpperCase() + theme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
         // custom code end
     }    
     public zoomSettings: object = {

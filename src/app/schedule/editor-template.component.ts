@@ -7,6 +7,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
 
 /**
@@ -30,7 +31,7 @@ import { NgIf } from '@angular/common';
     providers: [MonthService, DayService, WeekService, WorkWeekService, ResizeService, DragAndDropService],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [ScheduleModule, NgIf, DropDownListModule, DateTimePickerModule, SBDescriptionComponent, SBActionDescriptionComponent]
+    imports: [ScheduleModule, NgIf, DropDownListModule, DateTimePickerModule, SBDescriptionComponent, SBActionDescriptionComponent, FormsModule]
 })
 export class EditTempComponent {
   @ViewChild('scheduleObj')
@@ -47,20 +48,13 @@ export class EditTempComponent {
   public endDate: Date;
   public statusData: string[] = ['New', 'Requested', 'Confirmed'];
 
-  public startDateParser(data: string) {
-    if (isNullOrUndefined(this.startDate) && !isNullOrUndefined(data)) {
-      return new Date(data);
-    } else if (!isNullOrUndefined(this.startDate)) {
-      return new Date(this.startDate);
+  public onPopupOpen(args: any): void {
+    if (args.type === 'Editor' && !isNullOrUndefined(args.data)) {
+      this.startDate = args.data.StartTime;
+      this.endDate = args.data.EndTime;
     }
   }
-  public endDateParser(data: string) {
-    if (isNullOrUndefined(this.endDate) && !isNullOrUndefined(data)) {
-      return new Date(data);
-    } else if (!isNullOrUndefined(this.endDate)) {
-      return new Date(this.endDate);
-    }
-  }
+  
   public onDateChange(args: ChangeEventArgs): void {
     if (!isNullOrUndefined(args.event)) {
       if (args.element.id === "StartTime") {

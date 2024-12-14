@@ -102,8 +102,7 @@ export const diagramAppRoutes: Object[] = [
     {
         path: ':theme/diagram/connectors', component: ConnectorDiagramComponent,
         name: 'Connectors', category: 'Getting Started', order: '01',
-        description: 'This sample visualizes the data flow in a marketing process using predefined shapes and connectors. Different types of connectors and decorators are used to customize the appearance, path, and direction of the data flow.',
-        type: "update"
+        description: 'This sample visualizes the data flow in a marketing process using predefined shapes and connectors. Different types of connectors and decorators are used to customize the appearance, path, and direction of the data flow.'
     },
     {
         path: ':theme/diagram/line-routing', component: LineRoutingComponent,
@@ -204,8 +203,7 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/quick-commands', component: UserHandlediagramComponent,
         name: 'User Handles',
         category: 'Interactive Features', order: '02',
-        description: 'This sample visualizes a simple flow diagram along with options to execute the frequently used commands using user handles.',
-        type: "update"
+        description: 'This sample visualizes a simple flow diagram along with options to execute the frequently used commands using user handles.'
     },
     {
         path: ':theme/diagram/overview', component: OverviewDiagramComponent,
@@ -223,8 +221,7 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/flowchart-layout', component: FlowchartLayoutDiagramComponent,
         name: 'Flowchart Layout',
         category: 'Automatic Layouts', order: '03',
-        description: 'This sample illustrates the flowchart layout algorithm that is used to automatically arrange the flow shapes.',
-        type:'new'
+        description: 'This sample illustrates the flowchart layout algorithm that is used to automatically arrange the flow shapes.'
     },
     {
         path: ':theme/diagram/mind-map', component: MindMapDiagramComponent,
@@ -298,8 +295,7 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/serialization', component: SerializationDiagramComponent,
         name: 'Serialization',
         category: 'Save and Restore', order: '06',
-        description: 'This sample visualizes building diagrams interactively and editing the saved diagrams. Symbol Palette is used to easily build diagrams.',
-        type: "update"
+        description: 'This sample visualizes building diagrams interactively and editing the saved diagrams. Symbol Palette is used to easily build diagrams.'
     },
     {
         path: ':theme/diagram/print-export', component: PrintExportDiagramComponent,

@@ -50,7 +50,8 @@ export class SmartLabelsComponent {
     //Initializing Tooltip
     public tooltip: TooltipSettingsModel = {
         header:'',
-        enable: true, format: '<b>${point.x}</b><br> Gold Medals: <b>${point.y}</b>'
+        enable: true, format: '<b>${point.x}</b><br> Gold Medals: <b>${point.y}</b>',
+        enableHighlight: true
     };
     public title: string = 'Rio Olympics Gold ';
      // custom code start

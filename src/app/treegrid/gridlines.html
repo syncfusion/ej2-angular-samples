@@ -1,5 +1,5 @@
 <div class="col-lg-9 control-section">
-    <ejs-treegrid #treegrid [dataSource]='data' [gridLines]='lines' allowPaging='true' [pageSettings]='pageSettings' childMapping='subtasks' height='350' [treeColumnIndex]='1'>
+    <ejs-treegrid #treegrid [dataSource]='data' [gridLines]='lines' allowPaging='true' [pageSettings]='pageSettings' childMapping='subtasks' height='340' [treeColumnIndex]='1'>
         <e-columns>
             <e-column field='taskID' headerText='Task ID' width='80' textAlign='Right'></e-column>
             <e-column field='taskName' headerText='Task Name' width='200'></e-column>
@@ -14,12 +14,12 @@
                 <div class="property-panel-header">Properties </div>
         <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
             <tr>
-                <td  style="width: 50%">
+                <td>
                     <div class="" style="padding-top: 8px">
                         Grid Lines
                     </div>
                 </td>
-                <td style="width: 50%;padding-right: 10px">
+                <td style="width: 80%;padding-right: 10px">
                     <div id='linesddl'>
                         <ejs-dropdownlist #dropdown1 id='ddlelement' width= '130px' [dataSource]='d1data' [fields]='ddlfields' value='Vertical' (change)="change($event)"></ejs-dropdownlist>
                     </div>

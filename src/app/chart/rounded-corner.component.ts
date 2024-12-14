@@ -50,7 +50,8 @@ export class CornerRadiusComponent {
     public enableSmartLabels: boolean = true;
     public tooltip: Object = {
         enable: true,
-        header: '<b>Budget</b>', format: '${point.x}: <b>${point.y}%</b>'
+        header: '<b>Budget</b>', format: '${point.x}: <b>${point.y}%</b>',
+        enableHighlight: true
     };
     public annotations: Object[] = [
       {

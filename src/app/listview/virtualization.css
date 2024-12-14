@@ -42,10 +42,6 @@
   display: none;
 }
 
-#ui-list.e-listview .e-list-item {
-  padding: 3px 0;
-}
-
 #ui-list.e-listview .R {
   background: lightgrey;
 }

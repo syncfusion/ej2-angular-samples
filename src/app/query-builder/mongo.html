@@ -35,6 +35,7 @@
 					  <ng-template #content>
 						<div class="preview" (mouseenter)="onmouseenter($event)" (mouseleave)="onmouseleave($event)">
 						  <div class="e-content-header">
+							<label>Format Info:</label>
 							<ejs-radiobutton (change)="change($event)" label="Inline" checked="true" name="state" value="Inline"></ejs-radiobutton>
 							<ejs-radiobutton style="margin-left: 20px" label="Parameterized" (change)="change($event)" name="state" value="Parameterized">
 							</ejs-radiobutton>

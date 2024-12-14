@@ -23,8 +23,10 @@
     height: 250px;
     padding: 10px;
     position: relative;
+    display: flex;
+    align-items: center;
     text-align: center;
-    line-height: 17;
+    justify-content: center;
     font-size: 14px;
 }
 /* custom code start*/
@@ -42,7 +44,6 @@
     }
 
     #contextmenutarget {
-        line-height: 19;
         font-size: 12px;
     }
 }

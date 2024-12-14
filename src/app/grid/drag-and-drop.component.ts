@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, ViewChild } from '@angular/core';
+import { Component, OnInit, Inject,ViewChild } from '@angular/core';
 import { orderDetails } from './data';
 import { RowDDService, SelectionService, GridModule, SortService, PageService, FilterService, ToolbarService, EditService, GridComponent } from '@syncfusion/ej2-angular-grids';
 import { SBDescriptionComponent } from '../common/dp.component';

@@ -5,13 +5,14 @@
 <div class="control-section">
     <div class='control-wrapper'>
         <div style='padding-top:60px;'>
-            <ejs-multicolumncombobox id='sorting' #sorting [dataSource]='workDetails' [fields]='fields' [allowSorting]='true' [sortOrder]='sortOrder' [sortType]='sortType' [placeholder]='waterMark' popupHeight='230px'>
+            <label>Select a product</label>
+            <ejs-multicolumncombobox id='sorting' #sorting [dataSource]='datasource' [fields]='fields' [allowSorting]='true' [sortOrder]='sortOrder' [sortType]='sortType' [placeholder]='waterMark' popupHeight='210px' popupWidth='600px'>
                 <e-columns>
-                    <e-column field='Name' header='Name' width="100"/>
-                    <e-column field='YearOfJoining' header='Year Of Joining' width="100"/>                        
-                    <e-column field='Status' header='Status' width="60"/>
-                    <e-column field='Location' header='Location' width="90"/>
-                    <e-column field='Experience' header='Experience in Year' width="120"/>
+                    <e-column field='Name' header='Name ID' width="110"/>
+                    <e-column field='Price' header='Price' width="70"/>
+                    <e-column field='Availability' header='Availability' width="98"/>
+                    <e-column field='Category' header='Category' width="95"/>
+                    <e-column field='Rating' header='Rating' width="70"/>
                 </e-columns>
             </ejs-multicolumncombobox>
         </div>

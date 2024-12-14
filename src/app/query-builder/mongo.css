@@ -180,3 +180,21 @@ ejs-querybuilder {
 .fluent2-highcontrast .e-query-preview #content-area {
   color: white;
 }
+
+.preview .e-content-header .e-wrapper {
+  margin-left: 20px;
+}
+
+.preview .e-content-header label {
+  font-weight: 500;
+  margin-left: 0px;
+}
+
+.tailwind3-dark .mongo-text-area,
+.tailwind3-dark .e-query-preview .e-text-area-content {
+    background: transparent;
+}
+
+.tailwind3-dark .e-query-preview .e-pre-content {
+    color: white;
+}

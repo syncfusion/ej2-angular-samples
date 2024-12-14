@@ -91,10 +91,6 @@ export class KeyPerformanceComponent {
     this.selectedTheme = this.selectedTheme ? this.selectedTheme : 'Material';
     args.gauge.theme = <GaugeTheme>(this.selectedTheme.charAt(0).toUpperCase() +
       this.selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
-      if (this.selectedTheme == 'tailwind') {
-        args.gauge.axes[0].annotations[0].angle = 96;
-        args.gauge.axes[0].annotations[0].radius = "-34%";
-      }
       if (this.selectedTheme.indexOf('dark') > -1 || this.selectedTheme.indexOf('contrast') > -1) {
         args.gauge.axes[0].annotations[3].content = '<div style="font-size:22px;color:white;">0</div>';
         args.gauge.axes[0].annotations[4].content = '<div style="font-size:22px;color:white;">100</div>';

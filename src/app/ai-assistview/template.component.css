@@ -4,7 +4,8 @@
     margin: 0 auto;
 }
 
-.e-assistview-icon:before {
+.template-aiassistview .banner-content .e-assistview-icon:before,
+.template-aiassistview .response-header .e-assistview-icon:before {
     margin-right: 10px;
 }
 
@@ -14,7 +15,7 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-    padding: 10px 10px;
+    padding: 10px;
     width: 65%;
     margin: 0 auto;
 }

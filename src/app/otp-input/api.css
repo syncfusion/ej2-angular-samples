@@ -1,15 +1,10 @@
-.col-lg-8.control-section.otp-wrapper {
+.api-otp-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.col-lg-4.property-section.otp-property-panel {
-    border-left: 1px solid #D7D7D7;
-}
-
-.sb-property-border.otp-wrapper {
-    border: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 400px;
 }
 
 #otp-container {
@@ -53,10 +48,4 @@
 .property-panel-content td {
     padding: 10px 0px;
     width: 35%;
-}
-
-@media (max-width: 1200px) {
-    .col-lg-4.property-section.otp-property-panel {
-        border: none;
-    }
 }

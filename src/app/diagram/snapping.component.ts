@@ -8,13 +8,13 @@
      Diagram, NodeModel, UndoRedo, Node, DataBinding, DiagramContextMenu, HierarchicalTree, ConnectorModel, 
      SnapSettingsModel, PortConstraints, PortVisibility, Connector, ConnectorConstraints, UserHandleModel, SelectorModel, SelectorConstraints, ISelectionChangeEventArgs, IRotationEventArgs
  } from '@syncfusion/ej2-diagrams';
- import { SnapConstraints } from '@syncfusion/ej2-diagrams';
+ import { SnapConstraints, Snapping } from '@syncfusion/ej2-diagrams';
  import { NumericTextBoxModule, ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
 import { CheckBoxComponent, CheckBoxModule, RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
  
- Diagram.Inject(UndoRedo, DiagramContextMenu, HierarchicalTree, DataBinding);
+ Diagram.Inject(UndoRedo, DiagramContextMenu, HierarchicalTree, DataBinding, Snapping);
  
  export interface DataInfo {
      [key: string]: string;
@@ -39,8 +39,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     @ViewChild('snappingToObject')
     public snappToObject : CheckBoxComponent;
 
-    @ViewChild('snappingObject')
-      public snappingObject1 : NumericTextBoxModule;
+    @ViewChild('snappingInterval')
+      public snappingInterval : NumericTextBoxModule;
 
     // Method called when the diagram is created
     public created(args) {
@@ -168,7 +168,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
       }
     }
     // Sets the snapping interval
-    public snappingInterval(args : any){
+    public snappingIntervalChange(args : any){
       this.diagram.snapSettings.horizontalGridlines.snapIntervals[0] = args.value;
       this.diagram.snapSettings.verticalGridlines.snapIntervals[0] = args.value;
       this.diagram.dataBind();
@@ -197,11 +197,13 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
       this.scale();
     }
     // Update the snap interval scale
-    public scale(){
-      var getsnap = document.getElementById('snappingInterval');
-      getsnap = (getsnap as any).ej2_instances[0];
-      this.diagram.snapSettings.horizontalGridlines.snapIntervals[0] = (getsnap as any).value;
-      this.diagram.snapSettings.verticalGridlines.snapIntervals[0] = (getsnap as any).value;
+    public scale() {
+      this.diagram.snapSettings.horizontalGridlines.snapIntervals[0] = (
+        this.snappingInterval as any
+      ).value;
+      this.diagram.snapSettings.verticalGridlines.snapIntervals[0] = (
+        this.snappingInterval as any
+      ).value;
       this.diagram.dataBind();
     }
     public snapToLines(args:any) {

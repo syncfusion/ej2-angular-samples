@@ -7,7 +7,8 @@
     color: rgba(0, 0, 0, 0.70);
 }
 
-.tailwind-dark .formtitle{
+.tailwind-dark .formtitle,
+.tailwind3-dark .formtitle {
     color: rgb(249 249 249);
 }
 
@@ -124,7 +125,7 @@ top:0%! important;
 .material-dark #formId,
 .material3-dark #formId,
 .bootstrap5-dark #formId
-.bootstrap5.3-dark #formId {
+.bootstrap5\.3-dark #formId {
     background: #212529;
 }
 
@@ -134,7 +135,8 @@ top:0%! important;
 .fabric-dark #formId {
     background: #201f1f;
 }
-.tailwind-dark #formId {
+.tailwind-dark #formId,
+.tailwind3-dark #formId {
     background: #1f2937;
 }
 .fluent-dark #formId,
@@ -147,8 +149,9 @@ top:0%! important;
 .bootstrap-dark .form-title,
 .fabric-dark .form-title,
 .tailwind-dark .form-title,
+.tailwind3-dark .form-title,
 .bootstrap5-dark .form-title,
-.bootstrap5.3-dark .form-title,
+.bootstrap5\.3-dark .form-title,
 .fluent-dark .form-title,
 .fluent2-dark .form-title,
 .fluent2-highcontrast .form-title {

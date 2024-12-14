@@ -8,6 +8,7 @@ import { GroupAndIconComboBoxComponent } from './grouping-icon.component';
 import { DataBindingComboBoxComponent } from './data-binding.component';
 import { DisabledItemsComboBoxComponent } from './disabled-items.component'
 import { TemplateComboBoxComponent } from './template.component';
+import { ResizeComboBoxComponent } from './resize.component';
 import { CascadingComboBoxComponent } from './cascading.component';
 import { FilteringComboBoxComponent } from './filtering.component';
 import { CustomValueComboBoxComponent } from './custom-value.component';
@@ -33,6 +34,8 @@ export const comboboxAppRoutes: Object[] = [
 		category: 'ComboBox' },
     { path: ':theme/combo-box/template', component: TemplateComboBoxComponent, name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular combo box component pop-up list using the template.', order: '01',
 		category: 'ComboBox' },
+    { path: ':theme/combo-box/resize', component: ResizeComboBoxComponent, name: 'Popup Resize',type: "new" , description: 'This demo showcases the custom resizing functionality of Combo Box, You can adjust the size of the popup based on your preferences, allowing for better control over its appearance.', order: '01',
+      category: 'ComboBox' },
     { path: ':theme/combo-box/virtual-scroll', component: VirtualScrollComboBoxComponent, name: 'Virtualization', description: 'This example demonstrates how to utilize the virtualization support of Angular combo box component.', order: '01', 
     category: 'ComboBox' },
     { path: ':theme/combo-box/filtering', component: FilteringComboBoxComponent, name: 'Filtering', description: 'This example demonstrates how the filtering functionalities works based on the typed characters in the Angular combo box component.', order: '01',
@@ -43,9 +46,9 @@ export const comboboxAppRoutes: Object[] = [
         path: ':theme/combo-box/diacritics-filtering', component: DiacriticsFilteringComboBoxComponent, description: 'This example demonstrates how to achieve the diacritics filter functionalities in the Angular combo box component.', order: '01',
         name: 'Diacritics Filtering', category: 'ComboBox'
     },
-    { path: ':theme/combo-box/template-driven', component: TemplateDrivenComboBoxComponent, name: 'Template Driven', description: 'This demo explains the template-driven forms support of the Syncfusion angular combo box component.', order: '02',
+    { path: ':theme/combo-box/template-driven', component: TemplateDrivenComboBoxComponent, name: 'Template Driven', description: 'This demo explains the template-driven forms support of the Syncfusion<sup>®</sup> angular combo box component.', order: '02',
 		category: 'Form Support' },
-    { path: ':theme/combo-box/reactive-form', component: ReactiveFormComboBoxComponent, name: 'Reactive Form', description: 'This demo explains the reactive forms support of the Syncfusion angular combo box component.', order: '02',
+    { path: ':theme/combo-box/reactive-form', component: ReactiveFormComboBoxComponent, name: 'Reactive Form', description: 'This demo explains the reactive forms support of the Syncfusion<sup>®</sup> angular combo box component.', order: '02',
 		category: 'Form Support' }
 
 ];

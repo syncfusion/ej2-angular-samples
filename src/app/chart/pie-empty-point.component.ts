@@ -36,7 +36,7 @@ export class PieEmptyPointChartComponent {
       // custom code end
     //Initializing Tooltip
     public tooltip: Object = {
-        enable: true, format: '<b>${point.x}</b><br> Profit: <b>$${point.y}K</b>', header:''
+        enable: true, format: '<b>${point.x}</b><br> Profit: <b>$${point.y}K</b>', header:'', enableHighlight: true
     };
     //Initializing DataLabel
     DataLabelRenderEvent(args: IAccTextRenderEventArgs) {

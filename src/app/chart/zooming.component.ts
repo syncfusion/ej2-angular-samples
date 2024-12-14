@@ -61,13 +61,18 @@ export class ZoomingChartComponent {
         enableScrollbar: true,
         mode: 'X',
         enablePinchZooming: true,
-        enableAnimation: true
+        enableAnimation: true,
+        showToolbar : true,
+        toolbarPosition:{y: -60, draggable: true}
     };
     public chartArea: Object = {
         border: {
             width: 0
         }
     };
+    public margin: Object ={
+        top: 20,
+    }
 
     // custom code start
     public load(args: ILoadedEventArgs): void {
@@ -84,7 +89,8 @@ export class ZoomingChartComponent {
     // custom code end
     public border: Object = { width: 2, color: this.borderColor[this.themes.indexOf(this.theme)] };
     public width: string = Browser.isDevice ? '100%' : '80%'
-    public title: string = 'Global Warming: Monthly Temperature Anomalies'
+    public title: string = Browser.isDevice ? 'Monthly Temperature Anomalies' : 'Global Warming: Monthly Temperature Anomalies'
+    public titleStyle: Object = { textAlignment: Browser.isDevice ? 'Near' : 'Center' };
     constructor() {
         this.loadSeriesData();
 

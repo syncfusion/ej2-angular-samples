@@ -18,6 +18,18 @@
     font-weight: normal;
     font-style: normal;
 }
+
+.material3 #gridheadersample .e-gridheader .e-headercelldiv span.e-icons,
+.material3-dark #gridheadersample .e-gridheader .e-headercelldiv span.e-icons,
+.fluent #gridheadersample .e-gridheader .e-headercelldiv span.e-icons,
+.fluent-dark #gridheadersample .e-gridheader .e-headercelldiv span.e-icons,
+.tailwind #gridheadersample .e-gridheader .e-headercelldiv span.e-icons,
+.tailwind-dark #gridheadersample .e-gridheader .e-headercelldiv span.e-icons,
+.tailwind3 #gridheadersample .e-gridheader .e-headercelldiv span.e-icons,
+.tailwind3-dark #gridheadersample .e-gridheader .e-headercelldiv span.e-icons {
+    vertical-align: sub;
+}
+
 .e-icon-calender::before { 
     font-family: 'ej2-headertemplate';
     content: "\e960"; }
@@ -42,4 +54,9 @@
 }
 #gridheadersample .e-icon-calender, #gridheadersample .e-icon-userlogin, #gridheadersample .e-location, #gridheadersample .e-description, #gridheadersample .e-mail, #gridheadersample .e-phone {
     margin-right: 5px;
+}
+.highcontrast .e-grid td.e-rowcell.e-selectionbackground.e-active .e-icons,
+.fluent2-highcontrast .e-grid .e-row:hover .e-icons,
+.fluent2-highcontrast .e-grid td.e-rowcell.e-selectionbackground.e-active .e-icons {
+    color: black;
 }

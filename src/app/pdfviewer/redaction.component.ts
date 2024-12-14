@@ -1,13 +1,13 @@
-import { Component, ViewEncapsulation, OnInit, ViewChild, Inject } from '@angular/core';
-import { PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ToolbarService, NavigationService, TextSelectionService, PrintService, DynamicStampItem, SignStampItem, StandardBusinessStampItem, PageChangeEventArgs, LoadEventArgs, AnnotationService, FormDesignerService, PageOrganizerService, TextSearchService, TextSelection, PdfViewerModule, AnnotationAddEventArgs, AnnotationRemoveEventArgs, PdfViewer , CreateArgs } from '@syncfusion/ej2-angular-pdfviewer';
-import { ToolbarComponent, MenuItemModel, ToolbarModule, MenuModule, AppBar, AppBarModule, ChangeEventArgs } from '@syncfusion/ej2-angular-navigations';
-import { AnimationSettingsModel, Dialog, DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
+import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
+import { PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ToolbarService, NavigationService, TextSelectionService, PrintService, PageChangeEventArgs, LoadEventArgs, AnnotationService, FormDesignerService, PageOrganizerService, TextSearchService, PdfViewerModule, AnnotationAddEventArgs, AnnotationRemoveEventArgs, CreateArgs } from '@syncfusion/ej2-angular-pdfviewer';
+import { ToolbarComponent, ToolbarModule, MenuModule, AppBarModule, ChangeEventArgs } from '@syncfusion/ej2-angular-navigations';
+import { DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
 import { ClickEventArgs } from '@syncfusion/ej2-buttons';
-import { ButtonComponent, ButtonModule, SwitchComponent, SwitchModule } from '@syncfusion/ej2-angular-buttons';
+import { ButtonComponent, ButtonModule, SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
-import { RemovingEventArgs, UploaderComponent, UploaderModule } from '@syncfusion/ej2-angular-inputs';
+import { UploaderComponent, UploaderModule } from '@syncfusion/ej2-angular-inputs';
 /**
  * Default PdfViewer Controller
  */
@@ -52,6 +52,7 @@ export class RedactionComponent implements OnInit {
     @ViewChild('cancelButton')
     public cancelButton: ButtonComponent;
     public showCloseIcon: Boolean = true;
+    public height = '482px';
     public target = '#e-pv-redact-sb-panel';
     public width = '477px';
     public visible: Boolean = false;
@@ -98,7 +99,8 @@ export class RedactionComponent implements OnInit {
     }
 
     public document: string = "https://cdn.syncfusion.com/content/pdf/programmatical-annotations.pdf";
-    public service: string = "https://ej2services.syncfusion.com/angular/development/api/pdfviewer";
+    public resource: string = "https://cdn.syncfusion.com/ej2/27.2.2/dist/ej2-pdfviewer-lib"; 
+    public url: string = "https://ej2services.syncfusion.com/angular/development/api/pdfviewer/Redaction";
 
     //zoom value
     public data: string[] = ['10%', '25%', '50%', '75%', '100%', '200%', '400%'];
@@ -242,11 +244,62 @@ export class RedactionComponent implements OnInit {
     }
     //To download the redacted pdf 
     public download(e: ClickEventArgs): void {
+        this.pdfviewerControl.saveAsBlob().then((blob) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(blob);
+            reader.onload = (e: ProgressEvent<FileReader>) => {
+              const base64String = e.target?.result;
+              const xhr = new XMLHttpRequest();
+              xhr.open('POST', this.url, true);
+              xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
+              const requestData = JSON.stringify({ base64String });
+              xhr.onload = () => {
+                if (xhr.status === 200) {
+                  const responseBase64 = xhr.responseText.split('base64,')[1];
+                  if (responseBase64) {
+                    const blob = this.createBloburl(responseBase64, 'application/pdf');
+                    const blobUrl = URL.createObjectURL(blob);
+                    this.downloadDocument(blobUrl);
+                  } else {
+                    console.error('Invalid base64 response.');
+                  }
+                } else {
+                  console.error('Download failed:', xhr.statusText);
+                }
+              };
+              xhr.onerror = () => {
+                console.error('An error occurred during the download:', xhr.statusText);
+              };
+              xhr.send(requestData);
+            };
+          }).catch((error) => {
+            console.error('Error saving Blob:', error);
+          });
+    }
+
+    public createBloburl(base64String: string, contentType: string):Blob{
+        const sliceSize = 512;
+        const byteCharacters = atob(base64String);
+        const byteArrays: Uint8Array[] = [];
+        for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+            const slice = byteCharacters.slice(offset, offset + sliceSize);
+            const byteNumbers = Array.from(slice, char => char.charCodeAt(0));
+            byteArrays.push(new Uint8Array(byteNumbers));
+        }
+        return new Blob(byteArrays, { type: contentType });
+    }
+
+    public downloadDocument(blobUrl: string):void{
+        const anchorElement = document.createElement('a');
+        anchorElement.href = blobUrl;
+        anchorElement.target = '_parent';
         this.pdfviewerControl.fileName = this.fileName;
-        this.pdfviewerControl.downloadFileName = this.fileName;
-        this.pdfviewerControl.serverActionSettings.download = "Redaction";
-        this.pdfviewerControl.download();
-        this.pdfviewerControl.serverActionSettings.download = "Download";
+        const downloadFileName = this.pdfviewerControl.fileName || 'downloadedFile.pdf';
+        anchorElement.download = downloadFileName.endsWith('.pdf') ? downloadFileName : `${downloadFileName}.pdf`;
+        document.body.appendChild(anchorElement);
+        anchorElement.click();
+        document.body.removeChild(anchorElement);
+        URL.revokeObjectURL(blobUrl);
     }
 
     //Method for moving to previous page
@@ -307,22 +360,33 @@ export class RedactionComponent implements OnInit {
 
     //To redact the pdf in server side using the button click event
     public redaction(): void {
-        this.pdfviewerControl.serverActionSettings.download = "Redaction";
-        let data: any;
-        let base64data: any;
-        this.pdfviewerControl.saveAsBlob().then((value) => {
-            data = value;
-            var reader = new FileReader();
-            reader.readAsDataURL(data);
-            reader.onload = () => {
-                base64data = reader.result;
-                this.pdfviewerControl.load(base64data, null);
-            };
-
-        });
-        this.redactionCount = 0;
-        this.updateRedaction();
-        this.pdfviewerControl.serverActionSettings.download = "Download";
+        if (this.redactionCount > 0) {
+            this.pdfviewerControl.saveAsBlob().then((blob) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(blob);
+                reader.onload = (e: ProgressEvent<FileReader>) => {
+                    const base64String = e.target?.result;
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST', this.url, true);
+                    xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
+                    const requestData = JSON.stringify({ base64String });
+                    xhr.onload = () => {
+                        if (xhr.status === 200) {
+                            this.pdfviewerControl.load(xhr.responseText, null);
+                        }
+                        else {
+                            console.error('Redaction failed:', xhr.statusText);
+                        }
+                    };
+                    xhr.onerror = function () {
+                        console.error('An error occurred during the redaction:', xhr.statusText);
+                    };
+                    xhr.send(requestData);
+                }
+            });
+            this.redactionCount = 0;
+            this.updateRedaction();
+        }
     }
 
 }

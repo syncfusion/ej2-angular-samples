@@ -94,7 +94,9 @@ export class EventsDiagramComponent {
     }
 
     public selectionChange(args: ISelectionChangeEventArgs): void {
-        this.getEventDetails(args);
+        if (args.state === 'Changed') {
+            this.getEventDetails(args);
+        }
     }
 
     public sizeChange(args: ISizeChangeEventArgs): void {
@@ -138,7 +140,9 @@ export class EventsDiagramComponent {
     }
 
     public collectionChange(args: ICollectionChangeEventArgs): void {
-        this.getEventDetails(args);
+        if (args.state === 'Changed') {
+            this.getEventDetails(args);
+        }
     }
 
     public mouseEnter(args: IMouseEventArgs): void {

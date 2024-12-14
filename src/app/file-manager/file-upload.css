@@ -12,7 +12,7 @@
 
 #openBtn {
     position: absolute;
-    top: 24px;
+    top: 18px;
     left: 43%;
 }
 
@@ -40,6 +40,17 @@
     top: 16px;
 }
 
-.fluent2 .fileupload .e-file-select-wrap {
+.ej2-new #openBtn {
+   top: 148px;
+ }
+
+  @media (max-width: 768px) {
+    .ej2-new #openBtn {
+     top: 274px !important;
+     left: 35%;
+    }
+  }
+
+.fileupload .e-file-select-wrap {
     padding: 20px 0 20px 20px;
 }

@@ -25,6 +25,7 @@ export class DetailTemplateComponent implements OnInit {
   public pageSettings: Object;
   public headerText: Record<string, any>[] = [];
   public cardSettings: CardSettingsModel;
+  public statusColumns: Object[];
   constructor() {
 
   }
@@ -36,6 +37,12 @@ export class DetailTemplateComponent implements OnInit {
     this.cardSettings = {
       headerField: 'Id',
     };
+    this.statusColumns = [
+      { headerText: 'Open', keyField: 'Open' },
+      { headerText: 'In Progress', keyField: 'InProgress' },
+      { headerText: 'Testing', keyField: 'Testing' },
+      { headerText: 'Done', keyField: 'Close' }
+    ];
   }
 
   public detailDataBound(args: any) {

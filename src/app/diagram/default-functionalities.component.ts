@@ -557,7 +557,7 @@ export class FlowDiagramComponent {
     for (let i: number = 0; i < this.diagram.selectedItems.nodes.length; i++) {
       let node = this.diagram.selectedItems.nodes[i];
       if (node.constraints & NodeConstraints.Drag) {
-        node.constraints = NodeConstraints.PointerEvents | NodeConstraints.Select;
+        node.constraints = NodeConstraints.PointerEvents | NodeConstraints.Select | NodeConstraints.ReadOnly;
         isChecked = true;
       } else {
         node.constraints = NodeConstraints.Default;
@@ -567,7 +567,7 @@ export class FlowDiagramComponent {
     for (let j: number = 0; j < this.diagram.selectedItems.connectors.length; j++) {
       let connector = this.diagram.selectedItems.connectors[j];
       if (connector.constraints & ConnectorConstraints.Drag) {
-        connector.constraints = ConnectorConstraints.PointerEvents | ConnectorConstraints.Select;
+        connector.constraints = ConnectorConstraints.PointerEvents | ConnectorConstraints.Select | ConnectorConstraints.ReadOnly;
         isChecked = true;
       } else {
         connector.constraints = ConnectorConstraints.Default;

@@ -1,0 +1,44 @@
+<div class="control-section">
+    <div class="contextmenu-control">
+      <div id="contextmenutarget">{{content}}</div>
+      <ejs-contextmenu #contextmenu
+        cssClass="e-contextMenu-template"
+        id="contextmenu"
+        (created)="onCreated()"
+        [target]="'#contextmenutarget'"
+        [items]="data"
+        [itemTemplate]="itemTemplate"
+        (beforeOpen)="addTemplateClass($event)"
+      >
+        <ng-template #itemTemplate let-data>
+          <div class="menu-wrapper">
+            <span class="{{data.iconCss}} icon-right"></span>
+            <div class="text-content">
+              <span class="text">{{ data.answerType }}</span>
+              <span class="description">{{ data.description }}</span>
+            </div>
+          </div>
+        </ng-template>
+      </ejs-contextmenu>
+    </div>
+    <div id="action-description">
+      <p>This sample demonstrates the template functionality of the ContextMenu. Right-click or touch and hold the designated rectangular area to open the ContextMenu, which displays customized items using a template.</p>
+    </div>
+    <div id="description">
+      <p>
+        ContextMenu is a graphical user interface that appears on a right-click or touch-and-hold action. It supports displaying single-level or multi-level menus and allows for customizing the menu items through templates.
+      </p>
+      <p>
+        In this demo, <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/context-menu/#itemtemplate">itemTemplate
+        </a></code> property  is used to enable template support for customizing ContextMenu items. Each menu item is customized using a template to include icons, descriptive text, and additional content, offering a flexible and user-friendly interface.
+      </p>
+      <p>
+        In mobile, the sub menu opens in a single layer with option for switching back to parent menu.
+      </p>
+      <p>
+        More information about ContextMenu can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/context-menu/getting-started">documentation section</a>.
+      </p>
+    </div>
+  </div>
+  

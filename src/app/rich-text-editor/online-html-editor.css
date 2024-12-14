@@ -130,16 +130,18 @@ border-left: none;
   background-color: #303030;
   color: #fff;
 }
-.tailwind-dark .CodeMirror-gutters, .tailwind-dark .CodeMirror {
+.tailwind-dark .CodeMirror-gutters, .tailwind-dark .CodeMirror,
+.tailwind3-dark .CodeMirror-gutters, .tailwind3-dark .CodeMirror {
   background-color: #1F2937;
   color: #fff;
 }
-.highcontrast .CodeMirror-gutters, .highcontrast .CodeMirror {
+.highcontrast .CodeMirror-gutters, .highcontrast .CodeMirror,
+.fluent2-highcontrast .CodeMirror-gutters, .fluent2-highcontrast .CodeMirror {
   background-color: #000000;
   color: #fff;
 }
 
-.fabric-dark .title, .bootstrap5-dark .title,.bootstrap5\.3-dark .title, .bootstrap-dark .title, .fluent-dark .title,.fluent2-dark .title, .material3-dark .title
-.material-dark .title, .tailwind-dark .title, .highcontrast .title, .fluent2-highcontrast .CodeMirror-scroll {
+.fabric-dark .title, .bootstrap5-dark .title,.bootstrap5\.3-dark .title, .bootstrap-dark .title, .fluent-dark .title, .fluent2-dark .title, .material3-dark .title
+.material-dark .title, .tailwind-dark .title, .tailwind3-dark .title, .highcontrast .title, .fluent2-highcontrast .title {
   color: #fff;
 }

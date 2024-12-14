@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild, OnDestroy } from '@angular/core';
-import { View, EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService, NavigatingEventArgs, ActionEventArgs, ScheduleComponent, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { View, EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService, NavigatingEventArgs, ActionEventArgs, ScheduleComponent, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { HttpTransportType, HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
 import { scheduleData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -9,7 +9,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     // tslint:disable-next-line:component-selector
     selector: 'control-content',
     templateUrl: 'realtime-binding.html',
-    providers: [DayService, WeekService, WorkWeekService, MonthService, ResizeService, DragAndDropService],
+    providers: [DayService, WeekService, AgendaService, WorkWeekService, MonthService, ResizeService, DragAndDropService],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]

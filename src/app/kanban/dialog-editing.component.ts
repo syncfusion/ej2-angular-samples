@@ -1,4 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { extend } from '@syncfusion/ej2-base';
 import { KanbanComponent, CardSettingsModel, KanbanModule } from '@syncfusion/ej2-angular-kanban';
 import { kanbanData } from './data';
@@ -14,11 +15,12 @@ import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
   templateUrl: 'dialog-editing.html',
   encapsulation: ViewEncapsulation.None,
   standalone: true,
-  imports: [ KanbanModule, NgClass, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule, ButtonModule, TextBoxModule]
+  imports: [ KanbanModule, NgClass, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule, ButtonModule, TextBoxModule, CommonModule ]
 })
 export class DialogEditingComponent {
   @ViewChild('kanbanObj') kanbanObj: KanbanComponent;
   public kanbanData: Object[] = extend([], kanbanData, null, true) as Object[];
+  public enableContent: boolean = true;
   public cardSettings: CardSettingsModel = {
     contentField: 'Summary',
     headerField: 'Id'
@@ -37,6 +39,12 @@ export class DialogEditingComponent {
       Assignee: 'Andrew Fuller', Estimate: 0, Tags: '', Summary: ''
     };
     this.kanbanObj.openDialog('Add', cardDetails);
+  }
+  onDialogClose() {
+    this.enableContent = false;
+  }
+  onDialogOpen() {
+    this.enableContent = true;
   }
 }
 

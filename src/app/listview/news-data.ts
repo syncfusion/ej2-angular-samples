@@ -24,23 +24,23 @@ export let newsData: any = [
     },
     {
         'title': 'Must Reads: 5 Big Data E-books to upend your development',
-        'description': 'Did you know our first e-book was published in May 2012? jQuery Succinctly was the start of over...',
-        'content': '<p>Did you know our first e-book was published in May 2012? jQuery Succinctly was'
+        'description': 'Did you know our first e-book was published in May 2012? jQuery Succinctly<sup>®</sup> was the start of over...',
+        'content': '<p>Did you know our first e-book was published in May 2012? jQuery Succinctly<sup>®</sup> was'
         + 'the start of over one hundred free e-books written to help developers get free access to'
         + 'software development resources and strategies. Capturing and understanding big data is by'
         + 'far one of the most-asked-about topics across both our support and learning'
-        + 'sites.</p><p>Ranked in order of popularity, here are Succinctly e-books related to big data'
+        + 'sites.</p><p>Ranked in order of popularity, here are Succinctly<sup>®</sup> e-books related to big data'
         + 'to add to your reading list:</p><p>5. Hadoop Succinctly</p><p>An Apache open source project'
         + ', Hadoop stores huge amounts of data in safe, reliable storage and runs complex queries'
         + 'over data in an efficient way. It is at the core of a whole host of the most popular big'
         + 'data tools. Mastering Hadoop ensures you get the best out of all these tools and better'
-        + 'insight from your data. Elton Stoneman’s Hadoop Succinctly explains how Hadoop works, what'
+        + 'insight from your data. Elton Stoneman’s Hadoop Succinctly<sup>®</sup> explains how Hadoop works, what'
         + 'goes on in the cluster, demonstrating how to move data in and out of Hadoop, and how to'
         + 'query it efficiently. It also walks through a Java MapReduce example, illustrates how to'
         + 'write the same query in Python and .NET, and discusses the wider Hadoop ecosystem.</p><p>4. '
         + 'Cassandra Succinctly</p><p>Apache Cassandra is an open-source distributed database system'
         + 'noted for its consistency, its ability to run on commodity hardware, and its easy'
-        + 'deployment to cloud infrastructure. With Cassandra Succinctly by Marko Švaljek, you will'
+        + 'deployment to cloud infrastructure. With Cassandra Succinctly<sup>®</sup> by Marko Švaljek, you will'
         + 'learn the architecture behind Cassandra that makes it a reliable system, including how'
         + 'hashes are used to identify where data is stored, how choosing the right replication factor'
         + 'can enhance or hinder performance, and how the system handles updating and deleting data.'
@@ -55,7 +55,7 @@ export let newsData: any = [
         + 'Succinctly</p><p>Neural networks are an exciting field of software development used to'
         + 'calculate outputs from input data. While the idea seems simple enough, the implications of'
         + 'such networks are staggering—think optical character recognition, speech recognition, and'
-        + 'regression analysis. With Neural Networks Using C# Succinctly by James McCaffrey, you\'ll'
+        + 'regression analysis. With Neural Networks Using C# Succinctly<sup>®</sup> by James McCaffrey, you\'ll'
         + 'learn how to create your own neural network to solve classification problems, or problems'
         + 'where the outcomes can only be one of several values. Learn about encoding and normalizing'
         + 'data, activation functions and how to choose the right one, and ultimately how to train a'
@@ -68,17 +68,17 @@ export let newsData: any = [
         + 'favorite in the comments!</p>'
     },
     {
-        'title': 'The Syncfusion Global License: Your Questions, Answered ',
-        'description': 'Syncfusion recently hosted a webinar to cover the ins and outs of the Syncfusion global...',
-        'content': '<p>Syncfusion recently hosted a webinar to cover the ins and outs of the'
-        + 'Syncfusion global license. We received many questions about the license, and our client'
+        'title': 'The Syncfusion<sup>®</sup> Global License: Your Questions, Answered ',
+        'description': 'Syncfusion<sup>®</sup> recently hosted a webinar to cover the ins and outs of the Syncfusion<sup>®</sup> global...',
+        'content': '<p>Syncfusion<sup>®</sup> recently hosted a webinar to cover the ins and outs of the'
+        + 'Syncfusion<sup>®</sup> global license. We received many questions about the license, and our client'
         + 'relations team, led by Pat Staley, has provided answers. Read on for a full overview of the'
-        + 'Syncfusion global license, or visit Syncfusion’s YouTube channel to watch the webinar in'
+        + 'Syncfusion<sup>®</sup> global license, or visit Syncfusion’s YouTube channel to watch the webinar in'
         + 'full.</p><p>Q: Regarding the free license for companies with 5 developers or less than $1m'
         + 'in annual revenue: when does that license expire?</p><p>A: The Community License has'
         + 'several criteria that make it distinct from the global license, so there is no single'
         + 'answer to that question. Any customers with questions about the Community License should'
-        + 'contact a Syncfusion sales representative.</p><p>Q: Our business line in health care'
+        + 'contact a Syncfusion<sup>®</sup> sales representative.</p><p>Q: Our business line in health care'
         + 'requires that we obtain business agreements with contractors and vendors. Has Syncfusion'
         + 'signed these kinds of BAs in the past?</p><p>A: We work with many companies that request'
         + 'such documents, and we can always put you in touch with our legal team for'
@@ -88,7 +88,7 @@ export let newsData: any = [
         + 'situations like this, we work with our clients to reach the best solution; there is no'
         + 'single answer.</p><p>Q: Is there a time limit?</p><p>A: Our license model reflects a 1-year'
         + 'term unless you make other arrangements during the sales process.</p><p>Q: Can I use my'
-        + 'global license to create software that has Syncfusion controls embedded within it and sell'
+        + 'global license to create software that has Syncfusion<sup>®</sup> controls embedded within it and sell'
         + 'this software to my clients, or does that require a reseller or runtime license?</p><p>A:'
         + 'If you are providing an end-product to your client, and additional coding will not be'
         + 'needed, you may sell your software to your client with just the global license. If the'
@@ -123,23 +123,23 @@ export let newsData: any = [
         + 'The CRD is your trusted advisor within Syncfusion. You will have direct contact with a'
         + 'representative who can assist with service, support, and product education, and who can be'
         + 'the ally you need for your development.</p><p>Q:  If I have a flat license, do I have to'
-        + 'update Syncfusion with users I need added to the portal?</p><p>A:  Syncfusion does not need'
+        + 'update Syncfusion<sup>®</sup> with users I need added to the portal?</p><p>A:  Syncfusion<sup>®</sup> does not need'
         + 'to be notified when a user needs to be added.</p><p>Q:  Why would I want to create a new'
         + 'portal each time I start a new project?</p><p>A:  Not only is this a great organizational'
         + 'feature that keeps your projects autonomous from one another, each portal can support a'
         + 'different product version, allowing you to upgrade each project as needed. There is no'
         + 'co-dependency here.</p><p>Q:   Do I have to assign a platform or component to each project?'
         + 'What if I have multiple components being used on one project?</p><p>A:  The only time'
-        + 'Syncfusion will ask you to associate a platform or component with a project is during'
+        + 'Syncfusion<sup>®</sup> will ask you to associate a platform or component with a project is during'
         + 'incident creation. You can use multiple controls or components on one project, but only if'
         + 'the components are using the same product version. As mentioned, the portal can only'
         + 'support one product version at a time.</p><p>'
     },
     {
-        'title': 'Interview with Application Security in .NET Succinctly Author Stan Drapkin ',
-        'description': 'The following is a short interview with Succinctly series author Stan Drapkin, whose latest book...',
-        'content': '<p>The following is a short interview with Succinctly series author Stan Drapkin, whose latest book'
-        + 'Application Security in .NET Succinctly was published on Tuesday, October 12. You can download the book'
+        'title': 'Interview with Application Security in .NET Succinctly<sup>®</sup> Author Stan Drapkin ',
+        'description': 'The following is a short interview with Succinctly<sup>®</sup> series author Stan Drapkin, whose latest book...',
+        'content': '<p>The following is a short interview with Succinctly<sup>®</sup> series author Stan Drapkin, whose latest book'
+        + 'Application Security in .NET Succinctly<sup>®</sup> was published on Tuesday, October 12. You can download the book'
         + 'here.</p><p>What should people know about application security in the .NET Framework? Why is it important?'
         + '</p><p>Microsoft’s .NET Framework ushered a new era of rapid application development that was almost as powerful as'
         + 'C/C++ development on one hand, but did not have as many sharp edges and opportunities to "shoot yourself in the'
@@ -200,7 +200,7 @@ export let newsData: any = [
         + 'mobile application. My initial thinking was to do something like a list view within a list view, or a custom grid'
         + 'with rows and columns containing buttons within each cell. However, Syncfusion’s data grid control for'
         + 'Xamarin.Forms provided an easy out-of-the-box solution to do what we needed, and allowed us to customize a range of'
-        + 'features to meet the client’s requirements.</p><p>With the release of Essential Studio 2017 Volume 3 Service Pack 2'
+        + 'features to meet the client’s requirements.</p><p>With the release of Essential Studio<sup>®</sup> 2017 Volume 3 Service Pack 2'
         + '(version 15.3.0.33), a StartPageIndex property was added, which allows you to specify which page in a PDF document'
         + 'you want the data grid control to be rendered to.</p><p>Previous to this release, the data grid could only be'
         + 'rendered to the first page of a PDF document. This wasn’t a bad thing, but if you tried to create a PDF document'
@@ -211,8 +211,8 @@ export let newsData: any = [
         + 'show how to implement a .NET Standard library into your project (see this post from Nick Randolph in particular).'
         + 'There are also blog posts that show how to install PCL NuGet packages into .NET Standard libraries (see this post'
         + 'from James Montemagno).</p><p>Once the .NET Standard library was up and running, it was time to take a look at'
-        + 'Syncfusion’s data grid control. To use it, you need to import the appropriate Syncfusion NuGet packages.'
-        + 'Implementing the control is relatively easy. The Syncfusion documentation is excellent. With small code snippets,'
+        + 'Syncfusion’s data grid control. To use it, you need to import the appropriate Syncfusion<sup>®</sup> NuGet packages.'
+        + 'Implementing the control is relatively easy. The Syncfusion<sup>®</sup> documentation is excellent. With small code snippets,'
         + 'getting started and testing out the controls is a case of just reading through the documentation, copying the code'
         + 'snippet, and playing around to suit your needs. I won’t cover creating the data grid control or creating the model'
         + 'here, as those are covered extensively in the getting started documentation.</p><p>What I want to focus on is the'
@@ -278,7 +278,7 @@ export let newsData: any = [
         'description': 'The American Cancer Society reports that each year collectively more than one million people...',
         'content': '<p>The American Cancer Society reports that each year collectively more than one'
         + 'million people participate in nearly 300 Making Strides Against Breast Cancer events in the'
-        + 'US, raising at least $60 million. That’s why this weekend a number of Syncfusion employees'
+        + 'US, raising at least $60 million. That’s why this weekend a number of Syncfusion<sup>®</sup> employees'
         + 'from the client relations, marketing, and sales teams will lace up their shoes to'
         + 'participate in Raleigh’s Making Strides Against Breast Cancer event, happening this'
         + 'Saturday morning, October 14, at Midtown Park Event Stage.</p><p>Team Brett-y and the Jets,'

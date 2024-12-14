@@ -1,4 +1,4 @@
-    <div class="col-lg-8 control-section">
+    <div class="col-lg-9 control-section">
         <ejs-treegrid #treegrid [dataSource]='data' height='400' childMapping='subtasks' [treeColumnIndex]='1'   [editSettings]='editSettings' [toolbar]='toolbar'>
             <e-columns>
                 <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='90' textAlign='Right' [validationRules]='taskidrules'></e-column>
@@ -13,12 +13,12 @@
                     <div class="property-panel-header">Properties </div>
             <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
                 <tr style="height: 50px">
-                    <td style="width: 30%">
+                    <td>
                         <div>Edit Mode</div>
                     </td>
-                    <td style="width: 50%;padding-right: 10px">
+                    <td style="width: 100%;padding-right: 10px">
                         <div id='columnddl'>
-                              <ejs-dropdownlist id='ddlelement' width= '140px' [dataSource]='d1data' [fields]='ddlfields' value='CellEditing'  (change)="onChange($event)"></ejs-dropdownlist>   
+                              <ejs-dropdownlist id='ddlelement' width= '138px' [dataSource]='d1data' [fields]='ddlfields' value='CellEditing'  (change)="onChange($event)"></ejs-dropdownlist>   
                        </div>
                     </td>
                  </tr>
@@ -75,6 +75,12 @@
     .fluent2-highcontrast {
         #columnddl .e-input-group {
             width: 130px !important;
+        }
+    }
+
+    @media (min-width: 990px) and (max-width: 1300px){
+        #columnddl {
+            padding-left: 15px;
         }
     }
 </style>

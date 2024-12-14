@@ -138,14 +138,18 @@
 .material3 #letterAvatarList .listWrapper .e-avatar,
 .material3-dark #letterAvatarList .listWrapper .e-avatar,
 .tailwind #letterAvatarList .listWrapper .e-avatar,
-.tailwind-dark #letterAvatarList .listWrapper .e-avatar {
+.tailwind3 #letterAvatarList .listWrapper .e-avatar,
+.tailwind-dark #letterAvatarList .listWrapper .e-avatar,
+.tailwind3-dark #letterAvatarList .listWrapper .e-avatar {
     top: calc(100% - 45px);
 }
 
 .e-bigger.material3 #letterAvatarList .listWrapper .e-avatar,
 .e-bigger.material3-dark #letterAvatarList .listWrapper .e-avatar,
 .e-bigger.tailwind #letterAvatarList .listWrapper .e-avatar,
-.e-bigger.tailwind-dark #letterAvatarList .listWrapper .e-avatar {
+.e-bigger.tailwind3 #letterAvatarList .listWrapper .e-avatar,
+.e-bigger.tailwind-dark #letterAvatarList .listWrapper .e-avatar,
+.e-bigger.tailwind3-dark #letterAvatarList .listWrapper .e-avatar {
     top: calc(100% - 48px);
 }
 

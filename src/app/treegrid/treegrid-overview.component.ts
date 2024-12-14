@@ -50,7 +50,7 @@ export class TreeGridOverviewComponent implements OnInit {
             div.appendChild(imgElement);
             let cellValue: HTMLElement = document.createElement('DIV');
             cellValue.innerHTML = args.cell.querySelector('.e-treecell').innerHTML;
-            cellValue.setAttribute('style', 'display:inline;padding-left:6px');
+            cellValue.setAttribute('style', 'display:inline;padding-left:6px;vertical-align: middle');
             args.cell.querySelector('.e-treecell').innerHTML = '';
             args.cell.querySelector('.e-treecell').appendChild(div);
             args.cell.querySelector('.e-treecell').appendChild(cellValue);
@@ -61,4 +61,7 @@ export class TreeGridOverviewComponent implements OnInit {
         return data[field] / 1000000;
     }
 
+    getFlagPath(data: any): string {
+        return `assets/treegrid/images/${data.parentItem ? data.parentItem.name : data.name}.png`;
+    }
 }

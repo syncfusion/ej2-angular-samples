@@ -1,6 +1,7 @@
+
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataManager } from '@syncfusion/ej2-data';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
-import { Component, OnInit, ViewChild } from '@angular/core';
 import { resourceAllocationData, resourceAllocationResources } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
@@ -32,6 +33,8 @@ export class GanttResourcesComponent implements OnInit {
     public taskType: string;
     public dropdownlistObj?: DropDownList| any;
     public value?: any;
+    public existingResourceIds?: any;
+    public selectedValue?: any;
     public ngOnInit(): void {
         this.data = resourceAllocationData;
         this.resources = resourceAllocationResources;
@@ -130,42 +133,70 @@ export class GanttResourcesComponent implements OnInit {
           }
       }
     };
-
-    public actionBegin (args: any): void {
-      if (args.requestType === 'beforeOpenEditDialog' || args.requestType === 'beforeOpenAddDialog') {
-        args.Resources.selectionSettings = {};
-        args.Resources.columns.splice(0, 1);
+    public cellEdit (args: any): void {
+      // Restrict editing based on row data
+      if (args.rowData.TaskID === 1 || args.rowData.TaskID === 5) { // Example: Prevent editing Task ID 1
+        args.cancel = true; // Cancel editing for this specific cell
       }
-    };
-
-    public editParams(): object {
-      return {
-        read: () => {
-          this.value = this.dropdownlistObj ? this.dropdownlistObj.value : null;
-          if (this.value === null) {
-            this.value = [];
+    }
+    public actionBegin (args: any): void {
+        if (args.requestType === 'beforeOpenEditDialog' || args.requestType === 'beforeOpenAddDialog') {
+          // Restrict editing based on row data for dialog
+          if (args.rowData.TaskID === 1 || args.rowData.TaskID === 5) {
+            args.cancel = true; // Cancel editing for this specific row dialog
           }
-          const gantt: any = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
-          gantt.treeGridModule.currentEditRow[gantt.taskFields.resourceInfo] = [this.value];
-          return this.value;
-        },
-        destroy: () => {
-          if (this.dropdownlistObj) {
-            this.dropdownlistObj.destroy();
-          }
-        },
-        write: (args: any) => {
-          const gantt: any = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
-          gantt.treeGridModule.currentEditRow = {};
-          this.dropdownlistObj = new DropDownList({
-            dataSource: new DataManager(gantt.resources),
-            fields: { text: gantt.resourceFields.name, value: gantt.resourceFields.id },
-            enableRtl:gantt.enableRtl,
-            popupHeight: '350px',
-            value: gantt.treeGridModule.getResourceIds(args.rowData)
-          });
-          this.dropdownlistObj.appendTo(args.element as HTMLElement);
+          args.Resources.selectionSettings = {};
+          args.Resources.columns.splice(0, 1);
         }
       };
-    }
+      public actionComplete (args: any): void {
+        if (args.requestType === 'add' && !args.data['TaskName']) {
+          var taskName = 'Task Name ' + args.data['TaskID'];
+          args.data['TaskName'] = taskName;
+          args.data['ganttProperties'].taskName = taskName;
+          args.data['taskData'].TaskName = taskName;
+        }
+      };
+      public editParams(): object {
+        return {
+          read: () => {
+            const gantt: any = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
+            // Get the selected value from the dropdown
+            this.value = this.dropdownlistObj ? this.dropdownlistObj.value : null;
+            if (this.value === null) {
+              // If no value is selected, retain the existing resource(s)
+              this.value = gantt.treeGridModule.currentEditRow[gantt.taskFields.resourceInfo];
+            }
+            else {
+              // Update the resource info with the selected value
+              gantt.treeGridModule.currentEditRow[gantt.taskFields.resourceInfo] = [this.value];
+            }
+            return this.value;
+          },
+          destroy: () => {
+            if (this.dropdownlistObj) {
+              this.dropdownlistObj.destroy();
+            }
+          },
+          write: (args: any) => {
+            const gantt: any = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
+            gantt.treeGridModule.currentEditRow = {};
+
+             // Retrieve the existing resource(s) from the row data or set default
+             this.existingResourceIds = gantt.treeGridModule.getResourceIds(args.rowData);
+             this.selectedValue = (this.existingResourceIds && this.existingResourceIds.length > 0) ? this.existingResourceIds[0] : null;
+
+            this.dropdownlistObj = new DropDownList({
+              dataSource: new DataManager(gantt.resources),
+              fields: { text: gantt.resourceFields.name, value: gantt.resourceFields.id },
+              enableRtl:gantt.enableRtl,
+              popupHeight: '350px',
+              // Set the existing resource(s) as the selected value
+              value: this.selectedValue
+            });
+            // Append the dropdown to the element
+            this.dropdownlistObj.appendTo(args.element as HTMLElement);
+          }
+        };
+      }
 }

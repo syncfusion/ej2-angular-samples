@@ -21,6 +21,7 @@ import { MentionModule } from '@syncfusion/ej2-angular-dropdowns';
 @Component({
     selector: 'control-content',
     templateUrl: 'mail-merge.html',
+    styleUrls: ['mail-merge.css'],
     providers: [
         ToolbarService,
         LinkService,

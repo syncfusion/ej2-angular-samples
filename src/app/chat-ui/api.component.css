@@ -1,0 +1,26 @@
+.api-chatui {
+    height: 500px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.api-chatui .chat_header_icon {
+    background-image: url('src/app/chat-ui/images/public-event.png');
+    background-color: unset;
+}
+
+.chat-property-section .property-panel-content td {
+    padding: 10px 0px;
+}
+
+.chat-property-section .e-multiselect,
+.chat-property-section .e-multi-select-wrapper {
+    padding-left: 0;
+    padding-top: 0;
+}
+
+@media only screen and (max-width: 850px) {
+    .api-chatui {
+        width: 80%;
+    }
+}

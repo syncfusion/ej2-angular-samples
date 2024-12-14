@@ -13,8 +13,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     styleUrls: ['adaptive.style.css'],
     providers: [ PageService, FilterService, SortService, EditService ],
     standalone: true,
-    imports: [NgIf, TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
-
+    imports: [NgIf, TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent],
+    encapsulation: ViewEncapsulation.None
 })
 export class TreeGridAdaptiveComponent implements OnInit {
     constructor(@Inject('sourceFiles') private sourceFiles: any) {

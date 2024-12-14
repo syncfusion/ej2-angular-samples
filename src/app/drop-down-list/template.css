@@ -127,7 +127,8 @@
          color: #2899F5;
     }
 
-    .tailwind-dark .header {
+    .tailwind-dark .header,
+    .tailwind3-dark .header {
         background: #374151;
         color: rgb(255, 255, 255);
     }

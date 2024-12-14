@@ -73,6 +73,8 @@
     .fluent2-dark .e-icon-btn.e-active .e-md-preview::before,
     .tailwind .e-icon-btn.e-active .e-md-preview::before,
     .tailwind-dark .e-icon-btn.e-active .e-md-preview::before,
+    .tailwind3 .e-icon-btn.e-active .e-md-preview::before,
+    .tailwind3-dark .e-icon-btn.e-active .e-md-preview::before,
     .bootstrap5 .e-icon-btn.e-active .e-md-preview::before,
     .bootstrap5\.3 .e-icon-btn.e-active .e-md-preview::before,
     .bootstrap5\.3-dark .e-icon-btn.e-active .e-md-preview::before,
@@ -84,6 +86,8 @@
 
     .tailwind .e-icon-btn .e-md-preview::before,
     .tailwind-dark .e-icon-btn .e-md-preview::before,
+    .tailwind3 .e-icon-btn .e-md-preview::before,
+    .tailwind3-dark .e-icon-btn .e-md-preview::before,
     .bootstrap5 .e-icon-btn .e-md-preview::before,
     .bootstrap5\.3 .e-icon-btn .e-md-preview::before,
     .bootstrap5\.3-dark .e-icon-btn .e-md-preview::before,
@@ -188,12 +192,14 @@
         border-color: #D0BCFF;
     }
     
-    .tailwind .e-rte-custom-tbar-section .char_block.e-active {
+    .tailwind .e-rte-custom-tbar-section .char_block.e-active,
+    .tailwind3 .e-rte-custom-tbar-section .char_block.e-active {
         outline: 1px solid #3730a3;
         border-color: #3730a3;
     }
 
-    .tailwind-dark .e-rte-custom-tbar-section .char_block.e-active {
+    .tailwind-dark .e-rte-custom-tbar-section .char_block.e-active,
+    .tailwind3-dark .e-rte-custom-tbar-section .char_block.e-active {
         outline: 1px solid #22d3ee;
         border-color: #22d3ee;
     }

@@ -181,6 +181,8 @@ export class MultiFormatViewerComponent implements OnInit {
     }
     fileDetails.style.display = "block";
     document.getElementById("fileName").innerHTML = args.filesData[0].name;
+    this.pdfviewerControl.downloadFileName = args.filesData[0].name;
+    this.pdfviewerControl.exportAnnotationFileName = args.filesData[0].name;
     let size = document.getElementById("fileSize") as HTMLElement;
     if((args.filesData[0].size.toString()).length <= 6){
       size.innerHTML = ((args.filesData[0].size/1024).toFixed(1)).toString()+" KB";

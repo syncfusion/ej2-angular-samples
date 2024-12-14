@@ -24,7 +24,7 @@ export class SmaIndicatorComponent {
             type: 'Sma',
             xName: 'x',
             field: 'Close',
-            fill: 'blue',
+            fill: '#6063ff',
             period: this.period,
             seriesName: 'Apple Inc'
         }

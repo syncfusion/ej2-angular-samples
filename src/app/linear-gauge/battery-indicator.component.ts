@@ -83,7 +83,7 @@ export class BatteryIndicatorComponent {
         // custom code end
         this.borderColor = args.gauge.theme.indexOf('Dark') > -1 ? 'white' : '#bfbfbf';
         this.textColor = args.gauge.theme.indexOf('Dark') > -1 || args.gauge.theme.indexOf('HighContrast') > -1 ? '#FFFFFF' : '#000000';
-        if (args.gauge.theme == 'Bootstrap5Dark' || args.gauge.theme == 'TailwindDark') {
+        if (args.gauge.theme == 'Bootstrap5Dark' || args.gauge.theme == 'Tailwind3Dark') {
             this.borderColor = "#4b5563";
         }
         if (args.gauge.theme == 'FabricDark' || args.gauge.theme == 'BootstrapDark' || args.gauge.theme == 'MaterialDark' || args.gauge.theme == 'HighContrast' || args.gauge.theme == 'Material' || args.gauge.theme == 'Fabric' || args.gauge.theme == 'Bootstrap') {
@@ -95,11 +95,11 @@ export class BatteryIndicatorComponent {
         if (args.gauge.theme == 'FluentDark' || args.gauge.theme == 'Fluent2Dark' || args.gauge.theme == 'Fluent2HighContrast') {
             this.borderColor = "#292827";
         }
-        if (args.gauge.theme == 'Bootstrap5' || args.gauge.theme == 'Tailwind') {
+        if (args.gauge.theme == 'Bootstrap5' || args.gauge.theme == 'Tailwind3') {
             this.borderColor = "#E5E7EB";
         }
         args.gauge.annotations[0].content = `<div style="width: 16px;height: 37px;border: 5px solid ${this.borderColor};margin-left:26px;margin-top:57px;border-radius: 6px;" />`;
-        args.gauge.annotations[1].content = `<div style="width: 134px;font-size: 20px;margin-top:-47px;margin-left:147px;color:${this.textColor};">Charged: 75%</div>`;        
+        args.gauge.annotations[1].content = `<div style="width: 137px;font-size: 20px;margin-top:-47px;margin-left:147px;color:${this.textColor};">Charged: 75%</div>`;        
     }
 
     constructor() {

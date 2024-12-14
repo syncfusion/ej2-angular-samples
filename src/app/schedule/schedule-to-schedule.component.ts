@@ -50,11 +50,22 @@ export class MultipleSchedulerComponent {
         if (cellData) {
           sourceSchedule.deleteEvent((args as any).data.Id);
           const resourceDetails = targetSchedule.getResourcesByIndex(cellData.groupIndex);
+          let droppedEventStartTime: Date;
+          let droppedEventEndTime: Date;
+          const eventDuration = new Date(args.data.EndTime).getTime() - new Date(args.data.StartTime).getTime();
+          if (!args.data.IsAllDay) {
+              droppedEventStartTime = new Date(cellData.startTime);
+              droppedEventStartTime.setHours(args.data.StartTime.getHours(), args.data.StartTime.getMinutes());
+              droppedEventEndTime = new Date(droppedEventStartTime.getTime() + eventDuration);
+          } else {
+              droppedEventStartTime = cellData.startTime;
+              droppedEventEndTime = new Date(droppedEventStartTime.getTime() + eventDuration);
+          }
           const eventData = {
             Id: targetSchedule.getEventMaxID(),
             Subject: args.data.Subject,
-            StartTime: args.data.StartTime,
-            EndTime: args.data.EndTime,
+            StartTime: droppedEventStartTime,
+            EndTime: droppedEventEndTime,
             IsAllDay: args.data.IsAllDay,
             Location: args.data.Location,
             Description: args.data.Description,

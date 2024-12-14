@@ -99,3 +99,7 @@ body[class*="material3-dark"].e-bigger .fab-hover:hover .text-container {
 .fab-icon-shopping::before {
     content: "\e70c";
 }
+
+.e-fab.e-btn .e-btn-icon {
+    margin-top: 5px !important;
+}

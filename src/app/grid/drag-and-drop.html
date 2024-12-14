@@ -10,18 +10,18 @@
         <ejs-grid #Grid id='Grid' [dataSource]='srcData' [allowPaging]="true" [pageSettings]="pageOptions" [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbar' [allowSelection]="true" [allowRowDragAndDrop]="true"
             [selectionSettings]="selectionOptions" [rowDropSettings]="srcDropOptions" width="49%" (rowDragStart)='rowDragStart($event)'>
             <e-columns>
-                <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
-                <e-column field='CustomerName' headerText='Customer Name' width='130' [validationRules]='customeridrules'></e-column>
-                <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right' editType='numericedit' [validationRules]='freightrules'></e-column>
+                <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules' type='number'></e-column>
+                <e-column field='CustomerName' headerText='Customer Name' width='130' [validationRules]='customeridrules' type='string'></e-column>
+                <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right' editType='numericedit' [validationRules]='freightrules' type='number'></e-column>
             </e-columns>
             </ejs-grid>
 
             <ejs-grid #DestGrid id='DestGrid' [dataSource]='destData' [allowPaging]="true" [pageSettings]="pageOptions" [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbar' [allowSelection]="true"
                 [allowRowDragAndDrop]="true" [selectionSettings]="selectionOptions" [rowDropSettings]="destDropOptions" width="49%">
                 <e-columns>
-                    <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
-                    <e-column field='CustomerName' headerText='Customer Name' width='130' [validationRules]='customeridrules'></e-column>
-                    <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right' editType='numericedit' [validationRules]='freightrules'></e-column>
+                    <e-column field='OrderID' headerText='Order ID' width='120' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules' type='number'></e-column>
+                    <e-column field='CustomerName' headerText='Customer Name' width='130' [validationRules]='customeridrules' type='string'></e-column>
+                    <e-column field='Freight' headerText='Freight' width='120' format='C2' textAlign='Right' editType='numericedit' [validationRules]='freightrules' type='number'></e-column>
                 </e-columns>
                 </ejs-grid>
     </div>

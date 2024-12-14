@@ -5,13 +5,13 @@
 <div class="control-section">
     <div class='control-wrapper'>
         <div style='padding-top:60px;'>
-            <ejs-multicolumncombobox id='virtual' [dataSource]='records' [fields]='fields' [enableVirtualization]='true' [placeholder]='waterMark' popupHeight='230px' [gridSettings]="gridSettings">
+            <label>Select an employee</label>
+            <ejs-multicolumncombobox id='virtual' [dataSource]='records' [fields]='fields' [enableVirtualization]='true' [placeholder]='waterMark' popupHeight='210px' popupWidth='530px' [gridSettings]="gridSettings">
                 <e-columns>
-                    <e-column field='TaskID' header='Task ID' width='70'/>
-                    <e-column field='Engineer' header='Engineer' width='100'/>
-                    <e-column field='Designation' header='Designation' width='100'/>
-                    <e-column field='Estimation' header='Estimation' width='90'/>
-                    <e-column field='Status' header='Status' width='90'/>
+                    <e-column field='Name' header='Name' width='100'/>
+                    <e-column field='Department' header='Department' width='100'/>
+                    <e-column field='Role' header='Role' width='90'/>
+                    <e-column field='Location' header='Location' width='90'/>
                 </e-columns>
             </ejs-multicolumncombobox>
         </div>

@@ -1,6 +1,7 @@
+
 #filter-btn {
   padding: 5px;
-  margin-bottom: 5px;
+  margin: 5px;
   cursor: pointer;
   float: right;
   display: flex;

@@ -13,13 +13,7 @@
                     <e-tabitem [header]='headerText[0]'>
                         <ng-template #content>
                             <div style="padding-top: 20px; padding-bottom: 20px;">
-                                <ejs-kanban #kanbanObj cssClass='kanban-swimlane' keyField="Status" [dataSource]='taskDetail' [cardSettings]='cardSettings' >
-                                <e-columns>
-                                    <e-column headerText='Open' keyField='Open'></e-column>
-                                    <e-column headerText='In Progress' keyField='InProgress'></e-column>
-                                    <e-column headerText='Testing' keyField='Testing'></e-column>
-                                    <e-column headerText='Done' keyField='Close'></e-column>
-                                </e-columns>
+                                <ejs-kanban #kanbanObj cssClass='kanban-swimlane' keyField="Status" [dataSource]='taskDetail' [cardSettings]='cardSettings' [columns]='statusColumns'>
                                 <ng-template #cardSettingsTemplate let-data>
                                     <div class="card-template">
                                         <table class="card-template-wrap" style="width: 100%">
@@ -43,15 +37,14 @@
                                                         </div>
                                                         <span class="e-card-content"><b>Estimated hour:</b> {{data.Estimate}}</span>
                                                       </td>
-                              
                                                     </tr>
                                                   </tbody>
                                                 </table>
                                               </td>
                                             </tr>
                                           </tbody>
-                                        </table >
-                                      </div >
+                                        </table>
+                                      </div>
                                 </ng-template>
                             </ejs-kanban>
                             </div>
@@ -105,8 +98,8 @@
           In this demonstration, the parent row provides information about employees name, ID, team and reporter names. In each employee row with 
           a details view, when expanding the details, you can see the sprint report of that employee. In the details row with two tabs, the first tab contains 
           <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/demos/#/fluent2/kanban/overview">
-          Syncfusion Kanban component</a></code> used to list assigned tasks and their current statuses, and the second tab contains <code><a target="_blank" class="code" 
-          href="https://ej2.syncfusion.com/angular/demos/#/fluent2/chart/overview.html"> Syncfusion Chart Component</a></code> used to 
+          Syncfusion<sup>®</sup> Kanban component</a></code> used to list assigned tasks and their current statuses, and the second tab contains <code><a target="_blank" class="code" 
+          href="https://ej2.syncfusion.com/angular/demos/#/fluent2/chart/overview.html"> Syncfusion<sup>®</sup> Chart Component</a></code> used to 
           display the burndown chart of employee task estimated time vs actual spend time.
         </p>
         <br/>

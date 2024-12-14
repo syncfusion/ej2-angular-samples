@@ -35,8 +35,9 @@ import { CircularGaugeSampleModule } from '../circular-gauge/circular-gauge.modu
 import { LinearGaugeSampleModule } from '../linear-gauge/linear-gauge.module';
 import { MaskedTextBoxSampleModule } from '../maskedtextbox/maskedtextbox.module';
 import { MultiSelectSampleModule } from '../multi-select/multi-select.module';
-import { MultiColumnComboBoxSampleModule } from '../multicolumn-combobox/multi-combobox.module';
-import { AIAssistSampleModule } from '../ai-assistview/aiassistview.module';
+import { MultiColumnComboBoxSampleModule } from '../multicolumn-combobox/multicolumn-combobox.module';
+import { AIAssistSampleModule } from '../ai-assistview/ai-assistview.module';
+import { ChatUISampleModule } from '../chat-ui/chat-ui.module';
 import { MenuModule } from '../context-menu/context-menu.module';
 import { MenuSampleModule } from '../menu/menu.module';
 import { TabSampleModule } from '../tab/tab.module';
@@ -60,7 +61,7 @@ import { ColorPickerSampleModule } from '../color-picker/color-picker.module';
 import { PivotTableSampleModule } from '../pivot-table/pivot-table.module';
 import { DocumentEditorSampleModule } from '../document-editor/document-editor.module';
 import { RTESampleModule } from '../rich-text-editor/rich-text-editor.module';
-import { MDESampleModule } from '../mark-down-editor/markdown-editor.module';
+import { MDESampleModule } from '../markdown-editor/markdown-editor.module';
 import { FormValidatorModule } from '../form-validator/form-validator.module';
 import { PdfViewerSampleModule } from '../pdfviewer/pdfviewer.module';
 import { QueryBuilderSampleModule } from '../query-builder/query-builder.module';
@@ -144,8 +145,10 @@ const appRoutes: any = [
     { path: 'spreadsheet', loadChildren: import('../spreadsheet/spreadsheet.module').then(m=>m.SpreadsheetSampleModule) },
     { path: ':theme/spreadsheet/:sample', redirectTo: 'material/spreadsheet/default' },
     //Interactive chat
-    { path: 'ai-assistview', loadChildren: import('../ai-assistview/aiassistview.module').then(m=>m.AIAssistSampleModule) },
+    { path: 'ai-assistview', loadChildren: import('../ai-assistview/ai-assistview.module').then(m=>m.AIAssistSampleModule) },
     { path: ':theme/ai-assistview/:sample', redirectTo: 'material/ai-assistview/default' },
+    { path: 'chat-ui', loadChildren: import('../chat-ui/chat-ui.module').then(m=>m.ChatUISampleModule) },
+    { path: ':theme/chat-ui/:sample', redirectTo: 'material/chat-ui/default' },
     // Data visualization
     { path: 'chart', loadChildren: import('../chart/chart.module').then(m=>m.ChartSampleModule) },
     { path: '', redirectTo: 'material/chart/overview-chart', pathMatch: 'full' },
@@ -178,8 +181,8 @@ const appRoutes: any = [
     { path: ':theme/pdfviewer/:sample', redirectTo: 'material/pdfviewer/default' },
     { path: 'rich-text-editor', loadChildren: import('../rich-text-editor/rich-text-editor.module').then(m=>m.RTESampleModule) },
     { path: ':theme/rich-text-editor/:sample', redirectTo: 'material/rich-text-editor/default' },
-    { path: 'mark-down-editor', loadChildren: import('../mark-down-editor/markdown-editor.module').then(m=>m.MDESampleModule) },
-    { path: ':theme/mark-down-editor/:sample', redirectTo: 'material/mark-down-editor/overview' },
+    { path: 'markdown-editor', loadChildren: import('../markdown-editor/markdown-editor.module').then(m=>m.MDESampleModule) },
+    { path: ':theme/markdown-editor/:sample', redirectTo: 'material/markdown-editor/overview' },
     { path: 'document-editor', loadChildren: import('../document-editor/document-editor.module').then(m=>m.DocumentEditorSampleModule) },
     { path: ':theme/document-editor/:sample', redirectTo: 'material/document-editor/default' },
     { path: 'image-editor', loadChildren: import('../image-editor/image-editor.module').then(m=>m.ImageEditorSampleModule) },
@@ -208,7 +211,7 @@ const appRoutes: any = [
     { path: 'list-box', loadChildren: import('../list-box/list-box.module').then(m=>m.ListBoxSampleModule) },
     { path: ':theme/list-box/:sample', redirectTo: 'material/list-box/default' },
     { path: 'mention', loadChildren: import('../mention/mention.module').then(m=>m.MentionSampleModule) },
-    { path: 'multicolumn-combobox', loadChildren: import('../multicolumn-combobox/multi-combobox.module').then(m=>m.MultiColumnComboBoxSampleModule) },
+    { path: 'multicolumn-combobox', loadChildren: import('../multicolumn-combobox/multicolumn-combobox.module').then(m=>m.MultiColumnComboBoxSampleModule) },
     { path: ':theme/multicolumn-combobox/:sample', redirectTo: 'material/multicolumn-combobox/default' },
     // Navigation
     { path: ':theme/accordion/:sample', redirectTo: 'material/accordion/default' },
@@ -342,7 +345,9 @@ const appRoutes: any = [
         ListBoxSampleModule,
         MentionSampleModule,
         MultiColumnComboBoxSampleModule,
+        //Interactive chat
         AIAssistSampleModule,
+        ChatUISampleModule,
         // Inputs
         TextboxesModule,
         TextAreasModule,

@@ -204,14 +204,6 @@ export class DefaultComponent {
     selectedTheme = selectedTheme ? selectedTheme : 'Material';
     args.gauge.theme = <GaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
       selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
-    if (selectedTheme == 'tailwind') {
-      args.gauge.axes[0].annotations[0].radius = "91%";
-      args.gauge.axes[0].annotations[1].radius = "79%";
-      args.gauge.axes[0].annotations[2].radius = "64%";
-      args.gauge.axes[0].annotations[3].radius = "53%";
-      args.gauge.axes[0].annotations[4].angle = 327;
-      args.gauge.axes[0].annotations[4].radius = "37%";       
-    }
     if (selectedTheme.indexOf('dark') > -1 || selectedTheme.indexOf('contrast') > -1) {
       args.gauge.axes[0].annotations[5].content = '<div class="annotation" style="color:white;">68%</div>';
       args.gauge.axes[0].annotations[6].content = '<div class="annotation" style="color:white;">43%</div>';

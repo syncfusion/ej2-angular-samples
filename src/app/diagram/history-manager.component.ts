@@ -7,6 +7,8 @@ import {
     SnapConstraints,
     HistoryEntry,
     FlowShapes,
+    UndoRedo,
+    Diagram,
 } from '@syncfusion/ej2-diagrams';
 import {
     DropDownList
@@ -16,7 +18,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
-
+Diagram.Inject(UndoRedo);
 /**
  * Sample for history manager
  */

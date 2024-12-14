@@ -56,7 +56,7 @@ export class MapsProgrammaticZoomComponent {
       height: 20,
       width: 20,
       shape: 'Image',
-      imageUrl: './assets/maps/images/ballon.png',
+      imageUrl: 'https://ej2.syncfusion.com/angular/demos/assets/maps/images/ballon.png',
       tooltipSettings: {
         format:  '<b>Capital</b> : ${name}<br><b>Country</b> : ${Country}',
         visible: true,

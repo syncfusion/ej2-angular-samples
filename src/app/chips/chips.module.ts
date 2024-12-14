@@ -13,7 +13,7 @@ export const chipsAppRoutes: Object[] = [
         component: DefaultChipsComponent,
         name: 'Default Functionalities',
         category: 'Chips',
-        description: 'This demo for Essential JS2 chips shows its types (default, input, choice, filter) and styles (primary, success, info, warning, danger) of chips.',
+        description: 'This demo for Essential<sup>®</sup> JS2 chips shows its types (default, input, choice, filter) and styles (primary, success, info, warning, danger) of chips.',
             sourceFiles: [
                 {displayName: 'default.component.ts', path: './src/chips/default.component.ts'},
                 {displayName: 'default.html', path: './src/chips/default.html'},
@@ -25,12 +25,11 @@ export const chipsAppRoutes: Object[] = [
         component: ApiChipsComponent,
         name: 'API',
         category: 'Chips',
-        description: 'This demo for Essential JS2 chips shows its types (default, input, choice, filter) and styles (primary, success, info, warning, danger) of chips.',
+        description: 'This demo for Essential<sup>®</sup> JS2 chips shows its types (default, input, choice, filter) and styles (primary, success, info, warning, danger) of chips.',
             sourceFiles: [
                 {displayName: 'chips-api.component.ts', path: './src/chips/chips-api.component.ts'},
                 {displayName: 'chips-api.html', path: './src/chips/chips-api.html'},
                 {displayName: 'chips-api.css', path: './src/chips/chips-api.css'},
-                {displayName: 'data.json', path: './src/chips/data.json'},
             ]
     }
 ];

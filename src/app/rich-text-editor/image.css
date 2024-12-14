@@ -26,6 +26,8 @@
 .material3-dark .e-rte-quick-popup .e-rte-quick-toolbar .e-rotate-left::before,
 .tailwind .e-rte-quick-popup .e-rte-quick-toolbar .e-rotate-left::before,
 .tailwind-dark .e-rte-quick-popup .e-rte-quick-toolbar .e-rotate-left::before,
+.tailwind3 .e-rte-quick-popup .e-rte-quick-toolbar .e-rotate-left::before,
+.tailwind3-dark .e-rte-quick-popup .e-rte-quick-toolbar .e-rotate-left::before,
 .fluent2-highcontrast .e-rte-quick-popup .e-rte-quick-toolbar .e-rotate-left::before {
     content: "\e713";
 }
@@ -42,6 +44,8 @@
 .material3-dark .e-rte-quick-popup .e-rte-quick-toolbar .e-rotate-right::before,
 .tailwind .e-rte-quick-popup .e-rte-quick-toolbar .e-rotate-right::before,
 .tailwind-dark .e-rte-quick-popup .e-rte-quick-toolbar .e-rotate-right::before,
+.tailwind3 .e-rte-quick-popup .e-rte-quick-toolbar .e-rotate-right::before,
+.tailwind3-dark .e-rte-quick-popup .e-rte-quick-toolbar .e-rotate-right::before,
 .fluent2-highcontrast .e-rte-quick-popup .e-rte-quick-toolbar .e-rotate-right::before {
     content: "\e755";
 }

@@ -54,7 +54,9 @@
 .bootstrap5.3-dark .e-customStyle span.e-icons.highlight,
 .bootstrap5.3-dark .e-customStyle span.e-icons.highlight:before,
 .tailwind-dark .e-customStyle span.e-icons.highlight,
-.tailwind-dark .e-customStyle span.e-icons.highlight:before {
+.tailwind3-dark .e-customStyle span.e-icons.highlight,
+.tailwind-dark .e-customStyle span.e-icons.highlight:before,
+.tailwind3-dark .e-customStyle span.e-icons.highlight:before {
     color: #ff7500;
 }
 

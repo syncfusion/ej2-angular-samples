@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild, Inject } from '@angular/core';
-import { PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ToolbarService, NavigationService, TextSelectionService, PrintService, DynamicStampItem, SignStampItem, StandardBusinessStampItem, PageChangeEventArgs, LoadEventArgs, AnnotationService, FormDesignerService,PageOrganizerService, TextSearchService, TextSelection, PdfViewerModule } from '@syncfusion/ej2-angular-pdfviewer';
+import { PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ToolbarService, NavigationService, TextSelectionService, PrintService, DynamicStampItem, SignStampItem, StandardBusinessStampItem, PageChangeEventArgs, LoadEventArgs, AnnotationService, FormDesignerService, FormFieldsService, PageOrganizerService, TextSearchService, TextSelection, PdfViewerModule } from '@syncfusion/ej2-angular-pdfviewer';
 import { ToolbarComponent, MenuItemModel, ToolbarModule, MenuModule } from '@syncfusion/ej2-angular-navigations';
 import { DialogComponent } from '@syncfusion/ej2-angular-popups';
 import { ClickEventArgs } from '@syncfusion/ej2-buttons';
@@ -15,7 +15,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     selector: 'control-content',
     templateUrl: 'custom-toolbar.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [LinkAnnotationService, BookmarkViewService, TextSearchService, TextSelectionService, MagnificationService, ToolbarService, NavigationService, TextSelectionService, PrintService, AnnotationService, FormDesignerService,PageOrganizerService],
+    providers: [LinkAnnotationService, BookmarkViewService, TextSearchService, TextSelectionService, MagnificationService, ToolbarService, NavigationService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService,PageOrganizerService],
     styleUrls: ['pdfviewer.component.css'],
     standalone: true,
     imports: [

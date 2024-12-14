@@ -10,13 +10,13 @@ import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 export const mentionAppRoutes: Object[] = [
-    { path: ':theme/mention/default', component: DefaultMentionComponent, name: 'Default Functionalities', description: 'This example demonstrates the default functionalities of Syncfusion TypeScript Mention component with minimum configuration.', order: '01',
+    { path: ':theme/mention/default', component: DefaultMentionComponent, name: 'Default Functionalities', description: 'This example demonstrates the default functionalities of Syncfusion<sup>®</sup> TypeScript Mention component with minimum configuration.', order: '01',
 		category: 'Mention' },
-    { path: ':theme/mention/multiple-list', component: MultipleListMentionComponent, name: 'Multiple List', description: 'This example demonstrates the multiple list functionalities of Syncfusion TypeScript Mention component with minimum configuration.', order: '01',
+    { path: ':theme/mention/multiple-list', component: MultipleListMentionComponent, name: 'Multiple List', description: 'This example demonstrates the multiple list functionalities of Syncfusion<sup>®</sup> TypeScript Mention component with minimum configuration.', order: '01',
       category: 'Mention' },
-    { path: ':theme/mention/template', component: TemplateMentionComponent, name: 'Template', description: 'This example demonstrates the template functionalities of Syncfusion TypeScript Mention component with minimum configuration.', order: '01',
+    { path: ':theme/mention/template', component: TemplateMentionComponent, name: 'Template', description: 'This example demonstrates the template functionalities of Syncfusion<sup>®</sup> TypeScript Mention component with minimum configuration.', order: '01',
 		category: 'Mention' },
-    { path: ':theme/mention/disabled-items', component: DisabledItemsMentionComponent, name: 'Disabled Items', type : 'new', description: 'This example demonstrates the disabled items functionalities of Syncfusion TypeScript Mention component with minimum configuration.', order: '01',
+    { path: ':theme/mention/disabled-items', component: DisabledItemsMentionComponent, name: 'Disabled Items', description: 'This example demonstrates the disabled items functionalities of Syncfusion<sup>®</sup> TypeScript Mention component with minimum configuration.', order: '01',
 		category: 'Mention' }
 ];
 

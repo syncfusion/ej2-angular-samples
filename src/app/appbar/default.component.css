@@ -44,7 +44,9 @@
   }
   .e-bigger .default-appbar-section .e-inherit.e-btn.login,
   .e-bigger.tailwind-dark .default-appbar-section .e-inherit.e-btn.e-icon-btn.menu,
+  .e-bigger.tailwind3-dark .default-appbar-section .e-inherit.e-btn.e-icon-btn.menu,
   .e-bigger.tailwind .default-appbar-section .e-inherit.e-btn.e-icon-btn.menu,
+  .e-bigger.tailwind3 .default-appbar-section .e-inherit.e-btn.e-icon-btn.menu,
   .e-bigger.fluent2-dark .default-appbar-section .e-inherit.e-btn.e-icon-btn.menu,
   .e-bigger.fluent2-highcontrast .default-appbar-section .e-inherit.e-btn.e-icon-btn.menu,
   .e-bigger.fluent2 .default-appbar-section .e-inherit.e-btn.e-icon-btn.menu {

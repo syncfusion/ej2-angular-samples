@@ -1,22 +1,24 @@
-<div class="col-lg-8 control-section sb-property-border otp-wrapper">
-    <div id="otp-container">
-        <div class="form-container">
-            <span class="otp-header"> Enter verification code </span>
-            <div ejs-otpinput #otpRef [separator]="separatorVal" [placeholder]="placeHolder" [length]="lengthVal"
-                [cssClass]="otpCssClass" [disabled]="disabledVal" [stylingMode]="styleMode"
-                (input)='handleOtpChange($event)'>
-            </div>
-            <div class="otp-actions">
-                <button #resetBtn class="e-btn" type="button" disabled=true (click)='handleResetClick()'> Clear
-                </button>
-                <button #verifyBtn class="e-btn e-primary" type="button" disabled=true (click)='handleVerifyClick()'>
-                    Verify </button>
+<div class="col-lg-8 control-section sb-property-border">
+    <div class="api-otp-wrapper">
+        <div id="otp-container">
+            <div class="form-container">
+                <span class="otp-header"> Enter verification code </span>
+                <div ejs-otpinput #otpRef [separator]="separatorVal" [placeholder]="placeHolder" [length]="lengthVal"
+                    [cssClass]="otpCssClass" [disabled]="disabledVal" [stylingMode]="styleMode"
+                    (input)='handleOtpChange($event)'>
+                </div>
+                <div class="otp-actions">
+                    <button #resetBtn class="e-btn" type="button" disabled=true (click)='handleResetClick()'> Clear
+                    </button>
+                    <button #verifyBtn class="e-btn e-primary" type="button" disabled=true (click)='handleVerifyClick()'>
+                        Verify </button>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="col-lg-4 property-section otp-property-panel">
+<div class="col-lg-4 property-section">
     <div class="property-panel-section">
         <div class="property-panel-header">Properties</div>
         <div class="property-panel-content">

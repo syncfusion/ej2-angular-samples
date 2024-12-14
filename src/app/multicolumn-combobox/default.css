@@ -1,6 +1,6 @@
 .control-wrapper {
     margin: 0 auto;
-    width: 520px;
+    width: 250px;
 }
 
 @media screen and (max-width: 480px) {

@@ -1,5 +1,5 @@
 <div class="control-section">
-    <ejs-grid #grid id="group-aggregate-grid" [dataSource]="data" [allowGrouping]="true" [enableHover]='false' [allowSorting]='true' [allowMultiSorting]='true' [height]='300' [allowFiltering]='true' [filterSettings]='filterSettings' [groupSettings]="groupSettings" [gridLines]="gridLines">
+    <ejs-grid #grid id="group-aggregate-grid" [dataSource]="data" [allowGrouping]="true" [allowSorting]='true' [enableHover]='false' [allowMultiSorting]='true' [height]='300' [gridLines]="gridLines" [allowFiltering]='true' [filterSettings]='filterSettings' [groupSettings]="groupSettings">
         <e-columns>
             <e-column field='ID' visible="false" isPrimaryKey="true"></e-column>
             <e-column field='Month' headerText='Month' width='120' textAlign='Right' format="yMd" clipMode='EllipsisWithTooltip'></e-column>

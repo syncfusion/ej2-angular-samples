@@ -94,7 +94,9 @@
     }
     
     .tailwind-dark .card-control-section.flip_card_layout #card_flip.e-card,
-    .tailwind-dark .card-control-section.flip_card_layout #card_flip_profile.e-card {
+    .tailwind3-dark .card-control-section.flip_card_layout #card_flip.e-card,
+    .tailwind-dark .card-control-section.flip_card_layout #card_flip_profile.e-card,
+    .tailwind3-dark .card-control-section.flip_card_layout #card_flip_profile.e-card {
         height: 314px;
     }
 
@@ -335,7 +337,8 @@
         border: none;
     }
     
-    .tailwind-dark .card-control-section.reveal_card_layout .e-card #card_revealed .e-card-content table td .e-card-actions .e-card-btn {
+    .tailwind-dark .card-control-section.reveal_card_layout .e-card #card_revealed .e-card-content table td .e-card-actions .e-card-btn,
+    .tailwind3-dark .card-control-section.reveal_card_layout .e-card #card_revealed .e-card-content table td .e-card-actions .e-card-btn {
         background-color: unset;
         border: 1px solid #22d3ee;
     }
@@ -450,7 +453,9 @@
     .fluent .card-control-section.reveal_card_layout .e-card .e-collapse:before,
     .fluent-dark .card-control-section.reveal_card_layout .e-card .e-collapse:before,
     .tailwind .card-control-section.reveal_card_layout .e-card .e-collapse:before,
+    .tailwind3 .card-control-section.reveal_card_layout .e-card .e-collapse:before,
     .tailwind-dark .card-control-section.reveal_card_layout .e-card .e-collapse:before,
+    .tailwind3-dark .card-control-section.reveal_card_layout .e-card .e-collapse:before,
     .bootstrap5 .card-control-section.reveal_card_layout .e-card .e-collapse:before,
     .bootstrap5-dark .card-control-section.reveal_card_layout .e-card .e-collapse:before {
         content: "\e7e7";
@@ -471,7 +476,9 @@
     .fluent .card-control-section.reveal_card_layout .e-card .e-reveal-icon:before,
     .fluent-dark .card-control-section.reveal_card_layout .e-card .e-reveal-icon:before,    
     .tailwind .card-control-section.reveal_card_layout .e-card .e-reveal-icon:before,
+    .tailwind3 .card-control-section.reveal_card_layout .e-card .e-reveal-icon:before,
     .tailwind-dark .card-control-section.reveal_card_layout .e-card .e-reveal-icon:before,
+    .tailwind3-dark .card-control-section.reveal_card_layout .e-card .e-reveal-icon:before,
     .bootstrap5 .card-control-section.reveal_card_layout .e-card .e-reveal-icon:before,
     .bootstrap5-dark .card-control-section.reveal_card_layout .e-card .e-reveal-icon:before {
     	content: "\e71c";

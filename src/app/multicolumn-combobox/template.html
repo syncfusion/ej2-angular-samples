@@ -5,7 +5,8 @@
 <div class="control-section">
     <div class='control-wrapper template-multicolumn'>
         <div style='padding-top:55px;'>
-            <ejs-multicolumncombobox id='template' #template cssClass='multicolumn-customize' [dataSource]='empData' [fields]='fields' [placeholder]='waterMark' popupHeight='230px' [gridSettings]="gridSettings">
+            <label>Select an employee</label>
+            <ejs-multicolumncombobox id='template' #template cssClass='multicolumn-customize' [dataSource]='datasource' [fields]='fields' [placeholder]='waterMark' popupHeight='210px' popupWidth='540px' [gridSettings]="gridSettings">
                 <e-columns>
                     <e-column field='Eimg' width='90'>
                         <ng-template #headerTemplate let-data>

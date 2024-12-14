@@ -5,14 +5,14 @@
 //tslint:disable
 // custom code end
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
-import { MapsTheme, Maps, Marker, MapsTooltip, NavigationLine, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, Maps, Marker, MapsTooltip, NavigationLine, ILoadEventArgs, MapsModule, Zoom } from '@syncfusion/ej2-angular-maps';
 import { markerLocation } from './map-location';
 import { data } from './navigation-data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 let worldMap: object[] = require('./world-map.json');
 declare var require: any;
-Maps.Inject(Marker, MapsTooltip, NavigationLine);
+Maps.Inject(Marker, MapsTooltip, NavigationLine, Zoom);
 
 @Component({
     selector: 'control-content',

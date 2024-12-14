@@ -1,0 +1,47 @@
+<div class="control-section">
+    <div class="template-chatui">
+      <div id="chatTemplate" ejs-chatui #chatTemplate [user]="user" headerText="Order Assistant" headerIconCss="chat-bot"
+           showTimeBreak="true" autoScrollToBottom="true" [showFooter]="false" (messageSend)="onMessageSend($event)">
+           <ng-template #emptyChatTemplate>
+            <div class="emptychat-content">
+                <h3><span class="e-icons e-comment-show"></span></h3>
+                <div class="emptyChatText">Just a second, we're preparing your chat...</div>
+            </div>
+        </ng-template>
+        <ng-template #messageTemplate let-data>
+            <div class="message-wrapper">
+              <div class="message-template">
+                <img *ngIf="data.message.author.id !== 'admin'" class="message-user" [src]="data.message.author.avatarUrl" [alt]="data.message.author.user">
+                <div class="message-items e-card">
+                  <div class="message-text" [innerHTML]='data.message.text'></div>
+                </div>
+              </div>
+              <div class="suggestion-container" *ngIf="data.message.suggestions && data.message.suggestions.length > 0 && data.message.author.id !== 'admin'">
+                <div class="message-suggestions">
+                  <button *ngFor="let suggestion of data.message.suggestions" class="suggestion-button e-btn e-primary e-outline">{{suggestion}}</button>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          
+          <ng-template #timeBreakTemplate let-data>
+            <div class="timebreak-template">
+              {{ formatDate(data.messageDate) }}
+            </div>
+          </ng-template>
+      </div>
+    </div>
+  </div>
+  
+  <div id="action-description">
+    <p>This sample demonstrates the template functionality of the Chat UI component, showing how you can customize various elements of the chat interface. It highlights the ability to adjust the appearance of message items, time breaks, and empty chat screens using templates.</p>
+</div>
+<div id="description">
+    <p>
+        In this example, a bot provides order tracking updates by customizing each message using the templates. The <code>messageTemplate</code> property controls the layout of messages, including the avatar, message content, and suggestions. The <code>timeBreakTemplate</code> adjusts the display of time breaks, showing either "Today" or the specific date.
+    </p>
+    <p>
+        The bot sends a default response when a message is sent, and suggestions appear below the message. When a suggestion is clicked, the bot replies with a new message or set of suggestions, demonstrating how templates enhance the interaction flow within the Chat UI component.
+    </p>
+</div>
+  

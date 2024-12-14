@@ -76,6 +76,7 @@ export class FormInplaceEditorComponent implements OnInit {
         if(this.scrollParent){
             this.scrollParent.addEventListener('scroll', this.hidePopup.bind(this));
         }
+        
     }
 
     commentCreated(): void {

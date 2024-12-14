@@ -1,4 +1,4 @@
-<div class="col-lg-8 control-section" role="main" aria-label="Treegrid section">
+<div class="col-lg-9 control-section" role="main" aria-label="Treegrid section">
         <div class="content-wrapper">
                 <ejs-treegrid #treegrid [dataSource]='data' height='350' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' [toolbar]='toolbar' enableHover='false' childMapping='subtasks' [treeColumnIndex]='1' 
                 (rowDataBound)="rowDataBound($event)" (beginEdit)="beginEdit($event)">
@@ -12,22 +12,22 @@
         </div>
 </div>
 <div class="col-lg-3 property-section" aria-label="Treegrid Properties">
-        <div class="property-panel-section">
-                <div class="property-panel-header">Properties </div>
-            <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
-                <tr style="height: 50px">
-                    <td >
-                        <label for="disableRows" style="width: 100px">Disable Rows</label>
-                    </td>
-                    <td style="width: 30%;padding-right: 10px">
-                        <div id='columnddl'>
-                            <ejs-multiselect #multiselect id='ddlelement' width='160px' [dataSource]='d1data'  [value]='value'
-                            mode='CheckBox' [popupHeight]='popupHeight' [showDropDownIcon]='true' showSelectAll='true' (select)="select($event)" (removed)="removed($event)" ></ejs-multiselect>
-                       </div>
-                    </td>
-                 </tr>
-            </table>
-        </div>
+    <div class="property-panel-section lockrow-propertysection">
+            <div class="property-panel-header">Properties </div>
+        <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+            <tr style="height: 50px">
+                <td>
+                    <label for="disableRows" style="padding-left: 10px;">Disable Rows</label>
+                </td>
+                <td style="width: 100%;padding-right: 10px">
+                    <div id='columnddl'>
+                        <ejs-multiselect #multiselect id='ddlelement' width='150px' [dataSource]='d1data'  [value]='value'
+                        mode='CheckBox' [popupHeight]='popupHeight' [showDropDownIcon]='true' showSelectAll='true' (select)="select($event)" (removed)="removed($event)" ></ejs-multiselect>
+                   </div>
+                </td>
+             </tr>
+        </table>
+    </div>
 </div>
 <div id="action-description">
     <p>
@@ -57,4 +57,13 @@
       More information on the editing feature can be found in the documentation section.
     </p>
 </div>
-
+<style>
+    @media (min-width: 990px) and (max-width: 1300px){
+        .lockrow-propertysection{
+            padding-left: 0px;
+        }
+        #columnddl {
+            padding-left: 13px;
+        }
+    }
+</style>

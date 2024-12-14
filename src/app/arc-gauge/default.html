@@ -40,11 +40,19 @@
         .titleText {
           font-family: inherit;
           font-size: 22px;
-          margin-top: 8px;
+          margin-top: 6px;
         }
-        .e-view.tailwind div.titleText, .e-view.tailwind-dark div.titleText {
-            font-size: 22px;
-            margin-top: 0px;
+        .e-view.material3 div.titleText, .e-view.material3-dark div.titleText {
+            margin-top: 8px;
+        }
+        .e-view.tailwind3 div.titleText, .e-view.tailwind3-dark div.titleText {
+            margin-top: 6px;
+        }
+        .e-view.fluent2-highcontrast div.titleText {
+            margin-top: 6px
+        }
+        .e-view.fluent2 div.titleText, .e-view.fluent2-dark div.titleText {
+            margin-top: 6px;
         }
         .annotation {
             font-family: inherit;
@@ -57,10 +65,6 @@
           .annotation {
               font-size: 13px;
           }
-          .e-view.tailwind div.titleText, .e-view.tailwind-dark div.titleText {
-              font-size: 15px;
-              margin-top: 0px;
-          }
         }
         @media screen and (max-width: 800px) {
             .titleText {
@@ -69,20 +73,12 @@
           .annotation {
               font-size: 12px;
           }
-          .e-view.tailwind div.titleText, .e-view.tailwind-dark div.titleText {
-              font-size: 15px;
-              margin-top: -5px;
-          }
         }
         @media screen and (max-width: 480px) {
             .titleText {
                 font-family: inherit;
                 font-size: 15px;
                 margin-top: 8px;
-            }
-            .e-view.tailwind div.titleText, .e-view.tailwind-dark div.titleText {
-                font-size: 15px;
-                margin-top: 0px;
             }
             .annotation {
                 font-family: inherit;

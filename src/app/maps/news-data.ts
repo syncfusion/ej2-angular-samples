@@ -68,18 +68,18 @@ export let newsData: any = [
         + 'favorite in the comments!</p>'
     },
     {
-        'title': 'The Syncfusion Global License: Your Questions, Answered ',
-        'description': 'Syncfusion recently hosted a webinar to cover the ins and outs of the Syncfusion global...',
-        'content': '<p>Syncfusion recently hosted a webinar to cover the ins and outs of the'
-        + 'Syncfusion global license. We received many questions about the license, and our client'
+        'title': 'The Syncfusion<sup>®</sup> Global License: Your Questions, Answered ',
+        'description': 'Syncfusion<sup>®</sup> recently hosted a webinar to cover the ins and outs of the Syncfusion<sup>®</sup> global...',
+        'content': '<p>Syncfusion<sup>®</sup> recently hosted a webinar to cover the ins and outs of the'
+        + 'Syncfusion<sup>®</sup> global license. We received many questions about the license, and our client'
         + 'relations team, led by Pat Staley, has provided answers. Read on for a full overview of the'
-        + 'Syncfusion global license, or visit Syncfusion’s YouTube channel to watch the webinar in'
+        + 'Syncfusion<sup>®</sup> global license, or visit Syncfusion<sup>®</sup>’s YouTube channel to watch the webinar in'
         + 'full.</p><p>Q: Regarding the free license for companies with 5 developers or less than $1m'
         + 'in annual revenue: when does that license expire?</p><p>A: The Community License has'
         + 'several criteria that make it distinct from the global license, so there is no single'
         + 'answer to that question. Any customers with questions about the Community License should'
-        + 'contact a Syncfusion sales representative.</p><p>Q: Our business line in health care'
-        + 'requires that we obtain business agreements with contractors and vendors. Has Syncfusion'
+        + 'contact a Syncfusion<sup>®</sup> sales representative.</p><p>Q: Our business line in health care'
+        + 'requires that we obtain business agreements with contractors and vendors. Has Syncfusion<sup>®</sup>'
         + 'signed these kinds of BAs in the past?</p><p>A: We work with many companies that request'
         + 'such documents, and we can always put you in touch with our legal team for'
         + 'specifics.</p><p>Q: We develop products. If we want to use dashboards, do our clients need'
@@ -88,11 +88,11 @@ export let newsData: any = [
         + 'situations like this, we work with our clients to reach the best solution; there is no'
         + 'single answer.</p><p>Q: Is there a time limit?</p><p>A: Our license model reflects a 1-year'
         + 'term unless you make other arrangements during the sales process.</p><p>Q: Can I use my'
-        + 'global license to create software that has Syncfusion controls embedded within it and sell'
+        + 'global license to create software that has Syncfusion<sup>®</sup> controls embedded within it and sell'
         + 'this software to my clients, or does that require a reseller or runtime license?</p><p>A:'
         + 'If you are providing an end-product to your client, and additional coding will not be'
         + 'needed, you may sell your software to your client with just the global license. If the'
-        + 'software requires additional work over time, you will need to speak with your Syncfusion'
+        + 'software requires additional work over time, you will need to speak with your Syncfusion<sup>®</sup>'
         + 'sales representative to ensure you have the correct license.</p><p>Q: When does my license'
         + 'expire?</p><p>A: You can log into your portal and view the expiration date under License'
         + 'and Keys.</p><p>Q:  Who is my client relations representative?</p><p>A:  Please send an'
@@ -116,21 +116,21 @@ export let newsData: any = [
         + 'upon, we will include that information in your Master License Agreement.</p><p>Q:  What is'
         + 'the benefit of including all my users in the portal?</p><p>A:  Developers can see support'
         + 'incidents created within the portal and can receive patches and updates so users are all'
-        + 'working on the same version of Syncfusion. Our client relations team also monitors accounts'
+        + 'working on the same version of Syncfusion<sup>®</sup>. Our client relations team also monitors accounts'
         + 'to ensure that you do not have an excessive amount of support incidents open at one time.'
         + 'Ensuring that all of your users are in the portal helps us to manage your account and'
         + 'incidents.</p><p>Q:  Can you tell me more about the client relations department?</p><p>A: '
-        + 'The CRD is your trusted advisor within Syncfusion. You will have direct contact with a'
+        + 'The CRD is your trusted advisor within Syncfusion<sup>®</sup>. You will have direct contact with a'
         + 'representative who can assist with service, support, and product education, and who can be'
         + 'the ally you need for your development.</p><p>Q:  If I have a flat license, do I have to'
-        + 'update Syncfusion with users I need added to the portal?</p><p>A:  Syncfusion does not need'
+        + 'update Syncfusion<sup>®</sup> with users I need added to the portal?</p><p>A:  Syncfusion<sup>®</sup> does not need'
         + 'to be notified when a user needs to be added.</p><p>Q:  Why would I want to create a new'
         + 'portal each time I start a new project?</p><p>A:  Not only is this a great organizational'
         + 'feature that keeps your projects autonomous from one another, each portal can support a'
         + 'different product version, allowing you to upgrade each project as needed. There is no'
         + 'co-dependency here.</p><p>Q:   Do I have to assign a platform or component to each project?'
         + 'What if I have multiple components being used on one project?</p><p>A:  The only time'
-        + 'Syncfusion will ask you to associate a platform or component with a project is during'
+        + 'Syncfusion<sup>®</sup> will ask you to associate a platform or component with a project is during'
         + 'incident creation. You can use multiple controls or components on one project, but only if'
         + 'the components are using the same product version. As mentioned, the portal can only'
         + 'support one product version at a time.</p><p>'
@@ -198,9 +198,9 @@ export let newsData: any = [
         + 'provider. The application was designed to replace a form being used to assess students’ driving abilities. The'
         + 'tricky part came when deciding how to display the assessment sheet, a grid displaying driving assessment data, in a'
         + 'mobile application. My initial thinking was to do something like a list view within a list view, or a custom grid'
-        + 'with rows and columns containing buttons within each cell. However, Syncfusion’s data grid control for'
+        + 'with rows and columns containing buttons within each cell. However, Syncfusion<sup>®</sup>’s data grid control for'
         + 'Xamarin.Forms provided an easy out-of-the-box solution to do what we needed, and allowed us to customize a range of'
-        + 'features to meet the client’s requirements.</p><p>With the release of Essential Studio 2017 Volume 3 Service Pack 2'
+        + 'features to meet the client’s requirements.</p><p>With the release of Essential<sup>®</sup> Studio 2017 Volume 3 Service Pack 2'
         + '(version 15.3.0.33), a StartPageIndex property was added, which allows you to specify which page in a PDF document'
         + 'you want the data grid control to be rendered to.</p><p>Previous to this release, the data grid could only be'
         + 'rendered to the first page of a PDF document. This wasn’t a bad thing, but if you tried to create a PDF document'
@@ -211,8 +211,8 @@ export let newsData: any = [
         + 'show how to implement a .NET Standard library into your project (see this post from Nick Randolph in particular).'
         + 'There are also blog posts that show how to install PCL NuGet packages into .NET Standard libraries (see this post'
         + 'from James Montemagno).</p><p>Once the .NET Standard library was up and running, it was time to take a look at'
-        + 'Syncfusion’s data grid control. To use it, you need to import the appropriate Syncfusion NuGet packages.'
-        + 'Implementing the control is relatively easy. The Syncfusion documentation is excellent. With small code snippets,'
+        + 'Syncfusion<sup>®</sup>’s data grid control. To use it, you need to import the appropriate Syncfusion<sup>®</sup> NuGet packages.'
+        + 'Implementing the control is relatively easy. The Syncfusion<sup>®</sup> documentation is excellent. With small code snippets,'
         + 'getting started and testing out the controls is a case of just reading through the documentation, copying the code'
         + 'snippet, and playing around to suit your needs. I won’t cover creating the data grid control or creating the model'
         + 'here, as those are covered extensively in the getting started documentation.</p><p>What I want to focus on is the'
@@ -278,7 +278,7 @@ export let newsData: any = [
         'description': 'The American Cancer Society reports that each year collectively more than one million people...',
         'content': '<p>The American Cancer Society reports that each year collectively more than one'
         + 'million people participate in nearly 300 Making Strides Against Breast Cancer events in the'
-        + 'US, raising at least $60 million. That’s why this weekend a number of Syncfusion employees'
+        + 'US, raising at least $60 million. That’s why this weekend a number of Syncfusion<sup>®</sup> employees'
         + 'from the client relations, marketing, and sales teams will lace up their shoes to'
         + 'participate in Raleigh’s Making Strides Against Breast Cancer event, happening this'
         + 'Saturday morning, October 14, at Midtown Park Event Stage.</p><p>Team Brett-y and the Jets,'
@@ -298,8 +298,8 @@ export let dataSource: any = [
         id: '01',
         title: newsData[0].title,
         description: newsData[0].description,
-        text: 'Syncfusion Blog',
-        imgSrc: 'src/listview/images/1.png', timeStamp: 'Syncfusion Blog - October 19, 2017',
+        text: 'Syncfusion<sup>®</sup> Blog',
+        imgSrc: 'src/listview/images/1.png', timeStamp: 'Syncfusion<sup>®</sup> Blog - October 19, 2017',
         child: [{
             id: '01_1', title: newsData[0].title, category: newsData[0].title, text: newsData[0].title,
             imgSrc: '', heading: '', timeStamp: '', description: newsData[0].content
@@ -309,8 +309,8 @@ export let dataSource: any = [
         id: '02',
         title: newsData[1].title,
         description: newsData[1].description,
-        text: 'Syncfusion Blog',
-        imgSrc: 'src/listview/images/2.png', timeStamp: 'Syncfusion Blog - October 18, 2017',
+        text: 'Syncfusion<sup>®</sup> Blog',
+        imgSrc: 'src/listview/images/2.png', timeStamp: 'Syncfusion<sup>®</sup> Blog - October 18, 2017',
         child: [{
             id: '02_1', title: newsData[1].title, category: newsData[1].title, text: newsData[1].title,
             imgSrc: '', heading: '', timeStamp: '', description: newsData[1].content
@@ -320,8 +320,8 @@ export let dataSource: any = [
         id: '03',
         title: newsData[2].title,
         description: newsData[2].description,
-        text: 'Syncfusion Blog',
-        imgSrc: 'src/listview/images/3.png', timeStamp: 'Syncfusion Blog - October 18, 2017',
+        text: 'Syncfusion<sup>®</sup> Blog',
+        imgSrc: 'src/listview/images/3.png', timeStamp: 'Syncfusion<sup>®</sup> Blog - October 18, 2017',
         child: [{
             id: '03_1', title: newsData[2].title, category: newsData[2].title, text: newsData[2].title,
             imgSrc: '', heading: '', timeStamp: '', description: newsData[2].content
@@ -331,8 +331,8 @@ export let dataSource: any = [
         id: '04',
         title: newsData[3].title,
         description: newsData[3].description,
-        text: 'Syncfusion Blog',
-        imgSrc: 'src/listview/images/4.png', timeStamp: 'Syncfusion Blog - October 18, 2017',
+        text: 'Syncfusion<sup>®</sup> Blog',
+        imgSrc: 'src/listview/images/4.png', timeStamp: 'Syncfusion<sup>®</sup> Blog - October 18, 2017',
         child: [{
             id: '04_1', title: newsData[3].title, category: newsData[3].title, text: newsData[3].title,
             imgSrc: '', heading: '', timeStamp: '', description: newsData[3].content
@@ -342,8 +342,8 @@ export let dataSource: any = [
         id: '05',
         title: newsData[4].title,
         description: newsData[4].description,
-        text: 'Syncfusion Blog',
-        imgSrc: 'src/listview/images/5.png', timeStamp: 'Syncfusion Blog - October 17, 2017',
+        text: 'Syncfusion<sup>®</sup> Blog',
+        imgSrc: 'src/listview/images/5.png', timeStamp: 'Syncfusion<sup>®</sup> Blog - October 17, 2017',
         child: [{
             id: '05_1', title: newsData[4].title, category: newsData[4].title, text: newsData[4].title,
             imgSrc: '', heading: '', timeStamp: '', description: newsData[4].content
@@ -353,8 +353,8 @@ export let dataSource: any = [
         id: '06',
         title: newsData[5].title,
         description: newsData[5].description,
-        text: 'Syncfusion Blog',
-        imgSrc: 'src/listview/images/6.png', timeStamp: 'Syncfusion Blog - October 17, 2017',
+        text: 'Syncfusion<sup>®</sup> Blog',
+        imgSrc: 'src/listview/images/6.png', timeStamp: 'Syncfusion<sup>®</sup> Blog - October 17, 2017',
         child: [{
             id: '06_1', title: newsData[5].title, category: newsData[5].title, text: newsData[5].title,
             imgSrc: '', heading: '', timeStamp: '', description: newsData[5].content
@@ -364,8 +364,8 @@ export let dataSource: any = [
         id: '07',
         title: newsData[6].title,
         description: newsData[6].description,
-        text: 'Syncfusion Blog',
-        imgSrc: 'src/listview/images/7.png', timeStamp: 'Syncfusion Blog - October 13, 2017',
+        text: 'Syncfusion<sup>®</sup> Blog',
+        imgSrc: 'src/listview/images/7.png', timeStamp: 'Syncfusion<sup>®</sup> Blog - October 13, 2017',
         child: [{
             id: '07_1', title: newsData[6].title, category: newsData[6].title, text: newsData[6].title,
             imgSrc: '', heading: '', timeStamp: '', description: newsData[6].content

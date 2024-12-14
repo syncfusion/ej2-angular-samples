@@ -157,6 +157,15 @@ ejs-querybuilder {
     padding-left: 20px;
   }
 
+  .preview .e-content-header .e-wrapper {
+    margin-left: 20px;
+  }
+
+  .preview .e-content-header label {
+    font-weight: 500;
+    margin-left: 0px;
+  }
+
   @media only screen and (max-width: 700px) {
     .e-query-preview .e-sql-content,
     .e-query-preview .e-mongo-content {
@@ -166,4 +175,12 @@ ejs-querybuilder {
     .e-query-preview .copy-tooltip {
        display: block !important;
     }
+}
+
+.tailwind3-dark .e-query-preview .e-text-area-content {
+    background: transparent;
+}
+
+.tailwind3-dark .e-query-preview .e-pre-content {
+    color: white;
 }

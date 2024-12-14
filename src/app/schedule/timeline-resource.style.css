@@ -32,7 +32,7 @@
   border-right: 0;
 }
 
-.timeline-resource.e-schedule.e-rtl .e-timeline-view .e-resource-cells, 
+.timeline-resource.e-schedule.e-rtl .e-timeline-view .e-resource-cells,
 .timeline-resource.e-schedule.e-rtl .e-timeline-month-view .e-resource-cells {
     padding-right: 0;
 }
@@ -125,7 +125,8 @@
   border-color: #444c54;
 }
 
-.tailwind-dark .timeline-resource.e-schedule .e-resource-cells .template-wrap>div {
+.tailwind-dark .timeline-resource.e-schedule .e-resource-cells .template-wrap>div,
+.tailwind3-dark .timeline-resource.e-schedule .e-resource-cells .template-wrap>div {
   border-color: #4b5563;
 }
 
@@ -150,30 +151,44 @@
   line-height: 39px;
 }
 
-.tailwind .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text, .tailwind-dark .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text {
+.tailwind .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text,
+.tailwind3 .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text,
+.tailwind-dark .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text,
+.tailwind3-dark .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text {
   height: 39px;
 }
 
-.tailwind .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div, .tailwind-dark .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
+.tailwind .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+.tailwind3 .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+.tailwind-dark .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+.tailwind3-dark .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
   height: 39px;
   line-height: 39px;
 }
 
-.tailwind .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
+.tailwind .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+.tailwind3 .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
   background-color: #f3f4f6;
   border-color: #e5e7eb;
 }
 
-.tailwind-dark .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
+.tailwind-dark .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+.tailwind3-dark .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
   background-color: #374151;
   border-color: #4b5563;
 }
 
-.tailwind.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text, .tailwind-dark.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text {
+.tailwind.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text,
+.tailwind3.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text,
+.tailwind-dark.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text,
+.tailwind3-dark.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text {
   height: 40px;
 }
 
-.tailwind.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div, .tailwind-dark.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
+.tailwind.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+.tailwind3.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+.tailwind-dark.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+.tailwind3-dark.e-bigger .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div {
   height: 40px;
   line-height: 40px;
 }

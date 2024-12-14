@@ -86,7 +86,8 @@
 .fabric-dark .imagepreview #dropArea .e-upload .e-upload-files .e-icons,
 .bootstrap-dark .imagepreview #dropArea .e-upload .e-upload-files .e-icons, 
 .bootstrap5-dark .imagepreview #dropArea .e-upload .e-upload-files .e-icons,
-.tailwind-dark .imagepreview #dropArea .e-upload .e-upload-files .e-icons {
+.tailwind-dark .imagepreview #dropArea .e-upload .e-upload-files .e-icons,
+.tailwind3-dark .imagepreview #dropArea .e-upload .e-upload-files .e-icons {
     color: #333;
 }
 
@@ -132,6 +133,7 @@
 .bootstrap-dark .imagepreview div.file-name,
 .bootstrap5-dark .imagepreview div.file-name,
 .tailwind-dark .imagepreview div.file-name,
+.tailwind3-dark .imagepreview div.file-name,
 .fluent-dark .imagepreview div.file-name,
 .fluent2-dark .imagepreview div.file-name,
 .fluent2-highcontrast .imagepreview div.file-name {
@@ -167,7 +169,9 @@
 .bootstrap5 .imagepreview .progressbar,
 .bootstrap5-dark .imagepreview .progressbar,
 .tailwind .imagepreview .progressbar,
+.tailwind3 .imagepreview .progressbar,
 .tailwind-dark .imagepreview .progressbar,
+.tailwind3-dark .imagepreview .progressbar,
 .fluent-dark .imagepreview .progressbar {
     top: -70px;
 }
@@ -181,7 +185,8 @@
 .fabric-dark .imagepreview #dropArea progress,
 .bootstrap-dark .imagepreview #dropArea progress,
 .bootstrap5-dark .imagepreview #dropArea progress,
-.tailwind-dark .imagepreview #dropArea progress {
+.tailwind-dark .imagepreview #dropArea progress,
+.tailwind3-dark .imagepreview #dropArea progress {
     border: none;
     background: black;
 }
@@ -252,7 +257,8 @@
 .bootstrap5-dark .imagepreview #dropimage a {
     color:#0d6efd;
 }
-.tailwind-dark .imagepreview #dropimage a {
+.tailwind-dark .imagepreview #dropimage a,
+.tailwind3-dark .imagepreview #dropimage a {
     color:#22d3ee;
 }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {

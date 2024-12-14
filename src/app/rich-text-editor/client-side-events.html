@@ -4,7 +4,7 @@
 </div>
 <div class="col-lg-8 control-section sb-property-border">
     <div class="content-wrapper">
-        <ejs-richtexteditor #RTEevents id='defaultRTE' [toolbarSettings]='tools' (created)='onCreate()' (toolbarClick)='toolbarClick()' (actionBegin)='begin($event)' (actionComplete)='complete($event)' (focus)='focus()' (change)='onChange()' (blur)='blur()' (beforeDialogOpen)='beforeDialogOpen()'
+        <ejs-richtexteditor #RTEevents id='defaultRTE' [toolbarSettings]='tools' [fileManagerSettings]='fileManagerSettings' (created)='onCreate()' (toolbarClick)='toolbarClick()' (actionBegin)='begin($event)' (actionComplete)='complete($event)' (focus)='focus()' (change)='onChange()' (blur)='blur()' (beforeDialogOpen)='beforeDialogOpen()'
             (dialogOpen)='dialogOpen()' (dialogClose)='dialogClose()' (beforeQuickToolbarOpen)='beforeQuickToolbarOpen()' (quickToolbarOpen)='quickToolbarOpen()' (quickToolbarClose)='quickToolbarClose()' (imageSelected)='imageSelected()' (imageUploading)='imageUploading()'
             (imageUploadSuccess)='imageUploadSuccess()' (imageUploadFailed)='imageUploadFailed()' (imageRemoving)='imageRemoving()' (destroyed)='destroyed()' (beforeSanitizeHtml)='beforeSanitizeHtml()' (resizing)='resizing()' (resizeStart)='resizeStart()'
             (resizeStop)='resizeStop()'>

@@ -103,7 +103,8 @@ export class PieWithPatternsComponent {
   };
   public tooltip: Object = {
     enable: true,
-    format: '<b>${point.x}</b><br>Browser Share: <b>${point.y}%</b>',header:""
+    format: '<b>${point.x}</b><br>Browser Share: <b>${point.y}%</b>',header:"",
+    enableHighlight: true
   };
   public title: string = 'Browser Market Share';
   constructor() {

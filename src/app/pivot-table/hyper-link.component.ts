@@ -209,7 +209,7 @@ export class HyperLinkComponent implements OnInit {
         this.measuresddl = new DropDownList({
             dataSource: this.measures,
             fields: { value: 'value', text: 'text' },
-            value: 'In Stock',
+            value: 'In_Stock',
             width: '100%'
         });
         this.measuresddl.appendTo('#measures');

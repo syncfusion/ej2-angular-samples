@@ -121,7 +121,7 @@
             </div>
         </ejs-sidebar>
         <div [ngStyle]="{ 'width': isMobile ? '100%' : 'calc(100% - 200px)' }">
-            <ejs-pdfviewer #pdfviewer id="pdfViewer" [enableNavigationToolbar]="false" [enableToolbar]="false" [enableAnnotationToolbar]="false" [serviceUrl]="service"
+            <ejs-pdfviewer #pdfviewer id="pdfViewer" [enableNavigationToolbar]="false" [enableToolbar]="false" [enableAnnotationToolbar]="false" 
                 [documentPath]='document' (documentLoad)="documentLoad($event)" (formFieldAdd)="addFormField($event)" (pageClick)="pageClick($event)"
                 [resourceUrl]='resource' [downloadFileName]="fileName" [ngStyle]="{ 'height': isMobile ? '500px' : '640px' }" style="display:block">
             </ejs-pdfviewer>

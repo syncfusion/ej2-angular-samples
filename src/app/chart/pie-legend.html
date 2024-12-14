@@ -1,11 +1,11 @@
 <div id="action-description">
     <p>
-        This sample shows statistics on expenditure made in a year using the donut chart with legends shown at the right side of the chart.
+        This sample demonstrates a donut chart showcasing mobile browser usage statistics, with legends displayed at the bottom of the chart.
     </p>
 </div>
 <div class="control-section" >
     <div>
-        <ejs-accumulationchart id="donut-container" [title]="title"  align='center'[legendSettings]="legendSettings" [tooltip]="tooltip" selectionMode='Point' [annotations]='annotations' (load)='load($event)' [enableBorderOnMouseMove]='false'>
+        <ejs-accumulationchart id="donut-container" [title]="title"  align='center'[legendSettings]="legendSettings" [tooltip]="tooltip" selectionMode='Point' [annotations]='annotations' (load)='load($event)' [enableBorderOnMouseMove]='false' (pointRender)='pointRender($event)'>
             <e-accumulation-series-collection>
                 <e-accumulation-series name='Revenue' [dataSource]='data' xName='x' [startAngle]="startAngle" yName='y' [radius]="radius" [innerRadius]="innerRadius" [dataLabel]="dataLabel"> </e-accumulation-series>
             </e-accumulation-series-collection>
@@ -13,7 +13,7 @@
     </div>
 </div>
 <div id="description">
-    <p> In this example, you can see how to render a doughnut chart with legends. You can use <code>Radius</code> and <code>InnerRadius</code> properties to render the doughnut. Here, the legend text is wrapped using the <code>TextWrap</code> property.</p>
+    <p> This example demonstrates how to render a donut chart with legends positioned at the bottom. The legend can be arranged in horizontal, vertical, or auto layout modes. Using the <code>maximumColumns</code> property, you can define the maximum number of columns in auto layout. Additionally, a fixed width option ensures uniform legend sizes for a polished appearance.</p>
     <p style="font-weight: 500"><b>Injecting Module</b></p>
     <p>
         AccumulationChart component features are segregated into individual feature-wise modules. To use legend, we need to Inject

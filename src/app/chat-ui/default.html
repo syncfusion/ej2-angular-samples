@@ -1,0 +1,16 @@
+<div class="control-section chat-ui">
+    <div class="default-chatui">
+        <div id="chatUser1" ejs-chatui #defaultChatUI1 headerText='Albert' headerIconCss="chat_user1_avatar" [messages]="chatMessage" [user]="user1" [headerToolbar]="headerToolbar1" (userTyping)="userOneTyping($event)" (messageSend)="messageSendOne($event)" (created)="userOneCreated()"></div>
+        <div id="chatUser2" ejs-chatui #defaultChatUI2 headerText='Reena' headerIconCss="chat_user2_avatar" [messages]="chatMessage" [user]="user2" [suggestions]="suggestions" [headerToolbar]="headerToolbar2" (userTyping)="userTwoTyping($event)" (messageSend)="messageSendTwo($event)" (created)="userTwoCreated()"></div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the features of the Chat UI component, designed to simulate a real-time chat interface. It highlights customizable elements like headers, avatars, synchronized messaging update, and real-time typing indicators.</p>
+</div>
+<div id="description">
+    <p>
+        In this example, two Chat UI web components are used to represent users <b>Albert</b> and <b>Reena</b>, each with a unique header, avatar, and toolbar. Messages are instantly synchronized between the two users through the <code>messageSend</code> event, while typing indicators are shown in the other chat interface via the <code>userTyping</code> event, adding a more interactive feel.
+        This example demonstrates how to use the Chat UI component to display chat messages for multiple users. The chat interface allows switching between users' conversations, with bot responses triggered by user input. A header toolbar is included, and a splitter layout displays the chat alongside a list view for easy navigation.
+    </p>
+</div>

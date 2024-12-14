@@ -14,15 +14,15 @@
             </e-columns>
         </ejs-treegrid>
     </div>
-    <div class="col-lg-2 property-section">
+    <div class="col-lg-3 property-section">
         <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
-                <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+                <table id="property" class="property-panel-table" title="Properties" style="width: 100%;table-layout: auto;">
                     <tr style="height: 50px">
-                        <td style="width: 30%">
+                        <td>
                             <div>Indicator Type</div>
                         </td>
-                        <td style="width: 50%;padding-right: 10px">
+                        <td style="padding-right: 10px">
                             <div id='columnddl'>
                                 <ejs-dropdownlist id='dropdown' width='120px' #dropdown index='0' [dataSource]='indicatortypes'
                                 (change)='indicatorChange($event)' [fields]='fields'></ejs-dropdownlist>

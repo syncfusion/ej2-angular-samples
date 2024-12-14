@@ -32,6 +32,7 @@ background: #f9f9f9;
 .fluent2-highcontrast #control_wrapper,
 .fabric-dark #control_wrapper,
 .tailwind-dark #control_wrapper,
+.tailwind3-dark #control_wrapper,
 .material-dark #control_wrapper {
 background: inherit;
 }

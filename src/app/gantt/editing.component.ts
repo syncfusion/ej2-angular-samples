@@ -90,9 +90,12 @@ export class GanttEditingComponent implements OnInit {
         
     }
     actionBegin(args): void {
-        if (args.columnName === "EndDate"){
+        if (args.columnName === "EndDate" || args.requestType === "beforeOpenAddDialog" || args.requestType === "beforeOpenEditDialog") {
             this.startDate = args.rowData.ganttProperties.startDate;
         }
+        if (args.requestType === "taskbarediting" && args.taskBarEditAction === "ChildDrag") {
+            this.startDate = args.data.ganttProperties.startDate;
+        }   
     }
     public customFn(args) {
       var endDate;

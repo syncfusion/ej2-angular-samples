@@ -78,7 +78,7 @@ export class ProgressBarLinearComponent {
         args.progressBar.theme = <ProgressTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
         if (args.progressBar.theme === 'HighContrast' || args.progressBar.theme === 'Bootstrap5Dark' || args.progressBar.theme === 'BootstrapDark' || args.progressBar.theme === 'FabricDark'
-        || args.progressBar.theme === 'TailwindDark' || args.progressBar.theme === 'MaterialDark' || args.progressBar.theme === 'FluentDark' || args.progressBar.theme === 'Material3Dark' || args.progressBar.theme === 'Fluent2Dark' || args.progressBar.theme === 'Fluent2HighContrast') {
+        || args.progressBar.theme === 'TailwindDark' || args.progressBar.theme === 'Tailwind3Dark' || args.progressBar.theme === 'MaterialDark' || args.progressBar.theme === 'FluentDark' || args.progressBar.theme === 'Material3Dark' || args.progressBar.theme === 'Fluent2Dark' || args.progressBar.theme === 'Fluent2HighContrast') {
                 for (let i = 0; i < div.length; i++) {
                     div[i].setAttribute('style', 'color:white');
                 }
@@ -110,15 +110,19 @@ export class ProgressBarLinearComponent {
         } else if (selectedTheme === 'fluent') {
             args.progressBar.secondaryProgressColor = '#98c5f5'
         } else if (selectedTheme === 'tailwind-dark') {
-            args.progressBar.secondaryProgressColor = '#386e7f'
+             args.progressBar.secondaryProgressColor = '#22D3EE'
         } else if (selectedTheme === 'tailwind') {
-            args.progressBar.secondaryProgressColor = '#b1afe9'
+            args.progressBar.secondaryProgressColor = '#4F46E5'
         } else if (selectedTheme === 'fluent2') {
             args.progressBar.secondaryProgressColor = '#0F6CBD';
         } else if (selectedTheme === 'fluent2-highcontrast') {
             args.progressBar.secondaryProgressColor = '#1AEBFF';
         } else if (selectedTheme === 'fluent2-dark') {
             args.progressBar.secondaryProgressColor = '#115EA3';
+        } else if (selectedTheme === 'tailwind3-dark') {
+            args.progressBar.secondaryProgressColor = '#6366F1'
+        } else if (selectedTheme === 'tailwind3') {
+            args.progressBar.secondaryProgressColor = '#4F46E5'
         }
     }
 }
