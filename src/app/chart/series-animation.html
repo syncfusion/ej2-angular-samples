@@ -1,0 +1,108 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the animation capabilities of various chart series types in Angular Charts. The chart updates its data dynamically at regular intervals to showcase smooth transitions and animations.
+    </p>
+</div>
+<div class="control-section">
+    <div class="content-wrapper">
+        <ejs-tab heightAdjustMode='None' overflowMode='Scrollable' height='500px' headerPlacement='Top' >
+            <e-tabitems>
+                <e-tabitem [header]='headerText[0]'>
+                    <ng-template #content>
+                        <div id="lineCharts">
+                            <ejs-chart id='lineChart' [series]='[lineSeries]' [primaryXAxis]='primaryXAxis'
+                                [primaryYAxis]='primaryYAxis' [chartArea]='chartArea' [width]='width' (load)='lineLoad($event)' (loaded)='lineLoaded($event)'>
+                            </ejs-chart>
+                        </div>
+                    </ng-template>
+                </e-tabitem>
+                <e-tabitem [header]='headerText[1]'>
+                    <ng-template #content>  
+                        <div id="columnCharts">
+                            <ejs-chart id='columnChart' [series]='[columnSeries]' [primaryXAxis]='primaryXAxis'
+                                [primaryYAxis]='primaryYAxis' [chartArea]='chartArea' [width]='width' (load)='columnLoad($event)' (loaded)='columnLoaded($event)'>
+                            </ejs-chart>
+                        </div>
+                    </ng-template>
+                </e-tabitem>
+                <e-tabitem [header]='headerText[2]'>
+                    <ng-template #content>  
+                        <div id="splineCharts">
+                            <ejs-chart id='splineChart' [series]='[splineSeries]' [primaryXAxis]='primaryXAxis'
+                                [primaryYAxis]='primaryYAxis' [chartArea]='chartArea' [width]='width' (load)='splineLoad($event)' (loaded)='splineLoaded($event)'>
+                            </ejs-chart>
+                        </div>
+                    </ng-template>
+                </e-tabitem>
+                <e-tabitem [header]='headerText[3]'>
+                    <ng-template #content>  
+                        <div id="areaCharts">
+                            <ejs-chart id='areaChart' [series]='[areaSeries]' [primaryXAxis]='primaryXAxis'
+                                [primaryYAxis]='primaryYAxis' [chartArea]='chartArea' [width]='width' (load)='areaLoad($event)' (loaded)='areaLoaded($event)'>
+                            </ejs-chart>
+                        </div>
+                    </ng-template>
+                </e-tabitem>
+                <e-tabitem [header]='headerText[4]'>
+                    <ng-template #content>  
+                        <div id="barCharts">
+                            <ejs-chart id='barChart' [series]='[barSeries]' [primaryXAxis]='primaryXAxis'
+                                [primaryYAxis]='primaryYAxis' [chartArea]='chartArea' [width]='width' (load)='barLoad($event)' (loaded)='barLoaded($event)'>
+                            </ejs-chart>
+                        </div>
+                    </ng-template>
+                </e-tabitem>
+                <e-tabitem [header]='headerText[5]'>
+                    <ng-template #content>  
+                        <div id="bubbleCharts">
+                            <ejs-chart id='bubbleChart' [series]='[bubbleSeries]' [primaryXAxis]='bubbleXAxis' (pointRender)='bubblePointRender($event)'
+                                [primaryYAxis]='bubbleYAxis' [chartArea]='chartArea' (load)='bubbleLoad($event)' (loaded)='bubbleLoaded($event)'>
+                            </ejs-chart>
+                        </div>
+                    </ng-template>
+                </e-tabitem>
+                <e-tabitem [header]='headerText[6]'>
+                    <ng-template #content>  
+                        <div id="scatterCharts">
+                            <ejs-chart id='scatterChart' [primaryXAxis]='scatterXAxis'
+                                [primaryYAxis]='scatterYAxis' [chartArea]='chartArea' [width]='width' (load)='scatterLoad($event)' (loaded)='scatterLoaded($event)'>
+                                <e-series-collection>
+                                    <e-series [dataSource]='scatterData' type='Scatter' xName='x' yName='y' [marker]='marker' [animation]='animation'> </e-series>
+                                    <e-series [dataSource]='scatterData' type='Scatter' xName='x' yName='y1'[marker]='marker' [animation]='animation'> </e-series>
+                                </e-series-collection>
+                            </ejs-chart>
+                        </div>
+                    </ng-template>
+                </e-tabitem>
+                <e-tabitem [header]='headerText[7]'>
+                    <ng-template #content>  
+                        <div id="stepLineCharts">
+                            <ejs-chart id='stepLineChart' [series]='[stepLineSeries]' [primaryXAxis]='primaryXAxis'
+                                [primaryYAxis]='primaryYAxis' [chartArea]='chartArea' [width]='width' (load)='stepLoad($event)' (loaded)='stepLoaded($event)'>
+                            </ejs-chart>
+                        </div>
+                    </ng-template>
+                </e-tabitem>
+                <e-tabitem [header]='headerText[8]'>
+                    <ng-template #content>  
+                        <div id="rangeCharts">
+                            <ejs-chart id='rangeChart' [series]='[rangeSeries]' [primaryXAxis]='primaryXAxis'
+                                [primaryYAxis]='primaryYAxis' [chartArea]='chartArea' [width]='width' (load)='rangeLoad($event)' (loaded)='rangeLoaded($event)'>
+                            </ejs-chart>
+                        </div>
+                    </ng-template>
+                </e-tabitem>
+            </e-tabitems>
+        </ejs-tab>
+    </div>    
+</div>
+
+<div id="description">
+    <p>
+        In this example, different types of chart series, such as Line, Column, Spline, Area, Bar, Bubble, Scatter, Step Line, and Range Column, are animated to demonstrate real-time data updates. The chart dynamically updates with random values using the <code>setData</code> method. Each chart type reflects its unique characteristics and enhances visual understanding through animations.
+    </p>
+    <p><b>Injecting Module</b></p>
+    <p>
+        Chart component features are divided into individual, feature-specific modules. To use a particular series, you need to inject the corresponding series module using <code>LineSeriesService</code> into the <code>&#64;NgModule.providers</code> section.
+    </p>
+</div>

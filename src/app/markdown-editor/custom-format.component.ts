@@ -10,6 +10,7 @@ import * as Marked from 'marked';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { Tooltip } from '@syncfusion/ej2-angular-popups';
 
 @Component({
     selector: 'control-content',
@@ -27,13 +28,13 @@ export class MarkdownCustomComponent {
 
     public textArea: HTMLTextAreaElement;
     public mdsource: HTMLElement;
+    public tooltipObj: Tooltip;
     public placeholder: string = 'Enter the text here...';
     public tools: ToolbarModule = {
         items: ['Bold', 'Italic', 'StrikeThrough', '|',
             'Formats', 'Blockquote', 'OrderedList', 'UnorderedList', '|',
             'CreateLink', 'Image', '|',
             {
-                tooltipText: 'Preview',
                 template: '<button id="preview-code" class="e-tbar-btn e-control e-btn e-icon-btn" aria-label="Preview Code">' +
                     '<span class="e-btn-icon e-icons e-md-preview"></span></button>'
             }, 'Undo', 'Redo']
@@ -49,6 +50,11 @@ export class MarkdownCustomComponent {
     });
 
     public onCreate(): void {
+        this.tooltipObj = new Tooltip({
+            content: "Preview",  
+            target: "#preview-code"  
+          });
+        this.tooltipObj.appendTo("#preview-code");
         this.textArea = this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement;
         this.textArea.addEventListener('keyup', (e: KeyboardEventArgs) => {
             this.markdownConversion();
@@ -79,6 +85,7 @@ export class MarkdownCustomComponent {
             this.mdsource.classList.remove('e-active');
             this.textArea.style.display = 'block';
             htmlPreview.style.display = 'none';
+            this.tooltipObj.content = "Preview";
         } else {
             this.mdsource.classList.add('e-active');
             if (!htmlPreview) {
@@ -89,7 +96,7 @@ export class MarkdownCustomComponent {
             this.textArea.style.display = 'none';
             htmlPreview.style.display = 'block';
             htmlPreview.innerHTML = Marked.parse((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
-            this.mdsource.parentElement.title = 'Code View';
+            this.tooltipObj.content = "Codeview";
         }
     }
 }

@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { ChartTheme, Chart3DLoadedEventArgs } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { Chart3DAllModule } from '@syncfusion/ej2-angular-charts';
+import { load3DChartTheme } from './theme-color';
 
 /**
  * 3D Chart Stacking Bar sample
@@ -45,10 +46,7 @@ export class StackingBar100Component {
     public depth: number = 100;
     
     public load(args: Chart3DLoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        load3DChartTheme(args);
     };
     constructor() {
         // code

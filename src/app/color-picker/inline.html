@@ -10,12 +10,12 @@
         <div id="inline-content" class="row">
             <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
                 <h4>Inline Palette</h4>
-                <input ejs-colorpicker id="inline-color-palette" type="color" mode="Palette" [modeSwitcher]="ctrlSwitch" inline="true" [showButtons]="ctrlSwitch"
+                <input ejs-colorpicker #inlinePalette id="inline-color-palette" type="color" mode="Palette" [modeSwitcher]="ctrlSwitch" inline="true" [showButtons]="ctrlSwitch"
                     (change)="change($event)" />
             </div>
             <div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
                 <h4>Inline Picker</h4>
-                <input ejs-colorpicker id="inline-color-picker" type="color" [modeSwitcher]="ctrlSwitch" inline="true" [showButtons]="ctrlSwitch"
+                <input ejs-colorpicker #inlinePicker id="inline-color-picker" type="color" [modeSwitcher]="ctrlSwitch" inline="true" [showButtons]="ctrlSwitch"
                     (change)="change($event)" />
             </div>
         </div>

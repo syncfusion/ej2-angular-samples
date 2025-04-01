@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { AnimationModel, ProgressTheme, ILoadedEventArgs, ProgressBar } from '@syncfusion/ej2-progressbar';
 import { Button } from '@syncfusion/ej2-buttons';
 import { ProgressBarAllModule } from '@syncfusion/ej2-angular-progressbar';
-
+import { loadProgressBarTheme } from './theme-color';
 /**
  * RTl sample
  */
@@ -73,10 +73,7 @@ export class ProgressBarLinearComponent {
     }
     public load(args: ILoadedEventArgs): void {
         let div: HTMLCollection = document.getElementsByClassName('progressbar-label');
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.progressBar.theme = <ProgressTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        let selectedTheme: string = loadProgressBarTheme(args);
         if (args.progressBar.theme === 'HighContrast' || args.progressBar.theme === 'Bootstrap5Dark' || args.progressBar.theme === 'BootstrapDark' || args.progressBar.theme === 'FabricDark'
         || args.progressBar.theme === 'TailwindDark' || args.progressBar.theme === 'Tailwind3Dark' || args.progressBar.theme === 'MaterialDark' || args.progressBar.theme === 'FluentDark' || args.progressBar.theme === 'Material3Dark' || args.progressBar.theme === 'Fluent2Dark' || args.progressBar.theme === 'Fluent2HighContrast') {
                 for (let i = 0; i < div.length; i++) {

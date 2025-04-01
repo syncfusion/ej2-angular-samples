@@ -3,7 +3,7 @@ import { extend } from '@syncfusion/ej2-base';
 import { Query, DataManager } from '@syncfusion/ej2-data';
 import { DialogComponent, ButtonPropsModel, DialogModule } from '@syncfusion/ej2-angular-popups';
 import { AnimationSettingsModel } from '@syncfusion/ej2-splitbuttons';
-import { EventSettingsModel, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { SelectEventArgs, TabModule } from '@syncfusion/ej2-angular-navigations';
 import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent, RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { scheduleData } from './scheduleDatasource';
@@ -27,7 +27,7 @@ import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
     templateUrl: 'multiple-components.html',
     styleUrls: ['multiple-components.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService],
     standalone: true,
     imports: [ButtonModule, DialogModule, TabModule, GridModule, ChartModule, ScheduleModule, RichTextEditorModule, FormsModule, ReactiveFormsModule, NgIf, DatePickerModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
@@ -97,7 +97,7 @@ export class DialogMultipleComponent implements AfterViewInit {
     }
   };
 
-  public chartWidth: string = Browser.isDevice ? '100%' : '60%';
+  public chartWidth: string = '100%';
   public marker: Object = {
     visible: true,
     height: 10,

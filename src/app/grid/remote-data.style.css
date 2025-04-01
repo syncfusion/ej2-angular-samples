@@ -1,0 +1,39 @@
+#export-cache-container {
+    display: flex;
+    margin-bottom: 7px;
+}
+
+#export-cache-container label {
+    font-size: 15px;
+    margin-right: 8px;
+}
+
+.material3 #export-cache-container .e-switch-wrapper.e-wrapper,
+.material3-dark #export-cache-container .e-switch-wrapper.e-wrapper,
+.tailwind3 #export-cache-container .e-switch-wrapper.e-wrapper,
+.tailwind3-dark #export-cache-container .e-switch-wrapper.e-wrapper {
+    margin: -1.25px 0px 0px 0px;
+}
+
+.bootstrap5\.3 #export-cache-container .e-switch-wrapper.e-wrapper,
+.bootstrap5\.3-dark #export-cache-container .e-switch-wrapper.e-wrapper,
+.fluent2 #export-cache-container .e-switch-wrapper.e-wrapper,
+.fluent2-dark #export-cache-container .e-switch-wrapper.e-wrapper,
+.fluent2-highcontrast #export-cache-container .e-switch-wrapper.e-wrapper {
+    margin: 1.5px 0px 0px 0px;
+}
+
+.e-bigger.material3 #export-cache-container .e-switch-wrapper.e-wrapper,
+.e-bigger.material3-dark #export-cache-container .e-switch-wrapper.e-wrapper,
+.e-bigger.tailwind3 #export-cache-container .e-switch-wrapper.e-wrapper,
+.e-bigger.tailwind3-dark #export-cache-container .e-switch-wrapper.e-wrapper {
+    margin: -5.5px 0px 0px 0px;
+}
+
+.e-bigger.bootstrap5\.3 #export-cache-container .e-switch-wrapper.e-wrapper,
+.e-bigger.bootstrap5\.3-dark #export-cache-container .e-switch-wrapper.e-wrapper,
+.e-bigger.fluent2 #export-cache-container .e-switch-wrapper.e-wrapper,
+.e-bigger.fluent2-dark #export-cache-container .e-switch-wrapper.e-wrapper,
+.e-bigger.fluent2-highcontrast #export-cache-container .e-switch-wrapper.e-wrapper {
+    margin: -0.5px 0px 0px 0px;
+}

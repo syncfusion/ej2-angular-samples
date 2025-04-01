@@ -5,7 +5,7 @@
 <div class="control-section">
     <div class="sample-container">
         <div class="default-section">
-            <ejs-richtexteditor #iframeRTE id='iframeRTE' [toolbarSettings]='tools' [iframeSettings]='iframe'
+            <ejs-richtexteditor #iframeRTE id='iframeRTE' [toolbarSettings]='tools' [iframeSettings]='iframe' [enableTabKey]='enableTabKey'
                 [height]='height' [fileManagerSettings]='fileManagerSettings' (actionBegin)='handleFullScreen($event)'
                 (actionComplete)='actionCompleteHandler($event)'>
                 <ng-template #valueTemplate>

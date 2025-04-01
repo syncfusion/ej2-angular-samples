@@ -2,11 +2,7 @@
     <p>This sample demonstrates the resize operation of the Rich Text Editor control. To resize the Rich Text Editor, select and resize the editor using its handle (grip) at the bottom right corner of the content panel.</p>
 </div>
 <div class="control-section">
-    <ejs-richtexteditor id='defaultRTE' [enableResize]="true" height='250px'>
-        <ng-template #valueTemplate>
-            <p>The Rich Text Editor component is a WYSIWYG ("what you see is what you get") editor that provides the best user experience to create and update the content. 
-                Users can format their content using standard toolbar commands.</p>
-        </ng-template>
+    <ejs-richtexteditor id='defaultRTE' [enableResize]="true" height='250px' [value]=editorValue>
     </ejs-richtexteditor>
 </div>
 <div id='rteContent' style='display: none'>

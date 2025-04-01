@@ -8,6 +8,8 @@ import { MultiSelectComponent, MultiSelectAllModule, MultiSelectModule } from '@
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
+MultiSelect.Inject(CheckBoxSelection);
+
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'lockrow.html',
@@ -30,6 +32,7 @@ export class LockRowComponent implements OnInit {
     public tasknamerules: Object;
     public startdaterules: Object;
     public durationrules: Object;
+    public dateeditparam:Object;
     @ViewChild('treegrid')
     public treegrid: TreeGridComponent;
     @ViewChild('multiselect')
@@ -42,12 +45,12 @@ export class LockRowComponent implements OnInit {
         this.d1data = lockRowDropDownData;
         this.value = [2,6];
         this.popupHeight='350px';
+        this.dateeditparam = { params: { format: 'M/d/yyyy' } };
         this.taskidrules = { required: true , number: true};
         this.tasknamerules = { required: true};
-        this.startdaterules = { date: true};
+        this.startdaterules = { date: ['M/d/yyyy', 'Please enter a valid date']};
         this.durationrules = {number: true , min: 0};
         this.editparams = {params: { format: 'n' }};
-
     }
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['lockrow.style.css'];

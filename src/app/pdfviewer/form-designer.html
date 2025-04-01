@@ -9,10 +9,7 @@
                 <span class="e-msg-icon render-mode-info-icon"
                     title="Turn OFF to render the PDF Viewer as server-backed"></span>
             </div>
-            <div>
-                <ejs-switch cssClass="buttonSwitch" id="checked" (change)="change($event)" [checked]="true">
-                </ejs-switch>
-            </div>
+            <ejs-switch cssClass="buttonSwitch" id="checked" (change)="change($event)" [checked]="true"></ejs-switch>
         </div>
         <ejs-pdfviewer #pdfviewer id="pdfViewer" [documentPath]='document' [resourceUrl]='resource' (documentLoad)='documentLoaded($event)'
             (validateFormFields)='validateFormFields($event)' [enableFormFieldsValidation]=true

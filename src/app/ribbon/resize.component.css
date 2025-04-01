@@ -103,7 +103,7 @@ body[class*="high"] #ribbonContainer {
 }
 
 p.ribbonResizeDisplayText  {
-  margin: 0 0 0 15px;
+  margin: 0 15px;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.1;
@@ -145,7 +145,6 @@ line-height: 1;
 .sf-icon-editor:before { content: "\e70a"; }
 .sf-icon-word:before { content: "\e70d"; }
 
-.ribbon-resize.e-rtl .ribbonResizeDisplayText{
+.ribbon-resize.e-rtl + #ribbonPlaceHolder .ribbonSliderWrapper{
   direction: rtl;
-  padding-right: 15px;
 }

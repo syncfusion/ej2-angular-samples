@@ -8,11 +8,11 @@
 }
 
 .default-chatui .chat_user1_avatar {
-    background-image: url('src/app/chat-ui/images/andrew.png');
+    background-image: url('/assets/chat-ui/images/andrew.png');
 }
 
 .default-chatui .chat_user2_avatar {
-    background-image: url('src/app/chat-ui/images/reena.png');
+    background-image: url('/assets/chat-ui/images/reena.png');
 }
 .default-chatui .chat_user1_avatar, 
 .default-chatui .chat_user2_avatar {

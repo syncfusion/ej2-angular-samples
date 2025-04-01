@@ -26,12 +26,12 @@ export class ApiChipsComponent {
         { id: '5', text: 'Warning' },
         { id: '6', text: 'Info' },
       ];
-    public avatarData: Object[] = [
+    public avatarData: Object[] =  [
         { id: '1', text: 'None' },
         { id: '2', text: 'Icon' },
         { id: '3', text: 'Image' },
         { id: '4', text: 'Letter' },
-      ];   
+      ];  
     outlineCss = '';
     colorCss = '';
     iconHandler(e): void {

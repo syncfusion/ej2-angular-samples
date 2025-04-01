@@ -3,6 +3,7 @@ import { AccumulationChartComponent, ChartAllModule,AccumulationChart, Accumulat
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { donutPointRender, loadAccumulationChartTheme } from './theme-color';
 /**
  * Sample for doughnut 
  */
@@ -23,61 +24,8 @@ export class DonutComponent {
         { x: 'Others', y: 3.6, DataLabelMappingName: Browser.isDevice ? 'Others: <br> 3.6%' :'Others: 3.6%' }
     ];
     public pointRender(args: IPointRenderEventArgs): void {
-        this.SetTheme(args);
+        donutPointRender(args);
      };
-    public SetTheme(args: IPointRenderEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        let seriesColor = ['#FFE066', "#FAB666", "#F68F6A", "#F3646A", "#CC555A", "#9C4649"];
-        if (selectedTheme === 'fluent' || selectedTheme === 'bootstrap5') {
-            args.fill = seriesColor[args.point.index % 10];
-        } 
-        if (selectedTheme.indexOf('dark') > -1 )
-        {
-          if(selectedTheme.indexOf('material') > -1 )
-          {
-            args.border.color = '#303030' ;
-          }
-          else if(selectedTheme.indexOf('bootstrap5') > -1 )
-          {
-            args.border.color = '#212529' ;
-          }
-          else if(selectedTheme.indexOf('bootstrap') > -1 )
-          {
-            args.border.color = '#1A1A1A' ;
-          }
-          else if(selectedTheme.indexOf('tailwind') > -1 )
-          {
-            args.border.color = '#1F2937' ;
-          }
-          else if(selectedTheme.indexOf('fluent') > -1 )
-          {
-            args.border.color = '#252423' ;
-          }
-          else if(selectedTheme.indexOf('fabric') > -1 )
-          {
-            args.border.color = '#201f1f' ;
-          }
-          else
-          {
-            args.border.color = '#222222' ;
-          }
-        }
-        else if(selectedTheme.indexOf('highcontrast') > -1)
-        {
-          args.border.color = '#000000' ;
-        }
-        else if (selectedTheme.indexOf('fluent2') > -1) {
-          args.fill = seriesColor[args.point.index % 10];
-        }
-        else if (selectedTheme.indexOf('fluent2-highcontrast') > -1) {
-          args.fill = seriesColor[args.point.index % 10];
-        }
-        else
-        {
-          args.border.color = '#FFFFFF' ;
-        }
-      };
     //Initializing Legend
     public legendSettings: Object = {
         visible: false,
@@ -108,9 +56,7 @@ export class DonutComponent {
     };
      // custom code start
     public load(args: IAccLoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadAccumulationChartTheme(args);
     };
      // custom code end
     public radius: string = Browser.isDevice ? '40%' : '70%'

@@ -18,8 +18,12 @@ ComboBoxComponent.Inject(VirtualScroll);
     imports: [SBActionDescriptionComponent, ComboBoxModule, SBDescriptionComponent]
 })
 export class VirtualScrollComboBoxComponent {
-    @ViewChild('sample')
-    public comboBoxObj: ComboBoxComponent;
+    @ViewChild('sample1')
+    public localComboBoxObj: ComboBoxComponent;
+    @ViewChild('sample2')
+    public remoteComboBoxObj: ComboBoxComponent;
+    @ViewChild('sample3')
+    public groupComboBoxObj: ComboBoxComponent;
     // defined the array of data
     public records: { [key: string]: Object }[] = [];
     constructor() {
@@ -47,6 +51,17 @@ export class VirtualScrollComboBoxComponent {
                     break;
             }
             this.records.push(item);
+        }
+    }
+    ngAfterViewInit(): void {
+        if (this.localComboBoxObj) {
+            this.localComboBoxObj.refresh();
+        }
+        if (this.remoteComboBoxObj) {
+            this.remoteComboBoxObj.refresh();
+        }
+        if (this.groupComboBoxObj) {
+            this.groupComboBoxObj.refresh();
         }
     }
     // bind the DataManager instance to dataSource property

@@ -18,7 +18,6 @@ export class GanttExportingComponent implements OnInit {
     @ViewChild('ganttExcel')
     public ganttObj: GanttComponent;
     public data: object[];
-    public isFitToWidth: boolean;
     public resources: object[];
     public resourceFields: object ;
     public taskSettings: object;
@@ -115,20 +114,7 @@ export class GanttExportingComponent implements OnInit {
             this.ganttObj.csvExport();
         }
         else if (args.item.id === "GanttExport_pdfexport") {
-            let exportProperties: PdfExportProperties = {
-
-              fitToWidthSettings: {
-                isFitToWidth:this.isFitToWidth,
-              }
-            };
-          this.ganttObj.pdfExport(exportProperties);
+          this.ganttObj.pdfExport();
         }
     }
-    public dragDropChange(args): any {
-      if (args.checked) {
-        this.isFitToWidth = true;
-      } else {
-        this.isFitToWidth = false;
-      }
-  }
 }

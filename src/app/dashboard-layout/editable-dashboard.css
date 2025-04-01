@@ -2,6 +2,28 @@
     display: none;
 }
 
+.editBtnContainer {
+    width: 100%;
+    height: 30px;
+}
+
+#togglebtn {
+    float: right;
+    width: 75px;
+}
+
+#addBtn {
+    padding: 5px;
+    margin-top: 5px;
+    text-align: end;
+}
+
+.contentContainer,
+#visitorsChart {
+    height: 100%;
+    width: 100%;
+}
+
 .e-chart {
     height: inherit !important;
     width: inherit !important;
@@ -128,7 +150,6 @@
 .save::before {
     content: '\e500';
     font-family: 'e-sb-icons';
-    /* color: #e3165b; */
     margin-left: -7px;
     vertical-align: middle;
 }

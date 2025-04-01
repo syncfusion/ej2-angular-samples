@@ -17,8 +17,8 @@
                 <ejs-message id="msg_warning" [content]="msgWarning" [visible]='warningVisible' severity="Warning"></ejs-message>
                 <ejs-message id="msg_error" [content]="msgError" [visible]='errorVisible' severity="Error"></ejs-message>
 
-        <ejs-pdfviewer #pdfviewer id='pdfViewer' [documentPath]="document"(addSignature) = "addSignature($event)"  (documentLoad)="documentLoad($event)" [serviceUrl]="service" [enableToolbar]=false [enableNavigationToolbar]=false 
-              style="height:640px; display: block">
+        <ejs-pdfviewer #pdfviewer id='pdfViewer' [documentPath]="document"(addSignature) = "addSignature($event)"  (documentLoad)="documentLoad($event)" [enableToolbar]=false [enableNavigationToolbar]=false 
+        [resourceUrl]='resource' [enableAnnotationToolbar]=false [enableTextSelection]=false style="height:640px; display: block">
         </ejs-pdfviewer>
         <input type="file" id="fileUpload" accept=".pdf" style="display:block;visibility:hidden;width:0;height:0;">
     </div>

@@ -5,13 +5,7 @@
 <div class="col-lg-8 control-section sb-property-border">
     <div class="sample-container">
         <div class="default-section">
-            <ejs-richtexteditor #imageRTE id='imageRTE' [(quickToolbarSettings)]='toolbarSettings' (toolbarClick)='onToolbarClick($event)'>
-                <ng-template #valueTemplate>
-                    <p>Rich Text Editor allows inserting images from online sources as well as the local computers where you want to insert the image in your content.</p>
-                    <p><b>Get started Quick Toolbar to click on the image</b></p>
-                    <p>It is possible to add custom style on the selected image inside the Rich Text Editor through the quick toolbar.</p>
-                    <img id="rteImageID" style="width:300px; height:300px;transform: rotate(0deg);" alt="Sky" src="https://cdn.syncfusion.com/ej2/richtexteditor-resources/RTE-Portrait.png">
-                </ng-template>
+            <ejs-richtexteditor #imageRTE id='imageRTE' [quickToolbarSettings]='toolbarSettings' (toolbarClick)='onToolbarClick($event)' [value]=editorValue>
             </ejs-richtexteditor>
         </div>
     </div>

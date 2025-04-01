@@ -8,14 +8,13 @@ import { ChartComponent, RangeNavigatorComponent, RangeNavigatorAllModule, Chart
 import { Browser, remove } from '@syncfusion/ej2-base';
 import { SwitchComponent, ChangeEventArgs, SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { periodData } from './period-data';
+import { loadRangeNavigatorTheme } from './theme-colors';
 
 /**
  * Sample for Periodic Selector
  */
 
-let selectedTheme: string = location.hash.split('/')[1];
-selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-let theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+let theme: ChartTheme = loadRangeNavigatorTheme();
 
 let dataSource: any[] = [];
 for (let i = 2100; i < periodData.length - 20; i++) {

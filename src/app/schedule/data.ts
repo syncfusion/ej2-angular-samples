@@ -5483,3 +5483,139 @@ export let scheduleEvent: object[] = [
       EndTime: new Date(2024, 7, 15, 15, 30),
   },
 ];
+export let scheduleOverlapData: object[] = [
+
+  {
+    Id: 1,
+    Subject: "Winter Market",
+    StartTime: new Date(2025, 1, 3, 9, 30),
+    EndTime: new Date(2025, 1, 3, 11, 30),
+    CategoryColor: "#ff0000"
+  }, {
+    Id: 2,
+    Subject: "Ice Skating Event",
+    StartTime: new Date(2025, 1, 3, 12, 30),
+    EndTime: new Date(2025, 1, 3, 14, 30),
+    CategoryColor: "#00ff00"
+  }, {
+    Id: 3,
+    Subject: "Snow Sculpture Workshop",
+    StartTime: new Date(2025, 1, 5, 10, 0),
+    EndTime: new Date(2025, 1, 5, 12, 0),
+    CategoryColor: "#0000ff"
+  }, {
+    Id: 4,
+    Subject: "Winter Photography Tour",
+    StartTime: new Date(2025, 1, 5, 11, 30),
+    EndTime: new Date(2025, 1, 5, 13, 30),
+    CategoryColor: "#ff00ff"
+  }, {
+    Id: 5,
+    Subject: "Ski Resort Trip",
+    StartTime: new Date(2025, 1, 7, 15, 0),
+    EndTime: new Date(2025, 1, 7, 17, 0),
+    CategoryColor: "#00ffff"
+  }, {
+    Id: 6,
+    Subject: "Winter Fashion Show",
+    StartTime: new Date(2025, 1, 8, 13, 0),
+    EndTime: new Date(2025, 1, 8, 15, 0),
+    CategoryColor: "#ff8000"
+  }, {
+    Id: 7,
+    Subject: "Hot Chocolate Festival",
+    StartTime: new Date(2025, 1, 10, 11, 0),
+    EndTime: new Date(2025, 1, 10, 13, 0),
+    CategoryColor: "#8000ff"
+  }, {
+    Id: 8,
+    Subject: "Winter Ball",
+    StartTime: new Date(2025, 1, 11, 12, 30),
+    EndTime: new Date(2025, 1, 11, 14, 30),
+    CategoryColor: "#ff0080"
+  }, {
+    Id: 9,
+    Subject: "Ice Fishing Competition",
+    StartTime: new Date(2025, 1, 13, 10, 0),
+    EndTime: new Date(2025, 1, 13, 12, 0),
+    CategoryColor: "#0080ff"
+  }, {
+    Id: 10,
+    Subject: "Winter Craft Fair",
+    StartTime: new Date(2025, 1, 14, 11, 30),
+    EndTime: new Date(2025, 1, 14, 13, 30),
+    CategoryColor: "#ff8000"
+  }, {
+    Id: 11,
+    Subject: "Snow Parade",
+    StartTime: new Date(2025, 1, 15, 14, 0),
+    EndTime: new Date(2025, 1, 15, 16, 0),
+    CategoryColor: "#800080"
+  }, {
+    Id: 12,
+    Subject: "Winter Lights Festival",
+    StartTime: new Date(2025, 1, 17, 15, 30),
+    EndTime: new Date(2025, 1, 17, 17, 30),
+    CategoryColor: "#ff00ff"
+  }, {
+    Id: 13,
+    Subject: "Winter Baking Class",
+    StartTime: new Date(2025, 1, 19, 12, 0),
+    EndTime: new Date(2025, 1, 19, 14, 0),
+    CategoryColor: "#00ff80"
+  }, {
+    Id: 14,
+    Subject: "Frost Fair",
+    StartTime: new Date(2025, 1, 21, 13, 30),
+    EndTime: new Date(2025, 1, 21, 15, 30),
+    CategoryColor: "#ff0080"
+  }, {
+    Id: 15,
+    Subject: "Winter Bird Watching",
+    StartTime: new Date(2025, 1, 22, 15, 0),
+    EndTime: new Date(2025, 1, 22, 16, 0),
+    CategoryColor: "#cddc39"
+  }, {
+    Id: 16,
+    Subject: "Ice Carving Show",
+    StartTime: new Date(2025, 1, 23, 15, 30),
+    EndTime: new Date(2025, 1, 23, 17, 0),
+    CategoryColor: "#ff9800"
+  }, {
+    Id: 17,
+    Subject: "Winter Wildlife Tour",
+    StartTime: new Date(2025, 1, 24, 11, 0),
+    EndTime: new Date(2025, 1, 24, 12, 0),
+    CategoryColor: "#795548"
+  }, {
+    Id: 18,
+    Subject: "Snowshoe Hike",
+    StartTime: new Date(2025, 1, 25, 13, 0),
+    EndTime: new Date(2025, 1, 25, 14, 0),
+    CategoryColor: "#607d8b"
+  }, {
+    Id: 19,
+    Subject: "Winter Wellness Retreat",
+    StartTime: new Date(2025, 1, 26, 15, 0),
+    EndTime: new Date(2025, 1, 26, 16, 0),
+    CategoryColor: "#e91e63"
+  }, {
+    Id: 20,
+    Subject: "Frozen Lake Tour",
+    StartTime: new Date(2025, 1, 27, 15, 30),
+    EndTime: new Date(2025, 1, 27, 17, 0),
+    CategoryColor: "#9e9e9e"
+  }, {
+    Id: 21,
+    Subject: "Winter Star Gazing",
+    StartTime: new Date(2025, 1, 28, 11, 0),
+    EndTime: new Date(2025, 1, 28, 12, 30),
+    CategoryColor: "#ff4081"
+  }, {
+    Id: 22,
+    Subject: "Polar Plunge Event",
+    StartTime: new Date(2025, 1, 28, 13, 0),
+    EndTime: new Date(2025, 1, 28, 15, 0),
+    CategoryColor: "#8e24aa"
+  }
+];

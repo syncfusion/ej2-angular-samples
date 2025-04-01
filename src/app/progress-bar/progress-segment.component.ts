@@ -3,6 +3,8 @@ import { ProgressBar, ITextRenderEventArgs, AnimationModel, FontModel } from '@s
 import {ILoadedEventArgs, ProgressTheme} from '@syncfusion/ej2-progressbar';
 import { Browser } from '@syncfusion/ej2-base';
 import { ProgressBarAllModule } from '@syncfusion/ej2-angular-progressbar';
+import { loadProgressBarTheme } from './theme-color';
+
 /**
  * RTl sample
  */
@@ -38,20 +40,14 @@ export class ProgressBarProgressSegmentComponent {
     @ViewChild('circular')
     public circular: ProgressBar;
     public load1(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.progressBar.theme = <ProgressTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        let selectedTheme = loadProgressBarTheme(args);
         if (selectedTheme === 'highcontrast') {
             args.progressBar.trackColor = '#969696';
         }
 
     }
     public load2(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.progressBar.theme = <ProgressTheme>(selectedTheme.charAt(0).toUpperCase() +
-        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        let selectedTheme: string = loadProgressBarTheme(args);
         switch (selectedTheme) {
             case 'material':
                 args.progressBar.annotations[0].content = '<div id="point1" style="font-size:24px;font-weight:bold;color:#e91e63"><span></span></div>';

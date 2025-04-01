@@ -3,13 +3,13 @@ import { ChartTheme, IChangedEventArgs, RangeTooltip, IRangeLoadedEventArgs, Dat
 import { Browser } from '@syncfusion/ej2-base';
 import { GetDateTimeData } from './data-service';
 import { RangeNavigatorModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { loadRangeNavigatorTheme } from './theme-colors';
 
 /**
  *  Sample for range navigator without series
  */
 
-let selectedTheme: string = location.hash.split('/')[1];
-selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
+let theme: ChartTheme = loadRangeNavigatorTheme();
 
 @Component({
     selector: 'control-content',
@@ -37,7 +37,7 @@ export class LightWeightComponent {
 
     public width: string = Browser.isDevice ? '100%' : '80%';
 
-    public theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+    public theme: ChartTheme = theme;    
 
     public navigatorStyleSettings: Object = {
         thumb: {

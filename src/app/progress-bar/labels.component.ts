@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ProgressBar, ITextRenderEventArgs, AnimationModel, FontModel,ILoadedEventArgs,ProgressTheme } from '@syncfusion/ej2-progressbar';
 import { ProgressBarAllModule } from '@syncfusion/ej2-angular-progressbar';
-
+import { loadProgressBarTheme } from './theme-color';
 
 /**
  * RTl sample
@@ -51,17 +51,13 @@ export class ProgressBarLabelComponent {
         this.linear4.refresh();
     }
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.progressBar.theme = <ProgressTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
-            if (args.progressBar.theme === 'Material') {
-                args.progressBar.trackColor = '#eee';
-            }
-            if (selectedTheme === 'highcontrast') {
-               args.progressBar.labelStyle.color = '#000000';
-               args.progressBar.trackColor = '#969696';
-           }
-
+        let selectedTheme: string = loadProgressBarTheme(args);
+        if (args.progressBar.theme === 'Material') {
+            args.progressBar.trackColor = '#eee';
+        }
+        if (selectedTheme === 'highcontrast') {
+            args.progressBar.labelStyle.color = '#000000';
+            args.progressBar.trackColor = '#969696';
+        }
     }
 }

@@ -1,26 +1,26 @@
 <div id="action-description">
     <p>
-        This sample shows the music album sales with spline series by inverting X and Y Axes. 
-        Data points are enhanced by a marker and tooltip.
+        This sample showcases an inversed spline chart depicting stock market capitalization as a percentage of GDP by country, with enhanced interactivity through markers and tooltips.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
-        <ejs-chart style='display:block' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-            [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' isTransposed='true' [width]='width'>
+        <ejs-chart style='display:block' align='center' id='chartcontainer' [title]='title' [subTitle]='subTitle' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' isTransposed='true' [width]='width' [legendSettings]='legendSettings'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Spline' xName='Month' yName='FR_Temperature' width=2 opacity=1 [marker]='marker'> </e-series>
+                <e-series [dataSource]='data' type='Spline' xName='country' yName='y' width=2 [marker]='marker'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the spline type charts. A Spline chart uses a curved line to connect points in a data series. 
-        <code>Markers</code>are used to represent individual data and its value.
+        In this example, you can see how to render and configure inversed spline type charts using the
+        <code>isTransposed</code> property. A spline chart uses a curved line to connect points in a data series. 
+        <code>Markers</code> are used to represent individual data points and their values.
     </p>
     <p>
-        <code>Tooltips</code>are enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+        <code>Tooltips</code> are enabled in this example. To see a tooltip in action, hover over or tap on the chart.
     </p>
     <p style="font-weight: 500">Injecting Module</p>
     <p>

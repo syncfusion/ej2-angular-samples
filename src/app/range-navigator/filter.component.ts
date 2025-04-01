@@ -4,13 +4,13 @@ import { Browser } from '@syncfusion/ej2-base';
 import { GridComponent, GridModule } from '@syncfusion/ej2-angular-grids';
 import { employeeData } from './datasource';
 import { RangeNavigatorModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { loadRangeNavigatorTheme } from './theme-colors';
 
 /**
  * Range navigator with date time axis
  */
 
-let selectedTheme: string = location.hash.split('/')[1];
-selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
+let theme: ChartTheme = loadRangeNavigatorTheme();
 
 @Component({
     selector: 'control-content',
@@ -34,8 +34,8 @@ export class FilterComponent {
 
     public width: string = Browser.isDevice ? '100%' : '80%';
 
-    public theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
-
+    public theme: ChartTheme = theme;
+    
     public value: object = [new Date(1992, 5, 1), new Date(1993, 4, 1)];
 
     public format:Object = { skeleton: 'yMd', type: 'date' };

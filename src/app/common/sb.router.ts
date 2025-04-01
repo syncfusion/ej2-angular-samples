@@ -38,6 +38,7 @@ import { MultiSelectSampleModule } from '../multi-select/multi-select.module';
 import { MultiColumnComboBoxSampleModule } from '../multicolumn-combobox/multicolumn-combobox.module';
 import { AIAssistSampleModule } from '../ai-assistview/ai-assistview.module';
 import { ChatUISampleModule } from '../chat-ui/chat-ui.module';
+import { SpeechToTextSampleModule } from '../speech-to-text/speech-to-text.module';
 import { MenuModule } from '../context-menu/context-menu.module';
 import { MenuSampleModule } from '../menu/menu.module';
 import { TabSampleModule } from '../tab/tab.module';
@@ -256,6 +257,8 @@ const appRoutes: any = [
     { path: 'rating', loadChildren: import('../rating/rating.module').then(m=>m.RatingSampleModule) },
     { path: 'otp-input', loadChildren: import('../otp-input/otp-input.module').then(m=>m.OtpInputSampleModule) },
     { path: ':theme/otp-input/:sample', redirectTo: 'material/otp-input/default' },
+    { path: 'speech-to-text', loadChildren: import('../speech-to-text/speech-to-text.module').then(m=>m.SpeechToTextSampleModule) },
+    { path: ':theme/speech-to-text/:sample', redirectTo: 'material/speech-to-text/default' },
     // layouts
     { path: ':theme/avatar/:sample', redirectTo: 'material/avatar/default' },
     { path: ':theme/card/:sample', redirectTo: 'material/card/default' },
@@ -360,6 +363,7 @@ const appRoutes: any = [
         InplaceEditorSampleModule,
         RatingSampleModule,
         OtpInputSampleModule,
+        SpeechToTextSampleModule,
         // calendars
         ScheduleSampleModule,
         CalendarSampleModule,

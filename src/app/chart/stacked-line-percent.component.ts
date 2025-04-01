@@ -1,8 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme, MarkerSettingsModel, ChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ILegendClickEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 
 /**
  * Sample for 100% Stacked Line Series
@@ -17,109 +18,163 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 })
 export class PercentStackedLineChartComponent {
 
-    public data: Object[] = [
-        { x: 'Jan', y: 90 },
-        { x: 'Feb', y: 80 },
-        { x: 'Mar', y: 50 },
-        { x: 'Apr', y: 70 },
-        { x: 'May', y: 30 },
-        { x: 'Jun', y: 10 },
-        { x: 'Jul', y: 100 },
-        { x: 'Aug', y: 55 },
-        { x: 'Sep', y: 20 },
-        { x: 'Oct', y: 40 },
-        { x: 'Nov', y: 45 },
-        { x: 'Dec', y: 75 },
+    public chartData1: Object[] = [
+        { x: 'O+ve', y: 39.0 },
+        { x: 'A+ve', y: 36.0 },
+        { x: 'B+ve', y: 7.6 },
+        { x: 'AB+ve', y: 2.5 },
+        { x: 'O-ve', y: 7.0 },
+        { x: 'A-ve', y: 6.0 },
+        { x: 'B-ve', y: 1.4 },
+        { x: 'AB-ve', y: 0.5 }
     ];
-    public data1: Object[] = [
-        { x: 'Jan', y: 40 },
-        { x: 'Feb', y: 90 },
-        { x: 'Mar', y: 80 },
-        { x: 'Apr', y: 30 },
-        { x: 'May', y: 80 },
-        { x: 'Jun', y: 40 },
-        { x: 'Jul', y: 30 },
-        { x: 'Aug', y: 95 },
-        { x: 'Sep', y: 50 },
-        { x: 'Oct', y: 20 },
-        { x: 'Nov', y: 15 },
-        { x: 'Dec', y: 45 },
+    public chartData2: Object[] = [
+        { x: 'O+ve', y: 40.0 },
+        { x: 'A+ve', y: 30.0 },
+        { x: 'B+ve', y: 15.0 },
+        { x: 'AB+ve', y: 4.25 },
+        { x: 'O-ve', y: 6.6 },
+        { x: 'A-ve', y: 2.3 },
+        { x: 'B-ve', y: 1.1 },
+        { x: 'AB-ve', y: 0.75 }
     ];
-    public data2: Object[] = [
-        { x: 'Jan', y: 70 },
-        { x: 'Feb', y: 110 },
-        { x: 'Mar', y: 120 },
-        { x: 'Apr', y: 60 },
-        { x: 'May', y: 80 },
-        { x: 'Jun', y: 30 },
-        { x: 'Jul', y: 70 },
-        { x: 'Aug', y: 55 },
-        { x: 'Sep', y: 40 },
-        { x: 'Oct', y: 80 },
-        { x: 'Nov', y: 45 },
-        { x: 'Dec', y: 65 },
+    public chartData3: Object[] = [
+        { x: 'O+ve', y: 47.0 },
+        { x: 'A+ve', y: 26.0 },
+        { x: 'B+ve', y: 9.0 },
+        { x: 'AB+ve', y: 2.0 },
+        { x: 'O-ve', y: 8.0 },
+        { x: 'A-ve', y: 5.0 },
+        { x: 'B-ve', y: 2.0 },
+        { x: 'AB-ve', y: 1.0 }
     ];
-    public data3: Object[] = [
-        { x: 'Jan', y: 120 },
-        { x: 'Feb', y: 70 },
-        { x: 'Mar', y: 50 },
-        { x: 'Apr', y: 180 },
-        { x: 'May', y: 30 },
-        { x: 'Jun', y: 270 },
-        { x: 'Jul', y: 40 },
-        { x: 'Aug', y: 75 },
-        { x: 'Sep', y: 65 },
-        { x: 'Oct', y: 95 },
-        { x: 'Nov', y: 135 },
-        { x: 'Dec', y: 115 },
+    public chartData4: Object[] = [
+        { x: 'O+ve', y: 29.0 },
+        { x: 'A+ve', y: 46.3 },
+        { x: 'B+ve', y: 12.0 },
+        { x: 'AB+ve', y: 5.6 },
+        { x: 'O-ve', y: 2.0 },
+        { x: 'A-ve', y: 3.7 },
+        { x: 'B-ve', y: 1.0 },
+        { x: 'AB-ve', y: 0.4 }
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        majorGridLines: { width: 0 },
-        minorGridLines: { width: 0 },
         majorTickLines: { width: 0 },
         minorTickLines: { width: 0 },
-        interval: 1,
+        majorGridLines: { width: 0 },
         lineStyle: { width: 0 },
+        valueType: 'Category',
         labelRotation: Browser.isDevice ? -45 : 0,
-        labelIntersectAction: Browser.isDevice ? 'None' : 'Rotate45',
-        valueType: 'Category'
+        labelIntersectAction: Browser.isDevice ? 'None' : 'Trim'
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
+        title: 'Population Share (%)',
         lineStyle: { width: 0 },
         interval: 20,
+        minorTickLines: { width: 0 },
         majorTickLines: { width: 0 },
         majorGridLines: { width: 1 },
-        minorGridLines: { width: 1 },
-        minorTickLines: { width: 0 },
+        minorGridLines: { width: 1 }
     };
     public tooltip: Object = {
         enable: true,
-        format: '${point.x} : <b>${point.y} (${point.percentage}%)</b>'
+        format: '${point.x} : <b>${point.y}% (${point.percentage}%)</b>',
+        enableHighlight: true,
+        showNearestTooltip: true
     };
-     // custom code start
+    // custom code start
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadChartTheme(args);
     };
-     // custom code end
-    public title: string = 'Family Expenses for Year';
+    // custom code end
+    public title: string = 'Blood Type Distribution by Country';
+    public subTitle: string = 'Source: wikipedia.org';
     public chartArea: Object = {
         border: {
             width: 0
+        },
+        margin: {
+            bottom: 12
         }
     };
     public legend: Object = {
         visible: true,
-        enableHighlight : true
+        enableHighlight: true
     }
     public width: string = Browser.isDevice ? '100%' : '75%';
-    public marker: Object = { visible: true, height: 7, width: 7 , shape: 'Circle' , isFilled: true };
-    public marker1: Object = { visible: true, height: 7, width: 7 , shape: 'Diamond' , isFilled: true };
-    public marker2: Object = { visible: true, height: 5, width: 5 , shape: 'Rectangle' , isFilled: true };
-    public marker3: Object = { visible: true, height: 6, width: 6 , shape: 'Triangle' , isFilled: true };
+    public marker: Object = { visible: true, isFilled: true, shape: 'Circle', width: 7, height: 7 };
+    public marker1: Object = { visible: true, isFilled: true, shape: 'Diamond', width: 7, height: 7 };
+    public marker2: Object = { visible: true, isFilled: true, shape: 'Rectangle', width: 5, height: 5 };
+    public marker3: Object = { isFilled: true, visible: true, shape: 'Triangle', width: 6, height: 6 };
+    public legendClick(args: ILegendClickEventArgs): void {
+        if (args.series.index === 0) {
+            if (args.chart.series[3].visible) {
+                args.chart.series[3].width = 3;
+                args.chart.series[0].width = 2;
+            } else if (args.chart.series[2].visible) {
+                args.chart.series[2].width = 3;
+                args.chart.series[0].width = 2;
+            } else if (args.chart.series[1].visible) {
+                args.chart.series[1].width = 3;
+                args.chart.series[0].width = 2;
+            } else {
+                args.chart.series[0].width = 3;
+            }
+        }
+
+        if (args.series.index === 1) {
+            if (args.chart.series[3].visible) {
+                args.chart.series[3].width = 3;
+                args.chart.series[1].width = 2;
+            } else if (args.chart.series[2].visible) {
+                args.chart.series[2].width = 3;
+                args.chart.series[1].width = 2;
+            } else if (args.series.visible && args.chart.series[0].visible) {
+                args.chart.series[0].width = 3;
+                args.chart.series[1].width = 2;
+            } else {
+                args.chart.series[1].width = 3;
+                args.chart.series[0].width = 2;
+            }
+        }
+
+        if (args.series.index === 2) {
+            if (args.chart.series[3].visible) {
+                args.chart.series[3].width = 3;
+                args.chart.series[2].width = 2;
+            } else if (!args.series.visible) {
+                args.chart.series[2].width = 3;
+                args.chart.series[1].width = 2;
+                args.chart.series[0].width = 2;
+            } else if (args.chart.series[1].visible) {
+                args.chart.series[1].width = 3;
+                args.chart.series[2].width = 2;
+            } else if (args.series.visible && args.chart.series[0].visible) {
+                args.chart.series[0].width = 3;
+                args.chart.series[2].width = 2;
+            }
+        }
+
+        if (args.series.index === 3) {
+            if (!args.series.visible) {
+                args.chart.series[3].width = 3;
+                args.chart.series[2].width = 2;
+                args.chart.series[1].width = 2;
+                args.chart.series[0].width = 2;
+            } else if (args.chart.series[2].visible) {
+                args.chart.series[2].width = 3;
+                args.chart.series[3].width = 2;
+            } else if (args.chart.series[1].visible) {
+                args.chart.series[1].width = 3;
+                args.chart.series[3].width = 2;
+            } else if (args.series.visible && args.chart.series[0].visible) {
+                args.chart.series[0].width = 3;
+                args.chart.series[3].width = 2;
+            }
+        }
+    };
 
     constructor() {
         //code

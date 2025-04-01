@@ -1,0 +1,25 @@
+#PivotView {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@media only screen and (max-width: 400px) {
+    #pivot-table-section {
+        overflow: auto;
+    }
+}
+
+#PivotViewcontainerwrapper {
+    height: auto !important;
+}
+
+.tabular-layout-switch {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.pivot-layout-switch, #layout-switch {
+    margin-left: 10px;
+}

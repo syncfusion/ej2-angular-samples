@@ -3,6 +3,7 @@ import { ILoadedEventArgs, ChartTheme, ChartAllModule } from '@syncfusion/ej2-an
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 /**
  * Sample for Pareto Series
  */
@@ -72,9 +73,7 @@ export class ParetoSeriesChartComponent {
     public title: string = 'Defects in Shirts';
     // custom code start
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        let selectedTheme: ChartTheme | string = loadChartTheme(args);
         if(selectedTheme === 'material3'){
             args.chart.series[0].paretoOptions.fill = '#F7523F';
             args.chart.series[0].paretoOptions.marker.fill= '#F7523F';

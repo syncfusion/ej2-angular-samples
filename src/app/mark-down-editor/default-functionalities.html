@@ -1,0 +1,47 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates markdown editing in the Rich Text Editor with complete features.
+    </p>
+</div>
+
+<div class="control-section">
+    <div class="sample-container">
+        <div class="default-section">
+            <ejs-richtexteditor id='mdDefault' #mdDefault height='250px' [formatter]='formatter'
+                [toolbarSettings]='tools' [editorMode]='mode' (created)='onCreate()'>
+                <ng-template #valueTemplate>
+                    The sample is added to showcase **markdown editing**.
+                    Type or edit the content and apply formatting to view markdown formatted content.
+                    We can add our own custom formation syntax for the Markdown formation, [sample
+                    link](https://ej2.syncfusion.com/home/).
+                    The third-party library <b>Marked</b> is used in this sample to convert markdown into HTML content.
+                </ng-template>
+            </ejs-richtexteditor>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>The Rich Text Editor supports markdown editing when the <code>editorMode</code> is set to mode property of the
+        Rich Text Editor</p>
+    <p>The editor’s toolbar contains commands to format the markdown content. The toolbar consists of:</p>
+    <ul>
+        <li><code>Lists</code> - Ordered and unordered list types.</li>
+        <li><code>Links</code> - A hyperlink can be inserted into the editor for quick access to related information.
+        </li>
+        <li><code>Image</code> - Inserts and manages images.</li>
+        <li><code>Alignment</code> - Aligns the content with left, center, and right margins.</li>
+        <li><code>Format</code> – Formats the sentence in different ways such as heading level, quotation, and code
+            snippet</li>
+        <li><code>Styles</code> – Allows you to apply inline styles to the selected content like bold, italic, and more.
+        </li>
+        <li><code>Tables</code> – Allows you to insert a table with header.</li>
+
+    </ul>
+    <p><b>Injecting Module</b></p>
+    <p>Rich Text Editor features are segregated into individual feature-wise modules. To use above feature we need to
+        inject following services <code>ToolbarService, LinkService, ImageService, MarkdownEditorService</code> into the
+        <code>&#64;NgModule.providers section</code>.</p>
+
+    <p>The third-party library <code>Marked</code> is used in this sample to convert markdown into HTML content.</p>
+</div>

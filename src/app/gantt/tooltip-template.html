@@ -63,13 +63,53 @@
                 </ng-container>
             </div>
         </ng-template>
+        <ng-template #tooltipSettingsTimeline let-data>
+            <ng-container *ngIf="data.tier === 'topTier'; else bottomTierTemplate">
+                <div *ngIf="executeTopTierTooltip(data.value, data.date, data.tier)">
+                    <div [style.border-bottom]=" '2px solid ' + themeClass " [style.padding-bottom]="'5px'" [style.text-align]="'center'">
+                        <span style="font-weight: bold; font-size: 14px;">{{data.date}}</span>
+                    </div>
+                    <div style="display: flex; padding-bottom: 5px; padding-top: 5px;">
+                        <span style="font-weight: bold;">Active Tasks:</span>
+                        <span style="padding-left: 2px;">{{ topTierData.activeTasks }}</span>
+                    </div>
+                    <div style="display: flex; padding-bottom: 5px;">
+                        <span style="font-weight: bold;">Milestones:</span>
+                        <span style="padding-left: 2px;">{{ topTierData.milestones }}</span>
+                    </div>
+                    <div style="display: flex; padding-bottom: 5px;">
+                        <span style="font-weight: bold;">Overall Progress:</span>
+                        <span style="padding-left: 2px;">{{ topTierData.overallProgress }}</span>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-template #bottomTierTemplate>
+                <div *ngIf="executeBottomTierTooltip(data.date, data.tier)">
+                    <div [style.border-bottom]=" '2px solid ' + themeClass " [style.padding-bottom]="'5px'" [style.text-align]="'center'">
+                        <span style="font-weight: bold; font-size: 14px;">{{data.date}}</span>
+                    </div>
+                    <div style="display: flex; padding-bottom: 5px;padding-top: 5px;">
+                        <span style="font-weight: bold;">Active Tasks:</span>
+                        <span style="padding-left: 2px;">{{ bottomTierData.activeTasks }}</span>
+                    </div>
+                    <div style="display: flex; padding-bottom: 5px;">
+                        <span style="font-weight: bold;">Milestones:</span>
+                        <span style="padding-left: 2px;">{{ bottomTierData.milestones }}</span>
+                    </div>
+                    <div style="display: flex; padding-bottom: 5px;">
+                        <span style="font-weight: bold;">Overall Progress:</span>
+                        <span style="padding-left: 2px;">{{ bottomTierData.overallProgress }}</span>
+                    </div>
+                </div>
+            </ng-template>
+        </ng-template>
     </ejs-gantt>
 </div>
 
 <div id="description">
     <p>Tooltip can be enabled or disabled using <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/tooltipSettings/#showtooltip">tooltipSettings.showTooltip</a> property.In this demo, the
-        tooltip template is rendered for <code>taskbar</code> and <code>baseline</code> using the
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/tooltipSettings/#taskbar">tooltipSettings.taskbar</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/tooltipSettings/#baseline">tooltipSettings.baseline</a> properties.
+        tooltip template is rendered for <code>taskbar</code> <code>timeline</code> and <code>baseline</code> using the
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/tooltipSettings/#taskbar">tooltipSettings.taskbar</a>, <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/tooltipSettings/#timeline">tooltipSettings.timeline</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/tooltipSettings/#baseline">tooltipSettings.baseline</a> properties.
     </p>
     <p>
         The baseline feature enables the user to view the deviation between the planned dates and the actual dates of

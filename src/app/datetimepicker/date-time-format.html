@@ -10,20 +10,37 @@
     <div class="col-lg-8 content-wrapper">
         <div class="content">
             <div id="control_wrapper">
-                <ejs-datetimepicker [value]="date" [format]="format"></ejs-datetimepicker>
+                <ejs-datetimepicker [value]="date" placeholder="Choose a DateTime" [inputFormats]="inputFormats" [format]="format"></ejs-datetimepicker>
             </div>
         </div>
     </div>
-    <div id="property" class="col-lg-4 property-section">
+    <div class="col-lg-4 property-section">
         <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
-                <table id="property " class="property-panel-table" title="Properties">
-                    <tr>
-                        <td id="propertyControl">
-                            <ejs-dropdownlist id='datetimeformats' #listObj [dataSource]='formatsData' (change)='changeFormat()' [floatLabelType]='floatLabelType' placeholder='Formats'  [value]='value'></ejs-dropdownlist>
-                        </td>
-                    </tr>
-                </table>
+                <label class="example-label">Choose a display format</label>
+                <ejs-dropdownlist 
+                    id="datetimeformats" 
+                    #listObj 
+                    [dataSource]="formatData" 
+                    fields="{ text: 'text', value: 'id' }" 
+                    placeholder="Select a format" 
+                    [(value)]="format" 
+                    (change)="changeFormat($event)">
+                </ejs-dropdownlist>
+            </div>
+            <div class="property-panel-content">
+                <label class="multi-label">Choose input formats</label>
+                <ejs-multiselect 
+                    id="inputFormatsDateTimePicker" 
+                    #multiSelect 
+                    [dataSource]="inputFormatData" 
+                    [showSelectAll]="true" 
+                    [mode]="'CheckBox'" 
+                    placeholder="e.g. MM/dd/yyyy HH:mm" 
+                    [(value)]="inputFormats" 
+                    (change)="changeInputFormats()">
+                </ejs-multiselect>
             </div>
         </div>
     </div>
@@ -32,6 +49,12 @@
     <p>
          Datetime Formats sample illustrates the support of custom dateTime format in the DateTimePicker component by using the <code>format</code> property. You can also change the datetime format by selecting it from the format options in the properties
         panel.
+    </p>
+    <p>
+        Furthermore, this example showcases the flexible date value parsing functionality available in DateTimePicker
+        component.
+        By utilizing the <code>inputFormats</code> property, users can enter dates in various formats, which will be
+        automatically parsed and formatted according to the chosen date format.
     </p>
 </div>
 
@@ -42,5 +65,13 @@
     
     #propertyControl {
         width: 40%;
+    }
+
+    .multi-label {
+        margin-top: 40px;
+    }
+
+    .property-panel-section {
+        width: 62%;
     }
 </style>

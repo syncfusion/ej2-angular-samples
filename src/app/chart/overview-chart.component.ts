@@ -4,6 +4,7 @@ import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { DashboardLayoutModule } from '@syncfusion/ej2-angular-layouts';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { accPointRender, loadAccumulationChartTheme, loadChartTheme } from './theme-color';
 
 @Component({
     selector: 'control-content',
@@ -33,18 +34,18 @@ export class OverViewChartComponent {
 
   // Column Chart Data
   public columnChartDataCollection: Object[] = [
-    { Period: "2017", Percentage: 60, TextMapping: "60%" },
-    { Period: "2018", Percentage: 56, TextMapping: "56%" },
-    { Period: "2019", Percentage: 71, TextMapping: "71%" },
-    { Period: "2020", Percentage: 85, TextMapping: "85%" },
-    { Period: "2021", Percentage: 73, TextMapping: "73%" }
+    { Period: "2020", Percentage: 60, TextMapping: "60%" },
+    { Period: "2021", Percentage: 56, TextMapping: "56%" },
+    { Period: "2022", Percentage: 71, TextMapping: "71%" },
+    { Period: "2023", Percentage: 85, TextMapping: "85%" },
+    { Period: "2024", Percentage: 73, TextMapping: "73%" }
   ];
   public columnChartData: Object[] = [
-    { Period: "2017", Percentage: 40, TextMapping: "40%" },
-    { Period: "2018", Percentage: 44, TextMapping: "44%" },
-    { Period: "2019", Percentage: 29, TextMapping: "29%" },
-    { Period: "2020", Percentage: 15, TextMapping: "15%" },
-    { Period: "2021", Percentage: 27, TextMapping: "27%" }
+    { Period: "2020", Percentage: 40, TextMapping: "40%" },
+    { Period: "2021", Percentage: 44, TextMapping: "44%" },
+    { Period: "2022", Percentage: 29, TextMapping: "29%" },
+    { Period: "2023", Percentage: 15, TextMapping: "15%" },
+    { Period: "2024", Percentage: 27, TextMapping: "27%" }
   ];
 
   //Initializing Primary X Axis
@@ -67,7 +68,8 @@ export class OverViewChartComponent {
   public columnChartlegendSettings: Object = {
     padding:5,
     shapeHeight:8,
-    shapeWidth:8
+    shapeWidth:8,
+    enableHighlight: true
   };
 
   public columnChartmarker: Object = {
@@ -77,6 +79,10 @@ export class OverViewChartComponent {
         color:'#FFFFFF'
       }
     },
+  };
+
+  public chartCornerRadius: Object = {
+    topLeft: 4, topRight: 4
   };
 
   public series1Fill: string = '#2485fa'
@@ -113,9 +119,7 @@ export class OverViewChartComponent {
   public startAngle: number = 270;
   public endAngle: number = 270;
   public accumulationload(args: IAccLoadedEventArgs): void {
-    let selectedTheme: string = location.hash.split('/')[1];
-    selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-    args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+    loadAccumulationChartTheme(args);
   };  
 
   //Spline Area
@@ -172,7 +176,8 @@ export class OverViewChartComponent {
   }
   public spLineAreatooltipSettings: Object = {
     enable: true,
-    shared: true,
+    enableHighlight: true, 
+    showNearestTooltip: true,
     enableMarker: false
   };
   public spLineAreaBorder: Object = {
@@ -187,96 +192,14 @@ export class OverViewChartComponent {
   public spLineAreaFill: string = '#2485fa'
   public spLineAreaFill1: string = '#FEC200'
 
-  public load(args: ILoadedEventArgs ): void {
-    let selectedTheme: string = location.hash.split('/')[1];
-    selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-    args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+  public load(args: ILoadedEventArgs ): void {    
+    loadChartTheme(args);
     args.chart.series[0].fill = 'url(#' +'gradient-chart)';
     args.chart.series[1].fill = 'url(#' +'gradient-chart1)';
 };
 
 public pointRender(args: IAccPointRenderEventArgs): void {
-  let selectedTheme: string = location.hash.split('/')[1];
-  selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-  if (selectedTheme.indexOf('dark') > -1 )
-  {
-    if(selectedTheme.indexOf('material') > -1 )
-    {
-      args.border.color = '#303030' ;
-      this.layoutColor= '#303030' ;
-    }
-    else if(selectedTheme.indexOf('bootstrap5') > -1 )
-    {
-      args.border.color = '#212529' ;
-      this.layoutColor= '#212529' ;
-    }
-    else if(selectedTheme.indexOf('bootstrap') > -1 )
-    {
-      args.border.color = '#1A1A1A' ;
-      this.layoutColor= '#1A1A1A' ;
-    }
-    else if(selectedTheme.indexOf('tailwind') > -1 )
-    {
-      args.border.color = '#1F2937' ;
-      this.layoutColor= '#1F2937' ;
-    }
-    else if(selectedTheme.indexOf('fluent') > -1 )
-    {
-      args.border.color = '#252423' ;
-      this.layoutColor= '#252423' ;
-    }
-    else if(selectedTheme.indexOf('fabric') > -1 )
-    {
-      args.border.color = '#201f1f' ;
-      this.layoutColor= '#201f1f' ;
-    }
-    else
-    {
-      args.border.color = '#222222' ;
-      this.layoutColor= '#222222' ;
-    }
-  }
-  else if(selectedTheme.indexOf('highcontrast') > -1)
-  {
-    args.border.color = '#000000' ;
-    this.layoutColor= '#000000' ;
-  }
-  else
-  {
-    args.border.color = '#FFFFFF' ;
-    this.layoutColor= '#FFFFFF' ;
-  }
-
-  if(selectedTheme.indexOf('highcontrast') > -1 || selectedTheme.indexOf('dark') > -1)
-  {
-    let element =  document.querySelector('#header1') as HTMLElement 
-    element.style.color='#F3F2F1';
-    let element1 =  document.querySelector('#header2') as HTMLElement 
-    element1.style.color='#F3F2F1';
-    let element2 =  document.querySelector('#header3') as HTMLElement 
-    element2.style.color='#F3F2F1';
-  }
-  if(selectedTheme.indexOf('tailwind') > -1)
-  {
-    let element =  document.querySelector('#layout_0_body') as HTMLElement 
-    element.style.padding='0';
-    let element1 =  document.querySelector('#layout_1_body') as HTMLElement 
-    element1.style.padding='0';
-    let element2 =  document.querySelector('#layout_2_body') as HTMLElement 
-    element2.style.padding='0';
-  }
-  let element =  document.querySelector('#layout_0template') as HTMLElement 
-  element.style.background= this.layoutColor;
-  let elementBody = document.getElementById('column');
-  elementBody.style.background = this.layoutColor;
-  let element1 =  document.querySelector('#layout_1template') as HTMLElement 
-  element1.style.background= this.layoutColor;
-  let element1Body = document.getElementById('pie');
-  element1Body.style.background = this.layoutColor;
-  let element2 =  document.querySelector('#layout_2template') as HTMLElement 
-  element2.style.background=this.layoutColor;
-  let element2Body = document.getElementById('spline');
-  element2Body.style.background = this.layoutColor;
+  accPointRender(args);
 };
 
   constructor() {

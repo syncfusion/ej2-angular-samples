@@ -121,6 +121,7 @@ export class MailMergeComponent {
         if (args.item.text != null) {
             const value = this.textToValueMap[args.item.text];
             const trimmedValue = value.trim();
+            this.mailMergeEditor.formatter.editorManager.nodeSelection.restore();
             this.mailMergeEditor.executeCommand(
                 'insertHTML',
                 `<span contenteditable="false" class="e-mention-chip"><span>{{${trimmedValue}}}</span></span>&nbsp;`,

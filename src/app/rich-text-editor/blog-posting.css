@@ -165,7 +165,7 @@ span.questionSide {
 }
 
 .questionar {
-    background: url("/assets/rich-text-editor/images/emp1.png");
+    background: url("https://ej2.syncfusion.com/demos/src/rich-text-editor/images/emp1.png");
 }
 
 .raiser {
@@ -190,23 +190,23 @@ span.questionSide {
 }
 
 .logos {
-    background: url("/assets/rich-text-editor/images/emp2.png");
+    background: url("https://ej2.syncfusion.com/demos/src/rich-text-editor/images/emp2.png");
 }
 
 .logo {
-    background: url("/assets/rich-text-editor/images/author.png") no-repeat scroll 0 0 transparent;
+    background: url("https://ej2.syncfusion.com/demos/src/rich-text-editor/images/author.png") no-repeat scroll 0 0 transparent;
 }
 
 .emp1 {
-    background: url("/assets/rich-text-editor/images/1.png") no-repeat scroll 0 0 transparent;
+    background: url("https://ej2.syncfusion.com/demos/src/rich-text-editor/images/1.png") no-repeat scroll 0 0 transparent;
 }
 
 .emp2 {
-    background: url("/assets/rich-text-editor/images/2.png") no-repeat scroll 0 0 transparent;
+    background: url("https://ej2.syncfusion.com/demos/src/rich-text-editor/images/2.png") no-repeat scroll 0 0 transparent;
 }
 
 .emp3 {
-    background: url("/assets/rich-text-editor/images/3.png") no-repeat scroll 0 0 transparent;
+    background: url("https://ej2.syncfusion.com/demos/src/rich-text-editor/images/3.png") no-repeat scroll 0 0 transparent;
 }
 
 .blog-avatar {

@@ -4,6 +4,7 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadAccumulationChartTheme } from './theme-color';
 
 /**
  * Sample for groping in pie chart
@@ -80,9 +81,7 @@ export class GroupingPieComponent {
     };
     // custom code start
     public load(args: IAccLoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+       loadAccumulationChartTheme(args);
     };
     // custom code end
     public clubvalue: string = '9';

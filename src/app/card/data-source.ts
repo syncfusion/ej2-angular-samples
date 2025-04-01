@@ -68,7 +68,7 @@ export let cardBook: Object[] = [
         header_title: ' CSS3',
         header_subtitle: 'Peter Shaw',
         cardImage: { url: './assets/card/images/Tile_6.png', tag: 'ui' },
-        cardContent: 'In CSS3 Succinctly<sup>®</sup>, author Peter Shaw provides an overview of the latest features available for custom cascading style sheets.',
+        cardContent: 'In CSS3 Succinctly, author Peter Shaw provides an overview of the latest features available for custom cascading style sheets.',
         card_action_btn: {
             action_btns: [{ tag: 'a', href: 'https://www.syncfusion.com/ebooks/css3', target: '_blank', text: 'Read More' }],
             isVertical: true
@@ -80,7 +80,7 @@ export let cardBook: Object[] = [
         header_title: ' ASP.NET Core',
         header_subtitle: 'Simone Chiaretta and Ugo Lattanzi',
         cardImage: { url: './assets/card/images/Tile_7.png', tag: 'server' },
-        cardContent: 'In ASP.NET Core Succinctly<sup>®</sup>, seasoned authors Simone Chiaretta and Ugo Lattanzi update you on all the advances provided by Microsoft’s landmark framework.',
+        cardContent: 'In ASP.NET Core Succinctly, seasoned authors Simone Chiaretta and Ugo Lattanzi update you on all the advances provided by Microsoft’s landmark framework.',
         card_action_btn: {
             action_btns: [{ tag: 'a', href: 'https://www.syncfusion.com/ebooks/asp_net_core_succinctly', target: '_blank', text: 'Read More' }],
             isVertical: true
@@ -116,7 +116,7 @@ export let cardBook: Object[] = [
         header_title: 'JavaScript',
         header_subtitle: 'Cody Lindley',
         cardImage: { url: './assets/card/images/Tile_10.png', tag: 'client' },
-        cardContent: 'JavaScript Succinctly<sup>®</sup> was written to give readers an accurate, concise examination of JavaScript objects and their supporting nuances.',
+        cardContent: 'JavaScript Succinctly was written to give readers an accurate, concise examination of JavaScript objects and their supporting nuances.',
         card_action_btn: {
             action_btns: [{ tag: 'a', href: 'https://www.syncfusion.com/ebooks/javascript', target: '_blank', text: 'Read More' }],
             isVertical: true
@@ -128,7 +128,7 @@ export let cardBook: Object[] = [
         header_title: 'Knockout.js',
         header_subtitle: 'Ryan Hodson',
         cardImage: { url: './assets/card/images/Tile_11.png', tag: 'client' },
-        cardContent: 'Knockout.js Succinctly<sup>®</sup> is intended for professional web developers who need to build dynamic, scalable user interfaces with minimal code.',
+        cardContent: 'Knockout.js Succinctly is intended for professional web developers who need to build dynamic, scalable user interfaces with minimal code.',
         card_action_btn: {
             action_btns: [{ tag: 'a', href: 'https://www.syncfusion.com/ebooks/knockoutjs', target: '_blank', text: 'Read More' }],
             isVertical: true

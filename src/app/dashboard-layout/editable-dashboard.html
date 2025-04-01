@@ -1,14 +1,13 @@
 <div class="control-section">
     <div>
-        <div style="width: 100%; height: 30px">
-            <button id="togglebtn" #toggleBtn style="float: right; width: 75px"
-                class="e-btn e-outline e-flat e-primary e-btn-icons" ejs-button iconCss="edit" [isToggle]="true"
-                (click)="onClick()">
+        <div class="editBtnContainer">
+            <button id="togglebtn" #toggleBtn class="e-btn e-outline e-flat e-primary e-btn-icons" ejs-button
+                iconCss="edit" [isToggle]="true" (click)="onClick()">
                 Edit
             </button>
         </div>
 
-        <div style="padding: 5px; margin-top: 5px; text-align: end">
+        <div id="addBtn">
             <div class="add-widget-button e-control e-btn e-lib" id="dialogBtn" (click)="addWidget()">
                 <b>Add New Widget</b>
             </div>
@@ -24,10 +23,9 @@
                     <div><b>Bar Chart</b></div>
                 </ng-template>
                 <ng-template #content>
-                    <div id="barchart" style="height:100%; width:100%">
-                        <ejs-chart style="display:block;" id="colChart" #colchart [chartArea]="chartArea" width="100%"
-                            height="100%" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis"
-                            (load)="load($event)">
+                    <div id="barchart" class="contentContainer">
+                        <ejs-chart [chartArea]="chartArea" width="100%" height="100%" [primaryXAxis]="primaryXAxis"
+                            [primaryYAxis]="primaryYAxis" (load)="load($event)">
                             <e-series-collection>
                                 <e-series [dataSource]="data" type="Column" xName="x" yName="y" name="Jan" width="2"
                                     [marker]="marker" fill="#00bdae">
@@ -48,8 +46,8 @@
                     <div><b>Pie Chart</b></div>
                 </ng-template>
                 <ng-template #content>
-                    <div id="pie" style="height:100%; width:100%">
-                        <ejs-accumulationchart id="pie" (load)="piechartLoad($event)" #pie width="100%" height="100%"
+                    <div id="pie" class="contentContainer">
+                        <ejs-accumulationchart #pieChart (load)="piechartLoad($event)" width="100%" height="100%"
                             [legendSettings]="legendSettings" [tooltip]="tooltip"
                             (animationComplete)="animationComplete($event)" (textRender)="textRender($event)"
                             [enableSmartLabels]="enablesmartlabel" selectionMode="Point">
@@ -68,10 +66,9 @@
                     <div><b>Spline Chart</b></div>
                 </ng-template>
                 <ng-template #content>
-                    <div id="pie" style="height:100%; width:100%">
-                        <ejs-chart style="height:100%; width:100%; text-align: center" #splineChart id="visitorsChart"
-                            style="display:block;" [chartArea]="chartArea" [width]="widthValue" [height]="heightValue"
-                            [primaryXAxis]="lineprimaryXAxis" [primaryYAxis]="lineprimaryYAxis"
+                    <div id="line" class="contentContainer">
+                        <ejs-chart id="visitorsChart" [chartArea]="chartArea" [width]="widthValue"
+                            [height]="heightValue" [primaryXAxis]="lineprimaryXAxis" [primaryYAxis]="lineprimaryYAxis"
                             [legendSettings]="linelegendSettings" (load)="load($event)">
                             <e-series-collection>
                                 <e-series [dataSource]="splineData1" type="SplineArea" xName="x" yName="y" name="Jan"

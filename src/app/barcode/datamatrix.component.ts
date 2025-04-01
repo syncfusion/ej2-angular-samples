@@ -11,7 +11,7 @@ import {  DataMatrixEncoding } from '@syncfusion/ej2-barcode-generator/src/barco
 import { TextBox, NumericTextBox, ChangedEventArgs } from '@syncfusion/ej2-inputs';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
-import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { CheckBoxModule, ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
@@ -19,7 +19,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     styleUrls: ['barcode-style.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [SBActionDescriptionComponent, DataMatrixGeneratorModule, TextBoxModule, NumericTextBoxModule, CheckBoxModule, ColorPickerModule, DropDownListModule, SBDescriptionComponent]
+    imports: [SBActionDescriptionComponent, DataMatrixGeneratorModule, TextBoxModule, NumericTextBoxModule, CheckBoxModule, ColorPickerModule, DropDownListModule, SBDescriptionComponent, ButtonModule]
 })
 export class DataMatrixComponent {
   @ViewChild('barcode')
@@ -182,5 +182,7 @@ public invalidInput(args: ValidateEvent): void {
     this.barcode.encoding = ((args.itemData.value.toString()) as DataMatrixEncoding);
   }
 
-
+  btnClick() {
+    this.barcode.exportImage("DataMatrix", "PNG");
+  }
 }

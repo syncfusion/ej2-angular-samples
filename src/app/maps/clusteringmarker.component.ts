@@ -53,7 +53,7 @@ export class MapsClusteringComponent {
             visible: true,
             animationDuration: 0,
             shape: 'Image',
-            imageUrl: './assets/maps/images/ballon.png',
+            imageUrl: 'https://ej2.syncfusion.com/demos/src/maps/images/ballon.png',
             height: 20,
             width: 20,
             border: { width: 2, color: '#285255' },

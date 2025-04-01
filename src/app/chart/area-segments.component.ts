@@ -3,6 +3,7 @@ import { ILoadedEventArgs, ChartTheme, ChartAllModule } from '@syncfusion/ej2-an
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 
 /**
  * Sample for Line Series
@@ -64,13 +65,11 @@ export class AreaSegmentChartComponent {
         enable: true,
         header: '<b>Revenue</b>',
         format: '${point.x} : <b>${point.y}</b>',
-        shared: true
+        showNearestTooltip: true
     };
        // custom code start
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadChartTheme(args);
         [150, 71.5, 106.4, 100.25, 70.0, 106.0, 85.6, 78.5, 76.4, 86.1, 155.6, 160.4].map((value: number, index: number) => {
             this.dataValues.push({ XValue: new Date(2016, index, 1), YValue: value });
         });

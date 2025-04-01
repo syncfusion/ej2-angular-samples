@@ -4,6 +4,7 @@ import { getElement } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 
 /**
  * Sample for vertical chart
@@ -46,7 +47,8 @@ export class VerticalChartComponent {
         width: 7, height: 7, isFilled: true
     };
     public tooltip: Object = {
-        enable: true
+        enable: true,
+        enableHighlight: true
     };
     public legendSettings: Object = {
         visible: false
@@ -59,9 +61,7 @@ export class VerticalChartComponent {
      // custom code start
     public width: string = Browser.isDevice ? '100%' : '75%';
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadChartTheme(args);
     }
      // custom code end
     public vertical: boolean = true;

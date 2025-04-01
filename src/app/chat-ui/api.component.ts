@@ -65,7 +65,7 @@ export class ChatUIApiComponent {
     }
 
     private createUserForTyping(userName: string) {
-        let avatarBgColor: string = '#bacbe4';
+        let avatarBgColor: string = '#87cefa';
         let avatarUrl: string;
         
         if (userName === 'Laura') {

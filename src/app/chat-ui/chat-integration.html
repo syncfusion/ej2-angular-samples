@@ -14,7 +14,7 @@
                                     <ejs-listview id="listview_template" #listView [dataSource]='data' cssClass="e-list-template" headerTitle='Chats' showHeader='true' (actionComplete)="onActionComplete()" (select)="onChatItemSelected($event)">
                                         <ng-template #template let-item>
                                             <div class="clearfix desc e-list-wrapper e-list-multi-line e-list-avatar">
-                                              <img *ngIf="item.imgSrc" class="e-avatar" [src]="'./assets/chat-ui/images/' + item.imgSrc + '.png'" alt="image" style="border-radius: 50%;" />
+                                              <img *ngIf="item.imgSrc" class="e-avatar" src="./assets/chat-ui/images/{{item.imgSrc}}.png" alt="image" style="border-radius: 50%;" />
                                               <span class="e-list-item-header">{{ item.title }}</span>
                                               <div *ngIf="item.message" class="chat_message" style="font-size: 12px;">
                                                 {{ item.message }}

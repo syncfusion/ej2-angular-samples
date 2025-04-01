@@ -35,6 +35,7 @@ export class ESigningFormDesignerComponent implements OnInit {
   public borderStyle:string = this.isMobile ? 'none' : '1px solid #C4C7C5';
   public fileName: string = "eSign_designMode.pdf";
   public document: string = 'https://cdn.syncfusion.com/content/PDFViewer/Fill+and+Sign.pdf';
+  public zoomMode = "FitToPage";
   public resource: string = "https://cdn.syncfusion.com/ej2/27.2.2/dist/ej2-pdfviewer-lib";
   public currentUser: string = 'andrew@mycompany.com';
   public userColor: string = '#ffefef';
@@ -295,6 +296,5 @@ export class ESigningFormDesignerComponent implements OnInit {
     this.initializeDraggable(this.initialDiv.element, 'InitialField');
     this.defaultZoomFactor = false;
     this.pdfviewerControl.designerMode = true;
-    this.pdfviewerControl.magnification.fitToPage();
   }
 }

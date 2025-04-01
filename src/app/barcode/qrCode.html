@@ -52,7 +52,7 @@
             <div class='centercontrol' style="width:200px;height:200px">
                 <ejs-qrcodegenerator style="display: block;" #barcode id="barcode" width="200px" height="150px"
                 [displayText]="{visibility: true}"
-                [logo]="{imageSource: 'https://www.syncfusion.com/web-stories/wp-content/uploads/sites/2/2022/02/cropped-Syncfusion-logo.png'}" value="Syncfusion">
+                [logo]="{imageSource: logoImageSource}" value="Syncfusion">
                 </ejs-qrcodegenerator>
             </div>
         </div>
@@ -187,6 +187,11 @@
                         <ejs-dropdownlist #errorCorrection id="errorCorrection" [dataSource]="errorCorrectionValue"
                             value="Medium" (change)="errorCorrectionOnChange($event)"></ejs-dropdownlist>
                     </div>
+                </div>
+            </div>
+            <div class="row sb-child-row">
+                <div class="col-xs-6 top barcode-panel-left">
+                    <button ejs-button (click)="btnClick()">Download</button>
                 </div>
             </div>
         </div>

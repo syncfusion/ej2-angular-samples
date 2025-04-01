@@ -4,6 +4,7 @@ import { Browser } from '@syncfusion/ej2-base';
 import { chartDataValues } from './financial-data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 
 /**
  * Sample for Range Area Series
@@ -47,6 +48,7 @@ export class RangeStepAreaComponent {
     enable: true,
     format:'Temperature : <b>${point.low} - ${point.high}</b>',
     shared: false,
+    showNearestTooltip: true,
     header: '<b>${point.x}</b>',
   };
   public chartArea: Object = {
@@ -60,15 +62,13 @@ export class RangeStepAreaComponent {
   public border: Object = { width: 2 };
   // custom code start
   public load(args: ILoadedEventArgs): void {
-    let selectedTheme: string = location.hash.split('/')[1];
-    selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-    args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
-    switch (selectedTheme) {
-      case ('bootstrap5') :
+    loadChartTheme(args);
+    switch (args.chart.theme) {
+      case ('Bootstrap5') :
         args.chart.series[0].fill = "#BDD9F5";
         args.chart.series[0].border.color = "#539DE3";
         break;
-      case ('fluent') :
+      case ('Fluent') :
         args.chart.series[0].fill = "#C3A6DB";
         args.chart.series[0].border.color = "#9E71C2";
         break;

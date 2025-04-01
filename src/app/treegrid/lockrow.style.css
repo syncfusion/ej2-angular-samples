@@ -1,8 +1,14 @@
+.disableRow .e-rowcell,
 .material .disableRow .e-rowcell {
     color: rgba(0, 0, 0, .38) !important;
 }
-
+.disableRow .e-rowcell,
+body:not([class]) #_gridcontrol .disableRow .e-rowcell,
+.ej2-new #_gridcontrol .disableRow .e-rowcell {
+    color: rgba(0, 0, 0, .35) !important;
+}
 /* custom code start*/
+.disableRow .e-rowcell,
 .material-dark .disableRow .e-rowcell,
 .fabric-dark .disableRow .e-rowcell,
 .bootstrap-dark .disableRow .e-rowcell,
@@ -19,15 +25,15 @@
 .tailwind3-dark .disableRow .e-rowcell {
     color: #757575 !important;
 }
-
+.disableRow .e-rowcell,
 .material3 .disableRow .e-rowcell {
     color: rgba(0, 0, 0, .38) !important;
 }
-
+.disableRow .e-rowcell,
 .fabric .disableRow .e-rowcell {
     color: #c8c8c8 !important;
 }
-
+.disableRow .e-rowcell,
 .bootstrap .disableRow .e-rowcell,
 .bootstrap4 .disableRow .e-rowcell,
 .bootstrap5 .disableRow .e-rowcell,
@@ -41,5 +47,4 @@
     padding-left: 0px !important;
     padding-top: 0px !important;
 }
-
 /* custom code end*/

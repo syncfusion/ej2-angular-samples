@@ -1,8 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, ChartComponent, ChartTheme, ChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartComponent, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 /**
  * Sample for chart export
  */
@@ -17,12 +18,12 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 export class CylindricalColumnChartComponent {
 
     public data: Object[] = [
-        { x: 'China', y: 26 , tooltipMappingName:'China' },
-        { x: 'Australia', y: 8, tooltipMappingName:'Australia'},
-        { x: 'Germany', y: 17, tooltipMappingName:'Germany' },
-        { x: 'Spain', y: 7, tooltipMappingName:'Spain' },
-        { x: 'Japan', y: 12, tooltipMappingName:'Japan' },
-        { x: 'USA', y: 46, tooltipMappingName:'United States' }
+        { year: '2017 - 18', energy: 228.0 },
+        { year: '2018 - 19', energy: 261.8 },
+        { year: '2019 - 20', energy: 294.3 },
+        { year: '2020 - 21', energy: 297.5 },
+        { year: '2021 - 22', energy: 322.6 },
+        { year: '2022 - 23', energy: 365.59 }
     ];
     public chart: ChartComponent;
     //Initializing Primary X Axis
@@ -37,17 +38,17 @@ export class CylindricalColumnChartComponent {
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Medal Count',
+        title: 'Total Renewable Power (TWh)',
+        labelFormat: '{value}TWh',
+        minimum: 150,
+        maximum: 400,
+        interval: 50,
         majorTickLines: { width: 0 },
-        lineStyle: { width: 0 },
-        maximum: 50,
-        interval: 10
+        lineStyle: { width: 0 }
     };
     // custom code start
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadChartTheme(args);
     };
     // custom code end
     public chartArea: Object = {
@@ -56,13 +57,15 @@ export class CylindricalColumnChartComponent {
         }
     };
     public width: string = Browser.isDevice ? '100%' : '75%';
-    public title: string = 'Olympic Gold Medal Counts - RIO';
+    public title: string = 'Year-wise Renewable Energy Generation Trends in India';
+    public subTitle: string = 'Source: wikipedia.org';
     public tooltip: Object = {
         enable: true,
-        header:"<b>${point.tooltip}</b>",
-        format:"Gold Medal: <b>${point.y}</b>",
+        header: '<b>${point.x}</b>',
+        format: '${series.name}: <b>${point.y}</b>'
     };
+    public legendSettings: Object = { visible: false };
     constructor() {
         // code
-     };
+    };
 }

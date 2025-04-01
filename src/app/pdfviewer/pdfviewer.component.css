@@ -116,6 +116,7 @@ width: 50px;
 .flex-container {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .render-mode-info {
@@ -136,10 +137,11 @@ width: 50px;
     letter-spacing: 0.24px;
     text-align: right;
     font-size: 14px;
+    margin-bottom: 3px;
 }
 
 .render-mode-info .render-mode-info-icon::before {
-    line-height: 0.5rem;
+    line-height: normal;
 }
 
 .buttonSwitch {
@@ -389,4 +391,20 @@ width: 50px;
 #e-pv-redact-sb-toolbar-secondary .e-toolbar-items .e-template 
 {
     min-width: 0px !important;
+}
+
+.pdfviewer-input-title
+{
+    margin-top: 12px;
+    font-size: 12px;
+}
+
+.pdfviewer-text-content
+{
+    font-size: 12px;
+}
+.pdfviewer-table-input-title
+{
+    margin-top: 6px;
+    font-size: 11px;
 }

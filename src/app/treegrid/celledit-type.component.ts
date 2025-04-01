@@ -35,7 +35,7 @@ export class CellEditTypeComponent implements OnInit {
         this.dpParams = {  params: { format: 'M/d/y hh:mm a' } };
         this.taskidrules = { required: true , number: true};
         this.tasknamerules = { required: true};
-        this.startdaterules = { date: true};
+        this.startdaterules = { date: ['M/d/y hh:mm a', 'Please enter a valid date']};;
         this.priorityrules = { required: true};
         this.progressrules = { number: true , min: 0};
     }

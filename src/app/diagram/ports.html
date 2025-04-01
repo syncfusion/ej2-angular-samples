@@ -157,7 +157,7 @@
                             Stroke Width
                         </div>
                         <div style="padding-bottom: 8px">
-                            <ejs-numerictextbox #portWidthNum id="portWidthNum" value="1" step="0.5" format='###.##' (change)='onBorderWidthChange($event)'></ejs-numerictextbox>
+                            <ejs-numerictextbox #portWidthNum id="portWidthNum" value="1" step="0.5" min="0" format='###.##' (change)='onBorderWidthChange($event)'></ejs-numerictextbox>
                         </div>
                     </div>
                     <div class="col-xs-6">
@@ -165,7 +165,7 @@
                             Size
                         </div>
                         <div style="padding-bottom: 8px">
-                            <ejs-numerictextbox #portSizeNum id="portSizeNum" value="6" step="1" format='###.##' (change)='onSizeChange($event)'></ejs-numerictextbox>
+                            <ejs-numerictextbox #portSizeNum id="portSizeNum" value="6" step="1" min="1" format='###.##' (change)='onSizeChange($event)'></ejs-numerictextbox>
                         </div>
                     </div>
                 </div>

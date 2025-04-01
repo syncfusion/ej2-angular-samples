@@ -50,7 +50,7 @@ export class MapsSalesMapComponent {
         height: 40,
         width: 40,
         labelStyle: { color: 'white' },
-        imageUrl: './assets/maps/images/cluster.svg'
+        imageUrl: 'https://ej2.syncfusion.com/angular/demos/assets/maps/images/cluster.svg'
     },
     markerSettings: [{
       dataSource: salesMap,
@@ -59,7 +59,7 @@ export class MapsSalesMapComponent {
       height: 15,
       width: 15,
       shape: 'Image',
-      imageUrl: './assets/maps/images/ballon.png',
+      imageUrl: 'https://ej2.syncfusion.com/demos/src/maps/images/ballon.png',
       tooltipSettings: {
         format: '<b>Name</b> : ${name}<br><b>Product</b> : ${product}<br><b>Total value</b> : ${worth}',
         visible: true,

@@ -21,20 +21,23 @@ export class CommandColumnComponent implements OnInit {
     public editparams: Object;
     public commands: Object[];
     public pageSettings: Object;
-
+    public dateeditparam:Object;
+    
     ngOnInit(): void {
         this.data = sampleData.slice(0);
         this.editSettings = {
             allowAdding: true,
             allowEditing: true,
             allowDeleting: true,
-            mode: 'Row'
+            mode: 'Row',
+            allowEditOnDblClick: false
         };
         this.numberrules = { number: true, min: 0 };
         this.pageSettings = { pageSize: 10 };
         this.taskidrules = { required: true, number: true };
         this.tasknamerules = { required: true };
-        this.daterules = { date: true};
+        this.daterules = { date: ['M/d/yyyy', 'Please enter a valid date']};
+        this.dateeditparam = { params: { format: 'M/d/yyyy' } };
         this.editparams = {params: { format: 'n' }};
         this.commands = [{ type: 'Edit', buttonOption: { iconCss: ' e-icons e-edit', cssClass: 'e-flat' } },
         { type: 'Delete', buttonOption: { iconCss: 'e-icons e-delete', cssClass: 'e-flat' } },

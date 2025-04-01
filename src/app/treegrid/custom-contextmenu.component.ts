@@ -37,7 +37,8 @@ export class CustomContextMenuComponent implements OnInit {
         }
         if (elem.closest('.e-row')) {
           if ( isNullOrUndefined(uid) || 
-            isNullOrUndefined(getValue('hasChildRecords', this.treegrid.grid.getRowObjectFromUID(uid).data))) {
+            isNullOrUndefined(getValue('hasChildRecords', this.treegrid.grid.getRowObjectFromUID(uid).data)) ||
+            !getValue('hasChildRecords', this.treegrid.grid.getRowObjectFromUID(uid).data)) {
             arg.cancel = true;
           } else {
             let flag: boolean = getValue('expanded', this.treegrid.grid.getRowObjectFromUID(uid).data);

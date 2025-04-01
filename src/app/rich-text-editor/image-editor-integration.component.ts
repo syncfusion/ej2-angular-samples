@@ -93,21 +93,23 @@ export class ImageEditorIntegrationComponent {
         this.defaultRTE.formatter.enableUndo(this.defaultRTE);
         this.dispose();
         this.dialogObj.hide();
-        this.imageELement.crossOrigin = null;
     }
 
     public onCancel(): void {
         this.dispose();
         this.dialogObj.hide();
         this.isLoaded = true;
-        this.imageELement.crossOrigin = null;
     }
 
     public onclose() {
         this.dispose();
         this.dialogObj.hide();
         this.isLoaded = true;
-        this.imageELement.crossOrigin = null;
+    }
+
+    public open(): void {
+        this.imageEditorObj.update();
+        this.imageEditorObj.open(this.dataURL);
     }
 
     public OnBeforeOpen(): void {
@@ -135,17 +137,14 @@ export class ImageEditorIntegrationComponent {
                     (canvas as any).height
                 );
                 this.dataURL = (canvas as any).toDataURL();
-                if (isLoded !== undefined && !isLoded) {
-                    this.imageEditorObj = new ImageEditor({
-                        height: '450px',
-                        created: () => {
-                            this.imageEditorObj.open(this.dataURL);
-                        },
-                    });
-                    this.imageEditorObj.appendTo('#image-editor');
-                    isLoded = true;
-                }
             };
+            if (isLoded !== undefined && !isLoded) {
+                this.imageEditorObj = new ImageEditor({
+                    height: '450px'
+                });
+                this.imageEditorObj.appendTo('#image-editor');
+                isLoded = true;
+            }
         }
     }
 

@@ -18,6 +18,8 @@ export class ChatUITemplateComponent implements AfterViewInit {
 
   public user: UserModel = { id: 'admin', user: 'Admin', avatarUrl: './assets/chat-ui/images/bot.png' };
 
+  public templateMessagedata = templateMessagedata;
+
   ngAfterViewInit() {
     this.bindInitialBotMessage();
   }
@@ -40,7 +42,7 @@ export class ChatUITemplateComponent implements AfterViewInit {
   }
 
   private handleSuggestionClick(suggestion: HTMLElement) {
-    const message = templateMessagedata.find(m => m.text === suggestion.innerText);
+    const message = this.templateMessagedata.find(m => m.text === suggestion.innerText);
     if (message) {
       this.chatTemplate.addMessage(message.text);
       setTimeout(() => {
@@ -66,8 +68,8 @@ export class ChatUITemplateComponent implements AfterViewInit {
     setTimeout(() => {
       const message = {
         author: { id: 'bot', user: 'Bot', avatarUrl: './assets/chat-ui/images/bot.png' },
-        text: templateMessagedata[0].text,
-        suggestions: templateMessagedata[0].suggestions
+        text: this.templateMessagedata[0].text,
+        suggestions: this.templateMessagedata[0].suggestions
       };
       this.chatTemplate.addMessage(message);
       setTimeout(() => {

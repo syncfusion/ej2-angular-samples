@@ -8,3 +8,11 @@
 .e-grid .e-gridheader tr th:first-child.e-filterbarcell.e-fltrtemp {
     padding-left: 6px;
 }
+
+.e-grid:not(.e-rtl) .e-min-max-separator {
+    margin-right: 5px;
+}
+
+.e-rtl .e-min-max-separator {
+    margin-left: 5px;
+}

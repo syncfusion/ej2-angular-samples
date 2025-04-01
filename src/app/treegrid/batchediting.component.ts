@@ -20,7 +20,7 @@ export class BatchEditingComponent implements OnInit {
     public startdaterules: Object;
     public durationrules: Object;
     public numericParams: Object;
-
+    public dateeditparam: Object;
      @ViewChild('treegrid')
      public treegrid: TreeGridComponent;
     ngOnInit(): void {
@@ -29,7 +29,8 @@ export class BatchEditingComponent implements OnInit {
         this.toolbar = ['Add', 'Delete', 'Update', 'Cancel'];
         this.taskidrules = { required: true , number: true};
         this.tasknamerules = { required: true};
-        this.startdaterules = { date: true};
+        this.startdaterules = { date: ['M/d/yyyy', 'Please enter a valid date']};
+        this.dateeditparam = { params: { format: 'M/d/yyyy' } };
         this.durationrules = {number: true , min: 0};
         this.numericParams = { params: {  format: 'n'}};
     }

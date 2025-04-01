@@ -1,21 +1,18 @@
 <div id="action-description">
     <p>
-        This column chart demonstrates the dynamic sorting of data in real-time. The chart visualizes nitrogen
-        fertilizer use per hectare of cropland, updating every few seconds to show sorted data from different datasets.
+        This sample shows three series of columns in which each column is rendered with a different width and placed behind the previous column.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [enableSideBySidePlacement]='placement'>
+            [primaryYAxis]='primaryYAxis' [title]='title' [subTitle]='subTitle' [tooltip]='tooltip' [legendSettings]='legendSettings' (load)='load($event)' (axisLabelRender)='axisLabelRender($event)' (sharedTooltipRender)='sharedTooltipRender($event)' (resized)='resized($event)' [enableSideBySidePlacement]='placement'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Column' xName='ConsumerName' yName='TotalCount' name='Total' width=2 [marker]='dataLebelMarker' columnWidth=0.5>
+                <e-series [dataSource]='totalData' type='Column' xName='country' yName='population' name='Total' [cornerRadius]='cornerRadius' columnWidth=0.5 legendShape='Rectangle'>
                 </e-series>
-                <e-series [dataSource]='data' type='Column' xName='ConsumerName' yName='AppleCount' name='Apple' width=2 [marker]='marker' columnWidth=0.4>
+                <e-series [dataSource]='maleData' type='Column' xName='country' yName='male' name='Male' [cornerRadius]='cornerRadius' columnWidth=0.3 legendShape='Rectangle'>
                 </e-series>
-                <e-series [dataSource]='data' type='Column' xName='ConsumerName' yName='OrangeCount' name='Orange' width=2 [marker]='marker' columnWidth=0.3>
-                </e-series>
-                <e-series [dataSource]='data' type='Column' xName='ConsumerName' yName='GrapesCount' name='Grapes' width=2 [marker]='marker' columnWidth=0.2>
+                <e-series [dataSource]='femaleData' type='Column' xName='country' yName='female' name='Female' [cornerRadius]='cornerRadius' columnWidth=0.2 legendShape='Rectangle'>
                 </e-series>
             </e-series-collection>
         </ejs-chart>
@@ -23,9 +20,10 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can observe how the column chart updates dynamically with sorted data using the
-        <code>setData</code> method. The data is sourced from multiple datasets, and the chart updates and sorts its
-        data periodically to reflect the latest information.
+        In this example, you can see how to render and configure the column chart. The column chart is used to compare the frequency, count, total, or average of data in different categories. The <code>EnableSideBySidePlacement</code> property is used to enable and disable side-by-side positioning. DataLabel is used to present details about individual data points.
+    </p>
+    <p>
+        Tooltip is enabled in this example. To see the tooltip in action, hover over a point or tap on a point in touch-enabled devices.
     </p>
     <p style="font-weight: 500">Injecting Module</p>
     <p>

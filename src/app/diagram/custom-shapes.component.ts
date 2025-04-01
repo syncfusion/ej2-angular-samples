@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from "@angular/core";
 import { extend } from '@syncfusion/ej2-base';
 import { isNullOrUndefined as isNOU } from '@syncfusion/ej2-base';
-import { ChartComponent, AccumulationChartModule, ChartModule } from '@syncfusion/ej2-angular-charts';
+import { ChartComponent, AccumulationChartModule, ChartModule, ChartAllModule, AccumulationChartAllModule } from '@syncfusion/ej2-angular-charts';
 import {
     IAccTextRenderEventArgs, IAccLoadedEventArgs, AccumulationChartComponent,
     IAccAnimationCompleteEventArgs, ILoadedEventArgs
@@ -27,7 +27,7 @@ import { CommonModule } from '@angular/common';
     styleUrls: ['diagram-style.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [SBActionDescriptionComponent,CommonModule, DiagramModule, NgIf, DateRangePickerModule, AccumulationChartModule, GridModule, ChartModule, CircularGaugeModule, SBDescriptionComponent, CurrencyPipe]
+    imports: [SBActionDescriptionComponent,CommonModule, DiagramModule, NgIf, DateRangePickerModule, AccumulationChartModule, GridModule, ChartModule, CircularGaugeModule, SBDescriptionComponent, CurrencyPipe,ChartAllModule,AccumulationChartAllModule]
 })
 
 export class ComplexShapesDiagramComponent {

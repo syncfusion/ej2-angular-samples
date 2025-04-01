@@ -85,6 +85,7 @@ import { timelineAppRoutes } from '../timeline/timeline.module';
 import { multicomboboxAppRoutes } from '../multicolumn-combobox/multicolumn-combobox.module';
 import { aiassistviewAppRoutes } from '../ai-assistview/ai-assistview.module';
 import { chatUIAppRoutes } from '../chat-ui/chat-ui.module';
+import { speechToTextAppRoutes } from '../speech-to-text/speech-to-text.module';
 import { smartPasteAppRoutes } from '../ai-smart-paste/smartpaste.module';
 import { smartTextAreaAppRoutes } from '../ai-smart-textarea/smarttextarea.module';
 import { AIGridAppRoutes } from '../ai-grid/aigrid.module';
@@ -102,10 +103,10 @@ import { AIRichTextEditorAppRoutes } from '../ai-rich-text-editor/airichtextedit
 
 export let samplesList: any = [
     {
-        'name': 'Smart Paste', 'category': 'Smart Components', 'order': '01', 'path': 'ai-smart-paste', 'samples': smartPasteAppRoutes,  'ftName': 'ai-smart-paste'
+        'name': 'Smart Paste', 'category': 'Smart Components', 'type': 'preview', 'order': '01', 'path': 'ai-smart-paste', 'samples': smartPasteAppRoutes,  'ftName': 'ai-smart-paste'
     },
     {
-        'name': 'Smart TextArea', 'category': 'Smart Components', 'order': '01', 'path': 'ai-smart-textarea', 'samples': smartTextAreaAppRoutes,  'ftName': 'ai-smart-textarea'
+        'name': 'Smart TextArea', 'category': 'Smart Components', 'type': 'preview', 'order': '01', 'path': 'ai-smart-textarea', 'samples': smartTextAreaAppRoutes,  'ftName': 'ai-smart-textarea'
     },
     {
         'name': 'Data Grid', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-grid', 'samples': AIGridAppRoutes
@@ -141,22 +142,22 @@ export let samplesList: any = [
         'name': 'Maps', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-maps', 'samples': AIMapsAppRoutes
     },
     {
-        'name': 'Document Editor', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-document-editor', 'samples': AIDocumentEditorAppRoutes
+        'name': 'Word Processor', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-document-editor', 'samples': AIDocumentEditorAppRoutes
     },
     {
         'name': 'Data Grid', 'type':'update', 'category': 'Grids', 'order': '01', 'path': 'grid', 'samples': gridRouteConfig, 'ftName': 'datagrid'
     },
     {
-        'name': 'AI AssistView', 'category': 'Interactive Chat', 'order': '06', 'path': 'ai-assistview', 'samples': aiassistviewAppRoutes, 'ftName': 'ai-assistview'
+        'name': 'AI AssistView', 'category': 'Interactive Chat', 'type': 'update', 'order': '06', 'path': 'ai-assistview', 'samples': aiassistviewAppRoutes, 'ftName': 'ai-assistview'
     },
     {
         'name': 'Chat UI','category': 'Interactive Chat', 'type': 'preview', 'order': '06', 'path': 'chat-ui', 'samples': chatUIAppRoutes, "ftName": "chat-ui"
     },
     {
-        'name': 'Pivot Table', 'type':'update', 'category': 'Grids', 'order': '01', 'path': 'pivot-table', 'samples': pivottableRouteConfig
+        'name': 'Pivot Table', 'category': 'Grids', 'order': '01', 'path': 'pivot-table', 'samples': pivottableRouteConfig
     },
     {
-        'name': 'Tree Grid', 'category': 'Grids', 'order': '01', 'path': 'treegrid', 'samples': treegridRouteConfig
+        'name': 'Tree Grid', 'category': 'Grids', 'order': '01', 'path': 'treegrid', 'samples': treegridRouteConfig, 'type':'update'
     },
     {
         'name': 'Spreadsheet', 'category': 'Grids', 'order': '04', 'path': 'spreadsheet', 'samples': spreadsheetAppRoutes, 'ftName': 'spreadsheet'
@@ -171,7 +172,7 @@ export let samplesList: any = [
         'name': '3D Circular Chart', 'category': 'Data visualization', 'order': '02', 'path': 'three-dimension-circular-chart', 'samples': threeDimensionCircularChartAppRoutes
     },
     {
-        'name': 'Stock Chart', 'category': 'Data visualization', 'order': '02', 'path': 'stock-chart', 'samples': stockChartAppRoutes, 'type':'update'
+        'name': 'Stock Chart', 'category': 'Data visualization', 'order': '02', 'path': 'stock-chart', 'samples': stockChartAppRoutes
     },
     {
         'name': 'Arc Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'arc-gauge', 'samples': arcgaugeAppRoutes
@@ -180,7 +181,7 @@ export let samplesList: any = [
         'name': 'Circular Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'circular-gauge', 'samples': circulargaugeAppRoutes
     },
     {
-        'name': 'Diagram', 'category': 'Data visualization', 'order': '02', 'path': 'diagram', 'samples': diagramAppRoutes
+        'name': 'Diagram', 'category': 'Data visualization', 'order': '02', 'path': 'diagram', 'samples': diagramAppRoutes, 'type':'update'
     },
     {
         'name': 'HeatMap Chart', 'category': 'Data visualization', 'order': '02', 'path': 'heatmap-chart', 'samples': heatmapAppRoutes, 'ftName': 'heatmap'
@@ -189,7 +190,7 @@ export let samplesList: any = [
         'name': 'Linear Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'linear-gauge', 'samples': lineargaugeAppRoutes
     },
     {
-        'name': 'Maps', 'category': 'Data visualization', 'type':'update', 'order': '02', 'path': 'maps', 'samples': mapAppRoutes
+        'name': 'Maps', 'category': 'Data visualization', 'order': '02', 'path': 'maps', 'samples': mapAppRoutes
     },
     {
         'name': 'Range Navigator', 'category': 'Data visualization', 'order': '02', 'path': 'range-navigator', 'samples': rangeNavigatorAppRoutes
@@ -228,28 +229,28 @@ export let samplesList: any = [
         'name': "Markdown Editor", 'category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "markdown-editor", 'samples': mdeAppRoutes
     },
     {
-        'name': 'DocumentEditor', 'category': 'File Viewers & Editors', 'order': '03', 'path': 'document-editor', 'samples': documentEditorAppRoutes, 'ftName': 'document-editor'
+        'name': 'Word Processor', 'category': 'File Viewers & Editors', 'order': '03', 'path': 'document-editor', 'samples': documentEditorAppRoutes, 'ftName': 'document-editor'
     },
     {
-        "name": "Image Editor", 'category': 'File Viewers & Editors', 'ftName': 'image-editor', 'order': '03', 'path': 'image-editor', 'samples': ImageEditorAppRoutes, 'type': 'update'
+        "name": "Image Editor", 'category': 'File Viewers & Editors', 'ftName': 'image-editor', 'order': '03', 'path': 'image-editor', 'samples': ImageEditorAppRoutes
     },
     {
         'name': 'Scheduler', 'category': 'Calendars', 'order': '04', 'path': 'schedule', 'samples': scheduleRouteConfig, 'ftName': 'scheduler', 'type': 'update'
     },
     {
-        'name': 'Gantt Chart', 'category': 'Calendars', 'order': '04', 'path': 'gantt', 'samples': GanttAppRoutes, 'ftName': 'gantt'
+        'name': 'Gantt Chart', 'category': 'Calendars', 'order': '04', 'type':'update', 'path': 'gantt', 'samples': GanttAppRoutes, 'ftName': 'gantt'
     },
     {
         'name': 'Calendar', 'category': 'Calendars', 'order': '04', 'path': 'calendar', 'samples': calendarAppRoutes
     },
     {
-        'name': 'DatePicker', 'category': 'Calendars', 'order': '04', 'path': 'datepicker', 'samples': datePickerAppRoutes
+        'name': 'DatePicker',  "type": "update", 'category': 'Calendars', 'order': '04', 'path': 'datepicker', 'samples': datePickerAppRoutes
     },
     {
         'name': 'DateRangePicker', 'category': 'Calendars', 'order': '04', 'path': 'daterangepicker', 'samples': dateRangePickerAppRoutes
     },
     {
-        'name': 'DateTimePicker', 'category': 'Calendars', 'order': '04', 'path': 'datetimepicker', 'samples': dateTimePickerAppRoutes
+        'name': 'DateTimePicker',  "type": "update", 'category': 'Calendars', 'order': '04', 'path': 'datetimepicker', 'samples': dateTimePickerAppRoutes
     },
     {
         'name': "TimePicker", 'category': 'Calendars', 'order': '04', 'path': "timepicker", 'samples': timePickerAppRoutes
@@ -258,7 +259,7 @@ export let samplesList: any = [
         'name': 'Button', 'category': 'Buttons', 'order': '03', 'path': 'button', 'samples': buttonAppRoutes
     },
     {
-        'name': 'Chips', 'category': 'Buttons', 'order': '03', 'path': 'chips', 'samples': chipsAppRoutes
+        'name': 'Chips', 'category': 'Buttons','type': 'update', 'order': '03', 'path': 'chips', 'samples': chipsAppRoutes
     },
     {
         'name': "Floating Action Button", 'category': 'Buttons', 'order': '03', 'path': "floating-action-button", 'samples': floatingActionButtonAppRoutes,
@@ -267,25 +268,25 @@ export let samplesList: any = [
         'name': "SpeedDial", 'category': 'Buttons', 'order': '03', 'path': "speed-dial", 'samples': speedDialAppRoutes,
     },
     {
-        'name': "AutoComplete", 'category': "Dropdowns", "type": "update",'ftName': "autocomplete", 'order': '05', 'path': "auto-complete", 'samples': autoCompleteAppRoutes
+        'name': "AutoComplete", 'category': "Dropdowns",'ftName': "autocomplete", 'order': '05', 'path': "auto-complete", 'samples': autoCompleteAppRoutes
     },
     {
-        'name': "ComboBox", 'category': "Dropdowns", 'ftName': "combo-box", "type": "update", 'order': '05', 'path': "combo-box", 'samples': comboboxAppRoutes
+        'name': "ComboBox", 'category': "Dropdowns", 'ftName': "combo-box",  'order': '05', 'path': "combo-box", 'samples': comboboxAppRoutes
     },
     {
-        'name': "Dropdown List", 'category': "Dropdowns", "type": "update", 'ftName': "dropdown-list", 'order': '05', 'path': "drop-down-list", 'samples': dropdownlistAppRoutes
+        'name': "Dropdown List", 'category': "Dropdowns",  'ftName': "dropdown-list", 'order': '05', 'path': "drop-down-list", 'samples': dropdownlistAppRoutes
     },
     {
         'name': "Dropdown Tree", 'category': "Dropdowns", 'ftName': "dropdown-tree", 'order': '05', 'path': "drop-down-tree", 'samples': dropdowntreeAppRoutes
     },
     {
-        'name': "MultiSelect Dropdown", 'category': "Dropdowns", "type": "update", 'ftName': "multiselect-dropdown", 'order': '05',  'path': "multi-select", 'samples': multiselectAppRoutes
+        'name': "MultiSelect Dropdown", 'category': "Dropdowns",  'ftName': "multiselect-dropdown", 'order': '05',  'path': "multi-select", 'samples': multiselectAppRoutes
     },
     {
         "name": "List Box", "category": "Dropdowns", "ftName": "list-box", 'order': '03', "path": "list-box", "samples": listBoxAppRoutes
     },
     {
-        "name": "Mention", "category": "Dropdowns", 'order': '03', "path": "mention", "samples": mentionAppRoutes
+        "name": "Mention",  "type": "update", "category": "Dropdowns", 'order': '03', "path": "mention", "samples": mentionAppRoutes
     },
     {
         "name": "MultiColumn Combobox", "category": "Dropdowns", "ftName": "multicolumn-comboboox", 'order': '03', "path": "multicolumn-combobox", "samples": multicomboboxAppRoutes
@@ -303,7 +304,7 @@ export let samplesList: any = [
         'name': 'Carousel', 'category': 'Navigation', 'order': '06', 'path': 'carousel', 'samples': carouselAppRoutes, 'ftName': "carousel"
     },
     {
-        'name': 'Context Menu', 'category': 'Navigation', "type": "update", 'order': '06', 'path': 'context-menu', 'samples': contextMenuAppRoutes, 'ftName': "context-menu"
+        'name': 'Context Menu', 'category': 'Navigation', 'order': '06', 'path': 'context-menu', 'samples': contextMenuAppRoutes, 'ftName': "context-menu"
     },
     {
         'name': 'Menu Bar', 'category': 'Navigation', 'order': '06', 'path': 'menu', 'samples': menuAppRoutes, 'ftName': "menu-bar"
@@ -378,6 +379,9 @@ export let samplesList: any = [
         'name': "OTP Input", 'category': 'Inputs', "ftName": "otp-input", 'order': '03', 'path': "otp-input", 'samples': otpInputAppRoutes
     },
     {
+        'name': 'Speech To Text', 'category': 'Inputs', 'type': 'preview', 'order': '03', 'path': 'speech-to-text', 'samples': speechToTextAppRoutes, 'ftName': 'speech-to-text'
+    },
+    {
         'name': 'Avatar', 'category': 'Layout', 'order': '09', 'path': 'avatar', 'samples': avatarAppRoutes
     },
     {
@@ -399,7 +403,7 @@ export let samplesList: any = [
         'name': 'Splitter', 'category': 'Layout', 'order': '09', 'path': 'splitter', 'samples': splitterAppRoutes, 'ftName': 'splitter'
     },
     {
-        'name': 'Dashboard Layout', 'category': 'Layout', 'order': '09', 'path': 'dashboard-layout', 'samples': dashboardlayoutAppRoutes, "ftName": "dashboard-layout", 'type': 'update'
+        'name': 'Dashboard Layout', 'category': 'Layout', 'order': '09', 'path': 'dashboard-layout', 'samples': dashboardlayoutAppRoutes, "ftName": "dashboard-layout"
     },
     {
         'name': 'Timeline', 'category': 'Layout', 'order': '10', 'path': 'timeline', 'samples': timelineAppRoutes, "ftName": "timeline"

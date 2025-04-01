@@ -1,9 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IAccLoadedEventArgs, AccumulationChartComponent, AccumulationTheme, IAccTextRenderEventArgs, AccumulationChartAllModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
-import { EmptyPointMode } from '@syncfusion/ej2-charts';
+import { ChartTheme, EmptyPointMode } from '@syncfusion/ej2-charts';
 import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadAccumulationChartTheme } from './theme-color';
 
 /**
  * Sample for Pie chart empty points
@@ -26,9 +27,7 @@ export class PieEmptyPointChartComponent {
     ];
       // custom code start
     public load(args: IAccLoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        let selectedTheme: string = loadAccumulationChartTheme(args);
         if(selectedTheme === 'bootstrap5-dark'){
             args.chart.series[0].emptyPointSettings.fill = '#FF7F7F';
         }

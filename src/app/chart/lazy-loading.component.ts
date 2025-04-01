@@ -11,6 +11,7 @@ import { DatePickerComponent, DatePickerModule } from '@syncfusion/ej2-angular-c
 import { NumericTextBoxComponent, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 
 /**
  * Sample for Lazy Loading
@@ -71,7 +72,7 @@ export class LazyLoadingComponent {
         labelFormat: '{value}MB'
     };
     public tooltip: Object = {
-        enable: true, shared: true,
+        enable: true, showNearestTooltip: true, enableHighlight: true,
         header : "<b>${point.x}</b>", format : "Server load : <b>${point.y}</b>"
     };
     public legend: Object = {
@@ -94,9 +95,7 @@ export class LazyLoadingComponent {
     };
     // custom code start
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadChartTheme(args);
     };
     // custom code end
     public GetDateTimeData(start: Date, end: Date): { x: Date, y: number }[] {

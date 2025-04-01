@@ -1,12 +1,12 @@
 <div id="action-description">
     <p>
-        This Angular Spline Chart example represents the North Carolina weather report for the year 2016 with default spline series in the chart.
+        This Angular Spline Chart example visualizes the average monthly high and low temperatures across the contiguous U.S. for 2024.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart id='spline-chartcontainer' align='center' [chartArea]='chartArea' [width]='width' style='display:block;' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' (load)='load($event)' [title]='title' [tooltip]='tooltip' [annotations]='annotations' [legendSettings]='legend'>
+            [primaryYAxis]='primaryYAxis' (load)='load($event)' [title]='title' [subTitle]='subTitle' [tooltip]='tooltip' [crosshair]="crosshair" [annotations]='annotations' [legendSettings]='legend' [height]='height'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Spline' xName='x' yName='y' name='Max Temp' width=2 [marker]='marker'> </e-series>
                 <e-series [dataSource]='data1' type='Spline' xName='x' yName='y' name='Avg Temp' width=2 [marker]='marker'> </e-series>
@@ -14,17 +14,13 @@
             </e-series-collection>
         </ejs-chart>
     </div>
-    <div style="float: right; margin-right: 10px; margin-top: -5px">Source:
-        <a href="https://www.worldweatheronline.com/mooresville-weather/north-carolina/us.aspx" target="_blank" aria-label="Navigate to the documentation for world weather online">www.worldweatheronline.com</a>
-    </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the spline chart. The Spline chart uses a curved line to connect points in a data series.
-        <code>Marker</code> are used to represent individual data and its value.
+        In this example, you can see how to render and configure a spline chart. The spline chart uses a smooth, curved line to connect points in a data series. <code>Markers</code> represent individual data points with different shapes, while the <code>crosshair</code> enhances data tracking by highlighting the category.
     </p>
     <p>
-        <code>Tooltips</code> are enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+        <code>Tooltips</code> are enabled in this example. To see a tooltip in action, hover over or tap on the chart.
     </p>
     <p style="font-weight: 500"><b>Injecting Module</b></p>
     <p>
@@ -41,16 +37,6 @@
 <style>
     #control-container {
         padding: 0px !important;
-    }
-
-    #spline-chartcontainer_Series_0_Point_2_Symbol {
-        -webkit-animation: opac 1s ease-out infinite;
-        animation: opac 1s ease-out infinite;
-    }
-
-    #spline-chartcontainer_Series_2_Point_0_Symbol {
-        -webkit-animation: opac 1s ease-out infinite;
-        animation: opac 1s ease-in-out infinite;
     }
 
     @keyframes opac {

@@ -82,7 +82,7 @@
                     <div style="display: table-cell; vertical-align: middle ">Margin X</div>
                 </div>
                 <div class="col-xs-7 ">
-                    <ejs-numerictextbox id='mleft' [value]="10" format='n0' step="1" (change)='onMarginLeftChange($event)'></ejs-numerictextbox>
+                    <ejs-numerictextbox id='mleft' [value]="10" format='n0' min="10" max="120" step="1" (change)='onMarginLeftChange($event)'></ejs-numerictextbox>
                 </div>
             </div>
             <div class="row sb-child-row">
@@ -90,7 +90,7 @@
                     <div style="display: table-cell; vertical-align: middle ">Margin Y</div>
                 </div>
                 <div class="col-xs-7 ">
-                    <ejs-numerictextbox id='mtop' [value]="50" format='n0' step="1" (change)='onMarginTopChange($event)'></ejs-numerictextbox>
+                    <ejs-numerictextbox id='mtop' [value]="50" format='n0' min="10" max="120" step="1" (change)='onMarginTopChange($event)'></ejs-numerictextbox>
                 </div>
             </div>
             <div class="row sb-child-row">
@@ -98,7 +98,7 @@
                     <div style="display: table-cell; vertical-align: middle ">Horizontal Spacing</div>
                 </div>
                 <div class="col-xs-7 ">
-                    <ejs-numerictextbox id='hspace' [value]="40" format='n0' step="1" (change)='onhSpacingChange($event)'></ejs-numerictextbox>
+                    <ejs-numerictextbox id='hspace' [value]="40" format='n0' min="20" max="60" step="1" (change)='onhSpacingChange($event)'></ejs-numerictextbox>
                 </div>
             </div>
             <div class="row sb-child-row">
@@ -106,7 +106,7 @@
                     <div style="display: table-cell; vertical-align: middle ">Vertical Spacing</div>
                 </div>
                 <div class="col-xs-7 ">
-                    <ejs-numerictextbox id='vspace' [value]="40" format='n0' step="1" (change)='onvSpacingChange($event)'></ejs-numerictextbox>
+                    <ejs-numerictextbox id='vspace' [value]="40" format='n0' min="20" max="60" step="1" (change)='onvSpacingChange($event)'></ejs-numerictextbox>
                 </div>
             </div>
             <div class="row property-panel-content" style="padding-top: 10px">

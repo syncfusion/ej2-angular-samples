@@ -46,6 +46,7 @@ export class IFrameComponent {
 
     public iframe: IFrameSettingsModel = { enable: true };
     public height: number = 500;
+    public enableTabKey: boolean = true;
 
     public handleFullScreen(e: any) {
         const sbCntEle: HTMLElement = document.querySelector('.sb-content.e-view');

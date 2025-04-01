@@ -5,7 +5,7 @@
 }
 
 .api-chatui .chat_header_icon {
-    background-image: url('src/app/chat-ui/images/public-event.png');
+    background-image: url('/assets/chat-ui/images/public-event.png');
     background-color: unset;
 }
 

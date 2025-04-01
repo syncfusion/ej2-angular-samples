@@ -3,6 +3,7 @@ import { AccumulationChart, AccumulationChartComponent, ChartAllModule, IAccLoad
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadAccumulationChartTheme } from './theme-color';
 
 /**
  * Sample for Pie Update Data Source
@@ -141,9 +142,7 @@ export class UpdatePieDataSourceComponent {
     let yearIndex: number = 2;
     let year: number = 10;
     args.accumulation.centerLabel.text = "2010";
-    let selectedTheme: string = location.hash.split('/')[1];
-    selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-    args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+    loadAccumulationChartTheme(args);
     this.updateClearInterval();
     this.intervalId = setInterval(() => {
       let container: HTMLElement = document.getElementById('donut-container');

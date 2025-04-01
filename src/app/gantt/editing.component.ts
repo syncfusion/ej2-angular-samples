@@ -55,7 +55,7 @@ export class GanttEditingComponent implements OnInit {
             { field: 'TaskID', width: 80 },
             { field: 'TaskName', headerText: 'Job Name', width: '250', clipMode: 'EllipsisWithTooltip', validationRules: { required: true, minLength: [5, 'Task name should have a minimum length of 5 characters'], } },
             { field: 'StartDate' },
-            { field: 'EndDate', validationRules: { date: true, required: [this.customFn.bind(this), 'Please enter a value greater than the start date.'] } },
+            { field: 'EndDate', validationRules: { required: [this.customFn.bind(this), 'Please enter a value greater than the start date.'] } },
             { field: 'Duration', validationRules: { required: true} },
             { field: 'Progress', validationRules: { required: true, min: 0, max: 100 } },
             { field: 'Predecessor' }
@@ -101,7 +101,8 @@ export class GanttEditingComponent implements OnInit {
       var endDate;
       var gantt = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
       if (args.element && args.value) {
-        endDate = new Date(args.value);
+        var dateOptions = { format: gantt.dateFormat, type: 'dateTime', skeleton: 'yMd' };
+        endDate =  gantt.globalize.parseDate(args.value, dateOptions);
         if(!this.startDate && gantt.editModule.dialogModule['beforeOpenArgs']) {
           this.startDate = gantt.editModule.dialogModule['beforeOpenArgs'].rowData['ganttProperties'].startDate;
           endDate = (gantt.editModule.dialogModule['beforeOpenArgs'].rowData['ganttProperties'].endDate);

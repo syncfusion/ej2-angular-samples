@@ -37,3 +37,82 @@ export let defaultSuggestions: string[] = [
     "How do I set daily goals in my work day?",
     "Steps to publish a e-book with marketing strategy"
 ];
+
+export let streamingData: { [key: string]: string | string[] } [] = [
+    {
+        prompt: "What are the main features of the AI AssistView component?",
+        response: "The AI AssistView component offers several powerful features that enhance user interaction:\n\n- **Customizable Views:** Allows for custom templates to be used for banners, prompts, responses, and suggestions.\n- **Streaming Responses:** Provides real-time feedback as data is processed, enhancing immediacy and user engagement.\n- **Interactive Toolbar:** Easily integrates custom toolbar items, such as buttons and inputs, enhancing functionality.\n- **Seamless Integration:** Connects with AI services to provide advanced processing and intelligent responses.",
+        suggestions: [ "How can I customize the appearance of AI AssistView?", "What are the benefits of using Markdown?" ]
+    },
+    {
+        prompt: "How can I customize the appearance of AI AssistView?",
+        response: "Customizing AI AssistView enables you to tailor the look and functionality to suit specific needs:\n\n- **Template Customization:** Modify templates for prompts, responses, and more.\n- **CSS Styling:** Apply custom styles to align with your application’s visual theme.\n- **Theme Support:** Utilize built-in themes or create your own for consistent styling.\n- **Banner and Toolbar Configurations:** Adjust content and tools for personalized UI experiences.",
+        suggestions: [ "What customization options are available in AI AssistView?", "Prime number checking C# example?" ]
+    },
+    {
+        prompt: "What is Markdown and how is it used?",
+        response: "Markdown is a straightforward syntax used primarily for formatting text documents:\n\n- **Headers:** Create headings with `#`, `##`, `###` for different levels.\n- **Emphasis:** Use `*text*` for italic and `**text**` for bold.\n- **Links and Images:** `[Link](URL)`, `![Alt Text](ImageURL)` to include links and images.\n- **Lists and Code Blocks:** Use `-` for lists and triple backticks ``` for code blocks.\n\nMarkdown’s simplicity and readability make it ideal for writing documentation.",
+        suggestions: [ "What are the benefits of using Markdown?", "What customization options are available in AI AssistView?" ]
+    },
+    {
+        prompt: "What customization options are available in AI AssistView?",
+        response: "AI AssistView provides extensive customization options for tailored user interactions:\n\n- **Templates:** Use `<PromptItemTemplate>`, `<ResponseItemTemplate>`, etc., for customized display.\n- **Custom Toolbar Items:** Add buttons and other controls via `AssistViewToolbar`.\n- **Dynamic Content:** Update content based on user actions or external events.\n- **Styling:** Full CSS support for styling individual components and layouts.",
+        suggestions: ["What are the main features of the AI AssistView component?", "Generate Fibonacci sequence C# example?"]
+    },
+    {
+        prompt: "What are the benefits of using Markdown?",
+        response: "Markdown provides several benefits, especially in documentation and writing:\n\n- **Ease of Use:** Its syntax is simple and quick to learn, increasing productivity.\n- **Readability:** Plain text format ensures content is easy to read and edit.\n- **Flexibility:** Can be converted to HTML, PDF, and other formats easily.\n- **Collaboration:** Widely supported in various tools for collaborative writing and documentation.",
+        suggestions: ["Prime number checking C# example?", "Generate Fibonacci sequence C# example?"]
+    },
+    {
+        prompt: "Prime number checking C# example?",
+response: `<pre><code class=\"csharp language-csharp\">using System;
+
+class Program
+{
+    static bool IsPrime(int n)
+    {
+        if (n <= 1) return false;
+        for (int i = 2; i <= Math.Sqrt(n); i++)
+            if (n % i == 0) return false;
+        return true;
+    }
+
+    static void Main()
+    {
+        Console.WriteLine(IsPrime(11)); // True
+    }
+}
+</code></pre>`
+    },
+    {
+        prompt: "Generate Fibonacci sequence C# example?",
+        response: `<pre><code class=\"csharp language-csharp\">using System;
+
+class Program
+{
+    static void Fibonacci(int n)
+    {
+        int a = 0, b = 1, c;
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write(a + \" \");
+            c = a + b;
+            a = b;
+            b = c;
+        }
+    }
+
+    static void Main()
+    {
+        Fibonacci(10); // 0 1 1 2 3 5 8 13 21 34
+    }
+}
+</code></pre>`
+    }
+];
+
+export let streamingSuggestions: string[] = [
+    "What are the main features of the AI AssistView component?",
+    "What is Markdown and how is it used?"
+];

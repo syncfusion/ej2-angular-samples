@@ -22,7 +22,7 @@ export class BasicDialogComponent implements AfterViewInit {
 
     public header: string = 'About SYNCFUSION Succinctly Series';
     public showCloseIcon: Boolean = true;
-    public width: string = '50%';
+    public width: string = '500px';
     public animationSettings: AnimationSettingsModel = { effect: 'None' };
     public target: string = '.control-section';
 

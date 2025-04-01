@@ -26,7 +26,7 @@ export class ConditionalFormattingComponent implements OnInit {
     queryCellInfo (args: QueryCellInfoEventArgs) {
         if (args.cell.innerHTML === 'High') {
             var x = document.createElement('IMG');
-            x.setAttribute('src', 'assets/treegrid/images/High.png');
+            x.setAttribute('src', 'https://ej2.syncfusion.com/angular/demos/assets/treegrid/images/High.png');
             x.setAttribute('height', '15px');
             var span = document.createElement('span');
             span.innerHTML = args.cell.innerHTML;
@@ -36,7 +36,7 @@ export class ConditionalFormattingComponent implements OnInit {
             args.cell.appendChild(span);
         } else if (args.cell.innerHTML === 'Critical') {
             var y = document.createElement('IMG');
-            y.setAttribute('src', 'assets/treegrid/images/Critical.png');
+            y.setAttribute('src', 'https://ej2.syncfusion.com/angular/demos/assets/treegrid/images/Critical.png');
             y.setAttribute('height', '15px');
             var span = document.createElement('span');
             span.innerHTML = args.cell.innerHTML;
@@ -46,7 +46,7 @@ export class ConditionalFormattingComponent implements OnInit {
             args.cell.appendChild(span);
         } else if (args.cell.innerHTML === 'Low') {
             var z = document.createElement('IMG');
-            z.setAttribute('src', 'assets/treegrid/images/Low.png');
+            z.setAttribute('src', 'https://ej2.syncfusion.com/angular/demos/assets/treegrid/images/Low.png');
             z.setAttribute('height', '15px');
             var span = document.createElement('span');
             span.innerHTML = args.cell.innerHTML;
@@ -56,7 +56,7 @@ export class ConditionalFormattingComponent implements OnInit {
             args.cell.appendChild(span);
         } else if (args.cell.innerHTML === 'Normal') {
             var a = document.createElement('IMG');
-            a.setAttribute('src', 'assets/treegrid/images/normal.png');
+            a.setAttribute('src', 'https://ej2.syncfusion.com/angular/demos/assets/treegrid/images/normal.png');
             a.setAttribute('height', '15px');
             var span = document.createElement('span');
             span.innerHTML = args.cell.innerHTML;

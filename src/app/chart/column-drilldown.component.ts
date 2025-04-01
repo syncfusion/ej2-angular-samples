@@ -1,9 +1,9 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { ChartComponent, ChartTheme, ILoadedEventArgs, IPointRenderEventArgs, IAxisLabelRenderEventArgs, IMouseEventArgs, ChartAllModule, IAxisLabelClickEventArgs, Series } from '@syncfusion/ej2-angular-charts';
+import { ChartComponent, ChartTheme, ILoadedEventArgs, IPointRenderEventArgs, IAxisLabelRenderEventArgs, ITooltipRenderEventArgs, IMouseEventArgs, ChartAllModule, IAxisLabelClickEventArgs, Series } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-import { bubbleFabricColors, pointFabricColors, pointMaterialDarkColors, bubbleMaterialDarkColors, bubbleMaterialColors, pointMaterialColors, bubbleBootstrap5DarkColors, pointBootstrap5DarkColors, bubbleBootstrap5Colors, pointBootstrap5Colors, bubbleBootstrapColors, pointBootstrapColors, bubbleHighContrastColors, pointHighContrastColors, bubbleFluentDarkColors, pointFluentDarkColors, bubbleFluentColors, pointFluentColors, bubbleTailwindDarkColors, pointTailwindDarkColors, bubbleTailwindColors, pointTailwindColors, bubbleMaterial3Colors, pointMaterial3Colors, bubbleMaterial3DarkColors, pointMaterial3DarkColors, bubbleFluent2Colors, pointFluent2Colors, bubbleFluent2HighContrastColors, pointFluent2HighContrastColors, bubbleFluent2DarkColors, pointFluent2DarkColors, pointTailwind3Colors, pointTailwind3DarkColors } from './theme-color';
+import { bubbleFabricColors, pointFabricColors, pointMaterialDarkColors, bubbleMaterialDarkColors, bubbleMaterialColors, pointMaterialColors, bubbleBootstrap5DarkColors, pointBootstrap5DarkColors, bubbleBootstrap5Colors, pointBootstrap5Colors, bubbleBootstrapColors, pointBootstrapColors, bubbleHighContrastColors, pointHighContrastColors, bubbleFluentDarkColors, pointFluentDarkColors, bubbleFluentColors, pointFluentColors, bubbleTailwindDarkColors, pointTailwindDarkColors, bubbleTailwindColors, pointTailwindColors, bubbleMaterial3Colors, pointMaterial3Colors, bubbleMaterial3DarkColors, pointMaterial3DarkColors, bubbleFluent2Colors, pointFluent2Colors, bubbleFluent2HighContrastColors, pointFluent2HighContrastColors, bubbleFluent2DarkColors, pointFluent2DarkColors, pointTailwind3Colors, pointTailwind3DarkColors, loadChartTheme } from './theme-color';
 
 @Component({
     selector: 'control-content',
@@ -47,12 +47,13 @@ export class ColumnDrilldownComponent implements OnInit {
     };
 
     public cornerRadius: Object = {
-        topLeft: Browser.isDevice ? 2 : 5,
-        topRight: Browser.isDevice ? 2 : 5
+        topLeft: 5,
+        topRight: 5
     };
 
     public width: string = Browser.isDevice ? '100%' : '75%';
     public title: string = 'Top Populated Continents of 2023';
+    public subTitle: string = 'A Look at Population Rankings and Trends in 2023';
     public tooltip: Object = {
         enable: true,
         header: "<b>Population - 2023</b>",
@@ -67,9 +68,7 @@ export class ColumnDrilldownComponent implements OnInit {
     ngOnInit(): void {}
 
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadChartTheme(args);
     }
 
     public loaded(args: ILoadedEventArgs): void {
@@ -128,6 +127,7 @@ export class ColumnDrilldownComponent implements OnInit {
                 document.getElementById("text").style.visibility = "visible";
                 if (args.point.index === 0) {
                     args.series.chart.title = "Top Populated Countries of Asia - 2023";
+                    args.series.chart.subTitle = "A Look at Population Rankings and Trends in 2023";
                     this.clicked = true;
                     args.series.chart.series[0].dataSource = [{
                             y: 1422,
@@ -165,6 +165,7 @@ export class ColumnDrilldownComponent implements OnInit {
                 }
                 if (args.point.index === 1) {
                     args.series.chart.title = "Top Populated Countries of Africa - 2023";
+                    args.series.chart.subTitle = "A Look at Population Rankings and Trends in 2023";
                     this.clicked = true;
                     args.series.chart.series[0].dataSource = [{
                             y: 223,
@@ -198,6 +199,7 @@ export class ColumnDrilldownComponent implements OnInit {
                 }
                 if (args.point.index === 2) {
                     args.series.chart.title = "Top Populated Countries of Europe - 2023";
+                    args.series.chart.subTitle = "A Look at Population Rankings and Trends in 2023";
                     this.clicked = true;
                     args.series.chart.series[0].dataSource = [{
                             y: 143,
@@ -227,6 +229,7 @@ export class ColumnDrilldownComponent implements OnInit {
                 }
                 if (args.point.index === 3) {
                     args.series.chart.title = "Top Populated Countries of North America - 2023";
+                    args.series.chart.subTitle = "A Look at Population Rankings and Trends in 2023";
                     this.clicked = true;
                     args.series.chart.series[0].dataSource = [{
                             y: 339,
@@ -264,6 +267,7 @@ export class ColumnDrilldownComponent implements OnInit {
                 }
                 if (args.point.index === 4) {
                     args.series.chart.title = "Top Populated Countries of Oceania - 2023";
+                    args.series.chart.subTitle = "A Look at Population Rankings and Trends in 2023";
                     this.clicked = true;
                     args.series.chart.series[0].dataSource = [{
                             y: 26,
@@ -287,6 +291,12 @@ export class ColumnDrilldownComponent implements OnInit {
             visible: true,
             position: 'Outer',
         }
+    };
+
+    public tooltipRender = (args: ITooltipRenderEventArgs) => {
+        args.text = args.text.replace(/\d+/g, (num: string) =>
+            Number(num).toLocaleString('en-US')
+        );
     };
 
     public pointRender(args: IPointRenderEventArgs): void {
@@ -388,6 +398,7 @@ export class ColumnDrilldownComponent implements OnInit {
                     document.getElementById("text").style.visibility = "visible";
                     if (args.index === 0) {
                         args.chart.title = "Top Populated Countries of Asia - 2023";
+                        args.chart.subTitle = "A Look at Population Rankings and Trends in 2023";
                         this.clicked = true;
                         args.chart.series[0].dataSource = [{
                             y: 1422,
@@ -425,6 +436,7 @@ export class ColumnDrilldownComponent implements OnInit {
                     }
                     if (args.index === 1) {
                         args.chart.title = "Top Populated Countries of Africa - 2023";
+                        args.chart.subTitle = "A Look at Population Rankings and Trends in 2023";
                         this.clicked = true;
                         args.chart.series[0].dataSource = [{
                             y: 223,
@@ -458,6 +470,7 @@ export class ColumnDrilldownComponent implements OnInit {
                     }
                     if (args.index === 2) {
                         args.chart.title = "Top Populated Countries of Europe - 2023";
+                        args.chart.subTitle = "A Look at Population Rankings and Trends in 2023";
                         this.clicked = true;
                         args.chart.series[0].dataSource = [{
                             y: 143,
@@ -487,6 +500,7 @@ export class ColumnDrilldownComponent implements OnInit {
                     }
                     if (args.index === 3) {
                         args.chart.title = "Top Populated Countries of North America - 2023";
+                        args.chart.subTitle = "A Look at Population Rankings and Trends in 2023";
                         this.clicked = true;
                         args.chart.series[0].dataSource = [{
                             y: 339,
@@ -524,6 +538,7 @@ export class ColumnDrilldownComponent implements OnInit {
                     }
                     if (args.index === 4) {
                         args.chart.title = "Top Populated Countries of Oceania - 2023";
+                        args.chart.subTitle = "A Look at Population Rankings and Trends in 2023";
                         this.clicked = true;
                         args.chart.series[0].dataSource = [{
                             y: 26,
@@ -546,6 +561,7 @@ export class ColumnDrilldownComponent implements OnInit {
 
     public resetChart(): void {
         this.chart.title = "Top Populated Continents of 2023";
+        this.chart.subTitle = "A Look at Population Rankings and Trends in 2023";
         this.chart.primaryXAxis.labelStyle.color = "blue";
         this.chart.primaryYAxis.interval = 1000;
         this.chart.series[0].dataSource = this.data;

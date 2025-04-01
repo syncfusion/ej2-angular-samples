@@ -3,7 +3,7 @@ import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagram
 import { ToolbarComponent, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import {
   Diagram, NodeModel, UndoRedo, Connector,
-  NodeConstraints, IHistoryChangeArgs, ISelectionChangeEventArgs
+  NodeConstraints, IHistoryChangeArgs, ISelectionChangeEventArgs, FlipDirection
 } from '@syncfusion/ej2-diagrams';
 import { ClickEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -230,7 +230,7 @@ export class CommandComponent {
   public flipObjects(flipType) {
     var selectedObjects = this.diagram.selectedItems.nodes.concat(this.diagram.selectedItems.connectors as any);
     for (let i: number = 0; i < selectedObjects.length; i++) {
-      selectedObjects[i].flip = flipType === 'Flip Horizontal' ? 'Horizontal' : 'Vertical';
+      selectedObjects[i].flip ^= flipType === 'Flip Horizontal' ? FlipDirection.Horizontal : FlipDirection.Vertical;
     }
     this.diagram.dataBind();
   }

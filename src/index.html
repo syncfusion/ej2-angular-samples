@@ -17,20 +17,22 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="manifest" href="./manifest.webmanifest">
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
     <link href="./styles/roboto.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"></link>
     <link href="./styles/tailwind3.css" rel="stylesheet" id="themelink" />
     <link href="./styles/index.css" rel="stylesheet" />
     <link href="./styles/codemirror/codemirror.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/highlight.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/shim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reflect-metadata/0.1.10/Reflect.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha512-iOOHRE9HrRga+nmGyk6fmAMTrtopFR907WWoD7XsoFuWxdnPtaYxopCyBWZiOBNFlv8qyHporbY49hyVWSSxHA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/shim.min.js" integrity="sha512-KblIy3bBne8lyIvVdK5cSfalLHlqMmzgU5YP2yjeAiIaHChXgpk6qXWUCnBK9XRX5IGkVlBf3L9gaF1taUxovA==" 
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reflect-metadata/0.1.10/Reflect.min.js" integrity="sha512-OYt1EpazBm0ORZtTDaECuDh4c3FkHOrspDpJPV5BstRc87qIfWfOUTe/CuzJaobGxlBinyhLEn7PjjuS947i0w=="
+    crossorigin="anonymous"></script>
     <script type="text/javascript">
         if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
-            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"><\/script>');
-            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"><\/script>');
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"><\/script>');
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js" integrity="sha512-b4faIN3Sb+HJ3GPPbb4cfMfFzB0M7mZfqOd0IUFxYhbO8pjPVSs2hs90/50yfY95Tm7Q3aExrErQKSLw9/FrpA==" crossorigin="anonymous"><\/script>');
             if (window.NodeList && !NodeList.prototype.forEach) {
                 NodeList.prototype.forEach = Array.prototype.forEach;
             }
@@ -282,7 +284,12 @@
     </div>
     <ng-app class="sb-content e-view"></ng-app>
     </div>
-
+    <script>
+        // Hide the "FREE TRIAL" button on localhost
+        if (window.location.hostname === "localhost") {
+            document.getElementById('download-now').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>

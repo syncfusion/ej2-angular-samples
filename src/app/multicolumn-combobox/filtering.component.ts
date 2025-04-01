@@ -31,7 +31,7 @@ export class FilteringMultiComboBoxComponent {
     public change(args: any): void {
         this.filtering.filterType = args.value;
     }
-    public filterType: string = '';
+    public filterType: string = 'StartsWith';
     
     @ViewChild('filtering')
     public filtering: MultiColumnComboBoxComponent;

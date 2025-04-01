@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { textdata, getSparkData } from './jsontreegriddata';
-import { TreeGridComponent, TreeGridModule} from '@syncfusion/ej2-angular-treegrid';import { EmitType } from '@syncfusion/ej2-base';
+import { TreeGridComponent, TreeGridModule} from '@syncfusion/ej2-angular-treegrid';
+import { EmitType } from '@syncfusion/ej2-base';
 import { Sparkline, SparklineModule,ISparklineLoadEventArgs, SparklineTheme } from '@syncfusion/ej2-angular-charts';
 import { RowDataBoundEventArgs, getObject, GridModule } from '@syncfusion/ej2-angular-grids';
 import { SBDescriptionComponent } from '../common/dp.component';

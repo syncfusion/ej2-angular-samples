@@ -5,7 +5,8 @@ import { Chart3DPointRenderEventArgs, Chart3DAllModule } from '@syncfusion/ej2-a
 import {
     pointFabricColors, pointMaterialDarkColors, pointMaterialColors, pointBootstrap5DarkColors, pointBootstrap5Colors,
     pointBootstrapColors, pointHighContrastColors, pointFluentDarkColors, pointFluentColors, pointTailwindDarkColors,
-    pointTailwindColors, pointMaterial3Colors, pointMaterial3DarkColors, pointFluent2Colors, pointFluent2HighContrastColors, pointTailwind3Colors, pointTailwind3DarkColors
+    pointTailwindColors, pointMaterial3Colors, pointMaterial3DarkColors, pointFluent2Colors, pointFluent2HighContrastColors, pointTailwind3Colors, pointTailwind3DarkColors,
+    load3DChartTheme
 } from './theme-color';
 
 /**
@@ -53,10 +54,7 @@ export class EmptyPointColumnComponent {
     public depth: number = 100;
 
     public load(args: Chart3DLoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        load3DChartTheme(args);
     };
 
     public labelRender(args: Chart3DPointRenderEventArgs): void {

@@ -1,10 +1,4 @@
 <main>
-    <section id="action-description" aria-label="Description of Circular Gauge sample">
-        <p>
-            This sample depicts the appearance of a speedometer rendered using the circular gauge. The pointer value is
-            dynamically updated with random values in this case.
-        </p>
-    </section>
     <div class="col-md-8 control-section">
         <ejs-circulargauge (load)='load($event)' background='transparent' (loaded)='loaded($event)' style='display:block;'
             id='container' centerY='75%' title='Speedometer' [titleStyle]='titleStyle' #circulargauge=''>
@@ -62,6 +56,12 @@
             </linearGradient>
         </defs>
     </svg>
+    <section id="action-description" aria-label="Description of Circular Gauge sample">
+        <p>
+            This sample depicts the appearance of a speedometer rendered using the circular gauge. The pointer value is
+            dynamically updated with random values in this case.
+        </p>
+    </section>
     <section id="description" aria-label="Description of the Circular Gauge features demonstrated in this sample">
         <p>
             In this example, you can see how to make a circular gauge look like a speedometer. Using the options in the

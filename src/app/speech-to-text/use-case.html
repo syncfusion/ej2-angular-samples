@@ -1,0 +1,49 @@
+<div class="control-section">
+  <div class="usecase-speechToText-section e-message">
+    <div class="stt-container">
+      <button ejs-speechtotext #speechToText id="speechToText"
+              [buttonSettings]="{ stopIconCss: 'e-icons e-listen-icon' }"
+              cssClass="usecase-stt-btn"
+              (transcriptChanged)="onTranscriptChange($event)"
+              (onStart)="onListeningStart()"
+              (onStop)="onListeningStop($event)"
+              (onError)="onErrorHandler($event)">
+      </button>
+      <span class="speech-recognition-status">Click the mic button to start speaking...</span>
+    </div>
+    <div class="transcript-container">
+      <div id="transcript-content" ejs-chatui #chatUI [showHeader]="false" [showFooter]="false" timeStampFormat="MMM d, h:mm a"
+                  autoScrollToBottom="true">
+        <ng-template #emptyChatTemplate>
+          <div class="empty-chat">
+            <span class="e-icons e-multiple-comment"></span>
+            No transcript available. Start speaking to generate a transcript.
+          </div>
+        </ng-template>
+        <ng-template #typingUsersTemplate>
+          <div class="e-typing-indicator">
+            <span class="e-user-text">Transcripting</span> 
+            <div class="e-indicator-wrapper">
+              <span class="e-indicator"></span><span class="e-indicator"></span><span class="e-indicator"></span>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="action-description">
+  <p>
+    This sample demonstrates a live transcription feature that converts spoken words into text in real-time. Click the microphone button to start speaking, and the transcribed text will appear in the ChatUI component as a conversation with timestamps.
+  </p>
+</div>
+
+<div id="description">
+  <p>
+    The Speech-to-Text component captures audio input and transcribes it dynamically, updating the transcript in the <code>ChatUI</code> component. Each spoken segment is displayed as an individual message with a timestamp, ensuring a structured conversation format.
+  </p>
+  <p>
+    The integration with <code>ChatUI</code> allows real-time updates, maintaining the natural flow of conversation. This setup enhances readability and interaction, making it easier to follow and review the transcription.
+  </p>
+</div>

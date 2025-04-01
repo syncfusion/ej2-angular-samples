@@ -3,6 +3,7 @@ import { AccumulationChartComponent, AccumulationChart, IAccLoadedEventArgs, Acc
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadAccumulationChartTheme } from './theme-color';
 /**
  * Sample for Pie chart
  */
@@ -47,9 +48,7 @@ export class DefaultPieComponent {
     
       // custom code start
     public load(args: IAccLoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadAccumulationChartTheme(args);
     };
       // custom code end
     public startAngle: number = Browser.isDevice ? 55 : 35;

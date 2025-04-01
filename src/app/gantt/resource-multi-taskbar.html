@@ -1,6 +1,6 @@
 <div id="action-description">
-    <p>This sample explains you about, how to visualize the list of tasks assigned for a resource in a parent row of collapsed state.  It is also possible to change the tasks scheduling in the collapsed state.
-        This feature can be enabled by setting the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#enablemultitaskbar">enableMultiTaskbar</a> property as "true".
+    <p>This sample demonstrates how to visualize a list of tasks assigned to a resource within a collapsed parent row. It also allows modifying task scheduling actions such as dragging, left resizing, and progress editing while keeping the parent row collapsed.
+        This functionality can be enabled by setting the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#enablemultitaskbar">enableMultiTaskbar</a> property to <code>true</code>.
     </p>
 </div>
 <div class="col-lg-12 control-section">
@@ -29,17 +29,17 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can enable taskbar drag and drop from one resource to another resource vertically by enabling <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#allowtaskbardraganddrop">allowTaskbarDragAndDrop</a> property. Also, you can prevent the taskbar overlap  in resource task by disabling the <a target="_blank" href="https://ej2.syncfusion.com/javascript/documentation/api/gantt#allowtaskbaroverlap">allowTaskbarOverlap</a> property.
+        This example demonstrates how to enable taskbar drag-and-drop functionality for reassigning tasks between resources vertically by setting the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#allowtaskbardraganddrop">allowTaskbarDragAndDrop</a> property to <code>true</code>. Additionally, you can prevent taskbar overlap within a resource's tasks by disabling the <a target="_blank" href="https://ej2.syncfusion.com/javascript/documentation/api/gantt#allowtaskbaroverlap">allowTaskbarOverlap</a> property.
     </p>
     <p>
-        In this example, you can see that, the resource breaks down from a bulk of tasks can be done by mapping the pre-defined resource ID-s to each task and the resource information can be shown by using the labelSetting property.
-        Using the toolbar action, you can perform the CRUD operation for the resource allocation based on their availability and task complexity.
+        In this example, resources are assigned to tasks using predefined resource IDs, allowing efficient task distribution. The resource details are displayed using the <code>labelSetting</code> property.
+        You can also perform CRUD operations on resource allocation using toolbar actions, considering availability and task complexity.
     </p>
-        <p>The resources and tasks assigned to those resources can be grouped into categories. Resources can be mapped using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#resourcefields">resourceFields:</a>.</p>
-        <p><code>ID</code>: To map resource ID.</p>
-        <p><code>Name</code>: To map resource name.</p>
-        <p><code>Unit</code>: To map resource unit.</p>
-        <p><code>Group</code>: To map resource group.</p>
+        <p>The resources and their assigned tasks are grouped into categories. Resources can be mapped using the following <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#resourcefields">resourceFields:</a>.</p>
+        <p><code>ID</code>: Maps the resource ID.</p>
+        <p><code>Name</code>: Maps the resource name.</p>
+        <p><code>Unit</code>: Map the resource unit.</p>
+        <p><code>Group</code>: Maps the resource group.</p>
     <p style="font-weight: 500">Injecting module:</p>
     <p>
         The Gantt control features are segregated into individual feature-wise modules. To use a selection, markers, toolbar and edit inject the

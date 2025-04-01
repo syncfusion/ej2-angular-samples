@@ -1,3 +1,12 @@
+import { ChartTheme, IBulletLoadedEventArgs } from "@syncfusion/ej2-angular-charts";
+
+export let loadBulletChartTheme = (args: IBulletLoadedEventArgs): void => {
+    let selectedTheme: string = location.hash.split('/')[1];
+    selectedTheme = selectedTheme ? selectedTheme : 'Tailwind3';
+    args.bulletChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() +
+    selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/light/i, 'Light').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+};
+
 export let fabricColors: string[] = ['#e269ae', '#6f6fe2', '#c1c1c1', '#5b9bd5', '#70ad47', '#ffc000', '#ed7d31', '#4472c4'];
 export let bootstrapColors: string[] = ['#407c92', '#b99b4f', '#7953ac', '#ff6ea6', '#7ddf1e', '#55a5c2', '#f7ce69', '#a16ee5'];
 export let highContrastColors: string[] = ['#43ACEF', '#00C27A', '#FA83C3', '#BA98FF', '#C6E773',

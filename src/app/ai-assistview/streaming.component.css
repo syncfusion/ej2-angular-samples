@@ -1,0 +1,24 @@
+
+.stream-component {
+    height: 600px;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.stream-component .banner-content .e-assistview-icon:before {
+    font-size: 35px;
+}
+
+.stream-component .banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 330px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 750px) {
+    .stream-component {
+        width: 100%;
+    }
+}

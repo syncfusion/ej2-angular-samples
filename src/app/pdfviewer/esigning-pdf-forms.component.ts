@@ -36,6 +36,7 @@ export class ESigningPdfFormsComponent implements OnInit {
   public fileName: string = "eSign_designMode.pdf";
   public document: string = 'https://cdn.syncfusion.com/content/pdf/eSign_filling.pdf';
   public resource: string = "https://cdn.syncfusion.com/ej2/27.2.2/dist/ej2-pdfviewer-lib";
+  public zoomMode = "FitToPage";
   public currentUser: string = 'andrew@mycompany.com';
   public currentUserBorderColor: string = 'red';
   public andrewBackground: string = '#ffefef';
@@ -268,7 +269,6 @@ export class ESigningPdfFormsComponent implements OnInit {
 
   public documentLoad = (args: any) => {
     this.pdfviewerControl.designerMode = false;
-    this.pdfviewerControl.magnification.fitToPage();
     this.updateUserFormField();
   }
 

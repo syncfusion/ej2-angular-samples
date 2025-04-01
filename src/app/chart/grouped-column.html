@@ -1,33 +1,32 @@
 <div id="action-description">
     <p>
-        This sample visualizes the Olympic medal count using grouped column series. Data labels are used to display the
-        values of data points.
+        This sample visualizes the Olympics medal count using a grouped column series. Data labels are used to display the values of data points.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
-        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' [title]='title'
-            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)' [tooltip]='tooltip' [legendSettings]='legend'>
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' [title]='title' [subTitle]='subTitle'
+            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)' (tooltipRender)='tooltipRender($event)' [tooltip]='tooltip' [legendSettings]='legend'>
             <e-series-collection>
                 <e-series [dataSource]='data' type='Column' xName='Year' yName='USA_Total' name='USA Total Medals' width=2
-                    groupName='USA' columnWidth=0.7 columnSpacing=0.1 [marker]='marker'>
+                    groupName='USA' columnWidth=0.7 columnSpacing=0.1 [marker]='marker' [cornerRadius]='cornerRadius' legendShape='Rectangle'>
                 </e-series>
                 <e-series [dataSource]='data' type='Column' xName='Year' yName='USA_Gold' name='USA Gold Medals' width=2 groupName='USA'
-                    columnWidth=0.5 columnSpacing=0.1 [marker]='marker'>
+                    columnWidth=0.5 columnSpacing=0.1 [marker]='marker' [cornerRadius]='cornerRadius' legendShape='Rectangle'>
                 </e-series>
 
                 <e-series [dataSource]='data' type='Column' xName='Year' yName='UK_Total' name='UK Total Medals' width=2 groupName='UK'
-                    columnWidth=0.7 columnSpacing=0.1 [marker]='marker'>
+                    columnWidth=0.7 columnSpacing=0.1 [marker]='marker' [cornerRadius]='cornerRadius' legendShape='Rectangle'>
                 </e-series>
                 <e-series [dataSource]='data' type='Column' xName='Year' yName='UK_Gold' name='UK Gold Medals' width=2 groupName='UK'
-                    columnWidth=0.5 columnSpacing=0.1 [marker]='marker'>
+                    columnWidth=0.5 columnSpacing=0.1 [marker]='marker' [cornerRadius]='cornerRadius' legendShape='Rectangle'>
                 </e-series>
 
                 <e-series [dataSource]='data' type='Column' xName='Year' yName='China_Total' name='China Total Medals' width=2
-                    groupName='China' columnWidth=0.7 columnSpacing=0.1 [marker]='marker'>
+                    groupName='China' columnWidth=0.7 columnSpacing=0.1 [marker]='marker' [cornerRadius]='cornerRadius' legendShape='Rectangle'>
                 </e-series>
                 <e-series [dataSource]='data' type='Column' xName='Year' yName='China_Gold' name='China Gold Medals' width=2
-                    groupName='China' columnWidth=0.5 columnSpacing=0.1 [marker]='marker'>
+                    groupName='China' columnWidth=0.5 columnSpacing=0.1 [marker]='marker' [cornerRadius]='cornerRadius' legendShape='Rectangle'>
                 </e-series>
             </e-series-collection>
         </ejs-chart>
@@ -35,11 +34,12 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure column charts. Column charts are used for comparing the frequency, count, total, or average of data in different categories. You can group the column series by using the <code>GroupName</code> property.
+        In this example, you can see how to render and configure the column type charts.
+        Column type charts are used for comparing the frequency, count, total or average of data in different categories.
+        You can group the column series by using <code>groupName</code> property.
     </p>
     <p>
-        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover a point or tap on a point
-        in touch-enabled devices.
+        <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
     </p>
     <p style="font-weight: 500"><b>Injecting Module</b></p>
     <p>

@@ -6,6 +6,7 @@ import { ChipListModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons'
 
 
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DragAndDropChipsComponent } from './draganddrop.component';
 
 export const chipsAppRoutes: Object[] = [
     {
@@ -13,7 +14,7 @@ export const chipsAppRoutes: Object[] = [
         component: DefaultChipsComponent,
         name: 'Default Functionalities',
         category: 'Chips',
-        description: 'This demo for Essential<sup>®</sup> JS2 chips shows its types (default, input, choice, filter) and styles (primary, success, info, warning, danger) of chips.',
+        description: 'This demo for Essential JS2 chips shows its types (default, input, choice, filter) and styles (primary, success, info, warning, danger) of chips.',
             sourceFiles: [
                 {displayName: 'default.component.ts', path: './src/chips/default.component.ts'},
                 {displayName: 'default.html', path: './src/chips/default.html'},
@@ -25,11 +26,24 @@ export const chipsAppRoutes: Object[] = [
         component: ApiChipsComponent,
         name: 'API',
         category: 'Chips',
-        description: 'This demo for Essential<sup>®</sup> JS2 chips shows its types (default, input, choice, filter) and styles (primary, success, info, warning, danger) of chips.',
+        description: 'This demo for Essential JS2 chips shows its types (default, input, choice, filter) and styles (primary, success, info, warning, danger) of chips.',
             sourceFiles: [
                 {displayName: 'chips-api.component.ts', path: './src/chips/chips-api.component.ts'},
                 {displayName: 'chips-api.html', path: './src/chips/chips-api.html'},
-                {displayName: 'chips-api.css', path: './src/chips/chips-api.css'},
+                {displayName: 'chips-api.css', path: './src/chips/chips-api.css'}
+            ]
+    },
+    {
+        path: ':theme/chips/draganddrop',
+        component: DragAndDropChipsComponent,
+        name: 'Draggable Chips',
+        category: 'Chips',
+        type: 'new',
+        description: 'This sample demonstrates the drag and drop functionalities of chips component.',
+            sourceFiles: [
+                {displayName: 'draganddrop.component.ts', path: './src/chips/draganddrop.component.ts'},
+                {displayName: 'draganddrop.html', path: './src/chips/draganddrop.html'},
+                {displayName: 'draganddrop.css', path: './src/chips/draganddrop.css'}
             ]
     }
 ];

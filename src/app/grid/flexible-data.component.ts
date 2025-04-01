@@ -91,6 +91,9 @@ export class FlexibleDataBindingComponent implements OnInit {
     },
   });
   ngOnInit(): void {
+    if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+      document.body.classList.add('e-mac-safari');
+    }
     this.data = new DataManager({
       url: 'https://services.odata.org/V4/Northwind/Northwind.svc/Orders/',
       adaptor: new ODataV4Adaptor(),

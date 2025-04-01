@@ -5,6 +5,7 @@ import { ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dro
 import { BulletTooltipSettingsModel, FeatureType, IBulletLoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 import { ColorPickerEventArgs, SliderChangeEventArgs, TooltipDataModel  } from '@syncfusion/ej2-inputs';
 import { SliderModule, ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
+import { loadBulletChartTheme } from './theme-color';
 /**
  * RTl sample
  */
@@ -59,10 +60,7 @@ export class BulletChartBarCustomizationComponent {
     }
 
     public load =  (args: IBulletLoadedEventArgs) => {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.bulletChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() +
-        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/light/i, 'Light').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadBulletChartTheme(args);
     }
 
     public positionTitle: TextPosition = Browser.isDevice ? 'Top' : 'Left';

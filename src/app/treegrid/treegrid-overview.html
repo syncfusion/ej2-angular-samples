@@ -37,7 +37,7 @@
             <e-column field='coordinates' headerText='Coordinates' [allowSorting]='false' width=220 >
                 <ng-template #template let-data>
                     <div class="image" id="coordinates">
-                        <img src="./assets/treegrid/images/Map.png" class="e-image" alt="Map Image of {{ data.coordinates }}" /> &#160;
+                        <img src="https://ej2.syncfusion.com/angular/demos/assets/treegrid/images/Map.png" class="e-image" alt="Map Image of {{ data.coordinates }}" /> &#160;
                         <a target="_blank" href="https://www.google.com/maps/place/{{data.coordinates}}">{{data.coordinates}}</a>
                     </div>             
                 </ng-template>
@@ -52,7 +52,7 @@
             <e-column field='timezone' headerText='Time Zone' width=150 >
                 <ng-template #template let-data>
                     
-                    <img style="filter: brightness(150%);" src="./assets/treegrid/images/normal.png" [ngClass]="{'negativeTimeZone' : data.timezone.includes('-')}"/>
+                    <img style="filter: brightness(150%);" src="https://ej2.syncfusion.com/angular/demos/assets/treegrid/images/normal.png" [ngClass]="{'negativeTimeZone' : data.timezone.includes('-')}"/>
             <span style="padding-left:7px;">{{data.timezone}}</span>
                 </ng-template>
             </e-column>

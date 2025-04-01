@@ -1,8 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme, MarkerSettingsModel, ChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 
 /**
  * Sample for Stacked Line Series
@@ -17,61 +18,49 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 })
 export class StackedLineChartComponent {
 
-    public data: Object[] = [
-        { x: 'Jan', y: 90 },
-        { x: 'Feb', y: 80 },
-        { x: 'Mar', y: 50 },
-        { x: 'Apr', y: 70 },
-        { x: 'May', y: 30 },
-        { x: 'Jun', y: 10 },
-        { x: 'Jul', y: 100 },
-        { x: 'Aug', y: 55 },
-        { x: 'Sep', y: 20 },
-        { x: 'Oct', y: 40 },
-        { x: 'Nov', y: 45 },
-        { x: 'Dec', y: 75 },
+    public chartData1: Object[] = [
+        { x: 2015, y: 28.2 },
+        { x: 2016, y: 28.6 },
+        { x: 2017, y: 46.0 },
+        { x: 2018, y: 52.7 },
+        { x: 2019, y: 62.0 },
+        { x: 2020, y: 64.6 },
+        { x: 2021, y: 60.1 },
+        { x: 2022, y: 68.6 },
+        { x: 2023, y: 71.81 }
     ];
-    public data1: Object[] = [
-        { x: 'Jan', y: 40 },
-        { x: 'Feb', y: 90 },
-        { x: 'Mar', y: 80 },
-        { x: 'Apr', y: 30 },
-        { x: 'May', y: 80 },
-        { x: 'Jun', y: 40 },
-        { x: 'Jul', y: 30 },
-        { x: 'Aug', y: 95 },
-        { x: 'Sep', y: 50 },
-        { x: 'Oct', y: 20 },
-        { x: 'Nov', y: 15 },
-        { x: 'Dec', y: 45 },
+    public chartData2: Object[] = [
+        { x: 2015, y: 15.0 },
+        { x: 2016, y: 16.7 },
+        { x: 2017, y: 14.2 },
+        { x: 2018, y: 15.3 },
+        { x: 2019, y: 16.4 },
+        { x: 2020, y: 13.9 },
+        { x: 2021, y: 14.8 },
+        { x: 2022, y: 16.1 },
+        { x: 2023, y: 16.02 }
     ];
-    public data2: Object[] = [
-        { x: 'Jan', y: 70 },
-        { x: 'Feb', y: 110 },
-        { x: 'Mar', y: 120 },
-        { x: 'Apr', y: 60 },
-        { x: 'May', y: 80 },
-        { x: 'Jun', y: 30 },
-        { x: 'Jul', y: 70 },
-        { x: 'Aug', y: 55 },
-        { x: 'Sep', y: 40 },
-        { x: 'Oct', y: 80 },
-        { x: 'Nov', y: 45 },
-        { x: 'Dec', y: 65 },
+    public chartData3: Object[] = [
+        { x: 2015, y: 8.1 },
+        { x: 2016, y: 8.4 },
+        { x: 2017, y: 7.73 },
+        { x: 2018, y: 5.1 },
+        { x: 2019, y: 8.7 },
+        { x: 2020, y: 9.4 },
+        { x: 2021, y: 10.3 },
+        { x: 2022, y: 10.4 },
+        { x: 2023, y: 11.17 }
     ];
-    public data3: Object[] = [
-        { x: 'Jan', y: 120 },
-        { x: 'Feb', y: 70 },
-        { x: 'Mar', y: 50 },
-        { x: 'Apr', y: 180 },
-        { x: 'May', y: 30 },
-        { x: 'Jun', y: 270 },
-        { x: 'Jul', y: 40 },
-        { x: 'Aug', y: 75 },
-        { x: 'Sep', y: 65 },
-        { x: 'Oct', y: 95 },
-        { x: 'Nov', y: 135 },
-        { x: 'Dec', y: 115 },
+    public chartData4: Object[] = [
+        { x: 2015, y: 4.6 },
+        { x: 2016, y: 7.5 },
+        { x: 2017, y: 12.1 },
+        { x: 2018, y: 25.9 },
+        { x: 2019, y: 39.3 },
+        { x: 2020, y: 50.1 },
+        { x: 2021, y: 60.4 },
+        { x: 2022, y: 73.5 },
+        { x: 2023, y: 102.01 }
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
@@ -79,50 +68,52 @@ export class StackedLineChartComponent {
         minorGridLines: { width: 0 },
         majorTickLines: { width: 0 },
         minorTickLines: { width: 0 },
-        interval: 1,
         lineStyle: { width: 0 },
-        valueType: 'Category',
+        valueType: 'Double',
         labelRotation: Browser.isDevice ? -45 : 0,
-        labelIntersectAction: Browser.isDevice ? 'None' : 'Rotate45',
+        labelIntersectAction: Browser.isDevice ? 'None' : 'Trim'
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Expense',
         lineStyle: { width: 0 },
-        minimum: 0,
-        maximum: 400,
-        interval: 100,
         majorTickLines: { width: 0 },
         majorGridLines: { width: 1 },
         minorGridLines: { width: 1 },
         minorTickLines: { width: 0 },
-        labelFormat: '${value}',
+        labelFormat: '{value}TWh',
+        title: 'Energy Generation (TWh)'
     };
     public tooltip: Object = {
-        enable: true
+        enable: true,
+        enableHighlight: true,
+        showNearestTooltip: true,
+        header: '<b>${series.name}</b>',
+        format: '${point.x} : <b>${point.y}</b>'
     };
     public legend: Object = {
         visible: true,
-        enableHighlight : true
+        enableHighlight: true
     }
-     // custom code start
+    // custom code start
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadChartTheme(args);
     };
-     // custom code end
-    public title: string = 'Family Expenses for Year';
+    // custom code end
+    public title: string = 'Yearly Renewable Energy Generation in India (2015-2023)';
+    public subTitle: string = 'Source: wikipedia.org';
     public chartArea: Object = {
         border: {
             width: 0
+        },
+        margin: {
+            bottom: 12
         }
     };
     public width: string = Browser.isDevice ? '100%' : '75%';
-    public marker: Object = { visible: true, height: 7, width: 7 , shape: 'Circle' , isFilled: true };
-    public marker1: Object = { visible: true, height: 7, width: 7 , shape: 'Diamond' , isFilled: true };
-    public marker2: Object = { visible: true, height: 5, width: 5 , shape: 'Rectangle' , isFilled: true };
-    public marker3: Object = { visible: true, height: 6, width: 6 , shape: 'Triangle' , isFilled: true };
+    public marker: Object = { isFilled: true, visible: true, shape: 'Circle', width: 7, height: 7 };
+    public marker1: Object = { isFilled: true, visible: true, shape: 'Diamond', width: 7, height: 7 };
+    public marker2: Object = { isFilled: true, visible: true, shape: 'Rectangle', width: 5, height: 5 };
+    public marker3: Object = { isFilled: true, visible: true, shape: 'Triangle', width: 6, height: 6 };
 
     constructor() {
         //code

@@ -5,6 +5,7 @@ import { ColorPickerEventArgs } from '@syncfusion/ej2-inputs';
 import { ChangeEventArgs, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { IBulletLoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 import { ColorPickerModule } from '@syncfusion/ej2-angular-inputs';
+import { loadBulletChartTheme } from './theme-color';
 /**
  * RTl sample
  */
@@ -62,9 +63,6 @@ export class BulletChartCustomizationComponent {
     }
 
     public load =  (args: IBulletLoadedEventArgs) => {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.bulletChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() +
-        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/light/i, 'Light').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadBulletChartTheme(args);
     }
 }

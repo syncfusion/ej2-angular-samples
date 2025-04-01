@@ -1,21 +1,17 @@
 <div id="action-description">
     <p>
-        This Angular column chart example visualizes the medal count from the Rio Olympics with the default column series in the chart. 
+        This Angular column chart example visualizes the production of Walnuts and Almonds for different countries in 2023.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'>
+            [primaryYAxis]='primaryYAxis' [title]='title' [subTitle]='subTitle' [tooltip]='tooltip' (load)='load($event)' (axisLabelRender)='axisLabelRender($event)' (tooltipRender)='tooltipRender($event)' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Column' xName='Country' yName='GoldMedal' name='Gold' width=2 [marker]='marker' columnSpacing='0.1' tooltipMappingName='MappingName'> </e-series>
-                <e-series [dataSource]='data' type='Column' xName='Country' yName='SilverMedal' name='Silver' width=2 [marker]='marker' columnSpacing='0.1' tooltipMappingName='MappingName'> </e-series>
-                <e-series [dataSource]='data' type='Column' xName='Country' yName='BronzeMedal' name='Bronze' width=2 [marker]='marker' columnSpacing='0.1' tooltipMappingName='MappingName'> </e-series>
+                <e-series [dataSource]='columnData' type='Column' xName='country' yName='walnuts' name='Walnuts' [cornerRadius]='cornerRadius' legendShape='Rectangle' columnSpacing='0.4'> </e-series>
+                <e-series [dataSource]='columnData' type='Column' xName='country' yName='almonds' name='Almonds' [cornerRadius]='cornerRadius' legendShape='Rectangle' columnSpacing='0.4'> </e-series>
             </e-series-collection>
         </ejs-chart>
-    </div>
-    <div style="float: right; margin-right: 10px; margin-top: -5px">Source:
-        <a href="https://www.gov.uk/" target='_blank' aria-label="Navigate to the documentation for gov">www.gov.uk</a>
     </div>
 </div>
 <div id="description">
@@ -23,7 +19,7 @@
         In this example, you can see how to render and configure a column chart. The column chart is used to compare the frequency, count, total, or average of data in different categories.
     </p>
     <p>
-        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch-enabled devices.
+        Tooltip is enabled in this example. To see the tooltip in action, hover over a point or tap on a point in touch-enabled devices.
     </p>
     <p style="font-weight: 500">Injecting Module</p>
     <p>

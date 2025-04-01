@@ -1,0 +1,34 @@
+<div id="action-description">
+    <p> This sample demonstrates how to customize tags of markdown formatting. Type or edit the text and apply the
+        format to
+        view customized markdown syntax. For example, apply “+” to Unordered list. </p>
+</div>
+
+<div class="control-section">
+    <div class="sample-container">
+        <div class="default-section">
+            <ejs-richtexteditor id='mdCustom' #mdCustom [toolbarSettings]='tools' [editorMode]='mode'
+                [formatter]='formatter' (created)='onCreate()'>
+                <ng-template #valueTemplate>
+                    The sample is configured with customized markdown syntax using the __formatter__ property. Type the
+                    content and click the toolbar item to view customized markdown syntax. For unordered list, you need
+                    to add a plus sign before the word (e.g., + list1). Or To make a phrase bold, you need to add two
+                    underscores before and after the phrase (e.g., __this text is bold__).
+                </ng-template>
+            </ejs-richtexteditor>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    The rich text editor allows you to customize the markdown syntax by overriding its default syntax. Configure the
+    customized
+    markdown syntax using the <code>formatter</code>property
+    <p><b>Injecting Module</b></p>
+    <p>The Rich Text Editor features are segregated into individual feature-wise modules. To use the above feature, we
+        need to inject following service modules
+        <code>ToolbarService, LinkService, ImageService, MarkdownEditorService</code> into the
+        <code>&#64;NgModule.providers section</code>.</p>
+
+    <p>The third-party library <code>Marked</code> is used in this sample to convert markdown into HTML content.</p>
+</div>

@@ -2,7 +2,7 @@
     <p>This example shows how to integrate &#64;mention component within Rich Text Editor component. Type <code>&#64;</code> character and select a user from the suggestion list.</p>
 </div>
 <div class="control-section">
-    <ejs-richtexteditor id="mention_integration"  placeholder="Type @ and tag the name" (actionBegin)="onActionBegin($event)">
+    <ejs-richtexteditor id="mention_integration"  placeholder="Type @ and tag the name">
         <ng-template #valueTemplate>
             <p>Hello <span contenteditable="false" class="e-mention-chip"><a href="mailto:maria@gmail.com" title="maria@gmail.com">&#64;Maria</a></span>&#8203;</p>
             <p>Welcome to the mention integration with rich text editor demo. Type <code>&#64;</code> character and tag user from the suggestion list. </p>
@@ -11,7 +11,7 @@
 </div>
 
 <ejs-mention #mention [dataSource]='data' target='#mention_integration_rte-edit-view' [fields]='fieldsData' [suggestionCount]="8" [showMentionChar]="false" [allowSpaces]="true"  
-popupWidth='250px' popupHeight='200px'>
+popupWidth='250px' popupHeight='200px' [suffixText]='&nbsp;'>
     <ng-template #itemTemplate let-data>
         <table>
             <tr>

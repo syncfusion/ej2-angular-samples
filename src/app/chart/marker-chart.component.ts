@@ -3,6 +3,7 @@ import { ILoadedEventArgs, ChartTheme, ChartAllModule } from '@syncfusion/ej2-an
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 
 /**
  * Sample for Chart Symbols
@@ -73,7 +74,7 @@ export class MarkerChartComponent {
         dataLabel: { name: 'x' }, isFilled: true
     };
     public tooltip: Object = {
-        enable: true, header:"" ,format:"<b>${point.x}</b> <br> ${series.name} : <b>${point.y}</b>"
+        enable: true, header:"" ,format:"<b>${point.x}</b> <br> ${series.name} : <b>${point.y}</b>", showNearestTooltip: true, enableHighlight: true
     };
     public chartArea: Object = {
         border: {
@@ -84,9 +85,7 @@ export class MarkerChartComponent {
     public width: string = Browser.isDevice ? '100%' : '75%';
     // custom code start
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadChartTheme(args);
     };
     // custom code end
     public title: string = 'FB Penetration of Internet Audience';

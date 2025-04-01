@@ -1,8 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme, ChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 
 /**
  * Sample for Spline Series
@@ -17,39 +18,41 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 })
 export class InversedSplineChartComponent {
     public data: Object[] = [
-        { Month : 2000, LDN_Temperature : -1, FR_Temperature : 10 },
-        { Month : 2002, LDN_Temperature : -1, FR_Temperature : 7 },
-        { Month : 2004, LDN_Temperature : 25, FR_Temperature : 13 },
-        { Month : 2005, LDN_Temperature : 31, FR_Temperature : 16 },
-        { Month : 2007, LDN_Temperature : 14, FR_Temperature : 11 },
-        { Month : 2010, LDN_Temperature : 8, FR_Temperature : 10 },
-        { Month : 2011, LDN_Temperature : 8, FR_Temperature : 15 },
-        { Month : 2013, LDN_Temperature : 8, FR_Temperature : 20 },
-        { Month : 2014, LDN_Temperature : 8, FR_Temperature : 17 },
-        { Month : 2015, LDN_Temperature : 8, FR_Temperature : 5 }
+        { country: 'United States', y: 194.55 },
+        { country: 'Japan', y: 146.2 },
+        { country: 'China', y: 65.1 },
+        { country: 'France', y: 84.9 },
+        { country: 'India', y: 140.1 },
+        { country: 'Canada', y: 160.7 },
+        { country: 'Brazil', y: 68.4 },
+        { country: 'United Kingdom', y: 100.2 },
+        { country: 'Sweden', y: 162 },
+        { country: 'Netherlands', y: 132.3 },
+        { country: 'Bangladesh', y: 27.7 }
     ];
 
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        title: 'Years',
-        valueType: 'Double',
-        maximum: 2016,
-        minimum: 2000,
-        interval: 4,
-        minorTickLines: { width: 0 }
+        valueType: 'Category',
+        minorTickLines: { width: 0 },
+        lineStyle: { width: 0 },
+        majorTickLines: { width: 0 },
+        labelPlacement: 'OnTicks'
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Sales (In Millions)',
-        edgeLabelPlacement: 'Shift', 
-        maximum: 25,
-        minimum: 0,
-        interval: 5,
-        labelFormat: '{value}M',
+        labelFormat: '{value}%',
+        title: 'Capitalization Ratio (% of GDP)',
+        interval: 40,
+        edgeLabelPlacement: 'Shift',
+        lineStyle: { width: 0 },
+        majorTickLines: { width: 0 },
+        majorGridLines: { width: 0 },
+        labelRotation: Browser.isDevice ? -45 : 0
     };
     public chartArea: Object = {
         border: {
-            width: 1
+            width: 0
         }
     };
     public marker: Object = {
@@ -61,21 +64,22 @@ export class InversedSplineChartComponent {
     //Initializing Tooltip
     public tooltip: Object = {
         enable: true,
-        header: "<b>Album Sale</b>",
-        shared: true,
+        showNearestTooltip: true,
+        header: '<b>Stock Market Cap</b>',
         format: '${point.x}: <b>${point.y}</b>',
+        enableHighlight: true
     };
-     // custom code start
+    // custom code start
     public width: string = Browser.isDevice ? '100%' : '75%';
+    public legendSettings: Object = { visible: false };
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadChartTheme(args);
     };
-     // custom code end
-    public title: string = 'Music Album Sales';
+    // custom code end
+    public title: string = 'Stock Market Capitalization as a Percentage of GDP by Country';
+    public subTitle: string = 'Source: wikipedia.org';
     constructor() {
-       //code
+        //code
     };
 
 }

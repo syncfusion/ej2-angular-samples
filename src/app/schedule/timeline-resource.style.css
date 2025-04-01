@@ -242,7 +242,7 @@
   opacity: .8;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 768px) {
   .timeline-resource.e-schedule .e-timeline-view .e-resource-left-td {
     width: 100px;
   }

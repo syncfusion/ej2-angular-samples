@@ -55,7 +55,8 @@ export class AIAssistTemplateComponent {
         }, '#ddMenu');
         var proxy = this;
         setTimeout(function() {
-            proxy.carouselObj.element.addEventListener('click', proxy.carouselClick);
+            proxy.carouselObj.element.addEventListener('click', proxy.handleAction);
+            proxy.carouselObj.element.addEventListener('touchstart', proxy.handleAction);
         });
     };
 
@@ -70,7 +71,7 @@ export class AIAssistTemplateComponent {
         { imagePath: './assets/ai-assistview/images/tokyo.jpg', title:'Tokyo', suggestion: 'What tools or apps can help me prioritize tasks?'  }
     ];
 
-    public carouselClick = (e) => {
+    public handleAction = (e) => {
         var target = e.target;
         var prompt = '';
         if (target.tagName === 'IMG') {

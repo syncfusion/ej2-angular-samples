@@ -1,8 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, ChartComponent, ChartTheme, IPointRenderEventArgs, ITooltipRenderEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartComponent, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 /**
  * Sample for Column Series with rounded corner
  */
@@ -17,152 +18,50 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 export class RoundedColumnChartComponent {
     @ViewChild('roundcol')
     public chart: ChartComponent;
-    public pointRender(args: IPointRenderEventArgs): void {
-       this.SetTheme(args);
-    };
-    public SetTheme(args: IPointRenderEventArgs): void {
-        if (location.hash.indexOf("material") > -1)
-        {
-            if (location.hash.indexOf("dark") > -1)
-            {
-                if (args.series.yName == "Rate")
-                    args.fill = "#f9fafb";                
-            }
-            else
-            {
-                if (args.series.yName == "Rate")
-                    args.fill = "grey";               
-            }
-        }
-        else if (location.hash.indexOf("fabric") > -1)
-        {
-            if (location.hash.indexOf("dark") > -1)
-            {
-                if (args.series.yName == "Rate")
-                    args.fill = "#f9fafb";
-            }
-            else
-            {
-                if (args.series.yName == "Rate")
-                    args.fill = "grey";
-            }
-        }
-        else if (location.hash.indexOf("bootstrap5") > -1)
-        {
-            if (location.hash.indexOf("dark") > -1)
-            {
-                if (args.series.yName == "Rate")
-                    args.fill = "#f9fafb";
-            }
-            else
-            {
-                if (args.series.yName == "Rate")
-                    args.fill = "grey";
-            }
-        }
-        else if (location.hash.indexOf("fluent") > -1)
-        {
-            if (location.hash.indexOf("dark") > -1)
-            {
-                if (args.series.yName == "Rate")
-                    args.fill = "#f9fafb";
-            }
-            else
-            {
-                if (args.series.yName == "Rate")
-                    args.fill = "grey";
-            }
-        }
-        else if (location.hash.indexOf("bootstrap4") > -1)
-        {
-            if (args.series.yName == "Rate")
-                args.fill = "grey";
-        }
-        else if (location.hash.indexOf("bootstrap") > -1)
-        {
-            if (location.hash.indexOf("dark") > -1)
-            {
-                if (args.series.yName == "Rate")
-                    args.fill = "#f9fafb";
-            }
-            else
-            {
-                if (args.series.yName == "Rate")
-                    args.fill = "grey";
-            }
-        }
-        else if (location.hash.indexOf("tailwind") > -1)
-        {
-            if (location.hash.indexOf("dark") > -1)
-            {
-                if (args.series.yName == "Rate")
-                    args.fill = "#f9fafb";
-            }
-            else
-            {
-                if (args.series.yName == "Rate")
-                    args.fill = "grey";
-            }
-        }
-        else if (location.hash.indexOf("tailwind3") > -1)
-            {
-                if (location.hash.indexOf("dark") > -1)
-                {
-                    if (args.series.yName == "Rate")
-                        args.fill = "#f9fafb";
-                }
-                else
-                {
-                    if (args.series.yName == "Rate")
-                        args.fill = "grey";
-                }
-            }
-        else if (location.hash.indexOf("highcontrast") > -1)
-        {
-            if (args.series.yName == "Rate")
-                args.fill = "#f9fafb";
-        }
-        else if (location.hash === 'fluent2-highcontrast' || location.hash === 'fluent2-dark') {
-            if (args.series.yName == "Rate")
-                args.fill = "#f9fafb";
-        } else if (location.hash === 'fluent2') {
-            if (args.series.yName == "Rate")
-                args.fill = "grey";
-        }
-        else
-        {
-            if (args.series.yName == "Rate")
-                args.fill = "grey";
-        }
-     };
+
     public data: Object[] = [
-        { Country : "Niger", Rate : 100, Literacy_Rate : 19.1, Text : "19.1%" },
-        { Country : "Sierra Leone", Rate : 100, Literacy_Rate : 48.1, Text : "48.1%" },
-        { Country : "South Sudan", Rate : 100, Literacy_Rate : 26.8, Text : "26.8%" },
-        { Country : "Nepal", Rate : 100, Literacy_Rate : 64.7, Text : "64.7%" },
-        { Country : "Gambia", Rate : 100, Literacy_Rate : 55.5, Text : "55.5%" },
-        { Country : "Gyana", Rate : 100, Literacy_Rate : 88.5, Text : "88.5%" },
-        { Country : "Kenya", Rate : 100, Literacy_Rate : 78.0, Text : "78.0%" },
-        { Country : "Singapore", Rate : 100, Literacy_Rate : 96.8, Text : "96.8%" }
+        { x: 'Healthcare', y: 0.9, text: '0.9%' },
+        { x: 'Real Estate', y: 1.3, text: '1.3%' },
+        { x: 'Energy', y: 2.3, text: '2.3%' },
+        { x: Browser.isDevice ? 'Consumer <br> Staples' : 'Consumer Staples', y: 12.0, text: '12.0%' },
+        { x: 'Industrials', y: 15.6, text: '15.6%' },
+        { x: 'Utilities', y: 19.6, text: '19.6%' },
+        { x: Browser.isDevice ? 'S&P <br> 500 Average' : 'S&P 500 Average', y: 23.3, text: '23.3%' },
+        { x: 'Financials', y: 28.4, text: '28.4%' },
+        { x: Browser.isDevice ? 'Consumer <br> Discretionary' : 'Consumer Discretionary', y: 29.1, text: '29.1%' },
+        { x: Browser.isDevice ? 'Information <br> Technology' : 'Information Technology', y: 35.7, text: '35.7%' },
+        { x: Browser.isDevice ? 'Communication <br> Services' : 'Communication Services', y: 38.9, text: '38.9%' }
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        majorTickLines: {width : 0}, minorTickLines: {width: 0},valueType: 'Category', interval: 1, majorGridLines: { width: 0 }, labelRotation: Browser.isDevice ? -45 : 0, labelIntersectAction: Browser.isDevice ? 'None' : 'Rotate45'
+        valueType: 'Category',
+        interval: 1,
+        majorGridLines: { width: 0 },
+        majorTickLines: { width: 0 },
+        minorTickLines: { width: 0 },
+        lineStyle: { width: 0 },
+        labelPosition: 'Outside',
+        labelIntersectAction: Browser.isDevice ? 'None' : 'Rotate45'
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
+        minimum: 0,
+        maximum: 50,
+        title: 'Sector-wise Growth (%)',
         labelFormat: '{value}%',
-        title: 'Literacy Rate In Percentage',
-        minimum: 0, maximum: 100, interval: 25, majorTickLines: { width: 0 },
-        minorTickLines: { width: 0 }, lineStyle: { width: 0 }
+        interval: 10,
+        majorGridLines: { width: 0 },
+        majorTickLines: { width: 0 },
+        lineStyle: { width: 0 },
+        opposedPosition: true
     };
-    public radius: Object = { bottomLeft: Browser.isDevice ? 12 : 35, bottomRight: Browser.isDevice ? 12 : 35, topLeft: Browser.isDevice ? 12 : 35, topRight: Browser.isDevice ? 12 : 35 }
-    public marker: Object = { dataLabel: { visible: true, position: 'Top', name:'Text', enableRotation: Browser.isDevice ? true : false, angle: -90, font: { fontWeight: '600', color: '#ffffff' } } }
-    public title: string = 'Literacy rate by Country in 2015';
+    public radius: Object = { bottomLeft: Browser.isDevice ? 8 : 10, bottomRight: Browser.isDevice ? 8 : 10, topLeft: Browser.isDevice ? 8 : 10, topRight: Browser.isDevice ? 8 : 10 }
+    public marker: Object = { dataLabel: { visible: true, name: 'text', enableRotation: false, angle: -90, font: { fontWeight: '600' } } }
+    public title: string = 'Top Performing Market Sectors by Growth Rate (2024)';
+    public subTitle: string = 'Source: visualcapitalist.com';
+    public titleStyle: Object = { position: 'Bottom' };
     public tooltip: Object = {
-        enable: true,
-        header: '<b>${point.x}</b>',
-        format : 'Rate : <b>${point.tooltip}</b>'
+        enable: true, header: "<b>${point.x}</b>", format: "Growth Rate : <b>${point.text}</b>"
     };
     public legend: Object = {
         visible: false
@@ -172,14 +71,10 @@ export class RoundedColumnChartComponent {
             width: 0
         }
     };
-    public highlightColor: string = 'transparent';
-    public placement: boolean = false;
-    public width: string = Browser.isDevice ? '100%' : '75%';
-   // custom code start
+    public width: string = Browser.isDevice ? '100%' : '77%';
+    // custom code start
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadChartTheme(args);
     };
     constructor() {
         //code

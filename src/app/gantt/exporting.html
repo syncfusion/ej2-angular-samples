@@ -4,15 +4,6 @@
 </div>
 
 <div class="control-section">
-  <div style="display: flex; padding: 5px;">
-    <div style="display: flex;">
-        <label for="checked" id = "drag" style="margin: 0px 0px 0px -4px;font-size: 15px; padding-bottom: 5px; "> AutoFit in Pdf Export </label>
-        <div style="padding-left: 10px;">
-          <ejs-switch id="checked" (change)="dragDropChange($event)"></ejs-switch>
-        </div>
-    </div>
-  </div>
-  <div>
     <ejs-gantt id="GanttExport" #ganttExcel height="430px" [dataSource]="data" [taskFields]="taskSettings"
         [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [treeColumnIndex]="1"
         [allowExcelExport]="true" [allowPdfExport]="true" height="450px" [allowSelection]="true" dateFormat="MMM dd, y"
@@ -33,8 +24,6 @@
       <a target="_blank"  href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#csvexport">csvExport</a>
       methods.
     </p>
-    <p>In addition we have provided support to export the Gantt component where each rows are auto-fit to the PDF document
-      page width using <a target="_blank" href="hhttps://ej2.syncfusion.com/angular/documentation/api/gantt/pdfExportProperties/#fittowidthsettings">fitToWidthSettings</a> in <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/pdfExportProperties">PdfExportProperties</a> and also it includes the functionality allowing the PDF export of <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#holidays">holidays</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#eventmarkers">eventMarkers</a>.</p>
   <p style="font-weight: 500">Injecting Module:</p>
     <p>To use Excel and CSV export features, we need to inject the <code>ExcelExportService</code> into the <code>&#64;NgModule.providers</code> section.</p>
     <p>To use PDF export feature, inject the <code>PdfExportService</code> into the <code>&#64;NgModule.providers</code> section.</p>

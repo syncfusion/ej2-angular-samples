@@ -61,9 +61,14 @@ export class AnnotationDiagramComponent {
 
     //Defines the default node properties
     public nodeDefaults(node: NodeModel): void {
-         node = { width: 150, height: 50, style: { fill: '#D5EDED', strokeColor: '#7DCFC9', strokeWidth: 1 },
-            shape: { cornerRadius: 5 },
-        };
+        node.width = 150,
+        node.height = 50,
+        node.style = {
+            fill: '#D5EDED',
+            strokeColor: '#7DCFC9',
+            strokeWidth: 1
+        },
+        node.shape = { cornerRadius: 5 }
     };
 
     //Defines the default connector properties

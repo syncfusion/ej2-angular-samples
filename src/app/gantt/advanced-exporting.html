@@ -1,0 +1,88 @@
+<div id="action-description">
+    <p>This sample demonstrates the advanced PDF export features of the Gantt Chart, allowing customization of various
+        elements such as headers, footers, task labels, event markers, holidays, and taskbars. These customizations can
+        be configured using the
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/gantt/pdfExportProperties/">pdfExportProperties</a>
+        and
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/gantt/pdfQueryTaskbarInfoEventArgs/">pdfQueryTaskbarInfo</a>
+        event.
+    </p>
+</div>
+
+<div class="control-section">
+    <div style="display: flex; padding: 5px;">
+        <div style="display: flex;">
+            <label for="checked" id="drag" style="margin: 0px 0px 0px -4px;font-size: 15px; padding-bottom: 5px; ">
+                AutoFit in Pdf Export </label>
+            <div style="padding-left: 10px;">
+                <ejs-switch id="checked" (change)="dragDropChange($event)"></ejs-switch>
+            </div>
+        </div>
+    </div>
+    <div>
+        <ejs-gantt id="AdvancedGanttExport" #ganttExcel height="430px" [dataSource]="data" [enableCriticalPath]="true"
+            dateFormat="MMM dd, y" [taskFields]="taskSettings" [eventMarkers]="eventMarkers" [holidays]="holidays"
+            [columns]="columns" [timelineSettings]="timelineSettings" [treeColumnIndex]="1" [allowPdfExport]="true"
+            height="450px" [allowSelection]="true" [projectStartDate]="projectStartDate"
+            [projectEndDate]="projectEndDate" [highlightWeekends]="true" [gridLines]="gridLines" [toolbar]="toolbar"
+            [resourceFields]="resourceFields" [resources]="resources"
+            (pdfQueryTaskbarInfo)="pdfQueryTaskbarInfo($event)" (queryTaskbarInfo)="queryTaskbarInfo($event)"
+            (toolbarClick)="toolbarClick($event)" [splitterSettings]="splitterSettings">
+            <ng-template #labelSettingsLeftLabel let-data>
+                <span>{{ data.TaskName }}</span>
+            </ng-template>
+
+            <ng-template #labelSettingsRightLabel let-data>
+                <div style="display:inline-flex" innerHtml="{{ customFunction(data) }}"></div>
+            </ng-template>
+        </ejs-gantt>
+    </div>
+    <div id="description">
+        <p>In this sample, the Gantt Chart's PDF export functionality is enhanced with various customization options:
+        </p>
+
+        <ul>
+            <li>
+                <strong>Custom Headers and Footers</strong>: The headers and footers in the exported PDF can be
+                customized using the
+                <a target="_blank"
+                    href="https://ej2.syncfusion.com/angular/documentation/api/gantt/pdfExportProperties/#header">header</a>
+                and
+                <a target="_blank"
+                    href="https://ej2.syncfusion.com/angular/documentation/api/gantt/pdfExportProperties/#footer">footer</a>
+                properties,which allowing us to include relevant information of exported PDF.
+            </li>
+            <li>
+                <strong>Taskbar and Task Label Styling</strong>:Taskbar and Task Label appearance can be customized in
+                the exported PDF using the
+                <a target="_blank"
+                    href="https://ej2.syncfusion.com/angular/documentation/api/gantt/pdfQueryTaskbarInfoEventArgs">pdfQueryTaskbarInfoEvent</a>.
+            </li>
+            <li>
+                <strong> Event marker and holiday</strong>:Event marker and holiday can be cusotmized in exported PDF
+                using
+                <a target="_blank"
+                    href="https://helpej2.syncfusion.com/documentation/api/gantt/pdfExportProperties/#ganttstyle">ganttstyle</a>
+                in <a target="_blank"
+                    href="https://ej2.syncfusion.com/angular/documentation/api/gantt/pdfExportProperties">pdfExportProperties</a>.
+            </li>
+            <li>
+                <strong>Fit-to-Width Support</strong>: This feature allows the Gantt component's rows to be auto-fitted
+                to the width of the PDF document's page using the
+                <a target="_blank"
+                    href="https://ej2.syncfusion.com/angular/documentation/api/gantt/pdfExportProperties/#fittowidthsettings">fitToWidthSettings</a>
+                in <a target="_blank"
+                    href="https://ej2.syncfusion.com/angular/documentation/api/gantt/pdfExportProperties">pdfExportProperties</a>.
+            </li>
+        </ul>
+
+        <p>More information about advanced PDF exporting features in Gantt can be found in the <a target="_blank"
+                href="https://ej2.syncfusion.com/javascript/documentation/gantt/pdf-export/pdf-export">documentation
+                section</a>.</p>
+        <p style="font-weight: 500">Injecting Module:</p>
+        <p>To use PDF export feature, inject the <code>PdfExportService</code> into the
+            <code>&#64;NgModule.providers</code> section.
+        </p>
+    </div>

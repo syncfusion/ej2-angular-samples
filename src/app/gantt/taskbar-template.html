@@ -15,20 +15,16 @@
                 innerHtml="{{ customFunction(data) }}" style="height:100%"
             ></div>
         </ng-template>
-        <ng-template #milestoneTemplate let-data>
+       <ng-template #milestoneTemplate let-data>
             <div>
-                <div class="e-gantt-milestone" style="position:absolute;">
-                    <img class="moments" height="24px" width="48px">
-                    <div
-                        class="e-milestone-top"
-                        style="border-right-width:26px; margin-top: -24px;border-left-width:26px;border-bottom-width:26px;"
-                    ></div>
-                    <div
-                        class="e-milestone-bottom"
-                        style="top:26px;border-right-width:26px; border-left-width:26px; border-top-width:26px;"
-                    ></div>
-                </div>
-            </div>
+                <img class="moments"      
+                         alt="Moments svg"
+                         style="z-index: 1; left: 7px;top: 13px;padding-right:22px"
+                         role="presentation" />
+                    <div class="e-gantt-milestone"
+                         style="width: 41px; height: 41px; transform: rotate(45deg); background-color: #7ab748 !important; border: 0; left: 0px; top: 7px;">
+                    </div>
+            </div>          
         </ng-template>
         <ng-template #tooltipSettingsTaskbar let-data>
             <div>

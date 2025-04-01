@@ -5,6 +5,7 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 
 /**
  * Sample for Polar series with drawType Stacking Column
@@ -46,17 +47,15 @@ export class PolarStackedColumnChartComponent {
     };
      // custom code start
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
-
+        loadChartTheme(args);
     };
      // custom code end
     public border: Object = {
         width: 1, color: 'white'
     };
     public tooltip: Object = {
-        enable: true
+        enable: true,
+        enableHighlight: true
     };
     public legendSettings: Object = {
         visible: true,

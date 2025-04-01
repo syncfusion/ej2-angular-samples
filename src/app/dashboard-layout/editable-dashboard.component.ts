@@ -31,17 +31,15 @@ export class EditableDashboardComponent {
     public toggleBtn: ButtonComponent | any;
     @ViewChild('template')
     public dialogObj: DialogComponent | any;
-    @ViewChild('pie')
+    @ViewChild('pieChart')
     public pie: AccumulationChart;
-    @ViewChild('piechart') public piechart: ChartComponent;
-    @ViewChild('colchart') public colchart: ChartComponent;
     public centerTitle: any;
 
-    constructor(@Inject('sourceFiles') private sourceFiles: any){
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
         this.centerTitle = document.createElement('div') as HTMLElement;
         sourceFiles.files = ['editable-dashboard.css'];
     }
-  
+
     ngAfterViewInit() {
         this.centerTitle.innerHTML = 'Active <br> users  &nbsp';
         this.centerTitle.style.position = 'absolute';
@@ -391,7 +389,7 @@ export class EditableDashboardComponent {
             this.count = this.count + 1;
             this.dashboardObject.addPanel(panel[0]);
             // Create pie chart and append to the new Dashboard panel content
-            var pie = new AccumulationChart({
+            var pieChartObj = new AccumulationChart({
                 series: [
                     {
                         dataSource: [
@@ -427,8 +425,8 @@ export class EditableDashboardComponent {
                 width: '100%',
                 height: '100%',
             });
-            pie.appendTo('#' + '_pie' + countValue);
-            pie.refresh();
+            pieChartObj.appendTo('#' + '_pie' + countValue);
+            pieChartObj.refresh();
         };
 
         document.getElementById('splinetemplate').onclick = () => {

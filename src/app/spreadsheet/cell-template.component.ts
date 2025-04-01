@@ -30,6 +30,7 @@ export class CellTemplateComponent {
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold' }, 'B2:B9');
         // Merges B1 and C1 cells
         this.spreadsheetObj.merge('B1:C1');
+        this.spreadsheetObj.cellFormat({ verticalAlign: 'middle' }, 'B2:C9');
     }
 
 }

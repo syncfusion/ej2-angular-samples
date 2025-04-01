@@ -1,9 +1,10 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ILoadedEventArgs, ChartComponent, IPointRenderEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
-import { ChartTheme } from '@syncfusion/ej2-charts';
+import { Chart, ChartTheme } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 /**
  * Sample for Error bar 
  */
@@ -31,10 +32,8 @@ export class ErrorBarChartComponent {
   
        // custom code start
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
-        if (selectedTheme === 'bootstrap5' || selectedTheme === 'fluent') {
+        let selectedTheme: ChartTheme | string = loadChartTheme(args);
+        if (selectedTheme === 'Bootstrap5' || selectedTheme === 'Fluent') {
             args.chart.highlightColor = '#c7e9b6';
         }
     };

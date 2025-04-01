@@ -75,7 +75,7 @@ export class HyperLinkComponent implements OnInit {
         if ((args.currentCell.querySelector('.e-headercelldiv') && !(args.data as IAxisSet).indexObject) ||
             args.currentCell.className.indexOf('e-cellvalue') > -1) {
             cell += 'Value Header ';
-        } else if (args.currentCell.className.indexOf('e-rowsheader') > -1) {
+        } else if (args.currentCell.parentElement.className.indexOf('e-rowsheader') > -1 || args.currentCell.className.indexOf('e-rowsheader') > -1) {
             cell += 'Row Header ';
         } else if (args.currentCell.className.indexOf('e-columnsheader') > -1 ||
             args.currentCell.className.indexOf('e-pivotcell-container') > -1) {

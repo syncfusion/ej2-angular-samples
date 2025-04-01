@@ -1,38 +1,388 @@
 <div id="action-description">
-    <p>This sample demonstrates the Grid component with the stacked header and and resize feature. In this sample, we have shown multiple level of column headers.
+    <p>This example showcases the Syncfusion EJ2 Grid component which features stacked headers, column resizing, and a customizable column chooser template.
     </p>
 </div>
+<style>
+    #column-chooser-icon, #column-chooser-text {
+      position: relative;
+    }
+
+    #column-chooser-icon {
+        top: 3px;
+    }
+
+    #column-chooser-text {
+      left: 5px;
+    }
+
+    .e-rtl #column-chooser-icon {
+      top: 3px;
+      right: 5px;
+    }
+    
+    .e-rtl #column-chooser-text {
+        left: 0;
+    }
+    
+    .no-record-text {
+        padding: 5px;
+    }
+
+    .custom-rating.e-rating-container .e-rating-item-container,
+        .e-bigger
+          .custom-rating.e-rating-container
+          .e-rating-item-container
+          .e-rating-icon,
+        .e-bigger.custom-rating.e-rating-container
+          .e-rating-item-container
+          .e-rating-icon {
+          font-size: 11px;
+    }
+
+    .custom-rating.e-rating-container
+        .e-rating-item-container
+        .e-rating-icon {
+        -webkit-text-fill-color: lightgrey;
+        -webkit-text-stroke: 1px lightgrey;
+    }
+
+    .custom-rating.e-rating-container
+        .e-rating-item-container.e-rating-selected
+        .e-rating-icon {
+        background: linear-gradient(
+        to right,
+        #ffa600 var(--rating-value),
+        #ffa600 var(--rating-value)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px #ffa600;
+    }
+
+    .e-image {
+        height: 13px;
+        width: 14px;
+    }
+
+    .fluent .e-grid .e-rowcell.e-delivered,
+    .fluent2 .e-grid .e-rowcell.e-delivered,
+    .bootstrap5 .e-grid .e-rowcell.e-delivered,
+    .bootstrap5\.3 .e-grid .e-rowcell.e-delivered,
+    .tailwind3 .e-grid .e-rowcell.e-delivered,
+    .tailwind .e-grid .e-rowcell.e-delivered,
+    .material .e-grid .e-rowcell.e-delivered,
+    .fabric .e-grid .e-rowcell.e-delivered,
+    .bootstrap4 .e-grid .e-rowcell.e-delivered,
+    .bootstrap .e-grid .e-rowcell.e-delivered,
+    .highcontrast .e-grid .e-rowcell.e-delivered,
+    .fluent
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .fluent2
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .bootstrap5
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .bootstrap5\.3
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .tailwind3
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .tailwind
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .material
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .fabric
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .bootstrap4
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .bootstrap
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .highcontrast
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .e-grid .e-rowcell.e-delivered,
+    .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd) {
+        background-color: #dfffe2;
+        color: #00a653;
+    }
+
+    .fluent-dark .e-grid .e-rowcell.e-delivered,
+    .fluent2-dark .e-grid .e-rowcell.e-delivered,
+    .fluent2-highcontrast .e-grid .e-rowcell.e-delivered,
+    .bootstrap5-dark .e-grid .e-rowcell.e-delivered,
+    .bootstrap5\.3-dark .e-grid .e-rowcell.e-delivered,
+    .highcontrast .e-grid .e-rowcell.e-delivered,
+    .tailwind3-dark .e-grid .e-rowcell.e-delivered,
+    .tailwind-dark .e-grid .e-rowcell.e-delivered,
+    .material-dark .e-grid .e-rowcell.e-delivered,
+    .fabric-dark .e-grid .e-rowcell.e-delivered,
+    .bootstrap-dark .e-grid .e-rowcell.e-delivered,
+    .fluent-dark
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .fluent2-dark
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .fluent2-highcontrast
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .bootstrap5-dark
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .bootstrap5\.3-dark
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .highcontrast
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .tailwind3-dark
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .tailwind-dark
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .material-dark
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .fabric-dark
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd),
+    .bootstrap-dark
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd) {
+          background-color: #315c35;
+          color: #38ff9c;
+    }
+
+    .material3-dark .e-grid .e-rowcell.e-delivered,
+    .material3-dark
+        .e-grid
+        .e-rowcell.e-delivered:not(.e-editedbatchcell):not(.e-updatedtd) {
+          background-color: #143e17;
+          color: #8eda94;
+    }
+
+    .fluent .e-grid .e-rowcell.e-inprogress,
+    .fluent2 .e-grid .e-rowcell.e-inprogress,
+    .bootstrap5 .e-grid .e-rowcell.e-inprogress,
+    .bootstrap5\.3 .e-grid .e-rowcell.e-inprogress,
+    .tailwind3 .e-grid .e-rowcell.e-inprogress,
+    .tailwind .e-grid .e-rowcell.e-inprogress,
+    .material .e-grid .e-rowcell.e-inprogress,
+    .fabric .e-grid .e-rowcell.e-inprogress,
+    .bootstrap4 .e-grid .e-rowcell.e-inprogress,
+    .bootstrap .e-grid .e-rowcell.e-inprogress,
+    .highcontrast .e-grid .e-rowcell.e-inprogress,
+    .fluent
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .fluent2
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .bootstrap5
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .bootstrap5\.3
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .tailwind3
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .tailwind
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .material
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .fabric
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .bootstrap4
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .bootstrap
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .highcontrast
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .e-grid .e-rowcell.e-inprogress,
+    .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd) {
+          background-color: #ffebe9;
+          color: #ff3740;
+    }
+
+    .fluent-dark .e-grid .e-rowcell.e-inprogress,
+    .fluent2-dark .e-grid .e-rowcell.e-inprogress,
+    .fluent2-highcontrast .e-grid .e-rowcell.e-inprogress,
+    .bootstrap5-dark .e-grid .e-rowcell.e-inprogress,
+    .bootstrap5\.3-dark .e-grid .e-rowcell.e-inprogress,
+    .highcontrast .e-grid .e-rowcell.e-inprogress,
+    .tailwind3-dark .e-grid .e-rowcell.e-inprogress,
+    .tailwind-dark .e-grid .e-rowcell.e-inprogress,
+    .material-dark .e-grid .e-rowcell.e-inprogress,
+    .fabric-dark .e-grid .e-rowcell.e-inprogress,
+    .bootstrap-dark .e-grid .e-rowcell.e-inprogress,
+    .fluent-dark
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .fluent2-dark
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .fluent2-highcontrast
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .bootstrap5-dark
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .bootstrap5\.3-dark
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .highcontrast
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .tailwind3-dark
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .tailwind-dark
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .material-dark
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .fabric-dark
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd),
+    .bootstrap-dark
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd) {
+          background-color: #55241e;
+          color: #ff9ca0;
+    }
+
+    .material3-dark .e-grid .e-rowcell.e-inprogress,
+    .material3-dark
+        .e-grid
+        .e-rowcell.e-inprogress:not(.e-editedbatchcell):not(.e-updatedtd) {
+        background-color: #3a1618;
+        color: #ff7b81;
+    }
+
+    .no-border {
+        border: none !important;
+    }
+</style>
 <div class="control-section">
-    <ejs-grid [dataSource]="data" [allowPaging]='true' [allowResizing]="true" [allowSorting]='true' [allowMultiSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbar'>
+    <ejs-grid #grid [dataSource]="data" [allowPaging]='true' [allowResizing]="true" [enableHover]="false" clipMode="EllipsisWithTooltip" [allowSorting]='true' [showColumnChooser]='true' [allowMultiSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [columnChooserSettings]='columnChooserSettings' [editSettings]='editSettings' [toolbar]='toolbar' (queryCellInfo)='queryCellInfo($event)' (actionBegin)='actionBegin($event)' (beforeOpenColumnChooser)='beforeOpenColumnChooser($event)'>
         <e-columns>
-            <e-column field='OrderID' headerText='Order ID' width='130' textAlign="Center" minWidth=10  isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
-            <e-column headerText='Order Details' [columns]='orderColumns'></e-column>
-            <e-column headerText='Ship Details' [columns]='shipColumns'></e-column>
+            <e-column field='CustomerID' headerText='Customer ID' width='160' textAlign="Right" minWidth='100'  isPrimaryKey='true' [validationRules]='orderidrules' [showInColumnChooser]='false'></e-column>
+            <e-column field='CustomerName' headerText='Name' width='100' minWidth='100'></e-column>
+            <e-column headerText='Order Details' [columns]='orderColumns' textAlign="Center"></e-column>
+            <e-column headerText='Shipping Details' [columns]='shipColumns' textAlign="Center"></e-column>
+            <e-column headerText='Delivery Status' [columns]='deliveryColumns' textAlign="Center"></e-column>
         </e-columns>
+
+        <ng-template #columnChooserSettingsTemplate let-data>
+          <div *ngIf="!(data && data.columns && data.columns.length)" class="no-record-text">No Matches Found</div>
+          <div *ngIf="(data && data.columns && data.columns.length)" id='treeparent'><ejs-treeview #treeview id='treeview' cssClass="no-border" [fields]= 'treeDataFields' (nodeClicked)='nodeCheck($event)' (keyPress)='nodeCheck($event)' [showCheckBox]='true' [enableRtl]='enableRTL'></ejs-treeview></div>
+        </ng-template>
+        
+        <ng-template #columnChooserSettingsHeaderTemplate>
+          <div>
+              <span class="e-icons e-columns" id="column-chooser-icon"></span> 
+              <span id="column-chooser-text">Column Options</span>
+          </div>
+        </ng-template>
+        
+        <ng-template #columnChooserSettingsFooterTemplate>
+          <button #applyBtn (click)="columnChooserSubmit()" ejs-button>Apply</button>
+          <button #closeBtn (click)="columnChooserClose()" ejs-button>Close</button>
+        </ng-template>
     </ejs-grid>
-     <div id="description">
-        <p>The Grid columns can be stacked/grouped in order to show multiple level of column headers. It can be done by
-            setting the <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/grid/column/#columns">
-        columns->columns
-        </a></code> property.
-        </p>
-        <p>The Grid columns can be resized by clicking and dragging at the right edge of columns header. To enable column, resize behavior, set <code><a target="_blank" class="code"
-            href="http://ej2.syncfusion.com/angular/documentation/api/grid#allowresizing">allowResizing
-            </a></code> property as true. You can also prevent the resize of the particular column by setting
-            <code><a target="_blank" class="code"
-            href="http://ej2.syncfusion.com/angular/documentation/api/grid/column#allowresizing">columns->allowResizing
-            </a></code> as false in columns definition.
-        </p>
+    <ng-template #feedbackTemplate let-data>
+        <div class="rate">
+        <div class="rating">
+            <input
+            ejs-rating
+            [readOnly]="true"
+            value="{{ data.Feedback }}"
+            cssClass="custom-rating"
+            />
+        </div>
+        </div>
+    </ng-template>
+
+    <ng-template #locationTemplate let-data>
+        <div class="loc">
+        <img
+            src="https://ej2.syncfusion.com/angular/demos/assets/grid/images/Map.png"
+            class="e-image"
+            alt=""
+        />&nbsp;
+        <span id="locationtext">{{ data.ShipCountry }}</span>
+        </div>
+    </ng-template>
+    <div id="description">
+        <p><b>Stacked Headers:</b></p>
         <p>
-            In this demo, the columns <strong>OrderDate, Freight</strong> are grouped under <strong>Order Details</strong>,
-            the columns <strong>ShippedDate, ShipCountry</strong> are grouped under <strong>Ship Details</strong>.
+            The Grid allows grouping columns to display multiple levels of headers using the
+            <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/grid/column/#columns"> columns->columns </a></code> property.
         </p>
+        <p>In this demo, the columns are grouped as follows:</p>
+        <ul>
+            <li><b>Order Details</b>: ID and Date</li>
+            <li><b>Shipping Details</b>: Country and Charges </li>
+            <li><b>Delivery Status</b>: Status and Feedback</li>
+        </ul>
+        <br/>
+        <p><b>Column Resizing:</b></p>
+        <p>Columns can be resized by clicking and dragging the right edges of the column header. To enable this feature, set
+            <code><a target="_blank" class="code" href="http://ej2.syncfusion.com/angular/documentation/api/grid#allowresizing">allowResizing </a></code> to true.
+            To disable resizing for specific columns, set
+            <code><a target="_blank" class="code" href="http://ej2.syncfusion.com/angular/documentation/api/grid/column#allowresizing">columns->allowResizing </a></code> 
+            to false.
+        </p>
+        <br/>
+        <p><b>Column Chooser Templates:</b></p>
+        <p>The column chooser template is used to customize layout and manage column visibility.</p>
+        <p>Key properties: </p>
+        <ul>
+            <li>
+                <code>columnChooserSettings->headerTemplate </code> :- Defines the header template.                   
+            </li>
+            <li>
+                <code>columnChooserSettings->template </code> :- Defines the content template.
+            </li>
+            <li>
+                <code>columnChooserSettings->footerTemplate </code> :- Defines the footer template.
+            </li>
+            <li>
+                <code>columnChooserSettings->enableSearching </code> :- Enables or disables search functionality.
+            </li>
+        </ul>
+        <p>In this demo, the <code> showInColumnChooser </code> of the <b>Customer ID</b> column is set to false, preventing it from being displayed in the column chooser popup.</p>
+        <br/>
+
         <p style="font-weight: 500">Injecting Module:</p>
-        <p>
-            Grid features are segregated into individual feature-wise modules.
-            To use Resize feature, we need to inject <code>ResizeService</code> into the <code>&#64;NgModule.providers</code> section.
-        </p>
+        <p>Grid features are modular.</p>
+            <ul>
+                <li>
+                    To enable column resizing, inject <code>ResizeService</code> into <code>&#64;NgModule.providers</code>.                
+                </li>
+                <li>
+                    To enable column chooser templates, inject <code>ColumnChooserService</code>.              
+                </li>
+            </ul>
          <p>
             More information on the stacked header configuration can be found in this
             <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/grid/columnDirective/#columns">documentation section</a>.

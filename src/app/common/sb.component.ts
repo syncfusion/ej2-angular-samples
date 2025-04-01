@@ -163,7 +163,7 @@ export class SBController {
                         let elementList = demoSection.getElementsByClassName('e-control e-lib');
                         for (let i = 0; i < elementList.length; i++) {
                             let instance = (elementList[i] as any).ej2_instances;
-                            if (instance && instance[0] && typeof instance[0].refresh === 'function' && this.currentControl !== 'Rich Text Editor') {
+                            if (instance && instance[0] && typeof instance[0].refresh === 'function' && !['Rich Text Editor', 'Chat UI', 'AI AssistView'].includes(this.currentControl)) {
                                 if (instance[0].getModuleName() !== 'split-btn' && instance[0].getModuleName() !== 'checkbox' && instance[0].getModuleName() !== 'radio' && instance[0].getModuleName() !== 'switch') {
                                     instance[0].refresh();
                                 }
@@ -520,7 +520,8 @@ export class SBController {
                 ele['href'] = sb === 'asp_core' ? 'https://ej2.syncfusion.com/aspnetcore/' : 'https://ej2.syncfusion.com/aspnetmvc/';
             }
             else if (sb === 'nextjs') {
-                ele.href = 'https://ej2.syncfusion.com/nextjs/demos/';
+                const defaultSamplePath = sample[1].includes('grid/over-view') ? sample[1].split('/')[0] + '/grid/overview' : sample[1];
+                ele.href = 'https://ej2.syncfusion.com/nextjs/demos/' + defaultSamplePath;
             }
             else if (sb === 'blazor') {
                 ele['href'] = 'https://blazor.syncfusion.com/demos/';

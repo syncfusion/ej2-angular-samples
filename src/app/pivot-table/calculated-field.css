@@ -14,3 +14,7 @@
 #PivotViewcontainerwrapper {
     height: auto !important;
 }
+
+.sb-mobile-overlay {
+    z-index: 1001 !important;
+}

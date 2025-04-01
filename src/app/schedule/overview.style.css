@@ -1,7 +1,3 @@
-.tailwind3 .schedule-overview .import-button .e-template-btn {
-  color: #fff;
-}
-
 .tailwind .schedule-overview .overview-content .right-panel .control-panel,
 .tailwind3 .schedule-overview .overview-content .right-panel .control-panel {
   background-color: #f3f4f6;
@@ -207,6 +203,10 @@
 
 .schedule-overview .calendar-import.e-upload .e-file-select-wrap {
   padding: 0
+}
+
+.schedule-overview .calendar-import.e-upload .e-file-select-wrap .e-file-select {
+  display: none;
 }
 
 .schedule-overview .calendar-import.e-upload .e-file-select-wrap .e-file-drop,

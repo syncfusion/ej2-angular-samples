@@ -13,3 +13,11 @@ img {
     background-repeat: no-repeat;
 
 }
+
+.tailwind3-dark #TreeGrid .e-table td.border,
+.fluent2-dark #TreeGrid .e-table td.border,
+.bootstrap5\.3-dark #TreeGrid .e-table td.border,
+.material3-dark #TreeGrid .e-table td.border,
+.fluent2-highcontrast #TreeGrid .e-table td.border {
+   color: #fff;
+}

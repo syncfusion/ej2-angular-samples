@@ -1,0 +1,704 @@
+<div id="action-description">
+    <p>This sample demonstrates the creation of various types of annotations in the PDF viewer, including text markup, shapes, measurements, free text, stamps, handwritten signatures, ink, and sticky notes. Additionally, we can customize existing annotations or add new annotations programmatically in the PDF viewer using the provided options.</p>
+</div>
+<div class="col-lg-9 control-section">
+    <div class="content-wrapper">
+        <div class="flex-container">
+            <label class="switchLabel" for="checked">Standalone PDF Viewer</label>
+            <div class="e-message render-mode-info">
+                <span class="e-msg-icon render-mode-info-icon"
+                    title="Turn OFF to render the PDF Viewer as server-backed"></span>
+            </div>
+            <div>
+                <ejs-switch cssClass="buttonSwitch" id="checked" (change)="change($event)"
+                    [checked]="true"></ejs-switch>
+            </div>
+        </div>
+        <div>
+            <ejs-pdfviewer #pdfviewer id="pdfViewer" [documentPath]='document' [resourceUrl]='resource'
+                [enableAnnotationToolbar]="false"
+                [toolbarSettings]="toolbarSettings"
+                (documentLoad)='documentLoaded($event)' (annotationSelect)="AnnotationSelectedEvent($event)"
+                (annotationUnSelect)="annotationUnSelectedEvent()"
+                (annotationRemove)="annotationUnSelectedEvent()"
+                (annotationMove)="onAnnotationMoved($event)" (annotationResize)="onAnnotationResized($event)"
+                style="height:640px;display:block"></ejs-pdfviewer>
+        </div>
+    </div>
+</div>
+<div class="col-lg-3 e-pv-property-section e-pv-main-panel">
+    <div class="property-panel-header e-pv-header-panel">
+        Properties
+        <button class="e-btn e-bigger e-lib e-flat e-icon-btn" (click)="reset()">
+            <span id="e-pv-refresh-button-icon" class="e-icons e-refresh e-btn-icon"></span>
+        </button>
+    </div>
+    <div class="e-pv-property-panel-content">
+        <div class="pdfviewer-text-content"><span>Annotation Type</span></div>
+        <div class="e-pv-input-item">
+            <ejs-dropdownlist #sample [dataSource]='annotationsList'
+                (change)='onAnnotationChange($event)' [value]='this.selectedAnnotation.AnnotationType'
+                [fields]='annotationListFields' [enabled]='!this.selectedAnnotation.annotationSelected'></ejs-dropdownlist>
+        </div>
+        <div class="e-pv-annot-inner-container" [hidden]="this.selectedAnnotation.AnnotationType !== 'Stamp' || isStampClicked">
+            <div class="pdfviewer-input-title"><span>Stamp Type</span></div>
+            <div class="e-pv-input-item">
+                <ejs-dropdownlist #sample [dataSource]='stampTypeDataList' [fields]='stampTypeDatafields'
+                    [value]='selectedAnnotation.stampType' (change)="onStampTypeChange($event)"></ejs-dropdownlist>
+            </div>
+            <div>
+                <div class="pdfviewer-input-title"><span>Comments</span></div>
+                <div class="e-pv-input-item">
+                    <ejs-dropdownlist #sample [dataSource]='currentCommentsList'
+                        [fields]='stampCommentsTypeDatafields' [value]='selectedAnnotation.stampComment'
+                        (change)="onpropertiesvaluechanges('stampComment',$event)"></ejs-dropdownlist>
+                </div>
+            </div>
+        </div>
+        <div class="pdfviewer-input-title" [hidden]="!(this.selectedAnnotation.AnnotationType === 'CustomStamp' && !showFileUploader)">
+            <ejs-uploader #defaultupload class="pdfViewer-ejs-uploader"
+                [asyncSettings]="pdfviewerApiPath" [dropArea]="dropImageElement" (removing)="onFileRemove($event)"
+                (success)="onFileSuccess($event)" [multiple]="false">
+                <ng-template #template let-data="">
+                    <span class="wrapper">
+                        <img class="upload-image" [src]="selectedAnnotation.customStampImageSource" />
+                        <span class="name file-name">{{data.name}}</span>
+                        <span class="e-icons e-file-remove-btn" title="Remove" (click)="removeFile()"></span>
+                    </span>
+                </ng-template>
+            </ejs-uploader>
+        </div>
+        <div class="pdfviewer-input-title"><span>Page Number</span></div>
+        <div class="e-pv-input-item">
+            <ejs-numerictextbox format="n0"
+                [value]="selectedAnnotation.pageNumber" (change)="onpropertiesvaluechanges('pageNumber',$event)" [min]="1"
+                [max]="pageCount" [enabled]='!this.selectedAnnotation.annotationSelected'></ejs-numerictextbox>
+        </div>
+
+        <div class="pdfviewer-input-title"><span>Settings:</span></div>
+        <div class="e-pv-annot-inner-container" style="padding: 0 0 12px 0px;">
+            <table class="e-pv-annot-inner-table">
+                <tr [hidden]="showXYPositionRow">
+                    <td class="left-item">
+                        <div class="pdfviewer-text-content">
+                            <span>X Position</span>
+                            <div class="e-pv-input-item">
+                                <ejs-numerictextbox [value]="selectedAnnotation.x"
+                                    format="###.##" [showSpinButton]="false" min="0"
+                                    (change)="onpropertiesvaluechanges('x',$event)"></ejs-numerictextbox>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="right-item">
+                        <div class="pdfviewer-text-content">
+                            <span>Y Position</span>
+                            <div class="e-pv-input-item">
+                                <ejs-numerictextbox [value]="selectedAnnotation.y"
+                                    format="###.##" [showSpinButton]="false" min="0"
+                                    (change)="onpropertiesvaluechanges('y',$event)"></ejs-numerictextbox>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr [hidden]="showHeightWidthRow">
+                    <td class="left-item">
+                        <div class="pdfviewer-text-content">
+                            <span>Width</span>
+                            <div class="e-pv-input-item">
+                                <ejs-numerictextbox [value]="selectedAnnotation.width" format="###.##"
+                                    [showSpinButton]="false" min="0"
+                                    (change)="onpropertiesvaluechanges('width',$event)"></ejs-numerictextbox>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="right-item">
+                        <div class="pdfviewer-text-content">
+                            <span>Height</span>
+                            <div class="e-pv-input-item">
+                                <ejs-numerictextbox [value]="selectedAnnotation.height"
+                                    format="###.##" [showSpinButton]="false" min="0"
+                                    (change)="onpropertiesvaluechanges('height',$event)"></ejs-numerictextbox>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr [hidden]="showX1Y1PositionRow">
+                    <td class="left-item">
+                        <div class="pdfviewer-text-content">
+                            <span>X1 Position</span>
+                            <div class="e-pv-input-item">
+                                <ejs-numerictextbox [value]="selectedAnnotation.vertexX1"
+                                    format="###.##" [showSpinButton]="false" min="0"
+                                    (change)="onpropertiesvaluechanges('vertexX1',$event)"></ejs-numerictextbox>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="right-item">
+                        <div class="pdfviewer-text-content">
+                            <span>Y1 Position</span>
+                            <div class="e-pv-input-item">
+                                <ejs-numerictextbox [value]="selectedAnnotation.vertexY1"
+                                    format="###.##" [showSpinButton]="false" min="0"
+                                    (change)="onpropertiesvaluechanges('vertexY1',$event)"></ejs-numerictextbox>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr [hidden]="showX2Y2PositionRow">
+                    <td class="left-item">
+                        <div class="pdfviewer-text-content">
+                            <span>X2 Position</span>
+                            <div class="e-pv-input-item">
+                                <ejs-numerictextbox [value]="selectedAnnotation.vertexX2"
+                                    format="###.##" [showSpinButton]="false" min="0"
+                                    (change)="onpropertiesvaluechanges('vertexX2',$event)"></ejs-numerictextbox>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="right-item">
+                        <div class="pdfviewer-text-content">
+                            <span>Y2 Position</span>
+                            <div class="e-pv-input-item">
+                                <ejs-numerictextbox [value]="selectedAnnotation.vertexY2"
+                                    format="###.##" [showSpinButton]="false" min="0"
+                                    (change)="onpropertiesvaluechanges('vertexY2',$event)"></ejs-numerictextbox>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-item">
+                        <div class="pdfviewer-text-content">
+                            <span>Shape Opacity</span>
+                            <div class="e-pv-input-item">
+                                <ejs-numerictextbox [value]="selectedAnnotation.opacity"
+                                [max]="100"
+                                    format="n0" [showSpinButton]="false"
+                                    (change)="onpropertiesvaluechanges('opacity',$event)"></ejs-numerictextbox>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="right-item" [hidden]="showFillColor">
+                        <div class="pdfviewer-text-content">
+                            <span>Fill Color</span>
+                            <div class="e-pv-input-item">
+                                <input ejs-colorpicker type='color' mode="Palette"
+                                    [showButtons]="ctrlSwitch" (change)="onpropertiesvaluechanges('fillColor',$event)"
+                                    [value]="selectedAnnotation.fillColor" (open)="openColorPicker($event)"/>
+                            </div>
+
+                        </div>
+                    </td>
+                </tr>
+                <tr [hidden]="showStrokeProperties">
+                    <td class="left-item">
+                        <div class="pdfviewer-text-content">
+                            <span>Stroke Thickness</span>
+                            <div class="e-pv-input-item">
+                                <ejs-numerictextbox [value]="selectedAnnotation.thickness"
+                                    min="0"
+                                    [max]="12"
+                                    format="n0" [showSpinButton]="false"
+                                    (change)="onpropertiesvaluechanges('thickness',$event)"></ejs-numerictextbox>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="right-item">
+                        <div class="pdfviewer-text-content">
+                            <span>Stroke Color</span>
+                            <div class="e-pv-input-item">
+                                <input ejs-colorpicker type='color' mode="Palette"
+                                    [showButtons]="ctrlSwitch" (change)="onpropertiesvaluechanges('strokeColor',$event)"
+                                    [value]="selectedAnnotation.strokeColor" (open)="openColorPicker($event)"/>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div style="padding: 12px 12px 0 12px;">
+                @if(this.selectedAnnotation.AnnotationType === "Highlight" || this.selectedAnnotation.AnnotationType === "Underline" || this.selectedAnnotation.AnnotationType === "Strikethrough") {
+                    @if(selectedAnnotation.bounds && selectedAnnotation.bounds.length > 0) {
+                        <table class="e-pv-annot-inner-table e-pv-annot-bounds-list" style="border-collapse: collapse;">
+                            @for(bound of selectedAnnotation.bounds; track bound; let index = $index;) {
+                                <tr>
+                                    <td>
+                                        <div class="e-pv-table-items">
+                                            <div>X{{index + 1}} = {{this.vertexTableNumberFormat(bound.X)}}</div>
+                                            <div>Y{{index + 1}} = {{this.vertexTableNumberFormat(bound.Y)}}</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="e-pv-table-items">
+                                            <div>W{{index + 1}} = {{this.vertexTableNumberFormat(bound.Width)}}</div>
+                                            <div>H{{index + 1}} = {{this.vertexTableNumberFormat(bound.Height)}}</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                }
+                @else if(selectedAnnotation.AnnotationType !== "Line" && selectedAnnotation.AnnotationType !== "Distance"){
+                    @if(selectedAnnotation.vertexPoints && selectedAnnotation.vertexPoints.length > 0) {
+                        <table class="e-pv-annot-inner-table pdfViewer-coordinate-table" style="border-collapse: collapse;">
+                            @for(vertexPoint of selectedAnnotation.vertexPoints; track vertexPoint; let index = $index; let count = $count) {
+                                <tr>
+                                    @if(index % 2 == 0) {
+                                        <td>
+                                            <div class="e-pv-table-items">
+                                                <div>X{{index + 1}} = {{vertexTableNumberFormat(vertexPoint.x)}}</div>
+                                                <div>Y{{index + 1}} = {{vertexTableNumberFormat(vertexPoint.y)}}</div>
+                                            </div>
+                                        </td>
+                                        @if((index + 1) < count) {
+                                            <td>
+                                                <div class="e-pv-table-items">
+                                                    <div>X{{index + 2}} = {{vertexTableNumberFormat(selectedAnnotation.vertexPoints[index + 1].x)}}</div>
+                                                    <div>Y{{index + 2}} = {{vertexTableNumberFormat(selectedAnnotation.vertexPoints[index + 1].y)}}</div>
+                                                </div>
+                                            </td>
+                                        }
+                                        @else {
+                                            <td style="border: none;"></td>
+                                        }
+                                    }
+                                </tr>
+                            }
+                        </table>
+                    }
+                } 
+            </div>
+            <div [hidden]="showDeleteAddBoundsButtons">
+                <div class="e-pv-annot-button-section" style="padding: 12px 12px 0px 0; border: 0px;">
+                    <button ejs-button [isPrimary]="true" [disabled]="isDeleteBoundsDisabled" style="text-transform: capitalize;"
+                        (click)="OnBoundsDelete()">Delete</button>
+                    <button ejs-button [isPrimary]="true" style="text-transform: capitalize;" (click)="addBounds()">Add Bounds</button>
+                </div>
+            </div>
+            <div style="padding: 0px 12px 12px 12px" [hidden]="isLineShape">
+                <div class="pdfviewer-input-title"><span>Line Head Start</span></div>
+                <div class="e-pv-input-item">
+                    <ejs-dropdownlist #sample [dataSource]='lineHeadstatusList'
+                        [fields]='lineHeadstatusfield' [value]='selectedAnnotation.lineHeadStartStyle'
+                        (change)="onpropertiesvaluechanges('lineHeadStartStyle',$event)"></ejs-dropdownlist>
+                </div>
+
+                <div class="pdfviewer-input-title"><span>Line Head End</span></div>
+                <div class="e-pv-input-item">
+                    <ejs-dropdownlist #sample [dataSource]='lineHeadstatusList'
+                        [fields]='lineHeadstatusfield' [value]='selectedAnnotation.lineHeadEndStyle'
+                        (change)="onpropertiesvaluechanges('lineHeadEndStyle',$event)"></ejs-dropdownlist>
+                </div>
+                <div class="pdfviewer-input-title" [hidden]="isDistanceAnnotation">
+                    <span>Leader Length</span>
+                    <div class="e-pv-input-item">
+                        <ejs-numerictextbox [value]="selectedAnnotation.leaderLength" format="###.##"
+                            [showSpinButton]="false"
+                            (change)="onpropertiesvaluechanges('leaderLength',$event)"></ejs-numerictextbox>
+                    </div>
+                </div>
+            </div>
+            <div style="padding: 12px 12px 0 12px;">
+                <table class="e-pv-annot-inner-table pdfViewer-coordinate-table e-pv-annot-bounds-list" style="border-collapse: collapse;">
+                </table>
+            </div>
+            <div [hidden]="showAddDeleteVertexButtons">
+                <div class="e-pv-annot-button-section" style="padding: 12px 12px 0px 0; border: 0px;">
+                    <button ejs-button [isPrimary]="true" style="text-transform: capitalize;" [disabled]="isDeleteVertexDisabled"
+                        (click)="onVertexDelete()">Delete</button>
+                    <button ejs-button [isPrimary]="true" style="text-transform: capitalize;" (click)="addVertex()">Add Vertex</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding: 0 0 12px 0px;" [hidden]="isInkAnnotation">
+        <div class="pdfviewer-input-title"><span>Ink Annotation</span></div>
+        <div class="e-pv-input-item">
+            <ejs-dropdownlist #sample [dataSource]='inkAnnotationDataList' [fields]='inkAnnotationfield'
+                inkAnnotationType [value]='selectedAnnotation.inkAnnotationType'
+                (change)="onpropertiesvaluechanges('inkAnnotationType',$event)"
+                [enabled]="!selectedAnnotation.annotationSelected"></ejs-dropdownlist>
+        </div>
+    </div>
+    <div class="pdfviewer-input-title" [hidden]="showFreeTextProperties"><span>Text Properties:</span></div>
+    <div class="e-pv-annot-inner-container" [hidden]="showFreeTextProperties">
+        <div class="pdfviewer-text-content" style="margin-top: 0%;"><span>Default Text</span></div>
+        <div class="e-pv-input-item">
+            <ejs-textbox [value]="selectedAnnotation.defaultText"
+                (change)="onpropertiesvaluechanges('defaultText',$event)"></ejs-textbox>
+        </div>
+        <div class="pdfviewer-input-title"><span>Font Family</span></div>
+        <div class="e-pv-input-item">
+            <ejs-dropdownlist #sample [dataSource]='freeTextFontFamilyList'
+                [fields]='freetextFontFamilyFields' [value]='selectedAnnotation.fontFamily'
+                (change)="onpropertiesvaluechanges('fontFamily',$event)"></ejs-dropdownlist>
+        </div>
+        <div class="pdfviewer-input-title"><span>Alignment</span></div>
+        <div class="e-pv-input-item">
+            <ejs-dropdownlist #sample [dataSource]='freeTextAlignmentList' [fields]='freeTextAlignmentField'
+                [value]='selectedAnnotation.alignment'
+                (change)="onpropertiesvaluechanges('alignment',$event)"></ejs-dropdownlist>
+        </div>
+        <div class="pdfviewer-input-title"><span>Font Style</span></div>
+        <div class="e-pv-input-item">
+            <ejs-dropdownlist #sample [dataSource]='freeTextFontStyleList'
+                [fields]='freeTextFontStyleFields' [value]='selectedAnnotation.fontStyle'
+                (change)="onpropertiesvaluechanges('fontStyle',$event)"></ejs-dropdownlist>
+        </div>
+        <div class="pdfviewer-input-title">
+            <table class="e-pv-annot-inner-table">
+                <tr>
+                    <td style="width:50%;padding:0;">
+                        <span>Font Size</span>
+                        <div class="e-pv-input-item">
+                            <ejs-numerictextbox [value]="selectedAnnotation.fontSize"
+                                format="n0" [showSpinButton]="false"
+                                (change)="onpropertiesvaluechanges('fontSize',$event)"></ejs-numerictextbox>
+                        </div>
+                    </td>
+                    <td style="padding:0;">
+                        <div style="margin-left: 12px;">
+                            <span>Font Color</span>
+                            <div class="e-pv-input-item">
+                                <input ejs-colorpicker type='color' mode="Palette"
+                                    [showButtons]="ctrlSwitch" (change)="onpropertiesvaluechanges('fontColor',$event)"
+                                    [value]="selectedAnnotation.fontColor" (open)="openColorPicker($event)"/>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="pdfviewer-input-title">
+        <table>
+            <tr>
+                <td class="e-pv-check-box-row"><ejs-checkbox [checked]="selectedAnnotation.annotationSelected ? selectedAnnotation.isPrint : allowPrint"
+                    (change)="onCheckBoxChangePrint($event)"></ejs-checkbox></td>
+                <td class="e-pv-check-box-row"><span>Print Annotation</span></td>
+            </tr>
+            <tr>
+                <td class="e-pv-check-box-row"><ejs-checkbox [checked]="selectedAnnotation.annotationSelected ? selectedAnnotation.isLocked : allowInteractions"
+                        (change)="onCheckboxChangeIntractionBox($event)"></ejs-checkbox></td>
+                <td class="e-pv-check-box-row"><span>Lock Annotation</span></td>
+            </tr>
+        </table>
+    </div>
+    <div [hidden]="!(selectedAnnotation.annotationSelected ? selectedAnnotation.isLocked : allowInteractions)">
+        <div class="pdfviewer-input-title pdfviewer-text-content"><span>Allow Interactions</span></div>
+        <div class="e-pv-input-item">
+            <ejs-multiselect #interactionsMultiSelect [fields]='intractionsListfield' [dataSource]="intractionsList"
+                [mode]="multiSelectMode" [value]="selectedAnnotation.allowedInteractions" [allowFiltering]="false"
+                [showDropDownIcon]="true" placeholder="Select Interactions"
+                (change)="onintractionvaluechange($event)"></ejs-multiselect>
+        </div>
+    </div>
+    <div class="pdfviewer-input-title"><span>Add Comments</span></div>
+    <div class="pdfviewer-input-title"><span>Author</span></div>
+    <div class="e-pv-input-item">
+        <ejs-textbox placeholder="Enter text" [value]="selectedAnnotation.author"
+            (change)="onpropertiesvaluechanges('author',$event)"></ejs-textbox>
+    </div>
+    <div class="pdfviewer-input-title"><span>Content</span></div>
+    <div class="e-pv-input-item">
+        <ejs-textbox [value]="selectedAnnotation.comment" placeholder="New Comment"
+            (change)="onpropertiesvaluechanges('comment',$event)"></ejs-textbox>
+    </div>
+    <div class="pdfviewer-input-title"><span>Status</span></div>
+    <div class="e-pv-input-item">
+        <ejs-dropdownlist [dataSource]='commentStatusList' [fields]='commentStatusListfields'
+            [value]='selectedAnnotation.setState'
+            (change)="onpropertiesvaluechanges('setState',$event)"></ejs-dropdownlist>
+    </div>
+    <div class="pdfviewer-input-title">
+        <table>
+            <tr>
+                <td class="e-pv-check-box-row"><ejs-checkbox #replyCheckBox [checked]="selectedAnnotation.annotationSelected ? ( selectedAnnotation.replyComments?.length > 0) : false"
+                        (change)="onCheckboxChangeReplyBox($event)"></ejs-checkbox></td>
+                <td class="e-pv-check-box-row"><span>Reply</span></td>
+            </tr>
+        </table>
+    </div>
+
+        <div [hidden]="!replyCheckBox.checked">
+            <div class="pdfviewer-input-title" [hidden]="!(selectedAnnotation?.replyComments?.length > 0)">Replies:</div>
+            <div class="e-pv-annot-inner-container e-pv-replies" id="repliesContainer" >
+                @for(reply of selectedAnnotation.replyComments; track reply.id) {
+                    <div class="reply-container">
+                        <div class="reply-icon e-pv-comment-icon e-pv-icon"></div>
+                        <div class="reply-main-container">
+                            <div class="reply-text">{{reply.author}} - {{reply.modifiedDate.toString()}}</div>
+                            <div class="reply-text">{{reply.note}} &nbsp; {{reply.state !== 'None' ? reply.state : ''}}</div>
+                        </div>
+                        <div class="more-container">
+                            <button ejs-button class="e-control e-btn e-lib e-flat e-icon-btn context-menu-btn" data-id="{{reply.id}}" 
+                            (click)="openContextMenu($event)" (mousedown)="getCommentID(reply.id)" id='contextmenutarget' style="padding: 5px 4px;">
+                            <span class="e-icons e-more-vertical-1 e-btn-icon"></span>
+                            </button>                
+                        </div> 
+                    </div>
+                }              
+            </div>
+            <ejs-contextmenu #contextMenuObj [items]= 'selectedAnnotation.replyMenuItems' (select)="contextMenuItemSelected($event)"></ejs-contextmenu>
+        </div>
+    <div class="e-pv-annot-inner-container pdfViewer-checked-Content" style="padding: 10px;" [hidden]="!replyCheckBox.checked">
+        <div class="pdfviewer-input-title"><span>Author</span></div>
+        <div class="e-pv-input-item">
+            <ejs-textbox placeholder="Enter text" [value]="selectedAnnotation.replyAuthor"
+                (change)="onpropertiesvaluechanges('replyAuthor',$event)"></ejs-textbox>
+        </div>
+        <div class="pdfviewer-input-title"><span>Content</span></div>
+        <div class="e-pv-input-item">
+            <ejs-textbox [value]="selectedAnnotation.replyComment" placeholder="Reply Comment"
+                (change)="onpropertiesvaluechanges('replyComment',$event)"></ejs-textbox>
+        </div>
+        <div class="pdfviewer-input-title"><span>Status</span></div>
+        <div class="e-pv-input-item">
+            <ejs-dropdownlist [dataSource]='commentStatusList' [fields]='commentStatusListfields'
+                [value]='selectedAnnotation.replyState'
+                (change)="onpropertiesvaluechanges('replyState',$event)"></ejs-dropdownlist>
+        </div>
+        <div class="e-pv-annot-button-section" style="padding: 12px 12px 0px 0; border: 0px;">
+            <div [hidden]="isEditing"><button ejs-button  [isPrimary]="true" style="text-transform: capitalize;" (click)="updateReply(); onpropertiesvaluechanges('', {isInteracted: true});" >Add Reply</button>
+             </div>
+             
+             <div [hidden]="!isEditing"><button  ejs-button  [isPrimary]="true" style="text-transform: capitalize;" (click)="updateEditReply()">Edit Reply</button>
+             </div>
+        </div>
+    </div>
+    <div class="e-pv-property-panel-footer">
+        <div class="e-pv-annot-button-section">
+            <button ejs-button [isPrimary]="true" style="text-transform: capitalize;"
+                [disabled]="!(this.selectedAnnotation.annotationSelected && selectedAnnotation.isInputChange)" (click)="updateChangesAnnotation()">Update</button>
+            <button ejs-button [isPrimary]="true" style="text-transform: capitalize;"
+                [disabled]="this.selectedAnnotation.annotationSelected" (click)="addNewAnnotation()">Add
+                Annotation</button>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>The PDF Viewer component allows the process of programmatically adding or modifying annotations within a PDF document. With the ability to programmatically add any type of annotation using the <a target='_blank' href='https://helpej2.syncfusion.com/angular/documentation/api/pdfviewer/annotation/#addannotation' aria-label="Navigate to the documentation for Add Annotation API in Angular Pdf Viewer component" >addAnnotation</a> API and edit existing annotations using the editAnnotation API, users can seamlessly enhance their PDF Viewing experience.</p>
+    <br />
+    <p>The creation of an annotation when clicking the ‘Add annotation’ button depends on the selected properties from the Property panel. To update an existing annotation, users can select the desired annotation, modify its properties, and then click the ‘Update’ button.</p>
+    <br />
+    <p>We can programmatically add or update the following types of annotations in the PDF viewer:</p>
+    <ul>
+        <li><a target='_blank' href='https://ej2.syncfusion.com/angular/documentation/pdfviewer/annotation/text-markup-annotation' aria-label="Navigate to the documentation for Text markup annotations in Angular Pdf Viewer component"> Text markup annotations </a></li>
+        <li><a target='_blank' href='https://ej2.syncfusion.com/angular/documentation/pdfviewer/annotation/shape-annotation ' aria-label="Navigate to the documentation for Shape annotations in Angular Pdf Viewer component"> Shape annotations </a></li>
+        <li><a target='_blank' href='https://ej2.syncfusion.com/angular/documentation/pdfviewer/annotation/measurement-annotation' aria-label="Navigate to the documentation for Measurements annotation in Angular Pdf Viewer component"> Measurements annotation </a></li>
+        <li><a target='_blank' href='https://ej2.syncfusion.com/angular/documentation/pdfviewer/annotation/free-text-annotation' aria-label="Navigate to the documentation for Free text annotation in Angular Pdf Viewer component"> Free text annotation </a></li>
+        <li><a target='_blank' href='https://ej2.syncfusion.com/angular/documentation/pdfviewer/annotation/stamp-annotation' aria-label="Navigate to the documentation Stamp annotation in Angular Pdf Viewer component"> Stamp annotation </a></li>
+        <li><a target='_blank' href='https://ej2.syncfusion.com/angular/documentation/pdfviewer/annotation/ink-annotation' aria-label="Navigate to the documentation for Ink annotation in Angular Pdf Viewer component"> Ink annotation </a></li>
+        <li><a target='_blank' href='https://ej2.syncfusion.com/angular/documentation/pdfviewer/annotation/sticky-notes-annotation' aria-label="Navigate to the documentation for Sticky notes annotation in Angular Pdf Viewer component"> Sticky notes annotation </a></li>
+    </ul>
+    <p>
+        More information on adding annotation programmatically can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/pdfviewer/getting-started">
+            documentation section
+        </a>.
+    </p>
+</div>
+<style>
+    .e-pv-header-panel {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0px;
+        z-index: 2;
+        background-color: white;
+        border-bottom: 1px solid #D7D7D7;
+        padding-bottom: 5px;
+        margin-bottom: 16px;
+    }
+
+    .e-pv-annot-inner-table td {
+        text-wrap: nowrap;
+        padding: 12px 12px 0 12px;
+        width: 50%;
+    }
+
+    .e-pv-main-panel {
+        border-left: 1px solid #D7D7D7;
+        height: 700px;
+        overflow-y: scroll;
+        padding-bottom: 0px;
+
+    }
+
+    .e-pv-input-item {
+        margin-top: 0px;
+    }
+
+    .e-pv-annot-inner-container {
+        margin-top: 15px;
+        border: 1px solid rgba(196, 199, 197, 1);
+        padding: 12px;
+    }
+
+    .e-pv-annot-inner-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+
+    .pdfViewer-coordinate-table {
+        border-spacing: 0px;
+    }
+
+    .pdfViewer-coordinate-table td {
+        border: 1px solid rgba(196, 199, 197, 1);
+        font-size: 10px;
+        text-align: center;
+        width: auto;
+        padding: 4px 0px;
+    }
+
+    .e-pv-annot-bounds-list {
+        border: 1px solid rgba(196, 199, 197, 1);
+        border-spacing: 0px;
+    }
+
+    .e-pv-annot-bounds-list td {
+        font-size: 10px;
+        text-align: center;
+        width: auto;
+        padding: 4px 0px;
+        border-bottom: 1px solid rgba(196, 199, 197, 1);
+    }
+
+    .e-pv-property-panel-footer {
+        padding: 10px 0px 16px 0px;
+        position: sticky;
+        bottom: 0;
+        background-color: white;
+        z-index: 2;
+        border-top: 1px solid #D7D7D7;
+        margin-top: 16px;
+    }
+
+    .e-pv-annot-button-section {
+        text-align: center;
+        display: flex;
+        justify-content: end;
+        gap: 12px;
+        flex-wrap: wrap-reverse;
+    }
+
+    .pdfviewer-input-title .e-pv-check-box-row {
+        padding: 5px;
+        margin-top: 16px;
+    }
+
+    .fluent2 .pdfviewer-input-title .e-pv-check-box-row,
+    .fluent2-dark .pdfviewer-input-title .e-pv-check-box-row,
+    .fluent2-highcontrast .pdfviewer-input-title .e-pv-check-box-row {
+        padding: 0;
+        margin-top: 16px;
+    }
+
+    .fileuploader {
+        margin-top: 5px;
+
+    }
+
+    .e-pv-table-items {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 2px;
+    }
+
+    .reply-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+        padding: 12px;
+    }
+    .reply-main-container {
+        flex-grow: 1;
+    }
+    .e-pv-replies {
+        overflow-y: auto;
+        max-height: 180px;
+        padding: 0px !important;
+    }
+    .inner-container {
+        margin-top: 15px;
+        border: 1px solid rgba(196, 199, 197, 1);
+        padding: 12px;
+    }
+    .reply-text {
+        width: 100%;
+        font-size: 12px;
+        word-break: break-word;
+    }
+    .more-container {
+        width: min-content;
+    }
+    #contextmenutarget
+    {
+        padding: 10px;
+        position: relative;
+        text-align: justify;
+        color: gray;
+        user-select: none;
+    }
+
+    .upload-image {
+        width: 80px;
+        height: 80px;
+        margin: 12px;
+        border-radius: 5px;
+        border: 1px solid rgba(196, 199, 197, 1);
+        padding: 4px;
+    }
+
+    div .file-name {
+        font-size: 14px;
+        padding: 0px 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 500;
+        width: 90px;
+        white-space: nowrap;
+    }
+    .wrapper {
+        display: flex;
+        align-items: center;
+    }
+    .e-delim-view.e-delim-values.e-delim-total {
+        width: 170px !important;
+    }
+    .fluent-dark .e-pv-property-panel-footer, .fluent-dark .e-pv-header-panel {
+        background-color: #1B1A19;
+    }
+
+    .bootstrap5\.3-dark .e-pv-property-panel-footer, .bootstrap5\.3-dark .e-pv-header-panel{
+        background-color: #212529;
+    }
+
+    .highcontrast .e-pv-property-panel-footer, .highcontrast .e-pv-header-panel {
+        background-color: #000000;
+    }
+
+    .tailwind-dark .e-pv-property-panel-footer, .tailwind-dark .e-pv-header-panel {
+        background-color: #1F2937;
+    }
+
+    .fluent2-highcontrast .e-pv-property-panel-footer, .fluent2-highcontrast .e-pv-header-panel,
+    .material3-dark .e-pv-property-panel-footer, .material3-dark .e-pv-header-panel, 
+    .fluent2-dark .e-pv-property-panel-footer, .fluent2-dark .e-pv-header-panel {
+        background-color: #1C1B1F;
+    }
+
+    .tailwind3-dark .e-pv-property-panel-footer, .tailwind3-dark .e-pv-header-panel {
+        background: #111827;
+    }
+
+    .tailwind3-dark .e-pv-header-panel #e-pv-refresh-button-icon .e-btn-icon,
+    .tailwind3 .e-pv-header-panel #e-pv-refresh-button-icon .e-btn-icon{
+        font-size: 18px;
+    }
+
+</style>

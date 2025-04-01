@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { Browser } from '@syncfusion/ej2-base';
 import { BulletTooltipSettingsModel, AnimationModel, BulletChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { TextPosition, IBulletLoadedEventArgs, ChartTheme, MarginModel } from '@syncfusion/ej2-charts';
+import { loadBulletChartTheme } from './theme-color';
 /**
  * Local data Source sample
  */
@@ -51,10 +52,7 @@ export class BulletChartDefaultComponent {
     public data5: Object[] =  [{ value: 4.9, target: 4 }];
 
     public load =  (args: IBulletLoadedEventArgs) => {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.bulletChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() +
-        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/light/i, 'Light').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadBulletChartTheme(args);
     }
 
     public positionTitle: TextPosition = Browser.isDevice ? 'Top' : 'Left';

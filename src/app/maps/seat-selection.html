@@ -1,9 +1,4 @@
 <main>
-    <section id="action-description" aria-label="Description of Maps sample">
-        <p>
-            This sample visualizes a seating chart, in which the seats can be selected similarly to bus seat booking. Available, booked, and selected seats will be displayed in different colors.
-        </p>
-    </section>
     
     <div class="col-lg-9 control-section">
         <div style="width:200px;margin:auto;padding-bottom:20px">
@@ -14,7 +9,7 @@
         <div style="border: 3px solid darkgray;width:200px;display:block;margin:auto;border-radius:5px">
             <img alt="Steering wheel icon" src="https://ej2.syncfusion.com/angular/demos/assets/maps/images/wheel.png" style="width:30px;height:30px;margin-left:18%;margin-top:10px">
     
-            <ejs-maps id='container' style="display:block;" projectionType='Equirectangular' [zoomSettings]='zoomSettings' height='400'
+            <ejs-maps id='container' #maps style="display:block;" projectionType='Equirectangular' [zoomSettings]='zoomSettings' height='400'
                 [layers]='layers' (itemSelection)="itemSelection($event)" (load)="load($event)">
             </ejs-maps>
     
@@ -91,6 +86,12 @@
         }
     </style>
     <!-- custom code end -->
+    <section id="action-description" aria-label="Description of Maps sample">
+        <p>
+            This sample visualizes a seating chart, in which the seats can be selected similarly to bus seat booking. Available, booked, and selected seats will be displayed in different colors.
+        </p>
+    </section>
+    
     <section id='description' aria-label="Description of the Maps features demonstrated in this sample">
     
         <p>

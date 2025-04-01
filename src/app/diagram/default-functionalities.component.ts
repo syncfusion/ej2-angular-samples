@@ -5,7 +5,7 @@ import { ClickEventArgs, ItemModel, MenuEventArgs, SplitButtonModule } from '@sy
 import {
   Diagram, NodeModel, UndoRedo, ConnectorModel, PointPortModel, Connector, FlowShapeModel,
   SymbolInfo, IDragEnterEventArgs, SnapSettingsModel, MarginModel, TextStyleModel, StrokeStyleModel,
-  OrthogonalSegmentModel, Node, PaletteModel
+  OrthogonalSegmentModel, Node, PaletteModel, FlipDirection
 } from '@syncfusion/ej2-diagrams';
 import { ExpandMode } from '@syncfusion/ej2-navigations';
 import { paletteIconClick } from './script/diagram-common';
@@ -547,7 +547,7 @@ export class FlowDiagramComponent {
   public flipObjects(flipType) {
     var selectedObjects = this.diagram.selectedItems.nodes.concat(this.diagram.selectedItems.connectors as any);
     for (let i: number = 0; i < selectedObjects.length; i++) {
-      selectedObjects[i].flip = flipType === 'Flip Horizontal' ? 'Horizontal' : 'Vertical';
+      selectedObjects[i].flip ^= flipType === 'Flip Horizontal' ? FlipDirection.Horizontal : FlipDirection.Vertical;
     }
     this.diagram.dataBind();
   }

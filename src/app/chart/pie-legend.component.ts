@@ -3,6 +3,7 @@ import { AccumulationChart, AccumulationChartComponent, IPointRenderEventArgs,Ch
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadAccumulationChartTheme } from './theme-color';
 
 /**
  * Sample for Doughnut chart
@@ -50,23 +51,18 @@ export class DefaultDonutComponent {
             x:"51%", y:"50%"
         }
     ];
-
+    private selectedTheme: string;
     public pointRender(args: IPointRenderEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
         let fluent2Colors: string[] = ['#6200EE', '#09AF74', '#0076E5', '#CB3587', '#E7910F', '#66CD15', '#F3A93C', '#107C10',
             '#C19C00'];
-
-        if (selectedTheme === 'fluent2') {
+        if (this.selectedTheme === 'fluent2') {
             args.fill = fluent2Colors[args.point.index % 10];
         }
     };
 
           // custom code start
     public load(args: IAccLoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        this.selectedTheme = loadAccumulationChartTheme(args);
     }
     public tooltip: Object = {
         enable: true,

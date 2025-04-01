@@ -5,14 +5,13 @@ import { ChartTheme, ChartAnnotation, ILoadedEventArgs, ChartAnnotationSettingsM
 import { Browser } from '@syncfusion/ej2-base';
 import { sl, aus } from './double_data';
 import { RangeNavigatorAllModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { loadRangeNavigatorTheme } from './theme-colors';
 
 /**
  * Sample for range navigator with numeric axis
  */
 
-let selectedTheme: string = location.hash.split('/')[1];
-selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-let theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+let theme: ChartTheme = loadRangeNavigatorTheme();;
 let chartAnnotation: ChartAnnotationSettingsModel[] = [];
 chartAnnotation.push({ content: '<div id="exchangeRate"></div>', coordinateUnits: 'Pixel', region: 'Chart', x: '85%', y: '15%' });
 let backgroundColor: string = 'white';
@@ -69,7 +68,7 @@ export class DoubleComponent {
 
     public width: string = Browser.isDevice ? '100%' : '80%';
 
-    public theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+    public theme: ChartTheme = theme;
 
     public value: Object = [31, 50];
 

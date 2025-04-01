@@ -1,9 +1,4 @@
 <main>
-    <section id="action-description" aria-label="Description of Circular Gauge sample">
-        <p>
-            This sample shows the work progress using a circular gauge and a range bar pointer with rounded corners.
-        </p>
-    </section>
     <div class="control-section">
         <ejs-circulargauge (load)='load($event)' (loaded)='loaded($event)' background='transparent' style='display:block;'
             id='range-container' #circulargauge='' [title]='title' [titleStyle]='titleStyle'>
@@ -29,6 +24,11 @@
         </div>
     </script>
     <!-- custom code start -->
+    <section id="action-description" aria-label="Description of Circular Gauge sample">
+        <p>
+            This sample shows the work progress using a circular gauge and a range bar pointer with rounded corners.
+        </p>
+    </section>
     <section id="description" aria-label="Description of the Circular Gauge features demonstrated in this sample">
         <p>
             In this example, you can see how to render the range and range bar pointer with rounded corners. A slider is

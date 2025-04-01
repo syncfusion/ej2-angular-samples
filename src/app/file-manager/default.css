@@ -23,3 +23,9 @@
 .checkboxElement {
     font-size:14px;
 }
+
+@media (max-width: 550px) {
+  #rangeSelectionRow {
+    display: none;
+  }
+}

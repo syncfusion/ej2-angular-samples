@@ -44,27 +44,27 @@ export const barcodeAppRoutes: Object[] = [
     },
   
     {
-        path: ':theme/barcode/Code128', component: Code128Component,
+        path: ':theme/barcode/code128', component: Code128Component,
         name: 'Code 128', order: '01', category: 'Getting Started',
         description: 'This sample visualizes the processing of an order placed using credit card with built-in flow shapes.',
     },
     {
-        path: ':theme/barcode/Code128A', component: Code128AComponent,
+        path: ':theme/barcode/code128A', component: Code128AComponent,
         name: 'Code 128A', order: '01', category: 'Getting Started',
         description: 'This sample visualizes the processing of an order placed using credit card with built-in flow shapes.',
     },
     {
-        path: ':theme/barcode/Code128B', component: Code128BComponent,
+        path: ':theme/barcode/code128B', component: Code128BComponent,
         name: 'Code 128B', order: '01', category: 'Getting Started',
         description: 'This sample visualizes the processing of an order placed using credit card with built-in flow shapes.',
     },
     {
-        path: ':theme/barcode/Code128C', component: Code128CComponent,
+        path: ':theme/barcode/code128C', component: Code128CComponent,
         name: 'Code 128C', order: '01', category: 'Getting Started',
         description: 'This sample visualizes the processing of an order placed using credit card with built-in flow shapes.',
     },
     {
-        path: ':theme/barcode/Code93', component: Code93Component,
+        path: ':theme/barcode/code93', component: Code93Component,
         name: 'Code 93', order: '01', category: 'Getting Started',
         description: 'This sample visualizes the processing of an order placed using credit card with built-in flow shapes.',
     },

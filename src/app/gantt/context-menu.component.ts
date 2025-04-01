@@ -97,10 +97,10 @@ export class GanttContextMenuComponent implements OnInit {
     }
     contextMenuClick (args?: ContextMenuClickEventArgs): void {
         let record: IGanttData = args.rowData;
-                if (args.item.id === 'collapserow') {
+                if ((args as any).item.id === 'collapserow') {
                     this.ganttObj.collapseByID(Number(record.ganttProperties.taskId));
                 }
-                if (args.item.id === 'expandrow') {
+                if ((args as any).item.id === 'expandrow') {
                     this.ganttObj.expandByID(Number(record.ganttProperties.taskId));
                 }
     }

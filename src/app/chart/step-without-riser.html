@@ -10,7 +10,7 @@
             [tooltip]='tooltip' [legendSettings]="legendSettings">
             <e-series-collection>
                 <e-series [dataSource]='data' type='StepArea' xName='x' yName='y' name='Product Sales' width=2
-                    [border]='border' step="Center" opacity=0.1 noRisers=true [marker]='marker'> </e-series>
+                    [border]='border' step="Center" opacity=0.1 noRisers=true> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
@@ -20,6 +20,9 @@
         In this example, you can see how to render and configure a step area chart without vertical risers. The
         <code>noRisers</code> feature allows the series to appear as a continuous flow without showing vertical lines
         between points. This approach can be useful for highlighting trends without the distraction of risers.
+    </p>
+    <p>
+        <code>Tooltips</code> are enabled in this example. To see a tooltip in action, hover over or tap on the chart.
     </p>
     <p style="font-weight: 500"><b>Injecting Module</b></p>
     <p>

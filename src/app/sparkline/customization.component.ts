@@ -6,6 +6,7 @@ import { SliderComponent, SliderModule } from '@syncfusion/ej2-angular-inputs';
 import { EmitType } from '@syncfusion/ej2-base';
 import { CheckBox, ChangeEventArgs as CheckBoxChangeEvents } from '@syncfusion/ej2-buttons';
 import { ISparklineLoadEventArgs, SparklineTheme, SparklineAllModule } from '@syncfusion/ej2-angular-charts';
+import { loadSparkLineTheme } from './theme-color';
 /**
  * Sample for axis type in Sparkline 
  */
@@ -20,9 +21,7 @@ import { ISparklineLoadEventArgs, SparklineTheme, SparklineAllModule } from '@sy
 export class SparklineCustomizationSample {
     // custom code start
     public load(args: ISparklineLoadEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.sparkline.theme = <SparklineTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadSparkLineTheme(args);
     };
     // custom code end
     public percentageData: object[] = [

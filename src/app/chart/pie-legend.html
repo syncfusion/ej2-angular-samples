@@ -5,7 +5,7 @@
 </div>
 <div class="control-section" >
     <div>
-        <ejs-accumulationchart id="donut-container" [title]="title"  align='center'[legendSettings]="legendSettings" [tooltip]="tooltip" selectionMode='Point' [annotations]='annotations' (load)='load($event)' [enableBorderOnMouseMove]='false' (pointRender)='pointRender($event)'>
+        <ejs-accumulationchart id="donut-container" [title]="title"  align='center'[legendSettings]="legendSettings" [tooltip]="tooltip" [annotations]='annotations' (load)='load($event)' [enableBorderOnMouseMove]='false' (pointRender)='pointRender($event)'>
             <e-accumulation-series-collection>
                 <e-accumulation-series name='Revenue' [dataSource]='data' xName='x' [startAngle]="startAngle" yName='y' [radius]="radius" [innerRadius]="innerRadius" [dataLabel]="dataLabel"> </e-accumulation-series>
             </e-accumulation-series-collection>

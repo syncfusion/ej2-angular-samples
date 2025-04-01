@@ -25,6 +25,7 @@ export class EditTemplateComponent implements OnInit {
     public durationrules: Object;
     public progressrules: Object;
     public dpParams: Object;
+    public dateeditparam:Object;
     public autoCompleteObj: AutoComplete;
      @ViewChild('treegrid')
      public treegrid: TreeGridComponent;
@@ -37,7 +38,8 @@ export class EditTemplateComponent implements OnInit {
         this.numericParams = { params: {  format: 'n'} };
         this.taskidrules = { required: true , number: true};
         this.tasknamerules = { required: true};
-        this.startdaterules = { date: true};
+        this.startdaterules = { date: ['M/d/yyyy', 'Please enter a valid date']};
+        this.dateeditparam = { params: { format: 'M/d/yyyy' } };
         this.durationrules = { number: true , min: 0};
         this.progressrules = { number: true , min: 0};
         this.dpParams = {

@@ -4,8 +4,8 @@
             <e-column field='taskID' headerText='Task ID' width='120' textAlign='Right' isPrimaryKey='true' ></e-column>
             <e-column field='taskName' headerText='Task Name' width='225' ></e-column>
             <e-column field='startDate' headerText='Start Date' width='150' format="yMd" ></e-column>
-            <e-column field='duration' headerText='Duration' width='90' textAlign='Right' ></e-column>
-            <e-column field='progress' headerText='Progress' width='90' textAlign='Right' ></e-column>
+            <e-column field='duration' headerText='Duration' width='130' textAlign='Right' ></e-column>
+            <e-column field='progress' headerText='Progress' width='130' textAlign='Right' ></e-column>
         </e-columns>
         <ng-template #editSettingsTemplate let-data>
             <div ngForm #taskForm="ngForm">
@@ -14,8 +14,8 @@
                             <col style="width: 120px;">
                             <col style="width: 225px;">
                             <col style="width: 150px;">
-                            <col style="width: 90px;">
-                            <col style="width: 90px;">
+                            <col style="width: 130px;">
+                            <col style="width: 130px;">
                     </colgroup>
                     <tbody>
                         <tr>

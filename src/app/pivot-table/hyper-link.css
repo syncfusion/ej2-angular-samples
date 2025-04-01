@@ -4,7 +4,7 @@
     display: block;
 }
 .pivottable-property-section table tr td:first-child {
-    width: 25%;
+    width: 35%;
 }
 .pivottable-property-section .text1cls,
 .pivottable-property-section .text2cls {

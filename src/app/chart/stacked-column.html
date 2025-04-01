@@ -1,27 +1,30 @@
 <div id="action-description">
     <p>
-        This Angular stacked column chart example visualizes motor vehicle production by manufacturer with a default stacked column series. The legend in the sample shows more information about those series.
+        This stacked column chart visualizes global cotton production trends over the years, with data points enhanced by data labels.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
-        <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' (axisLabelRender)='OnChartAxisLabeRender($event)' [legendSettings]='legend'>
+        <ejs-chart style='display:block;' [chartArea]='chartArea' [stackLabels]='stackLabels' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
+            [primaryYAxis]='primaryYAxis' [title]='title' [subTitle]='subTitle' [tooltip]='tooltip' (load)='load($event)' (legendClick)='legendClick($event)' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='StackingColumn' xName='Year' yName='General' name='General Motors' width='2' columnWidth=0.6 [border]='border'> </e-series>
-                <e-series [dataSource]='data' type='StackingColumn' xName='Year' yName='Honda' name='Honda' width='2' columnWidth=0.6 [border]='border'> </e-series>
-                <e-series [dataSource]='data' type='StackingColumn' xName='Year' yName='Suzuki' name='Suzuki' width='2' columnWidth=0.6 [border]='border'> </e-series>
-                <e-series [dataSource]='data' type='StackingColumn' xName='Year' yName='BMW' name='BMW' width='2' columnWidth=0.6 [border]='border'> </e-series>
+                <e-series [dataSource]='data1' type='StackingColumn' xName='x' yName='y' name='India' columnWidth=0.4 [border]='border' [marker]='marker' legendShape='Rectangle'> </e-series>
+                <e-series [dataSource]='data2' type='StackingColumn' xName='x' yName='y' name='China' columnWidth=0.4 [border]='border' [marker]='marker' legendShape='Rectangle'> </e-series>
+                <e-series [dataSource]='data3' type='StackingColumn' xName='x' yName='y' name='United States' columnWidth=0.4 [border]='border' [marker]='marker' [cornerRadius]='cornerRadius' legendShape='Rectangle'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the stacked column chart. The stacked column chart stacks points in the series vertically. You can also use the <code>StackingGroup</code> property to group stacked collections based on category.
+        In this example, you can see how to render and configure a stacked column chart. The stacked column chart stacks
+        points in the series vertically. You can also use the <code>stackingGroup</code> property to group stacked
+        collections based on category. This chart displays data labels for individual points and the total value on top
+        of each stack.
     </p>
     <p>
-        <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch-enabled devices.
+        <code>Tooltips</code> are enabled in this example. To see the tooltip in action, hover over a point or tap on a
+        point in touch-enabled devices.
     </p>
     <p style="font-weight: 500">Injecting Module</p>
     <p>

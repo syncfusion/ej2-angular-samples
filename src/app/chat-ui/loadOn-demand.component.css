@@ -1,0 +1,25 @@
+.loadonDemand-chatui {
+    height: 500px;
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.loadonDemand-chatui .chat_user2_avatar {
+    background-image: url('/assets/chat-ui/images/andrew.png');
+    background-color: unset;
+}
+
+@media only screen and (max-width: 850px) {
+    .loadonDemand-chatui {
+        flex-direction: column;
+        height: 500px;
+        width: 80%;
+    }
+
+    .chat-ui.control-section {
+        height: 1050px;
+    }
+}

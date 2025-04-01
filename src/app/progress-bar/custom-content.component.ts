@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ProgressBar, ProgressAnnotation, IProgressValueEventArgs, ILoadedEventArgs, ProgressTheme,
     AnimationModel } from '@syncfusion/ej2-progressbar';
 import { EmitType } from '@syncfusion/ej2-base';
+import { loadProgressBarTheme } from './theme-color';
 import { ProgressBarAllModule } from '@syncfusion/ej2-angular-progressbar';
 ProgressBar.Inject(ProgressAnnotation);
 
@@ -42,11 +43,8 @@ export class ProgressBarCustomComponent {
         tailwind3: string,
         tailwind3dark: string,
     } = { fluent: '#0D6EFD', fluentdark: '#0D6EFD',  material: '#e91e63', fabric: '#0078D6', bootstrap: '#317ab9', bootstrap4: '#007bff', highcontrast: '#FFD939', tailwind: '#4F46E5', bootstrap5: '#0D6EFD', bootstrap5dark: '#0D6EFD', bootstrapdark: '#9A9A9A', fabricdark: '#9A9A9A', materialdark: '#9A9A9A', tailwinddark: '#22D3EE', material3 : '#6750A4', material3dark: '#D0BCFF', fluent2: '#0F6CBD', fluent2highcontrast: '#1AEBFF', fluent2dark: '#115EA3', tailwind3: '#4F46E5', tailwind3dark: '#6366F1' };
-        public load: EmitType<ILoadedEventArgs> = (args: ILoadedEventArgs) => {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.progressBar.theme = <ProgressTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+    public load: EmitType<ILoadedEventArgs> = (args: ILoadedEventArgs) => {
+        let selectedTheme: string = loadProgressBarTheme(args);
         if (args.progressBar.element.id === 'label-container') {
             // tslint:disable-next-line:max-line-length
             args.progressBar.annotations[0].content = '<div id="point1" class="plabeltxt" style="color: ' + this.annotationColors[selectedTheme.replace(/-/i, '')] + ';font-size:25px "><span>80%</span></div>';

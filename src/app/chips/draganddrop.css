@@ -1,0 +1,31 @@
+#chip-draganddrop-wrapper .sample-padding {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chips-headers {
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#choice-container {
+    width: 400px;
+    min-height: 100px;
+    min-width: 150px;
+    border: 2px solid #2C3E50;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 30px;
+}
+
+#selection-container {
+    width: 400px;
+    min-height: 100px;
+    min-width: 150px;
+    border: 2px solid #8E44AD;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

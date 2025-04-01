@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ProgressBar, ILoadedEventArgs, ProgressTheme, AnimationModel } from '@syncfusion/ej2-progressbar';
 import { ProgressBarAllModule } from '@syncfusion/ej2-angular-progressbar';
+import { loadProgressBarTheme } from './theme-color';
 
 /**
  * RTl sample
@@ -45,17 +46,11 @@ export class ProgressBarRadiusComponent {
     public enablePieProgress4: boolean = true;
     public animation: AnimationModel = { enable: true, duration: 2000, delay: 0 };
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.progressBar.theme = <ProgressTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadProgressBarTheme(args);
     }
     public load1(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
         args.progressBar.progressColor = '#FFFFFF';
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.progressBar.theme = <ProgressTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        let selectedTheme: string = loadProgressBarTheme(args);
         switch (selectedTheme) {
             case 'material':
                 args.progressBar.trackColor = '#f8c2d4';

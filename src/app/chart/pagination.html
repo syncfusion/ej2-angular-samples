@@ -1,13 +1,13 @@
 <div id="action-description">
     <p>
-        This sample demonstrates the panning feature of the charts.
+        Explore an interactive weather chart with pagination using buttons. Each button represents a different day, allowing you to navigate dynamically through daily weather data within the chart.
     </p>
 </div>
 
 <div class="control-section" align='center'>
     <div align='center'>
         <ejs-chart id='container' #chart align='center' [chartArea]='chartArea' [width]='width' style='display:block;'
-            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)' [legendSettings]="legendSettings"
+            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' (load)='load($event)' (resized)='onResized($event)' (chartMouseClick)='onChartMouseClick($event)' [legendSettings]="legendSettings"
             (annotationRender)='annotationRender($event)' [annotations]='annotations' [zoomSettings]="zoomSettings" height="70%">
             <e-series-collection>
                 <e-series [dataSource]='chartData' type='SplineArea' xName='xValue' yName='y'  opacity=0.5 width=2
@@ -15,42 +15,132 @@
             </e-series-collection>
         </ejs-chart>
     </div>
-    <div id="button-container" align='center'>
-        <button id="friday" class="custom-button active" (click)="onClick('friday', 'sunny_image', 25, 'Friday', 0, 0.175)">
-            <div class="day">Fri</div>
+    <div id="chart-button-container" align='center'>
+        <button id="friday" class="chart-custom-button active" (click)="onClick('friday', 'sunny_image', 12, 'Friday', 0, 0.175, 0, 30, 5, 'Sunny')">
+            <div class="day">Friday</div>
             <img src="./assets/chart/images/sunny_image.png" alt="Friday">
-            <div class="temp">24°C - 19°C</div>
+            <div class="temp">2°C - 12°C</div>
         </button>
-        <button id="saturday" class="custom-button" (click)="onClick('saturday', 'sunny_image', 25, 'Saturday', 0.206, 0.175)">
-            <div class="day">Sat</div>
+        <button id="saturday" class="chart-custom-button" (click)="onClick('saturday', 'sunny_image', 16, 'Saturday', 0.206, 0.175, 0, 35, 6, 'Sunny')">
+            <div class="day">Saturday</div>
             <img src="./assets/chart/images/sunny_image.png" alt="Saturday">
-            <div class="temp">20°C - 25°C</div>
+            <div class="temp">6°C - 16°C</div>
         </button>
-        <button id="sunday" class="custom-button" (click)="onClick('sunday', 'cloudy', 24, 'Sunday', 0.413, 0.175)">
-            <div class="day">Sun</div>
+        <button id="sunday" class="chart-custom-button" (click)="onClick('sunday', 'cloudy', 18, 'Sunday', 0.413, 0.175, 1, 40, 4, 'Cloudy')">
+            <div class="day">Sunday</div>
             <img src="./assets/chart/images/cloudy.png" alt="Sunday">
-            <div class="temp">18°C - 24°C</div>
+            <div class="temp">15°C - 18°C</div>
         </button>
-        <button id="monday" class="custom-button" (click)="onClick('monday', 'cloudy', 19, 'Monday', 0.620, 0.175)">
-            <div class="day">Mon</div>
+        <button id="monday" class="chart-custom-button" (click)="onClick('monday', 'cloudy', 16, 'Monday', 0.620, 0.175, 2, 45, 5, 'Cloudy')">
+            <div class="day">Monday</div>
             <img src="./assets/chart/images/cloudy.png" alt="Monday">
-            <div class="temp">14°C - 19°C</div>
+            <div class="temp">12°C - 16°C</div>
         </button>
-        <button id="tuesday" class="custom-button" (click)="onClick('tuesday', 'rainy', 18, 'Tuesday', 0.827, 0.175)">
-            <div class="day">Tue</div>
+        <button id="tuesday" class="chart-custom-button" (click)="onClick('tuesday', 'rainy', 18, 'Tuesday', 0.827, 0.175, 5, 50, 6, 'Rainy')">
+            <div class="day">Tuesday</div>
             <img src="./assets/chart/images/rainy.png" alt="Tuesday">
             <div class="temp">14°C - 18°C</div>
         </button>
     </div>
+    <svg style="height: 0">
+        <defs>
+          <linearGradient id="material-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="fabric-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="bootstrap-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="bootstrap4-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="highcontrast-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="tailwind-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="bootstrap5-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="materialdark-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="fabricdark-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="bootstrapdark-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="tailwinddark-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="tailwind3-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="tailwind3dark-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="bootstrap5dark-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="fluent-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="fluentdark-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="material3-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="material3dark-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="fluent2-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="fluent2highcontrast-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+          <linearGradient id="fluent2dark-gradient-chart" style=" opacity: 0.75 " class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
 </div>
 
 
 
 <div id="description">
     <p>
-        This example shows how to view the next set of data through panning. You can swipe from left to right or vice
-        versa, and you can also click on the days at the bottom to view the next set of data.
+        This example demonstrates how to view the next set of data through panning. You can swipe left or right, or click on the days at the bottom to navigate through the data. Enable animation during panning by using the <code>enableAnimation</code> property in <code>zoomSettings</code>.
     </p>
+    <p>
+        Chart component features are divided into individual, feature-specific modules. To enable zooming, you need to inject the <code>ZoomService</code> into the <code>&#64;NgModule.providers</code> section..
+      </p>
     <p>
         More information on zooming and panning can be found in this
         <a target="_blank" href="https://ej2.syncfusion.com/documentation/chart/zooming/"
@@ -63,7 +153,7 @@
         padding: 0px !important;
     }
 
-    #button-container {
+    #chart-button-container {
         padding: 5px;
         /* Remove padding around the container */
         width: 75%;
@@ -78,7 +168,7 @@
         /* Optional: for rounded corners */
     }
 
-    .custom-button {
+    .chart-custom-button {
         flex-grow: 1;
         /* Make buttons grow to fill the container */
         flex-basis: 0;
@@ -103,13 +193,13 @@
         /* To position the line correctly */
     }
 
-    .custom-button:not(:last-child):not(.active)::after {
+    .chart-custom-button:not(:last-child):not(.active)::after {
         content: "";
         position: absolute;
         top: 50%;
         right: 0;
         transform: translateY(-50%);
-        width: 1px;
+        width: 2px;
         /* Width of the line */
         height: 80%;
         /* Height of the line, adjust as needed */
@@ -117,11 +207,11 @@
         /* Light shadow color */
     }
 
-    .custom-button.no-line::after {
+    .chart-custom-button.no-line::after {
         display: none;
     }
 
-    .custom-button img {
+    .chart-custom-button img {
         width: 30px;
         height: 30px;
     }
@@ -156,8 +246,85 @@
     }
 
 
-    .custom-button.active {
+    .chart-custom-button.active {
         box-shadow: 0 0 0 2px rgb(237, 236, 236);
         z-index: 2;
+    }
+
+    #material-gradient-chart stop {
+    stop-color: #00bdae;
+    }
+    #fabric-gradient-chart stop {
+        stop-color: #4472c4;
+    }
+    #bootstrap-gradient-chart stop {
+        stop-color: #a16ee5;
+    }
+    #bootstrap4-gradient-chart stop {
+        stop-color: #a16ee5;
+    }
+    #fluent-gradient-chart stop {
+        stop-color: #1AC9E6;
+    }
+    #fluentdark-gradient-chart stop {
+        stop-color: #1AC9E6;
+    }
+    #highcontrast-gradient-chart stop {
+        stop-color: #79ECE4;
+    }
+    #tailwind-gradient-chart stop {
+        stop-color: #5A61F6;
+    }
+    #tailwind3-gradient-chart stop {
+        stop-color: #2F4074;
+    }
+    #bootstrap5-gradient-chart stop {
+        stop-color: #FD7E14;
+    }
+    #materialdark-gradient-chart stop {
+        stop-color: #9ECB08;
+    }
+    #fabricdark-gradient-chart stop {
+        stop-color: #4472c4;
+    }
+    #bootstrapdark-gradient-chart stop {
+        stop-color: #a16ee5;
+    }
+    #tailwinddark-gradient-chart stop {
+        stop-color: #8B5CF6;
+    }
+    #tailwind3dark-gradient-chart stop {
+        stop-color: #8029F1;
+    }
+    #bootstrap5dark-gradient-chart stop {
+        stop-color: #FD7E14;
+    }
+    #material3-gradient-chart stop {
+        stop-color: #6355C7;
+    }
+    #material3dark-gradient-chart stop {
+        stop-color: #4EAAFF;
+    }
+    #fluent2-gradient-chart stop {
+        stop-color: #6200EE;
+    }
+    #fluent2highcontrast-gradient-chart stop {
+        stop-color: #9BB449;
+    }
+    #fluent2dark-gradient-chart stop {
+        stop-color: #9BB449;
+    }
+    .chart-gradient stop[offset="0"] {
+        stop-opacity: 0.9;
+    }
+    .chart-gradient stop[offset="1"] {
+        stop-opacity: 0.3;
+    }
+    #days, #weather {
+        font-size: 15px;
+        opacity: 0.7;
+        position: relative;
+        right: 0;
+        width: 85px;
     }
 </style>

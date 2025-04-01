@@ -1,0 +1,112 @@
+.usecase-speechToText-section,
+.e-bigger .usecase-speechToText-section {
+    width: 90%;
+    height: 55vh;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+}
+
+.usecase-speechToText-section #transcript-content {
+    border: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.usecase-speechToText-section .stt-container {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.usecase-speechToText-section .e-speech-to-text.usecase-stt-btn {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.usecase-speechToText-section .usecase-stt-btn .e-btn-icon,
+.e-bigger .usecase-speechToText-section .usecase-stt-btn .e-btn-icon {
+    font-size: 50px;
+}
+
+.usecase-speechToText-section .transcript-container {
+    width: 30%;
+    height: 100%;
+}
+
+/* Create wave effect using pseudo-elements */
+.usecase-stt-btn::before,
+.usecase-stt-btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #9b9b9b;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.usecase-speechToText-section .stt-listening-state::before {
+    animation: stt-wave-ring 1.5s infinite ease-out;
+}
+
+.usecase-speechToText-section .stt-listening-state::after {
+    animation: stt-wave-ring 1.5s 0.75s infinite ease-out; /* Slight delay for second wave */
+}
+
+@keyframes stt-wave-ring {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+.usecase-speechToText-section .empty-chat {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    margin: auto;
+}
+
+.usecase-speechToText-section .empty-chat .e-multiple-comment {
+    font-size: 50px;
+}
+
+.usecase-speechToText-section #transcript-content.e-chat-ui .e-message-group {
+    max-width: 95%;
+}
+
+@media only screen and (max-width: 850px) {
+    .usecase-speechToText-section, 
+    .e-bigger .usecase-speechToText-section {
+        flex-direction: column;
+        height: 70vh;
+    }
+    .usecase-speechToText-section .transcript-container {
+        width: 100%;
+        height: 70vh;
+        overflow: scroll;
+    }
+    .usecase-speechToText-section .stt-container {
+        width: 100%;
+        height: 55%;
+    }
+}

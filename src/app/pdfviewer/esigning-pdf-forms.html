@@ -50,7 +50,7 @@
         </e-items>
     </ejs-toolbar>
     <ejs-pdfviewer #pdfviewer id="pdfViewer" [enableNavigationToolbar]="false" [enableToolbar]="false" [enableAnnotationToolbar]="false"
-        [documentPath]='document' (documentLoad)="documentLoad($event)"    
+        [documentPath]='document' [zoomMode] = "zoomMode" (documentLoad)="documentLoad($event)"    
         (formFieldPropertiesChange)="fieldChange($event)" [resourceUrl]='resource' [downloadFileName]="fileName"
       style="height:640px;display:block">
     </ejs-pdfviewer>

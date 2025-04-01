@@ -1,8 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme, ChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ITooltipRenderEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 
 /**
  * Sample for Step line Series
@@ -18,17 +19,24 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 export class StepLineChartComponent {
 
     public data: Object[] = [
-        { Period : new Date(1975, 1, 1), CHN_UnemploymentRate : 16, AUS_UnemploymentRate : 35, ITA_UnemploymentRate : 3.4 },
-        { Period : new Date(1978, 1, 1), CHN_UnemploymentRate : 12.5, AUS_UnemploymentRate : 45, ITA_UnemploymentRate : 4.4 },
-        { Period : new Date(1981, 1, 1), CHN_UnemploymentRate : 19, AUS_UnemploymentRate : 55, ITA_UnemploymentRate : 6 },
-        { Period : new Date(1984, 1, 1), CHN_UnemploymentRate : 14.4, AUS_UnemploymentRate : 20, ITA_UnemploymentRate : 7 },
-        { Period : new Date(1987, 1, 1), CHN_UnemploymentRate : 11.5, AUS_UnemploymentRate : 10, ITA_UnemploymentRate : 11.3 },
-        { Period : new Date(1990, 1, 1), CHN_UnemploymentRate : 14, AUS_UnemploymentRate : 42, ITA_UnemploymentRate : 10.1 },
-        { Period : new Date(1993, 1, 1), CHN_UnemploymentRate : 10, AUS_UnemploymentRate : 35, ITA_UnemploymentRate : 7.8 },
-        { Period : new Date(1996, 1, 1), CHN_UnemploymentRate : 16, AUS_UnemploymentRate : 22, ITA_UnemploymentRate : 8.5 },
-        { Period : new Date(2000, 1, 1), CHN_UnemploymentRate : 16, AUS_UnemploymentRate : 65, ITA_UnemploymentRate : 8.5 },
-        { Period : new Date(2005, 1, 1), CHN_UnemploymentRate : 16, AUS_UnemploymentRate : 65, ITA_UnemploymentRate : 8.5 },
-        { Period : new Date(2010, 1, 1), CHN_UnemploymentRate : 16, AUS_UnemploymentRate : 58, ITA_UnemploymentRate : 8.5 }
+        { x: 2007, y: 6.0, album: 'High School Musical 2', artist: 'Various Artists' },
+        { x: 2008, y: 6.8, album: 'Viva la Vida or Death and All His Friends', artist: 'Coldplay' },
+        { x: 2009, y: 8.3, album: 'I Dreamed a Dream', artist: 'Susan Boyle' },
+        { x: 2010, y: 5.7, album: 'Recovery', artist: 'Eminem' },
+        { x: 2011, y: 18.1, album: '21', artist: 'Adele' },
+        { x: 2012, y: 8.3, album: '21', artist: 'Adele' },
+        { x: 2013, y: 4.0, album: 'Midnight Memories', artist: 'One Direction' },
+        { x: 2014, y: 10.0, album: 'Frozen', artist: 'Various Artists' },
+        { x: 2015, y: 17.4, album: '25', artist: 'Adele' },
+        { x: 2016, y: 2.5, album: 'Lemonade', artist: 'Beyoncé' },
+        { x: 2017, y: 6.1, album: '÷', artist: 'Ed Sheeran' },
+        { x: 2018, y: 3.5, album: 'The Greatest Showman', artist: 'Hugh Jackman & Various Artists' },
+        { x: 2019, y: 3.3, album: '5x20 All the Best!! 1999–2019', artist: 'Arashi' },
+        { x: 2020, y: 4.8, album: 'Map of the Soul: 7', artist: 'BTS' },
+        { x: 2021, y: 4.68, album: '30', artist: 'Adele' },
+        { x: 2022, y: 7.2, album: 'Greatest Works of Art', artist: 'Jay Chou' },
+        { x: 2023, y: 6.4, album: 'FML', artist: 'Seventeen' },
+        { x: 2024, y: 5.6, album: 'The Tortured Poets Department', artist: 'Taylor Swift' }
     ];
     public chartArea: Object = {
         border: {
@@ -38,40 +46,52 @@ export class StepLineChartComponent {
     public width: string = Browser.isDevice ? '100%' : '75%';
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        minimum : new Date(1971,6,11),
-        maximum : new Date(2012,6,11), valueType: 'DateTime', edgeLabelPlacement: 'Shift', majorGridLines: { width: 0 }
+        valueType: 'Double',
+        minimum: 2006,
+        maximum: 2025,
+        interval: 3,
+        edgeLabelPlacement: 'Shift',
+        majorGridLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Production(In Percentage)',
+        minimum: 0,
+        maximum: 20,
+        interval: 4,
+        title: 'Sales in million',
+        labelFormat: '{value}',
         lineStyle: { width: 0 },
-        interval: 10,
-        majorTickLines: { width: 0 },
-        labelFormat: '{value}%'
+        majorTickLines: { width: 0 }
     };
     public marker: Object = {
-        visible: true,
-        width: 7,
-        height: 7
+        dataLabel: {
+            visible: true,
+            font: {
+                fontWeight: '600'
+            }
+        }
     };
     public tooltip: Object = {
         enable: true,
-        header: "<b>Fruit Production</b>",
-        shared: true,
-        format: '${point.x} : <b> ${point.y} </b>',
+        showNearestTooltip: true,
+        header: "<b>${point.x}</b>",
+        enableHighlight: true,
+        enableMarker: false
     };
     public legend: Object = {
-        visible: true,
-        enableHighlight : true
+        visible: false
     }
-     // custom code start
+    // custom code start
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadChartTheme(args);
     };
-     // custom code end
-    public title: string = 'Fruit Production Statistics';
+    // custom code end
+    public title: string = 'Worldwide Best-Selling Albums by Year';
+    public subTitle: string = 'Source: wikipedia.org';
+    public tooltipRender(args: ITooltipRenderEventArgs): void {
+        let data: any = args.series.dataSource[args.point.index];
+        args.text = `Sales: <b>${data.y}M</b><br/>Album: <b>${data.album}</b><br/>Artist: <b>${data.artist}</b>`;
+    };
     constructor() {
         //code
     };

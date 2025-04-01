@@ -17,8 +17,12 @@ AutoCompleteComponent.Inject(VirtualScroll);
     imports: [SBActionDescriptionComponent, AutoCompleteModule, SBDescriptionComponent]
 })
 export class VirtualScrollAutoCompleteComponent {
-    @ViewChild('sample')
-    public AutoCompleteObj: AutoCompleteComponent;
+    @ViewChild('sample1')
+    public localAutoCompleteObj: AutoCompleteComponent;
+    @ViewChild('sample2')
+    public remoteAutoCompleteObj: AutoCompleteComponent;
+    @ViewChild('sample3')
+    public groupAutoCompleteObj: AutoCompleteComponent;
     // defined the array of data
     public records: { [key: string]: Object }[] = [];
     constructor() {
@@ -46,6 +50,17 @@ export class VirtualScrollAutoCompleteComponent {
                     break;
             }
             this.records.push(item);
+        }
+    }
+    ngAfterViewInit(): void {
+        if (this.localAutoCompleteObj) {
+            this.localAutoCompleteObj.refresh();
+        }
+        if (this.remoteAutoCompleteObj) {
+            this.remoteAutoCompleteObj.refresh();
+        }
+        if (this.groupAutoCompleteObj) {
+            this.groupAutoCompleteObj.refresh();
         }
     }
     // bind the DataManager instance to dataSource property

@@ -1,9 +1,8 @@
 <div class="control-section" align='center'>
-            <ejs-accumulationchart id="container"  align='center' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" [enableAnimation]= 'enableAnimation'
-        (load)='load($event)'>
+            <ejs-accumulationchart id="container" [width]="width" align='center' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" [enableAnimation]= 'enableAnimation'
+        (load)='load($event)' (pointRender)='pointRender($event)'>
             <e-accumulation-series-collection>
-                <e-accumulation-series [dataSource]='data' xName='InterviewProcess' yName='Candidates' [neckWidth]="neckWidth" [neckHeight]="neckHeight"
-                [width]="width"  [explode]="explode" [dataLabel]="dataLabel" type='Funnel' > </e-accumulation-series>
+                <e-accumulation-series [dataSource]='data' xName='InterviewProcess' yName='Candidates' [explode]="explode" [dataLabel]="dataLabel" type='Funnel' funnelMode="Trapezoidal" > </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
 </div>
@@ -13,7 +12,7 @@
     </p>
 </div>
 <div id="description">
-    <p> In this example, you can see how to render and configure a funnel chart. The labels are smartly arranged to avoid overlapping. The width and height of the funnel chart can be customized using the <code>NeckWidth</code> and <code>NeckHeight</code> properties.</p>
+    <p> In this example, you can see how to render and configure a funnel chart to visualize the recruitment process. The <code>trapezoidal</code> funnelMode is set to display the stages of the employment cycle, from the number of candidates who applied to the number of hires. The labels are smartly arranged to avoid overlapping.</p>
     <p style="font-weight: 500">Injecting Module</p>
     <p>
         Chart component features are segregated into individual feature-wise modules. To use Funnel feature, we need to inject

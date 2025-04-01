@@ -1,26 +1,28 @@
 <div id="action-description">
     <p>
-        This sample illustrates a stacked bar chart with negative data points. Data point values are shown in data labels.
+        This sample illustrates a stacked bar chart representing the population distribution by age and gender, including negative data points. Data point values are displayed as data labels.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' (axisLabelRender)='labelRender($event)' [title]='title' [tooltip]='tooltip' (load)='load($event)' (tooltipRender)='tooltipRender($event)'
+            [primaryYAxis]='primaryYAxis' (axisLabelRender)='axisLabelRender($event)' [title]='title' [subTitle]='subTitle' [tooltip]='tooltip' (load)='load($event)' (tooltipRender)='tooltipRender($event)'
             [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='StackingBar' xName='Height' yName='Female' name='Female' width=2 [marker]='marker' columnWidth=0.5> </e-series>
-                <e-series [dataSource]='data' type='StackingBar' xName='Height' yName='Male' name='Male' width=2 [marker]='marker1' columnWidth=0.5> </e-series>
+                <e-series [dataSource]='negativeStackData' type='StackingBar' xName='age' yName='femalePercentValue' name='Female' [marker]='marker' columnWidth=0.5 legendShape='Rectangle' [cornerRadius]='cornerRadius'> </e-series>
+                <e-series [dataSource]='negativeStackData' type='StackingBar' xName='age' yName='malePercentValue' name='Male' [marker]='marker1' columnWidth=0.5 legendShape='Rectangle' [cornerRadius]='cornerRadius'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure negative values in a stacked bar chart. The stacked bar chart stacks points in the series horizontally. You can also use the <code>StackingGroup</code> property to group stacked collections based on category.
+        In this example, you can see how to render and configure negative values in a stacked bar chart. The stacked bar
+        chart stacks points in the series horizontally.
     </p>
     <p>
-        <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch-enabled devices.
+        <code>Tooltips</code> are enabled in this example. To see the tooltip in action, hover over a point or tap on a
+        point in touch-enabled devices.
     </p>
     <p style="font-weight: 500">Injecting Module</p>
     <p>

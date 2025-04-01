@@ -41,4 +41,5 @@ export class InlineComponent {
     public onChangeSelect(): void {
         this.rteObj.inlineMode.onSelection = this.rteSelectObj.checked;
     }
+    editorValue: string = `<h2>Inline Rich Text Editor</h2><p>Click on this text to edit dynamically. The formatting toolbar will appear only when you select the content.</p><h5>Features:</h5><ul><li><strong>Minimal UI:</strong> The editor is clean and distraction-free.</li><li><strong>Contextual Toolbar:</strong> The toolbar appears only when text is selected.</li><li><strong>Rich Formatting:</strong> Supports bold, italic, underline, lists, links, and more.</li><li><strong>Seamless Editing:</strong> Works like a native text field but with powerful styling options.</li></ul><blockquote><p>Try selecting this text to see the toolbar in action!</p></blockquote>`;
 }

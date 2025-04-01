@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { IStockChartEventArgs, ChartTheme, ITooltipRenderEventArgs, StockChartModule, ChartAllModule, RangeNavigatorAllModule } from '@syncfusion/ej2-angular-charts';
 import { aapl } from './stock-data';
+import { loadStockChartTheme } from './theme-color';
 /**
  * Sample for Spline Series
  */
@@ -34,9 +35,7 @@ export class SplineComponent {
     public indicatorType: string[] = [];
      // custom code start
     public load(args: IStockChartEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadStockChartTheme(args);
     };
      // custom code end
     public title: string = 'AAPL Stock Price';

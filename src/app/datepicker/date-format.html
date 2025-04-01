@@ -8,22 +8,39 @@
 <div class="control-section dateformat">
     <div class="col-lg-8 content-wrapper">
         <div class="content">
-            <div id="control_wrapper">
-                <ejs-datepicker [value]="date" [format]="format"></ejs-datepicker>
+            <div class="control-wrapper">
+                <label class="example-label">Select Date</label>
+                <ejs-datepicker id="datepicker" [value]="date" [format]="format" [inputFormats]="inputFormats" placeholder="Choose a Date"></ejs-datepicker>
             </div>
         </div>
     </div>
     <div class="col-lg-4 property-section">
         <div class="property-panel-section">
+            <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
-                <table id="property " class="property-panel-table" title="Properties">
-                    <tr>
-                        <td>
-                            <ejs-dropdownlist id='dateformats' #listObj [dataSource]='formatData' (change)='changeFormat()' [floatLabelType]='floatLabelType'
-                                placeholder='Formats' [value]='value'></ejs-dropdownlist>
-                        </td>
-                    </tr>
-                </table>
+                <label class="example-label">Choose a display format</label>
+                <ejs-dropdownlist
+                    id="displayFormatDatePicker"
+                    #listObj
+                    [dataSource]="formatData"
+                    fields="{ text: 'text', value: 'id' }"
+                    placeholder="Select a format"
+                    [(value)]="format"
+                    (change)="changeFormat($event)">
+                </ejs-dropdownlist>
+            </div>
+            <div class="property-panel-content">
+                <label class="multi-label">Choose input formats</label>
+                <ejs-multiselect
+                    id="inputFormatsDatePicker"
+                    #multiSelect
+                    [dataSource]="inputFormatData"
+                    [showSelectAll]="true"
+                    [mode]="'CheckBox'"
+                    placeholder="e.g. MM/dd/yyyy"
+                    [(value)]="inputFormats"
+                    (change)="changeInputFormats()">
+                </ejs-multiselect>
             </div>
         </div>
     </div>
@@ -33,8 +50,22 @@
         Date Formats sample illustrates the support of custom date format in the DatePicker component by using the
         <code>format</code> property. You can also change the date format by selecting it from the format options in the properties panel.
     </p>
+    <p>
+        Furthermore, this example showcases the flexible date value parsing functionality available in DatePicker component.
+        By utilizing the <code>inputFormats</code> property, users can enter dates in various formats, which will be
+        automatically parsed and formatted according to the chosen date format.
+    </p>
     <p> More information on the date format configuration can be found in the
         <a href="https://ej2.syncfusion.com/angular/documentation/datepicker/date-format.html"
             target="_blank"> documentation section</a>.
     </p>
 </div>
+
+<style>
+    .multi-label {
+        margin-top: 50px;
+    }
+    .property-panel-section {
+        width: 62%;
+    }
+</style>

@@ -1,30 +1,29 @@
 <div id="action-description">
     <p>
-        This Angular 100% Stacked Line Chart example visualizes the family expenses data with 100% stacked line series to identify who spent more
-        money in each category. Data points are enhanced with markers and tooltips.
+        This Angular 100% Stacked Line Chart example visualizes the blood type distribution across different countries.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer'
-            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'>
+            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [subTitle]='subTitle' [tooltip]='tooltip' (load)='load($event)' (legendClick)='legendClick($event)' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='StackingLine100' xName='x' yName='y' name='John' width='2' [marker]='marker' opacity=1> </e-series>
-                <e-series [dataSource]='data1' type='StackingLine100' xName='x' yName='y' name='Peter' width='2'[marker]='marker1' opacity=1> </e-series>
-                <e-series [dataSource]='data2' type='StackingLine100' xName='x' yName='y' name='Steve' width='2' [marker]='marker2' opacity=1> </e-series>
-                <e-series [dataSource]='data3' type='StackingLine100' xName='x' yName='y' name='Charle' width='2' [marker]='marker3' opacity=1> </e-series>
+                <e-series [dataSource]='chartData1' type='StackingLine100' xName='x' yName='y' name='Canada' width='2' [marker]='marker'> </e-series>
+                <e-series [dataSource]='chartData2' type='StackingLine100' xName='x' yName='y' name='Algeria' width='2'[marker]='marker1'> </e-series>
+                <e-series [dataSource]='chartData3' type='StackingLine100' xName='x' yName='y' name='Ireland' width='2' [marker]='marker2'> </e-series>
+                <e-series [dataSource]='chartData4' type='StackingLine100' xName='x' yName='y' name='Armenia' width='3' [marker]='marker3'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the 100% stacked line chart. This chart displays multiple series of data as stacked lines, ensuring that the cumulative proportion of each stacked element always totals 100%.
+        In this example, you can see how to render and configure the 100% stacked line chart. This chart displays multiple
+        series of data as stacked lines, ensuring that the cumulative proportion of each stacked element always totals 100%.
         <code>Markers</code> are used to represent individual data and its values.
     </p>
     <p>
-        <code>Tooltips</code> are enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch
-        enabled devices.
+        <code>Tooltips</code> are enabled in this example. To see a tooltip in action, hover over or tap on the chart.
     </p>
     <p style="font-weight: 500">Injecting Module</p>
     <p>

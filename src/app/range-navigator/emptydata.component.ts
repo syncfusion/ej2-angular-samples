@@ -6,7 +6,7 @@ import {
 import { Browser } from '@syncfusion/ej2-base';
 import { chartData } from './stock-data';
 import { RangeNavigatorAllModule, ChartAllModule } from '@syncfusion/ej2-angular-charts';
-
+import { borderColor, loadRangeNavigatorTheme, themes } from './theme-colors';
 /**
  * Sample for empty points
  */
@@ -26,14 +26,8 @@ for (let i: number = 0; i <= 250; i++) {
         (stockData[i] as Points).open = null;
     }
 }
-let selectedTheme: string = location.hash.split('/')[1];
-selectedTheme = selectedTheme ? selectedTheme : 'Material';
-let theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
-let emptythemes: string[] = ['bootstrap5', 'bootstrap5dark', 'tailwind', 'tailwinddark', 'material', 'materialdark', 'bootstrap4', 'bootstrap', 'bootstrapdark', 'fabric', 'fabricdark', 'highcontrast', 'fluent', 'fluentdark', 'material3', 'material3dark', 'fluent2', 'fluent2highcontrast', 'fluent2dark', 'tailwind3', 'tailwind3dark'];
-let borderColor : string[] = ['#FD7E14', '#FD7E14', '#5A61F6', '#8B5CF6', '#00bdae', '#9ECB08', '#a16ee5', '#a16ee5', '#a16ee5', '#4472c4', '#4472c4', '#79ECE4', '#1AC9E6', '#1AC9E6', '#6355C7', '#4EAAFF', '#6200EE', '#9BB449', '#9BB449', '#2F4074', '#8029F1'];
-let regionColor: string[] = ['rgba(99, 85, 199, 0.3)', 'rgba(143, 128, 244, 0.3)', 'rgba(90, 97, 246, 0.3)', 'rgba(139, 92, 246, 0.3)', 'rgba(0, 189, 174, 0.3)',
-'rgba(158, 203, 8, 0.3)', 'rgba(161, 110, 229, 0.3)', 'rgba(161, 110, 229, 0.3)', 'rgba(161, 110, 229, 0.3)', 'rgba(68, 114, 196, 0.3)',
-'rgba(68, 114, 196, 0.3)', 'rgba(121, 236, 228, 0.3)', 'rgba(26, 201, 230, 0.3)', 'rgba(26, 201, 230, 0.3)', 'rgba(99, 85, 199, 0.3)', 'rgba(78, 170, 255, 0.3)', 'rgba(98, 0, 238, 0.3)', 'rgba(155, 180, 73, 0.3)', 'rgba(155, 180, 73, 0.3)', 'rgba(47, 64, 116, 0.3)', 'rgba(128, 41, 241, 0.3)' ];
+
+let theme: ChartTheme = loadRangeNavigatorTheme();
     
 @Component({
     selector: 'control-content',
@@ -51,7 +45,7 @@ export class RangeNavigatorEmptyPointComponent {
         edgeLabelPlacement: 'Shift', majorGridLines: { width: 0 }
     };
     public fill: string = 'url(#' + theme.toLowerCase() + '-gradient-chart)';
-    public border:Object= { width: 2, color: borderColor[emptythemes.indexOf(theme.toLowerCase())] };
+    public border:Object= { width: 2, color: borderColor[themes.indexOf(theme.toLowerCase())] };
     public chartArea: Object= { border: { width: 0 } };
     public primaryYAxis: Object = { labelFormat: '${value}', minimum: 40, maximum: 140, interval: 20,
            majorTickLines: { width: 0 }, lineStyle: { width: 0 } };

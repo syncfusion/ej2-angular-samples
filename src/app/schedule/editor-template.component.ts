@@ -31,7 +31,7 @@ import { NgIf } from '@angular/common';
     providers: [MonthService, DayService, WeekService, WorkWeekService, ResizeService, DragAndDropService],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [ScheduleModule, NgIf, DropDownListModule, DateTimePickerModule, SBDescriptionComponent, SBActionDescriptionComponent, FormsModule]
+    imports: [ScheduleModule, NgIf, DropDownListModule, DateTimePickerModule, SBDescriptionComponent, SBActionDescriptionComponent, FormsModule ]
 })
 export class EditTempComponent {
   @ViewChild('scheduleObj')
@@ -54,7 +54,7 @@ export class EditTempComponent {
       this.endDate = args.data.EndTime;
     }
   }
-  
+
   public onDateChange(args: ChangeEventArgs): void {
     if (!isNullOrUndefined(args.event)) {
       if (args.element.id === "StartTime") {

@@ -64,7 +64,7 @@ export class HeatMapComponent implements OnInit {
 
     ngOnInit(): void {
         this.gridSettings = {
-            rowHeight:36, columnWidth: 120
+            rowHeight:35, columnWidth: 120
         } as GridSettings;
 
         this.dataSourceSettings = {

@@ -58,7 +58,6 @@ export class OverViewComponent implements OnInit {
         this.selectionSettings = {persistSelection: true, type: "Multiple", checkboxOnly: true };
 
     }
-
     public softwareValue(args: any):number {
         if (args <= 20) {
             args = args + 30;

@@ -1,13 +1,13 @@
 <div id="action-description">
     <p>
-        This sample shows the maximum and minimum temperatures for several months with the default range column series inverted. The tooltip shows the information for the data point.
+        This sample visually represents changes in visa-free access for various countries using an inverted Range Column chart. It highlights the countries that have experienced the most significant increases and decreases over the past decade.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
-        <ejs-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)' isTransposed='true'>
+        <ejs-chart id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' style="display:block;" [title]='title' [subTitle]='subTitle' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)' isTransposed='true' [legendSettings]='legendSettings'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='RangeColumn' xName='Month' high='CA_HighTemp' low='CA_LowTemp' columnSpacing=0.1 tooltipMappingName='Text' [marker]='marker'> </e-series>
+                <e-series [dataSource]='rangeBarData' type='RangeColumn' xName='country' high='high' low='low' columnSpacing=0.4 [marker]='marker' [cornerRadius]='cornerRadius'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
@@ -17,7 +17,7 @@
         In this example, you can see how to render and configure the range column chart in an inverted manner. You can use <code>isTransposed</code> property to invert your chart.
     </p>
     <p>
-        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover over a point or tap on a point in touch-enabled devices.
+        <code>Tooltips</code> are enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch enabled devices.
     </p>
     <p style="font-weight: 500">Injecting Module</p>
     <p>

@@ -6,12 +6,12 @@
     </div>
     <div  align="center">
         <ejs-chart #chart id="drilldown" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-                   [chartArea]='chartArea' [width]='width' [title]='title' [tooltip]='tooltip'
+                   [chartArea]='chartArea' [width]='width' [title]='title' [subTitle]='subTitle' [tooltip]='tooltip'
                    [legendSettings]='legendSettings' (load)='load($event)' (loaded)='loaded($event)'
                    (pointRender)='pointRender($event)' (chartMouseClick)='chartMouseClick($event)'
-                   (axisLabelClick)='axisLabelClick($event)' (pointClick)='pointClick($event)'>
+                   (axisLabelClick)='axisLabelClick($event)' (tooltipRender)='tooltipRender($event)' (pointClick)='pointClick($event)'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Column' xName='drilldown' yName='y' name='Population' [width]='2' [cornerRadius]='cornerRadius' [marker]='marker'>
+                <e-series [dataSource]='data' type='Column' xName='drilldown' yName='y' name='Population' [cornerRadius]='cornerRadius' [marker]='marker'>
                 </e-series>
             </e-series-collection>
         </ejs-chart>

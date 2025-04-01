@@ -11,6 +11,7 @@ import { SliderComponent, SliderModule } from '@syncfusion/ej2-angular-inputs';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { loadSmithChartTheme } from './theme-color';
 
 @Component({
     selector: 'control-content',
@@ -80,9 +81,7 @@ export class SmithchartCustomComponent {
     public max: number = 1;
     // custom code start
     public load = (args: ISmithchartLoadEventArgs) => {
-        let theme: string = location.hash.split('/')[1];
-        theme = theme ? theme : 'Fluent2';
-        args.smithchart.theme = <SmithchartTheme>(theme.charAt(0).toUpperCase() + theme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadSmithChartTheme(args);
     }
     // custom code end
     public setRadius(e: SliderChangeEventArgs): void {

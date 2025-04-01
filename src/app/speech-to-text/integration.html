@@ -1,0 +1,37 @@
+<div class="control-section integration-control-section">
+    <div class="integration-speechToText-section">
+      <div ejs-aiassistview #assistView (created)="setupFooterButtons()" (promptRequest)="onPromptRequest()" [toolbarSettings]="toolbarSettings">
+        <ng-template #bannerTemplate>
+          <div class="banner-info">
+            <div class="e-icons e-listen-icon"></div>    
+            <h3>Speech To Text</h3>
+            <i>Click the below mic-button to convert your voice to text.</i>
+          </div>
+        </ng-template>
+        <ng-template #footerTemplate>
+          <div class="e-footer-wrapper">
+            <div id="assistview-footer" class="content-editor" contenteditable="true" placeholder="Click to speak or start typing..."></div>
+            <div class="option-container">
+              <button ejs-speechtotext #speechToText id="speechToText" cssClass="e-flat" (transcriptChanged)="onTranscriptChange($event)" (onStop)="toggleButtons()" (onError)="onErrorHandler($event)"></button>
+              <button id="assistview-sendButton" class="e-assist-send e-icons" role="button"></button>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+      <ejs-toast #toast id="stt-toast" [position]="toastPosition" [target]="target" cssClass="e-toast-danger"></ejs-toast>
+    </div>
+  </div>
+    
+<div id="action-description">
+    <p>
+        This sample demonstrates the integration of SpeechToText with the AI AssistView component. It allows users to convert spoken words into text in real time and use the transcribed content as input for AI-based interactions.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, the SpeechToText component captures and transcribes spoken input into text, which is displayed in an editable area. Users can modify the transcribed text or send it directly to the AI AssistView for processing.
+    </p>
+    <p>
+        The AI AssistView responds based on the provided input. A toolbar option is available to clear the conversation history, and a toast notification alerts users to any speech recognition errors.
+    </p>
+</div>

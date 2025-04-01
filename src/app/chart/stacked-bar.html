@@ -1,26 +1,29 @@
 <div id="action-description">
     <p>
-        This Angular stacked bar chart example visualizes a comparison of several months’ sales with the default stacked bar series. The legend in the sample shows more information about the series.
+        This example demonstrates a Angular stacked bar chart that illustrates renewable energy generation in China from 2020 to 2023, segmented by wind, solar, and hydro sources. The legend in the sample shows more information about the series.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'>
+            [primaryYAxis]='primaryYAxis' [title]='title' [subTitle]='subTitle' [tooltip]='tooltip' (load)='load($event)' (legendClick)='legendClick($event)' [legendSettings]='legend' [stackLabels]='stackLabels'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='StackingBar' xName='Month' yName='AppleSales' name='Apple' width=2 columnWidth=0.6 [border]='border'> </e-series>
-                <e-series [dataSource]='data' type='StackingBar' xName='Month' yName='OrangeSales' name='Orange' width=2 columnWidth=0.6 [border]='border'> </e-series>
-                <e-series [dataSource]='data' type='StackingBar' xName='Month' yName='Wastage' name='Wastage' width=2 columnWidth=0.6 [border]='border'> </e-series>
+                <e-series [dataSource]='data1' type='StackingBar' xName='x' yName='y' name='Wind' columnWidth=0.6 [border]='border' [marker]='marker' legendShape='Rectangle'> </e-series>
+                <e-series [dataSource]='data2' type='StackingBar' xName='x' yName='y' name='Solar' columnWidth=0.6 [border]='border' [marker]='marker' legendShape='Rectangle'> </e-series>
+                <e-series [dataSource]='data3' type='StackingBar' xName='x' yName='y' name='Hydro' columnWidth=0.6 [border]='border' [marker]='marker' legendShape='Rectangle' [cornerRadius]='cornerRadius'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the stacked bar chart. The stacked bar chart stacks points in the series horizontally. You can also use the <code>StackingGroup</code> property to group stacked collections based on category.
+        In this example, you can see how to render and configure the stacked bar chart. The stacked bar chart stacks points
+        in the series horizontally. You can also use the <code>stackingGroup</code> property to group stacked collections
+        based on category.
     </p>
     <p>
-        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch-enabled devices.
+        <code>Tooltips</code> are enabled in this example. To see the tooltip in action, hover over a point or tap on a
+        point in touch-enabled devices.
     </p>
     <p style="font-weight: 500">Injecting Module</p>
     <p>

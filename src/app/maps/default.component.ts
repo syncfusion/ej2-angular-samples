@@ -49,7 +49,7 @@ export class MapsDefaultComponent {
                 { latitude: 51.5326602, longitude: -0.1262422, name: 'London' }
             ], 
             shape: 'Image', 
-            imageUrl: './assets/maps/images/ballon.png', 
+            imageUrl: 'https://ej2.syncfusion.com/demos/src/maps/images/ballon.png', 
             height: 20, width: 20,
             tooltipSettings: { visible: true, valuePath: 'name' }, 
             animationDuration: 0 

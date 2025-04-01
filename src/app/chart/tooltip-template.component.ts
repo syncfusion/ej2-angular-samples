@@ -43,6 +43,8 @@ export class TooltipTemplateComponent {
 
     public tooltip: TooltipSettingsModel =  {
         enable: true,
+        showNearestTooltip: true,
+        enableHighlight: true,
         // tslint:disable-next-line:max-line-length
         template:
         '<div id="Tooltip"><table style="width:100%;  border: 1px solid black;" class="table-borderless">' +

@@ -3,7 +3,7 @@
             <e-columns>
                 <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='90' textAlign='Right' [validationRules]='taskidrules'></e-column>
                 <e-column field='taskName' headerText='Task Name' editType='stringedit' width= 220  [validationRules]='tasknamerules'></e-column>
-                <e-column field='startDate' headerText='Start Date' width='140'  editType='datepickeredit' format='yMd' [validationRules]='startdaterules' textAlign='Right'></e-column>
+                <e-column field='startDate' headerText='Start Date' width='140'  editType='datepickeredit' format='yMd' [edit]="dateeditparam" [validationRules]='startdaterules' textAlign='Right'></e-column>
                 <e-column field='duration' headerText='Duration' width='140' textAlign='Right' editType= 'numericedit' [validationRules]='durationrules' [edit]='edit'></e-column>
             </e-columns>
         </ejs-treegrid>

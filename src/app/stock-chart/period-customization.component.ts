@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { PeriodsModel, IStockChartEventArgs, ChartTheme, StockChartModule, ChartAllModule, RangeNavigatorAllModule } from '@syncfusion/ej2-angular-charts';
+import { loadStockChartTheme } from './theme-color';
 
 /**
  * Sample for default stockchart
@@ -50,9 +51,7 @@ export class PeriodCustomizationComponent {
         lineType: 'Both' 
     };
     public load(args: IStockChartEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.stockChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadStockChartTheme(args);
     };
     constructor() {
         for (this.i = 1; this.i < 1440; this.i++) {

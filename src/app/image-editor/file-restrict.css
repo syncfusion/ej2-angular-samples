@@ -10,12 +10,6 @@
     width: 100%;
     margin-top: 18px;
 }
-@media only screen and (max-width: 700px) {
-  .e-img-editor-sample {
-    height: 75vh;
-    width: 100%;
-  }
-}
 .control-wrapper {
 	height: 100%;
 }
@@ -25,4 +19,18 @@
 
 .e-img-editor-dropdown-container #dropdownbtn {
   font-weight: 400;
+}
+@media only screen and (max-width: 700px) {
+  .e-img-editor-sample {
+    height: 75vh;
+    width: 100%;
+  }
+
+  .e-img-editor-dropdown-container,
+  .e-img-editor-numeric-textbox-container {
+      display: block;
+      margin-right: 0;
+      margin-bottom: 20px;
+      text-align: center;
+  }
 }

@@ -98,7 +98,7 @@
     <div align='center'>
         <ejs-chart id='chartcontainer' style='display:block; width: 100%' [chartArea]='chartArea' [margin]='margin' [width]='width' align='center'
             [primaryXAxis]='primaryXAxis' [legendSettings]='legend' [zoomSettings]='zoomSettings' [title]='title' [titleStyle]='titleStyle' [primaryYAxis]='primaryYAxis'
-            (load)='load($event)' >
+            (load)='load($event)' [tooltip]='tooltip'>
             <e-series-collection>
                 <e-series [dataSource]='seriesData' type='Line' xName='x' yName='y' name='Product X'  [animation]='animation' [border]='border'>
                 </e-series>
@@ -128,6 +128,10 @@
             <li><b>Y</b> - Zoom the chart with respect to the vertical axis only.</li>
         </ul>
     <p>The <code>toolbarPosition</code> property is used to adjust the position of the zoom toolbar. In this example, the toolbar is moved 60 pixels upward from its default position. The <code>draggable</code> property is used to drag and drop the zoom toolbar to any position within the chart area.</p>   
+    <p>The chart supports different scrollbar positions. By default, it appears next to the axis line, but you can adjust its placement using the <code>position</code> property of <code>scrollbarSettings</code>. This positioning allows better customization and flexibility in the chart's design.</p>
+    <p>
+        <code>Tooltips</code> are enabled in this example. To see a tooltip in action, hover over or tap on the chart.
+    </p>
     <p style="font-weight: 500"><b>Injecting Module</b></p>
     <p>
          Chart component features are segregated into individual feature-wise modules. To use zooming, we need to inject

@@ -3,7 +3,7 @@
         <e-columns>
             <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='80' textAlign='Right' [validationRules]='taskidrules'></e-column>
             <e-column field='taskName' headerText='Task Name' width='200' editType='stringedit' [validationRules]='tasknamerules'></e-column>
-            <e-column field='startDate' headerText='Start Date' width='140' format="yMd" editType='datepickeredit' textAlign='Right' [validationRules]='daterules'></e-column>
+            <e-column field='startDate' headerText='Start Date' width='140' format="yMd" editType='datepickeredit' textAlign='Right' [edit]="dateeditparam" [validationRules]='daterules'></e-column>
             <e-column field='duration' headerText='Duration' width='130' editType='numericedit' textAlign='Right' [edit]='editparams' [validationRules]='numberrules'></e-column>
             <e-column field='progress' headerText='Progress' width='150' editType='numericedit' textAlign='Right' [edit]='editparams'  [validationRules]='numberrules'></e-column>
             <e-column headerText='Manage Records' width='150' [commands]='commands'></e-column>

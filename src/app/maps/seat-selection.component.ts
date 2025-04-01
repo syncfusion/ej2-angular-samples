@@ -1,7 +1,7 @@
 /**
  * Seat Selection sample
  */
-import { Component, ViewEncapsulation, Inject } from '@angular/core';
+import { Component, ViewEncapsulation, Inject, ViewChild } from '@angular/core';
 import { MapsTheme, Maps, ISelectionEventArgs, Selection, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -20,6 +20,8 @@ let seat_selection: object[] = require('./seat-data.json');
     imports: [SBActionDescriptionComponent, MapsModule, SBDescriptionComponent]
 })
 export class MapsSeatSelectionComponent {
+    @ViewChild('maps')
+    public maps: Maps;
     public zoomSettings: object = {
         enable: false
     };
@@ -79,11 +81,12 @@ export class MapsSeatSelectionComponent {
     ngAfterViewInit() {
         this.seatInfo = <HTMLDivElement>document.getElementById('selectedseats');
         document.getElementById('clear-btn').onclick = () => {
-            this.seatInfo.innerHTML = '';
-            let selected: HTMLCollection = document.getElementsByClassName('ShapeselectionMapStyle');
-            for (let i: number = 0, length: number = selected.length; i < length; i++) {
-                selected[0].setAttribute('class', '');
+            if (this.seatInfo.innerHTML === '') { return; }
+            let seats: any[] = this.seatInfo.innerText.split('-')[1].trim().split(',').map(num => Number(num.trim()));
+            for (let i: number = 0, length: number = seats.length; i < length; i++) {
+                this.maps.shapeSelection(0, 'seatno', seats[i], false);
             }
+            this.seatInfo.innerHTML = '';
         };
     }
     // custom code start

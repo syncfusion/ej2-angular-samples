@@ -2,11 +2,11 @@
  * Maps selection sample
  */
 import { Component, Inject, ViewEncapsulation } from '@angular/core';
-import { MapsTheme, Maps, MapsTooltip, ISelectionEventArgs, Selection, Highlight, ILoadEventArgs, MapsModule } from '@syncfusion/ej2-angular-maps';
+import { MapsTheme, Maps, MapsTooltip, ISelectionEventArgs, Selection, Highlight, ILoadEventArgs, MapsModule, Legend } from '@syncfusion/ej2-angular-maps';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-Maps.Inject(MapsTooltip, Selection, Highlight);
+Maps.Inject(MapsTooltip, Selection, Highlight, Legend);
 let usMap: object[] = require('./usa.json');
 let election: object[] = require('./election-data.json');
 

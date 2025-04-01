@@ -29,8 +29,9 @@ export class InvisibleSignatureComponent implements OnInit{
      
 @ViewChild('pdfviewer')
 public pdfviewerControl: PdfViewerComponent;
-public document: string = 'InvisibleDigitalSignature.pdf';
-public service:string ='https://services.syncfusion.com/angular/production/api/pdfviewer';
+public document: string = 'https://cdn.syncfusion.com/content/pdf/InvisibleDigitalSignature.pdf';
+public resource: string ='https://cdn.syncfusion.com/ej2/27.2.2/dist/ej2-pdfviewer-lib';
+public url: string ="https://services.syncfusion.com/angular/production/api/pdfviewer/AddSignature";
 public msgWarning=  "The document has been digitally signed and at least one signature has problem ";
 public  msgError="The document has been digitally signed, but it has been modified since it was signed and at least one signature is invalid .";
 public msgSuccess="The document has been digitally signed and all the signatures are valid";
@@ -69,8 +70,6 @@ public  hasDigitalSignature: boolean = false;
         }
         this.pdfviewerControl.download();
     }
-
-     
     readFile(args: any): void {
         // tslint:disable-next-line
         let upoadedFiles: any = args.target.files;
@@ -118,29 +117,36 @@ public  hasDigitalSignature: boolean = false;
     }
  //Triggers while validating the signature in the document.
     public signDocument(e: ClickEventArgs): void {
-        this.pdfviewerControl.serverActionSettings.download = 'AddSignature';
-        let data: any;
-        let base64data: any;
-        this.pdfviewerControl.saveAsBlob().then((value) => {
-          data = value;
-          var reader = new FileReader();
-          reader.readAsDataURL(data);
-          reader.onload = () => {
-            base64data = reader.result;
-            this.documentData = base64data;
-            this.pdfviewerControl.load(base64data, null);
-            this.downloadVisibility = false;
-            this.buttonVisibility = true;
-            this.pdfviewerControl.fileName = this.fileName;
-            this.pdfviewerControl.downloadFileName = this.fileName;
-            this.customToolbar.items[1].disabled = true;
-            this.customToolbar.items[2].disabled = false;
-          };
-      
-        });
-        this.pdfviewerControl.serverActionSettings.download = 'Download';
+        this.pdfviewerControl.saveAsBlob().then((blob) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(blob);
+            reader.onload = (e: ProgressEvent<FileReader>) => {
+              const base64String = e.target?.result;
+              const xhr = new XMLHttpRequest();
+              xhr.open('POST', this.url, true);
+              xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
+              const requestData = JSON.stringify({ base64String });
+              xhr.onload = () => {
+                if (xhr.status === 200) {
+                    this.documentData = xhr.responseText;
+                    this.pdfviewerControl.load(xhr.responseText, null);
+                    this.customToolbar.items[1].disabled = true;
+                    this.customToolbar.items[2].disabled = false;
+                    this.pdfviewerControl.fileName = this.fileName;
+                    this.pdfviewerControl.downloadFileName = this.fileName;
+                } else {
+                    console.error('Error in AddSignature API:', xhr.statusText);
+                }
+              };
+              xhr.onerror = () => {
+                console.error('Error reading Blob as Base64.', xhr.statusText);
+            };
+            xhr.send(requestData);
+            };
+          }).catch((error) => {
+            console.error('Error saving Blob:', error);
+          });
       }
-      
 //Reloads the PDF document with digital signature.
     documentLoad(args){
         this.fileName = args.documentName;

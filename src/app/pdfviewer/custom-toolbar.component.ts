@@ -44,7 +44,6 @@ export class CustomToolbarComponent implements OnInit {
     public matchCase = false;
     public isInkEnabled = false;
     public searchActive = false;
-
     public menuItems: MenuItemModel[] = [{
         iconCss: 'e-icons e-stamp',
         items: [
@@ -570,36 +569,25 @@ export class CustomToolbarComponent implements OnInit {
   public initiateTextSearch(): void {
     const textsearchPrevElement = document.getElementById('container_prev_occurrence') as HTMLButtonElement;
     const textsearchNextElement = document.getElementById('container_next_occurrence') as HTMLButtonElement;
-    const textsearchcloseElement = document.getElementById('container_close_search_box-icon') as HTMLElement;
-    const textsearchElement = document.getElementById('container_search_box-icon') as HTMLElement;
-
-    if (textsearchPrevElement && textsearchNextElement && textsearchcloseElement && textsearchElement) {
+    var textsearchElement = document.getElementById('container_search_box-icon') as HTMLElement;
+    if (textsearchNextElement && textsearchPrevElement && textsearchElement) {
+      textsearchElement.classList.add('e-close');
+      textsearchElement.classList.remove('e-search');
       textsearchPrevElement.disabled = false;
       textsearchNextElement.disabled = false;
-      textsearchcloseElement.style.display = 'block';
-      textsearchElement.style.display = 'none';
-
       if (this.searchText !== (document.getElementById('container_search_input') as HTMLInputElement).value || this.prevMatchCase !== this.matchCase) {
-        this.pdfviewerControl.textSearchModule.cancelTextSearch();
+        textsearchPrevElement.addEventListener("click", this.previousTextSearch);
+        textsearchNextElement.addEventListener("click", this.nextTextSearch);
+        this.pdfviewerControl.textSearch.cancelTextSearch();
         this.searchText = (document.getElementById('container_search_input') as HTMLInputElement).value;
         this.searchActive = true;
-        this.pdfviewerControl.textSearchModule.searchText(this.searchText, this.matchCase);
+        this.pdfviewerControl.textSearch.searchText(this.searchText, this.matchCase);
         this.prevMatchCase = this.matchCase;
       }
       else{
         this.nextTextSearch();
       }
     }
-  }
-
-  public clearTextSearch(): void {
-    const textsearchcloseElement = document.getElementById('container_close_search_box-icon') as HTMLElement;
-    const textsearchElement = document.getElementById('container_search_box-icon') as HTMLElement;
-    textsearchcloseElement.style.display = 'none';
-    textsearchElement.style.display = 'block';
-    this.pdfviewerControl.textSearchModule.cancelTextSearch();
-    const searchTextElement = document.getElementById('container_search_input') as HTMLInputElement;
-    searchTextElement.value = '';
   }
 
   public previousTextSearch(): void {
@@ -612,21 +600,51 @@ export class CustomToolbarComponent implements OnInit {
       this.pdfviewerControl.textSearchModule.clearAllOccurrences();
     }
   }
+  
+  public searchClickHandler(): void {
+    var searchBtn = document.getElementById('container_search_box-icon') as HTMLElement;
+    if (searchBtn.classList.contains('e-search')) {
+      this.pdfviewerControl.textSearch.cancelTextSearch();
+      this.initiateTextSearch();
+      this.updateSearchInputIcon(false);
+      this.searchText = '';
+    }
+    else if (searchBtn.classList.contains('e-close')) {
+      var searchInput = document.getElementById('container_search_input') as HTMLInputElement;
+      this.updateSearchInputIcon(true);
+      searchInput.value = '';
+      searchInput.focus();
+      this.pdfviewerControl.textSearch.cancelTextSearch();
+      this.searchText = '';
+    }
+  }
+  
+  public updateSearchInputIcon(isEnable: Boolean) {
+    var searchBtn = document.getElementById('container_search_box-icon') as HTMLElement;
+    if (isEnable) {
+      searchBtn.classList.add('e-search');
+      searchBtn.classList.remove('e-close');
+    } 
+    else {
+      searchBtn.classList.add('e-close');
+      searchBtn.classList.remove('e-search');
+    }
+  }
 
   public inputChange(): void {
-    this.pdfviewerControl.textSearchModule.clearAllOccurrences();
+   this.pdfviewerControl.textSearch.clearAllOccurrences();
     this.searchActive = false;
-    if((document.getElementById('container_search_input') as HTMLInputElement).value == '') {
-      const textsearchcloseElement = document.getElementById('container_close_search_box-icon') as HTMLElement;
-      const textsearchElement = document.getElementById('container_search_box-icon') as HTMLElement;
-      textsearchcloseElement.style.display = 'none';
-      textsearchElement.style.display = 'block';
+    var searchInput = document.getElementById('container_search_input') as HTMLInputElement;
+    if(searchInput.value == '') {
+      this.updateSearchInputIcon(true);
+      this.pdfviewerControl.textSearch.resetVariablesTextSearch();
+      this.pdfviewerControl.textSearch.cancelTextSearch();
     }
   }
 
   public nextTextSearch(): void {
-    this.pdfviewerControl.textSearchModule.searchNext();
     this.searchActive = true;
+    this.pdfviewerControl.textSearch.searchNext();
   }
 
   public checkBoxChanged(event: Event): void {

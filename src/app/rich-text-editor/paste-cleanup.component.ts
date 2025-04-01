@@ -102,4 +102,18 @@ export class PasteCleanupComponent {
             this.rteObj.pasteCleanupSettings[settingsProperty] = arrayValue.filter((prop) => prop !== '');
         }
     }
+    editorValue: string = `<h4>Paste Cleanup in Rich Text Editor<br></h4><p>The Rich Text Editor automatically <strong>cleans up formatted content</strong> when you paste from external sources like Word, Google Docs, or web pages.</p><p><b>Paste Cleanup properties:</b></p><ul>
+                <li><strong>Prompt </strong>- specifies whether to enable the prompt when pasting in Rich Text Editor
+                </li>
+                <li><strong>Plain Text </strong>- specifies whether to paste as plain text or not in Rich Text Editor.
+                </li>
+                <li><strong>Keep Format</strong>- specifies whether to keep or remove the format when pasting in Rich Text Editor.
+                </li>
+                <li><strong>Denied Tags</strong> - specifies the tags to restrict when pasting in Rich Text Editor.
+                </li>
+                <li><strong>Denied Attributes</strong> - specifies the attributes to restrict when pasting in Rich Text Editor.
+                </li>
+                <li><strong>Allowed Style Properties</strong> - specifies the allowed style properties when pasting in Rich Text Editor.
+                </li>
+            </ul><p><span><strong>Try It Out!</strong></span></p><p>Copy content from a web page or document and paste it here. The editor will display a prompt and allow you to input your options.</p>`;
 }

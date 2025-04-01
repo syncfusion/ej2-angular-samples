@@ -1,24 +1,22 @@
 <div id="action-description">
     <p>
-        This sample visualizes the gold medal count from the Rio Olympics using a cylindrical column chart.
+        This sample visualizes the year-wise renewable energy generation trends in India using a cylindrical column chart. The chart displays the total renewable energy generation in terawatt-hours (TWh) for each year from 2017 to 2023.
     </p>
 </div>
 <div class="control-section">
-    <ejs-chart #chart style='display:block' align='center' [chartArea]='chartArea' [title]='title'
-        [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)'
-        [width]='width'>
+    <ejs-chart #chart style='display:block' align='center' [chartArea]='chartArea' [title]='title' [subTitle]='subTitle' [legendSettings]='legendSettings'
+        [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)' [width]='width'>
         <e-series-collection>
-            <e-series [dataSource]='data' columnFacet= 'Cylinder' type='Column' xName='x' yName='y' width=2 columnSpacing=0.1 tooltipMappingName='tooltipMappingName'> </e-series>
+            <e-series [dataSource]='data' columnFacet= 'Cylinder' type='Column' name='India' xName='year' yName='energy' columnSpacing=0.3> </e-series>
         </e-series-collection>
     </ejs-chart>
 </div>
 <div id="description">
     <p>
-        In this example, you can observe the rendering and configuration of a cylindrical column chart. The cylindrical column chart serves the purpose of comparing the frequency, count, total, or average of data across various categories using a cylindrical shape.
-    </p>
+        In this example, you can observe the rendering and configuration of a cylindrical column chart. The cylindrical column chart serves the purpose of comparing the frequency, count, total, or average of data across various categories using a cylindrical shape.</p>
     <p>
-        Tooltips have been enabled in this example. To experience the tooltip functionality, simply hover over a point or tap on it in touch-enabled devices.
-    </p>
+        Tooltips have been enabled in this example. To experience the tooltip functionality, simply hover over a point or tap on it in touch-enabled devices.                    </p>
+    <p>
     <p style="font-weight: 500"><b>Injecting Module</b></p>
     <p>
         Chart component features are segregated into individual feature-wise modules. To use column feature, we need to

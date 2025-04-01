@@ -43,7 +43,7 @@ export class TreeGridOverviewComponent implements OnInit {
             let imgElement: HTMLElement = document.createElement('IMG');
             let val: string = !(<ITreeData>args.data).level ? args.data[args.column.field] :
                  (<ITreeData>args.data).parentItem[args.column.field];
-            imgElement.setAttribute('src', 'assets/treegrid/images/' + val + '.png');
+            imgElement.setAttribute('src', 'https://ej2.syncfusion.com/angular/demos/assets/treegrid/images/' + val + '.png');
             imgElement.classList.add('e-image');
             let div: HTMLElement = document.createElement('DIV');
             div.style.display = 'inline';
@@ -62,6 +62,6 @@ export class TreeGridOverviewComponent implements OnInit {
     }
 
     getFlagPath(data: any): string {
-        return `assets/treegrid/images/${data.parentItem ? data.parentItem.name : data.name}.png`;
+        return `https://ej2.syncfusion.com/angular/demos/assets/treegrid/images/${data.parentItem ? data.parentItem.name : data.name}.png`;
     }
 }

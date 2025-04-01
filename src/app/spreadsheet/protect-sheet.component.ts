@@ -25,8 +25,7 @@ export class ProtectSheetComponent {
     public openUrl = 'https://services.syncfusion.com/angular/production/api/spreadsheet/open';
     public saveUrl = 'https://services.syncfusion.com/angular/production/api/spreadsheet/save';
     created() {
-        // Applied style and number formatting to a range
-        this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center' }, 'EMI Schedule!A1:F1');
+        // Applied number formatting to a range
         this.spreadsheetObj.numberFormat('$#,##0.00', 'EMI Schedule!C2:F13');
         this.spreadsheetObj.numberFormat('m/d/yyyy', 'EMI Calculator!C5:C5');
         this.spreadsheetObj.numberFormat('m/d/yyyy', 'EMI Schedule!B2:B13');

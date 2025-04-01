@@ -1,7 +1,7 @@
 /**
  * Default Sample
  */
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, OnDestroy } from '@angular/core';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { ImageEditorAllModule, Dimension, ImageEditorComponent, ImageFilterOption, ShapeChangeEventArgs, ShapeType, ShapeSettings } from '@syncfusion/ej2-angular-image-editor';
@@ -20,7 +20,7 @@ import { ColorPickerModule, ColorPicker, ColorPickerMode, ColorPickerEventArgs, 
     imports: [SBActionDescriptionComponent, FabModule, ImageEditorAllModule, ToolbarAllModule, DropDownButtonAllModule, ColorPickerModule, SBDescriptionComponent]
 })
 
-export class CustomToolbarComponent {
+export class CustomToolbarComponent implements OnDestroy {
     @ViewChild('imageEditor') imageEditorObj: ImageEditorComponent;
     @ViewChild('filterToolbar') filterToolbar: ToolbarComponent;
     toolbarItems: any = [];
@@ -514,8 +514,10 @@ export class CustomToolbarComponent {
     createCanvasFilter() {
         const inMemoryCanvas: HTMLCanvasElement = document.createElement('canvas');
         const inMemoryContext: CanvasRenderingContext2D = inMemoryCanvas.getContext('2d');
-        inMemoryCanvas.width = this.imageData.width; inMemoryCanvas.height = this.imageData.height;
-        inMemoryContext.putImageData(this.imageData, 0, 0);
+        if(this.imageData) {
+            inMemoryCanvas.width = this.imageData.width; inMemoryCanvas.height = this.imageData.height;
+            inMemoryContext.putImageData(this.imageData, 0, 0);
+        }
         this.updateFilterCanvas('_defaultCanvas', 'default', inMemoryCanvas);
         this.updateFilterCanvas('_chromeCanvas', 'chrome', inMemoryCanvas);
         this.updateFilterCanvas('_coldCanvas', 'cold', inMemoryCanvas);
@@ -611,6 +613,17 @@ export class CustomToolbarComponent {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         if (e.type === 'dblclick' && (e.target as any).closest('.e-textarea')) {
             this.isTextEditing = true;
+        }
+    }
+
+    ngOnDestroy() {
+        const dropdowns = document.querySelectorAll('.e-dropdown-popup');
+        if (dropdowns && dropdowns.length > 0) {
+            dropdowns.forEach(dropdown => {
+                if (dropdown.id && dropdown.id.indexOf("imageEditor") !== -1) {
+                    dropdown.remove();
+                }
+            });
         }
     }
 }

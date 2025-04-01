@@ -9,14 +9,13 @@ import { Browser, remove } from '@syncfusion/ej2-base';
 import { getElement } from '@syncfusion/ej2-svg-base/src/tooltip/helper';
 import { chartDataValue } from './stock-data';
 import { RangeNavigatorModule, ChartAllModule, StockChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { loadRangeNavigatorTheme } from './theme-colors';
 
 /**
  * Sample for stock chart using period selector
  */
 
-let selectedTheme: string = location.hash.split('/')[1];
-selectedTheme = selectedTheme ? selectedTheme : 'Material';
-let theme: ChartTheme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+let theme: ChartTheme = loadRangeNavigatorTheme();;
 let index: number = 0;
 let removeSecondaryElement: Function;
 let periodsValue: PeriodSelectorSettingsModel = {

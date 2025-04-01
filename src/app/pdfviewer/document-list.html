@@ -7,9 +7,7 @@
         <div class="e-message render-mode-info">
             <span class="e-msg-icon render-mode-info-icon" title="Turn OFF to render the PDF Viewer as server-backed"></span>
         </div>
-        <div>
-            <ejs-switch cssClass="buttonSwitch" id="checked" (change)="change($event)" [checked]="true"></ejs-switch>
-        </div>
+        <ejs-switch cssClass="buttonSwitch" id="checked" (change)="change($event)" [checked]="true"></ejs-switch>
     </div>
     <ejs-grid #grid id="Grid" [dataSource]='data' width="100%" (commandClick)="openViewer($event)">
         <e-columns>

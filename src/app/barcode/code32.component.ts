@@ -10,7 +10,7 @@ import { TextPosition, Alignment } from '@syncfusion/ej2-barcode-generator/src/b
 import { TextBox, NumericTextBox, ChangedEventArgs } from '@syncfusion/ej2-inputs';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
-import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { CheckBoxModule, ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
@@ -18,7 +18,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     styleUrls: ['barcode-style.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [SBActionDescriptionComponent, BarcodeGeneratorModule, TextBoxModule, NumericTextBoxModule, CheckBoxModule, ColorPickerModule, DropDownListModule, SBDescriptionComponent]
+    imports: [SBActionDescriptionComponent, BarcodeGeneratorModule, TextBoxModule, NumericTextBoxModule, CheckBoxModule, ColorPickerModule,
+      DropDownListModule, SBDescriptionComponent, ButtonModule]
 })
 export class Code32Component {
   @ViewChild('barcode')
@@ -135,12 +136,12 @@ export class Code32Component {
     this.barcode.displayText.alignment = (args.value) as Alignment;
   }
 
-  
-
-
   public displayTextOnChange(args: ChangedEventArgs) {
     this.barcode.displayText.text = args.value.toString();
   }
 
-
+  //Toggle button click event handler
+  btnClick() {
+    this.barcode.exportImage("Barcode", "PNG");
+  }
 }

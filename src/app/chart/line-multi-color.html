@@ -1,14 +1,14 @@
 <div id="action-description">
     <p>
-        This sample shows the particulate levels in rainfall with multi-colored line series in the chart. Data points are enhanced with individual colors and tooltips.
+        This sample demonstrates a multi-colored line chart showing the average January temperature in the United States from 1895 to 2025. Each data point is represented with a unique color, and hovering over the points reveals detailed information through tooltips.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
-        <ejs-chart style='display:block' align='center' id='chartcontainer' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+        <ejs-chart style='display:block' align='center' id='chartcontainer' [title]='title' [subTitle]='subTitle' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
             [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' [width]='width' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='dataValues' type='MultiColoredLine' xName='XValue' yName='YValue' name='Rainfall' width=1.5 pointColorMapping='color'>
+                <e-series [dataSource]='multiColoredLineData' type='MultiColoredLine' xName='x' yName='y' width=1.5 pointColorMapping='color'>
                 </e-series>
             </e-series-collection>
         </ejs-chart>
@@ -16,11 +16,11 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure each point in line type series. 
-        Multicolored line charts are used to represent time-dependent data to show the trends at equal intervals with their individual colors by using <code>PointColorMapping</code>.
+        In this example, you can see how to render and configure each point in line type series.
+        Multi colored line charts are used to represent time-dependent data to show the trends at equal intervals with their individual colors by using <code>pointColorMapping</code>.
     </p>
     <p>
-        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover a point or tap a point in touch enabled devices.
+        <code>Tooltips</code> are enabled in this example. To see a tooltip in action, hover over or tap on the chart.
     </p>
     <br>
     <p style="font-weight: 500">Injecting Module</p>

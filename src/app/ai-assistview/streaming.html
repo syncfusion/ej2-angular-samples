@@ -1,0 +1,25 @@
+<div class="control-section">
+    <div class="stream-component">
+        <div id="aiAssistView" ejs-aiassistview #streamAIAssistView [bannerTemplate]="bannerTemplate" [promptSuggestions]="suggestions" [toolbarSettings]="toolbarSettings" (promptRequest)="promptRequest($event)" (stopRespondingClick)="handleStopResponse()"></div>
+    </div>
+    <ng-template #bannerTemplate>
+        <div class="banner-content">
+            <div class="e-icons e-assistview-icon"></div>
+            <h3>AI Assistance</h3>
+            <i>Update real-time responses with chunked streaming updates.</i>
+        </div>
+    </ng-template>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample demonstrates the streaming response update in the <code>AI AssistView</code> component.
+    </p>
+</div>
+<div id="description">
+    <p> In this example, the <code>AI AssistView</code> component dynamically updates responses in a streaming manner using the <code>addPromptResponse</code> method, while the <code>scrollToBottom</code> method ensures automatic scrolling. The <code>bannerTemplate</code> allows customization of the banner content, and <code>toolbarSettings</code> enables custom toolbar items, including a right-aligned Refresh button. Additionally, <code>promptSuggestions</code> offers AI-generated prompt suggestions, while <code>promptRequest</code> processes prompt requests when triggered.   
+    </p> 
+    <p>   
+      This implementation provides an interactive AI chat experience with real-time streaming updates, enhanced by Markdown-to-HTML conversion using the <code>Marked</code> plugin.   
+   </p>
+</div>

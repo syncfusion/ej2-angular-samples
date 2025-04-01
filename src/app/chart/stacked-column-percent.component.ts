@@ -1,8 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme, ChartAllModule } from '@syncfusion/ej2-angular-charts'
+import { ILoadedEventArgs, ILegendClickEventArgs, ITooltipRenderEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts'
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 /**
  * Sample for Stacked Column Series
  */
@@ -16,56 +17,221 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 })
 export class PercentStackedColumnChartComponent {
 
-    public data: Object[] = [
-        { Year : "2013", General : 9628912, Honda : 4298390, Suzuki : 2842133, BMW : 2006366 },
-        { Year : "2014", General : 9609326, Honda : 4513769, Suzuki : 3016710, BMW : 2165566 },
-        { Year : "2015", General : 7485587, Honda : 4543838, Suzuki : 3034081, BMW : 2279503 },
-        { Year : "2016", General : 7793066, Honda : 4999266, Suzuki : 2945295, BMW : 2359756 },
-        { Year : "2017", General : 6856880, Honda : 5235842, Suzuki : 3302336, BMW : 2505741 },
-    ];
+    public data1: Object[] = Browser.isDevice ?
+        [
+            { x: '2021', y: 24300000 },
+            { x: '2022', y: 26300000 },
+            { x: '2023', y: 25400000 },
+            { x: '2024', y: 25000000 }
+        ] :
+        [
+            { x: '2019', y: 28500000 },
+            { x: '2020', y: 27500000 },
+            { x: '2021', y: 24300000 },
+            { x: '2022', y: 26300000 },
+            { x: '2023', y: 25400000 },
+            { x: '2024', y: 25000000 }
+        ];
+    public data2: Object[] = Browser.isDevice ?
+        [
+            { x: '2021', y: 26700000 },
+            { x: '2022', y: 30800000 },
+            { x: '2023', y: 27400000 },
+            { x: '2024', y: 31000000 }
+        ] :
+        [
+            { x: '2019', y: 26900000 },
+            { x: '2020', y: 29300000 },
+            { x: '2021', y: 26700000 },
+            { x: '2022', y: 30800000 },
+            { x: '2023', y: 27400000 },
+            { x: '2024', y: 31000000 }
+        ];
+    public data3: Object[] = Browser.isDevice ?
+        [
+            { x: '2021', y: 17500000 },
+            { x: '2022', y: 14500000 },
+            { x: '2023', y: 12100000 },
+            { x: '2024', y: 14400000 }
+        ] :
+        [
+            { x: '2019', y: 19900000 },
+            { x: '2020', y: 14600000 },
+            { x: '2021', y: 17500000 },
+            { x: '2022', y: 14500000 },
+            { x: '2023', y: 12100000 },
+            { x: '2024', y: 14400000 }
+        ];
+    public data4: Object[] = Browser.isDevice ?
+        [
+            { x: '2021', y: 10800000 },
+            { x: '2022', y: 11700000 },
+            { x: '2023', y: 14600000 },
+            { x: '2024', y: 17000000 }
+        ] :
+        [
+            { x: '2019', y: 13000000 },
+            { x: '2020', y: 13800000 },
+            { x: '2021', y: 10800000 },
+            { x: '2022', y: 11700000 },
+            { x: '2023', y: 14600000 },
+            { x: '2024', y: 17000000 }
+        ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        valueType: 'Category',
-        labelIntersectAction: 'Rotate45',
         majorGridLines: { width: 0 },
         minorGridLines: { width: 0 },
         majorTickLines: { width: 0 },
-        minorTickLines: { width: 0 }
+        minorTickLines: { width: 0 },
+        interval: 1,
+        lineStyle: { width: 0 },
+        labelIntersectAction: 'Rotate45',
+        valueType: 'Category'
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        rangePadding: 'None',
-        interval: 20,
+        lineStyle: { width: 0 },
         majorTickLines: { width: 0 },
-        majorGridLines: { width: 1 },   
+        majorGridLines: { width: 1 },
+        minorGridLines: { width: 1 },
         minorTickLines: { width: 0 },
-        lineStyle: {
-            width: 0
-        }
+        interval: 20
     };
     public tooltip: Object = {
         enable: true,
-        format: '${point.x} : <b>${point.y} (${point.percentage}%)</b>'
+        enableHighlight: true,
+        header: '<b>${point.x}</b>'
     };
     public chartArea: Object = {
         border: {
-            width: 0,
+            width: 0
+        },
+        margin: {
+            bottom: 12
         }
     };
-    public border: Object = { color: '#ffffff', width:1 };
-     // custom code start
+    public border: Object = { color: 'white', width: 1 };
+    public cornerRadius: Object = { topLeft: 4, topRight: 4 };
+    // custom code start
     public width: string = Browser.isDevice ? '100%' : '75%';
     public legend: Object = {
-        visible: true,
-        enableHighlight : true
+        enableHighlight: true,
+        shapeWidth: 9,
+        shapeHeight: 9
     }
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadChartTheme(args);
     };
-     // custom code end
-    public title: string = 'Motor Vehicle Production by Manufacturer';
+    // custom code end
+    public title: string = Browser.isDevice ? 'Global Cotton Production by Country (2021–2024)' : 'Global Cotton Production by Country (2019–2024)';
+    public subTitle: string = 'Source: fas.usda.gov';
+    public legendClick = (args: ILegendClickEventArgs) => {
+        if (args.series.index === 0) {
+            if (args.chart.series[3].visible) {
+                args.chart.series[3].cornerRadius.topLeft = 4;
+                args.chart.series[3].cornerRadius.topRight = 4;
+                args.chart.series[0].cornerRadius.topLeft = 0;
+                args.chart.series[0].cornerRadius.topRight = 0;
+            } else if (args.chart.series[2].visible) {
+                args.chart.series[2].cornerRadius.topLeft = 4;
+                args.chart.series[2].cornerRadius.topRight = 4;
+                args.chart.series[0].cornerRadius.topLeft = 0;
+                args.chart.series[0].cornerRadius.topRight = 0;
+            } else if (args.chart.series[1].visible) {
+                args.chart.series[1].cornerRadius.topLeft = 4;
+                args.chart.series[1].cornerRadius.topRight = 4;
+                args.chart.series[0].cornerRadius.topLeft = 0;
+                args.chart.series[0].cornerRadius.topRight = 0;
+            } else {
+                args.chart.series[0].cornerRadius.topLeft = 4;
+                args.chart.series[0].cornerRadius.topRight = 4;
+            }
+        }
+
+        if (args.series.index === 1) {
+            if (args.chart.series[3].visible) {
+                args.chart.series[3].cornerRadius.topLeft = 4;
+                args.chart.series[3].cornerRadius.topRight = 4;
+                args.chart.series[1].cornerRadius.topLeft = 0;
+                args.chart.series[1].cornerRadius.topRight = 0;
+            } else if (args.chart.series[2].visible) {
+                args.chart.series[2].cornerRadius.topLeft = 4;
+                args.chart.series[2].cornerRadius.topRight = 4;
+                args.chart.series[1].cornerRadius.topLeft = 0;
+                args.chart.series[1].cornerRadius.topRight = 0;
+            } else if (args.series.visible && args.chart.series[0].visible) {
+                args.chart.series[0].cornerRadius.topLeft = 4;
+                args.chart.series[0].cornerRadius.topRight = 4;
+                args.chart.series[1].cornerRadius.topLeft = 0;
+                args.chart.series[1].cornerRadius.topRight = 0;
+            } else {
+                args.chart.series[1].cornerRadius.topLeft = 4;
+                args.chart.series[1].cornerRadius.topRight = 4;
+                args.chart.series[0].cornerRadius.topLeft = 0;
+                args.chart.series[0].cornerRadius.topRight = 0;
+            }
+        }
+
+        if (args.series.index === 2) {
+            if (args.chart.series[3].visible) {
+                args.chart.series[3].cornerRadius.topLeft = 4;
+                args.chart.series[3].cornerRadius.topRight = 4;
+                args.chart.series[2].cornerRadius.topLeft = 0;
+                args.chart.series[2].cornerRadius.topRight = 0;
+            } else if (!args.series.visible) {
+                args.chart.series[2].cornerRadius.topLeft = 4;
+                args.chart.series[2].cornerRadius.topRight = 4;
+                args.chart.series[1].cornerRadius.topLeft = 0;
+                args.chart.series[1].cornerRadius.topRight = 0;
+                args.chart.series[0].cornerRadius.topLeft = 0;
+                args.chart.series[0].cornerRadius.topRight = 0;
+            } else if (args.chart.series[1].visible) {
+                args.chart.series[1].cornerRadius.topLeft = 4;
+                args.chart.series[1].cornerRadius.topRight = 4;
+                args.chart.series[2].cornerRadius.topLeft = 0;
+                args.chart.series[2].cornerRadius.topRight = 0;
+            } else if (args.series.visible && args.chart.series[0].visible) {
+                args.chart.series[0].cornerRadius.topLeft = 4;
+                args.chart.series[0].cornerRadius.topRight = 4;
+                args.chart.series[2].cornerRadius.topLeft = 0;
+                args.chart.series[2].cornerRadius.topRight = 0;
+            }
+        }
+
+        if (args.series.index === 3) {
+            if (!args.series.visible) {
+                args.chart.series[3].cornerRadius.topLeft = 4;
+                args.chart.series[3].cornerRadius.topRight = 4;
+                args.chart.series[2].cornerRadius.topLeft = 0;
+                args.chart.series[2].cornerRadius.topRight = 0;
+                args.chart.series[1].cornerRadius.topLeft = 0;
+                args.chart.series[1].cornerRadius.topRight = 0;
+                args.chart.series[0].cornerRadius.topLeft = 0;
+                args.chart.series[0].cornerRadius.topRight = 0;
+            } else if (args.chart.series[2].visible) {
+                args.chart.series[2].cornerRadius.topLeft = 4;
+                args.chart.series[2].cornerRadius.topRight = 4;
+                args.chart.series[3].cornerRadius.topLeft = 0;
+                args.chart.series[3].cornerRadius.topRight = 0;
+            } else if (args.chart.series[1].visible) {
+                args.chart.series[1].cornerRadius.topLeft = 4;
+                args.chart.series[1].cornerRadius.topRight = 4;
+                args.chart.series[3].cornerRadius.topLeft = 0;
+                args.chart.series[3].cornerRadius.topRight = 0;
+            } else if (args.series.visible && args.chart.series[0].visible) {
+                args.chart.series[0].cornerRadius.topLeft = 4;
+                args.chart.series[0].cornerRadius.topRight = 4;
+                args.chart.series[3].cornerRadius.topLeft = 0;
+                args.chart.series[3].cornerRadius.topRight = 0;
+            }
+        }
+    };
+    public tooltipRender = (args: ITooltipRenderEventArgs) => {
+        if (args.text) {
+            let value: string = args.point.y.toLocaleString('en-US');
+            args.text = `${args.series.name}: <b>${value}M (${args.point.percentage}%)</b>`;
+        }
+    };
     constructor() {
         //code
     };

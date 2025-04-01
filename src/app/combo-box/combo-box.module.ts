@@ -34,7 +34,7 @@ export const comboboxAppRoutes: Object[] = [
 		category: 'ComboBox' },
     { path: ':theme/combo-box/template', component: TemplateComboBoxComponent, name: 'Template', description: 'This example demonstrates how to customize the appearance of each item in the Angular combo box component pop-up list using the template.', order: '01',
 		category: 'ComboBox' },
-    { path: ':theme/combo-box/resize', component: ResizeComboBoxComponent, name: 'Popup Resize',type: "new" , description: 'This demo showcases the custom resizing functionality of Combo Box, You can adjust the size of the popup based on your preferences, allowing for better control over its appearance.', order: '01',
+    { path: ':theme/combo-box/resize', component: ResizeComboBoxComponent, name: 'Popup Resize' , description: 'This demo showcases the custom resizing functionality of Combo Box, You can adjust the size of the popup based on your preferences, allowing for better control over its appearance.', order: '01',
       category: 'ComboBox' },
     { path: ':theme/combo-box/virtual-scroll', component: VirtualScrollComboBoxComponent, name: 'Virtualization', description: 'This example demonstrates how to utilize the virtualization support of Angular combo box component.', order: '01', 
     category: 'ComboBox' },

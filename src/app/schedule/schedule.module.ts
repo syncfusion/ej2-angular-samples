@@ -67,6 +67,7 @@ import { CalendarExportImportComponent } from './calendar-export-import.componen
 import { PrintComponent } from './print.component';
 import { YearComponent } from './year.component';
 import { InlineEditingComponent } from './inline-editing.component';
+import { OverlapEventsComponent } from './overlap-events.component';
 import { QuickInfoTemplateComponent } from './quick-info-template.component';
 import { OverviewComponent } from './overview.component';
 import { MultipleSchedulerComponent } from './schedule-to-schedule.component';
@@ -95,6 +96,7 @@ export const scheduleRouteConfig: Record<string, any>[] = [
   { path: ':theme/schedule/search-events', component: SearchEventsComponent, name: 'Search Events', order: '03', category: 'Appointments', description: 'This example shows how to filter the appointments or events of the Angular Scheduler based on a search string in a particular field or all fields.' },
   { path: ':theme/schedule/timezone-event', component: TimezoneComponent, name: 'Timezone', order: '03', category: 'Appointments', description: 'This demo shows how the Angular Scheduler works with different time zones. The events in the Scheduler automatically adapt to the selected time zone.' },
   { path: ':theme/schedule/inline-editing', component: InlineEditingComponent, name: 'Inline Editing', order: '03', category: 'Appointments', description: 'The example showcases the inline mode of the Angular Scheduler that is used to create an appointment or edit an existing appointments subject easily and quickly.' },
+  { path: ':theme/schedule/overlap-events', component: OverlapEventsComponent, name: 'Conflict Free Event', order: '03', category: 'Appointments', type: 'new', description: 'This demo explains how to restrict overlapping appointments within the same time range in Angular Scheduler.' },
   { path: ':theme/schedule/external-drag-drop', component: ExternalDragDropComponent, name: 'External Drag and Drop', order: '04', category: 'Drag and Drop', description: 'This demo shows the ability to drag and drop appointments from an external source (such as the DataGrid, ListView, etc.)  into the Angular Scheduler.' },
   { path: ':theme/schedule/multi-drag', component: MultiDragComponent, name: 'Multiple Events Drag', order: '04', category: 'Drag and Drop', description: 'This demo explains you about the ability to select multiple appointments and drag them simultaneously.' },
   { path: ':theme/schedule/schedule-to-schedule', component: MultipleSchedulerComponent, name: 'Multiple schedulers', order: '04', category: 'Drag and Drop', description: 'This example illustrates how to drag and drop events among multiple schedules. You can drag and drop events from one schedule to another in the Angular Scheduler.' },
@@ -147,7 +149,7 @@ export const scheduleRouteConfig: Record<string, any>[] = [
   { path: ':theme/schedule/print', component: PrintComponent, name: 'Print', order: '14', category: 'Exporting', description: 'This sample demonstrates how to print all the appointments (events) in the Angular Scheduler on the client side using the Print Library.' },
   { path: ':theme/schedule/recurrence-editor-generate-rule', component: RecGeneraterComponent, name: 'Rule Generator', order: '12', category: 'Recurrence Editor', description: 'This demo showcases how to generate various recurrence pattern rules, such as daily, weekly, monthly, and yearly, using the Recurrence Editor.' },
   { path: ':theme/schedule/recurrence-editor-populate-rule', component: RecPopulateComponent, name: 'Populate Rule', order: '12', category: 'Recurrence Editor', description: 'This demo shows how to populate a predefined set of recurrence rules in the Recurrence Editor fields to help users create recurring events.' },
-  { path: ':theme/schedule/clipboard', component: ClipboardComponent, name: 'Clipboard', order: '13', category: 'Miscellaneous', type: 'new', description: 'This demo showcases clipboard operations (cut, copy, and paste) with Scheduler events, along with a context menu for additional actions.'},
+  { path: ':theme/schedule/clipboard', component: ClipboardComponent, name: 'Clipboard', order: '13', category: 'Miscellaneous', description: 'This demo showcases clipboard operations (cut, copy, and paste) with Scheduler events, along with a context menu for additional actions.'},
   { path: ':theme/schedule/keyboard-interaction', component: KeyboardComponent, name: 'Keyboard Interaction', hideOnDevice: true, order: '13', category: 'Miscellaneous', description: 'This demo showcases all the available keyboard shortcuts that help users perform actions using only the keyboard in the Angular Scheduler control.' },
   { path: ':theme/schedule/events', component: EventsComponent, name: 'Events', order: '13', category: 'Miscellaneous', description: 'This demo lists the client-side events triggered on Angular Scheduler actions in the Event Tracer. The Event Tracer also includes a Clear option.' }
 ];

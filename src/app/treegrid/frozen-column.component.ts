@@ -6,7 +6,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-treegrid-container',
-    templateUrl: 'frozencolumn.html',
+    templateUrl: 'frozen-column.html',
     encapsulation: ViewEncapsulation.None,
     providers: [ FreezeService, SortService, SelectionService ],
     standalone: true,

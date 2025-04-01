@@ -28,7 +28,7 @@ export class GroupEditingComponent {
   public group: GroupModel = { allowGroupEdit: true, resources: ['Conferences'] };
   public allowMultiple = true;
   public eventSettings: EventSettingsModel = {
-    dataSource: resourceConferenceData,
+    dataSource: this.data,
     fields: {
       subject: { title: 'Conference Name', name: 'Subject' },
       description: { title: 'Summary', name: 'Description' },

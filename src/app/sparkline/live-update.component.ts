@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Sparkline, ISparklineLoadEventArgs, SparklineTheme } from '@syncfusion/ej2-charts';
 import { SparklineModule } from '@syncfusion/ej2-angular-charts';
+import { loadSparkLineTheme } from './theme-color';
 /**
  * Sample for axis type in Sparkline 
  */
@@ -235,9 +236,7 @@ export class SparkineLiveUpdateSample {
         this.time1 = window.setInterval(this.update.bind(this), 1000);
     }
     public cpuload(args: ISparklineLoadEventArgs): void {
-        var theme = location.hash.split('/')[1];
-        theme = theme ? theme : 'Fluent2';
-        args.sparkline.theme = <SparklineTheme>(theme.charAt(0).toUpperCase() + theme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadSparkLineTheme(args);
     }
     public memloaded(args: ISparklineLoadEventArgs): void {
         clearInterval(this.time2);

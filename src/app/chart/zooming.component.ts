@@ -4,6 +4,7 @@ import { Browser } from '@syncfusion/ej2-base';
 import { data } from './financial-data'
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme, themes, borderColor } from './theme-color';
 /**
  * Sample for Zooming in chart
  */
@@ -16,11 +17,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     imports: [ChartAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class ZoomingChartComponent {
-    public selectedTheme: string = (location.hash.split('/')[1]) ? (location.hash.split('/')[1]) : 'Material';
-    public theme: ChartTheme = <ChartTheme>(this.selectedTheme.charAt(0).toUpperCase() +
-        this.selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
-    public themes: string[] = ['bootstrap5', 'bootstrap5dark', 'tailwind', 'tailwinddark', 'material', 'materialdark', 'bootstrap4', 'bootstrap', 'bootstrapdark', 'fabric', 'fabricdark', 'highcontrast', 'fluent', 'fluentdark', 'material3', 'material3dark', 'fluent2', 'fluent2dark', 'fluent2highcontrast'];
-    public borderColor: string[] = ['#FD7E14', '#FD7E14', '#5A61F6', '#8B5CF6', '#00bdae', '#9ECB08', '#a16ee5', '#a16ee5', '#a16ee5', '#4472c4', '#4472c4', '#79ECE4', '#1AC9E6', '#1AC9E6', '#6355C7', '#4EAAFF', '#6200EE', '#9BB449', '#9BB449'];
+    public theme: ChartTheme | string = loadChartTheme();   
     // public fill: string = 'url(#' + this.selectedTheme + '-gradient-chart)';
     public seriesData: Object[] = [];
 
@@ -38,12 +35,12 @@ export class ZoomingChartComponent {
         majorGridLines: { width: 0 },
         majorTickLines: { width: 0 },
         scrollbarSettings: {
-            enableZoom: false
+            enableZoom: false, position: 'Bottom'
         }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Temperature',
+        title: 'Temperature Anomaly (°C)',
         intervalType: 'Months',
         labelFormat: '{value}°C',
         enableScrollbarOnZooming: false,
@@ -72,22 +69,23 @@ export class ZoomingChartComponent {
     };
     public margin: Object ={
         top: 20,
-    }
+    };
+    public tooltip: Object = {
+        enable: true, 
+        showNearestTooltip: true, 
+        header: '<b>${point.x}</b>', 
+        format: 'Temperature: <b>${point.y}</b>',
+        enableHighlight: true
+    };
 
     // custom code start
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
-        let themes: string[] = ['bootstrap5', 'bootstrap5dark', 'tailwind', 'tailwinddark', 'material', 'materialdark', 'bootstrap4', 'bootstrap', 'bootstrapdark', 'fabric', 'fabricdark', 'highcontrast', 'fluent', 'fluentdark', 'material3', 'material3dark', 'fluent2', 'fluent2dark', 'fluent2highcontrast'];
-        let borderColor: string[] = ['#6355C7', '#8F80F4', '#5A61F6', '#8B5CF6', '#00bdae', '#9ECB08', '#a16ee5', '#a16ee5', '#a16ee5', '#4472c4', '#4472c4', '#79ECE4', '#1AC9E6', '#1AC9E6', '#6355C7', '#4EAAFF', '#6200EE', '#9BB449', '#9BB449'];
+        loadChartTheme(args, true);
         args.chart.scrollBarModule = new ScrollBar(args.chart);
         args.chart.series[0].border.color = borderColor[themes.indexOf(args.chart.theme.toLowerCase())];
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');;
     };
     // custom code end
-    public border: Object = { width: 2, color: this.borderColor[this.themes.indexOf(this.theme)] };
+    public border: Object = { width: 2, color: borderColor[themes.indexOf(this.theme)] };
     public width: string = Browser.isDevice ? '100%' : '80%'
     public title: string = Browser.isDevice ? 'Monthly Temperature Anomalies' : 'Global Warming: Monthly Temperature Anomalies'
     public titleStyle: Object = { textAlignment: Browser.isDevice ? 'Near' : 'Center' };

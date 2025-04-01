@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { CircularChart3DTheme } from '@syncfusion/ej2-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { CircularChart3DAllModule, CircularChart3DLoadedEventArgs } from '@syncfusion/ej2-angular-charts';
+import { loadCircular3DChartTheme } from './theme-color';
 
 /**
  * Circular 3D Chart with legend.
@@ -29,9 +30,7 @@ export class PieLegend {
         font: { fontWeight: '600' }, name: 'text', connectorStyle: { length: '20px' }
     };
     public load(args: CircularChart3DLoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <CircularChart3DTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadCircular3DChartTheme(args);
     };
     //Initializing Circular 3D-Chart Title
     public title: string = 'Browser Market Shares in November 2023';

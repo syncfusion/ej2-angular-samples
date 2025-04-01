@@ -1,9 +1,4 @@
 <main>
-    <section id="action-description" aria-label="Description of Circular Gauge sample">
-        <p>
-            This sample demonstrates how to create an analog clock that displays the time.
-        </p>
-    </section>
     <div class="control-section">
         <ejs-circulargauge style='display:block;' background='transparent' #gauge (load)='load($event)' id="clock"
             (loaded)='loaded($event)' (resized)='resize($event)'>
@@ -34,6 +29,11 @@
             </e-axes>
         </ejs-circulargauge>
     </div>
+    <section id="action-description" aria-label="Description of Circular Gauge sample">
+        <p>
+            This sample demonstrates how to create an analog clock that displays the time.
+        </p>
+    </section>
     <section id="description" aria-label="Description of the Circular Gauge features demonstrated in this sample">
         <p>
             In this example, a clock has been created by adding axis, minor ticks, major ticks, and needles in a circular

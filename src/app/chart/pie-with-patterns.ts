@@ -3,6 +3,7 @@ import { AccumulationChart, AccumulationChartComponent, ChartAllModule, IAccLoad
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadAccumulationChartTheme, accpatternPointRender } from './theme-color';
 
 /**
  * Sample for Pie with Various Radius
@@ -43,63 +44,10 @@ export class PieWithPatternsComponent {
   }
   // custom code start
   public load(args: IAccLoadedEventArgs): void {
-    let selectedTheme: string = location.hash.split('/')[1];
-    selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-    args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+    loadAccumulationChartTheme(args);
   }
   public pointRender(args: IAccPointRenderEventArgs): void {
-    if (args.point.index == 0) {
-      args.pattern = 'DiagonalBackward'
-
-    }
-    else if (args.point.index == 1) {
-      args.pattern = 'DiagonalForward'
-
-    }
-    else if (args.point.index == 2) {
-      args.pattern = 'HorizontalStripe'
-
-    }
-    else if (args.point.index == 3) {
-      args.pattern = 'VerticalStripe'
-
-    }
-    else if (args.point.index == 4) {
-      args.pattern = 'HorizontalDash'
-
-    }
-    let selectedTheme: string = location.hash.split('/')[1];
-    selectedTheme = selectedTheme ? selectedTheme : 'Material';
-    if (selectedTheme.indexOf('dark') > -1) {
-      if (selectedTheme.indexOf('material') > -1) {
-        args.border.color = '#303030';
-      }
-      else if (selectedTheme.indexOf('bootstrap5') > -1) {
-        args.border.color = '#212529';
-      }
-      else if (selectedTheme.indexOf('bootstrap') > -1) {
-        args.border.color = '#1A1A1A';
-      }
-      else if (selectedTheme.indexOf('tailwind') > -1) {
-        args.border.color = '#1F2937';
-      }
-      else if (selectedTheme.indexOf('fluent') > -1) {
-        args.border.color = '#252423';
-      }
-      else if (selectedTheme.indexOf('fabric') > -1) {
-        args.border.color = '#201f1f';
-      }
-      else {
-        args.border.color = '#222222';
-      }
-    }
-    else if (selectedTheme.indexOf('highcontrast') > -1) {
-      args.border.color = '#000000';
-    }
-    else {
-      args.border.color = '#FFFFFF';
-    }
-
+    accpatternPointRender(args);
   };
   public tooltip: Object = {
     enable: true,

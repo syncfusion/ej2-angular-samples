@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ProgressBar, ITextRenderEventArgs, AnimationModel, FontModel } from '@syncfusion/ej2-progressbar';
 import { ILoadedEventArgs, ProgressTheme, ModeType} from '@syncfusion/ej2-progressbar';
 import { ProgressBarAllModule } from '@syncfusion/ej2-angular-progressbar';
-
+import { loadProgressBarTheme } from './theme-color';
 
 /**
  * RTl sample
@@ -79,10 +79,7 @@ export class ProgressBarStripesComponent {
             }
     }
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.progressBar.theme = <ProgressTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        let selectedTheme: string = loadProgressBarTheme(args);
             if (args.progressBar.theme === 'Material') {
                 args.progressBar.trackColor = '#eee';
             }

@@ -7,6 +7,7 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { loadSmithChartTheme } from './theme-color';
 
 @Component({
     selector: 'control-content',
@@ -58,9 +59,7 @@ export class SmithchartPrintExportComponent {
     };
     // custom code start
     public load = (args: ISmithchartLoadEventArgs) => {
-        let theme: string = location.hash.split('/')[1];
-        theme = theme ? theme : 'Fluent2';
-        args.smithchart.theme = <SmithchartTheme>(theme.charAt(0).toUpperCase() + theme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadSmithChartTheme(args);
     }
     // custom code end
     public onClick1(e: Event): void {

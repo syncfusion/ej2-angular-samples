@@ -1,89 +1,140 @@
+let communityMessageAdmin = {
+    user: 'Alice',
+    id: 'admin'
+};
+
+let communityMessageUser1 = {
+    user: 'Michale Suyama',
+    id: 'user1',
+    avatarBgColor: "#87cefa"
+};
+
+let communityMessageUser2 = {
+    user: 'Charlie',
+    id: 'user2',
+    avatarUrl: "./assets/chat-ui/images/charlie.png",
+};
+
+let communityMessageUser3 = {
+    user: 'Janet',
+    id: 'user3',
+    avatarBgColor: "#dec287",
+    avatarUrl: './assets/chat-ui/images/janet.png'
+};
+
+let chatMessageUser1 = {
+    user: 'Albert',
+    id: 'user1',
+    avatarUrl: './assets/chat-ui/images/andrew.png'
+};
+
+let chatMessageUser2 = {
+    user: 'Reena',
+    id: 'user2',
+    avatarUrl: './assets/chat-ui/images/reena.png'
+};
+
+let integrationMessageUser1 = {
+    user: 'Reena',
+    id: 'user1',
+    avatarUrl: './assets/chat-ui/images/reena.png'
+};
+
+let integrationMessageUser2 = {
+    user: 'Albert',
+    id: 'user2',
+    avatarUrl: './assets/chat-ui/images/andrew.png'
+};
+
+let botMessage = {
+    user: 'Bot',
+    id: 'bot',
+    avatarUrl: './assets/chat-ui/images/bot.png'
+};
+
+let walterMessageUser1 = {
+    user: 'Sam',
+    id: 'user2',
+    avatarUrl: './assets/chat-ui/images/laura.png'
+};
+
+let walterMessageUser2 = {
+    user: 'Charlie',
+    id: 'user5',
+    avatarUrl: "./assets/chat-ui/images/charlie.png",
+};
+
+let lauraMessageUser1 = {
+    user: 'Laura Callahan',
+    id: 'user1',
+    avatarUrl: './assets/chat-ui/images/laura.png'
+};
+
+let lauraMessageUser2 = {
+    user: 'Sam',
+    id: 'user3',
+    avatarUrl: './assets/chat-ui/images/laura.png'
+};
+
+let teamsMessageUser1 = {
+    user: 'Admin',
+    id: 'team'
+};
+
+let teamsMessageUser2= {
+    user: 'Janet',
+    id: 'user2',
+    avatarUrl: './assets/chat-ui/images/janet.png'
+};
+
 export const communityMessagedata = [
     {
-        author: {
-            user: 'Alice',
-            id: 'admin'
-        },
+        author: communityMessageAdmin,
         text: 'Hey Michale, Charlie! Seen the latest posts in the Design Community? Amazing projects!',
         timeStamp: new Date("October 25, 2024 07:30")
     },
     {
-        author: {
-            user: 'Michale Suyama',
-            id: 'user1'
-        },
+        author: communityMessageUser1,
         text: 'Hi Alice! Yes, Dana’s new UI design is incredible.',
         timeStamp: new Date("October 25, 2024 08:00")
     },
     {
-        author: {
-            user: 'Charlie',
-            id: 'user2',
-            avatarUrl: "./assets/chat-ui/images/charlie.png",
-            avatarBgColor: "#e6cdde"
-        },
+        author: communityMessageUser2,
         text: 'Hey! I loved Dana’s use of color. Frank’s typography guide was great too.',
         timeStamp: new Date("October 25, 2024 11:00")
     },
     {
-        author: {
-            user: 'Alice',
-            id: 'admin'
-        },
+        author: communityMessageAdmin,
         text: 'Absolutely! Any new community events planned?',
         timeStamp: new Date("October 26, 2024 11:00")
     },
     {
-        author: {
-            user: 'Michale Suyama',
-            id: 'user1'
-        },
+        author: communityMessageUser1,
         text: 'We should organize a design challenge.',
         timeStamp: new Date("October 26, 2024 12:15")
     },
     {
-        author: {
-            user: 'Janet',
-            id: 'user3',
-            avatarBgColor: "#dec287",
-            avatarUrl: './assets/chat-ui/images/janet.png'
-        },
+        author: communityMessageUser3,
         text: 'I am excited to see the new projects.',
         timeStamp: new Date("October 26, 2024 12:17")
     },
     {
-        author: {
-            user: 'Charlie',
-            id: 'user2',
-            avatarUrl: "./assets/chat-ui/images/charlie.png",
-            avatarBgColor: "#e6cdde"
-        },
+        author: communityMessageUser2,
         text: 'Great idea! Let’s discuss it in the next meeting.',
         timeStamp: new Date("October 26, 2024 12:30")
     },
     {
-        author: {
-            user: 'Alice',
-            id: 'admin'
-        },
+        author: communityMessageAdmin,
         text: 'Sounds good! This community is so inspiring.',
         timeStamp: new Date()
     },
     {
-        author: {
-            user: 'Michale Suyama',
-            id: 'user1'
-        },
+        author: communityMessageUser1,
         text: 'Agreed! Excited to see everyone’s ideas.',
         timeStamp: new Date()
     },
     {
-        author: {
-            user: 'Charlie',
-            id: 'user2',
-            avatarUrl: "./assets/chat-ui/images/charlie.png",
-            avatarBgColor: "#e6cdde"
-        },
+        author: communityMessageUser2,
         text: 'I am looking forward to the design challenge.',
         timeStamp: new Date()
     }
@@ -91,89 +142,49 @@ export const communityMessagedata = [
 
 export const chatMessagedata = [
     {
-        author: {
-            user: 'Albert',
-            id: 'user1',
-            avatarUrl: './assets/chat-ui/images/andrew.png'
-        },
+        author: chatMessageUser1,
         text: "Hi there! How's it going?"
     },
     {
-        author: {
-            user: 'Reena',
-            id: 'user2',
-            avatarUrl: './assets/chat-ui/images/reena.png'
-        },
+        author: chatMessageUser2,
         text: "Hey! I'm doing well, thanks. How about you?"
     },
     {
-        author: {
-            user: 'Albert',
-            id: 'user1',
-            avatarUrl: './assets/chat-ui/images/andrew.png'
-        },
+        author: chatMessageUser1,
         text: "Mostly the usual stuff. I did start a new hobby - painting!"
     },
 ];
 
 export const integrationMessagedata = [
     {
-        author: {
-            user: 'Reena',
-            id: 'user1',
-            avatarUrl: './assets/chat-ui/images/reena.png'
-        },
+        author: integrationMessageUser1,
         text: "Hey, I'm having trouble with my computer. It keeps freezing."
     },
     {
-        author: {
-            user: 'Albert',
-            id: 'user2',
-            avatarUrl: './assets/chat-ui/images/andrew.png'
-        },
+        author: integrationMessageUser2,
         text: "Oh, that's annoying. Have you tried restarting it?"
     },
     {
-        author: {
-            user: 'Reena',
-            id: 'user1',
-            avatarUrl: './assets/chat-ui/images/reena.png'
-        },
+        author: integrationMessageUser1,
         text: "Yeah, I did, but it didn't help."
     },
     {
-        author: {
-            user: 'Albert',
-            id: 'user2',
-            avatarUrl: './assets/chat-ui/images/andrew.png'
-        },
+        author: integrationMessageUser2,
         text: "Sometimes, outdated software or malware can cause issues."
     },
     {
-        author: {
-            user: 'Reena',
-            id: 'user1',
-            avatarUrl: './assets/chat-ui/images/reena.png'
-        },
+        author: integrationMessageUser1,
         text: "Okay, I'll try that. Thanks for the help!"
     }
 ];
 
 export const botMessagedata = [
     {
-        author: {
-            user: 'Bot',
-            id: 'bot',
-            avatarUrl: './assets/chat-ui/images/bot.png'
-        },
+        author: botMessage,
         text: "Hello Sam, I am a virtual assitant."
     },
     {
-        author: {
-            user: 'Bot',
-            id: 'bot',
-            avatarUrl: './assets/chat-ui/images/bot.png'
-        },
+        author: botMessage,
         text: "Which room are you looking to decorate?"
     }
 ];
@@ -196,96 +207,53 @@ export const chatSuggestions = ["Bedroom", "Kitchen"];
 
 export const walterMessagedata = [
     {
-        author: {
-            user: 'Sam',
-            id: 'user2',
-            avatarUrl: './assets/chat-ui/images/laura.png'
-        },
+        author: walterMessageUser1,
         text: "Hey Charlie, have you thought about where you want to go for our vacation?"
     },
     {
-        author: {
-            user: 'Charlie',
-            id: 'user5',
-            avatarUrl: './assets/chat-ui/images/charlie.png'
-        },
+        author: walterMessageUser2,
         text: "Hi Sam! I was thinking about going to Bali. I've heard the beaches are beautiful and there's so much to do."
     },
     {
-        author: {
-            user: 'Sam',
-            id: 'user2',
-            avatarUrl: './assets/chat-ui/images/laura.png'
-        },
+        author: walterMessageUser1,
         text: "Bali sounds amazing! I've always wanted to try surfing. Do you know any good places to stay?"
     },
     {
-        author: {
-            user: 'Charlie',
-            id: 'user5',
-            avatarUrl: './assets/chat-ui/images/charlie.png'
-        },
+        author: walterMessageUser2,
         text: "Yes, I found a few nice resorts and some budget-friendly options too. I'll send you the links."
     },
     {
-        author: {
-            user: 'Sam',
-            id: 'user2',
-            avatarUrl: './assets/chat-ui/images/laura.png'
-        },
+        author: walterMessageUser1,
         text: "Great! Let's finalize our plans this weekend."
     }
 ];
 
 export const lauraMessagedata = [
     {
-        author: {
-            user: 'Laura Callahan',
-            id: 'user1',
-            avatarUrl: './assets/chat-ui/images/laura.png'
-        },
+        author: lauraMessageUser1,
         text: "Hey Sam, can we have a quick meeting tomorrow morning to discuss the new project?"
     },
     {
-        author: {
-            user: 'Sam',
-            id: 'user3',
-            avatarUrl: './assets/chat-ui/images/laura.png'
-        },
+        author: lauraMessageUser2,
         text: "Sure, what time works best for you?"
     },
     {
-        author: {
-            user: 'Laura Callahan',
-            id: 'user1',
-            avatarUrl: './assets/chat-ui/images/laura.png'
-        },
+        author: lauraMessageUser1,
         text: "10 AM?"
     },
     {
-        author: {
-            user: 'Sam',
-            id: 'user3',
-            avatarUrl: './assets/chat-ui/images/laura.png'
-        },
+        author: lauraMessageUser2,
         text: "10 AM works for me."
     }
 ];
 
 export const teamsMessagedate = [
     {
-        author: {
-            user: 'Admin',
-            id: 'team'
-        },
+        author: teamsMessageUser1,
         text: "Hi, everyone!, welcome to the new web team"
     },
     {
-        author: {
-            user: 'Janet',
-            id: 'user2',
-            avatarUrl: './assets/chat-ui/images/janet.png'
-        },
+        author: teamsMessageUser2,
         text: "Hi Sir, excited about the new team."
     },
     {
@@ -296,18 +264,11 @@ export const teamsMessagedate = [
         text: "Good morning ! suprised with the new team message."
     },
     {
-        author: {
-            user: 'Charlie',
-            id: 'user2',
-            avatarUrl: './assets/chat-ui/images/charlie.png'
-        },
+        author: communityMessageUser2,
         text: "Hi all, what's the purpose of this new team formation ?"
     },
     {
-        author: {
-            user: 'Admin',
-            id: 'team'
-        },
+        author: teamsMessageUser1,
         text: "Charlie, we are planning for a new portal launch hence, grouping all in one place."
     }
 ];

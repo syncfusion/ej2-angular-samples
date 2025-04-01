@@ -1,0 +1,13 @@
+<div class="control-section chat-ui">
+    <div class="loadonDemand-chatui">
+        <div id="loadOnDemand" ejs-chatui headerText='Michale Suyama' headerIconCss="chat_user2_avatar" [messages]="chatMessages" [user]="currentUserModel" showTimeBreak="true" loadOnDemand="true"></div>
+    </div>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates the load on-demand feature of the Chat UI component to render a large number of data's.</p>
+</div>
+<div id="description">
+    <p> 
+        In this example, the chat <code>messages</code> are the list of conversations between two users allowing to scroll through their conversation history. The <code>loadOnDemand</code> property allows you to load more messages on demand, improving the performance and reducing load times, particularly in long conversations. Only the visible conversations are render, reducing the amount of DOM elements and improving the overall performance.
+    </p>
+</div>

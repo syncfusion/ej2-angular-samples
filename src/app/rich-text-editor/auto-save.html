@@ -2,7 +2,7 @@
     <div class="control-wrapper">
         <div class="sample-container">
             <div class="default-section">
-                <ejs-richtexteditor id='autosaveRTE' #autosaveRTE [toolbarSettings]='tools' [saveInterval]="5000" placeholder='Start to type a content to save' [enablePersistence]="true" (change)='updateStatus()'>
+                <ejs-richtexteditor id='autosaveRTE' #autosaveRTE [toolbarSettings]='tools' [saveInterval]="5000" placeholder='Start to type a content to save' [enablePersistence]="true" (change)='updateStatus()' [value]=editorValue>
                 </ejs-richtexteditor>
                 <div id='statusEle' class='current-status'>
                     <div id='saving' style="display: none">

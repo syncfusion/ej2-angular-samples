@@ -37,9 +37,4 @@ export class MentionIntegrationComponent {
       ];
       public  fieldsData: { [key: string]: string } = { text: 'Name' };
 
-      onActionBegin(args){
-        if (args.requestType === 'EnterAction' && this.mentionObj.element.classList.contains('e-popup-open')) {
-            args.cancel = true;
-        }
-      }
 }

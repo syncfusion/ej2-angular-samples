@@ -13,8 +13,8 @@ import { DefaultSignatureComponent } from './default.component';
 import { ToolbarSignatureComponent } from './toolbar.component';
 
 export const signatureAppRoutes: Object[] = [
-    { path: ':theme/signature/default', component: DefaultSignatureComponent, name: 'Default Functionalities', order: '01', category: 'Signature', description: 'This example demonstrates the default functionalities of the Syncfusion<sup>®</sup> Angular Signature.' },
-    { path: ':theme/signature/toolbar', component: ToolbarSignatureComponent, name: 'Toolbar', order: '01', category: 'Signature', description: 'This example demonstrates the toolbar functionalities of the Syncfusion<sup>®</sup> Angular Signature.' },
+    { path: ':theme/signature/default', component: DefaultSignatureComponent, name: 'Default Functionalities', order: '01', category: 'Signature', description: 'This example demonstrates the default functionalities of the Syncfusion Angular Signature.' },
+    { path: ':theme/signature/toolbar', component: ToolbarSignatureComponent, name: 'Toolbar', order: '01', category: 'Signature', description: 'This example demonstrates the toolbar functionalities of the Syncfusion Angular Signature.' },
 ];
 
 export const SignatureSampleModule: ModuleWithProviders<any> = RouterModule.forChild(signatureAppRoutes);

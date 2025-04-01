@@ -1,17 +1,14 @@
  <div id="action-description">
     <p>
-        This sample shows the literacy rate by country in 2015 with the default column series in the chart.
+        This sample showcases a bar chart with rounded corners, illustrating the anticipated growth rates across various sectors in 2024.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
-        <ejs-chart #roundcol style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='column-container' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend' [highlightColor]='highlightColor'
-            (pointRender)='pointRender($event)' [enableSideBySidePlacement]='placement'>
+        <ejs-chart #roundcol style='display:block;' [chartArea]='chartArea' [width]='width' height='500px' align='center' id='column-container' [primaryXAxis]='primaryXAxis'
+            [primaryYAxis]='primaryYAxis' [title]='title' [subTitle]='subTitle' [titleStyle]='titleStyle' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Column' xName='Country' yName='Rate' width=2 [cornerRadius]='radius' [enableTooltip] = false opacity=0.5 columnWidth=0.8>
-                </e-series>
-                <e-series [dataSource]='data' type='Column' xName='Country' yName='Literacy_Rate' width=2 [marker]='marker' [cornerRadius]='radius' tooltipMappingName='Text' columnWidth=0.8>
+                <e-series [dataSource]='data' type='Bar' xName='x' yName='y' [cornerRadius]='radius' columnWidth=0.5 [marker]='marker'>
                 </e-series>
             </e-series-collection>
         </ejs-chart>
@@ -19,7 +16,10 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the column chart. The column chart is used to compare the frequency, count, total, or average of data in different categories. You can use the <code>ChartCornerRadius</code> option to customize the vertical rectangle, resulting in a rounded column.
+        In this example, you can see how to render and configure the bar chart. The bar chart is similar to the column chart, but the orientation of the y-axis is horizontal rather than vertical. You can use the <code>cornerRadius</code> option to customize the horizontal rectangle, resulting in a rounded bar.
+    </p>
+    <p>
+        <code>Tooltips</code> are enabled in this example. To see the tooltip in action, hover over a point or tap on a point in touch-enabled devices.
     </p>
     <p style="font-weight: 500">Injecting Module</p>
     <p>

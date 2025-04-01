@@ -54,7 +54,7 @@ export class MapsOsmWithMarkerClusterComponent {
                     },
                     shape: 'Image',
                     height: 40, width: 40,
-                    imageUrl: './assets/maps/images/cluster-france.svg'
+                    imageUrl: 'https://ej2.syncfusion.com/angular/demos/assets/maps/images/cluster-france.svg'
                 },
                 visible: true,
                 dataSource: [
@@ -95,7 +95,7 @@ export class MapsOsmWithMarkerClusterComponent {
                         color: 'white',
                         size: '10px'
                     },
-                    imageUrl: './assets/maps/images/cluster-usa.svg'
+                    imageUrl: 'https://ej2.syncfusion.com/angular/demos/assets/maps/images/cluster-usa.svg'
                 },
                 visible: true,
                 dataSource: [
@@ -136,7 +136,7 @@ export class MapsOsmWithMarkerClusterComponent {
                         color: 'white',
                         size: '10px'
                     },
-                    imageUrl: './assets/maps/images/cluster-india.svg'
+                    imageUrl: 'https://ej2.syncfusion.com/angular/demos/assets/maps/images/cluster-india.svg'
                 },
                 visible: true,
                 dataSource: [
@@ -177,7 +177,7 @@ export class MapsOsmWithMarkerClusterComponent {
                         color: 'white',
                         size: '10px'
                     },
-                    imageUrl: './assets/maps/images/cluster-china.svg'
+                    imageUrl: 'https://ej2.syncfusion.com/angular/demos/assets/maps/images/cluster-china.svg'
                 },
                 visible: true,
                 dataSource: [

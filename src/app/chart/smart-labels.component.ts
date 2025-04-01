@@ -4,6 +4,7 @@ import { AccumulationDataLabelSettingsModel, LegendSettingsModel, TooltipSetting
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadAccumulationChartTheme } from './theme-color';
 /**
  * Sample for Smart Labels in Pie chart
  */
@@ -56,9 +57,7 @@ export class SmartLabelsComponent {
     public title: string = 'Rio Olympics Gold ';
      // custom code start
     public onLoad(args: IAccLoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.accumulation.theme = <AccumulationTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadAccumulationChartTheme(args);
     }
      // custom code end
     constructor() {

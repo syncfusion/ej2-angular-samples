@@ -1,10 +1,4 @@
 <main>
-    <section id="action-description" aria-label="Description of Circular Gauge sample">
-        <p>
-            This sample demonstrates how to create a direction compass by modifying the circular gauge's functionalities to
-            meet the needs of the user.
-        </p>
-    </section>
     <div class="control-section">
         <ejs-circulargauge #direction='' (load)='load($event)' id='direction-container' style='display:block;'
             background='transparent' (axisLabelRender)="onLabelRender($event)">
@@ -15,7 +9,12 @@
             </e-axes>
         </ejs-circulargauge>
     </div>
-    
+    <section id="action-description" aria-label="Description of Circular Gauge sample">
+        <p>
+            This sample demonstrates how to create a direction compass by modifying the circular gauge's functionalities to
+            meet the needs of the user.
+        </p>
+    </section>
     <section id="description" aria-label="Description of the Circular Gauge features demonstrated in this sample">
         <p>
             In this example, a direction compass has been depicted by adding a couple of needle pointers in the circular

@@ -1,7 +1,8 @@
-import { Component, ViewEncapsulation, Inject } from '@angular/core';
+import { Component, ViewEncapsulation, Inject, AfterViewInit } from '@angular/core';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { RatingModule } from '@syncfusion/ej2-angular-inputs';
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Tooltip sample
@@ -15,8 +16,21 @@ import { RatingModule } from '@syncfusion/ej2-angular-inputs';
     standalone: true,
     imports: [RatingModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
-export class TooltipRatingComponent {
+export class TooltipRatingComponent implements AfterViewInit {
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
         sourceFiles.files = ['tooltip.css'];
+    }
+  ngAfterViewInit() {
+        const rightPane = document.getElementById('right-pane');
+        if (rightPane) {
+            rightPane.addEventListener('scroll', this.hideTooltipOnScroll);
+      }
+    }
+
+    hideTooltipOnScroll(): void {
+        const tooltipElement: HTMLElement | null = document.querySelector('.e-rating-tooltip');
+        if (tooltipElement && Browser.isDevice) {
+            tooltipElement.style.display = 'none';
+        }
     }
 }

@@ -209,7 +209,7 @@
                             <input ejs-colorpicker #colorpicker id="fontcolor" value='#000' type='color' (change)='onFontColorChange($event)' />
                         </div>
                         <div class="col-xs-4 column-style">
-                            <ejs-numerictextbox #fontSize id="fontSize" value="12" step="2" format='##.##' (change)='onFontSizeChange($event)'>
+                            <ejs-numerictextbox #fontSize id="fontSize" value="12" step="2" format='##.##' min="1" max="16" (change)='onFontSizeChange($event)'>
                             </ejs-numerictextbox>
                         </div>
                         <div class="col-xs-4 column-style">

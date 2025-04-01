@@ -3,6 +3,7 @@ import { Browser } from '@syncfusion/ej2-base';
 // tslint:disable-next-line:max-line-length
 import { BulletTooltipSettingsModel, AnimationModel, BulletChartComponent, FontModel, BulletChartLegendSettingsModel, BulletChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { IBulletLoadedEventArgs, ChartTheme, IBulletLegendRenderEventArgs } from '@syncfusion/ej2-charts';
+import { loadBulletChartTheme } from './theme-color';
 /**
  * RTl sample
  */
@@ -31,10 +32,7 @@ export class BulletChartLegendComponent {
     public legendSettings: BulletChartLegendSettingsModel = {visible: true};
 
     public load =  (args: IBulletLoadedEventArgs) => {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.bulletChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() +
-        selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/light/i, 'Light').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadBulletChartTheme(args);
     }
     public legendRender = (args: IBulletLegendRenderEventArgs) => {
         if (args.text === 'Target_0') {

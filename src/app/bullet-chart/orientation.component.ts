@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { BulletTooltipSettingsModel, AnimationModel, BulletChartComponent, OrientationType, BulletChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { IBulletLoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 import { DropDownList, ChangeEventArgs } from '@syncfusion/ej2-dropdowns';
+import { loadBulletChartTheme } from './theme-color';
 /**
  * RTl sample
  */
@@ -29,10 +30,7 @@ export class BulletChartOrientationComponent {
     public labelFormat: string = '{value}%';
     public orientation: string = 'Vertical';
     public load = (args: IBulletLoadedEventArgs) => {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.bulletChart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() +
-            selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/light/i, 'Light').replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadBulletChartTheme(args);
     };
     ngOnInit(): void {
         this.chnageOrientation = new DropDownList({

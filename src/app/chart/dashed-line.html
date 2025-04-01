@@ -1,31 +1,33 @@
 <div id="action-description">
     <p>
-        This sample shows the rate of fruit production statistics with default line series and dash array in the chart. Dashed lines are animated using CSS animation.
+        This sample illustrates global population trends from 1950 to 2100, with solid lines representing historical data and dashed lines for projections.
     </p>
 </div>
 <div class="control-section">
-    <ejs-chart style='display:block' align='center' id='dashed-chartcontainer' [chartArea]='chartArea' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)' [crosshair]='crosshair' [width]='width'>
-        <e-annotations>
-            <e-annotation content='<div >Actual</div>' coordinateUnits='Point' x='Feb' y='125' >
-            </e-annotation>
-            <e-annotation content='<div >Forecast</div>' coordinateUnits='Point' x='Aug' y='210'>
-            </e-annotation>
-          </e-annotations>
+    <ejs-chart style='display:block' align='center' id='dashed-chartcontainer' [chartArea]='chartArea' [title]='title' [subTitle]='subTitle' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' (load)='load($event)' (axisLabelRender)='axisLabelRender($event)' (sharedTooltipRender)='sharedTooltipRender($event)' (legendRender)='legendRender($event)' [crosshair]='crosshair' [width]='width' [legendSettings]='legendSettings'>
         <e-series-collection>
-            <e-series [dataSource]='data' type='Line' xName='Period' yName='Banana_ProductionRate' width=2 [marker]='marker' opacity=1> </e-series>
-            <e-series [dataSource]='data1' type='Line' xName='Period' yName='Banana_ProductionRate' dashArray='10' width=2 [marker]='marker' opacity=1> </e-series>
+            <e-series [dataSource]='dashedLineData' type='Line' xName='x' yName='y' width=2 [marker]='marker' name='Total'> </e-series>
+            <e-series [dataSource]='dashLineData' type='Line' xName='x' yName='y' dashArray='4,4' width=2 [marker]='marker' name='Total1'> </e-series>
+            <e-series [dataSource]='dashedLineData' type='Line' xName='x' yName='y1' width=2 [marker]='marker' name='Ages 65+'> </e-series>
+            <e-series [dataSource]='dashLineData' type='Line' xName='x' yName='y1' dashArray='4,4' width=2 [marker]='marker' name='Ages1 65+'> </e-series>
+            <e-series [dataSource]='dashedLineData' type='Line' xName='x' yName='y2' width=2 [marker]='marker' name='Ages 25-64'> </e-series>
+            <e-series [dataSource]='dashLineData' type='Line' xName='x' yName='y2' dashArray='4,4' width=2 [marker]='marker' name='Ages1 25-64'> </e-series>
+            <e-series [dataSource]='dashedLineData' type='Line' xName='x' yName='y3' width=2 [marker]='marker' name='Under-25s'> </e-series>
+            <e-series [dataSource]='dashLineData' type='Line' xName='x' yName='y3' dashArray='4,4' width=2 [marker]='marker' name='Unders-25s'> </e-series>
+            <e-series [dataSource]='dashedLineData' type='Line' xName='x' yName='y4' width=2 [marker]='marker' name='Under-15s'> </e-series>
+            <e-series [dataSource]='dashLineData' type='Line' xName='x' yName='y4' dashArray='4,4' width=2 [marker]='marker' name='Unders-15s'> </e-series>
+            <e-series [dataSource]='dashedLineData' type='Line' xName='x' yName='y5' width=2 [marker]='marker' name='Under-5s'> </e-series>
+            <e-series [dataSource]='dashLineData' type='Line' xName='x' yName='y5' dashArray='4,4' width=2 [marker]='marker' name='Unders-5s'> </e-series>
         </e-series-collection>
     </ejs-chart>
 </div>
 <div id="description">
     <p>
-        In this example, you will see how to render and configure the line chart. Line charts are used to represent time-dependent data, showing trends in data at equal intervals. You can use
-        <code>DashArray</code>,
-        <code>Width</code>, and 
-        <code>Fill</code> properties to customize the line.
+        In this example, you will see how to render and configure the line chart. Line charts are used to represent time-dependent data, showing trends in data at equal intervals.
+        You can use <code>DashArray</code>, <code>Width</code>, <code>Fill</code> properties to customize the line.
     </p>
     <p>
-        <code>Tooltips</code> are enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch enabled devices.
+        <code>Tooltips</code> are enabled in this example.To see the tooltip in action, hover a point or tap on a point in touch enabled devices.
     </p>
     <p style="font-weight: 500">Injecting Module</p>
     <p>
@@ -42,8 +44,10 @@
         padding: 0px !important;
     }
     
-    #dashed-chartcontainer_Series_1 {
-        stroke-dasharray: 10px 10px;
+    #dashed-chartcontainer_Series_1, #dashed-chartcontainer_Series_3,
+    #dashed-chartcontainer_Series_5, #dashed-chartcontainer_Series_7,
+    #dashed-chartcontainer_Series_9, #dashed-chartcontainer_Series_11 {
+        stroke-dasharray: 4px 4px;
         stroke-linejoin: round;
         stroke-linecap: round;
         -webkit-animation: dash 1s linear infinite;

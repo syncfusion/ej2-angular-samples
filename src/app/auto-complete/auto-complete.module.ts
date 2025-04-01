@@ -44,7 +44,7 @@ export const autoCompleteAppRoutes: Object[] = [
     },
     {
         path: ':theme/auto-complete/resize', component: CustomResizeAutoCompleteComponent, order: '01',
-        name: 'Popup Resize', type: "new" , description: 'This demo showcases the custom resizing functionality of AutoComplete, You can adjust the size of the popup based on your preferences, allowing for better control over its appearance.', category: 'AutoComplete'
+        name: 'Popup Resize',  description: 'This demo showcases the custom resizing functionality of AutoComplete, You can adjust the size of the popup based on your preferences, allowing for better control over its appearance.', category: 'AutoComplete'
     },
     {
         path: ':theme/auto-complete/virtual-scroll', component: VirtualScrollAutoCompleteComponent, order: '01',

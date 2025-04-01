@@ -1,27 +1,30 @@
 <div id="action-description">
     <p>
-        This Angular 100% stacked column chart example visualizes motor vehicle production by manufacturer with a default stacked column series. The legend in the sample shows the information about those series.
+        This Angular 100% stacked column chart example visualizes global cotton production trends by depicting the contributions of various countries over multiple years. Each stacked column represents a countries proportionate production for a given year, summing to a total of 100% per year. The legend in the sample provides information about the series.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart style='display:block;' id='chartcontainer' [chartArea]='chartArea' [width]='width' align='center' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'>
+            [primaryYAxis]='primaryYAxis' [title]='title' [subTitle]='subTitle' [tooltip]='tooltip' (load)='load($event)' (legendClick)='legendClick($event)' (tooltipRender)='tooltipRender($event)' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='StackingColumn100' xName='Year' yName='General' name='General Motors' width='2' [border]='border' columnWidth=0.5> </e-series>
-                <e-series [dataSource]='data' type='StackingColumn100' xName='Year' yName='Honda' name='Honda' width='2'[border]='border' columnWidth=0.5> </e-series>
-                <e-series [dataSource]='data' type='StackingColumn100' xName='Year' yName='Suzuki' name='Suzuki' width='2' [border]='border' columnWidth=0.5> </e-series>
-                <e-series [dataSource]='data' type='StackingColumn100' xName='Year' yName='BMW' name='BMW' width='2' [border]='border' columnWidth=0.5> </e-series>
+                <e-series [dataSource]='data1' type='StackingColumn100' xName='x' yName='y' name='India' [border]='border' columnWidth=0.4 legendShape='Rectangle'> </e-series>
+                <e-series [dataSource]='data2' type='StackingColumn100' xName='x' yName='y' name='China' [border]='border' columnWidth=0.4 legendShape='Rectangle'> </e-series>
+                <e-series [dataSource]='data3' type='StackingColumn100' xName='x' yName='y' name='United States' [border]='border' columnWidth=0.4 legendShape='Rectangle'> </e-series>
+                <e-series [dataSource]='data4' type='StackingColumn100' xName='x' yName='y' name='Brazil' [border]='border' columnWidth=0.4 legendShape='Rectangle' [cornerRadius]='cornerRadius'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the 100% stacked column chart. The 100% stacked column chart displays multiple series of data as stacked columns, ensuring that the cumulative proportion of each stacked element always totals 100%.
+        In this example, you can see how to render and configure the 100% stacked column chart. The 100% stacked column chart
+        displays multiple series of data as stacked columns, ensuring that the cumulative proportion of each stacked element
+        always totals 100%.
     </p>
     <p>
-        <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point in touch-enabled devices.
+        <code>Tooltips</code> are enabled in this example. To see the tooltip in action, hover over a point or tap on a
+        point in touch-enabled devices.
     </p>
     <p style="font-weight: 500">Injecting Module</p>
     <p>

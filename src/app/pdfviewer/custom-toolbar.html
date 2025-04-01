@@ -4,9 +4,7 @@
       <div class="e-message render-mode-info">
           <span class="e-msg-icon render-mode-info-icon" title="Turn OFF to render the PDF Viewer as server-backed"></span>
       </div>
-      <div>
-          <ejs-switch cssClass="buttonSwitch" id="checked" (change)="change($event)" [checked]="true"></ejs-switch>
-      </div>
+      <ejs-switch cssClass="buttonSwitch" id="checked" (change)="change($event)" [checked]="true"></ejs-switch>
   </div>
   <div class='content-wrapper e-tbar-section'>
       <div class='e-sample-resize-container'>
@@ -77,8 +75,7 @@
             <div class="e-pv-search-bar-elements" id="container_search_box_elements">
               <div class="e-input-group e-pv-search-input" id="container_search_input_container">
                 <input class="e-input" id="container_search_input" type="text" placeholder="Find in document" (keypress)="searchInputKeypressed($event)" (input)="inputChange()" />
-                <span class="e-input-group-icon e-input-search-group-icon e-icons e-search" id="container_search_box-icon" style="top: 4px;" (click)="initiateTextSearch()"></span>
-                <span class="e-input-group-icon e-input-search-group-icon e-icons e-close" id="container_close_search_box-icon" [style.display]="'none'" style="top: 4px;" (click)="clearTextSearch()" ></span>
+                <span class="e-input-group-icon e-input-search-group-icon e-icons e-search" id="container_search_box-icon" (click)="searchClickHandler()"></span>
               </div>
               <button class="e-btn e-icon-btn e-pv-search-btn e-icons e-chevron-left" id="container_prev_occurrence" (click)="previousTextSearch()" type="button" [disabled]="true" aria-label="Previous Search text">
               </button>

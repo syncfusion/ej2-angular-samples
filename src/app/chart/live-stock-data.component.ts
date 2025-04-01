@@ -3,7 +3,7 @@ import { ILoadedEventArgs, IAxisRangeCalculatedEventArgs, ChartAnnotationSetting
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-
+import { loadChartTheme } from './theme-color';
 /**
  * Sample for Spline Series
  */
@@ -83,9 +83,7 @@ export class LiveStockDataComponent implements OnDestroy {
     public pointAdded: boolean = false;
     private intervalId: any;
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadChartTheme(args);
         let chart: this = this;
         this.clearInterval(); // Clear any existing interval
         this.intervalId = setInterval(function () {

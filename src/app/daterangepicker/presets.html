@@ -1,11 +1,11 @@
 <div class="control-section">
     <div id="control_wrapper">
-        <ejs-daterangepicker placeholder='Select a range'>
+        <ejs-daterangepicker #daterangepicker placeholder='Select a range'>
             <e-presets>
-                <e-preset label="This Week" [start]='weekStart' [end]='weekEnd'></e-preset>
-                <e-preset label="This Month" [start]='monthStart' [end]='monthEnd'></e-preset>
-                <e-preset label="Last Month" [start]='lastStart' [end]='lastEnd'></e-preset>
-                <e-preset label="Last Year" [start]='yearStart' [end]='yearEnd'></e-preset>
+                <e-preset [label]="labels[0]" [start]='weekStart' [end]='weekEnd'></e-preset>
+                <e-preset [label]="labels[1]" [start]='monthStart' [end]='monthEnd'></e-preset>
+                <e-preset [label]="labels[2]" [start]='lastStart' [end]='lastEnd'></e-preset>
+                <e-preset [label]="labels[3]" [start]='yearStart' [end]='yearEnd'></e-preset>
             </e-presets>
         </ejs-daterangepicker>
 

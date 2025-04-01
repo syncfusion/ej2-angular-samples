@@ -27,7 +27,7 @@ export class GroupByDateComponent {
   public group: GroupModel = { byDate: true, hideNonWorkingDays: true, resources: ['Owners'] };
   public allowMultiple = true;
   public eventSettings: EventSettingsModel = {
-    dataSource: resourceData,
+    dataSource: this.data,
     fields: {
       subject: { title: 'Task', name: 'Subject' },
       location: { title: 'Project Name', name: 'Location' },

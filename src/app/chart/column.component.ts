@@ -1,8 +1,9 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ILoadedEventArgs, ChartComponent, ChartTheme, ChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, IAxisLabelRenderEventArgs, ITooltipRenderEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 /**
  * Sample for Column Series
  */
@@ -16,56 +17,71 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 })
 export class ColumnChartComponent {
 
-    public data: Object[] = [
-        { Country : "GBR", GoldMedal : 27, SilverMedal : 23, BronzeMedal : 17, MappingName : "Great Britain" },
-        { Country : "CHN", GoldMedal : 26, SilverMedal : 18, BronzeMedal : 26, MappingName : "China" },
-        { Country : "AUS", GoldMedal : 8, SilverMedal : 11, BronzeMedal : 10, MappingName : "Australia" },
-        { Country : "RUS", GoldMedal : 19, SilverMedal : 17, BronzeMedal : 20, MappingName : "Russia" },
-        { Country : "GER", GoldMedal : 17, SilverMedal : 10, BronzeMedal : 15, MappingName : "Germany" },
-        { Country : "UA", GoldMedal : 2, SilverMedal : 5, BronzeMedal : 24, MappingName : "Ukraine" },       
-        { Country : "ES", GoldMedal : 7, SilverMedal : 4, BronzeMedal : 6, MappingName : "Spain" },
-        { Country : "UZB", GoldMedal : 4, SilverMedal : 2, BronzeMedal : 7, MappingName : "Uzbekistan" },
-        { Country : "JPN", GoldMedal : 12, SilverMedal : 8, BronzeMedal : 21, MappingName : "Japan" },
-        { Country : "NL", GoldMedal : 8, SilverMedal : 7, BronzeMedal : 4, MappingName : "NetherLand" },
-        { Country : "USA", GoldMedal : 46, SilverMedal : 37, BronzeMedal : 38, MappingName : "United States" },
+    public columnData: Object[] = [
+        { country: 'Chile', walnuts: 175000, almonds: 11300 },
+        { country: 'European Union', walnuts: 140000, almonds: 135000 },
+        { country: 'Turkey', walnuts: 67000, almonds: 24000 },
+        { country: 'India', walnuts: 33000, almonds: 4200 },
+        { country: 'Australia', walnuts: 12000, almonds: 154000 }
     ];
     //Initializing Primary X Axis
     public primaryXAxis: Object = {
-        labelIntersectAction: Browser.isDevice ? 'None' : 'Trim', labelRotation: Browser.isDevice ? -45 : 0 ,valueType: 'Category', interval: 1, majorGridLines: { width: 0 }, majorTickLines: { width: 0 }
+        valueType: 'Category',
+        interval: 1,
+        labelIntersectAction: Browser.isDevice ? 'None' : 'Trim',
+        labelRotation: Browser.isDevice ? -45 : 0,
+        majorGridLines: { width: 0 },
+        majorTickLines: { width: 0 }
     };
     //Initializing Primary Y Axis
     public primaryYAxis: Object = {
-        title: 'Medal Count',
-        maximum: 50,
-        interval: 10,
-        majorTickLines: { width: 0 }, lineStyle: { width: 0 }, 
+        title: 'Metric Tons',
+        interval: 40000,
+        majorTickLines: { width: 0 },
+        lineStyle: { width: 0 }
     };
     public marker: Object = { dataLabel: { visible: false, position: 'Top', font: { fontWeight: '600', color: '#ffffff' } } }
-    public title: string = 'Olympic Medal Counts - RIO';
+    public title: string = 'Walnuts and Almonds Estimated Production for 2023';
+    public subTitle: string = 'Source: fas.usda.gov';
     public tooltip: Object = {
         enable: true,
-        header: '<b>${point.tooltip}</b>',
-        shared: true
+        header: '<b>${point.x}</b>',
+        format: '${series.name}: <b>${point.y}</b>',
+        enableHighlight: true
     };
     public legend: Object = {
         visible: true,
-        enableHighlight : true
-    }
-      // custom code start
+        enableHighlight: true,
+        shapeWidth: 9,
+        shapeHeight: 9
+    };
+    public cornerRadius: Object = { 
+        topLeft: 4, 
+        topRight: 4
+    };
+    // custom code start
     public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
-        if(selectedTheme === 'highcontrast'){
-        args.chart.series[0].marker.dataLabel.font.color= '#000000';
-        args.chart.series[1].marker.dataLabel.font.color= '#000000';
-        args.chart.series[2].marker.dataLabel.font.color= '#000000';
+        loadChartTheme(args);
+    };
+    // custom code end
+    public axisLabelRender = (args: IAxisLabelRenderEventArgs) => {
+        const value: number = parseInt(args.text.replace(/,/g, ''), 10);
+        if (value >= 1000) {
+            args.text = value / 1000 + 'K';
         }
     };
-      // custom code end
+    public tooltipRender = (args: ITooltipRenderEventArgs) => {
+        if (args.text) {
+            let value: string = args.point.y.toLocaleString('en-US');
+            args.text = `${args.series.name}: <b>${value}</b>`;
+        }
+    };
     public chartArea: Object = {
         border: {
             width: 0
+        },
+        margin: {
+            bottom: 12
         }
     };
     public width: string = Browser.isDevice ? '100%' : '75%';

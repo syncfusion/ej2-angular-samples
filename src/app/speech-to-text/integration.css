@@ -1,0 +1,68 @@
+.integration-speechToText-section {
+    height: 550px;
+    width: 550px;
+    margin: 0 auto;
+}
+  
+.integration-speechToText-section .banner-info .e-listen-icon:before {
+    font-size: 35px;
+}
+  
+.integration-speechToText-section .banner-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 330px;
+    text-align: center;
+}
+  
+.integration-speechToText-section .e-footer-wrapper #assistview-sendButton {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+  
+.integration-speechToText-section .e-footer-wrapper #speechToText.visible,
+.integration-speechToText-section .e-footer-wrapper #assistview-sendButton.visible {
+    display: inline-block;
+}
+  
+.integration-speechToText-section .e-footer-wrapper #speechToText,
+.integration-speechToText-section .e-footer-wrapper #assistview-sendButton {
+    display: none;
+}
+  
+@media only screen and (max-width: 750px) {
+    .integration-speechToText-section {
+      width: 100%;
+    }
+}
+  
+.integration-speechToText-section .e-footer-wrapper {
+    display: flex;
+    border: 1px solid #c1c1c1;
+    padding: 5px 5px 5px 10px;
+    margin: 5px 5px 0 5px;
+    border-radius: 30px;
+}
+  
+.integration-speechToText-section .e-footer-wrapper .content-editor {
+    width: 100%;
+    overflow-y: auto;
+    font-size: 14px;
+    min-height: 25px;
+    max-height: 200px;
+    padding: 10px;
+    scrollbar-color: #c1c1c1 transparent;
+}
+  
+.integration-speechToText-section .e-footer-wrapper .content-editor[contentEditable=true]:empty:before {
+    content: attr(placeholder);
+}
+  
+.integration-speechToText-section .option-container {
+    align-self: flex-end;
+}

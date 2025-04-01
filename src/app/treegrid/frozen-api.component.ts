@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { frozenSampleData } from './jsontreegriddata';
-import { FreezeService, TreeGridModule, TreeGridComponent, SortService, SelectionService } from '@syncfusion/ej2-angular-treegrid';
-import { freezeDirection, Column } from '@syncfusion/ej2-grids';
+import { FreezeService, TreeGridModule, TreeGridComponent, SortService, SelectionService, Column  } from '@syncfusion/ej2-angular-treegrid';
+import { freezeDirection} from '@syncfusion/ej2-grids';
 import { DropDownListComponent, DropDownListModule, ChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import { DialogComponent, DialogModule, ButtonPropsModel } from '@syncfusion/ej2-angular-popups';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -58,7 +58,7 @@ export class FrozenAPI implements OnInit {
     }
     public columnChange(e: ChangeEventArgs): void {
         let columnName: string = e.value as string;
-        let column: Column = this.treegrid.grid.getColumnByField(columnName);
+        let column: Column = this.treegrid.getColumnByField(columnName);
         let value: string = column.freeze === undefined ? 'Center' : column.freeze;
         this.refresh = this.directionDropDown.value === value;
         this.directionDropDown.value = value;
@@ -67,7 +67,7 @@ export class FrozenAPI implements OnInit {
       public directionChange(e: ChangeEventArgs): void {
         if (this.refresh) {
           let columnName: string = this.columnDropDown.value as string;
-          let mvblColumns: Column[] = this.treegrid.grid.getMovableColumns();
+          let mvblColumns: Column[] = this.treegrid.getMovableColumns();
           if (
             mvblColumns.length === 1 &&
             columnName === mvblColumns[0].field &&
@@ -78,9 +78,12 @@ export class FrozenAPI implements OnInit {
             this.directionDropDown.value = 'Center';
             this.directionDropDown.refresh();
           } else {
-            this.treegrid.grid.getColumnByField(columnName).freeze =
-              e.value === 'Center' ? undefined : (e.value as freezeDirection);
-            this.treegrid.grid.refreshColumns();
+            let columns : Column[] = this.treegrid.getColumns();
+            let column = columns.find((col) => col.field === columnName);
+            if (column) {
+                column.freeze = e.value === 'Center' ? undefined : e.value as freezeDirection;
+            }
+            this.treegrid.columns = columns;
           }
         }
         this.refresh = true;

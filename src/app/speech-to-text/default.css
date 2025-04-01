@@ -1,0 +1,60 @@
+.default-speechToText-section,
+.default-speechToText-section .output-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#output-textarea {
+    width: 100%;
+}
+.default-speechToText-section {
+  gap: 50px;
+  margin: 50px auto;
+}
+
+.default-speechToText-section .output-container {
+  width: 75%;
+  gap: 10px;
+}
+
+.default-speechToText-section .output-container h4 {
+  margin: 0;
+  align-self: baseline;
+}
+
+.default-speechToText-section .speech-recognition-status {
+  font-size: 12px;
+}
+
+.default-speechToText .property-panel-content td {
+  padding: 10px 0px;
+  width: 50%;
+}
+.default-speechToText-section .output-options {
+    display: flex;
+    gap: 5px;
+}
+.default-speechToText-section .speechToText-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#transcript-copy-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+@media only screen and (max-width: 750px) {
+  .default-speechToText-section .output-container {
+    width: 100%;
+  }
+
+  .default-speechToText-section .output-options {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

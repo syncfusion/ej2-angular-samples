@@ -75,6 +75,7 @@ import { SnappingComponent } from './snapping.component';
 import { ScrollingComponent } from './scrolling.component';
 import { DataBindingWithTreeviewComponent } from './data-binding-with-treeview.component';
 import { WorkFlowDiagramComponent } from './workflow-editor.component';
+import { AvoidOverlapDiagramComponent } from './avoid-connector-overlap.component';
 
 export const diagramAppRoutes: Object[] = [
     {
@@ -109,6 +110,12 @@ export const diagramAppRoutes: Object[] = [
         name: 'Line Routing',
         category: 'Getting Started', order: '01',
         description: 'This sample visualizes the connectors that are automatically re-routing or moving away if any shape found on the connectors path'
+    },    
+    {
+        path: ':theme/diagram/avoid-connector-overlap', component: AvoidOverlapDiagramComponent,
+        name: 'Avoid Connector Overlap', type:'new',
+        category: 'Getting Started', order: '01',
+        description: 'This sample visualizes the connectors that automatically adjust to minimize visual overlap, ensuring clear and distinct representations of connections within the diagram.',
     },
     {
         path: ':theme/diagram/annotations', component: AnnotationDiagramComponent,
@@ -349,7 +356,7 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/workflow-editor', component: WorkFlowDiagramComponent,
-        name: 'WorkFlow Diagram', category: 'Real-time Diagrams', order: '09',
+        name: 'Workflow Diagram', category: 'Real-time Diagrams', order: '09',
         description: 'This sample visualizes the Travel booking reservation system and its built with readymade BPMN shapes.'
     },
     {

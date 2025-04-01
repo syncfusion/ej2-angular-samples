@@ -18,8 +18,12 @@ DropDownListComponent.Inject(VirtualScroll);
     imports: [SBActionDescriptionComponent, DropDownListModule, SBDescriptionComponent]
 })
 export class VirtualScrollDropDownListComponent {
-    
-    public listObj: DropDownListComponent;
+    @ViewChild('sample1')
+    public localListObj: DropDownListComponent;
+    @ViewChild('sample2')
+    public remoteListObj: DropDownListComponent;
+    @ViewChild('sample3')
+    public groupListObj: DropDownListComponent;
     // defined the array of data
     public records: { [key: string]: Object }[] = [];
     constructor() {
@@ -47,6 +51,17 @@ export class VirtualScrollDropDownListComponent {
                     break;
             }
             this.records.push(item);
+        }
+    }
+    ngAfterViewInit(): void {
+        if (this.localListObj) {
+            this.localListObj.refresh();
+        }
+        if (this.remoteListObj) {
+            this.remoteListObj.refresh();
+        }
+        if (this.groupListObj) {
+            this.groupListObj.refresh();
         }
     }
     // bind the DataManager instance to dataSource property

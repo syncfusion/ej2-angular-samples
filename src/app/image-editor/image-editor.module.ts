@@ -36,7 +36,6 @@ export const ImageEditorAppRoutes: Object[] = [
         path: ':theme/image-editor/file-restrict',
         component: FileRestrictComponent,
         order: '01',
-        type: 'new',
         name: 'File Restrict',
         category: 'Image Editor'
     }

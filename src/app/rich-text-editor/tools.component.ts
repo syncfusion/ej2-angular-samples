@@ -109,7 +109,7 @@ export class FullFeatureComponent {
     `
     };
     public exportPdf: ExportPdfModel = {
-        serviceUrl: 'https://ej2services.syncfusion.com/angular/development/api/RichTextEditor/ExportToPdf',
+        serviceUrl: this.hostUrl + 'api/RichTextEditor/ExportToPdf',
         fileName: 'RichTextEditor.pdf',
         stylesheet: `
         .e-rte-content{
@@ -180,9 +180,6 @@ export class FullFeatureComponent {
     }
 
     public actionBeginHandler(e: ActionBeginEventArgs): void {
-        if (e.requestType === 'EnterAction' && this.mention.element.classList.contains('e-popup-open')) {
-            e.cancel = true;
-        }
         if (e.requestType === 'Maximize' || e.requestType === 'Minimize') {
             this.handleFullScreen(e);
         }

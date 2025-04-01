@@ -38,7 +38,7 @@ export const dashboardlayoutAppRoutes: Object[] = [
         ]
     },
     {
-        path: ':theme/dashboard-layout/editable-dashboard', component: EditableDashboardComponent, type: "new", name: 'Editable Dashboard', order: '01', category: 'Dashboard Layout', sourceFiles: [
+        path: ':theme/dashboard-layout/editable-dashboard', component: EditableDashboardComponent, name: 'Editable Dashboard', order: '01', category: 'Dashboard Layout', sourceFiles: [
             { displayName: 'editable-dashboard.component.ts', path: './src/dashboard-layout/editable-dashboard.component.ts' },
             { displayName: 'editable-dashboard.component.html', path: './src/dashboard-layout/editable-dashboard.component.html' },
             { displayName: 'editable-dashboard.component.css', path: './src/dashboard-layout/editable-dashboard.component.css' }

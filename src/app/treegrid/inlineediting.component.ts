@@ -23,7 +23,7 @@ export class InlineEditing implements OnInit {
     public edit: Object;
     public d1data: Object;
     public ddlfields: Object;
-
+    public dateeditparam:Object;
      @ViewChild('treegrid')
      public treegrid: TreeGridComponent;
     ngOnInit(): void {
@@ -32,7 +32,8 @@ export class InlineEditing implements OnInit {
         this.toolbar = ['Add', 'Delete', 'Update', 'Cancel','Indent', 'Outdent'];
         this.taskidrules = { required: true , number: true};
         this.tasknamerules = { required: true};
-        this.startdaterules = { date: true};
+        this.startdaterules = { date: ['M/d/yyyy', 'Please enter a valid date']};
+        this.dateeditparam = { params: { format: 'M/d/yyyy' } };
         this.durationrules = {number: true , min: 0};
         this.edit = { params: {  format: 'n'}};
         this.ddlfields = { text: 'name' , value: 'id'};

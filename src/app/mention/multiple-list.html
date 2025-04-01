@@ -1,5 +1,7 @@
 <div id="action-description">
-    <p>This sample demonstrates the different mentioned characters that are used to render the suggestion list. Type the <code>&#64;</code> or <code>#</code> or <code>$</code> or <code>%</code> characters to select or tag the name from respective suggestion lists.</p>
+    <p>This sample demonstrates the different mentioned characters that are used to render the suggestion list. Type the
+        <code>&#64;</code> or <code>#</code> or <code>$</code> or <code>%</code> characters to select or tag the name from
+        respective suggestion lists.</p>
 </div>
 
 <div class="col-lg-12 control-section">
@@ -17,7 +19,7 @@
 
 <ejs-mention [dataSource]='data' [target]='commonTarget' [suggestionCount]='count' [fields]='dataFields' [query]='query' [popupWidth]="popupWidth" [popupHeight]="popupHeight" allowSpaces='true'></ejs-mention>
 
-<ejs-mention [dataSource]='projects' mentionChar='#' [target]='commonTarget' [fields]='localFields'>
+<ejs-mention [dataSource]='projects' mentionChar='#' [requireLeadingSpace]='false' [target]='commonTarget' [fields]='localFields'>
     <ng-template #displayTemplate let-data>
         <span class="e-success">{{data.Value}}</span>
     </ng-template>
@@ -36,6 +38,12 @@
 </ejs-mention>
 
 <div id="description">
+    <p>
+        The <code>requireLeadingSpace</code> property in Mention controls whether a space is needed before triggering the
+        Mention suggestion popup.
+        When set to <code>false</code>, it activates without a space; when set to <code>true</code>, a space is required
+        before the Mention character. To see this feature in action, start typing with <code>#</code>.
+    </p>
     <p>In the above sample, the following are configured for the contenteditable div element with &#64;mention integrated.</p>
     <ul>
         <li><code>&#64;</code> - Typing <code>&#64;</code> lists out the suggestions of the employee names.</li>

@@ -3,6 +3,7 @@ import { IAxisLabelRenderEventArgs, ChartTheme, ILoadedEventArgs, ChartAllModule
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 
 /**
  * Sample for Numeric Axis
@@ -65,14 +66,12 @@ export class NumericAxisChartComponent {
     public width: string = Browser.isDevice ? '100%' : '75%';
     
      public tooltip: Object = {
-        enable: true, format: '${point.x}th Over : <b>${point.y} Runs</b>'
+        enable: true, format: '${point.x}th Over : <b>${point.y} Runs</b>', enableHighlight: true
     };
     // custom code start
       public load(args: ILoadedEventArgs): void {
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
-        if (selectedTheme === 'highcontrast') {
+        let selectedTheme: ChartTheme | string = loadChartTheme(args);
+        if (selectedTheme === 'HighContrast') {
                args.chart.series[0].fill = '#57BCFF';
                args.chart.series[1].fill = '#E58184';
             }

@@ -3,6 +3,7 @@ import { ChartComponent, ILoadedEventArgs, ChartTheme, TrendlineTypes, LegendSet
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { loadChartTheme } from './theme-color';
 /**
  * Sample for trendlines
  */
@@ -46,6 +47,8 @@ export class TrendLineChartComponent {
     };
     public tooltip: Object = {
         enable: true,
+        enableHighlight: true,
+        showNearestTooltip: true
     };
     public marker: object = {
         visible: true,
@@ -55,9 +58,7 @@ export class TrendLineChartComponent {
     public legendSettings: LegendSettingsModel = { visible: true };
      // custom code start
      public load(args: ILoadedEventArgs): void {       
-        let selectedTheme: string = location.hash.split('/')[1];
-        selectedTheme = selectedTheme ? selectedTheme : 'Fluent2';
-        args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast').replace(/-highContrast/i, 'HighContrast');
+        loadChartTheme(args);
     };
      // custom code end
     public title: string = 'USD to INR Rates';

@@ -1,25 +1,30 @@
 <div id="action-description">
     <p>
-        This Angular bar chart example visualizes GDP data by country for the year 2017 with a default bar series.
+        This example demonstrates the global smartphone sales trends by brand from 2021 to 2023 using a bar chart. The
+        data is visualized with bars representing unit sales for different brands, highlighting the comparative
+        performance of each brand over the years.
     </p>
 </div>
 <div class="control-section">
     <div align='center'>
         <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer' [primaryXAxis]='primaryXAxis'
-            [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'>
+            [primaryYAxis]='primaryYAxis' [title]='title' [subTitle]='subTitle' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Bar' xName='Country' yName='GDP' name='GDP' [marker]='marker' columnSpacing=0.1> </e-series>
-                <e-series [dataSource]='data' type='Bar' xName='Country' yName='WorldShare' name="Share in World's GDP" columnSpacing=0.1 [marker]='marker'> </e-series>
+                <e-series [dataSource]='data' type='Bar' xName='year' yName='count' name='Apple' columnSpacing=0.3 legendShape='Rectangle' [cornerRadius]='cornerRadius'> </e-series>
+                <e-series [dataSource]='data1' type='Bar' xName='year' yName='count' name="Xiaomi" columnSpacing=0.3 legendShape='Rectangle' [cornerRadius]='cornerRadius'> </e-series>
+                <e-series [dataSource]='data2' type='Bar' xName='year' yName='count' name="Oppo" columnSpacing=0.3 legendShape='Rectangle' [cornerRadius]='cornerRadius'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure the bar chart. The bar chart is similar to the column chart, but the orientation of the y-axis is horizontal rather than vertical.
+        In this example, you can see how to render and configure the bar chart. The bar chart is similar to the column
+        chart, but the orientation of the y-axis is horizontal rather than vertical.
     </p>
     <p>
-        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover a point or tap on a point in touch-enabled devices.
+        <code>Tooltips</code> are enabled in this example. To see the tooltip in action, hover over a point or tap on a
+        point in touch-enabled devices.
     </p>
     <p style="font-weight: 500">Injecting Module</p>
     <p>

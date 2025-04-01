@@ -10,3 +10,7 @@
 .e-bigger .e-float-input.e-control-wrapper {
     width: 100% !important;
 }
+
+.sb-mobile-overlay {
+    z-index: 1001 !important;
+}

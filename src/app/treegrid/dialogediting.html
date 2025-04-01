@@ -3,8 +3,8 @@
         <e-columns>
             <e-column field='taskID' headerText='Task ID' width='120' textAlign='Right' isPrimaryKey='true'[validationRules]='taskidrules'></e-column>
             <e-column field='taskName' headerText='Task Name' width='225' editType='stringedit'  [validationRules]='tasknamerules'></e-column>
-            <e-column field='startDate' headerText='Start Date' width='150' format="yMd" editType='datepickeredit' textAlign='Right'  [validationRules]='startdaterules'></e-column>
-            <e-column field='endDate' headerText='End Date' width='150' format="yMd" editType='datepickeredit' textAlign='Right'  [validationRules]='enddaterules'></e-column>
+            <e-column field='startDate' headerText='Start Date' width='150' format="yMd" editType='datepickeredit' textAlign='Right' [edit]="dateeditparam" [validationRules]='startdaterules'></e-column>
+            <e-column field='endDate' headerText='End Date' width='150' format="yMd" editType='datepickeredit' textAlign='Right' [edit]="dateeditparam" [validationRules]='enddaterules'></e-column>
             <e-column field='duration' headerText='Duration' width='110' textAlign='Right' editType='numericedit'  [validationRules]='durationrules' [edit]='editParams'></e-column>
             <e-column field='progress' headerText='Progress' width='110' textAlign='Right' editType='numericedit'  [validationRules]='progressrules' [edit]='editParams'></e-column>
         </e-columns>

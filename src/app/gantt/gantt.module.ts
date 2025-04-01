@@ -11,6 +11,7 @@ import { GanttDefaultComponent } from './default.component';
 import { GanttEditingComponent } from './editing.component';
 import { GanttContextMenuComponent } from './context-menu.component';
 import { GanttExportingComponent } from './exporting.component';
+import { GanttAdvancedExportingComponent } from './advanced-exporting.component';
 import { GanttFilteringComponent } from './filtering.component';
 import { GanttAdvancedFilteringComponent } from './advanced-filtering.component';
 import { GanttEventsComponent } from './events.component';
@@ -210,7 +211,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/resource-multi-taskbar', component: GanttResourceMultiTaskbarComponent,
         description: 'This sample explains how to visualize the list of tasks assigned to each resource on a single parent row while collapsing the parent record.',
-        name: 'Resource Multi Taskbar', order: '06', category: 'Resources'
+        name: 'Resource Multi Taskbar', order: '06', category: 'Resources', type: "update"
     },
     {
         path: ':theme/gantt/sorting', component: GanttSortingComponent,
@@ -240,7 +241,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/tooltip-template', component: GanttTooltipTemplateComponent,
         description: 'This demo explains how to render tooltip template for taskbar and baseline in Syncfusion<sup>®</sup> Essential JS2 Gantt.',
-        name: 'Tooltip Template', order: '08', category: 'Templates', hideOnDevice: true
+        name: 'Tooltip Template', order: '08', category: 'Templates', hideOnDevice: true, type: "update"
     },
     {
         path: ':theme/gantt/toolbar-template', component: GanttToolbarTemplateComponent,
@@ -258,6 +259,16 @@ export const GanttAppRoutes: Object[] = [
       name: 'Advanced Filtering', order: '10', category: 'Filtering'
     },
     {
+        path: ':theme/gantt/exporting', component: GanttExportingComponent,
+        description: 'This demo explains how to export Gantt content to Excel and CSV documents using the Syncfusion<sup>®</sup> Gantt component.',
+        name: 'Exporting', order: '11', category: 'Exporting'
+    },
+    {
+        path: ':theme/gantt/advanced-exporting', component: GanttAdvancedExportingComponent,
+        description: 'This demo explains how to export Gantt chart content with customization to PDF documents using the Syncfusion<sup>®</sup> Gantt component.',
+        name: 'Advanced Exporting', order: '11', category: 'Exporting',type: "new"
+    },
+    {
         path: ':theme/gantt/selection', component: GanttSelectionComponent,
         description: 'This example demonstrates the various selection support of row and cell with different type in Syncfusion<sup>®</sup> Essential JS2 Gantt',
         name: 'Selection', order: '09', category: 'Miscellaneous'
@@ -266,11 +277,6 @@ export const GanttAppRoutes: Object[] = [
         path: ':theme/gantt/context-menu', component: GanttContextMenuComponent,
         description: 'This demo explains the usage of context menu and the default context menu items in Syncfusion<sup>®</sup> Gantt component.',
         name: 'Context Menu', order: '09', category: 'Miscellaneous'
-    },
-    {
-        path: ':theme/gantt/exporting', component: GanttExportingComponent,
-        description: 'This demo explains how to export Gantt content to Excel and CSV documents using the Syncfusion<sup>®</sup> Gantt component.',
-        name: 'Exporting', order: '09', category: 'Miscellaneous'
     },
     {
         path: ':theme/gantt/drag-and-drop', component: GanttDragAndDropComponent,
