@@ -1,0 +1,122 @@
+<div class="viewer-container" style="margin: 10px;display: flex; align-items: center; gap: 10px;">
+  <label for="viewer" class="viewer-label">Select Viewer Role:</label>
+  <ejs-dropdownlist
+    id="viewer"
+    style="width: 21%;"
+    [dataSource]="viewerRoles"
+    [fields]="{ text: 'role', value: 'id' }"
+    placeholder="Select Viewer Role"
+    [value]="selectedRole"
+    (change)="onViewerChange($event)"
+  ></ejs-dropdownlist>
+</div>
+
+<div class="content-wrapper">
+  <ejs-treegrid
+    #treegrid
+    id="sample"
+    gridLines="Both"
+    [dataSource]="data"
+    childMapping="Children"
+    [treeColumnIndex]="0"
+    [columns]="columns"
+    [height]="400"
+    [allowSorting]="true"
+    [allowFiltering]="true"
+    [filterSettings]="filterSettings"
+    [enableHover]="true"
+    (dataBound)="dataBound()"
+  >
+  </ejs-treegrid>
+</div>
+
+<ng-template #employeeTemplate let-data>
+  <div class="employee-content">
+    <img [src]="data.Image" alt="{{data.FullName}}" class="employee-img" />
+    <div class="employee-info">
+      <span class="employee-name">{{ data.Employee }}</span>
+      <span class="employee-title">{{ data.JobTitle }}</span>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #flagTemplate let-data>
+  <div className="flag-container">
+    <img
+      src="//ej2.syncfusion.com/javascript/demos/src/tree-grid/images/{{
+        data.Location
+      }}.png"
+      class="flag-img"
+      alt="{{ data.Location }}"
+    />
+
+    <span className="flag-text">{{ data.Location }}</span>
+  </div>
+</ng-template>
+
+<ng-template #leaveAvailabilityTemplate let-data>
+  <div class="leave-bar-container">
+    <ng-container
+      *ngFor="let type of ['casual', 'earned', 'sick']; let i = index"
+    >
+      <div class="leave-bar">
+        <span class="leave-label">
+          {{ type.charAt(0).toUpperCase() + type.slice(1) }}
+        </span>
+
+        <div class="bar">
+          <div
+            class="bar-fill"
+            [ngStyle]="getBarStyle(data.LeaveAvailability[type])"
+          ></div>
+          <div class="barlabel">{{ data.LeaveAvailability[type] }}</div>
+        </div>
+      </div>
+      <div class="separator" *ngIf="i < 2"></div>
+    </ng-container>
+  </div>
+</ng-template>
+
+<ng-template #emailTemplate let-data>
+  <a class="email-link" href="mailto:{{ data.Email }}">{{ data.Email }}</a>
+</ng-template>
+
+<ng-template #leaveCountHeaderTemplate let-data>
+  <span>Leaves {{ data.currentYear }}</span>
+</ng-template>
+
+<ng-template #statusTemplate let-data>
+  <div class="status-container" [ngStyle]="getStatusStyles(data.Status)">
+    {{ data.Status }}
+  </div>
+</ng-template>
+
+<div id="action-description">
+    <p>
+      This demo showcases the Syncfusion TreeGrid presenting comprehensive employee information customized for various viewer roles HR, Employee, Help Desk, and Project Management. The application uses a structured employee dataset that offers insights into profiles, work modes, leave balances, and other relevant details.
+    </p>
+</div>
+<div id="description">
+    <p>
+        This section highlights dynamic column generation and custom templates to present data that is specific and relevant to each viewer role. Features such as <a target="_blank" 
+        href="https://ej2.syncfusion.com/angular/documentation/treegrid/sorting">
+        Sorting</a>, <a target="_blank" 
+        href="https://ej2.syncfusion.com/angular/documentation/treegrid/filtering/filtering#filter-hierarchy-modes">
+        Filtering with hierarchical support</a>, <a target="_blank" 
+        href="https://ej2.syncfusion.com/angular/documentation/treegrid/columns/columns#column-formatting">
+        Column formatting</a> and <a target="_blank" 
+        href="https://ej2.syncfusion.com/angular/documentation/treegrid/columns/column-rendering#dynamic-column-generation">
+        dynamic column rendering</a> are seamlessly integrated. The Tree Grid <a target="_blank" 
+        href="https://ej2.syncfusion.com/angular/documentation/treegrid/columns/column-template">
+        Column template </a> is utilized to render visual elements like progress bars within cells, further enhancing the user experience. The Tree Grid flexibility and customization capabilities make it a powerful tool for organizational data representation.
+    </p>
+    
+    <p>
+    <br/> More information about  Tree Grid instantiation can be found in this
+    <a target="_blank" 
+        href="https://ej2.syncfusion.com/angular/documentation/treegrid/getting-started">
+        documentation section</a>.
+    </p>
+</div>
+   
+   

@@ -1,12 +1,12 @@
 <div id="action-description">
     <div id="action-description">
         <p>This sample demonstrates customization of the Angular Toolbar.</p>
-    </div> 
+    </div>
 </div>
 <div class="control-section e-tbar-section">
     <div class="e-sample-resize-container" style="margin-top: 100px; width: 100%; max-width: 100%;">
         <!-- Render the Toolbar Component -->
-        <ejs-toolbar overflowMode='Popup' cssClass="template">
+        <ejs-toolbar overflowMode='Popup' cssClass="template" (keyDown)="onKeyDown($event)">
             <e-items>
                 <e-item prefixIcon='e-icons e-folder' tooltipText='Open File' text='Open' showTextOn='Overflow' align="Left"></e-item>
                 <e-item type='Separator'></e-item>
@@ -20,23 +20,23 @@
                     </ng-template>
                 </e-item>
                 <e-item type='Separator'></e-item>
-                <e-item prefixIcon='e-icons e-zoom-out' tooltipText='Zoom-Out' text='Zoom-Out' showTextOn='Overflow' align="Left"></e-item>
+                <e-item prefixIcon='e-icons e-zoom-out' tooltipText='Zoom-Out' text='Zoom-Out' showTextOn='Overflow' align="Left" tabIndex='0'></e-item>
                 <e-item prefixIcon='e-icons e-zoom-in' tooltipText='Zoom-In' text='Zoom-In' showTextOn='Overflow' align="Left"></e-item>
                 <e-item cssClass="percentage" align="Left">
                     <ng-template #template>
-                        <div style="width: 80px"><ejs-combobox id='comboelement' #samples [dataSource]='data' popupWidth="80px" value="100%" [showClearButton]='false'></ejs-combobox></div>     
+                        <div style="width: 80px"><ejs-combobox id='comboelement' #samples [dataSource]='data' popupWidth="80px" value="100%" [showClearButton]='false'></ejs-combobox></div>
                     </ng-template>
-                </e-item>               
-                <e-item type='Separator'></e-item>            
-                <e-item prefixIcon='e-icons e-mouse-pointer' tooltipText='Text selection tool' text='Selection' showTextOn='Overflow' align="Left"></e-item>
+                </e-item>
+                <e-item type='Separator'></e-item>
+                <e-item prefixIcon='e-icons e-mouse-pointer' tooltipText='Text selection tool' text='Selection' showTextOn='Overflow' align="Left" tabIndex='0'></e-item>
                 <e-item prefixIcon='e-icons e-pan' tooltipText='Pan mode' text='Pan mode' showTextOn='Overflow' align="Left"></e-item>
                 <e-item type='Separator'></e-item>
                 <e-item prefixIcon='e-icons e-undo' tooltipText='Undo' text='Undo' showTextOn='Overflow' align="Left"></e-item>
                 <e-item prefixIcon='e-icons e-redo' tooltipText='Redo' text='Redo' showTextOn='Overflow' align="Left"></e-item>
                 <e-item type='Separator'></e-item>
-                <e-item prefixIcon='e-pv-comment-icon' tooltipText='Add Comments' text='Add Comments' showTextOn='Overflow' align="Left"></e-item>
+                <e-item prefixIcon='e-pv-comment-icon' tooltipText='Add Comments' text='Add Comments' showTextOn='Overflow' align="Left" tabIndex='0'></e-item>
                 <e-item type='Separator'></e-item>
-                <e-item text='Submit Form' align="Left"></e-item>
+                <e-item text='Submit Form' align="Left" tabIndex='0'></e-item>
                 <e-item cssClass="find" align="Right" overflow="Show">
                     <ng-template #template>
                         <div class="e-input-group e-float-icon-left">

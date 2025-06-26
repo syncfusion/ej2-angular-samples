@@ -10,29 +10,29 @@
                     <ejs-dropdownlist #userMenu id="e-pv-e-sign-employees" [dataSource]="userDetails" index = 0
                         [fields]="fields" (select)="userChange($event)" [popupHeight]="height">
                         <ng-template #itemTemplate let-data>
-                            <div style="display: flex; height: 50px; width: 200px;">
+                            <div style="display: flex;">
                                 <img class="e-pv-e-sign-empImage" height="30px" width="30px"
-                                    style="margin: 10px 6px; border-radius: 50%"
+                                    style="margin: 10px 3px; border-radius: 50%"
                                     [ngStyle]="{'border': '1px solid ' + (data.Mail === 'andrew@mycompany.com' ? 'red' : 'green')}"
                                     src="./assets/pdf-viewer/employees/{{data.Eimg}}.png"
                                     alt="{{data.Eimg}}" />
                                 <div>
-                                    <div class="e-pv-e-sign-ename">{{data.Name}}</div>
-                                    <div class="e-pv-e-sign-ejob">{{data.Mail}}</div>
+                                    <div class="e-pv-e-sign-ename" style="height: 18px; margin-left: 11px;">{{data.Name}}</div>
+                                    <div class="e-pv-e-sign-ejob" style="margin-left: 10px;">{{data.Mail}}</div>
                                 </div>
                             </div>
                         </ng-template>
                         <ng-template #valueTemplate let-data>
                             <div style="display: flex;">
-                                <img id="user-img" class="e-pv-e-sign-valueTemp" style="margin: 3px 6px; border-radius: 50%"
+                                <img id="user-img" class="e-pv-e-sign-valueTemp" style="margin-left: 3px; border-radius: 50%"
                                     [ngStyle]="{'border': '1px solid ' + currentUserBorderColor}"
                                     src="./assets/pdf-viewer/employees/{{data.Eimg}}.png"
-                                    height="30px" width="30px" alt="{{data.Eimg}}" />
+                                    height="30px" alt="{{data.Eimg}}" />
                                 <div>
-                                    <div class="e-pv-e-sign-name" style="margin-top: 3px;">
+                                    <div class="e-pv-e-sign-name" style="font-size:12px;margin-left: 11px;">
                                         {{data.Name}}
                                     </div>
-                                    <div class="e-pv-e-sign-job">{{data.Mail}}</div>
+                                    <div class="e-pv-e-sign-job" style="font-size:10px;margin-left: 10px;">{{data.Mail}}</div>
                                 </div>
                             </div>
                         </ng-template>
@@ -112,7 +112,6 @@
         width: 0px;
     }
 
-    .e-pv-e-sign-name,
     .e-pv-e-sign-ename {
         margin-top: 10px;
         font-size: 14px;
@@ -122,7 +121,6 @@
         line-height: 18px;
     }
 
-    .e-pv-e-sign-job,
     .e-pv-e-sign-ejob {
         font-size: 12px;
         font-family: Roboto;

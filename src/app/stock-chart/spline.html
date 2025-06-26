@@ -4,7 +4,7 @@
             style="display:block;" [tooltip]='tooltip' [crosshair]='crosshair' [primaryYAxis]='primaryYAxis'
             [seriesType]='seriesType' (tooltipRender)='tooltipRender($event)' [indicatorType]='indicatorType' (load)='load($event)'>
             <e-stockchart-series-collection>
-                <e-stockchart-series [dataSource]='data1' type='Spline' xName='x' yName='high'>
+                <e-stockchart-series [dataSource]='data1' type='Spline' xName='x' yName='high' [lastValueLabel]='lastValueLabel'>
                 </e-stockchart-series>
             </e-stockchart-series-collection>
         </ejs-stockchart>
@@ -16,7 +16,7 @@
     </p>
 </div>
 <div id="description">
-    <p>In this example, you can see how to render and configure stock chart to visualize the stock data with spline series. Use series <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/stock-chart/stockSeries/#type" aria-label="Navigate to the type property reference for Angular Stock Chart component">type</a> as <b>Spline</b> to render a spline series.</p>
+    <p>This example shows how to render and configure a stock chart to visualize stock data with a last value label using the <code>lastValueLabel</code> option. A spline series is used by setting the series <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/stock-chart/stockSeries/#type" aria-label="Navigate to the type property reference for Angular Stock Chart component">type</a> to <b>Spline</b>.</p>
     <p>
         <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover the chart or tap on it in touch enabled devices.
     </p>

@@ -1,6 +1,19 @@
 <div class="col-lg-12 control-section" id="default">
     <div class="content-wrapper">
-        <img src='./assets/ai-smart-textarea/smarttextarea.gif' width='100%' height='100%' alt="Showcase Smart TextArea Gif" />
+        <div class="example-label">Select a role</div>
+
+      <div style="width: 75%;">
+        <ejs-dropdownlist id="smart-dropdown"  placeholder="Select a role" id='dropdownlist' [dataSource]='rolesData'
+            value="Maintainer of an open-source project replying to GitHub issues" popupHeight="200px"
+            (change)="dropDownChange($event)"></ejs-dropdownlist>
+        </div>
+        <div style="width:75%;">
+        <ejs-smarttextarea cols="250" id="smart-textarea" #textareaObj  placeholder="Enter your queries here" floatLabelType="Auto" rows="5"
+
+            userRole="Employee communicating with internal team" [UserPhrases]="defaultPreset"
+            [aiSuggestionHandler]="serverAIRequest"
+            ></ejs-smarttextarea>
+            </div>
     </div>
     <div id="action-description">
         <p>
@@ -13,4 +26,5 @@
             The Smart TextArea uses AI to offer real-time sentence suggestions based on the user's input and role, helping users complete sentences more quickly and accurately.
         </p>
     </div>
+    <app-ai-toast></app-ai-toast>
 </div>

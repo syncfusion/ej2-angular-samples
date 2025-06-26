@@ -217,8 +217,7 @@ export class DashedLineChartComponent {
         showNearestTooltip: true
     };
     public legendSettings: Object = {
-        visible: true,
-        enableHighlight: true
+        visible: true
     };
     // custom code start
     public AnnotationColor: string = "light";

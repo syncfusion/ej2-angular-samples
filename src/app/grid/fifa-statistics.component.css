@@ -1,0 +1,57 @@
+   .fifa_tooltip.e-tooltip-wrap {
+    border-radius: 15px;
+}
+
+ .fifa_tooltip.e-tooltip-wrap .e-tip-content {
+    padding: 0;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+/* Grid */
+
+ #fifa_grid .e-gridcontent,
+ #fifa_grid .e-gridcontent .e-content,
+ #fifa_grid .e-gridcontent table {
+    background: transparent;
+}
+
+ ::ng-deep #fifa_grid .goal {
+    margin-right: 3px;
+    margin-top: 5px;
+    opacity: 0.6;
+}
+
+ ::ng-deep #fifa_grid .goal path {
+    fill: #000000;
+}
+
+ .fluent-dark #fifa_grid .goal path,
+ .fluent2-dark #fifa_grid .goal path,
+ .tailwind-dark #fifa_grid .goal path,
+ .tailwind3-dark #fifa_grid .goal path,
+ .bootstrap5\.3-dark #fifa_grid .goal path,
+ .material-dark #fifa_grid .goal path,
+ .material3-dark #fifa_grid .goal path,
+ .fabric-dark #fifa_grid .goal path,
+ .bootstrap-dark #fifa_grid .goal path,
+ .bootstrap4-dark #fifa_grid .goal path,
+ .bootstrap5-dark #fifa_grid .goal path,
+ .highcontrast #fifa_grid .goal path {
+    fill: #D3D8D4;
+}
+
+ #fifa_grid .e-gridcontent table.tournament::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/FIFA_World_Cup_Icon_%28Campionato_mondiale_di_calcio%29.svg/302px-FIFA_World_Cup_Icon_%28Campionato_mondiale_di_calcio%29.svg.png);
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    pointer-events: none;
+}

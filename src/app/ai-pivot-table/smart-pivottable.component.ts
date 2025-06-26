@@ -7,12 +7,14 @@ import { ChipListAllModule, ChipListComponent } from '@syncfusion/ej2-angular-bu
 import { createSpinner, hideSpinner, showSpinner } from '@syncfusion/ej2-popups';
 import { DropDownList, MultiSelect } from '@syncfusion/ej2-dropdowns';
 import { TextBox } from '@syncfusion/ej2-inputs';
-import { getAzureChatAIRequest } from '../../azure-openai';
+import { serverAIRequest } from '../common/ai-service';
+import {AIToastComponent} from '../common/ai-toast.component';  
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
 
 @Component({
   selector: 'app-smart-pivottable',
   standalone: true,
-  imports: [PivotViewAllModule, DialogAllModule, ChipListAllModule],
+  imports: [PivotViewAllModule, DialogAllModule, ChipListAllModule, ToastModule, AIToastComponent],
   templateUrl: './smart-pivottable.component.html',
   styleUrls: ['./smart-pivottable.component.css']
 })
@@ -99,7 +101,7 @@ export class SmartPivotTableComponent implements OnInit {
       this.description = `Filter the Products field based on ${filterText} and return the filtersettings with corresponding items from the Products field `;
     }
     let input: string = this.frameContent();
-    getAzureChatAIRequest({ messages: [{ role: 'user', content: input }] })
+    serverAIRequest({ messages: [{ role: 'user', content: input }] })
       .then((result: any) => {
         let cleanedJsonData: string = result.replace(/^```json\n|```\n?$/g, '');
         this.pivotView.dataSourceSettings = JSON.parse(cleanedJsonData);

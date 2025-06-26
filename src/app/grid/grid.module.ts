@@ -80,6 +80,8 @@ import { LiveDataComponent } from './live-data.component';
 import { MultipleExportComponent } from './multiple-export.component';
 import { EmptyRecordTemplateComponent } from './empty-record-template.component';
 import { ModuleWithProviders } from '@angular/core';
+import { FIFAStatisticsComponent } from './fifa-statistics.component';
+import { ChartComponent } from './chart.component';
 
 export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/over-view', component: OverViewComponent, 'name': 'Overview', description: 'This demo for Essential JS 2 grid component is an overview of how to display and manipulate large data with configuration options.', order: '01', category: 'Data Grid' },
@@ -88,9 +90,11 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/adaptive-layout', component: AdaptiveLayoutComponent, name: 'Adaptive Layout', description: 'This demo for Essential JS 2 grid component shows the Grid row in vertical direction.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/loading-animation', component: LoadingAnimationComponent, name: 'Loading Animation',  description: 'This demo for Essential JS 2 grid component shows the loading indicator when grid loading and refreshing.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/empty-record-template', component: EmptyRecordTemplateComponent, name: 'Empty Record Template',  description: 'This demo for Essential JS 2 grid component demonstrates usage of template in Grid to shown element or text or image or gif icon instead of displaying the empty record message.', order: '01', category: 'Data Grid' },
+    { 'path': ':theme/grid/chart', component: ChartComponent, name: 'Integrate Chart in Grid',  type: 'new',   description: 'This demo of the Essential JS 2 Grid component showcases the visual representation of data using a chart.', order: '01', category: 'Data Grid', hideOnDevice: true },
+ { 'path': ':theme/grid/fifa-statistics', component: FIFAStatisticsComponent, name: 'FIFA Statistics',  description: 'This demo for Essential Studio Angular grid component show the Product Use Case of FIFA Statistics', order: '17', category: 'Product Use Case' },
 
     { 'path': ':theme/grid/local-data', component: LocalDataComponent, 'name': 'Local Data', description: 'This demo for Essential JS 2 grid component shows how to bind with a local data source.', order: '02', category: 'Data Binding' },
-    { 'path': ':theme/grid/remote-data', component: DataBindingComponent, 'name': 'Remote Data', description: 'This demo for Essential JS 2 grid component shows how to consume data from a remote data service.', 'type': 'update', order: '02', category: 'Data Binding' },
+    { 'path': ':theme/grid/remote-data', component: DataBindingComponent, 'name': 'Remote Data', description: 'This demo for Essential JS 2 grid component shows how to consume data from a remote data service.', order: '02', category: 'Data Binding' },
     { 'path': ':theme/grid/flexible-data', component: FlexibleDataBindingComponent, 'name': 'Flexible Data', description: 'This sample demonstrates how to bind a data from various remote services to the Grid component.', order: '02', category: 'Data Binding' },
     {
         'path': ':theme/grid/async-pipe', component: AsyncPipeComponent, name: 'Async Pipe', description: 'This demo for Essential JS 2 grid component shows how to consume RxJS observables and perform editing, sorting and grouping operations using async pipe.', order: '02',
@@ -107,7 +111,7 @@ export const gridRouteConfig: Object[] = [
     },
     {
         'path': ':theme/grid/column/stacked-header', component: StackedHeaderComponent,
-        name: 'Stacked Header', description: 'This demo for Essential JS 2 grid component shows the usage of the stacked header feature.', 'type': 'update', order: '03', category: 'Columns'
+        name: 'Stacked Header', description: 'This demo for Essential JS 2 grid component shows the usage of the stacked header feature.', order: '03', category: 'Columns'
     },
     {
         'path': ':theme/grid/column/foreign-key', component: ForeignKeyColumnComponent, name: 'Foreign Key Column', order: '03',description: 'This demo for Essential JS 2 grid component demonstrates the usage of a foreign key column and performing actions such as filtering, sorting, and editing in the foreign key column.',
@@ -188,7 +192,7 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/filter-template', component: FilterTemplateComponent, name: 'Filter Template', description: 'This demo for Essential JS 2 grid control shows how to filter a data using custom component in the filter bar.', order: '07', category: 'Filtering' },
     {
         'path': ':theme/grid/filter-menu', component: FilteringMenuComponent,  name: 'Filter Menu',
-        description: 'This demo for Essential JS 2 grid component demonstrates a way of filtering rows using a menu, check box, and Excel filter UI.', 'type': 'update', order: '07', category: 'Filtering'
+        description: 'This demo for Essential JS 2 grid component demonstrates a way of filtering rows using a menu, check box, and Excel filter UI.', order: '07', category: 'Filtering'
     },
     { 'path': ':theme/grid/searching', component: SearchComponent, name: 'Search', description: 'This demo for Essential JS 2 grid component shows the content searching feature.', order: '07', category: 'Filtering' },
 

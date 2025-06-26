@@ -145,10 +145,10 @@
                 <e-columns>
                     <e-column field='TaskId' headerText='Task Id' width='180' [visible]='false'></e-column>
                     <e-column field='TaskName' headerText='Product Release' width='180'></e-column>
-                    <e-column field='resources' headerText='Assignee' [allowSorting]='false' width='140'>
+                    <e-column field='Assignee' headerText='Assignee' [allowSorting]='false' width='140'>
                         <ng-template #template let-data>
                             <div class="image" *ngIf=data.ganttProperties.resourceNames>
-                                <img src="assets/gantt/images/{{data.ganttProperties.resourceNames}}.png"
+                                <img src="./assets/gantt/images/{{data.ganttProperties.resourceNames}}.png"
                                     style="height:25px;width:25px" />
                                 <div style="display:inline-block;width:100%;position:relative;left:5px;">
                                     {{data.ganttProperties.resourceNames}}</div>
@@ -330,7 +330,7 @@
     </div>
 </div>
 <div id="description">
-    <p>This example shows the three-quarter release planning of product features rendered in the EJ2 Gantt chart. It
+    <p>This example shows the three-quarter release planning of product features rendered in the EJ2 Gantt Chart. It
         tracks the quarterly release planning of product status, resources, and task scheduling.</p>
     <p>EJ2 Gantt Chart features such as Sorting, Filtering, Column resizing, Column menu, column template and so on are
         used in this demo.</p>

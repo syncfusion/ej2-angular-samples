@@ -22,19 +22,19 @@ export class PropertiesComponent {
     public panels: any = panelData;
     public count: number = 5;
     public panelsData: PanelModel[] = [{
-        'sizeX': 2, 'sizeY': 2, 'row': 0, 'col': 0, header: '<div>Panel 1</div>'
+        'sizeX': 2, 'sizeY': 2, 'row': 0, 'col': 0, header: '<div>Panel 1</div>', 'zIndex': 999
     },
     {
-        'sizeX': 2, 'sizeY': 2, 'row': 0, 'col': 2, header: '<div>Panel 2</div>'
+        'sizeX': 2, 'sizeY': 2, 'row': 0, 'col': 2, header: '<div>Panel 2</div>', 'zIndex': 999
     },
     {
-        'sizeX': 2, 'sizeY': 2, 'row': 0, 'col': 4, header: '<div>Panel 3</div>'
+        'sizeX': 2, 'sizeY': 2, 'row': 0, 'col': 4, header: '<div>Panel 3</div>', 'zIndex': 999
     },
     {
-        'sizeX': 4, 'sizeY': 2, 'row': 2, 'col': 0, header: '<div>Panel 4</div>'
+        'sizeX': 4, 'sizeY': 2, 'row': 2, 'col': 0, header: '<div>Panel 4</div>', 'zIndex': 999
     },
     {
-        'sizeX': 2, 'sizeY': 2, 'row': 2, 'col': 4, header: '<div>Panel 5</div>'
+        'sizeX': 2, 'sizeY': 2, 'row': 2, 'col': 4, header: '<div>Panel 5</div>', 'zIndex': 999
     }];
     public cellSpacing: number[] =  [10, 10];
     public headerCount: number = 1;
@@ -65,7 +65,7 @@ export class PropertiesComponent {
     onAdd(): void {
         this.count = this.count + 1;
         let panel: PanelModel[] = [{
-            'id': this.count.toString() + '_layout', 'sizeX': 2, 'sizeY': 2, 'row': 0, 'col': 0,
+            'id': this.count.toString() + '_layout', 'sizeX': 2, 'sizeY': 2, 'row': 0, 'col': 0, 'zIndex': 999,
                 content: '<div></div>',
                 header: '<div>Panel ' + this.count.toString() + '</div>'
         }];

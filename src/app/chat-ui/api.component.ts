@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ChatUIComponent, ChatUIModule, UserModel } from '@syncfusion/ej2-angular-interactive-chat';
+import { ChatUIComponent, ChatUIModule, MessageToolbarItemClickedEventArgs, MessageToolbarSettingsModel, UserModel } from '@syncfusion/ej2-angular-interactive-chat';
 import { ChangeEventArgs, SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { RemoveEventArgs, DropDownListModule, SelectEventArgs, MultiSelectModule, ChangeEventArgs as DDLChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import { communityMessagedata } from './messageData';
@@ -29,9 +29,26 @@ export class ChatUIApiComponent {
     public typingUserOptions: Object[] = [
         { text: 'Michale', value: 'Michale' },
         { text: 'Laura', value: 'Laura' },
-        { text: 'Charlie', value: 'Charlie' }
+        { text: 'Charlie', value: 'Charlie' },
+        { text: 'Jordan', value: 'Jordan'}
     ];
     public typingUsers: UserModel[] = [];
+    public toolbarSettings: MessageToolbarSettingsModel = {
+        items: [
+            { type: 'Button', iconCss: 'e-icons e-chat-forward', tooltip: 'Forward', },
+            { type: 'Button', iconCss: 'e-icons e-chat-copy', tooltip: 'Copy' },
+            { type: 'Button', iconCss: 'e-icons e-chat-reply', tooltip: 'Reply' },
+            { type: 'Button', iconCss: 'e-icons e-chat-pin', tooltip: 'Pin' },
+            { type: 'Button', iconCss: 'e-icons e-chat-trash', tooltip: 'Delete' }
+        ],
+        itemClicked: (args: MessageToolbarItemClickedEventArgs) => {
+            if (args.item.prefixIcon === 'e-icons e-chat-forward') {
+                const newMessageObj = args.message;
+                newMessageObj.isForwarded = true;
+                this.chatUI.addMessage(newMessageObj);
+            }
+        }
+    }
 
     onTimeStampSwitchChange(args: ChangeEventArgs) {
         this.chatUI.showTimeStamp = args.checked;
@@ -51,6 +68,10 @@ export class ChatUIApiComponent {
 
     onTimeStampFormatChange(args: DDLChangeEventArgs) {
         this.chatUI.timeStampFormat = args.value.toString();
+    }
+
+    onCompactModeSwitchChange(args: ChangeEventArgs) {
+        this.chatUI.enableCompactMode = args.checked;
     }
 
     onTypingUsersSelect(args: SelectEventArgs) {

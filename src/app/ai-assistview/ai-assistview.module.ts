@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AIAssistDefaultComponent } from './default.component';
 import { AIAssistCustomViewsComponent } from './custom-views.component';
 import { AIAssistStreamComponent } from './streaming.component';
+import { AIAssistAttachmentComponent } from './attachments.component';
 import { AIAssistDialogComponent } from './dialog.component';
 import { AIAssistTemplateComponent } from './template.component';
 
@@ -21,10 +22,16 @@ export const aiassistviewAppRoutes: Object[] = [
         {displayName: 'custom-views.component.css', path: './src/ai-assistview/custom-views.component.css'},
         {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
     ] },
-    { path: ':theme/ai-assistview/streaming', component: AIAssistStreamComponent, name: 'Streaming Response', description: 'Showcases the AiAssistView component with its streaming support.', category: 'AI AssistView', order: '01', type: 'new', sourceFiles: [
+    { path: ':theme/ai-assistview/streaming', component: AIAssistStreamComponent, name: 'Streaming Response', description: 'Showcases the AiAssistView component with its streaming support.', category: 'AI AssistView', order: '01', sourceFiles: [
         {displayName: 'streaming.component.ts', path: './src/ai-assistview/streaming.component.ts'},
         {displayName: 'streaming.html', path: './src/ai-assistview/streaming.html'},
         {displayName: 'streaming.component.css', path: './src/ai-assistview/streaming.component.css'},
+        {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
+    ] },
+    { path: ':theme/ai-assistview/attachments', component: AIAssistAttachmentComponent, name: 'File Attachments', description: 'Showcases the AiAssistView control with its attachment support.', category: 'AI AssistView', order: '01', type: 'new', sourceFiles: [
+        {displayName: 'attachments.component.ts', path: './src/ai-assistview/attachments.component.ts'},
+        {displayName: 'attachments.html', path: './src/ai-assistview/attachments.html'},
+        {displayName: 'attachments.component.css', path: './src/ai-assistview/attachments.component.css'},
         {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
     ] },
     { path: ':theme/ai-assistview/template', component: AIAssistTemplateComponent, name: 'Template', description: 'Showcases the template properties of the AiAssistView component.', category: 'AI AssistView', order: '01', sourceFiles: [

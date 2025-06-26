@@ -1,11 +1,11 @@
 <div id="action-description">
     <p>
-        This sample shows the gold medal count scored by each country at the Rio Olympic Games using smart labels on the chart.
+        This sample shows the gold medal count scored by each country at the summer olympics 2024 games using smart labels on the chart.
     </p>
 </div>
 <div class="control-section">
     <div>
-        <ejs-accumulationchart id='container' style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (load)='onLoad($event)' [enableBorderOnMouseMove]='false'>
+        <ejs-accumulationchart id='container' style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" [subTitle]="subTitle" [enableSmartLabels]='true' (load)='onLoad($event)' [enableBorderOnMouseMove]='false'>
             <e-accumulation-series-collection>
                 <e-accumulation-series name='RIO' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [radius]="radius" innerRadius="0%"  [dataLabel]="dataLabel"> </e-accumulation-series>
             </e-accumulation-series-collection>
@@ -14,6 +14,8 @@
 </div>
 <div id="description">
     <p> In this example, you can see how the labels can be arranged smartly without overlapping. You can use the <code>EnableSmartLabels</code> property to enable or disable the support.</p>
+    <p><code>Tooltips</code> are enabled in this example, to see the tooltip in action, hover a point or tap on a point in
+    touch enabled devices.</p>
     <p style="font-weight: 500"> Injecting Module </p>
     <p> Accumulation chart component features are segregated into individual feature-wise modules. To use DataLabel, we need to inject <code>AccumulationDataLabel</code> into the <code>&#64;NgModule.providers</code> section.</p>
     <p>More information on the smart labels can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/data-label/#smart-labels" aria-label="Navigate to the documentation for Smart Labels in Angular Accumulation Chart component">documentation section</a>.</p>

@@ -14,3 +14,9 @@
     border-color: rgba(0, 0, 0, 0.12);
     color: #212121;
 }
+
+.e-print-fluent2-highcontrast.e-treegrid.e-print-grid-layout,
+.e-print-fluent2-highcontrast.e-treegrid.e-print-grid-layout .e-gridheader,
+.e-print-fluent2-highcontrast.e-treegrid.e-print-grid-layout .e-rowcell {
+    border-color: gray !important;
+}

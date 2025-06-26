@@ -17,56 +17,41 @@ import { loadAccumulationChartTheme } from './theme-color';
 })
 export class DefaultDonutComponent {
     public data: Object[] = [
-        { 'x': 'Chrome', y: 57.28, text: '57.28%' },
-        { 'x': 'UC Browser', y: 4.37, text: '4.37%' },
-        { 'x': 'Internet Explorer', y: 6.12, text: '6.12%' },
-        { 'x': 'QQ', y: 5.96, text: '5.96%' },
-        { 'x': 'Edge', y: 7.48, text: '7.48%' },
-        { 'x': 'Others', y: 14.06, text: '18.76%' },
+        { 'x': 'China', y: 35, text: '35%' },
+        { 'x': 'India', y: 30, text: '30%' },
+        { 'x': 'USA', y: 10.7, text: '10.7%' },
+        { 'x': 'Indonesia', y: 7, text: '7%' },
+        { 'x': 'Brazil', y: 5.3, text: '5.3%' },
+        { 'x': 'Others', y: 12, text: '12%' },
     ];
     //Initializing Legend
     public legendSettings: Object = {
         visible: true,
         toggleVisibility: false,
-        position: 'Bottom',
-        maximumColumns: Browser.isDevice ? 2 : 3,
-        fixedWidth: true
+        position: 'Bottom', textWrap: 'Wrap'
     };
-    public title: string = Browser.isDevice ? "Browser Market Share" : '';
     public innerRadius : string = '50%';
     public startAngle : number = 30
     public radius : string = Browser.isDevice ? '80%' : '85%'
     //Initializing Datalabel
     public dataLabel: Object = {
-        name: 'text',
-        visible: true,
-        font: {
-            fontWeight: '600',
-            color: '#ffffff'
-        }
+        visible: false
     };
+    public border: Object = { width: 1, color: '#ffffff' };
     public annotations: ChartAnnotationSettingsModel[] = [
         {
-            content : Browser.isDevice ? " " : "<div style='font-Weight:600;font-size:14px'>Browser<br>Market<br>Share</div>", region:"Series",
-            x:"51%", y:"50%"
+            content : Browser.isDevice ? " " : "<div style='font-Weight:600;font-size:14px'>Internet Users <br> by Country<br>2025</div>", region:"Series",
+            x:"50%", y:"50%"
         }
     ];
     private selectedTheme: string;
-    public pointRender(args: IPointRenderEventArgs): void {
-        let fluent2Colors: string[] = ['#6200EE', '#09AF74', '#0076E5', '#CB3587', '#E7910F', '#66CD15', '#F3A93C', '#107C10',
-            '#C19C00'];
-        if (this.selectedTheme === 'fluent2') {
-            args.fill = fluent2Colors[args.point.index % 10];
-        }
-    };
-
           // custom code start
     public load(args: IAccLoadedEventArgs): void {
         this.selectedTheme = loadAccumulationChartTheme(args);
     }
     public tooltip: Object = {
         enable: true,
-        format: '<b>${point.x}</b><br>Browser Share: <b>${point.y}%</b>',header:"",
+        format: '<b>${point.x}</b><br>Percentage: <b>${point.y}%</b>',header:"",
         enableHighlight: true
     };
     constructor() {

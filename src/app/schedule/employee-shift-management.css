@@ -1,0 +1,672 @@
+@font-face {
+    font-family: 'Employee Shift Management';
+    src: url(data:application/x-font-ttf;charset=utf-8;base64,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) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="sf-icon-"],
+[class*=" sf-icon-"] {
+    font-family: 'Employee Shift Management' !important;
+    speak: none;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.shift-management-control-section {
+    .shift-management-sample-wrapper {
+        display: flex;
+        height: 550px;
+        width: 100%;
+
+        .schedule-shift-management {
+            border: 1px solid #C4C7C5;
+            border-radius: 12px;
+            margin-right: 12px;
+
+            .e-table-wrap.e-timeline-view {
+
+                .e-resource-cells.e-parent-node,
+                .e-work-cells.e-resource-group-cells {
+                    height: 30px;
+                }
+
+                .e-resource-cells.e-child-node,
+                .e-work-cells:not(.e-resource-group-cells) {
+                    height: 60px;
+                }
+
+                .e-content-wrap {
+                    .e-appointment-wrapper {
+                        .e-appointment.morning-shift {
+                            background-color: #0875B8;
+                        }
+
+                        .e-appointment.evening-shift {
+                            background-color: #633DD0;
+                        }
+
+                        .e-appointment.event-swapped {
+                            background-color: #FFA500;
+                        }
+
+                        .e-appointment.event-leave:not(.e-read-only) {
+                            border: 1px dotted #B3261E !important;
+                            background-color: #F9DEDC !important;
+
+                            div {
+                                color: #1C1B1F;
+                            }
+
+                            .e-leave.e-icons {
+                                color: #C70404;
+                            }
+                        }
+
+                        .e-appointment {
+                            height: 45px !important;
+                            border-radius: 8px;
+
+                            .e-icon-element {
+                                display: flex !important;
+                                align-items: center;
+                                justify-content: space-between;
+                            }
+
+                            .e-leave::before {
+                                content: '\e800';
+                            }
+
+                            .sf-icon-user-replace:before {
+                                content: "\e700";
+                            }
+
+                            .sf-icon-replace-accepted:before {
+                                content: "\e701";
+                            }
+
+                            .sf-icon-replace-request:before {
+                                content: "\e702";
+                            }
+
+                            .e-swap.e-icons,
+                            .e-swapped.e-icons,
+                            .e-replaced.e-icons {
+                                color: #FFFFFF;
+                            }
+
+                            .e-swap.e-icons,
+                            .e-swapped.e-icons,
+                            .e-replaced.e-icons,
+                            .e-leave.e-icons {
+                                font-size: 18px;
+                            }
+
+                            .template-wrap {
+                                padding: 4px;
+                                display: flex;
+
+                                .specialist-image.alice {
+                                    background-image: url('https://ej2.syncfusion.com/react/demos/src/schedule/images/alice.png');
+                                }
+
+                                .specialist-image.robert {
+                                    background-image: url('https://ej2.syncfusion.com/react/demos/src/schedule/images/robert.png');
+                                }
+
+                                .specialist-image.robson {
+                                    background-image: url('https://ej2.syncfusion.com/react/demos/src/schedule/images/robson.png');
+                                }
+
+                                .specialist-image.laura {
+                                    background-image: url('https://ej2.syncfusion.com/react/demos/src/schedule/images/laura.png');
+                                }
+
+                                .specialist-image.nancy {
+                                    background-image: url('https://ej2.syncfusion.com/react/demos/src/schedule/images/nancy.png');
+                                }
+
+                                .specialist-image.margaret {
+                                    background-image: url('https://ej2.syncfusion.com/react/demos/src/schedule/images/margaret.png');
+                                }
+
+                                .e-staff {
+                                    height: 32px;
+                                    display: flex;
+                                    margin-top: 2px;
+
+                                    .staff-image {
+                                        background-color: #FFFFFF;
+                                        height: 32px;
+                                        width: 32px;
+                                        border-radius: 50%;
+                                        font-size: 16px;
+                                        font-weight: 500;
+                                        font-family: 'Roboto';
+                                        line-height: 20px;
+                                        letter-spacing: 0.1px;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        margin-right: 6px;
+                                    }
+
+                                    .staff-info {
+                                        height: 32px;
+
+                                        .e-name {
+                                            font-family: 'Roboto';
+                                            font-weight: 500;
+                                            font-size: 13px;
+                                            line-height: 18px;
+                                            letter-spacing: 0.1px;
+                                        }
+
+                                        .e-designation {
+                                            font-family: 'Roboto';
+                                            font-weight: 400;
+                                            font-size: 11px;
+                                            line-height: 14px;
+                                            letter-spacing: 0.1px;
+                                        }
+                                    }
+                                }
+
+                                .e-time {
+                                    font-family: 'Roboto';
+                                    font-weight: 400;
+                                    font-size: 12px;
+                                    line-height: 16px;
+                                    letter-spacing: 0.1px;
+                                }
+                            }
+
+                            .sf-icon-replace-request,
+                            .sf-icon-replace-accepted,
+                            .sf-icon-user-replace {
+                                display: flex;
+                            }
+                        }
+
+                        .e-appointment.e-read-only {
+                            background-color: #F1F2F3 !important;
+                            border: none;
+
+                            .staff-image {
+                                background-color: #CACACA !important;
+                                opacity: 50%;
+                            }
+
+                            .staff-info {
+                                color: #AEAEAE !important;
+                            }
+                        }
+
+                        .e-appointment.e-read-only:focus {
+                            box-shadow: none;
+                        }
+
+                        .e-appointment:not(.event-leave):not(.e-read-only) {
+                            .staff-info {
+                                color: #FFFFFF;
+                            }
+
+                            .staff-image {
+                                color: #1C1B1F !important;
+                            }
+                        }
+
+                        .e-appointment.event-swapped {
+
+                            .staff-info,
+                            .e-time,
+                            .sf-icon-replace-accepted {
+                                color: #1C1B1F !important;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .e-table-wrap.e-agenda-view {
+                .e-agenda-item {
+                    padding: 12px 0;
+
+                    .e-appointment {
+                        .agenda-event {
+                            padding: 8px 0px;
+
+                            .e-staff {
+                                display: flex;
+                                align-items: center;
+
+                                .staff-image {
+                                    align-items: center;
+                                    background-color: #6750A4;
+                                    border-radius: 50%;
+                                    color: #FFFFFF;
+                                    display: flex;
+                                    font-size: 16px;
+                                    font-weight: 500;
+                                    font-family: 'Roboto';
+                                    height: 40px;
+                                    justify-content: center;
+                                    line-height: 20px;
+                                    letter-spacing: 0.1px;
+                                    min-width: 40px;
+                                    width: 40px;
+                                }
+
+                                .staff-name {
+                                    font-family: 'Roboto';
+                                    font-weight: 500;
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    letter-spacing: 0px;
+                                }
+
+                                .staff-role,
+                                .staff-designation,
+                                .staff-availability,
+                                .event-time {
+                                    font-family: 'Roboto';
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    line-height: 20px;
+                                    letter-spacing: 0.24px;
+                                }
+
+                                .staff-availability {
+                                    color: #C70404;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .e-resource-column {
+                    display: none;
+                }
+            }
+
+            .e-schedule-toolbar-container {
+                .agenda-toolbar {
+                    border-bottom: 1px solid #C4C7C5;
+                    height: 72px !important;
+                    width: 100% !important;
+
+                    .e-chip-list .e-chip.e-outline {
+                        height: 32px;
+                        border-radius: 16px;
+                        min-width: 41px;
+                    }
+                }
+            }
+        }
+
+        .schedule-shift-management:not(.e-rtl) {
+            .e-agenda-view .staff-image {
+                margin-right: 9px;
+            }
+
+            .e-appointment.e-template {
+                display: block;
+                padding-left: 19px !important;
+            }
+
+            .e-appointment {
+
+                .e-swap.e-icons,
+                .e-swapped.e-icons,
+                .e-replaced.e-icons,
+                .e-leave.e-icons {
+                    margin-right: 8px;
+                }
+            }
+        }
+
+        .treeview-container {
+            border: 1px solid #C4C7C5;
+            border-radius: 12px;
+
+            .title-text {
+                height: 32px;
+                position: relative;
+                text-align: center;
+            }
+
+            .title-text span {
+                bottom: 0;
+                font-family: 'Roboto';
+                font-size: 16px;
+                font-weight: 500;
+                letter-spacing: 0.1px;
+                line-height: 20px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .role-tabs .e-chip-list {
+                flex-wrap: nowrap;
+                padding: 14px 4px 14px 4px;
+                height: 68px;
+
+                .e-chip.e-outline {
+                    height: 32px;
+                    border-radius: 16px;
+                    min-width: 41px;
+                }
+            }
+
+            .shift-management-treeview.e-control {
+                border: none;
+                border-radius: 0;
+                height: 440px;
+
+                .e-list-parent {
+                    height: 100%;
+
+                    .e-list-item {
+                        height: 48px;
+                        padding: 0;
+
+                        .e-fullrow {
+                            border-radius: 0%;
+                            height: 48px;
+                            margin: 0;
+                            width: 100%;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .e-chip-text {
+            font-family: 'Roboto';
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.1px;
+            line-height: 18px;
+            text-align: center;
+        }
+    }
+
+    .e-rtl.schedule-shift-management {
+        .role-template-wrap {
+            .role-image {
+                margin: 0 0 0 6px;
+            }
+        }
+
+        .e-table-wrap:not(.e-agenda-view) .e-appointment {
+            .template-wrap {
+                .e-staff {
+                    .staff-image {
+                        margin: 0 0 0 6px;
+                    }
+                }
+            }
+        }
+
+        .e-appointment {
+
+            .e-swap.e-icons,
+            .e-swapped.e-icons,
+            .e-replaced.e-icons,
+            .e-leave.e-icons {
+                margin-left: 8px;
+            }
+        }
+
+        .e-agenda-view .staff-image {
+            margin-left: 9px;
+        }
+
+        .e-appointment.e-template {
+            padding-right: 19px !important;
+        }
+    }
+}
+
+.shift-management-sample-wrapper .e-treeview.shift-management-treeview,
+.e-drag-item.e-treeview.shift-management-treeview {
+    .e-text-content {
+        padding: 0;
+
+        .e-list-text {
+            border: none;
+            height: 46px;
+            line-height: 15px !important;
+            padding: 0 5px;
+
+            #waitdetails {
+                display: flex;
+                align-items: center;
+                width: 95%;
+                float: left;
+                height: 100%;
+                padding: 0;
+
+                .employee-image {
+                    background-color: #FFFFFF;
+                    border-radius: 25px;
+                    height: 36px;
+                    width: 36px;
+                }
+
+                .text-container {
+                    padding: 5px 0;
+
+                    #waitlist {
+                        font-family: 'Roboto';
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 18px;
+                        letter-spacing: 0.1px;
+                        padding: 0;
+                    }
+
+                    #waitcategory {
+                        font-family: 'Roboto';
+                        font-size: 12px;
+                        font-weight: 400;
+                        line-height: 16px;
+                        letter-spacing: 0.1px;
+                        padding: 2px 0 0 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.shift-management-treeview:not(.e-rtl) {
+    .employee-image {
+        margin: 6px 12px 6px 0px;
+    }
+}
+
+.shift-management-treeview.e-rtl {
+    .employee-image {
+        margin: 6px 0px 6px 12px;
+    }
+}
+
+.e-drag-item.e-treeview.shift-management-treeview {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+
+    .e-text-content {
+        border-radius: 4px;
+    }
+}
+
+@media (max-width: 550px) {
+    .shift-management-control-section {
+        .shift-management-sample-wrapper {
+            display: block;
+            height: auto;
+            overflow: hidden;
+
+            .schedule-shift-management {
+                margin-right: 0;
+                margin-bottom: 10px;
+                width: 100%;
+                height: 450px;
+            }
+
+            .treeview-container {
+                width: 100%;
+                height: auto;
+                position: relative;
+                overflow: visible;
+
+                .shift-management-treeview.e-control {
+                    height: 300px;
+                }
+            }
+        }
+    }
+
+    /* Handle drag items specifically */
+    .e-drag-item.shift-management-treeview {
+        position: fixed !important;
+        max-width: 80%;
+        z-index: 9999;
+    }
+
+    /* Ensure the drag area is properly contained */
+    .shift-management-sample-wrapper[dragArea] {
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Fix for TreeView nodes */
+    .shift-management-treeview .e-list-item {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    /* Ensure employee images scale properly */
+    .employee-image {
+        max-width: 32px;
+        max-height: 32px;
+    }
+}
+
+.e-disble-not-allowed {
+    cursor: unset !important;
+}
+
+.e-drag-item.shift-management-treeview .e-icon-expandable {
+    display: none;
+}
+
+.e-schedule-dialog.shift-management-editor-popup .e-dlg-content {
+    .e-subject-container {
+        width: 100%;
+    }
+
+    .e-start-end-row,
+    .e-resources-row {
+        pointer-events: none;
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .e-location-container,
+    .e-all-day-time-zone-row,
+    .e-time-zone-row,
+    .e-repeat-parent-row,
+    .e-recurrenceeditor {
+        display: none;
+    }
+}
+
+.schedule-shift-management .e-quick-popup-wrapper .e-popup-header .e-edit,
+.schedule-shift-management .e-quick-popup-wrapper .e-popup-header .e-delete,
+.schedule-shift-management .e-quick-popup-wrapper .e-popup-footer,
+.e-schedule-dialog.shift-management-editor-popup .e-footer-content .e-event-delete.e-btn {
+    display: none;
+}
+
+.schedule-shift-management .e-quick-popup-wrapper .e-popup-header .e-subject-wrap .e-subject {
+    max-height: 100%;
+}
+
+.shift-management-tooltip.e-tooltip-wrap {
+    border: none !important;
+    opacity: 1;
+
+    .e-tip-content {
+        background-color: #313033;
+        color: #F4EFF4 !important;
+        font-family: 'Roboto';
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0.24px;
+        padding: 5px 12px;
+    }
+
+    .e-arrow-tip-inner.e-tip-bottom::before,
+    .e-arrow-tip-inner.e-tip-left::before {
+        color: #313033;
+    }
+}
+
+.e-dialog.swap-dialog {
+    .e-dlg-header-content {
+        height: 52px;
+
+        .e-dlg-header {
+            font-family: 'Roboto';
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.15px;
+            line-height: 20px;
+        }
+    }
+
+    .e-dlg-content {
+        overflow: visible;
+    }
+
+    .e-dlg-content label {
+        font-family: 'Roboto';
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.1px;
+        line-height: 12px;
+    }
+
+    .e-dlg-content input {
+        font-family: 'Roboto';
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.24px;
+        line-height: 20px;
+    }
+
+    .e-footer-content {
+        height: 60px;
+
+        .e-btn {
+            font-family: 'Roboto';
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            line-height: 16px;
+        }
+    }
+}
+  .highcontrast .e-leave::before {
+    content: '\e607'!important;
+}

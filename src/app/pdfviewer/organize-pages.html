@@ -10,7 +10,7 @@
             </div>
             <ejs-switch cssClass="buttonSwitch" id="checked" (change)="change($event)" [checked]="true"></ejs-switch>
         </div>
-        <ejs-pdfviewer #pdfviewer id="pdfViewer" [documentPath]='document' [resourceUrl]='resource' (documentLoad)='documentLoad($event)' style="height:640px;display:block"></ejs-pdfviewer>
+        <ejs-pdfviewer #pdfviewer id="pdfViewer" [documentPath]='document' [resourceUrl]='resource' (documentLoad)='documentLoad($event)' [pageOrganizerSettings]='pageOrganizerSettings' style="height:640px;display:block"></ejs-pdfviewer>
     </div>
 </div>
 
@@ -29,6 +29,7 @@
         <li>Undo and redo actions are available at the organize pages dialog.</li>
         <li>Enjoy real-time updates as any changes made to the page organization are instantly reflected within the PDF Viewer, when you click on the <code>Save</code> button.</li>
         <li>Utilize the <code>Save As</code> feature to preserve edits, enabling users to download the modified version of the PDF document for future reference.</li>
+        <li>Zoom in or out of page images using the slider opened through the page zoom icon available in the toolbar or using keyboard accessibility.</li>
     </ul> 
     <p>
         More information on the PDF Viewer instantiation can be found in this

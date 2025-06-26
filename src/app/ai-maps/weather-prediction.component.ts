@@ -1,7 +1,9 @@
 import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
 import { ButtonAllModule, Button } from '@syncfusion/ej2-angular-buttons';
 import { MapsAllModule } from '@syncfusion/ej2-angular-maps';
-import { getAzureChatAIRequest } from '../../azure-openai';
+import { serverAIRequest } from '../common/ai-service';
+import {AIToastComponent} from '../common/ai-toast.component';  
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
 
 interface MarkerData {
   latitude: number;
@@ -14,7 +16,7 @@ interface MarkerData {
 @Component({
   selector: 'app-weather-prediction',
   standalone: true,
-  imports: [ButtonAllModule, MapsAllModule],
+  imports: [ButtonAllModule, MapsAllModule, ToastModule, AIToastComponent],
   templateUrl: './weather-prediction.component.html',
   styleUrl: './weather-prediction.component.css'
 })
@@ -169,7 +171,7 @@ export class WeatherPredictionComponent {
 
   public generateWeatherRequest(date: string): Promise<any> {
     const prompt = 'Generate ' + date + '\'s temperature in Celsius for 15 important cities in USA as a JSON object, with fields such as "city_name", "temperature", "latitude", "longitude" and "weather_condition". The weather conditions must be sunny day, rainy day, cloudy day, snowy day and foggy day based on the temperature of the state. Strictly provide flat JSON object list alone without nested objects.';
-    return getAzureChatAIRequest({ messages: [{ role: 'user', content: prompt }] });
+    return serverAIRequest({ messages: [{ role: 'user', content: prompt }] });
   }
 
   public getWeatherImage(condition: string): string {

@@ -76,6 +76,7 @@ import { ScrollingComponent } from './scrolling.component';
 import { DataBindingWithTreeviewComponent } from './data-binding-with-treeview.component';
 import { WorkFlowDiagramComponent } from './workflow-editor.component';
 import { AvoidOverlapDiagramComponent } from './avoid-connector-overlap.component';
+import { ContainerDiagramComponent } from './container.component';
 
 export const diagramAppRoutes: Object[] = [
     {
@@ -110,10 +111,10 @@ export const diagramAppRoutes: Object[] = [
         name: 'Line Routing',
         category: 'Getting Started', order: '01',
         description: 'This sample visualizes the connectors that are automatically re-routing or moving away if any shape found on the connectors path'
-    },    
+    },
     {
         path: ':theme/diagram/avoid-connector-overlap', component: AvoidOverlapDiagramComponent,
-        name: 'Avoid Connector Overlap', type:'new',
+        name: 'Avoid Connector Overlap',
         category: 'Getting Started', order: '01',
         description: 'This sample visualizes the connectors that automatically adjust to minimize visual overlap, ensuring clear and distinct representations of connections within the diagram.',
     },
@@ -133,10 +134,15 @@ export const diagramAppRoutes: Object[] = [
         description: 'This sample visualizes the swimlane structure with diagram elements inside it.'
     },
     {
+        path: ':theme/diagram/container', component: ContainerDiagramComponent,
+        name: 'Container', type:'new', category: 'Getting Started', order: '01',
+        description: 'This sample  illustrates the Container shape usage, container and its child relationship.',
+    },
+    {
         path: ':theme/diagram/grouping-and-ordering', component: GroupingAndOrderingComponent,
         name: 'Grouping and Ordering', category: 'Getting Started', order: '01',
         description: 'This sample illustrates how to group, ungroup, and order commands with the diagram.',
-        
+
     },
     {
         path: ':theme/diagram/diagram-events', component: EventsDiagramComponent,
@@ -152,13 +158,13 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/commands', component: CommandComponent,
         name: 'Commands', category: 'Getting Started', order: '01',
         description: 'This example illustrates the various commands supported in the diagram control.',
-        
+
     },
     {
         path: ':theme/diagram/constraints', component: ConstraintComponent,
         name: 'Constraints', category: 'Getting Started', order: '01',
         description: 'This sample illustrates how node constraints are used to restrict end-users from performing certain operations on nodes and connector constraints are used to restrict end-users from performing certain operation on connectors.',
-        
+
 
     },
     {
@@ -178,21 +184,21 @@ export const diagramAppRoutes: Object[] = [
         name: 'Zooming and Panning',
         category: 'Interactive Features', order: '02',
         description: 'This sample shows how diagram objects snap to the nearest intersection of gridlines or objects while being dragged or resized.',
-        
+
     },
     {
         path: ':theme/diagram/snapping', component: SnappingComponent,
         name: 'Snapping',
         category: 'Interactive Features', order: '02',
         description: 'This sample illustrates how to zoom and pan in the diagram.',
-        
+
     },
     {
         path: ':theme/diagram/scrolling', component: ScrollingComponent,
         name: 'Scrolling',
         category: 'Interactive Features', order: '02',
         description: 'This example illustrates how to scroll a diagram using vertical and horizontal scrollbars. The scroll limit property helps limit the scrolling area.',
-        
+
     },
     {
         path: ':theme/diagram/drawing-tool', component: DrawingToolDiagramComponent,
@@ -254,7 +260,7 @@ export const diagramAppRoutes: Object[] = [
         category: 'Automatic Layouts', order: '03',
         description: 'This sample demonstrates a huge organizational structure using a compact layout model. Radial tree layout algorithm is used to build such a layout.'
     },
-   
+
     {
         path: ':theme/diagram/symmetric-layout', component: SymmetricLayoutDiagramComponent,
         name: 'Symmetric Layout',
@@ -278,7 +284,7 @@ export const diagramAppRoutes: Object[] = [
         name: 'Hierarchical Layout with multiple roots',
         category: 'Automatic Layouts', order: '03',
         description: 'This sample illustrates the structure of an Electricity Sector using complex hierarchical layout with multiple roots.',
-        
+
     },
     {
         path: ':theme/diagram/local-data', component: LocalDataDiagramComponent,
@@ -328,9 +334,9 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/uml-sequence-diagram', component: UmlSequenceComponent,
-        name: 'UML Sequence Diagram', category: 'Use Case Diagram', order: '08',
-        description: 'This sample illustrates an employees leave request sequence using a UML sequence diagram. The shapes for the sequence were designed with the port feature for Diagrams nodes.',
-        
+        name: 'UML Sequence Diagram', category: 'Use Case Diagram', order: '08', type: 'update',
+        description: 'This sample presents a UML sequence diagram to depict interactions in a secure transaction process involving a user, transaction system, and fraud detection using diagram model.',
+
     },
     {
         path: ':theme/diagram/uml-Class-diagram', component: UmlClassDiagramComponent,
@@ -356,37 +362,21 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/workflow-editor', component: WorkFlowDiagramComponent,
-        name: 'Workflow Diagram', category: 'Real-time Diagrams', order: '09',
-        description: 'This sample visualizes the Travel booking reservation system and its built with readymade BPMN shapes.'
+        name: 'Workflow Diagram', category: 'Real-time Diagrams', order: '09', type: 'update',
+        description: 'This sample visually represents a simple Workflow of a Travel Request Agency using Syncfusion<sup>®</sup> EJ2 TypeScript. The diagram includes BPMN nodes, connectors, and annotations to represent various diagram objects.'
     },
     {
         path: ':theme/diagram/data-binding-with-treeview', component: DataBindingWithTreeviewComponent,
         name: 'Data Binding with TreeView',
         description: 'This example illustrates how to create a tree view and a diagram with a datasource. It provides support for selecting, adding, deleting, dragging and dropping, and editing annotations of the nodes during runtime. These actions will be reflected in the corresponding nodes of the tree view component.',
-        category: 'Real-time Diagrams', order: '09', 
+        category: 'Real-time Diagrams', order: '09',
     },
     {
         path: ':theme/diagram/flow-execution', component: FlowExecutionDiagramComponent,
         name: 'Flow Execution', category: 'Real-time Diagrams', order: '09',
         description: 'This sample visualizes the hotel booking reservation system and its built with readymade BPMN shapes.'
     },
-    
-   
-   
-   
-   
-    
-   
-   
-   
 
-    
-    
-    
-    
-   
-    
-   
 ];
 
 export const DiagramSampleModule: ModuleWithProviders<any> = RouterModule.forChild(diagramAppRoutes);

@@ -33,7 +33,9 @@ export class SerializationDiagramComponent {
     public delayStyle: ShapeStyleModel = { fill: '#f8eee5', strokeColor: '#797979' };
     public connectorTextStyle: TextStyleModel = { fill: 'white' };
     public loaded() {
-        this.diagram.select([this.diagram.nodes[0]]);
+        setTimeout(() => {
+            this.diagram.select([this.diagram.nodes[0]]);
+        }, 100);
     }
     // Async settings for file upload
     public asyncSettings: AsyncSettingsModel = {
@@ -56,7 +58,7 @@ export class SerializationDiagramComponent {
     private verticalGridlines: GridlinesModel = { lineColor: '#e0e0e0', lineIntervals: this.interval };
     public snapSettings: SnapSettingsModel = { horizontalGridlines: this.horizontalGridlines, verticalGridlines: this.verticalGridlines };
 
-    
+
     public getConnectorDefaults(args: ConnectorModel, diagram: Diagram): ConnectorModel {
         args.targetDecorator.height = 5;
         args.targetDecorator.width = 5;
@@ -68,6 +70,7 @@ export class SerializationDiagramComponent {
     // Handle click events
     public onClicked(args: ClickEventArgs): void {
         if (args.item.text === 'New') {
+            this.diagram.clearSelection();
             this.diagram.clear();
         } else if (args.item.text === 'Load') {
             document.getElementsByClassName('e-file-select-wrap')[0].querySelector('button').click();

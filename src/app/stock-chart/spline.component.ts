@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IStockChartEventArgs, ChartTheme, ITooltipRenderEventArgs, StockChartModule, ChartAllModule, RangeNavigatorAllModule } from '@syncfusion/ej2-angular-charts';
+import { IStockChartEventArgs, ChartTheme, ITooltipRenderEventArgs, LastValueLabel, StockChartModule, ChartAllModule, RangeNavigatorAllModule } from '@syncfusion/ej2-angular-charts';
 import { aapl } from './stock-data';
 import { loadStockChartTheme } from './theme-color';
 /**
@@ -21,9 +21,10 @@ export class SplineComponent {
     };
 
     public primaryYAxis: Object = {
-        lineStyle: { width: 0 },
-        majorTickLines: { height: 0 }
+        lineStyle: { width: 0 }, labelPosition: 'Outside', tickPosition: 'Outside',
+        majorTickLines: { height: 17, width: 10, color: 'transparent' }
     };
+    public lastValueLabel: object = { enable: true, dashArray: '3,2', lineWidth: 0.5 };
     public tooltip: object = { enable: true };
     public crosshair: object = { enable: true };
     public chartArea: Object = {

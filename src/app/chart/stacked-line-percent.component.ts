@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, ILegendClickEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, ChartAllModule } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -108,73 +108,6 @@ export class PercentStackedLineChartComponent {
     public marker1: Object = { visible: true, isFilled: true, shape: 'Diamond', width: 7, height: 7 };
     public marker2: Object = { visible: true, isFilled: true, shape: 'Rectangle', width: 5, height: 5 };
     public marker3: Object = { isFilled: true, visible: true, shape: 'Triangle', width: 6, height: 6 };
-    public legendClick(args: ILegendClickEventArgs): void {
-        if (args.series.index === 0) {
-            if (args.chart.series[3].visible) {
-                args.chart.series[3].width = 3;
-                args.chart.series[0].width = 2;
-            } else if (args.chart.series[2].visible) {
-                args.chart.series[2].width = 3;
-                args.chart.series[0].width = 2;
-            } else if (args.chart.series[1].visible) {
-                args.chart.series[1].width = 3;
-                args.chart.series[0].width = 2;
-            } else {
-                args.chart.series[0].width = 3;
-            }
-        }
-
-        if (args.series.index === 1) {
-            if (args.chart.series[3].visible) {
-                args.chart.series[3].width = 3;
-                args.chart.series[1].width = 2;
-            } else if (args.chart.series[2].visible) {
-                args.chart.series[2].width = 3;
-                args.chart.series[1].width = 2;
-            } else if (args.series.visible && args.chart.series[0].visible) {
-                args.chart.series[0].width = 3;
-                args.chart.series[1].width = 2;
-            } else {
-                args.chart.series[1].width = 3;
-                args.chart.series[0].width = 2;
-            }
-        }
-
-        if (args.series.index === 2) {
-            if (args.chart.series[3].visible) {
-                args.chart.series[3].width = 3;
-                args.chart.series[2].width = 2;
-            } else if (!args.series.visible) {
-                args.chart.series[2].width = 3;
-                args.chart.series[1].width = 2;
-                args.chart.series[0].width = 2;
-            } else if (args.chart.series[1].visible) {
-                args.chart.series[1].width = 3;
-                args.chart.series[2].width = 2;
-            } else if (args.series.visible && args.chart.series[0].visible) {
-                args.chart.series[0].width = 3;
-                args.chart.series[2].width = 2;
-            }
-        }
-
-        if (args.series.index === 3) {
-            if (!args.series.visible) {
-                args.chart.series[3].width = 3;
-                args.chart.series[2].width = 2;
-                args.chart.series[1].width = 2;
-                args.chart.series[0].width = 2;
-            } else if (args.chart.series[2].visible) {
-                args.chart.series[2].width = 3;
-                args.chart.series[3].width = 2;
-            } else if (args.chart.series[1].visible) {
-                args.chart.series[1].width = 3;
-                args.chart.series[3].width = 2;
-            } else if (args.series.visible && args.chart.series[0].visible) {
-                args.chart.series[0].width = 3;
-                args.chart.series[3].width = 2;
-            }
-        }
-    };
 
     constructor() {
         //code

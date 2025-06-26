@@ -1,5 +1,5 @@
 <div id="action-description">
-    <p>This sample visualizes the support for changing different set of working days in a week. The selected working days in drop down list will be applied to Gantt chart.</p>
+    <p>This sample demonstrates how to adjust the working days within a week and manage the visibility of non-working days in the timeline, enabling customized project scheduling.</p>
 </div>
 
 <div class="col-lg-8 control-section">
@@ -17,7 +17,7 @@
                 <td style="width: 30%">
                     <div>Working Days</div>
                 </td>
-                <td style="width: 70%;padding-right: 10px">
+                <td style="width: 70%;padding-right: 10px; padding-bottom: 10px;">
                     <div id="WorkingDays" style="padding-left: 5px;width: 210px;">
                         <ejs-multiselect id="checklist" #WorkingDaysObj style="padding: 2px" [dataSource]="dropDownData" 
                         (select)="select($event)" (removed)="remove($event)" [value]="workWeek" 
@@ -25,7 +25,29 @@
                         popupHeight="350px"></ejs-multiselect>
                     </div>
                 </td>
-            </tr>            
+            </tr> 
+            <tr>
+                <td style="width: 30%; padding-top: 10px; padding-bottom: 10px;">
+                    <div>Show Weekends</div>
+                </td>
+                <td style="width: 70%">
+                    <div>
+                        <ejs-checkbox [checked]="true" (change)="onshowWeekendsChange($event)">
+                        </ejs-checkbox>
+                    </div>
+                </td>
+            </tr>   
+            <tr>
+                <td style="width: 30%; padding-top: 10px; padding-bottom: 10px;">
+                    <div>Highlight Weekends</div>
+                </td>
+                <td style="width: 70%">
+                    <div>
+                        <ejs-checkbox [checked]="true" (change)="onshightlightWeekendsChange($event)">
+                        </ejs-checkbox>
+                    </div>
+                </td>
+            </tr>           
         </table>
         </div>
     </div>
@@ -38,10 +60,11 @@
 </style>
     <div id="description">
         <p>
-            In this example, you can see how to render a Gantt chart with the provided data source and customizable array of working days. These working days alone will be considered for taskbar rendering and duration calculations.        
-        </p>
+            In this example, you can customize which days of the week are considered working days using the <a target="_blank" href="https://helpej2.syncfusion.com/angular/documentation/api/gantt/#workweek">workWeek</a> property. 
+            Simply select your preferred working days from the dropdown list in the property panel, and they will be applied to the Gantt Chart. Weekends can be highlighted using the <a target="_blank" href="https://helpej2.syncfusion.com/angular/documentation/api/gantt/#highlightweekends">highlightweekends</a> property for easy identification.     
+        </p>        
         <p>
-            The working days in your project can be customized using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#workweek">workWeek</a> property and the selected days in the dropdown list available in the property panel will be applied to Gantt chart. You can get to know the working days in the Gantt chart timeline by the highlighted weekend days. This can be enabled by using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#highlightweekends">highlightWeekends</a> property
+            Non-working days are visible by default in the Gantt Chart timeline, their visibility can be customized using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/timelineSettingsModel/#showWeekend">timelineSettings.showWeekend</a> property. Setting this to false will hide non-working days from the timeline.
         </p>
         <p>
             Gantt component features are segregated into individual feature-wise modules. To use a selection and markers, inject the

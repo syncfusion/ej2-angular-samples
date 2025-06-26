@@ -52,17 +52,7 @@ export class VirtualScrollAutoCompleteComponent {
             this.records.push(item);
         }
     }
-    ngAfterViewInit(): void {
-        if (this.localAutoCompleteObj) {
-            this.localAutoCompleteObj.refresh();
-        }
-        if (this.remoteAutoCompleteObj) {
-            this.remoteAutoCompleteObj.refresh();
-        }
-        if (this.groupAutoCompleteObj) {
-            this.groupAutoCompleteObj.refresh();
-        }
-    }
+
     // bind the DataManager instance to dataSource property
     public customerData: DataManager = new DataManager({
         url: 'https://services.syncfusion.com/js/production/api/VirtualDropdownData',

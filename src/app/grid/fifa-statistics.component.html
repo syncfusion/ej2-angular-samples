@@ -1,0 +1,40 @@
+<div id="action-description">
+  <p>In this demo, the Syncfusion DataGrid displays comprehensive FIFA World Cup records and statistics, covering the
+    entire history of the tournament from 1930 to 2022. The FIFA World Cup statistics and data utilized in this
+    application are sourced from
+    <code><a target="_blank" class="code" href="https://en.wikipedia.org/wiki/FIFA_World_Cup_records_and_statistics">Wikipedia</a></code>.
+    We sincerely thank Wikipedia for their invaluable resource, which has been
+    instrumental in preparing this demonstration.
+  </p>
+</div>
+<div class="control-section">
+  <div class="stackblitz-container material3">
+    <div class="content-wrapper">
+      <ejs-tooltip #tooltip id="tooltip" [cssClass]="'fifa_tooltip'"
+        target="td:nth-child(2) a, td:nth-child(3) a,td:nth-child(4) a,td:nth-child(4) img, td:nth-child(5) img,td:nth-child(5) a,td:nth-child(6) a,td:nth-child(6) img"
+        (beforeRender)="beforeRender($event)" (beforeOpen)="beforeOpen($event)" opensOn="Hover" width="300">
+        <ejs-grid #grid id="fifa_grid" [dataSource]="fifaData" gridLines="Both" [allowSorting]="true"
+          [enableStickyHeader]="true" [allowTextWrap]="true" [textWrapSettings]="{ wrapMode: 'Content' }"
+          [enableAltRow]="true" [enableHover]="false" [allowSelection]="false" (queryCellInfo)="queryCellInfo($event)"
+          (dataBound)="dataBound()">
+          <e-columns>
+            <e-column field="Year" headerText="Year" textAlign="Right" width="100"></e-column>
+            <e-column field="Host" headerText="Organizer" width="140"></e-column>
+            <e-column field="Champions" headerText="Champions" width="140"></e-column>
+            <e-column field="Coach" headerText="Winning Coach" width="185"></e-column>
+            <e-column field="TopScorer" headerText="Most Scorer(s)" width="185"></e-column>
+            <e-column field="BestPlayerAward" headerText="Player of season" width="170"></e-column>
+          </e-columns>
+        </ejs-grid>
+      </ejs-tooltip>
+    </div>
+  </div>
+  <div id="description">
+    <p>This section provides detailed information about the FIFA World Cup, including the year, host country, champion
+      team, top scorer, best player, and winning coach. The data is enhanced with flags, icons, and hyperlinks for easy
+      access to more details. The Grid
+      <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/grid/column/#template">column template</a></code>
+      feature allows custom content in grid cells, creating a rich,
+      interactive display.</p>
+  </div>
+</div>

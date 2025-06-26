@@ -1,21 +1,25 @@
 /**
  * DropDownList Filtering Sample
  */
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Query } from '@syncfusion/ej2-data';
 import { EmitType } from '@syncfusion/ej2-base';
 import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-
+import { NumericTextBoxComponent, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 @Component({
     selector: 'control-content',
     templateUrl: 'filtering.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, DropDownListModule, SBDescriptionComponent]
+    imports: [SBActionDescriptionComponent, DropDownListModule, SBDescriptionComponent, NumericTextBoxModule]
 })
 export class FilteringDropDownListComponent {
+    @ViewChild('sample')
+    public dropdownListObj: DropDownListComponent;
+    @ViewChild('numericTextBox')
+    public numericTextBoxObj: NumericTextBoxComponent;
     //define the filtering data
     public data: { [key: string]: Object; }[] = [
         { Name: 'Australia', Code: 'AU' },
@@ -46,6 +50,7 @@ export class FilteringDropDownListComponent {
     public watermark: string = 'Select a country';
     // set the placeholder to filter search box input element
     public filterPlaceholder: string = 'Search';
+    public debounceDelay:string ='300';
     // filtering event handler to filter a Country
     public onFiltering: EmitType<FilteringEventArgs> = (e: FilteringEventArgs) => {
         let query: Query = new Query();
@@ -53,5 +58,8 @@ export class FilteringDropDownListComponent {
         query = (e.text !== '') ? query.where('Name', 'startswith', e.text, true) : query;
         //pass the filter data source, filter query to updateData method.
         e.updateData(this.data, query);
+    }
+    public onChange(): void {
+        this.dropdownListObj.debounceDelay = this.numericTextBoxObj.value;
     }
 }

@@ -25,6 +25,7 @@ import {
 } from '@syncfusion/ej2-angular-schedule';
 import { getAzureChatAIRequest } from '../../azure-openai';
 import { DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
+import {AIToastComponent} from '../common/ai-toast.component';  
 interface ScheduleEvent {
   Id: number;
   Subject: string;
@@ -47,6 +48,8 @@ interface ScheduleEvent {
     ButtonAllModule,
     DialogModule,
     DateTimePickerModule,
+    AIToastComponent
+
   ],
   templateUrl: './smart-scheduler.component.html',
   styleUrl: './smart-scheduler.component.css',

@@ -152,7 +152,7 @@ export class LPController {
 
     onComponentSelect(e: NodeSelectEventArgs) {
         let path: string = e.node.getAttribute('data-path');
-        if (location.hash.replace('/#', '') !== path) {
+        if (path && location.hash.replace('/#', '') !== path) {
             this.navigateSample(path.replace(':theme', this.getCurrentTheme()));
             this.listComponent.dataSource = <any>this.controlSampleData[path.split('/')[1]];
             this.listComponent.dataBind();

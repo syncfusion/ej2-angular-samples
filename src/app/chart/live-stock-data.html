@@ -7,16 +7,16 @@
     <div align='center'>
         <ejs-chart id='stock' align='center' [chartArea]='chartArea' [width]='width' style='display:block;' [primaryXAxis]='primaryXAxis'
             [primaryYAxis]='primaryYAxis' (load)='load($event)' (pointRender)='pointRender($event)' (axisRangeCalculated)='axisRangeCalculated($event)' 
-            [title]='title' [crosshair]='crosshair' [annotations]='annotations'>
+            [title]='title' [crosshair]='crosshair'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Candle' xName='x' low='low' high='high' open='open' close='close' columnWidth=0.4 bearFillColor='#2ecd71' bullFillColor='#e74c3d'> </e-series>
+                <e-series [dataSource]='data' type='Candle' xName='x' low='low' high='high' open='open' close='close' columnWidth=0.4 bearFillColor='#2ecd71' bullFillColor='#e74c3d' [lastValueLabel]='lastValueLabel'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render and configure a candlestick series to display data that updates every second using the <code>setData</code> method and adds new data every five seconds using the <code>addPoint</code> method. The chart demonstrates setting up a crosshair to follow the latest data and adjusting the point color based on the value.
+        In this example, you can see how to render and configure a candlestick series to display data that updates every second using the <code>setData</code> method and adds new data every five seconds using the <code>addPoint</code> method.  The chart demonstrates how to set up a last value label that follows the latest data.
     </p>
     <p style="font-weight: 500">Injecting Module</p>
     <p>

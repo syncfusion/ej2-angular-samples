@@ -2,11 +2,10 @@ import { Connector, ConnectorModel, DiagramComponent, NodeModel, Node, NodeConst
 import { ClickEventArgs, MenuEventArgs } from "@syncfusion/ej2-angular-navigations";
 import { DropDownButtonComponent } from "@syncfusion/ej2-angular-splitbuttons";
 import { BasicShapeModel, ISelectionChangeEventArgs, PointPort, UserHandleEventsArgs, ConnectorConstraints } from "@syncfusion/ej2-angular-diagrams";
-
+let currentBranch = 'Left';
 //Sets the default values of a connector
 export function getConnectorDefaults(connector: Connector): ConnectorModel {
     let diagram: DiagramComponent = (document.querySelector('#diagram') as any).ej2_instances[0];
-    let currentBranch = 'Left'
     connector.type = 'Bezier';
     connector.targetDecorator = { shape: 'None' };
     connector.bezierSettings.allowSegmentsReset = false;

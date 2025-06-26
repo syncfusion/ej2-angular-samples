@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { projectNewData } from './data';
 import { extend } from '@syncfusion/ej2-base';
+import { ChangeEventArgs, CheckBoxAllModule } from '@syncfusion/ej2-angular-buttons';
 import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
 import { EJ2Instance } from '@syncfusion/ej2-schedule';
@@ -13,7 +14,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     selector: 'ej2-ganttworkweek',
     templateUrl: 'work-week.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, MultiSelectAllModule, SBDescriptionComponent]
+    imports: [SBActionDescriptionComponent, GanttAllModule, MultiSelectAllModule, SBDescriptionComponent, CheckBoxAllModule]
 })
 export class GanttWorkWeekComponent implements OnInit {
 
@@ -89,4 +90,18 @@ export class GanttWorkWeekComponent implements OnInit {
                 this.ganttObj.workWeek = workingDays;
             }
     }
+    onshowWeekendsChange(args: ChangeEventArgs): void {
+        if (args.checked) {
+            this.ganttObj.timelineSettings.showWeekend = true;    
+        } else {
+            this.ganttObj.timelineSettings.showWeekend = false;
+        }
     }
+    onshightlightWeekendsChange(args: ChangeEventArgs): void {
+        if (args.checked) {
+            this.ganttObj.highlightWeekends  = true;
+        } else {
+            this.ganttObj.highlightWeekends  = false;
+        }
+    }
+}

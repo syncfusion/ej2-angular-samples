@@ -3,13 +3,14 @@ import { GanttModule } from '@syncfusion/ej2-angular-gantt';
 import { tasksCollection, resourceCollection } from './resource-ganttdata';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations'
 import { ToolbarService } from '@syncfusion/ej2-angular-gantt'
-import {getAzureChatAIRequest } from '../../azure-openai';
-
+import { serverAIRequest } from '../common/ai-service';
+import {AIToastComponent} from '../common/ai-toast.component';  
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
 @Component({
   selector: 'app-resource-optimization',
   standalone: true,
   imports: [
-    GanttModule,ToolbarModule
+    GanttModule,ToolbarModule,ToastModule, AIToastComponent
   ],
   providers: [ToolbarService],
   templateUrl: './resource-optimization.component.html',
@@ -107,12 +108,16 @@ public toolbarClick(args: any) {
     Do not return any content or any other additional information only return JSON.
       Task Collection Data:` + JSON.stringify(tasksCollection);
       `Resource Collection Data:` + JSON.stringify(resourceCollection);
-    let aioutput = getAzureChatAIRequest({ messages: [{ role: 'user', content: input }] });
+    let aioutput = serverAIRequest({ messages: [{ role: 'user', content: input }] });
     aioutput.then((result: any) => {
-      let cleanedJsonData = result.replace(/^```json\n|```\n?$/g, '');
-      cleanedJsonData = cleanedJsonData.replace(/\n}\n/g, '');
-      (this.gantt as any).dataSource = JSON.parse(cleanedJsonData);
-      (this.gantt as any).hideSpinner();
+      if (result) {
+        let cleanedJsonData = result.replace(/^```json\n|```\n?$/g, '');
+        cleanedJsonData = cleanedJsonData.replace(/\n}\n/g, '');
+        (this.gantt as any).dataSource = JSON.parse(cleanedJsonData);
+        (this.gantt as any).hideSpinner();
+      } else {
+        (this.gantt as any).hideSpinner();
+      }
     });
   }
 }

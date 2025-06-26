@@ -16,18 +16,19 @@ import { loadAccumulationChartTheme } from './theme-color';
 })
 export class PyramidComponent {
     public data: Object[] = [
-        { Foods :  "Milk, Youghnut, Cheese", Calories : 435, DataLabelMappingName : Browser.isDevice ? 'Milk, Youghnut,<br> Cheese:  435 cal' :  "Milk, Youghnut, Cheese: 435 cal" },
-        { Foods :  "Vegetables", Calories : 470, DataLabelMappingName : "Vegetables: 470 cal" },
-        { Foods :  "Meat, Poultry, Fish", Calories : 475, DataLabelMappingName : Browser.isDevice ? 'Meat, Poultry,<br> Fish: 475 cal' : "Meat, Poultry, Fish: 475 cal" },
-        { Foods :  "Rice, Pasta", Calories : 930, DataLabelMappingName : Browser.isDevice ? 'Rice, Pasta:<br> 930 cal' : "Rice, Pasta: 930 cal" },
-        { Foods :  "Fruits", Calories : 520, DataLabelMappingName : Browser.isDevice ? 'Fruits: <br> 520 cal' : "Fruits: 520 cal" },
+        { Foods: "Oils", Calories: 2, DataLabelMappingName: "Oils: 2%" },
+        { Foods: "Protein", Calories: 10, DataLabelMappingName: "Protein: 10%" },
+        { Foods: "Fruits", Calories: 15, DataLabelMappingName: "Fruits: 15%" },
+        { Foods: "Dairy", Calories: 23, DataLabelMappingName: "Dairy: 23%" },
+        { Foods: "Vegetables", Calories: 23, DataLabelMappingName: "Vegetables: 23%" },
+        { Foods: "Grains", Calories: 27, DataLabelMappingName: "Grains: 27%" }
     ];
     @ViewChild('pyramid')
     public pyramid: AccumulationChartComponent | AccumulationChart;
     public dataLabel: Object = {
         name: 'DataLabelMappingName', visible: true,   position: 'Outside',
-        connectorStyle: {length: '20px'}, font: {
-            fontWeight: '600'
+        connectorStyle: {length: Browser.isDevice ? '10px' : '20px'}, font: {
+            fontWeight: '600',  size: Browser.isDevice ? '7px' : '12px'
         }
     };
     //Initializing Legend
@@ -50,14 +51,15 @@ export class PyramidComponent {
             args.accumulation.series[0].height = '80%';
         }
     };
-    public neckWidth: string = '15%';
-    public gapRatio: number = 0.03;
     public emptyPointSettings: Object = {
         fill: 'red', mode: 'Drop'
     };
-    public explode: boolean = true;
-    public tooltip: Object = { header:'', enable: true, enableHighlight: true, format: '${point.x} : <b>${point.y} cal</b>' };
-    public title: string = 'Food Comparison Chart';
+    public neckWidth: string = '15%';
+    public gapRatio: number = 0.03;
+    public explode: boolean = false;
+    public tooltip: Object = { header:'', enable: true, enableHighlight: true, format: '${point.x}: <b>${point.y}% of Daily Intake </b>' };
+    public title: string = 'Food Consumption Pyramid';
+    public subTitle: string = 'Source: wikipedia.org';
     constructor() {
         //code
     };

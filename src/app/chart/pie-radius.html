@@ -6,10 +6,10 @@
 <div class="control-section">
     <div>
         <ejs-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings"
-            [tooltip]="tooltip" [title]="title" [enableSmartLabels]='enableSmartLabels'
+            [tooltip]="tooltip" [title]="title" [subTitle]="subTitle" [enableSmartLabels]='enableSmartLabels'
             [enableAnimation]='enableAnimation' (load)='load($event)' [enableBorderOnMouseMove]='false'>
             <e-accumulation-series-collection>
-                <e-accumulation-series [dataSource]='data' xName='Country' yName='Population' innerRadius="20%" [dataLabel]="dataLabel" [radius]='radius' tooltipMappingName='Radius'>
+                <e-accumulation-series [dataSource]='data' xName='Country' yName='Population' innerRadius="20%" borderRadius='3' [dataLabel]="dataLabel" [radius]='radius' [border]="border" tooltipMappingName='Radius'>
                 </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
@@ -17,7 +17,7 @@
 </div>
 <div id="description">
     <p>
-        In this example, you can see how to render a doughnut chart with different radius. You can use the <code>Radius</code> mapping property to achieve this feature. DataLabels are used to represent individual data and its values. In addition, the sample shows how to change the order of legends for the doughnut chart by using the Reverse property.
+        In this example, you can see how to render a donut chart with different radius. You can use the <code>Radius</code> mapping property to achieve this feature. <code>DataLabel</code> are used to represent individual data and its values.
     </p>
     <p>
         <code>Tooltip</code> is enabled in this example, to see the tooltip in action, hover a point or tap on a point

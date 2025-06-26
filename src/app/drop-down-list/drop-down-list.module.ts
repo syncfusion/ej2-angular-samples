@@ -17,7 +17,7 @@ import { TemplateDrivenDropDownListComponent } from './template-driven.component
 import { ReactiveFormDropDownListComponent } from './reactive-form.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { VirtualScrollDropDownListComponent } from './virtual-scroll.component';
-import { ObjectDropDownListComponent } from './object-value-binding';
+import { ObjectDropDownListComponent } from './object-value-binding.component';
 export const dropdownlistAppRoutes: Object[] = [
     { path: ':theme/drop-down-list/default', component: DefaultDropDownListComponent, name: 'Default Functionalities', description: 'This example demonstrates the default functionalities of the Angular drop-down list component with minimum configuration.', order: '01',
 		category: 'Dropdown List' },
@@ -35,7 +35,7 @@ export const dropdownlistAppRoutes: Object[] = [
       category: 'Dropdown List' },
     { path: ':theme/drop-down-list/virtual-scroll', component: VirtualScrollDropDownListComponent, name: 'Virtualization', description: 'This example demonstrates how to utilize the virtualization support of Angular drop-down list component.', order: '01',
 		category: 'Dropdown List' },
-    { path: ':theme/drop-down-list/filtering', component: FilteringDropDownListComponent, name: 'Filtering', description: 'This example demonstrates how the filtering functionalities works based on the typed characters in the Angular drop-down list component.', order: '01',
+    { path: ':theme/drop-down-list/filtering', component: FilteringDropDownListComponent, name: 'Filtering', type:'update', description: 'This example demonstrates how the filtering functionalities works based on the typed characters in the Angular drop-down list component.', order: '01',
 		category: 'Dropdown List' },
     { path: ':theme/drop-down-list/cascading', component: CascadingDropDownListComponent, name: 'Cascading', description: 'This example demonstrates how to create a related drop-down list (Cascading DropDownList) using the Angular drop-down list component.', order: '01',
 		category: 'Dropdown List' },

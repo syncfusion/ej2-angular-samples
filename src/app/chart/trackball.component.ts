@@ -68,7 +68,7 @@ export class TrackBallChartComponent {
     };
     public legendSettings: Object = {
         visible: true,
-        shared: true
+        shared: true, enableHighlight: true
     };
    // custom code start
     public width: string = Browser.isDevice ? '100%' : '75%';

@@ -3,7 +3,7 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
-import { SlashMenuItemSelectArgs, ToolbarService, SlashMenuService, LinkService, ImageService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, FormatPainterService, TableService, SlashMenuSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
+import { SlashMenuItemSelectArgs, ToolbarService, SlashMenuService, LinkService, ImageService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, FormatPainterService, TableService, SlashMenuSettingsModel, CodeBlockService } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, HtmlEditorService, QuickToolbarService, EmojiPickerService } from '@syncfusion/ej2-angular-richtexteditor';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -11,7 +11,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
     templateUrl: 'smart-suggestion.html',
-    providers: [ToolbarService, LinkService, ImageService, QuickToolbarService, HtmlEditorService, EmojiPickerService, PasteCleanupService, VideoService, AudioService, FormatPainterService, TableService, SlashMenuService],
+    providers: [ToolbarService, LinkService, ImageService, QuickToolbarService, HtmlEditorService, EmojiPickerService, PasteCleanupService, VideoService, AudioService, FormatPainterService, TableService, SlashMenuService, CodeBlockService],
     standalone: true,
     imports: [SBActionDescriptionComponent, RichTextEditorModule, SBDescriptionComponent]
 })
@@ -26,7 +26,7 @@ export class SmartSuggestionComponent {
             'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
             'LowerCase', 'UpperCase', '|',
             'Formats', 'Alignments', 'Blockquote', '|', 'NumberFormatList', 'BulletFormatList', '|',
-            'Outdent', 'Indent', '|', 'CreateLink', 'Image', 'Video', 'Audio', 'CreateTable', '|', 'FormatPainter', 'ClearFormat',
+            'Outdent', 'Indent', '|', 'CreateLink', 'Image', 'Video', 'Audio', 'CreateTable', 'CodeBlock', '|', 'FormatPainter', 'ClearFormat',
             '|', 'EmojiPicker', '|',
             'SourceCode', '|', 'Undo', 'Redo']
     };

@@ -1,0 +1,11 @@
+.overview-blockeditor {
+    height: 600px;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 750px) {
+    .overview-blockeditor {
+        width: 100%;
+    }
+}

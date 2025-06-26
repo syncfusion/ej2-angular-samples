@@ -1,0 +1,229 @@
+<div id="action-description">
+  <p>This demo showcases a technical event management system that uses the Scheduler component, where each technical
+    event is split into multiple sessions with specific room allocations. The system features drag-and-drop capabilities
+    for scheduling sessions, conflict prevention, and filtering by room.</p>
+</div>
+<div class='control-section event-management-control-section'>
+  <div class='control-wrapper event-management-wrapper'>
+    <ejs-schedule #scheduleRef width='100%' cssClass='schedule-event-management' height='550px'
+      [selectedDate]="selectedDate" [eventSettings]="eventSettings" [(currentView)]="currentView"
+      (eventRendered)="onEventRendered($event)" [showTimeIndicator]="showTimeIndicator" startHour="08:00"
+      endHour="18:00" [timeScale]="timeScale" [group]="group" [allowOverlap]="false" (cellClick)="onCellClick($event)"
+      (popupOpen)="onPopupOpen($event)" (popupClose)="onPopupClose($event)" (eventClick)="onEventClick($event)"
+      [quickInfoTemplates]="{ header: quickInfoTemplatesHeader, content: quickInfoTemplate }" [allowDragAndDrop]="false"
+      [allowResizing]="false">
+      <ng-template #resourceHeaderTemplate let-data>
+        <div class="template-wrap">
+          <div class="resource-detail">
+            <div class="resource-name">{{ getRoomName(data) }}</div>
+            <div class="capacity-wrap">
+              <span class="e-icons e-capacity-icon"></span>
+              <span class="e-capacity">{{ getRoomCapacity(data.resourceData.RoomCapacity.toString()) }}</span>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+
+      <e-resources>
+        <e-resource field='RoomId' title='Rooms' name='Rooms' [dataSource]='rooms' textField='RoomName' idField='RoomId'
+          colorField='RoomColor'>
+        </e-resource>
+      </e-resources>
+
+      <e-views>
+        <e-view option="Day"></e-view>
+        <e-view option="Week"></e-view>
+        <e-view option="Agenda" [eventTemplate]="agendaTemplate"></e-view>
+      </e-views>
+
+      <e-toolbaritems>
+        <e-toolbaritem name="Previous" align="Left"></e-toolbaritem>
+        <e-toolbaritem name="Next" align="Left"></e-toolbaritem>
+        <e-toolbaritem name="DateRangeText" align="Left"></e-toolbaritem>
+        <e-toolbaritem name="Views" align="Right"></e-toolbaritem>
+        <e-toolbaritem type="Separator" align="Right" cssClass="toolbar-post-agenda"></e-toolbaritem>
+        <e-toolbaritem name="Custom" type="Input" align="Right" cssClass="toolbar-post-agenda room-filter">
+
+          <ng-template #template>
+            <ejs-dropdownlist [dataSource]="roomsData" [fields]="{ text: 'RoomName', value: 'RoomId' }" [value]=0
+              (change)="onRoomChange($event)" [valueTemplate]="roomValueTemplate">
+            </ejs-dropdownlist>
+          </ng-template>
+        </e-toolbaritem>
+
+        <e-toolbaritem type="Separator" align="Right" cssClass="toolbar-post-agenda"></e-toolbaritem>
+        <e-toolbaritem type="Input" align="Right">
+          <ng-template #template>
+            <ejs-button class="e-tbar-btn e-control e-btn e-lib toolbar-post-agenda"
+              id="overview_toolbar_settings_unplanned_events" (click)="toggleUnplannedEventsElement()"
+              title="Toggle Unplanned Events">
+              <span class="e-btn-icon e-icons e-show-unplanned-events"></span>
+            </ejs-button>
+          </ng-template>
+
+        </e-toolbaritem>
+        <e-toolbaritem name="Custom" type="Input" align="Right" cssClass="toolbar-post-agenda"
+          [template]="printExportTemplate">
+        </e-toolbaritem>
+      </e-toolbaritems>
+
+      <ng-template #agendaTemplate let-data>
+        <div class="agenda-event">
+          <div class="event-subject">{{ data.Subject }}</div>
+          <div class="event-description">{{ data.Description }}</div>
+
+          <!-- Duration and audience block (not shown for break or lunch) -->
+          <ng-container *ngIf="!isBreakOrLunch(data.Subject)">
+            <div class="event-duration-audience">
+              <div class="event-duration">
+                <span class="e-icons e-duration-icon"></span>
+                <span class="e-duration">{{ getTimeString(data.StartTime) }} - {{ getTimeString(data.EndTime) }}</span>
+              </div>
+              <div class="event-audience">
+                <span class="e-icons e-audience-icon"></span>
+                <span class="e-audience-count">Audience : {{ data.Capacity }}</span>
+              </div>
+            </div>
+          </ng-container>
+
+          <!-- Speaker section -->
+          <div *ngIf="data.Speakers?.length > 0" class="event-speaker">
+            <div class="separator-line"></div>
+            <label>{{ data.Speakers.length > 1 ? 'Speakers' : 'Speaker' }}</label>
+            <div *ngFor="let speaker of data.Speakers" class="speaker-details">
+              <div class="speaker-image">{{ speaker.Name.charAt(0) }}</div>
+              <div class="speaker-info">
+                <div class="speaker-name">{{ speaker.Name }}</div>
+                <div class="speaker-title">{{ speaker.Title }}</div>
+                <div class="speaker-note">{{ speaker.Note }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+
+    </ejs-schedule>
+    <!-- treeview -->
+    <div class="unplanned-events-container">
+      <div class="title-container">
+        <div class="title-text">Unscheduled Events</div>
+      </div>
+
+      <div id="list-container">
+        <div class="events-list">
+          <label class="event-label">Event</label>
+          <ejs-dropdownlist [fields]="{ text: 'name', value: 'id' }" [dataSource]="unPlannedEventsList"
+            [value]="selectedUnplannedEventItem.toString()" (change)="onUnplannedEventSelect($event)">
+          </ejs-dropdownlist>
+        </div>
+
+        <ejs-treeview #allUnplannedEventsTreeView id="treeview1" [cssClass]="'event-management-treeview'"
+          [dragArea]="'.event-management-wrapper'" [allowDragAndDrop]="true" [nodeTemplate]="treeTemplate"
+          [fields]="allUnplannedEventsTreeFields" (nodeDragStart)="onTreeDragStart()"
+          (nodeDragging)="onTreeDragging($event)" (nodeDragStop)="onTreeDragStop($event)">
+        </ejs-treeview>
+
+        <ejs-treeview #cloudSecurityEventTreeView id="treeview2" style="display: none;"
+          [cssClass]="'event-management-treeview'" [dragArea]="'.event-management-wrapper'" [allowDragAndDrop]="true"
+          [nodeTemplate]="treeTemplate" [fields]="unplannedEvent1TreeFields" (nodeDragStart)="onTreeDragStart()"
+          (nodeDragging)="onTreeDragging($event)" (nodeDragStop)="onTreeDragStop($event)">
+        </ejs-treeview>
+
+        <ejs-treeview #aiAutomationEventTreeView id="treeview3" style="display: none;"
+          [cssClass]="'event-management-treeview'" [dragArea]="'.event-management-wrapper'" [allowDragAndDrop]="true"
+          [nodeTemplate]="treeTemplate" [fields]="unplannedEvent2TreeFields" (nodeDragStart)="onTreeDragStart()"
+          (nodeDragging)="onTreeDragging($event)" (nodeDragStop)="onTreeDragStop($event)">
+        </ejs-treeview>
+
+        <div class="no-events-message hidden">All events have been scheduled</div>
+      </div>
+    </div>
+
+    <div id="target">
+      <ejs-dialog #alertDialog id="modalDialog" cssClass="alert-dialog" [isModal]="true" [buttons]="alertDialogButtons"
+        header="Notice" height="240px" width="335px" [visible]="false" [showCloseIcon]="true"
+        [animationSettings]="animationSettings" target="#target">
+      </ejs-dialog>
+    </div>
+
+    <ng-template #treeTemplate let-data>
+      <div class="unplanned-item">
+        <div class="unplanned-item-subject">{{ data.Subject }}</div>
+        <div class="unplanned-item-duration">
+          <span class="duration-icon e-icons"></span>
+          <span class="duration-value">Duration: {{ data.Duration }}</span>
+        </div>
+        <div class="unplanned-item-capacity">
+          <span class="capacity-icon e-icons"></span>
+          <span class="capacity-value">Audience Size: {{ data.Capacity }}</span>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template #quickInfoTemplatesHeader let-data>
+      <div class="e-event-header e-popup-header">
+        <div class="e-header-icon-wrapper">
+          <button id="close" class="e-close e-icons" title="CLOSE" (click)="closeQuickInfoPopup()">
+          </button>
+        </div>
+        <div class="quick-info-header-content" [style.background]="getQuickInfoHeaderStyle(data)?.background"
+          [style.color]="getQuickInfoHeaderStyle(data)?.color">
+          <div class="quick-info-title">{{ data.Subject }}</div>
+          <div class="duration-text">{{ getQuickInfoDurationText(data) }}</div>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template #quickInfoTemplate let-data>
+      <div class="quick-info-content">
+        <div class="event-content">
+          <div class="e-room e-content-item">
+            <label>Room</label><span class="colon">:</span>
+            <span class="e-content">{{ getRoomNameById(data.RoomId) }}</span>
+          </div>
+          <div class="e-event e-content-item" *ngIf="data.elementType !== 'cell'">
+            <label>Event</label><span class="colon">:</span>
+            <span class="e-content">{{ data.Title }}</span>
+          </div>
+          <div class="e-speaker e-content-item" *ngIf="data.Speakers?.length > 0">
+            <label>{{ data.Speakers.length > 1 ? 'Speakers' : 'Speaker' }}</label>
+            <span class="colon">:</span>
+            <span class="e-content">{{ formatSpeakers(data.Speakers) }}</span>
+          </div>
+          <div class="e-count e-content-item">
+            <label>Participant count</label><span class="colon">:</span>
+            <span class="e-content">{{ data.Capacity }}</span>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template #printExportTemplate>
+      <button ejs-dropdownbutton [items]="printExportItems" iconCss="e-icons e-print-export"
+        cssClass="e-caret-hide e-tbar-btn" (select)="handlePrintExportSelect($event)">
+      </button>
+    </ng-template>
+
+    <ng-template #roomValueTemplate let-data>
+      <span>{{ data.RoomName === 'All' ? 'Room: All' : data.RoomName }}</span>
+    </ng-template>
+  </div>
+</div>
+
+<div id="description">
+  <p>
+    This example demonstrates how to implement a technical event management system using the Scheduler component. The
+    application includes the following key features:
+  </p>
+  <ul>
+    <li>Each technical event is organized into multiple separate sessions, with specific room allocations on the same
+      day.</li>
+    <li>An external list of unscheduled sessions that can be scheduled via drag-and-drop functionality</li>
+    <li>Prevention of scheduling conflicts and room capacity overflows while dragging and dropping externally maintained
+      event sessions.</li>
+    <li>Room-based filtering through toolbar dropdown selections.</li>
+    <li>Ability to filter and view unscheduled event sessions by technical event.</li>
+    <li>Detailed agenda view that displays event information including speakers, audience size, and session
+      descriptions.</li>
+  </ul>
+</div>

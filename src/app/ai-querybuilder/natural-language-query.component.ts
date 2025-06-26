@@ -6,13 +6,15 @@ import { TabAllModule, TabComponent } from '@syncfusion/ej2-angular-navigations'
 import { Query, Predicate } from '@syncfusion/ej2-data';
 import { createSpinner, showSpinner, hideSpinner } from '@syncfusion/ej2-popups';
 import { GridModule, GridComponent } from '@syncfusion/ej2-angular-grids';
-import { getAzureChatAIRequest } from '../../azure-openai';
+import { serverAIRequest } from '../common/ai-service';
+import {AIToastComponent} from '../common/ai-toast.component';  
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
 @Component({
   selector: 'app-nl-query',
   standalone: true,
   templateUrl: './natural-language-query.component.html',
   styleUrl: './natural-language-query.component.css',
-  imports: [QueryBuilderModule, GridModule, ButtonModule, TabAllModule]
+  imports: [QueryBuilderModule, GridModule, ButtonModule, TabAllModule, ToastModule, AIToastComponent]
 })
 export class NlQueryComponent {
   constructor(@Inject('sourceFiles') private sourceFiles: any) {
@@ -64,24 +66,28 @@ export class NlQueryComponent {
   generateQuery(): void {
     showSpinner(document.getElementById('grid') as HTMLElement);
     let textArea = `Given the following input: "write SQL query to` + (document.querySelector('#text-area') as any).value + `I need to get sql query without changing the given values", generate an SQL query that matches the requirement similar to the example output. The output should be in the format: "SELECT * FROM user WHERE credits > 100".`;
-    let aiOutput = getAzureChatAIRequest({ messages: [{ role: 'user', content: textArea }] });
+    let aiOutput = serverAIRequest({ messages: [{ role: 'user', content: textArea }] });
     aiOutput.then((result) => {
-      if (result?.indexOf("```sql") !== -1) {
-        result = (result as any).split("```sql")[1]
-      }
-      let val: string = (result as any).split("WHERE ")[1].split(";\n")[0];
-      val = val.replace("\n", "");
-      this.qryBldrObj.setRulesFromSql(val);
-      let predicate: Predicate = this.qryBldrObj.getPredicate(this.qryBldrObj.getValidRules());
-      let query: Query;
-      if (isNullOrUndefined(predicate)) {
-        query = new Query();
+      if (result) {
+          if (result?.indexOf("```sql") !== -1) {
+              result = (result as any).split("```sql")[1]
+          }
+          let val: string = (result as any).split("WHERE ")[1].split(";\n")[0];
+          val = val.replace("\n", "");
+          this.qryBldrObj.setRulesFromSql(val);
+          let predicate: Predicate = this.qryBldrObj.getPredicate(this.qryBldrObj.getValidRules());
+          let query: Query;
+          if (isNullOrUndefined(predicate)) {
+              query = new Query();
+          } else {
+              query = new Query().where(predicate);
+          }
+          this.gridObj.query = query;
+          this.gridObj.refresh();
+          hideSpinner(document.getElementById('grid') as HTMLElement);
       } else {
-        query = new Query().where(predicate);
+          hideSpinner(document.getElementById('grid') as HTMLElement);
       }
-      this.gridObj.query = query;
-      this.gridObj.refresh();
-      hideSpinner(document.getElementById('grid') as HTMLElement);
-    });
+  });
   }
 }

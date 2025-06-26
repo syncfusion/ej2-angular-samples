@@ -1,15 +1,15 @@
-.e-gantt-single-timeline .e-gantt-tree-grid-pane .e-columnheader{
+#TimelineTemplate.e-gantt-single-timeline .e-gantt-tree-grid-pane .e-columnheader{
     height: 70px !important;
 }
-.gantt-single-timeline .e-gantt-tree-grid-pane .e-headercell{
+#TimelineTemplate.e-gantt-single-timeline .e-gantt-tree-grid-pane .e-headercell{
     height: 70px !important;
 }
-.e-gantt .e-gantt-chart .e-timeline-header-container {
+#TimelineTemplate.e-gantt .e-gantt-chart .e-timeline-header-container {
     height: 70px !important;
 }
-.e-gantt .e-gantt-chart .e-timeline-single-header-cell {
+#TimelineTemplate.e-gantt .e-gantt-chart .e-timeline-single-header-cell {
     height: 70px !important;
-}  
+} 
 .e-header-cell-label.e-gantt-top-cell-text{
     background-color: #fff
 }

@@ -5,6 +5,7 @@ import { DropDownList } from '@syncfusion/ej2-dropdowns';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { loadAccumulationChartTheme } from './theme-color';
+import { Browser } from '@syncfusion/ej2-base';
 
 /**
  * Sample for Pie chart empty points
@@ -20,10 +21,8 @@ import { loadAccumulationChartTheme } from './theme-color';
 export class PieEmptyPointChartComponent {
 
     public data: Object[] = [
-        { x: 'Rice', y: 80 }, { x: 'Wheat', y: null }, { x: 'Oil', y: 70 },
-        { x: 'Corn', y: 60 }, { x: 'Gram', y: null },
-        { x: 'Milk', y: 70 }, { x: 'Peas', y: 80 },
-        { x: 'Fruit', y: 60 }, { x: 'Butter', y: null }
+        { x: 'Action', y: 35,}, { x: 'Drama', y: 25 }, { x: 'Comedy', y: null },
+        { x: 'Romance', y: 20 }, { x: 'Horror', y: 10 }, { x: 'Sci-Fi', y: null }
     ];
       // custom code start
     public load(args: IAccLoadedEventArgs): void {
@@ -43,11 +42,12 @@ export class PieEmptyPointChartComponent {
       }
     public dataLabel: Object = {
         visible: true, position: 'Inside', font: {
-            fontWeight: '600', 
-        },enableRotation: true, 
+            fontWeight: '600', size: Browser.isDevice ? '8px' : '12px'
+        }, enableRotation: true, 
     };
-    
-    public title: string = 'Annual Product-Wise Profit Analysis';
+    public radius: string = '80%';
+    public border: Object = { width: 1, color: '#ffffff' };
+    public title: string = 'Movie Genre Revenue Share';
     public legend: Object = { visible: false};
     public emptyPointSettings: Object = {
         fill: '#e6e6e6',

@@ -7,7 +7,7 @@ import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { ToolbarService, LinkService, ImageService, TableService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, CountService, VideoService, AudioService, FormatPainterService, EmojiPickerService } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, ToolbarType } from '@syncfusion/ej2-angular-richtexteditor';
 import { SplitterComponent, SplitterModule } from '@syncfusion/ej2-angular-layouts';
-import * as CodeMirror from 'codemirror';
+const CodeMirror = require('codemirror');
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/css/css.js';

@@ -6,7 +6,7 @@
     <div class="sample-container">
         <div class="default-section">
             <ejs-richtexteditor #iframeRTE id='iframeRTE' [toolbarSettings]='tools' [iframeSettings]='iframe' [enableTabKey]='enableTabKey'
-                [height]='height' [fileManagerSettings]='fileManagerSettings' (actionBegin)='handleFullScreen($event)'
+                [height]='height' [fileManagerSettings]='fileManagerSettings' [exportWord]="exportWord" [exportPdf]="exportPdf" [importWord]="importWord" (actionBegin)='handleFullScreen($event)'
                 (actionComplete)='actionCompleteHandler($event)'>
                 <ng-template #valueTemplate>
                     <p>The Rich Text Editor component is a WYSIWYG ("what you see is what you get") editor that provides

@@ -17,7 +17,7 @@ import { loadAccumulationChartTheme } from './theme-color';
 export class SemiPieComponent {
     public annotations: ChartAnnotationSettingsModel[] = [
         {
-            content: Browser.isDevice ? "<div style='font-Weight:700; font-size:11px;'>Browser<br>Market<br>Shares</div>" : "<div style='font-Weight:600; font-size:14px;'>Browser<br>Market<br>Shares</div>",region:'Series',  x: Browser.isDevice ? "52%" : "51%", y: Browser.isDevice ? "85%" : "85%"
+            content: Browser.isDevice ? "<div style='font-Weight:600; font-size:10px;'>Browser<br>Market<br>Shares</div>" : "<div style='font-Weight:600; font-size:14px;'>Browser<br>Market<br>Shares</div>",region:'Series',  x: "50%", y: "85%"
         },
 
     ];
@@ -38,19 +38,21 @@ export class SemiPieComponent {
         visible: true, position: 'Inside',
         enableRotation:true,
         connectorStyle: { length: '20px', type: 'Curve' }, name: 'text',
-        font: { fontWeight: '600',size: Browser.isDevice ? '8px' : '11px', color: '#ffffff' }, 
+        font: { fontWeight: '600',size: Browser.isDevice ? '7px' : '11px' }, 
 
     };
      // custom code start
     public load(args: IAccLoadedEventArgs): void {
         loadAccumulationChartTheme(args);
     }
+    public border: Object = {
+        width: 1, color: '#ffffff'
+    };
      // custom code end
-    public  radius : string =  Browser.isDevice ? '85%' : '100%';
+    public radius : string = '100%';
     public enableAnimation: boolean = false;
     public startAngle: number = 270;
     public endAngle: number = 90;
-    public tooltip: Object = { enable: true, format: "<b>${point.x}</b><br>Browser Share: <b>${point.tooltip}</b>", header:'', enableHighlight: true };
     constructor() {
         //code
     };

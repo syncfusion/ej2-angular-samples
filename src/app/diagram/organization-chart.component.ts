@@ -108,7 +108,6 @@ export class OrganizationalChartDiagramComponent {
       }
     //To change subtree alignment
     private documentClick(args: MouseEvent): void {
-      debugger
         let target: HTMLElement = args.target as HTMLElement;
         var selectedpatternElement = document.getElementsByClassName(
           'e-selected-pattern-style'
@@ -160,7 +159,7 @@ export class OrganizationalChartDiagramComponent {
               subTreeAlignment = 'Right';
               break;
           }
-    
+
           this.diagram.layout.getLayoutInfo = (
             node: NodeModel,
             options: TreeInfo

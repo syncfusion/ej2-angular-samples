@@ -1,6 +1,6 @@
 <div id="action-description">
     <p>
-        This sample demonstrates a drill down chart with a pie for automobiles sales by category. By clicking one category, you can navigate to other sub-categories where companies are differentiated.
+        This sample demonstrates a drill down chart with a pie for automobiles sales by region. Selecting a category navigates to its sub-categories, where sales are further broken down by country.
     </p>
 </div>
 <div class="control-section">
@@ -13,9 +13,9 @@
             <p id="text" style="display:inline-block;"></p>
         </div>
         <button type="button" id="back" style="visibility: hidden;" (click)="onClick($event)">Back</button>
-        <ejs-accumulationchart id="container" #pie style='display:block;' [legendSettings]="legendSettings" [enableSmartLabels]='false' [title]="title" (textRender)="onTextRender($event)" (chartMouseClick)="onChartMouseClick($event)" (load)='load($event)' [enableBorderOnMouseMove]='false'>>
+        <ejs-accumulationchart id="container" #pie style='display:block;' [subTitle]="subTitle" [legendSettings]="legendSettings" [enableSmartLabels]='false' [title]="title" (textRender)="onTextRender($event)" (chartMouseClick)="onChartMouseClick($event)" (load)='load($event)' [enableBorderOnMouseMove]='false'>>
             <e-accumulation-series-collection>
-                <e-accumulation-series [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" radius="70%" [dataLabel]="dataLabel" [explode]="explode" explodeOffset='10%' [explodeIndex]='explodeIndex'>
+                <e-accumulation-series [dataSource]='data' xName='x' yName='y' name='Automobile Sales' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="0%" radius="70%" [dataLabel]="dataLabel" borderRadius="3" [border]="border">
                 </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>

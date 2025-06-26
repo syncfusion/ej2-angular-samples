@@ -1,12 +1,14 @@
 import { Component, ViewChild, TemplateRef, Inject } from '@angular/core';
 import { GridAllModule, GridComponent, QueryCellInfoEventArgs } from '@syncfusion/ej2-angular-grids';
 import { predictiveData, predictive } from './grid-data';
-import { getAzureChatAIRequest } from '../../azure-openai';
+import { serverAIRequest } from '../common/ai-service';
+import {AIToastComponent} from '../common/ai-toast.component';  
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
 
 @Component({
   selector: 'app-predictive-dataentry',
   standalone: true,
-  imports: [GridAllModule],
+  imports: [GridAllModule, ToastModule, AIToastComponent],
   templateUrl: './predictive-dataentry.component.html',
   styleUrl: './predictive-dataentry.component.css'
 })
@@ -38,14 +40,18 @@ export class PredictiveDataentryComponent {
     const prompt: string = 'Final year GPA column should updated based on GPA of FirstYearGPA, SecondYearGPA and ThirdYearGPA columns. Total GPA should update based on average of all years GPA. Total Grade update based on total GPA. Updated the grade based on following details, 0 - 2.5 = F, 2.6 - 2.9 = C, 3.0 - 3.4 = B, 3.5 - 3.9 = B+, 4.0 - 4.4 = A, 4.5 - 5 = A+. average value decimal should not exceed 1 digit.';
     const gridReportJson: string = JSON.stringify(this.grid.dataSource);
     const userInput: string = this.generatePrompt(gridReportJson, prompt);
-    let aiOutput: any = getAzureChatAIRequest({ messages: [{ role: 'user', content: userInput }] });
+    let aiOutput: any = serverAIRequest({ messages: [{ role: 'user', content: userInput }] });
     aiOutput.then((result: any) => {
-      result = result.replace('```json', '').replace('```', '');
-      const generatedData: predictive[] = JSON.parse(result);
-      this.grid.hideSpinner();
-      if (generatedData.length) {
-        this.grid.showColumns(['Final Year GPA', 'Total GPA', 'Total Grade']);
-        this.updateRows(generatedData);
+      if (result) {
+        result = result.replace('```json', '').replace('```', '');
+        const generatedData: predictive[] = JSON.parse(result);
+        this.grid.hideSpinner();
+        if (generatedData.length) {
+          this.grid.showColumns(['Final Year GPA', 'Total GPA', 'Total Grade']);
+          this.updateRows(generatedData);
+        }
+      } else {
+        this.grid.hideSpinner();
       }
     });
   }

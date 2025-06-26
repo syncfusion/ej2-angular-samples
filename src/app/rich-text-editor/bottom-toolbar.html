@@ -1,0 +1,18 @@
+<div class="control-section chat-ui" #chatContainer>
+    <div class="loadonDemand-chatui">
+        <div id="loadOnDemand" ejs-chatui headerText='Michale Suyama' headerIconCss="chat_user2_avatar"
+            [messages]="chatMessages" [user]="currentUserModel" showTimeBreak="true" loadOnDemand="true"
+            [messageToolbarSettings]="toolbarSettings" footerTemplate="footerTemplate">
+            <ng-template #footerTemplate>
+                <div class="custom-footer">
+                    <ejs-richtexteditor #rte [toolbarSettings]='rteTools'
+                        placeholder='Type something...'></ejs-richtexteditor>
+                    <button id="sendMessage" class="e-btn e-primary e-icons e-send e-send-1 e-icon-btn e-small"
+                        style="float: right; margin: 4px;" (click)="sendMessage(rte)"></button>
+                    <button id="cancelMessage" class="e-btn e-secondary e-icons e-trash e-delete-3 e-icon-btn e-small"
+                        style="float: right; margin: 4px;" (click)="cancelMessage(rte)"></button>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>

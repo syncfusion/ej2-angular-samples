@@ -16,7 +16,8 @@ export const ImageEditorAppRoutes: Object[] = [
         component: DefaultImageEditorComponent,
         order: '01',
         name: 'Default Functionalities',
-        category: 'Image Editor'
+        category: 'Image Editor',
+        type: 'update'
     },
     {
         path: ':theme/image-editor/profile-picture',
@@ -37,7 +38,8 @@ export const ImageEditorAppRoutes: Object[] = [
         component: FileRestrictComponent,
         order: '01',
         name: 'File Restrict',
-        category: 'Image Editor'
+        category: 'Image Editor',
+        type: 'update'
     }
 ];
 

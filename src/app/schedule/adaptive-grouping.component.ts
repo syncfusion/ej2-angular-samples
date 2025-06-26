@@ -49,4 +49,3 @@ export class AdaptiveGroupingComponent {
     dataSource: extend([], resourceData.concat(timelineResourceData), null, true) as Record<string, any>[]
   };
 }
-

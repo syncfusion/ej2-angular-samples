@@ -1,0 +1,56 @@
+
+<div id="action-description">
+    <p> 
+        This sample demonstrates how to visualize grid data in a chart using the context menu feature. You will need to enable the
+        context menu feature to access this functionality. <code>Right-click</code> on any row,
+        select your preferred chart type, and a dialog will appear showing that data as a chart based on your category and series.
+    </p>
+</div>
+
+<div class="control-section">
+    <div class="content-wrapper">
+        <ejs-grid [dataSource]='data' #grid id="GridChart" height="500" [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' 
+            allowMultiSorting="true" allowSelection="true" [selectionSettings]='selectionSettings' [contextMenuItems]='contextMenuItems'
+            (contextMenuClick)='contextMenuClick($event)' (queryCellInfo)='queryCellInfo($event)' (created)='created()' [gridLines]="lines">
+            <e-columns>
+                <e-column type='checkbox' width='50' freeze="Left" textAlign='Center' [customAttributes]="{ class: 'grid-chart-checkbox-css' }"></e-column>
+                <e-column field='Product' headerText='Product' width='200' freeze="Left">
+                    <ng-template #template let-data>
+                        <div class="e-product-info">
+                            <img src="./assets/grid/images/product/{{data.Image}}.png" [alt]="data.Product" />
+                            <span>{{ data.Product }}</span>
+                        </div>
+                    </ng-template>
+                </e-column>
+                <e-column field='Category' headerText='Categories' width='160'>
+                    <ng-template #template let-data>
+                        <div class="e-category-info">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path [attr.d]="data.CategoryIcon" fill="black"/>
+                            </svg>
+                            <span>{{ data.Category }}</span>
+                        </div>
+                    </ng-template>
+                </e-column>
+                <e-column field='Year' headerText='Year' textAlign='Right' width='140'></e-column>
+                <e-column field='Online' headerText='Online' format='C2' textAlign='Right' width='160'></e-column>
+                <e-column field='Retail' headerText='Retail' format='C2' textAlign='Right' width='160'></e-column>
+                <e-column field='ProfitLoss' headerText='Profit/Loss' format='C2' textAlign='Right' width='200'></e-column>
+                <e-column field='UnitsSold' headerText='Units Sold' textAlign='Right' width='160'></e-column>
+                <e-column field='Revenue' headerText='Revenue' format='C2' textAlign='Right' width='160' freeze="Right"></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        The sample supports various chart types - <code>Line</code>, <code>Area</code>, <code>Column</code>,
+        <code>Bar</code>, <code>Scatter</code>, <code>Pie</code> and their stacked variations.
+        Charts are rendered using the <code>&#64;syncfusion/ej2-grid-chart</code> package's <code>render</code> method,
+        which requires category, series and optional chart properties.
+    </p>
+    <p>
+        This example uses categories like 'Product' and 'Year' with series data for 'Online', 'Retail' and 'Revenue' in the chart visualization.
+    </p>
+</div>

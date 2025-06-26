@@ -38,7 +38,6 @@ export const chipsAppRoutes: Object[] = [
         component: DragAndDropChipsComponent,
         name: 'Draggable Chips',
         category: 'Chips',
-        type: 'new',
         description: 'This sample demonstrates the drag and drop functionalities of chips component.',
             sourceFiles: [
                 {displayName: 'draganddrop.component.ts', path: './src/chips/draganddrop.component.ts'},

@@ -216,7 +216,7 @@
                 </tr>
             </table>
             <div style="padding: 12px 12px 0 12px;">
-                @if(this.selectedAnnotation.AnnotationType === "Highlight" || this.selectedAnnotation.AnnotationType === "Underline" || this.selectedAnnotation.AnnotationType === "Strikethrough") {
+                @if(this.selectedAnnotation.AnnotationType === "Highlight" || this.selectedAnnotation.AnnotationType === "Underline" || this.selectedAnnotation.AnnotationType === "Strikethrough" || this.selectedAnnotation.AnnotationType === "Squiggly") {
                     @if(selectedAnnotation.bounds && selectedAnnotation.bounds.length > 0) {
                         <table class="e-pv-annot-inner-table e-pv-annot-bounds-list" style="border-collapse: collapse;">
                             @for(bound of selectedAnnotation.bounds; track bound; let index = $index;) {

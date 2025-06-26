@@ -3,7 +3,9 @@ import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { SmartTextAreaComponent, SmartTextAreaModule, ChatParameters } from '@syncfusion/ej2-angular-inputs';
-import { getAzureChatAIRequest } from '../../azure-openai';
+import { serverAIRequest } from '../common/ai-service';
+import {AIToastComponent} from '../common/ai-toast.component';  
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
 
 @Component({
     selector: 'control-content',
@@ -11,7 +13,7 @@ import { getAzureChatAIRequest } from '../../azure-openai';
     styleUrls: ['default.component.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [DropDownListAllModule, SmartTextAreaModule, SBActionDescriptionComponent, SBDescriptionComponent]
+    imports: [DropDownListAllModule, SmartTextAreaModule, SBActionDescriptionComponent, SBDescriptionComponent, ToastModule, AIToastComponent]
 })
 export class SmartTextAreaDefaultComponent {
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
@@ -26,16 +28,7 @@ export class SmartTextAreaDefaultComponent {
         "Sales representative responding to client inquiries"
     ];
 
-    public serverAIRequest = async (settings: ChatParameters) => {
-        let output = '';
-        try {
-            const response = await getAzureChatAIRequest(settings) as string;
-            output = response;
-        } catch (error) {
-            console.error("Error:", error);
-        }
-        return output;
-    };
+    public serverAIRequest = serverAIRequest;
     public presets: any = [
         {
             userRole: "Maintainer of an open-source project replying to GitHub issues",

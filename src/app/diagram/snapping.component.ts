@@ -5,7 +5,7 @@
  import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
  import { BasicShapeModel, DiagramComponent, RulerSettingsModel, ScrollSettingsModel, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
  import {
-     Diagram, NodeModel, UndoRedo, Node, DataBinding, DiagramContextMenu, HierarchicalTree, ConnectorModel, 
+     Diagram, NodeModel, UndoRedo, Node, DataBinding, DiagramContextMenu, HierarchicalTree, ConnectorModel,
      SnapSettingsModel, PortConstraints, PortVisibility, Connector, ConnectorConstraints, UserHandleModel, SelectorModel, SelectorConstraints, ISelectionChangeEventArgs, IRotationEventArgs
  } from '@syncfusion/ej2-diagrams';
  import { SnapConstraints, Snapping } from '@syncfusion/ej2-diagrams';
@@ -13,13 +13,13 @@
 import { CheckBoxComponent, CheckBoxModule, RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
- 
+
  Diagram.Inject(UndoRedo, DiagramContextMenu, HierarchicalTree, DataBinding, Snapping);
- 
+
  export interface DataInfo {
      [key: string]: string;
  }
- 
+
  @Component({
     selector: 'control-content',
     templateUrl: 'snapping.html',
@@ -28,7 +28,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     standalone: true,
     imports: [SBActionDescriptionComponent, DiagramModule, NumericTextBoxModule, ColorPickerModule, CheckBoxModule, RadioButtonModule, SBDescriptionComponent]
 })
- 
+
  export class SnappingComponent {
     @ViewChild('diagram')
     public diagram: DiagramComponent;
@@ -76,12 +76,12 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
               height:100,width:7
           }],
           annotations:[{id:'annot1',content:'Shape 2',offset:{x:0.5,y:1.2},style:{bold:true}}]
-  
+
       },
       {
           id:'node_3',width:100,height:100,offsetX:500,offsetY:400,
           annotations:[{id:'annot1',content:'Shape 3', offset:{x:0.5,y:1.2}, style:{bold:true}}]
-  
+
       },
     ];
     // Array defining the connectors between nodes
@@ -122,7 +122,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     // Defines custom actions for the user handles
     public getCustomTool: Function = this.getTool.bind(this);
     // Custom actions for user handles
-    public getTool(action: string) {  
+    public getTool(action: string) {
       if (action == "Delete") {
           this.diagram.remove();
       }
@@ -156,7 +156,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
               }
           }
       }
-    } 
+    }
     // Event handler for rotation changes
     public rotateChange(args : IRotationEventArgs){
       if(args.state === 'Start' || args.state === 'Progress')
@@ -181,13 +181,12 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     // Change the color of the snap lines
     public colorChange(args : any){
       this.diagram.snapSettings.snapLineColor = args.value;
-      this.diagram.dataBind();    
+      this.diagram.dataBind();
     }
     // Toggle the visibility of grid lines
     public showGridLine(args: any){
           this.diagram.snapSettings.constraints = this.diagram.snapSettings.constraints ^ SnapConstraints.ShowLines;
           this.diagram.dataBind();
-          debugger
           this.scale();
     }
     // Toggle the snapping to objects
@@ -296,4 +295,3 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
       this.scale();
     }
 }
- 

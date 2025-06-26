@@ -61,7 +61,7 @@ export class RoundedColumnChartComponent {
     public subTitle: string = 'Source: visualcapitalist.com';
     public titleStyle: Object = { position: 'Bottom' };
     public tooltip: Object = {
-        enable: true, header: "<b>${point.x}</b>", format: "Growth Rate : <b>${point.text}</b>"
+        enable: true, header: Browser.isDevice ? "" : "<b>${point.x}</b>", format: "Growth Rate : <b>${point.text}</b>"
     };
     public legend: Object = {
         visible: false

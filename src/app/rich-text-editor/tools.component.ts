@@ -3,11 +3,11 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NgStyle } from '@angular/common';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, EmojiPickerService, VideoService, AudioService, FormatPainterService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, CountService, ToolbarSettingsModel, ImageSettingsModel, ActionBeginEventArgs } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, EmojiPickerService, VideoService, AudioService, FormatPainterService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, CountService, ToolbarSettingsModel, ImageSettingsModel, ActionBeginEventArgs, CodeBlockService } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, TableService, FileManagerService, SlashMenuService, ImportExportService } from '@syncfusion/ej2-angular-richtexteditor';
 import { FileManagerSettingsModel, QuickToolbarSettingsModel, SlashMenuSettingsModel, ExportPdfModel, ExportWordModel, ImportWordModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, addClass, removeClass, Browser } from '@syncfusion/ej2-base';
-import * as CodeMirror from 'codemirror';
+const CodeMirror = require('codemirror');
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/css/css.js';
 import 'codemirror/mode/htmlmixed/htmlmixed.js';
@@ -20,7 +20,7 @@ import { MentionComponent, MentionModule } from '@syncfusion/ej2-angular-dropdow
     templateUrl: 'tools.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['over-view.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, FileManagerService, EmojiPickerService, VideoService, AudioService, FormatPainterService, QuickToolbarService, PasteCleanupService, CountService, SlashMenuService, ImportExportService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, FileManagerService, EmojiPickerService, VideoService, AudioService, FormatPainterService, QuickToolbarService, PasteCleanupService, CountService, SlashMenuService, ImportExportService, CodeBlockService],
     standalone: true,
     imports: [SBActionDescriptionComponent, RichTextEditorModule, SBDescriptionComponent, MentionModule, NgStyle]
 })
@@ -56,13 +56,11 @@ export class FullFeatureComponent {
     public tools: ToolbarSettingsModel = {
         items: [
             'Undo', 'Redo', '|', 'ImportWord', 'ExportWord', 'ExportPdf', '|',
-            'Bold', 'Italic', 'Underline', 'StrikeThrough', 'InlineCode', 'SuperScript', 'SubScript', '|',
-            'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
-            'LowerCase', 'UpperCase', '|',
-            'Formats', 'Alignments', 'Blockquote', '|', 'NumberFormatList', 'BulletFormatList', '|',
-            'Outdent', 'Indent', '|', 'CreateLink', 'Image', 'FileManager', 'Video', 'Audio', 'CreateTable', '|', 'FormatPainter', 'ClearFormat',
-            '|', 'EmojiPicker', 'Print', '|',
-            'SourceCode', 'FullScreen']
+            'Bold', 'Italic', 'Underline', 'StrikeThrough', 'InlineCode', '|', 'CreateLink', 'Image', 'CreateTable', 'CodeBlock',
+            'HorizontalLine', 'Blockquote', '|', 'BulletFormatList', 'NumberFormatList', '|', 'Formats', 'Alignments', '|', 'Outdent', 'Indent', '|',
+            'FontColor', 'BackgroundColor', 'FontName', 'FontSize', '|', 'LowerCase', 'UpperCase', '|', 'SuperScript', 'SubScript', '|',
+            'EmojiPicker', 'FileManager', 'Video', 'Audio', '|', 'FormatPainter', 'ClearFormat',
+            '|', 'Print', 'FullScreen', '|', 'SourceCode']
     };
 
     public insertImageSettings: ImageSettingsModel = {
@@ -83,7 +81,8 @@ export class FullFeatureComponent {
     };
 
     public quickToolbarSettings: QuickToolbarSettingsModel = {
-        table: ['TableHeader', 'TableRows', 'TableColumns', 'TableCell', '-', 'BackgroundColor', 'TableRemove', 'TableCellVerticalAlign', 'Styles'],
+        table: ['Tableheader', 'TableRemove', '|', 'TableRows', 'TableColumns', 'TableCell', '|' , 'Styles', 'BackgroundColor', 'Alignments', 'TableCellVerticalAlign'],
+        text: ['Formats', '|', 'Bold', 'Italic', 'Fontcolor', 'BackgroundColor', '|', 'CreateLink', 'Image', 'CreateTable', 'Blockquote', '|' , 'Unorderedlist', 'Orderedlist', 'Indent', 'Outdent'],
         showOnRightClick: true,
     };
 

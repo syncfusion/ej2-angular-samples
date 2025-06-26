@@ -87,6 +87,7 @@ export class ProgressBarRadiusComponent {
             case 'tailwind3-dark':
                 args.progressBar.progressColor = '#6366F1';
                 args.progressBar.annotations[0].content = '<div id="point1" style="font-size:24px;font-weight:bold;color:#6366F1"><span></span></div>';
+                break;
             case 'bootstrap4':
                 args.progressBar.progressColor = '#007bff';
                 args.progressBar.annotations[0].content = '<div id="point1" style="font-size:24px;font-weight:bold;color:#007bff"><span></span></div>';

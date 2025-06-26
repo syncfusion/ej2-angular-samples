@@ -6,7 +6,7 @@
         <e-column headerText='Menu' keyField='Menu'></e-column>
         <e-column headerText='Order' keyField='Order'></e-column>
         <e-column headerText='Ready to Serve' keyField='Ready to Serve'></e-column>
-        <e-column headerText='Delivered' keyField='Delivered,Served'></e-column>
+        <e-column headerText='Delivered' keyField='Delivered'></e-column>
       </e-columns>
       <ng-template #cardSettingsTemplate let-data>
         <div class='card-template'>
@@ -36,7 +36,7 @@
                                 <div class='e-description e-tooltip-text' *ngIf='data.Category == "Menu"'>{{data.Description}}</div>
                                 <div class='e-description e-tooltip-text' *ngIf='data.Category != "Menu"'>{{data.OrderID}}</div>
                               </td>
-                              <td class='card-content' *ngIf='data.Category == "Delivered" || data.Category == "Served"'>
+                              <td class='card-content' *ngIf='data.Category == "Delivered"'>
                                 <div class='e-description e-tooltip-text'>{{data.OrderID}}</div>
                                 <div class='e-icons e-done'></div>
                               </td>
@@ -49,7 +49,7 @@
                               <td class='card-content' *ngIf='data.Category != "Menu"'>
                                 <div class='e-preparingText e-tooltip-text' *ngIf='data.Category == "Order"'>Preparing</div>
                                 <div class='e-readyText e-tooltip-text' *ngIf='data.Category == "Ready to Serve"'>Ready to Serve</div>
-                                <div class='e-deliveredText e-tooltip-text' *ngIf='data.Category == "Delivered" || data.Category == "Served"'>Delivered</div>
+                                <div class='e-deliveredText e-tooltip-text' *ngIf='data.Category == "Delivered"'>Delivered</div>
                                 <div class='e-time e-tooltip-text' *ngIf='data.Category == "Order"'>
                                   <div class='e-icons e-clock'></div>
                                   <div class='e-mins'>15 mins</div>

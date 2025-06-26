@@ -8,11 +8,13 @@
 
 #documenteditor_titlebar {
     border-bottom: 1px solid #2B3481;
-    height: 5%;
+    height: 36px;
     line-height: 26px;
     width: 100%;
     font-size: 12px;
     font-family: inherit;
+    padding-left: 15px;
+    padding-right: 10px;
 }
 
 #documenteditor_title_contentEditor {

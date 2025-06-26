@@ -2,10 +2,12 @@ import { Component, Inject } from '@angular/core';
 import { ComboBoxModule, FilteringEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import { Query } from "@syncfusion/ej2-data";
 import { embeddingModel, cosineSimilarity } from '../../embedding-model';
+import {AIToastComponent} from '../common/ai-toast.component';  
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
 @Component({
   selector: 'app-local-embedding',
   standalone: true,
-  imports: [ComboBoxModule],
+  imports: [ComboBoxModule, ToastModule, AIToastComponent ],
   templateUrl: './local-embedding.component.html',
   styleUrl: './local-embedding.component.css'
 })

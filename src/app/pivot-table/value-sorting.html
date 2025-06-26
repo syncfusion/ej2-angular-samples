@@ -1,20 +1,22 @@
 <div id="action-description">
-    <p>This sample demonstrates ordering of values in ascending or descending order. Here, the
-        <b>FY 2015 -> In Stock</b> column header text is ordered by defining sort-related settings in code behind.</p>
+    <p>This sample demonstrates ordering of column and row header values in ascending or descending order. Here, the
+        <b>FY 2015 → In Stock</b> column header and the <b>France</b> row header are both ordered by defining
+        sort-related settings in code behind.
+    </p>
 </div>
 <div id="description">
-    <p>You can sort column values by clicking the column header. Clicking the same header once again will reverse the sorting
-        direction. It can be enabled by setting the <code>enableValueSorting</code> as true.
-    </p>
-    <p>Value sort-related settings can be defined in code behind, too. To do so, headers of the column to be sorted are given
-        in the
-        <code>headerText</code> property under
-        <code>valueSortSettings</code>, separated by a delimiter string. The purpose of providing complete header text here is
-        to indicate exactly which value column needs to be sorted. The string which is used to separate the headers is given
-        in the property
-        <code>headerDelimiters</code>. The sorting direction is performed by the
-        <code>sortOrder</code> property.
-    </p><br />
+    <p>This sample demonstrates how to enable sorting for column and row values by simply clicking their headers.
+        Repeated clicks toggle the sort direction. This functionality is activated by setting the
+        <code>enableValueSorting</code> property to <b>true</b>.</p>
+    <p>You can also configure value-based sorting programmatically. To sort a column, specify the target header using
+        the <code>columnHeaderText</code> property under <code>valueSortSettings</code>, with individual header levels
+        separated by a delimiter defined in the <code>headerDelimiter</code> property. Use <code>columnSortOrder</code>
+        to set the sort direction.</p>
+    <p>Similarly, to sort a row, provide the header in <code>rowHeaderText</code> and specify the direction using
+        <code>rowSortOrder</code>.
+        This approach allows precise and independent control over sorting behavior for both columns and rows based on
+        the provided headers.</p>
+    <br />
     <p>
         More information on the value sorting can be found in this <a target="_blank"
             href="https://ej2.syncfusion.com/angular/documentation/pivotview/sorting#value-sorting">
@@ -22,6 +24,6 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings width='100%' height='300' enableValueSorting='true' [gridSettings]='gridSettings'>
+    <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings width='100%' height='300' showValuesButton='true' showFieldList='true' enableValueSorting='true' [gridSettings]='gridSettings'>
     </ejs-pivotview>
 </div>

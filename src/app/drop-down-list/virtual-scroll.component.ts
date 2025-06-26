@@ -53,17 +53,7 @@ export class VirtualScrollDropDownListComponent {
             this.records.push(item);
         }
     }
-    ngAfterViewInit(): void {
-        if (this.localListObj) {
-            this.localListObj.refresh();
-        }
-        if (this.remoteListObj) {
-            this.remoteListObj.refresh();
-        }
-        if (this.groupListObj) {
-            this.groupListObj.refresh();
-        }
-    }
+    
     // bind the DataManager instance to dataSource property
     public customerData: DataManager = new DataManager({
         url: 'https://services.syncfusion.com/js/production/api/VirtualDropdownData',

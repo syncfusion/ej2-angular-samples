@@ -6,7 +6,7 @@
 <div class="control-section">
     <div>
         <ejs-accumulationchart id="pyramidcontainer" #pyramid style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip"
-            [title]="title" (load)='load($event)' (resized)='onChartResized($event)'>
+            [title]="title" [subTitle]="subTitle" (load)='load($event)' (resized)='onChartResized($event)'>
             <e-accumulation-series-collection>
                 <e-accumulation-series  name='Food' [dataSource]='data' xName='Foods' yName='Calories' [neckWidth]="neckWidth" [gapRatio]="gapRatio" [emptyPointSettings]="emptyPointSettings"
                     width="45%" height="80%" [explode]="explode" [dataLabel]="dataLabel" type='Pyramid'> </e-accumulation-series>

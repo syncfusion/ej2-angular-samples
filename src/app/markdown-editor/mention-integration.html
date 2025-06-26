@@ -9,7 +9,7 @@
                 [toolbarSettings]='tools' [editorMode]='mode' (created)='onCreate()'>
             </ejs-richtexteditor>
             <ejs-mention #editorMention id='editorMention' [dataSource]='emailData' [fields]='fields' [allowSpaces]="true" 
-        popupWidth='250px' popupHeight='200px' sortOrder='Ascending' target='#mdDefault_editable-content' [suffixText]='&nbsp;'>
+        popupWidth='250px' popupHeight='200px' sortOrder='Ascending' target='#mdDefault_editable-content'>
         <ng-template #displayTemplate let-data>
             [&commat;{{ data.name }}](mailto:${{data.email}})
         </ng-template>

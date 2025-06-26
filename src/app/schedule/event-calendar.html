@@ -6,7 +6,11 @@
           <e-item prefixIcon="e-menu" tooltipText="Menu" cssClass="e-menu-btn"></e-item>
           <e-item prefixIcon="e-chevron-left" tooltipText="Previous" cssClass="e-previous"></e-item>
           <e-item prefixIcon="e-chevron-right" tooltipText="Next" cssClass="e-next"></e-item>
-          <e-item [text]="dateRange" cssClass="e-date-range"></e-item>
+          <e-item cssClass="e-date-range">
+            <ng-template #template>
+              {{dateRange}}
+            </ng-template>
+          </e-item>
           <e-item prefixIcon="e-plus" text="Create" align="Right" cssClass="e-create"></e-item>
           <e-item type="Separator" align="Right"></e-item>
           <e-item text="Today" align="Right" cssClass="e-today"></e-item>

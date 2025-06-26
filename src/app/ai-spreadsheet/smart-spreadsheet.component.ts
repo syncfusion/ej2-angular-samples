@@ -6,10 +6,13 @@ import { getAzureChatAIRequest } from '../../azure-openai';
 import { SheetModel, getCell, SpreadsheetAllModule } from '@syncfusion/ej2-angular-spreadsheet';
 import { SidebarAllModule } from '@syncfusion/ej2-angular-navigations';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import {AIToastComponent} from '../common/ai-toast.component';  
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
+
 @Component({
     selector: 'app-smart-spreadsheet',
     standalone: true,
-    imports: [SpreadsheetAllModule, SidebarAllModule, ButtonModule],
+    imports: [SpreadsheetAllModule, SidebarAllModule, ButtonModule, ToastModule, AIToastComponent],
     templateUrl: './smart-spreadsheet.component.html',
     styleUrl: './smart-spreadsheet.component.css'
 })

@@ -50,7 +50,7 @@ export class GanttTimezoneComponent implements OnInit {
             { field: 'progress' },
         ];
         this.timelineSettings = {
-            timelineUnitSize: 65,
+            timelineUnitSize: 70,
             topTier: {
                 unit: 'Day',
                 format: 'MMM dd, yyyy'

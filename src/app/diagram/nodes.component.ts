@@ -73,7 +73,7 @@ export class NodeDiagramComponent {
         node.constraints &= ~(NodeConstraints.Resize | NodeConstraints.Delete | NodeConstraints.Rotate | NodeConstraints.Drag);
         node.constraints |= NodeConstraints.ReadOnly;
       } else {
-        node.constraints |= NodeConstraints.Default & ~(NodeConstraints.ReadOnly);
+        node.constraints = NodeConstraints.Default;
       }
       if (isShadowEnabled) {
         node.constraints |= NodeConstraints.Shadow;
@@ -82,15 +82,15 @@ export class NodeDiagramComponent {
     }
     for (let j: number = 0; j < this.diagram.connectors.length; j++) {
       let connector: ConnectorModel = this.diagram.connectors[j];
-     
+    
       if (args.checked) {
         connector.constraints &= ~(ConnectorConstraints.DragSourceEnd | ConnectorConstraints.DragTargetEnd | ConnectorConstraints.Drag | ConnectorConstraints.Delete);
         connector.constraints |= ConnectorConstraints.ReadOnly;
     } else {
-        connector.constraints |= ConnectorConstraints.Default & ~(ConnectorConstraints.ReadOnly);
+        connector.constraints = ConnectorConstraints.Default;
     }
       }
-      
+
       this.diagram.dataBind();
   }
   // Handler for document click event
@@ -135,7 +135,7 @@ export class NodeDiagramComponent {
     node.style.strokeWidth = width;
     node.style.strokeColor = '#024249';
     node.style.strokeDashArray = dashArray;
-  
+
     if (type === undefined) {
       node.style.gradient.type = 'None';
     } else {

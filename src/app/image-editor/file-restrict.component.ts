@@ -21,11 +21,12 @@ export class FileRestrictComponent {
     { Name: 'JPG', Value: '.jpg' },
     { Name: 'PNG', Value: '.png' },
     { Name: 'SVG', Value: '.svg' },
-    { Name: 'WebP', Value: '.webp' }
+    { Name: 'WebP', Value: '.webp' },
+    { Name: 'BMP', Value: '.bmp' }
   ];
   public defaultUnit = 'KB';
   public fields = { text: 'Name', value: 'Value' };
-  public allowedExtensions: any = ['.jpeg', '.jpg', '.png', '.svg', '.webp'];
+  public allowedExtensions: any = ['.jpeg', '.jpg', '.png', '.svg', '.webp', '.bmp'];
   public minFileSize = 1;
   public maxFileSize = 100;
   public uploadSettings = {
@@ -62,7 +63,7 @@ export class FileRestrictComponent {
 
   updateAllowedExtensions(event: any): void {
     if (event.value.length === 0) {
-      this.allowedExtensions = ".jpeg, .jpg, .png, .svg, .webp";
+      this.allowedExtensions = ".jpeg, .jpg, .png, .svg, .webp, .bmp";
     } else {
       this.allowedExtensions = event.value;
     }

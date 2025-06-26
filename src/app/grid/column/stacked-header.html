@@ -285,8 +285,8 @@
 <div class="control-section">
     <ejs-grid #grid [dataSource]="data" [allowPaging]='true' [allowResizing]="true" [enableHover]="false" clipMode="EllipsisWithTooltip" [allowSorting]='true' [showColumnChooser]='true' [allowMultiSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [columnChooserSettings]='columnChooserSettings' [editSettings]='editSettings' [toolbar]='toolbar' (queryCellInfo)='queryCellInfo($event)' (actionBegin)='actionBegin($event)' (beforeOpenColumnChooser)='beforeOpenColumnChooser($event)'>
         <e-columns>
-            <e-column field='CustomerID' headerText='Customer ID' width='160' textAlign="Right" minWidth='100'  isPrimaryKey='true' [validationRules]='orderidrules' [showInColumnChooser]='false'></e-column>
-            <e-column field='CustomerName' headerText='Name' width='100' minWidth='100'></e-column>
+            <e-column field='CustomerID' headerText='Customer ID' width='160' textAlign="Right" minWidth='115'  isPrimaryKey='true' [validationRules]='orderidrules' [showInColumnChooser]='false'></e-column>
+            <e-column field='CustomerName' headerText='Name' width='150' minWidth='120'></e-column>
             <e-column headerText='Order Details' [columns]='orderColumns' textAlign="Center"></e-column>
             <e-column headerText='Shipping Details' [columns]='shipColumns' textAlign="Center"></e-column>
             <e-column headerText='Delivery Status' [columns]='deliveryColumns' textAlign="Center"></e-column>

@@ -2,8 +2,8 @@
     <p>This sample demonstrates the default functionalities of the MultiSelect. Type a character in the MultiSelect element or click on this element to choose one or more items from the suggestion list.</p>
 </div>
 
-<div id="multiselect-sample" class="control-section" style="height: 500px">
-       
+<div  class="control-section" style="height: 500px">
+    <div class="control-section">
         <div id='content'>
             <div class="control-styles">
             <label class="h4"> Default Mode</label>
@@ -20,6 +20,7 @@
             <label class="h4">Delimiter Mode</label>
             <ejs-multiselect id='sample-list3' [dataSource]='sportsData' [mode]='delimiter' [fields]='fields' [placeholder]='waterMark'></ejs-multiselect>
         </div>
+    </div>
 </div>
 
 <div id="description">
@@ -44,5 +45,11 @@
         font-size: 16px;
         margin: 0 0 10px;
     }
+    .control-section {
+      width: 80%;
+      margin: 0 auto;
+      min-width: 185px;
+      padding-top: 30px;
+  }
 
 </style>

@@ -23,7 +23,7 @@ export class DefaultCalendarComponent {
     public cellSpacing: number[] = [10, 10];
     addPanel(): void {
         let panel: PanelModel[] = [{
-            'id': this.count.toString(), 'sizeX': 1, 'sizeY': 1, 'row': 0, 'col': 0,
+            'id': this.count.toString(), 'sizeX': 1, 'sizeY': 1, 'row': 0, 'col': 0, 'zIndex':999,
             content: '<span id="close" class="e-template-icon e-close-icon"></span><div class="text-align">' + this.count.toString() + '</div>'
         }];
         this.dashboard.addPanel(panel[0]);

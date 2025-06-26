@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
     ToolbarService,
     LinkService,
@@ -22,6 +22,7 @@ import { MentionModule } from '@syncfusion/ej2-angular-dropdowns';
     selector: 'control-content',
     templateUrl: 'mail-merge.html',
     styleUrls: ['mail-merge.css'],
+    encapsulation: ViewEncapsulation.None,
     providers: [
         ToolbarService,
         LinkService,
@@ -92,8 +93,8 @@ export class MailMergeComponent {
             'Bold', 'Italic', 'Underline', '|',
             'Formats', 'Alignments', 'OrderedList', 'UnorderedList', '|',
             'CreateLink', 'Image', 'CreateTable', '|',
-            { tooltipText: 'Merge Data', template: '#merge_data' },
-            { tooltipText: 'Insert Field', template: '#insertField' },
+            { tooltipText: 'Merge Data', template: '#merge_data', command: 'Custom' },
+            { tooltipText: 'Insert Field', template: '#insertField', command: 'Custom' },
             'SourceCode', '|', 'Undo', 'Redo'
         ],
     };
@@ -114,6 +115,12 @@ export class MailMergeComponent {
         } else if (e.requestType === 'Preview') {
             this.mailMergeEditor.getToolbar().querySelector('#merge_data').parentElement.classList.remove('e-overlay');
             this.mailMergeEditor.getToolbar().querySelector('#insertField').parentElement.classList.remove('e-overlay');
+        }
+    }
+
+    onDropDownClose() {
+        if (this.mailMergeEditor) {
+            this.mailMergeEditor.focusIn();
         }
     }
 

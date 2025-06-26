@@ -1,0 +1,93 @@
+.e-richtexteditor {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+    width: 100%;
+}
+
+.e-toolbar-wrapper {
+    order: 2;
+    width: 100%;
+}
+
+.e-rte-content {
+    order: 1;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.chat_user2_avatar {
+    background-image: url('//ej2.syncfusion.com/demos/src/chat-ui/images/andrew.png');
+    background-color: unset;
+}
+
+.loadonDemand-chatui {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.editor-container {
+    position: relative;
+}
+
+#sendMessage,
+#cancelMessage {
+    position: absolute !important;
+    z-index: 100;
+    bottom : 40px;
+}
+.tailwind3 .custom-footer > #sendMessage,
+.tailwind3 .custom-footer > #cancelMessage {
+    bottom: 50px;
+}
+.material3 .custom-footer > #sendMessage,
+.material3 .custom-footer > #cancelMessage {
+    bottom: 50px;
+}
+.tailwind3 .custom-footer > #cancelMessage {
+    right: 55px;
+}
+#sendMessage {
+    right: 20px;
+}
+#cancelMessage {
+    right: 50px;
+}
+.loadonDemand-chatui .chat_user2_avatar {
+    background-image: url('//ej2.syncfusion.com/demos/src/chat-ui/images/andrew.png');
+    background-color: unset;
+}
+
+.e-richtexteditor .e-rte-content .e-content, 
+.e-richtexteditor .e-source-content .e-content{
+    overflow-y: auto;
+    max-height: 300px;
+}
+.e-message-content .e-text p{
+    margin-bottom: 4px;  
+}	    
+.e-bigger .custom-footer > #sendMessage {
+    bottom: 46px;
+    right: 20px;
+}
+.e-bigger .custom-footer > #cancelMessage {
+    bottom: 46px;
+    right: 65px;
+}
+.tailwind3.e-bigger .custom-footer > #sendMessage,
+.material3.e-bigger .custom-footer > #sendMessage {
+    bottom: 57px;
+    right: 20px;
+}
+.tailwind3.e-bigger .custom-footer > #cancelMessage {
+    bottom: 57px;
+    right: 71px;
+}
+.material3.e-bigger .custom-footer > #cancelMessage {
+    bottom: 57px;
+    right: 63px;
+}

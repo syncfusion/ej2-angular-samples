@@ -1,0 +1,62 @@
+#GridChart .e-gridcontent .e-product-info,
+#GridChart .e-gridcontent .e-category-info {
+    display: flex;
+    align-items: center;
+}
+
+#GridChart .e-gridcontent .e-product-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+#GridChart .e-gridcontent .e-product-info span,
+#GridChart .e-gridcontent .e-category-info span {
+    margin: 0px 10px;
+}
+
+#GridChart .e-gridcontent .e-gridchart-sales-loss {
+    color: red;
+}
+
+#GridChart .e-gridcontent .e-gridchart-sales-profit {
+    color: green;
+}
+
+.material3-dark #GridChart .e-gridcontent .e-category-info path,
+.bootstrap5\.3-dark #GridChart .e-gridcontent .e-category-info path,
+.fluent2-dark #GridChart .e-gridcontent .e-category-info path,
+.tailwind3-dark #GridChart .e-gridcontent .e-category-info path,
+.fluent2-highcontrast #GridChart .e-gridcontent .e-category-info path,
+.fluent-dark #GridChart .e-gridcontent .e-category-info path,
+.highcontrast #GridChart .e-gridcontent .e-category-info path {
+    fill: white;
+}
+
+.fluent2-highcontrast #GridChart .e-gridcontent .e-row:hover .e-category-info path,
+.fluent2-highcontrast #GridChart .e-gridcontent .e-rowcell.e-selectionbackground .e-category-info path {
+    fill: black;
+}
+
+#GridChart .grid-chart-checkbox-css {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.e-bigger #GridChart .grid-chart-checkbox-css {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+#GridChart .grid-chart-checkbox-css .e-headerchkcelldiv {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: center;
+}
+
+#GridChart .grid-chart-checkbox-css .e-checkbox-wrapper .e-label {
+    margin: 0px;
+}

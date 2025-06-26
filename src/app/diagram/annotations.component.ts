@@ -6,7 +6,7 @@ import { CheckBoxChangeEventArgs } from '@syncfusion/ej2-grids';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { ColorPickerModule, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
-import { ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { ButtonModule, CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
@@ -25,7 +25,7 @@ let node: NodeModel;
 export class AnnotationDiagramComponent {
     @ViewChild('diagram')
     public diagram: DiagramComponent;
-
+    @ViewChild('labelConstraints') labelConstraintsCheckbox: CheckBoxComponent;
 
     public segments1: OrthogonalSegmentModel = [{ type: 'Orthogonal', direction: 'Right', length: 60 }];
     public segments2: OrthogonalSegmentModel = [{ type: 'Orthogonal', direction: 'Bottom', length: 100 }];
@@ -86,7 +86,7 @@ export class AnnotationDiagramComponent {
         this.diagram.fitToPage();
     }
 
-    //Function to set the existing property in property panel
+    //Function to set the existing property in property panel 
     public selectionChange(arg: ISelectionChangeEventArgs): void {
         if (arg.state === 'Changed') {
             // custom code start
@@ -98,24 +98,38 @@ export class AnnotationDiagramComponent {
             //Checks whether new node is selected or not
             if (arg.newValue[0]) {
                 let node: NodeModel = arg.newValue[0] as NodeModel;
-                let annotation: ShapeAnnotationModel = node.annotations[0];
-                if (annotation.offset.x === 0 && annotation.offset.y === 0) {
-                    this.updateAnnotationPosition('left');
-                } else if (annotation.offset.x === 1 && annotation.offset.y === 0) {
-                    this.updateAnnotationPosition('right');
-                } else if (annotation.offset.x === 0 && annotation.offset.y === 1) {
-                    this.updateAnnotationPosition('bottomLeft');
-                } else if (annotation.offset.x === 1 && annotation.offset.y === 1) {
-                    this.updateAnnotationPosition('bottomRight');
-                } else if (annotation.offset.x === 0.5 && annotation.offset.y === 0.5) {
-                    this.updateAnnotationPosition('center');
-                } else if (annotation.offset.x === 0.5 && annotation.offset.y === 1) {
-                    this.updateAnnotationPosition('bottomCenter');
+                // Annotation position logic
+                if (node.annotations && node.annotations.length > 0) {
+                    let annotation: ShapeAnnotationModel = node.annotations[0];
+                    if (annotation.offset.x === 0 && annotation.offset.y === 0) {
+                        this.updateAnnotationPosition('left');
+                    } else if (annotation.offset.x === 1 && annotation.offset.y === 0) {
+                        this.updateAnnotationPosition('right');
+                    } else if (annotation.offset.x === 0 && annotation.offset.y === 1) {
+                        this.updateAnnotationPosition('bottomLeft');
+                    } else if (annotation.offset.x === 1 && annotation.offset.y === 1) {
+                        this.updateAnnotationPosition('bottomRight');
+                    } else if (annotation.offset.x === 0.5 && annotation.offset.y === 0.5) {
+                        this.updateAnnotationPosition('center');
+                    } else if (annotation.offset.x === 0.5 && annotation.offset.y === 1) {
+                        this.updateAnnotationPosition('bottomCenter');
+                    }
+                    // Label interaction checkbox sync
+                    const hasInteraction = (annotation.constraints & AnnotationConstraints.Interaction) === AnnotationConstraints.Interaction;
+                    this.labelConstraintsCheckbox.disabled = false;
+                    this.labelConstraintsCheckbox.checked = hasInteraction;
+                } else {
+                    this.labelConstraintsCheckbox.disabled = true;
+                    this.labelConstraintsCheckbox.checked = false;
                 }
+            } else {
+                // No node selected - disable checkbox
+                this.labelConstraintsCheckbox.disabled = true;
+                this.labelConstraintsCheckbox.checked = false;
             }
             this.enablePropertyPanel(arg);
         }
-    };
+    }
 
     public diagramCreate(args: Object): void {
         this.diagram.select([this.diagram.nodes[0]]);
@@ -188,7 +202,7 @@ export class AnnotationDiagramComponent {
         }
     }
 
-    //Apply the appearence of the Annotation 
+    //Apply the appearence of the Annotation
     private applyAnnotationStylenotationStyle(propertyName: string, propertyValue: string): void {
         for (let i: number = 0; i < this.diagram.selectedItems.nodes.length; i++) {
             node = this.diagram.selectedItems.nodes[i];

@@ -18,44 +18,37 @@ import { loadAccumulationChartTheme } from './theme-color';
 })
 export class GroupingPieComponent {
     public data: Object[] = [
-        { 'x': 'Australia', y: 26, text: 'Australia: 8' },
-        { 'x': 'Russia', y: 19, text: 'Russia: 19' },
-        { 'x': 'Japan', y: 17, text: 'Japan: 12' },
-        { 'x': 'Germany', y: 12, text: 'Germany: 17' },
-        { 'x': 'France', y: 10, text: 'France: 10' },
-        { 'x': 'South Korea', y: 9, text: 'South Korea: 9' },
-        { 'x': 'Great Britain', y: 27, text: 'Great Britain: 27' },
-        { 'x': 'Italy', y: 8, text: 'Italy: 8' },
-        { 'x': 'China', y: 8, text: 'China: 26' },
-        { 'x': 'Netherlands', y: 8, text: 'Netherlands: 8' },
-        { 'x': 'Hungary', y: 8, text: 'Hungary: 8' },
-        { 'x': 'Brazil', y: 7, text: 'Brazil: 7' },
-        { 'x': 'Spain', y: 7, text: 'Spain: 7' },
-        { 'x': 'Kenya', y: 6, text: 'Kenya: 6' },
+        { x: 'China', y: 40, text: 'China: 40' },
+        { x: 'Japan', y: 20, text: Browser.isDevice ? 'Japan:<br> 20' : 'Japan: 20' },
+        { x: 'Australia', y: 18, text: Browser.isDevice ? 'Australia:<br> 18' : 'Australia: 18' },
+        { x: 'France', y: 16, text: 'France: 16' },
+        { x: 'Netherlands', y: 15, text: 'Netherlands: 15' },
+        { x: 'Great Britain', y: 14, text: 'Great Britain: 14' },
+        { x: 'South Korea', y: 13, text: 'South Korea: 13' },
+        { x: 'Germany', y: 12, text: Browser.isDevice ? 'Germany:<br> 12' : 'Germany: 12' },
+        { x: 'Italy', y: 12, text: Browser.isDevice ? 'Italy:<br> 12' : 'Italy: 12' },
+        { x: 'Canada', y: 9, text: Browser.isDevice ? 'CA: 9' : 'Canada: 9' },
+        { x: 'Hungary', y: 6, text: Browser.isDevice ? 'HU: 6' : 'Hungary: 6' },
+        { x: 'Spain', y: 5, text: 'Spain: 5' },
+        { x: 'Kenya', y: 4, text: 'Kenya: 4' },
+        { x: 'Brazil', y: 3, text: 'Brazil: 3' }
     ];
     @ViewChild('pie')
     public pie: AccumulationChartComponent | AccumulationChart;
-    public onTextRender(args: IAccTextRenderEventArgs): void {
-        args.text = args.point.x + ' ' + args.point.y;
-    }
-    public onPointRender(args: IAccPointRenderEventArgs): void {
-        if (args.point.isClubbed || args.point.isSliced) {
-            args.fill = '#D3D3D3';
-        }
-    }
-    public radius: string = Browser.isDevice ? '40%' : '70%';
+    public radius: string = Browser.isDevice ? '40%' : '55%';
     public explode: boolean = true;
     //Initializing Legend
     public legendSettings: Object = {
         visible: false,
     };
+    public border: Object = { width: 1, color: '#ffffff' };
     //Initializing DataLabel
     public dataLabel: Object = {
         visible: true,
-        position: 'Outside',
-        connectorStyle: { type: 'Curve', length: '20px' },
+        position: 'Outside', name: 'text',
+        connectorStyle: { type: 'Curve', length: Browser.isDevice ? '10px' : '20px' },
         font: {
-            size: '11px' ,
+             size: Browser.isDevice ? '8px' : '13px', 
             fontWeight: '600'
         }
     };
@@ -85,10 +78,11 @@ export class GroupingPieComponent {
     };
     // custom code end
     public clubvalue: string = '9';
-    public startAngle: number = 0;
-    public endAngle: number = 360;
+    public startAngle: number = -20;
+    public endAngle: number = 340;
     public tooltip: Object = { enable: true, header:'', format:'<b>${point.x}</b><br> Gold Medals: <b>${point.y}</b>', enableHighlight: true };
-    public title: string = 'Rio Olympic Gold Medals';
+    public title: string = 'Summer Olympic 2024 - Gold Medals';
+    public subTitle: string = 'Source: wikipedia.org';
     public groupMode: DropDownList;
     ngOnInit(): void {
         this.groupMode = new DropDownList({

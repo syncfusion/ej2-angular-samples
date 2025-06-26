@@ -1,19 +1,17 @@
 <div id="action-description">
     <p>
-        This sample shows the gold medal count scored by each country at the Rio Olympic Games, along with the pie series grouping functionality.
+        This sample shows the gold medal count scored by each country at the summer olympic 2024 games, along with the pie series grouping functionality.
     </p>
 </div>
 <div class="control-section">
     <div class="col-md-8">
-        <ejs-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" (textRender)="onTextRender($event)" (pointRender)="onPointRender($event)" (load)='load($event)' [enableBorderOnMouseMove]='false'>
+        <ejs-accumulationchart id="container" #pie style='display:block; width: 92%' [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" [subTitle]="subTitle" (load)='load($event)' [enableBorderOnMouseMove]='false'>
             <e-accumulation-series-collection>
-                <e-accumulation-series name='RIO' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" [radius]="radius" innerRadius="0%" [explode]="explode" [dataLabel]="dataLabel" [groupTo]='clubvalue' groupMode='Point'>
-                </e-accumulation-series>
+                <e-accumulation-series name='Summer Olympics' [dataSource]='data' xName='x' yName='y' [startAngle]="startAngle" [endAngle]="endAngle" [radius]="radius" innerRadius="0%" [explode]="explode" [dataLabel]="dataLabel" [groupTo]='clubvalue' groupMode='Point' [border]="border" borderRadius="3"> </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
     </div>
     <div class="col-md-4 property-section">
-        <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
             <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
@@ -47,7 +45,6 @@
                     </tr>
                 </table>
             </div>
-        </div>
     </div>
 </div>
 <div id="description">

@@ -1,5 +1,5 @@
 import { Component, OnDestroy, ViewEncapsulation } from '@angular/core';
-import { ILoadedEventArgs, IAxisRangeCalculatedEventArgs, ChartAnnotationSettingsModel, ChartTheme, ChartAllModule, Series } from '@syncfusion/ej2-angular-charts';
+import { ILoadedEventArgs, IAxisRangeCalculatedEventArgs, LastValueLabel, ChartTheme, ChartAllModule, Series } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -16,15 +16,6 @@ import { loadChartTheme } from './theme-color';
     imports: [SBActionDescriptionComponent, ChartAllModule, SBDescriptionComponent]
 })
 export class LiveStockDataComponent implements OnDestroy {
-    public annotations: ChartAnnotationSettingsModel[] = [
-        {
-            x: new Date(2000, 5, 2, 2, 0, 1),
-            region: "Series",
-            coordinateUnits: 'Point',
-            y: 140,
-            content: `<div></div>`
-        }
-    ];
     public chartArea: Object = {
         border: {
             width: 0
@@ -50,12 +41,13 @@ export class LiveStockDataComponent implements OnDestroy {
         majorGridLines: { width: 1 }, 
         majorTickLines: { width: 0 }
     };
+    public lastValueLabel: Object = { enable: true, background: 'red', dashArray: '3,2', lineWidth: 0.5, font: {size: '10px'} };
     public getData = (): { series: Candlestick[] } => {
         let value: number = 180;
         let series: Candlestick[] = [];
         let point: Candlestick;
         for (let i: number = 0; i < 30; i++) {
-        value = 180 + Math.round((Math.random() * 25) * Math.sin(i * Math.PI / 8)); // Adjust the function as needed
+        value = 180 + (Math.random() * 25) * Math.sin(i * Math.PI / 8); // Adjust the function as needed
         value = Math.max(140, Math.min(260, value));
         if (value > 260) {
             value = 260;
@@ -63,6 +55,7 @@ export class LiveStockDataComponent implements OnDestroy {
         if (value < 140) {
             value = 140;
         }
+        value += Math.random() * 0.1;
             let open: number = value + Math.round(Math.random() * 18);
             let low: number = Math.min(value, open) - Math.round(Math.random() * 6);
             let high: number = Math.min(220, Math.max(value, open) + Math.round(Math.random() * 15));
@@ -111,7 +104,7 @@ export class LiveStockDataComponent implements OnDestroy {
                     }
                 }
                 else {
-                    let change: number = Math.round((Math.random() < 0.49 ? 1 : -1) * Math.random() * 10);
+                    let change: number = (Math.random() < 0.49 ? 1 : -1) * Math.random() * 10;
                     value += change;
                     if (value > 260) {
                         value = 260;
@@ -119,6 +112,7 @@ export class LiveStockDataComponent implements OnDestroy {
                     if (value < 140) {
                         value = 140;
                     }
+                    value += Math.random() * 0.1;
                     let open: number = value + Math.round(Math.random() * 12);
                     let low: number = Math.min(value, open) - Math.round(Math.random() * 8);
                     let high: number = Math.max(value, open) + Math.round(Math.random() * 15);
@@ -155,23 +149,7 @@ export class LiveStockDataComponent implements OnDestroy {
         }
     }
     public pointRender (args): void {
-        if (args.series.chart.enableRtl) {
-            args.series.chart.annotations[0].x = 0;
-        }
-        if (this.pointAdded && args.series.points[args.series.points.length - 1] === args.point) {
-            const firstPoint = args.series.chart.enableRtl ? args.series.points[args.series.points.length - 1].x : args.series.points[0].x;
-            args.series.chart.annotations[0].x = new Date(Number(firstPoint)).getTime() + (args.series.chart.enableRtl ? 2000 : 1000);
-            args.series.chart.annotations[0].y = args.point.close;
-            args.series.chart.annotations[0].content = `<div style="width: ${args.series.chart.initialClipRect.width}px; height: 0; left: ${Browser.isDevice ? -10 : -16}px; position: absolute;">
-            <svg width="100%" height="2" style="display: block;">
-              <line x1="0" y1="1" x2="${args.series.chart.initialClipRect.width}" y2="1" 
-                style="stroke:#868180; stroke-width:0.75; stroke-dasharray:5,5;" />
-            </svg>
-          </div>
-          <div style="width: 40px; height: 18px; background-color: ${args.fill}; border: 1px solid rgba(48, 153, 245, 0.4); color: white; font-size: 11px; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 18px; position: absolute; left: ${(args.series.chart.enableRtl ? -args.series.chart.initialClipRect : args.series.chart.initialClipRect.width - 20)}px; top: -9px;">
-            ${(args.point.close as number).toFixed(2)}
-        </div>`;
-        }
+        args.series.lastValueLabel.background = args.fill;
     };
     public title: string = 'AAPL Historical';
     public crosshair: Object = { enable: true, dashArray: '5,5' };

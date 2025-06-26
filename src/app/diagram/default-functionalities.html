@@ -3,7 +3,6 @@
       .e-symbolpalette {
         display: block;
     }
-    
 </style>
 <div id="action-description">
     <p>
@@ -89,7 +88,7 @@
                         <ejs-splitbutton [items]='zoomMenuItems' [content]="zoomContent()" (select)='zoomChange($event)' id='Zoom'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
-              
+
             </e-items>
         </ejs-toolbar>
         <div class="sb-mobile-palette-bar">
@@ -101,7 +100,7 @@
         </div>
         <div id="diagram-space" class="sb-mobile-diagram">
             <div class="content-wrapper">
-                <ejs-diagram #diagram id="diagram" width="100%" height="700px" [snapSettings]='snapSettings' (created)="created()" [getConnectorDefaults]='connectorDefaults' [getNodeDefaults]='nodeDefaults' (dragEnter)="dragEnter($event)" (created)="diagramCreate($event)" (selectionChange)="selectionChange($event)" (historyChange)="historyChange($event)" [drawingObject] ="drawingObject">
+                <ejs-diagram #diagram id="diagram" width="100%" height="700px" [snapSettings]='snapSettings' (created)="created()" [getConnectorDefaults]='connectorDefaults' [getNodeDefaults]='nodeDefaults' (dragEnter)="dragEnter($event)" (created)="diagramCreate($event)" (selectionChange)="selectionChange($event)" (historyChange)="historyChange($event)" [drawingObject] ="drawingObject"  (textEdit)="textEdit($event)">
                     <e-nodes>
                         <e-node id='NewIdea' [height]=60 [offsetX]=300 [offsetY]=80 [shape]='terminator'>
                             <e-node-annotations>

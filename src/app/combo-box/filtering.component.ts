@@ -1,21 +1,25 @@
 /**
  * ComboBox Filtering Sample
  */
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Query } from '@syncfusion/ej2-data';
 import { EmitType } from '@syncfusion/ej2-base';
 import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ComboBoxComponent, ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-
+import { NumericTextBoxComponent, NumericTextBoxModule} from '@syncfusion/ej2-angular-inputs';
 @Component({
     selector: 'control-content',
     templateUrl: 'filtering.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, ComboBoxModule, SBDescriptionComponent]
+    imports: [SBActionDescriptionComponent, ComboBoxModule, SBDescriptionComponent, NumericTextBoxModule]
 })
 export class FilteringComboBoxComponent {
+    @ViewChild('sample')
+    public comboBoxObj: ComboBoxComponent;
+    @ViewChild('numericTextBox')
+    public numericTextBoxObj: NumericTextBoxComponent;
     //define the filtering data
     public data: { [key: string]: Object; }[] = [
         { Name: 'Australia', Code: 'AU' },
@@ -44,6 +48,7 @@ export class FilteringComboBoxComponent {
     public height: string = '220px';
     // set the placeholder to ComboBox input element
     public watermark: string = 'Select a country';
+    public debounceDelay:string ='300';
     // filtering event handler to filter a Country
     public onFiltering: EmitType<FilteringEventArgs> = (e: FilteringEventArgs) => {
         let query: Query = new Query();
@@ -52,4 +57,7 @@ export class FilteringComboBoxComponent {
         //pass the filter data source, filter query to updateData method.
         e.updateData(this.data, query);
     }
+    public onChange(): void {
+    this.comboBoxObj.debounceDelay = this.numericTextBoxObj.value;
+  }
 }

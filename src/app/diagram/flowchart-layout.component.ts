@@ -2,7 +2,8 @@ import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { DiagramComponent, DiagramModule, DiagramTools } from '@syncfusion/ej2-angular-diagrams';
 import {
     Diagram, NodeModel, ConnectorModel, FlowShapeModel, LayoutModel,
-    RulerSettingsModel, FlowchartLayout, DataBinding
+    RulerSettingsModel, FlowchartLayout, DataBinding,
+    ScrollSettingsModel
 } from '@syncfusion/ej2-diagrams';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
@@ -31,7 +32,7 @@ export class FlowchartLayoutDiagramComponent {
 
     }
     public rulerSettings: RulerSettingsModel = { showRulers: true };
-
+    public scrollSettings: ScrollSettingsModel = { scrollLimit: 'Infinity', padding: { bottom: 50, right: 50 }, };
     //Initializes the data source for the layout
     public flowchartData = [
         { id: "A", name: "Start", shape: "Terminator", color: "#90EE90", parentId: null as any, stroke: "#333", strokeWidth: 1 },

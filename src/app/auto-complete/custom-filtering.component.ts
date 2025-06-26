@@ -1,21 +1,26 @@
 /**
  * AutoComplete Custom Filtering Sample
  */
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
 import Fuse from 'fuse.js';
 import { EmitType } from '@syncfusion/ej2-base';
 import { FilteringEventArgs } from '@syncfusion/ej2-dropdowns';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
+import { AutoCompleteComponent, AutoCompleteModule } from '@syncfusion/ej2-angular-dropdowns';
+import { NumericTextBoxComponent ,NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'custom-filtering.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, AutoCompleteModule, SBDescriptionComponent]
+    imports: [SBActionDescriptionComponent, AutoCompleteModule, SBDescriptionComponent, NumericTextBoxModule]
 })
 export class CustomFilteringAutoCompleteComponent {
+    @ViewChild('sample')
+    public autoCompleteObj: AutoCompleteComponent;
+    @ViewChild('numericTextBox')
+    public numericTextBoxObj : NumericTextBoxComponent;
     // define the JSON of books data
     public booksData: { [key: string]: Object; }[] = [
         { BookName: 'Support Vector Machines Succinctly', BookID: 'BOOK1' }, { BookName: 'Scala Succinctly', BookID: 'BOOK2' },
@@ -61,7 +66,8 @@ export class CustomFilteringAutoCompleteComponent {
     // maps the appropriate column to fields property
     public fields: Object = { value: 'BookName' };
     // set placeholder to AutoComplete input element
-    public watermark: string = 'e.g. Node.js Succinctly';
+    public watermark: string = 'e.g. Node.js Succinctly'; 
+    public debounceDelay:string ='300';
     //Bind the filter event
     public onFiltering: EmitType<FilteringEventArgs> = (e: FilteringEventArgs) => {
         let options: Object = {
@@ -86,6 +92,10 @@ export class CustomFilteringAutoCompleteComponent {
             // For highlight the typed characters, pass the result data and list items to highlightSearch method.
             this.highlightSearch(lists, result);
         }
+    }
+    
+    public onChange(): void {
+        this.autoCompleteObj.debounceDelay = this.numericTextBoxObj.value;
     }
 
     public highlightSearch(listItems: Element[], result: any): void {

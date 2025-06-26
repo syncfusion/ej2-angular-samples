@@ -6,12 +6,14 @@ import {
   QueryCellInfoEventArgs,
 } from '@syncfusion/ej2-angular-grids';
 import { MachineData, machineDataList } from './grid-data';
-import { getAzureChatAIRequest } from '../../azure-openai';
+import { serverAIRequest } from '../common/ai-service';
+import {AIToastComponent} from '../common/ai-toast.component';  
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
 
 @Component({
   selector: 'app-anomaly-detection',
   standalone: true,
-  imports: [GridAllModule],
+  imports: [GridAllModule, ToastModule, AIToastComponent],
   templateUrl: './anomaly-detection.component.html',
   styleUrls: ['./anomaly-detection.component.css'],
 })
@@ -45,21 +47,24 @@ export class AnomalyDetectionComponent {
   detectAnomalyData(): void {
     const gridReportJson: string = JSON.stringify(this.grid.dataSource);
     const userInput: string = this.generatePrompt(gridReportJson);
-    let aiOutput: any = getAzureChatAIRequest({
+    let aiOutput: any = serverAIRequest({
       messages: [{ role: 'user', content: userInput }],
     });
 
     aiOutput.then((result: any) => {
-      result = result.replace('```json', '').replace('```', '');
-      this.aiGeneratedData = JSON.parse(result);
-      this.grid.hideSpinner();
-
-      if (this.aiGeneratedData.length) {
-        this.grid.showColumns(['Anomaly Description']);
-        for (let i: number = 0; i < this.aiGeneratedData.length; i++) {
-          const item = this.aiGeneratedData[i];
-          this.grid.setRowData(item.MachineID, item);
+      if (result) {
+        result = result.replace('```json', '').replace('```', '');
+        this.aiGeneratedData = JSON.parse(result);
+        this.grid.hideSpinner();
+        if (this.aiGeneratedData.length) {
+          this.grid.showColumns(['Anomaly Description']);
+          for (let i: number = 0; i < this.aiGeneratedData.length; i++) {
+            const item = this.aiGeneratedData[i];
+            this.grid.setRowData(item.MachineID, item);
+          }
         }
+      } else {
+        this.grid.hideSpinner();
       }
     });
   }

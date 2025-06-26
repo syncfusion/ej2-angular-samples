@@ -5,7 +5,7 @@
         <ng-template #content>
           <div id="prompt-ui">
             <div id="customTbarDialog">
-              <span class="e-text">Instruct AI</span>
+              <span class="e-text">Query</span>
               <textarea id="text-area" aria-label="ai assistant query box"
                 placeholder="find all users who lives in los angeles and have over 1000 credits"></textarea>
             </div>
@@ -33,7 +33,7 @@
   </ejs-tab>
 
   <div class="e-custom-elem">
-    <button ejs-button id="submit" (click)="generateQuery()" class="e-control e-btn">Generate Query</button>
+   <button ejs-button id="submit" (click)="generateQuery()" cssClass="e-control e-btn e-primary" iconCss="e-icons e-play">Run Query</button>
   </div>
   <div class="e-custom-elem">
     <span class="e-text">Results from your AI generated Query</span>

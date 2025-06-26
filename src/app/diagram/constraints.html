@@ -3,7 +3,7 @@
     .e-symbolpalette {
         display: block;
     }
-    .diagram-property-tab .row {
+    .diagram-constraints-property-tab .row {
                 margin-left: 0px;
                 margin-right: 0px;
                 padding-top: 8px;
@@ -25,7 +25,7 @@
                 <div class="property-panel-header">
                     <span>Diagram Constraints</span>
                 </div>
-                <div class="row property-panel-content diagram-property-tab">
+                <div class="row property-panel-content diagram-constraints-property-tab">
                     <div class="row">
                         <ejs-checkbox #checkbox label="Zooming" [checked]="true" (change)="zoomingChange($event)"></ejs-checkbox>
                     </div>
@@ -48,12 +48,12 @@
             </div>
             <div id="description">
                 <p>This sample illustrates how node constraints are used to restrict end-users from performing certain operations on nodes and connector constraints are used to restrict end-users from performing certain operation on connectors.</p>
-                
+
                 <p>The <code>NodeConstraints</code> property allows you to enable or disable node behaviors like select, drag, resize, rotate, and delete.</p>
-            
+
                 <p>The <code>ConnectorConstraints</code> property allows you to enable or disable connector behaviors like select, drag, delete, drag source end, and drag target end.</p>
-            
+
                 <p>The <code>AnnotationConstraints</code> property allows you to enable or disable the annotation behavior, text editing.</p>
-            
+
                <p> Using the <code>DiagramConstraints</code> property, enable or disable certain features of the diagram like zoom, undo/redo, context menu, drag, and select.</p>
               </div>

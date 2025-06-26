@@ -94,6 +94,9 @@ export class MapsDynamicMarkerComponent {
     }
 
     public mapClicked = (args: any) => {
+        if (args.target.id.indexOf('_Zooming_ToolBar_') != -1) {
+            return;
+        }
         if (this.markerCheckedState) {
             this.addMarker(args);
         }

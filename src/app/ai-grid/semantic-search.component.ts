@@ -4,11 +4,13 @@ import { GridAllModule, GridComponent } from '@syncfusion/ej2-angular-grids';
 import { MedicalRecord, MedicalRecords } from './grid-data';
 import { Query, Predicate } from "@syncfusion/ej2-data";
 import { embeddingModel, cosineSimilarity } from '../../embedding-model';
+import {AIToastComponent} from '../common/ai-toast.component';  
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
 
 @Component({
   selector: 'app-semantic-search',
   standalone: true,
-  imports: [GridAllModule, TextBoxModule],
+  imports: [GridAllModule, TextBoxModule, ToastModule, AIToastComponent],
   templateUrl: './semantic-search.component.html',
   styleUrl: './semantic-search.component.css'
 })

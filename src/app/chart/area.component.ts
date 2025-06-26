@@ -20,21 +20,54 @@ import { loadChartTheme } from './theme-color';
 export class AreaChartComponent {
     public annotations: ChartAnnotationSettingsModel[] = [
         {
-            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">8-TRACK</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">8-TRACK</div>',x: '8%', y: '95%' , region:'Series'
-        }, {
-            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">VINYL</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">VINYL</div>',x: "12%", y: "80%" ,region:'Series'
-        }, {
-            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">CASSETTE</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">CASSETTE</div>',x: "35%", y: "87%" ,region:'Series'
-        }, {
-            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">COMPACT DISC</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">COMPACT DISC</div>',x: "63%", y: "70%" ,region:'Series'
-        }, {
-            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">OTHERS</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">OTHERS</div>',x: "75%", y: '98%' ,region:'Series'
-        }, {
-            content: Browser.isDevice ? '<div style="color:white; font-size: 8px;">DOWNLOAD</div>' : '<div style="color:white; font-size: 11px; font-weight: bold">DOWNLOAD</div>',x: '85%', y: '93%' ,region:'Series'
-        }, {
-            content: Browser.isDevice ? '' : '<div style="color:white; font-size: 11px; font-weight: bold">STREAMING</div>',x: '93%', y: '96%' ,region:'Series'
+            content: Browser.isDevice ? '<div style="font-weight: bold; color: white; font-size: 7px;">8-TRACK</div>' : '<div style="font-weight: bold; color: white; font-size: 11px;">8-TRACK</div>',
+            region: 'Series',
+            coordinateUnits: 'Point',
+            x: new Date(1976, 1, 1),
+            y: 1.5
         },
-
+        {
+            content: Browser.isDevice ? '<div style="font-weight: bold; color: white;font-size: 7px;">VINYL</div>' : '<div style="font-weight: bold; color: white;font-size: 11px;">VINYL</div>',
+            region: 'Series',
+            coordinateUnits: 'Point',
+            x: new Date(1977, 1, 1),
+            y: 5
+        },
+        {
+            content: Browser.isDevice ? '<div style="font-weight: bold; color: white;font-size: 7px;">CASSETTE</div>' : '<div style="font-weight: bold; color: white;font-size: 11px;">CASSETTE</div>',
+            region: 'Series',
+            coordinateUnits: 'Point',
+            x: new Date(1990, 1, 1),
+            y: 3
+        },
+        {
+            content: Browser.isDevice ? '<div style="font-weight: bold; color: white;font-size: 7px;">COMPACT DISC</div>' : '<div style="font-weight: bold; color: white;font-size: 11px;">COMPACT DISC</div>',
+            region: 'Series',
+            coordinateUnits: 'Point',
+            x: new Date(2001, 1, 1),
+            y: 10
+        },
+        {
+            content: Browser.isDevice ? '<div style="font-weight: bold; color: white;font-size: 7px;">OTHERS</div>' : '<div style="font-weight: bold; color: white;font-size: 11px;">OTHERS</div>',
+            region: 'Series',
+            coordinateUnits: 'Point',
+            x: new Date(2006, 1, 1),
+            y: 0.50
+        },
+        {
+            content: Browser.isDevice ? '<div style="font-weight: bold; color: white; font-size: 7px;">DOWNLOAD</div>' : '<div style="font-weight: bold; color: white; font-size: 11px;">DOWNLOAD</div>',
+            region: 'Series',
+            coordinateUnits: 'Point',
+            x: new Date(2011, 6, 1),
+            y: 1.8
+        },
+        {
+            content: Browser.isDevice ? '<div style="font-weight: bold; color: white;font-size: 7px;"></div>' : '<div style="font-weight: bold; color: white;font-size: 11px;">STREAMING</div>',
+            region: 'Series',
+            coordinateUnits: 'Point',
+            x: new Date(2015, 1, 1),
+            y: Browser.isDevice ? 1.3 : 1.2
+        }
     ];
     public chartArea: Object = {
         border: {

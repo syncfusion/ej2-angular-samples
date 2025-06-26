@@ -1,257 +1,818 @@
-import { Component, ViewEncapsulation, ViewChild,Inject } from '@angular/core';
-import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
-import { ToolbarComponent, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { AfterViewInit, Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
-  Diagram, NodeModel, UndoRedo, ConnectorModel, PointPortModel,  NodeConstraints,  DiagramTools, DiagramConstraints, AnnotationConstraints, randomId, PageSettingsModel, BpmnShapeModel,Node, BpmnGatewayModel, ShapeStyleModel, SnapSettingsModel, SnapConstraints
-} from '@syncfusion/ej2-diagrams';
-
-import { ClickEventArgs } from '@syncfusion/ej2-navigations';
-import { SBDescriptionComponent } from '../common/dp.component';
+  DiagramComponent,
+  NodeModel,
+  ConnectorModel,
+  UserHandleModel,
+  NodeConstraints,
+  DiagramTools,
+  Diagram,
+  BpmnDiagrams,
+  UndoRedo,
+  DiagramModule,
+  ScrollSettingsModel,
+  SymbolPaletteComponent,
+  SymbolInfo,
+  SymbolPaletteModule,
+  SymbolPalette,
+} from '@syncfusion/ej2-angular-diagrams';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-Diagram.Inject(UndoRedo);
-/**
- * Default FlowShape sample
- */
+import { ToolbarComponent, ToolbarModule } from '@syncfusion/ej2-angular-navigations';
+import { SBDescriptionComponent } from '../common/dp.component';
+import { SwitchComponent } from '@syncfusion/ej2-angular-buttons';
+import { TooltipComponent, TooltipModule } from '@syncfusion/ej2-angular-popups';
+import { SwitchModule } from '@syncfusion/ej2-angular-buttons';
+
+Diagram.Inject(UndoRedo, BpmnDiagrams);
+SymbolPalette.Inject(BpmnDiagrams);
 
 @Component({
-    selector: 'control-content',
-    templateUrl: 'workflow-editor.html',
-    encapsulation: ViewEncapsulation.None,
-    standalone: true,
-    // Importing necessary components
-    imports: [SBActionDescriptionComponent, ToolbarModule, DiagramModule, SBDescriptionComponent]
+  selector: 'control-content',
+  templateUrl: 'workflow-editor.html',
+  encapsulation: ViewEncapsulation.None,
+  standalone: true,
+  // Importing necessary components
+  imports: [SBActionDescriptionComponent, ToolbarModule, TooltipModule, SwitchModule, DiagramModule, SBDescriptionComponent, SymbolPaletteModule]
 })
-export class WorkFlowDiagramComponent {
-   // ViewChilds for accessing Diagram and Toolbar components
+export class WorkFlowDiagramComponent implements AfterViewInit {
   @ViewChild('diagram')
-  //Diagram Properties
-  public diagram: DiagramComponent;
-
-  @ViewChild('toolbar')
-  public toolbar: ToolbarComponent;
-
-  constructor() {​​​​​​​
-    
-}​​​​​​​
-// Properties
-public width = '435px';
-
-public pageSettings: PageSettingsModel = {background:{color:'white'}};
-public diagramtool = DiagramTools.ZoomPan;
-public diagramConstraints = DiagramConstraints.Default| DiagramConstraints.Tooltip;
-public start: BpmnShapeModel = {type:'Bpmn'};
-public taskShape:BpmnShapeModel =  {
-  type: 'Bpmn', shape: 'Activity', activity: {
-      activity: 'Task',
-  }};// Task shape configuration
-public gateWay:BpmnShapeModel = { type: 'Bpmn', shape: 'Gateway', gateway: { type: 'Exclusive' } as BpmnGatewayModel }
-public targetDecorator = {shape:'None'};
-public connAnnotStyle = {fill:'white'};
-public conOffset = 0.4;
-
-// Levels for identifying connector collection
-public firstLevel = {level:1};
-public secondLevel = {level:2};
-public thirdLevel = {level:3};
-public fourthLevel = {level:4};
-public fifthLevel = {level:5};
-public sixthLevel = {level:6};
-public seventhLevel = {level:7};
-public eighthLevel = {level:8};
-public ninethLevel = {level:9};
-public tenthLevel = {level:10};
-public eleventhLevel = {level:11};
-public twelthLevel = {level:12};
-public container = "container";
-
-
- // Default settings for nodes in the diagram
-public getNodeDefaults(node:NodeModel){
-   // Customize node ports
-  if(node.id === 'checkLevel2-ApprovalStatus'){
-    node.ports = [{id:'right_port',offset:{x:1,y:0.5}}];
+  public diagram!: DiagramComponent;
+  @ViewChild('Diagramtoolbar')
+  public toolbar!: ToolbarComponent;
+  @ViewChild('symbolPalette')
+  public symbolPalette!: SymbolPaletteComponent;
+  @ViewChild('toggleSwitch')
+  public toggleSwitch!: SwitchComponent;
+  @ViewChild('switchTooltip')
+  public switchTooltip!: TooltipComponent;
+  @ViewChild('fileInput', { static: false })
+  fileInput!: ElementRef<HTMLInputElement>;
+  @ViewChild('tooltip', { static: false }) tooltip!: TooltipComponent;
+  @ViewChild('editLabel') editLabel!: ElementRef<HTMLElement>;
+  constructor() {
   }
-   // Disable constraints for HTML shaped nodes
-  if((node.shape as any).type === 'HTML'){
-    node.constraints = NodeConstraints.None;
+
+  isEditMode: boolean = false;
+  ngAfterViewInit(): void {
+    this.applyModeState(this.isEditMode);
+    this.tooltipContent = this.isEditMode ? 'Disable Editing' : 'Enable Editing';
   }
-  // Configure annotations for non-HTML nodes
-  if((node.shape as any).type !== 'HTML'){
-    node.annotations = [
+  public tools: DiagramTools = DiagramTools.ZoomPan;
+  public scrollSettings: ScrollSettingsModel = {
+    scrollLimit: "Infinity", canAutoScroll: true
+  };
+  public flowTimeOut1: any;
+  public flowTimeOut2: any;
+  public isPaused: boolean = false;
+  public animationIntervals: any[] = [];
+  public connectorBeforeAnimationColor: string = '#B0B0B0';
+  public connectorDuringAnimationColor: string = "#FF7F50";
+  public connectorAfterAnimationColor: string = "green";
+  public connectorAnnotationColor: string = "#32CD32";
+  public nodeStrokeBeforeAnimationColor: string = "black";
+  public nodeStrokeAfterAnimationColor: string = "green";
+  public tooltipContent: string = 'Enable Editing';
+  public nodes: NodeModel[] = [
     {
-      id:node.id+'_label',
-      content:node.id.replace(/-/g, ' ')
-      .replace(/([a-z])([A-Z0-9])/g, '$1 $2')
-      .replace(/\b\w/g, match => match.toUpperCase()),
-      style:{fontSize:15},
-      constraints:AnnotationConstraints.ReadOnly
-   }];
-     // Additional annotation configurations based on node ID or shape type
-    if(node.id === 'travelRequestApprovalProcess'){
-      node.annotations[0].offset = {x:0.1,y:0.5}
-    }
-    if(node.id === 'travelRequest'){
-      node.annotations[0].offset = {x:0.95,y:0.5}
-    }
-    if((node.shape as BpmnShapeModel).shape === 'Gateway' || (node.shape as BpmnShapeModel).shape === 'Event'){
-      node.annotations[0].offset = {x:0.5,y:1.7};
-    }
-    if(node.id === 'row1' || node.id === 'row2'){
-      node.annotations = [];
-    }
-    
-    node.annotations[0].style.fontSize = 14;
-    
-  }
-};
-  // Default settings for connectors in the diagram
-public getConnectorDefaults(connector:ConnectorModel){
-  connector.type = 'Orthogonal';
-  connector.style = {strokeColor:'#B6B6B4'};
-  connector.targetDecorator.style = {strokeColor:'#B6B6B4',fill:'#B6B6B4'};
-  if(connector.annotations && connector.annotations.length > 0){
-    connector.annotations[0].style.fontSize=14;
-    connector.annotations = connector.annotations.concat({content:'',height:8,width:8,offset:0,style:{fill:'transparent'}});
-    if(connector.annotations[0].content === 'Accepted' || connector.annotations[0].content === 'Yes'){
-      connector.annotations[0].alignment = 'Before';
-      connector.annotations[0].displacement = {x:0,y:10};
-    }
-  }else{
-    connector.annotations = [{content:'',height:8,width:8,offset:0,style:{fill:'transparent'}}];
-  }
-}
+      id: "start",
+      offsetX: 100,
+      offsetY: 380,
+      shape: {
+        type: "Bpmn",
+        shape: "Event",
+        event: { event: "Start", trigger: "None" },
+      },
+      annotations: [{ content: "Start" }],
+    },
+    {
+      id: "liquidInput",
+      offsetX: 300,
+      offsetY: 280,
+      shape: {
+        type: "Bpmn",
+        shape: "Activity",
+        activity: { activity: "Task" },
+      },
+      annotations: [{ content: "Liquid Input" }],
+    },
+    {
+      id: "dryInput",
+      offsetX: 300,
+      offsetY: 480,
+      shape: {
+        type: "Bpmn",
+        shape: "Activity",
+        activity: { activity: "Task" },
+      },
+      annotations: [{ content: "Dry Input" }],
+    },
+    {
+      id: "condensed",
+      offsetX: 500,
+      offsetY: 180,
+      shape: {
+        type: "Bpmn",
+        shape: "Activity",
+        activity: { activity: "Task" },
+      },
+      annotations: [{ content: "Condensed" }],
+    },
+    {
+      id: "cream",
+      offsetX: 500,
+      offsetY: 260,
+      shape: {
+        type: "Bpmn",
+        shape: "Activity",
+        activity: { activity: "Task" },
+      },
+      annotations: [{ content: "Cream" }],
+    },
+    {
+      id: "caneSugar",
+      offsetX: 500,
+      offsetY: 340,
+      shape: {
+        type: "Bpmn",
+        shape: "Activity",
+        activity: { activity: "Task" },
+      },
+      annotations: [{ content: "Cane Sugar" }],
+    },
+    {
+      id: "water",
+      offsetX: 500,
+      offsetY: 420,
+      shape: {
+        type: "Bpmn",
+        shape: "Activity",
+        activity: { activity: "Task" },
+      },
+      annotations: [{ content: "Water" }],
+    },
+    {
+      id: "ingredients",
+      offsetX: 500,
+      offsetY: 500,
+      shape: {
+        type: "Bpmn",
+        shape: "Activity",
+        activity: { activity: "Task" },
+      },
+      annotations: [{ content: "Ingredients" }],
+    },
+    {
+      id: "flavour",
+      offsetX: 500,
+      offsetY: 580,
+      shape: {
+        type: "Bpmn",
+        shape: "Activity",
+        activity: { activity: "Task" },
+      },
+      annotations: [{ content: "Flavour" }],
+    },
+    {
+      id: "fruitsAndNuts",
+      offsetX: 500,
+      offsetY: 660,
+      shape: {
+        type: "Bpmn",
+        shape: "Activity",
+        activity: { activity: "Task" },
+      },
+      annotations: [{ content: "Fruits and Nuts" }],
+    },
+    {
+      id: "blending",
+      offsetX: 700,
+      offsetY: 380,
+      shape: {
+        type: "Bpmn",
+        shape: "Activity",
+        activity: { activity: "Task" },
+      },
+      annotations: [{ content: "Blending" }],
+    },
+    {
+      id: "coolingAging",
+      offsetX: 840,
+      offsetY: 380,
+      shape: {
+        type: "Bpmn",
+        shape: "Activity",
+        activity: { activity: "Task" },
+      },
+      annotations: [{ content: "Cooling/Aging" }],
+    },
+    {
+      id: "packaging",
+      offsetX: 980,
+      offsetY: 380,
+      shape: {
+        type: "Bpmn",
+        shape: "Activity",
+        activity: { activity: "Task" },
+      },
+      annotations: [{ content: "Packaging" }],
+    },
+    {
+      id: "storageDistribution",
+      width: 140,
+      offsetX: 1130,
+      offsetY: 380,
+      shape: {
+        type: "Bpmn",
+        shape: "Activity",
+        activity: { activity: "Task" },
+      },
+      annotations: [{ content: "Storage/Distribution" }],
+    },
+    {
+      id: "end",
+      offsetX: 1260,
+      offsetY: 380,
+      shape: {
+        type: "Bpmn",
+        shape: "Event",
+        event: { event: "End", trigger: "None" },
+      },
+      annotations: [{ content: "End" }],
+    },
+  ];
 
-// Event handler for diagram creation
-public created(): void {
-  this.diagram.fitToPage({region:'Content',mode:'Width'});
-}
-// Toolbar item click handler
-public onItemClick(args: ClickEventArgs): void {
-  switch (args.item.text) {
-      case 'Execute':
-          this.startWorkflow(undefined);
-          this.toolbar.items[0].disabled=true;
-          this.toolbar.items[2].disabled=true;
-          break;
+  public connectors: ConnectorModel[] = [
+    { id: "c1", sourceID: "start", targetID: "liquidInput" },
+    { id: "c2", sourceID: "start", targetID: "dryInput" },
+    { id: "c3", sourceID: "liquidInput", targetID: "condensed" },
+    { id: "c4", sourceID: "liquidInput", targetID: "cream" },
+    { id: "c5", sourceID: "liquidInput", targetID: "caneSugar" },
+    { id: "c6", sourceID: "liquidInput", targetID: "water" },
+    { id: "c7", sourceID: "liquidInput", targetID: "ingredients" },
+    {
+      id: "c8",
+      sourceID: "dryInput",
+      targetID: "flavour",
+    },
+    {
+      id: "c9",
+      sourceID: "dryInput",
+      targetID: "fruitsAndNuts",
+    },
+    { id: "c10", sourceID: "condensed", targetID: "blending" },
+    { id: "c11", sourceID: "cream", targetID: "blending" },
+    { id: "c12", sourceID: "caneSugar", targetID: "blending" },
+    { id: "c13", sourceID: "water", targetID: "blending" },
+    { id: "c14", sourceID: "ingredients", targetID: "blending" },
+    { id: "c15", sourceID: "flavour", targetID: "blending" },
+    { id: "c16", sourceID: "fruitsAndNuts", targetID: "blending" },
+    { id: "c17", sourceID: "blending", targetID: "coolingAging" },
+    { id: "c18", sourceID: "coolingAging", targetID: "packaging" },
+    { id: "c19", sourceID: "packaging", targetID: "storageDistribution" },
+    { id: "c20", sourceID: "storageDistribution", targetID: "end" },
+  ];
 
-      case 'Reset':
-      this.toolbar.items[0].disabled=false;
-      this.toolbar.items[2].disabled=true;
-          this.resetDiagram();
-          this.diagram.fitToPage({ mode: 'Width', region: 'Content',});
-          break;
+  // Node defaults
+  public getNodeDefaults(node: NodeModel): NodeModel {
+    // restrict rotation and hide thumbs
+    node.constraints =
+      (NodeConstraints.Default & ~NodeConstraints.Rotate) |
+      NodeConstraints.HideThumbs;
+    // Set default width and height
+    const dimensions: any = {
+      Event: { width: 60, height: 60 },
+      Gateway: { width: 90, height: 70 },
+      Activity: { width: 90, height: 50 },
+    };
+
+    const shapeType = (node.shape as any).shape;
+    if (!node.width) node.width = dimensions[shapeType].width;
+    if (!node.height) node.height = dimensions[shapeType].height;
+    return node;
   }
-}
-// Styling for shapes
-public style: ShapeStyleModel = { strokeWidth: 0 };
- // Workflow execution variables
-public flowInterval;
-public flowTimeOut1;
-public flowTimeOut2;
-public connectorCollection = [];
-public currentLevel: number;
-public currentTarget:any;
-// To execute workflow.
-public startWorkflow(args: number) {
-  if(!args){
-    clearInterval(this.flowInterval);
+
+  public getConnectorDefaults: Function = this.connectorDefaults.bind(this);
+
+  // Connector defaults
+  public connectorDefaults(connector: ConnectorModel): ConnectorModel {
+    // Configure the connector with a straight type
+    connector.type = "Straight";
+
+    // connector initial color style, before animation
+    connector.style.strokeColor =
+      connector.targetDecorator.style.strokeColor =
+      connector.targetDecorator.style.fill =
+      this.connectorBeforeAnimationColor;
+
+    // connector annotation, that will be animated during the workflow animation
+    connector.annotations = [
+      {
+        content: "",
+        height: 16,
+        width: 16,
+        offset: 0,
+        style: { fill: "transparent", fontSize: 24 },
+      },
+    ];
+    return connector;
+  }
+
+  // User handles
+  public selectedItems = {
+    userHandles: [
+      {
+        name: 'delete',
+        pathData:
+          'M0.97,3.04 L12.78,3.04 L12.78,12.21 C12.78,12.64,12.59,13,12.2,13.3 C11.82,13.6,11.35,13.75,10.8,13.75 L2.95,13.75 C2.4,13.75,1.93,13.6,1.55,13.3 C1.16,13,0.97,12.64,0.97,12.21 Z M4.43,0 L9.32,0 L10.34,0.75 L13.75,0.75 L13.75,2.29 L0,2.29 L0,0.75 L3.41,0.75 Z',
+        tooltip: { content: 'Delete Node' },
+        side: 'Bottom',
+        offset: 0.5,
+        margin: { bottom: 5 },
+        disableConnectors: true,
+      },
+      {
+        name: 'drawConnector',
+        pathData:
+          'M6.09,0 L13.75,6.88 L6.09,13.75 L6.09,9.64 L0,9.64 L0,4.11 L6.09,4.11 Z',
+        tooltip: { content: 'Draw Connector' },
+        side: 'Right',
+        offset: 0.5,
+        margin: { right: 5 },
+        disableConnectors: true,
+      },
+      {
+        name: 'stopAnimation',
+        pathData: 'M4.75,0.75 L9.25,0.75 L9.25,9.25 L4.75,9.25 Z',
+        tooltip: { content: 'Enable Animation' },
+        disableNodes: true,
+      },
+    ] as UserHandleModel[],
+  };
+
+  public onCreated(): void {
+    this.diagram.fitToPage();
+  }
+
+  // Dynamically updates the stopAnimation user handle icon and tooltip based on the selected connector's state
+  public onSelectionChange(args: any): void {
+    if (args.state !== "Changed") return;
+    const connector = this.diagram.selectedItems.connectors[0];
+    let handle = null;
+    for (let i = 0; i < this.diagram.selectedItems.userHandles.length; i++) {
+      if (this.diagram.selectedItems.userHandles[i].name === "stopAnimation") {
+        handle = this.diagram.selectedItems.userHandles[i];
+        break;
+      }
+    }
+    if (connector && handle) {
+      const isStopped =
+        (connector.addInfo as any) && (connector.addInfo as any).stopAnimation === true;
+
+      handle.pathData = isStopped
+        ? "M2,0 L10,8 L2,16 L2,0 Z" // Play icon (start animation)
+        : "M5.25,1.25 L8.75,1.25 L8.75,8.75 L5.25,8.75 Z"; // Stop icon
+
+      handle.tooltip.content = isStopped
+        ? "Enable Animation"
+        : "Disable Animation";
+
+      handle.visible = true;
+    } else if (handle) {
+      handle.visible = false;
+    }
+  }
+
+  // User handle functionality
+  public onUserHandleMouseDown(args: any): void {
+    const handleName = args.element.name;
+
+    switch (handleName) {
+      case 'delete':
+        this.diagram.remove(this.diagram.selectedItems.nodes[0]);
+        break;
+
+      case 'drawConnector':
+        const sourceNode = this.diagram.selectedItems.nodes[0];
+        if (!sourceNode) return;
+        this.diagram.drawingObject = { type: 'Straight', sourceID: sourceNode.id };
+        this.diagram.tool = DiagramTools.DrawOnce;
+        break;
+
+      case 'stopAnimation':
+        const connector = this.diagram.selectedItems.connectors[0];
+        if (connector) {
+          if (!connector.addInfo) (connector.addInfo as any) = {};
+          (connector.addInfo as any).stopAnimation = !(connector.addInfo as any).stopAnimation;
+
+          // Update path and tooltip
+          const handle = this.diagram.selectedItems.userHandles.find((h: any) => h.name === 'stopAnimation');
+          if (handle) {
+            const isStopped = (connector.addInfo as any).stopAnimation;
+
+            handle.pathData = isStopped
+              ? 'M2,0 L10,8 L2,16 L2,0 Z'  // Play icon
+              : 'M4.75,0.75 L9.25,0.75 L9.25,9.25 L4.75,9.25 Z';  // Stop icon
+
+            handle.tooltip.content = isStopped ? 'Enable Animation' : 'Disable Animation';
+          }
+        }
+        break;
+    }
+  }
+
+  // Workflow animation
+  public startWorkflow() {
+    // PAUSE state if running
+    if (!this.isPaused && this.animationIntervals.length) {
+      this.isPaused = true;
+      this.updateExecuteButton("Resume");
+      this.clearAnimationIntervals();
+      return;
+    }
+
+    // RESUME state if paused
+    if (this.isPaused) {
+      this.isPaused = false;
+      this.updateExecuteButton("Pause");
+      this.resumeWorkflow();
+      return;
+    }
+
+    // EXECUTE state to start from start
+    this.isPaused = false;
+    this.resetWorkflow();
+    this.updateExecuteButton("Pause");
+
+    // find the "start" nodes in the diagram, as animation only works from "start" nodes
+    const startNodes = this.diagram.nodes.filter((node: any) => {
+      return (
+        node.shape &&
+        node.shape.type === "Bpmn" &&
+        node.shape.shape === "Event" &&
+        node.shape.event.event === "Start"
+      );
+    });
+
+    if (startNodes.length === 0) {
+      console.error("No start nodes found.");
+      return;
+    }
+
+    startNodes.forEach((startNode: any) => {
+      this.animateNode(startNode.id);
+    });
+  }
+
+  // Resume Workflow animation from the last paused state
+  public resumeWorkflow() {
+    this.diagram.connectors.forEach((connector: any) => {
+      // Retrieve the last annotation of the connector
+      const lastAnn = connector.annotations[connector.annotations.length - 1];
+      // Check if the annotation offset is within the animation range
+      if (lastAnn && lastAnn.offset > 0 && lastAnn.offset < 0.9) {
+        // Restore the annotations that need to be visible
+        lastAnn.content = "●";
+        if (lastAnn.style) lastAnn.style.color = this.connectorAnnotationColor;
+
+        // Get the source node of the connector and check if it s a start event node
+        const sourceNode = this.diagram.getObject(connector.sourceID);
+        const isStartNode =
+          sourceNode &&
+          (sourceNode as any).shape &&
+          (sourceNode as any).shape.type === "Bpmn" &&
+          (sourceNode as any).shape.shape === "Event" &&
+          (sourceNode as any).shape.event &&
+          (sourceNode as any).shape.event.event === "Start";
+
+        // If the source node is a start node or already completed node, continue the animation
+        if (
+          isStartNode ||
+          (sourceNode && (sourceNode as any).style.strokeColor === this.nodeStrokeAfterAnimationColor)
+        ) {
+          // Animate the connector and the target node
+          this.animateConnector(connector, (targetId: string) => {
+            const targetNode = this.diagram.getObject(targetId);
+            if (targetNode) {
+              this.createLoadingAnimation(targetNode);
+              setTimeout(() => {
+                this.completeNodeAnimation(targetNode);
+                this.animateNode(targetId);
+              }, 1000);
+            }
+          });
+        }
+      }
+    });
+  }
+
+  // Function to animate a node and its connected nodes
+  public animateNode(nodeId: string): void {
+    // Filter connectors originating from the node
+    const currentConnectors = this.diagram.connectors.filter((conn: any) => conn.sourceID === nodeId);
+    currentConnectors.forEach((connector: any) => {
+      // Check if additional info contains "stopAnimation"
+      if (!(connector.addInfo && connector.addInfo.stopAnimation === true)) {
+        this.animateConnector(connector, (targetNodeId: string) => {
+          const targetNode = this.diagram.getObject(targetNodeId);
+          // Start loading animation for the target node
+          if (targetNode) {
+            this.createLoadingAnimation(targetNode);
+            // Hide all loading indicators
+            this.flowTimeOut1 = setTimeout(() => {
+              document.querySelectorAll(".Diagram-loading-indicator").forEach((el: any) => el.style.display = "none");
+              document.querySelectorAll(".Diagramtick").forEach((el: any) => el.style.display = "block");
+              (targetNode as any).style.strokeColor = this.nodeStrokeAfterAnimationColor;
+              this.diagram.dataBind();
+              // Check if the target node is a BPMN "End" event node
+              if ((targetNode as any).shape && (targetNode as any).shape.type === "Bpmn" && (targetNode as any).shape.shape === "Event" && (targetNode as any).shape.event && (targetNode as any).shape.event.event === "End") {
+                // Reset toolbar for new execution
+                this.updateExecuteButton("Execute");
+                this.animationIntervals.length = 0;
+              } else {
+                // Recursively animate connected nodes
+                this.animateNode(targetNodeId);
+              }
+            }, 1000);
+          }
+        });
+      }
+    });
+  }
+
+  // Function to animate a connector and execute a callback upon completion
+  public animateConnector(connector: any, callback: Function): void {
+    const lastAnn = connector.annotations[connector.annotations.length - 1];
+    lastAnn.offset = lastAnn.offset || 0.02; // Initialize or set the offset
+    lastAnn.content = "●"; // Set visual marker, to show the flow
+    lastAnn.style.color = this.connectorAnnotationColor; // Set annotation marker color
+    this.diagram.dataBind();
+    // Start interval to animate the connector
+    const flowInterval = setInterval(() => {
+      if (this.isPaused) {
+        return; // Pause animation if the workflow is paused
+      }
+      // Continue animation if the offset hasn't reached the end
+      if (lastAnn.offset < 0.9) {
+        lastAnn.offset += 0.025;
+        connector.style.strokeColor = connector.targetDecorator.style.strokeColor = connector.targetDecorator.style.fill = this.connectorDuringAnimationColor; // Change color during animation
+        this.diagram.dataBind();
+      } else {
+        // Animation complete, clean up and execute the callback
+        clearInterval(flowInterval);
+        lastAnn.style.color = "transparent";
+        connector.style.strokeColor = connector.targetDecorator.style.strokeColor = connector.targetDecorator.style.fill = this.connectorAfterAnimationColor; // Set after animation color for connector
+        this.diagram.dataBind();
+        callback(connector.targetID); // Execute callback with target node ID
+      }
+    }, 120); // Interval of 120ms for the animation steps
+
+    // Add the interval to the list of active animations
+    this.animationIntervals.push(flowInterval);
+  }
+
+  // Function to create and add a loading animation annotation to a node
+  public createLoadingAnimation(targetNode: any): void {
+    if (!targetNode || !targetNode.annotations) {
+      return;
+    }
+    // HTML template for the loading animation and a hidden tick indicator
+    const htmlTemplate = '<div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; margin-left: -3px; margin-top: -3px;"><div class="Diagram-loading-indicator"></div><div class="Diagramtick" style="display: none;"><i class="e-icons e-check"></i></div></div>';
+    // adding annotation with the template to the node
+    const annotation: any = {
+      template: htmlTemplate,
+      offset: { x: 0, y: 0 },
+      verticalAlignment: "Top",
+      horizontalAlignment: "Left",
+      style: { fill: "transparent" }
+    };
+    this.diagram.addLabels(targetNode, [annotation]);
+  }
+
+  // Function to show complete status for the given node
+  public completeNodeAnimation(node: any): void {
+    // Hide all loading indicators
+    document.querySelectorAll(".Diagram-loading-indicator").forEach((el: any) => el.style.display = "none");
+    // Display all tick elements as visible
+    document.querySelectorAll(".Diagramtick").forEach((el: any) => el.style.display = "block");
+    // Update the stroke color for the node to indicate completion
+    if (node.style) {
+      node.style.strokeColor = this.nodeStrokeAfterAnimationColor;
+    }
+    // Update the diagram to reflect changes
+    this.diagram.dataBind();
+  }
+
+  public resetWorkflow(): void {
+    // Set pause state to false
+    this.isPaused = false;
+    // clear any existing timeouts
     clearTimeout(this.flowTimeOut1);
     clearTimeout(this.flowTimeOut2);
+    // Clear any running animation intervals
+    this.clearAnimationIntervals();
+    // Remove all custom animations and tick indicators
+    document.querySelectorAll(".Diagram-loading-indicator, .Diagramtick").forEach((el: any) => el.remove());
+    // Restore all nodes to their default styles
+    this.diagram.nodes.forEach((node: any) => {
+      if (node.style) node.style.strokeColor = this.nodeStrokeBeforeAnimationColor;
+    });
+    // Restore all connectors to their default styles
+    this.diagram.connectors.forEach((connector: any) => {
+      connector.style.strokeColor = connector.targetDecorator.style.strokeColor = connector.targetDecorator.style.fill = this.connectorBeforeAnimationColor;
+      // Reset connector annotations to initial state
+      connector.annotations.forEach((ann: any) => {
+        ann.offset = 0;
+        ann.content = "";
+        ann.style.color = this.connectorAnnotationColor;
+      });
+    });
+    this.diagram.dataBind();
   }
-  this.connectorCollection = [];
-  let level = args ? args : 1;
-  let connectors = this.diagram.connectors;
 
-  for (let i: number = 0; i < connectors.length; i++) {
-    if (connectors[i].addInfo && (connectors[i].addInfo as any).level === level) {
-      this.connectorCollection.push(connectors[i]);
+  // Function to clear all active animation intervals
+  public clearAnimationIntervals() {
+    // Stop all timers stored in animationIntervals
+    this.animationIntervals.forEach(clearInterval);
+    // Reset the array to remove all interval references
+    this.animationIntervals.length = 0;
+  }
+
+  // Hidden file input for opening json files
+  onFileChange(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e: ProgressEvent<FileReader>) => {
+      try {
+        const json = JSON.parse(e.target!.result as string);
+        this.diagram.loadDiagram(json);
+        this.updateExecuteButton('Execute');
+        this.clearAnimationIntervals();
+        this.diagram.tool = DiagramTools.ZoomPan;
+      } catch (err) {
+        console.error('Invalid JSON file', err);
+      } finally {
+        input.value = ''; // Clear file input
+      }
+       this.diagram.fitToPage();
+    };
+    reader.readAsText(file);
+  }
+
+  // Update the execute button's text and tooltip based on the workflow state
+  public updateExecuteButton(state: 'Execute' | 'Pause' | 'Resume'): void {
+    const btn = this.toolbar.items[4];
+    const states = {
+      Pause: {
+        id: "Pause",
+        text: "Pause",
+        tooltipText: "Pause Workflow",
+        prefixIcon: "e-icons e-pause",
+      },
+      Resume: {
+        id: "Resume",
+        text: "Resume",
+        tooltipText: "Resume Workflow",
+        prefixIcon: "e-icons e-play",
+      },
+      Execute: {
+        id: "Execute",
+        text: "Execute",
+        tooltipText: "Start Workflow",
+        prefixIcon: "e-icons e-play",
+      },
+    };
+    Object.assign(btn, states[state] || states.Execute);
+  }
+
+  public onToolbarClick(args: any): void {
+    const diagram = this.diagram;
+
+    switch (args.item.id) {
+      case 'New':
+        this.updateExecuteButton('Execute');
+        this.clearAnimationIntervals();
+        diagram.clear();
+        break;
+      case 'Open':
+        this.fileInput.nativeElement.click();
+        break;
+      case 'Save':
+        this.saveDiagram();
+        break;
+      case 'Execute':
+      case 'Pause':
+      case 'Resume':
+        diagram.clearSelection();
+        this.startWorkflow();
+        break;
+      case 'Reset':
+        this.resetWorkflow();
+        this.updateExecuteButton('Execute');
+        break;
+      case 'Delete':
+        diagram.remove();
+        break;
+      case 'Select':
+        diagram.tool = DiagramTools.MultipleSelect;
+        break;
+      case 'Pan':
+        diagram.tool = DiagramTools.ZoomPan;
+        break;
     }
   }
 
-  let intervalDuration = 120;
-  let completedCount = 0;
+  // save the current diagram in json format
+  public saveDiagram(): void {
+    const jsonData = this.diagram.saveDiagram();
+    const blob = new Blob([jsonData], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Diagram.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
 
-   this.flowInterval = setInterval(() => {
-     for (let j = 0; j < this.connectorCollection.length; j++) {
-       let connector = this.connectorCollection[j];
-       if ((connector.id !== "checkApprovalStatus-setStatusAsRejected") && (connector.id !== "checkIfItIsAnInternaltionalTravel-setStatusAsAccepted") && (connector.id !== "checkLevel2-ApprovalStatus-setNextApprovalStatusAsRejected")) {
-         connector.annotations[connector.annotations.length - 1].style.fill = '#76F543';
-         if (connector.annotations[connector.annotations.length - 1].offset < 0.9) {
-           connector.annotations[connector.annotations.length - 1].offset += 0.025;
-           connector.style.strokeColor = '#F8FC02';
-         }
-         if (connector.annotations[connector.annotations.length - 1].offset >= 0.9) {
-           completedCount++;
-           if (completedCount === this.connectorCollection.length) {
-             clearInterval(this.flowInterval);
-             this.flowTimeOut1 = setTimeout(() => {
-               for (let k = 0; k < this.connectorCollection.length; k++) {
-                 this.connectorCollection[k].annotations[connector.annotations.length - 1].style.fill = 'transparent';
-                 this.connectorCollection[k].style.strokeColor = 'green';
-                 this.connectorCollection[k].targetDecorator.style.strokeColor = 'green';
-                 this.connectorCollection[k].targetDecorator.style.fill = 'green';
-                 let targetNode = this.diagram.getObject(this.connectorCollection[k].targetID);
-                 if (((targetNode as Node).shape as BpmnShapeModel).shape !== 'Gateway' && (targetNode as Node).id !== 'setStatusAsRejected' && (targetNode as Node).id !== 'setStatusAsAccepted' && (targetNode as Node).id !== 'setNextApprovalStatusAsRejected') {
-                   let newNode: NodeModel = {
-                     id: randomId(), width: 15, height: 15, offsetX: (targetNode as any).wrapper.bounds.left + 1,
-                     offsetY: (targetNode as any).wrapper.bounds.top +2, shape: {
-                       type: 'HTML', content:
-                         '<div style="display: flex; flex-direction: column; align-items: center;"><div id="loadingIndicator" class="loading-indicator"></div><div class="tick">✓</div></div>'
-                     }
-                   }
-                   this.diagram.add(newNode);
-                   this.currentTarget = targetNode;
+  // SYMBOL PALETTE
+  public palettes = [
+    {
+      id: 'BPMN',
+      expanded: true,
+      symbols: [
+        {
+          id: 'Start',
+          shape: { type: 'Bpmn', shape: 'Event' },
+          annotations: [{ content: 'Start' }],
+          tooltip: { content: 'Start', relativeMode: 'Object' },
+          constraints: NodeConstraints.Default | NodeConstraints.Tooltip
+        },
+        {
+          id: 'Decision',
+          shape: { type: 'Bpmn', shape: 'Gateway' },
+          annotations: [{ content: 'Decision' }],
+          tooltip: { content: 'Decision', relativeMode: 'Object' },
+          constraints: NodeConstraints.Default | NodeConstraints.Tooltip
+        },
+        {
+          id: 'Task',
+          shape: { type: 'Bpmn', shape: 'Activity' },
+          annotations: [{ content: 'Task' }],
+          tooltip: { content: 'Task', relativeMode: 'Object' },
+          constraints: NodeConstraints.Default | NodeConstraints.Tooltip
+        },
+        {
+          id: 'End',
+          shape: { type: 'Bpmn', shape: 'Event', event: { event: 'End', trigger: 'None' } },
+          annotations: [{ content: 'End' }],
+          tooltip: { content: 'End', relativeMode: 'Object' },
+          constraints: NodeConstraints.Default | NodeConstraints.Tooltip
+        }
+      ],
+      iconCss: ''
+    }
+  ];
 
-                 }
-               }
+  public getSymbolInfo(symbol: NodeModel): SymbolInfo {
+    return { fit: true };
+  }
+  public onPaletteExpanding(args: any) {
+    args.cancel = true;
+  }
 
-             }, 10);
-             this.flowTimeOut2 = setTimeout(() => {
-               this.diagram.dataBind();
-               let loadingIndicator = document.getElementsByClassName('loading-indicator');
-               // To remove loading indicator.
-               for (let l: number = 0; l < loadingIndicator.length; l++) {
-                 (loadingIndicator[l] as any).style.display = 'none';
-               }
-               // To add tick mark.
-               let tick: any = document.getElementsByClassName('tick');
-               for (let l: number = 0; l < tick.length; l++) {
-                 (tick[l] as any).style.display = 'block';
-               }
-               if (level < 12) {
-                 this.startWorkflow(level + 1);
-               } else {
-                this.toolbar.items[2].disabled=false;
-               }
-               this.currentTarget.style.strokeColor = 'green';
-               this.currentTarget.style.strokeWidth = 2;
-             }, 1800);
-           }
-         }
-       }else
-       {
-        clearInterval(this.flowInterval);
-        clearTimeout(this.flowTimeOut1);
-        clearTimeout(this.flowTimeOut2);
-        this.startWorkflow(level + 1);
-       }
-     }
-     this.diagram.dataBind();
-  }, intervalDuration);
+  // function to enable or disable tool bar buttons based on editing mode
+  public applyModeState(isEditMode: boolean): void {
+    const buttonsToToggle = ['Select', 'Delete', 'Save'];
+    if (this.toolbar) {
+      this.toolbar.items.forEach((item) => {
+        if (buttonsToToggle.includes(item.id)) {
+          item.disabled = !isEditMode;
+        }
+      });
+
+      // Hide last separator in toolbar if palette is hidden
+      const lastSepIndex = this.toolbar.items.findIndex((item, idx) => item.type === 'Separator' && idx > 7);
+      if (lastSepIndex !== -1) {
+        this.toolbar.items[lastSepIndex].visible = isEditMode;
+      }
+
+      // Show/hide stencil palette
+      const paletteEl = document.getElementById("symbolPalette");
+      if (paletteEl) {
+        paletteEl.style.display = isEditMode ? 'flex' : 'none';
+      }
+      this.diagram.tool = isEditMode ? DiagramTools.MultipleSelect : DiagramTools.ZoomPan;
+    }
+  }
+  public onToggleChange(args: any): void {
+    this.isEditMode = args.checked;
+    this.applyModeState(this.isEditMode);
+    this.tooltipContent = this.isEditMode ? 'Disable Editing' : 'Enable Editing';
+  }
+
+
 }
-
-
-
-public snapSettings: SnapSettingsModel = { constraints: SnapConstraints.None }
-
-// To reset diagram.
-public resetDiagram(){
-  clearInterval(this.flowInterval);
-  clearTimeout(this.flowTimeOut1);
-  clearTimeout(this.flowTimeOut2);
-  this. diagram.loadDiagram('{"width":"100%","height":"645px","nodes":[{"shape":{"type":"Bpmn","shape":"Event","event":{"event":"Start","trigger":"None"},"activity":{"subProcess":{}},"annotations":[]},"ports":[],"id":"newTravelRequestRecieved","width":50,"height":50,"offsetX":100,"offsetY":245,"addInfo":{"type":"Bpmn"},"annotations":[{"id":"newTravelRequestRecieved_label","content":"New Travel Request Recieved","style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"bold":false,"textWrapping":"WrapWithOverflow","color":"black","whiteSpace":"CollapseSpace","fontFamily":"Arial","italic":false,"opacity":1,"strokeDashArray":"","textAlign":"Center","textOverflow":"Wrap","textDecoration":"None"},"constraints":2,"offset":{"x":0.5,"y":1.7},"annotationType":"String","hyperlink":{"link":"","hyperlinkOpenState":"NewTab","content":"","textDecoration":"None"},"visibility":true,"rotateAngle":0,"margin":{"right":0,"bottom":0,"left":0,"top":0},"horizontalAlignment":"Center","verticalAlignment":"Center"}],"zIndex":0,"container":null,"visible":true,"horizontalAlignment":"Left","verticalAlignment":"Top","backgroundColor":"transparent","borderColor":"none","borderWidth":0,"rotateAngle":0,"pivot":{"x":0.5,"y":0.5},"margin":{},"flip":"None","wrapper":{"actualSize":{"width":50,"height":50},"offsetX":100,"offsetY":245},"style":{"fill":"white","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"constraints":5240814,"isExpanded":true,"expandIcon":{"shape":"None"},"fixedUserHandles":[],"flipMode":"All","inEdges":[],"outEdges":["newTravelRequestRecieved-getTravelRequestDetails"],"parentId":"","processId":"","umlIndex":-1,"isPhase":false,"isLane":false},{"shape":{"type":"Bpmn","shape":"Activity","activity":{"activity":"Task","subProcess":{"type":"None"},"task":{"call":false,"compensation":false,"loop":"None","type":"None"}},"annotations":[]},"ports":[],"id":"getTravelRequestDetails","width":100,"height":80,"offsetX":250,"offsetY":245,"annotations":[{"id":"getTravelRequestDetails_label","content":"Get Travel Request Details","style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"bold":false,"textWrapping":"WrapWithOverflow","color":"black","whiteSpace":"CollapseSpace","fontFamily":"Arial","italic":false,"opacity":1,"strokeDashArray":"","textAlign":"Center","textOverflow":"Wrap","textDecoration":"None"},"constraints":2,"annotationType":"String","hyperlink":{"link":"","hyperlinkOpenState":"NewTab","content":"","textDecoration":"None"},"visibility":true,"rotateAngle":0,"margin":{"right":0,"bottom":0,"left":0,"top":0},"horizontalAlignment":"Center","verticalAlignment":"Center","offset":{"x":0.5,"y":0.5}}],"zIndex":1,"container":null,"visible":true,"horizontalAlignment":"Left","verticalAlignment":"Top","backgroundColor":"transparent","borderColor":"none","borderWidth":0,"rotateAngle":0,"pivot":{"x":0.5,"y":0.5},"margin":{},"flip":"None","wrapper":{"actualSize":{"width":100,"height":80},"offsetX":250,"offsetY":245},"style":{"fill":"white","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"constraints":5240814,"isExpanded":true,"expandIcon":{"shape":"None"},"fixedUserHandles":[],"flipMode":"All","inEdges":["newTravelRequestRecieved-getTravelRequestDetails"],"outEdges":["getTravelRequestDetails-getRequesterProfile"],"parentId":"","processId":"","umlIndex":-1,"isPhase":false,"isLane":false},{"shape":{"type":"Bpmn","shape":"Activity","activity":{"activity":"Task","subProcess":{"type":"None"},"task":{"call":false,"compensation":false,"loop":"None","type":"None"}},"annotations":[]},"ports":[],"id":"getRequesterProfile","width":100,"height":80,"offsetX":400,"offsetY":245,"annotations":[{"id":"getRequesterProfile_label","content":"Get Requester Profile","style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"bold":false,"textWrapping":"WrapWithOverflow","color":"black","whiteSpace":"CollapseSpace","fontFamily":"Arial","italic":false,"opacity":1,"strokeDashArray":"","textAlign":"Center","textOverflow":"Wrap","textDecoration":"None"},"constraints":2,"annotationType":"String","hyperlink":{"link":"","hyperlinkOpenState":"NewTab","content":"","textDecoration":"None"},"visibility":true,"rotateAngle":0,"margin":{"right":0,"bottom":0,"left":0,"top":0},"horizontalAlignment":"Center","verticalAlignment":"Center","offset":{"x":0.5,"y":0.5}}],"zIndex":2,"container":null,"visible":true,"horizontalAlignment":"Left","verticalAlignment":"Top","backgroundColor":"transparent","borderColor":"none","borderWidth":0,"rotateAngle":0,"pivot":{"x":0.5,"y":0.5},"margin":{},"flip":"None","wrapper":{"actualSize":{"width":100,"height":80},"offsetX":400,"offsetY":245},"style":{"fill":"white","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"constraints":5240814,"isExpanded":true,"expandIcon":{"shape":"None"},"fixedUserHandles":[],"flipMode":"All","inEdges":["getTravelRequestDetails-getRequesterProfile"],"outEdges":["getRequesterProfile-getManagerDetails"],"parentId":"","processId":"","umlIndex":-1,"isPhase":false,"isLane":false},{"shape":{"type":"Bpmn","shape":"Activity","activity":{"activity":"Task","subProcess":{"type":"None"},"task":{"call":false,"compensation":false,"loop":"None","type":"None"}},"annotations":[]},"ports":[],"id":"getManagerDetails","width":100,"height":80,"offsetX":550,"offsetY":245,"annotations":[{"id":"getManagerDetails_label","content":"Get Manager Details","style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"bold":false,"textWrapping":"WrapWithOverflow","color":"black","whiteSpace":"CollapseSpace","fontFamily":"Arial","italic":false,"opacity":1,"strokeDashArray":"","textAlign":"Center","textOverflow":"Wrap","textDecoration":"None"},"constraints":2,"annotationType":"String","hyperlink":{"link":"","hyperlinkOpenState":"NewTab","content":"","textDecoration":"None"},"visibility":true,"rotateAngle":0,"margin":{"right":0,"bottom":0,"left":0,"top":0},"horizontalAlignment":"Center","verticalAlignment":"Center","offset":{"x":0.5,"y":0.5}}],"zIndex":3,"container":null,"visible":true,"horizontalAlignment":"Left","verticalAlignment":"Top","backgroundColor":"transparent","borderColor":"none","borderWidth":0,"rotateAngle":0,"pivot":{"x":0.5,"y":0.5},"margin":{},"flip":"None","wrapper":{"actualSize":{"width":100,"height":80},"offsetX":550,"offsetY":245},"style":{"fill":"white","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"constraints":5240814,"isExpanded":true,"expandIcon":{"shape":"None"},"fixedUserHandles":[],"flipMode":"All","inEdges":["getRequesterProfile-getManagerDetails"],"outEdges":["getManagerDetails-initiateApprovalWithManager"],"parentId":"","processId":"","umlIndex":-1,"isPhase":false,"isLane":false},{"shape":{"type":"Bpmn","shape":"Activity","activity":{"activity":"Task","subProcess":{},"task":{"call":false,"compensation":false,"loop":"None","type":"None"}},"annotations":[]},"ports":[],"id":"setStatusAsRejected","width":100,"height":80,"offsetX":700,"offsetY":245,"annotations":[{"id":"setStatusAsRejected_label","content":"Set Status As Rejected","style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"bold":false,"textWrapping":"WrapWithOverflow","color":"black","whiteSpace":"CollapseSpace","fontFamily":"Arial","italic":false,"opacity":1,"strokeDashArray":"","textAlign":"Center","textOverflow":"Wrap","textDecoration":"None"},"constraints":2,"annotationType":"String","hyperlink":{"link":"","hyperlinkOpenState":"NewTab","content":"","textDecoration":"None"},"visibility":true,"rotateAngle":0,"margin":{"right":0,"bottom":0,"left":0,"top":0},"horizontalAlignment":"Center","verticalAlignment":"Center","offset":{"x":0.5,"y":0.5}}],"zIndex":4,"container":null,"visible":true,"horizontalAlignment":"Left","verticalAlignment":"Top","backgroundColor":"transparent","borderColor":"none","borderWidth":0,"rotateAngle":0,"pivot":{"x":0.5,"y":0.5},"margin":{},"flip":"None","wrapper":{"actualSize":{"width":100,"height":80},"offsetX":700,"offsetY":245},"style":{"fill":"white","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"constraints":5240814,"isExpanded":true,"expandIcon":{"shape":"None"},"fixedUserHandles":[],"flipMode":"All","inEdges":["checkApprovalStatus-setStatusAsRejected"],"outEdges":[],"parentId":"","processId":"","umlIndex":-1,"isPhase":false,"isLane":false},{"shape":{"type":"Bpmn","shape":"Activity","activity":{"activity":"Task","subProcess":{},"task":{"call":false,"compensation":false,"loop":"None","type":"None"}},"annotations":[]},"ports":[],"id":"setStatusAsAccepted","width":100,"height":80,"offsetX":850,"offsetY":245,"annotations":[{"id":"setStatusAsAccepted_label","content":"Set Status As Accepted","style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"bold":false,"textWrapping":"WrapWithOverflow","color":"black","whiteSpace":"CollapseSpace","fontFamily":"Arial","italic":false,"opacity":1,"strokeDashArray":"","textAlign":"Center","textOverflow":"Wrap","textDecoration":"None"},"constraints":2,"annotationType":"String","hyperlink":{"link":"","hyperlinkOpenState":"NewTab","content":"","textDecoration":"None"},"visibility":true,"rotateAngle":0,"margin":{"right":0,"bottom":0,"left":0,"top":0},"horizontalAlignment":"Center","verticalAlignment":"Center","offset":{"x":0.5,"y":0.5}}],"zIndex":5,"container":null,"visible":true,"horizontalAlignment":"Left","verticalAlignment":"Top","backgroundColor":"transparent","borderColor":"none","borderWidth":0,"rotateAngle":0,"pivot":{"x":0.5,"y":0.5},"margin":{},"flip":"None","wrapper":{"actualSize":{"width":100,"height":80},"offsetX":850,"offsetY":245},"style":{"fill":"white","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"constraints":5240814,"isExpanded":true,"expandIcon":{"shape":"None"},"fixedUserHandles":[],"flipMode":"All","inEdges":["checkIfItIsAnInternaltionalTravel-setStatusAsAccepted"],"outEdges":[],"parentId":"","processId":"","umlIndex":-1,"isPhase":false,"isLane":false},{"shape":{"type":"Bpmn","shape":"Activity","activity":{"activity":"Task","subProcess":{},"task":{"call":false,"compensation":false,"loop":"None","type":"None"}},"annotations":[]},"ports":[],"id":"setNextApprovalStatusAsRejected","width":100,"height":80,"offsetX":1100,"offsetY":245,"annotations":[{"id":"setNextApprovalStatusAsRejected_label","content":"Set Next Approval Status As Rejected","style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"bold":false,"textWrapping":"WrapWithOverflow","color":"black","whiteSpace":"CollapseSpace","fontFamily":"Arial","italic":false,"opacity":1,"strokeDashArray":"","textAlign":"Center","textOverflow":"Wrap","textDecoration":"None"},"constraints":2,"annotationType":"String","hyperlink":{"link":"","hyperlinkOpenState":"NewTab","content":"","textDecoration":"None"},"visibility":true,"rotateAngle":0,"margin":{"right":0,"bottom":0,"left":0,"top":0},"horizontalAlignment":"Center","verticalAlignment":"Center","offset":{"x":0.5,"y":0.5}}],"zIndex":6,"container":null,"visible":true,"horizontalAlignment":"Left","verticalAlignment":"Top","backgroundColor":"transparent","borderColor":"none","borderWidth":0,"rotateAngle":0,"pivot":{"x":0.5,"y":0.5},"margin":{},"flip":"None","wrapper":{"actualSize":{"width":100,"height":80},"offsetX":1100,"offsetY":245},"style":{"fill":"white","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"constraints":5240814,"isExpanded":true,"expandIcon":{"shape":"None"},"fixedUserHandles":[],"flipMode":"All","inEdges":["checkLevel2-ApprovalStatus-setNextApprovalStatusAsRejected"],"outEdges":[],"parentId":"","processId":"","umlIndex":-1,"isPhase":false,"isLane":false},{"shape":{"type":"Bpmn","shape":"Activity","activity":{"activity":"Task","subProcess":{},"task":{"call":false,"compensation":false,"loop":"None","type":"None"}},"annotations":[]},"ports":[],"id":"setNextApprovalStatusAsAccepted","width":100,"height":80,"offsetX":1250,"offsetY":245,"annotations":[{"id":"setNextApprovalStatusAsAccepted_label","content":"Set Next Approval Status As Accepted","style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"bold":false,"textWrapping":"WrapWithOverflow","color":"black","whiteSpace":"CollapseSpace","fontFamily":"Arial","italic":false,"opacity":1,"strokeDashArray":"","textAlign":"Center","textOverflow":"Wrap","textDecoration":"None"},"constraints":2,"annotationType":"String","hyperlink":{"link":"","hyperlinkOpenState":"NewTab","content":"","textDecoration":"None"},"visibility":true,"rotateAngle":0,"margin":{"right":0,"bottom":0,"left":0,"top":0},"horizontalAlignment":"Center","verticalAlignment":"Center","offset":{"x":0.5,"y":0.5}}],"zIndex":7,"container":null,"visible":true,"horizontalAlignment":"Left","verticalAlignment":"Top","backgroundColor":"transparent","borderColor":"none","borderWidth":0,"rotateAngle":0,"pivot":{"x":0.5,"y":0.5},"margin":{},"flip":"None","wrapper":{"actualSize":{"width":100,"height":80},"offsetX":1250,"offsetY":245},"style":{"fill":"white","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"constraints":5240814,"isExpanded":true,"expandIcon":{"shape":"None"},"fixedUserHandles":[],"flipMode":"All","inEdges":["checkLevel2-ApprovalStatus-setNextApprovalStatusAsAccepted"],"outEdges":[],"parentId":"","processId":"","umlIndex":-1,"isPhase":false,"isLane":false},{"shape":{"type":"Bpmn","shape":"Activity","activity":{"activity":"Task","subProcess":{"type":"None"},"task":{"call":false,"compensation":false,"loop":"None","type":"None"}},"annotations":[]},"ports":[],"id":"initiateApprovalWithManager","width":100,"height":80,"offsetX":550,"offsetY":445,"annotations":[{"id":"initiateApprovalWithManager_label","content":"Initiate Approval With Manager","style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"bold":false,"textWrapping":"WrapWithOverflow","color":"black","whiteSpace":"CollapseSpace","fontFamily":"Arial","italic":false,"opacity":1,"strokeDashArray":"","textAlign":"Center","textOverflow":"Wrap","textDecoration":"None"},"constraints":2,"annotationType":"String","hyperlink":{"link":"","hyperlinkOpenState":"NewTab","content":"","textDecoration":"None"},"visibility":true,"rotateAngle":0,"margin":{"right":0,"bottom":0,"left":0,"top":0},"horizontalAlignment":"Center","verticalAlignment":"Center","offset":{"x":0.5,"y":0.5}}],"zIndex":8,"container":null,"visible":true,"horizontalAlignment":"Left","verticalAlignment":"Top","backgroundColor":"transparent","borderColor":"none","borderWidth":0,"rotateAngle":0,"pivot":{"x":0.5,"y":0.5},"margin":{},"flip":"None","wrapper":{"actualSize":{"width":100,"height":80},"offsetX":550,"offsetY":445},"style":{"fill":"white","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"constraints":5240814,"isExpanded":true,"expandIcon":{"shape":"None"},"fixedUserHandles":[],"flipMode":"All","inEdges":["getManagerDetails-initiateApprovalWithManager"],"outEdges":["initiateApprovalWithManager-checkApprovalStatus"],"parentId":"","processId":"","umlIndex":-1,"isPhase":false,"isLane":false},{"shape":{"type":"Bpmn","shape":"Gateway","gateway":{"type":"Exclusive"},"activity":{"subProcess":{}},"annotations":[]},"ports":[],"id":"checkApprovalStatus","width":80,"height":60,"offsetX":700,"offsetY":445,"annotations":[{"id":"checkApprovalStatus_label","content":"Check Approval Status","style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"bold":false,"textWrapping":"WrapWithOverflow","color":"black","whiteSpace":"CollapseSpace","fontFamily":"Arial","italic":false,"opacity":1,"strokeDashArray":"","textAlign":"Center","textOverflow":"Wrap","textDecoration":"None"},"constraints":2,"offset":{"x":0.5,"y":1.7},"annotationType":"String","hyperlink":{"link":"","hyperlinkOpenState":"NewTab","content":"","textDecoration":"None"},"visibility":true,"rotateAngle":0,"margin":{"right":0,"bottom":0,"left":0,"top":0},"horizontalAlignment":"Center","verticalAlignment":"Center"}],"zIndex":9,"container":null,"visible":true,"horizontalAlignment":"Left","verticalAlignment":"Top","backgroundColor":"transparent","borderColor":"none","borderWidth":0,"rotateAngle":0,"pivot":{"x":0.5,"y":0.5},"margin":{},"flip":"None","wrapper":{"actualSize":{"width":80,"height":60},"offsetX":700,"offsetY":445},"style":{"fill":"white","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"constraints":5240814,"isExpanded":true,"expandIcon":{"shape":"None"},"fixedUserHandles":[],"flipMode":"All","inEdges":["initiateApprovalWithManager-checkApprovalStatus"],"outEdges":["checkApprovalStatus-setStatusAsRejected","checkApprovalStatus-checkIfItIsAnInternaltionalTravel"],"parentId":"","processId":"","umlIndex":-1,"isPhase":false,"isLane":false},{"shape":{"type":"Bpmn","shape":"Gateway","gateway":{"type":"Exclusive"},"activity":{"subProcess":{}},"annotations":[]},"ports":[],"id":"checkIfItIsAnInternaltionalTravel","width":80,"height":60,"offsetX":850,"offsetY":445,"annotations":[{"id":"checkIfItIsAnInternaltionalTravel_label","content":"Check If It Is An Internaltional Travel","style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"bold":false,"textWrapping":"WrapWithOverflow","color":"black","whiteSpace":"CollapseSpace","fontFamily":"Arial","italic":false,"opacity":1,"strokeDashArray":"","textAlign":"Center","textOverflow":"Wrap","textDecoration":"None"},"constraints":2,"offset":{"x":0.5,"y":1.7},"annotationType":"String","hyperlink":{"link":"","hyperlinkOpenState":"NewTab","content":"","textDecoration":"None"},"visibility":true,"rotateAngle":0,"margin":{"right":0,"bottom":0,"left":0,"top":0},"horizontalAlignment":"Center","verticalAlignment":"Center"}],"zIndex":10,"container":null,"visible":true,"horizontalAlignment":"Left","verticalAlignment":"Top","backgroundColor":"transparent","borderColor":"none","borderWidth":0,"rotateAngle":0,"pivot":{"x":0.5,"y":0.5},"margin":{},"flip":"None","wrapper":{"actualSize":{"width":80,"height":60},"offsetX":850,"offsetY":445},"style":{"fill":"white","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"constraints":5240814,"isExpanded":true,"expandIcon":{"shape":"None"},"fixedUserHandles":[],"flipMode":"All","inEdges":["checkApprovalStatus-checkIfItIsAnInternaltionalTravel"],"outEdges":["checkIfItIsAnInternaltionalTravel-setStatusAsAccepted","checkIfItIsAnInternaltionalTravel-initialteApprovalWithNextLevelManager"],"parentId":"","processId":"","umlIndex":-1,"isPhase":false,"isLane":false},{"shape":{"type":"Bpmn","shape":"Activity","activity":{"activity":"Task","subProcess":{"type":"None"},"task":{"call":false,"compensation":false,"loop":"None","type":"None"}},"annotations":[]},"ports":[],"id":"initialteApprovalWithNextLevelManager","width":100,"height":80,"offsetX":1000,"offsetY":445,"annotations":[{"id":"initialteApprovalWithNextLevelManager_label","content":"Initialte Approval With Next Level Manager","style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"bold":false,"textWrapping":"WrapWithOverflow","color":"black","whiteSpace":"CollapseSpace","fontFamily":"Arial","italic":false,"opacity":1,"strokeDashArray":"","textAlign":"Center","textOverflow":"Wrap","textDecoration":"None"},"constraints":2,"annotationType":"String","hyperlink":{"link":"","hyperlinkOpenState":"NewTab","content":"","textDecoration":"None"},"visibility":true,"rotateAngle":0,"margin":{"right":0,"bottom":0,"left":0,"top":0},"horizontalAlignment":"Center","verticalAlignment":"Center","offset":{"x":0.5,"y":0.5}}],"zIndex":11,"container":null,"visible":true,"horizontalAlignment":"Left","verticalAlignment":"Top","backgroundColor":"transparent","borderColor":"none","borderWidth":0,"rotateAngle":0,"pivot":{"x":0.5,"y":0.5},"margin":{},"flip":"None","wrapper":{"actualSize":{"width":100,"height":80},"offsetX":1000,"offsetY":445},"style":{"fill":"white","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"constraints":5240814,"isExpanded":true,"expandIcon":{"shape":"None"},"fixedUserHandles":[],"flipMode":"All","inEdges":["checkIfItIsAnInternaltionalTravel-initialteApprovalWithNextLevelManager"],"outEdges":["initialteApprovalWithNextLevelManager-checkLevel2-ApprovalStatus"],"parentId":"","processId":"","umlIndex":-1,"isPhase":false,"isLane":false},{"shape":{"type":"Bpmn","shape":"Gateway","gateway":{"type":"Exclusive"},"activity":{"subProcess":{}},"annotations":[]},"ports":[{"inEdges":[],"outEdges":["checkLevel2-ApprovalStatus-setNextApprovalStatusAsAccepted"],"id":"right_port","offset":{"x":1,"y":0.5},"height":12,"width":12,"shape":"Square","margin":{"right":0,"bottom":0,"left":0,"top":0},"style":{"fill":"white","strokeColor":"black","opacity":1,"strokeDashArray":"","strokeWidth":1},"horizontalAlignment":"Center","verticalAlignment":"Center","visibility":8,"constraints":24}],"id":"checkLevel2-ApprovalStatus","width":80,"height":60,"offsetX":1130,"offsetY":445,"annotations":[{"id":"checkLevel2-ApprovalStatus_label","content":"Check Level 2 Approval Status","style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"bold":false,"textWrapping":"WrapWithOverflow","color":"black","whiteSpace":"CollapseSpace","fontFamily":"Arial","italic":false,"opacity":1,"strokeDashArray":"","textAlign":"Center","textOverflow":"Wrap","textDecoration":"None"},"constraints":2,"offset":{"x":0.5,"y":1.7},"annotationType":"String","hyperlink":{"link":"","hyperlinkOpenState":"NewTab","content":"","textDecoration":"None"},"visibility":true,"rotateAngle":0,"margin":{"right":0,"bottom":0,"left":0,"top":0},"horizontalAlignment":"Center","verticalAlignment":"Center"}],"zIndex":12,"container":null,"visible":true,"horizontalAlignment":"Left","verticalAlignment":"Top","backgroundColor":"transparent","borderColor":"none","borderWidth":0,"rotateAngle":0,"pivot":{"x":0.5,"y":0.5},"margin":{},"flip":"None","wrapper":{"actualSize":{"width":80,"height":60},"offsetX":1130,"offsetY":445},"style":{"fill":"white","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"constraints":5240814,"flipMode":"All","isExpanded":true,"expandIcon":{"shape":"None"},"fixedUserHandles":[],"inEdges":["initialteApprovalWithNextLevelManager-checkLevel2-ApprovalStatus"],"outEdges":["checkLevel2-ApprovalStatus-setNextApprovalStatusAsRejected","checkLevel2-ApprovalStatus-setNextApprovalStatusAsAccepted"],"parentId":"","processId":"","umlIndex":-1,"isPhase":false,"isLane":false}],"connectors":[{"shape":{"type":"None"},"id":"newTravelRequestRecieved-getTravelRequestDetails","sourceID":"newTravelRequestRecieved","targetID":"getTravelRequestDetails","addInfo":{"level":1},"annotations":[{"id":"HvJiG","content":"","height":8,"width":8,"offset":0,"style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"alignment":"Center","segmentAngle":false,"displacement":{"x":0,"y":0}}],"zIndex":13,"type":"Orthogonal","style":{"strokeWidth":1,"strokeColor":"#B6B6B4","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"targetDecorator":{"shape":"Arrow","style":{"fill":"#B6B6B4","strokeColor":"#B6B6B4","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"width":10,"height":10,"pivot":{"x":0,"y":0.5}},"segments":[{"type":"Orthogonal","direction":null}],"sourcePortID":"","targetPortID":"","targetPoint":{"x":200,"y":245},"connectorSpacing":13,"sourcePadding":0,"targetPadding":0,"sourcePoint":{"x":124.66,"y":245},"sourceDecorator":{"shape":"None","width":10,"height":10,"pivot":{"x":0,"y":0.5},"style":{"fill":"black","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}}},"cornerRadius":0,"wrapper":{"actualSize":{"width":75.34,"height":0},"offsetX":162.32999999999998,"offsetY":245},"fixedUserHandles":[],"ports":[],"visible":true,"constraints":994878,"flipMode":"All","parentId":""},{"shape":{"type":"None"},"id":"getTravelRequestDetails-getRequesterProfile","sourceID":"getTravelRequestDetails","targetID":"getRequesterProfile","addInfo":{"level":2},"annotations":[{"id":"fi2MU","content":"","height":8,"width":8,"offset":0,"style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"alignment":"Center","segmentAngle":false,"displacement":{"x":0,"y":0}}],"zIndex":14,"type":"Orthogonal","style":{"strokeWidth":1,"strokeColor":"#B6B6B4","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"targetDecorator":{"shape":"Arrow","style":{"fill":"#B6B6B4","strokeColor":"#B6B6B4","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"width":10,"height":10,"pivot":{"x":0,"y":0.5}},"segments":[{"type":"Orthogonal","direction":null}],"sourcePortID":"","targetPortID":"","targetPoint":{"x":350,"y":245},"connectorSpacing":13,"sourcePadding":0,"targetPadding":0,"sourcePoint":{"x":300,"y":245},"sourceDecorator":{"shape":"None","width":10,"height":10,"pivot":{"x":0,"y":0.5},"style":{"fill":"black","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}}},"cornerRadius":0,"wrapper":{"actualSize":{"width":50,"height":0},"offsetX":325,"offsetY":245},"fixedUserHandles":[],"ports":[],"visible":true,"constraints":994878,"flipMode":"All","parentId":""},{"shape":{"type":"None"},"id":"getRequesterProfile-getManagerDetails","sourceID":"getRequesterProfile","targetID":"getManagerDetails","addInfo":{"level":3},"annotations":[{"id":"JyK3T","content":"","height":8,"width":8,"offset":0,"style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"alignment":"Center","segmentAngle":false,"displacement":{"x":0,"y":0}}],"zIndex":15,"type":"Orthogonal","style":{"strokeWidth":1,"strokeColor":"#B6B6B4","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"targetDecorator":{"shape":"Arrow","style":{"fill":"#B6B6B4","strokeColor":"#B6B6B4","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"width":10,"height":10,"pivot":{"x":0,"y":0.5}},"segments":[{"type":"Orthogonal","direction":null}],"sourcePortID":"","targetPortID":"","targetPoint":{"x":500,"y":245},"connectorSpacing":13,"sourcePadding":0,"targetPadding":0,"sourcePoint":{"x":450,"y":245},"sourceDecorator":{"shape":"None","width":10,"height":10,"pivot":{"x":0,"y":0.5},"style":{"fill":"black","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}}},"cornerRadius":0,"wrapper":{"actualSize":{"width":50,"height":0},"offsetX":475,"offsetY":245},"fixedUserHandles":[],"ports":[],"visible":true,"constraints":994878,"flipMode":"All","parentId":""},{"shape":{"type":"None"},"id":"getManagerDetails-initiateApprovalWithManager","sourceID":"getManagerDetails","targetID":"initiateApprovalWithManager","addInfo":{"level":4},"annotations":[{"id":"HANdM","content":"","height":8,"width":8,"offset":0,"style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"alignment":"Center","segmentAngle":false,"displacement":{"x":0,"y":0}}],"zIndex":16,"type":"Orthogonal","style":{"strokeWidth":1,"strokeColor":"#B6B6B4","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"targetDecorator":{"shape":"Arrow","style":{"fill":"#B6B6B4","strokeColor":"#B6B6B4","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"width":10,"height":10,"pivot":{"x":0,"y":0.5}},"segments":[{"type":"Orthogonal","direction":null}],"sourcePortID":"","targetPortID":"","targetPoint":{"x":550,"y":405},"connectorSpacing":13,"sourcePadding":0,"targetPadding":0,"sourcePoint":{"x":550,"y":285},"sourceDecorator":{"shape":"None","width":10,"height":10,"pivot":{"x":0,"y":0.5},"style":{"fill":"black","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}}},"cornerRadius":0,"wrapper":{"actualSize":{"width":0,"height":120},"offsetX":550,"offsetY":345},"fixedUserHandles":[],"ports":[],"visible":true,"constraints":994878,"flipMode":"All","parentId":""},{"shape":{"type":"None"},"id":"initiateApprovalWithManager-checkApprovalStatus","sourceID":"initiateApprovalWithManager","targetID":"checkApprovalStatus","addInfo":{"level":5},"annotations":[{"id":"XvuH5","content":"","height":8,"width":8,"offset":0,"style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"alignment":"Center","segmentAngle":false,"displacement":{"x":0,"y":0}}],"zIndex":17,"type":"Orthogonal","style":{"strokeWidth":1,"strokeColor":"#B6B6B4","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"targetDecorator":{"shape":"Arrow","style":{"fill":"#B6B6B4","strokeColor":"#B6B6B4","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"width":10,"height":10,"pivot":{"x":0,"y":0.5}},"segments":[{"type":"Orthogonal","direction":null}],"sourcePortID":"","targetPortID":"","targetPoint":{"x":660,"y":445},"connectorSpacing":13,"sourcePadding":0,"targetPadding":0,"sourcePoint":{"x":600,"y":445},"sourceDecorator":{"shape":"None","width":10,"height":10,"pivot":{"x":0,"y":0.5},"style":{"fill":"black","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}}},"cornerRadius":0,"wrapper":{"actualSize":{"width":60,"height":0},"offsetX":630,"offsetY":445},"fixedUserHandles":[],"ports":[],"visible":true,"constraints":994878,"flipMode":"All","parentId":""},{"shape":{"type":"None"},"id":"checkApprovalStatus-setStatusAsRejected","sourceID":"checkApprovalStatus","targetID":"setStatusAsRejected","addInfo":{"level":6},"annotations":[{"id":"CrRG5","content":"Rejected","style":{"strokeWidth":0,"strokeColor":"transparent","fill":"white","fontSize":14,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"offset":0.5,"alignment":"Center","segmentAngle":false},{"id":"SgPGQ","content":"","height":8,"width":8,"offset":0,"style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontSize":12,"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"alignment":"Center","segmentAngle":false,"displacement":{"x":0,"y":0}}],"zIndex":18,"type":"Orthogonal","style":{"strokeWidth":1,"strokeColor":"#B6B6B4","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"targetDecorator":{"shape":"Arrow","style":{"fill":"#B6B6B4","strokeColor":"#B6B6B4","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"width":10,"height":10,"pivot":{"x":0,"y":0.5}},"segments":[{"type":"Orthogonal","direction":null}],"sourcePortID":"","targetPortID":"","targetPoint":{"x":700,"y":285},"connectorSpacing":13,"sourcePadding":0,"targetPadding":0,"sourcePoint":{"x":700,"y":415},"sourceDecorator":{"shape":"None","width":10,"height":10,"pivot":{"x":0,"y":0.5},"style":{"fill":"black","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}}},"cornerRadius":0,"wrapper":{"actualSize":{"width":0,"height":130},"offsetX":700,"offsetY":350},"fixedUserHandles":[],"ports":[],"visible":true,"constraints":994878,"flipMode":"All","parentId":""},{"shape":{"type":"None"},"id":"checkApprovalStatus-checkIfItIsAnInternaltionalTravel","sourceID":"checkApprovalStatus","targetID":"checkIfItIsAnInternaltionalTravel","annotations":[{"id":"vvnwf","content":"Accepted","style":{"strokeWidth":0,"strokeColor":"transparent","fill":"white","fontSize":14,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"alignment":"Before","displacement":{"x":0,"y":10},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"offset":0.5,"segmentAngle":false},{"id":"CpHnx","content":"","height":8,"width":8,"offset":0,"style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontSize":12,"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"alignment":"Center","segmentAngle":false,"displacement":{"x":0,"y":0}}],"addInfo":{"level":7},"zIndex":19,"type":"Orthogonal","style":{"strokeWidth":1,"strokeColor":"#B6B6B4","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"targetDecorator":{"shape":"Arrow","style":{"fill":"#B6B6B4","strokeColor":"#B6B6B4","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"width":10,"height":10,"pivot":{"x":0,"y":0.5}},"segments":[{"type":"Orthogonal","direction":null}],"sourcePortID":"","targetPortID":"","targetPoint":{"x":810,"y":445},"connectorSpacing":13,"sourcePadding":0,"targetPadding":0,"sourcePoint":{"x":740,"y":445},"sourceDecorator":{"shape":"None","width":10,"height":10,"pivot":{"x":0,"y":0.5},"style":{"fill":"black","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}}},"cornerRadius":0,"wrapper":{"actualSize":{"width":70,"height":0},"offsetX":775,"offsetY":445},"fixedUserHandles":[],"ports":[],"visible":true,"constraints":994878,"flipMode":"All","parentId":""},{"shape":{"type":"None"},"id":"checkIfItIsAnInternaltionalTravel-setStatusAsAccepted","sourceID":"checkIfItIsAnInternaltionalTravel","targetID":"setStatusAsAccepted","annotations":[{"id":"Vi7uZ","content":"No","offset":0.4,"style":{"strokeWidth":0,"strokeColor":"transparent","fill":"white","fontSize":14,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"alignment":"Center","segmentAngle":false},{"id":"b2ATX","content":"","height":8,"width":8,"offset":0,"style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontSize":12,"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"alignment":"Center","segmentAngle":false,"displacement":{"x":0,"y":0}}],"addInfo":{"level":8},"zIndex":20,"type":"Orthogonal","style":{"strokeWidth":1,"strokeColor":"#B6B6B4","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"targetDecorator":{"shape":"Arrow","style":{"fill":"#B6B6B4","strokeColor":"#B6B6B4","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"width":10,"height":10,"pivot":{"x":0,"y":0.5}},"segments":[{"type":"Orthogonal","direction":null}],"sourcePortID":"","targetPortID":"","targetPoint":{"x":850,"y":285},"connectorSpacing":13,"sourcePadding":0,"targetPadding":0,"sourcePoint":{"x":850,"y":415},"sourceDecorator":{"shape":"None","width":10,"height":10,"pivot":{"x":0,"y":0.5},"style":{"fill":"black","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}}},"cornerRadius":0,"wrapper":{"actualSize":{"width":0,"height":130},"offsetX":850,"offsetY":350},"fixedUserHandles":[],"ports":[],"visible":true,"constraints":994878,"flipMode":"All","parentId":""},{"shape":{"type":"None"},"id":"checkIfItIsAnInternaltionalTravel-initialteApprovalWithNextLevelManager","sourceID":"checkIfItIsAnInternaltionalTravel","targetID":"initialteApprovalWithNextLevelManager","annotations":[{"id":"iNfD4","content":"Yes","offset":0.4,"style":{"strokeWidth":0,"strokeColor":"transparent","fill":"white","fontSize":14,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"alignment":"Before","displacement":{"x":0,"y":10},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"segmentAngle":false},{"id":"tDi9H","content":"","height":8,"width":8,"offset":0,"style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontSize":12,"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"alignment":"Center","segmentAngle":false,"displacement":{"x":0,"y":0}}],"addInfo":{"level":9},"zIndex":21,"type":"Orthogonal","style":{"strokeWidth":1,"strokeColor":"#B6B6B4","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"targetDecorator":{"shape":"Arrow","style":{"fill":"#B6B6B4","strokeColor":"#B6B6B4","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"width":10,"height":10,"pivot":{"x":0,"y":0.5}},"segments":[{"type":"Orthogonal","direction":null}],"sourcePortID":"","targetPortID":"","targetPoint":{"x":950,"y":445},"connectorSpacing":13,"sourcePadding":0,"targetPadding":0,"sourcePoint":{"x":890,"y":445},"sourceDecorator":{"shape":"None","width":10,"height":10,"pivot":{"x":0,"y":0.5},"style":{"fill":"black","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}}},"cornerRadius":0,"wrapper":{"actualSize":{"width":60,"height":0},"offsetX":920,"offsetY":445},"fixedUserHandles":[],"ports":[],"visible":true,"constraints":994878,"flipMode":"All","parentId":""},{"shape":{"type":"None"},"id":"initialteApprovalWithNextLevelManager-checkLevel2-ApprovalStatus","sourceID":"initialteApprovalWithNextLevelManager","targetID":"checkLevel2-ApprovalStatus","addInfo":{"level":10},"annotations":[{"id":"TxsOH","content":"","height":8,"width":8,"offset":0,"style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","fontSize":14,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"alignment":"Center","segmentAngle":false,"displacement":{"x":0,"y":0}}],"zIndex":22,"type":"Orthogonal","style":{"strokeWidth":1,"strokeColor":"#B6B6B4","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"targetDecorator":{"shape":"Arrow","style":{"fill":"#B6B6B4","strokeColor":"#B6B6B4","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"width":10,"height":10,"pivot":{"x":0,"y":0.5}},"segments":[{"type":"Orthogonal","direction":null}],"sourcePortID":"","targetPortID":"","targetPoint":{"x":1090,"y":445},"connectorSpacing":13,"sourcePadding":0,"targetPadding":0,"sourcePoint":{"x":1050,"y":445},"sourceDecorator":{"shape":"None","width":10,"height":10,"pivot":{"x":0,"y":0.5},"style":{"fill":"black","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}}},"cornerRadius":0,"wrapper":{"actualSize":{"width":40,"height":0},"offsetX":1070,"offsetY":445},"fixedUserHandles":[],"ports":[],"visible":true,"constraints":994878,"flipMode":"All","parentId":""},{"shape":{"type":"None"},"id":"checkLevel2-ApprovalStatus-setNextApprovalStatusAsRejected","sourceID":"checkLevel2-ApprovalStatus","targetID":"setNextApprovalStatusAsRejected","annotations":[{"id":"vuJBl","content":"Rejected","offset":0.4,"style":{"strokeWidth":0,"strokeColor":"transparent","fill":"white","fontSize":14,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"alignment":"Center","segmentAngle":false},{"id":"f9rUi","content":"","height":8,"width":8,"offset":0,"style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontSize":12,"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"alignment":"Center","segmentAngle":false,"displacement":{"x":0,"y":0}}],"addInfo":{"level":11},"zIndex":23,"type":"Orthogonal","style":{"strokeWidth":1,"strokeColor":"#B6B6B4","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"targetDecorator":{"shape":"Arrow","style":{"fill":"#B6B6B4","strokeColor":"#B6B6B4","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"width":10,"height":10,"pivot":{"x":0,"y":0.5}},"segments":[{"type":"Orthogonal","direction":null}],"sourcePortID":"","targetPortID":"","targetPoint":{"x":1100,"y":285},"connectorSpacing":13,"sourcePadding":0,"targetPadding":0,"sourcePoint":{"x":1130,"y":415},"sourceDecorator":{"shape":"None","width":10,"height":10,"pivot":{"x":0,"y":0.5},"style":{"fill":"black","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}}},"cornerRadius":0,"wrapper":{"actualSize":{"width":30,"height":130},"offsetX":1115,"offsetY":350},"fixedUserHandles":[],"ports":[],"visible":true,"constraints":994878,"flipMode":"All","parentId":""},{"shape":{"type":"None"},"id":"checkLevel2-ApprovalStatus-setNextApprovalStatusAsAccepted","sourceID":"checkLevel2-ApprovalStatus","targetID":"setNextApprovalStatusAsAccepted","sourcePortID":"right_port","annotations":[{"id":"Th5Zc","content":"Approved","style":{"strokeWidth":0,"strokeColor":"transparent","fill":"white","fontSize":14,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"offset":0.5,"alignment":"Center","segmentAngle":false},{"id":"XQHwT","content":"","height":8,"width":8,"offset":0,"style":{"strokeWidth":0,"strokeColor":"transparent","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"},"fontSize":12,"fontFamily":"Arial","textOverflow":"Wrap","textDecoration":"None","whiteSpace":"CollapseSpace","textWrapping":"WrapWithOverflow","textAlign":"Center","color":"black","italic":false,"bold":false},"annotationType":"String","constraints":4,"visibility":true,"rotateAngle":0,"horizontalAlignment":"Center","verticalAlignment":"Center","margin":{"left":0,"right":0,"bottom":0,"top":0},"alignment":"Center","segmentAngle":false,"displacement":{"x":0,"y":0}}],"addInfo":{"level":12},"zIndex":24,"type":"Orthogonal","style":{"strokeWidth":1,"strokeColor":"#B6B6B4","fill":"transparent","strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"targetDecorator":{"shape":"Arrow","style":{"fill":"#B6B6B4","strokeColor":"#B6B6B4","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}},"width":10,"height":10,"pivot":{"x":0,"y":0.5}},"segments":[{"type":"Orthogonal","direction":null}],"targetPortID":"","targetPoint":{"x":1250,"y":285},"connectorSpacing":13,"sourcePadding":0,"targetPadding":0,"sourcePoint":{"x":1170,"y":445},"sourceDecorator":{"shape":"None","width":10,"height":10,"pivot":{"x":0,"y":0.5},"style":{"fill":"black","strokeColor":"black","strokeWidth":1,"strokeDashArray":"","opacity":1,"gradient":{"type":"None"}}},"cornerRadius":0,"wrapper":{"actualSize":{"width":80,"height":160},"offsetX":1210,"offsetY":365},"fixedUserHandles":[],"ports":[],"visible":true,"constraints":994878,"flipMode":"All","parentId":""}],"tool":4,"scrollSettings":{"currentZoom":0.8979658060097132,"viewPortWidth":1153.5999755859375,"viewPortHeight":645,"horizontalOffset":38.400001525878906,"verticalOffset":0,"padding":{"left":0,"right":0,"top":0,"bottom":0},"scrollLimit":"Diagram","minZoom":0.2,"maxZoom":30},"snapSettings":{"constraints":0,"gridType":"Lines","verticalGridlines":{"lineIntervals":[1.25,18.75,0.25,19.75,0.25,19.75,0.25,19.75,0.25,19.75],"snapIntervals":[20]},"horizontalGridlines":{"lineIntervals":[1.25,18.75,0.25,19.75,0.25,19.75,0.25,19.75,0.25,19.75],"snapIntervals":[20]}},"pageSettings":{"background":{"color":"white","source":""},"boundaryConstraints":"Infinity","orientation":"Landscape","height":null,"width":null,"showPageBreaks":false,"fitOptions":{"canFit":false}},"getNodeDefaults":{},"getConnectorDefaults":{},"created":{},"enableRtl":false,"locale":"en","enablePersistence":false,"rulerSettings":{"showRulers":false},"backgroundColor":"transparent","constraints":500,"layout":{"type":"None","enableAnimation":true,"connectionPointOrigin":"SamePoint","arrangement":"Nonlinear","enableRouting":false},"contextMenuSettings":{},"dataSourceSettings":{"dataManager":null,"dataSource":null,"crudAction":{"read":""},"connectionDataSource":{"crudAction":{"read":""}}},"mode":"SVG","layers":[{"id":"default_layer","visible":true,"lock":false,"objects":["newTravelRequestRecieved","getTravelRequestDetails","getRequesterProfile","getManagerDetails","setStatusAsRejected","setStatusAsAccepted","setNextApprovalStatusAsRejected","setNextApprovalStatusAsAccepted","initiateApprovalWithManager","checkApprovalStatus","checkIfItIsAnInternaltionalTravel","initialteApprovalWithNextLevelManager","checkLevel2-ApprovalStatus","newTravelRequestRecieved-getTravelRequestDetails","getTravelRequestDetails-getRequesterProfile","getRequesterProfile-getManagerDetails","getManagerDetails-initiateApprovalWithManager","initiateApprovalWithManager-checkApprovalStatus","checkApprovalStatus-setStatusAsRejected","checkApprovalStatus-checkIfItIsAnInternaltionalTravel","checkIfItIsAnInternaltionalTravel-setStatusAsAccepted","checkIfItIsAnInternaltionalTravel-initialteApprovalWithNextLevelManager","initialteApprovalWithNextLevelManager-checkLevel2-ApprovalStatus","checkLevel2-ApprovalStatus-setNextApprovalStatusAsRejected","checkLevel2-ApprovalStatus-setNextApprovalStatusAsAccepted"],"zIndex":0,"objectZIndex":24}],"diagramSettings":{"inversedAlignment":true},"selectedItems":{"nodes":[],"connectors":[],"wrapper":null,"constraints":16382,"selectedObjects":[]},"basicElements":[],"tooltip":{"content":""},"commandManager":{"commands":[]},"version":17.1}');
-}
-
-}
-
-

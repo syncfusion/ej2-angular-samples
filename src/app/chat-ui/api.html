@@ -1,6 +1,6 @@
 <div class="col-lg-8 control-section sb-property-border">
     <div class="api-chatui"> 
-        <div id="chatui" ejs-chatui #chatUI [messages]="messages" [user]="user" [headerText]="headerText" [headerIconCss]="headerIconCss" showTimeBreak="true" timeStampFormat="MM/dd hh:mm a"></div>
+        <div id="chatui" ejs-chatui #chatUI [messages]="messages" [user]="user" [headerText]="headerText" [headerIconCss]="headerIconCss" showTimeBreak="true" timeStampFormat="MM/dd hh:mm a" [messageToolbarSettings]="toolbarSettings"></div>
     </div>
 </div>
 
@@ -53,6 +53,14 @@
                 </tr>
                 <tr>
                     <td>
+                        <div>Compact Mode</div>
+                    </td>
+                    <td style="padding-right: 10px">
+                        <ejs-switch id="compactMode" [checked]="false" (change)="onCompactModeSwitchChange($event)"></ejs-switch>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <div>Typing users</div>
                     </td>
                     <td style="padding-right: 10px">
@@ -77,7 +85,10 @@
         <li><code>showTimeBreak</code>: Enables or disables the display of time breaks in the chat interface.</li>
         <li><code>showHeader</code>: Lets users toggle the visibility of the chat header.</li>
         <li><code>showFooter</code>: Toggles the visibility of the chat footer.</li>
+        <li><code>enableCompactMode</code>: Streamlines the chat interface,  aligning all messages to the left by default and enhancing readability </li>
         <li><code>typingUsers</code>: Allows users to manage the list of users who are typing, updated through the multi-select options in the property pane.</li>
+        <li><code>statusIconCss</code>: Display the status of the current user in the chat.</li>
+        <li><code>messageToolbarSettings</code>: Configures the toolbar that appears on individual messages, allowing customization such as copy, forward, reply, pin and delete. Supports adding, removing, or reordering toolbar items based on application needs.</li>
     </ul>
     <p>
         These properties can be adjusted via the property pane for a highly flexible and customizable chat experience.

@@ -1,15 +1,17 @@
 import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
 import { TaskDataCollection } from './ganttdata';
-import { getAzureChatAIRequest } from '../../azure-openai';
+import { serverAIRequest } from '../common/ai-service';
 import * as data from './progress.json';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations'
 import { ToolbarService } from '@syncfusion/ej2-angular-gantt'
 import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import {AIToastComponent} from '../common/ai-toast.component';  
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
 
 @Component({
   selector: 'app-progress',
   standalone: true,
-  imports: [GanttAllModule,ToolbarModule],
+  imports: [GanttAllModule,ToolbarModule,ToastModule, AIToastComponent],
   providers: [ToolbarService],
   templateUrl: './progress.component.html'
 })
@@ -64,25 +66,29 @@ export class ProgressComponent {
             "- Key 'MilestoneTaskDate' with a list of milestone dates 'MilestoneDate' with 'TaskName' - task name. A milestone date is defined as the end date of tasks with a duration of 0 and only give current based milestone." +
             "- Key 'ProjectCompletionDate' indicating the latest end date among all tasks." +
             "- Key 'Summary' providing a summary of the project completion date and milestones.Ensure milestones are defined correctly based on tasks with a duration of 0, and the project completion date reflects the latest end date of all tasks "
-        let aioutput = getAzureChatAIRequest({ messages: [{ role: 'user', content: input }] });
+        let aioutput = serverAIRequest({ messages: [{ role: 'user', content: input }] });
         aioutput.then((result: any) => {
-            let cleanedJsonData: string = result.replace(/^```json\n|```\n?$/g, '');
-            let dataset: any = JSON.parse(cleanedJsonData);
-            let details = dataset.TaskDetails || dataset;
-            let eventMarkers: any = details.MilestoneTaskDate
-                .map((milestone: any) => ({
-                    day: new Date(milestone["MilestoneDate"]),
-                    label: milestone["TaskName"]
-                }));
-            let projectDetails = {
-                day: new Date(details.ProjectCompletionDate),
-                label: "Project completion date"
-            };
-            eventMarkers.push(projectDetails);
-            (this.gantt as any).eventMarkers = eventMarkers;
+          if (result) {
+              let cleanedJsonData: string = result.replace(/^```json\n|```\n?$/g, '');
+              let dataset: any = JSON.parse(cleanedJsonData);
+              let details = dataset.TaskDetails || dataset;
+              let eventMarkers: any = details.MilestoneTaskDate
+                  .map((milestone: any) => ({
+                      day: new Date(milestone["MilestoneDate"]),
+                      label: milestone["TaskName"]
+                  }));
+              let projectDetails = {
+                  day: new Date(details.ProjectCompletionDate),
+                  label: "Project completion date"
+              };
+              eventMarkers.push(projectDetails);
+              (this.gantt as any).eventMarkers = eventMarkers;
 
-            (this.gantt as any).hideSpinner();
-        });
+              (this.gantt as any).hideSpinner();
+          } else {
+              (this.gantt as any).hideSpinner();
+          }
+      });
     }
     function getHistoricalCollection(): string {
         let historicalDataCollection: string = '';

@@ -5,7 +5,8 @@ import { ClickEventArgs, ItemModel, MenuEventArgs, SplitButtonModule } from '@sy
 import {
   Diagram, NodeModel, UndoRedo, ConnectorModel, PointPortModel, Connector, FlowShapeModel,
   SymbolInfo, IDragEnterEventArgs, SnapSettingsModel, MarginModel, TextStyleModel, StrokeStyleModel,
-  OrthogonalSegmentModel, Node, PaletteModel, FlipDirection
+  OrthogonalSegmentModel, Node, PaletteModel, FlipDirection,
+  ITextEditEventArgs
 } from '@syncfusion/ej2-diagrams';
 import { ExpandMode } from '@syncfusion/ej2-navigations';
 import { paletteIconClick } from './script/diagram-common';
@@ -60,7 +61,10 @@ export class FlowDiagramComponent {
     if (node.width === undefined) {
       node.width = 145;
     }
-    node.style = { fill: '#357BD2', strokeColor: 'white' };
+    if (node.shape.type !== 'Text')
+    {
+       node.style = { fill: '#357BD2', strokeColor: 'white' };
+    }
     for (let i: number = 0; i < node.annotations.length; i++) {
       node.annotations[i].style = {
         color: 'white',
@@ -101,6 +105,15 @@ export class FlowDiagramComponent {
       obj.offsetY += (obj.height - objHeight) / 2;
       obj.style = { fill: '#357BD2', strokeColor: 'white' };
     }
+  }
+
+  //Sets the text color of node to transparent
+  public textEdit(args: ITextEditEventArgs): void {
+    let obj = args.element;
+    obj.annotations[0].style = {
+        color: 'white',
+        fill: 'transparent',
+    };
   }
 
   //SymbolPalette Properties
@@ -288,12 +301,34 @@ export class FlowDiagramComponent {
   }
   // To enable toolbar items
   public enableItems() {
+    var selectedItems = this.diagram.selectedItems.nodes;
+    selectedItems = selectedItems.concat(this.diagram.selectedItems.connectors as any);
+    let isSelectedItemLocked = false;
+    if (selectedItems && selectedItems.length > 0) {
+      var obj = selectedItems[0];
+      if (obj instanceof Node) {
+        if (obj.constraints === (NodeConstraints.PointerEvents | NodeConstraints.Select | NodeConstraints.ReadOnly)) {
+          isSelectedItemLocked = true;
+        }
+        else {
+          isSelectedItemLocked = false;
+        }
+      }
+      else if (obj instanceof Connector) {
+        if ((obj as any).constraints === (ConnectorConstraints.PointerEvents | ConnectorConstraints.Select | ConnectorConstraints.ReadOnly)) {
+          isSelectedItemLocked = true;
+        }
+        else {
+          isSelectedItemLocked = false;
+        }
+      }
+    }
     const itemIds = ['Cut', 'Copy', 'Lock', 'Delete', 'Order', 'Rotate', 'Flip'];
     itemIds.forEach(itemId => {
-        const item = this.toolbar.items.find(item => item.id === itemId);
-        if (item) {
-            item.disabled = false;
-        }
+      const item = this.toolbar.items.find(item => item.id === itemId);
+      if (item) {
+        item.disabled = isSelectedItemLocked;
+      }
     });
   }
   //To disable toolbar items
@@ -309,6 +344,8 @@ export class FlowDiagramComponent {
   // To handle toolbar click
   public clicked(args: ClickEventArgs) {
     var item = (args as any).item.tooltipText;
+    var selectedItems = this.diagram.selectedItems.nodes;
+    selectedItems = selectedItems.concat(this.diagram.selectedItems.connectors as any);
     switch (item) {
       case 'Undo':
         this.diagram.undo();
@@ -367,6 +404,26 @@ export class FlowDiagramComponent {
         document.getElementsByClassName('e-file-select-wrap')[0].querySelector('button').click();
         break;
     }
+    if (selectedItems && selectedItems.length > 0) {
+        var obj = selectedItems[0];
+        if (obj instanceof Node) {
+            if (obj.constraints === (NodeConstraints.PointerEvents | NodeConstraints.Select | NodeConstraints.ReadOnly)) {
+                this.updateToolbarState(true);
+            }
+            else {
+                this.updateToolbarState(false);
+            }
+        }
+        else if (obj instanceof Connector) {
+            if ((obj as any).constraints === (ConnectorConstraints.PointerEvents | ConnectorConstraints.Select | ConnectorConstraints.ReadOnly)) {
+                this.updateToolbarState(true);
+            }
+            else {
+                this.updateToolbarState(false);
+            }
+        }
+    }
+
     this.diagram.dataBind();
   }
 
@@ -433,7 +490,6 @@ export class FlowDiagramComponent {
   }
   //To handle selection of connectors.
   public onConnectorSelect(args: any) {
-    debugger
     this.diagram.clearSelection();
     this.diagram.drawingObject = { type: args.item.text };
     this.diagram.tool = DiagramTools.ContinuousDraw;
@@ -617,14 +673,13 @@ export class FlowDiagramComponent {
   }
   //set up uploaded file and call loadDiagram
   public onUploadSuccess(args: { [key: string]: Object }): void {
-    debugger
     let file1: { [key: string]: Object } = args.file as { [key: string]: Object };
     let file: Blob = file1.rawFile as Blob;
     let reader: FileReader = new FileReader();
     reader.readAsText(file);
     reader.onloadend = this.loadDiagram.bind(this);
   }
-  //To load diagram 
+  //To load diagram
   public loadDiagram(event: ProgressEvent): void {
     this.diagram.loadDiagram((event.target as FileReader).result.toString());
   }

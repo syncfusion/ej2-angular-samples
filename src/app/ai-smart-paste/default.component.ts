@@ -6,15 +6,17 @@ import { ButtonModule, SmartPasteButtonModule, ChatOptions , RadioButtonModule, 
 import { ComboBoxModule } from '@syncfusion/ej2-angular-dropdowns';
 import { TextAreaModule, TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
-import { getAzureChatAIRequest } from '../../azure-openai';
-
+// import { getAzureChatAIRequest } from '../../azure-openai';
+import { serverAIRequest } from '../common/ai-service';
+import {AIToastComponent} from '../common/ai-toast.component';  
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
 @Component({
     selector: 'control-content',
     templateUrl: 'default.html',
     styleUrls: ['default.component.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [ButtonModule, ChipListModule, TextBoxModule, RadioButtonModule, SmartPasteButtonModule, ComboBoxModule, TextAreaModule, DatePickerModule, SBActionDescriptionComponent, SBDescriptionComponent]
+    imports: [ButtonModule, ChipListModule, TextBoxModule, RadioButtonModule, SmartPasteButtonModule, ComboBoxModule, TextAreaModule, DatePickerModule, SBActionDescriptionComponent, SBDescriptionComponent, ToastModule, AIToastComponent]
 })
 export class SmartPasteDefaultComponent implements OnInit {
     constructor(@Inject('sourceFiles') private sourceFiles: any, private fb: FormBuilder) {
@@ -58,19 +60,8 @@ export class SmartPasteDefaultComponent implements OnInit {
         this.bugForm.reset();
     }
 
-    public serverAIRequest = async (settings: ChatOptions) => {
-        let output = '';
-        try {
-            const response = await getAzureChatAIRequest(settings) as string;
-            output = response;
-        } catch (error) {
-            console.error("Error:", error);
-        }
-        return output;
-    };
-    
     onCreated(): void {
-        this.smartPaste.aiAssistHandler = this.serverAIRequest;
+        this.smartPaste.aiAssistHandler = serverAIRequest;
     }
 
     async onCopy(): Promise<void> {

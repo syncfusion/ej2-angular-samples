@@ -274,6 +274,7 @@ export class EditableDashboardComponent {
                     sizeY: 1,
                     row: 0,
                     col: 0,
+                    zIndex:999,
                     header: '<div>Bar Chart</div>',
                     content:
                         '<div id=_bar' +
@@ -379,6 +380,7 @@ export class EditableDashboardComponent {
                     sizeY: 1,
                     row: 0,
                     col: 0,
+                    zIndex:999,
                     header: '<div>Pie Chart</div>',
                     content:
                         '<div id=_pie' +
@@ -439,6 +441,7 @@ export class EditableDashboardComponent {
                     sizeY: 1,
                     row: 0,
                     col: 0,
+                    zIndex:999,
                     header: '<div>Spline Chart</div>',
                     content:
                         '<div id=_spline' +

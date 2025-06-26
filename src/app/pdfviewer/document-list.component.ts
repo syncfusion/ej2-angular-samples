@@ -134,8 +134,8 @@ export class DocumentListComponent implements OnInit {
             };
             this.pdfviewerControl.contextMenuOption ='RightClick';
         }
-        this.pdfviewerControl.dataBind();
-        this.pdfviewerControl.load(args.rowData['Document'],null);
         this.dialog.show();
+        this.pdfviewerControl.load(args.rowData['Document'],null);
+        this.pdfviewerControl.dataBind();
     }
 }

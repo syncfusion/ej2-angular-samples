@@ -1,14 +1,16 @@
 import { Component, Inject, ViewChild } from '@angular/core';
 import { DocumentEditorContainerAllModule, DocumentEditorContainerComponent } from '@syncfusion/ej2-angular-documenteditor';
 import { CustomContentMenuEventArgs } from '@syncfusion/ej2/documenteditor';
-import { getAzureChatAIRequest } from '../../azure-openai';
+// import { getAzureChatAIRequest } from '../../azure-openai';
+import { serverAIRequest } from '../common/ai-service';
 import { MenuItemModel } from '@syncfusion/ej2/navigations';
 import { DialogAllModule, ButtonPropsModel, DialogComponent, showSpinner, hideSpinner,createSpinner } from '@syncfusion/ej2-angular-popups';
 import { SplitterAllModule } from '@syncfusion/ej2-angular-layouts';
 import { MultiSelectAllModule, ChangeEventArgs, ComboBoxAllModule, MultiSelectChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
 import { TitleBar } from './title-bar';
 import { ToolbarAllModule, ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
-
+import {AIToastComponent} from '../common/ai-toast.component';  
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
 interface Message {
   role: string;
   content: string;
@@ -22,7 +24,7 @@ interface AzureAIRequestOptions {
   selector: 'app-smart-editor',
   standalone: true,
   imports: [DocumentEditorContainerAllModule,
-    DialogAllModule, SplitterAllModule, ToolbarAllModule, ComboBoxAllModule, MultiSelectAllModule],
+    DialogAllModule, SplitterAllModule, ToolbarAllModule, ComboBoxAllModule, MultiSelectAllModule, ToastModule, AIToastComponent],
   templateUrl: './smart-editor.component.html',
   styleUrl: './smart-editor.component.css'
 })
@@ -365,7 +367,11 @@ export class SmartEditorComponent  {
   async onGenerate(options: AzureAIRequestOptions): Promise<void> {
     this.outList = [];
     for (let i = 0; i < 3; i++) {
-      const response = await getAzureChatAIRequest(options);
+      const response = await serverAIRequest(options);
+      if (response === undefined) {
+        // Exit the loop if the response is undefined
+        break;
+      }
       if (response && this.outList.indexOf(response) === -1) {
         this.outList.push(response);
       } else {
@@ -379,7 +385,7 @@ export class SmartEditorComponent  {
   }
 // Generate refined text
   async reframeContent(options: AzureAIRequestOptions): Promise<void> {
-    const response = await getAzureChatAIRequest(options);
+    const response = await serverAIRequest(options);
     if (response) {
       this.editableDiv.nativeElement.innerHTML = response;
     }

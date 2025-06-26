@@ -15,21 +15,14 @@ import { loadAccumulationChartTheme } from './theme-color';
     imports: [SBActionDescriptionComponent, AccumulationChartAllModule, ChartAllModule,SBDescriptionComponent]
 })
 export class DefaultPieComponent {
-    public data: Object[] = Browser.isDevice ? [
-        { Browser: "Chrome", Users: 59.28, DataLabelMappingName: "Chrome: 59.28%" },
-        { Browser: "Safari", Users: 4.73, DataLabelMappingName: Browser.isDevice ? 'Safari <br> 4.73%'  : 'Safari: 4.73%' },
-        { Browser: 'Opera', Users: 6.12, DataLabelMappingName: 'Opera: 6.12%' },
-        { Browser: "Edge", Users: 7.48, DataLabelMappingName: "  Edge: 7.48%" },
-        { Browser: "Others", Users: 22.39, DataLabelMappingName: "  Others: 22.39%" },] : [ 
-        { Browser : "Chrome", Users : 59.28, DataLabelMappingName : "  Chrome: 59.28%"},
-        { Browser : "UC Browser", Users : 4.37, DataLabelMappingName : "  UC Browser: 4.37%"},
-        { Browser : "Opera", Users : 3.12, DataLabelMappingName : "  Opera: 3.12%"},
-        { Browser : "Sogou Explorer", Users : 1.73, DataLabelMappingName : "  Sogou Explorer: 1.73%"},
-        { Browser : "QQ", Users : 3.96, DataLabelMappingName : "  QQ: 3.96%"},
-        { Browser : "Safari", Users : 4.73, DataLabelMappingName : "  Safari: 4.73%"},
-        { Browser : "Internet Explorer", Users : 6.12, DataLabelMappingName : "  Internet Explorer: 6.12%"},
-        { Browser : "Edge", Users : 7.48, DataLabelMappingName : "  Edge: 7.48%"},
-        { Browser : "Others", Users : 9.57, DataLabelMappingName : "  Others: 9.57%"},
+    public data: Object[] = [
+        { Browser: "Coal", Users: 34.4, DataLabelMappingName: "Coal: 34.4%" },
+        { Browser: "Natural Gas", Users: 22.1, DataLabelMappingName: "Natural Gas: 22.1%" },
+        { Browser: "Hydro", Users: 14.4, DataLabelMappingName: "Hydro: 14.4%" },
+        { Browser: "Nuclear", Users: 9.0, DataLabelMappingName: "Nuclear: 9.0%" },
+        { Browser: "Wind", Users: 8.1, DataLabelMappingName: "Wind: 8.1%" },
+        { Browser: "Others", Users: 12.0, DataLabelMappingName: "Others: 12.0%" }
+
     ];
     //Initializing Legend
     public legendSettings: Object = {
@@ -40,30 +33,33 @@ export class DefaultPieComponent {
         visible: true,
         position: 'Outside', name: 'DataLabelMappingName',
         font: {
+            size: Browser.isDevice ? '8px' : '12px',
             fontWeight: '600'
         },
-        connectorStyle: { length: '20px', type: 'Curve'},
+        connectorStyle: { length: Browser.isDevice ? '10px' : '20px', type: 'Curve'},
         
     };
+    public border: Object = { width: 1, color: 'white' };
     
       // custom code start
     public load(args: IAccLoadedEventArgs): void {
         loadAccumulationChartTheme(args);
     };
       // custom code end
-    public startAngle: number = Browser.isDevice ? 55 : 35;
-    public radius: string = Browser.isDevice ? '40%' : '70%'
+    public startAngle: number = Browser.isDevice ? 70 : 30;
+    public radius: string = Browser.isDevice ? '40%' : '60%'
     public explode: boolean = true;
     public enableAnimation: boolean = true;
     public tooltip: Object = { 
         enable: true,
         enableHighlight: true,
-        format: '<b>${point.x}</b><br>Browser Share: <b>${point.y}%</b>',
+        format: '<b>${point.x}</b><br>Percentage: <b>${point.y}%</b>',
         header:'',
 
     };
     
-    public title: string = 'Browser Market Share';
+    public title: string = 'Global Electricity Generation by Source - 2024';
+    public subTitle: string = 'Source: wikipedia.org';
     constructor() {
         //code
     };

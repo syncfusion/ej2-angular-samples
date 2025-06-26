@@ -56,7 +56,9 @@
             "Warm": "Warm",
             "Grayscale": "Graustufen",
             "Sepia": "Sepia",
-            "Invert": "Umkehren"
+            "Invert": "Umkehren",
+            "Underline": "Unterstreichen",
+            "Strikethrough": "Durchgestrichen"
         }
     },
     "ar": {
@@ -116,7 +118,9 @@
             "Warm": "دافيء",
             "Grayscale": "تدرج الرمادي",
             "Sepia": "بني داكن",
-            "Invert": "عكس"
+            "Invert": "عكس",
+            "Underline": "تسطير",
+            "Strikethrough": "يتوسطه"
         }
     },
     "en": {
@@ -176,7 +180,9 @@
             "Warm": "Warm",
             "Grayscale": "Grayscale",
             "Sepia": "Sepia",
-            "Invert": "Invert"
+            "Invert": "Invert",
+            "Underline": "Underline",
+            "Strikethrough": "Strikethrough"
         }
     },
     "zh": {
@@ -236,7 +242,9 @@
             "Warm": "温暖的",
             "Grayscale": "灰阶",
             "Sepia": "棕褐色",
-            "Invert": "倒置"
+            "Invert": "倒置",
+            "Underline": "強調",
+            "Strikethrough": "刪除線"
         }
     },
     "fr-CH": {
@@ -296,7 +304,9 @@
             "Warm": "Chaleureuse",
             "Grayscale": "Niveaux de gris",
             "Sepia": "Sépia",
-            "Invert": "Inverser"
+            "Invert": "Inverser",
+            "Underline": "Souligner",
+            "Strikethrough": "Barré"
         }
     }
 }

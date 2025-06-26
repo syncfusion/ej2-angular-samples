@@ -1,6 +1,7 @@
 <div id="action-description">
-    <p>This sample demonstrates how to use a server-side pivot engine to obtain, process and return the summarized data
-        via a remote service and display it in the pivot table.</p>
+    <p>This sample shows how to use a server-side pivot engine to fetch and display summarized data in the Pivot Table.
+        It includes export options for Excel, CSV, and PDF with headers and footers, and a layout switcher to toggle
+        between Compact and Tabular views at runtime.</p>
 </div>
 <div id="description">
     <p>
@@ -27,6 +28,14 @@
         and an external server engine. This would improve pivot table rendering performance when working with large
         amounts of data.
     </p>
+    <p>
+        The built-in toolbar includes export options for Excel, CSV, and PDF documents. These export features support
+        adding headers and footers, enabling enriched document formatting and presentation.
+    </p>
+    <p>
+        Additionally, a custom toolbar menu is provided to switch between <strong>Compact</strong> and
+        <strong>Tabular</strong> layouts at runtime, offering flexibility in how the summarized data is displayed.
+    </p>
     <br />
     <p>
         <strong>Injecting Module:</strong>
@@ -46,6 +55,7 @@
 <div class="control-section">
     <ejs-pivotview #pivotview id='PivotView' showFieldList='true' showGroupingBar='true' width='100%' height='450'
         [dataSourceSettings]=dataSourceSettings (dataBound)='onDataBound()' enableVirtualization='true'
-        allowDataCompression='true'>
+        allowDataCompression='true' allowExcelExport='true' allowPdfExport='true' showToolbar='true' [gridSettings]='gridSettings'
+        [toolbar]='toolbarOptions' (toolbarRender)='beforeToolbarRender($event)' (beforeExport)='beforeExport($event)'>
     </ejs-pivotview>
 </div>

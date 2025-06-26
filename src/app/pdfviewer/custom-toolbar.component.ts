@@ -637,8 +637,8 @@ export class CustomToolbarComponent implements OnInit {
     var searchInput = document.getElementById('container_search_input') as HTMLInputElement;
     if(searchInput.value == '') {
       this.updateSearchInputIcon(true);
-      this.pdfviewerControl.textSearch.resetVariablesTextSearch();
       this.pdfviewerControl.textSearch.cancelTextSearch();
+      this.searchText = '';
     }
   }
 

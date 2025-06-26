@@ -32,22 +32,22 @@ export class AggregationComponent implements OnInit {
         { value: 'Min', text: 'Min' },
         { value: 'Max', text: 'Max' },
         { value: 'Count', text: 'Count' },
-        { value: 'DistinctCount', text: 'DistinctCount' },
+        { value: 'DistinctCount', text: 'Distinct Count' },
         { value: 'Product', text: 'Product' },
         { value: 'Index', text: 'Index' },
-        { value: 'PopulationStDev', text: 'PopulationStDev' },
-        { value: 'SampleStDev', text: 'SampleStDev' },
-        { value: 'PopulationVar', text: 'PopulationVar' },
-        { value: 'SampleVar', text: 'SampleVar' },
-        { value: 'RunningTotals', text: 'RunningTotals' },
-        { value: 'DifferenceFrom', text: 'DifferenceFrom' },
-        { value: 'PercentageOfDifferenceFrom', text: 'PercentageOfDifferenceFrom' },
-        { value: 'PercentageOfGrandTotal', text: 'PercentageOfGrandTotal' },
-        { value: 'PercentageOfColumnTotal', text: 'PercentageOfColumnTotal' },
-        { value: 'PercentageOfRowTotal', text: 'PercentageOfRowTotal' },
-        { value: 'PercentageOfParentTotal', text: 'PercentageOfParentTotal' },
-        { value: 'PercentageOfParentColumnTotal', text: 'PercentageOfParentColumnTotal' },
-        { value: 'PercentageOfParentRowTotal', text: 'PercentageOfParentRowTotal' }
+        { value: 'PopulationStDev', text: 'Population StDev' },
+        { value: 'SampleStDev', text: 'Sample StDev' },
+        { value: 'PopulationVar', text: 'Population Var' },
+        { value: 'SampleVar', text: 'Sample Var' },
+        { value: 'RunningTotals', text: 'Running Totals' },
+        { value: 'DifferenceFrom', text: 'Difference From' },
+        { value: "PercentageOfDifferenceFrom", text: "% of Difference From" },
+        { value: "PercentageOfGrandTotal", text: "% of Grand Total" },
+        { value: "PercentageOfColumnTotal", text: "% of Column Total" },
+        { value: "PercentageOfRowTotal", text: "% of Row Total" },
+        { value: "PercentageOfParentTotal", text: "% of Parent Total" },
+        { value: "PercentageOfParentColumnTotal", text: "% of Parent Column Total" },
+        { value: "PercentageOfParentRowTotal", text: "% of Parent Row Total" }
     ];
 
     @ViewChild('pivotview')
@@ -94,11 +94,11 @@ export class AggregationComponent implements OnInit {
     }
 
     changePricedrpdwn (args: ChangeEventArgs) {
-        this.setSummaryType('ProCost', args.value as SummaryTypes);
+        this.setSummaryType('ProCost', args.itemData.value as SummaryTypes);
     }
 
     changeFreightdrpdwn (args: ChangeEventArgs) {
-        this.setSummaryType('PowUnits', args.value as SummaryTypes);
+        this.setSummaryType('PowUnits', args.itemData.value as SummaryTypes);
     }
 
     ngOnInit(): void {

@@ -10,9 +10,9 @@
         <span style="display:inline-flex"><span class="e-tbar-btn-text">Merge Data</span></span>
     </button>
     <button
-        class="e-rte-dropdown-btn e-control e-dropdown-btn e-lib e-btn e-rte-dropdown-popup e-rte-dropdown-items e-formats-tbar-btn e-rte-elements e-tbar-btn"
+        class="e-rte-dropdown-btn e-control e-dropdown-btn e-lib e-btn e-rte-dropdown-popup e-rte-dropdown-items e-formats-tbar-btn e-rte-elements e-rte-dropdown-menu"
         id="insertField" ejs-dropdownbutton [items]="items"
-        [content]="dropdownContent" (select)="onItemSelect($event)"></button>
+        [content]="dropdownContent" (select)="onItemSelect($event)" (close)="onDropDownClose()"></button>
     <ejs-mention #mentionObj [dataSource]="mergeData" target="#mailMergeEditor" [mentionChar]="mentionChar"
         [fields]='fieldsData' [suggestionCount]="8" [allowSpaces]="true" popupWidth='250px' popupHeight='200px'>
         <ng-template #displayTemplate let-data>
@@ -42,3 +42,9 @@
         section of your Angular module.
     </p>
 </div>
+<style>
+    .tailwind3 #merge_data,
+    .tailwind3-dark #merge_data {
+        font-weight:400;
+    }
+</style>

@@ -18,7 +18,7 @@ import { ReactiveFormComboBoxComponent } from './reactive-form.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { VirtualScrollComboBoxComponent } from './virtual-scroll.component';
-import { ObjectComboBoxComponent } from './object-value-binding';
+import { ObjectComboBoxComponent } from './object-value-binding.component';
 export const comboboxAppRoutes: Object[] = [
     { path: ':theme/combo-box/default', component: DefaultComboBoxComponent, name: 'Default Functionalities', description: 'This example demonstrates the default functionalities of the Angular combo box component with minimum configuration.', order: '01',
 	  category: 'ComboBox' },
@@ -38,7 +38,7 @@ export const comboboxAppRoutes: Object[] = [
       category: 'ComboBox' },
     { path: ':theme/combo-box/virtual-scroll', component: VirtualScrollComboBoxComponent, name: 'Virtualization', description: 'This example demonstrates how to utilize the virtualization support of Angular combo box component.', order: '01', 
     category: 'ComboBox' },
-    { path: ':theme/combo-box/filtering', component: FilteringComboBoxComponent, name: 'Filtering', description: 'This example demonstrates how the filtering functionalities works based on the typed characters in the Angular combo box component.', order: '01',
+    { path: ':theme/combo-box/filtering', component: FilteringComboBoxComponent, name: 'Filtering', type:'update', description: 'This example demonstrates how the filtering functionalities works based on the typed characters in the Angular combo box component.', order: '01',
 		category: 'ComboBox' },
     { path: ':theme/combo-box/cascading', component: CascadingComboBoxComponent, name: 'Cascading', description: 'This example demonstrates how to create a related combo box (Cascading ComboBox) using the Angular combo box component.', order: '01',
 		category: 'ComboBox' },

@@ -1,20 +1,20 @@
 <div id="action-description">
     <p>
-        This Angular donut chart example visualizes mobile browser statistics. The center label shows information about the data in the donut series.
+        This Angular donut chart example visualizes mobile browser statistics. Data labels and the center label provide information about the data in the series.
     </p>
 </div>
 <div class="control-section">
-    <ejs-accumulationchart id="container" #pie style='display:block;  width: 92%'  [centerLabel]="centerLabel" (pointRender)='pointRender($event)' [legendSettings]="legendSettings" 
+    <ejs-accumulationchart id="container" #pie style='display:block;  width: 92%' [tooltip]="tooltip" [centerLabel]="centerLabel" [legendSettings]="legendSettings" 
      (load)='load($event)' [enableBorderOnMouseMove]='false'>
         <e-accumulation-series-collection>
             <e-accumulation-series name='Project' [dataSource]='data' xName='x' yName='y' [border]="border" [startAngle]="startAngle" innerRadius="65%" [radius]="radius"
-            [dataLabel]="dataLabel">
+            [dataLabel]="dataLabel" borderRadius='3'>
             </e-accumulation-series>
         </e-accumulation-series-collection>
     </ejs-accumulationchart>
     <div id="description">
-        <p>   In this example, you can see how to render and configure a donut chart. To create a donut in the pie series, we use the <code>innerRadius</code> property. 
-            The <code>centerLabel</code> property allows you to specify the default text that will be rendered in the center. You can also customize the text that will render when the mouse pointer is hovered over one of the donut slices using the <code>hoverTextFormat</code> property.</p>
+        <p>   In this example, you can see how to render and configure a donut chart. To create a donut in the pie series, we use the <code>innerRadius</code> property. The <code>centerLabel</code> property allows you to specify the default text that will be rendered in the center. You can also customize the text that will render when the mouse pointer is hovered over one of the donut slices using the <code>hoverTextFormat</code> property.</p>
+        <p> <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover a point or tap a point in touch enabled devices.</p>
     <p style="font-weight: 500"><b>Injecting Module</b></p>
     <p>
         The Charts component’s features are segregated into individual feature modules. To use pie series feature, we need to

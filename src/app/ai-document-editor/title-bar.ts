@@ -55,7 +55,7 @@ export class TitleBar {
         this.documentTitle = createElement('label', { id: 'documenteditor_title_name', styles: 'font-weight:400;text-overflow:ellipsis;white-space:pre;overflow:hidden;user-select:none;cursor:text' });
         let iconCss: string = 'e-de-padding-right';
         let btnFloatStyle: string = 'float:right;';
-        let titleCss: string = '';
+        let titleCss: string = 'height: 26px;max-width: 85%;width: auto;overflow: hidden;display: inline-block;padding-left: 4px;padding-right: 4px;margin: 5px;';
         if (this.isRtl) {
             iconCss = 'e-de-padding-right-rtl';
             btnFloatStyle = 'float:left;';

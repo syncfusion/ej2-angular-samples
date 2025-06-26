@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import {
     NodeModel, DiagramTools, ScrollSettingsModel, LayoutModel,
     Diagram, ConnectorModel, Node, SnapConstraints, SnapSettingsModel,
-    Container, TextElement, StackPanel, ImageElement, DataBinding, HierarchicalTree, TreeInfo
+    GroupableView, TextElement, StackPanel, ImageElement, DataBinding, HierarchicalTree, TreeInfo
 } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
 import { data } from './overview-data';
@@ -34,7 +34,7 @@ export class OverviewDiagramComponent {
         getLayoutInfo: (node: Node, tree: TreeInfo) => {
             if (!tree.hasSubTree) {
                 tree.orientation = 'Vertical';
-                tree.type = 'Right';
+                tree.type = 'Alternate';
             }
         }
     };
@@ -57,7 +57,7 @@ export class OverviewDiagramComponent {
     public scrollSettings: ScrollSettingsModel = { scrollLimit: 'Infinity' };
 
     // Funtion to add the Template of the Node.
-    public setNodeTemplate(obj: NodeModel, diagram: Diagram): Container {
+    public setNodeTemplate(obj: NodeModel, diagram: Diagram): GroupableView {
 
         // Create the outer container for the node content.
         let content: StackPanel = new StackPanel();

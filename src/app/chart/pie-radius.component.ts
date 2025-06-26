@@ -17,30 +17,31 @@ import { loadAccumulationChartTheme } from './theme-color';
 })
 export class PieRadiusComponent {
     public data: Object[] = [
-        { Country : "Argentina", Population : 505370, Radius : Browser.isDevice ? '110' : "100", text: 'Argentina'},
-        { Country : "Belgium",    Population : 551500, Radius : Browser.isDevice ? '120' :"118.7", text: 'Belgium' },
-        { Country : "Dominican Republic",  Population : 312685 , Radius : '137.5', text: Browser.isDevice ? 'Dominican <br> Republic' :  'Dominican Republic' },
-        { Country : "Cuba", Population : 350000 , Radius : '124.6', text: 'Cuba'},
-        { Country : "Egypt", Population : 301000 , Radius : "150.8", text: 'Egypt'},
-        { Country : "Kazakhstan", Population : 300000, Radius : "155.5",text: 'Kazakhstan'},
-        { Country : "Somalia",  Population : 357022, Radius : "160.6", text: 'Somalia'}
+        { Country: "Cuba", Population: 103800, Radius: "106", text: "CUB" },
+        { Country: "Syria", Population: 185178, Radius: "133", text: "SYR" },
+        { Country: "Benin", Population: 112760, Radius: "128", text: "BEN" },
+        { Country: "Portugal", Population: 91606, Radius: "114", text: "POR" },
+        { Country: "Austria", Population: 82520, Radius: "111", text: "AUS" },
+        { Country: "Honduras", Population: 111890, Radius: "97", text: "HON" },
+        { Country: "Azerbaijan", Population: 82650, Radius: "125", text: "AZE" }
     ];
     @ViewChild('pie')
     public pie: AccumulationChartComponent | AccumulationChart;
     //Initializing Legend
     public legendSettings: Object = {
-        visible: true,
-        reverse: true
+        visible: false
     };
     //Initializing Datalabel
     public dataLabel: Object = {
         visible: true, position: Browser.isDevice ? 'Inside' : 'Outside',
-        name: 'text',
-        connectorStyle: { length: '20px', type:'Curve' },
+        name: Browser.isDevice ? 'text' : 'Country',
+        connectorStyle: { length: Browser.isDevice ? '10px' : '20px', type:'Curve' },
+        textWrap: Browser.isDevice ? 'Wrap' : 'Normal',
         font: {
-            fontWeight: '600'
+            fontWeight: '600',
+            size: Browser.isDevice ? '7px' : '12px', 
         },
-        enableRotation: true,
+        enableRotation: false,
     };
       // custom code start
     public load(args: IAccLoadedEventArgs): void {
@@ -48,16 +49,17 @@ export class PieRadiusComponent {
     };
       // custom code end
     public radius: string = 'Radius';
+    public border: Object = { width: 1, color: '#ffffff' };
     public enableAnimation: boolean = true;
     public enableSmartLabels: boolean = true;
     public tooltip: Object = {
         enable: true,
         header: '',
-        format: '<b>${point.x}</b><br>Area in square km: <b>${point.y}</b><br>Population density per square km: <b>${point.tooltip}</b>',
-        name: 'Radius',
+        format: '<b>${point.x}</b><br>Area in square km: <b>${point.y}</b><br>Population density per square km: <b>${point.tooltip}',
         enableHighlight: true
     };
-    public title: string = 'Pie with different Radius';
+    public title: string = 'Global Distribution of Population and Land Area by Country - 2025';
+    public subTitle: string = 'Source: wikipedia.org';
     constructor() {
         //code
     };

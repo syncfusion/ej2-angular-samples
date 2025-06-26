@@ -16,19 +16,24 @@ import { donutPointRender, loadAccumulationChartTheme } from './theme-color';
 })
 export class DonutComponent {
     public data: Object[] = [
-        { x: 'Chrome', y: 61.3, DataLabelMappingName: Browser.isDevice ? 'Chrome: <br> 61.3%' : 'Chrome: 61.3%' },
-        { x: 'Safari', y: 24.6, DataLabelMappingName: Browser.isDevice ? 'Safari: <br> 24.6%' : 'Safari: 24.6%' },
-        { x: 'Edge', y: 5.0, DataLabelMappingName: 'Edge: 5.0%' },
-        { x: 'Samsung Internet', y: 2.7, DataLabelMappingName: Browser.isDevice ? 'Samsung Internet: <br> 2.7%' : 'Samsung Internet: 2.7%' },
-        { x: 'Firefox', y: 2.6, DataLabelMappingName: Browser.isDevice ? 'Firefox: <br> 2.6%' : 'Firefox: 2.6%' },
-        { x: 'Others', y: 3.6, DataLabelMappingName: Browser.isDevice ? 'Others: <br> 3.6%' :'Others: 3.6%' }
+        { x: 'Chrome', y: 63.5, DataLabelMappingName: 'Chrome: 63.5%' },
+        { x: 'Safari', y: 25.0, DataLabelMappingName: 'Safari: 25.0%' },
+        { x: 'Samsung Internet', y: 6.0, DataLabelMappingName: 'Samsung Internet: 6.0%' },
+        { x: 'UC Browser', y: 2.5, DataLabelMappingName: 'UC Browser: 2.5%' },
+        { x: 'Opera', y: 1.5, DataLabelMappingName: 'Opera: 1.5%' },
+        { x: 'Others', y: 1.5, DataLabelMappingName: 'Others: 1.5%' }
     ];
-    public pointRender(args: IPointRenderEventArgs): void {
-        donutPointRender(args);
-     };
     //Initializing Legend
     public legendSettings: Object = {
         visible: false,
+    };
+    public centerLabel: Object = {
+        text: 'Mobile<br>Browser<br>Statistics<br>2024',
+        hoverTextFormat: '${point.x}<br>Browser Share<br>${point.y}%',
+        textStyle: {
+            fontWeight: '600',
+            size: Browser.isDevice ? '7px' : '15px'
+        },
     };
     //Initializing DataLabel
     public dataLabel: Object = {
@@ -37,22 +42,21 @@ export class DonutComponent {
         position: 'Outside',
         font: {
             fontWeight: '600',
+            size: Browser.isDevice ? '8px' : '12px'
         },
         connectorStyle: { 
-            length: '20px',
+            length: Browser.isDevice ? '10px' : '20px',
             type: 'Curve'
          },
     };
-    public centerLabel: Object = {
-        text: 'Mobile<br>Browsers<br>Statistics',
-        hoverTextFormat: '${point.x}<br>Browser Share<br>${point.y}%',
-        textStyle: {
-            fontWeight: '600',
-            size: Browser.isDevice ? '7px' : '15px'
-        },
-    };
     public border: object = {
-        width: 1
+        width: 1, color: '#ffffff'
+    };
+    public tooltip: Object = { 
+        enable: true,
+        enableHighlight: true,
+        format: '<b>${point.x}</b><br>Browser Share: <b>${point.y}%</b>',
+        header:'',
     };
      // custom code start
     public load(args: IAccLoadedEventArgs): void {
@@ -60,7 +64,7 @@ export class DonutComponent {
     };
      // custom code end
     public radius: string = Browser.isDevice ? '40%' : '70%'
-    public startAngle: number =  Browser.isDevice ? 30 : 62;
+    public startAngle: number =  Browser.isDevice ? 70 : 60;
     constructor() {
         //code
     };

@@ -46,7 +46,7 @@ export class ImageEditorIntegrationComponent {
             'Align',
             'Caption',
             'Remove',
-            '-',
+            '|',
             'InsertLink',
             'OpenImageLink',
             'EditImageLink',

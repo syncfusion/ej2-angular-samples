@@ -1,0 +1,70 @@
+<div class="control-section">
+    <style>
+        .diagram-toolbar-container {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <div style="width: 100%"  class="diagram-toolbar-container">
+        <ejs-toolbar #toolbar overflowMode="Scrollable" id="toolbar_scrollable" (clicked)="toolbarClick($event)">
+            <e-items>
+                <e-item id="FontStyle" tooltipText="Font Style" type="Input" disabled="true">
+                    <ng-template #template>
+                        <ejs-combobox id="games" #sample [dataSource]="fontTypeList" (select)="fontFamily($event)"
+                            [(value)]="value"></ejs-combobox>
+                    </ng-template>
+                </e-item>
+
+                <e-item id="Separator3" type="Separator">
+                    <ng-template #template>
+                        <div style="margin-left:1px;"></div>
+                    </ng-template>
+                </e-item>
+
+                <e-item id="FontSize" tooltipText="Font Size" disabled="true">
+                    <ng-template #template>
+                        <ejs-numerictextbox id="range" value="12" format="##.##" [step]="2" [min]="1" [max]="30"
+                            width="110px" (change)="fontSizeChange($event)"></ejs-numerictextbox>
+                    </ng-template>
+                </e-item>
+
+                <e-item id="Bold" prefixIcon="e-icons e-bold" tooltipText="Bold" type="Button" disabled="true"></e-item>
+
+                <e-item id="Italic" prefixIcon="e-icons e-italic" tooltipText="Italic" type="Button"
+                   disabled="true"></e-item>
+
+                <e-item id="Underline" prefixIcon="e-icons e-underline" tooltipText="Underline" type="Button"
+                   disabled="true">
+                </e-item>
+
+                <e-item id="FontColor" disabled="true">
+                    <ng-template #template>
+                        <input ejs-colorpicker id="color-picker" type="color" (change)="colorChange($event)" />
+                    </ng-template>
+                </e-item>
+
+            </e-items>
+        </ejs-toolbar>
+    </div>
+    <div id="diagram-space" class="sb-mobile-diagram">
+        <div class="content-wrapper" style="width: 100%">
+            <ejs-diagram #diagram id="diagram" width="100%" height="700px" [nodes]="nodes" [connectors]="connectors"
+                [constraints]="constraints"
+                (created)="created()" (selectionChange)="selectionChange($event)" [rulerSettings]="rulerSettings">
+            </ejs-diagram>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample visualizes a structured process flow by grouping related elements using built-in container shapes.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        This sample demonstrates how a process can be organized using containers that group related elements together. Setting the <code>type</code> property of a <code>shape</code> to Container enables the grouping behavior. Nodes can be added inside the container using the <code>children</code> property. Additionally, containers can be created interactively by dragging container shapes from the symbol palette into the diagram.
+    </p>
+</div>

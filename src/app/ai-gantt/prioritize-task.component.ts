@@ -3,12 +3,13 @@ import { GanttModule } from '@syncfusion/ej2-angular-gantt';
 import { tasksCollection, resourceCollection } from './ganttdata';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { ToolbarService } from '@syncfusion/ej2-angular-gantt';
-import { getAzureChatAIRequest } from '../../azure-openai';
-
+import { serverAIRequest } from '../common/ai-service';
+import {AIToastComponent} from '../common/ai-toast.component';  
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
 @Component({
   selector: 'app-prioritize-task',
   standalone: true,
-  imports: [GanttModule, ToolbarModule],
+  imports: [GanttModule, ToolbarModule, ToastModule, AIToastComponent],
   providers: [ToolbarService],
   templateUrl: './prioritize-task.component.html'
 })
@@ -96,7 +97,7 @@ export class PrioritizeTaskComponent {
     Return the entire modified TaskCollection in JSON format. Ensure all tasks are included with their updated isCritical property. Do not include any other text or additional information.`;
       let prompt = input;
       debugger;
-      let aioutput = getAzureChatAIRequest({
+      let aioutput = serverAIRequest({
         messages: [{ role: 'user', content: prompt }],
       });
       aioutput.then((result: any) => {
@@ -124,23 +125,28 @@ export class PrioritizeTaskComponent {
       - The 'AddedResourceIds' property with the IDs of tasks where additional resources were added.
       
       Do not include any additional text or information.`;
-        let aioutput1 = getAzureChatAIRequest({
-          messages: [{ role: 'user', content: input1 }],
-        });
+      let aioutput1 = serverAIRequest({
+        messages: [{ role: 'user', content: input1 }],
+      });
         aioutput1.then((result: any) => {
-          let cleanedJsonData1 = result.replace(/^```json\n|```\n?$/g, '');
-          let criticalTask1 = JSON.parse(cleanedJsonData1);
-          (this.gantt as any).dataSource = criticalTask1.CriticalCollection;
-          let modifiedtaskID = criticalTask1.AddedResourceIds;
-          let taskIdsString = modifiedtaskID.join(', ');
-          let csfooterElement = document.getElementById('csfooter');
-          if (csfooterElement) {
-            csfooterElement.innerText =
-              ' Critical task containing Task Id: ' +
-              taskIdsString +
-              ' new resources has been added';
+          if (result) {
+            let cleanedJsonData1 = result.replace(/^```json\n|```\n?$/g, '');
+            let criticalTask1 = JSON.parse(cleanedJsonData1);
+            (this.gantt as any).dataSource = criticalTask1.CriticalCollection;
+            let modifiedtaskID = criticalTask1.AddedResourceIds;
+            let taskIdsString = modifiedtaskID.join(', ');
+            let csfooterElement = document.getElementById('csfooter');
+            if (csfooterElement) {
+              csfooterElement.innerText =
+                ' Critical task containing Task Id: ' +
+                taskIdsString +
+                ' new resources has been added';
+            }
+            (this.gantt as any).hideSpinner();
           }
-          (this.gantt as any).hideSpinner();
+          else {
+            (this.gantt as any).hideSpinner();
+          }
         });
       });
     }

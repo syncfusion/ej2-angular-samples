@@ -15,7 +15,8 @@ import { convertTextToMindMap } from './ai-mindmap';
 import { getConnectorDefaults } from './utilitymethods';
 import { NodeConstraints, randomId, SnapConstraints } from "@syncfusion/ej2-angular-diagrams";
 import { BasicShapeModel, ISelectionChangeEventArgs, PointPort, UserHandleEventsArgs } from "@syncfusion/ej2-angular-diagrams";
-
+import {AIToastComponent} from '../common/ai-toast.component';  
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
 export interface MindMapData {
   id: string;
   parentId: string;
@@ -52,7 +53,7 @@ export function getPort() {
 @Component({
   selector: 'app-smart-mindmap',
   standalone: true,
-  imports: [DiagramModule, SymbolPaletteModule, ToolbarModule, ButtonModule, FabModule, UploaderModule, MenuModule, DialogModule, DropDownButtonModule, TextBoxModule],
+  imports: [DiagramModule, SymbolPaletteModule, ToolbarModule, ButtonModule, FabModule, UploaderModule, MenuModule, DialogModule, DropDownButtonModule, TextBoxModule, ToastModule, AIToastComponent],
   providers: [DataBindingService, PrintAndExportService, FlowchartLayoutService, MindMapService, UndoRedoService],
   templateUrl: './smart-mindmap.component.html',
   styleUrl: './smart-mindmap.component.css'
@@ -71,7 +72,7 @@ export class SmartMindmapComponent {
   @ViewChild('msgBtn2', { static: true }) public msgBtn2!: ButtonComponent;
   @ViewChild('msgBtn3', { static: true }) public msgBtn3!: ButtonComponent;
   @ViewChild('textBox', { static: true }) public textBox!: TextBoxComponent;
-  @ViewChild('sendButton', { static: true }) public sendButton!: ButtonComponent;
+  @ViewChild('dbSend', { static: true }) public sendButton!: ButtonComponent;
   @ViewChild('toolbarObj', { static: true }) public toolbarObj!: ToolbarComponent;
   @ViewChild('menu', { static: true }) public menu!: MenuComponent;
   public asyncSettings: Object = {
@@ -101,7 +102,17 @@ export class SmartMindmapComponent {
   public selectedItems: any = { constraints: SelectorConstraints.UserHandle, userHandles: this.handle };
   public menuItems = menuItems;
   public getConnectorDefaults = getConnectorDefaults;
-
+  public layout = {
+      type: 'MindMap', horizontalSpacing: 80,
+      verticalSpacing: 50,
+      getBranch: function (node: Node) {
+        if (node.addInfo) {
+          var addInfo = node.addInfo;
+          return (addInfo as any).orientation.toString();
+        }
+        return 'Left';
+      }
+    }
 
   ngOnInit(): void {
     if (this.diagram) {
@@ -231,11 +242,11 @@ export class SmartMindmapComponent {
         id: node.id,
         Label: node.annotations ? node.annotations[0].content : 'Node',
         fill: node!.style.fill,
-        branch: node.addInfo.orientation,
+        branch: node.addInfo?.orientation,
         strokeColor: node.style.strokeColor,
-        parentId: node.data.parentId,
-        level: node.addInfo.level,
-        orientation: node.addInfo!.orientation,
+        parentId: node.data?.parentId,
+        level: node.addInfo?.level,
+        orientation: node.addInfo?.orientation,
         hasChild: false,
       };
       this.workingData.push(nodeData);

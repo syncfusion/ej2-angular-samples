@@ -38,7 +38,7 @@ export class GanttTimelineTemplateComponent implements OnInit {
     public imageString(date: any) {
       const gantt = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
       const imageDate = gantt.locale === 'ar' ? this.parseArabicDate(date) : this.parseDateString(date);
-      return 'assets/gantt/images/'+ imageDate.getDay() +'.svg' ;
+      return './assets/gantt/images/'+ imageDate.getDay() +'.svg' ;
     }
 
     public convertArabicNumeralsToWestern(arabicNumerals: any) {

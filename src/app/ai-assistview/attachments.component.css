@@ -1,0 +1,24 @@
+
+.attachment-aiassistview {
+    height: 600px;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.attachment-aiassistview .banner-content .e-assistview-icon:before {
+    font-size: 35px;
+}
+
+.attachment-aiassistview .banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 330px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 750px) {
+    .attachment-aiassistview {
+        width: 100%;
+    }
+}

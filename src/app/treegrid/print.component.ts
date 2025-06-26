@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { sampleData } from './jsontreegriddata';
 import { TreeGridComponent, ToolbarService, ExcelExportService, PdfExportService, PageService, TreeGridModule } from '@syncfusion/ej2-angular-treegrid';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -7,8 +7,10 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'print.html',
+    styleUrls: ['./gridlines.style.css'],
     providers: [ToolbarService, PageService, ExcelExportService, PdfExportService],
     standalone: true,
+    encapsulation: ViewEncapsulation.None,
     imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class PrintComponent implements OnInit {

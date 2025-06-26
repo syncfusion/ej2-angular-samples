@@ -24,7 +24,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/styles",
-              "src/source"
+              "src/source",
+              "src/embedding-model"
             ],
             "styles": [],
             "scripts": []

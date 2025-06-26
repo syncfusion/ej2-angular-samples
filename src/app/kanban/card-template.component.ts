@@ -28,8 +28,7 @@ export class CardTemplateComponent {
     'Menu',
     'Order',
     'Ready to Serve',
-    'Delivered',
-    'Served',
+    'Delivered'
   ];
   
   onDialogClose(args: DialogEventArgs) {

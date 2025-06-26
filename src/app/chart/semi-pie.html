@@ -1,18 +1,18 @@
 <div id="action-description">
     <p>
-        This example demonstrates a semi-pie chart for mobile browsers usage statistics. 
+        This example demonstrates a semi-pie chart for mobile browsers usage statistics. Data label shows the information about the points.
     </p>
 </div>
 <div class="control-section">
-        <ejs-accumulationchart id='container' [legendSettings]="legendSettings" [tooltip]="tooltip" (load)='load($event)' [annotations]='annotations' [enableAnimation]="enableAnimation" [enableBorderOnMouseMove]='false'>
+        <ejs-accumulationchart id='container' [legendSettings]="legendSettings" (load)='load($event)' enableAnimation="false" [annotations]='annotations' [enableAnimation]="enableAnimation" [enableBorderOnMouseMove]='false'>
             <e-accumulation-series-collection>
-                <e-accumulation-series name='Browser' [dataSource]='data' xName='Browser' yName='Users' [startAngle]="startAngle" [endAngle]="endAngle" innerRadius="40%" [radius]="radius" [dataLabel]="dataLabel" tooltipMappingName='tooltipMappingName'>
+                <e-accumulation-series name='Browser' [dataSource]='data' xName='Browser' yName='Users' [startAngle]="startAngle" [endAngle]="endAngle" [border]="border" innerRadius="50%" borderRadius="3" [radius]="radius" [dataLabel]="dataLabel">
                 </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
 </div>
 <div id="description">
-    <p> In this example, you can see how to render a semi pie chart using <code>StartAngle</code> and <code>EndAngle</code> properties. Data labels are wrapped to fit inside the pie slice. To enable the datalabel wrap feature, use the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/data-label#text-wrap" aria-label="Navigate to the textWrap property reference for Angular Accumulation Chart DataLabel">textwrap</a> datalabel property.</p>
+    <p> In this example, you can see how to render a semi pie chart using <code>StartAngle</code> and <code>EndAngle</code> properties. Data labels are wrapped to fit inside the pie slice. To enable the datalabel wrap feature, use the <code>textWrap</code> datalabel property.</p>
     <p>
         More information on the data labels can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/data-label/" aria-label="Navigate to the documentation for Datalabel in Angular Accumulation Chart component">documentation section</a>.
     </p>

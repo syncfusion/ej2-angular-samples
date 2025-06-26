@@ -1,0 +1,192 @@
+<div id="action-description">
+  <p>This demo shows efficient employee shift management using the Scheduler, including shift scheduling, swapping,
+    highlighting staff unavailability, and seamlessly assigning leave replacements using drag-and-drop.
+  </p>
+</div>
+<div id="schedule-control-section" class="shift-management-control-section">
+  <div class="col-lg-12 control-section">
+    <div class="control-wrapper shift-management-sample-wrapper">
+      <ejs-schedule #scheduleObj id='schedule' [currentView]="currentView" [selectedDate]="selectedDate"
+        cssClass='schedule-shift-management' width='100%' height='550px' [group]="group" [startHour]="'07:00'"
+        [endHour]="'23:00'" [eventSettings]="eventSettings" [timeScale]="timeScale" [workHours]="workHours"
+        [showTimeIndicator]="true" [allowDragAndDrop]="false" [allowResizing]="false"
+        [editorHeaderTemplate]="editorHeaderTemplate" (eventRendered)="onEventRendered($event)"
+        (eventClick)="onEventClick($event)" (actionComplete)="onActionComplete($event)"
+        (navigating)="onNavigating($event)" (popupOpen)="onPopupOpen($event)" (popupClose)="onPopupClose($event)"
+        (cellClick)="onCellClick($event)">
+        <ng-template #editorHeaderTemplate let-data>
+          <div id="event-header">Leave Replacement</div>
+        </ng-template>
+        <e-views>
+          <e-view option="TimelineWeek"></e-view>
+          <e-view option="Agenda" [eventTemplate]="agendaTemplateRef"></e-view>
+        </e-views>
+        <ng-template #agendaToolbarTmpl>
+          <ejs-toolbar width="100%" [ngClass]="{ 'e-hidden': currentView !== 'Agenda' }" overflowMode="Scrollable"
+            class="agenda-toolbar">
+            <e-items>
+              <e-item type="Input" align="Left" class="tooltip-chips">
+                <ng-template #template>
+                  <ejs-chiplist #chipList selection="Single" [selectedChips]="[0]" cssClass="e-outline"
+                    (beforeClick)="handleChipBeforeClick($event, false)" (click)="agendaChipsClick($event)">
+                    <e-chips>
+                      <e-chip text="All"></e-chip>
+                      <e-chip text="Doctors"></e-chip>
+                      <e-chip text="Nurses"></e-chip>
+                      <e-chip text="Staffs"></e-chip>
+                    </e-chips>
+                  </ejs-chiplist>
+                </ng-template>
+              </e-item>
+              <e-item type="Input" align="Right" class="tooltip-ddl">
+                <ng-template #template>
+                  <ejs-dropdownlist #dropdown [dataSource]="agendaDropdownItems" style="width: 230px;"
+                    [fields]="{ text: 'text', value: 'value' }" placeholder="Select an employee" popupHeight="220px"
+                    showClearButton="true" (beforeOpen)="onDropDownListBeforeOpen()"
+                    (change)="onDropDownListChange($event)">
+                  </ejs-dropdownlist>
+                </ng-template>
+              </e-item>
+            </e-items>
+          </ejs-toolbar>
+        </ng-template>
+        <e-resources>
+          <e-resource field='RoleId' title='Department' name='Role' [dataSource]='employeeRole' textField='Text'
+            idField='Id' colorField='Color'>
+          </e-resource>
+          <e-resource field='DesignationId' title='Consultant' name='Designation' [dataSource]='designationsData'
+            [allowMultiple]='allowMultiple' textField='Text' idField='Id' groupIDField="GroupId" colorField='Color'>
+          </e-resource>
+        </e-resources>
+        <e-toolbaritems>
+          <e-toolbaritem name="Previous" align="Left"></e-toolbaritem>
+          <e-toolbaritem name="Next" align="Left"></e-toolbaritem>
+          <e-toolbaritem name="DateRangeText" align="Left"></e-toolbaritem>
+          <e-toolbaritem name="Views" align="Right"></e-toolbaritem>
+        </e-toolbaritems>
+      </ejs-schedule>
+      <ng-template #agendaTemplateRef let-data>
+        <div class="agenda-event">
+          <div class="e-staff">
+            <div class="staff-image">
+              {{ data.Subject.charAt(0) }}
+            </div>
+            <div class="event-details">
+              <div class="staff-info">
+                <span class="staff-name">{{ data.Subject }}</span>
+                <span>{{" "}}</span>
+                <span class="staff-role">{{ getRole(data.RoleId) }}</span>
+                <span class="staff-designation">
+                  ({{ getDesignation(data.DesignationId) }})
+                </span>
+                <span *ngIf="isLeave(data.Description)" class="staff-availability">
+                  - On Leave
+                </span>
+              </div>
+              <div class="event-time">
+                Shift Time:
+                {{ getShortTimeString(data.StartTime) }} - {{ getShortTimeString(data.EndTime) }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template #majorSlotTemplate let-data>
+        <div class="shift-label">
+          {{ getShiftTextSafe(data.date) }}
+        </div>
+      </ng-template>
+      <div class="treeview-container">
+        <div class="title-text">
+          <span>Available List</span>
+        </div>
+        <div class="role-tabs">
+          <ejs-chiplist #externalChips id="chip-avatar" selection="Single" cssClass="e-outline"
+            [selectedChips]="[chipIndex]" (beforeClick)="handleChipBeforeClick($event, true)"
+            (click)="onChipClick($event)" aria-labelledby="choiceChips">
+            <e-chips>
+              <e-chip text="All"></e-chip>
+              <e-chip text="Doctors"></e-chip>
+              <e-chip text="Nurses"></e-chip>
+              <e-chip text="Staffs"></e-chip>
+            </e-chips>
+          </ejs-chiplist>
+        </div>
+        <ejs-treeview *ngIf="chipIndex === 0" #allTree id="allStaffsTreeview" cssClass="shift-management-treeview"
+          dragArea=".shift-management-sample-wrapper" [nodeTemplate]="treeTemplate" [fields]="allTreeFields"
+          (nodeDragStop)="onTreeDragStop($event)" (nodeDragStart)="onTreeDragStart($event)"
+          [allowDragAndDrop]="allowDragAndDrop"></ejs-treeview>
+
+        <ejs-treeview *ngIf="chipIndex === 1" #doctorsTree id="doctorsTreeview" cssClass="shift-management-treeview"
+          dragArea=".shift-management-sample-wrapper" [nodeTemplate]="treeTemplate" [fields]="doctorsTreeFields"
+          (nodeDragStop)="onTreeDragStop($event)" (nodeDragStart)="onTreeDragStart($event)"
+          [allowDragAndDrop]="allowDragAndDrop"></ejs-treeview>
+
+        <ejs-treeview *ngIf="chipIndex === 2" #nursesTree id="nursesTreeview" cssClass="shift-management-treeview"
+          dragArea=".shift-management-sample-wrapper" [nodeTemplate]="treeTemplate" [fields]="nursesTreeFields"
+          (nodeDragStop)="onTreeDragStop($event)" (nodeDragStart)="onTreeDragStart($event)"
+          [allowDragAndDrop]="allowDragAndDrop"></ejs-treeview>
+
+        <ejs-treeview *ngIf="chipIndex === 3" #staffsTree id="staffsTreeview" cssClass="shift-management-treeview"
+          dragArea=".shift-management-sample-wrapper" [nodeTemplate]="treeTemplate" [fields]="staffsTreeFields"
+          (nodeDragStop)="onTreeDragStop($event)" (nodeDragStart)="onTreeDragStart($event)"
+          [allowDragAndDrop]="allowDragAndDrop"></ejs-treeview>
+
+        <ng-template #treeTemplate let-data>
+          <div id="waiting">
+            <div id="waitdetails">
+              <img class="employee-image" [src]="imageMap[data.Name.toLowerCase()]" alt="Employee" />
+              <div class="text-container">
+                <div id="waitlist">{{ data.Name }}</div>
+                <div id="waitcategory">{{ data.Description }}</div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+      <div id="target" [ngStyle]="{
+        position: 'fixed',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        'z-index': 9999,
+        display: dialogVisible ? 'block' : 'none'
+      }">
+        <ejs-dialog id="modalDialog" cssClass="swap-dialog" [height]="'250px'" [width]="'378px'" [isModal]="true"
+          [buttons]="buttons" header="Shift swap" [(visible)]="dialogVisible" [showCloseIcon]="true"
+          [animationSettings]="animationSettings" (open)="dialogOpen()" (close)="dialogClose()">
+          <div class="e-shift-swap">
+            <div>
+              <label>Select an employee (Available for swapping)</label>
+              <ejs-dropdownlist [dataSource]="employeeNamesList" [fields]="{ text: 'name', value: 'id' }"
+                placeholder="Select an employee" (change)="employeeNameChange($event)"></ejs-dropdownlist>
+            </div>
+            <div style="margin-top: 10px;">
+              <label>Select shift</label>
+              <ejs-dropdownlist #shiftDropdown [dataSource]="shiftsData" [fields]="{ text: 'name', value: 'id' }"
+                placeholder="Select shift" (change)="shiftChange($event)"></ejs-dropdownlist>
+            </div>
+          </div>
+        </ejs-dialog>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="description">
+  <p>
+    In this demo, employees are categorized by roles (Doctors, nurses, and support staff) and designations, with two
+    daily shifts: Morning(7 AM-3 PM) and Evening(3 PM-11 PM). Past shifts are diabled for clarity.
+  </p>
+  <p><b>Shift Swapping</b></p>
+  <p>
+    Shifts can be swapped between employees with the same designation using the swap request icon. The updated shift
+    is highlighted with a swap icon, and details are available in the quick info popup.
+  </p>
+  <p><b>Leave Replacement</b>
+  </p>
+  <p>To cover leave, drag and drop available staff from the same designation. The appointment updates with a
+    replacement icon, and details appear in the quick info popup.</p>
+  <p><b>Filtering</b></p>
+  <p>Filtering shifts by role or employee name in the agenda view to check staff availability and for shift
+    management.</p>
+</div>

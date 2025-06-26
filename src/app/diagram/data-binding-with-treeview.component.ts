@@ -25,7 +25,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
  export interface EmployeeInfo {
    Name: string;
  }
- 
+
  @Component({
     selector: 'control-content',
     templateUrl: 'data-binding-with-treeview.html',
@@ -43,7 +43,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
  export class DataBindingWithTreeviewComponent {
     @ViewChild('diagram')
     public diagram: DiagramComponent;
- 
+
     @ViewChild('treeview')
     public treeview: TreeViewComponent;
     public index : number = 1;
@@ -72,7 +72,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
      { Name: "Craft Personnel4", Id: "17", ParentId: "15" }
     ];
     public tools = DiagramTools.Default;
- 
+
     public items1: DataManager = new DataManager(
       this.data1 as JSON[],
       new Query().take(7)
@@ -89,13 +89,13 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     public snapSettings: SnapSettingsModel = {
       constraints: SnapConstraints.None,
     };
-  
+
     public layout: Object = {
       type: 'HierarchicalTree',
       verticalSpacing: 50, horizontalSpacing: 40,
           enableAnimation: true
     };
-  
+
     //Defines the default node and connector properties
     public nodeDefaults(node: NodeModel): NodeModel {
      node.width = 100;
@@ -133,8 +133,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
      this.add();
     }
     public deleteButton(){
-      debugger
-      if ((this.diagram.selectedItems.nodes[0].data as any).Id !== "1") {
+       if ((this.diagram.selectedItems.nodes[0].data as any).Id !== "1") {
        this.remove();
    }
     }
@@ -158,7 +157,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
      };
      args.dragItem = node;
     }
-    //Drop a node from the palette into the diagram 
+    //Drop a node from the palette into the diagram
      public drop(args : any) {
      let connector;
      let tempData;
@@ -198,7 +197,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
               this.treeview.refresh();
           }
        }, 0);
- 
+
  }
 //Change the annotation of the node
  public textEdit(args : any) {
@@ -223,7 +222,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
      let node = this.diagram.getObject(this.treeview.selectedNodes[0]);
      this.diagram.select([node]);
  }
- 
+
  // Key Press Event
  public keyPress(args : any) {
      if (args.event.key === 'Enter') {
@@ -255,7 +254,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
          }
      }
      this.diagram.doLayout();
- 
+
  }
  //Remove sub child node
  public removeSubChild(node, canDelete) {
@@ -346,9 +345,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
  }
  public field:Object ={ dataSource: this.data1, id: 'Id', text: 'Name', parentID: 'ParentId',
  hasChildren: 'hasChild' };
- 
+
  public allowEditing:boolean = true;
  public allowDragAndDrops:boolean = true;
- 
+
   }
-  

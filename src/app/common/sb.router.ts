@@ -103,6 +103,7 @@ import { AISchedulerSampleModule } from '../ai-schedule/aischedule.module';
 import { AIDiagramSampleModule } from '../ai-diagram/aidiagram.module';
 import { AIDocumentEditorSampleModule } from '../ai-document-editor/aidocumenteditor.module';
 import { AIRichTextEditorSampleModule } from '../ai-rich-text-editor/airichtexteditor.module';
+import { BlockEditorSampleModule } from '../block-editor/block-editor.module';
 
 
 const appRoutes: any = [
@@ -187,6 +188,8 @@ const appRoutes: any = [
     { path: 'document-editor', loadChildren: import('../document-editor/document-editor.module').then(m=>m.DocumentEditorSampleModule) },
     { path: ':theme/document-editor/:sample', redirectTo: 'material/document-editor/default' },
     { path: 'image-editor', loadChildren: import('../image-editor/image-editor.module').then(m=>m.ImageEditorSampleModule) },
+    { path: 'block-editor', loadChildren: import('../block-editor/block-editor.module').then(m=>m.BlockEditorSampleModule) },
+    { path: ':theme/block-editor/:sample', redirectTo: 'material/block-editor/overview' },
     // calendars
     { path: 'schedule', loadChildren: import('../schedule/schedule.module').then(m=>m.ScheduleSampleModule) },
     { path: ':theme/schedule/:sample', redirectTo: 'material/schedule/default' },
@@ -334,6 +337,7 @@ const appRoutes: any = [
         MDESampleModule,
         DocumentEditorSampleModule,
         ImageEditorSampleModule,
+        BlockEditorSampleModule,
         //Buttons
         ButtonSampleModule,
         ChipsSampleModule,

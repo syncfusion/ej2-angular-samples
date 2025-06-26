@@ -6,12 +6,12 @@
 <div class="control-section">
     <div align='center'>
         <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' align='center' id='chartcontainer'
-            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [subTitle]='subTitle' [tooltip]='tooltip' (load)='load($event)' (legendClick)='legendClick($event)' [legendSettings]='legend'>
+            [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [subTitle]='subTitle' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend'>
             <e-series-collection>
                 <e-series [dataSource]='chartData1' type='StackingLine100' xName='x' yName='y' name='Canada' width='2' [marker]='marker'> </e-series>
                 <e-series [dataSource]='chartData2' type='StackingLine100' xName='x' yName='y' name='Algeria' width='2'[marker]='marker1'> </e-series>
                 <e-series [dataSource]='chartData3' type='StackingLine100' xName='x' yName='y' name='Ireland' width='2' [marker]='marker2'> </e-series>
-                <e-series [dataSource]='chartData4' type='StackingLine100' xName='x' yName='y' name='Armenia' width='3' [marker]='marker3'> </e-series>
+                <e-series [dataSource]='chartData4' type='StackingLine100' xName='x' yName='y' name='Armenia' width='2' [marker]='marker3'> </e-series>
             </e-series-collection>
         </ejs-chart>
     </div>

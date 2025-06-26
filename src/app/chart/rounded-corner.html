@@ -1,17 +1,17 @@
 <div id="action-description">
     <p>
-        This sample demonstrates the company's budget distribution over a year using a donut chart with rounded corners.
+        This sample demonstrates the global usage share of operating systems across all platforms in 2024 using a donut chart with rounded corners.
     </p>
 </div>
 <div class="control-section">
     <div>
         <ejs-accumulationchart id="container" #pie style='display:block; width: 92%' align='center'
-            [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" [enableSmartLabels]='enableSmartLabels'
+            [legendSettings]="legendSettings" [tooltip]="tooltip" [title]="title" [subTitle]="subTitle"
             [enableAnimation]='enableAnimation' (load)='load($event)' [enableBorderOnMouseMove]='false'
-            (pointRender)='pointRender($event)' [annotations]='annotations'>
+            (pointRender)='pointRender($event)'>
             <e-accumulation-series-collection>
-                <e-accumulation-series [dataSource]='data' xName='x' yName='y' innerRadius="50%" [dataLabel]="dataLabel"
-                 [border]='border' borderRadius='8'>
+                <e-accumulation-series [dataSource]='data' name="Project" xName='x' yName='y' [radius]='radius' innerRadius="50%" [dataLabel]="dataLabel"
+                 [border]='border' borderRadius='8' [explode]="false" [startAngle]="120">
                 </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>

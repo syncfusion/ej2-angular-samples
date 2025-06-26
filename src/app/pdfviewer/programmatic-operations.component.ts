@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
-import { PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService, PageOrganizerService, HighlightSettings, UnderlineSettings, StrikethroughSettings, LineSettings, ArrowSettings, RectangleSettings, CircleSettings, PolygonSettings, DistanceSettings, PerimeterSettings, AreaSettings, RadiusSettings, VolumeSettings, FreeTextSettings, DynamicStampItem, SignStampItem, StandardBusinessStampItem, CustomStampSettings, InkAnnotationSettings, StickyNotesSettings, StampSettings, LoadEventArgs, PdfViewerModule, AnnotationMoveEventArgs, AnnotationResizeEventArgs, DecoratorShapes, AnnotationSelectEventArgs } from '@syncfusion/ej2-angular-pdfviewer';
+import { PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService, PageOrganizerService, HighlightSettings, UnderlineSettings, StrikethroughSettings, SquigglySettings, LineSettings, ArrowSettings, RectangleSettings, CircleSettings, PolygonSettings, DistanceSettings, PerimeterSettings, AreaSettings, RadiusSettings, VolumeSettings, FreeTextSettings, DynamicStampItem, SignStampItem, StandardBusinessStampItem, CustomStampSettings, InkAnnotationSettings, StickyNotesSettings, StampSettings, LoadEventArgs, PdfViewerModule, AnnotationMoveEventArgs, AnnotationResizeEventArgs, DecoratorShapes, AnnotationSelectEventArgs } from '@syncfusion/ej2-angular-pdfviewer';
 import { SwitchComponent, SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -129,7 +129,7 @@ export class AnnotationBase {
  */
 @Component({
     selector: 'control-content',
-    templateUrl: 'programmatic-operations.component.html',
+    templateUrl: 'programmatic-operations.html',
     encapsulation: ViewEncapsulation.None,
     // tslint:disable-next-line:max-line-length
     providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService, NavigationService, TextSearchService,
@@ -170,7 +170,7 @@ export class ProgrammaticOperationsComponent implements OnInit {
     public contextMenu: ContextMenu;
     @ViewChild('interactionsMultiSelect')
     public interactionsMultiSelect: MultiSelectComponent;
-    public document: string = 'https://cdn.syncfusion.com/content/pdf/annotations.pdf';
+    public document: string = 'https://cdn.syncfusion.com/content/pdf/annotations-v3.pdf';
     public resource: string = "https://cdn.syncfusion.com/ej2/23.2.6/dist/ej2-pdfviewer-lib";
 
     public toolbarSettings: object = { 
@@ -240,6 +240,7 @@ export class ProgrammaticOperationsComponent implements OnInit {
         { ID: 'Highlight', Text: 'Highlight' },
         { ID: 'Underline', Text: 'Underline' },
         { ID: 'Strikethrough', Text: 'Strikethrough' },
+        { ID: 'Squiggly', Text: 'Squiggly' },
         { ID: 'Line', Text: 'Line' },
         { ID: 'Arrow', Text: 'Arrow' },
         { ID: 'Rectangle', Text: 'Rectangle' },
@@ -414,6 +415,7 @@ export class ProgrammaticOperationsComponent implements OnInit {
             case 'Highlight':
             case 'Underline':
             case 'Strikethrough':
+            case 'Squiggly':
                 {
                     this.showStrokeProperties = true;
                     this.showDeleteAddBoundsButtons = false;
@@ -437,6 +439,10 @@ export class ProgrammaticOperationsComponent implements OnInit {
                     else if(this.selectedAnnotation.AnnotationType === 'Underline')
                     {
                         this.selectedAnnotation.fillColor = "#00FF00";
+                    }
+                    else if(this.selectedAnnotation.AnnotationType === 'Squiggly')
+                    {
+                        this.selectedAnnotation.fillColor = "#FF0000";
                     }
 
                     break;
@@ -701,7 +707,7 @@ export class ProgrammaticOperationsComponent implements OnInit {
                 this.selectedAnnotation.isInputChange = false;
             }
             let shapeAnnotation: string = this.selectedAnnotation.AnnotationType;
-            if (((property === "x") || (property === "y") || (property === "height") || (property === "width")) && ((shapeAnnotation === "Underline") || (shapeAnnotation === "Strikethrough") || (shapeAnnotation === "Highlight"))) {
+            if (((property === "x") || (property === "y") || (property === "height") || (property === "width")) && ((shapeAnnotation === "Underline") || (shapeAnnotation === "Strikethrough") || (shapeAnnotation === "Highlight") || (shapeAnnotation === "Squiggly"))) {
                 this.selectedAnnotation.isInputChange = false;
             }
             if (((property === "x") || (property === "y")) && ((shapeAnnotation === "Polygon") || (shapeAnnotation === "Area") || (shapeAnnotation === "Perimeter") || (shapeAnnotation === "Volume"))) {
@@ -730,12 +736,13 @@ export class ProgrammaticOperationsComponent implements OnInit {
         thickness: this.selectedAnnotation.thickness,
         strokeColor: this.selectedAnnotation.strokeColor,
         fillColor: this.selectedAnnotation.fillColor,
-        bounds: [{ 
-            x: this.selectedAnnotation.x, 
-            y: this.selectedAnnotation.y, 
-            width: this.selectedAnnotation.width, 
-            height: this.selectedAnnotation.height
-        }],
+        bounds: (this.selectedAnnotation.bounds && this.selectedAnnotation.bounds.length > 0) ? this.selectedAnnotation.bounds.map(function (item) { return { x: item.X, y: item.Y, width: item.Width, height: item.Height }; }) :
+            [{
+                x: this.selectedAnnotation.x,
+                y: this.selectedAnnotation.y,
+                width: this.selectedAnnotation.width,
+                height: this.selectedAnnotation.height
+            }],
         vertexPoints: this.selectedAnnotation.vertexPoints,
         fontFamily: this.selectedAnnotation.fontFamily,
         fontStyle: this.selectedAnnotation.fontStyle,
@@ -779,6 +786,9 @@ export class ProgrammaticOperationsComponent implements OnInit {
             this.pdfviewerControl.annotation.addAnnotation(this.selectedAnnotation.AnnotationType, currentannotationSettings);
         }
         else if (this.selectedAnnotation.AnnotationType === 'Strikethrough') {
+            this.pdfviewerControl.annotation.addAnnotation(this.selectedAnnotation.AnnotationType, currentannotationSettings);
+        }
+        else if (this.selectedAnnotation.AnnotationType === 'Squiggly') {
             this.pdfviewerControl.annotation.addAnnotation(this.selectedAnnotation.AnnotationType, currentannotationSettings);
         }
         else if (this.selectedAnnotation.AnnotationType === 'Line') {
@@ -934,7 +944,7 @@ export class ProgrammaticOperationsComponent implements OnInit {
         this.selectedAnnotation.fillColor = currentannotation.fillColor;
         this.selectedAnnotation.strokeColor = currentannotation.strokeColor;
 
-        if (currentannotation.textMarkupAnnotationType === "Highlight" || currentannotation.textMarkupAnnotationType === "Underline" || currentannotation.textMarkupAnnotationType === "Strikethrough") {
+        if (currentannotation.textMarkupAnnotationType === "Highlight" || currentannotation.textMarkupAnnotationType === "Underline" || currentannotation.textMarkupAnnotationType === "Strikethrough" || currentannotation.textMarkupAnnotationType === "Squiggly") {
             this.selectedAnnotation.AnnotationType = currentannotation.textMarkupAnnotationType;
         }
 
@@ -1001,7 +1011,7 @@ export class ProgrammaticOperationsComponent implements OnInit {
         if (currentannotation.fillColor) {
             this.selectedAnnotation.fillColor = currentannotation.fillColor;
         }
-        if (this.selectedAnnotation.AnnotationType === "Highlight" || this.selectedAnnotation.AnnotationType === "Underline" || this.selectedAnnotation.AnnotationType === "Strikethrough") {
+        if (this.selectedAnnotation.AnnotationType === "Highlight" || this.selectedAnnotation.AnnotationType === "Underline" || this.selectedAnnotation.AnnotationType === "Strikethrough" || this.selectedAnnotation.AnnotationType === "Squiggly") {
             if (currentannotation.bounds[0] && currentannotation.bounds[0].X && currentannotation.bounds[0].Y && currentannotation.bounds[0].Width && currentannotation.bounds[0].Height) {
                 this.selectedAnnotation.bounds = currentannotation.bounds;
                 this.selectedAnnotation.width = currentannotation.bounds[0].Width;
@@ -1326,7 +1336,7 @@ export class ProgrammaticOperationsComponent implements OnInit {
             selectedAnnotation.width = 100;
             selectedAnnotation.height = 100;
         }
-        else if ((ShapeAnnotation === "Highlight") || (ShapeAnnotation === "Underline") || (ShapeAnnotation === "Strikethrough")) {
+        else if ((ShapeAnnotation === "Highlight") || (ShapeAnnotation === "Underline") || (ShapeAnnotation === "Strikethrough") || (ShapeAnnotation === "Squiggly")) {
 
             selectedAnnotation.width = 100;
             selectedAnnotation.height = 14;
@@ -1351,7 +1361,7 @@ export class ProgrammaticOperationsComponent implements OnInit {
         if (ShapeAnnotation === "Distance") {
             selectedAnnotation.leaderLength = 0;
         }
-        if ((ShapeAnnotation === "Highlight") || (ShapeAnnotation === "Underline") || (ShapeAnnotation === "Strikethrough") || (ShapeAnnotation === "FreeText")) {
+        if ((ShapeAnnotation === "Highlight") || (ShapeAnnotation === "Underline") || (ShapeAnnotation === "Strikethrough") || (ShapeAnnotation === "Squiggly") || (ShapeAnnotation === "FreeText")) {
             selectedAnnotation.x = 10;
             selectedAnnotation.y = 10;
             if (ShapeAnnotation === 'Highlight') {
@@ -1361,6 +1371,9 @@ export class ProgrammaticOperationsComponent implements OnInit {
                 selectedAnnotation.fillColor = "#00FF00FF";
             }
             else if (ShapeAnnotation === 'Strikethrough') {
+                selectedAnnotation.fillColor = "#FF0000FF";
+            }
+            else if (ShapeAnnotation === 'Squiggly') {
                 selectedAnnotation.fillColor = "#FF0000FF";
             }
             else {
@@ -1404,7 +1417,7 @@ export class ProgrammaticOperationsComponent implements OnInit {
     }
     public annotationUpdate(annotation: any) {
         let currentAnnotation = annotation;
-        if (currentAnnotation.textMarkupAnnotationType === "Highlight" || currentAnnotation.textMarkupAnnotationType === "Underline" || currentAnnotation.textMarkupAnnotationType === "Strikethrough") {
+        if (currentAnnotation.textMarkupAnnotationType === "Highlight" || currentAnnotation.textMarkupAnnotationType === "Underline" || currentAnnotation.textMarkupAnnotationType === "Strikethrough" || currentAnnotation.textMarkupAnnotationType === "Squiggly") {
             currentAnnotation.bounds = [];
             currentAnnotation.color = this.selectedAnnotation.fillColor;
             if (this.selectedAnnotation.bounds?.length == 0) {
@@ -1669,19 +1682,23 @@ export class ProgrammaticOperationsComponent implements OnInit {
         if (this.pdfviewerControl) {
             this.pageCount = this.pdfviewerControl.pageCount
         }
-        if (e.documentName === 'annotations.pdf') {
+        if (e.documentName === 'annotations-v3.pdf') {
             this.pdfviewerControl.annotation.addAnnotation("Highlight", {
-                bounds: [{ x: 97, y: 610, width: 350, height: 14 }],
+                bounds: [{ x: 97, y: 610, width: 340, height: 14 }],
                 pageNumber: 1
             } as HighlightSettings);
             this.pdfviewerControl.annotation.addAnnotation("Underline", {
-                bounds: [{ x: 97, y: 723, width: 353.5, height: 14 }],
+                bounds: [{ x: 97, y: 705, width: 346, height: 14 }],
                 pageNumber: 1
             } as UnderlineSettings);
             this.pdfviewerControl.annotation.addAnnotation("Strikethrough", {
-                bounds: [{ x: 97, y: 836, width: 376.5, height: 14 }],
+                bounds: [{ x: 97, y: 800, width: 367, height: 14 }],
                 pageNumber: 1
             } as StrikethroughSettings);
+            this.pdfviewerControl.annotation.addAnnotation("Squiggly", {
+                bounds: [{ x: 97, y: 895.5, width: 336, height: 14 }],
+                pageNumber: 1
+            } as SquigglySettings);
             this.pdfviewerControl.annotation.addAnnotation("Line", {
                 offset: { x: 200, y: 230 },
                 pageNumber: 2,

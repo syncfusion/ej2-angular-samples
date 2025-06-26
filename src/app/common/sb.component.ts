@@ -730,6 +730,7 @@ export class SBController {
         select('.sb-mobile-setting').addEventListener('click', this.toggleMobilePropertyPanel.bind(this));
         select('.sb-settings').addEventListener('click', this.onSearchButtonClick.bind(this));
         select('.e-search-overlay').addEventListener('click', this.onSearchOverlayClick.bind(this));
+        select('.close-button').addEventListener('click', this.onCloseButtonClick.bind(this));
         this.mobileOverlay.addEventListener('click', this.onMobileOverlayClick.bind(this));
         this.themeDarkButton.addEventListener('click', this.darkSwitch.bind(this));
         window.addEventListener('resize', this.onSBResize.bind(this));
@@ -740,6 +741,13 @@ export class SBController {
                document.querySelector('.e-search-overlay').classList.add('sb-hide');
             }
         });
+    }
+
+    onCloseButtonClick(): void {
+        let banner = document.querySelector('.sb-header1');
+        if (banner) {
+            banner.classList.add('sb-hide');
+        }
     }
 
     onPrevButtonClick(): void {
@@ -1054,14 +1062,17 @@ export class SBController {
         }
     }
 
-    setScrollTop() {
-        const rightPane: HTMLElement = <HTMLElement>select('.sb-right-pane');
-        if (this.isMobile) {
-            rightPane.scrollTop = 74;
-        } else {
-            rightPane.scrollTop = 0;
-        }
+     setScrollTop() {
+    const rightPane: HTMLElement = <HTMLElement>select('.sb-right-pane');
+    const leftPane: HTMLElement = <HTMLElement>select('#left-sidebar');
+    if (this.isMobile) {
+        if (rightPane) rightPane.scrollTop = 74; // mobile offset if needed
+        if (leftPane) leftPane.scrollTop = 0;    // scroll left pane to top
+    } else {
+        if (rightPane) rightPane.scrollTop = 0;
+        if (leftPane) leftPane.scrollTop = 0;
     }
+   }
 
     updateSourceCode(path: string): void {
         let pathArray: string[] = path.split('/');

@@ -91,7 +91,7 @@ export class SelectionComponent implements OnInit {
             rows: [{ name: 'Country' }, { name: 'Products' }],
             valueSortSettings: { headerDelimiter: ' - ' },
             dataSource: data,
-            expandAll: false,
+            expandAll: true,
             values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
             filters: []
         };

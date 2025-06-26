@@ -2,7 +2,8 @@ import { pipeline, env } from "@xenova/transformers";
 
 // env.allowLocalModels = false;
 
-env.localModelPath = './';
+// env.localModelPath = './assets/';
+env.localModelPath = './embedding-model/';
 
 // Disable the loading of remote models from the Hugging Face Hub:
 env.allowRemoteModels = false;
@@ -10,22 +11,21 @@ env.allowRemoteModels = false;
 let pipe: any = null;
 
 export async function initializePipeline() {
-  pipe = await pipeline("feature-extraction", "models");
+  pipe = await pipeline("feature-extraction", "Supabase/gte-small");
   return pipe;
 }
 
 export async function embeddingModel(description: string) {
-  let embedding = [];
-  // if (!pipe) {
-  //   pipe = await initializePipeline();
-  // }
-  // // Generate the embedding from text
-  // const output = await pipe(description, {
-  //   pooling: "mean",
-  //   normalize: true,
-  // });
+  if (!pipe) {
+    pipe = await initializePipeline();
+  }
+  // Generate the embedding from text
+  const output = await pipe(description, {
+    pooling: "mean",
+    normalize: true,
+  });
   // Extract the embedding output
-  //embedding = Array.from(output.data);
+  const embedding = Array.from(output.data);
   return embedding;
 }
 

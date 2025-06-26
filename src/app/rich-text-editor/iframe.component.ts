@@ -3,7 +3,8 @@
  */
 import { Component, ViewChild } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, EmojiPickerService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, EmojiPickerService, TableService, CodeBlockService, ImportExportService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ExportWordModel, ExportPdfModel, ImportWordModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, IFrameSettingsModel, FileManagerService } from '@syncfusion/ej2-angular-richtexteditor';
 import { FileManagerSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
@@ -12,7 +13,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
     templateUrl: 'iframe.html',
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, FileManagerService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, EmojiPickerService, TableService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, FileManagerService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, EmojiPickerService, TableService, CodeBlockService, ImportExportService],
     standalone: true,
     imports: [SBActionDescriptionComponent, RichTextEditorModule, SBDescriptionComponent]
 })
@@ -24,13 +25,12 @@ export class IFrameComponent {
     private hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
 
     public tools: ToolbarModule = {
-        items: ['Bold', 'Italic', 'Underline', 'StrikeThrough', 'InlineCode', 'SuperScript', 'SubScript', '|',
-            'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
-            'LowerCase', 'UpperCase', '|',
-            'Formats', 'Alignments', 'Blockquote', '|', 'NumberFormatList', 'BulletFormatList', '|',
-            'Outdent', 'Indent', '|', 'CreateLink', 'Image', 'FileManager', 'Video', 'Audio', 'CreateTable', '|', 'ClearFormat',
-            '|', 'EmojiPicker', 'Print', '|',
-            'SourceCode', 'FullScreen', '|', 'Undo', 'Redo']
+        items: ['Undo', 'Redo', '|', 'ImportWord', 'ExportWord', 'ExportPdf', '|',
+            'Bold', 'Italic', 'Underline', 'StrikeThrough', 'InlineCode', '|', 'CreateLink', 'Image', 'CreateTable', 'CodeBlock',
+            'HorizontalLine', 'Blockquote', '|', 'BulletFormatList', 'NumberFormatList', '|', 'Formats', 'Alignments', '|', 'Outdent', 'Indent', '|',
+            'FontColor', 'BackgroundColor', 'FontName', 'FontSize', '|', 'LowerCase', 'UpperCase', '|', 'SuperScript', 'SubScript', '|',
+            'EmojiPicker', 'FileManager', 'Video', 'Audio', '|', 'FormatPainter', 'ClearFormat',
+            '|', 'Print', 'FullScreen', '|', 'SourceCode']
     };
 
     public fileManagerSettings: FileManagerSettingsModel = {
@@ -42,6 +42,33 @@ export class IFrameComponent {
             uploadUrl: this.hostUrl + 'api/FileManager/Upload',
             downloadUrl: this.hostUrl + 'api/FileManager/Download'
         }
+    };
+
+    public exportWord: ExportWordModel = {
+        serviceUrl: 'https://services.syncfusion.com/angular/production/api/RichTextEditor/ExportToDocx',
+        fileName: 'RichTextEditor.docx',
+        stylesheet: `
+        .e-rte-content {
+            font-size: 1em;
+            font-weight: 400;
+            margin: 0;
+        }`
+    };
+
+    public importWord: ImportWordModel = {
+        serviceUrl: 'https://services.syncfusion.com/angular/production/api/RichTextEditor/ImportFromWord',
+    };
+
+    public exportPdf: ExportPdfModel = {
+        serviceUrl: 'https://services.syncfusion.com/angular/production/api/RichTextEditor/ExportToPdf',
+        fileName: 'RichTextEditor.pdf',
+        stylesheet: `
+        .e-rte-content{
+            font-size: 1em;
+            font-weight: 400;
+            margin: 0;
+        }
+    `
     };
 
     public iframe: IFrameSettingsModel = { enable: true };

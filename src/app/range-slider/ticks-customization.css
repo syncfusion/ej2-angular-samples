@@ -184,10 +184,14 @@
     top: 2px;
 }
 
-.fluent2 #ticks_slider .e-scale,    .fluent2 #ticks_slider .e-scale, .tailwind3 #ticks_slider .e-scale,.tailwind3-dark #ticks_slider .e-scale,
+.fluent2 #ticks_slider .e-scale,    .fluent2 #ticks_slider .e-scale,.tailwind3-dark #ticks_slider .e-scale,
 .fluent2-dark #ticks_slider .e-scale,
 .fluent2-highcontrast #ticks_slider .e-scale {
     font-size: 14px;
+}
+
+.tailwind3 #ticks_slider .e-scale{
+    font-size: 10px;
 }
 
 .fluent2.e-bigger #ticks_slider .e-scale,

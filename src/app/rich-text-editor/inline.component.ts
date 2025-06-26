@@ -27,9 +27,7 @@ export class InlineComponent {
     public rteObj: RichTextEditorComponent;
 
     public toolbarSettings: ToolbarModule = {
-        items: ['Bold', 'Italic', 'Underline',
-            'Formats', '-', 'Alignments', 'OrderedList', 'UnorderedList',
-            'CreateLink']
+        items: ['Formats', '|', 'Bold', 'Italic', 'Fontcolor', 'BackgroundColor', '|', 'CreateLink', 'Image', 'CreateTable', '|' , 'Unorderedlist', 'Orderedlist']
     };
     public format: FormatModel = {
         width: 'auto'

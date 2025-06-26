@@ -108,6 +108,7 @@ export class GanttAdvancedFilteringComponent implements OnInit {
     this.queryBuilder.reset();
     this.predicateValue = null;
     this.searchQuery = new Query();
+    this.gantt.query = this.searchQuery;
     this.gantt.refresh();
   }
 

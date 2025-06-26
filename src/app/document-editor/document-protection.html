@@ -1,9 +1,17 @@
 <div>
     <div class="col-lg-9 control-section">
+        <div class="flex-container">
+            <label class="switchLabel" for="checked">Ribbon UI</label>
+            <div class="e-message render-mode-info">
+                <span class="e-msg-icon render-mode-info-icon"
+                    title="Turn OFF to switch from Ribbon to toolbar UI"></span>
+            </div>
+            <ejs-switch #switch cssClass="buttonSwitch" id="checked" (change)="change($event)"></ejs-switch>
+        </div>
         <div id="default_title_bar" class="e-de-ctn-title"></div>
         <div>
             <ejs-documenteditorcontainer #documenteditor_default [enableToolbar]=true [showPropertiesPane]=false [documentEditorSettings]="settings"
-                [locale]="culture" (created)="onCreate()" (documentChange)="onDocumentChange()" height="600px" [serviceUrl]="hostUrl"  style="display:block;">
+                [locale]="culture" [toolbarMode]="'Ribbon'" (created)="onCreate()" (documentChange)="onDocumentChange()" height="600px" [serviceUrl]="hostUrl"  style="display:block;">
             </ejs-documenteditorcontainer>
         </div>
     </div>
@@ -43,7 +51,43 @@
     </p>
 </div>
 <style>
-    #documenteditor_title_contentEditor {
+    
+        .flex-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .render-mode-info {
+            background: none;
+            border: none;
+            padding-left: 0px;
+        }
+
+        .render-mode-info .render-mode-info-icon {
+            height: 16px;
+            width: 16px;
+        }
+
+        .switchLabel {
+            font-family: "Segoe UI", "GeezaPro", "DejaVu Serif", sans-serif;
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: 0.24px;
+            text-align: right;
+            font-size: 14px;
+            margin-bottom: 0px;
+        }
+
+        .render-mode-info .render-mode-info-icon::before {
+            line-height: normal;
+        }
+
+        .buttonSwitch {
+            Width: 40px;
+            Height: 24px;
+        }
+#documenteditor_title_contentEditor {
         height: 26px;
         max-width: 75%;
         width: auto;

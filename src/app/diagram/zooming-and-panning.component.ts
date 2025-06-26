@@ -5,7 +5,7 @@
 // Importing needed dependencies for diagram
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NodeModel, DiagramTools, ScrollSettingsModel, LayoutModel, Diagram, ConnectorModel,
-    SnapConstraints, SnapSettingsModel,Container, TextElement, StackPanel, ImageElement, DataBinding,
+    SnapConstraints, SnapSettingsModel,GroupableView, TextElement, StackPanel, ImageElement, DataBinding,
     HierarchicalTree, TreeInfo,UndoRedo } from '@syncfusion/ej2-diagrams';
 import { DataManager } from '@syncfusion/ej2-data';
 import { data } from './overview-data';
@@ -126,7 +126,7 @@ export class ZoomingAndPanning {
     public scrollSettings: ScrollSettingsModel = { scrollLimit: 'Infinity' };
 
     //Funtion to add the Template of the Node.
-    public setNodeTemplate(node: NodeModel): Container {
+    public setNodeTemplate(node: NodeModel): GroupableView {
         
         // Create an outer StackPanel as content to contain image and text elements
         let content: StackPanel = new StackPanel();

@@ -8,10 +8,10 @@ import { TextAreaModule, TextBoxModule, NumericTextBoxModule } from '@syncfusion
 import { ReactiveComponent } from './reactive-forms.component';
 import { TemplateDrivenComponent } from './template-driven-forms.component';
 import { FieldErrorDisplayComponent } from './field-error-display.backup';
-import { DefaultTextAreaController } from './default-component';
-import { FloatingLabelTextAreaController } from './floating-label-component';
-import { ResizeTextAreaController } from './resize-component';
-import { ApiTextAreaController } from './api-component';
+import { DefaultTextAreaController } from './default.component';
+import { FloatingLabelTextAreaController } from './floating-label.component';
+import { ResizeTextAreaController } from './resize.component';
+import { ApiTextAreaController } from './api.component';
 import { CheckBoxModule  } from '@syncfusion/ej2-angular-buttons';
 
 

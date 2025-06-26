@@ -15,7 +15,7 @@ export const chatUIAppRoutes: Object[] = [
         {displayName: 'default.component.css', path: './src/chat-ui/default.component.css'},
         {displayName: 'messageData.ts', path: './src/chat-ui/messageData.ts'}
     ] },
-    { path: ':theme/chat-ui/loadOn-demand', component: ChatUILoadOnDemandComponent, name: 'Load On-demand', description: 'This sample demonstrates the features of the Chat UI component.', category: 'Chat UI', order: '01', type: 'new', sourceFiles: [
+    { path: ':theme/chat-ui/loadOn-demand', component: ChatUILoadOnDemandComponent, name: 'Load On-demand', description: 'This sample demonstrates the features of the Chat UI component.', category: 'Chat UI', order: '01', sourceFiles: [
         {displayName: 'loadOn-demand.component.ts', path: './src/chat-ui/loadOn-demand.component.ts'},
         {displayName: 'loadOn-demand.html', path: './src/chat-ui/loadOn-demand.html'},
         {displayName: 'loadOn-demand.component.css', path: './src/chat-ui/loadOndemand.component.css'},
@@ -26,7 +26,7 @@ export const chatUIAppRoutes: Object[] = [
         {displayName: 'template.component.css', path: './src/chat-ui/template.component.css'},
         {displayName: 'messageData.ts', path: './src/chat-ui/messageData.ts'}
     ] },
-    { path: ':theme/chat-ui/api', component: ChatUIApiComponent, name: 'API', description: 'This sample demonstrates the properties available in the Chat UI component.', category: 'Chat UI', order: '01', sourceFiles: [
+    { path: ':theme/chat-ui/api', component: ChatUIApiComponent, name: 'API', description: 'This sample demonstrates the properties available in the Chat UI component.', category: 'Chat UI', order: '01', type: 'update', sourceFiles: [
         {displayName: 'api.component.ts', path: './src/chat-ui/api.component.ts'},
         {displayName: 'api.html', path: './src/chat-ui/api.html'},
         {displayName: 'api.component.css', path: './src/chat-ui/api.component.css'},

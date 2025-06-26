@@ -162,11 +162,9 @@ export class GanttTooltipTemplateComponent implements OnInit {
   private updateThemeClass(): void {
     const bodyClasses = document.body.classList;
     const themeIsDark = bodyClasses.contains('tailwind3-dark') ||
-        bodyClasses.contains('fluent2') ||
         bodyClasses.contains('material3-dark') ||
         bodyClasses.contains('bootstrap5.3-dark') ||
         bodyClasses.contains('highcontrast');
-
     this.themeClass = themeIsDark ? 'black' : 'white';
 }
   public executeTopTierTooltip(

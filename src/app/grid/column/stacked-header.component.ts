@@ -47,15 +47,15 @@ export class StackedHeaderComponent implements OnInit {
         this.orderidrules = { required: true, number: true };
         this.orderColumns = [
             { field: 'OrderID', headerText: 'ID', textAlign: 'Right', width: 90, minWidth: 90 },
-            { field: 'OrderDate', headerText: 'Date', textAlign: 'Right', width: 110, minWidth: 100, format: 'yMd', editType: 'datepickeredit' }
+            { field: 'OrderDate', headerText: 'Date', textAlign: 'Right', width: 110, minWidth: 105, format: 'yMd', editType: 'datepickeredit' }
         ];
         this.shipColumns = [
-            { field: 'ShipCountry', headerText: 'Country', textAlign: 'Left', width: 115, minWidth: 100, editType: 'dropdownedit', template : this.locationTemplate, validationRules: { required: true } },
-            { field: 'Freight', headerText: 'Charges', textAlign: 'Right', width: 130, minWidth: 100, format: 'C2', editType: 'numericedit', validationRules: { required: true, number: true } },
+            { field: 'ShipCountry', headerText: 'Country', textAlign: 'Left', width: 150, minWidth: 120, editType: 'dropdownedit', template : this.locationTemplate, validationRules: { required: true } },
+            { field: 'Freight', headerText: 'Charges', textAlign: 'Right', width: 130, minWidth: 115, format: 'C2', editType: 'numericedit', validationRules: { required: true, number: true } },
         ];
         this.deliveryColumns = [
-            { field: 'Status', headerText: 'Status', textAlign: 'Center', width: 110, minWidth: 100, editType: 'dropdownedit', validationRules: { required: true, } },
-            { field: 'Feedback', headerText: 'Feedback', allowResizing: false, textAlign: 'Center', width: 130, minWidth: 100, template : this.feedbackTemplate, editType: 'numericedit', validationRules: { required: true, min: 0, max: 5 } }
+            { field: 'Status', headerText: 'Status', textAlign: 'Center', width: 150, minWidth: 120, editType: 'dropdownedit', validationRules: { required: true, } },
+            { field: 'Feedback', headerText: 'Feedback', allowResizing: false, textAlign: 'Center', width: 130, minWidth: 115, template : this.feedbackTemplate, editType: 'numericedit', validationRules: { required: true, min: 0, max: 5 } }
         ];
     }
 

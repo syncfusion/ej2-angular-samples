@@ -31,17 +31,6 @@
     content: '\e711';
 }
 
-.material .e-export::before {
-    content: '\e706';
-}
-
-.bootstrap .e-export::before {
-    content: '\e71e';
-}
-
-.e-file-select-wrap {
-    display: none;
-}
 
 /* Toolbar width */
 .db-toolbar-editor {
@@ -114,9 +103,4 @@
     font-family: Arial, sans-serif;
     font-size: 14px;
     color: #000;
-}
-
-#toolbarEditor .e-toolbar-left,
-#toolbarEditor .e-toolbar-right {
-    padding-top: 3px !important;
 }

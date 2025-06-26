@@ -1,0 +1,49 @@
+<div class="col-lg-8 control-section">
+    <div class="content-wrapper">
+        <div id="events-blockeditor" ejs-blockeditor #apiBlockEditor [blocks]="blockDataEvents" (created)="logEvent('created')" (contentChanged)="logEvent('contentChanged')" (blockAdded)="logEvent('blockAdded')" (blockRemoved)="logEvent('blockRemoved')" (blockMoved)="logEvent('blockMoved')" (blockDrag)="logEvent('blockDrag')" (blockDragStart)="logEvent('blockDragStart')" (blockDrop)="logEvent('blockDrop')" (focus)="logEvent('focus')" (blur)="logEvent('blur')" (selectionChanged)="logEvent('selectionChanged')" (beforePaste)="logEvent('beforePaste')" (afterPaste)="logEvent('afterPaste')" (undoRedoPerformed)="logEvent('undoRedoPerformed')"></div>
+    </div>
+</div>
+<div class="col-lg-4 property-section">
+    <table id="property" title="Event Trace" class="property-panel-table">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="eventarea" style="height: 245px; overflow: auto">
+                        <span id="eventLog" style="word-break: normal"></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="evtbtn" style="padding-bottom: 10px">
+                        <button ejs-button id="clear">Clear</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the events that trigger on every action of the Block Editor. The event details are showcased in the event trace panel.</p>
+</div>
+
+<div id="description">
+    <p>The Block Editor triggers events based on its actions. These events can be used as extension points to perform custom operations.</p>
+    <ul>
+        <li><code>created</code> - Triggers after the Block Editor is rendered completely.</li>
+        <li><code>contentChanged</code> - Triggers when the content of the block editor is changed.</li>
+        <li><code>selectionChanged</code> - Triggers when the selection in the block editor changes.</li>
+        <li><code>blockAdded</code> - Triggers when a new block is added to the editor.</li>
+        <li><code>blockRemoved</code> - Triggers when a block is removed from the editor.</li>
+        <li><code>blockMoved</code> - Triggers when a block is moved within the editor.</li>
+        <li><code>blockDrag</code> - Triggers during the dragging operation of a block.</li>
+        <li><code>blockDragStart</code> - Triggers when the drag operation for a block starts.</li>
+        <li><code>blockDrop</code> - Triggers when a block is dropped after a drag operation.</li>
+        <li><code>focus</code> - Triggers when the block editor gains focus.</li>
+        <li><code>blur</code> - Triggers when the block editor loses focus.</li>
+        <li><code>beforePaste</code> - Triggers before pasting the content in the block editor.</li>
+        <li><code>afterPaste</code> - Triggers after pasting the content in the block editor.</li>
+        <li><code>undoRedoPerformed</code> - Triggers when the undo/redo actions are performed in the block editor.</li>
+    </ul>
+</div>

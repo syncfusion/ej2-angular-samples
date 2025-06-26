@@ -1,0 +1,67 @@
+<div class="control-section">
+  <div class="content-wrapper">
+    <!-- Syncfusion Angular Gantt Component -->
+    <ejs-gantt #gantt id="Constraint" height="450px" [dataSource]="data" [taskFields]="taskSettings"
+      [editSettings]="editSettings" [toolbar]="toolbar" [columns]="columns" [treeColumnIndex]="1" [labelSettings]="labelSettings"
+      [splitterSettings]="splitterSettings" [timelineSettings]="timelineSettings" [projectStartDate]="projectStartDate"
+      [projectEndDate]="projectEndDate" [eventMarkers]="eventMarkers">
+
+      <!-- Right Label Template to Show Constraint Text -->
+      <ng-template #rightLabel let-data>
+        <div style="margin-top: -7px;">
+          {{ getConstraintText(data.ConstraintType) }}
+        </div>
+      </ng-template>
+    </ejs-gantt>
+
+    <!-- Source Reference -->
+    <div style="float: right; margin: 10px;">
+      Source:
+      <a href="https://en.wikipedia.org/wiki/Construction" target="_blank">
+        https://en.wikipedia.org/
+      </a>
+    </div>
+  </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample illustrates how to apply and visualize task constraints in a Gantt Chart. Task constraints define specific scheduling rules that determine when a task can start or finish, based on project requirements or dependencies.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+	    In Gantt Chart, task constraints define the rules that limit a tasks start or end date based on project scheduling needs. The following constraint types are supported:
+    </p>
+        
+    <ul>
+	    <li><code>As Soon As Possible</code> - Task starts as early as possible. Default for auto-scheduled tasks.</li>
+	    <li><code>As Late As Possible</code> - Task finishes as late as possible without delaying dependent tasks.</li>
+	    <li><code>Must Start On</code> - Task must start on the specified date.</li>
+	    <li><code>Must Finish On</code> - Task must finish on the specified date.</li>
+	    <li><code>Start No Earlier Than</code> - Task cannot start before the specified date.</li>
+	    <li><code>Start No Later Than</code> - Task must start on or before the specified date.</li>
+	    <li><code>Finish No Earlier Than</code> - Task cannot finish before the specified date.</li>
+	    <li><code>Finish No Later Than</code> - Task must finish on or before the specified date.</li>
+    </ul>
+    <br />
+    <p>
+        You can assign constraints to a task using the <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/documentation/api/gantt/taskFieldsModel/#constraintType">taskFields.constraintType</a></code> and <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/documentation/api/gantt/taskFieldsModel/#constraintDate">taskFields.constraintDate</a></code> properties.
+        Constraints can also be updated interactively through the task edit dialog.
+    </p>
+    <p><strong>Handling constraint violation popup:</strong></p>
+    <p>
+        To control or suppress the constraint violation dialog, handle the <code>actionBegin</code> event with <code>requestType</code> as <code>validateTaskViolation</code>. 
+        Use <code>args.validateMode</code> to specify how to respond to constraint conflicts. Available properties include:
+    </p>
+    <ul>
+      <li><code>respectMustStartOn</code></li>
+      <li><code>respectMustFinishOn</code></li>
+      <li><code>respectStartNoLaterThan</code></li>
+      <li><code>respectFinishNoLaterThan</code></li>
+    </ul>
+    <p>
+        These options are false by default, which means the violation popup appears. To suppress the popup and cancel conflicting changes silently, set the relevant flag(s) to <strong>true</strong>.
+    </p>
+</div>

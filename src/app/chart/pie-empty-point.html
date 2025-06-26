@@ -1,6 +1,6 @@
 <div id="action-description">
     <p>
-        This sample illustrates the annual product-wise profit analysis of an organization with empty point functionality in the pie series.
+        This sample illustrates the movie genre revenue share with empty point functionality in the pie series. The Mode of empty point can be changed by using <code>Empty Point Mode</code> in property panel.
     </p>
 </div>
 <div class="control-section">
@@ -12,13 +12,12 @@
                 </e-annotation>
             </e-annotations>
             <e-accumulation-series-collection>
-                <e-accumulation-series name='Profit' [dataSource]='data' xName='x' yName='y' [dataLabel]="dataLabel" [emptyPointSettings]='emptyPointSettings' >
+                <e-accumulation-series name='Profit' [dataSource]='data' xName='x' yName='y' [dataLabel]="dataLabel" [radius]="radius" borderRadius="3" [border]="border" [emptyPointSettings]='emptyPointSettings' >
                 </e-accumulation-series>
             </e-accumulation-series-collection>
         </ejs-accumulationchart>
     </div>
     <div class="col-lg-4 property-section">
-        <div class="property-panel-section">
             <div class="property-panel-header">Properties</div>
             <div class="property-panel-content">
                 <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
@@ -38,7 +37,6 @@
                     </tr>
                 </table>
             </div>
-        </div>
     </div>
 </div>
 <div id="description">

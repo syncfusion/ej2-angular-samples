@@ -1,6 +1,6 @@
 import { DiagramComponent } from "@syncfusion/ej2-angular-diagrams";
-import { getAzureChatAIRequest } from '../../azure-openai';
-
+import { serverAIRequest } from '../common/ai-service';
+let attempts = 0;
 export async function convertTextToFlowchart(inputText: string, diagram: DiagramComponent) {
     showLoading();
     const options = {
@@ -58,15 +58,19 @@ export async function convertTextToFlowchart(inputText: string, diagram: Diagram
     }
 
     try {
-        const jsonResponse = await getAzureChatAIRequest(options);
+        let jsonResponse = await serverAIRequest(options);
+        // Remove ```mermaid and ``` if they exist at the start and end of the response
+        jsonResponse = (jsonResponse as string).replace('```mermaid', '').replace('```', '');
         diagram.loadDiagramFromMermaid(jsonResponse as string);
         hideLoading();
 
     } catch (error) {
-        console.error('Error:', error);
-        convertTextToFlowchart(inputText, diagram);
+         hideLoading();
+          if(attempts < 2){
+            convertTextToFlowchart(inputText, diagram);
+        }
+        attempts++;
     }
-    hideLoading();
 };
 
 // Function to show loading indicator

@@ -7,10 +7,13 @@ import { StabilityAiModelBGRemover,StabilityAiModel,StabilityAiModelMagicEraser 
 import { ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
 import { TextBoxAllModule, TextBoxComponent , ColorPickerAllModule, ColorPickerEventArgs, PaletteTileEventArgs, ColorPickerComponent} from '@syncfusion/ej2-angular-inputs';
 import { CommonModule } from '@angular/common';
+import {AIToastComponent} from '../common/ai-toast.component';  
+import { ToastModule } from '@syncfusion/ej2-angular-notifications';
+
 @Component({
   selector: 'app-smart-editor',
   standalone: true,
-  imports: [ImageEditorAllModule,CommonModule,ToolbarAllModule, TreeViewAllModule, SidebarAllModule, ButtonAllModule,TextBoxAllModule,ColorPickerAllModule],
+  imports: [ImageEditorAllModule,CommonModule,ToolbarAllModule, TreeViewAllModule, SidebarAllModule, ButtonAllModule,TextBoxAllModule,ColorPickerAllModule, ToastModule, AIToastComponent],
   templateUrl: './smart-editor.component.html',
   styleUrl: './smart-editor.component.css'
 })

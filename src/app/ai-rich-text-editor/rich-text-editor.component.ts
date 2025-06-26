@@ -1,19 +1,21 @@
 import { Component, ViewChild, Inject } from '@angular/core';
 import { RichTextEditorComponent, RichTextEditorModule, ToolbarService, LinkService, ImageService, QuickToolbarService, HtmlEditorService, ToolbarClickEventArgs } from '@syncfusion/ej2-angular-richtexteditor';
 import { enableRipple } from '@syncfusion/ej2-base';
-import { OpenAiModelRTE } from '../../azure-openai';
+// import { OpenAiModelRTE } from '../../azure-openai';
+import { getOpenAiModelRTE } from '../common/ai-service';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 import { DropDownButton } from '@syncfusion/ej2-splitbuttons';
 import { DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { ButtonModule, ChipListComponent, ChipListModule, ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 import { SkeletonModule, ToastComponent, ToastModule } from '@syncfusion/ej2-angular-notifications';
 import { DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
+import {AIToastComponent} from '../common/ai-toast.component';  
 enableRipple(true);
 
 @Component({
   selector: 'app-rich-text-editor',
   standalone: true,
-  imports: [RichTextEditorModule, DropDownButtonModule, DropDownListModule, ButtonModule, ChipListModule, SkeletonModule, ToastModule, DialogModule],
+  imports: [RichTextEditorModule, DropDownButtonModule, DropDownListModule, ButtonModule, ChipListModule, SkeletonModule, ToastModule, DialogModule, AIToastComponent],
   providers: [ToolbarService, LinkService, ImageService, QuickToolbarService, HtmlEditorService],
   templateUrl: './rich-text-editor.component.html',
   styleUrl: './rich-text-editor.component.css'
@@ -27,9 +29,9 @@ export class SmartRichTextEditor {
   }
   @ViewChild('dialog', { static: true }) public dialog!: DialogComponent;
   @ViewChild('queryCategory', { static: false }) public queryCategory!: DropDownListComponent;
-  @ViewChild('languageCategory', { static: true }) public languageCategory!: DropDownListComponent;
+  @ViewChild('languageCategory', { static: false }) public languageCategory!: DropDownListComponent;
   @ViewChild('defaultRTE', { static: true }) public defaultRTE!: RichTextEditorComponent;
-  @ViewChild('chipList', { static: true }) public chipList!: ChipListComponent;
+  @ViewChild('chipList', { static: false }) public chipList!: ChipListComponent;
   @ViewChild('leftRte', { static: false }) public leftRte!: RichTextEditorComponent;
   @ViewChild('rightRte', { static: false }) public rightRte!: RichTextEditorComponent;
   @ViewChild('toastObj', { static: true }) public toastObj!: ToastComponent;
@@ -240,7 +242,7 @@ export class SmartRichTextEditor {
   }
 
   async getResponseFromOpenAI(subQuery: string, promptQuery: string): Promise<string> {
-    const content = await OpenAiModelRTE(subQuery, promptQuery);
+    const content = await getOpenAiModelRTE(subQuery, promptQuery);
     return content ? content as string : '';
   }
 

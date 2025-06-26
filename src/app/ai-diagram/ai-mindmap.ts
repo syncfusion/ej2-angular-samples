@@ -1,6 +1,6 @@
 import { Diagram, DiagramComponent } from "@syncfusion/ej2-angular-diagrams";
-import { getAzureChatAIRequest } from '../../azure-openai';
-
+import { serverAIRequest } from '../common/ai-service';
+let attempts = 0;
 let workingData = [
     { id: "1", Label: "Business Planning", parentId: "", branch: "Root", fill: "#D0ECFF", hasChild: true, level: 0, strokeColor: "#D0ECFF", orientation: "Root" },
     { id: "2", Label: "Expectation", parentId: "1", branch: "Left", fill: "#C4F2E8", hasChild: true, level: 1, strokeColor: "#C4F2E8", orientation: "Left" },
@@ -83,7 +83,9 @@ export async function convertTextToMindMap(inputText: string, diagram: Diagram) 
     }
 
     try {
-        const jsonResponse = await getAzureChatAIRequest(options);
+        let jsonResponse = await serverAIRequest(options);
+         // Remove ```mermaid and ``` if they exist at the start and end of the response
+        jsonResponse = (jsonResponse as string).replace('```mermaid', '').replace('```', '');
         diagram.loadDiagramFromMermaid(jsonResponse as string);
         diagram.clearHistory();
         pushWorkingData(diagram as DiagramComponent);
@@ -91,9 +93,11 @@ export async function convertTextToMindMap(inputText: string, diagram: Diagram) 
         hideLoading();
 
     } catch (error) {
-        console.error('Error:', error);
-        convertTextToMindMap(inputText, diagram);
-
+        hideLoading();
+        if (attempts < 2) {
+            convertTextToMindMap(inputText, diagram);
+        }
+        attempts++;
     }
 };
 
@@ -104,12 +108,12 @@ function pushWorkingData(diagram: DiagramComponent) {
         let nodeData: any = {
             id: node.id,
             Label: node.annotations ? node.annotations[0].content : 'Node',
-            fill: node!.style.fill,
+            fill: node.style.fill,
             branch: node.addInfo.orientation,
             strokeColor: node.style.strokeColor,
             parentId: node.data.parentId,
             level: node.addInfo.level,
-            orientation: node.addInfo!.orientation,
+            orientation: node.addInfo.orientation,
             hasChild: false,
         };
         workingData.push(nodeData);

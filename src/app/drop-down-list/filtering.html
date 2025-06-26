@@ -4,18 +4,63 @@
 </div>
 
 <div class="control-section">
-    <div class='content' style="width: 280px;margin: 0 auto; padding-top:40px">
-        <ejs-dropdownlist id='country' [dataSource]='data' [fields]='fields' (filtering)='onFiltering($event)' [filterBarPlaceholder]="filterPlaceholder"
-            [popupHeight]='height' [allowFiltering]='true' [placeholder]='watermark'></ejs-dropdownlist>
+    <div class="col-lg-8 control-section sb-property-border">
+        <div class='content' style="width: 280px;margin: 0 auto; padding-top:40px">
+            <ejs-dropdownlist id='country' #sample [dataSource]='data' [fields]='fields' (filtering)='onFiltering($event)' [filterBarPlaceholder]="filterPlaceholder"
+                [popupHeight]='height' [allowFiltering]='true' [placeholder]='watermark' [debounceDelay] ='debounceDelay'></ejs-dropdownlist>
+        </div>
+    </div>
+    <div class="col-lg-4 property-section dropdown-filtering">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties:</div>
+            <div class="property-panel-content">
+                <div id="property" class="property-panel-table" title="Properties">
+                    <div style="margin-left: 50px; padding-top:25px;">
+                        <label className="example-label">Debounce Delay</label>
+                    <ejs-numerictextbox #numericTextBox format="n0" value="300" min="1" (change)="onChange()"></ejs-numerictextbox>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <div id="description">
     <p>The DropDownList has built-in support to filter the data source, when <code>allowFiltering</code> is enabled. It performs
         when characters are typed in the search box. In the <code>filtering</code> event, you can filter down the data source and
-        return the resulted data to DropDownList via <code>updateData</code> method to display its list items.</p>
+        return the resulted data to DropDownList via <code>updateData</code> method to display its list items.
+        The debounce delay, in milliseconds, for filtering items in the DropDownList component can be set using the <a href="https://ej2.syncfusion.com/angular/documentation/api/drop-down-list/#debouncedelay" target="_blank">debounceDelay</a> property.
+    </p>
     <p>This sample illustrates that, query the data source and pass the resulted data to DropDownList through the <code>updateData</code> method in <code>filtering</code> event.</p>
     <p>More information on the filtering feature configuration can be found in the
         <a href="http://ej2.syncfusion.com/angular/documentation/drop-down-list/filtering.html" target="_blank"> documentation section</a>.
     </p>
 </div>
+
+<style>
+    .property-panel-content {
+        padding: 0 10px 10px 0;
+    }
+
+    .content {
+        width: 43%;
+        margin: 0 auto;
+        min-width: 185px;
+        padding: 25px 0px;
+    }
+
+    .control-label {
+        padding: 24px 0px 0px 0px;
+        font-size: 12px;
+        opacity: 0.54;
+    }
+
+    .control-section,
+    .content-wrapper {
+        min-height: 350px;
+    }
+    .property-section.dropdown-filtering
+    {
+        width: 285px;
+    }
+</style>

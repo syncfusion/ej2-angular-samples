@@ -81,6 +81,7 @@ export class RightToLeftComponent implements OnInit {
                     'Highlight': 'تسليط الضوء على النص',
                     'Underline': 'تسطير النص',
                     'Strikethrough': 'نص يتوسطه خط',
+                    'Squiggly': 'نص متعرج',
                     'Delete': 'حذف التعليق التوضيحي',
                     'Opacity': 'غموض',
                     'Color edit': 'غير اللون',
@@ -88,6 +89,7 @@ export class RightToLeftComponent implements OnInit {
                     'highlight': 'تسليط الضوء',
                     'underline': 'أكد',
                     'strikethrough': 'يتوسطه',
+                    'squiggly': 'متعرج',
                     // tslint:disable-next-line:max-line-length
                     'Server error': 'خدمة الانترنت لا يستمع. يعتمد قوات الدفاع الشعبي المشاهد على خدمة الويب لجميع ميزاته. يرجى بدء خدمة الويب للمتابعة.',
                     'Open text': 'افتح',
@@ -198,6 +200,7 @@ export class RightToLeftComponent implements OnInit {
                     'Highlight context': 'تسليط الضوء',
                     'Underline context': 'تسطير',
                     'Strikethrough context': 'يتوسطه خط',
+                    'Squiggly context': 'نص متعرج',
                     'FormDesigner': 'إضافة وتحرير حقل النموذج',
                     'SubmitForm': 'تقديم النموذج',
                     'Search text': 'بحث',

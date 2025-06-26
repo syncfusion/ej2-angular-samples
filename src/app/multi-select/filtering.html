@@ -3,17 +3,34 @@
 </div>
 
 <div id="multiselect-sample" class="control-section">
-    <div class="control-styles">
-        <label class="h4">Filtering</label>
-        <ejs-multiselect id='multiselect-filtering' [dataSource]='data' [fields]='fields' (filtering)='onFiltering($event)' [allowFiltering]='true'
-            [placeholder]='watermarks'></ejs-multiselect>
+    <div class="col-lg-8 control-section sb-property-border">
+        <div class="control-styles">
+            <label class="h4">Filtering</label>
+            <ejs-multiselect id='multiselect-filtering' #sample [dataSource]='data' [fields]='fields' (filtering)='onFiltering($event)' [allowFiltering]='true'
+                [placeholder]='watermarks' [debounceDelay] ='debounceDelay'></ejs-multiselect>
+        </div>
+    </div>
+    <div class="col-lg-4 property-section dropdown-filtering">
+        <div class="property-panel-section">
+            <div class="property-panel-header">Properties:</div>
+            <div class="property-panel-content">
+                <div id="property" class="property-panel-table" title="Properties">
+                    <div style="margin-left: 50px; padding-top:25px;">
+                        <label className="example-label">Debounce Delay</label>
+                    <ejs-numerictextbox #numericTextBox format="n0" value="300" min="1" (change)="onChange()"></ejs-numerictextbox>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <div id="description">
     <p>The MultiSelect has built-in support to filter the data source when <code>allowFiltering</code> is enabled. It performs
         when characters are typed in the component. In <code>filtering</code> event, you can filter down the data source and
-        return the resulted data to MultiSelect via <code>updateData</code> method to display its list items.</p>
+        return the resulted data to MultiSelect via <code>updateData</code> method to display its list items.
+        The debounce delay, in milliseconds, for filtering items in the MultiSelect component can be set using the <a href="https://ej2.syncfusion.com/angular/documentation/api/multi-select/#debouncedelay" target="_blank">debounceDelay</a> property
+    </p>
     <p>This sample illustrates that, query the data source and pass the resulted data to MultiSelect through the <code>updateData</code> method in <code>filtering</code> event.</p>
     <p>More information on the filtering feature configuration can be found in the
         <a href="http://ej2.syncfusion.com/angular/documentation/multi-select/filtering.html" target="_blank"> documentation section</a>.
@@ -31,6 +48,31 @@
         font-size: 16px;
         margin: 0 0 10px;
         font-weight: bold;
+    }
+    .property-panel-content {
+        padding: 0 10px 10px 0;
+    }
+
+    .content {
+        width: 43%;
+        margin: 0 auto;
+        min-width: 185px;
+        padding: 25px 0px;
+    }
+
+    .control-label {
+        padding: 24px 0px 0px 0px;
+        font-size: 12px;
+        opacity: 0.54;
+    }
+
+    .control-section,
+    .content-wrapper {
+        min-height: 350px;
+    }
+    .property-section.dropdown-filtering
+    {
+        width: 285px;
     }
 
 </style>

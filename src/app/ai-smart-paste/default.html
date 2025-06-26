@@ -1,6 +1,86 @@
+  
 <div class="col-lg-12 control-section" id="default">
+
     <div class="content-wrapper">
-        <img src='./assets/ai-smart-paste/smartpaste.gif' width='100%' height='100%' alt="Showcase Smart Paste Gif" />
+        <form class="form-container container bug-form-container"
+          style="max-width: 900px; line-height: 35px;">
+        <div style="text-align:center; font-weight: 700;"><span>Bug Report Form</span></div>
+        <div class="single-row-group">
+            <label for="bug-name" class="e-form-label">Bug Name</label>
+         <ejs-textbox id="bug-name" name="bug-name" formControlName="bugName" cssClass="form-input" placeholder="What's the bug ?"></ejs-textbox>
+        </div>
+        <div class="row-group">
+            <div>
+                <label for="reporter-name" class="e-form-label">Reporter</label>
+                <ejs-textbox id="reporter-name" name="reporter-name" formControlName="reporterName"
+                    cssClass="form-input" placeholder="Who is the reporter ?"></ejs-textbox>
+            </div>
+            <div>
+                <label for="submitted-date" class="e-form-label">Submitted Date</label>
+                <ejs-textbox id="submitted-date" name="submit-date" formControlName="submittedDate"
+                    cssClass="form-input" placeholder="When it is reported ?"></ejs-textbox>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bug-description" class="e-form-label">Bug Description</label>
+            <ejs-textarea cols="250" id="bug-description" formControlName="bugDescription" cssClass="form-textarea"
+                multiline="true" placeholder="Describe a little about the bug."></ejs-textarea>
+        </div>
+        <div class="row-group">
+            <div style="display: flex; flex-direction: column;">
+                <label for="reproduce-steps" class="e-form-label">Reproduce Steps</label>
+                <ejs-textbox id="reproduce-steps" name="reproduce-steps" formControlName="reproduceSteps"
+                cssClass="form-textarea" multiline="true" placeholder="Enter the repro steps here.."></ejs-textbox>
+            </div>
+            <div id="bug-priority">
+                <label class="form-label">Bug Priority</label>
+                <div class="row">
+                    <ejs-radiobutton id="radio1" label="Low" name="bugPriority" formControlName="bugPriority"
+                        value="Low"></ejs-radiobutton>
+                </div>
+                <div class="row">
+                    <ejs-radiobutton id="radio2" label="Medium" name="bugPriority" formControlName="bugPriority"
+                        value="Medium" [checked]="true"></ejs-radiobutton>
+                </div>
+                <div class="row">
+                    <ejs-radiobutton id="radio3" label="High" name="bugPriority" formControlName="bugPriority"
+                        value="High"></ejs-radiobutton>
+                </div>
+            </div>
+        </div>
+        <div>
+            <label for="browser" class="form-label">Select the browser</label>
+            <ejs-combobox id="browser" name="browser" formControlName="browser" [dataSource]="browsers"
+                placeholder="Choose the browser"></ejs-combobox>
+        </div>
+        <div class="form-footer">
+            <button ejs-button type="reset" id="reset" cssClass="form-button" (click)="onReset()" iconCss="e-icons e-reset">Reset</button>
+            <button #smart ejs-smart-paste-button type="button" id="smart-paste" cssClass="form-button e-btn e-primary"
+                (created)="onCreated()" iconCss="e-icons e-paste">Smart Paste</button>
+        </div>
+    </form>
+
+    <div class="col-lg-8 property-section"  style="margin-top:20px;margin-left: 16%">
+        <div class="property-panel-section">
+            <div class="property-panel-content">
+                <div class="e-card">
+                    <div class="e-card-content">
+                        <h4>Choose a preset below</h4>
+                        <div class="chip-container">
+                            <ejs-chiplist #chipList [chips]="bugPresets" selection="Single" [selectedChips]="[0]"
+                                (click)="onChipClick($event)"></ejs-chiplist>
+                        </div>
+                        <div #copyContent id="bug-report-text">Hi, this is Alice. On July 3rd, I've come across a bug where the
+                            dropdown menu in the navigation bar doesn't close after selecting an item. I just navigated to the
+                            homepage, opened the dropdown menu in the navigation bar, clicked an item in the dropdown and then
+                            the issue occurred which happens only on Chrome. Though this doesn't seem like a serious/important
+                            bug, kindly look into it and resolve it. Regards, J Alice Abraham</div>
+                        <button #copybutton ejs-button id="copy-btn" (click)="onCopy()">Copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     <div id="action-description">
         <p>This example demonstrates how the <code>SmartPasteButton</code> component can automatically fill out forms using data from the user's clipboard.</p>
@@ -9,4 +89,5 @@
     <div id='description'>
         <p>In this example, clicking the Smart Paste button retrieves data from the clipboard and automatically fills in the form fields. This streamlines the data entry process by removing the need for manual input.</p>
     </div>
+   <app-ai-toast></app-ai-toast>
 </div>

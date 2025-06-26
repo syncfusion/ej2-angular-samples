@@ -71,6 +71,10 @@ import { InfiniteScrollingComponent } from './infinite-scrolling.component';
 import { FrozenAPI } from './frozen-api.component';
 import { LoadingAnimationComponent } from './loading-animation.component';
 import { LiveDataComponent } from './live-data.component';
+import { EmployeemgmtComponent } from './employeemgmt.component';
+import { RestaurantMenuComponent } from './restaurant-menu.component';
+import { StickyHeaderComponent } from './stickyheader.component';
+import { RemoteVirtualComponent } from './remotevirtual.component';
 
 export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/treegrid-overview', component: TreeGridOverviewComponent, 'name': 'Overview',
@@ -88,6 +92,13 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/loading-animation', component: LoadingAnimationComponent, name: 'Loading Animation',
     description: 'This demo for Essential<sup>®</sup> JS 2 Tree Grid component shows the loading indicator when Tree Grid loading and refreshing.', 
     order: '01', category: 'Tree Grid' },
+
+     { 'path': ':theme/treegrid/employeemgmt', component: EmployeemgmtComponent, name: 'Employee Management',
+    description: 'This example demonstrates role-based rendering in the TreeGrid.', type:'new',
+    order: '14', category: 'Product Use Case' },
+    { 'path': ':theme/treegrid/restaurant-menu', component: RestaurantMenuComponent, name: 'Restaurant Menu',
+    description: 'This demo for Essential<sup>®</sup> JS 2 Tree Grid component shows the loading indicator when tree grid loading and refreshing.', type:'new',
+    order: '14', category: 'Product Use Case' },
 
    
     { 'path': ':theme/treegrid/localdata', component: LocalDataComponent, 'name': 'Local Data',
@@ -192,7 +203,7 @@ export const treegridRouteConfig: Object[] = [
     order: '07', category: 'Filtering' },
     { 'path': ':theme/treegrid/filtermenu', component: FilteringMenuComponent, 'name': 'Menu Filter',
     description: 'This demo explains how to filter the content using menu filter type of Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
-    order: '07', category: 'Filtering', type:'update' },
+    order: '07', category: 'Filtering' },
     { 'path': ':theme/treegrid/search', component: SearchComponent, 'name': 'Search',
     description: 'This demo explains how to search the text entered in the search bar in Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid content.', 
     order: '07', category: 'Filtering' },
@@ -202,8 +213,11 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/paging-api', component: PagingAPIComponent, 'name': 'Paging API', 
     description: 'This demo explains how to customize a pager using the APIs that are relevant to paging of Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
     order: '08', category: 'Paging' },
-    { 'path': ':theme/treegrid/default-scrolling', component: DefaultScrollingComponent, 'name': 'Default Scrolling',
+    { 'path': ':theme/treegrid/default-scrolling', component: DefaultScrollingComponent, 'name': 'Default Scrolling', 
     description: 'This demo for Essential<sup>®</sup> JS 2 Tree Grid control shows the usage of horizontal and vertical scrollbars to view Tree Grid content that exceeds the Tree Grid area.', 
+    order: '09', category: 'Scrolling'},
+      { 'path': ':theme/treegrid/stickyheader', component: StickyHeaderComponent, 'name': 'Sticky Header', type:'new',
+    description: 'This demo for Essential<sup>®</sup> JS 2 Tree Grid control shows  sticky header to view Tree Grid content.', 
     order: '09', category: 'Scrolling'},
     { 'path': ':theme/treegrid/frozen-column', component: FreezeComponent, 'name': 'Frozen Columns', hideOnDevice: true,
     description: 'This demo for Essential<sup>®</sup> JS 2 Tree Grid control shows frozen columns feature of Tree Grid. Scroll the movable content to view the frozen columns.', 
@@ -214,6 +228,8 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/virtual-scrolling', component: VirtualScrollingComponent, 'name': 'Virtual Scrolling',
     description: 'This demo demonstrates how to use Essential<sup>®</sup> JS 2 Tree Grid to show a large data view without performance degradation by rendering only the required rows.', 
     order: '09', category: 'Scrolling'},
+     { 'path': ':theme/treegrid/remotevirtual', component: RemoteVirtualComponent, 'name': 'Load Child On Demand', type:"new",
+    description: "This example shows the binding of remote services by using the DataManager in the Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid", order: '09', category: 'Scrolling'},
     { 'path': ':theme/treegrid/infinite-scrolling', component: InfiniteScrollingComponent, 'name': 'Infinite Scrolling',
     description: 'This demo demonstrates how to use Essential<sup>®</sup> JS 2 Tree Grid to show a large data view without performance degradation by rendering only the required rows.', 
     order: '09', category: 'Scrolling' },

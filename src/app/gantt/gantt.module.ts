@@ -56,7 +56,8 @@ import { GanttLoadingAnimationComponent } from './loading-animation.component';
 import { GanttOverviewComponent } from './overview.component';
 import { GanttLoadOnDemandComponent } from './load-on-demand.component';
 import { GanttUndoRedoComponent } from './undo-redo.component';
-
+import {GanttWbsViewComponent} from "./wbs-column.component";
+import {GanttConstraintComponent} from "./constraints.component";
 export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/overview', component: GanttOverviewComponent,
@@ -114,9 +115,14 @@ export const GanttAppRoutes: Object[] = [
         name: 'Task Scheduling Mode', order: '03', category: 'Scheduling Concepts'
     },
     {
+        path: ':theme/gantt/constraints', component: GanttConstraintComponent,
+        description: 'This example demonstrates the constraint feature of the gantt chart.',
+        name: 'Constraints', order: '03', category: 'Scheduling Concepts', type:'new'
+    },
+    {
         path: ':theme/gantt/work-week', component: GanttWorkWeekComponent,
         description: 'This sample demonstrates the way to bind the customizable array of working days in a week for project.',
-        name: 'Workweek', order: '03', category: 'Scheduling Concepts'
+        name: 'Workweek', order: '03', category: 'Scheduling Concepts', type: "update"
     },
     {
         path: ':theme/gantt/working-time-range', component: GanttWorkingTimeRangeComponent,
@@ -199,6 +205,11 @@ export const GanttAppRoutes: Object[] = [
         name: 'Show or Hide Column', order: '05', category: 'Columns'
     },
     {
+        path:':theme/gantt/wbs-column', component: GanttWbsViewComponent ,
+        description: 'This example demonstrates how to enable and automatically update the WBS (Work Breakdown Structure) column.',
+        name:'WBS Column', order: "05", category:"Columns", type: "new"
+    },
+    {
         path: ':theme/gantt/resources', component: GanttResourcesComponent,
         description: 'This example demonstrates how to allocate available resources to the task based on their skills and availability',
         name: 'Resource Allocation', order: '06', category: 'Resources'
@@ -211,7 +222,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/resource-multi-taskbar', component: GanttResourceMultiTaskbarComponent,
         description: 'This sample explains how to visualize the list of tasks assigned to each resource on a single parent row while collapsing the parent record.',
-        name: 'Resource Multi Taskbar', order: '06', category: 'Resources', type: "update"
+        name: 'Resource Multi Taskbar', order: '06', category: 'Resources'
     },
     {
         path: ':theme/gantt/sorting', component: GanttSortingComponent,
@@ -241,7 +252,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/tooltip-template', component: GanttTooltipTemplateComponent,
         description: 'This demo explains how to render tooltip template for taskbar and baseline in Syncfusion<sup>®</sup> Essential JS2 Gantt.',
-        name: 'Tooltip Template', order: '08', category: 'Templates', hideOnDevice: true, type: "update"
+        name: 'Tooltip Template', order: '08', category: 'Templates', hideOnDevice: true
     },
     {
         path: ':theme/gantt/toolbar-template', component: GanttToolbarTemplateComponent,
@@ -266,7 +277,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/advanced-exporting', component: GanttAdvancedExportingComponent,
         description: 'This demo explains how to export Gantt chart content with customization to PDF documents using the Syncfusion<sup>®</sup> Gantt component.',
-        name: 'Advanced Exporting', order: '11', category: 'Exporting',type: "new"
+        name: 'Advanced Exporting', order: '11', category: 'Exporting'
     },
     {
         path: ':theme/gantt/selection', component: GanttSelectionComponent,
