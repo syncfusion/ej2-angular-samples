@@ -11,7 +11,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
-    templateUrl: 'invisible-signature.html',
+    templateUrl: 'invisible-digital-signature.html',
     encapsulation: ViewEncapsulation.None,
     providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ToolbarService, NavigationService, TextSelectionService, PrintService, AnnotationService, FormFieldsService, FormDesignerService,PageOrganizerService],
     styleUrls: ['pdfviewer.component.css'],
@@ -25,7 +25,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     ],
 })
 
-export class InvisibleSignatureComponent implements OnInit{
+export class InvisibleDigitalSignatureComponent implements OnInit{
      
 @ViewChild('pdfviewer')
 public pdfviewerControl: PdfViewerComponent;

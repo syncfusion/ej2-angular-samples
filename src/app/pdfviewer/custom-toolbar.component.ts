@@ -350,7 +350,15 @@ export class CustomToolbarComponent implements OnInit {
         }
         this.pdfviewerControl.annotation.setAnnotationMode('Strikethrough');
       }
-    
+      
+      public squiggly(e: ClickEventArgs) {
+        this.disableInkAnnotation(); 
+        if(this.pdfviewerControl.tool == 'Ink'){
+          this.pdfviewerControl.annotation.setAnnotationMode('Ink');
+        }
+        this.pdfviewerControl.annotation.setAnnotationMode('Squiggly');
+      }
+
       public addLine(e: ClickEventArgs) {
         this.disableInkAnnotation(); 
         if(this.pdfviewerControl.tool == 'Ink'){

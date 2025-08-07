@@ -14,7 +14,7 @@ import { FormFillingComponent } from './form-filling.component';
 import { HandwrittenComponent } from './hand-written.component';
 import { FormDesignerComponent } from './form-designer.component';
 import { AnnotationsComponent } from './annotations.component';
-import {InvisibleSignatureComponent} from './invisible-signature.component';
+import {InvisibleDigitalSignatureComponent} from './invisible-digital-signature.component';
 import {ReadOnlyComponent} from './read-only.component';
 import { MessageModule } from '@syncfusion/ej2-angular-notifications';
 import { SwitchModule } from '@syncfusion/ej2-angular-buttons';
@@ -60,7 +60,7 @@ export const pdfViewerAppRoutes: Object[] = [
     // tslint:disable-next-line:max-line-length
     { path: ':theme/pdfviewer/hand-written', component: HandwrittenComponent , name: 'Handwritten Signature', order: '14', category: 'Signature', description: 'This sample demonstrates the Handwritten signature and initial support of the PDF Viewer. The signature or initial support reduces the paperwork of reviewing the contents and it is verified digitally.'},
     // tslint:disable-next-line:max-line-length
-    { path: ':theme/pdfviewer/invisible-signature', component: InvisibleSignatureComponent , name: 'Invisible Signature', order: '14', category: 'Signature', description: 'This sample demonstrates how to digitally sign a PDF document from code behind using Syncfusion PDF Viewer and PDF Library'},
+    { path: ':theme/pdfviewer/invisible-digital-signature', component: InvisibleDigitalSignatureComponent , name: 'Invisible Digital Signature', order: '14', category: 'Signature', description: 'This sample demonstrates how to digitally sign a PDF document from code behind using Syncfusion PDF Viewer and PDF Library'},
 ];
 
 export const PdfViewerSampleModule: ModuleWithProviders<any> = RouterModule.forChild(pdfViewerAppRoutes);
