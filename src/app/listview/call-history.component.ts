@@ -4,7 +4,6 @@
 
 import { Component, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
 import { DataManager, Query, ReturnOption } from '@syncfusion/ej2-data';
-import { Browser } from '@syncfusion/ej2-base';
 import { callHistoryData } from './dataSource';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { ListViewAllModule } from '@syncfusion/ej2-angular-lists';
@@ -54,13 +53,5 @@ export class CallHistoryListViewComponent {
             this.listObjects[args.selectedIndex].dataSource = newData;
         }
 
-    }
-
-    ngOnInit() {
-        if (!Browser.isDevice) {
-            document.getElementsByClassName('layoutWrapper')[0].classList.add('e-device-layout');
-        } else {
-            document.getElementsByClassName('tabContainer')[0].classList.add('e-visbile-layer');
-        }
     }
 }

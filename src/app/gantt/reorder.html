@@ -5,8 +5,8 @@
 </div>
 
 <div class="col-lg-9 control-section">
-    <ejs-gantt #ganttObj id="columnReorder" height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true" [columns]="columns"
-    [allowReordering]="true" [treeColumnIndex]='1' [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" height="400px" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+    <ejs-gantt #ganttObj id="columnReorder" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true" [columns]="columns"
+    [allowReordering]="true" [treeColumnIndex]='1' [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" height="650px" rowHeight="46" taskbarHeight ="25" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
     [highlightWeekends]="true" (actionComplete)="actionComplete($event)">
     </ejs-gantt>
 </div>
@@ -47,4 +47,6 @@
  </p>
  <p>Injecting Module:</p>
  <p>Gantt component features are segregated into individual feature-wise modules. To use reordering feature, we need to inject <code>ReorderService</code> into the <code>&#64;NgModule.providers</code> section.</p>
+  <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/columns/column-reorder">documentation section</a>.</p>
 </div>

@@ -42,7 +42,7 @@ export const multiselectAppRoutes: Object[] = [
 		category: 'MultiSelect Dropdown' },
     { path: ':theme/multi-select/resize', component: ResizeMultiSelectComponent,  name: 'Popup Resize', description: 'This demo showcases the custom resizing functionality of Multiselect, You can adjust the size of the popup based on your preferences, allowing for better control over its appearance',order: '01',
       category: 'MultiSelect Dropdown' },
-    { path: ':theme/multi-select/filtering', component: FilteringMultiSelectComponent, name: 'Filtering', type:'update', description: 'This example demonstrates how the filtering functionalities works based on the typed characters in the Angular multiselect component.', order: '01',
+    { path: ':theme/multi-select/filtering', component: FilteringMultiSelectComponent, name: 'Filtering', description: 'This example demonstrates how the filtering functionalities works based on the typed characters in the Angular multiselect component.', order: '01',
 		category: 'MultiSelect Dropdown' },
     { path: ':theme/multi-select/custom-value', component: CustomTagMultiSelectComponent, name: 'Custom Values', description: 'This example demonstrates the addition of a new value that is not present in the predefined list of the Angular multiselect component.', order: '01',
 		category: 'MultiSelect Dropdown' },

@@ -4,8 +4,8 @@
 </div>
 
 <div class="control-section">
-    <ejs-gantt id="ganttZooming" height="430px" [dataSource]="data" [taskFields]="taskSettings"
-		[toolbar]="toolbar" [labelSettings]="labelSettings"
+    <ejs-gantt id="ganttZooming" height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings"
+		[toolbar]="toolbar" [labelSettings]="labelSettings" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
 		[splitterSettings]="splitterSettings" [columns]="columns" [treeColumnIndex]="1">
     </ejs-gantt>
 </div>
@@ -35,4 +35,6 @@
 	</p>
 	<p>
 		Gantt component features are segregated into individual feature-wise modules.To use a zoom support related icons, inject the <code>ToolbarService</code> into the <code>&#64;NgModule.providers</code> section.</p>
+    <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/undo-redo">documentation section</a>.</p>
 </div>

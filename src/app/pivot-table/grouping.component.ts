@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, GroupingBarService, PivotViewModule,PivotView, DateGroup, IDataSet, LoadEventArgs } from '@syncfusion/ej2-angular-pivotview';
 import { ColumnRenderEventArgs } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
-import { enableRipple, extend } from '@syncfusion/ej2-base';
+import { enableRipple, extend, Browser } from '@syncfusion/ej2-base';
 import { MultiSelect, MultiSelectModule, SelectEventArgs, RemoveEventArgs, CheckBoxSelection } from '@syncfusion/ej2-angular-dropdowns';
 import { GroupSettingsModel } from '@syncfusion/ej2-pivotview/src/model/datasourcesettings-model';
 import { NumericTextBoxComponent, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
@@ -38,6 +38,7 @@ export class GroupingComponent implements OnInit {
     public filterBarWaterMark: string = 'Search group';
     public mode: string = 'CheckBox';
     public observable = new Observable();
+    public width: string = Browser.isDevice ? '125' : '150';
 
     @ViewChild('pivotview')
     public pivotObj: PivotView;

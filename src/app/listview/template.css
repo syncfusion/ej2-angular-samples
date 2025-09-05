@@ -20,7 +20,7 @@ body.highcontrast #listview_template {
 
 /* ListView header alignment */
 
-#listview_templat.e-listview .e-list-header #list-logo {
+#listview_template.e-listview .e-list-header #list-logo {
   margin-top: 2.5px;
   position: absolute;
   right: 20px;

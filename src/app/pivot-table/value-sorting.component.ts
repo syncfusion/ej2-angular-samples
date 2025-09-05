@@ -27,7 +27,7 @@ export class ValueSortingComponent implements OnInit {
 
         this.dataSourceSettings = {
             valueSortSettings: {
-                columnHeaderText: 'FY 2015##In Stock',
+                columnHeaderText: 'FY 2022##In Stock',
                 headerDelimiter: '##',
                 columnSortOrder: 'Descending',
                 rowHeaderText: 'France',

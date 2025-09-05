@@ -74,8 +74,8 @@ export class GanttResourceMultiTaskbarComponent implements OnInit {
         this.labelSettings = {
             taskLabel: 'TaskName'
         };
-        this.projectStartDate= new Date('03/24/2024');
-        this.projectEndDate= new Date('07/28/2024');
+        this.projectStartDate= new Date('03/26/2025');
+        this.projectEndDate= new Date('05/30/2025');
     }
     public dragDropChange(args): any {
         if (args.checked) {

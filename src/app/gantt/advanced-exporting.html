@@ -22,10 +22,10 @@
         </div>
     </div>
     <div>
-        <ejs-gantt id="AdvancedGanttExport" #ganttExcel height="430px" [dataSource]="data" [enableCriticalPath]="true"
+        <ejs-gantt id="AdvancedGanttExport" #ganttExcel height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data" [enableCriticalPath]="true"
             dateFormat="MMM dd, y" [taskFields]="taskSettings" [eventMarkers]="eventMarkers" [holidays]="holidays"
             [columns]="columns" [timelineSettings]="timelineSettings" [treeColumnIndex]="1" [allowPdfExport]="true"
-            height="450px" [allowSelection]="true" [projectStartDate]="projectStartDate"
+            [allowSelection]="true" [projectStartDate]="projectStartDate"
             [projectEndDate]="projectEndDate" [highlightWeekends]="true" [gridLines]="gridLines" [toolbar]="toolbar"
             [resourceFields]="resourceFields" [resources]="resources"
             (pdfQueryTaskbarInfo)="pdfQueryTaskbarInfo($event)" (queryTaskbarInfo)="queryTaskbarInfo($event)"
@@ -39,6 +39,25 @@
             </ng-template>
         </ejs-gantt>
     </div>
+    <style>
+    .fluent2 #export,
+    .fluent2-dark #export,
+    .fluent2-highcontrast #export {
+        padding: 7px;
+        font-size: 15px !important;
+        margin-right: -7px !important;
+    }
+    .e-bigger:not(.bootstrap5\.3) #export {
+        margin: 5px 5px 0px 5px !important;
+    }
+    .e-bigger.fluent2 #export, .e-bigger.fluent2-dark #export, .e-bigger.fluent2-highcontrast #export {
+         margin: 3px -7px 0px 0px !important;
+    }
+    .bootstrap5\.3 #export{
+        margin-top: 0px !important;
+    }
+</style>
+
     <div id="description">
         <p>In this sample, the Gantt Chart's PDF export functionality is enhanced with various customization options:
         </p>
@@ -78,11 +97,11 @@
             </li>
         </ul>
 
-        <p>More information about advanced PDF exporting features in Gantt can be found in the <a target="_blank"
-                href="https://ej2.syncfusion.com/javascript/documentation/gantt/pdf-export/pdf-export">documentation
-                section</a>.</p>
+        
         <p style="font-weight: 500">Injecting Module:</p>
         <p>To use PDF export feature, inject the <code>PdfExportService</code> into the
             <code>&#64;NgModule.providers</code> section.
         </p>
+        <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/documentation/gantt/getting-started#adding-gantt-component">documentation section</a>.</p>
     </div>

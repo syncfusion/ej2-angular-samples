@@ -3,13 +3,13 @@
 </div>
 <div class="control-section" style="padding-top: 0px;">
   <div class="content-wrapper">
-    <div id="ganttsidebar-parent" style="overflow: hidden; height: 460px;">
+    <div id="ganttsidebar-parent" style="overflow: hidden;">
       <button ejs-button id="filter-btn" (click)="triggerSidebar()">
         <span class="e-quickfilter" style="padding: 3px;"></span>
         Advanced Filters
       </button>
       <ejs-gantt #gantt id="AdvancedFiltering" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
-                 [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" [height]="height"
+                 [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" height="650px" rowHeight="46" taskbarHeight ="25"
                  [includeWeekend]="includeWeekend" [allowFiltering]="allowFiltering"
                  [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" (rowSelected)="onRowSelect()">
       </ejs-gantt>
@@ -44,6 +44,8 @@
   <p>
     In this example, the process involves retrieving the complex query from the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/query-builder/getting-started">QueryBuilder</a> component and subsequently integrating it into the Gantt Chart by updating its <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#query">Query</a> Property. The QueryBuilder component tool is located in a <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/sidebar/getting-started">SideBar</a> component that appears when you click on the toolbar.
   </p>
+  <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/filtering/filtering">documentation section</a>.</p>
 </div>
 
 

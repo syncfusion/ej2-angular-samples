@@ -33,15 +33,15 @@ export class GanttToolbarTemplateComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            child: 'subtasks'
+            parentID: 'ParentId'
         };
         this.columns = [
-            { field: 'TaskID', width: 80 },
+                { field: 'TaskID', width: 100 },
             { field: 'TaskName', width: 250 },
             { field: 'StartDate' },
             { field: 'EndDate' },
             { field: 'Duration' },
-            { field: 'Predecessor' },
+                { field: 'Predecessor', width: 190 },
             { field: 'Progress' },
         ];
         this.toolbar = ['ExpandAll', 'CollapseAll', { text: 'Quick Filter', tooltipText: 'Quick Filter', id: 'Quick Filter', prefixIcon: 'e-quickfilter' },{ text: 'Clear Filter', tooltipText: 'Clear Filter', id: 'Clear Filter' }];
@@ -51,8 +51,8 @@ export class GanttToolbarTemplateComponent implements OnInit {
         this.splitterSettings = {
             columnIndex: 2
         };
-        this.projectStartDate = new Date('03/24/2024');
-        this.projectEndDate = new Date('07/06/2024');
+        this.projectStartDate = new Date('03/26/2025');
+        this.projectEndDate = new Date('07/20/2025');
     }
     public toolbarClick(args: ClickEventArgs): void {
         if (args.item.text === 'Quick Filter') {

@@ -30,7 +30,7 @@ export class GanttAdvancedFilteringComponent implements OnInit {
   public labelSettings: object;
   public projectStartDate: Date;
   public projectEndDate: Date;
-  public height: string;
+  
   public create: any;
   public includeWeekend: boolean;
   public allowFiltering: boolean;
@@ -49,28 +49,26 @@ export class GanttAdvancedFilteringComponent implements OnInit {
       duration: 'Duration',
       progress: 'Progress',
       dependency: 'Predecessor',
-      child: 'subtasks'
+      parentID:'parentId'  
     };
     this.columns = [
-      { field: 'TaskID', width: 80 },
+      { field: 'TaskID', width: 120 },
       { field: 'TaskName', headerText: 'Name', width: 250 },
       { field: 'StartDate' },
       { field: 'Duration' },
       { field: 'EndDate' },
       { field: 'Progress' },
-      { field: 'Predecessor' }
-    ];
+ { field: 'Predecessor', type: 'string', width:190 }    ];
     this.splitterSettings = {
-      columnIndex: 4
+      columnIndex: 2
     };
     this.labelSettings = {
       rightLabel: 'TaskName'
     };
-    this.height = '410px';
     this.includeWeekend = true;
     this.allowFiltering = true;
-    this.projectStartDate = new Date('04/01/2024');
-    this.projectEndDate = new Date('07/06/2024');
+    this.projectStartDate = new Date('03/30/2025');
+    this.projectEndDate = new Date('07/20/2025');
   }
 
   public triggerSidebar(): void {

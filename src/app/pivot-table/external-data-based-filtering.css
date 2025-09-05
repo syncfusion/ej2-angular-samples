@@ -1,0 +1,15 @@
+@media only screen and (max-width: 400px) {
+    #pivot-table-section {
+        overflow: auto;
+    }
+}
+
+.pivot-datepicker {
+    margin: 10px 20px 10px 0px !important;
+}
+
+.tailwind3 .pivot-datepicker .e-calendar .e-btn.e-today.e-flat.e-primary.e-disabled,
+.tailwind3-dark .pivot-datepicker .e-calendar .e-btn.e-today.e-flat.e-primary.e-disabled {
+    background: #a5b4fc !important;
+    border-color: #a5b4fc !important;
+}

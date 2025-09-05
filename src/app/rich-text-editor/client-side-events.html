@@ -7,7 +7,7 @@
         <ejs-richtexteditor #RTEevents id='defaultRTE' [toolbarSettings]='tools' [fileManagerSettings]='fileManagerSettings' (created)='onCreate()' (toolbarClick)='toolbarClick()' (actionBegin)='begin($event)' (actionComplete)='complete($event)' (focus)='focus()' (change)='onChange()' (blur)='blur()' (beforeDialogOpen)='beforeDialogOpen()'
             (dialogOpen)='dialogOpen()' (dialogClose)='dialogClose()' (beforeQuickToolbarOpen)='beforeQuickToolbarOpen()' (quickToolbarOpen)='quickToolbarOpen()' (quickToolbarClose)='quickToolbarClose()' (imageSelected)='imageSelected()' (imageUploading)='imageUploading()'
             (imageUploadSuccess)='imageUploadSuccess()' (imageUploadFailed)='imageUploadFailed()' (imageRemoving)='imageRemoving()' (destroyed)='destroyed()' (beforeSanitizeHtml)='beforeSanitizeHtml()' (resizing)='resizing()' (resizeStart)='resizeStart()'
-            (resizeStop)='resizeStop()'>
+            (resizeStop)='resizeStop()' (selectionChanged)='selectionChanged()'>
             <ng-template #valueTemplate>
                 <p>The Rich Text Editor component is a WYSIWYG ("what you see is what you get") editor that provides the best user experience to create and update the content. Users can format their content using standard toolbar commands.</p>
 
@@ -100,6 +100,7 @@
         <li><code>resizing</code> – Triggers only when resizing the image</li>
         <li><code>resizeStart</code> –Triggers only when start resize the image</li>
         <li><code>resizeStop</code> – Triggers only when stop resize the image</li>
+        <li><code>selectionChanged</code> – Triggers only when the selection within the editor is modified.</li>
     </ul>
     <p><b>Injecting Module</b></p>
     <p>Rich Text Editor features are segregated into individual feature-wise modules. In this demo we have used following injectable services

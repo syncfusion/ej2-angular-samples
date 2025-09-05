@@ -3,7 +3,8 @@ import { BlockModel, BlockType, ContentType } from "@syncfusion/ej2-angular-bloc
 export let blockDataAPI: BlockModel[] = [
     {
         id: 'heading-block',
-        type: BlockType.Heading1,
+        type: BlockType.Heading,
+        props: { level: 1 },
         content: [{ 
             id: 'heading-content',
             type: ContentType.Text,
@@ -21,7 +22,8 @@ export let blockDataAPI: BlockModel[] = [
     },
     {
         id: 'api-heading',
-        type: BlockType.Heading2,
+        type: BlockType.Heading,
+        props: { level: 2 },
         content: [{ 
             id: 'api-heading-content',
             type: ContentType.Text,
@@ -104,7 +106,7 @@ export let blockDataAPI: BlockModel[] = [
         id: 'api-list-9',
         type: BlockType.BulletList,
         content: [{ 
-            id: 'api-list-8-content',
+            id: 'api-list-9-content',
             type: ContentType.Text,
             content: 'getDataAsHtml - Retrieves data from the editor as HTML.'
         }]
@@ -116,9 +118,11 @@ export let blockDataAPI: BlockModel[] = [
             id: 'try-it-content',
             type: ContentType.Text,
             content: 'Try it out! Use the property panel on the right to interact with the API.',
-            styles: {
-                bold: true,
-                bgColor: '#999999'
+            props: {
+                styles: {
+                    bold: true,
+                    bgColor: '#999999'
+                }
             }
         }]
     }
@@ -127,7 +131,8 @@ export let blockDataAPI: BlockModel[] = [
 export let blockDataOverview: BlockModel[] = [
     {
         id: 'heading-block',
-        type: BlockType.Heading1,
+        type: BlockType.Heading,
+        props: { level: 1 },
         content: [{ 
             id: 'heading-content',
             type: ContentType.Text,
@@ -140,7 +145,7 @@ export let blockDataOverview: BlockModel[] = [
         content: [{ 
             id: 'intro-content',
             type: ContentType.Text,
-            content: 'Block Editor is a powerful rich text editor that allows you to create structured content using blocks. Each block can be formatted, moved, or transformed into different types.',
+            content: 'Block Editor is a powerful rich text editor that allows you to create structured content using blocks. Each block can be formatted, moved, or transformed into different types.'
         }]
     },
     {
@@ -156,9 +161,11 @@ export let blockDataOverview: BlockModel[] = [
                 id: 'styled-text-2',
                 type: ContentType.Text,
                 content: 'formatting options',
-                styles: {
-                    bold: true,
-                    italic: true
+                props: {
+                    styles: {
+                        bold: true,
+                        italic: true
+                    }
                 }
             },
             {
@@ -170,9 +177,11 @@ export let blockDataOverview: BlockModel[] = [
                 id: 'styled-text-4',
                 type: ContentType.Text,
                 content: '"/"',
-                styles: {
-                    bgColor: '#999999',
-                    bold: true
+                props: {
+                    styles: {
+                        bgColor: '#999999',
+                        bold: true
+                    }
                 }
             },
             {
@@ -184,7 +193,8 @@ export let blockDataOverview: BlockModel[] = [
     },
     {
         id: 'block-types-heading',
-        type: BlockType.Heading2,
+        type: BlockType.Heading,
+        props: { level: 2 },
         content: [{ 
             id: 'block-types-heading-content',
             type: ContentType.Text,
@@ -198,30 +208,37 @@ export let blockDataOverview: BlockModel[] = [
             id: 'quote-content',
             type: ContentType.Text,
             content: 'The Block Editor makes document creation a seamless experience with its intuitive block-based approach.',
-            styles: {
-                italic: true
+            props: {
+                styles: {
+                    italic: true
+                }
             }
         }]
     },
     {
         id: 'callout-block',
         type: BlockType.Callout,
-        children: [{ 
-            id: 'callout-content',
-            type: BlockType.Paragraph,
-            content: [{
-                id: 'callout-content-1',
-                type: ContentType.Text,
-                content: 'Important: Block Editor supports various content types including Text, Link, Code, Mention, and Label.',
-                styles: {
-                    bold: true
-                }
+        props: {
+            children: [{ 
+                id: 'callout-content',
+                type: BlockType.Paragraph,
+                content: [{
+                    id: 'callout-content-1',
+                    type: ContentType.Text,
+                    content: 'Important: Block Editor supports various content types including Text, Link, Code, Mention, and Label.',
+                    props: {
+                        styles: {
+                            bold: true
+                        }
+                    }
+                }]
             }]
-        }]
+        }
     },
     {
         id: 'list-types-heading',
-        type: BlockType.Heading3,
+        type: BlockType.Heading,
+        props: { level: 3 },
         content: [{ 
             id: 'list-types-heading-content',
             type: ContentType.Text,
@@ -235,8 +252,10 @@ export let blockDataOverview: BlockModel[] = [
             id: 'bullet-list-header-content',
             type: ContentType.Text,
             content: 'Text blocks: Paragraph, Heading 1-4, Quote, Callout',
-            styles: {
-                bold: true
+            props: {
+                styles: {
+                    bold: true
+                }
             }
         }]
     },
@@ -251,8 +270,8 @@ export let blockDataOverview: BlockModel[] = [
     },
     {
         id: 'check-list',
-        type: BlockType.CheckList,
-        isChecked: true,
+        type: BlockType.Checklist,
+        props: { isChecked: true },
         content: [{ 
             id: 'check-list-content',
             type: ContentType.Text,
@@ -266,24 +285,27 @@ export let blockDataOverview: BlockModel[] = [
     },
     {
         id: 'toggle-block',
-        type: BlockType.ToggleParagraph,
-        isExpanded: true,
+        type: BlockType.CollapsibleParagraph,
+
         content: [{ 
             id: 'toggle-content',
             type: ContentType.Text,
             content: 'Click me to expand/collapse'
         }],
-        children: [
-            {
-                id: 'toggle-child',
-                type: BlockType.Paragraph,
-                content: [{ 
-                    id: 'toggle-child-content',
-                    type: ContentType.Text,
-                    content: 'This content is inside a toggle block. Toggle blocks are useful for organizing content that can be expanded or collapsed.',
-                }]
-            }
-        ]
+        props: {
+            isExpanded: true,
+            children: [
+                {
+                    id: 'toggle-child',
+                    type: BlockType.Paragraph,
+                    content: [{ 
+                        id: 'toggle-child-content',
+                        type: ContentType.Text,
+                        content: 'This content is inside a toggle block. Toggle blocks are useful for organizing content that can be expanded or collapsed.'
+                    }]
+                }
+            ]
+        }
     },
     {
         id: 'code-block',
@@ -296,7 +318,8 @@ export let blockDataOverview: BlockModel[] = [
     },
     {
         id: 'formatting-heading',
-        type: BlockType.Heading4,
+        type: BlockType.Heading,
+        props: { level: 4 },
         content: [{ 
             id: 'formatting-heading-content',
             type: ContentType.Text,
@@ -311,64 +334,80 @@ export let blockDataOverview: BlockModel[] = [
                 id: 'format-bold',
                 type: ContentType.Text,
                 content: 'Bold ',
-                styles: {
-                    bold: true
+                props: {
+                    styles: {
+                        bold: true
+                    }
                 }
             },
             { 
                 id: 'format-italic',
                 type: ContentType.Text,
                 content: 'Italic ',
-                styles: {
-                    italic: true
+                props: {
+                    styles: {
+                        italic: true
+                    }
                 }
             },
             { 
                 id: 'format-underline',
                 type: ContentType.Text,
                 content: 'Underline ',
-                styles: {
-                    underline: true
+                props: {
+                    styles: {
+                        underline: true
+                    }
                 }
             },
             { 
                 id: 'format-strikethrough',
                 type: ContentType.Text,
                 content: 'Strikethrough ',
-                styles: {
-                    strikethrough: true
+                props: {
+                    styles: {
+                        strikethrough: true
+                    }
                 }
             },
             { 
                 id: 'format-superscript',
                 type: ContentType.Text,
                 content: 'Superscript ',
-                styles: {
-                    superscript: true
+                props: {
+                    styles: {
+                        superscript: true
+                    }
                 }
             },
             { 
                 id: 'format-subscript',
                 type: ContentType.Text,
                 content: 'Subscript ',
-                styles: {
-                    subscript: true
+                props: {
+                    styles: {
+                        subscript: true
+                    }
                 }
             },
             { 
                 id: 'format-uppercase',
                 type: ContentType.Text,
                 content: 'uppercase ',
-                styles: {
-                    uppercase: true
+                props: {
+                    styles: {
+                        uppercase: true
+                    }
                 }
             },
             { 
                 id: 'format-lowercase',
                 type: ContentType.Text,
                 content: 'LOWERCASE',
-                styles: {
-                    lowercase: true
+                props: {
+                    styles: {
+                        lowercase: true
+                    }
                 }
             }
         ]
@@ -386,7 +425,7 @@ export let blockDataOverview: BlockModel[] = [
                 id: 'link-content',
                 type: ContentType.Link,
                 content: 'Syncfusion',
-                linkSettings: {
+                props: {
                     url: 'https://www.syncfusion.com/',
                     openInNewWindow: true
                 }
@@ -408,8 +447,9 @@ export let blockDataOverview: BlockModel[] = [
                 content: 'This block contains a '
             },
             { 
-                id: 'progress',
-                type: ContentType.Label
+                id: 'progress-label',
+                type: ContentType.Label,
+                props: { labelId: 'progress' }
             },
             { 
                 id: 'label-text-end',
@@ -425,9 +465,11 @@ export let blockDataOverview: BlockModel[] = [
             id: 'try-it-content',
             type: ContentType.Text,
             content: 'Try it out! Click anywhere and start typing, or type "/" to see available commands.',
-            styles: {
-                bold: true,
-                bgColor: '#999999'
+            props: {
+                styles: {
+                    bold: true,
+                    bgColor: '#999999'
+                }
             }
         }]
     }
@@ -436,7 +478,8 @@ export let blockDataOverview: BlockModel[] = [
 export let blockDataEvents: BlockModel[] = [
     {
         id: 'heading-block',
-        type: BlockType.Heading1,
+        type: BlockType.Heading,
+        props: { level: 1 },
         content: [{ 
             id: 'heading-content',
             type: ContentType.Text,
@@ -454,7 +497,8 @@ export let blockDataEvents: BlockModel[] = [
     },
     {
         id: 'features-heading',
-        type: BlockType.Heading2,
+        type: BlockType.Heading,
+        props: { level: 2 },
         content: [{ 
             id: 'features-heading-content',
             type: ContentType.Text,
@@ -531,9 +575,11 @@ export let blockDataEvents: BlockModel[] = [
             id: 'try-it-content',
             type: ContentType.Text,
             content: 'Try different actions like typing, selecting text, adding blocks, or moving blocks to see the events triggered.',
-            styles: {
-                bold: true,
-                bgColor: '#999999'
+            props: {
+                styles: {
+                    bold: true,
+                    bgColor: '#999999'
+                }
             }
         }]
     }

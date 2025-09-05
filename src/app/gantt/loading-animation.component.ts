@@ -43,13 +43,13 @@ export class GanttLoadingAnimationComponent implements OnInit {
         ];
         this.columns = [
             { field: 'TaskID' },
-            { field: 'TaskName' },
-            { field: 'StartDate' },
+            { field: 'TaskName', width:'200px' },
+            { field: 'StartDate',width: 170 },
             { field: 'Duration' },
             { field: 'Progress' }
         ];
         this.splitterSettings = {
-            columnIndex: 3
+            columnIndex: 2
         };
         this.labelSettings = {
             rightLabel: 'TaskName',

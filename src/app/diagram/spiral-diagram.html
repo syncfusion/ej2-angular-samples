@@ -1,0 +1,27 @@
+<div class="control-section" style="width: 100%">
+  <ejs-diagram
+    #diagram
+    id="diagram"
+    width="100%"
+    height="730px"
+    [nodes]="nodes"
+    [connectors]="connectors"
+    [snapSettings]="snapSettings"
+    [tool]="tool"
+    (created)="created()"
+    (load)="load()"
+    [constraints]="constraints"
+  ></ejs-diagram>
+</div>
+
+<div id="action-description">
+  <p>
+    This sample visualizes the software development lifecycle using a spiral diagram, implemented with the Syncfusion<sup>®</sup> EJ2 Angular Diagram component. It represents project stages as nodes arranged in a continuously expanding spiral.
+  </p>
+</div>
+
+<div id="description">
+  <p>
+    This interactive spiral diagram visualizes a software project's lifecycle. Each stage (e.g., "Ideation," "Development") is represented by a color-coded circular node with an icon. Connectors emphasize directional progression, and tooltip display stage titles on hover, offering immediate clarity into the iterative development process.
+  </p>
+</div>

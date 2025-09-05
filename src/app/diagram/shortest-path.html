@@ -1,0 +1,25 @@
+<div id="action-description">
+    <p>
+      This sample demonstrates an interactive shortest path algorithm visualization using the Syncfusion<sup>®</sup> EJ2 Angular Diagram component, featuring a dynamic graph where users select source and destination nodes to view animated optimal paths.
+    </p>
+</div>
+
+<div class="control-section" style="width: 100%">
+  <div class="switch-container" style="display: flex; align-items: center; justify-content: center; margin: 20px;">
+    <ejs-switch #graphswitch id="graphSwitch" [checked]="true" (change)="onGraphTypeChanged($event)">
+    </ejs-switch>
+    <label for="graphSwitch" class="switch-label" style="margin-left: 10px; font-size: 18px; font-weight: 500;">Directed Graph</label>
+  </div>
+
+    <ejs-diagram #diagram [width]="diagramWidth" [height]="diagramHeight" [nodes]="createNodes"
+    [connectors]="createConnectors" [snapSettings]="snapSettings" (mouseEnter)="onMouseEnter($event)"
+    (mouseLeave)="onMouseLeave($event)" (click)="onNodeClicked($event)" (created)="onDiagramCreated()"
+    [constraints]="constraints">
+    </ejs-diagram>
+</div>
+
+<div id="description">
+  <p>
+      Users can interactively find the shortest path by selecting a <strong>source</strong> node and hovering over a <strong>destination</strong>. The optimal path is dynamically highlighted using animated, dashed connectors and numerical labels. Tooltip instantly display the path sequence or show a <strong>"No path found"</strong> warning. A toggle allows seamless switching between directed and undirected graph modes. 
+  </p>
+</div>

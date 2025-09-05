@@ -1,27 +1,55 @@
-    <div class="control-section">
-        <ejs-treegrid #treegrid [dataSource]='data' childMapping='subtasks' height='350' [treeColumnIndex]='1' [allowPaging]=true>
+<div class="control-section">
+        <ejs-treegrid id="TreeGrid" #stackedHeadertreegrid clipMode="EllipsisWithTooltip" [dataSource]='data' childMapping='subtasks' height='350' [treeColumnIndex]='1' [allowPaging]=true [toolbar]="toolbar" [showColumnChooser]="true">
             <e-columns>
-                <e-column headerText='Order Details' [columns]='orderColumns'></e-column>
-                <e-column headerText='Shipment Details' [columns]='shipColumns'></e-column>
-                <e-column headerText='Price Details' [columns]='priceColumns'></e-column>
+                <e-column headerText='Order Details' [columns]='orderColumns' textAlign='Center'></e-column>
+                <e-column headerText='Shipment Details' [columns]='shipColumns' textAlign='Center'></e-column>
+                <e-column headerText='Price Details' [columns]='priceColumns' textAlign='Center'></e-column>
             </e-columns>
+            
+          <!-- Custom Column Chooser Template using TreeView Component -->
+          <ng-template #columnChooserSettingsTemplate let-data>
+
+            <div *ngIf="!(data && data.columns && data.columns.length)" class="no-record-text">No Matches Found</div>
+             <div *ngIf="(data && data.columns && data.columns.length)" id="transparent">
+            <ejs-treeview #treeview id="treeview" cssClass="no-border" [fields]="dataProcess(data)" (nodeClicked)="nodeCheck($event)" (keyPress)="nodeCheck($event)" [showCheckBox]="true"></ejs-treeview>
+            </div>
+          </ng-template>
+          
+          <!-- Column Chooser Header Template -->
+          <ng-template #columnChooserSettingsHeaderTemplate>
+            <div>
+              <span id="column-chooser-text">Column Options</span>
+            </div>
+          </ng-template>
+          
+          <!-- Column Chooser Footer Template with Apply/Close Buttons -->
+          <ng-template #columnChooserSettingsFooterTemplate>
+            <button #applyBtn (click)="columnChooserSubmit()" ejs-button>Apply</button>
+            <button #closeBtn (click)="columnChooserClose()" ejs-button>Close</button>
+          </ng-template>            
         </ejs-treegrid>
     </div>
         <div id="action-description">
-            <p>This sample demonstrates the Tree Grid component with the stacked header feature. In this sample, we have shown multiple levels of column header.
-            </p>
+          <p>This sample demonstrates how to use stacked headers and a customizable
+            column chooser in the Tree Grid component.
+          </p>
         </div>
         <div id="description">
-            <p>The Tree Grid columns can be stacked/grouped in order to show multiple levels of column header. 
-                It can be done by setting the <code>columns->columns</code> property.
-            </p>
-            <p>
-                In this demo, the columns <strong>Order ID, Order Name, Order Date</strong> are grouped under Order Details, the columns <strong>Shipment Category, Shipped Date, Units</strong> are grouped under Shipment Details and <strong>Price per Unit, Total Price</strong> are grouped under Price details. 
-            </p>
-            <p>
-                More information on the stacked header configuration can be found in this
-                <a target="_blank" 
-                href="https://ej2.syncfusion.com/angular/documentation/treegrid/columns/column-resizing#resize-stacked-column">
-                documentation section</a>.
-            </p>
+          <p>The stacked header category explains the use of the <code>columns -> column</code> property to group columns under
+            common headers, facilitating a clear and structured display of data for enhanced readability and user navigation. It
+            categorizes columns into three groups: Order Details, comprising Order ID, Order Name, and Order Date; Shipment
+            Details, comprising Shipment Category, Shipped Date, and Units; and Price Details, comprising Price per Unit and
+            Total Price. </p>
+          <p>The <b>Column Chooser Template </b> category highlights a customizable layout that allows users to manage column
+            visibility, offering flexibility and improving the overall user experience.
+          <p>
+          <p>Key properties include <code>columnChooserSettings -> headerTemplate</code> for a custom header layout,
+            <code>columnChooserSettings -> template</code> for a custom content
+            layout,<code>columnChooserSettings -> footerTemplate</code> for a custom footer layout, and
+            <code>enableSearching</code> to enable or disable search functionality.</p>
+          <p>More information on the stacked header configuration can be found in this
+            <a target="_blank"
+              href="https://ej2.syncfusion.com/angular/documentation/treegrid/columns/column-resizing#resize-stacked-column">
+              documentation</a> section.
+          </p>
         </div>

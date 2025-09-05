@@ -4,19 +4,21 @@
 }
 
 .e-span {
-	position: absolute;
-	top: 18px;
-	text-overflow: ellipsis;
-	font-size: 12px;
-	overflow: hidden;
-	color: #fff;
-  left: 35px;
+    position:absolute;
+    top:15px;
+    left:40px;
+    right:5px;
+    font-size:12px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    color: white;
 }
 
 .e-gantt-child-taskbar {
 	height: 100%;
 	border-radius: 5px;
-  display: flex !important;
+    display: flex !important;
 }
 
 .e-custom-moments {

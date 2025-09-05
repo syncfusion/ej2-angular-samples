@@ -73,8 +73,8 @@ export class GanttTasklabelTemplateComponent implements OnInit {
       this.splitterSettings = {
         position: "35%"
       };
-      this.projectStartDate = new Date('03/24/2024');
-      this.projectEndDate = new Date('05/04/2024');
+      this.projectStartDate = new Date('03/24/2025');
+      this.projectEndDate = new Date('06/10/2025');
       this.labelSettings = {
         taskLabel: '${Progress}%',
       };

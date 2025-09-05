@@ -1,0 +1,87 @@
+<div class="control-section">
+    <ejs-treegrid #treegrid [dataSource]='data | async' height='350' idMapping='TicketID'
+        parentIdMapping='ParentTicketID' hasChildMapping='isParent' [treeColumnIndex]='1' allowPaging='true'
+        allowSorting='true' [pageSettings]='pageSetting' allowFiltering="true"
+        (dataStateChange)='dataStateChange($event)' (dataSourceChanged)='dataSourceChange($event)' gridLines="Both" [editSettings]='editSettings' >
+        <e-columns>
+            <e-column field='TicketID' headerText='Ticket ID' width='110' textAlign='Left'
+                isPrimaryKey='true'></e-column>
+            <e-column field='Title' textAlign='Left' headerText='Title' width='250' clipMode="EllipsisWithTooltip"></e-column>
+            <e-column field='Category' headerText='Category' width='120' textAlign='Left'></e-column>
+            <e-column field='Priority' headerText='Priority' width='100' textAlign='Left'>
+                <ng-template #template let-data>
+                    <span [ngClass]="getPriorityClass(data.Priority)">{{data.Priority}}</span>
+                </ng-template>
+            </e-column>
+            <e-column field='Status' headerText='Status' width='120'textAlign='Left'>
+                <ng-template #template let-data>
+                    <span [ngClass]="getStatusClass(data.Status)">{{data.Status}}</span>
+                </ng-template>
+            </e-column>
+            <e-column field='AssignedAgent' headerText='Assigned To' width='150' textAlign='Left'></e-column>
+            <e-column field='CustomerName' headerText='Customer' width='140' textAlign='Left'></e-column>
+            <e-column field='CreatedDate' headerText='Created Date' [allowFiltering]="false" textAlign='Right' width='130' format='yMd' type='date' editType='datepickeredit' [validationRules]='daterules' [edit]="dateeditparam"></e-column>
+            <e-column field='DueDate' headerText='Due Date' [allowFiltering]="false" textAlign='Right' width='130' format='yMd' type='date' editType='datepickeredit' [validationRules]='daterules' [edit]="dateeditparam"></e-column>
+        </e-columns>
+    </ejs-treegrid>
+</div>
+<div id="action-description">
+    <p>
+        This demo showcases a ticket management dashboard that displays a hierarchical list of support issues in a Tree Grid. The Tree Grid is bound to an Observable object using the async pipe for custom data binding.
+    </p>
+</div>
+<div id="description">
+   <p>
+        The TreeGrid can be bound with <code>Observable</code> or <code>Promise</code> objects. These objects should be piped into the TreeGrid by using AsyncPipe.
+    </p>
+    <p>
+      When performing TreeGrid actions like <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#allowpaging">paging</a>, 
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#allowsorting">sorting</a>, 
+        or <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#allowfiltering">filtering</a>, the <code>dataStateChange</code> event triggers expand, and collapse, the <code>dataStateChange</code> event will be triggered, 
+      and the <code>Observable</code> needs to be resolved based on the new TreeGrid data state. With AsyncPipe, you can bind observables directly to the data, without having to store the result in an intermediate property or variable.
+      
+    </p>
+    <p>
+       In this demo, users can navigate the paged Tree Grid, sort data by clicking any column header, and apply filters using the filter bar. Multi-column sorting is supported, and filtering is enabled per column. To enable paging, sorting and filtering set the <code>allowPaging</code>, <code>allowSorting</code>, and <code>allowFiltering</code> properties as <b>true</b>.
+    </p>
+    <p style="font-weight: 500">Injecting Module:</p>
+    <p>
+        Tree Grid component features are segregated into individual modules. To use the paging, sorting and filtering features,
+        inject <code>PageService</code>, <code>SortService</code> and <code>FilterService</code> into the
+        <code>&#64;NgModule.providers</code> section.
+    </p>
+     <p>
+        More information about the async pipe can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/treegrid/overview">documentation</a> section.
+     </p>
+</div>
+<style>
+    .bg-warning {
+        --bs-bg-opacity: 1;
+        background-color: rgba(255, 193, 7, 1) !important;
+    }
+
+    .bg-danger {
+        --bs-bg-opacity: 1;
+        background-color: rgba(220, 53, 69, 1) !important;
+    }
+
+    .bg-info {
+        --bs-bg-opacity: 1;
+        background-color: rgba(13, 202, 240, 1) !important;
+    }
+
+    .bg-success {
+        --bs-bg-opacity: 1;
+        background-color: rgba(25, 135, 84, 1) !important;
+    }
+
+    .bg-primary {
+        --bs-bg-opacity: 1;
+        background-color: rgba(13, 110, 253, 1) !important;
+    }
+
+    .bg-secondary {
+        --bs-bg-opacity: 1;
+        background-color: rgba(108, 117, 125, 1) !important;
+        }
+</style>

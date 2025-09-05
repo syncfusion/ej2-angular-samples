@@ -198,9 +198,9 @@
 	<p>This sample demonstrates the Gantt header template feature. In this sample, custom icons have been shown in the column headers.</p>
 </div>
 <div class="control-section">
-    <ejs-gantt id="headerTemplate" height="430px" [dataSource]="data" [taskFields]="taskSettings"
+    <ejs-gantt id="headerTemplate" height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings"
         [labelSettings]="labelSettings" [splitterSettings]="splitterSettings"
-        height="450px" [allowSelection]="true" [resourceFields] = "resourceFields"
+       [allowSelection]="true" [resourceFields] = "resourceFields"
         [resources]="resources" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true">
         <e-columns>
             <e-column field='TaskName' width='250'>
@@ -258,4 +258,8 @@
     </p>
     <p>In this demo, we have rendered the customized template for all column headers.</p>
     <p>More information about the header template can be found in documentation section.</p>
+
+    <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/columns/column-headers#header-template">documentation section</a>.</p>
+    
 </div>

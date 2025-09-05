@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { orderDatas } from './data';
+import { orderDetails } from './data';
 import { EditService, PageService, CommandColumnService, CommandModel, SortService, FilterService, GridModule } from '@syncfusion/ej2-angular-grids';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -23,7 +23,7 @@ export class CommandColumnComponent implements OnInit {
     public commands: CommandModel[];
 
     public ngOnInit(): void {
-        this.data = orderDatas;
+        this.data = orderDetails;
         this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Normal', allowEditOnDblClick: false };
         this.orderidrules = { required: true };
         this.customeridrules = { required: true };

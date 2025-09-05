@@ -46,7 +46,7 @@ a detailed or abstract view and display it as a grid and chart.</p>
       [toolbar]='toolbarOptions' (saveReport)='saveReport($event)'
       (loadReport)='loadReport($event)' (fetchReport)='fetchReport($event)' (renameReport)='renameReport($event)'
       (removeReport)='removeReport($event)' (newReport)='newReport()' (toolbarRender)='beforeToolbarRender($event)'
-      (chartSeriesCreated)='chartSeriesCreated()' enableFieldSearching='true'>
+      (chartSeriesCreated)='chartSeriesCreated()' enableFieldSearching='true' (load)='load($event)'>
       <ng-template #cellTemplate let-data>
           <span>{{getCellContent(data)}}</span>
       </ng-template>

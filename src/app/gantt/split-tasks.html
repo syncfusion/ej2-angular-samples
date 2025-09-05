@@ -6,7 +6,7 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-gantt id="SplitTasks" #splittasks height="450px" [dataSource]="data" [taskFields]="taskSettings" [treeColumnIndex]="1"
+    <ejs-gantt id="SplitTasks" #splittasks height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [treeColumnIndex]="1"
         [splitterSettings]="splitterSettings" [editSettings]="editSettings" [columns]="columns" [labelSettings]="labelSettings"
         [allowSelection]="true" [enableContextMenu]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
         [toolbar]="toolbar">
@@ -17,4 +17,6 @@
         can be defined in the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/taskFieldsModel/#segments">taskFields.segments</a> property. Segments can be created or merged by two ways: Using Edit Dialog and Context Menu.
     </p>
     <p>A task must have a duration of minimum two time unit cells in order to be split. Similarly, milestone tasks or parent tasks cannot be split into segments.</p>
+    <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/data-binding#remote-data">documentation section</a>.</p>
 	</div>

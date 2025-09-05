@@ -94,10 +94,6 @@ body.tailwind .e-tab .e-tab-header .e-toolbar-item .e-tab-wrap {
   visibility: visible;
 }
 
-.e-visbile-layer {
-  visibility: visible;
-}
-
 /* ListView customization */
 
 @font-face {

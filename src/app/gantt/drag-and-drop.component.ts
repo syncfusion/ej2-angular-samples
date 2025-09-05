@@ -36,7 +36,7 @@ export class GanttDragAndDropComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            child: 'subtasks'
+             parentID: 'ParentId'
         };
         this.columns =  [
             { field: 'TaskID', headerText: 'ID', width: 80 },
@@ -53,8 +53,8 @@ export class GanttDragAndDropComponent implements OnInit {
         this.labelSettings = {
             leftLabel: 'TaskName'
         };
-        this.projectStartDate= new Date('03/25/2024');
-        this.projectEndDate= new Date('07/06/2024');
+        this.projectStartDate= new Date('03/26/2025');
+        this.projectEndDate=  new Date('07/20/2025');
         this.splitterSettings = {
             columnIndex: 3
         };

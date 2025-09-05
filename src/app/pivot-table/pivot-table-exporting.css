@@ -1,0 +1,26 @@
+.e-pivotview {
+    width: 100%;
+    height: 100%;
+}
+
+.sb-sample-content-area {
+    min-height: 255px !important;
+}
+
+.control-section {
+    min-height: 255px !important;
+}
+
+.tabular-layout-switch {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.pivot-layout-switch {
+    margin-left: 10px;
+}
+
+.e-tool-grid {
+    content: "\e705";
+}

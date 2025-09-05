@@ -97,8 +97,8 @@ export class GanttTimelineTemplateComponent implements OnInit {
       },
       timelineUnitSize: 200,
     };
-      this.projectStartDate = new Date('03/31/2024');
-      this.projectEndDate = new Date('04/23/2024');
+      this.projectStartDate = new Date('03/29/2025 01:00:00 PM');
+      this.projectEndDate = new Date('04/23/2025');
       this.labelSettings = {
         leftLabel: 'TaskName',
         taskLabel: 'Progress'

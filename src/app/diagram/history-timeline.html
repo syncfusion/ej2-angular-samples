@@ -1,0 +1,66 @@
+<div class="control-section">
+  <div id="timeline-container">
+    <div id="timeline-header">
+      <h1>Internet History Timeline</h1>
+      <p>A comprehensive timeline of key events in Internet development from 1969 to 2035</p>
+    </div>
+    <div class="content-wrapper" style="width: 100%">
+      <ejs-diagram #diagram id="timeline-diagram" width="100%" height="600px"
+        [nodes]="nodes" [connectors]="connectors" [tool]="tool" [constraints]="constraints"
+        [snapSettings]="snapSettings" [selectedItems]="selectedItems" [commandManager]="commandManager"
+        (selectionChange)="selectionChange($event)" (onUserHandleMouseDown)="onUserHandleMouseDown($event)"
+        (click)="click($event)" (created)="created()" (load)="load()">
+      </ejs-diagram>
+
+      <ejs-dialog #dialog id="dialog" [visible]="false" width="300px" [isModal]="true"
+        [target]="target" [animationSettings]="{ effect: 'Zoom' }" [buttons]="dialogButtons"
+        (overlayClick)="dialog.hide()" [header]="dialog?.header">
+        <div style="padding: 0px 15px 15px 15px;">
+          <form #formElement id="form-element" class="form-horizontal">
+
+            <div class="form-group">
+              <label for="yearInput">Year:</label>
+              <ejs-textbox #yearTextBox id="yearInput" name="yearInput" [(ngModel)]="formData.yearInput"
+                floatLabelType="Never" placeholder="e.g., 2025" cssClass="e-outline">
+              </ejs-textbox>
+            </div>
+
+            <div class="form-group">
+              <label for="titleInput">Title:</label>
+              <ejs-textbox #titleTextBox id="titleInput" name="titleInput"
+                [(ngModel)]="formData.titleInput" floatLabelType="Never"
+                placeholder="Event Title" cssClass="e-outline">
+              </ejs-textbox>
+            </div>
+
+            <div class="form-group">
+              <label for="descriptionInput">Description:</label>
+              <ejs-textarea #describeTextBox id="descriptionInput" name="descriptionInput"
+                [(ngModel)]="formData.descriptionInput" [rows]="2" floatLabelType="Never"
+                placeholder="Brief description of the event" cssClass="e-outline"[resizeMode]="'Vertical'">
+              </ejs-textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="imageUrl">Image Url:</label>
+              <ejs-textbox #imageTextBox id="imageUrl" name="imageUrl" [(ngModel)]="formData.imageUrl"
+                floatLabelType="Never" placeholder="https://example.com/image.jpg" cssClass="e-outline">
+              </ejs-textbox>
+            </div>
+
+          </form>
+        </div>
+      </ejs-dialog>
+    </div>
+    <div id="action-description">
+        <p>
+          This sample visualizes key milestones in Internet history using the interactive Syncfusion<sup>®</sup> EJ2 Angular Diagram component. Events are presented as nodes on a horizontal timeline, with color-coded sections and customizable event details.
+        </p>
+    </div>
+    <div id="description">
+        <p>
+          This interactive timeline displays Internet history events as styled nodes along a central bar, alternating above and below for visual variety. Color-coded segments define historical periods, and tooltip provide event descriptions on hover. Users can dynamically add or edit events, ensuring chronological accuracy with real-time updates.
+        </p>
+    </div>
+</div>
+

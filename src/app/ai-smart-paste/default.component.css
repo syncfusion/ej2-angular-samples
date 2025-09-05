@@ -1,4 +1,3 @@
-
 .form-container {
     display: flex;
     flex-direction: column;
@@ -66,4 +65,18 @@
 
 #bug-priority .row {
     margin-left: 0px;
+}
+.quick-message {
+    margin: 20px auto;
+    width: 60%;
+}
+ 
+@media (max-width: 550px) {
+    .quick-message {
+        width: 100% !important;
+    }
+ 
+    .form-container {
+        width: 100%;
+    }
 }

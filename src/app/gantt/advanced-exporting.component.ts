@@ -124,11 +124,11 @@ export class GanttAdvancedExportingComponent implements OnInit {
       },
     };
     this.gridLines = 'Both';
-    this.projectStartDate = new Date('03/25/2025');
-    this.projectEndDate = new Date('06/28/2025');
+    this.projectStartDate = new Date('03/30/2025');
+    this.projectEndDate = new Date('07/20/2025');
     this.resources = editingResources;
     this.splitterSettings = {
-      columnIndex: 2,
+      columnIndex: 3,
     };
     this.columns = [
       { field: 'TaskID', width: 80 },

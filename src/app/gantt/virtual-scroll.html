@@ -3,7 +3,7 @@
         It also reduces the DOM element's weight by virtually updating DOM during the vertical scroll and also in timeline during horizontal scroll.</p>
 </div>
 <div class="control-section">
-    <ejs-gantt id="SplitTasks" #splittasks height="450px" [dataSource]="data" [taskFields]="taskSettings" [treeColumnIndex]="1"
+    <ejs-gantt id="SplitTasks" #splittasks height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [treeColumnIndex]="1"
         [splitterSettings]="splitterSettings" [columns]="columns" [labelSettings]="labelSettings" [projectStartDate]="projectStartDate"
         [projectEndDate]="projectEndDate"
         [allowSelection]="true" [enableVirtualization]="true" [highlightWeekends]="true" [enableTimelineVirtualization]="true">
@@ -16,4 +16,6 @@
         <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#enablevirtualization">enableVirtualization</a> property as true. Additionally, the Gantt component now includes the timeline virtualization feature by setting the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#enabletimelinevirtualization">enableTimelineVirtualization</a> to true.</p>
     <p>This demo highlights the utilization of row and timeline virtualization features within the Gantt.</p>
     <p>By default during Virtual scroll Shimmer effect is enabled you can disable this by changing <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#enablevirtualmaskrow">enableVirtualMaskRow</a> to false</p>
+    <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/undo-redo">documentation section</a>.</p>
 	</div>

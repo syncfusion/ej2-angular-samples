@@ -51,6 +51,7 @@ import { LocalDataDiagramComponent } from './local-data.component';
 import { RemoteDataDiagramComponent } from './remote-data.component';
 
 import { VennDiagramComponent } from './venn-diagram.component';
+import { TournamentBracketComponent } from './tournament-bracket.component';
 import { RTLTreeDiagramComponent } from './right-to-left-tree.component';
 import { PertChartDiagramComponent } from './pert-chart.component';
 import { LogicCircuitComponent } from './logic-circuit.component';
@@ -58,6 +59,7 @@ import { UmlActivityComponent } from './uml-activity.component';
 import { NetworkShapesDiagramComponent } from './network-diagram.component';
 import { CRUDDiagramComponent } from './crud.component';
 import { UmlClassDiagramComponent } from './uml-Class-diagram.component';
+import { PeriodicTableComponent } from './periodic-table.component';
 import { DialogAllModule } from '@syncfusion/ej2-angular-popups';
 import { FlowExecutionDiagramComponent } from 'src/app/diagram/flow-execution.component';
 import { HistoryManagerDiagramComponent } from 'src/app/diagram/history-manager.component';
@@ -77,6 +79,13 @@ import { DataBindingWithTreeviewComponent } from './data-binding-with-treeview.c
 import { WorkFlowDiagramComponent } from './workflow-editor.component';
 import { AvoidOverlapDiagramComponent } from './avoid-connector-overlap.component';
 import { ContainerDiagramComponent } from './container.component';
+import { ShortestPathDiagramComponent } from './shortest-path.component';
+import { SpiralDiagramComponent } from './spiral-diagram.component';
+import { SeatBookingComponent } from './seat-booking.component';
+import { NeuralNetworkComponent } from './neural-network.component';
+import { PuzzleDiagramComponent } from './puzzle.component';
+import { PipelineInstrumentationDiagramComponent } from './pipeline-instrumentation-diagram.component';
+import { HistoryTimelineDiagramComponent } from './history-timeline.component';
 
 export const diagramAppRoutes: Object[] = [
     {
@@ -135,7 +144,7 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/container', component: ContainerDiagramComponent,
-        name: 'Container', type:'new', category: 'Getting Started', order: '01',
+        name: 'Container', category: 'Getting Started', order: '01',
         description: 'This sample  illustrates the Container shape usage, container and its child relationship.',
     },
     {
@@ -175,7 +184,8 @@ export const diagramAppRoutes: Object[] = [
     {
         path: ':theme/diagram/symbol-palette', component: SymbolPaletteDiagramComponent,
         name: 'Symbol Palette',
-        category: 'Getting Started', order: '01',
+        category: 'Getting Started',
+        type: 'update', order: '01',
         description: 'This example illustrates predefining shapes in a palette that can be easily dragged and dropped into the drawing area. Customizable options of the symbol palette are also illustrated in this example.'
     },
 
@@ -334,7 +344,7 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/uml-sequence-diagram', component: UmlSequenceComponent,
-        name: 'UML Sequence Diagram', category: 'Use Case Diagram', order: '08', type: 'update',
+        name: 'UML Sequence Diagram', category: 'Use Case Diagram', order: '08',
         description: 'This sample presents a UML sequence diagram to depict interactions in a secure transaction process involving a user, transaction system, and fraud detection using diagram model.',
 
     },
@@ -344,6 +354,53 @@ export const diagramAppRoutes: Object[] = [
         description: 'This sample visualizes the class shapes in diagram.',
     },
     {
+        path: ':theme/diagram/shortest-path', component: ShortestPathDiagramComponent,
+        name: 'Shortest Path Visualizer', category: 'Use Case Diagram', order: '08', type:'new',
+        description: 'Visualize shortest paths using Dijkstra’s algorithm in Syncfusion EJ2 Angular Diagram. Interactive graph with animated connectors and dynamic node styling.',
+    },
+    {
+        path: ':theme/diagram/tournament-bracket', component: TournamentBracketComponent,
+        name: 'Tournament Bracket', category: 'Use Case Diagram', order: '08', type: 'new',
+        description: 'Follow the UEFA Champions League journey with Syncfusion EJ2 Angular Diagram. Interactive bracket with match details, animated progression, and champion highlights.',
+    },
+    {
+        path: ':theme/diagram/seat-booking', component: SeatBookingComponent,
+        name: 'Ticket Booking', category: 'Use Case Diagram', order: '08', type: 'new',
+        description: 'Book cinema seats interactively with Syncfusion EJ2 Angular Diagram. Select seats by tier, view real-time pricing, and confirm bookings with dynamic updates and responsive design.',
+    },
+    {
+        path: ':theme/diagram/spiral-diagram', component: SpiralDiagramComponent,
+        name: 'Spiral Diagram', category: 'Use Case Diagram', order: '08', type:'new',
+        description: 'Visualize the software development lifecycle with a spiral diagram in Syncfusion EJ2 Angular. Interactive nodes, custom icons, and tooltips illustrate iterative project stages from ideation to deployment.',
+    },
+    {
+        path: ':theme/diagram/puzzle', component: PuzzleDiagramComponent,
+        name: 'Image Puzzle', category: 'Use Case Diagram', order: '08', type:'new',
+        description: 'Play a sliding image puzzle with Syncfusion EJ2 Angular Diagram. Drag tiles, track moves and time, and enjoy multiple themes with pause and clue options.',
+    },
+    {
+        path: ':theme/diagram/periodic-table', component: PeriodicTableComponent,
+        name: 'Periodic Table', category: 'Use Case Diagram', order: '08', type:'new',
+        description: 'Explore the Periodic Table interactively with Syncfusion EJ2 Angular Diagram. Color-coded elements, hover details, and dynamic highlighting by period and group make learning chemistry engaging.',
+    },
+    {
+        path: ':theme/diagram/history-timeline', component: HistoryTimelineDiagramComponent,
+        name: 'History Timeline', category: 'Use Case Diagram', order: '08', type:'new',
+        description: 'Explore Internet history with an interactive timeline built using Syncfusion EJ2 Angular Diagram. Add, edit, and visualize key milestones with color-coded segments.',
+    },
+    {
+        path: ':theme/diagram/pipeline-instrumentation-diagram', component: PipelineInstrumentationDiagramComponent,
+        name: 'P&ID Diagram',
+        category: 'Real-time Diagrams', order: '09', type:'new',
+        description: 'Simulate a real-time chemical reactor P&ID using Syncfusion EJ2 Angular Diagram. Control fluid flows, tank levels, and temperature with interactive elements and live animations.',
+    },
+    {
+        path: ':theme/diagram/neural-network', component: NeuralNetworkComponent,
+        name: 'Neural Network',
+        category: 'Real-time Diagrams', order: '09', type:'new',
+        description: 'Explore neural network architecture with Syncfusion EJ2 Angular Diagram. Visualize layers, weights, and data flow with nodes and connections.',
+    },
+    {
         path: ':theme/diagram/venn-diagram', component: VennDiagramComponent,
         name: 'Venn Diagram',
         category: 'Real-time Diagrams', order: '09',
@@ -351,7 +408,7 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/network-diagram', component: NetworkShapesDiagramComponent,
-        name: 'Network Diagram', category: 'Use Case Diagram', order: '09',
+        name: 'Network Diagram', category: 'Real-time Diagrams', order: '09',
         description: 'This sample visualizes graphical layout of a network diagram using diagram `Native (SVG)` shapes.',
     },
     {
@@ -362,7 +419,7 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/workflow-editor', component: WorkFlowDiagramComponent,
-        name: 'Workflow Diagram', category: 'Real-time Diagrams', order: '09', type: 'update',
+        name: 'Workflow Diagram', category: 'Real-time Diagrams', order: '09',
         description: 'This sample visually represents a simple Workflow of a Travel Request Agency using Syncfusion<sup>®</sup> EJ2 TypeScript. The diagram includes BPMN nodes, connectors, and annotations to represent various diagram objects.'
     },
     {

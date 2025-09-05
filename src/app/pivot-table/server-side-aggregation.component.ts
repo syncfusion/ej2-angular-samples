@@ -17,7 +17,7 @@ enableRipple(false);
     styleUrls: ['server-side-aggregation.css'],
     encapsulation: ViewEncapsulation.None,
     templateUrl: 'server-side-aggregation.html',
-    providers: [FieldListService, GroupingBarService, VirtualScrollService, ToolbarService, ExcelExportService, PDFExportService],
+    providers: [FieldListService, GroupingBarService, ToolbarService, ExcelExportService, PDFExportService],
     standalone: true,
     imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
@@ -35,7 +35,7 @@ export class ServerSideAggregationComponent implements OnInit {
         if (Browser.isDevice && this.pivotObj && this.pivotObj.enableRtl) {
             document.querySelector('.control-section').classList.add('e-rtl');
         }
-        if (document.querySelector('#grid_menu .e-menu-item') == null) {
+         if (document.querySelector('#grid_menu .e-menu-item') == null) {
             var menuItems = [
                 {
                     iconCss: 'e-toolbar-grid e-icons',
@@ -53,7 +53,8 @@ export class ServerSideAggregationComponent implements OnInit {
     }
 
     gridToolbarClicked(args: any): void {
-        if (this.pivotObj && this.pivotObj.gridSettings && this.pivotObj.gridSettings.layout !== args.item.id) {
+        if (this.pivotObj && this.pivotObj.gridSettings && this.pivotObj.gridSettings.layout !== args.item.id &&
+            (args.item.id == 'Compact' || args.item.id == 'Tabular')) {
             this.pivotObj.setProperties({
                 gridSettings: {
                     layout: args.item.id
@@ -181,19 +182,24 @@ export class ServerSideAggregationComponent implements OnInit {
         this.toolbarOptions = ['Export', 'FieldList'] as ItemModel[];
 
         this.dataSourceSettings = {
-            url: 'https://ej2services.syncfusion.com/angular/release/api/pivot/post',
+            url: 'https://ej2services.syncfusion.com/angular/development/api/pivot/post',
             mode: 'Server',
             expandAll: false,
             enableSorting: true,
-            columns: [{ name: 'Year', caption: 'Production Year' }],
+            columns: [ { name: 'Year', caption: 'Production Year' },
+            ],
             values: [
                 { name: 'Sold', caption: 'Units Sold' },
-                { name: 'Price', caption: 'Sold Amount' }
+                { name: 'Amount', caption: 'Sold Amount' }
             ],
-            rows: [{ name: 'ProductID', caption: 'Product ID' }, { name: 'Country' }],
-            drilledMembers: [{ name: 'ProductID', items: ['PRO-10001', 'PRO-10002', 'PRO-10003'] }],
-            formatSettings: [{ name: 'Price', format: 'C0' }, { name: 'Sold', format: 'N0' }],
-            filters: []
+            rows: [{ name: 'Country' }, {name: 'Products'}],
+            drilledMembers: [{ name: 'Country', items: ['France', 'Germany'] }],
+            formatSettings: [{ name: 'Amount', format: 'C0' }, { name: 'Sold', format: 'N0' }],
+            filters: [],
+            fieldMapping: [
+                { name: 'Product_Categories', groupName: 'Product Details'},
+                { name: 'Products', groupName: 'Product Details' }
+            ]
         };
     }
 }

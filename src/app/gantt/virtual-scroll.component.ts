@@ -31,7 +31,7 @@ export class GanttVirtualScrollComponent implements OnInit {
         };
 		this.columns = [
                 { field: 'TaskID' },
-                { field: 'TaskName' },
+                { field: 'TaskName', width: '200px' },
                 { field: 'StartDate' },
                 { field: 'Duration' },
                 { field: 'Progress' }
@@ -43,7 +43,7 @@ export class GanttVirtualScrollComponent implements OnInit {
             leftLabel: 'TaskName',
             taskLabel: 'Progress'
         };
-        this.projectStartDate = new Date('04/01/2024');
+        this.projectStartDate = new Date('03/24/2025');
         this.projectEndDate = new Date('12/31/2030');
     }
 }

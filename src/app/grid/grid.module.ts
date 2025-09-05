@@ -82,6 +82,7 @@ import { EmptyRecordTemplateComponent } from './empty-record-template.component'
 import { ModuleWithProviders } from '@angular/core';
 import { FIFAStatisticsComponent } from './fifa-statistics.component';
 import { ChartComponent } from './chart.component';
+import { RowSpanningComponentAPI} from './row-spanning-api.component';
 
 export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/over-view', component: OverViewComponent, 'name': 'Overview', description: 'This demo for Essential JS 2 grid component is an overview of how to display and manipulate large data with configuration options.', order: '01', category: 'Data Grid' },
@@ -90,7 +91,7 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/adaptive-layout', component: AdaptiveLayoutComponent, name: 'Adaptive Layout', description: 'This demo for Essential JS 2 grid component shows the Grid row in vertical direction.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/loading-animation', component: LoadingAnimationComponent, name: 'Loading Animation',  description: 'This demo for Essential JS 2 grid component shows the loading indicator when grid loading and refreshing.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/empty-record-template', component: EmptyRecordTemplateComponent, name: 'Empty Record Template',  description: 'This demo for Essential JS 2 grid component demonstrates usage of template in Grid to shown element or text or image or gif icon instead of displaying the empty record message.', order: '01', category: 'Data Grid' },
-    { 'path': ':theme/grid/chart', component: ChartComponent, name: 'Integrate Chart in Grid',  type: 'new',   description: 'This demo of the Essential JS 2 Grid component showcases the visual representation of data using a chart.', order: '01', category: 'Data Grid', hideOnDevice: true },
+    { 'path': ':theme/grid/chart', component: ChartComponent, name: 'Integrate Chart in Grid',   description: 'This demo of the Essential JS 2 Grid component showcases the visual representation of data using a chart.', order: '01', category: 'Data Grid', hideOnDevice: true },
  { 'path': ':theme/grid/fifa-statistics', component: FIFAStatisticsComponent, name: 'FIFA Statistics',  description: 'This demo for Essential Studio Angular grid component show the Product Use Case of FIFA Statistics', order: '17', category: 'Product Use Case' },
 
     { 'path': ':theme/grid/local-data', component: LocalDataComponent, 'name': 'Local Data', description: 'This demo for Essential JS 2 grid component shows how to bind with a local data source.', order: '02', category: 'Data Binding' },
@@ -160,6 +161,10 @@ export const gridRouteConfig: Object[] = [
         'path': ':theme/grid/row-spanning', component: RowSpanningComponent, name: 'Row Spanning', description: 'This demo for Essential JS 2 grid control shows the usage of the row and column spanning feature.', order: '04', category: 'Rows',
         hideOnDevice: true
     },
+    {
+        'path': ':theme/grid/row-spanning-api', component: RowSpanningComponentAPI, name: 'Row Spanning (API)', type: 'new', description: 'This demo for Essential JS 2 grid control demonstrates the row and column spanning feature. In this sample, we have spanned row cells together.', order: '04',
+        category: 'Rows',
+    },
 
     {
         'path': ':theme/grid/normal-edit', component: NormalEditComponent, name: 'Inline Editing', description: 'This demo for Essential JS 2 grid component shows the inline editing operation.', order: '05',
@@ -214,7 +219,7 @@ export const gridRouteConfig: Object[] = [
     },
 
     { 'path': ':theme/grid/selection', component: SelectionComponent, name: 'Default Selection', description: 'This demo for Essential JS 2 grid component shows how to select rows or cells through simple mouse down or keyboard interaction using the selection feature.', order: '11', category: 'Selection' },
-    { 'path': ':theme/grid/selection-api', component: SelectionApiComponent,  name: 'Selection API', description: 'This demo for Essential JS 2 grid component shows how to perform selection programmatically.', order: '11', category: 'Selection' },
+    { 'path': ':theme/grid/selection-api', component: SelectionApiComponent,  name: 'Selection (API)', description: 'This demo for Essential JS 2 grid component shows how to perform selection programmatically.', order: '11', category: 'Selection' },
     {
         'path': ':theme/grid/checkbox-selection', component: CheckboxSelectionComponent,
         name: 'Checkbox Selection', description: 'This demo for Essential JS 2 grid component shows how the check box selection feature can be used to select grid rows.', order: '11',   category: 'Selection'
@@ -230,7 +235,7 @@ export const gridRouteConfig: Object[] = [
         category: 'Scrolling'
     },
     {
-        'path': ':theme/grid/frozen-api', component: FrozenApiComponent, name: 'Frozen API', order: '13',description: 'This demo for Essential JS 2 grid component shows how the rows and columns can be frozen or pinned.',
+        'path': ':theme/grid/frozen-api', component: FrozenApiComponent, name: 'Frozen (API)', order: '13',description: 'This demo for Essential JS 2 grid component shows how the rows and columns can be frozen or pinned.',
         category: 'Scrolling'
     },
     {

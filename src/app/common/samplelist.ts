@@ -55,15 +55,12 @@ import { sparklineAppRoutes } from '../sparkline/sparkline.module';
 import { smithchartAppRoutes } from '../smith-chart/smith-chart.module';
 import { colorPickerAppRoutes } from '../color-picker/color-picker.module';
 import { pivottableRouteConfig } from '../pivot-table/pivot-table.module';
-import { documentEditorAppRoutes } from '../document-editor/document-editor.module';
-import { pdfViewerAppRoutes } from '../pdfviewer/pdfviewer.module';
 import { QueryBuilderAppRoutes } from '../query-builder/query-builder.module';
 import { stockChartAppRoutes } from '../stock-chart/stock-chart.module';
 import { GanttAppRoutes } from '../gantt/gantt.module';
 import { fileManagerAppRoutes } from '../file-manager/file-manager.module';
 import { dashboardlayoutAppRoutes } from '../dashboard-layout/dashboard-layout.module';
 import { listBoxAppRoutes } from '../list-box/list-box.module';
-import { spreadsheetAppRoutes } from '../spreadsheet/spreadsheet.module';
 import { bulletChartAppRoutes } from '../bullet-chart/bullet-chart.module';
 import { progressBarAppRoutes } from '../progress-bar/progress-bar.module';
 import { kanbanRouteConfig } from '../kanban/kanban.module';
@@ -90,7 +87,6 @@ import { smartPasteAppRoutes } from '../ai-smart-paste/smartpaste.module';
 import { smartTextAreaAppRoutes } from '../ai-smart-textarea/smarttextarea.module';
 import { AIGridAppRoutes } from '../ai-grid/aigrid.module';
 import { AIGanttAppRoutes } from '../ai-gantt/aigantt.module';
-import { AISpreadsheetAppRoutes } from '../ai-spreadsheet/aispreadsheet.module';
 import { AIQueryBuilderAppRoutes } from '../ai-querybuilder/aiquerybuilder.module';
 import { AIComboBoxAppRoutes } from '../ai-combo-box/aicombobox.module';
 import { AIImageEditorAppRoutes } from '../ai-image-editor/aiimageeditor.module';
@@ -98,7 +94,6 @@ import { AIPivotTableAppRoutes } from '../ai-pivot-table/aipivottable.module';
 import { AIMapsAppRoutes } from '../ai-maps/aimaps.module';
 import { AISchedulerAppRoutes } from '../ai-schedule/aischedule.module';
 import { AIDiagramAppRoutes } from '../ai-diagram/aidiagram.module';
-import { AIDocumentEditorAppRoutes } from '../ai-document-editor/aidocumenteditor.module';
 import { AIRichTextEditorAppRoutes } from '../ai-rich-text-editor/airichtexteditor.module';
 import { blockEditorAppRoutes } from '../block-editor/block-editor.module';
 
@@ -125,12 +120,6 @@ export let samplesList: any = [
         'name': 'Rich Text Editor', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-rich-text-editor', 'samples': AIRichTextEditorAppRoutes
     },
     {
-        'name': 'Word Processor', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-document-editor', 'samples': AIDocumentEditorAppRoutes
-    },
-    {
-        'name': 'Spreadsheet', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-spreadsheet', 'samples': AISpreadsheetAppRoutes
-    },
-    {
         'name': 'Gantt Chart', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-gantt', 'samples': AIGanttAppRoutes
     },
     {
@@ -149,7 +138,7 @@ export let samplesList: any = [
         'name': 'Data Grid', 'type':'update', 'category': 'Grids', 'order': '01', 'path': 'grid', 'samples': gridRouteConfig, 'ftName': 'datagrid'
     },
     {
-        'name': 'AI AssistView', 'category': 'Interactive Chat', 'type': 'update', 'order': '06', 'path': 'ai-assistview', 'samples': aiassistviewAppRoutes, 'ftName': 'ai-assistview'
+        'name': 'AI AssistView', 'category': 'Interactive Chat', 'order': '06', 'path': 'ai-assistview', 'samples': aiassistviewAppRoutes, 'ftName': 'ai-assistview'
     },
     {
         'name': 'Block Editor','category': 'File Viewers & Editors', 'type': 'preview','order': '06', 'path': 'block-editor', 'samples': blockEditorAppRoutes, 'ftName': 'block-editor'
@@ -164,9 +153,6 @@ export let samplesList: any = [
         'name': 'Tree Grid', 'category': 'Grids', 'order': '01', 'path': 'treegrid', 'samples': treegridRouteConfig, 'type':'update'
     },
     {
-        'name': 'Spreadsheet', 'category': 'Grids', 'order': '04', 'path': 'spreadsheet', 'samples': spreadsheetAppRoutes, 'ftName': 'spreadsheet'
-    },
-    {
         'name': 'Chart', 'category': 'Data visualization', 'order': '02', 'path': 'chart', 'samples': chartAppRoutes, 'type':'update'
     },
     {
@@ -176,7 +162,7 @@ export let samplesList: any = [
         'name': '3D Circular Chart', 'category': 'Data visualization', 'order': '02', 'path': 'three-dimension-circular-chart', 'samples': threeDimensionCircularChartAppRoutes
     },
     {
-        'name': 'Stock Chart', 'category': 'Data visualization', 'order': '02', 'path': 'stock-chart', 'samples': stockChartAppRoutes, 'type':'update'
+        'name': 'Stock Chart', 'category': 'Data visualization', 'order': '02', 'path': 'stock-chart', 'samples': stockChartAppRoutes
     },
     {
         'name': 'Arc Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'arc-gauge', 'samples': arcgaugeAppRoutes
@@ -215,7 +201,7 @@ export let samplesList: any = [
         'name': 'Bullet Chart', 'category': 'Data visualization', 'order': '02', 'path': 'bullet-chart', 'samples': bulletChartAppRoutes
     },
     {
-        'name': 'Kanban', 'category': 'Data visualization', 'order': '02', 'path': 'kanban', 'samples': kanbanRouteConfig,'ftName': 'kanban'
+        'name': 'Kanban', 'category': 'Data visualization', 'order': '02', 'path': 'kanban', 'samples': kanbanRouteConfig,'ftName': 'kanban', 'type': 'update'
     },
     {
         'name': 'Form Validator', 'category': 'Forms', 'order': '03', 'path': 'form-validator', 'samples': formValidatorAppRoutes
@@ -224,22 +210,16 @@ export let samplesList: any = [
         'name': "Query Builder", 'category': "Forms", 'order': '10', 'path': "query-builder", 'samples': QueryBuilderAppRoutes
     },
     {
-        'name': "PDF Viewer", 'type':'update','category': "File Viewers & Editors", 'order': '11', 'path': "pdfviewer", 'samples': pdfViewerAppRoutes, 'ftName': "pdfviewer"
-    },
-    {
         'name': "Rich Text Editor", 'type':'update', 'category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "rich-text-editor", 'samples': rteAppRoutes
     },
     {
         'name': "Markdown Editor", 'category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "markdown-editor", 'samples': mdeAppRoutes
     },
     {
-        'name': 'Word Processor', 'category': 'File Viewers & Editors', 'order': '03', 'path': 'document-editor', 'samples': documentEditorAppRoutes, 'ftName': 'document-editor', 'type': 'update'
+        "name": "Image Editor", 'category': 'File Viewers & Editors', 'ftName': 'image-editor', 'order': '03', 'path': 'image-editor', 'samples': ImageEditorAppRoutes
     },
     {
-        "name": "Image Editor", 'category': 'File Viewers & Editors', 'ftName': 'image-editor', 'order': '03', 'path': 'image-editor', 'samples': ImageEditorAppRoutes, 'type': 'update'
-    },
-    {
-        'name': 'Scheduler', 'category': 'Calendars', 'order': '04', 'path': 'schedule', 'samples': scheduleRouteConfig, 'ftName': 'scheduler', 'type': 'update'
+        'name': 'Scheduler', 'category': 'Calendars', 'order': '04', 'path': 'schedule', 'samples': scheduleRouteConfig, 'ftName': 'scheduler'
     },
     {
         'name': 'Gantt Chart', 'category': 'Calendars', 'order': '04', 'type':'update', 'path': 'gantt', 'samples': GanttAppRoutes, 'ftName': 'gantt'
@@ -251,7 +231,7 @@ export let samplesList: any = [
         'name': 'DatePicker',  'category': 'Calendars', 'order': '04', 'path': 'datepicker', 'samples': datePickerAppRoutes
     },
     {
-        'name': 'DateRangePicker', 'type':'update', 'category': 'Calendars', 'order': '04', 'path': 'daterangepicker', 'samples': dateRangePickerAppRoutes
+        'name': 'DateRangePicker', 'category': 'Calendars', 'order': '04', 'path': 'daterangepicker', 'samples': dateRangePickerAppRoutes
     },
     {
         'name': 'DateTimePicker', 'category': 'Calendars', 'order': '04', 'path': 'datetimepicker', 'samples': dateTimePickerAppRoutes
@@ -272,19 +252,19 @@ export let samplesList: any = [
         'name': "SpeedDial", 'category': 'Buttons', 'order': '03', 'path': "speed-dial", 'samples': speedDialAppRoutes,
     },
     {
-        'name': "AutoComplete", 'type':'update', 'category': "Dropdowns",'ftName': "autocomplete",  'order': '05', 'path': "auto-complete", 'samples': autoCompleteAppRoutes
+        'name': "AutoComplete", 'category': "Dropdowns",'ftName': "autocomplete",  'order': '05', 'path': "auto-complete", 'samples': autoCompleteAppRoutes
     },
     {
-        'name': "ComboBox", 'type':'update', 'category': "Dropdowns", 'ftName': "combo-box",  'order': '05', 'path': "combo-box", 'samples': comboboxAppRoutes
+        'name': "ComboBox", 'category': "Dropdowns", 'ftName': "combo-box",  'order': '05', 'path': "combo-box", 'samples': comboboxAppRoutes
     },
     {
-        'name': "Dropdown List", 'type':'update', 'category': "Dropdowns",  'ftName': "dropdown-list", 'order': '05', 'path': "drop-down-list", 'samples': dropdownlistAppRoutes
+        'name': "Dropdown List", 'category': "Dropdowns",  'ftName': "dropdown-list", 'order': '05', 'path': "drop-down-list", 'samples': dropdownlistAppRoutes
     },
     {
         'name': "Dropdown Tree", 'category': "Dropdowns", 'ftName': "dropdown-tree", 'order': '05', 'path': "drop-down-tree", 'samples': dropdowntreeAppRoutes
     },
     {
-        'name': "MultiSelect Dropdown", 'type':'update', 'category': "Dropdowns",  'ftName': "multiselect-dropdown", 'order': '05',  'path': "multi-select", 'samples': multiselectAppRoutes
+        'name': "MultiSelect Dropdown", 'category': "Dropdowns",  'ftName': "multiselect-dropdown", 'order': '05',  'path': "multi-select", 'samples': multiselectAppRoutes
     },
     {
         "name": "List Box", "category": "Dropdowns", "ftName": "list-box", 'order': '03', "path": "list-box", "samples": listBoxAppRoutes

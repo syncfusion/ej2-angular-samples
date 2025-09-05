@@ -1,7 +1,7 @@
 <div class="control-section">
     <div class="sample-container">
         <div class="default-section">
-            <ejs-richtexteditor id='insertMediaRTE' [toolbarSettings]='tools'>
+            <ejs-richtexteditor id='insertMediaRTE' [toolbarSettings]='tools' [insertVideoSettings]='insertVideoSettings' [insertAudioSettings]='insertAudioSettings'>
                 <ng-template #valueTemplate>
                 <p>Rich Text Editor allows inserting video and audio from online sources and the local computers where you want to insert a video and audio into your content.</p>
                 <p><b>Get started with Quick Toolbar to click on a video</b></p>
@@ -21,7 +21,7 @@
 </div>
  
 <div id="action-description">
-    <p>This sample demonstrates the option to insert the media into the Rich Text Editor content. Click the audio and video button from the toolbar item to insert the media.</p>
+    <p>This sample demonstrates the option to insert the media into the Rich Text Editor content. Click the audio and video button from the toolbar item to insert the media, or drag and drop audio and video files directly into the editor.</p>
 </div>
 
 <div id="description">

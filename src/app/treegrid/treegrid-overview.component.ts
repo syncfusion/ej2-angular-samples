@@ -39,6 +39,7 @@ export class TreeGridOverviewComponent implements OnInit {
             (args.cell.querySelector('.bar')as HTMLElement).style.width = args.data[args.column.field] * 10 + '%';
             args.cell.querySelector('.barlabel').textContent = args.data[args.column.field] + '%';
         }
+        
         if (args.column.field === 'name') {
             let imgElement: HTMLElement = document.createElement('IMG');
             let val: string = !(<ITreeData>args.data).level ? args.data[args.column.field] :

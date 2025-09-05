@@ -239,7 +239,7 @@ export class HyperLinkComponent implements OnInit {
         this.valueInput2.appendTo('#value2');
         this.textInput = new MaskedTextBox({
             value: '',
-            placeholder: 'Example: "FY 2015.In Stock"',
+            placeholder: 'Example: "FY 2022.In Stock"',
             width: '100%'
         });
         this.textInput.appendTo('#text');

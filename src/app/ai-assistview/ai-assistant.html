@@ -1,0 +1,59 @@
+<div class="control-section">
+    <div>
+        <div class="ai-assistant">
+            <div id="aiAssistView" ejs-aiassistview #aiAssistViewInst [bannerTemplate]="bannerTemplate" [promptSuggestions]="suggestions" [toolbarSettings]="toolbarSettings" [enableAttachments]="enableAttachments" [attachmentSettings]="attachmentSettings" (promptRequest)="promptRequest($event)" (created)="created()"></div>
+        </div>
+    </div>
+    <!-- sidebar element declaration -->
+    <ejs-sidebar id="assistantSidebar" #sideObj width="260px" target=".ai-assistant"
+            position="Left" [enableDock]="enableDock" dockSize="75px" [enableGestures]="enableGesture">
+        <div class="assistant-sidebar-header">
+            <ejs-toolbar class="assistantToolbar">
+                <e-items>
+                    <e-item prefixIcon="e-icons e-assistview-icon" tooltipText="Menu"></e-item>
+                    <e-item prefixIcon="e-icons e-menu" tooltipText="Toggle sidebar" align="Right" (click)="toggle()"></e-item>
+                    <e-item prefixIcon="e-icons e-rename" cssClass= "new-chat-button" tooltipText="Start new chat" align="Right" (click)="loadNewAIAssist()"></e-item>
+                </e-items>
+            </ejs-toolbar>
+        </div>
+        <div class="assistant-sidebar-content">
+            <div class="assistant-listview-option" tabindex="1">
+                <div class="e-icons e-multiple-comment"></div>
+                <div class="header-conversation">Chat Conversations</div>
+                <span class="e-icons e-refresh" title="Reset" id="resetButton"></span>
+            </div>
+            <ejs-listview id="assistant-listview-grp" #grpListObj [dataSource]='listData' [fields]='fields'
+                (select)="onListViewSelect($event)">
+                <ng-template #template let-data="">
+                    <div class="chat-item">
+                        <div class="chat-title">{{data.text}}</div>
+                    </div>
+                </ng-template>
+            </ejs-listview>
+        </div>
+    </ejs-sidebar>
+    <!-- Banner Template for AI Assistant -->
+    <ng-template #bannerTemplate>
+        <div class="banner-content e-no-content">
+            <div class="e-icons e-assistview-icon"></div>
+            <h3>AI Assistance</h3>
+            <div class="ai-assist-banner-subtitle">Hello, I'm Your Digital Assistant!</div>
+        </div>
+    </ng-template>
+</div>
+
+<!-- Action and General Description -->
+<div id="action-description">
+    <p>This sample demonstrates a AI chat assistant with conversation management. Users can create new conversations and receive AI-generated responses with relevant suggestions.</p>
+</div>
+<div id="description">
+    <p>The AI AssistView component in this example showcases integration of an AI usage with conversation history management which include's:</p>
+    <ul>
+        <li>Sidebar with organized conversation history, categorized by date (Today and Previous days)</li>
+        <li>Customizable banner interface using <code>bannerTemplate</code> for guidance messages</li>
+        <li>Intelligent follow-up suggestions after each responses via <code>promptSuggestions</code></li>
+        <li>Local storage integration for persisting conversation history across sessions</li>
+        <li>Toolbar with convenient actions new chat, toggle sidebar, and user profile</li>
+    </ul>
+    <p>This example demonstrates how to build a AI assistant interface with conversation management, providing users with a seamless and productive AI interaction experience.</p>
+</div>

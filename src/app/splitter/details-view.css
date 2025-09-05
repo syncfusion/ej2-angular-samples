@@ -80,6 +80,10 @@
     border-radius: 3px;
 }
 
+#letterAvatarList:not(.e-list-template) .e-list-item {
+    padding: 0;
+}
+
 #letterAvatarList .listWrapper {
     width: inherit;
     height: inherit;

@@ -73,7 +73,8 @@ export class NodeDiagramComponent {
         node.constraints &= ~(NodeConstraints.Resize | NodeConstraints.Delete | NodeConstraints.Rotate | NodeConstraints.Drag);
         node.constraints |= NodeConstraints.ReadOnly;
       } else {
-        node.constraints = NodeConstraints.Default;
+        node.constraints &= ~NodeConstraints.ReadOnly;
+        node.constraints |= (NodeConstraints.Resize | NodeConstraints.Delete | NodeConstraints.Rotate | NodeConstraints.Drag);
       }
       if (isShadowEnabled) {
         node.constraints |= NodeConstraints.Shadow;

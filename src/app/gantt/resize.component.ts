@@ -29,7 +29,7 @@ export class ResizeComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            child: 'subtasks'
+             parentID: 'ParentId'
         };
         this.columns =  [
             { field: 'TaskID', headerText: 'ID', width: 80, minWidth: 8 },
@@ -46,7 +46,7 @@ export class ResizeComponent implements OnInit {
         this.labelSettings = {
             rightLabel: 'TaskName'
         };
-        this.projectStartDate= new Date('03/25/2024');
-        this.projectEndDate= new Date('07/28/2024');
+        this.projectStartDate= new Date('03/30/2025');
+        this.projectEndDate= new Date('07/20/2025');
     }
 }

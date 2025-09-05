@@ -1,0 +1,27 @@
+#stackedHeadertreegrid .no-record-text {
+    padding: 5px;
+}
+
+#stackedHeadertreegrid .e-dlg-header {
+    width: 300px !important;
+}
+
+#TreeGrid_gridcontrol_ccdlg .e-columnChooserTemplate {
+    overflow-x: auto !important;
+    overflow-y: auto;
+    min-width: 230px;
+}
+
+#TreeGrid_gridcontrol_ccdlg .e-columnChooserTemplate .e-ul {
+    width: fit-content !important;
+}
+
+#TreeGrid_gridcontrol_ccdlg .e-treeview .e-text-content,
+#TreeGrid_gridcontrol_ccdlg .e-treeview .e-list-text {
+    white-space: nowrap !important;
+    overflow: hidden;
+}
+
+.no-border {
+    border: none !important;
+}

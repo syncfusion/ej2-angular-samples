@@ -60,17 +60,14 @@ import { SparklineSampleModule } from '../sparkline/sparkline.module';
 import { SmithchartSampleModule } from '../smith-chart/smith-chart.module';
 import { ColorPickerSampleModule } from '../color-picker/color-picker.module';
 import { PivotTableSampleModule } from '../pivot-table/pivot-table.module';
-import { DocumentEditorSampleModule } from '../document-editor/document-editor.module';
 import { RTESampleModule } from '../rich-text-editor/rich-text-editor.module';
 import { MDESampleModule } from '../markdown-editor/markdown-editor.module';
 import { FormValidatorModule } from '../form-validator/form-validator.module';
-import { PdfViewerSampleModule } from '../pdfviewer/pdfviewer.module';
 import { QueryBuilderSampleModule } from '../query-builder/query-builder.module';
 import { GanttSampleModule } from '../gantt/gantt.module';
 import { FileSampleModule } from '../file-manager/file-manager.module';
 import { DashboardLayoutSampleModule } from '../dashboard-layout/dashboard-layout.module';
 import { ListBoxSampleModule } from '../list-box/list-box.module';
-import { SpreadsheetSampleModule } from '../spreadsheet/spreadsheet.module';
 import { BulletChartSampleModule } from '../bullet-chart/bullet-chart.module';
 import { KanbanSampleModule } from '../kanban/kanban.module';
 import { ProgressBarSampleModule } from '../progress-bar/progress-bar.module';
@@ -93,7 +90,6 @@ import { SmartPasteSampleModule } from '../ai-smart-paste/smartpaste.module';
 import { SmartTextAreaSampleModule } from '../ai-smart-textarea/smarttextarea.module';
 import { AIGridSampleModule } from '../ai-grid/aigrid.module';
 import { AIGanttSampleModule } from '../ai-gantt/aigantt.module';
-import { AISpreadsheetSampleModule } from '../ai-spreadsheet/aispreadsheet.module';
 import { AIQueryBuilderSampleModule } from '../ai-querybuilder/aiquerybuilder.module';
 import { AIComboBoxSampleModule } from '../ai-combo-box/aicombobox.module';
 import { AIImageEditorSampleModule } from '../ai-image-editor/aiimageeditor.module';
@@ -101,7 +97,6 @@ import { AIPivotTableSampleModule } from '../ai-pivot-table/aipivottable.module'
 import { AIMapsSampleModule } from '../ai-maps/aimaps.module';
 import { AISchedulerSampleModule } from '../ai-schedule/aischedule.module';
 import { AIDiagramSampleModule } from '../ai-diagram/aidiagram.module';
-import { AIDocumentEditorSampleModule } from '../ai-document-editor/aidocumenteditor.module';
 import { AIRichTextEditorSampleModule } from '../ai-rich-text-editor/airichtexteditor.module';
 import { BlockEditorSampleModule } from '../block-editor/block-editor.module';
 
@@ -119,8 +114,6 @@ const appRoutes: any = [
     { path: 'ai-gantt', loadChildren: import('../ai-gantt/aigantt.module').then(m => m.AIGanttSampleModule) },
     // AI Diagram
     { path: 'ai-diagram', loadChildren: import('../ai-diagram/aidiagram.module').then(m => m.AIDiagramSampleModule) },
-    //AI Spreadsheet
-    { path: 'ai-spreadsheet', loadChildren: import('../ai-spreadsheet/aispreadsheet.module').then(m => m.AISpreadsheetSampleModule) },
     //AI Query Builder
     { path: 'ai-querybuilder', loadChildren: import('../ai-querybuilder/aiquerybuilder.module').then(m => m.AIQueryBuilderSampleModule) },
     //AI ComboBox
@@ -133,8 +126,6 @@ const appRoutes: any = [
     { path: 'ai-rich-text-editor', loadChildren: import('../ai-rich-text-editor/airichtexteditor.module').then(m => m.AIRichTextEditorSampleModule) },
     // AI Maps
     { path: 'ai-maps', loadChildren: import('../ai-maps/aimaps.module').then(m => m.AIMapsSampleModule) },
-    // AI Document Editor
-    { path: 'ai-document-editor', loadChildren: import('../ai-document-editor/aidocumenteditor.module').then(m => m.AIDocumentEditorSampleModule) },
     // AI Scheduler
     { path: 'ai-schedule', loadChildren: import('../ai-schedule/aischedule.module').then(m => m.AISchedulerSampleModule) },
     // Grids
@@ -144,8 +135,6 @@ const appRoutes: any = [
     { path: 'treegrid', loadChildren: import('../treegrid/treegrid.module').then(m=>m.TreeGridSampleModule) },
     { path: 'pivot-table', loadChildren: import('../pivot-table/pivot-table.module').then(m=>m.PivotTableSampleModule) },
     { path: ':theme/pivot-table/:sample', redirectTo: 'material/pivot-table/default' },
-    { path: 'spreadsheet', loadChildren: import('../spreadsheet/spreadsheet.module').then(m=>m.SpreadsheetSampleModule) },
-    { path: ':theme/spreadsheet/:sample', redirectTo: 'material/spreadsheet/default' },
     //Interactive chat
     { path: 'ai-assistview', loadChildren: import('../ai-assistview/ai-assistview.module').then(m=>m.AIAssistSampleModule) },
     { path: ':theme/ai-assistview/:sample', redirectTo: 'material/ai-assistview/default' },
@@ -179,14 +168,10 @@ const appRoutes: any = [
     { path: 'query-builder', loadChildren: import('../query-builder/query-builder.module').then(m=>m.QueryBuilderSampleModule) },
     { path: ':theme/query-builder/:sample', redirectTo: 'material/query-builder/default' },
     // File Viewers & Editors
-    { path: 'pdfviewer', loadChildren: import('../pdfviewer/pdfviewer.module').then(m=>m.PdfViewerSampleModule) },
-    { path: ':theme/pdfviewer/:sample', redirectTo: 'material/pdfviewer/default' },
     { path: 'rich-text-editor', loadChildren: import('../rich-text-editor/rich-text-editor.module').then(m=>m.RTESampleModule) },
     { path: ':theme/rich-text-editor/:sample', redirectTo: 'material/rich-text-editor/default' },
     { path: 'markdown-editor', loadChildren: import('../markdown-editor/markdown-editor.module').then(m=>m.MDESampleModule) },
     { path: ':theme/markdown-editor/:sample', redirectTo: 'material/markdown-editor/overview' },
-    { path: 'document-editor', loadChildren: import('../document-editor/document-editor.module').then(m=>m.DocumentEditorSampleModule) },
-    { path: ':theme/document-editor/:sample', redirectTo: 'material/document-editor/default' },
     { path: 'image-editor', loadChildren: import('../image-editor/image-editor.module').then(m=>m.ImageEditorSampleModule) },
     { path: 'block-editor', loadChildren: import('../block-editor/block-editor.module').then(m=>m.BlockEditorSampleModule) },
     { path: ':theme/block-editor/:sample', redirectTo: 'material/block-editor/overview' },
@@ -287,8 +272,6 @@ const appRoutes: any = [
         AIGanttSampleModule,
         // AI Diagram
         AIDiagramSampleModule,
-        // AI Spreadsheet
-        AISpreadsheetSampleModule,
         // AI Query Builder
         AIQueryBuilderSampleModule,
         // AI ComboBox
@@ -303,13 +286,10 @@ const appRoutes: any = [
         AIMapsSampleModule,
         // AI Scheduler
         AISchedulerSampleModule,
-        // Document Editor
-        AIDocumentEditorSampleModule,
         // Grids
         GridSampleModule,
         PivotTableSampleModule,
         TreeGridSampleModule,
-        SpreadsheetSampleModule,
         // Data visualization
         ChartSampleModule,
         ThreeDimensionChartSampleModule,
@@ -332,10 +312,8 @@ const appRoutes: any = [
         FormValidatorModule,
         QueryBuilderSampleModule,
         // Editors & Viewers
-        PdfViewerSampleModule,
         RTESampleModule,
         MDESampleModule,
-        DocumentEditorSampleModule,
         ImageEditorSampleModule,
         BlockEditorSampleModule,
         //Buttons

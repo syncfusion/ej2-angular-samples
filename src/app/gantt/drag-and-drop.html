@@ -3,7 +3,7 @@
 </div>
 
 <div class="control-section">
-    <ejs-gantt id="DragAndDrop" height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowRowDragAndDrop]="true" [columns]="columns"
+    <ejs-gantt id="DragAndDrop" height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [allowRowDragAndDrop]="true" [columns]="columns"
         [labelSettings]="labelSettings" [treeColumnIndex]="1" [splitterSettings]="splitterSettings" [selectionSettings]="selectionSettings" 
         [highlightWeekends]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [editSettings]="editSettings" [allowTaskbarDragAndDrop]="true">
     </ejs-gantt>
@@ -18,4 +18,6 @@
     <p>
      Gantt component features are segregated into individual feature-wise modules. To use row, drag and drop feature we need to inject <code>RowDDService</code> and <code>EditService</code> into the <code>&#64;NgModule.providers</code> section.
         </p>
+         <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/drag-and-drop">documentation section</a>.</p>
 </div>

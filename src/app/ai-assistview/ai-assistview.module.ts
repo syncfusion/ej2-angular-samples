@@ -8,6 +8,7 @@ import { AIAssistStreamComponent } from './streaming.component';
 import { AIAssistAttachmentComponent } from './attachments.component';
 import { AIAssistDialogComponent } from './dialog.component';
 import { AIAssistTemplateComponent } from './template.component';
+import { AiAssistantComponent} from './ai-assistant.component';
 
 export const aiassistviewAppRoutes: Object[] = [
     { path: ':theme/ai-assistview/default', component: AIAssistDefaultComponent, name: 'Default Functionalities', description: 'Showcases the default combinations of the AiAssistView component.', category: 'AI AssistView', order: '01', sourceFiles: [
@@ -28,7 +29,7 @@ export const aiassistviewAppRoutes: Object[] = [
         {displayName: 'streaming.component.css', path: './src/ai-assistview/streaming.component.css'},
         {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
     ] },
-    { path: ':theme/ai-assistview/attachments', component: AIAssistAttachmentComponent, name: 'File Attachments', description: 'Showcases the AiAssistView control with its attachment support.', category: 'AI AssistView', order: '01', type: 'new', sourceFiles: [
+    { path: ':theme/ai-assistview/attachments', component: AIAssistAttachmentComponent, name: 'File Attachments', description: 'Showcases the AiAssistView control with its attachment support.', category: 'AI AssistView', order: '01', sourceFiles: [
         {displayName: 'attachments.component.ts', path: './src/ai-assistview/attachments.component.ts'},
         {displayName: 'attachments.html', path: './src/ai-assistview/attachments.html'},
         {displayName: 'attachments.component.css', path: './src/ai-assistview/attachments.component.css'},
@@ -40,7 +41,7 @@ export const aiassistviewAppRoutes: Object[] = [
         {displayName: 'template.component.css', path: './src/ai-assistview/template.component.css'},
         {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
     ] },
-    { path: ':theme/ai-assistview/dialog', component: AIAssistDialogComponent, name: 'Dialog', description: 'Showcases the default combinations of the AiAssistView component views.', category: 'Integration', order: '02', sourceFiles: [
+    { path: ':theme/ai-assistview/dialog', component: AIAssistDialogComponent, name: 'Notes Assistant', description: 'Showcases the default combinations of the AiAssistView component views.', category: 'Integration', order: '02', sourceFiles: [
         {displayName: 'dialog.component.ts', path: './src/ai-assistview/dialog.component.ts'},
         {displayName: 'dialog.html', path: './src/ai-assistview/dialog.html'},
         {displayName: 'dialog.component.css', path: './src/ai-assistview/dialog.component.css'},

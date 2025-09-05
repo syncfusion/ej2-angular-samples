@@ -1,0 +1,91 @@
+<div id="action-description">
+    <p>
+        This sample illustrates handling the empty data chart using no data template. This template is used to display a
+        custom message or image when the data is not available in the chart.
+    </p>
+</div>
+<div class="control-section">
+
+    <div align='center'>
+        <ejs-chart style='display:block;' #chart [width]='width' align='center' id='chartcontainer'
+            [noDataTemplate]='noDataTemplate' [chartArea]='chartArea' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            [tooltip]='tooltip' [title]='title' [subTitle]='subTitle' (load)='load($event)' (loaded)='loaded($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='data' type='Line' xName='x' yName='y' [marker]='marker' [width]='2'> </e-series>
+            </e-series-collection>
+            <ng-template #noDataTemplate>
+                <div id="noDataTemplateContainer" [ngClass]="theme">
+                    <div class="template-align">    
+                        <img src="./assets/chart/images/no-data.png" alt="No Data"/>
+                    </div>
+                    <div class="template-align">
+                        <p style="font-size: 15px; margin: 10px 0 0;"><strong>No data available to display.</strong></p>
+                    </div>
+                    <div class="template-align" style="margin-top: 15px;">
+                        <button ejs-button class="load-data-btn" (click)="loadData()" iconCss="e-icons e-refresh">Load Data</button>
+                    </div>
+                </div>
+            </ng-template>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <p>
+         In this example, the <code>noDataTemplate</code> property is assigned with an HTML template that includes an image, a message indicating data unavailability, and a button to load new data into the chart. Once data is provided, a line chart is displayed.   
+    </p>
+    <p>
+       <b>Tooltip</b> is enabled in the chart. To view a tooltip, hover over a data point or tap on it if you're using a touch-enabled device.
+    </p>
+</div>
+
+<style>
+    #noDataTemplateContainer {
+        height: inherit;
+        width: inherit;
+    }
+
+    .load-data-btn {
+        border-radius: 4px !important;
+        text-transform: none !important;
+    }
+
+    .dark-bg {
+        background-color: #000000;
+        color: #ffffff;
+    }
+    
+    .material3-dark .dark-bg, .fluent2-dark .dark-bg, .fluent2-highcontrast .dark-bg {
+        background-color: #1c1b1f;
+    }
+
+    .tailwind3-dark .dark-bg {
+        background-color: #111827;
+    }
+    
+    .bootstrap5\.3-dark .dark-bg {
+        background-color: #212529;
+    }
+
+    .light-bg {
+        background-color: #fafafa;
+        color: #000000;
+    }
+
+    .template-align img {
+        max-width: 150px;
+        /* Adjust size as needed */
+        max-height: 150px;
+        margin-top: 55px;
+    }
+
+    .template-align {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #control-container {
+        padding: 0px !important;
+    }
+</style>

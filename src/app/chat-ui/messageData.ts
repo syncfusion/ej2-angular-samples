@@ -1,24 +1,24 @@
-let communityMessageAdmin = {
+export let communityMessageAdmin = {
     user: 'Alice Brown',
     id: 'admin',
     statusIconCss: 'e-icons e-user-busy'
 };
 
-let communityMessageUser1 = {
+export let communityMessageUser1 = {
     user: 'Michale Suyama',
     id: 'user1',
     avatarBgColor: "#87cefa",
     statusIconCss: 'e-icons e-user-online'
 };
 
-let communityMessageUser2 = {
+export  let communityMessageUser2 = {
     user: 'Charlie',
     id: 'user2',
     avatarUrl: "./assets/chat-ui/images/charlie.png",
     statusIconCss: 'e-icons e-user-away'
 };
 
-let communityMessageUser3 = {
+export let communityMessageUser3 = {
     user: 'Janet',
     id: 'user3',
     avatarBgColor: "#dec287",
@@ -26,7 +26,7 @@ let communityMessageUser3 = {
     statusIconCss: 'e-icons e-user-offline'
 };
 
-let communityMessageUser4 = {
+export let communityMessageUser4 = {
     user: 'Jordan Peele',
     id: 'user4',
     statusIconCss: 'e-icons e-user-busy'

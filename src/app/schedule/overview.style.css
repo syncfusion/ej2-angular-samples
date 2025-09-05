@@ -197,7 +197,8 @@
   padding-left: 0 !important;
 }
 
-.schedule-overview .calendar-import.e-upload .e-btn-icon {
+.schedule-overview .calendar-import.e-upload .e-btn-icon,
+.e-bigger .schedule-overview .calendar-import.e-upload .e-btn-icon {
   margin-left: initial;
 }
 

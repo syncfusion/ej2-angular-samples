@@ -69,6 +69,7 @@ const darkIgnore = ['highcontrast', 'fluent2-highcontrast'];
 let selectedTheme: string;
 let themeFlag: boolean = true;
 let slideFlag: boolean = false;
+let loadFlag: boolean = false;
 
 
 declare let hljs: any;
@@ -197,6 +198,7 @@ export class SBController {
         });
         
         let theme: string = location.hash ? location.hash.split('/')[1] : 'tailwind3';
+        this.isDarkTheme = location.hash?.split('/')[1]?.includes('-dark');
         this.themeDropDown = new DropDownList({
             index: themes.indexOf(theme.split('-')[0]),
             change: (e: any) => { this.switchTheme(e.value); }
@@ -380,6 +382,9 @@ export class SBController {
     }
 
     ngOnInit(): void {
+        window.addEventListener('hashchange', () => {
+            this.hashHandler(); // on manual edits to hash
+        });
         if (this.isInitialRender) {
             let mT: string = localStorage.getItem('pointer') || 'mouse';
             if (Browser.isDevice) {
@@ -419,7 +424,10 @@ export class SBController {
                 loadTheme(theme);       
             }
             if (event.navigationTrigger === 'popstate') {
+                if (!loadFlag) {
                 location.reload();
+                    loadFlag = false;
+                    }
             }
         });
 
@@ -640,14 +648,146 @@ export class SBController {
     }
 
     darkSwitch(): void {
-        let hash: string[] = location.hash.split('/');
-        var darkTheme: string = hash[1]
-        darkTheme = darkTheme.includes("-dark") ? darkTheme.replace("-dark", "") : darkIgnore.indexOf(darkTheme) === 0 ? darkTheme : darkTheme + '-dark';
-        this.isDarkTheme = darkTheme.includes("-dark");
-        hash[1] = darkTheme;
-        location.hash = hash.join('/');
-        this.themeDarkButton.style.display = "none";
-        location.reload();
+        const hash = location.hash.replace(/^#/, '').split('/');
+        const currentTheme = hash[1] || 'tailwind3';
+        const isCurrentlyDark = currentTheme.includes('-dark');
+        const baseTheme = currentTheme.replace('-dark', '');
+        const newTheme = isCurrentlyDark ? baseTheme : baseTheme + '-dark';
+
+        // Update hash
+        hash[1] = newTheme;
+        const updatedHash = '#' + hash.join('/');
+        if (location.hash !== updatedHash) {
+            history.replaceState(null, '', updatedHash);
+        }
+
+        this.updateThemeClass(newTheme);
+        this.updateStylesheet(newTheme);
+        this.updateIconAndLabel(this.isDarkTheme);
+
+        localStorage.setItem('theme', newTheme);
+        themeFlag = false;
+
+        this.refreshControls();
+    }
+
+    public doControls: string[] = [
+        "Chart", "3D Chart", "3D Circular Chart", "Stock Chart", "Arc Gauge", "Circular Gauge",
+        "Diagram", "HeatMap Chart", "Linear Gauge", "Maps", "Range Selector", "Smith Chart",
+        "Barcode", "Sparkline Charts", "TreeMap", "Bullet Chart"
+    ];
+
+
+    hashHandler(): void {
+        const hash = location.hash.replace(/^#/, '').split('/');
+        const themeSegment = hash[1] || 'tailwind3';
+        this.applyTheme(themeSegment);
+    }
+private readonly themeCollection: string[] = [
+  'material3', 'bootstrap5', 'fluent2', 'tailwind3',
+  'fluent2-highcontrast', 'highcontrast', 'tailwind', 'fluent'
+];
+
+private updateThemeClass(theme: string): void {
+  const isDark = theme.endsWith('-dark');
+  let baseTheme = theme.replace('-dark', '');
+
+  // Normalize bootstrap5 to bootstrap5.3
+  if (baseTheme.includes('bootstrap5')) {
+    baseTheme = baseTheme.replace('bootstrap5', 'bootstrap5.3');
+  }
+
+  const themeClass = isDark ? `${baseTheme}-dark` : baseTheme;
+
+  // Get current body class list
+  const currentClasses = document.body.className.trim().split(/\s+/);
+
+  // Replace any existing theme class
+  const updatedClasses = currentClasses.map(c => {
+    const normalized = c.replace('-dark', '');
+    if (this.themeCollection.includes(normalized) || normalized === 'bootstrap5.3') {
+      return themeClass;
+    }
+    return c;
+  });
+
+  // If no theme class was found, add it
+  const hasTheme = updatedClasses.some(c => {
+    const normalized = c.replace('-dark', '');
+    return this.themeCollection.includes(normalized) || normalized === 'bootstrap5.3';
+  });
+
+  if (!hasTheme) {
+    updatedClasses.push(themeClass);
+  }
+
+  // Apply updated class list
+  document.body.className = updatedClasses.join(' ').trim();
+
+  // Store dark mode state
+  this.isDarkTheme = isDark;
+}
+private updateStylesheet(theme: string): void {
+    const linkEl = document.getElementById('themelink');
+    if (linkEl) {
+        const isDark = theme.endsWith('-dark');
+        const baseTheme = theme.replace('-dark', '');
+
+        let themeFile = baseTheme;
+
+        if (baseTheme === 'bootstrap5') {
+            themeFile = 'bootstrap5.3';
+        }
+
+        if (isDark) {
+            themeFile += '-dark';
+        }
+        linkEl.setAttribute('href', `./styles/${themeFile}.css`);
+    }
+}
+
+    applyTheme(theme: string): void {
+        this.updateThemeClass(theme);
+        this.updateStylesheet(theme);
+        this.updateIconAndLabel(this.isDarkTheme);
+
+        localStorage.setItem('theme', theme);
+        themeFlag = false;
+        loadFlag = true;
+
+        this.refreshControls();
+    }
+    private updateIconAndLabel(isDark: boolean): void {
+        const darkIcon = document.getElementById('dark-icon');
+        const lightIcon = document.getElementById('light-icon');
+        const labelSpan = document.getElementById('sb-dark-span');
+
+        if (isDark) {
+            darkIcon?.style.setProperty('display', 'none');
+            lightIcon?.style.setProperty('display', 'inline-block');
+            if (labelSpan) labelSpan.textContent = 'LIGHT';
+        } else {
+            darkIcon?.style.setProperty('display', 'inline-block');
+            lightIcon?.style.setProperty('display', 'none');
+            if (labelSpan) labelSpan.textContent = 'DARK';
+        }
+    }
+
+    private refreshControls(): void {
+        if (this.doControls?.includes(this.currentControl)) {
+            setTimeout(() => {
+                const demo = document.querySelector('.sb-demo-section');
+                if (demo) {
+                    const controls = demo.getElementsByClassName('e-control e-lib');
+                    for (let i = 0; i < controls.length; i++) {
+                        const instance = (controls[i] as any).ej2_instances;
+                        if (instance?.[0]?.refresh instanceof Function) {
+                            instance[0].refresh();
+                        }
+                    }
+                }
+            }, 100);
+        }
     }
 
     updateStaticView() {
@@ -1062,17 +1202,14 @@ export class SBController {
         }
     }
 
-     setScrollTop() {
-    const rightPane: HTMLElement = <HTMLElement>select('.sb-right-pane');
-    const leftPane: HTMLElement = <HTMLElement>select('#left-sidebar');
-    if (this.isMobile) {
-        if (rightPane) rightPane.scrollTop = 74; // mobile offset if needed
-        if (leftPane) leftPane.scrollTop = 0;    // scroll left pane to top
-    } else {
-        if (rightPane) rightPane.scrollTop = 0;
-        if (leftPane) leftPane.scrollTop = 0;
+    setScrollTop() {
+        const rightPane: HTMLElement = <HTMLElement>select('.sb-right-pane');
+        if (this.isMobile) {
+            rightPane.scrollTop = 74;
+        } else {
+            rightPane.scrollTop = 0;
+        }
     }
-   }
 
     updateSourceCode(path: string): void {
         let pathArray: string[] = path.split('/');

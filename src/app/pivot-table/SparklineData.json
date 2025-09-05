@@ -1,0 +1,4082 @@
+[
+  {
+    "Year": 2019,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Laptop",
+    "Sold": 326,
+    "Amount": 376530
+  },
+  {
+    "Year": 2019,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Smartphone",
+    "Sold": -425,
+    "Amount": -390575
+  },
+  {
+    "Year": 2019,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Tablet",
+    "Sold": 117,
+    "Amount": 62478
+  },
+  {
+    "Year": 2019,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Monitor",
+    "Sold": 490,
+    "Amount": 271950
+  },
+  {
+    "Year": 2019,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Printer",
+    "Sold": 462,
+    "Amount": 200508
+  },
+  {
+    "Year": 2019,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Laptop",
+    "Sold": 264,
+    "Amount": 231528
+  },
+  {
+    "Year": 2019,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Smartphone",
+    "Sold": 362,
+    "Amount": 402182
+  },
+  {
+    "Year": 2019,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Tablet",
+    "Sold": 472,
+    "Amount": 339840
+  },
+  {
+    "Year": 2019,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Monitor",
+    "Sold": -343,
+    "Amount": -279202
+  },
+  {
+    "Year": 2019,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Printer",
+    "Sold": 368,
+    "Amount": 284464
+  },
+  {
+    "Year": 2019,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Laptop",
+    "Sold": 307,
+    "Amount": 230864
+  },
+  {
+    "Year": 2019,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Smartphone",
+    "Sold": -273,
+    "Amount": -280644
+  },
+  {
+    "Year": 2019,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Tablet",
+    "Sold": 468,
+    "Amount": 195156
+  },
+  {
+    "Year": 2019,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Monitor",
+    "Sold": 299,
+    "Amount": 61893
+  },
+  {
+    "Year": 2019,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Printer",
+    "Sold": 106,
+    "Amount": 65720
+  },
+  {
+    "Year": 2019,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Laptop",
+    "Sold": 299,
+    "Amount": 289731
+  },
+  {
+    "Year": 2019,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Smartphone",
+    "Sold": 178,
+    "Amount": 48950
+  },
+  {
+    "Year": 2019,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Tablet",
+    "Sold": -460,
+    "Amount": -414920
+  },
+  {
+    "Year": 2019,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Monitor",
+    "Sold": 329,
+    "Amount": 341831
+  },
+  {
+    "Year": 2019,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Printer",
+    "Sold": 205,
+    "Amount": 55965
+  },
+  {
+    "Year": 2019,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Laptop",
+    "Sold": 489,
+    "Amount": 220539
+  },
+  {
+    "Year": 2019,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Smartphone",
+    "Sold": 338,
+    "Amount": 217334
+  },
+  {
+    "Year": 2019,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Tablet",
+    "Sold": 422,
+    "Amount": 384442
+  },
+  {
+    "Year": 2019,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Monitor",
+    "Sold": 334,
+    "Amount": 98530
+  },
+  {
+    "Year": 2019,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Printer",
+    "Sold": 236,
+    "Amount": 148208
+  },
+  {
+    "Year": 2019,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Laptop",
+    "Sold": 475,
+    "Amount": 462650
+  },
+  {
+    "Year": 2019,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Smartphone",
+    "Sold": 446,
+    "Amount": 516914
+  },
+  {
+    "Year": 2019,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Tablet",
+    "Sold": 383,
+    "Amount": 279590
+  },
+  {
+    "Year": 2019,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Monitor",
+    "Sold": 343,
+    "Amount": 134113
+  },
+  {
+    "Year": 2019,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Printer",
+    "Sold": 110,
+    "Amount": 21780
+  },
+  {
+    "Year": 2019,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Laptop",
+    "Sold": -133,
+    "Amount": -153216
+  },
+  {
+    "Year": 2019,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Smartphone",
+    "Sold": 458,
+    "Amount": 248236
+  },
+  {
+    "Year": 2019,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Tablet",
+    "Sold": 292,
+    "Amount": 134612
+  },
+  {
+    "Year": 2019,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Monitor",
+    "Sold": 399,
+    "Amount": 119700
+  },
+  {
+    "Year": 2019,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Printer",
+    "Sold": 377,
+    "Amount": 84825
+  },
+  {
+    "Year": 2019,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Laptop",
+    "Sold": 107,
+    "Amount": 122087
+  },
+  {
+    "Year": 2019,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Smartphone",
+    "Sold": 323,
+    "Amount": 229330
+  },
+  {
+    "Year": 2019,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Tablet",
+    "Sold": 377,
+    "Amount": 398489
+  },
+  {
+    "Year": 2019,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Monitor",
+    "Sold": 172,
+    "Amount": 75508
+  },
+  {
+    "Year": 2019,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Printer",
+    "Sold": 423,
+    "Amount": 347706
+  },
+  {
+    "Year": 2019,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Laptop",
+    "Sold": 362,
+    "Amount": 144438
+  },
+  {
+    "Year": 2019,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Smartphone",
+    "Sold": 221,
+    "Amount": 57018
+  },
+  {
+    "Year": 2019,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Tablet",
+    "Sold": 172,
+    "Amount": 26144
+  },
+  {
+    "Year": 2019,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Monitor",
+    "Sold": -100,
+    "Amount": -38000
+  },
+  {
+    "Year": 2019,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Printer",
+    "Sold": 128,
+    "Amount": 53760
+  },
+  {
+    "Year": 2019,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Laptop",
+    "Sold": 215,
+    "Amount": 54610
+  },
+  {
+    "Year": 2019,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Smartphone",
+    "Sold": -398,
+    "Amount": -383274
+  },
+  {
+    "Year": 2019,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Tablet",
+    "Sold": 472,
+    "Amount": 307272
+  },
+  {
+    "Year": 2019,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Monitor",
+    "Sold": 135,
+    "Amount": 145530
+  },
+  {
+    "Year": 2019,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Printer",
+    "Sold": 159,
+    "Amount": 169335
+  },
+  {
+    "Year": 2019,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Laptop",
+    "Sold": 383,
+    "Amount": 96899
+  },
+  {
+    "Year": 2019,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Smartphone",
+    "Sold": 222,
+    "Amount": 241536
+  },
+  {
+    "Year": 2019,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Tablet",
+    "Sold": 200,
+    "Amount": 224800
+  },
+  {
+    "Year": 2019,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Monitor",
+    "Sold": -420,
+    "Amount": -362460
+  },
+  {
+    "Year": 2019,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Printer",
+    "Sold": 106,
+    "Amount": 82574
+  },
+  {
+    "Year": 2019,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Laptop",
+    "Sold": 228,
+    "Amount": 51756
+  },
+  {
+    "Year": 2019,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Smartphone",
+    "Sold": 490,
+    "Amount": 549290
+  },
+  {
+    "Year": 2019,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Tablet",
+    "Sold": 338,
+    "Amount": 401206
+  },
+  {
+    "Year": 2019,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Monitor",
+    "Sold": 299,
+    "Amount": 216177
+  },
+  {
+    "Year": 2019,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Printer",
+    "Sold": 189,
+    "Amount": 61992
+  },
+  {
+    "Year": 2019,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Laptop",
+    "Sold": -112,
+    "Amount": -68656
+  },
+  {
+    "Year": 2019,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Smartphone",
+    "Sold": -197,
+    "Amount": -42158
+  },
+  {
+    "Year": 2019,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Tablet",
+    "Sold": 122,
+    "Amount": 20618
+  },
+  {
+    "Year": 2019,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Monitor",
+    "Sold": 240,
+    "Amount": 147120
+  },
+  {
+    "Year": 2019,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Printer",
+    "Sold": 342,
+    "Amount": 153216
+  },
+  {
+    "Year": 2019,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Laptop",
+    "Sold": 179,
+    "Amount": 50299
+  },
+  {
+    "Year": 2019,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Smartphone",
+    "Sold": 287,
+    "Amount": 97293
+  },
+  {
+    "Year": 2019,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Tablet",
+    "Sold": -484,
+    "Amount": -519816
+  },
+  {
+    "Year": 2019,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Monitor",
+    "Sold": 448,
+    "Amount": 479360
+  },
+  {
+    "Year": 2019,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Printer",
+    "Sold": 282,
+    "Amount": 102648
+  },
+  {
+    "Year": 2019,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Laptop",
+    "Sold": 205,
+    "Amount": 36695
+  },
+  {
+    "Year": 2019,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Smartphone",
+    "Sold": 321,
+    "Amount": 117486
+  },
+  {
+    "Year": 2019,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Tablet",
+    "Sold": 293,
+    "Amount": 108703
+  },
+  {
+    "Year": 2019,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Monitor",
+    "Sold": -193,
+    "Amount": -129117
+  },
+  {
+    "Year": 2019,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Printer",
+    "Sold": 356,
+    "Amount": 323604
+  },
+  {
+    "Year": 2019,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Laptop",
+    "Sold": 142,
+    "Amount": 53960
+  },
+  {
+    "Year": 2019,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Smartphone",
+    "Sold": -416,
+    "Amount": -72384
+  },
+  {
+    "Year": 2019,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Tablet",
+    "Sold": 402,
+    "Amount": 412854
+  },
+  {
+    "Year": 2019,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Monitor",
+    "Sold": 273,
+    "Amount": 60060
+  },
+  {
+    "Year": 2019,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Printer",
+    "Sold": 269,
+    "Amount": 138804
+  },
+  {
+    "Year": 2019,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Laptop",
+    "Sold": 235,
+    "Amount": 38305
+  },
+  {
+    "Year": 2019,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Smartphone",
+    "Sold": 500,
+    "Amount": 505500
+  },
+  {
+    "Year": 2019,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Tablet",
+    "Sold": 379,
+    "Amount": 291451
+  },
+  {
+    "Year": 2019,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Monitor",
+    "Sold": 343,
+    "Amount": 361865
+  },
+  {
+    "Year": 2019,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Printer",
+    "Sold": 215,
+    "Amount": 256710
+  },
+  {
+    "Year": 2020,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Laptop",
+    "Sold": 441,
+    "Amount": 78057
+  },
+  {
+    "Year": 2020,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Smartphone",
+    "Sold": 157,
+    "Amount": 42861
+  },
+  {
+    "Year": 2020,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Tablet",
+    "Sold": -498,
+    "Amount": -419814
+  },
+  {
+    "Year": 2020,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Monitor",
+    "Sold": -227,
+    "Amount": -163213
+  },
+  {
+    "Year": 2020,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Printer",
+    "Sold": -286,
+    "Amount": -338910
+  },
+  {
+    "Year": 2020,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Laptop",
+    "Sold": 155,
+    "Amount": 153295
+  },
+  {
+    "Year": 2020,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Smartphone",
+    "Sold": 437,
+    "Amount": 443555
+  },
+  {
+    "Year": 2020,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Tablet",
+    "Sold": -337,
+    "Amount": -128734
+  },
+  {
+    "Year": 2020,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Monitor",
+    "Sold": 299,
+    "Amount": 104052
+  },
+  {
+    "Year": 2020,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Printer",
+    "Sold": -169,
+    "Amount": -67600
+  },
+  {
+    "Year": 2020,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Laptop",
+    "Sold": 248,
+    "Amount": 146072
+  },
+  {
+    "Year": 2020,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Smartphone",
+    "Sold": 410,
+    "Amount": 293150
+  },
+  {
+    "Year": 2020,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Tablet",
+    "Sold": -393,
+    "Amount": -225189
+  },
+  {
+    "Year": 2020,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Monitor",
+    "Sold": 157,
+    "Amount": 123873
+  },
+  {
+    "Year": 2020,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Printer",
+    "Sold": 145,
+    "Amount": 63365
+  },
+  {
+    "Year": 2020,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Laptop",
+    "Sold": -242,
+    "Amount": -249986
+  },
+  {
+    "Year": 2020,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Smartphone",
+    "Sold": 259,
+    "Amount": 164724
+  },
+  {
+    "Year": 2020,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Tablet",
+    "Sold": -228,
+    "Amount": -46740
+  },
+  {
+    "Year": 2020,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Monitor",
+    "Sold": 477,
+    "Amount": 235161
+  },
+  {
+    "Year": 2020,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Printer",
+    "Sold": -263,
+    "Amount": -141494
+  },
+  {
+    "Year": 2020,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Laptop",
+    "Sold": 117,
+    "Amount": 106002
+  },
+  {
+    "Year": 2020,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Smartphone",
+    "Sold": 113,
+    "Amount": 59325
+  },
+  {
+    "Year": 2020,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Tablet",
+    "Sold": 489,
+    "Amount": 182397
+  },
+  {
+    "Year": 2020,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Monitor",
+    "Sold": 401,
+    "Amount": 447516
+  },
+  {
+    "Year": 2020,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Printer",
+    "Sold": -237,
+    "Amount": -116841
+  },
+  {
+    "Year": 2020,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Laptop",
+    "Sold": 384,
+    "Amount": 430848
+  },
+  {
+    "Year": 2020,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Smartphone",
+    "Sold": -345,
+    "Amount": -324300
+  },
+  {
+    "Year": 2020,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Tablet",
+    "Sold": 331,
+    "Amount": 285653
+  },
+  {
+    "Year": 2020,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Monitor",
+    "Sold": 194,
+    "Amount": 189732
+  },
+  {
+    "Year": 2020,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Printer",
+    "Sold": 434,
+    "Amount": 480872
+  },
+  {
+    "Year": 2020,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Laptop",
+    "Sold": 141,
+    "Amount": 134373
+  },
+  {
+    "Year": 2020,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Smartphone",
+    "Sold": 415,
+    "Amount": 138610
+  },
+  {
+    "Year": 2020,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Tablet",
+    "Sold": 182,
+    "Amount": 99372
+  },
+  {
+    "Year": 2020,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Monitor",
+    "Sold": 476,
+    "Amount": 182308
+  },
+  {
+    "Year": 2020,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Printer",
+    "Sold": 255,
+    "Amount": 254745
+  },
+  {
+    "Year": 2020,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Laptop",
+    "Sold": 169,
+    "Amount": 56784
+  },
+  {
+    "Year": 2020,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Smartphone",
+    "Sold": 296,
+    "Amount": 44696
+  },
+  {
+    "Year": 2020,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Tablet",
+    "Sold": 169,
+    "Amount": 89908
+  },
+  {
+    "Year": 2020,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Monitor",
+    "Sold": 150,
+    "Amount": 144750
+  },
+  {
+    "Year": 2020,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Printer",
+    "Sold": 460,
+    "Amount": 197800
+  },
+  {
+    "Year": 2020,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Laptop",
+    "Sold": -372,
+    "Amount": -441564
+  },
+  {
+    "Year": 2020,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Smartphone",
+    "Sold": 439,
+    "Amount": 91312
+  },
+  {
+    "Year": 2020,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Tablet",
+    "Sold": 237,
+    "Amount": 242925
+  },
+  {
+    "Year": 2020,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Monitor",
+    "Sold": 102,
+    "Amount": 106182
+  },
+  {
+    "Year": 2020,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Printer",
+    "Sold": 357,
+    "Amount": 195636
+  },
+  {
+    "Year": 2020,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Laptop",
+    "Sold": -293,
+    "Amount": -101378
+  },
+  {
+    "Year": 2020,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Smartphone",
+    "Sold": 154,
+    "Amount": 170632
+  },
+  {
+    "Year": 2020,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Tablet",
+    "Sold": 114,
+    "Amount": 124146
+  },
+  {
+    "Year": 2020,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Monitor",
+    "Sold": 470,
+    "Amount": 535330
+  },
+  {
+    "Year": 2020,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Printer",
+    "Sold": 294,
+    "Amount": 72912
+  },
+  {
+    "Year": 2020,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Laptop",
+    "Sold": 103,
+    "Amount": 26883
+  },
+  {
+    "Year": 2020,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Smartphone",
+    "Sold": 494,
+    "Amount": 568100
+  },
+  {
+    "Year": 2020,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Tablet",
+    "Sold": 305,
+    "Amount": 138775
+  },
+  {
+    "Year": 2020,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Monitor",
+    "Sold": 386,
+    "Amount": 295676
+  },
+  {
+    "Year": 2020,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Printer",
+    "Sold": 271,
+    "Amount": 251217
+  },
+  {
+    "Year": 2020,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Laptop",
+    "Sold": 318,
+    "Amount": 244224
+  },
+  {
+    "Year": 2020,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Smartphone",
+    "Sold": 442,
+    "Amount": 419458
+  },
+  {
+    "Year": 2020,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Tablet",
+    "Sold": 175,
+    "Amount": 124950
+  },
+  {
+    "Year": 2020,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Monitor",
+    "Sold": -493,
+    "Amount": -190791
+  },
+  {
+    "Year": 2020,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Printer",
+    "Sold": 182,
+    "Amount": 174902
+  },
+  {
+    "Year": 2020,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Laptop",
+    "Sold": 182,
+    "Amount": 50596
+  },
+  {
+    "Year": 2020,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Smartphone",
+    "Sold": 160,
+    "Amount": 121440
+  },
+  {
+    "Year": 2020,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Tablet",
+    "Sold": 333,
+    "Amount": 234765
+  },
+  {
+    "Year": 2020,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Monitor",
+    "Sold": 156,
+    "Amount": 145860
+  },
+  {
+    "Year": 2020,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Printer",
+    "Sold": 458,
+    "Amount": 275716
+  },
+  {
+    "Year": 2020,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Laptop",
+    "Sold": 386,
+    "Amount": 402212
+  },
+  {
+    "Year": 2020,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Smartphone",
+    "Sold": 461,
+    "Amount": 202379
+  },
+  {
+    "Year": 2020,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Tablet",
+    "Sold": 324,
+    "Amount": 60264
+  },
+  {
+    "Year": 2020,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Monitor",
+    "Sold": 344,
+    "Amount": 149984
+  },
+  {
+    "Year": 2020,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Printer",
+    "Sold": 455,
+    "Amount": 509145
+  },
+  {
+    "Year": 2020,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Laptop",
+    "Sold": 319,
+    "Amount": 86449
+  },
+  {
+    "Year": 2020,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Smartphone",
+    "Sold": -475,
+    "Amount": -280250
+  },
+  {
+    "Year": 2020,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Tablet",
+    "Sold": 199,
+    "Amount": 95918
+  },
+  {
+    "Year": 2020,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Monitor",
+    "Sold": 416,
+    "Amount": 320320
+  },
+  {
+    "Year": 2020,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Printer",
+    "Sold": 311,
+    "Amount": 174160
+  },
+  {
+    "Year": 2020,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Laptop",
+    "Sold": 145,
+    "Amount": 122525
+  },
+  {
+    "Year": 2020,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Smartphone",
+    "Sold": 204,
+    "Amount": 107304
+  },
+  {
+    "Year": 2020,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Tablet",
+    "Sold": -203,
+    "Amount": -130123
+  },
+  {
+    "Year": 2020,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Monitor",
+    "Sold": 496,
+    "Amount": 444416
+  },
+  {
+    "Year": 2020,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Printer",
+    "Sold": 322,
+    "Amount": 170338
+  },
+  {
+    "Year": 2020,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Laptop",
+    "Sold": 383,
+    "Amount": 93835
+  },
+  {
+    "Year": 2020,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Smartphone",
+    "Sold": 361,
+    "Amount": 344755
+  },
+  {
+    "Year": 2020,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Tablet",
+    "Sold": -253,
+    "Amount": -284119
+  },
+  {
+    "Year": 2020,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Monitor",
+    "Sold": 416,
+    "Amount": 197600
+  },
+  {
+    "Year": 2020,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Printer",
+    "Sold": 301,
+    "Amount": 277522
+  },
+  {
+    "Year": 2021,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Laptop",
+    "Sold": 270,
+    "Amount": 105570
+  },
+  {
+    "Year": 2021,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Smartphone",
+    "Sold": 338,
+    "Amount": 262288
+  },
+  {
+    "Year": 2021,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Tablet",
+    "Sold": 441,
+    "Amount": 473634
+  },
+  {
+    "Year": 2021,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Monitor",
+    "Sold": 134,
+    "Amount": 72628
+  },
+  {
+    "Year": 2021,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Printer",
+    "Sold": 185,
+    "Amount": 188330
+  },
+  {
+    "Year": 2021,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Laptop",
+    "Sold": 360,
+    "Amount": 314280
+  },
+  {
+    "Year": 2021,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Smartphone",
+    "Sold": 441,
+    "Amount": 242991
+  },
+  {
+    "Year": 2021,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Tablet",
+    "Sold": 454,
+    "Amount": 204754
+  },
+  {
+    "Year": 2021,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Monitor",
+    "Sold": -208,
+    "Amount": -243360
+  },
+  {
+    "Year": 2021,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Printer",
+    "Sold": 361,
+    "Amount": 174002
+  },
+  {
+    "Year": 2021,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Laptop",
+    "Sold": 135,
+    "Amount": 131085
+  },
+  {
+    "Year": 2021,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Smartphone",
+    "Sold": -248,
+    "Amount": -242544
+  },
+  {
+    "Year": 2021,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Tablet",
+    "Sold": 115,
+    "Amount": 61295
+  },
+  {
+    "Year": 2021,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Monitor",
+    "Sold": -215,
+    "Amount": -54180
+  },
+  {
+    "Year": 2021,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Printer",
+    "Sold": -201,
+    "Amount": -171453
+  },
+  {
+    "Year": 2021,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Laptop",
+    "Sold": 261,
+    "Amount": 167823
+  },
+  {
+    "Year": 2021,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Smartphone",
+    "Sold": 499,
+    "Amount": 494010
+  },
+  {
+    "Year": 2021,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Tablet",
+    "Sold": 476,
+    "Amount": 481712
+  },
+  {
+    "Year": 2021,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Monitor",
+    "Sold": 133,
+    "Amount": 50939
+  },
+  {
+    "Year": 2021,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Printer",
+    "Sold": -342,
+    "Amount": -344736
+  },
+  {
+    "Year": 2021,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Laptop",
+    "Sold": -141,
+    "Amount": -116184
+  },
+  {
+    "Year": 2021,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Smartphone",
+    "Sold": 493,
+    "Amount": 451095
+  },
+  {
+    "Year": 2021,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Tablet",
+    "Sold": -149,
+    "Amount": -130524
+  },
+  {
+    "Year": 2021,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Monitor",
+    "Sold": 496,
+    "Amount": 370512
+  },
+  {
+    "Year": 2021,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Printer",
+    "Sold": 304,
+    "Amount": 153216
+  },
+  {
+    "Year": 2021,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Laptop",
+    "Sold": 438,
+    "Amount": 422670
+  },
+  {
+    "Year": 2021,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Smartphone",
+    "Sold": 478,
+    "Amount": 107550
+  },
+  {
+    "Year": 2021,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Tablet",
+    "Sold": -341,
+    "Amount": -300762
+  },
+  {
+    "Year": 2021,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Monitor",
+    "Sold": 425,
+    "Amount": 184450
+  },
+  {
+    "Year": 2021,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Printer",
+    "Sold": 325,
+    "Amount": 136825
+  },
+  {
+    "Year": 2021,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Laptop",
+    "Sold": 246,
+    "Amount": 192864
+  },
+  {
+    "Year": 2021,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Smartphone",
+    "Sold": 487,
+    "Amount": 235221
+  },
+  {
+    "Year": 2021,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Tablet",
+    "Sold": 222,
+    "Amount": 169830
+  },
+  {
+    "Year": 2021,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Monitor",
+    "Sold": -459,
+    "Amount": -335529
+  },
+  {
+    "Year": 2021,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Printer",
+    "Sold": 322,
+    "Amount": 94024
+  },
+  {
+    "Year": 2021,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Laptop",
+    "Sold": -248,
+    "Amount": -234608
+  },
+  {
+    "Year": 2021,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Smartphone",
+    "Sold": -108,
+    "Amount": -16524
+  },
+  {
+    "Year": 2021,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Tablet",
+    "Sold": -238,
+    "Amount": -153748
+  },
+  {
+    "Year": 2021,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Monitor",
+    "Sold": 366,
+    "Amount": 202764
+  },
+  {
+    "Year": 2021,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Printer",
+    "Sold": -365,
+    "Amount": -77380
+  },
+  {
+    "Year": 2021,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Laptop",
+    "Sold": 122,
+    "Amount": 37576
+  },
+  {
+    "Year": 2021,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Smartphone",
+    "Sold": 402,
+    "Amount": 102510
+  },
+  {
+    "Year": 2021,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Tablet",
+    "Sold": 109,
+    "Amount": 55808
+  },
+  {
+    "Year": 2021,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Monitor",
+    "Sold": 425,
+    "Amount": 371450
+  },
+  {
+    "Year": 2021,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Printer",
+    "Sold": 156,
+    "Amount": 162708
+  },
+  {
+    "Year": 2021,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Laptop",
+    "Sold": 134,
+    "Amount": 105190
+  },
+  {
+    "Year": 2021,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Smartphone",
+    "Sold": 382,
+    "Amount": 263580
+  },
+  {
+    "Year": 2021,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Tablet",
+    "Sold": 500,
+    "Amount": 586000
+  },
+  {
+    "Year": 2021,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Monitor",
+    "Sold": -478,
+    "Amount": -316436
+  },
+  {
+    "Year": 2021,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Printer",
+    "Sold": -424,
+    "Amount": -487176
+  },
+  {
+    "Year": 2021,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Laptop",
+    "Sold": 244,
+    "Amount": 83936
+  },
+  {
+    "Year": 2021,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Smartphone",
+    "Sold": 413,
+    "Amount": 409696
+  },
+  {
+    "Year": 2021,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Tablet",
+    "Sold": 141,
+    "Amount": 77973
+  },
+  {
+    "Year": 2021,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Monitor",
+    "Sold": 409,
+    "Amount": 316975
+  },
+  {
+    "Year": 2021,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Printer",
+    "Sold": 315,
+    "Amount": 192465
+  },
+  {
+    "Year": 2021,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Laptop",
+    "Sold": 103,
+    "Amount": 113918
+  },
+  {
+    "Year": 2021,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Smartphone",
+    "Sold": 264,
+    "Amount": 66000
+  },
+  {
+    "Year": 2021,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Tablet",
+    "Sold": 305,
+    "Amount": 121085
+  },
+  {
+    "Year": 2021,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Monitor",
+    "Sold": 175,
+    "Amount": 186200
+  },
+  {
+    "Year": 2021,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Printer",
+    "Sold": -184,
+    "Amount": -117208
+  },
+  {
+    "Year": 2021,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Laptop",
+    "Sold": 171,
+    "Amount": 126027
+  },
+  {
+    "Year": 2021,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Smartphone",
+    "Sold": 183,
+    "Amount": 45750
+  },
+  {
+    "Year": 2021,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Tablet",
+    "Sold": 120,
+    "Amount": 27840
+  },
+  {
+    "Year": 2021,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Monitor",
+    "Sold": 123,
+    "Amount": 59040
+  },
+  {
+    "Year": 2021,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Printer",
+    "Sold": 498,
+    "Amount": 480570
+  },
+  {
+    "Year": 2021,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Laptop",
+    "Sold": -139,
+    "Amount": -61438
+  },
+  {
+    "Year": 2021,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Smartphone",
+    "Sold": 157,
+    "Amount": 43332
+  },
+  {
+    "Year": 2021,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Tablet",
+    "Sold": 237,
+    "Amount": 143622
+  },
+  {
+    "Year": 2021,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Monitor",
+    "Sold": -262,
+    "Amount": -120258
+  },
+  {
+    "Year": 2021,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Printer",
+    "Sold": -483,
+    "Amount": -180642
+  },
+  {
+    "Year": 2021,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Laptop",
+    "Sold": 222,
+    "Amount": 257520
+  },
+  {
+    "Year": 2021,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Smartphone",
+    "Sold": 446,
+    "Amount": 401846
+  },
+  {
+    "Year": 2021,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Tablet",
+    "Sold": 297,
+    "Amount": 55242
+  },
+  {
+    "Year": 2021,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Monitor",
+    "Sold": 474,
+    "Amount": 76314
+  },
+  {
+    "Year": 2021,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Printer",
+    "Sold": 467,
+    "Amount": 447853
+  },
+  {
+    "Year": 2021,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Laptop",
+    "Sold": -279,
+    "Amount": -205344
+  },
+  {
+    "Year": 2021,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Smartphone",
+    "Sold": 488,
+    "Amount": 404064
+  },
+  {
+    "Year": 2021,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Tablet",
+    "Sold": 438,
+    "Amount": 477858
+  },
+  {
+    "Year": 2021,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Monitor",
+    "Sold": -199,
+    "Amount": -62486
+  },
+  {
+    "Year": 2021,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Printer",
+    "Sold": 113,
+    "Amount": 27007
+  },
+  {
+    "Year": 2021,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Laptop",
+    "Sold": 486,
+    "Amount": 169128
+  },
+  {
+    "Year": 2021,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Smartphone",
+    "Sold": 135,
+    "Amount": 87885
+  },
+  {
+    "Year": 2021,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Tablet",
+    "Sold": 241,
+    "Amount": 178099
+  },
+  {
+    "Year": 2021,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Monitor",
+    "Sold": 369,
+    "Amount": 412542
+  },
+  {
+    "Year": 2021,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Printer",
+    "Sold": 189,
+    "Amount": 59157
+  },
+  {
+    "Year": 2022,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Laptop",
+    "Sold": -117,
+    "Amount": -63882
+  },
+  {
+    "Year": 2022,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Smartphone",
+    "Sold": -183,
+    "Amount": -68991
+  },
+  {
+    "Year": 2022,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Tablet",
+    "Sold": -239,
+    "Amount": -200521
+  },
+  {
+    "Year": 2022,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Monitor",
+    "Sold": 477,
+    "Amount": 518022
+  },
+  {
+    "Year": 2022,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Printer",
+    "Sold": 209,
+    "Amount": 142747
+  },
+  {
+    "Year": 2022,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Laptop",
+    "Sold": 357,
+    "Amount": 294168
+  },
+  {
+    "Year": 2022,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Smartphone",
+    "Sold": 175,
+    "Amount": 130725
+  },
+  {
+    "Year": 2022,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Tablet",
+    "Sold": 386,
+    "Amount": 235460
+  },
+  {
+    "Year": 2022,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Monitor",
+    "Sold": 346,
+    "Amount": 208292
+  },
+  {
+    "Year": 2022,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Printer",
+    "Sold": 280,
+    "Amount": 184240
+  },
+  {
+    "Year": 2022,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Laptop",
+    "Sold": 346,
+    "Amount": 57782
+  },
+  {
+    "Year": 2022,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Smartphone",
+    "Sold": 396,
+    "Amount": 207504
+  },
+  {
+    "Year": 2022,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Tablet",
+    "Sold": 406,
+    "Amount": 199752
+  },
+  {
+    "Year": 2022,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Monitor",
+    "Sold": 178,
+    "Amount": 99324
+  },
+  {
+    "Year": 2022,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Printer",
+    "Sold": 444,
+    "Amount": 348540
+  },
+  {
+    "Year": 2022,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Laptop",
+    "Sold": 492,
+    "Amount": 577116
+  },
+  {
+    "Year": 2022,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Smartphone",
+    "Sold": 464,
+    "Amount": 554480
+  },
+  {
+    "Year": 2022,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Tablet",
+    "Sold": -166,
+    "Amount": -102920
+  },
+  {
+    "Year": 2022,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Monitor",
+    "Sold": -230,
+    "Amount": -196650
+  },
+  {
+    "Year": 2022,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Printer",
+    "Sold": 126,
+    "Amount": 89838
+  },
+  {
+    "Year": 2022,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Laptop",
+    "Sold": 452,
+    "Amount": 421264
+  },
+  {
+    "Year": 2022,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Smartphone",
+    "Sold": 340,
+    "Amount": 72420
+  },
+  {
+    "Year": 2022,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Tablet",
+    "Sold": 232,
+    "Amount": 106024
+  },
+  {
+    "Year": 2022,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Monitor",
+    "Sold": 151,
+    "Amount": 63420
+  },
+  {
+    "Year": 2022,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Printer",
+    "Sold": 141,
+    "Amount": 111249
+  },
+  {
+    "Year": 2022,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Laptop",
+    "Sold": -164,
+    "Amount": -118572
+  },
+  {
+    "Year": 2022,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Smartphone",
+    "Sold": -360,
+    "Amount": -155880
+  },
+  {
+    "Year": 2022,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Tablet",
+    "Sold": 393,
+    "Amount": 253485
+  },
+  {
+    "Year": 2022,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Monitor",
+    "Sold": 419,
+    "Amount": 416486
+  },
+  {
+    "Year": 2022,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Printer",
+    "Sold": -392,
+    "Amount": -89768
+  },
+  {
+    "Year": 2022,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Laptop",
+    "Sold": 243,
+    "Amount": 184680
+  },
+  {
+    "Year": 2022,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Smartphone",
+    "Sold": 264,
+    "Amount": 60192
+  },
+  {
+    "Year": 2022,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Tablet",
+    "Sold": 405,
+    "Amount": 232065
+  },
+  {
+    "Year": 2022,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Monitor",
+    "Sold": 347,
+    "Amount": 187033
+  },
+  {
+    "Year": 2022,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Printer",
+    "Sold": 174,
+    "Amount": 160080
+  },
+  {
+    "Year": 2022,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Laptop",
+    "Sold": 328,
+    "Amount": 176464
+  },
+  {
+    "Year": 2022,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Smartphone",
+    "Sold": 263,
+    "Amount": 98625
+  },
+  {
+    "Year": 2022,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Tablet",
+    "Sold": 164,
+    "Amount": 97908
+  },
+  {
+    "Year": 2022,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Monitor",
+    "Sold": 228,
+    "Amount": 184908
+  },
+  {
+    "Year": 2022,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Printer",
+    "Sold": 227,
+    "Amount": 150501
+  },
+  {
+    "Year": 2022,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Laptop",
+    "Sold": -193,
+    "Amount": -132012
+  },
+  {
+    "Year": 2022,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Smartphone",
+    "Sold": 446,
+    "Amount": 304618
+  },
+  {
+    "Year": 2022,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Tablet",
+    "Sold": 491,
+    "Amount": 533717
+  },
+  {
+    "Year": 2022,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Monitor",
+    "Sold": 285,
+    "Amount": 71535
+  },
+  {
+    "Year": 2022,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Printer",
+    "Sold": 437,
+    "Amount": 249527
+  },
+  {
+    "Year": 2022,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Laptop",
+    "Sold": -475,
+    "Amount": -435100
+  },
+  {
+    "Year": 2022,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Smartphone",
+    "Sold": 280,
+    "Amount": 316120
+  },
+  {
+    "Year": 2022,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Tablet",
+    "Sold": -220,
+    "Amount": -187000
+  },
+  {
+    "Year": 2022,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Monitor",
+    "Sold": 448,
+    "Amount": 448000
+  },
+  {
+    "Year": 2022,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Printer",
+    "Sold": 221,
+    "Amount": 186524
+  },
+  {
+    "Year": 2022,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Laptop",
+    "Sold": 475,
+    "Amount": 563825
+  },
+  {
+    "Year": 2022,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Smartphone",
+    "Sold": 229,
+    "Amount": 103279
+  },
+  {
+    "Year": 2022,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Tablet",
+    "Sold": 377,
+    "Amount": 405652
+  },
+  {
+    "Year": 2022,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Monitor",
+    "Sold": -328,
+    "Amount": -241408
+  },
+  {
+    "Year": 2022,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Printer",
+    "Sold": 229,
+    "Amount": 236328
+  },
+  {
+    "Year": 2022,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Laptop",
+    "Sold": 147,
+    "Amount": 153027
+  },
+  {
+    "Year": 2022,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Smartphone",
+    "Sold": -205,
+    "Amount": -108650
+  },
+  {
+    "Year": 2022,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Tablet",
+    "Sold": 376,
+    "Amount": 450448
+  },
+  {
+    "Year": 2022,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Monitor",
+    "Sold": 325,
+    "Amount": 328575
+  },
+  {
+    "Year": 2022,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Printer",
+    "Sold": -368,
+    "Amount": -89056
+  },
+  {
+    "Year": 2022,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Laptop",
+    "Sold": 289,
+    "Amount": 152014
+  },
+  {
+    "Year": 2022,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Smartphone",
+    "Sold": 273,
+    "Amount": 164892
+  },
+  {
+    "Year": 2022,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Tablet",
+    "Sold": -476,
+    "Amount": -73304
+  },
+  {
+    "Year": 2022,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Monitor",
+    "Sold": 118,
+    "Amount": 48498
+  },
+  {
+    "Year": 2022,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Printer",
+    "Sold": 228,
+    "Amount": 236892
+  },
+  {
+    "Year": 2022,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Laptop",
+    "Sold": 191,
+    "Amount": 178776
+  },
+  {
+    "Year": 2022,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Smartphone",
+    "Sold": 169,
+    "Amount": 184717
+  },
+  {
+    "Year": 2022,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Tablet",
+    "Sold": 119,
+    "Amount": 107338
+  },
+  {
+    "Year": 2022,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Monitor",
+    "Sold": 321,
+    "Amount": 177834
+  },
+  {
+    "Year": 2022,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Printer",
+    "Sold": 380,
+    "Amount": 297540
+  },
+  {
+    "Year": 2022,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Laptop",
+    "Sold": 429,
+    "Amount": 187044
+  },
+  {
+    "Year": 2022,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Smartphone",
+    "Sold": -499,
+    "Amount": -543411
+  },
+  {
+    "Year": 2022,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Tablet",
+    "Sold": -494,
+    "Amount": -257374
+  },
+  {
+    "Year": 2022,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Monitor",
+    "Sold": 446,
+    "Amount": 232812
+  },
+  {
+    "Year": 2022,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Printer",
+    "Sold": 355,
+    "Amount": 321275
+  },
+  {
+    "Year": 2022,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Laptop",
+    "Sold": 191,
+    "Amount": 162923
+  },
+  {
+    "Year": 2022,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Smartphone",
+    "Sold": 164,
+    "Amount": 154324
+  },
+  {
+    "Year": 2022,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Tablet",
+    "Sold": 367,
+    "Amount": 377276
+  },
+  {
+    "Year": 2022,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Monitor",
+    "Sold": 241,
+    "Amount": 118813
+  },
+  {
+    "Year": 2022,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Printer",
+    "Sold": 378,
+    "Amount": 105840
+  },
+  {
+    "Year": 2022,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Laptop",
+    "Sold": 441,
+    "Amount": 472752
+  },
+  {
+    "Year": 2022,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Smartphone",
+    "Sold": -120,
+    "Amount": -119880
+  },
+  {
+    "Year": 2022,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Tablet",
+    "Sold": 492,
+    "Amount": 325704
+  },
+  {
+    "Year": 2022,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Monitor",
+    "Sold": 247,
+    "Amount": 214396
+  },
+  {
+    "Year": 2022,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Printer",
+    "Sold": 449,
+    "Amount": 354710
+  },
+  {
+    "Year": 2023,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Laptop",
+    "Sold": -292,
+    "Amount": -200312
+  },
+  {
+    "Year": 2023,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Smartphone",
+    "Sold": 308,
+    "Amount": 187264
+  },
+  {
+    "Year": 2023,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Tablet",
+    "Sold": 129,
+    "Amount": 52374
+  },
+  {
+    "Year": 2023,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Monitor",
+    "Sold": 496,
+    "Amount": 524272
+  },
+  {
+    "Year": 2023,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Printer",
+    "Sold": 432,
+    "Amount": 345168
+  },
+  {
+    "Year": 2023,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Laptop",
+    "Sold": 454,
+    "Amount": 192042
+  },
+  {
+    "Year": 2023,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Smartphone",
+    "Sold": -150,
+    "Amount": -109800
+  },
+  {
+    "Year": 2023,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Tablet",
+    "Sold": 378,
+    "Amount": 374220
+  },
+  {
+    "Year": 2023,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Monitor",
+    "Sold": 500,
+    "Amount": 503500
+  },
+  {
+    "Year": 2023,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Printer",
+    "Sold": 387,
+    "Amount": 151704
+  },
+  {
+    "Year": 2023,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Laptop",
+    "Sold": 222,
+    "Amount": 39738
+  },
+  {
+    "Year": 2023,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Smartphone",
+    "Sold": 479,
+    "Amount": 196869
+  },
+  {
+    "Year": 2023,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Tablet",
+    "Sold": 367,
+    "Amount": 183500
+  },
+  {
+    "Year": 2023,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Monitor",
+    "Sold": 383,
+    "Amount": 444280
+  },
+  {
+    "Year": 2023,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Printer",
+    "Sold": 485,
+    "Amount": 178480
+  },
+  {
+    "Year": 2023,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Laptop",
+    "Sold": 134,
+    "Amount": 22780
+  },
+  {
+    "Year": 2023,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Smartphone",
+    "Sold": 328,
+    "Amount": 181056
+  },
+  {
+    "Year": 2023,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Tablet",
+    "Sold": 197,
+    "Amount": 118003
+  },
+  {
+    "Year": 2023,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Monitor",
+    "Sold": 338,
+    "Amount": 116948
+  },
+  {
+    "Year": 2023,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Printer",
+    "Sold": 269,
+    "Amount": 124009
+  },
+  {
+    "Year": 2023,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Laptop",
+    "Sold": 335,
+    "Amount": 138690
+  },
+  {
+    "Year": 2023,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Smartphone",
+    "Sold": 308,
+    "Amount": 196196
+  },
+  {
+    "Year": 2023,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Tablet",
+    "Sold": 237,
+    "Amount": 46452
+  },
+  {
+    "Year": 2023,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Monitor",
+    "Sold": 398,
+    "Amount": 305664
+  },
+  {
+    "Year": 2023,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Printer",
+    "Sold": 187,
+    "Amount": 206822
+  },
+  {
+    "Year": 2023,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Laptop",
+    "Sold": -443,
+    "Amount": -460277
+  },
+  {
+    "Year": 2023,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Smartphone",
+    "Sold": -367,
+    "Amount": -308280
+  },
+  {
+    "Year": 2023,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Tablet",
+    "Sold": 165,
+    "Amount": 29040
+  },
+  {
+    "Year": 2023,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Monitor",
+    "Sold": 396,
+    "Amount": 295020
+  },
+  {
+    "Year": 2023,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Printer",
+    "Sold": 389,
+    "Amount": 243514
+  },
+  {
+    "Year": 2023,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Laptop",
+    "Sold": 140,
+    "Amount": 36820
+  },
+  {
+    "Year": 2023,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Smartphone",
+    "Sold": 379,
+    "Amount": 144778
+  },
+  {
+    "Year": 2023,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Tablet",
+    "Sold": 396,
+    "Amount": 186120
+  },
+  {
+    "Year": 2023,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Monitor",
+    "Sold": 264,
+    "Amount": 251328
+  },
+  {
+    "Year": 2023,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Printer",
+    "Sold": 184,
+    "Amount": 191728
+  },
+  {
+    "Year": 2023,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Laptop",
+    "Sold": 137,
+    "Amount": 134123
+  },
+  {
+    "Year": 2023,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Smartphone",
+    "Sold": -104,
+    "Amount": -16536
+  },
+  {
+    "Year": 2023,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Tablet",
+    "Sold": 148,
+    "Amount": 111000
+  },
+  {
+    "Year": 2023,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Monitor",
+    "Sold": 356,
+    "Amount": 203988
+  },
+  {
+    "Year": 2023,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Printer",
+    "Sold": 195,
+    "Amount": 209625
+  },
+  {
+    "Year": 2023,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Laptop",
+    "Sold": 221,
+    "Amount": 120666
+  },
+  {
+    "Year": 2023,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Smartphone",
+    "Sold": 426,
+    "Amount": 221094
+  },
+  {
+    "Year": 2023,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Tablet",
+    "Sold": -329,
+    "Amount": -282282
+  },
+  {
+    "Year": 2023,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Monitor",
+    "Sold": -250,
+    "Amount": -221000
+  },
+  {
+    "Year": 2023,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Printer",
+    "Sold": 182,
+    "Amount": 43498
+  },
+  {
+    "Year": 2023,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Laptop",
+    "Sold": 317,
+    "Amount": 300199
+  },
+  {
+    "Year": 2023,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Smartphone",
+    "Sold": 265,
+    "Amount": 87980
+  },
+  {
+    "Year": 2023,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Tablet",
+    "Sold": -437,
+    "Amount": -493373
+  },
+  {
+    "Year": 2023,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Monitor",
+    "Sold": 362,
+    "Amount": 261364
+  },
+  {
+    "Year": 2023,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Printer",
+    "Sold": 162,
+    "Amount": 78408
+  },
+  {
+    "Year": 2023,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Laptop",
+    "Sold": 382,
+    "Amount": 264344
+  },
+  {
+    "Year": 2023,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Smartphone",
+    "Sold": 369,
+    "Amount": 85239
+  },
+  {
+    "Year": 2023,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Tablet",
+    "Sold": 398,
+    "Amount": 429442
+  },
+  {
+    "Year": 2023,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Monitor",
+    "Sold": 475,
+    "Amount": 107350
+  },
+  {
+    "Year": 2023,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Printer",
+    "Sold": -247,
+    "Amount": -95095
+  },
+  {
+    "Year": 2023,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Laptop",
+    "Sold": 282,
+    "Amount": 172866
+  },
+  {
+    "Year": 2023,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Smartphone",
+    "Sold": 342,
+    "Amount": 259578
+  },
+  {
+    "Year": 2023,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Tablet",
+    "Sold": 216,
+    "Amount": 191592
+  },
+  {
+    "Year": 2023,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Monitor",
+    "Sold": 187,
+    "Amount": 98923
+  },
+  {
+    "Year": 2023,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Printer",
+    "Sold": 187,
+    "Amount": 201960
+  },
+  {
+    "Year": 2023,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Laptop",
+    "Sold": 352,
+    "Amount": 304832
+  },
+  {
+    "Year": 2023,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Smartphone",
+    "Sold": -241,
+    "Amount": -210152
+  },
+  {
+    "Year": 2023,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Tablet",
+    "Sold": 102,
+    "Amount": 93126
+  },
+  {
+    "Year": 2023,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Monitor",
+    "Sold": 416,
+    "Amount": 81952
+  },
+  {
+    "Year": 2023,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Printer",
+    "Sold": 491,
+    "Amount": 459576
+  },
+  {
+    "Year": 2023,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Laptop",
+    "Sold": 231,
+    "Amount": 270963
+  },
+  {
+    "Year": 2023,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Smartphone",
+    "Sold": 158,
+    "Amount": 170166
+  },
+  {
+    "Year": 2023,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Tablet",
+    "Sold": 365,
+    "Amount": 109135
+  },
+  {
+    "Year": 2023,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Monitor",
+    "Sold": 302,
+    "Amount": 264552
+  },
+  {
+    "Year": 2023,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Printer",
+    "Sold": 344,
+    "Amount": 336088
+  },
+  {
+    "Year": 2023,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Laptop",
+    "Sold": 135,
+    "Amount": 80595
+  },
+  {
+    "Year": 2023,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Smartphone",
+    "Sold": 406,
+    "Amount": 311402
+  },
+  {
+    "Year": 2023,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Tablet",
+    "Sold": 319,
+    "Amount": 253605
+  },
+  {
+    "Year": 2023,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Monitor",
+    "Sold": -439,
+    "Amount": -109750
+  },
+  {
+    "Year": 2023,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Printer",
+    "Sold": 236,
+    "Amount": 114460
+  },
+  {
+    "Year": 2023,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Laptop",
+    "Sold": -447,
+    "Amount": -128736
+  },
+  {
+    "Year": 2023,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Smartphone",
+    "Sold": 287,
+    "Amount": 55391
+  },
+  {
+    "Year": 2023,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Tablet",
+    "Sold": 134,
+    "Amount": 36984
+  },
+  {
+    "Year": 2023,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Monitor",
+    "Sold": 250,
+    "Amount": 39000
+  },
+  {
+    "Year": 2023,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Printer",
+    "Sold": -284,
+    "Amount": -63048
+  },
+  {
+    "Year": 2023,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Laptop",
+    "Sold": 449,
+    "Amount": 140088
+  },
+  {
+    "Year": 2023,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Smartphone",
+    "Sold": 159,
+    "Amount": 109392
+  },
+  {
+    "Year": 2023,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Tablet",
+    "Sold": 350,
+    "Amount": 246400
+  },
+  {
+    "Year": 2023,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Monitor",
+    "Sold": 152,
+    "Amount": 120080
+  },
+  {
+    "Year": 2023,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Printer",
+    "Sold": 143,
+    "Amount": 40183
+  },
+  {
+    "Year": 2024,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Laptop",
+    "Sold": 196,
+    "Amount": 230692
+  },
+  {
+    "Year": 2024,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Smartphone",
+    "Sold": 400,
+    "Amount": 339200
+  },
+  {
+    "Year": 2024,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Tablet",
+    "Sold": -286,
+    "Amount": -310024
+  },
+  {
+    "Year": 2024,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Monitor",
+    "Sold": 481,
+    "Amount": 176046
+  },
+  {
+    "Year": 2024,
+    "Region": "North America",
+    "Country": "USA",
+    "Product": "Printer",
+    "Sold": 201,
+    "Amount": 200598
+  },
+  {
+    "Year": 2024,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Laptop",
+    "Sold": 229,
+    "Amount": 97325
+  },
+  {
+    "Year": 2024,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Smartphone",
+    "Sold": 334,
+    "Amount": 191382
+  },
+  {
+    "Year": 2024,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Tablet",
+    "Sold": -234,
+    "Amount": -236574
+  },
+  {
+    "Year": 2024,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Monitor",
+    "Sold": 405,
+    "Amount": 345870
+  },
+  {
+    "Year": 2024,
+    "Region": "North America",
+    "Country": "Canada",
+    "Product": "Printer",
+    "Sold": 118,
+    "Amount": 106554
+  },
+  {
+    "Year": 2024,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Laptop",
+    "Sold": 176,
+    "Amount": 166848
+  },
+  {
+    "Year": 2024,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Smartphone",
+    "Sold": 464,
+    "Amount": 133632
+  },
+  {
+    "Year": 2024,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Tablet",
+    "Sold": 417,
+    "Amount": 429510
+  },
+  {
+    "Year": 2024,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Monitor",
+    "Sold": 202,
+    "Amount": 77164
+  },
+  {
+    "Year": 2024,
+    "Region": "North America",
+    "Country": "Mexico",
+    "Product": "Printer",
+    "Sold": 422,
+    "Amount": 254466
+  },
+  {
+    "Year": 2024,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Laptop",
+    "Sold": 150,
+    "Amount": 112050
+  },
+  {
+    "Year": 2024,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Smartphone",
+    "Sold": 168,
+    "Amount": 194208
+  },
+  {
+    "Year": 2024,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Tablet",
+    "Sold": 215,
+    "Amount": 190275
+  },
+  {
+    "Year": 2024,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Monitor",
+    "Sold": 175,
+    "Amount": 160125
+  },
+  {
+    "Year": 2024,
+    "Region": "South America",
+    "Country": "Brazil",
+    "Product": "Printer",
+    "Sold": 298,
+    "Amount": 275352
+  },
+  {
+    "Year": 2024,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Laptop",
+    "Sold": 458,
+    "Amount": 527616
+  },
+  {
+    "Year": 2024,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Smartphone",
+    "Sold": -333,
+    "Amount": -105894
+  },
+  {
+    "Year": 2024,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Tablet",
+    "Sold": 208,
+    "Amount": 50336
+  },
+  {
+    "Year": 2024,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Monitor",
+    "Sold": 180,
+    "Amount": 174060
+  },
+  {
+    "Year": 2024,
+    "Region": "South America",
+    "Country": "Argentina",
+    "Product": "Printer",
+    "Sold": 449,
+    "Amount": 404549
+  },
+  {
+    "Year": 2024,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Laptop",
+    "Sold": 200,
+    "Amount": 151600
+  },
+  {
+    "Year": 2024,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Smartphone",
+    "Sold": 294,
+    "Amount": 263718
+  },
+  {
+    "Year": 2024,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Tablet",
+    "Sold": 271,
+    "Amount": 143359
+  },
+  {
+    "Year": 2024,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Monitor",
+    "Sold": 267,
+    "Amount": 189036
+  },
+  {
+    "Year": 2024,
+    "Region": "South America",
+    "Country": "Chile",
+    "Product": "Printer",
+    "Sold": 122,
+    "Amount": 120536
+  },
+  {
+    "Year": 2024,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Laptop",
+    "Sold": 149,
+    "Amount": 74947
+  },
+  {
+    "Year": 2024,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Smartphone",
+    "Sold": 178,
+    "Amount": 198292
+  },
+  {
+    "Year": 2024,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Tablet",
+    "Sold": 214,
+    "Amount": 151726
+  },
+  {
+    "Year": 2024,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Monitor",
+    "Sold": 408,
+    "Amount": 214608
+  },
+  {
+    "Year": 2024,
+    "Region": "Europe",
+    "Country": "Germany",
+    "Product": "Printer",
+    "Sold": 150,
+    "Amount": 87900
+  },
+  {
+    "Year": 2024,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Laptop",
+    "Sold": -354,
+    "Amount": -157176
+  },
+  {
+    "Year": 2024,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Smartphone",
+    "Sold": 279,
+    "Amount": 173538
+  },
+  {
+    "Year": 2024,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Tablet",
+    "Sold": 290,
+    "Amount": 149060
+  },
+  {
+    "Year": 2024,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Monitor",
+    "Sold": 311,
+    "Amount": 125955
+  },
+  {
+    "Year": 2024,
+    "Region": "Europe",
+    "Country": "France",
+    "Product": "Printer",
+    "Sold": 428,
+    "Amount": 370648
+  },
+  {
+    "Year": 2024,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Laptop",
+    "Sold": 261,
+    "Amount": 304065
+  },
+  {
+    "Year": 2024,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Smartphone",
+    "Sold": 460,
+    "Amount": 120060
+  },
+  {
+    "Year": 2024,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Tablet",
+    "Sold": 194,
+    "Amount": 114848
+  },
+  {
+    "Year": 2024,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Monitor",
+    "Sold": -132,
+    "Amount": -62964
+  },
+  {
+    "Year": 2024,
+    "Region": "Europe",
+    "Country": "UK",
+    "Product": "Printer",
+    "Sold": 203,
+    "Amount": 40194
+  },
+  {
+    "Year": 2024,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Laptop",
+    "Sold": -153,
+    "Amount": -136476
+  },
+  {
+    "Year": 2024,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Smartphone",
+    "Sold": -405,
+    "Amount": -113805
+  },
+  {
+    "Year": 2024,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Tablet",
+    "Sold": 407,
+    "Amount": 198616
+  },
+  {
+    "Year": 2024,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Monitor",
+    "Sold": 175,
+    "Amount": 70350
+  },
+  {
+    "Year": 2024,
+    "Region": "Asia",
+    "Country": "China",
+    "Product": "Printer",
+    "Sold": 132,
+    "Amount": 36960
+  },
+  {
+    "Year": 2024,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Laptop",
+    "Sold": -160,
+    "Amount": -134880
+  },
+  {
+    "Year": 2024,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Smartphone",
+    "Sold": 362,
+    "Amount": 195842
+  },
+  {
+    "Year": 2024,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Tablet",
+    "Sold": 482,
+    "Amount": 74228
+  },
+  {
+    "Year": 2024,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Monitor",
+    "Sold": 449,
+    "Amount": 432836
+  },
+  {
+    "Year": 2024,
+    "Region": "Asia",
+    "Country": "India",
+    "Product": "Printer",
+    "Sold": 311,
+    "Amount": 303847
+  },
+  {
+    "Year": 2024,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Laptop",
+    "Sold": 361,
+    "Amount": 193496
+  },
+  {
+    "Year": 2024,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Smartphone",
+    "Sold": 381,
+    "Amount": 156210
+  },
+  {
+    "Year": 2024,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Tablet",
+    "Sold": 373,
+    "Amount": 279004
+  },
+  {
+    "Year": 2024,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Monitor",
+    "Sold": 451,
+    "Amount": 211519
+  },
+  {
+    "Year": 2024,
+    "Region": "Asia",
+    "Country": "Japan",
+    "Product": "Printer",
+    "Sold": 201,
+    "Amount": 52863
+  },
+  {
+    "Year": 2024,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Laptop",
+    "Sold": 286,
+    "Amount": 222222
+  },
+  {
+    "Year": 2024,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Smartphone",
+    "Sold": 424,
+    "Amount": 463432
+  },
+  {
+    "Year": 2024,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Tablet",
+    "Sold": 383,
+    "Amount": 127156
+  },
+  {
+    "Year": 2024,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Monitor",
+    "Sold": 306,
+    "Amount": 242046
+  },
+  {
+    "Year": 2024,
+    "Region": "Africa",
+    "Country": "Nigeria",
+    "Product": "Printer",
+    "Sold": 483,
+    "Amount": 478653
+  },
+  {
+    "Year": 2024,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Laptop",
+    "Sold": 230,
+    "Amount": 208610
+  },
+  {
+    "Year": 2024,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Smartphone",
+    "Sold": -123,
+    "Amount": -141942
+  },
+  {
+    "Year": 2024,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Tablet",
+    "Sold": -342,
+    "Amount": -337212
+  },
+  {
+    "Year": 2024,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Monitor",
+    "Sold": 300,
+    "Amount": 335400
+  },
+  {
+    "Year": 2024,
+    "Region": "Africa",
+    "Country": "Egypt",
+    "Product": "Printer",
+    "Sold": 471,
+    "Amount": 510093
+  },
+  {
+    "Year": 2024,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Laptop",
+    "Sold": 189,
+    "Amount": 90531
+  },
+  {
+    "Year": 2024,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Smartphone",
+    "Sold": 456,
+    "Amount": 108072
+  },
+  {
+    "Year": 2024,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Tablet",
+    "Sold": 197,
+    "Amount": 211184
+  },
+  {
+    "Year": 2024,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Monitor",
+    "Sold": 278,
+    "Amount": 299406
+  },
+  {
+    "Year": 2024,
+    "Region": "Africa",
+    "Country": "South Africa",
+    "Product": "Printer",
+    "Sold": 362,
+    "Amount": 55386
+  },
+  {
+    "Year": 2024,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Laptop",
+    "Sold": 369,
+    "Amount": 324351
+  },
+  {
+    "Year": 2024,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Smartphone",
+    "Sold": -139,
+    "Amount": -63662
+  },
+  {
+    "Year": 2024,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Tablet",
+    "Sold": 358,
+    "Amount": 384850
+  },
+  {
+    "Year": 2024,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Monitor",
+    "Sold": 286,
+    "Amount": 253110
+  },
+  {
+    "Year": 2024,
+    "Region": "Australia",
+    "Country": "Australia",
+    "Product": "Printer",
+    "Sold": 439,
+    "Amount": 234865
+  },
+  {
+    "Year": 2024,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Laptop",
+    "Sold": 349,
+    "Amount": 189856
+  },
+  {
+    "Year": 2024,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Smartphone",
+    "Sold": 237,
+    "Amount": 130824
+  },
+  {
+    "Year": 2024,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Tablet",
+    "Sold": -332,
+    "Amount": -226756
+  },
+  {
+    "Year": 2024,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Monitor",
+    "Sold": 388,
+    "Amount": 462108
+  },
+  {
+    "Year": 2024,
+    "Region": "Australia",
+    "Country": "New Zealand",
+    "Product": "Printer",
+    "Sold": 383,
+    "Amount": 336274
+  }
+]

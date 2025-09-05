@@ -1,0 +1,47 @@
+<div id="action-description">
+    <p>This sample shows how to embed sparkline charts in Pivot Table cells to visually highlight trends and comparisons
+        in sales data. You can choose different sparkline types Line, Column, Area, or WinLoss directly from the grand
+        total header cell to analyze performance metrics at a glance.</p>
+</div>
+<div id="description">
+    <p>This sample demonstrates how to embed <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/sparkline/getting-started/">Sparkline</a> charts within the
+        Pivot Table's grand total cells to visually summarize yearly sales performance across different regions.</p>
+    <p>The charts are rendered by capturing relevant cell values during the <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/row-and-column#querycellinfo">queryCellInfo</a>
+        event and inserting the sparklines after the Pivot Table is fully rendered via the  <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/pivotview/#databound">dataBound</a> event.
+    </p>
+    <p>
+        A built-in dropdown in the grand total column header allows dynamic switching between Sparkline types at
+        runtime:</p>
+    <ul>
+        <li><code>Line</code> - Displays trends with a continuous line.</li>
+        <li><code>Column</code> - Shows values as vertical bars for easy comparison.</li>
+        <li><code>Area</code> - Highlights magnitude with a filled line chart.</li>
+        <li><code>WinLoss</code> - Visualizes binary outcomes without exposing exact values.</li>
+    </ul>
+    <p>
+        Embedding the chart-type selector within the header keeps the interface compact and intuitive, enabling seamless
+        visual analysis with minimal performance overhead. </p>
+    <br />
+    <p>
+        More information on queryCellInfo can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/pivotview/row-and-column#querycellinfo">
+            documentation section</a>.
+    </p>
+</div>
+
+
+<div class="control-section" id="pivot-table-section">
+    <div class="content-wrapper">
+        <ejs-pivotview
+            #pivotview id='PivotView_sparkline'
+            [dataSourceSettings]=dataSourceSettings
+            [showTooltip]='false'
+            [height]='450'
+            [gridSettings]='gridSettings'
+            (dataBound)='onDataBound()'>
+        </ejs-pivotview>
+    </div>
+</div>

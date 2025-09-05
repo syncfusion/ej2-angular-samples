@@ -1,18 +1,52 @@
 <div id="action-description">
-    <p>This demo explains how the Gantt Chart schedules project in UTC timezone.</p>
-</div>
-<div class="control-section">
-        <ejs-gantt id="ganttDefault" #gantt [dataSource]="data" [taskFields]="taskSettings" [dayWorkingTime]="dayWorkingTime"
-            [timelineSettings]="timelineSettings" [columns]="columns" [treeColumnIndex]="1" timezone="UTC" durationUnit="Hour" dateFormat="hh:mm a"
-            height="450px" [includeWeekend]="true">
-        </ejs-gantt>
+  <p>This sample demonstrates how the Angular Gantt Chart schedules project tasks using the UTC timezone, ensuring consistent date and time handling across global teams</p>
 </div>
 
+<div class="control-section">
+  <div class="toolbar-items"
+    style="padding: 10px; background-color: #f4f4f4; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+    <!-- Left-aligned timezone label and combobox -->
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <label style="margin-right: 10px;margin-top: 3px;">Time Zone:</label>
+      <ejs-combobox #timezonelist id="timezonelist" [dataSource]="timeZoneData"
+        [fields]="{ text: 'text', value: 'text' }" [value]="timezoneValue" placeholder="Select timezone" width="300px"
+        popupHeight="350px" popupWidth="300px" ignoreAccent="true" filterType="Contains" [allowFiltering]="true"
+        (change)="timeZoneChange($event)">
+      </ejs-combobox>
+    </div>
+
+    <!-- Right-aligned buttons and dropdown -->
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <button align="left" ejs-button #previousTimespan id="previousTimespan" cssClass="previous-timespan"
+        (click)="previousTimeSpan()">
+        <span class="e-icons e-chevron-left-fill"></span>
+      </button>
+      <ejs-dropdownlist align="left" #timeline id="timeline" [dataSource]="timelineData"
+        [fields]="{ text: 'value', value: 'value' }" placeholder="Select timeline mode" value="Day"
+        (change)="changeTimelineMode($event)">
+      </ejs-dropdownlist>
+      <button align="left" ejs-button #nextTimespan id="nextTimespan" cssClass="next-timespan" (click)="nextTimeSpan()">
+        <span class="e-icons e-chevron-right-fill"></span>
+      </button>
+    </div>
+  </div>
+  <ejs-gantt #gantt id="gantt" [dataSource]="data" [taskFields]="taskSettings" [dayWorkingTime]="dayWorkingTime"
+    [timelineSettings]="timelineSettings" [columns]="columns" [treeColumnIndex]="1" [timezone]="timezoneValue"
+    durationUnit="Hour" dateFormat="hh:mm a" height="650px" [includeWeekend]="true" rowHeight="46" taskbarHeight="25"
+    [toolbar]="toolbar">
+  </ejs-gantt>
+</div>
+
+
 <div id="description">
-    <p>
-        For example, in this demo, the timezone of Gantt is set to UTC, and the task named <code>Plan timeline</code> has start time as <code>08:00 am</code> but converted based on UTC and rendered at <code>2.30 am</code>.
-    </p>
-    <p>
-        When a user sets any timezone, dates are converted based on the value set to <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#timezone">timezone</a> property of Gantt control.
-    </p>
+  <p>This sample demonstrates how the Angular Gantt Chart schedules project tasks using the UTC timezone, ensuring
+    consistent date and time handling across global teams.</p>
+  <p>
+    When a user sets any timezone, dates are converted based on the value set to
+    <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#timezone">timezone</a></code>
+    property of Gantt control.
+  </p>
+  <br>
+  <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank"
+      href="https://ej2.syncfusion.com/angular/documentation/gantt/timezone">documentation section</a>.</p>
 </div>

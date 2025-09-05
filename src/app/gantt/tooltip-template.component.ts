@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { tooltipData, editingResources } from './data';
 import { Internationalization } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -59,8 +59,8 @@ export class GanttTooltipTemplateComponent implements OnInit {
       { field: 'Duration' },
       { field: 'Predecessor' },
       { field: 'Progress' },
-      { field: 'BaselineStartDate' },
-      { field: 'BaselineEndDate' },
+      { field: 'BaselineStartDate', width: 200 },
+      { field: 'BaselineEndDate', width: 200 },
       { field: 'resources' },
     ];
     this.labelSettings = {
@@ -73,8 +73,8 @@ export class GanttTooltipTemplateComponent implements OnInit {
     (this.tooltipSettings = {
       showTooltip: true,
     }),
-      (this.projectStartDate = new Date('03/24/2024'));
-    this.projectEndDate = new Date('05/04/2024');
+      (this.projectStartDate = new Date('03/26/2025'));
+    this.projectEndDate = new Date('06/01/2025');
   }
   public format(value: Date): string {
     return instance.formatDate(value, { format: 'MM/dd/yyyy' });
@@ -162,11 +162,11 @@ export class GanttTooltipTemplateComponent implements OnInit {
   private updateThemeClass(): void {
     const bodyClasses = document.body.classList;
     const themeIsDark = bodyClasses.contains('tailwind3-dark') ||
-        bodyClasses.contains('material3-dark') ||
-        bodyClasses.contains('bootstrap5.3-dark') ||
-        bodyClasses.contains('highcontrast');
+      bodyClasses.contains('material3-dark') ||
+      bodyClasses.contains('bootstrap5.3-dark') ||
+      bodyClasses.contains('highcontrast');
     this.themeClass = themeIsDark ? 'black' : 'white';
-}
+  }
   public executeTopTierTooltip(
     value: string,
     date: Date,

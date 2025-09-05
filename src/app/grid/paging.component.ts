@@ -6,10 +6,10 @@ import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { GridModule } from '@syncfusion/ej2-angular-grids';
 
-setCulture('en-US');
+setCulture('en');
 
 L10n.load({
-    'en-US': {
+    'en': {
         'pager': {
             'currentPageInfo': '',
             'totalItemsInfo': '{1} to {2} of {0}',

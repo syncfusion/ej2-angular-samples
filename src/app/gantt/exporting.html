@@ -1,30 +1,39 @@
 <div id="action-description">
-    <p>This sample demonstrates client-side exporting of the Gantt, which allows you to export Gantt data to Excel, PDF and
-        CSV formats. Using the Gantt toolbar buttons, you can export Gantt data to the desired format. </p>
+  <p>This sample demonstrates client-side exporting of the Gantt, which allows you to export Gantt data to Excel, PDF
+    and
+    CSV formats. Using the Gantt toolbar buttons, you can export Gantt data to the desired format. </p>
 </div>
 
 <div class="control-section">
-    <ejs-gantt id="GanttExport" #ganttExcel height="430px" [dataSource]="data" [taskFields]="taskSettings"
-        [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [treeColumnIndex]="1"
-        [allowExcelExport]="true" [allowPdfExport]="true" height="450px" [allowSelection]="true" dateFormat="MMM dd, y"
-        [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true" [holidays]="holidays"
-        [gridLines]="gridLines" [toolbar]="toolbar" [resourceFields] = "resourceFields" [eventMarkers]="eventMarkers"
-        [resources]="resources" (toolbarClick)="toolbarClick($event)" [splitterSettings]="splitterSettings" [columns]="columns">
-    </ejs-gantt>
+  <ejs-gantt id="GanttExport" #ganttExcel height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data"
+    [taskFields]="taskSettings" [timelineSettings]="timelineSettings" [labelSettings]="labelSettings"
+    [treeColumnIndex]="1" [allowExcelExport]="true" [allowPdfExport]="true" [allowSelection]="true"
+    dateFormat="MMM dd, y" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+    [highlightWeekends]="true" [holidays]="holidays" [gridLines]="gridLines" [toolbar]="toolbar"
+    [resourceFields]="resourceFields" [eventMarkers]="eventMarkers" [resources]="resources"
+    (toolbarClick)="toolbarClick($event)" [splitterSettings]="splitterSettings" [columns]="columns">
+  </ejs-gantt>
 </div>
 <div id="description">
-    <p>Gantt supports client-side exporting, which allows you to export its data to the Excel, PDF and CSV formats. </p>
-    <p>In this demo, we have defined actions in the
-      <a target="_blank"  href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#toolbarclick">toolbarClick</a>
-      event to export the Gantt data using the
-      <a target="_blank"  href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#excelexport">excelExport</a>
-      ,
-      <a target="_blank"  href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#pdfexport">pdfExport</a>
-      and
-      <a target="_blank"  href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#csvexport">csvExport</a>
-      methods.
-    </p>
+  <p>Gantt supports client-side exporting, which allows you to export its data to the Excel, PDF and CSV formats. </p>
+  <p>In this demo, we have defined actions in the
+    <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#toolbarclick">toolbarClick</a>
+    event to export the Gantt data using the
+    <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#excelexport">excelExport</a>
+    ,
+    <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#pdfexport">pdfExport</a>
+    and
+    <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#csvexport">csvExport</a>
+    methods.
+  </p>
   <p style="font-weight: 500">Injecting Module:</p>
-    <p>To use Excel and CSV export features, we need to inject the <code>ExcelExportService</code> into the <code>&#64;NgModule.providers</code> section.</p>
-    <p>To use PDF export feature, inject the <code>PdfExportService</code> into the <code>&#64;NgModule.providers</code> section.</p>
+  <p>To use Excel and CSV export features, we need to inject the <code>ExcelExportService</code> into the
+    <code>&#64;NgModule.providers</code> section.</p>
+  <p>To use PDF export feature, inject the <code>PdfExportService</code> into the <code>&#64;NgModule.providers</code>
+    section.</p>
+
+  <br>
+  <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank"
+      href="https://ej2.syncfusion.com/angular/documentation/gantt/excel-export/excel-export">documentation section</a>.
+  </p>
 </div>

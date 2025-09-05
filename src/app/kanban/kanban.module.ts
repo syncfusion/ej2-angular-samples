@@ -31,6 +31,7 @@ import { WIPValidationComponent } from './wip-validation.component';
 import { EventsComponent } from './events.component';
 import { APIComponent } from './api.component';
 import { VirtualScrollingComponent } from './virtual-scrolling.component';
+import { RearrangeColumn } from './column-rearrangement.component';
 
 
 
@@ -52,6 +53,7 @@ export const kanbanRouteConfig: Object[] = [
   { 'path': ':theme/kanban/tooltip-template', component: TooltipTemplateComponent, name: 'Tooltip Template', order: '03', category: 'Templates', description: 'The example demonstrates how to enable and disable the tooltip messages on JavaScript Kanban cards, and customize using templates.' },
   { 'path': ':theme/kanban/toggle-columns', component: ToggleColumnsComponent, name: 'Toggle Columns', order: '04', category: 'Columns', description: 'This sample demonstrates the toggle column of JS Kanban, which is helpful to expand and collapse the columns and can be collapsed on page load also.' },
   { 'path': ':theme/kanban/show-hide', component: ShowHideComponent, name: 'Show/Hide Columns', order: '04', category: 'Columns', description: 'The example demonstrates how to show or hide the columns of JavaScript Kanban board dynamically, which is achieved from code using the public methods.' },
+  { 'path': ':theme/kanban/column-rearrangement', component: RearrangeColumn , name: 'Column Rearrangement', order: '04', category: 'Columns', description: 'This example demonstrates the column rearrangement of the Kanban control. You can drag and drop the columns to rearrange them across multiple stages of the Kanban board.', type: 'new' },
   { 'path': ':theme/kanban/wip-validation', component: WIPValidationComponent, name: 'WIP Validation', order: '05', category: 'Validation', description: 'The Work-in-progress (WIP) validation demo demonstrates the minimum and maximum limit of card per column or swimlane in JavaScript Kanban board.' },
   { 'path': ':theme/kanban/api', component: APIComponent, name: 'API', order: '06', category: 'Miscellaneous', description: 'The example showcases the important APIs of JavaScript Kanban in the property panel, which are used to manipulate the Kanban board dynamically.' },
   { 'path': ':theme/kanban/events', component: EventsComponent, name: 'Events', order: '06', category: 'Miscellaneous', description: 'The sample showcases the client- side events of JavaScript Kanban with event tracer, which is helpful to customize the Kanban board from application end.' }

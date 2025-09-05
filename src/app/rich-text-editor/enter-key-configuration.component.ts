@@ -95,13 +95,28 @@ export class EnterKeyComponent {
             codeView.appendChild(mirrorView);
         }
         mirrorView.style.display = 'block';
+        const existingLink = Array.from(document.getElementsByTagName('link'))
+            .some(link => link.href.includes('codemirror.css'));
+
+        if (!existingLink) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = '/src/common/lib/content/codemirror.css';
+            document.head.appendChild(link);
+        }
+
         if (this.rteObj.value !== null) {
-            CodeMirror(mirrorView, {
-                value: this.rteObj.value,
-                mode: 'text/html',
-                lineWrapping: true,
-                readOnly: true
-            });
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.js';
+            script.onload = () => {
+                const myCodeMirror = CodeMirror(mirrorView, {
+                    value: this.rteObj.value,
+                    mode: 'text/html',
+                    lineWrapping: true,
+                    readOnly: true
+                });
+            };
+            document.getElementsByTagName('head')[0].appendChild(script);
         }
     }
 }

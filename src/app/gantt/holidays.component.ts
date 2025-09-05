@@ -27,10 +27,10 @@ export class GanttHolidaysComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            child: 'subtasks'
+            parentID:'ParentId'
         };
         this.columns = [
-            { field: 'TaskID', width: 80 },
+            { field: 'TaskID',visible: false, width: 80 },
             { field: 'TaskName', width: 250 },
             { field: 'StartDate' },
             { field: 'EndDate' },
@@ -38,25 +38,29 @@ export class GanttHolidaysComponent implements OnInit {
             { field: 'Predecessor' },
             { field: 'Progress' },
         ];
-        this.projectStartDate = new Date('03/24/2024');
-        this.projectEndDate = new Date('07/06/2024');
+        this.projectStartDate = new Date('03/25/2025');
+        this.projectEndDate = new Date('07/20/2025');
         this.labelSettings = {
             leftLabel: 'TaskName',
         };
         this.holidays = [
-            {
-                from: new Date('04/04/2024'),
-                to: new Date('04/04/2024'),
-                label: 'Local Holiday'
-            }, {
-                from: new Date('04/19/2024'),
-                to: new Date('04/19/2024'),
-                label: 'Good Friday'
-            }, {
-                from: new Date('04/30/2024'),
-                to: new Date('04/30/2024'),
-                label: 'Release Holiday'
-            },
+           {
+                    from: new Date('03/28/2025'),
+                    to: new Date('03/28/2025'),
+                    label: 'Good Friday'
+                },{
+                    from: new Date('03/30/2025'),
+                    to: new Date('03/30/2025'),
+                    label: 'Easter Sunday'
+                }, {
+                    from: new Date('05/26/2025'),
+                    to: new Date('05/26/2025'),
+                    label: 'Memorial Day'
+                }, {
+                    from: new Date('07/04/2025'),
+                    to: new Date('07/04/2025'),
+                    label: 'Independence Day'
+                }, 
         ];
     }
 }

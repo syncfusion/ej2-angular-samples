@@ -95,6 +95,7 @@ import { StripLineRecurrenceChartComponent } from './strip-line-recurrence.compo
 import { StripLineChartComponent } from './strip-line.component';
 import { PieEmptyPointChartComponent } from './pie-empty-point.component';
 import { EmptyPointChartComponent } from './empty-point.component';
+import { NodataTemplateChartComponent } from './no-data-template.component';
 import { PrintChartComponent } from './print.component';
 import { SmartAxisLabelsChartComponent } from './smart-axis-labels.component';
 import { ErrorBarChartComponent } from './error-bar.component';
@@ -253,7 +254,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/chart-performance', component: PerformanceChartComponent, name: 'Chart Performance', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows the performance when plotting large volumes of data and handling high frequency real-time data.", order: '10', category: 'Benchmark' },
 
     { path: ':theme/chart/update-spline', component: UpdateSplineComponent, name: 'Spline updating each second', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows the real time charts", order: '17', category: 'Real-time Charts' },
-    { path: ':theme/chart/live-stock-data', component: LiveStockDataComponent, type: 'update', name: 'Live stock data', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows the real time charts", order: '17', category: 'Real-time Charts' },
+    { path: ':theme/chart/live-stock-data', component: LiveStockDataComponent, name: 'Live stock data', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows the real time charts", order: '17', category: 'Real-time Charts' },
     { path: ':theme/chart/update-data-source', component: UpdateDataSourceComponent, name: 'Update data source', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows the real time charts", order: '17', category: 'Real-time Charts' },
     { path: ':theme/chart/click-add-point', component: ClickAddPointComponent, name: 'Click to add a point', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows the real time charts", order: '17', category: 'Real-time Charts' },
     { path: ':theme/chart/live-data-sorting', component: LiveDataSortingComponent, name: 'Live Data Sorting', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows the real time charts", order: '17', category: 'Real-time Charts' },
@@ -294,6 +295,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/tooltip-template', component: TooltipTemplateComponent, name: 'Tooltip Template', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the tooltip template.", order: '14', category: 'Chart Customization' },
     { path: ':theme/chart/vertical', component: VerticalChartComponent, name: 'Vertical Chart', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the vertical type charts.", order: '14', category: 'Chart Customization' },
     { path: ':theme/chart/empty-point', component: EmptyPointChartComponent, name: 'Empty Points', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the empty points.", order: '14', category: 'Chart Customization'},
+    { path: ':theme/chart/no-data-template', component: NodataTemplateChartComponent, name: 'No Data Template', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the no data template.", order: '14', category: 'Chart Customization', type: 'new' },
     { path: ':theme/chart/range-color-mapping', component: RangeColorMappingComponent, name: 'Range Color Mapping', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the range color mapping.", order: '14', category: 'Chart Customization'},
     { path: ':theme/chart/series-animation', component: SeriesAnimationComponent, name: 'Animation', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure series animation.", order: '14', category: 'Chart Customization'},
 

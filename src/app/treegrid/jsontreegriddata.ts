@@ -2879,70 +2879,96 @@ export let virtualData: any[] = [];
         }
     }
 
-export let stackedData = [
+export let stackedData: Object[] = [
     {
-        orderID: '1',
+        orderID: 55721,
         orderName: 'Order 1',
         orderDate: new Date('02/03/2017'),
-        shippedDate: new Date('02/09/2017'),
-        units: 1395,
+        shippedDate: new Date('10/03/2017'),
+        units: '195',
         unitPrice: 47.00,
         price: 65565,
         shipMentCategory: 'Seafood',
         subtasks: [
-            { orderID: '1.1', orderName: 'Mackerel', shipMentCategory: 'Frozen seafood', units: '35',
-                orderDate: new Date('03/03/2017'), shippedDate: new Date('03/10/2017'), unitPrice: 12.56, price: 439.6},
-            { orderID: '1.2', orderName: 'Yellowfin Tuna', shipMentCategory: 'Frozen seafood', units: '324',
-                orderDate: new Date('05/03/2017'), shippedDate: new Date('05/10/2017'), unitPrice: 28.26, price: 9156.24 },
-            { orderID: '1.3', orderName: 'Herrings', shipMentCategory: 'Frozen seafood', units: '48',
-                orderDate: new Date('05/08/2017'), shippedDate: new Date('05/15/2017'), unitPrice: 11.35, price: 544.8 },
-            { orderID: '1.4', orderName: 'Preserved Olives', shipMentCategory: 'Edible', units: '125',
-               orderDate: new Date('06/10/2017'), shippedDate: new Date('06/17/2017'), unitPrice: 29.23, price: 3653.75},
-            { orderID: '1.5', orderName: 'Sweet corn Frozen', shipMentCategory: 'Edible', units: '223',
-                orderDate: new Date('07/12/2017'), shippedDate: new Date('07/19/2017'), unitPrice: 47.17, price: 10518.91 }
-
-         ]
+            {
+                orderID: 55722, orderName: 'Mackerel', shipMentCategory: 'Frozen seafood', units: '235',
+                orderDate: new Date('02/03/2017'), shippedDate: new Date('05/13/2017'), unitPrice: 12.00, price: 439.6
+            },
+            {
+                orderID: 55723, orderName: 'Yellowfin Tuna', shipMentCategory: 'Frozen seafood', units: '324',
+                orderDate: new Date('05/03/2017'), shippedDate: new Date('05/22/2017'), unitPrice: 8.00, price: 9156.24
+            },
+            {
+                orderID: 55724, orderName: 'Herrings', shipMentCategory: 'Frozen seafood', units: '488',
+                orderDate: new Date('10/03/2017'), shippedDate: new Date('10/14/2017'), unitPrice: 11.00, price: 544.8
+            },
+            {
+                orderID: 55725, orderName: 'Preserved Olives', shipMentCategory: 'Edible', units: '125',
+                orderDate: new Date('08/03/2017'), shippedDate: new Date('08/08/2017'), unitPrice: 9.00, price: 3653.75
+            },
+            {
+                orderID: 55726, orderName: 'Sweet Corn Frozen', shipMentCategory: 'Edible', units: '223',
+                orderDate: new Date('09/03/2017'), shippedDate: new Date('09/06/2017'), unitPrice: 7.00, price: 10518.91
+            }
+        ]
     },
     {
-        orderID: '2',
+        orderID: 55727,
         orderName: 'Order 2',
-        orderDate: new Date('01/10/2018'),
-        shippedDate: new Date('01/16/2018'),
-        units: '1944',
-        unitPrice: 58.45,
+        orderDate: new Date('05/03/2017'),
+        shippedDate: new Date('05/15/2017'),
+        units: '144',
+        unitPrice: 58,
         price: 113626.8,
         shipMentCategory: 'Seafood',
         subtasks: [
-            { orderID: '2.1', orderName: 'Tilapias', shipMentCategory: 'Frozen Seafood',
-            orderDate: new Date('02/05/2018'), shippedDate: new Date('02/12/2018'), units: '278', unitPrice: 15.25, price: 4239.5 },
-            { orderID: '2.2', orderName: 'White Shrimp', shipMentCategory: 'Frozen seafood', units: '560',
-            orderDate: new Date('05/22/2018'), shippedDate: new Date('05/29/2018'), unitPrice: 72.45, price: 36225 },
-            { orderID: '2.3', orderName: 'Fresh Cheese', shipMentCategory: 'Dairy', units: '323', unitPrice: 12.45,
-            orderDate: new Date('06/08/2018'), shippedDate: new Date('06/15/2018'), price: 4021.35 },
-            { orderID: '2.4', orderName: 'Blue Veined Cheese', shipMentCategory: 'Dairy', units: '370', unitPrice: 15.36,
-            orderDate: new Date('07/10/2018'), shippedDate: new Date('07/17/2018'), price: 5683.2 },
-            { orderID: '2.5', orderName: 'Butter', shipMentCategory: 'Dairy', units: '413', unitPrice: 19.35,
-            orderDate: new Date('09/18/2018'), shippedDate: new Date('09/25/2018'), price: 7991.55}
+            {
+                orderID: 55728, orderName: 'Tilapias', shipMentCategory: 'Frozen seafood',
+                orderDate: new Date('03/05/2017'), shippedDate: new Date('03/15/2017'), units: '278', unitPrice: 15.00, price: 4239.5
+            },
+            {
+                orderID: 55729, orderName: 'White Shrimp', shipMentCategory: 'Frozen seafood', units: '560',
+                orderDate: new Date('07/05/2017'), shippedDate: new Date('07/15/2017'), unitPrice: 7.00, price: 36225
+            },
+            {
+                orderID: 55730, orderName: 'Fresh Cheese', shipMentCategory: 'Dairy', units: '323', unitPrice: 12.00,
+                orderDate: new Date('09/03/2017'), shippedDate: new Date('09/19/2017'), price: 4021.35
+            },
+            {
+                orderID: 55731, orderName: 'Blue Veined Cheese', shipMentCategory: 'Dairy', units: '370', unitPrice: 15.00,
+                orderDate: new Date('11/03/2017'), shippedDate: new Date('11/13/2017'), price: 5683.2
+            },
+            {
+                orderID: 55732, orderName: 'Butter', shipMentCategory: 'Dairy', units: '413', unitPrice: 9.00,
+                orderDate: new Date('12/23/2017'), shippedDate: new Date('12/27/2017'), price: 7991.55
+            }
         ]
     },
     {
-        orderID: '3',
+        orderID: 55733,
         orderName: 'Order 3',
-        orderDate: new Date('09/10/2018'),
-        shippedDate: new Date('09/20/2018'),
-        units: '1120',
-        unitPrice: 33.34,
+        orderDate: new Date('03/10/2017'),
+        shippedDate: new Date('03/20/2017'),
+        units: '120',
+        unitPrice: 33.00,
         price: 37340.8,
         shipMentCategory: 'Seafood',
         subtasks: [
-            { orderID: '3.1', orderName: 'Lead glassware', shipMentCategory: 'Solid crystals',
-                orderDate: new Date('02/07/2018'), shippedDate: new Date('02/14/2018'), units: '542', unitPrice: 46.45, price: 25175.9 },
-            { orderID: '3.2', orderName: 'Pharmaceutical', shipMentCategory: 'Solid crystals',
-                orderDate: new Date('04/19/2018'), shippedDate: new Date('04/26/2018'), units: '324', unitPrice: 11.56, price: 3745.44 },
-            { orderID: '3.3', orderName: 'Glass beads', shipMentCategory: 'Solid crystals', units: '254',
-                orderDate: new Date('05/22/2018'), shippedDate: new Date('03/22/2018'), unitPrice: 16.25, price: 4127.5 }
+            {
+                orderID: 55734, orderName: 'Lead Glassware', shipMentCategory: 'Solid crystals',
+                orderDate: new Date('08/03/2017'), shippedDate: new Date('08/18/2017'), units: '542', unitPrice: 6.00, price: 25175.9
+            },
+            {
+                orderID: 55735, orderName: 'Pharmaceutical Glass', shipMentCategory: 'Solid crystals',
+                orderDate: new Date('03/10/2017'), shippedDate: new Date('03/20/2017'), units: '324', unitPrice: 11.00, price: 3745.44
+            },
+            {
+                orderID: 55736, orderName: 'Glass Beads', shipMentCategory: 'Solid crystals', units: '254',
+                orderDate: new Date('03/02/2017'), shippedDate: new Date('03/22/2017'), unitPrice: 16.00, price: 4127.5
+            }
         ]
     }
+
 ];
 export let sortData = [
     {
@@ -2963,7 +2989,7 @@ export let sortData = [
             orderDate: new Date('05/08/2017'), shippedDate: new Date('05/15/2017'), unitPrice: '11', price: '52.68' },
             { orderID: '1.4', orderName: 'Preserved Olives', Category: 'Edible', units: '125',
             orderDate: new Date('06/10/2017'), shippedDate: new Date('06/17/2017'), unitPrice: '9', price: '11.25' },
-            { orderID: '1.5', orderName: 'Sweet corn Frozen', Category: 'Edible', units: '223',
+            { orderID: '1.5', orderName: 'Sweet Corn Frozen', Category: 'Edible', units: '223',
             orderDate: new Date('07/12/2017'), shippedDate: new Date('07/19/2019'), unitPrice: '7', price: '15.61' }
          ]
     },
@@ -3032,7 +3058,7 @@ export let formatData = [
                 orderDate: new Date('10/03/2017'), shippedDate: new Date('10/14/2018'), unitPrice: '11', price: '52.68' },
                 { orderID: '1.4', orderName: 'Preserved Olives', Category: 'Edible', units: '125',
                 orderDate: new Date('08/03/2017'), shippedDate: new Date('08/03/2018'), unitPrice: '9', price: '11.25' },
-                { orderID: '1.5', orderName: 'Sweet corn Frozen', Category: 'Edible', units: '223',
+                { orderID: '1.5', orderName: 'Sweet Corn Frozen', Category: 'Edible', units: '223',
                 orderDate: new Date('09/03/2017'), shippedDate: new Date('09/03/2018'), unitPrice: '7', price: '15.61' }
              ]
         },
@@ -3068,60 +3094,65 @@ export let formatData = [
             price: '108.80',
             Category: 'seafood',
             subtasks: [
-                { orderID: '3.1', orderName: 'Lead glassware', Category: 'Solid crystals',
+                { orderID: '3.1', orderName: 'Lead Glassware', Category: 'Solid crystals',
                 orderDate: new Date('08/03/2017'), shippedDate: new Date('03/18/2018'), units: '542', unitPrice: '6', price: '32.52' },
                 { orderID: '3.2', orderName: 'Pharmaceutical Glassware', Category: 'Solid crystals',
                 orderDate: new Date('03/10/2017'), shippedDate: new Date('03/20/2018'), units: '324', unitPrice: '11', price: '35.64' },
-                { orderID: '3.3', orderName: 'Glass beads', Category: 'Solid crystals', units: '254',
+                { orderID: '3.3', orderName: 'Glass Beads', Category: 'Solid crystals', units: '254',
                 orderDate: new Date('03/02/2017'), shippedDate: new Date('03/22/2018'), unitPrice: '16', price: '40.64' }
             ]
         }
 
     ];
-    export let summaryData = [
-        {
-            ID: '1',
-            Name: 'Order 1',
-            units: '1395',
-            unitPrice: 47.00,
-            price: 65565,
-            category: 'Seafoods',
-            subtasks: [
-                { ID: '1.1', Name: 'Mackerel', category: 'Frozen seafood', units: '235', unitPrice: 12.26, price: 2881.1 },
-                { ID: '1.2', Name: 'Yellowfin Tuna', category: 'Frozen seafood', units: '324', unitPrice: 18.45, price: 5977.8 },
-                { ID: '1.3', Name: 'Herrings', category: 'Frozen seafood', units: '488', unitPrice: 11.45, price: 5587.6 },
-                { ID: '1.4', Name: 'Preserved Olives', category: 'Edible', units: '125', unitPrice: 19.56, price: 2445 },
-                { ID: '1.5', Name: 'Sweet corn Frozen', category: 'Edible', units: '223', unitPrice: 12.34, price: 2751.82 }
-             ]
-        },
-        {
-            ID: '2',
-            Name: 'Order 2',
-            units: '1944',
-            unitPrice: 58.45,
-            price: 1245.73,
-            category: 'Products',
-            subtasks: [
-                { ID: '2.1', Name: 'Tilapias', category: 'Frozen seafood', units: '278', unitPrice: 15.45, price: 4295.1 },
-                { ID: '2.2', Name: 'White Shrimp', category: 'Frozen seafood', units: '560', unitPrice: 17.66, price: 9889.6 },
-                { ID: '2.3', Name: 'Fresh Cheese', category: 'Dairy', units: '323', unitPrice: 12.35, price: 3989 },
-                { ID: '2.4', Name: 'Blue Veined Cheese', category: 'Dairy', units: '370', unitPrice: 15.77, price: 5834.9 },
-                { ID: '2.5', Name: 'Butter', category: 'Dairy', units: '413', unitPrice: 19.45, price: 8032.85 }
-            ]
-        },
-        {
-            ID: '3',
-            Name: 'Order 3',
-            units: '1120',
-            unitPrice: 33.45,
-            price: 37464,
-            category: 'Crystals',
-            subtasks: [
-                { ID: '3.1', Name: 'Lead glassware', category: 'Solid crystals', units: '542', unitPrice: 19.56, price: 10601.52 },
-                { ID: '3.2', Name: 'Pharmaceutical Glassware', category: 'Solid crystals', units: '324', unitPrice: 11.36, price: 3680.64 },
-                { ID: '3.3', Name: 'Glass beads', category: 'Solid crystals', units: '254', unitPrice: 16.11, price: 4091.94 }
-            ]
-        }];
+  
+  export let summaryData: Object[] = [
+    {
+        ID: 'ORD-55721',
+        Name: 'Seafood Order',
+        shipmentDate: new Date(2022,0,11),
+        units: '1395',
+        unitPrice: 47,
+        price: 65565,
+        category: 'Seafoods',
+        subtasks: [
+            { ID: 'ORD-55722', Name: 'Mackerel', shipmentDate: new Date(2022,1,5), category: 'Seafood', units: '235', unitPrice: 12, price: 2881.1 },
+            { ID: 'ORD-55723', Name: 'Yellowfin Tuna', shipmentDate: new Date(2022,1,17), category: 'Seafood', units: '324', unitPrice: 8, price: 5977.8 },
+            { ID: 'ORD-55724', Name: 'Herrings', shipmentDate: new Date(2022,4,16), category: 'Seafood', units: '488', unitPrice: 11, price: 5587.6 },
+            { ID: 'ORD-55725', Name: 'Preserved Olives', shipmentDate: new Date(2022,7,11), category: 'Edible', units: '125', unitPrice: 9, price: 2445 },
+            { ID: 'ORD-55726', Name: 'Sweet Corn Frozen', shipmentDate: new Date(2022,7,27), category: 'Edible', units: '223', unitPrice: 7, price: 2751.82 }
+        ]
+    },
+    {
+        ID: 'ORD-55727',
+        Name: 'Products Order',
+        shipmentDate: new Date(2023,4,25),
+        units: '1944',
+        unitPrice: 58,
+        price: 1245.73,
+        category: 'Products',
+        subtasks: [
+            { ID: 'ORD-55728', Name: 'Tilapias', shipmentDate: new Date(2023,5,12), category: 'Seafood', units: '278', unitPrice: 15, price: 4295.1 },
+            { ID: 'ORD-55729', Name: 'White Shrimp', shipmentDate: new Date(2023,7,23), category: 'Seafood', units: '560', unitPrice: 7, price: 9889.6 },
+            { ID: 'ORD-55730', Name: 'Fresh Cheese', shipmentDate: new Date(2023,7,30), category: 'Dairy', units: '323', unitPrice: 12, price: 3989 },
+            { ID: 'ORD-55731', Name: 'Blue Veined Cheese', shipmentDate: new Date(2023,10,15), category: 'Dairy', units: '370', unitPrice: 15, price: 5834.9 },
+            { ID: 'ORD-55732', Name: 'Butter', shipmentDate: new Date(2023,10,30), category: 'Dairy', units: '413', unitPrice: 9, price: 8032.85 }
+        ]
+    },
+    {
+        ID: 'ORD-55733',
+        Name: 'Crystals Order',
+        shipmentDate: new Date(2024,2,31),
+        units: '1120',
+        unitPrice: 33,
+        price: 37464,
+        category: 'Crystals',
+        subtasks: [
+            { ID: 'ORD-55734', Name: 'Lead Glassware', shipmentDate: new Date(2024,6,8), category: 'Crystal', units: '542', unitPrice: 6, price: 10601.52 },
+            { ID: 'ORD-55735', Name: 'Pharmaceutical Glassware', shipmentDate: new Date(2024,6,16), category: 'Crystal', units: '324', unitPrice: 11, price: 3680.64 },
+            { ID: 'ORD-55736', Name: 'Glass Beads', shipmentDate: new Date(2024,6,23), category: 'Crystal', units: '254', unitPrice: 16, price: 4091.94 }
+        ]
+    }
+];
 
     export let textdata = [{
         'Name': 'Robert King',

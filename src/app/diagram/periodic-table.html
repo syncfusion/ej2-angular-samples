@@ -1,0 +1,30 @@
+<div class="control-section periodic-table" style="width: 100%">
+    <ejs-diagram 
+        #diagram 
+        id="diagram" 
+        width="100%" 
+        height="700px"
+        [nodes]="nodes"
+        [connectors]="connectors"
+        [snapSettings]="snapSettings"
+        [tool]="tool"
+        [getConnectorDefaults]="connectorDefaults"
+        [selectedItems]="selectedItems"
+        (mouseEnter)="mouseEnter($event)"
+        (mouseLeave)="mouseLeave($event)"
+        (selectionChange)="selectionChange($event)"
+        (created)="created($event)"
+        (load)="load()"
+        [constraints]="constraints">
+    </ejs-diagram>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates an interactive Periodic Table of Elements built using the Syncfusion<sup>®</sup> EJ2 Angular Diagram component, displaying all known elements with categorization by color, detailed hover information, and highlighting by period or group.
+    </p>
+</div>
+<div id="description">
+    <p>
+        Elements in this interactive Periodic Table are nodes showing atomic number, symbol, and name; atomic mass appears on hover. Elements are color-coded by category with a clear legend. Users can dynamically highlight elements by clicking period or group numbers, instantly revealing chemical trends and relationships. 
+    </p>
+</div>

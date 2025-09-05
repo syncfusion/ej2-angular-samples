@@ -36,7 +36,7 @@ export class GanttGridLinesComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            child: 'subtasks'
+           parentID: 'ParentId'
         };
         this.columns = [
             { field: 'TaskID', width: 80 },
@@ -54,8 +54,8 @@ export class GanttGridLinesComponent implements OnInit {
             columnIndex: 2
         };
         this.gridLines = 'Both';
-        this.projectStartDate = new Date('03/24/2024');
-        this.projectEndDate = new Date('07/06/2024');
+        this.projectStartDate = new Date('03/26/2025');
+        this.projectEndDate = new Date('07/20/2025');
         this.dropDownGridLinesData = [
             { id: 'Both', type: 'Both' },
             { id: 'Vertical', type: 'Vertical' },

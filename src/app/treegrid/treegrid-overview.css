@@ -42,7 +42,6 @@
     .rating .star.checked {
         color: #EE9E54;
     }
-
     .rating .star:before {
         content: '★';
     }

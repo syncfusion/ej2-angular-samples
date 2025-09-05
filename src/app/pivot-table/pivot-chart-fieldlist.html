@@ -1,0 +1,115 @@
+<div id="action-description">
+    <p>This sample demonstrates rendering a pivot table and pivot chart along with the Excel-like field list feature. It
+        also provides interactive controls to toggle the toolbar and dynamically switch between different display modes.
+    </p>
+</div>
+<div id="description">
+    <p>
+        This example showcases the Syncfusion Pivot Table component alongside a Pivot Chart and a field list rendered
+        statically within a sidebar layout. The static field list allows users to configure and customize the report by
+        dragging and dropping fields into the appropriate sections such as rows, columns, values, and filters—without
+        relying on a popup interface. This enhances accessibility and usability, especially in wide-screen or dashboard
+        environments.
+    </p>
+    <p>
+        The Pivot Table component supports three display modes, which are implemented in this sample and can be
+        configurable using the <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/pivotview/displayOptionModel/#view">displayOption.view</a> property:
+    </p>
+    <table>
+        <tr>
+            <td style="vertical-align: top;padding: 4px 0;">
+                <code>Table :</code>
+            </td>
+            <td>Displays only the pivot table (default).</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;padding: 4px 0;">
+                <code>Chart :</code>
+            </td>
+            <td>Displays only the pivot chart.</td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top;padding: 4px 0;">
+                <code>Both :</code>
+            </td>
+            <td>Displays both the pivot table and pivot chart.</td>
+        </tr>
+    </table>
+    <br />
+    <p>
+        A <strong>Primary View</strong> dropdown lets users choose whether to prioritize the chart or table when both
+        are shown.</p>
+    <p>
+        Additionally, the <strong>Show/Hide Toolbar</strong> toggle controls the visibility of the built-in toolbar,
+        which includes
+        options for switching views and chart types.</p>
+    <p>
+        <strong>Injecting Module:</strong>
+    </p>
+    <p>
+        The pivot table features are segregated into individual modules. To take advantage of chart and toolbar support,
+        we need to inject the <code>PivotChartServices</code> module and <code>ToolbarService</code> into the
+        <code>&#64;NgModule.providers</code> method.
+    </p><br />
+    <p>
+        More information on the pivot chart can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/pivot-chart">
+            documentation section</a>.
+    </p>
+</div>
+<div class="control-section" style="overflow:auto;">
+    <div class="content-wrapper" style="width: 100%;">
+        <div style="width: 100%;">
+            <ejs-toolbar #defaultToolbar class='defaultToolbar' height='50px' (clicked)='ToolbarCliked($event)' (beforeCreate)='beforeCreate()'>
+                <e-items>
+                    <e-item>
+                        <ng-template id="layout" #template>
+                            <div class="toolbar-template" id="layout_switch">
+                                <label for="toolbar-switch" class="label_option">Show/hide Toolbar:</label>
+                                <div id="toolbar-switch"></div>
+                            </div>
+                        </ng-template>
+                    </e-item>
+                    <e-item>
+                        <ng-template id="display" #template>
+                            <div class="toolbar-template toolbar-temp">
+                                <label class="label_option display_label">Display Option:</label>
+                                <select id="displayOptionddl" name="ddl-display-option">
+                                    <option value="Both">Both</option>
+                                    <option value="Table">Table</option>
+                                    <option value="Chart">Chart</option>
+                                </select>
+                            </div>
+                        </ng-template>
+                    </e-item>
+                    <e-item>
+                        <ng-template id="preference" #template>
+                            <div class="toolbar-template toolbar-temp">
+                                <label class="label_option display_label">Primary View:</label>
+                                <select id="primaryViewddl" name="ddl-primary-view">
+                                    <option value="Table">Table</option>
+                                    <option value="Chart">Chart</option>
+                                </select>
+                            </div>
+                        </ng-template>
+                    </e-item>
+                    <e-item prefixIcon="sb-icons sb-icon-Next" id="fieldlist" tooltipText="Collapse Field List" align="Right"></e-item>
+                </e-items>
+            </ejs-toolbar>
+        </div>
+        <div id="pivot_sidebar" class="maincontent" style="width: 100%; height: 720px;">
+          <div id='pivot_container' style="width: 64%;">
+            <ejs-pivotview #pivotview id='PivotView' width='100%' height='600' [showToolbar]='true' [displayOption]='displayOption'
+            (enginePopulated)='afterEnginePopulate($event)' (actionBegin)='actionBegin($event)' (dataBound)='dataBound()' [toolbar]='toolbarOptions'
+                [gridSettings]='gridSettings'>
+            </ejs-pivotview>
+          </div>
+        </div>
+        <ejs-sidebar #defaultSidebar class='default-sidebar' height='100%' id='defaultSidebar' target='.maincontent' type='Auto' isOpen='true' position='Right' enableGestures={false} (change)='onChange()'>
+            <ejs-pivotfieldlist #pivotfieldlist id='PivotFieldList' height='100%' [dataSourceSettings]=dataSourceSettings renderMode='Fixed'
+                (enginePopulated)='afterPopulate($event)' allowCalculatedField='true' enableFieldSearching='true' (load)='onLoad()' (dataBound)='ondataBound()'>
+            </ejs-pivotfieldlist>
+        </ejs-sidebar>
+    </div>
+</div>

@@ -15,411 +15,431 @@ import { SelectEventArgs, RemoveEventArgs } from '@syncfusion/ej2-dropdowns';
 import { extend } from '@syncfusion/ej2-base';
 import { NumericTextBoxModule, NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
 import { ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
+import { PdfColor } from "@syncfusion/ej2-pdf-export";
 
 @Component({
-    selector: 'ej2-ganttoverview',
-    templateUrl: 'overview.html',
-    encapsulation: ViewEncapsulation.None,
-    standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, NgIf, SBDescriptionComponent, ButtonModule, SidebarAllModule, SliderAllModule, MultiSelectAllModule, DropDownListAllModule, SwitchAllModule, NumericTextBoxAllModule]
+  selector: 'ej2-ganttoverview',
+  templateUrl: 'overview.html',
+  encapsulation: ViewEncapsulation.None,
+  standalone: true,
+  imports: [SBActionDescriptionComponent, GanttAllModule, NgIf, SBDescriptionComponent, ButtonModule, SidebarAllModule, SliderAllModule, MultiSelectAllModule, DropDownListAllModule, SwitchAllModule, NumericTextBoxAllModule]
 })
 
 export class GanttOverviewComponent implements OnInit {
-    public data: object[];
-    public resources: object[];
-    public resourceFields: object;
-    public taskSettings: object;
-    public timelineSettings: object;
-    public gridLines: string;
-    public labelSettings: object;
-    public eventMarkers: object[];
-    public toolbar: object;
-    public splitterSettings: object;
-    @ViewChild('gantt')
-    public gantt: GanttComponent;
-    public holidays: object[];
-    public projectStartDate: Date;
-    public projectEndDate: Date;
-    public theme: any;
-    public style: any;
-    public CurrentTheme: any;
-    public statusStyleColor: any;
-    public priorityStyle: any;
-    public priorityContentStyle: any;
-    public statusContentstyleColor: any;
-    public workWeek?: string[];
-    public dropDownData?: Object;
-    public dropDownFields?: Object;
-    public mode?: string;
+  public data: object[];
+  public resources: object[];
+  public resourceFields: object;
+  public taskSettings: object;
+  public timelineSettings: object;
+  public gridLines: string;
+  public labelSettings: object;
+  public eventMarkers: object[];
+  public toolbar: object;
+  public splitterSettings: object;
+  @ViewChild('gantt')
+  public gantt: GanttComponent;
+  public holidays: object[];
+  public projectStartDate: Date;
+  public projectEndDate: Date;
+  public theme: any;
+  public style: any;
+  public CurrentTheme: any;
+  public statusStyleColor: any;
+  public priorityStyle: any;
+  public iconClass: any;
+  public priorityContentStyle: any;
+  public statusContentstyleColor: any;
+  public workWeek?: string[];
+  public dropDownData?: Object;
+  public dropDownFields?: Object;
+  public mode?: string;
 
-    @ViewChild('sidebar')
-    public sidebar: SidebarComponent;
+  @ViewChild('sidebar')
+  public sidebar: SidebarComponent;
 
-    @ViewChild('slider')
-    public defaultObj?: SliderComponent;
+  @ViewChild('slider')
+  public defaultObj?: SliderComponent;
 
-    @ViewChild('switch')
-    public switch?: SwitchComponent;
+  @ViewChild('switch')
+  public switch?: SwitchComponent;
 
-    @ViewChild('WorkingDaysObj')
-    public WorkingDaysObj: MultiSelectComponent;
+  @ViewChild('WorkingDaysObj')
+  public WorkingDaysObj: MultiSelectComponent;
 
-    @ViewChild('sample')
-    public listObj?: DropDownListComponent;
+  @ViewChild('sample')
+  public listObj?: DropDownListComponent;
 
-    public sidebarToggle: boolean = false;
-    public isSideBar: boolean = false;
+  public sidebarToggle: boolean = false;
+  public isSideBar: boolean = false;
 
-    public ngOnInit(): void {
-        this.data = overviewData;
-        this.mode = 'CheckBox';
-        this.dropDownFields = { text: 'day', value: 'id' };
-        this.dropDownData = [{ id: 'Sunday', day: 'Sunday' },
-        { id: 'Monday', day: 'Monday' },
-        { id: 'Tuesday', day: 'Tuesday' },
-        { id: 'Wednesday', day: 'Wednesday' },
-        { id: 'Thursday', day: 'Thursday' },
-        { id: 'Friday', day: 'Friday' },
-        { id: 'Saturday', day: 'Saturday' }];
-        this.workWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
-        this.taskSettings = {
-            id: 'TaskId',
-            name: 'TaskName',
-            startDate: 'StartDate',
-            endDate: 'EndDate',
-            duration: 'TimeLog',
-            progress: 'Progress',
-            dependency: 'Predecessor',
-            parentID: 'ParentId',
-            resourceInfo: 'Assignee'
-        };
-        this.resourceFields = {
-            id: 'resourceId',
-            name: 'resourceName'
-        };
-        this.toolbar = ['ExpandAll', 'CollapseAll', 'ZoomIn', 'ZoomOut', 'ZoomToFit', 'ExcelExport', 'CsvExport', 'PdfExport'],
-        this.timelineSettings = {
-            showTooltip: true,
-            topTier: {
-                unit: 'Month',
-                format: 'MMM yyyy'
-            },
-            bottomTier: {
-                unit: 'Day',
-                count: 4,
-                format: 'dd'
-            }
+  public ngOnInit(): void {
+    this.data = overviewData;
+    this.mode = 'CheckBox';
+    this.dropDownFields = { text: 'day', value: 'id' };
+    this.dropDownData = [{ id: 'Sunday', day: 'Sunday' },
+    { id: 'Monday', day: 'Monday' },
+    { id: 'Tuesday', day: 'Tuesday' },
+    { id: 'Wednesday', day: 'Wednesday' },
+    { id: 'Thursday', day: 'Thursday' },
+    { id: 'Friday', day: 'Friday' },
+    { id: 'Saturday', day: 'Saturday' }];
+    this.workWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    this.taskSettings = {
+      id: 'TaskId',
+      name: 'TaskName',
+      startDate: 'StartDate',
+      endDate: 'EndDate',
+      duration: 'TimeLog',
+      progress: 'Progress',
+      constraintType: 'ConstraintType',
+      constraintDate: 'ConstraintDate',
+      dependency: 'Predecessor',
+      parentID: 'ParentId',
+      resourceInfo: 'resource'
+    };
+    this.resourceFields = {
+      id: 'resourceId',
+      name: 'resourceName'
+    };
+    this.toolbar = ['ExpandAll', 'CollapseAll', 'ZoomIn', 'ZoomOut', 'ZoomToFit', 'ExcelExport', 'CsvExport', 'PdfExport'],
+      this.timelineSettings = {
+        showTooltip: true,
+        topTier: {
+          unit: 'Month',
+          format: 'MMM yyyy'
         },
-        this.gridLines = 'Vertical';
-        this.labelSettings = {
-            rightLabel: 'Assignee',
-            taskLabel: '${Progress}%'
-        };
-        this.eventMarkers = [
-            {
-                day: new Date('04/04/2024'),
-                cssClass: 'e-custom-event-marker',
-                label: 'Q-1 Release'
-            },
-            {
-                day: new Date('06/30/2024'),
-                cssClass: 'e-custom-event-marker',
-                label: 'Q-2 Release'
-            },
-            {
-                day: new Date('09/29/2024'),
-                cssClass: 'e-custom-event-marker',
-                label: 'Q-3 Release'
-            }
-        ];
-        this.holidays = [{
-            from: new Date("01/01/2024"),
-            to: new Date("01/01/2024"),
+        bottomTier: {
+          unit: 'Day',
+          count: 4,
+          format: 'dd'
+        }
+      },
+      this.gridLines = 'Both';
+    this.labelSettings = {
+      rightLabel: 'Assignee',
+      taskLabel: '${Progress}%'
+    };
+    this.eventMarkers = [
+      {
+        day: new Date('2025-03-13'),
+        cssClass: 'e-custom-event-marker',
+        label: 'Project Initiative'
+      },
+      {
+        day: new Date('2025-04-18'),
+        cssClass: 'e-custom-event-marker',
+        label: 'Requirement Gathering'
+      },
+      {
+        day: new Date('2025-05-30'),
+        cssClass: 'e-custom-event-marker',
+        label: 'Design Phase'
+      },
+      {
+        day: new Date('2025-11-25'),
+        cssClass: 'e-custom-event-marker',
+        label: 'Deployment'
+      }
+    ];
+    this.holidays = [
+      {
+            from: new Date("01/01/2025"),
+            to: new Date("01/01/2025"),
             label: "New Year holiday",
             cssClass: "e-custom-holiday"
         },
         {
-            from: new Date("12/25/2023"),
-            to: new Date("12/26/2023"),
+            from: new Date("12/25/2024"),
+            to: new Date("12/26/2024"),
             label: "Christmas holidays",
             cssClass: "e-custom-holiday"
-        }],
-            this.resources = editingResources;
-        this.splitterSettings = {
-            // columnIndex: 2,
-            position: '50%'
-        };
-        this.projectStartDate = new Date('12/17/2023');
-        this.projectEndDate = new Date('10/26/2024');
-    }
-    load(): void {
-        let themeCollection: any = ['bootstrap5', 'bootstrap', 'bootstrap4', 'fluent', 'fabric', 'fusionnew', 'material3', 'material', 'highcontrast', 'tailwind','fluent2','tailwind3','bootstrap5.3'];
-        let cls: any = document.body.className.split(' ');
-        this.theme = cls.indexOf('bootstrap5') > 0 ? 'bootstrap5' : cls.indexOf('bootstrap') > 0 ? 'bootstrap' : cls.indexOf('tailwind') > 0 ? 'tailwind' :
-            cls.indexOf('fluent') > 0 ? 'fluent' : cls.indexOf('fabric') > 0 ? 'fabric' :
-                cls.indexOf('material3') > 0 ? 'material3' : cls.indexOf('bootstrap4') > 0 ? 'bootstrap4' : cls.indexOf('material') > 0 ? 'material' :
-                    cls.indexOf('fusionnew') > 0 ? 'fusionnew' : cls.indexOf('highcontrast') > 0 ? 'highcontrast' : cls.indexOf('bootstrap5.3') > 0 ? 'bootstrap5.3' :
-                    cls.indexOf('fluent2') > 0 ? 'fluent2' : cls.indexOf('tailwind3') > 0 ? 'tailwind3' : '';
-        let check: any = themeCollection.indexOf(this.theme);
-        if (check >= 0) {
-            this.CurrentTheme = true;
         }
-        else {
-            this.CurrentTheme = false;
-        }
+  ],
+      this.resources = editingResources;
+    this.splitterSettings = {
+      columnIndex: 4,
     };
+    this.projectStartDate = new Date('01/25/2025');
+    this.projectEndDate = new Date('01/30/2026');
+  }
+  load(): void {
+    let themeCollection: any = ['bootstrap5', 'bootstrap', 'bootstrap4', 'fluent', 'fabric', 'fusionnew', 'material3', 'material', 'highcontrast', 'tailwind', 'fluent2', 'tailwind3', 'bootstrap5.3'];
+    let theme = document.body.className.split(' ').find(function(cls) { return themeCollection.includes(cls); }) || '';
+    this.CurrentTheme = theme ? true : false;
+  };
 
-    pdfQueryCellInfo(args: any): void {
-        if (args.column.headerText === 'Assignee' && args.data.taskData.resourcesImage) {
-            {
-                args.image = { height:25,width:25, base64: args.data.taskData.resourcesImage };
-            }
-        }
-    };
-    Status(status: any) {
-        switch (status) {
-            case "In Progress":
-                this.statusStyleColor = (this.CurrentTheme) ? "#DFECFF" : "#2D3E57";
-                this.style = "display: flex; padding: 0px 12px; gap: 10px; width: 96px; height: 24px; border-radius: 24px; background:" + this.statusStyleColor;
-                break;
-            case "Open":
-                this.style = "background-color: red; color: white; border-radius: 15px; padding:6px";
-                break;
-            case "On Hold":
-                this.statusStyleColor = (this.CurrentTheme) ? "#E4E4E7" : "#3C3B43";
-                this.style = "display: flex; border-radius: 24px; padding: 0px 12px; gap: 10px; width: 78px; height: 24px; background:" + this.statusStyleColor;
-                break;
-            case "Completed":
-                this.statusStyleColor = (this.CurrentTheme) ? "#DFFFE2" : "#16501C";
-                this.style = "display: flex; padding: 0px 12px; gap: 10px; width: 98px; height: 24px; border-radius: 24px;background:" + this.statusStyleColor;
-                break;
-            case "High":
-                this.statusStyleColor = (this.CurrentTheme) ? "#FFEBE9" : "#48211D";
-                this.style = "display: flex; padding: 0px 12px; gap: 10px; width: 55px; height: 24px; border-radius: 24px; background:" + this.statusStyleColor;
-                break;
-        }
-        return this.style;
-    };
+  Status(status: any) {
+    switch (status) {
+      case 'In Progress':
+        this.statusStyleColor = this.CurrentTheme ? '#006AA6' : '#34B6FF';
+        this.style = `display: flex; padding: 2px 10px; gap: 10px; width: 96px; height: 24px; border: solid 1px ${this.statusStyleColor}`;
+        break;
+      case 'Open':
+        this.style = 'display: flex; justify-content: center; gap: 10px; width: 96px; height: 24px; border: solid 1px red';
+        break;
+      case 'On Hold':
+        this.statusStyleColor = this.CurrentTheme ? '#766B7C' : '#CDCBD7';
+        this.style = `display: flex; justify-content: center; gap: 10px; width: 96px; height: 24px; border: solid 1px ${this.statusStyleColor}`;
+        break;
+      case 'Completed':
+        this.statusStyleColor = this.CurrentTheme ? '#00A653' : '#92FFC8';
+        this.style = `display: flex; padding: 2px 10px; gap: 10px; width: 96px; height: 24px; border: solid 1px ${this.statusStyleColor}`;
+        break;
+    }
+    return this.style;
+  };
 
-    StatusContent(status: any) {
-        switch (status) {
-            case "In Progress":
-                this.statusContentstyleColor = (this.CurrentTheme) ? "#006AA6" : "#34B6FF";
-                this.style = "width: 72px; height: 22px; font-style: normal; font-weight: 500; font-size: 14px; line-height: 20px; text-align: center; color: " + this.statusContentstyleColor;
-                break;
-            case "Open":
-                this.style = "background-color: red; color: white; border-radius: 15px; padding:6px";
-                break;
-            case "On Hold":
-                this.statusContentstyleColor = (this.CurrentTheme) ? "#766B7C" : "#CDCBD7";
-                this.style = "width: 54px; height: 22px; font-style: normal; font-weight: 500; font-size: 14px; line-height: 20px; text-align: center; color: " + this.statusContentstyleColor;
-                break;
-            case "Completed":
-                this.statusContentstyleColor = (this.CurrentTheme) ? "#00A653" : "#92FFC8";
-                this.style = "width: 74px; height: 22px; font-style: normal; font-weight: 500; font-size: 14px; line-height: 20px; text-align: center; color: " + this.statusContentstyleColor;
-                break;
-            case "High":
-                this.statusContentstyleColor = (this.CurrentTheme) ? "#FF3740" : "#FFB5B8";
-                this.style = "width: 31px; height: 22px; font-style: normal; font-weight: 500; font-size: 14px; line-height: 20px; text-align: center; color: " + this.statusContentstyleColor;
-                break;
-        }
-        return this.style;
-    };
+  StatusContent(status: any) {
+   switch (status) {
+      case 'In Progress':
+        this.statusContentstyleColor = this.CurrentTheme ? 'rgb(0, 106, 166)' : 'rgb(52, 182, 255)';
+        this.style = `width: 72px; height: 22px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 20px; text-align: center; color: ${this.statusContentstyleColor}`;
+        break;
+      case 'Open':
+        this.style = 'width: 54px; height: 22px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 22px; text-align: center; color: rgb(255,0,0)';
+        break;
+      case 'On Hold':
+        this.statusContentstyleColor = this.CurrentTheme ? 'rgb(118, 107, 124)' : 'rgb(205, 203, 215)';
+        this.style = `width: 54px; height: 22px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 22px; text-align: center; color: ${this.statusContentstyleColor}`;
+        break;
+      case 'Completed':
+        this.statusContentstyleColor = this.CurrentTheme ? 'rgb(0, 166, 83)' : 'rgba(146, 255, 200)';
+        this.style = `width: 74px; height: 22px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 20px; text-align: center; color: ${this.statusContentstyleColor}`;
+        break;
+      case 'High':
+        this.statusContentstyleColor = this.CurrentTheme ? 'rgb(243, 86, 32)' : 'rgb(255, 181, 184)';
+        this.style = `width: 31px; height: 22px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 20px; text-align: center; color: ${this.statusContentstyleColor}`;
+        break;
+    }
+    return this.style;
+  };
 
-    Priority(priority: any) {
-        switch (priority) {
-            case "Low":
-                this.priorityStyle = (this.CurrentTheme) ? "#FFF6D1" : "#473F1E";
-                this.style = "display: flex; padding: 0px 12px; gap: 10px; width: 52px; height: 24px; border-radius: 24px; background: " + this.priorityStyle;
-                break;
-            case "Normal":
-                this.priorityStyle = (this.CurrentTheme) ? "#F5DFFF" : "#4D2F5A";
-                this.style = "display: flex; padding: 0px 12px; gap: 10px; width: 73px; height: 24px; border-radius: 24px; background: " + this.priorityStyle;
-                break;
-            case "Critical":
-                this.priorityStyle = (this.CurrentTheme) ? "#FFEBE9" : "#48211D";
-                this.style = "display: flex; padding: 0px 12px; gap: 10px; width: 72px; height: 24px; border-radius: 24px; background: " + this.priorityStyle;
-                break;
-            case "High":
-                this.priorityStyle = (this.CurrentTheme) ? "#FFEBE9" : "#48211D";
-                this.style = "display: flex; padding: 0px 12px; gap: 10px; width: 55px; height: 24px; border-radius: 24px; background: " + this.priorityStyle;
-                break;
-        }
-        return this.style;
-    };
+  PriorityIconStyle(priority: any) {
+   switch (priority) {
+      case 'Low':
+        this.priorityStyle = this.CurrentTheme ? '#00A653' : '#FDFF88';
+        this.style = `margin-top: 3px; color: ${this.priorityStyle} !important`;
+        break;
+      case 'Normal':
+        this.priorityStyle = this.CurrentTheme ? '#7100A6' : '#E3A9FF';
+        this.style = `margin-top: 3px; color: ${this.priorityStyle} !important`;
+        break;
+      case 'Critical':
+        this.priorityStyle = this.CurrentTheme ? '#FF3740' : '#FFB5B8';
+        this.style = `margin-top: 3px; color: ${this.priorityStyle} !important`;
+        break;
+      case 'High':
+        this.priorityStyle = this.CurrentTheme ? '#f35620' : '#FFB5B8';
+        this.style = `margin-top: 3px; color: ${this.priorityStyle} !important`;
+        break;
+    }
+    return this.style;
+  };
 
-    PriorityContent(priority: any) {
-        switch (priority) {
-            case "Low":
-                this.priorityContentStyle = (this.CurrentTheme) ? "#70722B" : "#FDFF88";
-                this.style = "width: 28px; height: 22px; font-style: normal; font-weight: 500; font-size: 14px; line-height: 20px; text-align: center; color: " + this.priorityContentStyle;
-                break;
-            case "Normal":
-                this.priorityContentStyle = (this.CurrentTheme) ? "#7100A6" : "#E3A9FF";
-                this.style = "width: 49px; height: 22px; font-style: normal; font-weight: 500; font-size: 14px; line-height: 20px; text-align: center; color: " + this.priorityContentStyle;
-                break;
-            case "Critical":
-                this.priorityContentStyle = (this.CurrentTheme) ? "#FF3740" : "#FFB5B8";
-                this.style = "width: 48px; height: 22px; font-style: normal; font-weight: 500; font-size: 14px; line-height: 20px; text-align: center; color: " + this.priorityContentStyle;
-                break;
-            case "High":
-                this.priorityContentStyle = (this.CurrentTheme) ? "#FF3740" : "#FFB5B8";
-                this.style = "width: 31px; height: 22px; font-style: normal; font-weight: 500; font-size: 14px; line-height: 20px; text-align: center; color: " + this.priorityContentStyle;
-                break;
-        }
-        return this.style;
-    };
-    toolbarClick(args?: ClickEventArgs): void {
-        debugger;
-        if (args.item.id === 'overviewSample_excelexport') {
-            this.gantt.excelExport();
-        }
-        else if (args.item.id === "overviewSample_csvexport") {
-            this.gantt.csvExport();
-        }
-        else if (args.item.id === "overviewSample_pdfexport") {
-            this.gantt.pdfExport();
-        }
+  PriorityContent(priority: any) {
+    switch (priority) {
+      case 'Low':
+        this.priorityContentStyle = this.CurrentTheme ? 'rgb(0, 166, 83)' : 'rgb(253, 255, 136)';
+        this.style = `width: 28px; height: 22px; font-style: normal; font-size: 14px; margin-left: 3px; line-height: 20px; text-align: center; color: ${this.priorityContentStyle}`;
+        break;
+      case 'Normal':
+        this.priorityContentStyle = this.CurrentTheme ? 'rgb(113, 0, 166)' : 'rgb(227, 169, 255)';
+        this.style = `width: 28px; height: 22px; font-style: normal; margin-left: 3px; font-size: 14px; line-height: 20px; text-align: center; color: ${this.priorityContentStyle}`;
+        break;
+      case 'Critical':
+        this.priorityContentStyle = this.CurrentTheme ? 'rgb(255, 55, 64)' : 'rgb(255, 181, 184)';
+        this.style = `width: 48px; height: 22px; font-style: normal; font-size: 14px; margin-left: 3px; line-height: 20px; text-align: center; color: ${this.priorityContentStyle}`;
+        break;
+      case 'High':
+        this.priorityContentStyle = this.CurrentTheme ? 'rgb(235, 99, 67)' : 'rgb(255, 181, 184)';
+        this.style = `width: 31px; height: 22px; font-style: normal; font-size: 14px; margin-left: 3px; line-height: 20px; text-align: center; color: ${this.priorityContentStyle}`;
+        break;
+    }
+    return this.style;
+  };
+
+  PriorityIcon(priority: any) {
+    switch (priority) {
+      case 'Low':
+        this.iconClass = 'e-icons e-arrow-down e-icon-style';
+        break;
+      case 'Normal':
+        this.iconClass = 'e-icons e-arrow-right e-icon-style';
+        break;
+      case 'Critical':
+        this.iconClass = 'e-icons e-arrow-up e-icon-style';
+        break;
+      case 'High':
+        this.iconClass = 'e-icons e-arrow-up e-icon-style';
+        break;
+    }
+    return this.iconClass;
+  }
+
+  toolbarClick(args?: ClickEventArgs): void {
+    if (args.item.id === 'overviewSample_excelexport') {
+      this.gantt.excelExport();
+    }
+    else if (args.item.id === "overviewSample_csvexport") {
+      this.gantt.csvExport();
+    }
+    else if (args.item.id === "overviewSample_pdfexport") {
+      this.gantt.pdfExport();
+    }
+  }
+
+  public triggerSidebar(): void {
+    this.sidebarToggle = !this.sidebarToggle;
+    this.isSideBar = true;
+  }
+
+  public closeSidebar(): void {
+    this.sidebarToggle = false;
+    this.isSideBar = false;
+    this.sidebar.hide();
+  }
+
+  valueofSlider: number = 30;
+  min: number = 40;
+  max: number = 60;
+  step: number = 5;
+  ticks: Object = {
+    placement: 'Before',
+    largeStep: 10,
+    showSmallTicks: true
+  };
+  tooltip: Object = {
+    isVisible: true,
+    placement: 'Before',
+    showOn: "Hover"
+  };
+  sliderWidth = 190;
+  onChanged(args: any) {
+    this.gantt.rowHeight = args.value;
+  }
+
+  gridLinesChange(args: any) {
+    if (args.checked) {
+      this.gantt.gridLines = 'Both';
+    } else {
+      this.gantt.gridLines = 'Vertical';
+    }
+  }
+
+  tempEvents: any;
+  showEventMarkers(args: any) {
+    if (args.checked) {
+      this.gantt.eventMarkers = this.tempEvents;
+    } else {
+      this.tempEvents = this.gantt.eventMarkers;
+      this.gantt.eventMarkers = [];
+    }
+  }
+
+  dependencyChange(args: any) {
+    var ganttDependencyViewContainer = document.querySelector('.e-gantt-dependency-view-container');
+    if (args.checked) {
+      if (ganttDependencyViewContainer) {
+        (ganttDependencyViewContainer as HTMLElement).style.visibility = 'visible';
+      }
+    } else {
+      (ganttDependencyViewContainer as HTMLElement).style.visibility = 'hidden';
+    }
+  }
+
+  tempLabels: any;
+  taskLabelChange(args: any) {
+    if (args.checked) {
+      this.gantt.labelSettings.rightLabel = this.tempLabels;
+    } else {
+      this.tempLabels = this.gantt.labelSettings.rightLabel;
+      this.gantt.labelSettings.rightLabel = " ";
+    }
+  }
+
+  select(args: SelectEventArgs): void {
+    let workingDays: string[] = [...(this.WorkingDaysObj.value as string[])]; // Create a copy of the array
+    workingDays.push(args.item.innerText); // Add the selected item
+    this.gantt.workWeek = workingDays; // Update gantt workWeek
+  }
+
+  remove(args: RemoveEventArgs): void {
+    let workingDays: string[] = [...(this.WorkingDaysObj.value as string[])]; // Create a copy of the array
+    const index = workingDays.indexOf(args.item.innerText); // Find index of item to remove
+    if (index !== -1) {
+        workingDays.splice(index, 1); // Remove the item
+        this.gantt.workWeek = workingDays; // Update gantt workWeek
+    }
+  }
+
+
+  public durationUnit: Object[] = [
+    { Id: 'hour', Text: 'Hour' },
+    { Id: 'day', Text: 'Day' },
+    { Id: 'week', Text: 'Week' }
+  ];
+  public durationFields: Object = { text: 'Text', value: 'Id' };
+  public durationValue: string = 'day';
+  public height: string = '220px';
+
+  changeDuration(args: any): void {
+    this.gantt.durationUnit = args.value;
+  }
+
+  onChangeUnit(args: any): void {
+    var width = args.value;
+    this.gantt.timelineSettings.timelineUnitSize = width;
+  }
+
+  public viewTypeData: any = [
+    { id: "ResourceView", Text: "Resource View" },
+    { id: "ProjectView", Text: "Project View" }
+  ];
+  public viewFields: any = { text: 'Text', value: 'id' };
+  typeChange(args: any) {
+    this.gantt.viewType = args.value;
+    if ((document.getElementsByClassName('checkeddependency')[0] as any).hidden !== true) {
+      (document.querySelectorAll('.e-switch')[2] as any).ej2_instances[0].checked = true;
+    }
+  }
+
+  public viewModeData: any = [
+    { ID: "Default", Text: "Default" },
+    { ID: "Grid", Text: "Grid" },
+    { ID: "Chart", Text: "Chart" },
+  ];
+  public modeFields: any = { value: 'ID', text: 'Text' };
+  modeChange(args: any) {
+    if (args.value == 'Grid') {
+      this.gantt.setSplitterPosition('100%', 'position');
+    }
+    else if (args.value == 'Chart') {
+      this.gantt.setSplitterPosition('0%', 'position');
+    }
+    else {
+      this.gantt.setSplitterPosition('50%', 'position');
+    }
+  } 
+  pdfQueryCellInfo(args: any): void {
+    if (args.column.headerText === 'Assignee' && args.data.taskData.resourcesImage) {
+        args.image = { height: 30, width: 30, base64: args.data.taskData.resourcesImage};
+        args.value = `${args.data.Assignee}\n${args.data.taskData.Department}`; 
     }
 
-    public triggerSidebar(): void {
-        this.sidebarToggle = !this.sidebarToggle;
-        this.isSideBar = true;
+    // Set font color for Status or Priority columns
+    if (args.column.field === 'Status' || args.column.field === 'Priority') {
+        const style = args.column.field === 'Status' ? this.StatusContent(args.value) : this.PriorityContent(args.value);
+        const rgbMatch = style.match(/rgb\(\d+,\s*\d+,\s*\d+\)/);
+        if (rgbMatch) {
+            const rgbValues = rgbMatch[0].slice(4, -1).split(', ').map(Number);
+            args.style.fontColor = new PdfColor(rgbValues[0], rgbValues[1], rgbValues[2]);
+        }   
     }
-
-    public closeSidebar(): void {
-        this.sidebarToggle = false;
-        this.isSideBar = false;
-        this.sidebar.hide();
-    }
-
-    valueofSlider: number = 30;
-    min: number = 40;
-    max: number = 60;
-    step: number = 5;
-    ticks: Object = {
-        placement: 'Before',
-        largeStep: 10,
-        showSmallTicks: true
-    };
-    tooltip: Object = {
-        isVisible: true,
-        placement: 'Before',
-        showOn:"Hover"
-    };
-    sliderWidth = 190;
-    onChanged(args: any) {
-        const gantt: any = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
-        gantt.rowHeight = args.value;
-    }
-
-    gridLinesChange(args: any) {
-        const gantt: any = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
-        if (args.checked) {
-            gantt.gridLines = 'Both';
-        } else {
-            gantt.gridLines = 'Vertical';
-        }
-    }
-
-    tempEvents: any;
-    showEventMarkers(args: any) {
-        const gantt: any = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
-        if (args.checked) {
-            gantt.eventMarkers = this.tempEvents;
-        } else {
-            this.tempEvents = gantt.eventMarkers;
-            gantt.eventMarkers = null;
-        }
-    }
-
-    dependencyChange(args: any) {
-        var ganttDependencyViewContainer = document.querySelector('.e-gantt-dependency-view-container');
-        if (args.checked) {
-            if (ganttDependencyViewContainer) {
-                (ganttDependencyViewContainer as HTMLElement).style.visibility = 'visible';
-            }
-        } else {
-            (ganttDependencyViewContainer as HTMLElement).style.visibility = 'hidden';
-        }
-    }
-
-    tempLabels: any;
-    taskLabelChange(args: any) {
-        const gantt: any = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
-        if (args.checked) {
-            gantt.labelSettings.rightLabel = this.tempLabels;
-        } else {
-            this.tempLabels = gantt.labelSettings.rightLabel;
-            gantt.labelSettings.rightLabel = null;
-        }
-    }
-
-    select(args: SelectEventArgs): void {
-        let workingDays = Object[7];
-        workingDays = extend([], this.WorkingDaysObj.value, [], true);
-        workingDays.push(args.item.innerText);
-        this.gantt.workWeek = workingDays;
-    }
-    remove(args: RemoveEventArgs): void {
-        var index = this.gantt.workWeek.indexOf(args.item.innerText);
-        let workingDays = Object[7];
-        if (index !== -1) {
-            workingDays = this.WorkingDaysObj.value;
-            this.gantt.workWeek = workingDays;
-        }
-    }
-
-
-    public durationUnit: Object[] = [
-        { Id: 'hour', Text: 'Hour' },
-        { Id: 'day', Text: 'Day' },
-        { Id: 'week', Text: 'Week' }
-    ];
-    public durationFields: Object = { text: 'Text', value: 'Id' };
-    public durationValue: string = 'day';
-    public height: string = '220px';
-
-    changeDuration(args: any): void {
-        const gantt: any = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
-        gantt.durationUnit = args.value;
-    }
-
-    onChangeUnit(args: any): void {
-        const gantt: any = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
-        var width = args.value;
-        gantt.timelineSettings.timelineUnitSize = width;
-    }
-
-    public viewTypeData: any = [
-        { id: "ResourceView", Text: "Resource View" },
-        { id: "ProjectView", Text: "Project View" }
-    ];
-    public viewFields: any = { text: 'Text', value: 'id' };
-    typeChange(args: any) {
-        const gantt: any = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
-        gantt.viewType = args.value;
-        if ((document.getElementsByClassName('checkeddependency')[0] as any).hidden !== true) {
-            (document.querySelectorAll('.e-switch')[2] as any).ej2_instances[0].checked = true;
-        }
-    }
-
-    public viewModeData: any = [
-        { ID: "Default", Text: "Default" },
-        { ID: "Grid", Text: "Grid" },
-        { ID: "Chart", Text: "Chart" },
-    ];
-    public modeFields: any = { value: 'ID', text: 'Text' };
-    modeChange(args: any) {
-        const gantt: any = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
-        if (args.value == 'Grid') {
-            gantt.setSplitterPosition('100%', 'position');
-        }
-        else if (args.value == 'Chart') {
-            gantt.setSplitterPosition('0%', 'position');
-        }
-        else {
-            gantt.setSplitterPosition('50%', 'position');
-        }
-    }
+  };
+  pdfQueryTaskbarInfo(args:any):void{
+    if(this.gantt.labelSettings.rightLabel && args.data.taskData.resourcesImage){
+      args.labelSettings.rightLabel.image= [{base64: args.data.taskData.resourcesImage, height: 25, width: 25}];
+      args.labelSettings.rightLabel.value=args.data.ganttProperties.resourceNames;
+  };
+}
 }

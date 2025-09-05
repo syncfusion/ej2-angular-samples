@@ -1,0 +1,39 @@
+<div id="action-description">
+    <p>
+        This sample showcases an interactive sliding image puzzle game built using the Syncfusion<sup>®</sup> EJ2 Angular Diagram component, transforming images into a 4x4 grid of draggable tiles, with features like move and time tracking.
+    </p>
+</div>
+
+<div class="control-section diagram-puzzle-container">
+    <div>
+        <ejs-diagram #diagram id="diagram" class="puzzle-diagram" [width]="diagramWidth" [height]="diagramHeight"
+        [nodes]="nodes" [snapSettings]="snapSettings" [selectedItems]="selectedItems" (click)="onDiagramClick($event)"
+        (created)="onDiagramCreated()" (load)="onDiagramLoad()" [constraints]="constraints"></ejs-diagram>
+
+        <!-- Win Dialog (initially hidden) -->
+        <div *ngIf="showWinDialog" id="winDialog"  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 1000;">
+            <div style="background: #2c2c2c; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                        color: white; font-family: Arial, sans-serif; position: relative; display: inline-block;">
+                <!-- Close Icon -->
+                <div (click)="closeWinDialog()" style="position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #ccc;"
+                title="Close" tabindex="0" aria-label="Close dialog">✕</div>
+                <!-- Celebration Icon -->
+                <div style="font-size: 80px; margin-bottom: 20px;">🎉</div>
+                <!-- Congratulations Text -->
+                <h1 style="color: white; margin-bottom: 20px; font-size: 36px; font-weight: bold;">
+                    Congratulations!
+                </h1>
+                <!-- Steps Text -->
+                <p style="color: #ccc; font-size: 18px; margin-bottom: 30px;">
+                    you did it in <span>{{ moveCount }}</span> steps in {{ timeDisplay }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        This interactive 4x4 sliding image puzzle challenges users to reconstruct an image by moving tiles adjacent to an empty space. The game dynamically tracks moves and time, offering multiple image themes, pause/resume functionality, and a "Clue" option. A congratulatory message with statistics appears upon puzzle completion. 
+    </p>
+</div>

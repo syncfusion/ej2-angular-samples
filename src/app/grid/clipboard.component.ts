@@ -57,6 +57,9 @@ export class ClipboardComponent implements OnInit {
                 let withHeader: boolean = args.item.id === 'copyHeader' ? true : false;
                 this.grid.copy(withHeader);
             } else {
+                this.alertDialog.content = args.item.id === 'copyHeader' ? 'Atleast one row should be selected to copy with header'
+                    : 'Atleast one row should be selected to copy';
+                this.alertDialog.header = args.item.id === 'copyHeader' ? 'Copy with Header' : 'Copy';
                 this.alertDialog.show();
             }
         }

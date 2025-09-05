@@ -1,5 +1,5 @@
 import { Component, ViewChild, Inject } from '@angular/core';
-import { RichTextEditorComponent, RichTextEditorModule, ToolbarService, LinkService, ImageService, QuickToolbarService, HtmlEditorService, ToolbarClickEventArgs } from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorComponent, RichTextEditorModule, ToolbarService, LinkService, ImageService, QuickToolbarService, HtmlEditorService, TableService, ToolbarClickEventArgs } from '@syncfusion/ej2-angular-richtexteditor';
 import { enableRipple } from '@syncfusion/ej2-base';
 // import { OpenAiModelRTE } from '../../azure-openai';
 import { getOpenAiModelRTE } from '../common/ai-service';
@@ -16,7 +16,7 @@ enableRipple(true);
   selector: 'app-rich-text-editor',
   standalone: true,
   imports: [RichTextEditorModule, DropDownButtonModule, DropDownListModule, ButtonModule, ChipListModule, SkeletonModule, ToastModule, DialogModule, AIToastComponent],
-  providers: [ToolbarService, LinkService, ImageService, QuickToolbarService, HtmlEditorService],
+  providers: [ToolbarService, LinkService, ImageService, QuickToolbarService, HtmlEditorService, TableService],
   templateUrl: './rich-text-editor.component.html',
   styleUrl: './rich-text-editor.component.css'
 })
@@ -45,11 +45,13 @@ export class SmartRichTextEditor {
     items: [
       {
         tooltipText: 'AI Assist',
+        command: 'Custom',
         template:
           '<button class="e-tbar-btn e-btn" tabindex="-1" id="ai_assistant_button_tbar" style="width:100%"><div class="e-rte-dropdown-btn-text">AI Assist</div></button>'
       },
       {
         tooltipText: 'Rephrase',
+        command: 'Custom',
         template:
           '<button class="e-tbar-btn e-btn" tabindex="-1" id="ai_rephrase_button_tbar" style="width:100%"><div class="e-tbar-btn-text">Rephrase</div></button>'
       },

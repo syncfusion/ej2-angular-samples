@@ -29,7 +29,7 @@ export class GanttSortingAPIComponent implements OnInit {
     public dropDownColumnListFields: object;
     public dropDownDirectionListData: object[];
     public dropDownDirectionListFields: object;
-    public columnValue: string = 'TaskID';
+    public columnValue: string = 'TaskName';
     public directionValue: string = 'Ascending';
     public ngOnInit(): void {
         this.data = editingData;
@@ -41,10 +41,10 @@ export class GanttSortingAPIComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            child: 'subtasks'
+            parentID:'ParentId'
         };
         this.columns = [
-            { field: 'TaskID', headerText: 'ID', width: 80 },
+            { field: 'TaskID',visible:false, headerText: 'ID', width: 80 },
             { field: 'TaskName', headerText: 'TaskName', width: 250 },
             { field: 'StartDate', headerText: 'StartDate' },
             { field: 'EndDate', headerText: 'EndDate' },
@@ -57,10 +57,9 @@ export class GanttSortingAPIComponent implements OnInit {
         this.splitterSettings = {
             columnIndex: 2
         };
-        this.projectStartDate = new Date('03/25/2024');
-        this.projectEndDate = new Date('07/28/2024');
+        this.projectStartDate = new Date('03/26/2025');
+        this.projectEndDate = new Date('09/01/2025');
         this.dropDownColumnListData = [
-            { id: 'TaskID', type: 'TaskID' },
             { id: 'TaskName', type: 'TaskName' },
             { id: 'StartDate', type: 'StartDate' },
             { id: 'EndDate', type: 'EndDate' },

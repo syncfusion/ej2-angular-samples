@@ -26,9 +26,6 @@ export class GanttWbsViewComponent implements OnInit {
   public filterSettings: object;
   public timelineSettings: object;
   public labelSettings: object;
-  public height: string;
-  public taskbarHeight: number;
-  public rowHeight: number;
   public allowUnscheduledTasks: boolean;
   public enableWBS: boolean;
   public enableAutoWbsUpdate: boolean;
@@ -49,7 +46,7 @@ export class GanttWbsViewComponent implements OnInit {
     };
     this.columns = [
       { field: 'TaskID', headerText: 'Task ID', visible: false },
-      { field: 'WBSCode', headerText: 'WBS Code',width: '150px'  },
+      { field: 'WBSCode', headerText: 'WBS Code',width: '200px'  },
       { field: 'TaskName', headerText: 'Task Name', allowReordering: false, width: '260px'  },
       { field: 'StartDate', headerText: 'Start Date', width: '140px'  },
       { field: 'WBSPredecessor', headerText: 'WBS Predecessor',width: '190px' },
@@ -58,7 +55,7 @@ export class GanttWbsViewComponent implements OnInit {
     ];
     this.eventMarkers = [
             {
-                day: new Date('04/2/2024'),
+                day: new Date('04/2/2025'),
                 label: 'Project Initiation'
             }
     ];
@@ -82,14 +79,12 @@ export class GanttWbsViewComponent implements OnInit {
     this.labelSettings = {
       taskLabel: '${Progress}%'
     };
-    this.taskbarHeight = 20;
-    this.rowHeight = 40;
-    this.height = '550px';
+    
     this.allowUnscheduledTasks = true;
     this.enableWBS = true;
     this.enableAutoWbsUpdate = true;
-    this.projectStartDate = new Date('03/31/2024');
-    this.projectEndDate = new Date('05/30/2024');
+    this.projectStartDate = new Date('03/30/2025');
+    this.projectEndDate = new Date('05/30/2025');
   }
     public autoUpdate(args): void {
         if (args.checked) {

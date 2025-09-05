@@ -1,0 +1,32 @@
+<div class="control-section tournament-result-container">
+    <div class="sample-section">
+        <ejs-diagram #diagram
+            *ngIf="!isLoading"
+            id="footballResultDiagram" 
+            width="100%" 
+            height="100%" 
+            [nodes]="nodes" 
+            [connectors]="connectors"
+            [tool]="tools"
+            [snapSettings]="snapSettings"
+            [getConnectorDefaults]="connectorDefaults.bind(this)"
+            (load)="diagramLoad()"
+            [constraints]="constraints">
+        </ejs-diagram>
+        <div class="loading" *ngIf="isLoading">
+            <span>Loading Tournament Results...</span>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample interactively visualizes a UEFA Champions League tournament bracket using the Syncfusion<sup>®</sup> EJ2 Angular Diagram component, showcasing team progression through match results, winning teams, flip-card animations, and informative tooltip.
+    </p>
+</div>
+<div id="description">
+    <p>
+        This visually engaging UEFA Champions League bracket uses custom HTML nodes to display match details, including teams and scores. Flip-card animations reveal match results, clearly highlighting the winning teams. Animated connectors dynamically illustrate team progression, while interactive tooltip provide comprehensive match statistics. The ultimate champion is distinctly marked with a custom node and dynamic animations. 
+    </p>
+    <br>
+</div>

@@ -1,0 +1,31 @@
+<div class="control-section diagram-pipeline">
+    <div class="content-wrapper" style="width: 100%">
+        <ejs-diagram 
+            #diagram 
+            id="diagram"
+            width="100%" 
+            height="700px"
+            [nodes]="nodes" 
+            [connectors]="connectors"
+            [tool]="tools"
+            [snapSettings]="snapSettings"
+            [getNodeDefaults]="getNodeDefaults.bind(this)"
+            [getConnectorDefaults]="getConnectorDefaults.bind(this)"
+            (created)="onCreated()"
+            (load)="onLoad()"
+            [constraints]="constraints">
+        </ejs-diagram>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample visualizes a real-time chemical reactor system as an interactive Pipeline and Instrumentation Diagram (P&ID) using the Syncfusion<sup>®</sup> EJ2 Angular Diagram component, showcasing dynamic fluid flows, tank levels, pressure, and temperature. 
+    </p>
+</div>
+<div id="description">
+    <p>
+        Users actively control valve operations and pump states to observe real-time fluid flow, tank level changes, dynamic pressure, and temperature visualizations. Interactive toggles manage fluid flow between tanks, simulating operational conditions within an industrial process environment.
+    </p>
+    <br>
+</div>

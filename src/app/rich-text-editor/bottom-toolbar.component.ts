@@ -40,17 +40,37 @@ export class BottomToolbarComponent {
             'Image', 'CreateTable', 'EmojiPicker'
         ]
     };
+
+    private isValidContent(html: string): boolean {
+            if (!html || html.trim().length === 0)
+                return false;
+            const tempDiv: HTMLDivElement = document.createElement('div');
+            tempDiv.innerHTML = html;
+            // Check for meaningful text
+            const textContent: string = tempDiv.innerHTML.replace(/<br\s*\/?>/gi, '').replace(/&nbsp;/gi, '').replace(/<[^>]*>/g, '').trim();
+            if (textContent.length > 0)
+                return true;
+            // Check for media elements
+            const mediaTags: string[] = ['img', 'table', 'audio', 'video', 'iframe'];
+            for (var tag of mediaTags) {
+                if (tempDiv.getElementsByTagName(tag).length > 0)
+                    return true;
+            }
+            return false;
+    }
     sendMessage(rte: RichTextEditorComponent) {
         const message = rte.value;
         if (message && message.trim().length > 0) { 
-            rte.value = "";
-            rte.dataBind();
-            this.chatMessages = [
-                ...this.chatMessages,
-                { author: this.currentUserModel, text: message }
-            ];
-            rte.clearUndoRedo();
-            rte.focusIn();
+            if (this.isValidContent(message)) {
+                rte.value = "";
+                rte.dataBind();
+                this.chatMessages = [
+                    ...this.chatMessages,
+                    { author: this.currentUserModel, text: message }
+                ];
+                rte.clearUndoRedo();
+                rte.focusIn();
+            }
         }
     }
 

@@ -12,17 +12,17 @@
       <label id="drag" for="unchecked" style="margin:0px 5px 0px 5px;font-size: 15px; "> Auto Update WBS
       </label>
       <div>
-        <ejs-switch style="margin:0px" id="unchecked" (change)="autoUpdate($event)" [checked]="true"></ejs-switch>
+        <ejs-switch style="margin:0px" id="EnableWBS"  (change)="autoUpdate($event)" [checked]="true"></ejs-switch>
       </div>
     </div>
   </div>
   <div>
-    <ejs-gantt id="ganttWbs" #gantt height="450px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
+    <ejs-gantt id="ganttWbs" #gantt height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
       [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [editSettings]="editSettings"
       [allowFiltering]="true" [allowSorting]="true" [toolbar]="toolbar" [treeColumnIndex]="2"
       [filterSettings]="filterSettings" [allowSelection]="true" [projectStartDate]="projectStartDate"
       [projectEndDate]="projectEndDate" [enableWBS]="true" [enableAutoWbsUpdate]="true"
-      [splitterSettings]="splitterSettings" [rowHeight]="rowHeight" [taskbarHeight]="taskbarHeight"
+      [splitterSettings]="splitterSettings" 
       [allowUnscheduledTasks]="allowUnscheduledTasks" [eventMarkers]="eventMarkers" (dataBound)="dataBound()">
     </ejs-gantt>
   </div>
@@ -52,5 +52,24 @@
     This example showcases how enabling WBS along with automatic updates enhances task tracking and provides a clear,
     organized project view.
   </p>
+  <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/undo-redo">documentation section</a>.</p>
 
 </div>
+<style>
+  .fluent2 #EnableWBS, .fluent2-dark #EnableWBS, .fluent2-highcontrast #EnableWBS{ 
+    padding: 5px;
+    font-size: 15px !important;
+    margin-right: -5px !important;
+    margin-top: 0px !important;
+  }
+  .bootstrap5\.3 #checkboxes{
+    margin-top: 0px !important;
+  }
+  .e-bigger.fluent2 #EnableWBS, .e-bigger.fluent2-dark #EnableWBS, .e-bigger.fluent2-highcontrast #EnableWBS {
+    margin: 5px -5px 0px 5px !important;
+  }
+  .e-bigger:not(.bootstrap5\.3) #EnableWBS {
+        margin: 5px 5px 0px 5px !important;
+  }
+</style>

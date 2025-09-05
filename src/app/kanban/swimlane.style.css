@@ -4,3 +4,7 @@
 .kanban-overflow{
   overflow: hidden;
 }
+.kanban-swimlane-checkbox {
+  padding-left: 10px;
+  padding-top: 10px;
+}

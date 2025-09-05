@@ -2,9 +2,9 @@
         <div class="content-wrapper">
         <ejs-treegrid #treegrid [dataSource]='data' height='400' childMapping='children' [treeColumnIndex]='0'  (actionFailure)="actionFailure($event)">
                 <e-columns>
-                    <e-column field='FreightID' headerText='Freight ID' width='150' textAlign='Right'></e-column>
+                    <e-column field='FreightID' headerText='Freight ID' width='150' textAlign='Left'></e-column>
                     <e-column field='FreightName' headerText='Freight Name' width='200'></e-column>
-                    <e-column field='UnitWeight' headerText='Unit Weight' width='140'  textAlign='Right'></e-column>
+                    <e-column field='UnitWeight' headerText='Unit Weight' width='140'  textAlign='Right' type='number'></e-column>
                     <e-column field='TotalUnits' headerText='Total Units'type='number'  width='140'  textAlign='Right'></e-column>
                     </e-columns>
                     <e-aggregates>
@@ -13,7 +13,7 @@
                                 <e-column type="Min" field="TotalUnits" columnName='TotalUnits' >
                                     <ng-template #footerTemplate  let-data>Min:{{data.Min}} </ng-template>
                                 </e-column>
-                                <e-column type="Max" field="UnitWeight" format="C0" columnName='UnitWeight' >
+                                <e-column type="Max" field="UnitWeight" columnName='UnitWeight' >
                                     <ng-template #footerTemplate let-data>Max:{{data.Max}} </ng-template>
                                 </e-column>
                             </e-columns>

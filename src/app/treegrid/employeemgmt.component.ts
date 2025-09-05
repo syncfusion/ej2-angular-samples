@@ -31,7 +31,7 @@ import { DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
 @Component({
   selector: 'ej2-treegrid-container',
   templateUrl: 'employeemgmt.html',
-  styleUrl: 'employeemgmt.css',
+  styleUrls: ['employeemgmt.style.css'],
   providers: [PageService, FreezeService, SortService, FilterService],
   standalone: true,
   imports: [TreeGridAllModule, CommonModule, DropDownListAllModule],
@@ -81,9 +81,7 @@ export class EmployeemgmtComponent implements OnInit {
     this.treegrid.clearFiltering();
     this.treegrid.clearSorting();
     this.treegrid.columns = this.getColumns(this.selectedRole);
-    setTimeout(() => {
-      this.treegrid.refreshColumns();
-    }, 10);
+    this.treegrid.refresh();
   }
 
   // 👇 Your getColumns function with viewer switch logic
@@ -119,6 +117,7 @@ export class EmployeemgmtComponent implements OnInit {
             headerText: 'Date Joined',
             textAlign: 'Right',
             width: 180,
+            type:'date',
             format: { skeleton: 'yMd', type: 'date' },
           },
           {

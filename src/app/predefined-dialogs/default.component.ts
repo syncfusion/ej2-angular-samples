@@ -21,7 +21,8 @@ export class DefaultDialogComponent  {
       content: '10% of battery remaining',
       okButton: { click: this.alertOkAction.bind(this)  },
       position: { X: 'center', Y: 'center' },
-      closeOnEscape: true
+      closeOnEscape: true ,
+      close :this.alertOkAction.bind(this)
     });
   };
   private alertOkAction(): void {
@@ -37,7 +38,8 @@ export class DefaultDialogComponent  {
       okButton: { click: this.confirmOkAction.bind(this)},
       cancelButton: { click: this.confirmCancelAction.bind(this)},
       position: { X: 'center', Y: 'center' },
-      closeOnEscape: true
+      closeOnEscape: true ,
+      close: this.confirmCancelAction.bind(this) ,
     });
   };
   private confirmOkAction(): void {
@@ -58,7 +60,8 @@ export class DefaultDialogComponent  {
       okButton: { click:this.promptOkAction.bind(this)},
       cancelButton: { click:this.promptCancelAction.bind(this)},
       position: { X: 'center', Y: 'center' },
-      closeOnEscape: true
+      closeOnEscape: true ,
+      close: this.promptCancelAction.bind(this) ,
     });
   };
   private promptOkAction(): void {

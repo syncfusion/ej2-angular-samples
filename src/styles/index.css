@@ -1060,6 +1060,8 @@ margin-right: 6px;
 #search-input-wrapper .e-clear-icon {
   /* display: none; */
   /* margin-right: 12px; */
+   background-color: #111827 !important;
+  color: white;
 }
 
 #search-input-wrapper .e-input-focus:before,
@@ -1673,7 +1675,7 @@ text-transform: capitalize;
   padding-left: 25px;
   font-weight: 400;
   font-size: 16px;
-  color: #1763ff;
+  color: #6366F1;
 }
 
 .sb-control-navigation .e-treeview .e-list-item.e-active>.e-fullrow {
@@ -2183,26 +2185,11 @@ propertye pane
     padding-left: 10px;
     padding-right: 5px;
   }
- .e-nav-right-arrow::before {
-  color: #fff;
-  }
-  
-.e-nav-left-arrow::before {
-  color: #fff;
-  } 
-  
-  .ai-toast.e-toast {
-  width: 370px !important;
-  }
-  
+
   .e-ddl.e-popup,
   #sb-setting-theme_popup {
     z-index: 100001;
   }
-  
-  .e-ddl e-popup, #sb-setting-theme_popup {
-        top: 150px !important;
-   } 
 
   .sb-left-pane {
     position: fixed;
@@ -2400,9 +2387,6 @@ propertye pane
 
   .fluent2-dark .property-panel-section {
     background: #1C1B1F;
-  }
-  .fluent2-highcontrast .property-panel-section {
-    background : #1C1B1F
   }
 
   .property-panel-header {
@@ -4891,6 +4875,9 @@ color:#ffffff;
 .material3-dark .sb-content-tab .e-tab-header.sb-content-tab-header {
     border-radius: 12px 12px 0 0;
 }
+.material3-dark #search-input-wrapper input {
+  background: #212529;
+}
 
 body.material3-dark,
 .material3-dark #sb-header-text,
@@ -5916,7 +5903,7 @@ body.fluent2-highcontrast,
 }
 .fluent2-highcontrast .sb-header,
 .fluent2-highcontrast .sb-search-result .e-list-item {
-    background: #1C1B1F;
+    background:  linear-gradient(0deg, rgba(208, 188, 255, 0.08), rgba(208, 188, 255, 0.08)), #1C1B1F;
 }
 .fluent2-highcontrast .sb-content-tab > .e-tab.e-nested > .e-tab-header > .e-items.e-toolbar-items > .e-indicator
 {
@@ -5924,7 +5911,7 @@ body.fluent2-highcontrast,
 }
 .fluent2-highcontrast #left-sidebar {
     color: #c2c0c0;
-    background: #1C1B1F;
+    background:  #2B2831;
 }
 
 .fluent2-highcontrast #left-sidebar {
@@ -6224,28 +6211,4 @@ cursor: pointer;
   padding: 0;
   margin-top: 2px;
   color: #666;
-}
-
-@media screen and (max-width: 600px) {
-  .ai-toast.e-toast,
-  .ai-toast.e-toast-container .e-toast,
-  .ai-toast-content {
-    width: 90vw !important;
-    padding: 8px !important;
-  }
- 
-  .ai-toast-content {
-    font-size: 14px;
-    line-height: 1.4;
-  }
- 
-  .ai-toast-title {
-    font-size: 14px;
-  }
- 
-  .ai-toast-close {
-    padding-right:10px;
-    font-size: 12px;
-    margin-top: 4px;
-  }
 }

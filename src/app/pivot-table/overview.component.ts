@@ -5,7 +5,7 @@ import {
     NumberFormattingService,PivotViewModule, IAxisSet, GroupingBarService, GroupingService, VirtualScrollService, DrillThroughService, QueryCellInfoEventArgs, PDFExportService, ExcelExportService
 } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
-import { enableRipple, createElement, select } from '@syncfusion/ej2-base';
+import { enableRipple, createElement, select, Browser } from '@syncfusion/ej2-base';
 import { ChartSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/chartsettings';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-charts';
 import { ExcelQueryCellInfoEventArgs } from '@syncfusion/ej2-grids';
@@ -162,6 +162,11 @@ export class OverviewComponent implements OnInit {
         args.customToolbar.splice(9, 0, {
             type: 'Separator'
         });
+    }
+    load(args: any) {
+       if (Browser.isDevice) {
+           args.dataSourceSettings.rows = [{ name: 'rank_display', caption: 'Rank', expandAll: true, allowDragAndDrop: false }];
+       }
     }
 
     ngOnInit(): void {

@@ -28,7 +28,7 @@ export class GanttIndicatorsComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            child: 'subtasks',
+            parentID: 'ParentId',
             indicators: 'Indicators'
         };
         this.columns = [
@@ -40,8 +40,8 @@ export class GanttIndicatorsComponent implements OnInit {
             { field: 'Predecessor' },
             { field: 'Progress' },
         ];
-        this.projectStartDate = new Date('03/24/2024');
-        this.projectEndDate = new Date('07/06/2024');
+        this.projectStartDate =  new Date('03/26/2025');
+        this.projectEndDate =  new Date('07/20/2025');
         this.labelSettings = {
             leftLabel: 'TaskName',
         };

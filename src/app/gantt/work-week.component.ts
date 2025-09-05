@@ -56,10 +56,10 @@ export class GanttWorkWeekComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            child: 'subtasks'
+            parentID:'ParentId'
         };
         this.columns =  [
-            { field: 'TaskID', headerText: 'ID', width: 80 },
+            { field: 'TaskID',visible: false, headerText: 'ID', width: 80 },
             { field: 'TaskName', headerText: 'Name', width: 150 },
             { field: 'StartDate' },
             { field: 'EndDate' },
@@ -70,8 +70,8 @@ export class GanttWorkWeekComponent implements OnInit {
         this.splitterSettings = {
             columnIndex: 1
         },
-        this.projectStartDate = new Date('03/24/2024');
-        this.projectEndDate = new Date('07/06/2024');
+        this.projectStartDate = new Date('03/26/2025');
+        this.projectEndDate = new Date('07/20/2025');
         this.labelSettings = {
             leftLabel: 'TaskName',
         };

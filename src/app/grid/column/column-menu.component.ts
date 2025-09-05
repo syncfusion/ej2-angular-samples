@@ -66,7 +66,6 @@ export class ColumnMenuComponent implements OnInit {
             ];
             this.grid.columnMenuItems = columnMenuItems;
         } else {
-            this.grid.columnMenuClick = undefined;
             this.grid.columnMenuItems = undefined;
         }
     }

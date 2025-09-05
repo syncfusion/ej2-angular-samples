@@ -1,0 +1,25 @@
+<div id="action-description">
+    <p>
+      This sample provides an interactive visualization of a neural network architecture using the Syncfusion<sup>®</sup> EJ2 Angular Diagram component. It displays multi-layered networks with configurable neurons, connections, and data flow patterns.
+    </p>
+</div>
+<div class="control-section">
+  <ejs-diagram #diagram
+    id="diagram"
+    width="100%" height="600px"
+    [tool]="tool"
+    [snapSettings]="snapSettings"
+    [nodes]="nodes"
+    [connectors]="connectors"
+    (created)="created()"
+    (load)="load()"
+    [constraints]="constraints">
+  </ejs-diagram>
+</div>
+
+<div id="description">
+    <p>
+      This multi-layered neural network visualizer allows users to explore input, hidden, and output layers with configurable neurons. Connections clearly display weight values—positive in blue, negative in red—with thickness indicating magnitude. Interactive tooltip provide detailed information.
+    </p>
+    <br>
+</div>

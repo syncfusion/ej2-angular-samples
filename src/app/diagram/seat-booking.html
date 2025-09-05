@@ -1,0 +1,117 @@
+<div class="control-section diagram-seat-booking">
+    <header class="header">
+        <h2>
+            <div>
+                <span class="movie-name">
+                    <p class="movie-name-lnk">F1: The Movie</p>
+                </span>
+            </div>
+            <div>
+                <span class="movie-timing">{{ movieTimingText }}</span>
+                <span class="theater-name"> | </span>
+                <span class="theater-name">Velvet Aurora Cinematheque</span>
+            </div>
+        </h2>
+    </header>
+    <div class="show-timing-section">
+        <div class="date-row">
+            <ul class="timing-list">
+                <!-- Date label - using innerHtml because of the <br> tag -->
+                <li style="pointer-events: none">
+                    <span class="date-label" [innerHTML]="dateLabelText"></span>
+                </li>
+                <!-- Dynamic show timing samples -->
+                <li *ngFor="let timing of showTimings"
+                    [class]="'timing-item ' + timing.status + (selectedTimingId === timing.id ? ' selected' : '')"
+                    (click)="onTimingSelected(timing)"
+                    [attr.data-timing]="timing.id">
+                    <div class="time">{{ timing.time }}</div>
+                    <div class="screen-type">{{ timing.type }}</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Notification area -->
+    <div *ngIf="showNotificationFlag" id="notification" class="notification" style="display: block;">
+        {{ notificationMessage }}
+    </div>
+
+    <div class="content-wrapper" style="width: 100%">
+        <!-- Diagram component -->
+        <ejs-diagram #diagram
+            id="diagram" width="100%" height="700px"
+            [nodes]='nodes'
+            [snapSettings]='snapSettings'
+            [tool]='tool'
+            (click)='onDiagramClick($event)'
+            (created)='onDiagramCreated()'
+            (load)='load()'
+            [constraints]="constraints"
+            >
+        </ejs-diagram>
+    </div>
+
+    <div class="booking-summary-container">
+        <div class="seat-legend">
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-seat available"></div>
+                    <span class="legend-text">Available</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-seat selected"></div>
+                    <span class="legend-text">Selected</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-seat booked"></div>
+                    <span class="legend-text">Booked</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="booking-section">
+            <div class="price-info">
+                <div class="price" id="totalAmount">
+                    ${{ (seatSelection.amount + 6) | number : '1.0-2' }}
+                </div>
+                <div class="ticket-count" id="ticketCount">
+                    {{ seatSelection.ticketCount }} Tickets Selected
+                </div>
+            </div>
+
+            <div class="price-hint-inline" id="priceHint" [style.display]="seatSelection.ticketCount > 0 ? 'flex' : 'none'">
+                <span id="ticketAmount">Tickets: ${{ seatSelection.amount | number : '1.0-2' }}</span>
+                <span id="feesAmount">+ Fees: $6.00</span>
+            </div>
+
+            <button class="btn-proceed" id="proceedButton" [disabled]="seatSelection.ticketCount === 0" (click)="onProceedToBook()">
+                Proceed
+            </button>
+        </div>
+    </div>
+
+    <!-- Syncfusion Dialog for booking success - Now always in DOM with controlled visibility -->
+    <ejs-dialog #bookingSuccessDialog id="bookingSuccessDialog"
+        [cssClass]=""
+        [content]=""
+        [target]="'.control-section'" 
+        [width]="'435px'"
+        [isModal]="true"
+        [visible]="false"            
+        [showCloseIcon]="false"
+        [buttons]='dlgButtons'>
+    </ejs-dialog>
+</div>
+
+<!-- Removed scripts and style from here as they should be in separate .css and .ts files -->
+
+<div id="action-description">
+    <p>
+        This sample implements a functional movie ticket booking interface using the Syncfusion<sup>®</sup> EJ2 Angular Diagram component, providing an intuitive visual representation of a cinema hall's seating arrangement with real-time price updates and a complete booking workflow. 
+    </p>
+</div>
+<div id="description">
+    <p>
+        This interactive cinema seat booking experience begins with users selecting a showtime, which dynamically updates the seating layout to reflect real-time availability. Users can highlight and select seats (up to 10 within a single tier), while the booking summary panel instantly updates prices and fees. Tooltip provide seat details, and a "Proceed" button leads to a confirmation screen with a unique booking ID.
+    </p>
+</div>

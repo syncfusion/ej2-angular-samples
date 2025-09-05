@@ -22,11 +22,15 @@
         connected to the pivot table.
     </p>
     <p>
-        In this demo, the pivot table is shown with the virtualization option enabled through the <a target="_blank"
+        In this demo, the Pivot Table is rendered using an external server-side engine, which significantly enhances
+        performance when handling large datasets. By offloading data processing to the server, client-side rendering becomes
+        faster and more efficient—ensuring a smoother user experience even with complex or high-volume data.
+    </p>
+    <p>
+        For further performance improvements when working with large data volumes, we recommend enabling <a target="_blank"
             href="https://ej2.syncfusion.com/angular/documentation/api/pivotview/#enablevirtualization">
-            enableVirtualization</a> property
-        and an external server engine. This would improve pivot table rendering performance when working with large
-        amounts of data.
+            virtualization</a> or <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/pivotview/paging">
+            paging</a> features.
     </p>
     <p>
         The built-in toolbar includes export options for Excel, CSV, and PDF documents. These export features support
@@ -35,16 +39,6 @@
     <p>
         Additionally, a custom toolbar menu is provided to switch between <strong>Compact</strong> and
         <strong>Tabular</strong> layouts at runtime, offering flexibility in how the summarized data is displayed.
-    </p>
-    <br />
-    <p>
-        <strong>Injecting Module:</strong>
-    </p>
-    <p>
-        The pivot table features are segregated into individual modules. To use the virtual scrolling option,
-        we need to inject the
-        <code>VirtualScrollService</code> module using the
-        <code>&#64;NgModule.providers</code> section.
     </p><br />
     <p>
         More information about server-side aggregation can be found in this <a target="_blank"
@@ -54,7 +48,7 @@
 </div>
 <div class="control-section">
     <ejs-pivotview #pivotview id='PivotView' showFieldList='true' showGroupingBar='true' width='100%' height='450'
-        [dataSourceSettings]=dataSourceSettings (dataBound)='onDataBound()' enableVirtualization='true'
+        [dataSourceSettings]=dataSourceSettings (dataBound)='onDataBound()'
         allowDataCompression='true' allowExcelExport='true' allowPdfExport='true' showToolbar='true' [gridSettings]='gridSettings'
         [toolbar]='toolbarOptions' (toolbarRender)='beforeToolbarRender($event)' (beforeExport)='beforeExport($event)'>
     </ejs-pivotview>

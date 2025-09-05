@@ -1,6 +1,6 @@
 <div class="col-lg-8 control-section sb-property-border">
     <div class="api-chatui"> 
-        <div id="chatui" ejs-chatui #chatUI [messages]="messages" [user]="user" [headerText]="headerText" [headerIconCss]="headerIconCss" showTimeBreak="true" timeStampFormat="MM/dd hh:mm a" [messageToolbarSettings]="toolbarSettings"></div>
+        <div id="chatui" ejs-chatui #chatUI [messages]="messages" [user]="user" [headerText]="headerText" [headerIconCss]="headerIconCss" showTimeBreak="true" timeStampFormat="MM/dd hh:mm a" [messageToolbarSettings]="toolbarSettings" [mentionUsers]="mentionUsers"></div>
     </div>
 </div>
 
@@ -69,6 +69,16 @@
                         </ejs-multiselect>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <div>Mention users</div>
+                    </td>
+                    <td style="padding-right: 10px">
+                        <ejs-multiselect id="chat_mentionUsers" placeholder="Mention users..." [dataSource]="mentionUserOptions"
+                        [fields]="{ text: 'text', value: 'value' }" [value]="mentionUserValues"
+                        (select)="onMentionUsersSelect($event)" (removed)="onMentionUsersRemove($event)"></ejs-multiselect>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -87,6 +97,7 @@
         <li><code>showFooter</code>: Toggles the visibility of the chat footer.</li>
         <li><code>enableCompactMode</code>: Streamlines the chat interface,  aligning all messages to the left by default and enhancing readability </li>
         <li><code>typingUsers</code>: Allows users to manage the list of users who are typing, updated through the multi-select options in the property pane.</li>
+        <li><code>mentionUsers</code>: Configurable list of users that can be tagged using <code>&#64;</code> in chat messages.</li>
         <li><code>statusIconCss</code>: Display the status of the current user in the chat.</li>
         <li><code>messageToolbarSettings</code>: Configures the toolbar that appears on individual messages, allowing customization such as copy, forward, reply, pin and delete. Supports adding, removing, or reordering toolbar items based on application needs.</li>
     </ul>

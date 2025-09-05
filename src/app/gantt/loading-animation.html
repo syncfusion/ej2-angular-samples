@@ -2,7 +2,7 @@
     <p>This sample shows the loading indicator while initial rendering, refreshing and all gantt action. In this sample, you can change the loading indicators from the properties panel.</p>
 </div>
 <div class="col-lg-9 control-section">
-    <ejs-gantt id="ganttDefault" #gantt height="450px" [dataSource]="data" [taskFields]="taskSettings" [loadingIndicator]="loadingIndicator" [treeColumnIndex]="1"
+    <ejs-gantt id="ganttDefault" #gantt height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [loadingIndicator]="loadingIndicator" [treeColumnIndex]="1"
     [splitterSettings]="splitterSettings" [allowSorting]="true" [allowFiltering]="true" [columns]="columns" [labelSettings]="labelSettings"
     [allowSelection]="true" [enableVirtualization]="true" [highlightWeekends]="true">
     </ejs-gantt>
@@ -17,7 +17,7 @@
                </td>
                <td style="width: 50%;padding-right: 10px">
                      <div>
-                       <ejs-dropdownlist #dropdown1 id='typeelement'  width= '109px' [dataSource]='d1data' [fields]='typefields' value='Shimmer'  (change)="change($event)"></ejs-dropdownlist>
+                       <ejs-dropdownlist #dropdown1 id='typeelement'  width= '109px' [dataSource]='d1data' [fields]='typefields' value='Shimmer' (change)="change($event)"></ejs-dropdownlist>
                      </div>
                </td>
            </tr>
@@ -42,4 +42,7 @@
     <p>
         By default <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#enablevirtualmaskrow">enableVirtualMaskRow</a> is set to true which renders Shimmer during virtual scrolling.
     </p>
+    <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/loading-animation">documentation section</a>.</p>
+    
 </div>

@@ -1,7 +1,7 @@
 /**
  * Rich Text Editor Insert Media Sample
  */
-import { ToolbarSettingsModel, RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarSettingsModel, RichTextEditorModule, VideoSettingsModel, AudioSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { Component } from '@angular/core';
 import { ToolbarService, LinkService, ImageService, HtmlEditorService ,AudioService ,VideoService, QuickToolbarService, PasteCleanupService, TableService} from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, IFrameSettingsModel, FileManagerService } from '@syncfusion/ej2-angular-richtexteditor';
@@ -17,7 +17,18 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     imports: [RichTextEditorModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class InsertMediaComponent{
+    private hostUrl: string = 'https://services.syncfusion.com/angular/production/';
     public tools: ToolbarModule = {
         items: ['Bold', 'Italic', 'Underline', '|', 'Formats', 'Alignments', 'Blockquote', 'OrderedList', 'UnorderedList', '|', 'CreateLink', 'Image', 'Audio', 'Video', '|', 'SourceCode', 'Undo', 'Redo']
+    };
+    public insertVideoSettings: VideoSettingsModel = {
+        saveUrl: this.hostUrl + 'api/RichTextEditor/SaveFile',
+        removeUrl: this.hostUrl + 'api/RichTextEditor/DeleteFile',
+        path: this.hostUrl + 'RichTextEditor/'
+    };
+    public insertAudioSettings: AudioSettingsModel = {
+        saveUrl: this.hostUrl + 'api/RichTextEditor/SaveFile',
+        removeUrl: this.hostUrl + 'api/RichTextEditor/DeleteFile',
+        path: this.hostUrl + 'RichTextEditor/'
     };
 }

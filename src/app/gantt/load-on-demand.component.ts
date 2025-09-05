@@ -42,7 +42,7 @@ export class GanttLoadOnDemandComponent implements OnInit {
           columnIndex: 3
         };
         this.columns =  [
-            { field: 'taskId', width:80 },
+            { field: 'taskId', headerText: 'Task ID',width: 130 },
             { field: 'taskName', headerText: 'Name', width: '200', clipMode: 'EllipsisWithTooltip' },
             { field: 'startDate' },
             { field: 'duration' },

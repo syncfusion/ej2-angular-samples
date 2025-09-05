@@ -76,8 +76,8 @@ export class GanttWorkingTimeRangeComponent implements OnInit {
                 unit: 'Hour',
             },
         };
-        this.projectStartDate = new Date('04/02/2024');
-        this.projectEndDate = new Date('07/06/2024');
+        this.projectStartDate = new Date('04/02/2025');
+        this.projectEndDate = new Date('04/28/2025');
         this.labelSettings = {
             leftLabel: 'TaskName',
         };

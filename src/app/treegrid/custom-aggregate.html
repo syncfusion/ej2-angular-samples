@@ -1,19 +1,22 @@
 <div class="control-section">
-    <ejs-treegrid #treegrid [dataSource]='data' height='350' childMapping='subtasks' [treeColumnIndex]='1' (dataBound)='dataBound()'>
+    <ejs-treegrid #treegrid [dataSource]='dataSource' gridLines="Both" height='350' childMapping='subtasks' [allowPdfExport]='true' [toolbar]='toolbarOptions' (toolbarClick)='toolbarClick($event)'
+     [allowExcelExport]='true' [treeColumnIndex]='1' (dataBound)='onDataBound($event)' (excelAggregateQueryCellInfo)="excelAggregateQueryCellInfo($event)" (pdfAggregateQueryCellInfo)="pdfAggregateQueryCellInfo($event)">
         <e-columns>
-            <e-column field='ID' headerText='S.NO' width='90' textAlign='Right'></e-column>
-            <e-column field='Name' headerText='Shipment Name' width='170'></e-column>
-            <e-column field='category' headerText='Category' width='260' minWidth='260' textAlign='Right'></e-column>
-            <e-column field='units' headerText='Total Units' width='130' type='number'  textAlign='Right'></e-column>
-            <e-column field='unitPrice' headerText='Unit Price($)' width='130'  type='number' format='C2' textAlign='Right'></e-column>
-            <e-column field='price' headerText='Price($)' width='110' type='number' format='C'  textAlign='Right'></e-column>
+            <e-column field='ID' headerText='Order ID' width='120' textAlign='Left'></e-column>
+            <e-column field='Name' headerText='Shipment Name' textAlign="Left" clipMode='EllipsisWithTooltip' width='230' ></e-column>
+            <e-column field='shipmentDate' headerText='Shipment Date' width="120" type="date" format="yMd" textAlign="Right"></e-column>
+            <e-column field='category' headerText='Category' width='200' minWidth='240' textAlign="Left" ></e-column>
+            <e-column field='units' headerText='Units' width='80' type='number' textAlign="Right"  ></e-column>
+            <e-column field='unitPrice' headerText='Unit Price($)' width='120'  type='number' textAlign="Right" format='C2' ></e-column>
+            <e-column field='price' headerText='Price($)' width='110' type='number' format='C0'  textAlign="Right" ></e-column>
         </e-columns>
         <e-aggregates >
                 <e-aggregate [showChildSummary]='false'>
                     <e-columns >
-                        <e-column columnName="category" type="Custom" [customAggregate]="customAggregateFn" >
+                        <e-column columnName="category" type="Custom" [customAggregate]="customAggregateFn">
                             <ng-template #footerTemplate  let-data>
-                              {{data.Custom}} </ng-template>
+                               <span>Count of <input type="text" id="customers" /> : {{data.Custom}}</span>
+                             </ng-template>
                         </e-column>
                     </e-columns>
                 </e-aggregate>
@@ -21,33 +24,25 @@
     </ejs-treegrid>
 </div>
 <div id="action-description">
-        <p>This sample demonstrates custom aggregate functionality of the Tree Grid. In this sample, the custom aggregate value for the columns “Category” is displayed in column footer with dropdown to 
-            display the count of selected category name.</p>
-    </div>
-    <div id="description">
-            <p>The Tree Grid supports aggregates which will be displayed at the footer and every hierarchy level.
-            The aggregate configurations can be provided by the <code>aggregates</code> property.</p>
-            <p>The built-in aggregates are,</p>
-            <ul>
-                <li><code>Sum</code></li>     
-                <li><code>Average</code></li>     
-                <li><code>Min</code></li>     
-                <li><code>Max</code></li>     
-                <li><code>Count</code></li>     
-                <li><code>TrueCount</code></li>     
-                <li><code>FalseCount</code></li>     
-                <li><code>Custom</code> - Requires the <code>customAggregate</code> property to perform aggregation.
-                </li>     
-            </ul>    
-
-            <p>
-                In this demo, the footerTemplate property shows the custom aggregate value for the columns “Category” in column footer to display the count of category name.
-            </p>
-            <p>Injecting Module:</p>
-
-            <p>Tree Grid component features are segregated into individual feature-wise modules. To use aggregate feature, we need to inject <code>AggregateService</code> into the <code>&#64;NgModule.providers</code> section.</p>  
-            <p>
-                More information about aggregate can be found in this documentation section.
-            </p>
+    <p>This sample demonstrates custom aggregate and exporting functionality in the Tree Grid. Aggregate values for the columns are displayed in the column footer, and export options are available via the toolbar buttons.</p>
 </div>
+<div id="description">
+    <p>The Tree Grid supports displaying aggregates in the footer, which can be configured using the <code>aggregates</code> property. Here, a <code>customAggregate</code> configuration is applied to the <b>Category</b> column to show a dropdown that displays the count of the selected category.</p>
+    <p>
+       The Tree Grid also supports seamless exports to <b>Excel</b>, <b>PDF</b>, or <b>CSV</b> with a single click. The <code>excelAggregateQueryCellInfo</code> and <code>pdfAggregateQueryCellInfo</code> events ensure that footer aggregate values are accurately preserved in the exported files.
+    </p>
+    <p>
+
+    <p>Injecting Module:</p>
+
+    <p>Tree Grid component features are segregated into individual feature-wise modules. To use aggregate feature, we
+        need to inject <code>AggregateService</code> into the <code>&#64;NgModule.providers</code> section.</p>
+
+    <p>More information about the custom aggregate can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/treegrid/aggregates/custom-aggregate">
+            documentation
+        </a> section.
+    </p>
+</div>
+
          

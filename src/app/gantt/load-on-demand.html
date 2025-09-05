@@ -4,8 +4,8 @@
 
 <div class="control-section">
   <ejs-gantt id="ganttDefault" [dataSource]="data" [taskFields]="taskSettings" [loadChildOnDemand]="true" [enableVirtualization]="true" [allowSelection]="true"
-      [labelSettings]="labelSettings" [columns]="columns" [treeColumnIndex]="1" height="450px" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
-      [highlightWeekends]="true"  [taskbarHeight]="20" [rowHeight]="40" [tooltipSettings]="tooltipSettings"  [splitterSettings]="splitterSettings">
+      [labelSettings]="labelSettings" [columns]="columns" [treeColumnIndex]="1" height="650px" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+      [highlightWeekends]="true"  [taskbarHeight]="25" [rowHeight]="46" [tooltipSettings]="tooltipSettings"  [splitterSettings]="splitterSettings">
   </ejs-gantt>
 </div>
 
@@ -19,4 +19,7 @@
   <p>
     When expanding the root parent node or scrolling vertically, the corresponding tasks are dynamically fetched from the remote server and then updated in the DOM based on the current viewport position.
   </p>
+  <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/data-binding#load-on-demand">documentation section</a>.</p>
+    
 </div>

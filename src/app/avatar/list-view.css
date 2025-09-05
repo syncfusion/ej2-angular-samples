@@ -116,7 +116,9 @@ body.tailwind-dark #letterAvatarList .e-list-item{
 }
 
 body.bootstrap5-dark #letterAvatarList .e-list-item,
-body.bootstrap5\.3-dark #letterAvatarList .e-list-item {
+body.bootstrap5\.3-dark #letterAvatarList .e-list-item,
+body.tailwind3 #letterAvatarList .e-list-item,
+body.tailwind3-dark #letterAvatarList .e-list-item {
   line-height: 30px;
 }
 
@@ -141,7 +143,9 @@ body.bootstrap-dark #letterAvatarList .e-list-item {
 body.bootstrap5-dark #letterAvatarList .listWrapper .e-avatar,
 .bootstrap5\.3 #letterAvatarList .e-list-item .e-avatar,
 body.bootstrap5\.3-dark #letterAvatarList .listWrapper .e-avatar,
-body.tailwind-dark #letterAvatarList .listWrapper .e-avatar {
+body.tailwind-dark #letterAvatarList .listWrapper .e-avatar,
+body.tailwind3 #letterAvatarList .e-list-item .e-avatar,
+body.tailwind3-dark #letterAvatarList .e-list-item .e-avatar {
     top: calc(100% - 48px);
 }
 

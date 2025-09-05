@@ -1,6 +1,6 @@
 {
   "name": "ej2-angular-samples",
-  "version": "30.2.4",
+  "version": "31.1.17",
   "private": true,
   "dependencies": {
     "@angular/animations": "17.1.2",
@@ -20,7 +20,6 @@
     "@syncfusion/ej2-angular-charts": "*",
     "@syncfusion/ej2-angular-circulargauge": "*",
     "@syncfusion/ej2-angular-diagrams": "*",
-    "@syncfusion/ej2-angular-documenteditor": "*",
     "@syncfusion/ej2-angular-dropdowns": "*",
     "@syncfusion/ej2-angular-filemanager": "*",
     "@syncfusion/ej2-angular-gantt": "*",
@@ -36,7 +35,6 @@
     "@syncfusion/ej2-angular-multicolumn-combobox": "*",
     "@syncfusion/ej2-angular-navigations": "*",
     "@syncfusion/ej2-angular-notifications": "*",
-    "@syncfusion/ej2-angular-pdfviewer": "*",
     "@syncfusion/ej2-angular-pivotview": "*",
     "@syncfusion/ej2-angular-popups": "*",
     "@syncfusion/ej2-angular-progressbar": "*",
@@ -45,7 +43,6 @@
     "@syncfusion/ej2-angular-richtexteditor": "*",
     "@syncfusion/ej2-angular-schedule": "*",
     "@syncfusion/ej2-angular-splitbuttons": "*",
-    "@syncfusion/ej2-angular-spreadsheet": "*",
     "@syncfusion/ej2-angular-treegrid": "*",
     "@syncfusion/ej2-angular-treemap": "*",
     "@syncfusion/ej2-angular-image-editor": "*",

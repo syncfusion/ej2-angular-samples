@@ -3,9 +3,9 @@
         In this sample, we have shown custom images in the Resources column.</p>
 </div>
 <div class="control-section">
-    <ejs-gantt id="columnTemplate" height="430px" [dataSource]="data" [taskFields]="taskSettings"
-        [labelSettings]="labelSettings" [splitterSettings]="splitterSettings" [rowHeight]=60 [treeColumnIndex]=1
-        height="450px" [allowSelection]="true" [resourceFields] = "resourceFields" (queryCellInfo)="queryCellInfo($event)"
+    <ejs-gantt id="columnTemplate" height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings"
+        [labelSettings]="labelSettings" [splitterSettings]="splitterSettings"  [treeColumnIndex]=1
+         [allowSelection]="true" [resourceFields] = "resourceFields" (queryCellInfo)="queryCellInfo($event)"
         [resources]="resources" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true">
         <e-columns>
             <e-column field='TaskID' headerText='Task ID' textAlign='Left'></e-column>
@@ -30,5 +30,8 @@
 
 <div id="description">
     <p>The Gantt provides a way to use a custom layout for each cell using the column template feature. The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/columnModel/#template">columns -> template</a> property accepts the template for the cell.</p>
-    <p>In this demo, using column template, resource column has been presented with employee photo</p>
+    <p>In this demo, using column template, resource column has been presented with employee photoand the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/columnModel/#template">columns -> template</a> is assigned with the ID of a SCRIPT element whose content is used as the template.
+    </p>
+    <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/columns/column-template">documentation section</a>.</p>
 </div>

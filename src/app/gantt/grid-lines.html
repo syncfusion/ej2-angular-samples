@@ -5,7 +5,7 @@
 
 <div class="control-section">
     <div class="col-lg-9 control-section">
-        <ejs-gantt id="GridLines" #ganttGrid height="430px" [dataSource]="data" [gridLines]="gridLines"
+        <ejs-gantt id="GridLines" #ganttGrid height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [gridLines]="gridLines"
             [taskFields]="taskSettings" [allowSelection]="true" [labelSettings]="labelSettings" [treeColumnIndex]="1"
             [columns]="columns" [splitterSettings]="splitterSettings" [projectStartDate]="projectStartDate"
             [projectEndDate]="projectEndDate" [highlightWeekends]="true">
@@ -58,4 +58,7 @@
 
     <p> Gantt component features are segregated into individual feature-wise modules. To use a selection and markers, inject the
         <code>SelectionService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section respectively.</p>
+        <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/style-and-appearance#grid-lines">documentation section</a>.</p>
+    
 </div>

@@ -114,8 +114,8 @@ export class GanttTimelineComponent implements OnInit {
         this.splitterSettings = {
             columnIndex: 1
         };
-        this.projectStartDate = new Date('02/03/2024'),
-        this.projectEndDate = new Date('03/23/2024')
+        this.projectStartDate = new Date('02/05/2025'),
+        this.projectEndDate = new Date('03/23/2025')
     }
     public onUnitWidthChange(args: ChangedEventArgs): void {
         this.ganttObj.timelineSettings.timelineUnitSize = +args.value;

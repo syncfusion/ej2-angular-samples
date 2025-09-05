@@ -76,8 +76,8 @@ export class GanttResourcesComponent implements OnInit {
             rightLabel: 'resources',
             taskLabel: '${Progress}%'
         };
-        this.projectStartDate= new Date('03/28/2024');
-        this.projectEndDate= new Date('07/28/2024');
+        this.projectStartDate= new Date('03/26/2025');
+        this.projectEndDate= new Date('07/28/2025');
     }
 
     public queryTaskbarInfo(args: any): void {

@@ -1,0 +1,68 @@
+<!-- custom code start -->
+<div id="action-description">
+    <p>This sample demonstrates exporting a server-side Syncfusion Pivot Table as a fully interactive Excel Pivot Table.
+    </p>
+</div>
+<div id="description">
+    <p>This sample shows how to export a <strong>server-side</strong> Syncfusion Pivot Table to an Excel file while
+        preserving its native pivot structure. The exported Excel file supports full interactivity, allowing users to
+        customize pivot configurations directly within Excel.</p>
+    <p>The Pivot Table uses a server-side pivot engine powered by the <a target="_blank"
+            href="https://www.nuget.org/packages/Syncfusion.Pivot.Engine/"> Syncfusion.Pivot.Engine</a> package. This
+        engine runs on a separate hosted server, performing all pivot operations—including <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/aggregation/#aggregation">
+            aggregation</a>, <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/filtering/#filtering">
+            filtering</a>, <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/sorting/#sorting">
+            sorting</a>, and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/pivotview/grouping">
+            grouping</a> and returns only paged data to the client. The connection to the remote service is configured
+        using the <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/api/pivotview/dataSourceSettings/#url">
+            dataSourceSettings-&gt;url</a> property.</p>
+    <p><strong>Excel Export</strong> is available via the built-in toolbar and generates a true Excel Pivot Table, not
+        just static data. This enables users to interact with and manipulate the exported report directly in Excel.</p>
+    <p>Additionally, the toolbar includes custom menu items to toggle between <code>Compact</code> and
+        <code>Tabular</code> layouts and to switch chart types dynamically. This empowers users to customize both the
+        visual structure and the associated chart representation of their data.</p>
+
+    <br />
+    <p>
+        <strong>Injecting Module:</strong>
+    </p>
+    <p>
+        The pivot table features are segregated into individual modules. To use the exporting option, we
+        need to inject the
+        <code>ExcelExportService</code> module using the
+        <code>&#64;NgModule.providers</code> section.
+    </p>
+    <br />
+    <p>
+        More information about server-side aggregation can be found in this <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/server-side-pivot-engine">
+            documentation section</a>.
+    </p>
+</div>
+<!-- custom code end -->
+
+
+<div class="control-section">
+    <div class="content-wrapper">
+        <ejs-pivotview
+            #pivotview id='PivotView'
+            [dataSourceSettings]=dataSourceSettings
+            [height]='450'
+            [showFieldList]='true'
+            [showGroupingBar]='true'
+            [displayOption]='displayOption'
+            [allowExcelExport]='true'
+            [allowPdfExport]='true'
+            [showToolbar]='true'
+            [toolbar]='toolbarOptions'
+            [chartSettings]='chartSettings'
+            [gridSettings]='gridSettings'
+            (dataBound)='onDataBound()'
+            (toolbarRender)='beforeToolbarRender($event)'>
+        </ejs-pivotview>
+    </div>
+</div>

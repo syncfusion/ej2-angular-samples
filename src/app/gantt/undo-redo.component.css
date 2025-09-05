@@ -1,0 +1,14 @@
+#Undo, #Redo {
+    position: relative;
+    overflow: visible;
+    cursor: default;
+}
+
+#UndoRedo_Gantt_Toolbar {
+    overflow: visible;
+}
+
+.e-badge.e-badge-danger.e-badge-notification.e-badge-overlap.e-badge-circle {
+    margin-top: 8px;
+    z-index: 4;
+}

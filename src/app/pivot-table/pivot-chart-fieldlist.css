@@ -1,0 +1,58 @@
+#PivotViewcontainerwrapper {
+    height: auto !important;
+}
+
+#PivotView {
+    display: block;
+}
+
+.e-bigger .e-tbar-btn .tb-icons {
+    font-size: 20px;
+}
+
+.e-tbar-btn .tb-icons {
+    font-family: 'e-icons';
+    speak: none;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+
+.e-tbar-menu-icon:before {
+    content: "\e725";
+}
+
+#layout_switch {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.label_option {
+    margin-bottom: unset;
+}
+
+.toolbar-temp {
+    margin-left: 10px;
+}
+
+.display_label {
+    margin-right: 10px;
+}
+
+#pivot_sidebar .e-sidebar.e-right {
+    border-left: unset !important;
+}
+    
+.default-sidebar {
+    width: 35% !important;
+}
+
+#defaultToolbar .sb-icons {
+    font-size: 20px !important;
+}
+.pivot-fieldList{
+    display: none !important;
+}

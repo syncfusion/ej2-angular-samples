@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
 import { constraintData } from './data';
 
@@ -28,7 +28,7 @@ export class GanttConstraintComponent implements OnInit {
   public gridLines: string;
   public highlightWeekends: boolean;
   public allowSelection: boolean;
-  public height: string;
+
 
   ngOnInit(): void {
     this.data = constraintData;
@@ -53,8 +53,8 @@ export class GanttConstraintComponent implements OnInit {
       { field: 'TaskName', headerText: 'Job Name', width: '200', clipMode: 'EllipsisWithTooltip' },
       { field: 'StartDate' },
       { field: 'Duration' },
-      { field: 'ConstraintType' },
-      { field: 'ConstraintDate' },
+      { field: 'ConstraintType',width: '180' },
+      { field: 'ConstraintDate', width: 200 }, 
       { field: 'EndDate' },
       { field: 'Predecessor' },
       { field: 'Progress' }
@@ -70,8 +70,8 @@ export class GanttConstraintComponent implements OnInit {
 
     this.toolbar = ['Add', 'Edit', 'Update', 'Delete', 'Cancel', 'ExpandAll', 'CollapseAll', 'Indent', 'Outdent'];
     this.splitterSettings = { columnIndex: 4 };
-    this.labelSettings={
-      leftLabel:'TaskName',
+    this.labelSettings = {
+      leftLabel: 'TaskName',
       rightLabel: this.rightLabelTemplate
     }
     this.timelineSettings = {
@@ -80,7 +80,7 @@ export class GanttConstraintComponent implements OnInit {
     };
 
     this.projectStartDate = new Date('03/25/2025');
-    this.projectEndDate = new Date('09/01/2025');
+    this.projectEndDate = new Date('09/10/2025');
     this.eventMarkers = [
       { day: new Date('03/25/2025'), label: 'Project StartDate' },
       { day: new Date('08/31/2025'), label: 'Project EndDate' }
@@ -89,7 +89,7 @@ export class GanttConstraintComponent implements OnInit {
     this.gridLines = 'Both';
     this.highlightWeekends = true;
     this.allowSelection = true;
-    this.height = '450px';
+
   }
 
   public getConstraintText(value: number): string {
@@ -105,5 +105,5 @@ export class GanttConstraintComponent implements OnInit {
     };
     return map[value];
   }
- 
+
 }

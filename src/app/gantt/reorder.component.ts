@@ -42,7 +42,7 @@ export class ColumnReorderComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            child: 'subtasks'
+             parentID: 'ParentId'
         };
         this.dropDownFields = { text: 'name' , value: 'id'};
         this.columnNames = [{ id: 'TaskID', name: 'ID' },
@@ -72,10 +72,10 @@ export class ColumnReorderComponent implements OnInit {
             { field: 'Progress' },
             { field: 'Predecessor', headerText: 'Dependency' }
         ];
-        this.projectStartDate = new Date('03/24/2024');
-        this.projectEndDate = new Date('07/06/2024');
+        this.projectStartDate = new Date('03/31/2025');
+        this.projectEndDate = new Date('07/20/2025');
         this.labelSettings = {
-            leftLabel: 'TaskName'
+            rightLabel: 'TaskName'
         };
     }
     public columnNameChange(e: ChangeEventArgs): void {

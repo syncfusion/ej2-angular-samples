@@ -1,0 +1,621 @@
+    .diagram-seat-booking .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 24px;
+        padding-top: 0px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .diagram-seat-booking .header h2 {
+        margin: 0;
+        font-weight: normal;
+    }
+
+    .diagram-seat-booking .movie-name-lnk {
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 500;
+        margin: 0;
+        color: #337ab7;
+        font-family: Segoe UI, sans-serif;
+    }
+
+    .diagram-seat-booking .theater-info {
+        color: #374151;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .diagram-seat-booking .separator {
+        margin: 0 8px;
+        color: #999999;
+    }
+
+    .diagram-seat-booking .show-timing-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: space-around;
+        border-bottom: 1px solid #E5E7EB;
+    }
+
+    .diagram-seat-booking .date-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .diagram-seat-booking .date-label {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        color: #666666;
+        text-align: center;
+        line-height: 1.3;
+        min-width: 60px;
+        padding-right: 2.5rem;
+        border-right: 1px solid #9CA3AF;
+    }
+
+    .diagram-seat-booking .timing-list {
+        display: flex;
+        gap: 15px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-wrap: wrap;
+    }
+
+    .diagram-seat-booking .timing-item {
+        padding: 12px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-align: center;
+        min-width: 120px;
+        border: 1px solid transparent;
+    }
+
+    .diagram-seat-booking .timing-item .time {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+
+    .diagram-seat-booking .timing-item .screen-type {
+        font-size: 10px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .diagram-seat-booking .timing-item.available {
+        background-color: #FFFFFF;
+        border-radius: 8px;
+        border: 1px solid #9CA3AF;
+        color: #15803D;
+    }
+
+    .diagram-seat-booking .timing-item.available:hover {
+        background-color: #f3f4f6;
+        border-radius: 8px;
+        border-color: #9ca3af;
+    }
+
+    .diagram-seat-booking .timing-item.filling-fast {
+        background-color: #fef3c7;
+        border-radius: 8px;
+        border: 1px solid #f59e0b;
+        color: #92400e;
+    }
+
+    .diagram-seat-booking .timing-item.filling-fast:hover {
+        background-color: #fde68a;
+        border-radius: 8px;
+        border-color: #d97706;
+    }
+
+    .diagram-seat-booking .timing-item.selected {
+        background-color: #4F46E5;
+        border: 1px solid #4F46E5;
+        border-radius: 8px;
+        color: white;
+    }
+
+    .diagram-seat-booking .timing-item.sold-out {
+        border-radius: 8px;
+        background-color: #FFFFFF;
+        border: 1px solid #D1D5DB;
+        color: #9CA3AF;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    .diagram-seat-booking .main-container {
+        min-height: calc(100vh - 100px);
+        gap: 0;
+    }
+
+    .diagram-seat-booking .ticket-selection-section {
+        background-color: #f8f9fa;
+        margin-top: 2px;
+        min-height: 500px;
+    }
+
+    .diagram-seat-booking .booking-summary-container {
+        box-sizing: border-box;
+        width: 100%;
+        height: 154px;
+        left: 0px;
+        top: 1357px;
+        background: rgba(255, 255, 255, 0.0001);
+        border-top: 1px solid #E5E7EB;
+        margin-top: 20px;
+    }
+
+    .diagram-seat-booking .booking-summary-section {
+        position: relative;
+        background: #fff;
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+        border: none;
+        border-radius: 10px;
+        font-family: Arial, sans-serif;
+        margin-top: 2px;
+        padding: 0px;
+        height: 500px;
+    }
+
+    .diagram-seat-booking .booking-summary-section .header {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        font-size: 25px;
+        color: #d9534f;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0;
+        background: none;
+        padding: 12px 16px;
+        display: block;
+        text-align: left;
+        flex-shrink: 0;
+    }
+
+    .diagram-seat-booking .booking-content {
+        padding: 30px 30px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .diagram-seat-booking .left {
+        flex: 1;
+        text-align: left;
+    }
+
+    .diagram-seat-booking .right {
+        text-align: right;
+        white-space: nowrap;
+    }
+
+    .diagram-seat-booking .subtext {
+        font-size: 16px;
+        color: #777;
+        margin-left: 10px;
+    }
+
+    .diagram-seat-booking .bold {
+        font-weight: bold;
+    }
+
+    .diagram-seat-booking .divider {
+        border-top: 1px solid #eee;
+        margin: 8px 0;
+    }
+
+    .diagram-seat-booking .footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 75px;
+        background: #fff3cd;
+        border-radius: 0 0 10px 10px;
+        padding: 12px 16px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0
+    }
+
+    .diagram-seat-booking .__circle-left,
+    .diagram-seat-booking .__circle-right {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: #f2f2f2;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    .diagram-seat-booking .__circle-left {
+        left: -10px;
+        border: 1px solid #f2f2f2;
+        clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+    }
+
+    .diagram-seat-booking .__circle-right {
+        right: -10px;
+        border: 1px solid #f2f2f2;
+        border-right: none;
+    }
+
+    .diagram-seat-booking .action-buttons {
+        display: flex;
+        gap: 12px;
+        margin-top: 20px;
+        padding: 0 10px;
+        height: auto;
+    }
+
+    .diagram-seat-booking .btn {
+        flex: 1;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        height: 50px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+        
+    .diagram-seat-booking .btn-proceed:hover {
+        transform: translateY(-1px);
+    }
+
+    .diagram-seat-booking .btn-clear {
+        background-color: #f8f9fa;
+        color: #666;
+        border: 1px solid #e9ecef;
+    }
+
+    .diagram-seat-booking .btn-clear:hover {
+        background-color: #e9ecef;
+        color: #333;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .diagram-seat-booking .btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .diagram-seat-booking .btn-proceed[disabled] {
+        background-color: #e3e3e3 !important;
+        color: gray;
+    }
+
+    .diagram-seat-booking .seat-legend {
+        padding: 20px;
+    }
+
+    .diagram-seat-booking .legend-items {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .diagram-seat-booking .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .diagram-seat-booking .legend-seat {
+        width: 30px;
+        height: 30px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 12px;
+        position: relative;
+    }
+
+    .diagram-seat-booking .legend-seat.available {
+        background-color: transparent;
+        border: 2px solid #9CA3AF;
+        color: #9CA3AF;
+    }
+
+    .diagram-seat-booking .legend-seat.selected {
+        background-color: #15803D;
+        border: 2px solid #15803D;
+        color: #15803D;
+    }
+
+    .diagram-seat-booking .legend-seat.booked {
+        background-color: #E5E7EB;
+        border: 2px solid #E5E7EB;
+        color: #E5E7EB;
+    }
+
+    .diagram-seat-booking .legend-text {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .diagram-seat-booking .success-modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+    }
+
+    .diagram-seat-booking .success-icon {
+        font-size: 60px;
+        color: #28a745;
+        margin-bottom: 20px;
+    }
+
+    .diagram-seat-booking .success-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .diagram-seat-booking .success-message {
+        margin-bottom: 20px;
+        line-height: 1.5;
+        text-wrap-mode: wrap;
+    }
+
+    .diagram-seat-booking .booking-details {
+        padding: 15px;
+        border-radius: 5px;
+        text-align: left;
+    }
+
+    .diagram-seat-booking .booking-details h4 {
+        margin-bottom: 10px;
+    }
+
+    .diagram-seat-booking .booking-details p {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+    .diagram-seat-booking .notification {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #d9534f;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        z-index: 1000;
+        animation: slideInMaxSeat 0.3s ease-out;
+    }
+
+    @keyframes slideInMaxSeat {
+        0% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .diagram-seat-booking .theater-name,
+    .diagram-seat-booking .movie-timing {
+        font-size: 14px !important;
+    }
+
+    .diagram-seat-booking .timing-list {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .diagram-seat-booking .timing-list li {
+        margin: 10px;
+        padding: 10px;
+        border-radius: 3px;
+    }
+
+    .diagram-seat-booking .timing-list li.selected {
+        background-color: #4F46E5;
+        color: white;
+    }
+
+    .diagram-seat-booking .timing-list li.available {
+        border: 1px solid #9CA3AF;
+        color: #15803D;
+        background-color: transparent;
+    }
+
+    .diagram-seat-booking .timing-list li.available:hover {
+        background-color: #DCFCE7;
+        border: 1px solid #15803D;
+        color: #15803D;
+    }
+
+    .diagram-seat-booking .timing-list li.filling-fast {
+        border: 1px solid #9CA3AF;
+        color: #C2410C;
+        background-color: transparent;
+    }
+
+    .diagram-seat-booking .timing-list li.filling-fast:hover {
+        background-color: #FFEDD5;
+        border: 1px solid #C2410C;
+        color: #C2410C;
+    }
+
+    .diagram-seat-booking .timing-list li.sold-out {
+        border: 1px solid #D1D5DB;
+        color: #9CA3AF;
+        background-color: #FFFFFF;
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+
+    .diagram-seat-booking .timing-list li.sold-out:hover {
+        border: 1px solid #D1D5DB;
+        color: #9CA3AF;
+        background-color: #FFFFFF;
+        color: #6c757d;
+    }
+
+    .diagram-seat-booking .timing-list li.selected {
+        background-color: #4F46E5;
+        color: white;
+        border: 1px solid #4F46E5;
+    }
+
+    .diagram-seat-booking .booking-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .diagram-seat-booking .price-info {
+        display: flex;
+        flex-direction: column;
+        margin-left: 30%;
+    }
+
+    .diagram-seat-booking .price {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .diagram-seat-booking .ticket-count {
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .diagram-seat-booking .btn-proceed {
+        background-color: rgb(103, 85, 238);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-right: 30%;
+        transition: background-color 0.3s;
+    }
+
+    .diagram-seat-booking .btn-proceed:hover {
+        background-color: #5a4fcf;
+    }
+
+    .diagram-seat-booking .btn2 {
+        flex: 1;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .diagram-seat-booking .price-hint-inline {
+        font-size: 12px;
+        color: #888;
+        margin: 4px 0 0 0;
+        display: flex;
+        gap: 12px;
+    }
+
+    .diagram-seat-booking .timing-list {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 768px) {
+        .diagram-seat-booking .main-container {
+            grid-template-columns: 1fr !important;
+            grid-template-rows: auto auto !important;
+        }
+
+        .diagram-seat-booking .ticket-selection-section {
+            grid-row: 1 !important;
+            margin: 10px !important;
+            padding: 15px !important;
+        }
+
+        .diagram-seat-booking .booking-summary-container {
+            grid-row: 2 !important;
+            padding: 0px 10px 20px 10px !important;
+        }
+
+        .diagram-seat-booking .booking-summary-section {
+            height: auto !important;
+            min-height: 400px !important;
+        }
+
+        .diagram-seat-booking .header {
+            padding: 15px 10px !important;
+        }
+
+        .diagram-seat-booking .header h2 {
+            font-size: 18px !important;
+        }
+
+        .diagram-seat-booking .movie-name-lnk {
+            font-size: 20px !important;
+            font-weight: 500 !important;
+            margin: 0 !important;
+            color: #337ab7 !important;
+            font-family: Segoe UI, sans-serif !important;
+        }
+
+        .diagram-seat-booking .theater-name,
+        .diagram-seat-booking .movie-timing {
+            font-size: 12px !important;
+        }
+    }

@@ -1,0 +1,273 @@
+.treegrid-center-container .e-gridheader .e-headercelldiv {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 3.45px !important;
+}
+
+:root {
+  --green: #27ae60;
+  --red: #e74c3c;
+  --radius: 12px;
+  --grey-line: #e5e7eb;
+}
+
+
+.resmenu-veg-icon,
+.resmenu-nonveg-icon 
+.resmenu-e-veg-icon,
+.resmenu-nonveg-icon {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.resmenu-veg-icon,
+.resmenu-nonveg-icon 
+ {
+  width: 12px;
+  height: 12px;
+  margin: 0 0 4px 2px;
+}
+
+.material3 .resmenu-veg-icon,
+.material3 .resmenu-nonveg-icon ,
+.tailwind3 .resmenu-veg-icon,
+.tailwind3 .resmenu-nonveg-icon
+{
+  margin: 0 0 2px 2px;
+}
+
+.resmenu-veg-icon {
+  background: green;
+}
+
+.resmenu-nonveg-icon {
+  background: red;
+}
+
+.resmenu-FoodCategory_icon_veg,
+.resmenu-FoodCategory_icon_nonveg {
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+}
+
+.resmenu-FoodCategory_icon_veg {
+  border-color: green;
+}
+
+.resmenu-FoodCategory_icon_nonveg {
+  border-color: red;
+}
+
+.resmenu-e-veg-icon,
+.resmenu-e-nonveg-icon {
+  border: 2px solid;
+  border-radius: 4px;
+  background: #fff;
+  position: relative;
+}
+
+.resmenu-e-veg-icon {
+  border-color: var(--green);
+}
+
+.resmenu-e-nonveg-icon {
+  border-color: var(--red);
+}
+
+.resmenu-e-veg-icon::after,
+.resmenu-e-nonveg-icon::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+.resmenu-e-veg-icon::after {
+  background: var(--green);
+}
+
+.resmenu-e-nonveg-icon::after {
+  background: var(--red);
+}
+
+.resmenu-price {
+  font-weight: bold;
+}
+
+.resmenu-old-price {
+  font-size: 12px;
+  text-decoration: line-through;
+  margin: 3px;
+}
+
+.resmenu-card {
+  width: 25vw;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.resmenu-info-separator {
+  margin: 20px 0 0 0;
+}
+
+.resmenu-cell {
+  border-bottom: 1px solid var(--grey-line);
+}
+
+.resmenu-image {
+  width: 110px;
+  height: 110px;
+  float: right;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius);
+  margin: 20px;
+  transition: transform 0.3s;
+}
+
+.resmenu-image-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.resmenu-image-wrap:hover .resmenu-image {
+  transform: scale(1.2);
+}
+
+.resmenu-count {
+  margin: 10px 30px 0 0;
+}
+
+.resmenu-food-count {
+  width: 60px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.resmenu-price-section {
+  text-align: right;
+  width: 25vw;
+}
+
+.resmenu-rating {
+  padding: 15px 0;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.resmenu-rating-value {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.resmenu-rating-thumbsup,
+.resmenu-rating-count {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.resmenu-foodname {
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 7px;
+}
+
+.resmenu-fooddesc {
+  font-weight: 400;
+  letter-spacing: 0.45px;
+}
+
+.resmenu-title {
+  float: right;
+  margin: 5px 0 0 5px;
+  font-weight: bold;
+}
+
+.resmenu-parentfoodname {
+  height: 48px;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.e-toolbar-right {
+  right: 20px !important;
+}
+
+#CartUpdate {
+  font-weight: 400;
+  font-size: 10px;
+}
+
+.treegrid-center-container,
+.resmenu-toolbar-search {
+  width: 800px;
+  margin: 32px auto;
+}
+
+.resmenu-toolbar-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#search-autocomplete {
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#search-autocomplete input{
+  padding: 25px 12px;
+}
+
+.material3 #search-autocomplete,
+    .material3-dark #search-autocomplete {
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
+        padding-left: 13px;
+    }
+
+.e-chip.e-outline {
+  color: #222 !important;
+  border-color: #ccc !important;
+  background: #d3d3d3 !important;
+  box-shadow: none !important;
+  cursor: default !important;
+  transition: none !important;
+}
+
+@media (max-width: 1200px) {
+  .treegrid-center-container,
+  .resmenu-toolbar-search {
+    width: 100%;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+}
+
+#cartDialog_title {
+  text-align: center;
+}
+
+.treegrid-center-container .e-treegridexpand,
+.treegrid-center-container .e-treegridcollapse {
+  vertical-align: middle !important;
+  margin-left: 7px;
+}
+
+.treegrid-center-container .e-toolbar {
+  height: 60px !important;
+}
+
+.emptyRecord {
+  font-style: italic;
+  font-size: 20px;
+}

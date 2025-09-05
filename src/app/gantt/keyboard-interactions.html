@@ -6,7 +6,7 @@
 
 <div class="control-section">
     <div class="col-lg-9 control-section">
-        <ejs-gantt id="KeyboardNavigation" height="430px" [dataSource]="data"
+        <ejs-gantt id="KeyboardNavigation" height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data"
             [taskFields]="taskSettings" [allowSelection]="true" [labelSettings]="labelSettings"
             [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
             [treeColumnIndex]="1" [columns]="columns" [editSettings]="editSettings"
@@ -355,4 +355,7 @@
           <td>Redo Last Action</td>
       </tr>
     </table>
+    <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/accessibility#keyboard-navigation">documentation section</a>.</p>
+    
 </div>

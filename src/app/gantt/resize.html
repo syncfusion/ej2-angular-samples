@@ -3,9 +3,9 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-gantt id="columnResize" height="430px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
+    <ejs-gantt id="columnResize" height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
         [labelSettings]="labelSettings" [splitterSettings]="splitterSettings" [treeColumnIndex]="1" [allowResizing]="true"
-        height="450px" [allowSelection]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true">
+        [allowSelection]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true">
     </ejs-gantt>
     <div style="float: right; margin: 10px;">Source:
         <a href="https://en.wikipedia.org/wiki/Construction" target='_blank'>https://en.wikipedia.org/</a>
@@ -23,4 +23,6 @@
     </p>
     <p>Injecting Module:</p>
     <p>Gantt component features are segregated into individual feature-wise modules. To use Resize feature, we need to inject <code>ResizeService</code> into the <code>&#64;NgModule.providers</code> section.</p>
+     <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/columns/column-resizing">documentation section</a>.</p>
 </div>

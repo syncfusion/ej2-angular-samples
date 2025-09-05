@@ -22,6 +22,14 @@ export class VirtualScrollingComponent implements OnInit {
     public treegrid: TreeGridComponent;
     public tasknamerules: Object;
     public taskidrules: Object;
+    public tmidrules: Object;
+    public stintrules: Object;
+    public yearrules: Object;
+      
+    public customFn_length: (args: { [key: string]: number }) => boolean = (args: { [key: string]: number }) => {
+        return (args['value'].toString().length==4);
+    }
+    
 
     public ngOnInit(): void {
         if (virtualData.length === 0) {
@@ -32,5 +40,8 @@ export class VirtualScrollingComponent implements OnInit {
         this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel','Indent', 'Outdent'];
         this.tasknamerules = { required: true};
         this.taskidrules = { required: true ,number: true};
+        this.tmidrules = { required: true ,number: true};
+        this.stintrules = { required:true ,number: true};
+        this.yearrules = { required:true, number: true, maxLength:[this.customFn_length ,'Please enter a four digit value']};        
     }
 }

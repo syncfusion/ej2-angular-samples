@@ -6,9 +6,9 @@
         searching option, using which you can filter the Gantt content across all the columns.</p>
 </div>
 <div class="col-lg-9 control-section">
-    <ejs-gantt id="ganttDefault" #gantt height="430px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
+    <ejs-gantt id="ganttDefault" #gantt height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
         [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [allowFiltering]="true" [toolbar]="toolbar"
-        [treeColumnIndex]="0" height="450px" [filterSettings]='filterSettings' [allowSelection]="true" dateFormat="MM/dd/yyyy hh:mm:ss"
+        [treeColumnIndex]="0"  [filterSettings]='filterSettings' [allowSelection]="true" dateFormat="MM/dd/yyyy hh:mm:ss"
         [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" (actionComplete)="onActionComplete($event)"
         [includeWeekend]="true" [splitterSettings]="splitterSettings" durationUnit="Hour" [dayWorkingTime]="dayWorkingTime">
     </ejs-gantt>
@@ -69,4 +69,7 @@
         Gantt component features are segregated into individual feature-wise modules. To use filtering and toolbar feature, we need
         to inject <code>FilterService</code> and <code>ToolbarService</code> into the <code>&#64;NgModule.providers</code> section respectively.
     </p>
+    <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/filtering/filtering">documentation section</a>.</p>
+    
 </div>

@@ -1,0 +1,26 @@
+<div class="control-section">
+    <ejs-treegrid #emptyTreeGrid [dataSource]='data' [treeColumnIndex]='1' [editSettings]='editSettings' [toolbar]='toolbar' allowFiltering='true' [filterSettings]='filterSettings' (actionComplete)='onActionComplete($event)' (dataBound)="dataBound($event)" childMapping='subtasks' allowPaging='true' allowSorting='true'>
+        <e-columns>
+            <e-column field='taskID' headerText='Task ID' type='number' textAlign='Right' isPrimaryKey="true" [validationRules]="taskIdRules" width=110></e-column>
+            <e-column field='taskName' headerText='Task Name' type='string' textAlign='Left' [validationRules]="taskNameRules" width=130></e-column>
+            <e-column field='priority' headerText='Priority' type='string' textAlign='Left' width=100 editType='dropdownedit' [edit]="priorityParams"></e-column>
+            <e-column field='assignee' headerText='Assignee' type='string' textAlign='Left' width=110></e-column>
+            <e-column field='status' headerText='Status' type='string' textAlign='Left' editType='dropdownedit' [edit]="statusParams" width=120></e-column>
+            <e-column field='duration' headerText='Duration in Days' type='number' editType='numericedit' textAlign='Right' width=150></e-column>
+        </e-columns>
+        <ng-template #emptyRecordTemplate>
+            <div class='emptyRecordTemplate'>
+                <img src="https://ej2.syncfusion.com/angular/demos/assets/grid/images/emptyRecordTemplate_light.svg" class="e-emptyRecord" alt="No record" style="width: 50px; height: 50px;">
+                <div><b>There is no data available to display at the moment.</b></div><br>
+            </div>
+        </ng-template>
+    </ejs-treegrid>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates the use of the empty record template in the Tree Grid. The <code>emptyRecordTemplate</code> accepts either a string or an HTML element value, which will be used as the template when there is no data.</p>
+</div>
+
+<div id="description">
+    <p> The Tree Grid provides a way to use custom content when it has no data to present. Custom content, such as images, text, or other components, can be used when the Tree Grid does not contain any records to display. This feature replaces the default message of "No records to display" typically shown in the Tree Grid.</p>
+    <p>More information about the empty record template can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/treegrid/overview"> documentation</a> section.</p>
+</div>

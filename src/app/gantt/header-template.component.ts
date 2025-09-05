@@ -45,7 +45,7 @@ export class HeaderTemplateComponent implements OnInit {
             rightLabel: 'TaskName'
         };
         this.resources = editingResources;
-        this.projectStartDate= new Date('03/25/2024');
-        this.projectEndDate= new Date('07/28/2024');
+        this.projectStartDate= new Date('03/24/2025');
+        this.projectEndDate= new Date('07/06/2025');
     }
 }

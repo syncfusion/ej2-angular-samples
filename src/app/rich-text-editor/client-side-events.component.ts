@@ -175,4 +175,8 @@ export class EventsComponent {
     actionCompleteHandler(): void {
         setTimeout(() => { this.rteObj.toolbarModule.refreshToolbarOverflow(); }, 400);
     }
+
+    selectionChanged(): void {
+        this.appendElement('Rich Text Editor <b>selectionChanged</b> event called<hr>');
+   }
 }

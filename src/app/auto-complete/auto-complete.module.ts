@@ -56,7 +56,7 @@ export const autoCompleteAppRoutes: Object[] = [
     },
     {
         path: ':theme/auto-complete/custom-filtering', component: CustomFilteringAutoCompleteComponent, order: '01',
-        name: 'Custom Filtering', type:'update', description: 'This example demonstrates how to achieve the custom filtering functionalities in the Angular autocomplete component.', category: 'AutoComplete'
+        name: 'Custom Filtering', description: 'This example demonstrates how to achieve the custom filtering functionalities in the Angular autocomplete component.', category: 'AutoComplete'
     },
 {
         path: ':theme/auto-complete/diacritics-filtering', component: DiacriticsFilteringAutoCompleteComponent, order: '01',

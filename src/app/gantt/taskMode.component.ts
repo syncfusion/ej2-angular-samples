@@ -53,7 +53,7 @@ export class GanttTaskModeComponent implements OnInit {
         this.labelSettings = {
             leftLabel: 'TaskName'
         };
-        this.projectStartDate= new Date('02/20/2024');
-        this.projectEndDate= new Date('03/30/2024');
+        this.projectStartDate= new Date('02/20/2025');
+        this.projectEndDate= new Date('03/30/2025');
     }
 }

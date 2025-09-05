@@ -1,0 +1,109 @@
+<div class="control-section">
+  <div class="treegrid-center-container">
+    <div class="resmenu-toolbar-search">
+      <ejs-autocomplete id="search-autocomplete" [dataSource]="dishNames" placeholder="Search for dishes"
+        [filterType]="'Contains'" width="800" [highlight]="true" (change)="onSearchChange($event)">
+      </ejs-autocomplete>
+    </div>
+    <div id="cartDialog">
+      <ejs-dialog #cartDialog id="cartDialog" header="Dishes" [visible]="false" width="400px" height="480px"
+        [isModal]="true" [showCloseIcon]="true" [animationSettings]="{ effect: 'Zoom' }" [buttons]="dialogButtons"
+        (beforeOpen)="onBeforeOpen()">
+        <ng-template #content>
+          <div [innerHTML]="cartHtml"></div>
+        </ng-template>
+      </ejs-dialog>
+    </div>
+
+    <div>
+      <ejs-treegrid #treeGrid id="TreeGrid" [dataSource]="foodMenu" [idMapping]="'FoodId'"
+        [parentIdMapping]="'CategoryId'" [treeColumnIndex]="0" height="400" [columns]="columns" [toolbar]="toolbar"
+        (rowDataBound)="onRowDataBound($event)" (dataBound)="dataBound()">
+        <ng-template #rowTemplate let-data>
+          <tr *ngIf="isCategoryRow(data)">
+            <td class="resmenu-cell resmenu-parentfoodname" colspan="3">
+              <span class="resmenu-title">{{ data.FoodName }} ({{ getTotalItems(data) }})</span>
+            </td>
+          </tr>
+          <tr *ngIf="!isCategoryRow(data)">
+            <td class="resmenu-cell">
+              <div class="resmenu-card">
+                <div class="foodname-row" style=" display: flex;">
+                  <span [ngClass]="
+                  data.FoodType === 'Veg'
+                    ? 'resmenu-FoodCategory_icon_veg'
+                    : 'resmenu-FoodCategory_icon_nonveg'
+                ">
+                    <span [ngClass]="
+                    data.FoodType === 'Veg'
+                      ? 'resmenu-veg-icon'
+                      : 'resmenu-nonveg-icon'
+                  "></span>
+                  </span>
+                  <span class="resmenu-foodname">{{ data.FoodName }}</span>
+                </div>
+                <div class="resmenu-rating">
+                  <span>
+                    <span class="resmenu-rating-thumbsup">👍</span>
+                    <span class="resmenu-rating-value">{{ data.Rating }}</span>
+                    <span class="resmenu-rating-count">({{data.TotalReviews}})</span>
+                  </span>
+                </div>
+                <div class="resmenu-fooddesc">{{ data.FoodDescription }}</div>
+                <div class="resmenu-info-separator" [innerHTML]="chiptags(data.ingredients)"></div>
+
+
+              </div>
+            </td>
+            <td class="resmenu-cell">
+              <div class="resmenu-price-section">
+                <span class="resmenu-price">${{ data.newPrice }}&nbsp;&nbsp;</span>
+                <ng-container *ngIf="data.originalPrice > data.newPrice">
+                  <span class="price-direction"> <--- </span>
+                      <span class="resmenu-old-price">${{ data.originalPrice }}</span>
+                </ng-container>
+              </div>
+            </td>
+            <td class="resmenu-cell">
+              <div class="menu-right">
+                <div class="resmenu-image-wrap">
+                  <img class="resmenu-image" [src]="data.Image" [alt]="data.FoodName" />
+                  <div class="resmenu-count">
+                    <ejs-numerictextbox [value]="getCount(data.FoodName)" [min]="0" [max]="10" [step]="1" format="N"
+                      cssClass="resmenu-food-count" width="100px" (change)="onFoodCountChange($event, data)">
+                    </ejs-numerictextbox>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+      </ejs-treegrid>
+    </div>
+  </div>
+  <ng-template #emptyTemplate let-data>
+    <div class='emptyRecordTemplate'>
+      <span class="emptyRecord">Hmm... we could not find that dish. Want to try something else?</span>
+    </div>
+  </ng-template>
+</div>
+<div id="action-description">
+  <p>This demo shows how the Tree Grid can be used to create a visually rich and interactive food menu. The demo meets
+    different viewer preferences, such as vegetarian and bestseller dishes. It uses a food dataset that includes
+    details for categories like salads, pizza, burgers, hot-dogs, chowmein, and desserts, with descriptions, prices,
+    ratings, and bestseller indicators.
+  </p>
+</div>
+<div id="description">
+  <p>The sample shows how dynamic, customizable row templates and custom cell rendering make the menu more informative
+    and attractive. The Tree Grid row template adds visual elements like images, ratings, and price comparisons
+    right in the cells. With its flexibility and easy customization, the Tree Grid is a great tool for creating
+    interesting and engaging food menu presentations.
+  </p>
+  <br />
+  <p>
+    More information on the Tree Grid can be found in this
+    <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/treegrid/getting-started">
+      documentation section.</a>
+  </p>
+</div>

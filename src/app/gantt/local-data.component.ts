@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { projectNewData } from './data';
+import { localData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -18,7 +18,7 @@ export class GanttLocalDataComponent implements OnInit {
     public projectStartDate: Date;
     public projectEndDate: Date;
     public ngOnInit(): void {
-        this.data = projectNewData;
+        this.data = localData;
         this.taskSettings = {
             id: 'TaskID',
             name: 'TaskName',
@@ -38,13 +38,13 @@ export class GanttLocalDataComponent implements OnInit {
             { field: 'Predecessor' },
             { field: 'Progress' },
         ];
-        this.projectStartDate = new Date('03/24/2024');
-        this.projectEndDate = new Date('07/06/2024');
+        this.projectStartDate = new Date('03/26/2025');
+        this.projectEndDate = new Date('07/20/2025');
         this.labelSettings = {
             leftLabel: 'TaskName',
         };
         this.splitterSettings = {
-            position: "35%"
+            columnIndex: 2
         };
     }
 }

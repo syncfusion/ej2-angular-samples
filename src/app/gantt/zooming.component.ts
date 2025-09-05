@@ -15,6 +15,8 @@ export class GanttZoomingComponent implements OnInit {
     public labelSettings: object;
     public toolbar: string[];
     public columns: object[];
+    public projectStartDate: Date;
+    public projectEndDate: Date;
     public splitterSettings: object;
     public ngOnInit(): void {
         this.data = zoomingData;
@@ -42,7 +44,9 @@ export class GanttZoomingComponent implements OnInit {
             { field: 'Progress' },
         ];
         this.splitterSettings = {
-            position: "35%"
+            columnIndex: 3
         };
+        this.projectStartDate= new Date('03/26/2025');
+        this.projectEndDate= new Date('06/01/2025');
     }
 }

@@ -1,17 +1,4 @@
 <style>
-    .diagram-symbol-palette .sb-child-row {
-        margin-top: 8px;
-    }
-
-    .diagram-symbol-palette .row {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-
-    .diagram-symbol-palette .col-xs-6 {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
 
     @font-face {
     font-family: 'e-ddb-icons';
@@ -20,30 +7,106 @@
     font-style: normal;
     }
 
-.e-ddb-icons {
-    font-family: 'e-ddb-icons';
-    speak: none;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-       .e-basic::before {
-            content: "\e726";
-        }
+    .e-ddb-icons {
+        font-family: 'e-ddb-icons';
+        speak: none;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .e-basic::before {
+        content: "\e726";
+    }
 
-        .e-flow::before {
-            content: "\e724";
-        }
+    .e-flow::before {
+        content: "\e724";
+    }
 
-        .e-diagram-connector::before {
-            content: "\e725";
-        }
+    .e-diagram-connector::before {
+        content: "\e725";
+    }
 
+    .diagram-symbolpalette .e-ddb-icons {
+        font-family: 'e-ddb-icons';
+        speak: none;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    /* Icon css in dropdown */
+    .diagram-symbolpalette .e-basic::before {
+        content: "\e726";
+    }
+
+    .diagram-symbolpalette .e-flow::before {
+        content: "\e724";
+    }
+
+    .diagram-symbolpalette .e-connector::before {
+        content: "\e725";
+    }
+    .diagram-symbolpalette {
+        display: flex;
+        flex-wrap: wrap; /* Allows columns to stack when zoomed/shrunk */
+        width: 100%;
+    }
+   /* Base styles for columns */
+    .diagram-column {
+        min-height: 600px; /* Example height */
+        box-sizing: border-box;
+    }
+     .diagram-column {
+        padding-right: 10px;
+     }
+
+    #symbolpalette, #diagram {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ccc;
+    }
+    .palette-column {
+        flex: 1 1 170px; /* Grow, Shrink, Basis */
+        min-width: 170px;
+    }
+
+    .diagram-column {
+        flex: 3 1 500px;
+        min-width: 400px;
+    }
+
+    .property-panel-header {
+        padding-left: 10px; 
+        padding-top:  0px;
+        font-weight: 500;
+    }
+    .property-panel-section {
+        flex: 1 1 200px;
+        min-width: 180px;
+    }
+    .property-panel-content table tr td:first-child {
+        width: 50%;
+    }
+    .property-panel-content table tr td div {
+        padding-top: 18px;
+        padding-bottom: 15px;
+    }
+    .property-panel-content {
+        overflow: auto;
+        min-width:22%
+    }
+    .e-dropdownlist, .e-numeric {
+        padding-top: 5px;
+    }
 </style>
 <div id="action-description">
     <p>
@@ -51,70 +114,120 @@
         options of the symbol palette are also illustrated in this example.
     </p>
 </div>
-<div class="col-lg-8 control-section" id="palette-space" style="height:100%;">
-    <div id="palette-space" style="width:100%; height:100%;">
-        <ejs-symbolpalette #symbolpalette id="symbolpalette" [enableAnimation]='enableAnimation' [expandMode]='expandMode' [palettes]='palettes'
-            width="100%" height="700px" [symbolHeight]=60 [symbolWidth]=60 [symbolMargin]='symbolMargin' [getSymbolInfo]='getSymbolInfo'
-            [getNodeDefaults]='getSymbolDefaults'>
+ <div style="width: 100%; margin-top: 20px; margin-bottom:20px" class="diagram-symbolpalette">
+    <div class="palette-column"  style="min-width: 20%;" >
+        <div class="sb-mobile-palette-bar">
+            <div id="palette-icon" style="float: right;" role="button" class="e-ddb-icons1 e-toggle-palette"></div>
+        </div>
+        <ejs-symbolpalette #symbolpalette id="symbolpalette" [enableAnimation]='enableAnimation' [enableSearch]='enableSearch' [expandMode]='expandMode' [palettes]='palettes'
+            width="100%" height="900px" [symbolMargin]='symbolMargin' [getSymbolInfo]='getSymbolInfo'
+            [getNodeDefaults]='getSymbolDefaults' [getConnectorDefaults]='getConnectorDefaults'>
         </ejs-symbolpalette>
     </div>
-</div>
-<div class="col-lg-4 property-section diagram-symbol-palette">
-    <div class="property-panel-header">
-        Properties
+
+    <div  id="diagram-space" class="diagram-column">
+        <ejs-diagram #diagram id="diagram" width="100%" height="900px" (created)="created()" [getNodeDefaults]='getNodeDefaults'
+        [scrollSettings] = "scrollSettings">
+        </ejs-diagram>
     </div>
-    <div class="row sb-child-row property-panel-content">
-        <div class="row sb-child-row">
-            <div class="col-xs-6">
-                <span>Expandable:</span>
-            </div>
-            <div class="col-xs-6">
-                <ejs-dropdownlist id="expand" #expand [dataSource]="expandOptions" [fields]=fields index=1 (change)="onExpandChange($event)"></ejs-dropdownlist>
-            </div>
-        </div>
-        <div class="row sb-child-row">
-            <div class="col-xs-6">
-                <span>Symbol Size:</span>
-            </div>
-            <div class="col-xs-6">
-                <ejs-numerictextbox #size id="size" value="80" step="5" format="##.##" min="60" max="100" width="120px" (change)='onSizeChange($event)'></ejs-numerictextbox>
-            </div>
-        </div>
-        <div class="row sb-child-row">
-            <div class="col-xs-6">
-                <span>Animation:</span>
-            </div>
-            <div class="col-xs-6">
-                <ejs-checkbox #animation id="animation" [checked]="false" (change)="onAnimationChange($event)"></ejs-checkbox>
-            </div>
-        </div>
-        <div class="row sb-child-row">
-            <div class="col-xs-6">
-                <span>Item Text:</span>
-            </div>
-            <div class="col-xs-6">
-                <ejs-checkbox #itemtext id="itemtext" [checked]="false" (change)="onItemTextChange($event)"></ejs-checkbox>
-            </div>
-        </div>
-        <div class="row sb-child-row">
-            <div class="col-xs-6">
-                <span>Header Icon:</span>
-            </div>
-            <div class="col-xs-6">
-                <ejs-checkbox #itemtext id="headerIcon" [checked]="true" (change)="onHeaderIconChange($event)"></ejs-checkbox>
-            </div>
+
+    <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+            <table id="property" class="property-panel-table" title="Properties" style="width: 100%;height:100%;">
+                <tbody>
+                    <tr style="height: 50px">
+                        <td>
+                            <div>
+                                Expandable
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <ejs-dropdownlist id="expand1" #expand [dataSource]="expandOptions" [fields]=fields index=1 width="100px" (change)="onExpandChange($event)"></ejs-dropdownlist>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr style="height: 50px">
+                        <td>
+                            <div>
+                                Symbol Size
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <ejs-numerictextbox #size id="size" value="50" step="5" format="##.##" min="40" max="90" width="100px" (change)='onSizeChange($event)'></ejs-numerictextbox>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr style="height: 70px">
+                        <td>
+                            <div style="padding-top: 14px;">
+                                Animation
+                            </div>
+                        </td>
+                        <td>
+                            <div style="padding-top: 9px;">
+                            <ejs-checkbox #animation id="animation" [checked]="true" (change)="onAnimationChange($event)"></ejs-checkbox>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr style="height: 70px;">
+                        <td>
+                            <div style="padding-top: 14px;">
+                                Item Text
+                            </div>
+                        </td>
+                        <td>
+                            <div style="padding-top: 9px;">
+                                <ejs-checkbox id="itemtext" [checked]="false" (change)="onItemTextChange($event)"></ejs-checkbox>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr style="height: 70px;">
+                        <td>
+                            <div style="padding-top: 14px;">
+                                Header Icon
+                            </div>
+                        </td>
+                        <td>
+                            <div style="padding-top: 9px;">
+                                <ejs-checkbox id="headerIcon" [checked]="true" (change)="onHeaderIconChange($event)"></ejs-checkbox>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr style="height: 70px;">
+                        <td>
+                            <div style="padding-top: 14px;">
+                                Show Search TextBox
+                            </div>
+                        </td>
+                        <td>
+                            <div style="padding-top: 9px;">
+                            <ejs-checkbox id="showsearch" [checked]="true" (change)="onShowSearchChange($event)"></ejs-checkbox>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
+
 <div id="description">
     <p>
-        This example shows how to add shapes to symbol palette and how to customize it. The
-        <code>symbols</code> property can be used to add shapes to the symbol palette. The
-        <code>symbolWidth</code> and
-        <code>symbolHeight</code> properties allow you to define the size of the symbols.
+       This example demonstrates how to add shapes to a symbol palette and customize their appearance using the Syncfusion Diagram component. Symbol sizes can be adjusted using the <code>width</code> and <code>height</code> properties via the <code>getSymbolInfo</code> method.
     </p>
-    <p>
-        In this example, options to enable/disable animation, show/hide symbol descriptions, and show header icons are provided.
-    </p>
+    <p>Additional features include:</p>
+    <ul>
+        <li>Enabling or disabling animation using the <code>enableAnimation</code> property.</li>
+        <li>Activating search functionality with the <code>enableSearch</code> property, allowing users to find symbols by ID or search tags</li>
+    </ul>
+    <p>Note: The size of <b>"HTML Shapes"</b> in the symbol palette is restricted at runtime when modifying symbol size property, to maintain a consistent layout and visual appearance.</p>
     <br>
 </div>

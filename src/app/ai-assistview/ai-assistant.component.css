@@ -1,0 +1,140 @@
+.ai-assistant {
+    height: 500px;
+    width: auto;
+    margin: 0 auto;
+}
+
+.ai-assistant #aiAssistView {
+    width: auto !important;
+}
+
+#assistant-splitter .canvas-response {
+	padding: 16px;
+	overflow-y: auto;
+	height: 100%;
+	font-family: inherit;
+}
+
+.ai-assistant .banner-content .e-assistview-icon:before {
+    font-size: 35px;
+}
+
+.ai-assistant .banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 330px;
+    text-align: center;
+}
+
+.ai-assistant .banner-content.e-no-content {
+    height: 25vh;
+}
+
+.ai-assistant .banner-content h3 {
+    margin: 0;
+}
+
+.ai-assistant .banner-content .e-assistview-icon:before {
+    font-size: 40px;
+}
+
+#assistantSidebar {
+    border: 1px solid var(--color-sf-border);
+    border-right: unset;
+}
+
+#assistantSidebar .e-listview .e-aiassist-chat::before {
+    font-size: 18px;
+}
+
+#assistantSidebar .e-listview .e-aiassist-chat {
+    margin: 0 8px;
+}
+
+/* Chat item styles */
+#assistantSidebar #assistant-listview-grp .chat-item {
+    padding-left: 6px;
+    cursor: pointer;
+}
+
+#assistantSidebar #assistant-listview-grp .chat-title {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+}
+
+#assistantSidebar #assistant-listview-grp .chat-time {
+    font-size: 12px;
+    color: #757575;
+}
+
+#assistantSidebar #assistant-listview-grp {
+    height: calc(100% - 50px);
+    overflow-y: auto;
+    border: none;
+}
+
+#assistantSidebar .assistant-listview-option {
+    display: flex;
+    padding: 10px 10px 10px 8px;
+    align-items: center;
+}
+
+#assistantSidebar .assistant-listview-option div {
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+#assistantSidebar .assistant-listview-option span {
+    margin-left: auto;
+    margin-top: 5px;
+}
+
+#assistantSidebar .e-toolbar-left .e-toolbar-item .e-tbar-btn {
+    pointer-events: none;
+}
+
+#assistantSidebar .assistant-sidebar-header .e-toolbar,
+#assistantSidebar .assistant-sidebar-header .e-toolbar .e-tbar-btn {
+    background: inherit;
+}
+
+#assistantSidebar.e-close .assistant-sidebar-content .assistant-listview-option .header-conversation,
+#assistantSidebar.e-close .assistant-sidebar-content .assistant-listview-option .e-refresh,
+#assistantSidebar.e-close .assistant-sidebar-content #assistant-listview-grp,
+#assistantSidebar.e-close .new-chat-button,
+#assistantSidebar.e-close .e-toolbar-left .e-toolbar-item {
+    display: none;
+}
+
+#assistantSidebar.e-close .assistant-sidebar-content .assistant-listview-option .e-multiple-comment {
+    font-size: 24px;
+    padding-left: 5px;
+}
+
+#assistantSidebar.e-close .e-toolbar-items .e-toolbar-right {
+    left: 14px;
+}
+
+#assistantSidebar .e-toolbar-item .e-tbar-btn:hover .e-icons {
+    color: #6c757d;
+}
+
+#assistantSidebar .assistant-listview-option #resetButton {
+    cursor: pointer;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 480px) {
+    #assistantSidebar .e-toolbar-items .e-toolbar-right {
+        margin-left: 100px;
+    }
+
+    .ai-assistant {
+        width: 100%;
+    }
+}

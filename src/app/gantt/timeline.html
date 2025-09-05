@@ -4,9 +4,9 @@
 </div>
 
     <div class="col-lg-8 control-section">
-        <ejs-gantt id="ganttDefault" #gantt height="430px" [dataSource]="data" [taskFields]="taskSettings"
+        <ejs-gantt id="ganttDefault" #gantt height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings"
             [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [splitterSettings]="splitterSettings"
-            [treeColumnIndex]="1" height="450px" [allowSelection]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+            [treeColumnIndex]="1"  [allowSelection]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
             [highlightWeekends]="true" [columns]="columns">
         </ejs-gantt>
     </div>
@@ -173,4 +173,6 @@
         Gantt component features are segregated into individual feature-wise modules. To use a selection and markers support, inject the
         <code>SelectionService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section respectively.
     </p>
+    <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/data-binding#remote-data">documentation section</a>.</p>
 </div>

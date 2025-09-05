@@ -38,8 +38,8 @@ export class GanttSelfDataComponent implements OnInit {
             { field: 'predecessor' },
             { field: 'progress' },
         ];
-        this.projectStartDate = new Date('01/28/2024');
-        this.projectEndDate = new Date('03/10/2024');
+        this.projectStartDate = new Date('01/28/2025');
+        this.projectEndDate = new Date('03/30/2025');
         this.labelSettings = {
             leftLabel: 'taskName',
         };

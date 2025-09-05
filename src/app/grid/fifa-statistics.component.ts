@@ -235,7 +235,7 @@ export class FIFAStatisticsComponent implements OnInit, AfterViewInit {
       }
     }
     if (args.column && args.column.field === 'BestPlayerAward') {
-      const rowIndexStr = args.cell?.getAttribute('index');
+      const rowIndexStr = args.cell?.getAttribute('data-index');
       const rowIndex = rowIndexStr ? parseInt(rowIndexStr) : 0;
       if (rowIndex > 0) {
         if ((this.gridObj.currentViewData[rowIndex - 1] as FifaDetails)[args.column.field] !==

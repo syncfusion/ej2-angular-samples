@@ -171,7 +171,7 @@
     .bootstrap5-dark #toastcustom.e-toast-container .e-toast .e-toast-message,
     .bootstrap5\.3 #toastcustom.e-toast-container .e-toast .e-toast-message,
     .bootstrap5\.3-dark #toastcustom.e-toast-container .e-toast .e-toast-message {
-        margin-left: 95px;
+        margin-left: 0px;
     }
 
     .bootstrap5 #template_toast,

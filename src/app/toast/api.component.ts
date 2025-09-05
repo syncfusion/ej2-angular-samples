@@ -201,7 +201,7 @@ export class ApiController {
     }
 
     public onClose(e: ToastCloseArgs): void {
-        if (e.toastContainer.childElementCount === 0) {
+        if (e.toastContainer != null && e.toastContainer.childElementCount === 0) {
             const hideBtn: HTMLElement = document.getElementById('toastBtnHide');
             hideBtn.style.display = 'none';
         }

@@ -161,7 +161,7 @@ export class CellTemplateComponent implements OnInit {
         this.dataSourceSettings = {
             expandAll: true,
             enableSorting: true,
-            drilledMembers: [{ name: 'Year', items: ['FY 2015', 'FY 2017', 'FY 2018'] }],
+            drilledMembers: [{ name: 'Year', items: ['FY 2022', 'FY 2023', 'FY 2024'] }],
             formatSettings: [{ name: 'ProCost', format: 'C0' }, { name: 'PowUnits', format: 'N0' }],
             rows: [
                 { name: 'Year', caption: 'Production Year' },

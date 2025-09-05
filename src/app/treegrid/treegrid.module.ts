@@ -75,6 +75,8 @@ import { EmployeemgmtComponent } from './employeemgmt.component';
 import { RestaurantMenuComponent } from './restaurant-menu.component';
 import { StickyHeaderComponent } from './stickyheader.component';
 import { RemoteVirtualComponent } from './remotevirtual.component';
+import { EmptyRecordTemplateComponent } from './empty-record-template.component';
+import { AsyncPipeComponent } from './async-pipe.component';
 
 export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/treegrid-overview', component: TreeGridOverviewComponent, 'name': 'Overview',
@@ -92,12 +94,15 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/loading-animation', component: LoadingAnimationComponent, name: 'Loading Animation',
     description: 'This demo for Essential<sup>®</sup> JS 2 Tree Grid component shows the loading indicator when Tree Grid loading and refreshing.', 
     order: '01', category: 'Tree Grid' },
-
-     { 'path': ':theme/treegrid/employeemgmt', component: EmployeemgmtComponent, name: 'Employee Management',
-    description: 'This example demonstrates role-based rendering in the TreeGrid.', type:'new',
+    { 'path': ':theme/treegrid/empty-record-template', component: EmptyRecordTemplateComponent, name: 'Empty Record Template',
+    description: 'This demo demonstrates how to use Essential<sup>®</sup> JS 2 Tree Grid to display a custom template when the Tree Grid is rendered with an empty data source.', type:'new',
+    order: '01', category: 'Tree Grid' },
+    
+    { 'path': ':theme/treegrid/employeemgmt', component: EmployeemgmtComponent, name: 'Employee Management',
+    description: 'This example demonstrates role-based rendering in the TreeGrid.',
     order: '14', category: 'Product Use Case' },
     { 'path': ':theme/treegrid/restaurant-menu', component: RestaurantMenuComponent, name: 'Restaurant Menu',
-    description: 'This demo for Essential<sup>®</sup> JS 2 Tree Grid component shows the loading indicator when tree grid loading and refreshing.', type:'new',
+    description: 'This demo for Essential<sup>®</sup> JS 2 Tree Grid component shows the loading indicator when tree grid loading and refreshing.',
     order: '14', category: 'Product Use Case' },
 
    
@@ -109,6 +114,9 @@ export const treegridRouteConfig: Object[] = [
     order: '02', category: 'Data Binding' },
     { 'path': ':theme/treegrid/selfreference', component: SelfReferenceComponent, 'name': 'Self Reference Data',
     description: 'This example illustrates binding self-referential flat data with parent ID to a Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
+    order: '02', category: 'Data Binding' },
+    { 'path': ':theme/treegrid/async-pipe', component: AsyncPipeComponent, 'name': 'Async Pipe', type:'new',
+    description: 'This sample demonstrates the usage of the Angular TreeGrid control with observables using the async pipe. Paging, sorting, expand, and collapse can be performed in this sample.', 
     order: '02', category: 'Data Binding' },
     { 'path': ':theme/treegrid/columntemplate', component: ColumnTemplateComponent, 'name': 'Column Template', 
     description: 'This demo explains how to define template columns in Syncfusion<sup>®</sup>  Essential<sup>®</sup> JS2 Tree Grid control.', 
@@ -125,9 +133,9 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/resizing', component: ResizingComponent, 'name': 'Resizing',
     description: 'This demo for Essential<sup>®</sup> JS2 Tree Grid component shows the default rendering of the Tree Grid  component with minimum configuration.', 
     order: '03', category: 'Columns' },
-    { 'path': ':theme/treegrid/stackedheader', component: StackedHeaderComponent, 'name': 'Stacked Header',
+    { 'path': ':theme/treegrid/stackedheader', component: StackedHeaderComponent, 'name': 'Stacked Header', 
     description: 'This demo explains how to provide a common header for the group of columns in Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
-    order: '03', category: 'Columns' },
+    order: '03', type: 'update', category: 'Columns' },
     { 'path': ':theme/treegrid/columnmenu', component: ColumnMenuComponent, 'name': 'Column Menu',
     description: 'This demo explains the default functionalities of the Column Menu in Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
     order: '03', category: 'Columns' },
@@ -216,7 +224,7 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/default-scrolling', component: DefaultScrollingComponent, 'name': 'Default Scrolling', 
     description: 'This demo for Essential<sup>®</sup> JS 2 Tree Grid control shows the usage of horizontal and vertical scrollbars to view Tree Grid content that exceeds the Tree Grid area.', 
     order: '09', category: 'Scrolling'},
-      { 'path': ':theme/treegrid/stickyheader', component: StickyHeaderComponent, 'name': 'Sticky Header', type:'new',
+      { 'path': ':theme/treegrid/stickyheader', component: StickyHeaderComponent, 'name': 'Sticky Header',
     description: 'This demo for Essential<sup>®</sup> JS 2 Tree Grid control shows  sticky header to view Tree Grid content.', 
     order: '09', category: 'Scrolling'},
     { 'path': ':theme/treegrid/frozen-column', component: FreezeComponent, 'name': 'Frozen Columns', hideOnDevice: true,
@@ -228,7 +236,7 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/virtual-scrolling', component: VirtualScrollingComponent, 'name': 'Virtual Scrolling',
     description: 'This demo demonstrates how to use Essential<sup>®</sup> JS 2 Tree Grid to show a large data view without performance degradation by rendering only the required rows.', 
     order: '09', category: 'Scrolling'},
-     { 'path': ':theme/treegrid/remotevirtual', component: RemoteVirtualComponent, 'name': 'Load Child On Demand', type:"new",
+     { 'path': ':theme/treegrid/remotevirtual', component: RemoteVirtualComponent, 'name': 'Load Child On Demand',
     description: "This example shows the binding of remote services by using the DataManager in the Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid", order: '09', category: 'Scrolling'},
     { 'path': ':theme/treegrid/infinite-scrolling', component: InfiniteScrollingComponent, 'name': 'Infinite Scrolling',
     description: 'This demo demonstrates how to use Essential<sup>®</sup> JS 2 Tree Grid to show a large data view without performance degradation by rendering only the required rows.', 
@@ -242,12 +250,12 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/checkbox-selection', component: CheckboxSelectionComponent, 'name': 'Checkbox Selection',
     description: 'This demo explains how the check box selection feature can be used to select Tree Grid rows in Essential<sup>®</sup> TypeScript Tree Grid control.', 
     order: '10', category: 'Selection' },
-    // { 'path': ':theme/treegrid/default-aggregate', component: AggregateComponent, 'name': 'Default Aggregate', 
-    // description: 'This demo explains how to display the summary values such as average, minimum, etc., for the columns in Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
-    // order: '10', category: 'Aggregates' },
-    // { 'path': ':theme/treegrid/custom-aggregate', component: CustomAggregateComponent, 'name': 'Custom Aggregate', 
-    // description: 'This demo explains how to display the custom aggregate for the columns in Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
-    // order: '10', category: 'Aggregates' },
+    { 'path': ':theme/treegrid/default-aggregate', component: AggregateComponent, 'name': 'Default Aggregate', 
+    description: 'This demo explains how to display the summary values such as average, minimum, etc., for the columns in Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
+    order: '15', category: 'Aggregates' },
+    { 'path': ':theme/treegrid/custom-aggregate', component: CustomAggregateComponent, 'name': 'Custom Aggregate', 
+    type: 'update' ,description: 'This demo explains how to display the custom aggregate for the columns in Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
+    order: '15', category: 'Aggregates' },
     { 'path': ':theme/treegrid/exporting-default', component: DefaultExportComponent, 'name': 'Default Exporting',
     description: 'This demo explains how to export the Tree Grid content to Excel, PDF, and CSV documents using the Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
     order: '11', category: 'Exporting' },

@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { projectNewData } from './data';
+import { criticalPathData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -19,7 +19,7 @@ export class GanttCriticalPathComponent implements OnInit {
     public projectStartDate: Date;
     public projectEndDate: Date;
     public ngOnInit(): void {
-        this.data = projectNewData;
+        this.data = criticalPathData;
         this.taskSettings = {
             id: 'TaskID',
             name: 'TaskName',
@@ -28,7 +28,7 @@ export class GanttCriticalPathComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            child: 'subtasks'
+            parentID: 'ParentId'
         };
         this.editSettings = {
             allowAdding: true,
@@ -46,8 +46,8 @@ export class GanttCriticalPathComponent implements OnInit {
             { field: 'Progress' },
             { field: 'Predecessor' }
         ];
-        this.projectStartDate = new Date('03/24/2024');
-        this.projectEndDate = new Date('07/06/2024');
+        this.projectStartDate = new Date('03/26/2025');
+        this.projectEndDate = new Date('06/01/2025');
         this.labelSettings = {
             leftLabel: 'TaskName',
         };

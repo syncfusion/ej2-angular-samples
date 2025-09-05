@@ -1,0 +1,11 @@
+.emptyRecordTemplate {
+    text-align: center;
+    margin: 31px auto;
+}
+
+.e-emptyRecord {
+    display: block;
+    margin: 15px auto;
+    border-radius: 4px;
+    box-shadow: 2px 4px 10px rgba(52, 52, 52, 0.5);
+}

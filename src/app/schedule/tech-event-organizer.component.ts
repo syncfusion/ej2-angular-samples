@@ -56,8 +56,8 @@ export class TechEventOrganizerComponent implements OnInit {
   public draggedItemDescription: string;
   public unplannedEventsTreeViewRefs: any[] = []; 
   public showTimeIndicator = false;
-  public lockedScrollTop: number = 0;
   public eventAdded: boolean = false;
+  public lockedScrollTop: number = 0;
 
   public eventSettings: EventSettingsModel = {
     dataSource: this.eventsData,
@@ -103,7 +103,7 @@ export class TechEventOrganizerComponent implements OnInit {
   constructor(@Inject('sourceFiles') private sourceFiles: any) {
     sourceFiles.files = ['tech-event-organizer.html'];
   }
- ngAfterViewInit(): void {
+   ngAfterViewInit(): void {
     setTimeout(() => {
       this.scheduleRef.refresh();
     });
@@ -477,7 +477,7 @@ public onPopupClose(args: PopupCloseEventArgs): void {
   }
 
   public onTreeDragStart(): void {
-     const scheduleContent = this.scheduleRef.element.querySelector('.e-content-wrap') as HTMLElement;
+      const scheduleContent = this.scheduleRef.element.querySelector('.e-content-wrap') as HTMLElement;
     if (scheduleContent) {
       this.lockedScrollTop = scheduleContent.scrollTop;
       scheduleContent.addEventListener('scroll', this.freezeScroll);
@@ -507,12 +507,12 @@ public onPopupClose(args: PopupCloseEventArgs): void {
       (event.target as HTMLElement).classList.add('not-allowed-cursor');
     }
   }
-  private freezeScroll = (e: Event): void => {
+ private freezeScroll = (e: Event): void => {
     (e.target as HTMLElement).scrollTop = this.lockedScrollTop;
   }
 
   public onTreeDragStop(event: DragAndDropEventArgs): void {
-       const scheduleContent = this.scheduleRef.element.querySelector('.e-content-wrap') as HTMLElement;
+      const scheduleContent = this.scheduleRef.element.querySelector('.e-content-wrap') as HTMLElement;
     if (scheduleContent) {
       scheduleContent.removeEventListener('scroll', this.freezeScroll);
     }

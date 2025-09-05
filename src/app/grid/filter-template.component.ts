@@ -68,8 +68,8 @@ export class FilterTemplateComponent implements OnInit {
         if (args.keyCode === 13) {
             const target: Element = args.target as Element;
             const th: Element = closest(target, 'th');
-            if (th && th.classList.contains('e-filterbarcell') && th.hasAttribute('e-mappinguid')) {
-                const field: string = this.grid!.getColumnByUid(th.getAttribute('e-mappinguid')).field;
+            if (th && th.classList.contains('e-filterbarcell') && th.hasAttribute('data-mappinguid')) {
+                const field: string = this.grid!.getColumnByUid(th.getAttribute('data-mappinguid')).field;
                 if (field === 'UnitPrice') {
                     args.cancel = true;
                     if (this.minTextBox.element.value || this.maxTextBox.element.value) {

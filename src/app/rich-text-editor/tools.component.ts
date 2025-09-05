@@ -57,7 +57,7 @@ export class FullFeatureComponent {
         items: [
             'Undo', 'Redo', '|', 'ImportWord', 'ExportWord', 'ExportPdf', '|',
             'Bold', 'Italic', 'Underline', 'StrikeThrough', 'InlineCode', '|', 'CreateLink', 'Image', 'CreateTable', 'CodeBlock',
-            'HorizontalLine', 'Blockquote', '|', 'BulletFormatList', 'NumberFormatList', '|', 'Formats', 'Alignments', '|', 'Outdent', 'Indent', '|',
+            'HorizontalLine', 'Blockquote', '|', 'BulletFormatList', 'NumberFormatList', 'Checklist', '|', 'Formats', 'Alignments', '|', 'Outdent', 'Indent', '|',
             'FontColor', 'BackgroundColor', 'FontName', 'FontSize', '|', 'LowerCase', 'UpperCase', '|', 'SuperScript', 'SubScript', '|',
             'EmojiPicker', 'FileManager', 'Video', 'Audio', '|', 'FormatPainter', 'ClearFormat',
             '|', 'Print', 'FullScreen', '|', 'SourceCode']
@@ -81,7 +81,7 @@ export class FullFeatureComponent {
     };
 
     public quickToolbarSettings: QuickToolbarSettingsModel = {
-        table: ['Tableheader', 'TableRemove', '|', 'TableRows', 'TableColumns', 'TableCell', '|' , 'Styles', 'BackgroundColor', 'Alignments', 'TableCellVerticalAlign'],
+        table: ['Tableheader', 'TableRemove', '|', 'TableRows', 'TableColumns', 'TableCell', '|', 'TableEditProperties', 'Styles', 'BackgroundColor', 'Alignments', 'TableCellVerticalAlign'],
         text: ['Formats', '|', 'Bold', 'Italic', 'Fontcolor', 'BackgroundColor', '|', 'CreateLink', 'Image', 'CreateTable', 'Blockquote', '|' , 'Unorderedlist', 'Orderedlist', 'Indent', 'Outdent'],
         showOnRightClick: true,
     };
@@ -131,13 +131,14 @@ export class FullFeatureComponent {
         } else {
             this.rteObj.rootContainer.classList.add('e-rte-code-mirror-enabled');
             this.rteObj.rootContainer.classList.remove('e-source-code-enabled');
+            const editorVlaue: string = (this.rteObj.element.querySelector('.e-rte-srctextarea') as HTMLTextAreaElement).value;
             if (!mirrorView) {
                 mirrorView = createElement('div', { className: 'rte-code-mirror', id: id, styles: 'display: none;' });
                 this.rteObj.rootContainer.appendChild(mirrorView);
-                this.renderCodeMirror(mirrorView, this.rteObj.value === null ? '' : this.rteObj.value);
+                this.renderCodeMirror(mirrorView, editorVlaue === null ? '' : editorVlaue);
             }
             else {
-                this.codeMirror.setValue(this.rteObj.value);
+                this.codeMirror.setValue(editorVlaue);
             }
             this.codeMirror.focus();
         }

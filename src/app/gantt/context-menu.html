@@ -5,10 +5,10 @@
 	</p>
 </div>
 <div class="control-section">
-    <ejs-gantt id="contextMenu" #gantt height="430px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns" [enableContextMenu]="true"
+    <ejs-gantt id="contextMenu" #gantt height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns" [enableContextMenu]="true"
         [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [treeColumnIndex]="1" 
         [contextMenuItems]='contextMenuItems' (contextMenuOpen)="contextMenuOpen($event)" (contextMenuClick)="contextMenuClick($event)"
-        height="450px" [allowSelection]="true" dateFormat="MMM dd, y" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
+        [allowSelection]="true" dateFormat="MMM dd, y" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
         [gridLines]="gridLines" [eventMarkers]="eventMarkers" [editSettings]="editSettings" [allowResizing]="true" [allowSorting]="true"
         [toolbar]="toolbar" [resourceFields] = "resourceFields" 
         [resources]="resources" [splitterSettings]="splitterSettings">
@@ -56,7 +56,9 @@
 			collapsed state.</li>
 		<li><code>Collapse the Row</code> - Used to collapse the parent row and it will render where the row is in a
 			expanded state.</li>
-	</p>
-	<p>Injecting Module:</p>
-	<p>Gantt component features are segregated into individual feature-wise modules. To use Column Menu feature, we need to inject <code>ContextMenuService</code> into the <code>&#64;NgModule.providers</code> section. </p>
+	<br>
+        To use context menu feature, we need to inject <code>ContextMenu</code> module using the <code>Gantt.Inject(ContextMenu)</code> method.
+    </p>
+    <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/context-menu">documentation section</a>.</p>
 </div>

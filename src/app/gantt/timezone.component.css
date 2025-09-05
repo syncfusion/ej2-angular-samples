@@ -1,0 +1,62 @@
+.e-bigger .previous-timespan, .e-bigger .next-timespan {
+    height: 38px !important;
+    width: 38px !important;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.previous-timespan,
+.next-timespan {
+    height: 32px !important;
+    width: 32px !important;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.showhide {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+}
+.e-bigger .showhide {
+    font-size: 16px;
+    font-weight: 700;
+}
+.timezone-label {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+.timezone-dropdown {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    min-width: 300px;
+}
+.timeline-section {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+}
+.timeline-dropdown {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    min-width: 100px;
+}
+#timezone .e-toolbar-item.e-separator {
+    margin: 0 2px;
+}
+#timezone .e-separator {
+    padding: 0px;
+}
+#timezone .e-toolbar-item.e-template {
+    padding: 0px !important;
+}
+.bootstrap5\.3 #timezone .e-icons, .bootstrap5\.3-dark #timezone .e-icons {
+    color: white;
+}

@@ -3,9 +3,9 @@
 </div>
 
 <div class="control-section">
-    <ejs-gantt id="columnMenu" height="430px" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
+    <ejs-gantt id="columnMenu" height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
     [allowFiltering]="true" [allowSorting]="true" [allowResizing]="true" [treeColumnIndex]='1' showColumnMenu=true
-    [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" height="400px" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+    [splitterSettings]="splitterSettings" [labelSettings]="labelSettings"  [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
     [highlightWeekends]="true">
     </ejs-gantt>
 </div>
@@ -31,7 +31,6 @@
     </p>
     <p>Injecting Module:</p>
         <p>Gantt component features are segregated into individual feature-wise modules. To use Column Menu feature, we need to inject <code>ColumnMenuService</code> into the <code>&#64;NgModule.providers</code> section.</p> 
-    <p>
-        More information about column menu can be found in this documentation section.
-    </p>
+    <br>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/columns/column-menu">documentation section</a>.</p>
 </div>

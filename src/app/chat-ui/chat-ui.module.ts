@@ -32,7 +32,7 @@ export const chatUIAppRoutes: Object[] = [
         {displayName: 'api.component.css', path: './src/chat-ui/api.component.css'},
         {displayName: 'messageData.ts', path: './src/chat-ui/messageData.ts'}
     ] },
-    { path: ':theme/chat-ui/chat-integration', component: ChatIntegrationComponent, name: 'Use Case', description: 'This example showcases how to design a chat application using Chat UI. You can load the chat messages based on the user being selected.', category: 'Integration', order: '02', sourceFiles: [
+    { path: ':theme/chat-ui/chat-integration', component: ChatIntegrationComponent, name: 'Use Case', description: 'This example showcases how to design a chat application using Chat UI. You can load the chat messages based on the user being selected.', category: 'Chat UI', order: '02', sourceFiles: [
         {displayName: 'chat-integration.component.ts', path: './src/chat-ui/chat-integration.component.ts'},
         {displayName: 'chat-integration.html', path: './src/chat-ui/chat-integration.html'},
         {displayName: 'chat-integration.component.css', path: './src/chat-ui/chat-integration.component.css'},
