@@ -17,7 +17,6 @@ export class GanttCriticalPathComponent implements OnInit {
     public toolbar: string[];
     public editSettings: object;
     public projectStartDate: Date;
-    public projectEndDate: Date;
     public ngOnInit(): void {
         this.data = criticalPathData;
         this.taskSettings = {
@@ -47,7 +46,6 @@ export class GanttCriticalPathComponent implements OnInit {
             { field: 'Predecessor' }
         ];
         this.projectStartDate = new Date('03/26/2025');
-        this.projectEndDate = new Date('06/01/2025');
         this.labelSettings = {
             leftLabel: 'TaskName',
         };

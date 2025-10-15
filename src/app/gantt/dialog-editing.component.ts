@@ -92,7 +92,8 @@ export class GanttDialogComponent implements OnInit {
             {
               field: 'resourceName',
               headerText: 'Resource Name',
-              width: 204
+              width: 204,
+              template: '<div class="image"><img src="assets/gantt/images/${resourceName}.png" style="height:25px;width:25px" /><div style="display:inline-block;width:100%;position:relative;left:5px">${resourceName}</div></div>',
             },
             { field: 'unit', width: 84 },
             {
@@ -136,7 +137,8 @@ export class GanttDialogComponent implements OnInit {
             {
               field: 'resourceName',
               headerText: 'Resource Name',
-              width: 204
+              width: 204,
+              template: '<div class="image"><img src="assets/gantt/images/${resourceName}.png" style="height:25px;width:25px" /><div style="display:inline-block;width:100%;position:relative;left:5px">${resourceName}</div></div>',
             },
             { field: 'unit', width: 84 },
             {

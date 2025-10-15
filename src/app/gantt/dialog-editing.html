@@ -9,13 +9,6 @@
       [timelineSettings]="timelineSettings" [eventMarkers]="eventMarkers" [labelSettings]="labelSettings"
       [allowResizing]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
      (actionComplete)="actionComplete($event)">
-
-      <ng-template #columnTemplate let-data>
-        <div *ngIf="data.resourceName" class="image">
-          <img src="./assets/gantt/images/{{data.ganttProperties.resourceNames}}.png" style="height:25px;width:25px" />
-          <div style="display:inline-block;width:100%;position:relative;left:5px">{{data.resourceName}}</div>
-        </div>
-      </ng-template>
     </ejs-gantt>
   </div>
 </div>

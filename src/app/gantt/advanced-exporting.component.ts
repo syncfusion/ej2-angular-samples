@@ -42,7 +42,6 @@ export class GanttAdvancedExportingComponent implements OnInit {
   public gridLines: string;
   public labelSettings: object;
   public projectStartDate: Date;
-  public projectEndDate: Date;
   public toolbar: string[];
   public splitterSettings: object;
   public columns: object[];
@@ -125,7 +124,6 @@ export class GanttAdvancedExportingComponent implements OnInit {
     };
     this.gridLines = 'Both';
     this.projectStartDate = new Date('03/30/2025');
-    this.projectEndDate = new Date('07/20/2025');
     this.resources = editingResources;
     this.splitterSettings = {
       columnIndex: 3,

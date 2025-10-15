@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
-import { SortService, GridModule, FilterService, IFilter, Column, GridComponent, Filter } from '@syncfusion/ej2-angular-grids';
+import { SortService, GridModule, FilterService, IFilter, Column, GridComponent, Filter, IFilterCreate } from '@syncfusion/ej2-angular-grids';
 import { MultiSelect } from '@syncfusion/ej2-dropdowns';
 import { createElement } from '@syncfusion/ej2-base';
 import { employeeDetail } from './data';
@@ -42,7 +42,7 @@ export class ColumnTemplateComponent implements OnInit {
         this.filter = {
             type: 'Menu',
             ui: {
-                create: (args: { target: Element; column: object }) => {
+                create: (args: IFilterCreate) => {
                     const flValInput: HTMLElement = createElement('input', {
                         className: 'flm-input',
                     });
