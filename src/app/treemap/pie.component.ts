@@ -79,7 +79,7 @@ tooltipRendering = (args: ITreeMapTooltipRenderEventArgs) => {
             legendSettings: {visible: false},
             background: 'transparent',
             tooltip: {
-                enable: true,
+                enable: false,
                 format: '${point.x} : ${point.y}%'
             },
         });

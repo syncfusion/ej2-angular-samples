@@ -1,56 +1,18 @@
 <div id="action-description">
     <p>
-        This sample visualizes classifications of data science using Venn diagrams. Diagram nodes and annotations are used to define
-        Venn diagrams. Read only mode is enabled in this example.
+        This sample utilizes the Syncfusion<sup>®</sup> EJ2 Angular Diagram to visualize data science classifications through Venn Diagram.
     </p>
 </div>
+
 <div class="control-section">
-    <ejs-diagram #diagram id="diagram" width="100%" height="700px" [tool]=tool [snapSettings]=snapSettings (created)='create($event)'>
-        <e-nodes>
-            <!-- Node 1 -->
-            <e-node id='node1' [height]=400 [width]=400 [offsetX]=450 [offsetY]=232 [shape]=shape [style]=style1>
-                <e-node-annotations>
-                    <e-node-annotation content='Data Science' [offset]=offset1>
-                    </e-node-annotation>
-                </e-node-annotations>
-            </e-node>
-            <!-- Node 2 -->
-            <e-node id='node2' [height]=200 [width]=200 [shape]=shape [style]='style2' [offsetX]=508 [offsetY]=202>
-                <e-node-annotations>
-                    <e-node-annotation content='Trignometry' [offset]=offset2 horizontalAlignment='Left'>
-                    </e-node-annotation>
-                    <e-node-annotation content='Theisis' [offset]=offset3>
-                    </e-node-annotation>
-                </e-node-annotations>
-            </e-node>
-            <!-- Node 3 -->
-            <e-node id='node3' [height]=200 [width]=200 [shape]=shape [style]=style3 [offsetX]=437 [offsetY]=286>
-                <e-node-annotations>
-                    <e-node-annotation content='Expertise Knowledge' [offset]=offset4 verticalAlignment='Top'>
-                    </e-node-annotation>
-                </e-node-annotations>
-            </e-node>
-             <!-- Node 4 -->
-            <e-node id='node4' [height]=200 [width]=200 [shape]=shape [style]='style4' [offsetX]=381 [offsetY]=202>
-                <e-node-annotations>
-                    <e-node-annotation content='Programming' [offset]=offset2 horizontalAlignment='Right'>
-                    </e-node-annotation>
-                    <e-node-annotation content='Assembly' [offset]=offset5 horizontalAlignment='Left'>
-                    </e-node-annotation>
-                    <e-node-annotation content='Horizon' [offset]=offset6 horizontalAlignment='Left'>
-                    </e-node-annotation>
-                    <e-node-annotation content='Middleware' [offset]=offset7>
-                    </e-node-annotation>
-                </e-node-annotations>
-            </e-node>
-        </e-nodes>
+    <ejs-diagram #diagram id="diagram" width="100%" height="700px" [tool]="tool" [snapSettings]="snapSettings"
+        [nodes]="nodes" [connectors]="connectors" (created)="created()" (load)="load()">
     </ejs-diagram>
 </div>
+
 <div id="description">
     <p>
-        This example shows how to create a Venn diagram using diagram control. In this example, zoom and pan options are enabled.
-        The
-        <code>tool</code> property of the diagram control allows you to enable/disable zoom and pan options.
+        This sample uses nodes with both path and basic shapes, including annotations and Bezier connectors, and enables zoom and pan through the control's <code><b>Tool</b></code> property.
     </p>
     <br>
 </div>

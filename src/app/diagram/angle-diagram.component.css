@@ -1,0 +1,72 @@
+    .angle-diagram-container .e-ddl.e-input-group .e-input-group-icon, .e-ddl.e-input-group.e-control-wrapper .e-input-group-icon:hover {
+        color: #9CA3AF;
+    }
+    
+    .angle-diagram-container .e-ddl.e-input-group.e-control-wrapper .e-input {
+        color: #9CA3AF;
+        font-size: 16px;
+        font-weight : 500;
+    }
+
+    .angle-diagram-container .angle-control-section {
+        margin-bottom: 25px;
+        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .angle-diagram-container .angle-control-label {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 18px;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .angle-diagram-container .angle-control {
+        align-items: center;
+        background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+        border: 2px solid #e9ecef;
+        border-radius: 12px;
+        padding: 15px;
+        transition: all 0.3s ease;
+        height: 100px;
+    }
+
+    .angle-diagram-container .angle-display {
+        flex: 1;
+        text-align: center;
+        margin: 0 20px;
+    }
+
+    .angle-diagram-container .angle-value {
+        font-size: 20px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 5px;
+    }
+
+    .angle-diagram-container .angle-description {
+        font-size: 15px;
+        color: #7f8c8d;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+
+    .angle-diagram-container .efficiency-section {
+        text-align: center;
+        margin-bottom: 30px;
+        background: linear-gradient(145deg, #ffffff, #f1f3f4);
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .angle-diagram-container .e-diagram-selector {
+        stroke-width: 0;
+    }

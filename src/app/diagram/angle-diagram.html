@@ -1,0 +1,16 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates an interactive solar panel tilt system built with the Syncfusion<sup>®</sup> EJ2 Angular Diagram component. Adjust the panel angle to see real-time changes in system efficiency based on the sun's position and location.
+    </p>
+</div>
+<div class="control-section angle-diagram-container">
+    <ejs-diagram #diagram id="diagram" width="100%" height="750px" [nodes]="nodes" [connectors]="connectors"
+    [snapSettings]="snapSettings" [selectedItems]="selectedItems" [pageSettings]="pageSettings"
+    (rotateChange)="onRotationChange($event)" (created)="created()" (load)="load()" (scrollChange)="scrollChange()">
+    </ejs-diagram>
+</div>
+<div id="description">
+    <p>
+        This interactive diagram visualizes a solar panel system. The sun's path is represented by a curved connector, and users can adjust the panel's tilt angle either by direct rotation or using integrated buttons. The system provides immediate feedback through a dynamic efficiency gauge and performance messages. Users can also select different locations to observe how regional variations impact overall solar efficiency.
+    </p>
+</div>

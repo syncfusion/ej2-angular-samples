@@ -70,7 +70,7 @@ export class MapsPieComponent {
             markerSettings: [
                 {
                     visible: true,
-                    template: '<div id="pieChart1" style="height:70px;width:70px;"></div>',
+                    template: '<div id="pieChart1" style="top:-10px;left:-55px;height:150px;width:200px;"></div>',
                     dataSource: [
                         { 'latitude': 61.938950426660604, 'longitude': 97.03125 }
                     ],
@@ -78,7 +78,7 @@ export class MapsPieComponent {
                 },
                 {
                     visible: true,
-                    template: '  <div id="pieChart2" style="height:70px;width:70px;">',
+                    template: '  <div id="pieChart2" style="left:-55px;height:150px;width:200px;">',
                     dataSource: [
                         { 'latitude': 57.70414723434193, 'longitude': -114.08203125 }
                     ],
@@ -86,31 +86,31 @@ export class MapsPieComponent {
                 },
                 {
                     visible: true,
-                    template: '<div id="pieChart3" style="top:10px;left:10px;height:70px;width:70px;"></div>',
+                    template: '<div id="pieChart3" style="top:-35px;left:-105px;height:150px;width:200px;"></div>',
                     dataSource: [
-                        { 'latitude': 39.90973623453719, 'longitude': -103.0078125 }
+                        { 'latitude': 10.555037013237452, 'longitude': -64.1160548956648 }
                     ],
                     animationDuration: 0
                 },
                 {
                     visible: true,
-                    template: '<div id="pieChart4" style="height:70px;width:70px;"></div>',
+                    template: '<div id="pieChart4" style="top:-50px;left:-85px;height:150px;width:200px;"></div>',
                     dataSource: [
-                        { 'latitude': 35.746512259918504, 'longitude': 102.216796875 }
+                        { 'latitude': 9.774059122564566, 'longitude': 108.77498325892299 }
                     ],
                     animationDuration: 0
                 },
                 {
                     visible: true,
-                    template: '<div id="pieChart5" style="height:70px;width:70px;"></div>',
+                    template: '<div id="pieChart5" style="top:-60px;left:-45px;height:130px;width:200px;"></div>',
                     dataSource: [
-                        { 'latitude': -8.667918002363107, 'longitude': -52.55859375 }
+                        { 'latitude': -52.313430655959614, 'longitude': -66.26827567737013 }
                     ],
                     animationDuration: 0
                 },
                 {
                     visible: true,
-                    template: '<div id="pieChart6" style="height:70px;width:70px;"></div>',
+                    template: '<div id="pieChart6" style="top:5px;left:-65px;height:150px;width:200px;"></div>',
                     dataSource: [
                         { 'latitude': -23.725011735951796, 'longitude': 132.978515625 }
                     ],
@@ -121,7 +121,7 @@ export class MapsPieComponent {
     ];
     public loaded(args: ILoadedEventArgs): void {
             let chart: AccumulationChart = new AccumulationChart({
-                background: 'transparent', width: '70', height: '70',
+                background: 'transparent', width: '80', height: '70',
                 tooltip: { enable: true, format: '${point.x} : ${point.y}' },
                 series: [{
                     name: 'Russia', explode: true, explodeIndex: 0, explodeOffset: '30%',
@@ -137,7 +137,7 @@ export class MapsPieComponent {
             chart.appendTo('#pieChart1');
             this.chartCollection.push(chart);
             let chart1: AccumulationChart = new AccumulationChart({
-                background: 'transparent', width: '70', height: '70',
+                background: 'transparent', width: '80', height: '70',
                 tooltip: { enable: true, format: '${point.x} : ${point.y}' },
                 series: [{
                     name: 'Canada', explode: true, explodeIndex: 0, explodeOffset: '30%',
@@ -153,7 +153,7 @@ export class MapsPieComponent {
             chart1.appendTo('#pieChart2');
             this.chartCollection.push(chart1);
             let chart2: AccumulationChart = new AccumulationChart({
-                background: 'transparent', width: '70', height: '70',
+                background: 'transparent', width: '80', height: '70',
                 tooltip: { enable: true, format: '${point.x} : ${point.y}' },
                 series: [{
                     name: 'USA', explode: true, explodeIndex: 0, explodeOffset: '30%',
@@ -169,7 +169,7 @@ export class MapsPieComponent {
             chart2.appendTo('#pieChart3');
             this.chartCollection.push(chart2);
             let chart3: AccumulationChart = new AccumulationChart({
-                background: 'transparent', width: '70', height: '70',
+                background: 'transparent', width: '80', height: '70',
                 tooltip: { enable: true, format: '${point.x} : ${point.y}' },
                 series: [{
                     name: 'China', explode: true, explodeIndex: 0, explodeOffset: '30%',
@@ -185,7 +185,7 @@ export class MapsPieComponent {
             chart3.appendTo('#pieChart4');
             this.chartCollection.push(chart3);
             let chart4: AccumulationChart = new AccumulationChart({
-                background: 'transparent', width: '70', height: '70',
+                background: 'transparent', width: '80', height: '70',
                 tooltip: { enable: true, format: '${point.x} : ${point.y}' },
                 series: [{
                     name: 'Brazil', explode: true, explodeIndex: 0, explodeOffset: '30%',
@@ -201,7 +201,7 @@ export class MapsPieComponent {
             chart4.appendTo('#pieChart5');
             this.chartCollection.push(chart4);
             let chart5: AccumulationChart = new AccumulationChart({
-                background: 'transparent', width: '70', height: '70',
+                background: 'transparent', width: '80', height: '70',
                 tooltip: { enable: true, format: '${point.x} : ${point.y}' },
                 series: [{
                     name: 'Australia', explode: true, explodeIndex: 0, explodeOffset: '30%',

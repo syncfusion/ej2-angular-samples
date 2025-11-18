@@ -1,0 +1,18 @@
+<div class="control-section funnel-diagrams-container">
+    <ejs-diagram #diagram id="diagram" width="100%" height="675px" [nodes]="nodes"
+    [connectors]="connectors" [snapSettings]="snapSettings"
+    (created)="created()" (load)="load()">
+    </ejs-diagram>
+</div>
+
+<div id="action-description">
+    <p>
+       The funnel diagram is built using the Syncfusion<sup>®</sup> EJ2 Angular Diagram component, and it visually represents the conversion flow of users through a marketing campaign. The diagram is structured as a vertically stacked funnel, narrowing from top to bottom to indicate decreasing user counts at each stage of the customer journey.
+    </p>
+</div>
+
+ <div id="description">
+    <p>
+        Each funnel stage is constructed using customizable node shapes that reflect its width and value, while distinct colors enhance visual clarity. Interactive tooltip display conversion and cumulative rates on hover, and labels indicate the purpose of each stage. This structured visual approach helps marketers quickly assess performance and identify areas for improvement.
+    </p>
+</div>
