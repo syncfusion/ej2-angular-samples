@@ -1,0 +1,48 @@
+<div class="col-lg-12 control-section adornments">
+    <div class="content-wrapper">
+        <div class="row">
+            <ejs-textbox placeholder="Enter your Name" cssClass="e-prepend-textbox" floatLabelType="Auto" [prependTemplate]="prependTemplate">
+                <ng-template #prependTemplate>
+                    <span class="e-icons e-user"></span>
+                    <span class="e-input-separator"></span>
+                </ng-template>
+            </ejs-textbox>
+        </div>
+        <div class="row">
+            <ejs-textbox #appendTextbox placeholder="Password" cssClass="e-eye-icon" floatLabelType="Auto" [appendTemplate]="appendTemplate">
+                <ng-template #appendTemplate>
+                    <span class="e-input-separator"></span>
+                    <span class="e-icons e-eye" (click)="onEyeIconClick($event)"></span>
+                </ng-template>
+            </ejs-textbox>
+        </div>
+        <div class="row">
+            <ejs-textbox #iconTextbox placeholder="Enter the Mail Address" cssClass="e-icon-textbox" floatLabelType="Auto" [prependTemplate]="prependIconTemplate" [appendTemplate]="appendIconTemplate">
+                <ng-template #prependIconTemplate>
+                    <span class="e-icons e-people"></span>
+                    <span class="e-input-separator"></span>
+                </ng-template>
+                <ng-template #appendIconTemplate>
+                    <span>.com</span>
+                    <span class="e-input-separator"></span>
+                    <span class="e-icons e-trash" (click)="ondeleteClick()"></span>
+                </ng-template>
+            </ejs-textbox>
+        </div>
+    </div>
+</div>  
+
+<div id="action-description">
+    <p>
+        This example demonstrates the adornment capabilities of the Syncfusion TextBox component. Adornments are custom elements that can be added by using the <code>prependTemplate</code> and <code>appendTemplate</code> properties of the textbox to provide additional functionality or visual cues. This feature allows for enhanced user interaction, such as a dropdown for prefixes or clickable icons to toggle password visibility or clear input.
+    </p>
+</div>
+<div id="description">
+    <p>This sample demonstrates the adornment feature of the Syncfusion JavaScript TextBox, showcasing how to integrate custom elements or icons at both the beginning and end of the input field</p>
+    <ul>
+        <li>The first textbox displays a prepended user icon representing the username.</li>
+        <li>The second textbox features an appended eye icon, allowing users to toggle password visibility.</li>
+        <li>The third textbox combines a prepended people icon with an appended ".com" text and a trash icon that clears the input when clicked.</li>
+    </ul>
+    <p>These examples highlight the flexibility and enhanced user experience provided by TextBox adornments.</p>
+</div>

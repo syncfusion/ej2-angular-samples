@@ -39,7 +39,7 @@ export class ChunkUploadComponent {
     };
 
     public onChange(args: ChangeEventArgs): void {
-      this.chunkupload.asyncSettings.chunkSize = parseInt(args.itemData.value);
+      this.chunkupload.asyncSettings.chunkSize = parseInt(args.value as string);
     }
 
     public onFileRemove(args: RemovingEventArgs): void {

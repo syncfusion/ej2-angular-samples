@@ -1,7 +1,7 @@
-import { ChatUIModule } from '@syncfusion/ej2-angular-interactive-chat';
+import { ChatUIModule, ChatUIComponent } from '@syncfusion/ej2-angular-interactive-chat';
 import { UserModel, MessageModel, MessageToolbarSettingsModel } from '@syncfusion/ej2-interactive-chat';
 import { RichTextEditorAllModule, RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, ClipBoardCleanupService, AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { Component, ViewChild, ElementRef, ViewEncapsulation  } from '@angular/core';
 
 
@@ -12,10 +12,12 @@ import { Component, ViewChild, ElementRef, ViewEncapsulation  } from '@angular/c
     templateUrl: 'bottom-toolbar.html',
     styleUrls: ['bottom-toolbar.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService]
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, ClipBoardCleanupService, AutoFormatService]
 })
 
 export class BottomToolbarComponent {
+    @ViewChild('defaultChatUI')
+    public defaultChatUI: ChatUIComponent;
     public currentUserModel: UserModel = { user: 'Albert', id: 'user1' };
     public michaleUserModel: UserModel = { user: 'Michale Suyama', id: 'user2', avatarUrl: '//ej2.syncfusion.com/demos/src/chat-ui/images/andrew.png' };
 
@@ -64,10 +66,7 @@ export class BottomToolbarComponent {
             if (this.isValidContent(message)) {
                 rte.value = "";
                 rte.dataBind();
-                this.chatMessages = [
-                    ...this.chatMessages,
-                    { author: this.currentUserModel, text: message }
-                ];
+                this.defaultChatUI.addMessage(message);
                 rte.clearUndoRedo();
                 rte.focusIn();
             }

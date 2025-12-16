@@ -2,7 +2,7 @@
  * Rich Text Editor Auto save Sample
  */
 import { Component, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
-import { ToolbarService, RichTextEditorComponent, LinkService, ImageService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, RichTextEditorComponent, LinkService, ImageService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -13,7 +13,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
     templateUrl: 'auto-save.html',
     styleUrls: ['auto-save.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService],
     standalone: true,
     imports: [RichTextEditorModule, SwitchModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
@@ -27,7 +27,7 @@ export class AutoSaveComponent {
       items: ['Bold', 'Italic', 'Underline', '|', 'Formats', 'Alignments', 'Blockquote',
             'OrderedList', 'UnorderedList', '|', 'CreateLink', 'Image', '|', 'SourceCode', 'Undo', 'Redo']
     };
-public updateStatus() {
+ public updateStatus() {
     document.getElementById('saving').style.display = 'block';
     document.getElementById('saved').style.display = 'none';
     setTimeout(() => {

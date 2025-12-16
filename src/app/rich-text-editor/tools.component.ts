@@ -3,15 +3,16 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NgStyle } from '@angular/common';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, EmojiPickerService, VideoService, AudioService, FormatPainterService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, CountService, ToolbarSettingsModel, ImageSettingsModel, ActionBeginEventArgs, CodeBlockService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, EmojiPickerService, VideoService, AudioService, FormatPainterService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, CountService, ToolbarSettingsModel, ImageSettingsModel, ActionBeginEventArgs, CodeBlockService, ClipBoardCleanupService, AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, TableService, FileManagerService, SlashMenuService, ImportExportService } from '@syncfusion/ej2-angular-richtexteditor';
 import { FileManagerSettingsModel, QuickToolbarSettingsModel, SlashMenuSettingsModel, ExportPdfModel, ExportWordModel, ImportWordModel } from '@syncfusion/ej2-angular-richtexteditor';
-import { createElement, addClass, removeClass, Browser } from '@syncfusion/ej2-base';
+import { createElement, addClass, removeClass, Browser, getComponent  } from '@syncfusion/ej2-base';
 const CodeMirror = require('codemirror');
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/css/css.js';
 import 'codemirror/mode/htmlmixed/htmlmixed.js';
 import { SBDescriptionComponent } from '../common/dp.component';
+import { Sidebar } from '@syncfusion/ej2-navigations';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { MentionComponent, MentionModule } from '@syncfusion/ej2-angular-dropdowns';
 
@@ -20,7 +21,7 @@ import { MentionComponent, MentionModule } from '@syncfusion/ej2-angular-dropdow
     templateUrl: 'tools.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['over-view.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, FileManagerService, EmojiPickerService, VideoService, AudioService, FormatPainterService, QuickToolbarService, PasteCleanupService, CountService, SlashMenuService, ImportExportService, CodeBlockService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, FileManagerService, EmojiPickerService, VideoService, AudioService, FormatPainterService, QuickToolbarService, PasteCleanupService, CountService, SlashMenuService, ImportExportService, CodeBlockService, ClipBoardCleanupService, AutoFormatService],
     standalone: true,
     imports: [SBActionDescriptionComponent, RichTextEditorModule, SBDescriptionComponent, MentionModule, NgStyle]
 })
@@ -57,7 +58,7 @@ export class FullFeatureComponent {
         items: [
             'Undo', 'Redo', '|', 'ImportWord', 'ExportWord', 'ExportPdf', '|',
             'Bold', 'Italic', 'Underline', 'StrikeThrough', 'InlineCode', '|', 'CreateLink', 'Image', 'CreateTable', 'CodeBlock',
-            'HorizontalLine', 'Blockquote', '|', 'BulletFormatList', 'NumberFormatList', 'Checklist', '|', 'Formats', 'Alignments', '|', 'Outdent', 'Indent', '|',
+            'HorizontalLine', 'Blockquote', '|', 'LineHeight', 'Formats', 'Alignments', '|', 'BulletFormatList', 'NumberFormatList', 'Checklist', '|', 'Outdent', 'Indent', '|',
             'FontColor', 'BackgroundColor', 'FontName', 'FontSize', '|', 'LowerCase', 'UpperCase', '|', 'SuperScript', 'SubScript', '|',
             'EmojiPicker', 'FileManager', 'Video', 'Audio', '|', 'FormatPainter', 'ClearFormat',
             '|', 'Print', 'FullScreen', '|', 'SourceCode']
@@ -157,17 +158,18 @@ export class FullFeatureComponent {
         const sbCntEle: HTMLElement = document.querySelector('.sb-content.e-view')!;
         const sbHdrEle: HTMLElement = document.querySelector('.sb-header.e-view')!;
         const leftBar: HTMLElement = document.querySelector('#left-sidebar')!;
+        const sideBarElem: HTMLElement = document.body.querySelector('#left-sidebar');
+        const sideBar: Sidebar = getComponent(sideBarElem, 'sidebar');
         if (e.targetItem === 'Maximize') {
             if (Browser.isDevice && Browser.isIos) {
                 addClass([sbCntEle, sbHdrEle], ['hide-header']);
             }
-            addClass([leftBar], ['e-close']);
-            removeClass([leftBar], ['e-open']);
+            sideBar.hide();
         } else if (e.targetItem === 'Minimize') {
             if (Browser.isDevice && Browser.isIos) {
                 removeClass([sbCntEle, sbHdrEle], ['hide-header']);
             }
-            removeClass([leftBar], ['e-close']);
+            sideBar.show();
             if (!Browser.isDevice) {
                 addClass([leftBar], ['e-open']);
             }

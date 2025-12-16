@@ -1,0 +1,121 @@
+<div class="control-section">
+    <ejs-grid [dataSource]='data' id="PinnedRows" [isRowPinned]='isRowPinned' [enableVirtualization]='true' height="300" [allowSorting]='true' [allowFiltering]='true'
+        [filterSettings]='filterSettings' [pageSettings]='pageSettings' [contextMenuItems]="contextMenuItems" [allowKeyboard]='false'>
+        <e-columns>
+            <e-column field="TicketID" headerText="Ticket ID" width="140" isPrimaryKey="true" freeze="Left"></e-column>
+            <e-column field="Title" headerText="Title" width="210" ></e-column>
+            <e-column field="Description" headerText="Description" width="250" [allowFiltering]='false' clipMode="EllipsisWithTooltip"></e-column>
+            <e-column field="Status" headerText="Status" textAlign="Center" width="140">
+                <ng-template #template let-data>
+                    <div *ngIf="data.Status === 'Open'; else inProgress" class="statusvalue e-opencolor">
+                        <span class="statustxt e-opencolor">{{ data.Status }}</span>
+                    </div>
+
+                    <ng-template #inProgress>
+                        <div *ngIf="data.Status === 'In Progress'; else closed" class="statusvalue e-inprogresscolor">
+                        <span class="statustxt e-inprogresscolor">{{ data.Status }}</span>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #closed>
+                        <div *ngIf="data.Status === 'Closed'; else resolved" class="statusvalue e-closedcolor">
+                        <span class="statustxt e-closedcolor">{{ data.Status }}</span>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #resolved>
+                        <div class="statusvalue e-resolvedcolor">
+                        <span class="statustxt e-resolvedcolor">{{ data.Status }}</span>
+                        </div>
+                    </ng-template>
+                </ng-template>
+            </e-column>
+            <e-column field="Priority" headerText="Priority" textAlign="Center" width="140" >
+                <ng-template #template let-data>
+                    <div *ngIf="data.Priority === 'High'; else low" class="statusvalue e-highcolor">
+                        <span class="statustxt e-highcolor">{{ data.Priority }}</span>
+                    </div>
+
+                    <ng-template #low>
+                        <div *ngIf="data.Priority === 'Low'; else medium" class="statusvalue e-lowcolor">
+                        <span class="statustxt e-lowcolor">{{ data.Priority }}</span>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #medium>
+                        <div *ngIf="data.Priority === 'Medium'; else urgent" class="statusvalue e-mediumcolor">
+                        <span class="statustxt e-mediumcolor">{{ data.Priority }}</span>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #urgent>
+                        <div class="statusvalue e-urgentcolor">
+                        <span class="statustxt e-urgentcolor">{{ data.Priority }}</span>
+                        </div>
+                    </ng-template>
+                </ng-template>
+            </e-column>
+            <e-column field="Assignee" headerText="Assignee" width="140"></e-column>
+            <e-column field="Category" headerText="Category" width="130"></e-column>
+            <e-column field="TypeofRequest" headerText="Type of Request" width="210">
+                <ng-template #template let-data>
+                    <div class="e-request-info">
+                        <img src="./assets/grid/images/supportType/{{data.TypeofRequest}}.svg" [alt]="data.TypeofRequest" />
+                        <span>{{ data.TypeofRequest }}</span>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field="CreatedDate" headerText="Created Date" width="160" format="yMd" textAlign="Right"></e-column>
+            <e-column field="Rating" headerText="Rating" textAlign="Center" width="160" freeze="Right">          
+                <ng-template #template let-data>
+                    <div *ngIf="data.Rating === 'Satisfied'; else verySatisfied" class="statusvalue e-satisfiedcolor">
+                        <span class="statustxt e-satisfiedcolor">{{ data.Rating }}</span>
+                    </div>
+
+                    <ng-template #verySatisfied>
+                        <div *ngIf="data.Rating === 'Very Satisfied'; else dissatisfied" class="statusvalue e-verysatisfiedcolor">
+                        <span class="statustxt e-verysatisfiedcolor">{{ data.Rating }}</span>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #dissatisfied>
+                        <div *ngIf="data.Rating === 'Dissatisfied'; else veryDissatisfied" class="statusvalue e-dissatisfiedcolor">
+                        <span class="statustxt e-dissatisfiedcolor">{{ data.Rating }}</span>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #veryDissatisfied>
+                        <div *ngIf="data.Rating === 'Very Dissatisfied'; else neutral" class="statusvalue e-verydissatisfiedcolor">
+                        <span class="statustxt e-verydissatisfiedcolor">{{ data.Rating }}</span>
+                        </div>
+                    </ng-template>
+                    <ng-template #neutral>
+                        <div class="statusvalue e-neutralcolor">
+                        <span class="statustxt e-neutralcolor">{{ data.Rating }}</span>
+                        </div>
+                    </ng-template>
+                </ng-template>
+            </e-column>
+        </e-columns>
+    </ejs-grid>
+    <div id="action-description">
+        <p>This sample demonstrates that important rows can be pinned at the top and important columns frozen on the left or right, keeping them visible at all times.
+            Scroll vertically or horizontally to see how these pinned rows and frozen columns remain fixed while the rest of the grid moves beneath or beside them.
+        </p>
+    </div>
+    <div id="description">
+        <p>In this demo, tickets rated <strong>Dissatisfied</strong> or <strong>Very Dissatisfied</strong> are automatically pinned to the top through the <code><a target="_blank" class="code"
+            href="https://ej2.syncfusion.com/angular/documentation/api/grid/#isrowpinned">isRowPinned</a></code> callback function.
+            The grid applies column freezing by locking the <strong>Ticket ID</strong> column on the left and the <strong>Rating</strong> column on the right using the <code><a target="_blank" class="code"
+            href="https://ej2.syncfusion.com/angular/documentation/api/grid/column#freeze">column.freeze</a></code> property.</p>
+        <p>The feature supports dynamic row pinning so that any row can be pinned or unpinned through the context menu, and this functionality is configured by defining the <code><a target="_blank" class="code"
+            href="https://ej2.syncfusion.com/angular/documentation/api/grid/#contextmenuitems">contextMenuItems</a></code> property with the <strong>PinRow</strong> and <strong>UnpinRow</strong> options.</p>
+        <p style="font-weight: bold">Injecting Module</p>
+        <p>
+            Grid component features are segregated into individual feature-wise modules. To use Context Menu feature, we need to inject
+            <code>ContextMenuService</code> into the
+            <code>&#64;NgModule.providers</code> section.
+        </p>
+        <p>More information on pinned rows and frozen columns can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/grid/row/row"> documentation section</a>.</p>
+    </div>
+</div>

@@ -1,21 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { L10n, setCulture } from '@syncfusion/ej2-base';
 import { PageService, SortService, FilterService, ToolbarService, EditService } from '@syncfusion/ej2-angular-grids';
 import { data } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { GridModule } from '@syncfusion/ej2-angular-grids';
-
-setCulture('en');
-
-L10n.load({
-    'en': {
-        'pager': {
-            'currentPageInfo': '',
-            'totalItemsInfo': '{1} to {2} of {0}',
-        }
-    }
-});
 
 @Component({
     selector: 'ej2-gridpage',

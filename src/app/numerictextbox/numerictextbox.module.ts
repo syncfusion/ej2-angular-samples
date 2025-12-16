@@ -7,6 +7,7 @@ import { DefaultTextboxController } from './default.component';
 import { FormatTextboxController } from './custom-format.component';
 import { RestrictTextboxController } from './restrict-decimals.component';
 import { RangeTextboxController } from './range-validation.component';
+import { AdornmentNumericTextbox } from './adornments';
 
 
 
@@ -14,7 +15,8 @@ export const numericAppRoutes: Object[] = [
     { path: ':theme/numerictextbox/default', component: DefaultTextboxController, name: 'Default Functionalities', category: 'Numeric Textbox', description: "The NumericTextBox is used to get the numbered inputs from the users and the currency and percentage text boxes to get the currency and percentage inputs." },
     { path: ':theme/numerictextbox/range-validation', component: RangeTextboxController, name: 'Range Validation', category: 'Numeric Textbox',  description: "The NumericTextBox has options to restrict the input value between a specific range using min, max, and strictMode properties." },
     { path: ':theme/numerictextbox/custom-format', component: FormatTextboxController, name: 'Custom Format', category: 'Numeric Textbox', description: "The NumericTextBox provides an option to customize the display format of the numeric value using the format property. " },
-    { path: ':theme/numerictextbox/restrict-decimals', component: RestrictTextboxController, name: 'Restrict Decimals', category: 'Numeric Textbox', description: "The NumericTextBox provides an option to restrict the number of decimal values, by using the decimals property. So, it can only accept the integer value alone." }
+    { path: ':theme/numerictextbox/restrict-decimals', component: RestrictTextboxController, name: 'Restrict Decimals', category: 'Numeric Textbox', description: "The NumericTextBox provides an option to restrict the number of decimal values, by using the decimals property. So, it can only accept the integer value alone." },
+    { path: ':theme/numerictextbox/adornments', component: AdornmentNumericTextbox, name: 'Adornments', category: 'Numeric Textbox', type: 'new', description: "The example exposes a Angular Numeric TextBox with adornments support. It helps to render custom elements before or after the input element." }
 ];
 
 export const NumericModule: ModuleWithProviders<any> = RouterModule.forChild(numericAppRoutes);

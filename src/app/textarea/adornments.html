@@ -1,0 +1,50 @@
+<div class="col-lg-8 control-section adornment-textarea">
+    <div class="content-wrapper">
+        <div class="multiline-row">
+            <ejs-textarea #iconTextarea floatLabelType="Auto" placeholder="Add a comment" cssClass="e-outline" rows="5" cols="250" resizeMode="None" [prependTemplate]="prependTemplate" [appendTemplate]="appendTemplate">
+                <ng-template #prependTemplate>
+                    <span class="e-icons e-bold"></span>
+                    <span class="e-input-separator"></span>
+                    <span class="e-icons e-italic"></span>
+                    <span class="e-input-separator"></span>
+                </ng-template>
+                <ng-template #appendTemplate>
+                    <span class="e-input-separator"></span>
+                    <span class="e-icons e-save"></span>
+                    <span class="e-input-separator"></span>
+                    <span class="e-icons e-trash"></span>
+                </ng-template>
+            </ejs-textarea>
+        </div>
+    </div>
+</div>  
+
+<div class="col-lg-4 property-section adornment-textarea">
+    <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+            <table id="property" title="Properties" class="multiline-property">
+                <tr>
+                    <td> Flow Direction </td>
+                    <td>
+                        <ejs-dropdownlist [dataSource]="flowOrientationData" (change)="handleflowOrientation($event)" index=0 popupHeight='200px'></ejs-dropdownlist>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Orientation Direction </td>
+                    <td>
+                        <ejs-dropdownlist [dataSource]="orientOrientationData" (change)="handleOrientOrientation($event)" index=0 popupHeight='200px'></ejs-dropdownlist>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>This example demonstrates the adornments enhance a textarea with prefix/suffix elements, icons, text, or buttons that provide context or quick actions. Flow and orientation can be configured for horizontal or vertical layouts.</p>
+</div>
+<div id="description">
+        <p>
+            This sample showcases TextArea adornments using <code>prependTemplate</code> and <code>appendTemplate</code> to add bold/italic (prefix) and save/delete (suffix) icons. A DropDownList allows you to switch <code>adornmentFlow</code> and <code>adornmentOrientation</code> between Horizontal and Vertical, and the layout updates dynamically via dataBind whenever the selected option changes.
+        </p>
+</div>

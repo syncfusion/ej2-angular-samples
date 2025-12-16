@@ -1,0 +1,164 @@
+/* Diagram surface */
+.family-tree {
+    background: #FFFFFF;
+}
+
+.family-tree .e-diagram {
+    background: transparent;
+}
+
+.family-tree #diagramcontent {
+    overflow: hidden !important;
+}
+
+/* ===================== Node base ===================== */
+.family-tree .person-node-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #FFDBD1;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .16);
+    box-sizing: border-box;
+    position: relative;
+    transition: opacity 0.5s ease;
+    will-change: transform;
+    user-select: none;
+}
+
+.family-tree .person-node-container:hover {
+    cursor: default !important;
+    background: #f5e1a7;
+}
+
+/* Dim state driven by template */
+.family-tree .person-node-container.is-dim {
+    opacity: 0.25;
+    filter: grayscale(50%);
+    transition: opacity 0.2s ease-out, filter 0.3s ease;
+}
+
+/* ===================== Open state driven by template ===================== */
+.family-tree .person-node-container.is-open .person-image-circle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin: 0;
+    width: 80px;
+    height: 80px;
+}
+
+.family-tree .person-node-container.is-open .person-header {
+    text-align: left;
+    margin-left: 90px;
+}
+
+.family-tree .person-node-container.is-open .person-bio {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.family-tree .person-node-container.is-open .person-full-name {
+    display: block;
+    font-size: 20px;
+    text-align: left;
+}
+
+.family-tree .person-node-container.is-open .person-first-name {
+    display: none;
+}
+
+.family-tree .person-node-container.is-open .person-tenure {
+    font-size: 16px;
+    text-align: left;
+}
+
+/* ===================== Card layout ===================== */
+.family-tree .person-card {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 8.5px;
+    padding: 12px 8px 3px;
+    border-radius: 10px;
+    border: 2px solid #85736E;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+/* ===================== Avatar ===================== */
+.family-tree .person-image-circle {
+    width: 98px;
+    height: 98px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: #f0f0f0;
+    border: 3px solid #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.family-tree .person-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===================== Header/Text ===================== */
+.family-tree .person-header {
+    text-align: center;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+}
+
+.family-tree .person-first-name,
+.family-tree .person-full-name {
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 1.2;
+    text-align: center;
+    color: #723523;
+}
+
+/* By default show first name only; full name appears when is-open */
+.family-tree .person-full-name {
+    display: none;
+}
+
+.family-tree .person-tenure {
+    font-size: 15px;
+    color: #53433F;
+    opacity: 0.85;
+    margin-top: 4px;
+    text-align: center;
+}
+
+/* ===================== Bio ===================== */
+.family-tree .person-bio {
+    color: #723523;
+    font-size: 18px;
+    line-height: 1.35;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-left: 90px;
+    transition: opacity 0.2s ease;
+}
+
+/* ===================== Diagram visuals ===================== */
+
+/* Node width transition (diagram updates width on hover) */
+.family-tree [id$='_html_element'] {
+    transition: all 80ms ease;
+}
+
+/* Connector animation */
+.family-tree [id$='_path'] {
+    transition: opacity 0.4s ease, stroke 0.4s ease, stroke-width 0.4s ease;
+}

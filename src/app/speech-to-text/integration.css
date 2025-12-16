@@ -21,10 +21,18 @@
     height: 40px;
     font-size: 20px;
     border: none;
-    background: none;
     cursor: pointer;
 }
-  
+
+.integration-speechToText-section .e-footer-wrapper #assistview-sendButton:not(.e-assist-stop) {
+    background: none;
+}
+
+.e-bigger .integration-speechToText-section .e-footer-wrapper #assistview-sendButton {
+    width: 52px;
+    height: 52px;
+}
+ 
 .integration-speechToText-section .e-footer-wrapper #speechToText.visible,
 .integration-speechToText-section .e-footer-wrapper #assistview-sendButton.visible {
     display: inline-block;

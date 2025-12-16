@@ -4,6 +4,7 @@ import { detach, isNullOrUndefined } from '@syncfusion/ej2-base';
 import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { SanitizeHtmlHelper } from '@syncfusion/ej2-base';
 
 /**
  * Template Dialog Component
@@ -66,7 +67,7 @@ export class TemplateDialogComponent {
             detach(document.getElementsByClassName('contentText')[0]);
         }
         if (this.inVal.nativeElement.value !== '') {
-            this.dialogText.nativeElement.innerHTML = this.inVal.nativeElement.value;
+            this.dialogText.nativeElement.innerHTML = SanitizeHtmlHelper.sanitize(this.inVal.nativeElement.value);
         }
         this.inVal.nativeElement.value = '';
     }

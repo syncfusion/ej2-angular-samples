@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, SummaryTypes, FieldListService, PivotViewModule, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { ChangeEventArgs, DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs, DropDownListComponent, DropDownListModule, FieldSettingsModel } from '@syncfusion/ej2-angular-dropdowns';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -94,11 +94,11 @@ export class AggregationComponent implements OnInit {
     }
 
     changePricedrpdwn (args: ChangeEventArgs) {
-        this.setSummaryType('ProCost', args.itemData.value as SummaryTypes);
+        this.setSummaryType('ProCost', (args.itemData as FieldSettingsModel).value as SummaryTypes);
     }
 
     changeFreightdrpdwn (args: ChangeEventArgs) {
-        this.setSummaryType('PowUnits', args.itemData.value as SummaryTypes);
+        this.setSummaryType('PowUnits', (args.itemData as FieldSettingsModel).value as SummaryTypes);
     }
 
     ngOnInit(): void {

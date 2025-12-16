@@ -3,7 +3,7 @@
  */
 import { Component, ViewChild, ViewEncapsulation, ElementRef } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, FormatPainterService, EmojiPickerService, FileManagerService, FileManagerSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, FormatPainterService, EmojiPickerService, FileManagerService, FileManagerSettingsModel, ClipBoardCleanupService, AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { ActionBeginEventArgs, ActionCompleteEventArgs } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, RichTextEditorModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
@@ -15,7 +15,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     templateUrl: 'client-side-events.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['events.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService, PasteCleanupService, VideoService, AudioService, FormatPainterService, EmojiPickerService, FileManagerService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService, PasteCleanupService, VideoService, AudioService, FormatPainterService, EmojiPickerService, FileManagerService, ClipBoardCleanupService, AutoFormatService],
     standalone: true,
     imports: [SBActionDescriptionComponent, RichTextEditorModule, ButtonModule, SBDescriptionComponent]
 })

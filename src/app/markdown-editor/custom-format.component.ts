@@ -6,7 +6,7 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { RichTextEditorComponent, MarkdownFormatter, ToolbarService, EditorMode, RichTextEditorModule, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { LinkService, ImageService, MarkdownEditorService } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, KeyboardEventArgs } from '@syncfusion/ej2-base';
-import * as Marked from 'marked';
+import { MarkdownConverter } from '@syncfusion/ej2-markdown-converter'
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -75,7 +75,7 @@ export class MarkdownCustomComponent {
         if (this.mdsource.classList.contains('e-active')) {
             const id: string = this.rteObj.getID() + 'html-view';
             const htmlPreview: Element = this.rteObj.element.querySelector('#' + id);
-            htmlPreview.innerHTML = Marked.parse((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+            htmlPreview.innerHTML = MarkdownConverter.toHtml((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value) as string;
         }
     }
     public fullPreview(): void {
@@ -95,7 +95,7 @@ export class MarkdownCustomComponent {
             }
             this.textArea.style.display = 'none';
             htmlPreview.style.display = 'block';
-            htmlPreview.innerHTML = Marked.parse((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+            htmlPreview.innerHTML = MarkdownConverter.toHtml((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value) as string;
             this.tooltipObj.content = "Codeview";
         }
     }

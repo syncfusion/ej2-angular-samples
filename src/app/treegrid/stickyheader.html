@@ -1,5 +1,5 @@
 <div>
-    <ejs-treegrid [dataSource]='data' childMapping='subtasks' [treeColumnIndex]='1'  enableStickyHeader=true>
+    <ejs-treegrid [dataSource]='data' childMapping='subtasks' [treeColumnIndex]='1' clipMode="EllipsisWithTooltip" enableStickyHeader=true>
         <e-columns>
            <e-column field='taskID' headerText='Task ID' width='70' textAlign='Right'></e-column>
             <e-column field='taskName' headerText='Task Name' clipMode="ElipsisWithTooltip" width='200'></e-column>

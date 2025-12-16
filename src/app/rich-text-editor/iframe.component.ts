@@ -3,7 +3,7 @@
  */
 import { Component, ViewChild } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, EmojiPickerService, TableService, CodeBlockService, ImportExportService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, EmojiPickerService, TableService, CodeBlockService, ImportExportService, ClipBoardCleanupService,AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { ExportWordModel, ExportPdfModel, ImportWordModel, QuickToolbarSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, IFrameSettingsModel, FileManagerService } from '@syncfusion/ej2-angular-richtexteditor';
 import { FileManagerSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
@@ -13,7 +13,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
     templateUrl: 'iframe.html',
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, FileManagerService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, EmojiPickerService, TableService, CodeBlockService, ImportExportService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, FileManagerService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, EmojiPickerService, TableService, CodeBlockService, ImportExportService, ClipBoardCleanupService, AutoFormatService],
     standalone: true,
     imports: [SBActionDescriptionComponent, RichTextEditorModule, SBDescriptionComponent]
 })
@@ -27,7 +27,7 @@ export class IFrameComponent {
     public tools: ToolbarModule = {
         items: ['Undo', 'Redo', '|', 'ImportWord', 'ExportWord', 'ExportPdf', '|',
             'Bold', 'Italic', 'Underline', 'StrikeThrough', 'InlineCode', '|', 'CreateLink', 'Image', 'CreateTable', 'CodeBlock',
-            'HorizontalLine', 'Blockquote', '|', 'BulletFormatList', 'NumberFormatList', 'Checklist', '|', 'Formats', 'Alignments', '|', 'Outdent', 'Indent', '|',
+            'HorizontalLine', 'Blockquote', '|', 'LineHeight', 'Formats', 'Alignments', '|', 'BulletFormatList', 'NumberFormatList', 'Checklist', '|', 'Outdent', 'Indent', '|',
             'FontColor', 'BackgroundColor', 'FontName', 'FontSize', '|', 'LowerCase', 'UpperCase', '|', 'SuperScript', 'SubScript', '|',
             'EmojiPicker', 'FileManager', 'Video', 'Audio', '|', 'FormatPainter', 'ClearFormat',
             '|', 'Print', 'FullScreen', '|', 'SourceCode']

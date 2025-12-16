@@ -1,0 +1,347 @@
+.statusvalue.e-verydissatisfiedcolor {
+    background-color: #FFEBEE;
+}
+.statusvalue.e-dissatisfiedcolor {
+    background-color: #FFF3E0;
+}
+.statusvalue.e-neutralcolor {
+    background-color: #efebeb;
+}
+.statusvalue.e-satisfiedcolor {
+    background-color: #E8F5E9;
+}
+.statusvalue.e-verysatisfiedcolor {
+    background-color: #C8E6C9;
+}
+td.e-rowcell .statustxt.e-verydissatisfiedcolor {
+    color: #D32F2F;
+}
+td.e-rowcell .statustxt.e-dissatisfiedcolor {
+    color: #E65100;
+}
+td.e-rowcell .statustxt.e-neutralcolor {
+    color: #616161;
+}
+td.e-rowcell .statustxt.e-satisfiedcolor {
+    color: #388E3C;
+}
+td.e-rowcell .statustxt.e-verysatisfiedcolor {
+    color: #1B5E20;
+}
+.statusvalue {
+    position: relative;
+    padding: 3px 0;
+    border-radius: 5px;
+    text-align: center
+}
+.statusvalue.e-opencolor {
+    background-color: #d4edda;
+    width: 100px;
+}
+.statusvalue.e-inprogresscolor {
+    background-color: #ffe5d0;
+    width: 100px;
+}
+.statusvalue.e-closedcolor {
+    background-color: #e2e3e5;
+    width: 100px;
+}
+.statusvalue.e-resolvedcolor {
+    background-color: #d0e7ff;
+    width: 100px;
+}
+td.e-rowcell .statustxt.e-opencolor {
+    color: #28a745;
+}
+td.e-rowcell .statustxt.e-inprogresscolor {
+    color: #fd7e14;
+}
+td.e-rowcell .statustxt.e-closedcolor {
+    color: #6c757d;
+}
+td.e-rowcell .statustxt.e-resolvedcolor {
+    color: #007bff;
+}
+.statusvalue.e-highcolor {
+    background-color: #f8d7da;
+    width: 100px;
+}
+.statusvalue.e-lowcolor {
+    background-color: #d4edda;
+    width: 100px;
+}
+.statusvalue.e-mediumcolor {
+    background-color: #fff3cd;
+    width: 100px;
+}
+.statusvalue.e-urgentcolor {
+    background-color: #efacac;
+    width: 100px;
+}
+td.e-rowcell .statustxt.e-highcolor {
+    color: #b21f2d;
+}
+td.e-rowcell .statustxt.e-lowcolor {
+    color: #155724;
+}
+td.e-rowcell .statustxt.e-mediumcolor {
+    color: #856404;
+}
+td.e-rowcell .statustxt.e-urgentcolor {
+    color: darkred;
+}
+.material3-dark td.e-rowcell .statustxt.e-verydissatisfiedcolor,
+.bootstrap5\.3-dark td.e-rowcell .statustxt.e-verydissatisfiedcolor,
+.fluent2-dark td.e-rowcell .statustxt.e-verydissatisfiedcolor,
+.tailwind3-dark td.e-rowcell .statustxt.e-verydissatisfiedcolor,
+.fluent2-highcontrast td.e-rowcell .statustxt.e-verydissatisfiedcolor,
+.fluent-dark td.e-rowcell .statustxt.e-verydissatisfiedcolor,
+.highcontrast td.e-rowcell .statustxt.e-verydissatisfiedcolor {
+    color: #FFCDD2;
+}
+.material3-dark .statusvalue.e-verydissatisfiedcolor,
+.bootstrap5\.3-dark .statusvalue.e-verydissatisfiedcolor,
+.fluent2-dark .statusvalue.e-verydissatisfiedcolor,
+.tailwind3-dark .statusvalue.e-verydissatisfiedcolor,
+.fluent2-highcontrast .statusvalue.e-verydissatisfiedcolor,
+.fluent-dark .statusvalue.e-verydissatisfiedcolor,
+.highcontrast .statusvalue.e-verydissatisfiedcolor {
+    background-color: #3E1F1F;
+}
+.material3-dark td.e-rowcell .statustxt.e-dissatisfiedcolor,
+.bootstrap5\.3-dark td.e-rowcell .statustxt.e-dissatisfiedcolor,
+.fluent2-dark td.e-rowcell .statustxt.e-dissatisfiedcolor,
+.tailwind3-dark td.e-rowcell .statustxt.e-dissatisfiedcolor,
+.fluent2-highcontrast td.e-rowcell .statustxt.e-dissatisfiedcolor,
+.fluent-dark td.e-rowcell .statustxt.e-dissatisfiedcolor,
+.highcontrast td.e-rowcell .statustxt.e-dissatisfiedcolor {
+    color: #FFB74D;
+}
+.material3-dark .statusvalue.e-dissatisfiedcolor,
+.bootstrap5\.3-dark .statusvalue.e-dissatisfiedcolor,
+.fluent2-dark .statusvalue.e-dissatisfiedcolor,
+.tailwind3-dark .statusvalue.e-dissatisfiedcolor,
+.fluent2-highcontrast .statusvalue.e-dissatisfiedcolor,
+.fluent-dark .statusvalue.e-dissatisfiedcolor,
+.highcontrast .statusvalue.e-dissatisfiedcolor {
+    background-color: #3A2A1A;
+}
+.material3-dark td.e-rowcell .statustxt.e-neutralcolor,
+.bootstrap5\.3-dark td.e-rowcell .statustxt.e-neutralcolor,
+.fluent2-dark td.e-rowcell .statustxt.e-neutralcolor,
+.tailwind3-dark td.e-rowcell .statustxt.e-neutralcolor,
+.fluent2-highcontrast td.e-rowcell .statustxt.e-neutralcolor,
+.fluent-dark td.e-rowcell .statustxt.e-neutralcolor,
+.highcontrast td.e-rowcell .statustxt.e-neutralcolor {
+    color: #E0E0E0;
+}
+.material3-dark .statusvalue.e-neutralcolor,
+.bootstrap5\.3-dark .statusvalue.e-neutralcolor,
+.fluent2-dark .statusvalue.e-neutralcolor,
+.tailwind3-dark .statusvalue.e-neutralcolor,
+.fluent2-highcontrast .statusvalue.e-neutralcolor,
+.fluent-dark .statusvalue.e-neutralcolor,
+.highcontrast .statusvalue.e-neutralcolor {
+    background-color: #3A3A3A;
+}
+.material3-dark td.e-rowcell .statustxt.e-satisfiedcolor,
+.bootstrap5\.3-dark td.e-rowcell .statustxt.e-satisfiedcolor,
+.fluent2-dark td.e-rowcell .statustxt.e-satisfiedcolor,
+.tailwind3-dark td.e-rowcell .statustxt.e-satisfiedcolor,
+.fluent2-highcontrast td.e-rowcell .statustxt.e-satisfiedcolor,
+.fluent-dark td.e-rowcell .statustxt.e-satisfiedcolor,
+.highcontrast td.e-rowcell .statustxt.e-satisfiedcolor {
+    color: #81C784;
+}
+.material3-dark .statusvalue.e-satisfiedcolor,
+.bootstrap5\.3-dark .statusvalue.e-satisfiedcolor,
+.fluent2-dark .statusvalue.e-satisfiedcolor,
+.tailwind3-dark .statusvalue.e-satisfiedcolor,
+.fluent2-highcontrast .statusvalue.e-satisfiedcolor,
+.fluent-dark .statusvalue.e-satisfiedcolor,
+.highcontrast .statusvalue.e-satisfiedcolor {
+    background-color: #1F2E1F;
+}
+.material3-dark td.e-rowcell .statustxt.e-verysatisfiedcolor,
+.bootstrap5\.3-dark td.e-rowcell .statustxt.e-verysatisfiedcolor,
+.fluent2-dark td.e-rowcell .statustxt.e-verysatisfiedcolor,
+.tailwind3-dark td.e-rowcell .statustxt.e-verysatisfiedcolor,
+.fluent2-highcontrast td.e-rowcell .statustxt.e-verysatisfiedcolor,
+.fluent-dark td.e-rowcell .statustxt.e-verysatisfiedcolor,
+.highcontrast td.e-rowcell .statustxt.e-verysatisfiedcolor {
+    color: #66BB6A;
+}
+.material3-dark .statusvalue.e-verysatisfiedcolor,
+.bootstrap5\.3-dark .statusvalue.e-verysatisfiedcolor,
+.fluent2-dark .statusvalue.e-verysatisfiedcolor,
+.tailwind3-dark .statusvalue.e-verysatisfiedcolor,
+.fluent2-highcontrast .statusvalue.e-verysatisfiedcolor,
+.fluent-dark .statusvalue.e-verysatisfiedcolor,
+.highcontrast .statusvalue.e-verysatisfiedcolor {
+    background-color: #1A3A1A;
+}
+.material3-dark td.e-rowcell .statustxt.e-opencolor,
+.bootstrap5\.3-dark td.e-rowcell .statustxt.e-opencolor,
+.fluent2-dark td.e-rowcell .statustxt.e-opencolor,
+.tailwind3-dark td.e-rowcell .statustxt.e-opencolor,
+.fluent2-highcontrast td.e-rowcell .statustxt.e-opencolor,
+.fluent-dark td.e-rowcell .statustxt.e-opencolor,
+.highcontrast td.e-rowcell .statustxt.e-opencolor {
+    color: #81C784;
+}
+.material3-dark .statusvalue.e-opencolor,
+.bootstrap5\.3-dark .statusvalue.e-opencolor,
+.fluent2-dark .statusvalue.e-opencolor,
+.tailwind3-dark .statusvalue.e-opencolor,
+.fluent2-highcontrast .statusvalue.e-opencolor,
+.fluent-dark .statusvalue.e-opencolor,
+.highcontrast .statusvalue.e-opencolor {
+    background-color: #1F3A2E;
+}
+.material3-dark td.e-rowcell .statustxt.e-inprogresscolor,
+.bootstrap5\.3-dark td.e-rowcell .statustxt.e-inprogresscolor,
+.fluent2-dark td.e-rowcell .statustxt.e-inprogresscolor,
+.tailwind3-dark td.e-rowcell .statustxt.e-inprogresscolor,
+.fluent2-highcontrast td.e-rowcell .statustxt.e-inprogresscolor,
+.fluent-dark td.e-rowcell .statustxt.e-inprogresscolor,
+.highcontrast td.e-rowcell .statustxt.e-inprogresscolor {
+    color: #FFB74D;
+}
+.material3-dark .statusvalue.e-inprogresscolor,
+.bootstrap5\.3-dark .statusvalue.e-inprogresscolor,
+.fluent2-dark .statusvalue.e-inprogresscolor,
+.tailwind3-dark .statusvalue.e-inprogresscolor,
+.fluent2-highcontrast .statusvalue.e-inprogresscolor,
+.fluent-dark .statusvalue.e-inprogresscolor,
+.highcontrast .statusvalue.e-inprogresscolor {
+    background-color: #3A2E1F;
+}
+.material3-dark td.e-rowcell .statustxt.e-closedcolor,
+.bootstrap5\.3-dark td.e-rowcell .statustxt.e-closedcolor,
+.fluent2-dark td.e-rowcell .statustxt.e-closedcolor,
+.tailwind3-dark td.e-rowcell .statustxt.e-closedcolor,
+.fluent2-highcontrast td.e-rowcell .statustxt.e-closedcolor,
+.fluent-dark td.e-rowcell .statustxt.e-closedcolor,
+.highcontrast td.e-rowcell .statustxt.e-closedcolor {
+    color: #B0BEC5;
+}
+.material3-dark .statusvalue.e-closedcolor,
+.bootstrap5\.3-dark .statusvalue.e-closedcolor,
+.fluent2-dark .statusvalue.e-closedcolor,
+.tailwind3-dark .statusvalue.e-closedcolor,
+.fluent2-highcontrast .statusvalue.e-closedcolor,
+.fluent-dark .statusvalue.e-closedcolor,
+.highcontrast .statusvalue.e-closedcolor {
+    background-color: #2E2E2E;
+}
+.material3-dark td.e-rowcell .statustxt.e-resolvedcolor,
+.bootstrap5\.3-dark td.e-rowcell .statustxt.e-resolvedcolor,
+.fluent2-dark td.e-rowcell .statustxt.e-resolvedcolor,
+.tailwind3-dark td.e-rowcell .statustxt.e-resolvedcolor,
+.fluent2-highcontrast td.e-rowcell .statustxt.e-resolvedcolor,
+.fluent-dark td.e-rowcell .statustxt.e-resolvedcolor,
+.highcontrast td.e-rowcell .statustxt.e-resolvedcolor {
+    color: #4FC3F7;
+}
+.material3-dark .statusvalue.e-resolvedcolor,
+.bootstrap5\.3-dark .statusvalue.e-resolvedcolor,
+.fluent2-dark .statusvalue.e-resolvedcolor,
+.tailwind3-dark .statusvalue.e-resolvedcolor,
+.fluent2-highcontrast .statusvalue.e-resolvedcolor,
+.fluent-dark .statusvalue.e-resolvedcolor,
+.highcontrast .statusvalue.e-resolvedcolor {
+    background-color: #1F2E3A;
+}
+.material3-dark td.e-rowcell .statustxt.e-highcolor,
+.bootstrap5\.3-dark td.e-rowcell .statustxt.e-highcolor,
+.fluent2-dark td.e-rowcell .statustxt.e-highcolor,
+.tailwind3-dark td.e-rowcell .statustxt.e-highcolor,
+.fluent2-highcontrast td.e-rowcell .statustxt.e-highcolor,
+.fluent-dark td.e-rowcell .statustxt.e-highcolor,
+.highcontrast td.e-rowcell .statustxt.e-highcolor {
+    color: #FF6F61;
+}
+.material3-dark .statusvalue.e-highcolor,
+.bootstrap5\.3-dark .statusvalue.e-highcolor,
+.fluent2-dark .statusvalue.e-highcolor,
+.tailwind3-dark .statusvalue.e-highcolor,
+.fluent2-highcontrast .statusvalue.e-highcolor,
+.fluent-dark .statusvalue.e-highcolor,
+.highcontrast .statusvalue.e-highcolor {
+    background-color: #3E1F1F;
+}
+.material3-dark td.e-rowcell .statustxt.e-lowcolor,
+.bootstrap5\.3-dark td.e-rowcell .statustxt.e-lowcolor,
+.fluent2-dark td.e-rowcell .statustxt.e-lowcolor,
+.tailwind3-dark td.e-rowcell .statustxt.e-lowcolor,
+.fluent2-highcontrast td.e-rowcell .statustxt.e-lowcolor,
+.fluent-dark td.e-rowcell .statustxt.e-lowcolor,
+.highcontrast td.e-rowcell .statustxt.e-lowcolor {
+    color: #81C784;
+}
+.material3-dark .statusvalue.e-lowcolor,
+.bootstrap5\.3-dark .statusvalue.e-lowcolor,
+.fluent2-dark .statusvalue.e-lowcolor,
+.tailwind3-dark .statusvalue.e-lowcolor,
+.fluent2-highcontrast .statusvalue.e-lowcolor,
+.fluent-dark .statusvalue.e-lowcolor,
+.highcontrast .statusvalue.e-lowcolor {
+    background-color: #1F3A2E;
+}
+
+.material3-dark td.e-rowcell .statustxt.e-mediumcolor,
+.bootstrap5\.3-dark td.e-rowcell .statustxt.e-mediumcolor,
+.fluent2-dark td.e-rowcell .statustxt.e-mediumcolor,
+.tailwind3-dark td.e-rowcell .statustxt.e-mediumcolor,
+.fluent2-highcontrast td.e-rowcell .statustxt.e-mediumcolor,
+.fluent-dark td.e-rowcell .statustxt.e-mediumcolor,
+.highcontrast td.e-rowcell .statustxt.e-mediumcolor {
+    color: #FFD54F;
+}
+.material3-dark .statusvalue.e-mediumcolor,
+.bootstrap5\.3-dark .statusvalue.e-mediumcolor,
+.fluent2-dark .statusvalue.e-mediumcolor,
+.tailwind3-dark .statusvalue.e-mediumcolor,
+.fluent2-highcontrast .statusvalue.e-mediumcolor,
+.fluent-dark .statusvalue.e-mediumcolor,
+.highcontrast .statusvalue.e-mediumcolor {
+    background-color: #3A2E1F;
+}
+.material3-dark td.e-rowcell .statustxt.e-urgentcolor,
+.bootstrap5\.3-dark td.e-rowcell .statustxt.e-urgentcolor,
+.fluent2-dark td.e-rowcell .statustxt.e-urgentcolor,
+.tailwind3-dark td.e-rowcell .statustxt.e-urgentcolor,
+.fluent2-highcontrast td.e-rowcell .statustxt.e-urgentcolor,
+.fluent-dark td.e-rowcell .statustxt.e-urgentcolor,
+.highcontrast td.e-rowcell .statustxt.e-urgentcolor {
+    color: #F28B82;
+}
+.material3-dark .statusvalue.e-urgentcolor,
+.bootstrap5\.3-dark .statusvalue.e-urgentcolor,
+.fluent2-dark .statusvalue.e-urgentcolor,
+.tailwind3-dark .statusvalue.e-urgentcolor,
+.fluent2-highcontrast .statusvalue.e-urgentcolor,
+.fluent-dark .statusvalue.e-urgentcolor,
+.highcontrast .statusvalue.e-urgentcolor {
+    background-color: #5A1A1A;
+}
+#PinnedRows td.e-rowcell .e-request-info {
+    display: flex;
+    align-items: center;
+}
+#PinnedRows td.e-rowcell .e-request-info img {
+    margin-right: 5px;
+}
+.material3-dark #PinnedRows td.e-rowcell .e-request-info img,
+.bootstrap5\.3-dark #PinnedRows td.e-rowcell .e-request-info img,
+.fluent2-dark #PinnedRows td.e-rowcell .e-request-info img,
+.tailwind3-dark #PinnedRows td.e-rowcell .e-request-info img,
+.fluent2-highcontrast #PinnedRows td.e-rowcell .e-request-info img,
+.fluent-dark #PinnedRows td.e-rowcell .e-request-info img,
+.highcontrast #PinnedRows td.e-rowcell .e-request-info img {
+    filter: brightness(0) invert(1);
+}
+.fluent2-highcontrast #PinnedRows td.e-rowcell .e-row:hover .e-request-info img,
+.fluent2-highcontrast #PinnedRows td.e-rowcell .e-rowcell.e-selectionbackground .e-request-info img {
+    filter: none;
+}

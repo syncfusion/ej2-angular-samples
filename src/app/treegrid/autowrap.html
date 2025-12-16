@@ -1,29 +1,40 @@
 <div class="control-section">
-    <ejs-treegrid [dataSource]='data'  allowPaging='true' height='350' allowTextWrap='true'  childMapping='subtasks' [treeColumnIndex]='1' [pageSettings]='pageSetting'> 
-        <e-columns>
-            <e-column field='taskID' headerText='Task ID' width='90' textAlign='Right'></e-column>
-            <e-column field='taskName' headerText='Task Name' width='100'></e-column>
-            <e-column field='startDate' headerText='Start Date' width='90' format="yMd" textAlign='Right'></e-column>
-            <e-column field='duration' headerText='Duration' width='90' textAlign='Right'></e-column>
-            <e-column field='progress' headerText='Progress' width='90' textAlign='Right'></e-column>
-            <e-column field='priority' headerText='Priority' width='90'></e-column>
-
-        </e-columns>
-    </ejs-treegrid>
+  <ejs-treegrid [dataSource]='data' allowPaging='true' allowTextWrap='true' childMapping='subtasks'
+    [treeColumnIndex]='1' [pageSettings]='pageSetting' [allowFiltering]="true" [filterSettings]="filterSettings"
+    height="400" allowSorting='true'>
+    <e-columns>
+      <e-column field='taskID' headerText='Task ID' width='140' textAlign='Right'></e-column>
+      <e-column field='taskName' headerText='Title' width='240'></e-column>
+      <e-column field='description' headerText='Description (Comprehensive Objectives for Deliverables)' width='370'></e-column>
+      <e-column field='employeeName' headerText='Assigned To' width='180'></e-column>
+      <e-column field='priority' headerText='Priority' width='150' textAlign="Center"></e-column>
+      <e-column field='status' headerText='Status' width='130' textAlign='Center'></e-column>
+      <e-column field='startDate' headerText='Start Date' width='160' format="yMd" textAlign='Right'></e-column>
+      <e-column field='endDate' headerText='End Date' width='160' format="yMd" textAlign='Right'></e-column>
+    </e-columns>
+  </ejs-treegrid>
 </div>
 <div id="action-description">
-    <p>This sample demonstrates the Tree Grid component with the auto wrap column cell feature. In this sample, you can see that Task Name column cell content exceeded the available width hence it has been wrapped into multiple lines.</p>
+    <p>This sample demonstrates the Tree Grid with the text wrap option enabled
+        for both headers and cell content. This setting ensures that long header
+        text and cell values are fully visible by wrapping onto multiple lines
+        instead of being truncated with an ellipsis. </p>
 </div>
+
 <div id="description">
-    <p>Auto wrap cell content can be enabled using <code>allowTextWrap</code> property of the Tree Grid. Setting this property will wrap cell text on multiple lines. 
-        This feature is useful to view the cell content when it exceeds the cell width.</p>
-    <p>Setting this property will wrap the text in both content cell and header cell.</p>
-    <p>In this demo, the <code>allowTextWrap</code> property is enabled, and you can also see that the Task Name column whose content exceeded the cell width is wrapped into multiple lines.
-    </p>
+    <p>In this demo, the <strong>"Title"</strong> and <strong>"Description"</strong> columns
+        exceeds the available width, so its header and cell content are wrapped
+        across multiple lines for better readability. Text wrapping is enabled
+        by setting the Tree Grid's <code><a aria-label="API link for documentation"
+                target="_blank" class="code"
+                href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/index-default#allowtextwrap">allowTextWrap</a></code>
+        property to <strong>true</strong>, which automatically applies wrapping
+        to both header and cell content.</p>
     <p>
-        More information about Auto wrap cells can be found in this
-        <a target="_blank" 
-        href="https://ej2.syncfusion.com/angular/documentation/treegrid/cell/auto-wrap">
-        documentation section</a>.
+        More information about text wrap can be found in this
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/treegrid/cell#autowrap-the-treegrid-content">
+            documentation
+        </a>section.
     </p>
 </div>

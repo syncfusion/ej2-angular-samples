@@ -1,0 +1,11 @@
+.integration-texttospeech-section {
+  height: 450px;
+  width: 550px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 750px) {
+    .integration-texttospeech-section {
+        width: 100%;
+    }
+}

@@ -42,3 +42,8 @@
 body.fluent2-highcontrast .e-timeline .e-dot {
     color: #424242;
 }
+
+.fluent2-highcontrast {
+    background: #000000;
+    color: #ffffff;
+}

@@ -41,7 +41,7 @@ export class AnnotationDiagramComponent {
         { type: 'Bell MT', text: 'Bell MT' },
         { type: 'Fantasy', text: 'Fantasy' },
         { type: 'Times New Roman', text: 'Times New Roman' },
-        { type: 'Segoe UI', text: 'Cubic Bezier' },
+        { type: 'Segoe UI', text: 'Segoe UI' },
         { type: 'Verdana', text: 'Verdana' }
     ];
     //Template Collection

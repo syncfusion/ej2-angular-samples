@@ -25,6 +25,8 @@ import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 import { FirebaseController } from './firebase.component';
 import { FTPController } from './ftp-file-provider.component';
 import { IBMCOSController } from './ibm-cos-node-file-provider.component';
+import { SequentialUploadController } from './sequential-upload.component';
+import { TemplateController } from './template.component';
 
 export const fileManagerAppRoutes: Object[] = [
     { path: ':theme/file-manager/overview', component: OverViewController, name: 'Overview', order: '01', category: 'File Manager', description: 'Angular FileManager component with full view of the File Manager like a windows explorer User Interface.' },
@@ -32,10 +34,12 @@ export const fileManagerAppRoutes: Object[] = [
     { path: ':theme/file-manager/custom', component: CustomThumnailController, name: 'Custom Thumbnails', order: '01', category: 'File Manager', description: 'Angular FileManager component with how to use the custom thumbnails for the files and folders.' },
     { path: ':theme/file-manager/default', component: DefaultFileController, name: 'API', order: '01', category: 'File Manager', description: 'Angular FileManager component with how to render the File Manager without the navigation pane and enable or disable toolbar dynamically.' },
     { path: ':theme/file-manager/drag-drop', component: DragAndDropController, name: 'Drag and Drop', order: '01', category: 'File Manager', description: 'Angular FileManager component with drag and drop feature to drag and drop the file.' },
-    { path: ':theme/file-manager/directory-upload', component: DirectoryUploadController, name: 'Directory upload', order: '01', category: 'File Manager', description: 'Angular FileManager component with folder (directory) upload feature by using custom toolbar item.' },
+    { path: ':theme/file-manager/directory-upload', component: DirectoryUploadController, name: 'Directory upload', order: '01', category: 'File Manager', type: 'update', description: 'Angular FileManager component with folder (directory) upload feature by using custom toolbar item.' },
+    { path: ':theme/file-manager/sequential-upload', component: SequentialUploadController, name: 'Sequential upload', order: '01', category: 'File Manager', type: 'new', description: 'Angular FileManager component with sequential upload feature to upload files in the order they were added.' },
     { path: ':theme/file-manager/virtualization', component: VirtualizationController, name: 'Virtualization', order: '01', category: 'File Manager', description: 'Angular FileManager component with how to enable the virtual scrolling feature.' },
+    { path: ':theme/file-manager/template', component: TemplateController, name: 'Template', order: '01', category: 'File Manager', type: 'new', description: 'This example demonstrates how to use the template property to customize the navigation pane, large icons, and details view in a Angular File Manager component.' },
     { path: ':theme/file-manager/file-upload', component: FileUploadController, name: 'File Upload', order: '02', category: 'Use Case', description: 'Angular FileManager component with how to render the File Manager component inside the Dialog component.' },
-    { path: ':theme/file-manager/access-control', component: AccessControlController, name: 'Access Control', order: '02', category: 'Use Case', description: 'Angular FileManager component with how to restrict the file operations in the File Manager component.' },
+    { path: ':theme/file-manager/access-control', component: AccessControlController, name: 'Access Control', order: '02', category: 'Use Case', type: 'update', description: 'Angular FileManager component with how to restrict the file operations in the File Manager component.' },
     { path: ':theme/file-manager/azure-service', component: AzureController, name: 'Azure Blob Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the azure service.' },
     { path: ':theme/file-manager/nodejs-file-provider', component: NodeJSController, name: 'NodeJS File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the nodejs server database service.' },
     { path: ':theme/file-manager/amazon-s3-file-provider', component: AmazonS3Controller, name: 'Amazon S3 File Provider', order: '03', category: 'Cloud Service Providers', description: 'Angular FileManager component with how to configure and use the Amazon S3 file provider service.' },

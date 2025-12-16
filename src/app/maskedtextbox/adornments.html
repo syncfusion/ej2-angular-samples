@@ -1,0 +1,27 @@
+<div class="control-section adornment-mask">
+    <div class="content-wrapper">
+        <div class="mask-row">
+            <ejs-maskedtextbox mask="0000-000-000" promptChar="#" cssClass="e-prepend-mask" placeholder="Enter phone number" floatLabelType="Auto" [prependTemplate]="prependTemplate" [appendTemplate]="appendTemplate">
+                <ng-template #prependTemplate>
+                    <span class="e-icons e-user"></span>
+                    <span class="e-input-separator"></span>
+                </ng-template>
+                <ng-template #appendTemplate>
+                    <span class="e-input-separator"></span>
+                    <span class="e-icons e-send"></span>
+                </ng-template>
+            </ejs-maskedtextbox>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This example highlights adornment support in the Syncfusion MaskedTextBox. Adornments let you place custom elements before or after the masked input by using the <code>prependTemplate</code> and <code>appendTemplate</code> properties such as prefixes, suffix labels, or action icons to provide context, guide entry, and offer quick actions, while preserving mask validation and float label behavior.
+    </p>
+</div>
+<div id="description">
+    <p>
+        This sample illustrates adornment integration in the Syncfusion MaskedTextBox via a prepended user icon and a appended send icon.
+    </p>
+</div>

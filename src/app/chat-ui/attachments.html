@@ -1,0 +1,25 @@
+<div class="control-section chat-ui">
+    <div class="attachment-chatui">
+        <div id="chatAttachment" ejs-chatui #chatUI [headerText]="headerText" [headerIconCss]="headerIconCss" [user]="user" [emptyChatTemplate]="emptyChatTemplate" [enableAttachments]="enableAttachments" [attachmentSettings]="attachmentSettings" [headerToolbar]="headerToolbar" [messages]="messages"></div>
+        <ng-template #emptyChatTemplate>
+           <div class="emptychat-content">
+                <div class="chat-text-content"> 
+                    <h5><span class="e-icons e-multiple-comment"></span></h5>
+                    <div class="emptyChatText">No conversations yet.</div>
+                </div>
+                <div class="emptyChatMessage" >Type to begin or attach images, videos or files.</div>
+            </div>
+        </ng-template>
+    </div>
+</div>
+<div id="action-description">
+    <p>This example demonstrates the ability for users to attach files during chat interactions, which helps provide additional context to the conversation.</p>
+</div>
+<div id="description">
+    <p>
+        In this example, the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/chat-ui/#enableattachments">enableAttachments</a> property is set to <code>true</code> to allow users to attach files in the chat interface. The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/chat-ui/#attachmentsettings">attachmentSettings</a> property is used to configure the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/chat-ui/attachmentSettings/#saveurl">saveUrl</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/chat-ui/attachmentSettings/#removeurl">removeUrl</a>, enabling file upload functionality.
+    </p>    
+    <p>
+        Various file types such as images, videos, and documents can be attached. You can use the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/chat-ui/attachmentSettings/#allowedfiletypes">allowedFileTypes</a> property within <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/chat-ui/#attachmentsettings">attachmentSettings</a> to restrict uploads to specific file types. Additionally, the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/chat-ui/#emptychattemplate">emptyChatTemplate</a> property is used to customize the banner displayed before starting a conversation.
+    </p>
+</div>

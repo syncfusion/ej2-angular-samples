@@ -1,10 +1,10 @@
 <div class="col-lg-9 control-section">
             <div class="content-wrapper">
-                    <ejs-treegrid #treegrid [dataSource]='data' height='350' childMapping='subtasks' [treeColumnIndex]='1' allowPaging='true' [pageSettings]='pageSettings'>
+                    <ejs-treegrid #treegrid [dataSource]='data' height='350' childMapping='subtasks' [treeColumnIndex]='1' allowPaging='true' [pageSettings]='pageSettings' allowEditing='true' [editSettings]='editSettings'>
                             <e-columns>
-                                <e-column field='orderID' headerText='Order ID' width='100' textAlign='Right'></e-column>
+                                <e-column field='orderID' headerText='Order ID' width='100' textAlign='Right' isPrimaryKey='true'></e-column>
                                 <e-column field='orderName' headerText='Order Name' width='210' textAlign='Left'></e-column>
-                                <e-column field='orderDate' headerText='Order Date' width='190' [format]="format" textAlign='Right'></e-column>
+                                <e-column field='orderDate' headerText='Order Date' width='190' [format]="format" textAlign='Right' editType='datepickeredit'></e-column>
                                 <e-column field='price' headerText='Price' width='120' textAlign='Right' format='C2' type='number'></e-column>
                             </e-columns>
                         </ejs-treegrid>

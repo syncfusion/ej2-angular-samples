@@ -1,6 +1,6 @@
 {
   "name": "ej2-angular-samples",
-  "version": "31.2.12",
+  "version": "32.1.19",
   "private": true,
   "dependencies": {
     "@angular/animations": "17.1.2",
@@ -47,7 +47,9 @@
     "@syncfusion/ej2-angular-treemap": "*",
     "@syncfusion/ej2-angular-image-editor": "*",
     "@syncfusion/ej2-angular-interactive-chat": "*",
+    "@syncfusion/ej2-markdown-converter": "*",
     "@syncfusion/ej2-angular-blockeditor": "*",
+    "turndown": "7.2.2",
     "marked": "4.0.10",
     "rxjs": "7.8.0"
   },

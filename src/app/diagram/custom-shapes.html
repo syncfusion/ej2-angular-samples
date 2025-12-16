@@ -7,7 +7,7 @@
     <div class="col-lg-8 control-section" style="width: 100%;">
         <div class="content-wrapper">
             <ejs-diagram #diagram id="diagram" width="100%" height="900px" [nodes]="nodes" [backgroundColor]= 'back'
-                (created)="created()">
+                (created)="created()" (load)="load()">
                 <ng-template #nodeTemplate let-data >
                     <ng-container *ngIf="data.id == 'node1_template'">
                         <div class="diagram_border_cus diagram_border_cal">
@@ -69,7 +69,7 @@
                     </ng-container>
                     <ng-container *ngIf="data.id == 'node3_template'">
                         <div class="diagram_border_cus diagram_chart">
-                        <ejs-chart style='display:block' #columnChart class="column-chart" id="account-balance"
+                        <ejs-chart *ngIf="chartsReady" style='display:block' #columnChart class="column-chart" id="account-balance"
                             width='100%' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [margin]='margin'
                             [legendSettings]='legendSettings' [titleStyle]='titleStyle' useGroupingSeparator='true'
                             [tooltip]='tooltip' (loaded)='onChartLoaded($event)'>
@@ -91,7 +91,7 @@
                     </ng-container>
                     <ng-container *ngIf="data.id == 'node4_template'">
                         <div class="diagram_border_cus diagram_chart">
-                        <ejs-chart style='display:block' #lineChart id='balance' class='line-chart'
+                        <ejs-chart *ngIf="chartsReady" style='display:block' #lineChart id='balance' class='line-chart'
                             style="width:100%; max-width: 494px;" [primaryXAxis]='lprimaryXAxis'
                             [primaryYAxis]='lprimaryYAxis' [chartArea]='lchartArea' [margin]='lmargin'
                             useGroupingSeparator='true' [tooltip]='ltooltip'>

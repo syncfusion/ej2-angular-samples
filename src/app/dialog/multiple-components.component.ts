@@ -18,6 +18,7 @@ import { NgIf } from '@angular/common';
 import { ChartModule } from '@syncfusion/ej2-angular-charts';
 import { GridModule } from '@syncfusion/ej2-angular-grids';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import {  DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService } from '@syncfusion/ej2-angular-schedule';
 
 /**
  * Multiple components inside dialog
@@ -27,7 +28,7 @@ import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
     templateUrl: 'multiple-components.html',
     styleUrls: ['multiple-components.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService],
     standalone: true,
     imports: [ButtonModule, DialogModule, TabModule, GridModule, ChartModule, ScheduleModule, RichTextEditorModule, FormsModule, ReactiveFormsModule, NgIf, DatePickerModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })

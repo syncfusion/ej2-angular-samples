@@ -21,7 +21,7 @@ declare let window: MyWindow;
 @Component({
     selector: 'left-pane',
     templateUrl: 'left-pane.html',
-    standalone: true,
+    standalone: true, 
     imports: [
         TreeViewModule,
         NgIf,

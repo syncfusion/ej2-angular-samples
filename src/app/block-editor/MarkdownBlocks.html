@@ -1,0 +1,109 @@
+<div class="control-section blockeditor-marked">
+
+  <ejs-sidebar
+    id="sidebar-treeview"
+    class="sidebar-content"
+    #sidebarTreeviewInstance
+    [enableDock]="enableDock"
+    [width]="width"
+    [enableGestures]="false"
+    [dockSize]="dockSize"
+    (open)="onOpen()"
+    (close)="onClose()"
+    [mediaQuery]="mediaQuery"
+    [target]="target"
+    [isOpen]="false">
+    <div class="sidebar-header">
+      <span>{{ sidebarHeaderText }}</span>
+    </div>
+    <div class="sb-rightpane-collapsed"><div class="labelchoose">Markdown Templates</div></div>
+    <div class="main-menu">
+      <button ejs-button iconCss="e-icons e-chevron-left" cssClass="e-btn e-round" class="closebutton"
+        id="left-toc-closebtn" #closeBtn (click)="openClick()">
+      </button>
+        <ejs-treeview
+          id="main-treeview"
+          #treeviewInstance
+          [fields]="field"
+          expandOn="Click"
+          (nodeSelected)="onNodeSelected($event)">
+        </ejs-treeview>
+    </div>
+  </ejs-sidebar>
+  <div id="content_container" class="block-content">
+    <div class="stick">
+      <ejs-toolbar>
+        <e-items>
+          <e-item align="left">
+            <ng-template #template>
+              <div class="breadcrumbcontent"> <ejs-breadcrumb
+                  [items]="breadcrumbItems">
+                  <ng-template #separatorTemplate>
+                    <span class='e-icons e-chevron-right'></span>
+                  </ng-template>
+                </ejs-breadcrumb></div>
+
+            </ng-template>
+          </e-item>
+          <e-item align="right">
+            <ng-template #template>
+              <button ejs-button #download (click)="downloadMarkdown()"
+                iconCss="e-icons e-download" title="Download Markdown"
+                class="downloadbutton"></button>
+            </ng-template>
+          </e-item>
+        </e-items>
+      </ejs-toolbar>
+    </div>
+    <div class="markeditor"><ejs-blockeditor #blockEditorInstance
+        height="597px" [inlineToolbarSettings]="inlineToolbar" [commandMenuSettings]="commandMenu" [blocks]="editorBlocks"></ejs-blockeditor></div>
+  </div>
+
+</div>
+
+<div id="action-description">
+  <p>
+    This sample demonstrates the Markdown templates viewer built with Block Editor,
+    complete with a sidebar navigation tree, breadcrumb, and Markdown loading, editing and Download as Markdown
+    capabilities.
+  </p>
+</div>
+
+<div id="description">
+  <p>
+    The Block Editor Documentation Preview is a powerful, interactive
+    documentation system that combines
+    <code>BlockEditor</code> with a collapsible sidebar, tree
+    navigation, and Markdown rendering.
+    It allows users to view, edit, and download documentation articles
+    written in Markdown format.
+  </p>
+
+  <p>Key features demonstrated in this sample:</p>
+  <ul>
+    <li><strong>Sidebar with TreeView Navigation</strong>: Hierarchical menu
+      using <code>ejs-treeview</code> to browse documentation sections.</li>
+    <li><strong>Markdown Loading</strong>: Loads <code>.md</code> files
+      from the <code>assets</code> folder via <code>HttpClient</code>.</li>
+    <li><strong>Markdown to BlockEditor Conversion</strong>: Uses
+      <code>marked</code> and custom <code>parseHtmlToBlocks()</code> to convert
+      Markdown to rich editable blocks.
+    </li>
+    <li><strong>Download as Markdown</strong>: Export current editor content
+      back to clean Markdown using <code>TurndownService</code>.</li>
+    <li><strong>Dockable & Responsive Sidebar</strong>: Collapsible sidebar with
+      smooth open/close animation and mobile-friendly behavior.</li>
+    <li><strong>Real-time Editing</strong>: Full Block Editor experience
+      formatting, lists, code blocks, mentions, slash commands, and more.</li>
+    <li><strong>Clean UI with Toolbar</strong>: Professional layout with
+      breadcrumb and download button using Toolbar and Breadcrumb
+      components.</li>
+  </ul>
+
+  <p>
+    This sample serves as a complete template for building internal
+    documentation portals, knowledge bases,
+    technical wikis, or product guides using the Block
+    Editor.
+  </p>
+</div>

@@ -3,7 +3,7 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { RadioButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { RichTextEditorComponent, ToolbarService, PasteCleanupSettingsModel, LinkService, ImageService, RichTextEditorModule, VideoService, AudioService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorComponent, ToolbarService, PasteCleanupSettingsModel, LinkService, ImageService, RichTextEditorModule, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { PasteCleanupService } from '@syncfusion/ej2-angular-richtexteditor';
 import { HtmlEditorService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
 import { Link, Count, HtmlEditor, QuickToolbar } from '@syncfusion/ej2-angular-richtexteditor';
@@ -20,7 +20,7 @@ import { isNullOrUndefined } from '@syncfusion/ej2-base';
     templateUrl: 'paste-cleanup.html',
     styleUrls: ['style.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService],
     standalone: true,
     imports: [RichTextEditorModule, DropDownListModule, TextBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })

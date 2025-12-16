@@ -3,7 +3,7 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { createElement } from '@syncfusion/ej2-base';
-import { RichTextEditorComponent, ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorComponent, ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { DropDownListComponent, FieldSettingsModel, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { FloatLabelType } from '@syncfusion/ej2-angular-inputs';
 const CodeMirror = require('codemirror');
@@ -18,7 +18,7 @@ import 'codemirror/mode/htmlmixed/htmlmixed.js';
     templateUrl: 'enter-key-configuration.html',
     styleUrls: ['enter-key-configuration.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService],
     standalone: true,
     imports: [SBActionDescriptionComponent, DropDownListModule, RichTextEditorModule, SBDescriptionComponent]
 })

@@ -7,11 +7,6 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-P3WXFWCW');</script>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-W8WD8WN');</script>
     <!-- End Google Tag Manager --> 
     <title>Essential JS 2 for Angular</title>
@@ -19,15 +14,18 @@
     <meta name="description" content="Essential JS 2 for Angular is a modern JavaScript UI toolkit that has been built from the ground up to be lightweight, responsive, modular and touch friendly. It is written in TypeScript and has no external dependencies.">
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add these for Spectre isolation (COOP and COEP) -->
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="manifest" href="./manifest.webmanifest">
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
-    <link href="./styles/roboto.css" rel="stylesheet" />
+    <link href="./styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="./styles/roboto.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"></link>
     <link href="./styles/tailwind3.css" rel="stylesheet" id="themelink" />
-    <link href="./styles/index.css" rel="stylesheet" />
-    <link href="./styles/codemirror/codemirror.css" rel="stylesheet" />
+    <link href="./styles/index.min.css" rel="stylesheet" />
+    <link href="./styles/codemirror/codemirror.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/highlight.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha512-iOOHRE9HrRga+nmGyk6fmAMTrtopFR907WWoD7XsoFuWxdnPtaYxopCyBWZiOBNFlv8qyHporbY49hyVWSSxHA==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/shim.min.js" integrity="sha512-KblIy3bBne8lyIvVdK5cSfalLHlqMmzgU5YP2yjeAiIaHChXgpk6qXWUCnBK9XRX5IGkVlBf3L9gaF1taUxovA==" 
@@ -47,7 +45,6 @@
 
 <body class="e-view">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3WXFWCW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8WD8WN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div hidden id="sync-analytics" data-queue="EJ2 - Angular - Demos"></div>

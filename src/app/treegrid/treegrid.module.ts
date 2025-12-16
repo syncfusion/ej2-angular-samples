@@ -77,10 +77,11 @@ import { StickyHeaderComponent } from './stickyheader.component';
 import { RemoteVirtualComponent } from './remotevirtual.component';
 import { EmptyRecordTemplateComponent } from './empty-record-template.component';
 import { AsyncPipeComponent } from './async-pipe.component';
+import { RowSpanComponent} from './row-span.component';
 
 export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/treegrid-overview', component: TreeGridOverviewComponent, 'name': 'Overview',
-    description: 'This Angular Tree Grid example demonstrates the overview in Angular Tree Grid Component. Explore here for more details.', 
+    description: 'This sample demonstrates a feature-rich Syncfusion JavaScript Tree Grid for employee management, displaying hierarchical data with advanced cell templates.', 
     order: '01', category: 'Tree Grid' },
     { 'path': ':theme/treegrid/live-data', component: LiveDataComponent, name: 'Live Data',
     description: 'This demo for Essential<sup>®</sup> JS 2 Tree Grid component shows the grid Local Live Data Update.',
@@ -95,7 +96,7 @@ export const treegridRouteConfig: Object[] = [
     description: 'This demo for Essential<sup>®</sup> JS 2 Tree Grid component shows the loading indicator when Tree Grid loading and refreshing.', 
     order: '01', category: 'Tree Grid' },
     { 'path': ':theme/treegrid/empty-record-template', component: EmptyRecordTemplateComponent, name: 'Empty Record Template',
-    description: 'This demo demonstrates how to use Essential<sup>®</sup> JS 2 Tree Grid to display a custom template when the Tree Grid is rendered with an empty data source.', type:'new',
+    description: 'This demo demonstrates how to use Essential<sup>®</sup> JS 2 Tree Grid to display a custom template when the Tree Grid is rendered with an empty data source.',
     order: '01', category: 'Tree Grid' },
     
     { 'path': ':theme/treegrid/employeemgmt', component: EmployeemgmtComponent, name: 'Employee Management',
@@ -115,7 +116,7 @@ export const treegridRouteConfig: Object[] = [
     { 'path': ':theme/treegrid/selfreference', component: SelfReferenceComponent, 'name': 'Self Reference Data',
     description: 'This example illustrates binding self-referential flat data with parent ID to a Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
     order: '02', category: 'Data Binding' },
-    { 'path': ':theme/treegrid/async-pipe', component: AsyncPipeComponent, 'name': 'Async Pipe', type:'new',
+    { 'path': ':theme/treegrid/async-pipe', component: AsyncPipeComponent, 'name': 'Async Pipe',
     description: 'This sample demonstrates the usage of the Angular TreeGrid control with observables using the async pipe. Paging, sorting, expand, and collapse can be performed in this sample.', 
     order: '02', category: 'Data Binding' },
     { 'path': ':theme/treegrid/columntemplate', component: ColumnTemplateComponent, 'name': 'Column Template', 
@@ -135,12 +136,12 @@ export const treegridRouteConfig: Object[] = [
     order: '03', category: 'Columns' },
     { 'path': ':theme/treegrid/stackedheader', component: StackedHeaderComponent, 'name': 'Stacked Header', 
     description: 'This demo explains how to provide a common header for the group of columns in Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
-    order: '03', type: 'update', category: 'Columns' },
+    order: '03', category: 'Columns' },
     { 'path': ':theme/treegrid/columnmenu', component: ColumnMenuComponent, 'name': 'Column Menu',
     description: 'This demo explains the default functionalities of the Column Menu in Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
     order: '03', category: 'Columns' },
     { 'path': ':theme/treegrid/autowrap', component: AutoWrap, 'name': 'Auto Wrap Column Cells', 
-    description: 'This demo explains how to wrap the content of columns within the specified width of Tree Grid columns in Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
+    description: 'This demo explains how to wrap the content of columns within the specified width of Tree Grid columns in Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', type:'update', 
     order: '03', category: 'Columns' },
     { 'path': ':theme/treegrid/columnchooser', component: ColumnChooserComponent, 'name': 'Column Chooser',
     description: 'This demo explains how to dynamically show/hide columns in Tree Grid using Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
@@ -169,6 +170,9 @@ export const treegridRouteConfig: Object[] = [
     order: '04', category: 'Rows' },
     { 'path': ':theme/treegrid/rowheight', component: RowHeightComponent, 'name': 'Row Height',
     description: 'This demo explains the way of customizing the row height of Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
+    order: '04', category: 'Rows' },
+    { 'path': ':theme/treegrid/row-spanning', component: RowSpanComponent, 'name': 'Row Spanning (API)',
+    description: 'This demo demonstrates how to use rowspan and colspan API in the treegrid of Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', type:'new',
     order: '04', category: 'Rows' },
  
 
@@ -254,7 +258,7 @@ export const treegridRouteConfig: Object[] = [
     description: 'This demo explains how to display the summary values such as average, minimum, etc., for the columns in Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
     order: '15', category: 'Aggregates' },
     { 'path': ':theme/treegrid/custom-aggregate', component: CustomAggregateComponent, 'name': 'Custom Aggregate', 
-    type: 'update' ,description: 'This demo explains how to display the custom aggregate for the columns in Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
+     description: 'This demo explains how to display the custom aggregate for the columns in Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 
     order: '15', category: 'Aggregates' },
     { 'path': ':theme/treegrid/exporting-default', component: DefaultExportComponent, 'name': 'Default Exporting',
     description: 'This demo explains how to export the Tree Grid content to Excel, PDF, and CSV documents using the Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid control.', 

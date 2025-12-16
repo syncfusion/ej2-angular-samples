@@ -20,7 +20,7 @@ export class CarouselTemplateComponent {
 
   public getThumpImage(index: number): string {
     const images = ['cardinal', 'hunei', 'costa-rica', 'kaohsiung', 'bee-eater'];
-    return `./assets/carousel/images/${images[index]}.png`;
+    return `//ej2.syncfusion.com/angular/demos/assets/carousel/images/${images[index]}.png`;
   }
 
 }

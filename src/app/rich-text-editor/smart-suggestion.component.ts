@@ -3,7 +3,7 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
-import { SlashMenuItemSelectArgs, ToolbarService, SlashMenuService, LinkService, ImageService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, FormatPainterService, TableService, SlashMenuSettingsModel, CodeBlockService } from '@syncfusion/ej2-angular-richtexteditor';
+import { SlashMenuItemSelectArgs, ToolbarService, SlashMenuService, LinkService, ImageService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, FormatPainterService, TableService, SlashMenuSettingsModel, CodeBlockService, ClipBoardCleanupService, AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, HtmlEditorService, QuickToolbarService, EmojiPickerService } from '@syncfusion/ej2-angular-richtexteditor';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -11,7 +11,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
     templateUrl: 'smart-suggestion.html',
-    providers: [ToolbarService, LinkService, ImageService, QuickToolbarService, HtmlEditorService, EmojiPickerService, PasteCleanupService, VideoService, AudioService, FormatPainterService, TableService, SlashMenuService, CodeBlockService],
+    providers: [ToolbarService, LinkService, ImageService, QuickToolbarService, HtmlEditorService, EmojiPickerService, PasteCleanupService, VideoService, AudioService, FormatPainterService, TableService, SlashMenuService, CodeBlockService, ClipBoardCleanupService, AutoFormatService],
     standalone: true,
     imports: [SBActionDescriptionComponent, RichTextEditorModule, SBDescriptionComponent]
 })

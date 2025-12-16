@@ -491,10 +491,18 @@ body.bootstrap5\.3-dark,
   height: 22px;
 }
 
+.bootstrap5\.3 .e-samplestatus.new.tree,.bootstrap5\.3 .e-samplestatus.update.tree,.bootstrap5\.3 .e-samplestatus.preview.tree {
+  margin: 0px !important;
+}
+
 .bootstrap5\.3-dark .e-samplestatus.new.tree, .bootstrap5\.3-dark .e-samplestatus.update.tree, .bootstrap5\.3-dark  .e-samplestatus.preview.tree {
   margin: 6px 2px;
   padding: 4px;
   height: 22px;
+}
+
+.bootstrap5\.3-dark .e-samplestatus.new.tree, .bootstrap5\.3-dark .e-samplestatus.update.tree, .bootstrap5\.3-dark  .e-samplestatus.preview.tree {
+  margin: 0px !important;
 }
 
 .bootstrap5\.3-dark.e-bigger .e-samplestatus.new, .bootstrap5\.3-dark.e-bigger .e-samplestatus.update, .bootstrap5\.3-dark.e-bigger  .e-samplestatus.preview,
@@ -1060,8 +1068,8 @@ margin-right: 6px;
 #search-input-wrapper .e-clear-icon {
   /* display: none; */
   /* margin-right: 12px; */
-   /* background-color: #111827 !important;
-  color: white; */
+   background-color: #111827 !important;
+  color: white;
 }
 
 #search-input-wrapper .e-input-focus:before,
@@ -5242,6 +5250,7 @@ color:white;
 .fluent2-dark .sb-api-section,
 .fluent2-dark .copy-tooltip,
 .fluent2-dark .e-icons.copycode,
+.fluent2-dark #search-input-wrapper input,
 .tailwfluent2ind-dark #search-input-wrapper input::placeholder {
     color: #ffffff;
     background:  #2B2831;
@@ -6211,6 +6220,7 @@ cursor: pointer;
   margin-top: 2px;
   color: #666;
 }
-.tailwind3-dark #search-input-wrapper .e-clear-icon{
-  background-color: rgb(17,24,39) !important;
+.bootstrap5\.3.e-bigger .ai-toast .e-toast .e-toast-message .e-toast-content {
+    padding-left: 12px !important;
+    padding-bottom: 12px !important;
 }

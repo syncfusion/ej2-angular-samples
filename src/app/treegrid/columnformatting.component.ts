@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { formatData } from './jsontreegriddata';
-import { TreeGridComponent, TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
+import { TreeGridComponent, TreeGridAllModule, EditService} from '@syncfusion/ej2-angular-treegrid';
 import { DropDownListComponent , ChangeEventArgs, DropDownListAllModule} from '@syncfusion/ej2-angular-dropdowns';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -10,7 +10,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     selector: 'ej2-treegrid-container',
     templateUrl: 'columnformatting.html',
     standalone: true,
-    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListAllModule]
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListAllModule],
+    providers: [EditService]
 })
 export class ColumnFormattingComponent implements OnInit {
     public data: Object[] = [];
@@ -20,6 +21,7 @@ export class ColumnFormattingComponent implements OnInit {
     public d3data: any;
     public pageSettings: Object;
     public format: Object;
+    public editSettings: Object;
     public fields: Object;
     @ViewChild('treegrid')
     public treegrid: TreeGridComponent;
@@ -31,6 +33,7 @@ export class ColumnFormattingComponent implements OnInit {
         this.data = formatData;
         this.format = { format: 'M/d/yyyy', type: 'date'};
         this.pageSettings= { pageCount: 5 },
+        this.editSettings = { allowEditing: true, mode:'Cell'};
         this.ddlfields = { text: 'name' , value: 'id'};
         this.d1data= [{ id: 'price', name: 'Price' }, {id: 'orderDate', name: 'Order Date'}],
         this.d2data= [{ id: 'n2', format: 'n2' }, {id: 'n3', format: 'n3'},

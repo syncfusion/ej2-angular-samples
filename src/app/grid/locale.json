@@ -79,6 +79,8 @@
             "NotNull": "nicht null",
             "IsEmpty": "leer",
             "IsNotEmpty": "nicht leer",
+            "In": "In",
+            "NotIn": "Nicht in",
             "Between": "Zwischen",
             "CustomFilter": "Benutzerdefinierte Filter",
             "Expanded": "Erweitert",
@@ -157,7 +159,9 @@
             "StackingArea": "Gestapelter Bereich",
             "StackingArea100": "100 % gestapelte Fläche",
             "Pie": "Kreisdiagramm",
-            "Scatter": "Streudiagramm"
+            "Scatter": "Streudiagramm",
+            "PinRow": "Stecknadelreihe",
+            "UnpinRow": "Zeile lösen"
         },
         "checkboxFilter": {
             "Search": "Suche",
@@ -356,6 +360,8 @@
             "NotNull": "غير فارغة",
             "IsEmpty": "فارغ",
             "IsNotEmpty": "ليس فارغًا",
+            "In": "في",
+            "NotIn": "ليس في",
             "Between": "ما بين",
             "CustomFilter": "تصفية مخصص",
             "SelectAll": "اختر الكل",
@@ -434,7 +440,9 @@
             "StackingArea": "منطقة مكدسة",
             "StackingArea100": "منطقة مكدسة بنسبة 100%",
             "Pie": "مخطط دائري",
-            "Scatter": "مخطط التشتت"
+            "Scatter": "مخطط التشتت",
+            "PinRow": "صف الدبوس",
+            "UnpinRow": "إزالة تثبيت الصف"
         },
         "checkboxFilter": {
             "Search": "بحث",
@@ -633,6 +641,8 @@
             "NotNull": "Not Null",
             "IsEmpty": "Empty",
             "IsNotEmpty": "Not Empty",
+            "In": "In",
+            "NotIn": "Not In",
             "Between": "Between",
             "CustomFilter": "Custom Filter",
             "SelectAll": "Select All",
@@ -711,7 +721,9 @@
             "StackingArea": "Stacked Area",
             "StackingArea100": "100% Stacked Area",
             "Pie": "Pie Chart",
-            "Scatter": "Scatter Chart"
+            "Scatter": "Scatter Chart",
+            "PinRow": "Pin Row",
+            "UnpinRow": "Unpin Row"
         },
         "checkboxFilter": {
             "Search": "Search",
@@ -910,6 +922,8 @@
             "NotNull": "不為空",
             "IsEmpty": "空的",
             "IsNotEmpty": "不是空的",
+            "In": "在",
+            "NotIn": "不在",
             "Between": "之間",
             "CustomFilter": "自定義過濾器",
             "SelectAll": "全選",
@@ -988,7 +1002,9 @@
             "StackingArea": "堆叠面积",
             "StackingArea100": "100% 堆叠面积",
             "Pie": "饼图",
-            "Scatter": "散点图"
+            "Scatter": "散点图",
+            "PinRow": "别针排",
+            "UnpinRow": "解开行"
         },
         "checkboxFilter": {
             "Search": "搜索",
@@ -1187,6 +1203,8 @@
             "NotNull": "Non nul",
             "IsEmpty": "Vide",
             "IsNotEmpty": "Pas vide",
+            "In": "Dans",
+            "NotIn": "Pas dedans",
             "Between": "Entre",
             "CustomFilter": "Filtre personnalisé",
             "SelectAll": "Tout sélectionner",
@@ -1265,7 +1283,9 @@
             "StackingArea": "Zone empilée",
             "StackingArea100": "100 % de surface empilée",
             "Pie": "Graphique à secteurs",
-            "Scatter": "Graphique de dispersion"
+            "Scatter": "Graphique de dispersion",
+            "PinRow": "rangée d'épingles",
+            "UnpinRow": "Détacher la ligne"
         },
         "checkboxFilter": {
             "Search": "Chercher",

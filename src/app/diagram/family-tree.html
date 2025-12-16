@@ -1,0 +1,24 @@
+<div class="control-section family-tree">
+    <ejs-diagram #diagram id="diagram" width="100%" height="600px" [snapSettings]="snapSettings" [tool]="tool"
+        [layout]="layout" [dataSourceSettings]="dataSourceSettings" [setNodeTemplate]="setNodeTemplate"
+        [getConnectorDefaults]="getConnectorDefaults" (mouseEnter)="onMouseEnter($event)" (mouseLeave)="onMouseLeave()"
+        (dataLoaded)="onDataLoaded()">
+    </ejs-diagram>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample showcases a family tree built with the Syncfusion<sup>®</sup> EJ2 Angular Diagram,
+        illustrating complex hierarchical relationships through customizable node templates, interactive hover details,
+        and relation-based highlighting.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        The diagram uses a complex hierarchical tree layout to automatically arrange family members in a clear,
+        top-to-bottom structure. Each node is rendered using a custom HTML template that displays the individual’s
+        photo, name, and lifespan. On hover, the node expands to reveal relationship details, while related members are
+        highlighted and all other nodes are dimmed to enhance focus.
+    </p>
+</div>

@@ -1,0 +1,32 @@
+#ConditionalSelection .e-gridcontent .e-product-info,
+#ConditionalSelection .e-gridcontent .e-status-info {
+    display: flex;
+    align-items: center;
+}
+
+#ConditionalSelection .e-gridcontent .e-product-info img,
+#ConditionalSelection .e-gridcontent .e-status-info img {
+    margin-right: 5px;
+}
+
+#ConditionalSelection .e-gridcontent .e-product-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.material3-dark #ConditionalSelection .e-gridcontent .e-status-info img,
+.bootstrap5\.3-dark #ConditionalSelection .e-gridcontent .e-status-info img,
+.fluent2-dark #ConditionalSelection .e-gridcontent .e-status-info img,
+.tailwind3-dark #ConditionalSelection .e-gridcontent .e-status-info img,
+.fluent2-highcontrast #ConditionalSelection .e-gridcontent .e-status-info img,
+.fluent-dark #ConditionalSelection .e-gridcontent .e-status-info img,
+.highcontrast #ConditionalSelection .e-gridcontent .e-status-info img {
+    filter: brightness(0) invert(1);
+}
+
+.fluent2-highcontrast #ConditionalSelection .e-gridcontent .e-row:hover .e-status-info img,
+.fluent2-highcontrast #ConditionalSelection .e-gridcontent .e-rowcell.e-selectionbackground .e-status-info img {
+    filter: none;
+}

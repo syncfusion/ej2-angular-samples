@@ -6,7 +6,7 @@ import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';
 import { RichTextEditorComponent, ToolbarService, LinkService, EditorMode, ToolbarType, RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { ImageService, MarkdownEditorService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, KeyboardEventArgs, isNullOrUndefined } from '@syncfusion/ej2-base';
-import * as Marked from 'marked';
+import { marked } from 'marked';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { SplitterComponent, SplitterModule } from '@syncfusion/ej2-angular-layouts';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -18,7 +18,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     styleUrls: ['markdown-preview.css'],
     encapsulation: ViewEncapsulation.None,
     providers: [ToolbarService, LinkService, ImageService, TableService, MarkdownEditorService],
-    standalone: true,
+    
     imports: [SBActionDescriptionComponent, SplitterModule, RichTextEditorModule, SBDescriptionComponent]
 })
 export class MarkdownOverviewComponent {
@@ -52,7 +52,7 @@ export class MarkdownOverviewComponent {
         this.rteObj.refreshUI();
     }
     public updateValue(): void {
-        this.srcArea.innerHTML = (Marked as any).marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+        this.srcArea.innerHTML = (marked as any).marked((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
     }
     public updateOrientation(): void {
         if (Browser.isDevice) {

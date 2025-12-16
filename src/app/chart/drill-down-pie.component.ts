@@ -69,7 +69,7 @@ export class DrilldownPieComponent {
         if (this.isparent && document.getElementById('container_Series_' + index.series + '_Point_' + index.point)) {
             this.isparent = false;
             this.pie.annotations = [{
-                content: (this.pie.theme === 'HighContrast')|| (this.pie.theme.indexOf('Dark') > -1) ? darkThemeContent : lightThemeContent, region: 'Series', x: '50%', y: '50%'
+                content: (this.pie.theme === 'HighContrast' || this.pie.theme === 'Fluent2HighContrast' ||  this.pie.theme.indexOf('Dark') > -1) ? darkThemeContent : lightThemeContent, region: 'Series', x: '50%', y: '50%'
             }];
             this.pie.series[0].innerRadius = '30%';
             switch (index.point) {

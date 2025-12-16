@@ -12,11 +12,13 @@ import { DefaultTextboxController } from './default.component';
 
 import { DefaultTextAreaController } from './multiline-textbox.component';
 import { CheckBoxModule  } from '@syncfusion/ej2-angular-buttons';
+import { AdornmentTextbox } from './adornments';
 
 
 export const textboxesAppRoutes: Object[] = [
     { path: ':theme/textboxes/default', component: DefaultTextboxController, name: 'Default Functionalities', category: 'TextBox', description: 'The example describes key features of Angular textbox such as a floating label, input group, placeholder, validation states, sizing, types, and more.' },
     { path: ':theme/textboxes/multiline-textbox', component: DefaultTextAreaController, name: 'Multiline TextBox', category: 'TextBox', description: 'The example exposes a Angular Multiline TextBox (textarea). It helps to render address, feedback, and more in a form with customizable rows and columns.'},
+    { path: ':theme/textboxes/adornments', component: AdornmentTextbox, name: 'Adornments', category: 'TextBox', type: 'new', description: 'The example exposes a Angular TextBox with adornments support. It helps to render custom elements before or after the input element.'},
 	{ path: ':theme/textboxes/template-driven-forms', component: TemplateDrivenComponent, name: 'Template-driven Forms', category: 'Forms', order: '04', description: 'This example shows how to integrate the textbox component in an Angular (ng) template-driven form that binds values to the model using ngModel.'},
     { path: ':theme/textboxes/reactive-forms', component: ReactiveComponent, name: 'Reactive Forms', category: 'Forms', order: '04', description: 'This example shows how to integrate the textbox component in an Angular (ng) reactive form that works based on form-group, form-builder, and form-control.'}
 ];

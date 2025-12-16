@@ -2,14 +2,14 @@
  * Rich Text Editor Default Functionality Sample
  */
 import { Component, ViewChild } from '@angular/core';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, ImportExportService, RichTextEditorModule, QuickToolbarService, TableService, PasteCleanupService, ImportWordModel, ToolbarSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, ImportExportService, RichTextEditorModule, QuickToolbarService, TableService, PasteCleanupService, ImportWordModel, ToolbarSettingsModel, ClipBoardCleanupService, AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'import-word.html',
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService, PasteCleanupService, ImportExportService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, TableService, PasteCleanupService, ImportExportService, ClipBoardCleanupService, AutoFormatService],
     standalone: true,
     imports: [SBActionDescriptionComponent, RichTextEditorModule, SBDescriptionComponent]
 })

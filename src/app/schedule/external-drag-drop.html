@@ -2,7 +2,7 @@
   <div class="drag-sample-wrapper">
     <div class="schedule-container">
       <div class="title-container">
-        <h1 class="title-text">Doctor's Appointments</h1>
+        <div class="title-text">Doctor's Appointments</div>
       </div>
       <ejs-schedule #scheduleObj cssClass='schedule-drag-drop' width='100%' height='650px' [group]="group"
         [currentView]="currentView" [selectedDate]="selectedDate" [workHours]="workHours"
@@ -34,7 +34,7 @@
     </div>
     <div class="treeview-container">
       <div class="title-container">
-        <h1 class="title-text">Waiting List</h1>
+        <div class="title-text">Waiting List</div>
       </div>
       <ejs-treeview #treeObj [fields]='field' cssClass='treeview-external-drag' dragArea=".drag-sample-wrapper"
         [allowDragAndDrop]='allowDragAndDrop' (nodeDragStop)="onTreeDragStop($event)" (nodeDragStart)="onTreeDragStart()"

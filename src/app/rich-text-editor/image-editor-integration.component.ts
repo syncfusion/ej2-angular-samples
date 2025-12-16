@@ -4,7 +4,7 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ImageEditorModule } from '@syncfusion/ej2-angular-image-editor';
 import { DialogComponent, DialogModule } from '@syncfusion/ej2-angular-popups';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, NodeSelection, RichTextEditorComponent, RichTextEditorModule, QuickToolbarService, PasteCleanupService, CountService, VideoService, AudioService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, NodeSelection, RichTextEditorComponent, RichTextEditorModule, QuickToolbarService, PasteCleanupService, CountService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { getComponent } from '@syncfusion/ej2-base';
@@ -14,7 +14,7 @@ import { ImageEditor } from '@syncfusion/ej2-image-editor';
     templateUrl: 'image-editor-integration.html',
     styleUrls: ['image-editor-integration.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, CountService, VideoService, AudioService, TableService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, CountService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService],
     standalone: true,
     imports: [SBActionDescriptionComponent, RichTextEditorModule, DialogModule, ImageEditorModule, SBDescriptionComponent]
 })

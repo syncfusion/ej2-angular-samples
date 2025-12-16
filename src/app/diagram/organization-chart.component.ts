@@ -5,6 +5,7 @@ import { DataManager } from '@syncfusion/ej2-data';
 import { localBindData } from './diagram-data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { CheckBoxModule, ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(DataBinding, HierarchicalTree, LayoutAnimation);
 
@@ -25,7 +26,7 @@ export interface DataInfo {
     styleUrls: ['diagram-style.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [SBActionDescriptionComponent, DiagramModule, NumericTextBoxModule, SBDescriptionComponent]
+    imports: [SBActionDescriptionComponent, DiagramModule, NumericTextBoxModule, CheckBoxModule, SBDescriptionComponent]
 })
 export class OrganizationalChartDiagramComponent {
     @ViewChild('diagram')
@@ -189,6 +190,20 @@ export class OrganizationalChartDiagramComponent {
     public onVerticalSpacingChange(args: NumericChangeEventArgs): void {
         this.diagram.layout.verticalSpacing = Number(args.value);
         this.diagram.dataBind();
+    }
+    // Function to enable expand and collapse icon
+    public onExpandChange(args: ChangeEventArgs): void {
+        for (let node of this.diagram.nodes) {
+            if (args.checked) {
+                node.expandIcon.shape = 'Minus';
+                node.collapseIcon.shape = 'Plus';
+            } else {
+                node.expandIcon.shape = 'None';
+                node.collapseIcon.shape = 'None';
+            }
+        }
+        this.diagram.dataBind();
+        this.diagram.doLayout();
     }
 
 }

@@ -1,0 +1,111 @@
+.blockeditor-marked .sidebar-content {
+  overflow: visible;
+  margin-top: 20px;
+  border: 1px solid #dee2e6;
+  height: 95%;
+}
+.blockeditor-marked{
+  height:680px;
+  overflow: hidden;
+}
+.blockeditor-marked .e-blockeditor {
+  display: block;
+}
+.blockeditor-marked .block-content {
+  border: 1px solid #dee2e6;
+  border-left: none;
+}
+
+.blockeditor-marked .main-menu .e-list-parent.e-ul {
+  overflow: hidden;
+}
+.blockeditor-marked .block-content .downloadbutton{
+  box-shadow: none;
+}
+.blockeditor-marked .e-sidebar.e-left.e-transition.e-close {
+  transition: transform 2.5s ease, visibility 1200ms;
+}
+.blockeditor-marked .sidebar-content .main-menu .closebutton {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border-radius:100% ;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  top: 28px;
+  cursor: pointer; 
+}
+.blockeditor-marked .sidebar-content .main-menu #main-treeview {
+  border: none;
+}
+.blockeditor-marked .sb-rightpane-collapsed {
+  width:33px;
+  height:200px;
+  position:absolute;
+  z-index:1001;
+  pointer-events: none;
+}
+.blockeditor-marked .sb-rightpane-collapsed .labelchoose {
+  transform:translate(-50%,-50%)rotate(-90deg);
+  margin-top: 180px;
+  margin-left: 16px;
+  white-space: nowrap;
+  font-size: 14px;
+  pointer-events: none;
+}
+.blockeditor-marked .sidebar-content .main-menu .closebutton.expand-mode {
+  transform: rotate(180deg);
+}
+.blockeditor-marked .block-content .breadcrumbcontent {
+  pointer-events: none;
+}
+.blockeditor-marked .block-content .stick {
+  position: sticky;
+  top: 0;
+  z-index:10 ;
+  height: 48px;
+  background: var(--color-sf-content-bg-color-alt1);
+}
+.blockeditor-marked .stick .block-content .e-chevron-right {
+  font-size: 10px ;
+}
+.blockeditor-marked .e-content-animation {
+  transition: none;
+  transform: none;
+}
+.blockeditor-marked .sidebar-content .sidebar-header {
+  background-color: #f8f9fa;
+  padding: 12px 16px;
+  border-bottom: 1px solid #dee2e6;
+  z-index: 8;
+  font-size: 14px;
+  font-weight: 600;
+  color: #495057;
+  user-select: none;
+  height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+body[class*="dark"] .blockeditor-marked .sidebar-content .sidebar-header,
+body[class*="high"] .blockeditor-marked .sidebar-content .sidebar-header {
+  background-color: unset;
+  color: unset;
+}
+
+.blockeditor-marked .sidebar-content .sidebar-header span {
+  pointer-events: none;
+}
+
+.blockeditor-marked #sidebar-treeview.e-dock.e-close .sidebar-header {
+  display: none;
+}
+
+.blockeditor-marked #sidebar-treeview:not(.e-close) .labelchoose {
+  display: none;
+}
+
+.tailwind3-dark .blockeditor-marked .sidebar-content #left-toc-closebtn {
+    background: rgb(73 76 80);
+  }

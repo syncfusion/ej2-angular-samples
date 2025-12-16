@@ -60,6 +60,7 @@ import { GanttLoadOnDemandComponent } from './load-on-demand.component';
 import { GanttUndoRedoComponent } from './undo-redo.component';
 import {GanttWbsViewComponent} from "./wbs-column.component";
 import {GanttConstraintComponent} from "./constraints.component";
+import {GanttFrozenColumnsComponent} from "./frozen-column.component"
 export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/overview', component: GanttOverviewComponent,
@@ -95,7 +96,7 @@ export const GanttAppRoutes: Object[] = [
     {
       path: ':theme/gantt/dialog-editing', component: GanttDialogComponent,
         description: 'This demo for Essential JS 2 gantt component shows the loading indicator when gantt loading, refreshing and performing other action.',
-        name: 'Dialog  Editing', order: '02', category: 'Editing', type: 'new'
+        name: 'Dialog  Editing', order: '02', category: 'Editing'
     },
 
     {
@@ -161,12 +162,12 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/baseline', component: GanttBaselineComponent,
         description: 'Baselines are enabled to view the deviation between the planned dates of tasks and actual progress of task dates',
-        name: 'Baseline', order: '04', category: 'Scheduling Concepts', type: 'update'
+        name: 'Baseline', order: '04', category: 'Scheduling Concepts',
     },
     {
         path: ':theme/gantt/event-markers', component: GanttEventMarkersComponent,
         description: 'This example demonstrates how to highlight the different stages in the project development cycle just like bookmark.',
-        name: 'Event Markers', order: '04', category: 'Scheduling Concepts'
+        name: 'Event Markers', order: '04', category: 'Scheduling Concepts', type: 'update'
     },
     {
         path: ':theme/gantt/indicators', component: GanttIndicatorsComponent,
@@ -217,6 +218,11 @@ export const GanttAppRoutes: Object[] = [
         path:':theme/gantt/wbs-column', component: GanttWbsViewComponent ,
         description: 'This example demonstrates how to enable and automatically update the WBS (Work Breakdown Structure) column.',
         name:'WBS Column', order: "06", category:"Columns",
+    },
+    {
+        path:':theme/gantt/frozen-column', component: GanttFrozenColumnsComponent ,
+        description: 'This example demonstrates how to pin columns to the left or right, keeping key fields in view during horizontal scrolling.',
+        name:'Frozen Columns', order: "06", category:'Columns', type: 'new'
     },
     {
         path: ':theme/gantt/resources', component: GanttResourcesComponent,
@@ -291,7 +297,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/selection', component: GanttSelectionComponent,
         description: 'This example demonstrates the various selection support of row and cell with different type in Syncfusion<sup>®</sup> Essential JS2 Gantt',
-        name: 'Selection', order: '10', category: 'Miscellaneous', type: 'update'
+        name: 'Selection', order: '10', category: 'Miscellaneous'
     },
     {
         path: ':theme/gantt/context-menu', component: GanttContextMenuComponent,

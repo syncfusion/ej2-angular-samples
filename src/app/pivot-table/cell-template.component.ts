@@ -175,7 +175,6 @@ export class CellTemplateComponent implements OnInit {
                 { name: 'ProCost', caption: 'Revenue Growth' }
             ],
             filters: [],
-            alwaysShowValueHeader: true,
             dataSource: data
         };
     }

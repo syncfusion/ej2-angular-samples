@@ -1,5 +1,6 @@
 import { NgModule, ModuleWithProviders, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AttachmentsComponent } from './attachments.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { ChatUIDefaultComponent } from './default.component';
@@ -20,13 +21,18 @@ export const chatUIAppRoutes: Object[] = [
         {displayName: 'loadOn-demand.html', path: './src/chat-ui/loadOn-demand.html'},
         {displayName: 'loadOn-demand.component.css', path: './src/chat-ui/loadOndemand.component.css'},
     ] },
+        { path: ':theme/chat-ui/attachments', component: AttachmentsComponent, name: 'File Attachments', description: 'Showcases the chat component integration with other Chat UI control', category: 'Chat UI', order: '01', type: 'new', sourceFiles: [
+        {displayName: 'attachments.component.ts', path: './src/chat-ui/attachments.component.ts'},
+        {displayName: 'attachments.html', path: './src/chat-ui/attachments.html'},
+        {displayName: 'attachments.component.css', path: './src/chat-ui/attachments.component.css'}
+    ] },
     { path: ':theme/chat-ui/template', component: ChatUITemplateComponent, name: 'Template', description: 'This sample demonstrates the template functionality of the Chat UI component.', category: 'Chat UI', order: '01', sourceFiles: [
         {displayName: 'template.component.ts', path: './src/chat-ui/template.component.ts'},
         {displayName: 'template.html', path: './src/chat-ui/template.html'},
         {displayName: 'template.component.css', path: './src/chat-ui/template.component.css'},
         {displayName: 'messageData.ts', path: './src/chat-ui/messageData.ts'}
     ] },
-    { path: ':theme/chat-ui/api', component: ChatUIApiComponent, name: 'API', description: 'This sample demonstrates the properties available in the Chat UI component.', category: 'Chat UI', order: '01', type: 'update', sourceFiles: [
+    { path: ':theme/chat-ui/api', component: ChatUIApiComponent, name: 'API', description: 'This sample demonstrates the properties available in the Chat UI component.', category: 'Chat UI', order: '01', sourceFiles: [
         {displayName: 'api.component.ts', path: './src/chat-ui/api.component.ts'},
         {displayName: 'api.html', path: './src/chat-ui/api.html'},
         {displayName: 'api.component.css', path: './src/chat-ui/api.component.css'},

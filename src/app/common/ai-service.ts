@@ -131,3 +131,9 @@ export const getOpenAiModelRTE = async (subQuery: string, promptQuery: string): 
         }
     }
 };
+
+export async function getUserID(): Promise<string> {
+    return canvasFingerprint();
+}
+
+export const AI_SERVICE_URL: string = 'https://ai-samples-server-f5hta2h9g5aqhcfg.southindia-01.azurewebsites.net';

@@ -103,7 +103,7 @@ export class PivotTableExportComponent implements OnInit {
         } as GridSettings;
 
         this.dataSourceSettings = {
-            url: 'https://ej2services.syncfusion.com/js/development/api/pivot/post',
+            url: 'https://services.syncfusion.com/angular/production/api/pivot/post',
             mode: 'Server',
             expandAll: true,
             enableSorting: true,

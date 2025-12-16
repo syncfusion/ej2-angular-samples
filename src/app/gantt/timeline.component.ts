@@ -155,7 +155,7 @@ export class GanttTimelineComponent implements OnInit {
         } else if (unit === 'Hour') {
             this.topTierFormatObj.dataSource = this.hourformat;
         }
-        this.topTierFormatObj.refresh();
+        this.topTierFormatObj.value = this.topTierFormatObj.dataSource[0].id;
         this.updateUnitWidth(unit, 'top');
         this.ganttObj.timelineSettings.topTier.unit = unit as TimelineViewMode;
     }
@@ -180,7 +180,7 @@ export class GanttTimelineComponent implements OnInit {
         } else if (unit === 'Hour') {
             this.bottomTierFormatObj.dataSource = this.hourformat;
         }
-        this.bottomTierFormatObj.refresh();
+        this.bottomTierFormatObj.value = this.bottomTierFormatObj.dataSource[0].id;
         this.updateUnitWidth(unit, 'bottom');
         this.ganttObj.timelineSettings.bottomTier.unit = unit as TimelineViewMode;
     }

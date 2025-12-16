@@ -1,0 +1,31 @@
+.diagram-distance-measurement {
+    position: relative;
+}
+
+.diagram-distance-measurement .distance-units {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 7px;
+    background: #fafafa;
+    top: 60px;
+    right: 50px;
+    padding: 5px;
+    border: 0.5px solid #e0e0e0;
+}
+
+.diagram-distance-measurement .e-ddl.e-input-group .e-input-group-icon,
+.e-ddl.e-input-group.e-control-wrapper .e-input-group-icon:hover {
+    color: #9CA3AF;
+}
+
+.diagram-distance-measurement .e-ddl.e-input-group.e-control-wrapper .e-input {
+    color: #9CA3AF;
+}
+
+.diagram-distance-measurement .distance-unit-label {
+    color: #333 !important;
+    margin-bottom: 0px !important;
+    margin-right: 10px !important;
+}

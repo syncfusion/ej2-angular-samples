@@ -3,13 +3,15 @@ import { MultiSelectComponent, MultiSelectModule } from '@syncfusion/ej2-angular
 import { CheckBoxComponent } from '@syncfusion/ej2-angular-buttons';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { CheckBoxSelectionService } from '@syncfusion/ej2-angular-dropdowns';
 
 @Component({
     selector: 'control-content',
     templateUrl: 'grouping-with-checkbox.html',
     styleUrls: ['grouping-with-checkbox.css'],
     standalone: true,
-    imports: [SBActionDescriptionComponent, MultiSelectModule, SBDescriptionComponent]
+    imports: [SBActionDescriptionComponent, MultiSelectModule, SBDescriptionComponent],
+    providers: [CheckBoxSelectionService]
 })
 export class CheckboxGroupingMultiSelectComponent {
     //define the data with category

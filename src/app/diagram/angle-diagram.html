@@ -1,12 +1,12 @@
 <div id="action-description">
     <p>
-        This sample demonstrates an interactive solar panel tilt system built with the Syncfusion<sup>®</sup> EJ2 Angular Diagram component. Adjust the panel angle to see real-time changes in system efficiency based on the sun's position and location.
+        This sample demonstrates an interactive solar panel tilt system built with the Syncfusion<sup>®</sup> EJ2 Angular Diagram. Adjust the panel angle to see real-time changes in system efficiency based on the sun's position and location.
     </p>
 </div>
 <div class="control-section angle-diagram-container">
     <ejs-diagram #diagram id="diagram" width="100%" height="750px" [nodes]="nodes" [connectors]="connectors"
     [snapSettings]="snapSettings" [selectedItems]="selectedItems" [pageSettings]="pageSettings"
-    (rotateChange)="onRotationChange($event)" (created)="created()" (load)="load()" (scrollChange)="scrollChange()">
+    (rotateChange)="onRotationChange($event)" (created)="created()" (click)="click()" (load)="load()" (scrollChange)="scrollChange()">
     </ejs-diagram>
 </div>
 <div id="description">

@@ -1,0 +1,44 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the column freezing feature in the Gantt Chart. Frozen columns remain fixed while other columns scroll horizontally, improving readability.
+    </p>
+</div>
+
+<div class="control-section">
+
+    <div class="e-toolbar toolbar-items">
+        <!-- Left-aligned timezone label and combobox -->
+        <div class="columns">
+            <label class="column-label">Columns:</label>
+            <ejs-dropdownlist #columnDD id="columns" [dataSource]="leftColumns" [fields]="{ text: 'name', value: 'id' }"
+                [value]="columnValue" (change)="columnChange($event)">
+            </ejs-dropdownlist>
+        </div>
+        <div class="directions">
+            <label class="direction-label">Freeze Direction:</label>
+            <ejs-dropdownlist #directionDD id="freezeDirection" [dataSource]="directions"
+                [fields]="{ text: 'name', value: 'id' }" [value]="directionValue" (change)="directionChange($event)">
+            </ejs-dropdownlist>
+        </div>
+    </div>
+
+    <ejs-gantt #frozenColumns id="frozenColumns" height="650px" [dataSource]="data" [taskFields]="taskSettings"
+        [columns]="columns" [labelSettings]="labelSettings" [treeColumnIndex]="1" rowHeight="46" taskbarHeight="25"
+        height='650px' treeColumnIndex="1" [resources]="resources" [resourceFields]="resourceFields"
+        [allowSelection]="false" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [splitterSettings]="splitterSettings">
+    </ejs-gantt>
+</div>
+
+<div id="description">
+    <p>The freezing feature allows users to freeze specfied number of columns while scrolling the remaining content.
+        The freezing behavior can be configured using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/index-default#frozencolumns">frozenColumns</a> property.
+        Additionally, to keep specific columns visible during horizontal scrolling, use the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/columnmodel#freeze">column.freeze</a> 
+        property on the relevant columns to freeze them to the <code>Left</code>, <code>Right</code> or <code>Fixed</code>.
+    </p>
+    <p>In this example, the <b>Task ID</b> and <b>Task Name</b> columns are frozen on the left, and the <b>Assignee</b>
+        column is frozen on the right using the <code class="code">column.freeze</code> property.
+        Module injection: Gantt features are provided as feature-wise modules. To use column freezing, inject <code
+            class="code">FreezeSevice</code> into the <code>&#64;NgModule.providers</code> section..
+    </p>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/getting-started#adding-gantt-component">documentation section</a>.</p>
+</div>

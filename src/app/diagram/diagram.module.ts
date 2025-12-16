@@ -88,6 +88,8 @@ import { PipelineInstrumentationDiagramComponent } from './pipeline-instrumentat
 import { HistoryTimelineDiagramComponent } from './history-timeline.component';
 import { FunnelDiagramsComponent } from './funnel-diagrams.component';
 import { AngleDiagramComponent } from './angle-diagram.component';
+import { SerpentineDiagramComponent } from './serpentine-diagram.component';
+import { FamilyTreeDiagramsComponent } from './family-tree.component';
 
 export const diagramAppRoutes: Object[] = [
     {
@@ -395,8 +397,19 @@ export const diagramAppRoutes: Object[] = [
         description: 'Infographic funnel diagram with customizable node shapes and colors, showing stage-wise conversion and cumulative rates to assess marketing performance.',
     },
     {
+        path: ':theme/diagram/family-tree', component: FamilyTreeDiagramsComponent,
+        name: 'Family Tree Diagram',
+        category: 'Use Case Diagram', order: '08', type:'new',
+        description: 'Visualize family relationships with Syncfusion® EJ2 Angular Diagram. Arrange members in a complex hierarchical layout, showing names, tenure, and clear connections between spouses and children.',
+    },
+    {
+        path: ':theme/diagram/serpentine-diagram', component: SerpentineDiagramComponent,
+        name: 'Serpentine Diagram', category: 'Use Case Diagram', order: '08', type: 'new',
+        description: 'Visualizes a custom serpentine layout with the Diagram component, featuring 20 key medical breakthroughs that revolutionized healthcare (1796–1996).',
+    },
+    {
         path: ':theme/diagram/angle-diagram', component: AngleDiagramComponent,
-        name: 'Solar Panel Angle', category: 'Use Case Diagram', order: '08', type:'new',
+        name: 'Solar Panel Angle', category: 'Real-time Diagrams', order: '09', type:'new',
         description: 'Demonstrate a smart solar panel tilt system using Syncfusion® EJ2 Angular Diagram. Interactively adjust panel angles, track efficiency, and optimize based on sun position and location.',
     },
     {

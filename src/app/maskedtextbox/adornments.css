@@ -1,0 +1,42 @@
+.adornment-mask .content-wrapper div.mask-row {
+    max-width: 250px;
+    margin: 0 auto;
+    padding: 40px 0px 0px;
+}
+.adornment-mask .multiline-property .left-side {
+    font-size: 14px;
+    padding: 8px;
+}
+.adornment-mask .multiline-property.property-panel-table div.multiline {
+    padding-left: 0px;
+}
+.material3 .adornment-mask label.e-float-text, .material3 .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom, .material3 .e-float-input.e-control-wrapper:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom,
+.material3-dark .adornment-mask label.e-float-text, .material3-dark .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom, .material3-dark .e-float-input.e-control-wrapper:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom {
+    margin-top: -2px;
+}
+.bootstrap5\.3 .adornment-mask .e-prepend-template,
+.bootstrap5\.3-dark .adornment-mask .e-prepend-template,
+.tailwind3 .adornment-mask .e-prepend-template,
+.tailwind3-dark .adornment-mask .e-prepend-template {
+    padding-right: 0 !important;
+}
+.bootstrap5\.3 .adornment-mask .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom,
+.bootstrap5\.3-dark .adornment-mask .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom,
+.tailwind3 .adornment-mask .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom,
+.tailwind3-dark .adornment-mask .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom {
+    top: 50% !important;
+}
+.fluent2 .adornment-mask .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom,
+.fluent2-dark .adornment-mask .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom,
+.fluent2-highcontrast .adornment-mask .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom {
+    top: -10px !important;
+}
+.e-bigger.material3 .adornment-mask .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom,
+.e-bigger.material3-dark .adornment-mask .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom {
+    top: -3px !important;
+}
+.e-bigger.fluent2 .adornment-mask .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom,
+.e-bigger.fluent2-dark .adornment-mask .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom,
+.e-bigger.fluent2-highcontrast .adornment-mask .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom {
+    top: -8px !important;
+}

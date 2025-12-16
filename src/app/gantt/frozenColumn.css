@@ -1,0 +1,138 @@
+ .tailwind3 #frozenColumns .e-content .e-leftfreeze,
+ .tailwind3 #frozenColumns .e-content .e-rightfreeze,
+ .tailwind3 #frozenColumns .e-content .e-fixedfreeze {
+     background-color: #e0e7ff !important;
+ }
+
+ .tailwind3 #frozenColumns .e-columnheader .e-leftfreeze,
+ .tailwind3 #frozenColumns .e-columnheader .e-rightfreeze,
+ .tailwind3 #frozenColumns .e-columnheader .e-fixedfreeze {
+     background-color: #d8dfff !important;
+ }
+
+ /* ==================== TAILWIND3 DARK ==================== */
+ .tailwind3-dark #frozenColumns .e-content .e-leftfreeze,
+ .tailwind3-dark #frozenColumns .e-content .e-rightfreeze,
+ .tailwind3-dark #frozenColumns .e-content .e-fixedfreeze {
+     background-color: #1e1b4b !important;
+ }
+
+ .tailwind3-dark #frozenColumns .e-columnheader .e-leftfreeze,
+ .tailwind3-dark #frozenColumns .e-columnheader .e-rightfreeze,
+ .tailwind3-dark #frozenColumns .e-columnheader .e-fixedfreeze {
+     background-color: #2d2b55 !important;
+     /* slightly lighter than content for depth */
+ }
+
+ .fluent2 #frozenColumns .e-content .e-leftfreeze,
+ .fluent2 #frozenColumns .e-content .e-rightfreeze,
+ .fluent2 #frozenColumns .e-content .e-fixedfreeze {
+     background-color: #ebf3fc !important;
+ }
+
+ .fluent2 #frozenColumns .e-columnheader .e-leftfreeze,
+ .fluent2 #frozenColumns .e-columnheader .e-rightfreeze,
+ .fluent2 #frozenColumns .e-columnheader .e-fixedfreeze {
+     background-color: #e5f1ff !important;
+     /* slightly lighter than content for depth */
+ }
+
+ .fluent2-dark #frozenColumns .e-content .e-leftfreeze,
+ .fluent2-dark #frozenColumns .e-content .e-rightfreeze,
+ .fluent2-dark #frozenColumns .e-content .e-fixedfreeze {
+     background-color: #082338 !important;
+ }
+
+ .fluent2-dark #frozenColumns .e-columnheader .e-leftfreeze,
+ .fluent2-dark #frozenColumns .e-columnheader .e-rightfreeze,
+ .fluent2-dark #frozenColumns .e-columnheader .e-fixedfreeze {
+     background-color: #082338 !important;
+     /* slightly lighter than content for depth */
+ }
+
+ .material3 #frozenColumns .e-content .e-leftfreeze,
+ .material3 #frozenColumns .e-content .e-rightfreeze,
+ .material3 #frozenColumns .e-content .e-fixedfreeze {
+     background-color: rgba(234, 221, 255) !important;
+ }
+
+ .material3 #frozenColumns .e-columnheader .e-leftfreeze,
+ .material3 #frozenColumns .e-columnheader .e-rightfreeze,
+ .material3 #frozenColumns .e-columnheader .e-fixedfreeze {
+     background-color: rgb(230, 216, 251) !important;
+ }
+
+ /* slightly lighter than content for depth */
+ .material3-dark #frozenColumns .e-content .e-leftfreeze,
+ .material3-dark #frozenColumns .e-content .e-rightfreeze,
+ .material3-dark #frozenColumns .e-content .e-fixedfreeze {
+     background-color: rgb(60, 42, 107) !important;
+ }
+
+ .material3-dark #frozenColumns .e-columnheader .e-leftfreeze,
+ .material3-dark #frozenColumns .e-columnheader .e-rightfreeze,
+ .material3-dark #frozenColumns .e-columnheader .e-fixedfreeze {
+     background-color: rgb(78, 57, 130) !important;
+ }
+
+ .bootstrap5\.3 #frozenColumns .e-content .e-leftfreeze,
+ .bootstrap5\.3 #frozenColumns .e-content .e-rightfreeze,
+ .bootstrap5\.3 #frozenColumns .e-content .e-fixedfreeze {
+     background-color: #eeeeee !important;
+ }
+
+ .bootstrap5\.3 #frozenColumns .e-columnheader .e-leftfreeze,
+ .bootstrap5\.3 #frozenColumns .e-columnheader .e-rightfreeze,
+ .bootstrap5\.3 #frozenColumns .e-columnheader .e-fixedfreeze {
+     background-color: #e6e5e5 !important;
+     /* slightly lighter than content for depth */
+ }
+
+ .bootstrap5\.3-dark #frozenColumns .e-content .e-leftfreeze,
+ .bootstrap5\.3-dark #frozenColumns .e-content .e-rightfreeze,
+ .bootstrap5\.3-dark #frozenColumns .e-content .e-fixedfreeze {
+     background-color: #434343 !important;
+ }
+
+ .bootstrap5\.3-dark #frozenColumns .e-columnheader .e-leftfreeze,
+ .bootstrap5\.3-dark #frozenColumns .e-columnheader .e-rightfreeze,
+ .bootstrap5\.3-dark #frozenColumns .e-columnheader .e-fixedfreeze {
+     background-color: rgb(62, 62, 62) !important;
+     /* slightly lighter than content for depth */
+ }
+
+ /* Fluent2 High Contrast - separate class as you said */
+ .fluent2-highcontrast #frozenColumns .e-content .e-leftfreeze,
+ .fluent2-highcontrast #frozenColumns .e-content .e-leftfreeze .e-treecolumn-container .e-treegridexpand,
+ .fluent2-highcontrast #frozenColumns .e-content .e-leftfreeze .e-treecolumn-container .e-treegridcollapse,
+ .fluent2-highcontrast #frozenColumns .e-content .e-rightfreeze,
+ .fluent2-highcontrast #frozenColumns .e-content .e-rightfreeze .e-treecolumn-container .e-treegridexpand,
+ .fluent2-highcontrast #frozenColumns .e-content .e-rightfreeze .e-treecolumn-container .e-treegridcollapse,
+ .fluent2-highcontrast #frozenColumns .e-content .e-fixedfreeze,
+ .fluent2-highcontrast #frozenColumns .e-content .e-fixedfreeze .e-treecolumn-container .e-treegridexpand,
+ .fluent2-highcontrast #frozenColumns .e-content .e-fixedfreeze .e-treecolumn-container .e-treegridcollapse {
+     background-color: #45e3f4 !important;
+     color: #000 !important;
+ }
+
+ .fluent2-highcontrast #frozenColumns .e-columnheader .e-leftfreeze,
+ .fluent2-highcontrast #frozenColumns .e-columnheader .e-rightfreeze,
+ .fluent2-highcontrast #frozenColumns .e-columnheader .e-fixedfreeze {
+     background-color: #07dff3 !important;
+     color: #000 !important;
+ }
+
+ .toolbar-items .columns .column-label,
+ .toolbar-items .directions .direction-label {
+     font-size: 14px;
+     margin-bottom: 0px !important;
+ }
+
+ .toolbar-items{
+    padding: 10px; display: flex; gap: 15px;
+ }
+ .toolbar-items .columns, .toolbar-items .directions{
+    display: flex; 
+    align-items: center; 
+    gap: 15px;
+ }

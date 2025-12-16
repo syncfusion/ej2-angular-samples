@@ -1214,7 +1214,7 @@ private updateStylesheet(theme: string): void {
     updateSourceCode(path: string): void {
         let pathArray: string[] = path.split('/');
         pathArray = pathArray.slice(2);
-        const isAISamples: boolean = /ai-(?!assistview\b)[a-z-]+/.test(pathArray[0]);
+                const isAISamples: boolean = /ai-(?!assistview\b)[a-z-]+/.test(pathArray[0]) ||  /^ai-.*/.test(pathArray[1]);
         const desktopSettings: HTMLElement = select('.sb-desktop-setting') as HTMLElement;
         if (!Browser.isDevice && desktopSettings) {
             desktopSettings.style.display = isAISamples ? 'none' : '';

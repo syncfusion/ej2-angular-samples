@@ -1,0 +1,24 @@
+<div id="action-description">
+    <p>
+      This sample uses the Syncfusion<sup>®</sup> EJ2 Angular Diagram component to demonstrate measuring and visualizing distances between elements with interactive connectors.
+    </p>
+</div>
+<div class="control-section diagram-distance-measurement">
+    <ejs-diagram #diagram id="distanceDiagram" width="100%" height="750px" [tool]="tool" [snapSettings]="snapSettings"
+        [nodes]="nodes" [connectors]="connectors" [rulerSettings]="{showRulers: true}"
+        (sourcePointChange)="onSourcePointChanged($event)" (targetPointChange)="onTargetPointChanged($event)"
+        [getNodeDefaults]="getNodeDefaults" (created)="created()" (load)="diagramLoad()">
+    </ejs-diagram>
+    <div class="distance-units">
+        <label class="distance-unit-label">Unit: </label>
+        <ejs-dropdownlist #unitDropdown [dataSource]="unitOptions" [fields]="{text: 'text', value: 'value'}"
+            [value]="selectedUnit" (change)="onUnitChanged($event)" width="155px" placeholder="Select Unit">
+        </ejs-dropdownlist>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this demo, distance connectors are automatically generated and updated as users reposition the wall shapes. These connectors display dimensions between elements, with labels showing exact distances in inches, feet, and centimeters. The entire diagram is responsive, recalculating distances in real time to help users better understand spatial relationships and alignment.
+    </p>
+    <br>
+</div>

@@ -378,31 +378,59 @@
             "flow-execution": "Flow Execution",
             "custom-shapes": "Complex Shapes",
             "line-routing": "Line Routing",
+            "avoid-connector-overlap": "Avoid Connector Overlap",
+            "container": "Container",
+            "grouping-and-ordering": "Grouping and Ordering",
+            "commands": "Commands",
+            "constraints": "Constraints",
+            "zooming-and-panning": "Zooming and Panning",
+            "snapping": "Snapping",
+            "scrolling": "Scrolling",
             "bpmn-editor": "BPMN Editor",
             "logic-circuit": "Logic Circuit Diagram",
             "uml-activity": "UML Activity Diagram",
             "network-diagram": "Network Diagram",
             "uml-Class-diagram": "UML Class Diagram",
+            "uml-sequence-diagram": "UML Sequence Diagram",
+            "shortest-path": "Shortest Path Visualizer",
+            "tournament-bracket": "Tournament Bracket",
+            "seat-booking": "Ticket Booking",
+            "spiral-diagram": "Spiral Diagram",
+            "puzzle": "Image Puzzle",
+            "periodic-table": "Periodic Table",
+            "history-timeline": "History Timeline",
+            "distance-diagram": "Distance Diagram",
+            "funnel-diagrams": "Funnel Diagram",
+            "family-tree": "Family Tree Diagram",
+            "serpentine-diagram": "Serpentine Diagram",
+            "angle-diagram": "Solar Panel Angle",
+            "pipeline-instrumentation-diagram": "P&ID Diagram",
+            "neural-network": "Neural Network",
             "hierarchical-tree": "Hierarchical Tree",
             "organization-chart": "Organizational Chart",
+            "flowchart-layout": "Flowchart Layout",
             "radial-tree": "Radial Tree",
             "mind-map": "Mind Map",
             "symmetric-layout": "Symmetric Layout",
             "complex-hierarchical-tree": "Complex Hierarchical Tree",
             "right-to-left-tree": "RTL Tree",
             "pert-chart": "PERT chart",
+            "hierarchicallayout-with-multipleroots": "Hierarchical Layout with multiple roots",
             "drawing-tool": "Drawing Tools",
             "key-board-functions": "Keyboard Interaction",
             "quick-commands": "User Handles",
             "symbol-palette": "Symbol Palette",
             "overview": "Overview Panel",
+            "virtualization": "Virtualization",
             "serialization": "Serialization",
             "print-export": "Print and Export",
             "local-data": "Local Data",
             "remote-data": "Remote Data",
             "crud": "CRUD",
             "venn-diagram": "Venn Diagram",
-            "fishbone-diagram": "Fishbone Diagram"
+            "fishbone-diagram": "Fishbone Diagram",
+            "workflow-editor": "Workflow Diagram",
+            "data-binding-with-treeview": "Data Binding with TreeView"
         }
     },
     "dialog": {
@@ -781,15 +809,21 @@
             "streaming": "Streaming Response",
             "attachments": "File Attachments",
             "template": "Template",
-            "dialog": "Notes Assistant"
+            "dialog": "Notes Assistant",
+            "ai-integrations": "Multiple AI Models",
+            "ai-speech-to-text": "Speech To Text",
+            "ai-text-to-speech": "Text To Speech"
         }
     },
     "block-editor": {
         "ControlName": "Block Editor",
         "Samples": {
             "overview": "Overview",
+            "pasteSettings": "Paste Cleanup",
             "api": "API",
-            "events": "Events"
+            "events": "Events",
+            "template-gallery": "Template Gallery",
+            "MarkdownBlocks": "Markdown Blocks"
         }
     },
     "chat-ui": {
@@ -797,6 +831,7 @@
         "Samples": {
             "default": "Default Functionalities",
             "loadOn-demand": "Load On-demand",
+            "attachments": "File Attachments",
             "template": "Template",
             "api": "API",
             "chat-integration": "Use Case"

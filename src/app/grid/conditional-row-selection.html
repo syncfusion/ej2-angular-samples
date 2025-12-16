@@ -1,0 +1,48 @@
+<div class="control-section">
+    <ejs-grid [dataSource]='data' id="ConditionalSelection" [isRowSelectable]='isRowSelectable' [enableVirtualization]='true' height="400" [allowSorting]='true' [allowFiltering]='true' [filterSettings]='filterSettings' [allowSelection]="true" [selectionSettings]="selectOptions" [editSettings]='editSettings' [toolbar]='toolbar'>
+        <e-columns>
+            <e-column type='checkbox' width='50' [allowEditing]="false"></e-column>
+            <e-column field='OrderID' isPrimaryKey='true' headerText='Order ID' width='110' [allowEditing]="false"></e-column>
+            <e-column field='CustomerName' headerText='Customer Name' width='170' [allowEditing]="false"></e-column>
+            <e-column field='Product' headerText='Product' width='130' [allowEditing]="false">
+                <ng-template #template let-data>
+                    <div class="e-product-info">
+                        <img src="./assets/grid/images/product/{{data.Product}}.png" [alt]="data.Product" />
+                        <span>{{ data.Product }}</span>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='Amount' headerText='Amount' width='110' format='C2' textAlign='Right' [allowEditing]="false"></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='130' format="yMd" textAlign='Right' [allowEditing]="false"></e-column>
+            <e-column field='Status' headerText='Status' width='130' editType="dropdownedit">
+                <ng-template #template let-data>
+                    <div class="e-status-info">
+                        <img src="./assets/grid/images/status/{{data.Status}}.svg" [alt]="data.Status" />
+                        <span>{{ data.Status }}</span>
+                    </div>
+                </ng-template>
+            </e-column>
+        </e-columns>
+    </ejs-grid>
+    <div id="action-description">
+        <p>This sample demonstrates the conditional row selection of the Data Grid using checkbox selection.
+            It allows end-users to select only specific rows based on certain conditions.</p>
+    </div>
+    <div id="description">
+        <p>In this demo, conditional row selection is implemented using the
+            <code><a target="_blank" class="code"
+                href="https://ej2.syncfusion.com/angular/documentation/api/grid/#isrowselectable">isRowSelectable</a></code> callback function.
+            This callback function executes before the grid loads data, evaluates each row, and returns <strong>false</strong> for orders
+            with <strong>Delivered</strong> or <strong>Canceled</strong> status.</p>
+
+        <p>Selection is persisted by enabling <code><a target="_blank" class="code"
+                href="https://ej2.syncfusion.com/angular/documentation/api/grid/selectionSettings/#persistselection">
+                selectionSettings -> persistSelection</a></code>. With this setting, selected rows remain checked across all operations. Persist selection
+            requires at least one column to be defined as a primary key using the <code><a target="_blank" class="code"
+                href="https://ej2.syncfusion.com/angular/documentation/api/grid/column/#isprimarykey">
+                columns -> isPrimaryKey</a></code> property.</p>
+        <p>
+            More information on the conditional row selection can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/grid/selection/row-selection"> documentation section</a>.
+        </p>
+    </div>
+</div>

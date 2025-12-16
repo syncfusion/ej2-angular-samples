@@ -119,7 +119,6 @@ export let streamingSuggestions: string[] = [
 
 export let assistantSuggestions: string[] = [
     "How is AI used in everyday life?",
-    "What are the benefits of using AI?",
     "C# console app to manage library books"
 ];
 
@@ -127,17 +126,17 @@ export let assistantResponses : { [key: string]: string | string[] } [] = [
     {
     prompt: "How is AI used in everyday life?",
     response: "<p>AI is integrated into many aspects of daily life. Common examples include:</p> <ol><li>Voice assistants like Siri and Alexa.</li><li>Recommendation systems on Netflix and YouTube.</li><li>Spam filters in email.</li><li>Navigation apps like Google MapsSmart home devices and appliances.</li><ol>",
-    suggestions: ["C# console app to manage library books", "Prime number checking C# example?", "What are the benefits of using AI?"]
+    suggestions: ["C# console app to manage library books", "What are the benefits of using AI?"]
     },
     {
     prompt: "What are the benefits of using AI?",
     response: "<p>Artificial Intelligence (AI) is revolutionizing the way we live, work, and interact with the world. Here are the key benefits of using AI:<br></p><ol><li><strong>Automation of Repetitive Tasks:</strong> AI automates routine tasks, increasing efficiency and allowing humans to focus on creative and strategic work.</li><br><li><strong>Enhanced Decision-Making:</strong> AI analyzes large datasets to uncover patterns and insights, supporting better decisions in fields like finance, healthcare, and logistics.</li><br><li><strong>Personalization and Customer Experience:</strong> AI tailors experiences to individual users, improving satisfaction through personalized recommendations and services.</li><br><li><strong>Healthcare Advancements:</strong> AI improves diagnostics, treatment planning, and patient monitoring, enabling early disease detection and personalized medicine.</li><br><li><strong>Increased Productivity and Cost Savings:</strong> By optimizing processes and reducing errors, AI boosts productivity and lowers operational costs.</li><br><li><strong>Real-Time Data Processing:</strong> AI processes data in real time, enabling instant responses in areas like fraud detection, autonomous vehicles, and emergency services.</li><br><li><strong>Accessibility and Inclusion:</strong> AI-powered tools support people with disabilities through speech-to-text, real-time translation, and assistive technologies.</li><br><li><strong>Innovation and Scientific Discovery:</strong> AI accelerates research in fields like climate science, genomics, and space exploration by handling complex computations.</li><br><li><strong>Improved Safety and Security:</strong> AI enhances security through surveillance, threat detection, and predictive maintenance in industrial environments.</li><br><li><strong>Economic Growth and Job Creation:</strong> AI creates new roles in development, data science, and ethics, while fostering innovation and entrepreneurship.</li><br><li><strong>Environmental Sustainability:</strong> AI supports sustainability by optimizing energy use, improving agriculture, and guiding conservation efforts.</li><br><li><strong>Creative and Artistic Expression:</strong> AI contributes to the arts by generating music, visual art, and literature, opening new creative possibilities.</li></ol><br><p>In conclusion, AI offers transformative benefits across industries and society. When used responsibly, it can enhance human capabilities, solve complex problems, and drive progress in countless areas.</p>",
-    suggestions: ["What are the risks or challenges of AI?", "C# console app to manage library books", "Prime number checking C# example?"]
+    suggestions: ["What are the risks or challenges of AI?", "C# console app to manage library books"]
     },
     {
     prompt: "What are the risks or challenges of AI?",
     response: "<p>While AI has many benefits, it also presents challenges such as:</p><ol><li><strong>Bias:</strong> AI can reflect and amplify biases in training data.</li><li><strong>Privacy:</strong> AI systems often rely on large amounts of personal data.</li> <li><strong>Job Displacement:</strong> Automation may replace certain human jobs.</li></ol>",
-    suggestions: ["Prime number checking C# example?", "How is AI used in everyday life?", "C# console app to manage library books"]
+    suggestions: [ "How is AI used in everyday life?", "C# console app to manage library books"]
     },       
     {
         prompt: "C# console app to manage library books",

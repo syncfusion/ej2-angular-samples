@@ -1,0 +1,35 @@
+.adornment-numeric .content-wrapper {
+    width: 35%;
+    margin: 0 auto;
+    min-width: 250px;
+}
+.adornment-numeric .custom-margin {
+    margin: 25px 0;
+}
+
+.adornment-numeric .e-icons.e-search {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.adornment-numeric .e-numeric.e-control-wrapper.e-input-group .e-input-group-icon {
+    background-color: rgba(0,0,0,0) !important;
+}
+
+.bootstrap5\.3 .adornment-numeric .e-prepend-template,
+.bootstrap5\.3-dark .adornment-numeric .e-prepend-template,
+.tailwind3 .adornment-numeric .e-prepend-template,
+.tailwind3-dark .adornment-numeric .e-prepend-template {
+    padding-right: 0 !important;
+}
+
+.fluent2 .e-prepend-template,
+.fluent2-dark .e-prepend-template,
+.fluent2-highcontrast .e-prepend-template {
+    padding-left: 8px !important;
+}
+
+.e-icon-numeric .e-icons.e-reset,
+.e-icon-numeric.e-icons.e-horizontal-line,
+.e-icon-numeric .e-icons.e-plus {
+    cursor: pointer;
+}

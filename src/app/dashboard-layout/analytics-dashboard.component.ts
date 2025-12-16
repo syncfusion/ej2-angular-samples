@@ -107,10 +107,10 @@ export class AnalyticsDashboardComponent {
     }
     public  layers: object[] = [
         {
-            shapeData: new MapAjax('./source/dashboard-layout/worldmap.json'),
+            shapeData: new MapAjax('https://ej2.syncfusion.com/demos/src/dashboard-layout/worldmap.json'),
             shapePropertyPath: 'continent',
             shapeDataPath: 'continent',
-            dataSource: new MapAjax('./source/dashboard-layout/datasource.json'),
+            dataSource: new MapAjax('https://ej2.syncfusion.com/demos/src/dashboard-layout/datasource.json'),
             shapeSettings: {
                 colorValuePath: 'color',
             },

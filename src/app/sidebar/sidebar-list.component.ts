@@ -19,14 +19,14 @@ export class SidebarListComponent {
         { id: "1", text: "JavaScript", pic: "javascript", 
             description: "JavaScript (JS) is an interpreted computer programming language. " +
             "It was originally implemented as part of web browsers so that client-side scripts" + 
-            "could interact with the user, control the browser, communicate asynchronously, and" +
-            "alter the document content that was displayed. However, it has recently" +
-            "become common in both game development and the creation of desktop applications." },
+            " could interact with the user, control the browser, communicate asynchronously, and" +
+            " alter the document content that was displayed. However, it has recently" +
+            " become common in both game development and the creation of desktop applications." },
         { id: "2", text: "TypeScript", pic: "typescript", 
             description: "It is a typed superset of JavaScript that compiles to plain JavaScript." + 
-            "TypeScript is an open-source, object-oriented programing language. It contains all elements of JavaScript" + 
-            "It is a language designed for large-scale JavaScript application development, which can be executed on any" + 
-            "browser, any Host, and any Operating System. TypeScript is a language as well as a set of tools." +
+            " TypeScript is an open-source, object-oriented programing language. It contains all elements of JavaScript" + 
+            " It is a language designed for large-scale JavaScript application development, which can be executed on any" + 
+            " browser, any Host, and any Operating System. TypeScript is a language as well as a set of tools." +
             " TypeScript is the ES6 version of JavaScript with some additional features." },
         { id: "3", text: "Angular", pic: "angular", 
             description: "Angular is a platform and framework for building single-page client applications using HTML and TypeScript." +

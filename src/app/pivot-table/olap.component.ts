@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
     PivotView, FieldListService, CalculatedFieldService,
-    ToolbarService, ConditionalFormattingService, PivotViewModule, ToolbarItems, DisplayOption, GroupingBarService
+    ToolbarService, ConditionalFormattingService, PivotViewModule, ToolbarItems, DisplayOption, GroupingBarService,
+    PDFExportService, ExcelExportService
 } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
@@ -22,7 +23,7 @@ declare var require: any;
     templateUrl: 'olap.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['olap.css'],
-    providers: [CalculatedFieldService, ToolbarService, ConditionalFormattingService, FieldListService, GroupingBarService],
+    providers: [CalculatedFieldService, ToolbarService, ConditionalFormattingService, FieldListService, GroupingBarService, PDFExportService, ExcelExportService],
     standalone: true,
     imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })

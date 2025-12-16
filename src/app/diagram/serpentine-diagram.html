@@ -1,0 +1,76 @@
+<div class="control-section serpentine-diagram-container">
+    <style>
+        .serpentine-diagram-container {
+            padding: 20px;
+            background-color: #f8f9fa;
+            min-height: 600px;
+        }
+
+        #serpentineDiagram {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .diagram-header h3 {
+            color: #495057;
+            font-weight: 600;
+            margin-top: 0px;
+        }
+
+        @media (max-width: 768px) {
+            .serpentine-diagram-container {
+                padding: 10px;
+            }
+
+            #serpentineDiagram {
+                min-height: 600px;
+            }
+        }
+    </style>
+    <div class="sample-section">
+        <div class="content-wrapper">
+            <div class="diagram-header">
+                <h3 class="text-center mb-3">Medical Research Breakthroughs</h3>
+                <p class="text-muted text-center mb-4">
+                    A serpentine journey through 20 pivotal medical discoveries that changed healthcare forever
+                </p>
+            </div>
+            <div class="zoom-controls-container" style="padding: 0 0 15px 0; text-align: center;">
+                <button ejs-button [isPrimary]="activeZoom === 0.65" (click)="zoomClick(0.65)">0.65x</button>
+                <button ejs-button [isPrimary]="activeZoom === 0.75" (click)="zoomClick(0.75)">0.75x</button>
+                <button ejs-button [isPrimary]="activeZoom === 0.85" (click)="zoomClick(0.85)">0.86x</button>
+                <button ejs-button [isPrimary]="activeZoom === 1" (click)="zoomClick(1)">1x</button>
+            </div>
+
+            <div>
+                <ejs-diagram #diagram id="serpentineDiagram" width="100%" height="600px"
+                    [snapSettings]="snapSettings" [scrollSettings]="scrollSettings"
+                    [tool]="tool" [nodes]="nodes" [connectors]="connectors" (created)="created()">
+                </ejs-diagram>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample visualizes a serpentine layout using the Syncfusion<sup>®</sup> EJ2 Angular Diagram to showcase 20 important medical research breakthroughs that transformed healthcare between 1796 and 1996.
+    </p>
+</div>
+<div id="description">
+    <p>
+        A serpentine layout arranges elements along a zigzagging or winding path. This timeline presents each breakthrough as part of a continuous sequence. When the layout reaches the edge of the view, it wraps to the next line and reverses direction, creating a true serpentine flow.    
+    </p>
+    <p>
+        <strong>Key Features:</strong>
+    </p>
+    <ul>
+        <li><strong>Dynamic Serpentine Flow:</strong> Nodes are automatically arranged in a winding path that wraps based on the available container width.</li>
+        <li><strong>Interactive Nodes:</strong> Hover over any node to see a detailed tooltip with information about the medical breakthrough.</li>
+        <li><strong>Custom Connectors:</strong> The timeline uses straight connectors for nodes in the same row and elegant bezier curves for wrapping between rows.</li>
+        <li><strong>Zoom and Pan:</strong> Use the buttons to zoom in and out at specific zoom levels.</li>
+    </ul>
+    <br>
+</div>

@@ -1,10 +1,6 @@
-<div class="col-lg-8 control-section">
-    <div class="control-wrapper">
-        <div class="sample-container">
-            <div class="default-section">
-                <div id="api-blockeditor" ejs-blockeditor #apiBlockEditor [blocks]="blockDataAPI" (focus)="onFocus($event)"></div>
-            </div>
-        </div>
+<div class="col-lg-8 control-section sb-property-border">
+    <div class="blockeditor-api">
+        <ejs-blockeditor id="api-blockeditor" #apiBlockEditor height="600px" [blocks]="blockDataAPI" (focus)="onFocus($event)"></ejs-blockeditor>
     </div>
 </div>
 <div class="col-lg-4 property-section">
@@ -24,7 +20,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <div>Enable Drag and Drop </div>
+                        <div>Drag and Drop </div>
                     </td>
                     <td>
                         <div>
@@ -33,18 +29,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>
-                        <div>
-                            <button id="getJson" class="btn btn-default">Get JSON Data</button>
-                        </div>
+                        <div>Get Data</div>
                     </td>
-                </tr>
-                <tr>
-                    <td></td>
                     <td>
-                        <div>
-                            <button id="getHtml" class="btn btn-default">Get HTML Data</button>
+                        <div class='e-btn-group' style="padding: 0; margin: 10px 0 0 10px;">
+                            <button ejs-button class="e-btn" id="getJson">JSON</button>
+                            <button ejs-button class="e-btn" id="getHtml">HTML</button>
                         </div>
                     </td>
                 </tr>
@@ -68,22 +59,6 @@
                     <td></td>
                     <td>
                         <div>
-                            <button id="focusIn" class="btn btn-default">Focus In</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <div>
-                            <button id="focusOut" class="btn btn-default">Focus Out</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <div>
                             <button id="print" class="btn btn-default">Print</button>
                         </div>
                     </td>
@@ -94,16 +69,20 @@
 </div>
 
 <div id="action-description">
-    <p>This sample demonstrates the usage of API in Block Editor. Use the properties panel to change read-only mode, enable/disable drag and drop, enable HTML encode, get JSON data, get block count, select all blocks, and control focus.</p>
+    <p>This sample demonstrates the usage of API in Block Editor. Use the properties panel to change read-only mode, enable/disable drag and drop, get JSON data, get HTML data, get block count and select all blocks</p>
 </div>
 <div id="description">
     <p>In this demo, you can explore the API behaviors by:</p>
     <ul>
         <li>Click the <code>readOnly</code> checkbox to enable/disable editable and non-editable mode of the Block Editor.</li>
         <li>Click the <code>enableDragDrop</code> checkbox to enable/disable drag and drop functionality.</li>
-        <li>Click the <code>getJsonData</code> button to display the focused block JSON data in an alert window.</li>
-        <li>Click the <code>getHtmlData</code> button to display the editor content as HTML in an alert window.</li>
-        <li>Click the <code>getBlockCount</code> button to display the total number of blocks in an alert window.</li>
+        <li>Use the grouped buttons:
+            <ul>
+                <li><code>JSON</code>: Shows the editor’s data as JSON in a predefined dialog.</li>
+                <li><code>HTML</code>: Shows the editor’s HTML output as text in a predefined dialog.</li>
+            </ul>
+        </li>
+        <li>Click the <code>getBlockCount</code> button to display the total number of blocks in an predefined dialog.</li>
         <li>Click the <code>selectAllBlocks</code> button to select all content in the editor.</li>
         <li>Click the <code>focusIn</code> button to focus the editor.</li>
         <li>Click the <code>focusOut</code> button to remove focus from the editor.</li>

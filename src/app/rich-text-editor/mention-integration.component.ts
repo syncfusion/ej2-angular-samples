@@ -2,7 +2,7 @@
  * Rich Text Editor Mention integration Functionality Sample
  */
 import { Component, ViewEncapsulation, ViewChild} from '@angular/core';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { MentionModule } from '@syncfusion/ej2-angular-dropdowns';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -13,7 +13,7 @@ import { Mention } from '@syncfusion/ej2-angular-dropdowns';
     templateUrl: 'mention-integration.html',
     styleUrls: ['mention-integration.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService],
     standalone: true,
     imports: [SBActionDescriptionComponent, RichTextEditorModule, MentionModule, SBDescriptionComponent]
 })

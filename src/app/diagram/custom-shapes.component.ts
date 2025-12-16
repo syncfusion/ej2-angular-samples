@@ -27,7 +27,7 @@ import { CommonModule } from '@angular/common';
     styleUrls: ['diagram-style.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [SBActionDescriptionComponent,CommonModule, DiagramModule, NgIf, DateRangePickerModule, AccumulationChartModule, GridModule, ChartModule, CircularGaugeModule, SBDescriptionComponent, CurrencyPipe,ChartAllModule,AccumulationChartAllModule]
+    imports: [SBActionDescriptionComponent,CommonModule, DiagramModule, NgIf, DateRangePickerModule, AccumulationChartModule, GridModule, CircularGaugeModule, SBDescriptionComponent, CurrencyPipe,ChartAllModule,AccumulationChartAllModule]
 })
 
 export class ComplexShapesDiagramComponent {
@@ -469,10 +469,16 @@ export class ComplexShapesDiagramComponent {
     ];
 
     public targetElement: HTMLElement;
+    public chartsReady: boolean = false;
 
     public created(): void {
         this.initialRenderr();
         this.diagram.fitToPage();
+        // Defer chart creation until diagram node template is rendered stable
+        setTimeout(() => { this.chartsReady = true; }, 100);
+    }
+    public load(): void {
+      this.diagram.fitToPage();
     }
 
 }

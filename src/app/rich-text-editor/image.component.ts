@@ -2,7 +2,7 @@
  * Rich Text Editor Image Sample
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ToolbarService, LinkService, ImageService, QuickToolbarService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, TableService} from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, QuickToolbarService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService} from '@syncfusion/ej2-angular-richtexteditor';
 import { HtmlEditorService, NodeSelection, RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
 import { DropDownListComponent, FieldSettingsModel, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
@@ -15,7 +15,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     templateUrl: 'image.html',
     styleUrls: ['image.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService],
     standalone: true,
     imports: [SBActionDescriptionComponent, RichTextEditorModule, CheckBoxModule, DropDownListModule, SBDescriptionComponent]
 })

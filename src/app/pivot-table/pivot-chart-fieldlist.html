@@ -106,7 +106,7 @@
             </ejs-pivotview>
           </div>
         </div>
-        <ejs-sidebar #defaultSidebar class='default-sidebar' height='100%' id='defaultSidebar' target='.maincontent' type='Auto' isOpen='true' position='Right' enableGestures={false} (change)='onChange()'>
+        <ejs-sidebar #defaultSidebar class='default-sidebar' height='100%' id='defaultSidebar' target='.maincontent' type='Auto' isOpen='true' position='Right' [enableGestures]='false' (change)='onChange()'>
             <ejs-pivotfieldlist #pivotfieldlist id='PivotFieldList' height='100%' [dataSourceSettings]=dataSourceSettings renderMode='Fixed'
                 (enginePopulated)='afterPopulate($event)' allowCalculatedField='true' enableFieldSearching='true' (load)='onLoad()' (dataBound)='ondataBound()'>
             </ejs-pivotfieldlist>

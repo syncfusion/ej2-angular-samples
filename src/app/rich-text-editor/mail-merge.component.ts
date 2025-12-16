@@ -10,7 +10,9 @@ import {
     PasteCleanupService,
     ActionCompleteEventArgs,
     ActionBeginEventArgs,
-    RichTextEditorComponent
+    RichTextEditorComponent,
+    ClipBoardCleanupService,
+    AutoFormatService
 } from '@syncfusion/ej2-angular-richtexteditor';
 import { DropDownButtonModule, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 import { ItemModel } from '@syncfusion/ej2-splitbuttons';
@@ -31,6 +33,8 @@ import { MentionModule } from '@syncfusion/ej2-angular-dropdowns';
         QuickToolbarService,
         TableService,
         PasteCleanupService,
+        ClipBoardCleanupService,
+        AutoFormatService
     ],
     standalone: true,
     imports: [SBActionDescriptionComponent, RichTextEditorModule, DropDownButtonModule, MentionModule, SBDescriptionComponent],

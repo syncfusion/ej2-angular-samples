@@ -85,100 +85,134 @@ export class AngleDiagramComponent {
   private eastSunSvg: string = '<svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">            <g clip-path="url(#clip0_7964_371)">                <g filter="url(#filter0_d_7964_371)">                    <path d="M14.9707 35.1214C16.5606 35.1214 17.8496 36.4104 17.8496 38.0003C17.8494 39.59 16.5605 40.8792 14.9707 40.8792H9.21289C7.62318 40.8791 6.33416 39.59 6.33398 38.0003C6.33398 36.4105 7.62307 35.1215 9.21289 35.1214H14.9707ZM66.7881 35.1214C68.3778 35.1216 69.666 36.4105 69.666 38.0003C69.6658 39.5899 68.3777 40.879 66.7881 40.8792H61.0303C59.4405 40.8792 58.1515 39.5901 58.1514 38.0003C58.1514 36.4104 59.4404 35.1214 61.0303 35.1214H66.7881ZM15.6074 15.6087C16.7317 14.4845 18.5545 14.4845 19.6787 15.6087L23.75 19.68C24.8737 20.8041 24.8737 22.6262 23.75 23.7503C22.6259 24.8744 20.803 24.8751 19.6787 23.7513L15.6074 19.68C14.4832 18.5558 14.4832 16.7329 15.6074 15.6087ZM56.3203 15.6087C57.4445 14.4845 59.2674 14.4845 60.3916 15.6087C61.5158 16.7329 61.5158 18.5558 60.3916 19.68L56.3203 23.7513C55.1962 24.8749 53.3741 24.8749 52.25 23.7513C51.1258 22.627 51.1258 20.8042 52.25 19.68L56.3203 15.6087ZM38.001 6.33331C39.5907 6.33352 40.8789 7.62244 40.8789 9.21222V14.97C40.8787 16.5597 39.5906 17.8487 38.001 17.8489C36.4112 17.8489 35.1222 16.5598 35.1221 14.97V9.21222C35.1221 7.62231 36.4111 6.33331 38.001 6.33331Z" fill="url(#paint0_linear_7964_371)" />                </g>                <g filter="url(#filter1_d_7964_371)">                    <path d="M56.9995 63.3337C58.1653 63.3337 59.1106 64.2783 59.1108 65.444C59.1108 66.61 58.1654 67.5554 56.9995 67.5554H23.2222C22.0562 67.5554 21.1108 66.61 21.1108 65.444C21.1111 64.2783 22.0564 63.3337 23.2222 63.3337H56.9995ZM37.9995 50.6667C39.1654 50.6667 40.1108 51.6121 40.1108 52.778C40.1107 53.9438 39.1654 54.8893 37.9995 54.8893H4.22217C3.05631 54.8893 2.11097 53.9438 2.11084 52.778C2.11084 51.6121 3.05623 50.6667 4.22217 50.6667H37.9995ZM71.7778 50.6667C72.9437 50.6668 73.8892 51.6122 73.8892 52.778C73.889 53.9438 72.9436 54.8892 71.7778 54.8893H46.4438C45.2782 54.8891 44.3336 53.9437 44.3335 52.778C44.3335 51.6122 45.2781 50.6669 46.4438 50.6667H71.7778Z" fill="url(#paint1_radial_7964_371)" />                </g>                <g filter="url(#filter2_d_7964_371)">                    <path d="M38 20.7271C47.5394 20.7271 55.2733 28.4602 55.2734 37.9996C55.2734 39.4562 55.0924 40.8709 54.7529 42.2222H21.248C20.9085 40.8709 20.7275 39.4562 20.7275 37.9996C20.7277 28.4603 28.4607 20.7273 38 20.7271Z" fill="url(#paint2_radial_7964_371)" />                </g>            </g>            <defs>                <filter id="filter0_d_7964_371" x="2.53398" y="2.53331" width="71.7765" height="42.9903" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">                    <feFlood flood-opacity="0" result="BackgroundImageFix" />                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />                    <feOffset dx="0.422222" dy="0.422222" />                    <feGaussianBlur stdDeviation="2.11111" />                    <feComposite in2="hardAlpha" operator="out" />                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.156863 0 0 0 0 0.305882 0 0 0 0.25 0" />                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_7964_371" />                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_7964_371" result="shape" />                </filter>                <filter id="filter1_d_7964_371" x="-1.68916" y="46.8667" width="80.2228" height="25.3331" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">                    <feFlood flood-opacity="0" result="BackgroundImageFix" />                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />                    <feOffset dx="0.422222" dy="0.422222" />                    <feGaussianBlur stdDeviation="2.11111" />                    <feComposite in2="hardAlpha" operator="out" />                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.156863 0 0 0 0 0.305882 0 0 0 0.25 0" />                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_7964_371" />                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_7964_371" result="shape" />                </filter>                <filter id="filter2_d_7964_371" x="16.9275" y="16.9271" width="42.9903" height="29.9396" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">                    <feFlood flood-opacity="0" result="BackgroundImageFix" />                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />                    <feOffset dx="0.422222" dy="0.422222" />                    <feGaussianBlur stdDeviation="2.11111" />                    <feComposite in2="hardAlpha" operator="out" />                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.156863 0 0 0 0 0.305882 0 0 0 0.25 0" />                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_7964_371" />                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_7964_371" result="shape" />                </filter>                <linearGradient id="paint0_linear_7964_371" x1="66.875" y1="5.81636" x2="42.3723" y2="55.4803" gradientUnits="userSpaceOnUse">                    <stop stop-color="#FFBA24" />                    <stop offset="1" stop-color="#FF5500" />                </linearGradient>                <radialGradient id="paint1_radial_7964_371" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(49.6112 64.3887) rotate(-168.69) scale(48.441 24.199)">                    <stop stop-color="#FFBA24" />                    <stop offset="1" stop-color="#FF5500" />                </radialGradient>                <radialGradient id="paint2_radial_7964_371" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(41.9513 27.1673) rotate(180) scale(32.7953 32.7951)">                    <stop stop-color="#FFF4C3" />                    <stop offset="0.16" stop-color="#FFE036" />                    <stop offset="1" stop-color="#FA761C" />                </radialGradient>                <clipPath id="clip0_7964_371">                    <rect width="76" height="76" fill="white" />                </clipPath>            </defs>        </svg>';
   private westSunSvg: string = '<svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">            <g clip-path="url(#clip0_7964_385)">                <g filter="url(#filter0_d_7964_385)">                    <path d="M56.9998 61.2225C58.1655 61.2225 59.1108 62.1672 59.1111 63.3329C59.1111 64.4988 58.1657 65.4442 56.9998 65.4442H23.2224C22.0565 65.4442 21.1111 64.4988 21.1111 63.3329C21.1113 62.1672 22.0566 61.2225 23.2224 61.2225H56.9998ZM37.9998 48.5555C39.1657 48.5555 40.1111 49.5009 40.1111 50.6669C40.111 51.8327 39.1656 52.7782 37.9998 52.7782H4.22241C3.05655 52.7782 2.11119 51.8327 2.11108 50.6669C2.11108 49.5009 3.05648 48.5555 4.22241 48.5555H37.9998ZM71.7781 48.5555C72.9438 48.5557 73.8884 49.5011 73.8884 50.6669C73.8883 51.8326 72.9438 52.778 71.7781 52.7782H48.5554C47.3896 52.7782 46.4442 51.8327 46.4441 50.6669C46.4441 49.501 47.3895 48.5556 48.5554 48.5555H71.7781Z" fill="url(#paint0_radial_7964_385)" />                </g>                <g filter="url(#filter1_d_7964_385)">                    <path d="M37.7803 8.17151C51.8926 8.17156 63.333 19.6119 63.333 33.7242C63.333 35.8791 63.0648 37.9713 62.5625 39.9703H12.998C12.4958 37.9713 12.2275 35.8791 12.2275 33.7242C12.2275 19.6119 23.6679 8.17151 37.7803 8.17151Z" fill="url(#paint1_radial_7964_385)" />                </g>            </g>            <defs>                <filter id="filter0_d_7964_385" x="-1.68892" y="44.7555" width="80.2218" height="25.3331" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">                    <feFlood flood-opacity="0" result="BackgroundImageFix" />                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />                    <feOffset dx="0.422222" dy="0.422222" />                    <feGaussianBlur stdDeviation="2.11111" />                    <feComposite in2="hardAlpha" operator="out" />                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.156863 0 0 0 0 0.305882 0 0 0 0.25 0" />                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_7964_385" />                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_7964_385" result="shape" />                </filter>                <filter id="filter1_d_7964_385" x="8.42754" y="4.37151" width="59.5499" height="40.2433" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">                    <feFlood flood-opacity="0" result="BackgroundImageFix" />                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />                    <feOffset dx="0.422222" dy="0.422222" />                    <feGaussianBlur stdDeviation="2.11111" />                    <feComposite in2="hardAlpha" operator="out" />                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.156863 0 0 0 0 0.305882 0 0 0 0.25 0" />                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_7964_385" />                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_7964_385" result="shape" />                </filter>                <radialGradient id="paint0_radial_7964_385" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(39.8314 62.2776) rotate(-165.864) scale(38.8982 23.931)">                    <stop stop-color="#FFBA24" />                    <stop offset="1" stop-color="#FF5500" />                </radialGradient>                <radialGradient id="paint1_radial_7964_385" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(46.0737 36.9531) rotate(-153.435) scale(41.1658 41.1657)">                    <stop stop-color="#FFF4C3" />                    <stop offset="0.28125" stop-color="#FFE036" />                    <stop offset="0.598958" stop-color="#FA761C" />                </radialGradient>                <clipPath id="clip0_7964_385">                    <rect width="76" height="76" fill="white" />                </clipPath>            </defs>        </svg>';
 
-  public nodes: NodeModel[] = [
-    // Title
-    {
-      id: 'title', width: 450, height: 80, offsetX: 485, offsetY: 135, constraints: NodeConstraints.None,
-      shape: { type: 'Text', content: 'SMART SOLAR PANEL TILT SYSTEM' },
-      style: { color: '#2c3e50', fill: 'transparent', fontFamily: 'Segoe UI', fontSize: 26, bold: true }
-    },
-    // East sun
-    { id: 'eastSun', width: 60, height: 60, offsetX: 221, offsetY: 422, constraints: NodeConstraints.None,
-      shape: { type: 'Native', content: this.eastSunSvg } },
-    // Noon sun
-    { id: 'centerSun', width: 60, height: 60, offsetX: 483, offsetY: 293, constraints: NodeConstraints.None,
-      shape: { type: 'Native', content: this.centerSunSvg } },
-    // West sun
-    { id: 'westSun', width: 60, height: 45, offsetX: 731, offsetY: 422, constraints: NodeConstraints.None,
-      shape: { type: 'Native', content: this.westSunSvg } },
-    // Labels
-    { id: 'eastLabel', width: 60, height: 30, offsetX: 238, offsetY: 365, constraints: NodeConstraints.None,
-      shape: { type: 'Text', content: 'EAST' }, style: { color: '#34495e', fill: 'transparent', fontFamily: 'Segoe UI', fontSize: 14, bold: true } },
-    { id: 'westLabel', width: 60, height: 30, offsetX: 725, offsetY: 365, constraints: NodeConstraints.None,
-      shape: { type: 'Text', content: 'WEST' }, style: { color: '#34495e', fill: 'transparent', fontFamily: 'Segoe UI', fontSize: 14, bold: true } },
-    // Ground
-    { id: 'groundLine', width: 500, height: 5, offsetX: 489, offsetY: 657, constraints: NodeConstraints.None,
-      style: { fill: '#2E485F', strokeColor: '#2E485F', strokeWidth: 2 } },
-    // Support image
-    {
-      id: 'supportPost', width: 215, height: 185, offsetX: 465, offsetY: 565, constraints: NodeConstraints.None,
-      shape: { type: 'Image', source: './assets/diagram/Images/angle/panelSupport.png' },
+  // Helper factory methods to create nodes/connectors
+  private createTextNode(id: string, width: number, height: number, offsetX: number, offsetY: number, content: string, style: NodeModel['style'], constraints: NodeConstraints = NodeConstraints.None): NodeModel {
+    return {
+      id, width, height, offsetX, offsetY,
+      constraints,
+      shape: { type: 'Text', content },
+      style
+    } as NodeModel;
+  }
+
+  private createNativeNode(id: string, width: number, height: number, offsetX: number, offsetY: number, svgContent: string, constraints: NodeConstraints = NodeConstraints.None): NodeModel {
+    return {
+      id, width, height, offsetX, offsetY,
+      constraints,
+      shape: { type: 'Native', content: svgContent }
+    } as NodeModel;
+  }
+
+  private createImageNode(id: string, width: number, height: number, offsetX: number, offsetY: number, source: string, rotateAngle?: number, constraints?: NodeConstraints, pivotX?: number, pivotY?: number): NodeModel {
+    const node: NodeModel = {
+      id, width, height, offsetX, offsetY,
+      shape: { type: 'Image', source },
       style: { fill: 'transparent', strokeColor: 'transparent' }
-    },
-    // Solar panel (rotatable)
-    {
-      id: 'solarPanelFrame', width: 260, height: 50, offsetX: 478.25, offsetY: 485,
-      rotateAngle: this.solarData.currentAngle,
-      constraints: (NodeConstraints.Default | NodeConstraints.ReadOnly) & ~NodeConstraints.Drag,
-      pivot: { x: 0.5, y: 0.8 },
-      shape: { type: 'Image', source: './assets/diagram/Images/angle/solarPanel.png' },
-      style: { fill: 'transparent', strokeColor: 'transparent' }
-    },
-    // Pivot
-    {
-      id: 'pivotPoint', width: 16, height: 16, offsetX: 478.5, offsetY: 488, constraints: NodeConstraints.None,
-      shape: { type: 'Basic', shape: 'Ellipse' }, style: { fill: '#FF5F1F', strokeColor: '#2E485F', strokeWidth: 1 }
-    },
-    // Location HTML
-    {
-      id: 'location', offsetX: 1130, offsetY: 100, width: 300, height: 150, constraints: NodeConstraints.None,
-      shape: {
-        type: 'HTML',
-        content: `
+    } as NodeModel;
+    if (typeof rotateAngle === 'number') node.rotateAngle = rotateAngle;
+    if (typeof constraints === 'number') node.constraints = constraints;
+    if (typeof pivotX === 'number' && typeof pivotY === 'number') node.pivot = { x: pivotX, y: pivotY };
+    if (!node.constraints) node.constraints = NodeConstraints.None;
+    return node;
+  }
+
+  private createEllipseNode(id: string, width: number, height: number, offsetX: number, offsetY: number, fill: string, strokeColor: string, strokeWidth: number, constraints: NodeConstraints = NodeConstraints.None): NodeModel {
+    return {
+      id, width, height, offsetX, offsetY,
+      constraints,
+      shape: { type: 'Basic', shape: 'Ellipse' },
+      style: { fill, strokeColor, strokeWidth }
+    } as NodeModel;
+  }
+
+  private createHtmlNode(id: string, width: number, height: number, offsetX: number, offsetY: number, html: string, constraints: NodeConstraints = NodeConstraints.None): NodeModel {
+    return {
+      id, width, height, offsetX, offsetY,
+      constraints,
+      shape: { type: 'HTML', content: html }
+    } as NodeModel;
+  }
+
+  private createRectNode(id: string, width: number, height: number, offsetX: number, offsetY: number, fill: string, strokeColor: string, strokeWidth: number, constraints: NodeConstraints = NodeConstraints.None): NodeModel {
+    return {
+      id, width, height, offsetX, offsetY,
+      constraints,
+      style: { fill, strokeColor, strokeWidth }
+    } as NodeModel;
+  }
+
+  private createConnectorBezier(id: string, spx: number, spy: number, tpx: number, tpy: number, c1x: number, c1y: number, c2x: number, c2y: number, strokeColor: string, strokeWidth: number, dash: string, opacity: number): ConnectorModel {
+    return {
+      id,
+      zIndex: 1,
+      type: 'Bezier',
+      constraints: ConnectorConstraints.None,
+      sourcePoint: { x: spx, y: spy },
+      targetPoint: { x: tpx, y: tpy },
+      segments: [{ type: 'Bezier', point1: { x: c1x, y: c1y }, point2: { x: c2x, y: c2y } }],
+      style: { strokeColor, strokeWidth, strokeDashArray: dash, opacity },
+      sourceDecorator: { shape: 'None' },
+      targetDecorator: { shape: 'None' }
+    } as ConnectorModel;
+  }
+
+  private buildNodes(): NodeModel[] {
+    return [
+      // Title
+      this.createTextNode('title', 450, 80, 485, 135, 'SMART SOLAR PANEL TILT SYSTEM',
+        { color: '#2c3e50', fill: 'transparent', fontFamily: 'Segoe UI', fontSize: 26, bold: true }),
+      // East sun
+      this.createNativeNode('eastSun', 60, 60, 221, 422, this.eastSunSvg),
+      // Noon sun
+      this.createNativeNode('centerSun', 60, 60, 483, 293, this.centerSunSvg),
+      // West sun
+      this.createNativeNode('westSun', 60, 45, 731, 422, this.westSunSvg),
+      // Labels
+      this.createTextNode('eastLabel', 60, 30, 238, 365, 'EAST',
+        { color: '#34495e', fill: 'transparent', fontFamily: 'Segoe UI', fontSize: 14, bold: true }),
+      this.createTextNode('westLabel', 60, 30, 725, 365, 'WEST',
+        { color: '#34495e', fill: 'transparent', fontFamily: 'Segoe UI', fontSize: 14, bold: true }),
+      // Ground
+      this.createRectNode('groundLine', 500, 5, 489, 657, '#2E485F', '#2E485F', 2),
+      // Support image
+      this.createImageNode('supportPost', 215, 185, 465, 565, './assets/diagram/Images/angle/panelSupport.png'),
+      // Solar panel (rotatable)
+      this.createImageNode('solarPanelFrame', 260, 50, 478.25, 485, './assets/diagram/Images/angle/solarPanel.png', this.solarData.currentAngle, ((NodeConstraints.Default | NodeConstraints.ReadOnly) & ~NodeConstraints.Drag), 0.5, 0.8),
+      // Pivot
+      this.createEllipseNode('pivotPoint', 16, 16, 478.5, 488, '#FF5F1F', '#2E485F', 1),
+      // Location HTML
+      this.createHtmlNode('location', 300, 150, 1130, 100, `
           <div class="angle-control-section" style="height:150px; width:300px">
             <div class="angle-control-label" style="font-size:18px; font-weight:600">Select location</div>
             <div id="locationDropdown"></div>
-          </div>`
-      }
-    },
-    // Efficiency HTML
-    {
-      id: 'efficiency', offsetX: 1130, offsetY: 383, width: 300, height: 350, constraints: NodeConstraints.None,
-      shape: {
-        type: 'HTML',
-        content: `
+          </div>`),
+      // Efficiency HTML
+      this.createHtmlNode('efficiency', 300, 350, 1130, 383, `
           <div class="efficiency-section" style="width:300px; height:345px;">
             <h3 class="angle-control-label" style="font-size:18px; font-weight:600">System Efficiency</h3>
             <div style="width: 210px; height:180px; margin:auto;"><div id="efficiencyGauge"></div></div>
             <div style="width:250px;"><div id="performanceMessage"></div></div>
-          </div>`
-      }
-    },
-    {
-      id: 'angle', offsetX: 1130, offsetY: 680, width: 300, height: 185, constraints: NodeConstraints.None,
-      shape: {
-        type: 'HTML',
-        content: `
+          </div>`),
+      this.createHtmlNode('angle', 300, 185, 1130, 680, `
           <div class="angle-control-section" style="width: 300px; height: 185px;">
             <div class="angle-control-label" style="font-size:18px; font-weight:600">Tilt Angle</div>
             <div>
               <input id="angleValue" style="height:40px !important;font-size:large" />
             </div>
             <div class="angle-description" id="angleDescription">${this.getAngleDescription()}</div>
-          </div>`
-      }
-    },
-  ];
+          </div>`)
+    ];
+  }
 
-  public connectors: ConnectorModel[] = [
-    {
-      id: 'sunPath', zIndex: 1, type: 'Bezier', constraints: ConnectorConstraints.None,
-      sourcePoint: { x: 221, y: 422 }, targetPoint: { x: 731, y: 422 },
-      segments: [{ type: 'Bezier', point1: { x: 350, y: 260 }, point2: { x: 610, y: 260 } }],
-      style: { strokeColor: '#3498db', strokeWidth: 3, strokeDashArray: '10,5', opacity: 0.8 },
-      sourceDecorator: { shape: 'None' }, targetDecorator: { shape: 'None' }
-    }
-  ];
+  private buildConnectors(): ConnectorModel[] {
+    return [
+      this.createConnectorBezier('sunPath', 221, 422, 731, 422, 350, 260, 610, 260, '#3498db', 3, '10,5', 0.8)
+    ];
+  }
+  
+  public nodes: NodeModel[] = this.buildNodes();
+
+  public connectors: ConnectorModel[] = this.buildConnectors();
 
   // Diagram lifecycle hooks
   public scrollChange(): void {
@@ -201,6 +235,12 @@ export class AngleDiagramComponent {
     this.calculateEfficiency();
     this.updateUI();
     this.diagram.fitToPage();
+  }
+
+  public click(){
+    // Prevent losing selection of the solar panel node
+    const solarPanelNode = this.diagram.getObject('solarPanelFrame') as NodeModel;
+    if (solarPanelNode) this.diagram.select([solarPanelNode]);
   }
 
   public load(): void {
@@ -447,27 +487,64 @@ export class AngleDiagramComponent {
   // Updated efficiency model
   private calculateEfficiency(): void {
     if (this.solarData.sunElevation <= 0) {
-      this.solarData.efficiency = 0;
-      this.solarData.incidenceAngle = 90;
-      return;
+        this.solarData.efficiency = 0;
+        this.solarData.incidenceAngle = 90;
+        return;
     }
-    const panelTiltRad = this.solarData.intPanelAngleDeg * Math.PI / 180.0;
-    const sunElevRad = this.solarData.sunElevation * Math.PI / 180.0;
+
+    // Base calculations
+    const panelTiltRad = (this.solarData.intPanelAngleDeg * Math.PI) / 180.0;
+    const sunElevRad = (this.solarData.sunElevation * Math.PI) / 180.0;
     const azimuthDiff = 0;
 
-    let cosIncidence = Math.sin(sunElevRad) * Math.cos(panelTiltRad) +
-      Math.cos(sunElevRad) * Math.sin(panelTiltRad) * Math.cos(azimuthDiff);
+    let cosIncidence =
+        Math.sin(sunElevRad) * Math.cos(panelTiltRad) +
+        Math.cos(sunElevRad) * Math.sin(panelTiltRad) * Math.cos(azimuthDiff);
     cosIncidence = Math.max(0, Math.min(1, cosIncidence));
-    this.solarData.incidenceAngle = Math.acos(cosIncidence) * 180.0 / Math.PI;
+    this.solarData.incidenceAngle = (Math.acos(cosIncidence) * 180.0) / Math.PI;
 
     const irradianceFactor = Math.min(1.0, this.solarData.solarIrradiance / 900.0);
     const temperatureFactor = 0.95;
     const systemLossFactor = 0.95;
-    const optimalAngleDiff = Math.abs(this.solarData.intPanelAngleDeg - this.solarData.optimalTilt);
-    const optimalAngleFactor = Math.max(0.9, 1.0 - (optimalAngleDiff / 90.0) * 0.2);
+    const optimalAngleDiff = Math.abs(
+      this.solarData.intPanelAngleDeg - this.solarData.optimalTilt
+    );
+    const optimalAngleFactor = Math.max(
+        0.9,
+        1.0 - (optimalAngleDiff / 90.0) * 0.2
+    );
 
-    let eff = 100.0 * cosIncidence * irradianceFactor * temperatureFactor * systemLossFactor * optimalAngleFactor;
+    let eff =
+        100.0 *
+        cosIncidence *
+        irradianceFactor *
+        temperatureFactor *
+        systemLossFactor *
+        optimalAngleFactor;
+
     if (optimalAngleDiff < 5) eff = Math.min(100, eff * 1.08);
+
+    // Gradual noon uplift
+    const noonAngle = this.solarData.currentAngle;
+    const d = Math.min(noonAngle, 360 - noonAngle);
+    const strongFloorWindowDeg = 10;
+    const noonWindowDeg = 15;
+
+    if (d <= noonWindowDeg) {
+        const weight = 0.5 * (1 + Math.cos((Math.PI * d) / noonWindowDeg));
+        const t = Math.min(1, d / strongFloorWindowDeg);
+        const minAtD = 65 + (60 - 65) * t;
+        const maxAtD = 75 + (68 - 75) * t;
+        const noonTarget = minAtD + (maxAtD - minAtD) * irradianceFactor;
+
+        const blended = eff + (noonTarget - eff) * weight;
+        let uplifted = Math.max(eff, blended);
+        if (d <= strongFloorWindowDeg)
+        uplifted = Math.max(uplifted, irradianceFactor);
+
+        eff = Math.min(100, uplifted);
+    }
+
     this.solarData.efficiency = Math.max(0, Math.min(100, eff));
   }
 

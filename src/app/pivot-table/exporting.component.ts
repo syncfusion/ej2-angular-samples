@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { IDataOptions, PivotView, FieldListService, IDataSet, PivotViewModule } from '@syncfusion/ej2-angular-pivotview';
+import { IDataOptions, PivotView, FieldListService, IDataSet, PivotViewModule, ExcelExportService } from '@syncfusion/ej2-angular-pivotview';
 import { DropDownListComponent, DropDownListModule} from '@syncfusion/ej2-angular-dropdowns';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
@@ -19,7 +19,7 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
     templateUrl: 'exporting.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['exporting.css'],
-    providers: [FieldListService],
+    providers: [FieldListService, ExcelExportService],
     standalone: true,
     imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule, ButtonModule]
 })

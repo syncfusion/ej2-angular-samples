@@ -1,0 +1,42 @@
+<div class="control-section">
+  <ejs-treegrid #treegrid [dataSource]="rowSpanData" childMapping="children" [treeColumnIndex]="0" [height]="400"
+    [enableRowSpan]="true" [enableColumnSpan]="true" [rowHeight]="50" gridLines="Both" clipMode="EllipsisWithTooltip"
+    [enableHover]="false" [allowSelection]="false" allowPaging="true" [pageSettings]="pageSettings">
+    <e-columns>
+      <e-column field="activityName" headerText="Phase Name" width="250" freeze="Left"></e-column>
+      <e-column headerText="Schedule" textAlign="Center" [columns]="scheduleColumns"></e-column>
+      <e-column headerText="Work Status" textAlign="Center" [columns]="statusColumns"></e-column>
+      <e-column headerText="Compliance" textAlign="Center" [columns]="complianceColumns"></e-column>
+      <e-column headerText="Personnel" textAlign="Center" [columns]="personnelColumns"></e-column>
+      <e-column headerText="Materials" textAlign="Center" [columns]="materialsColumns"></e-column>
+      <e-column headerText="Cost Summary" textAlign="Center" [columns]="budgetColumns"></e-column>
+    </e-columns>
+
+  </ejs-treegrid>
+</div>
+
+<div id="action-description">
+    <p>
+       This sample demonstrates how the Tree Grid automatically merges adjacent cells containing same value across both rows and columns. 
+    </p>
+</div>
+
+<div id="description">
+
+    <p>
+        In this demo, the <b>"Start Date"</b>, <b>"End Date"</b>, <b>"Status"</b>, and <b>"Permit Status"</b> columns are merged when they share the same value. Row and column spanning can be enabled by setting <code>enableRowSpan</code> and <code>enableColumnSpan</code> to <b>true</b>, allowing the Tree Grid to merge adjacent cells both horizontally and vertically.
+    </p>
+    <p>
+        The <b>"Phase Name"</b> column remains frozen on the left side, achieved using the <a href="https://ej2.syncfusion.com/angular/documentation/treegrid/columns/frozen-column#freeze-direction">freeze</a> property in the column definition.
+    </p>
+            <p>
+            Tree Grid features are segregated into individual feature-wise modules. 
+            To use the frozen rows and columns feature, we need to inject the <code>FreezeService</code> using the <code>&#64;NgModule.providers</code> section.
+        </p>
+    <p>
+        More information on the Tree Grid component can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/treegrid/getting-started">
+            documentation</a> section.
+    </p>
+
+</div>

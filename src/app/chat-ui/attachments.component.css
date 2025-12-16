@@ -1,0 +1,44 @@
+.attachment-chatui {
+    height: 500px;
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+.attachment-chatui .chat_user_avatar {
+    background-image: url('/assets/chat-ui/images/paul_wilson.png');
+    background-color: unset;
+}
+.attachment-chatui .emptyChatText {
+    font-size: 16px;
+    font-style: italic;
+}
+.attachment-chatui .emptychat-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+}
+.attachment-chatui .chat-text-content {
+    display: flex;
+    align-items: center;
+}
+.attachment-chatui .emptyChatText {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+.attachment-chatui .emptyChatMessage {
+    font-size: 14px;
+    text-align: center;
+}
+@media only screen and (max-width: 850px) {
+    .attachment-chatui {
+        flex-direction: column;
+        height: 500px;
+        width: 70%;
+    }
+}

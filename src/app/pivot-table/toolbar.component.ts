@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
     IDataOptions, PivotView, FieldListService, CalculatedFieldService,
     ToolbarService, ConditionalFormattingService, ToolbarItems, DisplayOption, IDataSet,
-    NumberFormattingService, PivotViewModule
+    NumberFormattingService, PivotViewModule, ExcelExportService, PDFExportService
 } from '@syncfusion/ej2-angular-pivotview';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
@@ -23,7 +23,7 @@ let data: IDataSet[] = require('./Pivot_Data.json');
     templateUrl: 'toolbar.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['toolbar.css'],
-    providers: [CalculatedFieldService, ToolbarService, ConditionalFormattingService, FieldListService, NumberFormattingService],
+    providers: [CalculatedFieldService, ToolbarService, ConditionalFormattingService, FieldListService, NumberFormattingService, PDFExportService, ExcelExportService],
     standalone: true,
     imports: [PivotViewModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })

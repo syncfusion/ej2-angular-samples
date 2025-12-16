@@ -1,9 +1,9 @@
 <div id="action-description">
-  <p>This sample visualizes how to notify the important dates in the project timeline.</p>
+  <p>This sample demonstrates how to highlight and notify important dates within a project timeline using the Gantt Chart component.</p>
 </div>
 
 <div class="control-section">
-  <ejs-gantt id="eventMarkers" height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data"
+  <ejs-gantt id="eventMarkers" height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data" [splitterSettings]="splitterSettings"
     [taskFields]="taskSettings" [allowSelection]="true" [labelSettings]="labelSettings" [columns]="columns"
     [timelineSettings]="timelineSettings" [treeColumnIndex]="1"  [projectStartDate]="projectStartDate"
     [projectEndDate]="projectEndDate" [highlightWeekends]="true" [eventMarkers]="eventMarkers">
@@ -12,20 +12,18 @@
 
 <div id="description">
   <p>
-    In this example, the <a target="_blank"
-      href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#eventmarkers">eventMarkers</a> are used like a
-    bookmark to show the different stages of the project life cycle. You can show the desired text on the date. The
-    Event Markers model has the below properties to customize the marker:
-    <li><code>cssClass</code>: Used to assign external CSS styles to that particular marker.</li>
-    <li><code>day</code>: Used to set date of the event marker.</li>
-    <li><code>label</code>: The desired text can be shown on the vertical line using this property.</li>
+    In this example <a target="_blank"
+      href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#eventmarkers">eventMarkers</a> act as visual bookmarks to indicate key milestones or stages in the project life cycle. Each marker can display descriptive text on the corresponding date, making it easier to track progress and deadlines.</p>
+  <p>The <strong>Event Markers</strong> model provides several properties to customize the appearance and behavior of markers:
+    <li><code>cssClass</code>: Apply custom CSS styles to a specific marker.</li>
+    <li><code>day</code>: Define the exact date for the event marker.</li>
+    <li><code>label</code>: Display text along the vertical line to describe the event.</li>
+    <li><code>top</code>: Adjust the vertical position of the marker from the chart pane's content top to avoid overlap when multiple markers share the same date.</li>
   </p>
   <p>
-    Gantt component features are segregated into individual feature-wise modules. To use a selection and markers, inject
-    the
+    The Gantt Chart component is modular, with features separated into individual modules. To enable selection support and event markers, inject the
     <code>SelectionService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code>
     section respectively.
   </p>
-  <br>
-    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/eventmarkers">documentation section</a>.</p>
+  <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/eventmarkers">documentation section</a>.</p>
 </div>

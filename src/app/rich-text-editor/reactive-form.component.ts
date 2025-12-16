@@ -2,7 +2,7 @@
  * Rich Text Editor Reactive Form Sample
  */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { FormBuilder, FormControl, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
@@ -12,7 +12,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     selector: 'control-content',
     templateUrl: 'reactive-form.html',
     styleUrls: ['forms.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService],
     standalone: true,
     imports: [SBActionDescriptionComponent, FormsModule, ReactiveFormsModule, RichTextEditorModule, NgIf, ButtonModule, SBDescriptionComponent]
 })

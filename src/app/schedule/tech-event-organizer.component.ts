@@ -1,6 +1,7 @@
 import { Component, Inject, ViewEncapsulation, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { addClass, extend, Internationalization, removeClass } from '@syncfusion/ej2-base';
-import { View, EventSettingsModel, EventRenderedArgs, ScheduleComponent, DayService, WeekService, ResizeService, DragAndDropService, ScheduleModule, AgendaService, CellClickEventArgs, EventClickArgs, PopupOpenEventArgs, PopupCloseEventArgs, ResourcesModel, Print, ExcelExport } from '@syncfusion/ej2-angular-schedule';
+import { View, EventSettingsModel, EventRenderedArgs, ScheduleComponent, DayService, WeekService, ResizeService, DragAndDropService, ScheduleModule, AgendaService, ActionEventArgs, CellClickEventArgs, EventClickArgs, PopupOpenEventArgs, PopupCloseEventArgs, ResourcesModel, Print, ExcelExport } from '@syncfusion/ej2-angular-schedule';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { aiAutomationEventData, cloudSecurityEventData, TechnicalEventData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -24,7 +25,7 @@ ScheduleComponent.Inject(Print, ExcelExport);
   providers: [DayService, WeekService, ResizeService, DragAndDropService, AgendaService],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
-  imports: [CommonModule, ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule, DropDownButtonModule, TreeViewModule, DialogModule,]
+  imports: [CommonModule, ScheduleModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent, DropDownListModule, DropDownButtonModule, TreeViewModule, DialogModule,]
 })
 export class TechEventOrganizerComponent implements OnInit {
   @ViewChild('scheduleRef', { static: false }) public scheduleRef: ScheduleComponent;
@@ -203,6 +204,23 @@ export class TechEventOrganizerComponent implements OnInit {
     }
   }
 
+  onActionBegin(args: ActionEventArgs): void {
+    if (args.requestType === 'eventCreate') {
+      const data: Record<string, any> = args.data;
+      const roomId: number = data[0].RoomId;
+      const startTime: Date = data[0].StartTime;
+      const endTime: Date = data[0].EndTime;
+      const isRoomFiltered: boolean = (this.scheduleRef.resourceCollection[0].dataSource as Record<string, any>[]).length === 1;
+      const isRoomAvailable: boolean = this.scheduleRef.isSlotAvailable(startTime, endTime, !isRoomFiltered ? roomId - 1 : 0);
+      if (!isRoomAvailable) {
+        args.cancel = true;
+        this.alertDialogRef.content = 'Room is already booked for the selected time slot.';
+        this.alertDialogRef.show();
+        return;
+      }
+    }
+  }
+
   onCellClick(args: CellClickEventArgs): void {
     args.cancel = true; 
   }
@@ -280,14 +298,11 @@ public onPopupClose(args: PopupCloseEventArgs): void {
       const startTime: Date = args.data.StartTime;
       const endTime: Date = args.data.EndTime;
       const capacity: number = args.data.Capacity;
-      const isRoomFiltered = (this.scheduleRef.resourceCollection[0].dataSource as any[]).length === 1;
-      const isRoomAvailable =
-        this.scheduleRef.isSlotAvailable(startTime, endTime, !isRoomFiltered ? roomId - 1 : 0) &&
-        startTime.getHours() >= 8 &&
+      const isAvailableTime  = startTime.getHours() >= 8 &&
         (endTime.getHours() < 18 || (endTime.getHours() === 18 && endTime.getMinutes() === 0));
       const isCapacityAvailable = this.checkRoomCapacity(capacity, roomId);
 
-      if (!isRoomAvailable) {
+      if (!isAvailableTime ) {
         const timeElement = args.element.querySelector('.e-start-end-row');
         if (!args.element.querySelector('.time-alert')) {
           const newDiv = document.createElement('div');
@@ -313,7 +328,7 @@ public onPopupClose(args: PopupCloseEventArgs): void {
         if (capAlert) capAlert.remove();
       }
 
-      if (!isRoomAvailable || !isCapacityAvailable) {
+      if (!isAvailableTime  || !isCapacityAvailable) {
         args.cancel = true;
         return;
       }

@@ -37,7 +37,7 @@
     padding-left: 0px;
 }
 
-.e-input-group.e-multi-line-input {
+#smart-textarea .e-input-group.e-multi-line-input {
     max-width: 100%;
-    margin-top: 40px;
+    margin-top: 24px;
 }

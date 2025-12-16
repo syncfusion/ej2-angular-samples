@@ -1,9 +1,11 @@
-<div class="col-lg-8 control-section">
-    <div class="content-wrapper">
-        <div id="events-blockeditor" ejs-blockeditor #apiBlockEditor [blocks]="blockDataEvents" (created)="logEvent('created')" (contentChanged)="logEvent('contentChanged')" (blockAdded)="logEvent('blockAdded')" (blockRemoved)="logEvent('blockRemoved')" (blockMoved)="logEvent('blockMoved')" (blockDrag)="logEvent('blockDrag')" (blockDragStart)="logEvent('blockDragStart')" (blockDrop)="logEvent('blockDrop')" (focus)="logEvent('focus')" (blur)="logEvent('blur')" (selectionChanged)="logEvent('selectionChanged')" (beforePaste)="logEvent('beforePaste')" (afterPaste)="logEvent('afterPaste')" (undoRedoPerformed)="logEvent('undoRedoPerformed')"></div>
+<div class="col-lg-8 control-section sb-property-border">
+    <div class="blockeditor-events">
+        <ejs-blockeditor id="events-blockeditor" #apiBlockEditor height="600px" [blocks]="blockDataEvents" (created)="logEvent('created')" (blockChanged)="blockChangeEvent($event)" (blockDragStart)="logEvent('blockDragStart')" (blockDragging)="logEvent('blockDragging')" (blockDropped)="logEvent('blockDropped')" (focus)="logEvent('focus')" (blur)="logEvent('blur')" (selectionChanged)="logEvent('selectionChanged')" (beforePasteCleanup)="logEvent('beforePasteCleanup')" (afterPasteCleanup)="logEvent('afterPasteCleanup')" [inlineToolbarSettings]="inlineToolbar"></ejs-blockeditor>
     </div>
 </div>
 <div class="col-lg-4 property-section">
+     <div class="property-panel-header">Event Trace </div>
+    <div class="property-panel-content">
     <table id="property" title="Event Trace" class="property-panel-table">
         <tbody>
             <tr>
@@ -23,6 +25,7 @@
         </tbody>
     </table>
 </div>
+</div>
 
 <div id="action-description">
     <p>This sample demonstrates the events that trigger on every action of the Block Editor. The event details are showcased in the event trace panel.</p>
@@ -32,18 +35,14 @@
     <p>The Block Editor triggers events based on its actions. These events can be used as extension points to perform custom operations.</p>
     <ul>
         <li><code>created</code> - Triggers after the Block Editor is rendered completely.</li>
-        <li><code>contentChanged</code> - Triggers when the content of the block editor is changed.</li>
+        <li><code>blockChanged</code> - Triggers when the editor blocks are changed. This event provides details about the changes made to the blocks, including insertions, deletions, movements, and updates.</li>
         <li><code>selectionChanged</code> - Triggers when the selection in the block editor changes.</li>
-        <li><code>blockAdded</code> - Triggers when a new block is added to the editor.</li>
-        <li><code>blockRemoved</code> - Triggers when a block is removed from the editor.</li>
-        <li><code>blockMoved</code> - Triggers when a block is moved within the editor.</li>
-        <li><code>blockDrag</code> - Triggers during the dragging operation of a block.</li>
+        <li><code>blockDragging</code> - Triggers during the dragging operation of a block.</li>
         <li><code>blockDragStart</code> - Triggers when the drag operation for a block starts.</li>
-        <li><code>blockDrop</code> - Triggers when a block is dropped after a drag operation.</li>
+        <li><code>blockDropped</code> - Triggers when a block is dropped after a drag operation.</li>
         <li><code>focus</code> - Triggers when the block editor gains focus.</li>
         <li><code>blur</code> - Triggers when the block editor loses focus.</li>
-        <li><code>beforePaste</code> - Triggers before pasting the content in the block editor.</li>
-        <li><code>afterPaste</code> - Triggers after pasting the content in the block editor.</li>
-        <li><code>undoRedoPerformed</code> - Triggers when the undo/redo actions are performed in the block editor.</li>
+        <li><code>beforePasteCleanup</code> - Triggers before pasting the content in the block editor.</li>
+        <li><code>afterPasteCleanup</code> - Triggers after pasting the content in the block editor.</li>
     </ul>
 </div>

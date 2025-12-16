@@ -2,7 +2,7 @@
  * Rich Text Editor Template Driven Sample
  */
 import { Component, ViewChild } from '@angular/core';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { NgIf } from '@angular/common';
@@ -12,7 +12,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     selector: 'control-content',
     templateUrl: 'template-driven.html',
     styleUrls: ['forms.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService],
     standalone: true,
     imports: [SBActionDescriptionComponent, FormsModule, RichTextEditorModule, NgIf, ButtonModule, SBDescriptionComponent]
 })

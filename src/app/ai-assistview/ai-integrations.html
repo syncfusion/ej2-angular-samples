@@ -1,0 +1,68 @@
+<div class="control-section">
+  <div class="ai-models">
+    <div id="aiAssistView" ejs-aiassistview #aiAssistViewInst [bannerTemplate]="bannerTemplate"
+      [promptSuggestions]="suggestions" (promptRequest)="promptRequest($event)" [enableAttachments]="enableAttachments" [attachmentSettings]="attachmentSettings" [showHeader]="showHeader"
+      (stopRespondingClick)="handleStopResponse()" width="auto" [footerToolbarSettings]="footerToolbarSettings">
+      <div class="ai-assist-header">
+        <button ejs-button id="close" #togglebtn (click)="toggleSidebar()" iconCss="e-icons e-menu"></button>
+        <ejs-dropdownlist id="ai-model-dropdown" [dataSource]="models" [fields]="modelFields" [value]="selectedModel"
+          (change)="onModelChange($event)" popupHeight="200px">
+        </ejs-dropdownlist>
+      </div>
+    </div>
+  </div>
+  <ejs-sidebar id="assistantSidebar" #sideObj width="250px" target=".ai-models" position="Left"
+    [enableDock]="enableDock" [dockSize]="dockSize" [enableGestures]="enableGesture" [type]="type"
+    [showBackdrop]="showBackdrop" [closeOnDocumentClick]="closeOnDocumentClick">
+    <div class="assistant-sidebar-header">
+      <div class="header-left">
+        <span id="icon-assist" class="header-icon e-icons e-assistview-icon"></span>
+        <span class="header-title">AI Assist</span>
+      </div>
+      <button ejs-button id="close" #togglebtn (click)="btnClick()" iconCss="e-icons e-close"
+        cssClass="e-flat"></button>
+    </div>
+    <div class="assistant-sidebar-content">
+      <button ejs-button (click)="loadNewAIAssist()" iconCss="e-icons e-plus" cssClass="new-thread-btn">New
+        Thread</button>
+      <ejs-listview id="e-text-content" [dataSource]="listData">
+        <ng-template #template let-data>
+          <div class="e-list-text" (click)="onItemSelect(data)">
+            <span class="conversation-name">
+              {{ data.text }}
+            </span>
+            <span class="delete-icon e-icons e-trash" title="Delete Conversation"
+              (click)="deleteConversation(data.id, $event)"></span>
+          </div>
+        </ng-template>
+      </ejs-listview>
+    </div>
+  </ejs-sidebar>
+  <ng-template #bannerTemplate>
+    <div class="banner-content e-no-content">
+      <div class="e-icons e-assistview-icon"></div>
+      <h3 class="ai-assist-banner-subtitle">How can I help you today?</h3>
+    </div>
+  </ng-template>
+  <ejs-toast #toast [position]="toastPosition" target=".e-views" timeOut="1500" [showCloseButton]="true"></ejs-toast>
+</div>
+
+<div id="action-description">
+  <p>
+    This example demonstrates the <strong>AI AssistView</strong> designed to integrate multiple AI models: 
+    <code>Azure OpenAI</code>, <code>Gemini</code> and <code>DeepSeek</code>.
+  </p>
+</div>
+
+<div id="description">
+  <p>
+    In this example, the <strong>AI AssistView</strong> with a responsive sidebar, AI models dropdown and Markdown streaming to deliver an AI-powered chat interface.
+  </p>
+  <ul>
+    <li>Switch between providers (Azure OpenAI, Gemini and DeepSeek) via a dropdown menu, with toast notifications confirming selection.</li>
+    <li>Enter your API key(s) to enable live, dynamic responses from the selected provider.</li>
+    <li>Stream AI responses with auto-scroll and rich Markdown rendering using <code>marked</code>.</li>
+    <li>Create, select, and delete conversations with conversations stored in the localStorage.</li>
+  </ul>
+</div>
+<app-ai-toast></app-ai-toast>

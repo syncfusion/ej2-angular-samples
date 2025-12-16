@@ -101,7 +101,7 @@ export class AnnotationChartComponent {
             content : '<div class="box-top" > Mergulho </div>', x:'3.136', y:'284' , coordinateUnits:'Point'
         },
         {
-            content :  Browser.isDevice ? '' :'<div class="third-box-bottom" > Junção </div>',  x:'3.270', y:'98' , coordinateUnits:'Point'
+            content :  Browser.isDevice ? '' :'<div class="third-box-bottom" > Juncao </div>',  x:'3.270', y:'98' , coordinateUnits:'Point'
         },
         {
             content : Browser.isDevice ? '' :'<div class="box-top" > Subida dos <br /> Boxes </div>', x:'3.800', y:'312' , coordinateUnits:'Point'

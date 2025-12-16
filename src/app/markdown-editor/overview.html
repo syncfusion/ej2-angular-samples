@@ -13,17 +13,8 @@
                         <ng-template #content>
                             <div class="content">
                                 <ejs-richtexteditor id="defaultRTE" #defaultRTE height='447px' [toolbarSettings]='tools' saveInterval='10' [editorMode]='mode'
-                                    (created)='onCreate()' (change)='onChange()' (actionComplete)='updateValue()'>
+                                    (created)='onCreate()' (change)='onChange()' (actionComplete)='updateValue()' [value]='value'>
                                     <ng-template #valueTemplate>
-                                        In Rich Text Editor, you click the toolbar buttons to format the words and the changes are visible immediately. 
-                                        Markdown is not like that. When you format the word in Markdown format, you need to add Markdown syntax to the word to indicate which words 
-                                        and phrases should look different from each other
-                    
-                                        Rich Text Editor supports markdown editing when the editorMode set as **markdown** and using both *keyboard interaction* and *toolbar action*, you can apply the formatting to text.
-                    
-                                        We can add our own custom formation syntax for the Markdown formation, [sample link](https://ej2.syncfusion.com/home/).
-                    
-                                        The third-party library <b>Marked</b> is used in this sample to convert markdown into HTML content.
                                     </ng-template>
                                 </ejs-richtexteditor>
                             </div>
@@ -44,7 +35,7 @@
 </div>
 
 <div id="description">
-    <p>The Rich Text Editor provides the ability to instantly <code>preview</code> Markdown changes through the preview functionality. To achieve this, the sample utilizes the third-party library Marked.js to convert Markdown into HTML content.</p>
+    <p>The Rich Text Editor provides the ability to instantly <code>preview</code> Markdown changes through the preview functionality. To achieve this, the sample uses the Syncfusion's Markdown Converter to convert Markdown into HTML content.</p>
 
     <p><b>Injecting Module</b></p>
     <p>Rich Text Editor features are segregated into individual feature-wise modules. To use this MarkDown Preview feature
@@ -52,5 +43,5 @@
         <code>ToolbarService, LinkService, ImageService, MarkdownEditorService</code> into the
         <code>&#64;NgModule.providers section</code>.</p>
 
-    <p>The third-party library <code>Marked</code> is used in this sample to convert markdown into HTML content.</p>
+    <p>Syncfusion's <code>Markdown Converter</code> is used in this sample to convert markdown into HTML content.</p>
 </div>

@@ -1,0 +1,83 @@
+<div class="control-section">
+    <div class="integration-speechtotext-section">
+        <div
+          ejs-aiassistview
+          #assistView
+          (promptRequest)="onPromptRequest($event)"
+          [toolbarSettings]="toolbarSettings"
+          [promptToolbarSettings]="promptToolbarSettings"
+          (stopRespondingClick)="stopRespondingClick()"
+        >
+          <ng-template #bannerTemplate>
+            <div class="banner-info">
+            <div class="e-icons e-listen-icon"></div>
+            <h3>Speech To Text</h3>
+            <i>Click the below mic-button to convert your voice to text.</i>
+        </div>
+          </ng-template>
+          <ng-template #footerTemplate>
+            <div class="e-footer-wrapper">
+              <div
+                #contentEditor
+                id="assistview-footer"
+                class="content-editor"
+                contenteditable="true"
+                placeholder="Click to speak or start typing..."
+                (input)="onContentChanged()"
+                (keydown.enter)="onEditorKeyDown($event)"
+              ></div>
+              <div class="option-container">
+                <button
+                  ejs-speechtotext
+                  #speechToText
+                  id="speechToText"
+                  cssClass="e-flat"
+                  (onStart)="onListeningStart()"
+                  (onStop)="onListeningStop()"
+                  (transcriptChanged)="onTranscriptChange($event)"
+                  [class.visible]="!hasTextInEditor || isListening"
+                ></button>
+                <button
+                  id="assistview-sendButton"
+                  class="e-assist-send e-icons"
+                  role="button"
+                  (click)="sendIconClicked()"
+                  [class.visible]="hasTextInEditor && !isListening"
+                ></button>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+  </div>
+  <div id="action-description">
+    <p>
+      This sample demonstrates the integration of <code>Speech-to-Text</code> functionality with the AI AssistView component. It allows users to convert spoken input into text using the device's microphone and the browser's <code>SpeechRecognition</code> API.
+    </p>
+  </div>
+  <div id="description">
+    <p>
+      In this example, the AI AssistView component is integrated with the <code>SpeechToText</code> component to enable voice-based interaction.
+    </p>
+    <p>
+      The sample demonstrates the following features:
+    </p>
+    <ul>
+      <li>
+        The <code>SpeechToText</code> component captures voice input and transcribes it into text, which is then passed to the AI AssistView for generating contextual responses.
+      </li>
+      <li>
+        The <code>footerTemplate</code> includes a content-editable area and a microphone button for initiating voice input.
+      </li>
+      <li>
+        The <code>toolbarSettings</code> adds a right-aligned <code>Refresh</code> button to clear previous prompts.
+      </li>
+      <li>
+        Responses are streamed dynamically using the <code>addPromptResponse</code> method for a real-time experience.
+      </li>
+      <li>
+        Markdown content in the response is rendered using the <code>Marked</code> plugin.
+      </li>
+    </ul>
+  </div>
+  <app-ai-toast></app-ai-toast>

@@ -1,0 +1,165 @@
+.ai-models {
+  height: 500px;
+  width: 96%;
+  margin: 12px auto;
+  overflow: hidden;
+}
+.ai-models #aiAssistView {
+  border: 1px solid #dee2e6;
+}
+.ai-models .banner-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 330px;
+  text-align: center;
+}
+.ai-models .banner-content.e-no-content {
+  height: 25vh;
+}
+.ai-models .banner-content .e-assistview-icon:before {
+  font-size: 40px;
+}
+#assistantSidebar {
+  border: 1px solid #dee2e6;
+  border-right: none;
+}
+.assistant-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding-left: 17px;
+  border-bottom: 1px solid #dee2e6;
+}
+.assistant-sidebar-header .header-icon {
+  font-size: 20px;
+  margin-right: 8px;
+}
+.assistant-sidebar-header .header-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+.assistant-sidebar-content .new-thread-btn {
+  border: none;
+  color: #333;
+  text-align: start;
+  margin-top: 2px;
+  height: 35px;
+  width: 100%;
+}
+.assistant-sidebar-content .new-thread-btn .e-icons {
+  padding-left: 8px;
+  padding-bottom: 3px;
+  margin-right: 8px;
+  font-weight: bold;
+}
+.assistant-sidebar-content #e-text-content {
+  border: none;
+  padding-top: 10px;
+}
+.assistant-sidebar-content .e-list-container .e-list-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.assistant-sidebar-content .conversation-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} 
+
+.assistant-sidebar-content .conversation-item .delete-icon {
+  display: inline-block;
+  cursor: pointer;
+}
+#assistantSidebar .e-toolbar .e-toolbar-item:not(.e-separator):not(.e-spacer) {
+  padding: 8px 0;
+  margin: 0;
+}
+#assistantSidebar.e-close .assistant-sidebar-content .new-thread-btn,
+#assistantSidebar.e-close .e-toolbar-left .e-toolbar-item {
+  display: none;
+}
+#assistantSidebar.e-close .e-toolbar-items .e-toolbar-right {
+  left: 16px;
+}
+#assistantSidebar .e-toolbar-item .e-tbar-btn:hover .e-icons {
+  color: #6c757d;
+}
+.banner-content .e-assistview-icon:before {
+  font-size: 35px;
+}
+.assistant-sidebar-header .header-left {
+  display: flex;
+  cursor: default;
+}
+.toast-content {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.ai-models .ai-assist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 9px;
+  border-bottom: 1px solid #dee2e6;
+}
+.assistant-sidebar-content {
+  padding: 5px;
+}
+.ai-models #assistantSidebar .assistant-sidebar-content .e-btn {
+  box-shadow: none;
+}
+.e-listview .e-list-item {
+  border: none;
+}
+.e-view-content {
+  height: 90% !important;
+}
+#assistantSidebar .assistant-sidebar-content .e-text-content {
+  display: flex;
+  align-items: center;
+}
+#assistantSidebar .assistant-sidebar-content .e-text-content .delete-icon {
+  padding: 3px 5px 0 5px;
+}
+.e-dark-mode .ai-models #aiAssistView,
+.e-dark-mode #assistantSidebar{
+  border: 1px solid #666;
+}
+.e-dark-mode #assistantSidebar .assistant-sidebar-header ,
+.e-dark-mode .ai-models .ai-assist-header {
+  border-bottom: 1px solid #666;
+}
+.e-bigger .ai-models .e-toast-container .e-toast .e-toast-message
+{
+  margin-right: 5px;
+}
+.e-bigger .ai-models .e-toast-container .e-toast .e-toast-message .e-toast-content
+{
+  padding-left: 12px;
+}
+@media screen and (max-width: 980px) {
+  .ai-assistant {
+    width: 100%;
+    margin: 0;
+  }
+  #ai-model-dropdown {
+    margin-left: 50px;
+  }
+  .e-sidebar-container .e-main-content.e-content-animation {
+    margin-left: 0 !important;
+  }
+  #close {
+    display: block;
+  }
+}
+@media screen and (min-width: 981px) { 
+  #close {
+    display: none; 
+  }
+}

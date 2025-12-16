@@ -1,0 +1,70 @@
+<div class="col-lg-8 control-section sb-property-border">
+    <div class="paste-blockeditor"> 
+        <ejs-blockeditor id="block-editor" #pasteBlockEditor height="600px" [blocks]="blockDataPaste" [pasteCleanupSettings]="pasteSettings"></ejs-blockeditor>
+    </div>
+</div>
+<div class="col-lg-4 property-section">
+    <div class="property-panel-header"> Properties </div>
+    <div id="property" title="Properties" class="property-panel-table">
+       <table id="property" title="Properties">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div>Format Option </div>
+                        </td>
+                        <td>
+                            <div>
+                                <ejs-dropdownlist id='formatOption' #formatOption [dataSource]='formatData' (change)='formatChange()' [value]='value' [fields]='fields' [popupHeight]='height'></ejs-dropdownlist>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Denied Tags </div>
+                        </td>
+                        <td>
+                            <div>
+                                <ejs-textbox #deniedTags class="e-input" placeholder="'img[!href]', 'h1'"
+                                    (blur)="deniedTagChange()"></ejs-textbox>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>Allowed Style Properties </div>
+                        </td>
+                        <td>
+                            <div>
+                                <ejs-textbox #allowedStyleProperties class="e-input" placeholder="'href', 'style'"
+                                    (blur)="allowStyleChange()"></ejs-textbox>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the Block Editor <code>pasteCleanupSettings</code> property allows you to define various options to control how content is pasted into the editor.</p>
+</div>
+
+<div id="description">
+    <p>The following settings are available to cleanup the content in pasteCleanup settings property:</p>
+    <ul>
+        <li>Select any option in <code>Format Option</code> drop down list for the paste content.</li>
+        <ul>
+            <li>Select the <code>Plain Text</code> option to paste the content as plain text.</li>
+            <li>Select the <code>Keep Format</code> option to keep the same format in the copied content.</li>
+        </ul>
+        <li>Fill the <code>denied tags</code> text box to ignore the tags when pasting HTML content.</li>
+        <ul>
+            <li><code>['a[!href]']</code> - paste the content by filtering anchor tags that don’t have the 'href' attribute.</li>
+            <li><code>['a[href, target]']</code> - paste the content by filtering anchor tags that have the 'href' and 'target' attributes</li>
+        </ul>
+        <li>Fill the <code>allowed style</code> properties to paste the content by accepting these style attributes and removing other attributes. For example:</li>
+        <ul>
+            <li><code>['color', 'margin']</code> - This will allow only the style properties 'color' and 'margin' in each pasted element.</li>
+        </ul>
+    </ul>
+</div>

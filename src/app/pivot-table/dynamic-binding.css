@@ -1,0 +1,117 @@
+/* PivotView Layout Styles */
+.e-pivotview {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* PivotView Layout Styles */
+  .sb-sample-content-area,
+  .control-section {
+    min-height: 255px !important;
+  }
+  
+  /* Icon Styles */
+  .e-connect-report::before,
+  .e-save-report::before,
+  .e-open-report::before {
+    font-family: 'e-icons';
+    /* font-size: 18px; */
+  }
+  
+  .e-connect-report::before {
+    content: '\e835';
+  }
+  
+  .e-save-report::before {
+    content: '\e98e';
+  }
+  
+  .e-open-report::before {
+    content: '\e760';
+  }
+  
+  .e-csv-icon::before,
+  .e-json-icon::before,
+  .e-olap-icon::before {
+    font-family: 'e-icons';
+    color: #666;
+  }
+  
+  .e-csv-icon::before {
+    content: '\e7ba';
+  }
+  
+  /* Target the JSON icon in the menu */
+  .e-json-icon.e-icons::before {
+    font-family: unset;
+    content: "";
+    display: inline-block;
+    width: 15px;
+    /* adjust size as needed */
+    height: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  
+    /* Data URI with JSON SVG using medium gray (#555) */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" fill="white"/><rect x="2" y="2" width="20" height="20" rx="2.5" stroke="%23555" stroke-width="2"/><path d="M6.3115 10.255C6.41117 10.255 6.49783 10.2918 6.5715 10.3655C6.64517 10.4392 6.682 10.5258 6.682 10.6255V13.18C6.682 13.8603 6.539 14.3457 6.253 14.636C5.97133 14.922 5.50767 15.065 4.862 15.065C4.459 15.065 4.09933 15.0238 3.783 14.9415C3.679 14.9155 3.5945 14.8592 3.5295 14.7725C3.4645 14.6815 3.432 14.5797 3.432 14.467V14.09C3.432 14.0077 3.46667 13.9427 3.536 13.895C3.60967 13.843 3.68767 13.8322 3.77 13.8625C4.07333 13.9708 4.3615 14.025 4.6345 14.025C4.8815 14.025 5.06133 13.9513 5.174 13.804C5.291 13.6567 5.3495 13.4053 5.3495 13.05V10.6255C5.3495 10.5258 5.38633 10.4392 5.46 10.3655C5.53367 10.2918 5.62033 10.255 5.72 10.255H6.3115ZM9.15886 12.01C9.76552 12.1877 10.188 12.4 10.4264 12.647C10.6647 12.894 10.7839 13.2233 10.7839 13.635C10.7839 14.5883 10.1664 15.065 8.93136 15.065C8.53702 15.065 8.17952 15 7.85886 14.87C7.75919 14.831 7.67902 14.7617 7.61836 14.662C7.56202 14.5623 7.53386 14.454 7.53386 14.337V14.0055C7.53386 13.9232 7.56852 13.8625 7.63786 13.8235C7.70719 13.7845 7.77869 13.7823 7.85236 13.817C8.19469 13.9773 8.53269 14.0575 8.86636 14.0575C9.25636 14.0575 9.45136 13.9275 9.45136 13.6675C9.45136 13.5462 9.42102 13.453 9.36036 13.388C9.29969 13.323 9.18919 13.2645 9.02886 13.2125C8.45252 13.0348 8.03652 12.8138 7.78086 12.5495C7.52952 12.2808 7.40386 11.9493 7.40386 11.555C7.40386 11.1303 7.55552 10.7967 7.85886 10.554C8.16652 10.3113 8.61069 10.19 9.19136 10.19C9.60736 10.19 9.97786 10.2355 10.3029 10.3265C10.4069 10.3568 10.4914 10.4197 10.5564 10.515C10.6214 10.606 10.6539 10.7078 10.6539 10.8205V11.139C10.6539 11.2257 10.617 11.295 10.5434 11.347C10.474 11.3947 10.396 11.4033 10.3094 11.373C9.92369 11.2473 9.57269 11.1845 9.25636 11.1845C8.90102 11.1845 8.72336 11.308 8.72336 11.555C8.72336 11.7717 8.86852 11.9233 9.15886 12.01ZM12.6133 12.6275C12.6133 13.5375 12.9274 13.9925 13.5558 13.9925C14.1841 13.9925 14.4983 13.5375 14.4983 12.6275C14.4983 11.7175 14.1841 11.2625 13.5558 11.2625C12.9274 11.2625 12.6133 11.7175 12.6133 12.6275ZM11.8918 10.84C12.2991 10.4067 12.8538 10.19 13.5558 10.19C14.2578 10.19 14.8124 10.4067 15.2198 10.84C15.6271 11.2733 15.8308 11.8692 15.8308 12.6275C15.8308 13.3858 15.6271 13.9817 15.2198 14.415C14.8124 14.8483 14.2578 15.065 13.5558 15.065C12.8538 15.065 12.2991 14.8483 11.8918 14.415C11.4844 13.9817 11.2808 13.3858 11.2808 12.6275C11.2808 11.8692 11.4844 11.2733 11.8918 10.84ZM19.9508 10.255C20.0505 10.255 20.1372 10.2918 20.2108 10.3655C20.2845 10.4392 20.3213 10.5258 20.3213 10.6255V14.6295C20.3213 14.7292 20.2845 14.8158 20.2108 14.8895C20.1372 14.9632 20.0505 15 19.9508 15H19.4568C19.2098 15 19.0322 14.8895 18.9238 14.6685L17.7993 12.4065C17.7993 12.4022 17.7972 12.4 17.7928 12.4C17.7885 12.4 17.7863 12.4022 17.7863 12.4065V14.6295C17.7863 14.7292 17.7495 14.8158 17.6758 14.8895C17.6022 14.9632 17.5155 15 17.4158 15H16.9218C16.8222 15 16.7355 14.9632 16.6618 14.8895C16.5882 14.8158 16.5513 14.7292 16.5513 14.6295V10.6255C16.5513 10.5258 16.5882 10.4392 16.6618 10.3655C16.7355 10.2918 16.8222 10.255 16.9218 10.255H17.4158C17.6628 10.255 17.8405 10.3655 17.9488 10.5865L19.0733 12.8485C19.0733 12.8528 19.0755 12.855 19.0798 12.855C19.0842 12.855 19.0863 12.8528 19.0863 12.8485V10.6255C19.0863 10.5258 19.1232 10.4392 19.1968 10.3655C19.2705 10.2918 19.3572 10.255 19.4568 10.255H19.9508Z" fill="%23555"/></svg>');
+  }
+  
+  /* Target the OLAP icon in the menu */
+  .e-olap-icon.e-icons::before {
+    font-family: unset;
+    content: "";
+    display: inline-block;
+    width: 15px;
+    /* adjust size as needed */
+    height: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  
+    /* Data URI with your SVG (stroke is black here: %23000) */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox=\'0 0 24 24\' fill=\'none\'><path d="M3 6.5L7.5 8.75M3 6.5L8 4M3 6.5V12M12 22L16.5 19.75M12 22V16M12 22L7.5 19.75M21 6.5L16 4M21 6.5L16.5 8.75M21 6.5V12M12 11L7.5 8.75M12 11L16.5 8.75M12 11V16M7.5 8.75L16 4M7.5 8.75V19.75M16 4L12 2L8 4M8 4L16.5 8.75M16.5 8.75V19.75M16.5 19.75L21 17.5V12M12 16L21 12M12 16L3 12M3 12V17.5L7.5 19.75" stroke=\'%23666\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'/></svg>');
+  }
+  
+  
+  .e-remote-report-icon::before {
+    content: '\e797';
+  }
+  
+  .e-local-report-icon::before {
+    content: '\e911';
+  }
+  
+  
+  /* e-icons Font Definition (replace [FULL_BASE64_HERE] with Syncfusion's complete base64) */
+  @font-face {
+    font-family: 'e-icons';
+    src: url(data:application/x-font-ttf;charset=UTF-8;base64,[FULL_BASE64_HERE]);
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* OLAP Dialog Specific */
+  .olap-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    align-items: center;
+  }
+  
+  .olap-row label {
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    display: block;
+  }
+  
+  /* Error Dialog Specific */
+  .error-message {
+    color: #333;
+    font-size: 14px;
+    margin: 0 0 20px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    text-align: left;
+  }

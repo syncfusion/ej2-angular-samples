@@ -1,0 +1,66 @@
+.adornment-textarea .content-wrapper div.multiline-row {
+    margin: 0 auto;
+    padding: 40px 0px 0px;
+}
+.adornment-textarea .multiline-property .left-side {
+    font-size: 14px;
+    padding: 8px;
+}
+
+.adornment-textarea .multiline-property.property-panel-table div.multiline {
+    padding-left: 0px;
+}
+
+.adornment-textarea .property-panel-content td {
+    padding: 10px 0px;
+    width: 50%;
+}
+
+.e-bigger .adornment-textarea .e-prepend-template {
+    padding-right: 0 !important;
+}
+
+.e-bigger.material3 .adornment-textarea .e-outline.e-float-input:not(.e-error):not(.e-valid-input):not(.e-input-focus) textarea:not(:focus):valid ~ label.e-float-text.e-label-bottom,
+.e-bigger.material3-dark .adornment-textarea .e-outline.e-float-input:not(.e-error):not(.e-valid-input):not(.e-input-focus) textarea:not(:focus):valid ~ label.e-float-text.e-label-bottom {
+    top: -11px !important;
+}
+
+.e-bigger.material3 .adornment-textarea .e-input-separator,
+.e-bigger.material3-dark .adornment-textarea .e-input-separator {
+    margin-top: 3px !important;
+}
+
+.e-bigger.bootstrap5\.3 .adornment-textarea .e-textarea,
+.e-bigger.bootstrap5\.3-dark .adornment-textarea .e-textarea,
+.e-bigger.fluent2 .adornment-textarea .e-textarea,
+.e-bigger.fluent2-dark .adornment-textarea .e-textarea,
+.e-bigger.fluent2-highcontrast .adornment-textarea .e-textarea {
+    margin-top: 3px !important;
+}
+
+.e-bigger.tailwind3 .adornment-textarea .e-outline.e-float-input:not(.e-error):not(.e-valid-input):not(.e-input-focus) textarea:not(:focus):valid ~ label.e-float-text.e-label-bottom,
+.e-bigger.tailwind3-dark .adornment-textarea .e-outline.e-float-input:not(.e-error):not(.e-valid-input):not(.e-input-focus) textarea:not(:focus):valid ~ label.e-float-text.e-label-bottom {
+    top: -7px !important;
+}
+
+.tailwind3 .adornment-textarea .e-textarea,
+.tailwind3-dark .adornment-textarea .e-textarea {
+    margin-top: 6px !important;
+}
+
+.e-bigger.tailwind3 div.e-input-group.e-prepend-wrapper.e-multi-line-input.e-outline.e-float-input.e-control-wrapper Label.e-label-top,
+.e-bigger.tailwind3-dark div.e-input-group.e-prepend-wrapper.e-multi-line-input.e-outline.e-float-input.e-control-wrapper Label.e-label-top {
+    top: -26px !important;
+}
+
+.e-bigger.fluent2 .adornment-textarea .e-outline.e-float-input:not(.e-error):not(.e-valid-input):not(.e-input-focus) textarea:not(:focus):valid ~ label.e-float-text.e-label-bottom,
+.e-bigger.fluent2-dark .adornment-textarea .e-outline.e-float-input:not(.e-error):not(.e-valid-input):not(.e-input-focus) textarea:not(:focus):valid ~ label.e-float-text.e-label-bottom,
+.e-bigger.fluent2-highcontrast .adornment-textarea .e-outline.e-float-input:not(.e-error):not(.e-valid-input):not(.e-input-focus) textarea:not(:focus):valid ~ label.e-float-text.e-label-bottom {
+    top: -8px !important;
+}
+
+.e-bigger.fluent2 .adornment-textarea .e-input-separator,
+.e-bigger.fluent2-dark .adornment-textarea .e-input-separator,
+.e-bigger.fluent2-highcontrast .adornment-textarea .e-input-separator {
+    margin-top: 2px !important;
+}

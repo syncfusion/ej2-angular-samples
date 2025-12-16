@@ -1,0 +1,57 @@
+.adornments .content-wrapper {
+    width: 35%;
+    margin: 5% auto;
+    min-width: 250px;
+}
+.adornments .row {
+    margin: 7% 0;
+}
+
+.adornments .e-float-input span:not([class]):not(.e-float-text):not(.e-input-separator):not(.e-delete-text) {
+    line-height: 1; 
+    padding-right: 5px;
+}
+
+.adornments .material3 .e-eye-icon label.e-float-text,
+.adornments .material3-dark .e-eye-icon label.e-float-text {
+    top: -3px !important;
+}
+
+.bootstrap5\.3 .adornments .e-icon-textbox .e-prepend-template,
+.bootstrap5\.3 .adornments  .e-prepend-textbox .e-prepend-template,
+.bootstrap5\.3-dark .adornments .e-icon-textbox .e-prepend-template,
+.bootstrap5\.3-dark .adornments  .e-prepend-textbox .e-prepend-template,
+.tailwind3 .adornments .e-icon-textbox .e-prepend-template,
+.tailwind3 .adornments  .e-prepend-textbox .e-prepend-template,
+.tailwind3-dark .adornments .e-icon-textbox .e-prepend-template,
+.tailwind3-dark .adornments  .e-prepend-textbox .e-prepend-template  {
+    padding-right: 0 !important;
+}
+
+.tailwind3 .adornments .e-icon-textbox .e-float-text.e-label-bottom,
+.tailwind3 .adornments  .e-prepend-textbox .e-float-text.e-label-bottom,
+.tailwind3-dark .adornments .e-icon-textbox .e-float-text.e-label-bottom,
+.tailwind3-dark .adornments  .e-prepend-textbox .e-float-text.e-label-bottom  {
+    top: 50% !important;
+}
+
+.material3 .e-eye-icon label.e-float-text,
+.material3-dark .e-eye-icon label.e-float-text {
+    top: -3px !important;
+}
+
+.e-bigger.material3 .adornments .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom,
+.e-bigger.material3-dark .adornments .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom {
+    top: -5px !important;
+}
+
+.e-bigger.fluent2 .adornments .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom,
+.e-bigger.fluent2-dark .adornments .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom,
+.e-bigger.fluent2-highcontrast .adornments .e-float-input:not(.e-error):not(.e-input-focus) input:not(:focus):valid~label.e-float-text.e-label-bottom {
+    top: -8px !important;
+}
+.adornments .e-eye-icon .e-icons.e-eye,
+.adornments .e-eye-icon .e-icons.e-eye-slash,
+.adornments .e-icon-textbox .e-icons.e-trash {
+    cursor: pointer;
+}

@@ -1,0 +1,317 @@
+.e-progress_1 {
+        width: 100%;
+        height: 24px;
+        background-color: #e5e7eb;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .e-progress-bar-base {
+        height: 100%;
+        border-radius: 4px;
+        transition: width 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .progress-blue {
+        background-color: #3b82f6;
+    }
+
+    .progress-green {
+        background-color: #22c55e;
+    }
+
+    .progress-red {
+        background-color: #ef4444;
+    }
+
+    .progress-value {
+        font-size: 12px;
+        font-weight: 600;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+    }
+    .fabric .empimg {
+        background-color: #0078d6;
+    }
+
+    .material .empimg {
+        background-color: #e3165b;
+    }
+
+    .highcontrast .empimg {
+        background-color: #ffd939;
+    }
+
+    .tailwind .empimg {
+        background-color: #4f46e5;
+    }
+
+    .fluent .empimg {
+        background-color: #106EBE;
+    }
+    .tailwind3 .empimg,
+    .tailwind3-dark .empimg{
+        background-color:rgba(79, 70, 229);
+    }
+
+    _:-ms-fullscreen,
+    :root .highcontrast .e-userimg.sf-icon-Male::before,
+    _:-ms-fullscreen,
+    :root .highcontrast .e-userimg.sf-icon-FeMale::before {
+        color: black;
+    }
+
+    .highcontrast .e-userimg.sf-icon-Male::before,
+    .highcontrast .e-userimg.sf-icon-FeMale::before {
+        color: black;
+    }
+
+    .bootstrap .empimg {
+        background-color: #0078d6;
+    }
+
+    .bootstrap4 .empimg,
+    .bootstrap5 .empimg {
+        background-color: #0078d6;
+    }
+
+    #Emptext {
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 8px;
+    }
+
+    .e-grid.e-rtl #Emptext {
+        top: -14px;
+        left: -41px;
+        position: relative;
+    }
+
+    .empimg {
+        height: 27px;
+        width: 29px;
+        border-radius: 14px;
+        background-color: #e3165b;
+        display: inline-block;
+    }
+
+
+    .e-userimg.sf-icon-Male::before,
+    .e-userimg.sf-icon-FeMale::before {
+        font-size: 13px;
+    }
+
+    .e-userimg.sf-icon-Male,
+    .e-userimg.sf-icon-FeMale {
+        margin: 0px 8px;
+        line-height: 26px;
+        color: white;
+        font-size: 13px;
+    }
+
+    .e-userimg.sf-icon-Male::before {
+        content: '\e700';
+    }
+
+    .e-userimg.sf-icon-FeMale::before {
+        content: '\e701';
+    }
+
+
+    .highcontrast .e-grid td.e-rowcell.e-selectionbackground.e-active,
+    .fluent2-highcontrast .e-grid td.e-rowcell.e-selectionbackground.e-active {
+        background-color: transparent;
+        color: white;
+    }
+
+    .e-bigger .e-grid .statustxt {
+        position: relative;
+        top: -2px;
+    }
+
+    td.e-rowcell.e-selectionbackground.e-active {
+        background-color: transparent;
+    }
+
+    .e-image {
+        height: 13px;
+        width: 14px;
+    }
+
+    td.e-rowcell .statustxt.e-activecolor {
+        color: #00cc00;
+        position: relative;
+        top: 9px;
+    }
+
+    td.e-rowcell .statustxt.e-inactivecolor {
+        color: #e60000;
+        position: relative;
+        top: 9px;
+    }
+
+    .bootstrap5 td.e-rowcell .statustxt.e-inactivecolor,
+    .bootstrap5 td.e-rowcell .statustxt.e-activecolor {
+        top: 8px;
+    }
+
+    .bootstrap5 .e-checkboxfiltertext .statustemp .statustxt.e-activecolor,
+    .bootstrap5 .e-checkboxfiltertext .statustemp .statustxt.e-inactivecolor {
+        position: relative;
+        top: 1.5px;
+    }
+
+    .e-bigger.bootstrap5 .e-checkboxfiltertext .statustemp .statustxt.e-activecolor,
+    .e-bigger.bootstrap5 .e-checkboxfiltertext .statustemp .statustxt.e-inactivecolor {
+        top: -0.5px;
+    }
+
+    .bootstrap5 .e-checkboxfiltertext #Trusttext {
+        margin-left: -4px;
+    }
+
+    .statustemp.e-inactivecolor {
+        background-color: #ffd7cc;
+        width: 64px;
+    }
+
+    .statustemp.e-activecolor {
+        background-color: #ccffcc;
+        width: 57px;
+    }
+
+    .statustxt.e-activecolor {
+        color: #00cc00;
+    }
+
+    .statustxt.e-inactivecolor {
+        color: #e60000;
+    }
+
+    .statustemp {
+        position: relative;
+        height: 19px;
+        border-radius: 5px;
+        text-align: center
+    }
+
+    .highcontrast #msg {
+        color: #FFFFFF
+    }
+
+    #msg {
+        font-family: "Segoe UI", "GeezaPro", "DejaVu Serif", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        opacity: 0.95;
+        color: #333;
+        float: right;
+        margin-top: 3px;
+    }
+
+    .fabric-dark #msg, .bootstrap-dark #msg, .tailwind-dark #msg, .bootstrap5-dark #msg, .material-dark #msg, .material3-dark #msg, .fluent-dark #msg, .fluent2-dark #msg, .fluent2-highcontrast #msg, .tailwind3-dark #msg {
+        color: #ffffff !important;
+    }
+
+    @media only screen and (max-width: 370px) {
+        #msg {
+            float: left;
+            margin-top: 3px;
+        }
+
+        #Grid {
+            margin-top: 36px;
+        }
+    }
+
+    #samplecontainer {
+        padding-top: 5px;
+    }
+
+    #myProgress {
+        position: relative;
+        height: 18px;
+        width: 10em;
+        text-align: left;
+        background-color: white;
+    }
+
+    .highcontrast .e-grid #myProgress {
+        background-color: black;
+    }
+
+    #myBar {
+        position: absolute;
+        width: 10%;
+        height: 100%;
+        background-color: #00b300;
+    }
+
+    #myBar.progressdisable {
+        background-color: #df2222;
+    }
+
+    #pbarlabel {
+        position: relative;
+        left: 10px;
+        line-height: 18px;
+        font-size: 11px;
+        color: white;
+    }
+
+    .custom-rating.e-rating-container .e-rating-item-container ,
+    .e-bigger .custom-rating.e-rating-container .e-rating-item-container .e-rating-icon,
+    .e-bigger.custom-rating.e-rating-container .e-rating-item-container .e-rating-icon {
+        font-size: 11px;
+    }
+
+    .custom-rating.e-rating-container .e-rating-item-container .e-rating-icon {
+        -webkit-text-fill-color: lightgrey;
+        -webkit-text-stroke: 1px lightgrey;
+    }
+
+    .custom-rating.e-rating-container .e-rating-item-container.e-rating-selected .e-rating-icon {
+        background: linear-gradient(to right, #ffa600 var(--rating-value), #ffa600 var(--rating-value));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px #ffa600;
+    }
+
+    @-moz-document url-prefix() {    
+        #Grid.e-grid.e-grid-min-height .e-rowcell {         
+            line-height: 0 !important;
+    } }   
+
+    @font-face {
+font-family: 'Grid control Font';
+src:
+url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAAKAIAAAwAgT1MvMj1tSfQAAAEoAAAAVmNtYXDnE+ddAAABkAAAADpnbHlmWm7FjgAAAdgAAAPkaGVhZBFF/fMAAADQAAAANmhoZWEIHwQFAAAArAAAACRobXR4EAAAAAAAAYAAAAAQbG9jYQKaAUgAAAHMAAAACm1heHABEACgAAABCAAAACBuYW1lmuAR1QAABbwAAAKdcG9zdHgFC7MAAAhcAAAAQgABAAAEAAAAAFwEAAAAAAADwgABAAAAAAAAAAAAAAAAAAAABAABAAAAAQAAJ9BcPl8PPPUACwQAAAAAANcy3IEAAAAA1zLcgQAAAAADwgP0AAAACAACAAAAAAAAAAEAAAAEAJQAAgAAAAAAAgAAAAoACgAAAP8AAAAAAAAAAQQAAZAABQAAAokCzAAAAI8CiQLMAAAB6wAyAQgAAAIABQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUGZFZABA5wDnAgQAAAAAXAQAAAAAAAABAAAAAAAABAAAAAQAAAAEAAAABAAAAAAAAAIAAAADAAAAFAADAAEAAAAUAAQAJgAAAAQABAABAADnAv//AADnAP//AAAAAQAEAAAAAQACAAMAAAAAAAAAqAFIAfIAAAABAAAAAAPBA/MAkwAAASMPDRUfBQ8FHw4VDxYhLxY1Pw8vAz8DLxcjDwUBhQEIEQoKCwoEBQMEAwIBAQEBAwQFBggGAwIBAQICBQcKDAUEBwUFBgYICAYHCQkUFxcXPRUUFBAODAoMCQQEAgIBA4QBBAQEBQsKCw0PEhQUFh0sFxcUCQkHBgoMCAgDAwIBDAsGBQUDAgECBAcKDgYDAgEBAQMDBAUGBwkJCwsODxAOEQoLDA0ODwwNDg8PDxAD2gQLCQwOEgoLDA0NDxAREhMUFhYYGgoMBwgICQoKCgoKCiEUFgoLCQkIBncICAcHDgwLCRUKCw0NDg0OFBIMCwoQDxYTCwwMEw4ODQ4NDAoJChALDA4HBwgIdwwTERULDQ0OCQsHCAkJCgsMDA0NNiMaGxsODQ0NDAsLCgkJBwYEBA4ICQMEAwIBAQECAwMFBQABAAAAAAPCA/QAjQAAAQ8VFRcVDwcVHwwPFCEvFTM/Cy8INy8aAegOGhgVExAODAoMCwcKCAUFBAcGAgUDAQEDBgkHBAMBAQICBAcTCgsMDBkjMgUGBwgJCQsligkJCQ8OCwoJCgUFBgOEBgoGCAkLDQ4RCQkKC3UlCgoJCAcGBSITEhEPGRUPDwYDAgEBAQEJAgUCAQEBAQECAwYGCgsLDAwMDA0RCwoRDwQDCA8QEBERA/MCBQcJCQoKCwsPERAOEA0ODh8hEC8vEycZGRggJQoICAcGBQUFBAYKBQMDAwQCAQ4LCgkIBwYQRgYGBw8PEBEQGA8THR0iEBAQERAPDgYGBgU7EAYHCAkKCw4BAgICBwYHCAYHBwcGBgYVCBYLCrUUFBMTER8bHRkRDwwLCAcIBAIDAQYDBggFBQIBAAIAAAAAA14D9AA/AJIAAAEPDy8PPw8fDgUVHwcJAT8HNS8dKwEPHQJ9AQIDBAUGCAgJCQoLDAwMDQ0MDAwLCgkJCAgGBQQDAgEBAgMEBQYICAkJCgsMDAwNDQwMDAsKCQkICAYFBAMC/iYBAwQHCAkLDAEnAScMCwkIBwQDAQICAwQFBQcHBwkJCgoLDAwMDg0PDg8QEBAREBIREhISEhESEBEQEBAPDg8NDgwMDAsKCgkJBwcHBQUEAwICApYNDAwMCwoJCQgIBgUEAwIBAQIDBAUGCAgJCQoLDAwMDQ0MDAwLCgkJCAgGBQQDAgEBAgMEBQYICAkJCgsMDAwiDg4bGhkZGBcW/lMBrRYXGBkZGhscExMSEhISEREREA8PDw4NDQ0LCwsJCQgIBgYFBAQCAgICBAQFBgYICAkJCwsLDQ0NDg8PDxARERESEhISEwAAAAAAABIA3gABAAAAAAAAAAEAAAABAAAAAAABABEAAQABAAAAAAACAAcAEgABAAAAAAADABEAGQABAAAAAAAEABEAKgABAAAAAAAFAAsAOwABAAAAAAAGABEARgABAAAAAAAKACwAVwABAAAAAAALABIAgwADAAEECQAAAAIAlQADAAEECQABACIAlwADAAEECQACAA4AuQADAAEECQADACIAxwADAAEECQAEACIA6QADAAEECQAFABYBCwADAAEECQAGACIBIQADAAEECQAKAFgBQwADAAEECQALACQBmyBHcmlkIGNvbnRyb2wgRm9udFJlZ3VsYXJHcmlkIGNvbnRyb2wgRm9udEdyaWQgY29udHJvbCBGb250VmVyc2lvbiAxLjBHcmlkIGNvbnRyb2wgRm9udEZvbnQgZ2VuZXJhdGVkIHVzaW5nIFN5bmNmdXNpb24gTWV0cm8gU3R1ZGlvd3d3LnN5bmNmdXNpb24uY29tACAARwByAGkAZAAgAGMAbwBuAHQAcgBvAGwAIABGAG8AbgB0AFIAZQBnAHUAbABhAHIARwByAGkAZAAgAGMAbwBuAHQAcgBvAGwAIABGAG8AbgB0AEcAcgBpAGQAIABjAG8AbgB0AHIAbwBsACAARgBvAG4AdABWAGUAcgBzAGkAbwBuACAAMQAuADAARwByAGkAZAAgAGMAbwBuAHQAcgBvAGwAIABGAG8AbgB0AEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAHUAcwBpAG4AZwAgAFMAeQBuAGMAZgB1AHMAaQBvAG4AIABNAGUAdAByAG8AIABTAHQAdQBkAGkAbwB3AHcAdwAuAHMAeQBuAGMAZgB1AHMAaQBvAG4ALgBjAG8AbQAAAAACAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQBAgEDAQQBBQAETWFsZQZGZW1hbGUITG9jYXRpb24AAAAA) format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
+[class^="sf-icon-"], [class*=" sf-icon-"] {
+ font-family: 'Grid control Font' !important;
+speak: none;
+font-size: 55px;
+font-style: normal;
+font-weight: normal;
+font-variant: normal;
+text-transform: none;
+line-height: 1;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+.sf-icon-Male:before { content: "\e700"; }
+.sf-icon-Female:before { content: "\e701"; }
+.sf-icon-Location:before { content: "\e702"; }

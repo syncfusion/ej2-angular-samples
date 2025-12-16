@@ -1,0 +1,53 @@
+<div class="control-section">
+    <div class="sample-container">
+        <ejs-filemanager #filemanager id="filemanager" [ajaxSettings]="ajaxSettings" [toolbarSettings]="toolbarSettings"
+            [contextMenuSettings]="contextMenuSettings" [detailsViewSettings]="detailsViewSettings"
+            cssClass="e-fm-template-sample" height="600px" (menuOpen)="onMenuOpen($event)"
+            (fileLoad)="onFileLoad($event)">
+
+            <ng-template #navigationPaneTemplate let-data>
+                <div class="e-nav-pane-node" style="display:inline-flex; align-items:center;">
+                    <span class="e-icons" [ngClass]="getIconsForFolders(data)"></span>
+                    <span class="folder-name" style="margin-left:8px;">{{ data?.name }}</span>
+                </div>
+            </ng-template>
+
+            <ng-template #largeIconsTemplate let-data>
+                <div class="custom-icon-card">
+                    <div class="file-header">
+                        <div class="left-info">
+                            <ng-container *ngIf="data?.isFile">
+                                <div class="{{ getFileIconCssClass(data) }}"></div>
+                            </ng-container>
+                            <div class="file-name" [title]="data?.name">{{ data?.name }}</div>
+                        </div>
+                        <div class="action-ddb"></div>
+                    </div>
+                    <div class="{{ getBackgroundCss(data) }}" [title]="data?.name"></div>
+                    <div class="file-formattedDate">Created on {{ getFormattedDate(data?.dateCreated) }}</div>
+                </div>
+            </ng-template>
+        </ejs-filemanager>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample showcases how to customize the Syncfusion File Manager's component with template support in the
+        Navigation pane, Large icons and Details view.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        The <code>navigationPaneTemplate</code> renders the nodes with icons based on folder names, while
+        the<code>largeIconsTemplate</code> displays files with styled backgrounds and a action menu in each file/folder.
+        The <code>detailsViewSettings</code> template shows file information like name, size, and modified date in
+        columns.
+        File operations such as Open, Delete, Download, and Refresh are handled through a dropdown menu option showed in
+        each item,
+        and the <code>select</code> initiates each action to the corresponding File Manager methods
+        (<code>openFile</code>,
+        <code>downloadFiles</code>, <code>deleteFiles</code>, and <code>refreshFiles</code>).
+    </p>
+</div>

@@ -83,6 +83,8 @@ import { ModuleWithProviders } from '@angular/core';
 import { FIFAStatisticsComponent } from './fifa-statistics.component';
 import { ChartComponent } from './chart.component';
 import { RowSpanningComponentAPI} from './row-spanning-api.component';
+import { ConditionalRowSelectionComponent } from './conditional-row-selection.component';
+import { PinnedRowsComponent } from './pinned-rows.component';
 
 export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/over-view', component: OverViewComponent, 'name': 'Overview', description: 'This demo for Essential JS 2 grid component is an overview of how to display and manipulate large data with configuration options.', order: '01', category: 'Data Grid' },
@@ -127,7 +129,7 @@ export const gridRouteConfig: Object[] = [
         'path': ':theme/grid/column/column-menu', component: ColumnMenuComponent, name: 'Column Menu', order: '03',description: 'This demo for Essential JS 2 grid component shows the usage of the various column functionalities of the column menu feature.',
         category: 'Columns'
     },
-    { 'path': ':theme/grid/column/auto-wrap', component: AutoWrapComponent, name: 'AutoWrap Column cells', description: 'This demo for Essential JS 2 grid component shows how the grid cell content is autowrapped to show large cell content.', order: '03', category: 'Columns' },
+    { 'path': ':theme/grid/column/auto-wrap', component: AutoWrapComponent, 'type': 'update', name: 'AutoWrap Column cells', description: 'This demo for Essential JS 2 grid component shows how the grid cell content is autowrapped to show large cell content.', order: '03', category: 'Columns' },
     {
         'path': ':theme/grid/column/column-chooser', component: ColumnChooserComponent, name: 'Column Chooser', order: '03',description: 'This demo for Essential JS 2 grid component shows how the column chooser feature can be used to show or hide columns dynamically.',
         category: 'Columns'
@@ -162,7 +164,7 @@ export const gridRouteConfig: Object[] = [
         hideOnDevice: true
     },
     {
-        'path': ':theme/grid/row-spanning-api', component: RowSpanningComponentAPI, name: 'Row Spanning (API)', type: 'new', description: 'This demo for Essential JS 2 grid control demonstrates the row and column spanning feature. In this sample, we have spanned row cells together.', order: '04',
+        'path': ':theme/grid/row-spanning-api', component: RowSpanningComponentAPI, name: 'Row Spanning (API)', description: 'This demo for Essential JS 2 grid control demonstrates the row and column spanning feature. In this sample, we have spanned row cells together.', order: '04',
         category: 'Rows',
     },
 
@@ -224,6 +226,10 @@ export const gridRouteConfig: Object[] = [
         'path': ':theme/grid/checkbox-selection', component: CheckboxSelectionComponent,
         name: 'Checkbox Selection', description: 'This demo for Essential JS 2 grid component shows how the check box selection feature can be used to select grid rows.', order: '11',   category: 'Selection'
     },
+    {
+        'path': ':theme/grid/conditional-row-selection', component: ConditionalRowSelectionComponent,
+        name: 'Conditional Row Selection', description: 'This demo for Essential JS 2 grid component shows how the conditional row selection feature can be used to select grid rows.', 'type': 'new', order: '11', category: 'Selection'
+    },
 
     { 'path': ':theme/grid/hierarchy', component: HierarchyComponent, name: 'Hierarchy Grid', description: 'This demo for Essential JS 2 grid component shows the hierarchical binding feature that helps to build multilevel parent-child relationships.', order: '12', category: 'Relational Binding' },
     { 'path': ':theme/grid/master-detail', component: MasterdetailComponent, name: 'Master/Detail', description: 'This demo for  Essential JS 2 grid component shows usage of master/detail in which the details of a Master Grid record, is viewed in a separate Grid(Detail Grid) by clicking the particular row.', order: '12', category: 'Relational Binding' },
@@ -236,6 +242,10 @@ export const gridRouteConfig: Object[] = [
     },
     {
         'path': ':theme/grid/frozen-api', component: FrozenApiComponent, name: 'Frozen (API)', order: '13',description: 'This demo for Essential JS 2 grid component shows how the rows and columns can be frozen or pinned.',
+        category: 'Scrolling'
+    },
+    {
+        'path': ':theme/grid/pinned-rows', component: PinnedRowsComponent, name: 'Pinned Rows', 'type': 'new', order: '13',description: 'This demo for Essential JS 2 grid component shows how the rows and columns can be frozen or pinned.',
         category: 'Scrolling'
     },
     {

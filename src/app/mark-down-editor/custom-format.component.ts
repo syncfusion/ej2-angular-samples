@@ -6,7 +6,7 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { RichTextEditorComponent, MarkdownFormatter, ToolbarService, EditorMode, RichTextEditorModule, TableService } from '@syncfusion/ej2-angular-richtexteditor';
 import { LinkService, ImageService, MarkdownEditorService } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, KeyboardEventArgs } from '@syncfusion/ej2-base';
-import * as Marked from 'marked';
+import { marked } from 'marked';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -17,7 +17,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     styleUrls: ['markdown-preview.css'],
     encapsulation: ViewEncapsulation.None,
     providers: [ToolbarService, LinkService, ImageService, MarkdownEditorService, TableService],
-    standalone: true,
+    
     imports: [SBActionDescriptionComponent, RichTextEditorModule, SBDescriptionComponent]
 })
 export class MarkdownCustomComponent {
@@ -94,7 +94,7 @@ export class MarkdownCustomComponent {
         if (this.mdsource.classList.contains('e-active')) {
             const id: string = this.rteObj.getID() + 'html-view';
             const htmlPreview: Element = this.rteObj.element.querySelector('#' + id);
-            htmlPreview.innerHTML = Marked.parse((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+            htmlPreview.innerHTML = marked.parse((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
         }
     }
     public fullPreview(): void {
@@ -113,7 +113,7 @@ export class MarkdownCustomComponent {
             }
             this.textArea.style.display = 'none';
             htmlPreview.style.display = 'block';
-            htmlPreview.innerHTML = Marked.parse((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+            htmlPreview.innerHTML = marked.parse((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
         }
     }
 }

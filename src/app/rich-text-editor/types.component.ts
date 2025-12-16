@@ -3,7 +3,7 @@
  */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';
-import { ToolbarService, ToolbarType, LinkService, ImageService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, FormatPainterService, EmojiPickerService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, ToolbarType, LinkService, ImageService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, FormatPainterService, EmojiPickerService, TableService, ClipBoardCleanupService, AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { DropDownListComponent, FieldSettingsModel, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { CheckBoxComponent, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { RichTextEditorComponent, HtmlEditorService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
@@ -16,7 +16,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     templateUrl: 'types.html',
     styleUrls: ['types.css'],
     encapsulation: ViewEncapsulation.None,
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, FormatPainterService, EmojiPickerService, TableService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, FormatPainterService, EmojiPickerService, TableService, ClipBoardCleanupService, AutoFormatService],
     standalone: true,
     imports: [SBActionDescriptionComponent, RichTextEditorModule, DropDownListModule, CheckBoxModule, SBDescriptionComponent]
 })

@@ -3,7 +3,7 @@ import { AIAssistViewModule, AIAssistViewComponent, PromptRequestEventArgs, Tool
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { streamingData, streamingSuggestions } from './promptResponseData';
-import * as Marked from 'marked';
+import { MarkdownConverter } from '@syncfusion/ej2-markdown-converter';
 @Component({
     selector: 'control-content',
     templateUrl: 'streaming.html',
@@ -47,7 +47,7 @@ export class AIAssistStreamComponent {
                 lastResponse += response[i];
                 i++;
                 if (i % responseUpdateRate === 0 || i === responseLength) {
-                    let htmlResponse = Marked.marked(lastResponse);
+                    let htmlResponse = MarkdownConverter.toHtml(lastResponse);
                     this.streamAIAssistView.addPromptResponse(htmlResponse, i === responseLength);
                     this.streamAIAssistView.scrollToBottom();
                 }

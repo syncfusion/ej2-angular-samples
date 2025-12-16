@@ -1,0 +1,58 @@
+<div id="control-section" class="blockeditor-template">
+   <!-- Scrollable OR Centered Container -->
+  <div
+      #cardsContainer
+      class="cards-container">
+      @for (data of cards; track data.name) {
+      <div
+      title={{data.name}}
+        class="template-card"
+        (click)="onCardClick(data)"
+        [class.active]="selectedCardName === data.name"
+        tabindex="0">
+        <div class="card-icon-left">
+          <span class="icon">{{ data.icon }}</span>
+        </div>
+        <div class="card-content">
+          <div class="card-title">{{ data.name }}</div>
+          <div class="card-subtitle">{{ data.subtitle }}</div>
+        </div>
+      </div>
+      }
+    </div>
+<div class="header-label" contenteditable="true"><span class="selectedTitle" aria-placeholder="Untitle">{{selectedCardIcon}}{{selectedCardName}}</span></div>
+  <ejs-blockeditor #blockEditorInstance height="500px" (created)="onCreated()"></ejs-blockeditor>
+  <!-- Smart Scroll Wrapper -->
+  <div class="cards-wrapper">
+    <!-- Left fade -->
+    <div class="fade left"></div>
+
+    <!-- Right fade -->
+    <div class="fade right"></div>
+  </div>
+</div>
+<div id="action-description">
+  <p>This sample demonstrates a Template Gallery for the Block Editor; use the horizontal card rail to choose a
+    template, load its blocks into the editor, and customize the content with slash <code>(/)</code> commands, lists, and inline
+    formatting.</p>
+</div>
+<div id="description">
+  <p>
+    This sample implements a Template Gallery for the Block Editor. A horizontal set of cards acts as a template picker;
+    selecting a card loads its predefined block structure into the editor without reloading the page.
+  </p>
+  <ul>
+    <li><b>Interactive cards:</b> Each card is focusable and clickable, with active styling for the selected template.
+    </li>
+    <li><b>Dynamic loading:</b> Clicking a card calls <a target="_blank"
+        href="https://ej2.syncfusion.com/angular/documentation/api/blockeditor/index-default#renderblocksfromjson">renderBlocksFromJson</a>
+      to populate the editor with that template’s blocks.</li>
+    <li><b>Responsive behavior:</b> A ResizeObserver re-evaluates when to enable horizontal scrolling as the viewport
+      changes.</li>
+    <li><b>Templates included:</b> Blank Page, Project Brief, Team Decisions, Project Planning, and Meeting Notes.</li>
+  </ul>
+  <p>
+    Use this gallery to kickstart common document plan projects, record decisions, run meetings, and more then tailor
+    the content with headings, lists, checklists, and rich inline styles.
+  </p>
+</div>

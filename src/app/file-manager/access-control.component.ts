@@ -16,7 +16,7 @@ import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsVie
 export class AccessControlController {
     public ajaxSettings: object;
     public toolbarSettings: object;
-    public contextMenuSettings: object;
+    public uploadSettings: any;
     public hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
     public ngOnInit(): void {
         this.ajaxSettings = {
@@ -26,10 +26,8 @@ export class AccessControlController {
             downloadUrl: this.hostUrl + 'api/FileManagerAccess/Download'
         };
         this.toolbarSettings = { items: ['NewFolder', 'SortBy', 'Cut', 'Copy', 'Paste', 'Delete', 'Refresh', 'Download', 'Rename', 'Selection', 'View', 'Details',] };
-        this.contextMenuSettings = {
-            file: [ 'Cut', 'Copy', '|', 'Delete', 'Download', 'Rename', '|', 'Details'],
-            layout: ['SortBy', 'View', 'Refresh', '|', 'Paste', '|', 'NewFolder', '|', 'Details', '|', 'SelectAll'],
-            visible: true
+        this.uploadSettings = {
+           directoryUpload: true
         };
     }
 }

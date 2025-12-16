@@ -2,7 +2,7 @@
  * Rich Text Editor Custom-Toolbar Sample
  */
 import { Component, ViewChild, ViewEncapsulation, ElementRef } from '@angular/core';
-import { ToolbarService, NodeSelection, LinkService, ImageService, ToolbarSettingsModel, EmojiPickerService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, NodeSelection, LinkService, ImageService, ToolbarSettingsModel, EmojiPickerService, RichTextEditorModule, PasteCleanupService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, HtmlEditorService, QuickToolbarService } from '@syncfusion/ej2-angular-richtexteditor';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -12,7 +12,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     templateUrl: 'insert-emoticons.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['style.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, EmojiPickerService, PasteCleanupService, VideoService, AudioService, TableService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, QuickToolbarService, EmojiPickerService, PasteCleanupService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService],
     standalone: true,
     imports: [SBActionDescriptionComponent, RichTextEditorModule, SBDescriptionComponent]
 })

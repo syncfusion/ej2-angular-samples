@@ -119,7 +119,7 @@
                     <div style="display: table-cell; vertical-align: middle">Horizontal Spacing</div>
                 </div>
                 <div class="col-xs-6">
-                    <ejs-numerictextbox #diagram id='horizontalSpace' min="20" max="60" format='###.##' step="2" value="30" (change)='onHorizontalSpacingChange($event)'></ejs-numerictextbox>
+                    <ejs-numerictextbox id='horizontalSpace' min="20" max="60" format='###.##' step="2" value="30" (change)='onHorizontalSpacingChange($event)'></ejs-numerictextbox>
                 </div>
             </div>
             <div class="row sb-child-row">
@@ -127,8 +127,11 @@
                     <div style="display: table-cell; vertical-align: middle">Vertical Spacing</div>
                 </div>
                 <div class="col-xs-6">
-                    <ejs-numerictextbox #diagram id='verticalSpacing' min="20" max="60" format='###.##' step="2" value="30" (change)='onVerticalSpacingChange($event)'></ejs-numerictextbox>
+                    <ejs-numerictextbox id='verticalSpacing' min="20" max="60" format='###.##' step="2" value="30" (change)='onVerticalSpacingChange($event)'></ejs-numerictextbox>
                 </div>
+            </div>
+            <div class="row sb-child-row">
+                <ejs-checkbox label="Expandable" [checked]="false" (change)="onExpandChange($event)"></ejs-checkbox>
             </div>
         </div>
     </div>

@@ -8,8 +8,8 @@
     <ejs-schedule #scheduleRef width='100%' cssClass='schedule-event-management' height='550px'
       [selectedDate]="selectedDate" [eventSettings]="eventSettings" [(currentView)]="currentView"
       (eventRendered)="onEventRendered($event)" [showTimeIndicator]="showTimeIndicator" startHour="08:00"
-      endHour="18:00" [timeScale]="timeScale" [group]="group" [allowOverlap]="false" (cellClick)="onCellClick($event)"
-      (popupOpen)="onPopupOpen($event)" (popupClose)="onPopupClose($event)" (eventClick)="onEventClick($event)"
+      endHour="18:00" [timeScale]="timeScale" [group]="group" (cellClick)="onCellClick($event)"
+      (popupOpen)="onPopupOpen($event)" (actionBegin)="onActionBegin($event)" (popupClose)="onPopupClose($event)" (eventClick)="onEventClick($event)"
       [quickInfoTemplates]="{ header: quickInfoTemplatesHeader, content: quickInfoTemplate }" [allowDragAndDrop]="false"
       [allowResizing]="false">
       <ng-template #resourceHeaderTemplate let-data>
@@ -54,11 +54,11 @@
         <e-toolbaritem type="Separator" align="Right" cssClass="toolbar-post-agenda"></e-toolbaritem>
         <e-toolbaritem type="Input" align="Right">
           <ng-template #template>
-            <ejs-button class="e-tbar-btn e-control e-btn e-lib toolbar-post-agenda"
+            <button ejs-button class="e-tbar-btn e-control e-btn e-lib toolbar-post-agenda"
               id="overview_toolbar_settings_unplanned_events" (click)="toggleUnplannedEventsElement()"
               title="Toggle Unplanned Events">
               <span class="e-btn-icon e-icons e-show-unplanned-events"></span>
-            </ejs-button>
+            </button>
           </ng-template>
 
         </e-toolbaritem>

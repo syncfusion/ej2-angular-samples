@@ -18,6 +18,11 @@
         -moz-osx-font-smoothing: grayscale;
     }
 
+    .bootstrap5\.3 #toast_custom .e-toast-icon.e-toast-image,
+    .bootstrap5\.3-dark #toast_custom .e-toast-icon.e-toast-image {
+        position: relative;
+    }
+
     body>#toasttemplate .e-toast {
         width: 400px !important;
     }

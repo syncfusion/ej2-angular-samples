@@ -1,7 +1,7 @@
 import { Component, ElementRef, Inject, ViewChild } from '@angular/core';
 import { TaskDataCollection } from './ganttdata';
 import { serverAIRequest } from '../common/ai-service';
-import * as data from './progress.json';
+import data from './progress.json';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations'
 import { ToolbarService } from '@syncfusion/ej2-angular-gantt'
 import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';

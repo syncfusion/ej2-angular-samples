@@ -1,0 +1,58 @@
+<div class="control-section">
+    <ejs-richtexteditor #editor [toolbarSettings]="toolbarSettings" [quickToolbarSettings]="quickToolbarSettings" (aiAssistantPromptRequest)="onAIAssistantPromptRequest($event)">
+        <ng-template #valueTemplate>
+            <p><strong>Editing and Improving</strong></p>
+            <p>In today's competitive landscape, effective marketing focuses on building lasting customer relationships rather than just selling products. Brands are expected to provide personalized experiences through data analytics and consumer insights. As expectations evolve, marketers must stay agile and proactive in their strategies.</p>
+            <p><strong>Tone and style</strong></p>
+            <p>Agile methodologies are essential in modern project management, particularly in software development. They enable teams to adapt quickly and deliver greater customer value through iterative processes and collaboration. Successful Agile implementation requires fostering a culture of adaptability, trust, and shared ownership.</p>
+            <p><strong>Grammar</strong></p>
+            <p>Strong leadership is more than directing a team—it's about inspiring people toward a common vision. Effective leaders cultivate transparency, empathy, and accountability within their organizations. They empower others by encouraging autonomy and providing opportunities for growth. In times of uncertainty or rapid change, it's the leaders who stay grounded and lead with clarity who build the most resilient and high-performing teams.</p>
+            <p><strong>Summarization, simplification, or elaboration</strong></p>
+            <p>Strong leadership inspires a team toward a shared vision while promoting transparency, empathy, and accountability. Effective leaders empower others through autonomy and growth. In times of uncertainty or change, clear leaders build resilient, high-performing teams.</p>
+        </ng-template>
+    </ejs-richtexteditor>
+</div>
+
+<div id="action-description">
+    <p>The AI Assistant feature provides a user interface such as an AssistView inside a popup, nested dropdown with
+        predefined prompts, and a toolbar button for interacting with an AI model.</p>
+</div>
+<div id="description">
+    <p>The <b>AI Assistant</b> feature provides a predefined user interface for integrating AI capabilities into the
+        Rich Text Editor, enabling users to create, edit, and enhance content more efficiently.</p>
+    <ul>
+        <li>The AI Assistant can be accessed via the keyboard shortcut(<code>Alt + Enter or ⌥ + Enter</code>) or
+            toolbar.</li>
+        <li>The <b>AI Commands</b> menu provides a predefined list of prompts useful for performing common
+            content-related actions such as improving, shortening, elaborating, simplifying, summarizing, and checking
+            grammar.</li>
+        <li>The <b>AI Query </b>button helps to open the AI Assistant with the flexibility to provide a user defined
+            prompt when processing the content.</li>
+    </ul>
+    <p>In this sample the AI Assistant feature is enabled by </p>
+    <ul>
+        <li>Injecting the <code>AIAssistant</code> Service in to the Component providers section.</li>
+        <li>Adding the <code>AICommands</code>, <code>AIQuery</code> into the toolbarSettings items property.</li>
+    </ul>
+    <p><b>Processing of the Prompt:</b></p>
+    <ul>
+        <li>When a prompt is executed the <code>aiAssistantPromptRequest</code> event is triggered, followed by a
+            <code>fetch</code> request to the backend service to process the query.
+        </li>
+        <li>The response from the LLM is streamed back into the editor’s Assistant view using the
+            <code>addAIPromptResponse</code> public method.
+        </li>
+        <li>When the Stop Responding button is clicked the streaming process is cancelled by setting the
+            <code>stopStreaming</code> boolean to false.
+        </li>
+    </ul>
+    <p><b>Injectible Modules:</b></p>
+    <p>The AI Assistant feature is built as an injectable module to be modular and then tree-shaken and opted in only
+        when needed. It can be used by injecting the module in the <code>&#64;Component</code> providers.
+        <br>
+        For example: <code>AIAssistantService</code> feature can be injected by
+        <code>providers: [AIAssistantService, HtmlEditorService, ToolbarService, QuickToolbarService, ImageService, TableService, LinkService, PasteCleanupService],</code>
+    </p>
+</div>
+
+<app-ai-toast/>

@@ -4,7 +4,7 @@
 import { Component, ViewChild, ViewEncapsulation, OnInit, Inject } from '@angular/core';
 import { createElement, KeyboardEventArgs, Browser } from '@syncfusion/ej2-base';
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
-import { ToolbarService, LinkService, ImageService, TableService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, CountService, VideoService, AudioService, FormatPainterService, EmojiPickerService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, TableService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, CountService, VideoService, AudioService, FormatPainterService, EmojiPickerService, ClipBoardCleanupService, AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, ToolbarType } from '@syncfusion/ej2-angular-richtexteditor';
 import { SplitterComponent, SplitterModule } from '@syncfusion/ej2-angular-layouts';
 const CodeMirror = require('codemirror');
@@ -18,7 +18,7 @@ import 'codemirror/mode/htmlmixed/htmlmixed.js';
     encapsulation: ViewEncapsulation.None,
     templateUrl: 'online-html-editor.html',
     styleUrls: ['online-html-editor.css'],
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, QuickToolbarService, PasteCleanupService, CountService, VideoService, AudioService, FormatPainterService, EmojiPickerService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, TableService, QuickToolbarService, PasteCleanupService, CountService, VideoService, AudioService, FormatPainterService, EmojiPickerService, ClipBoardCleanupService, AutoFormatService],
     standalone: true,
     imports: [SBActionDescriptionComponent, SplitterModule, RichTextEditorModule]
 })

@@ -1020,3 +1020,144 @@ export let mindMap: object[] = [
     { "id": 61, "Label": "Staff", "parentId": 51, "branch": "subLeft" },
     { "id": 62, "Label": "Stakeholders", "parentId": 51, "branch": "subLeft" }
 ];
+export let familyTreeData: object[] = [
+    {
+        Id: "henryjohnson",
+        Name: "Henry Johnson",
+        FirstName: "Henry",
+        Description: "Father of Robert, Patricia, and Helen, ran a family farm and enjoyed storytelling.",
+        Tenure: "1923 - 1995"
+    },
+    {
+        Id: "evelynjohnson",
+        Name: "Evelyn Johnson",
+        FirstName: "Evelyn",
+        Description: "Mother of Robert, Patricia, and Helen, loved baking and helping others.",
+        Tenure: "1926 - 2008"
+    },
+    {
+        Id: "union_henryjohnson_evelynjohnson",
+        Type: "Union",
+        Parents: ["henryjohnson", "evelynjohnson"]
+    },
+    {
+        Id: "robertjohnson",
+        Name: "Robert Johnson",
+        FirstName: "Robert",
+        Description: "Son of Henry and Evelyn, worked as a mechanic and started the family business.",
+        Tenure: "1950 - 2020",
+        Parents: ["union_henryjohnson_evelynjohnson"]
+    },
+    {
+        Id: "patriciamiller",
+        Name: "Patricia Miller",
+        FirstName: "Patricia",
+        Description: "Robert's younger sister, retired nurse, enjoys family gatherings and community events.",
+        Tenure: "1955 - Present",
+        Parents: ["union_henryjohnson_evelynjohnson"]
+    },
+    {
+        Id: "helenjohnson",
+        Name: "Helen Johnson",
+        FirstName: "Helen",
+        Description: "Robert's sister, her husband died in an accident, lives alone and enjoys gardening.",
+        Tenure: "1958 - Present",
+        Parents: ["union_henryjohnson_evelynjohnson"]
+    },
+    {
+        Id: "margaretjohnson",
+        Name: "Margaret Johnson",
+        FirstName: "Margaret",
+        Description: "Worked as a schoolteacher for 35 years, married to Robert.",
+        Tenure: "1952 - Present"
+    },
+    {
+        Id: "frankmiller",
+        Name: "Frank Miller",
+        FirstName: "Frank",
+        Description: "Husband of Patricia, owns a local hardware store, enjoys fishing and gardening.",
+        Tenure: "1952 - Present"
+    },
+    {
+        Id: "union_robertjohnson_margaretjohnson",
+        Type: "Union",
+        Parents: ["robertjohnson", "margaretjohnson"]
+    },
+    {
+        Id: "union_patriciamiller_frankmiller",
+        Type: "Union",
+        Parents: ["patriciamiller", "frankmiller"]
+    },
+    {
+        Id: "michaeljohnson",
+        Name: "Michael Johnson",
+        FirstName: "Michael",
+        Description: "Eldest son of Robert & Margaret, software engineer, married to Jennifer with one child.",
+        Tenure: "1975 - Present",
+        Parents: ["union_robertjohnson_margaretjohnson"]
+    },
+    {
+        Id: "davidjohnson",
+        Name: "David Johnson",
+        FirstName: "David",
+        Description: "Youngest child of Robert and Margaret, architect, unmarried, travels frequently for work.",
+        Tenure: "1982 - Present",
+        Parents: ["union_robertjohnson_margaretjohnson"]
+    },
+    {
+        Id: "sarahsmith",
+        Name: "Sarah Smith",
+        FirstName: "Sarah",
+        Description: "Daughter of Robert and Margaret, pediatrician, married to David, has one child.",
+        Tenure: "1978 - Present",
+        Parents: ["union_robertjohnson_margaretjohnson"]
+    },
+    {
+        Id: "thomasmiller",
+        Name: "Thomas Miller",
+        FirstName: "Thomas",
+        Description: "Only child of Patricia and Frank, freelance photographer.",
+        Tenure: "1983 - Present",
+        Parents: ["union_patriciamiller_frankmiller"]
+    },
+    {
+        Id: "jenniferjohnson",
+        Name: "Jennifer Johnson",
+        FirstName: "Jennifer",
+        Description: "Marketing manager, married to Michael Johnson.",
+        Tenure: "1980 - Present"
+    },
+    {
+        Id: "davidsmith",
+        Name: "David Smith",
+        FirstName: "David",
+        Description: "Husband of Sarah, works as a teacher.",
+        Tenure: "1977 - Present"
+    },
+    {
+        Id: "union_michaeljohnson_jenniferjohnson",
+        Type: "Union",
+        Parents: ["michaeljohnson", "jenniferjohnson"]
+    },
+    {
+        Id: "union_sarahsmith_davidsmith",
+        Type: "Union",
+        Parents: ["sarahsmith", "davidsmith"]
+    },
+    {
+        Id: "jamesjohnson",
+        Name: "James Johnson",
+        FirstName: "James",
+        Description: "Son of Michael and Jennifer, talented musician.",
+        Tenure: "2005 - Present",
+        Parents: ["union_michaeljohnson_jenniferjohnson"]
+    },
+    {
+        Id: "ameliasmith",
+        Name: "Amelia Smith",
+        FirstName: "Amelia",
+        Description: "Daughter of Sarah and David, enjoys drawing and reading.",
+        Tenure: "2010 - Present",
+        Parents: ["union_sarahsmith_davidsmith"]
+    }
+];

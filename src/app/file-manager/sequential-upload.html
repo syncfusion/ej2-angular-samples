@@ -1,0 +1,32 @@
+<div class="sample-container">
+    <ejs-filemanager id="file-sequential" [ajaxSettings]="ajaxSettings" [uploadSettings]="uploadSettings">
+        <e-toolbaritems>
+            <e-toolbaritem name="NewFolder"></e-toolbaritem>
+            <e-toolbaritem name="Upload"></e-toolbaritem>
+            <e-toolbaritem name="SortBy"></e-toolbaritem>
+            <e-toolbaritem name="Refresh"></e-toolbaritem>
+            <e-toolbaritem name="Cut"></e-toolbaritem>
+            <e-toolbaritem name="Copy"></e-toolbaritem>
+            <e-toolbaritem name="Paste"></e-toolbaritem>
+            <e-toolbaritem name="Delete"></e-toolbaritem>
+            <e-toolbaritem name="Download"></e-toolbaritem>
+            <e-toolbaritem name="Rename"></e-toolbaritem>
+            <e-toolbaritem name="Selection"></e-toolbaritem>
+            <e-toolbaritem name="View"></e-toolbaritem>
+            <e-toolbaritem name="Details"></e-toolbaritem>
+        </e-toolbaritems>
+    </ejs-filemanager>
+</div>
+
+<div id="action-description">
+    <p>This sample showcases the File Manager's sequential upload feature. When enabled, files are uploaded one at a
+        time in the order they were added, ensures sequencing and better control over network usage.</p>
+</div>
+
+<div id="description">
+    <p>In this demo, a sequential upload is enabled by setting <a
+            href="https://ej2.syncfusion.com/angular/documentation/api/file-manager/uploadsettingsmodel/#sequentialUpload"
+            target="_blank">sequentialUpload</a> to <code>true</code> in the File Manager's upload settings. When
+        enabled, files are uploaded one after another in the order they were added, helping preserve the intended
+        sequence and manage bandwidth more effectively.</p>
+</div>

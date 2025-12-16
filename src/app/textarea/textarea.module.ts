@@ -13,12 +13,14 @@ import { FloatingLabelTextAreaController } from './floating-label.component';
 import { ResizeTextAreaController } from './resize.component';
 import { ApiTextAreaController } from './api.component';
 import { CheckBoxModule  } from '@syncfusion/ej2-angular-buttons';
+import { AdornmentTextArea } from './adornments';
 
 
 export const textareasAppRoutes: Object[] = [
     { path: ':theme/textarea/default', component: DefaultTextAreaController, name: 'Default Functionalities', category: 'TextArea', description: 'This example describes key features of Angular textarea such as input group, placeholder, validation states, and more.' },
     { path: ':theme/textarea/floating-label', component: FloatingLabelTextAreaController, name: 'Floating Label', category: 'TextArea', description: 'This example exposes the floating behaviour of the placeholder respective to the selected floatLabelType option from the property panel in Angular textarea.'},
     { path: ':theme/textarea/resize', component: ResizeTextAreaController, name: 'Resize', category: 'TextArea', description: 'This example exposes the resizing behaviour respective to the selected resizeMode option from the property panel in the Angular textarea.'},
+    { path: ':theme/textarea/adornments', component: AdornmentTextArea, name: 'Adornments', type: 'new', category: 'TextArea', description: 'The example exposes a Angular textarea with adornments support. It helps to render custom elements before or after the textarea element.'},
     { path: ':theme/textarea/api', component: ApiTextAreaController, name: 'API', category: 'TextArea', description: 'This example exposes the API functionalities used to customize the appearance and behavior of the React textarea.'},
 	{ path: ':theme/textarea/template-driven-forms', component: TemplateDrivenComponent, name: 'Template-driven Forms', category: 'Forms', order: '04', description: 'This example shows how to integrate the textarea component in an Angular (ng) template-driven form that binds values to the model using ngModel.'},
     { path: ':theme/textarea/reactive-forms', component: ReactiveComponent, name: 'Reactive Forms', category: 'Forms', order: '04', description: 'This example shows how to integrate the textarea component in an Angular (ng) reactive form that works based on form-group, form-builder, and form-control.'}

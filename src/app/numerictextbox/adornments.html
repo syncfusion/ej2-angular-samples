@@ -1,0 +1,47 @@
+<div class="col-lg-12 control-section adornment-numeric">
+    <div class="content-wrapper">
+        <div class="row custom-margin">
+            <ejs-numerictextbox #prependNumeric value="1" floatLabelType="Auto" cssClass="e-prepend-numeric" placeholder="Enter the price" [prependTemplate]="prependTemplate" (change)="onPriceChange()">
+                <ng-template #prependTemplate>
+                    <span class="e-icons e-menu"></span>
+                    <span class="e-input-separator"></span>
+                    <span class="e-icons e-search"></span>
+                    <span class="e-input-separator"></span>
+                </ng-template>
+            </ejs-numerictextbox>
+        </div>
+        <div class="row custom-margin">
+            <ejs-numerictextbox #appendNumeric value="5" step="1" floatLabelType="Auto" placeholder="Enter the kg" [appendTemplate]="appendTemplate" (change)="onKgChange()">
+                <ng-template #appendTemplate>
+                    <div>
+                        <span>kg</span>
+                    </div>
+                </ng-template>
+            </ejs-numerictextbox>
+        </div>
+        <div class="row custom-margin custom-margin-row">
+            <ejs-numerictextbox #iconNumeric value="10" [showSpinButton]="showSpinButtons" floatLabelType="Auto" cssClass="e-icon-numeric" placeholder="Enter the Number" [prependTemplate]="prependIconTemplate" [appendTemplate]="appendIconTemplate">
+                <ng-template #prependIconTemplate>
+                    <span class="e-icons e-reset" title="Reset" (click)="onResetClick()"></span>
+                    <span class="e-input-separator"></span>
+                </ng-template>
+                <ng-template #appendIconTemplate>
+                    <span class="e-input-separator"></span>
+                    <span class="e-icons e-horizontal-line" (click)="onSubClick()"></span>
+                    <span class="e-input-separator"></span>
+                    <span class="e-icons e-plus" (click)="onPlusClick()"></span>
+                </ng-template>
+            </ejs-numerictextbox>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This example highlights adornment support in the Syncfusion Numeric TextBox. Adornments let you place custom elements before or after the input by using the <code>prependTemplate</code> and <code>appendTemplate</code> properties of Numeric Textbox such as currency symbols, unit labels or action icons to provide context, trigger actions, and improve input clarity and efficiency.</p>
+</div>
+
+<div id="description">
+    <p>
+        This sample demonstrates adornment support in the Syncfusion Numeric TextBox by adding custom elements or icons before and after the input. It includes prepended menu and search icons for price, an appended “kg” label, and icon actions to reset, decrement, or increment values, with the first two fields synchronized.
+    </p>
+</div>

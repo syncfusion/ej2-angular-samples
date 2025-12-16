@@ -52,17 +52,17 @@ export class DefaultFileController {
         };
     }
 
-    toolClick(args: any) {
-        if (args.event.currentTarget.id == 'toolbar') {
+    toolClick(args: any, id: any) {
+        if (id == 'toolbar') {
             this.fileObj.toolbarSettings.visible = args.checked;
         }
-        if (args.event.currentTarget.id == 'fileExtension') {
+        if (id == 'fileExtension') {
             this.fileObj.showFileExtension = args.checked;
         }
-        if (args.event.currentTarget.id == 'thumbnail') {
+        if (id == 'thumbnail') {
             this.fileObj.showThumbnail = args.checked;
         }
-        if (args.event.currentTarget.id == 'rangeSelection') {
+        if (id == 'rangeSelection') {
             this.fileObj.enableRangeSelection = args.checked;
         }
     }

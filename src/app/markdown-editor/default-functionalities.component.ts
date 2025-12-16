@@ -7,7 +7,7 @@ import { RichTextEditorComponent, ToolbarService, TableService, EditorMode, Rich
 import { LinkService, ImageService, MarkdownEditorService } from '@syncfusion/ej2-angular-richtexteditor';
 import { MarkdownFormatter } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, KeyboardEventArgs } from '@syncfusion/ej2-base';
-import * as Marked from 'marked';
+import { MarkdownConverter } from '@syncfusion/ej2-markdown-converter'
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -29,6 +29,26 @@ export class MarkdownDefaultComponent {
     public textArea: HTMLTextAreaElement;
     public mdsource: HTMLElement;
     public placeholder: string = 'Enter the text here...';
+    public value: string = `# 🚀 My Project
+A simple yet powerful project that does amazing things.  
+**Bold text** for emphasis, *italic* for subtlety, ~~strikethrough~~ for corrections, and <u>underline</u> for highlights.
+
+## ✨ Features
+- Fast and efficient  
+- Easy to use  
+- Fully customizable  
+
+## 🛠️ How to Use
+1. Download the file  
+2. Open it directly  
+3. Start using immediately  
+
+## 🤝 Contributing
+Check out our **Contributing Guide** for details.
+
+## 📄 License
+This project is licensed under the **MIT License** – see the LICENSE file for details.
+`;
     public tools: ToolbarModule = {
         items: ['Bold', 'Italic', 'StrikeThrough', '|',
             'Formats', 'Blockquote', 'OrderedList', 'UnorderedList','SuperScript', 'SubScript', '|',
@@ -64,7 +84,7 @@ export class MarkdownDefaultComponent {
         if (this.mdsource.classList.contains('e-active')) {
             const id: string = this.rteObj.getID() + 'html-view';
             const htmlPreview: Element = this.rteObj.element.querySelector('#' + id);
-            htmlPreview.innerHTML = Marked.parse((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+            htmlPreview.innerHTML = MarkdownConverter.toHtml((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value) as string;
         }
     }
     public fullPreview(): void {
@@ -89,7 +109,7 @@ export class MarkdownDefaultComponent {
             }
             this.textArea.style.display = 'none';
             htmlPreview.style.display = 'block';
-            htmlPreview.innerHTML = Marked.parse((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value);
+            htmlPreview.innerHTML = MarkdownConverter.toHtml((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value) as string;
         }
     }
 }

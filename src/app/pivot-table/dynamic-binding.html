@@ -1,0 +1,187 @@
+<div id="action-description">
+    <p>This sample showcases how to dynamically load data from multiple data sources in the Pivot Table, including local
+        and remote JSON/CSV files, as well as an OLAP(XMLA) data source via customized toolbar menu options.
+        Additionally, you can save and reload Pivot Table report(s) as JSON files for future analysis.</p>
+</div>
+<div id="description">
+    <p>
+        This sample demonstrates how to dynamically load data from various sources into the Pivot Table at runtime. You
+        can load one data source at a time using the custom toolbar option. You can also save and load Pivot Table
+        report(s) using the custom toolbar options, which are explained below one by one.
+    </p>
+
+    <h4>Open a Data Source:</h4>
+
+    <b>JSON</b>
+    <ul>
+        <li>
+            <strong>Local JSON Data:</strong> Hover over the first toolbar option, then hover over the
+            <strong>JSON</strong> menu option and select the <strong>Local</strong> submenu option. This allows you
+            choose and load a JSON data source file from your machine.
+        </li>
+        <li>
+            <strong>Remote JSON Data:</strong> Hover over the first toolbar option, then hover over the
+            <strong>JSON</strong> menu option and select the <strong>Remote</strong> submenu option. A popup will appear
+            where you can enter the remote JSON data source file URL in the input box to load data into the Pivot Table.
+        </li>
+    </ul>
+
+    <b>CSV</b>
+    <ul>
+        <li>
+            <strong>Local CSV Data:</strong> Hover over the first toolbar option, then hover over the
+            <strong>CSV</strong> menu option and select the <strong>Local</strong> submenu option. This allows you
+            choose and load a CSV data source file from your machine.
+        </li>
+        <li>
+            <strong>Remote CSV Data:</strong> Hover over the first toolbar option, then hover over the
+            <strong>CSV</strong> menu option and select the <strong>Remote</strong> submenu option. A popup will appear
+            where you can enter the remote CSV data source file URL in the input box to load data into the Pivot Table.
+        </li>
+    </ul>
+
+    <b>OLAP(XMLA)</b>
+    <ul>
+        <li>Hover over the first toolbar option and click the <strong>OLAP(XMLA)</strong> menu option to open the
+            connection popup.</li>
+        <li>Enter the OLAP server URL in the <strong>URL</strong> input box and click <strong>Connect</strong>. This
+            will load the available data sources from the OLAP server.</li>
+        <li>Select a data source from the <strong>Data Sources</strong> dropdown. This will load the available catalogs
+            for that data source.</li>
+        <li>Select a catalog from the <strong>Catalogs</strong> dropdown. This will load the available cubes for that
+            catalog.</li>
+        <li>Select a cube from the <strong>Cubes</strong> dropdown, then click <strong>OK</strong> to load the selected
+            cube and begin your analysis.</li>
+    </ul>
+
+    <h4>Load a Pivot Report:</h4>
+    <p>You can load previously saved Pivot Report(s), which are in JSON file format, at any time to restore the exact
+        analysis state.</p>
+    <ul>
+        <li>
+            <strong>Local JSON Pivot Report:</strong> Hover over the second toolbar option, then hover over the
+            <strong>Load Pivot Report</strong> menu option and select the <strong>Local JSON</strong> submenu option to
+            choose and load a JSON Pivot Report file from your machine.
+        </li>
+        <li>
+            <strong>Remote JSON Pivot Report:</strong> Hover over the second toolbar option, then hover over the
+            <strong>Load Pivot Report</strong> menu option and select the <strong>Remote JSON</strong> submenu option. A
+            popup will appear where you can enter the remote JSON Pivot Report file URL in the input box to load the
+            report into the Pivot Table.
+        </li>
+    </ul>
+
+    <h4>Save a Pivot Report:</h4>
+    <p>
+        You can save the Pivot Table report as a JSON file by clicking the third toolbar option (<strong>Save Pivot
+            Report as JSON</strong>) to preserve configurations such as filtering, sorting, field arrangements,
+        formatting, aggregations, and more. In this example, the report configurations are saved excluding the data
+        source, but you can customize this behavior as needed.
+    </p>
+    <br />
+    <p>More information on the Essential® JS2 Pivot Table can be found in these <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/data-binding">Data Binding</a> and
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/tool-bar#save-and-load-report-as-a-json-file">Save
+            and load report as a JSON file</a> documentation sections.
+    </p>
+</div>
+
+<div class="control-section control-pane" id="pivot-table-section">
+    <input #connectFile type="file" id="connectFile" style="display: none;" />
+    <input #reportFile type="file" id="reportFile" style="display: none;" />
+    <div *ngIf="isDialogOpen && dialogType !== 'OLAP'">
+        <ejs-dialog #remoteDialog id="remoteDialog" [visible]="isDialogOpen" [isModal]="true" [showCloseIcon]="true"
+            width="480px" [header]="dialogType === 'JSON Report' ? 'Load Pivot Report' : 'Connect to ' + dialogType"
+            [target]="'.control-pane'" [closeOnEscape]="true" [position]="{ X: 'center', Y: 'center' }"
+            [animationSettings]="{ effect: 'Zoom', duration: 150 }" (close)="isDialogOpen = false"
+            (overlayClick)="isDialogOpen = false">
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <input type="text" [placeholder]="'Enter ' + dialogType + ' URL'" [(ngModel)]="remoteUrl"
+                    class="e-input" (keydown)="onEnterKey($event)" autofocus />
+                <div style="display: flex; justify-content: flex-end; gap: 8px;">
+                    <button ejs-button cssClass="e-primary" (click)="handleOpenRemote()">Open</button>
+                    <button ejs-button (click)="isDialogOpen = false">Cancel</button>
+                </div>
+            </div>
+        </ejs-dialog>
+    </div>
+
+    <div *ngIf="isErrorDialogOpen">
+        <ejs-dialog #error id="error" [visible]="isErrorDialogOpen" [isModal]="true" [showCloseIcon]="true"
+            width="420px" header="Error" [target]="'.control-pane'" [closeOnEscape]="true"
+            [position]="{ X: 'center', Y: 'center' }" [animationSettings]="{ effect: 'Fade', duration: 120 }"
+            (close)="isErrorDialogOpen = false" (overlayClick)="isErrorDialogOpen = false">
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <p class="error-message">{{ errorMessage }}</p>
+                <div style="display: flex; justify-content: flex-end;">
+                    <button ejs-button cssClass="e-primary" (click)="isErrorDialogOpen = false">OK</button>
+                </div>
+            </div>
+        </ejs-dialog>
+    </div>
+
+    <div *ngIf="isDialogOpen && dialogType === 'OLAP'">
+        <ejs-dialog #olap id="olap" [visible]="isDialogOpen" [isModal]="true" [showCloseIcon]="true" width="620px"
+            header="Connect to OLAP(XMLA)" [target]="'.control-pane'" [closeOnEscape]="true"
+            [position]="{ X: 'center', Y: 'center' }" [animationSettings]="{ effect: 'Zoom', duration: 150 }"
+            (close)="isDialogOpen = false" (overlayClick)="isDialogOpen = false">
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div class="olap-row">
+                    <label style="min-width: 80px; font-weight: 500;">URL</label>
+                    <div style="display: flex; flex: 1; gap: 8px; alignItems: center">
+                        <ejs-textbox type="text" [(value)]="olapProxyUrl"
+                            placeholder="Enter OLAP endpoint URL (e.g., https://bi.syncfusion.com/olap/msmdpump.dll)"
+                            cssClass="e-input" style="flex: 1;">
+                        </ejs-textbox>
+                        <button ejs-button cssClass="e-primary" (click)="onConnectClick()" [disabled]="loadingSources">
+                            {{ loadingSources ? 'Connecting…' : 'Connect' }}
+                        </button>
+                    </div>
+                </div>
+                <div class="olap-row">
+                    <label style="display: block; margin-bottom: 4px; font-weight: 500;">Data Sources</label>
+                    <ejs-dropdownlist [dataSource]="olapDataSources" [(value)]="selectedDataSource"
+                        [placeholder]="loadingSources ? 'Loading…' : 'Select data source'"
+                        [enabled]="olapConnected && !loadingSources" (change)="onDataSourceChange($event)"
+                        cssClass="e-input" style="width: 100%;">
+                    </ejs-dropdownlist>
+                </div>
+                <div class="olap-row">
+                    <label style="display: block; margin-bottom: 4px; font-weight: 500;">Catalogs</label>
+                    <ejs-dropdownlist [dataSource]="olapCatalogs" [(value)]="selectedCatalog"
+                        [placeholder]="loadingCatalogs ? 'Loading…' : 'Select catalog'"
+                        [enabled]="!!selectedDataSource && !loadingCatalogs" (change)="onCatalogChange($event)"
+                        cssClass="e-input" style="width: 100%;">
+                    </ejs-dropdownlist>
+                </div>
+                <div class="olap-row">
+                    <label style="display: block; margin-bottom: 4px; font-weight: 500;">Cubes</label>
+                    <ejs-dropdownlist [dataSource]="olapCubes" [(value)]="selectedCube"
+                        [placeholder]="loadingCubes ? 'Loading…' : 'Select cube'"
+                        [enabled]="!!selectedCatalog && !loadingCubes" (change)="onCubeChange($event)"
+                        cssClass="e-input" style="width: 100%;">
+                    </ejs-dropdownlist>
+                </div>
+                <div *ngIf="olapUiMessage" style="color: var(--e-error, #b00020); font-size: 14px;">
+                    {{ olapUiMessage }}
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 8px;">
+                    <button ejs-button cssClass="e-primary" (click)="onOlapOk()" [disabled]="!olapConnected">
+                        OK
+                    </button>
+                    <button ejs-button (click)="isDialogOpen = false">Cancel</button>
+                </div>
+            </div>
+        </ejs-dialog>
+    </div>
+
+    <div>
+        <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings allowExcelExport='true'
+            allowConditionalFormatting='true' allowNumberFormatting='true' allowPdfExport='true' showToolbar='true'
+            allowCalculatedField='true' showFieldList='true' width='100%' [displayOption]='displayOption' height='450'
+            [gridSettings]='gridSettings' [toolbar]='toolbarOptions' (toolbarRender)='toolbarRender($event)'
+            (dataBound)='onDataBound()' (enginePopulated)='onEnginePopulated($event)'>
+        </ejs-pivotview>
+    </div>
+</div>

@@ -99,10 +99,10 @@ import { blockEditorAppRoutes } from '../block-editor/block-editor.module';
 
 export let samplesList: any = [
     {
-        'name': 'Smart Paste', 'category': 'Smart Components', 'type': 'preview', 'order': '01', 'path': 'ai-smart-paste', 'samples': smartPasteAppRoutes,  'ftName': 'ai-smart-paste'
+        'name': 'Smart Paste', 'category': 'Smart Components', 'order': '01', 'path': 'ai-smart-paste', 'samples': smartPasteAppRoutes,  'ftName': 'ai-smart-paste'
     },
     {
-        'name': 'Smart TextArea', 'category': 'Smart Components', 'type': 'preview', 'order': '01', 'path': 'ai-smart-textarea', 'samples': smartTextAreaAppRoutes,  'ftName': 'ai-smart-textarea'
+        'name': 'Smart TextArea', 'category': 'Smart Components', 'order': '01', 'path': 'ai-smart-textarea', 'samples': smartTextAreaAppRoutes,  'ftName': 'ai-smart-textarea'
     },
     {
         'name': 'Data Grid', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-grid', 'samples': AIGridAppRoutes
@@ -117,7 +117,7 @@ export let samplesList: any = [
         'name': 'ComboBox', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-combo-box', 'samples': AIComboBoxAppRoutes
     },
     {
-        'name': 'Rich Text Editor', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-rich-text-editor', 'samples': AIRichTextEditorAppRoutes
+        'name': 'Rich Text Editor', 'type': 'update', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-rich-text-editor', 'samples': AIRichTextEditorAppRoutes
     },
     {
         'name': 'Gantt Chart', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-gantt', 'samples': AIGanttAppRoutes
@@ -138,13 +138,13 @@ export let samplesList: any = [
         'name': 'Data Grid', 'type':'update', 'category': 'Grids', 'order': '01', 'path': 'grid', 'samples': gridRouteConfig, 'ftName': 'datagrid'
     },
     {
-        'name': 'AI AssistView', 'category': 'Interactive Chat', 'order': '06', 'path': 'ai-assistview', 'samples': aiassistviewAppRoutes, 'ftName': 'ai-assistview'
+        'name': 'AI AssistView', 'type':'update', 'category': 'Interactive Chat', 'order': '06', 'path': 'ai-assistview', 'samples': aiassistviewAppRoutes, 'ftName': 'ai-assistview'
     },
     {
         'name': 'Block Editor','category': 'File Viewers & Editors', 'type': 'preview','order': '06', 'path': 'block-editor', 'samples': blockEditorAppRoutes, 'ftName': 'block-editor'
     },
     {
-        'name': 'Chat UI','category': 'Interactive Chat', 'type': 'preview', 'order': '06', 'path': 'chat-ui', 'samples': chatUIAppRoutes, "ftName": "chat-ui"
+        'name': 'Chat UI', 'type':'update','category': 'Interactive Chat', 'order': '06', 'path': 'chat-ui', 'samples': chatUIAppRoutes, "ftName": "chat-ui"
     },
     {
         'name': 'Pivot Table', 'category': 'Grids', 'order': '01', 'type': 'update', 'path': 'pivot-table', 'samples': pivottableRouteConfig
@@ -213,7 +213,7 @@ export let samplesList: any = [
         'name': "Rich Text Editor", 'type':'update', 'category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "rich-text-editor", 'samples': rteAppRoutes
     },
     {
-        'name': "Markdown Editor", 'category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "markdown-editor", 'samples': mdeAppRoutes
+        'name': "Markdown Editor", 'type':'update','category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "markdown-editor", 'samples': mdeAppRoutes
     },
     {
         "name": "Image Editor", 'category': 'File Viewers & Editors', 'ftName': 'image-editor', 'order': '03', 'path': 'image-editor', 'samples': ImageEditorAppRoutes
@@ -306,7 +306,7 @@ export let samplesList: any = [
         'name': 'TreeView', 'category': 'Navigation', 'order': '06', 'path': 'treeview', 'samples': treeAppRoutes, 'ftName': "treeview"
     },
     {
-        'name': 'File Manager', 'category': 'Navigation', 'order': '06', 'path': 'file-manager', 'samples': fileManagerAppRoutes
+        'name': 'File Manager', 'category': 'Navigation','type': 'update', 'order': '06', 'path': 'file-manager', 'samples': fileManagerAppRoutes
     },
     {
         'name': 'Ribbon', 'category': 'Navigation', 'order': '06', 'path': 'ribbon', 'samples': ribbonAppRoutes
@@ -330,16 +330,16 @@ export let samplesList: any = [
         'name': "Skeleton", 'category': 'Notifications',"ftName": "skeleton", 'order': '07', 'path': "skeleton", 'samples': skeletonAppRoutes
     },
     {
-        'name': 'TextBox', 'category': 'Inputs', 'order': '08', 'path': 'textboxes', 'samples': textboxesAppRoutes, 'ftName': 'textbox'
+        'name': 'TextBox', 'category': 'Inputs', 'order': '08', 'path': 'textboxes', 'samples': textboxesAppRoutes, 'ftName': 'textbox', 'type': 'update'
     },
     {
-        'name': 'TextArea', 'category': 'Inputs', 'order': '03', 'path': 'textarea', 'samples': textareasAppRoutes, 'ftName': 'textarea'
+        'name': 'TextArea', 'category': 'Inputs', 'order': '03', 'path': 'textarea', 'samples': textareasAppRoutes, 'ftName': 'textarea', 'type': 'update'
     },
     {
-        'name': 'Input Mask', 'category': 'Inputs', 'order': '08', 'path': 'maskedtextbox', 'samples': maskedTextBoxAppRoutes, 'ftName': "maskedtextbox"
+        'name': 'Input Mask', 'category': 'Inputs', 'order': '08', 'path': 'maskedtextbox', 'samples': maskedTextBoxAppRoutes, 'ftName': "maskedtextbox", 'type': 'update'
     },
     {
-        'name': 'Numeric Textbox', 'category': 'Inputs', 'order': '08', 'path': 'numerictextbox', 'samples': numericAppRoutes, 'ftName': "numerictextbox"
+        'name': 'Numeric Textbox', 'category': 'Inputs', 'order': '08', 'path': 'numerictextbox', 'samples': numericAppRoutes, 'ftName': "numerictextbox", 'type': 'update'
     },
     {
         'name': "Color Picker", 'category': "Inputs", 'order': '08', 'path': "color-picker", 'samples': colorPickerAppRoutes, 'ftName': "color-picker"

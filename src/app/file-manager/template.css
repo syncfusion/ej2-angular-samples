@@ -1,0 +1,150 @@
+.e-filemanager.e-fm-template-sample .e-list-icon {
+    height: 20px !important;
+    margin: 0 !important;
+    width: 20px !important;
+}
+
+.e-dropdown-btn.filemanager-dropdown-button {
+    border: none;
+    margin-right: -6px;
+    box-shadow: none;
+    background: transparent;
+}
+
+.e-dropdown-btn.filemanager-dropdown-button:hover,
+.e-dropdown-btn.filemanager-dropdown-button.e-btn:hover {
+    background: #d4d4d4;
+}
+
+.fluent2-dark .e-dropdown-btn.filemanager-dropdown-button:hover,
+.fluent2-dark .e-dropdown-btn.filemanager-dropdown-button.e-btn:hover,
+.fluent-dark .e-dropdown-btn.filemanager-dropdown-button:hover,
+.fluent-dark .e-dropdown-btn.filemanager-dropdown-button.e-btn:hover,
+.material3-dark .e-dropdown-btn.filemanager-dropdown-button:hover,
+.material3-dark .e-dropdown-btn.filemanager-dropdown-button.e-btn:hover,
+.tailwind3-dark .e-dropdown-btn.filemanager-dropdown-button:hover,
+.tailwind3-dark .e-dropdown-btn.filemanager-dropdown-button.e-btn:hover,
+.fluent2-highcontrast .e-dropdown-btn.filemanager-dropdown-button:hover,
+.fluent2-highcontrast .e-dropdown-btn.filemanager-dropdown-button.e-btn:hover,
+.highcontrast .e-dropdown-btn.filemanager-dropdown-button:hover,
+.highcontrast .e-dropdown-btn.filemanager-dropdown-button.e-btn:hover,
+.bootstrap5\.3-dark .e-dropdown-btn.filemanager-dropdown-button:hover,
+.bootstrap5\.3-dark .e-dropdown-btn.filemanager-dropdown-button.e-btn:hover {
+    background: #3d3d3d;
+}
+
+.bootstrap5\.3 .e-dropdown-btn.filemanager-dropdown-button {
+    color: #242424;
+}
+
+.e-filemanager.e-fm-template-sample .e-grid .e-gridheader .e-fe-grid-icon+.e-rowcell,
+.e-filemanager .e-grid .e-gridheader .e-fe-grid-icon+.e-headercell,
+.e-filemanager .e-grid .e-gridcontent .e-fe-grid-icon+.e-rowcell,
+.e-filemanager .e-grid .e-gridcontent .e-fe-grid-icon+.e-headercell {
+    padding-left: 6px;
+}
+
+.e-fm-template-sample .e-nav-pane-node .e-icons {
+    font-size: larger;
+}
+
+.e-fm-template-sample .custom-icon-card {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.e-fm-template-sample .file-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.e-fm-template-sample .left-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.e-fm-template-sample .file-name {
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+}
+
+.e-fm-template-sample .file-formattedDate {
+    font-size: 12px;
+    margin-top: 8px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.e-filemanager.e-fm-template-sample.e-fe-mobile .e-large-icons .e-list-parent .e-list-item {
+    height: 185px;
+    width: 100px;
+    margin: 8px 4px;
+}
+
+.e-filemanager.e-fm-template-sample.e-fe-mobile .e-large-icons .e-list-parent .e-list-item .file-icon {
+    width: 150px;
+    height: 90px;
+}
+
+.e-filemanager.e-fm-template-sample.e-fe-mobile .e-large-icons .e-list-parent .e-list-item .file-name {
+    max-width: 100px;
+}
+
+.e-filemanager.e-fm-template-sample .e-large-icons .e-list-item {
+    height: 240px;
+    width: 210px;
+}
+
+.e-filemanager.e-fm-template-sample .e-large-icons .e-list-parent .e-list-item .file-icon {
+    width: 190px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    margin-bottom: 10px;
+}
+
+.background-folder { background-image: url('../images/folders.svg'); }
+.background-png { background-image: url('../images/image-png.svg'); }
+.background-pptx { background-image: url('../images/pptx.png'); }
+.background-jpg { background-image: url('../images/image-jpg.svg'); }
+.background-doc { background-image: url('../images/docx.png'); }
+.background-pdf { background-image: url('../images/pdfphoto.png'); }
+.background-txt { background-image: url('../images/text.png'); }
+.background-video { background-image: url('../images/video.png'); }
+.background-audio { background-image: url('../images/music.png'); }
+.background-xlsx { background-image: url('../images/xlsx.png'); }
+.background-Adam { background-image: url('../images/Adam.png'); }
+.background-Andrew { background-image: url('../images/Andrew.png'); }
+.background-Ellie { background-image: url('../images/Ellie.png'); }
+.background-Jameson { background-image: url('../images/Jameson.png'); }
+.background-John { background-image: url('../images/John.png'); }
+.background-Josie { background-image: url('../images/Josie.png'); }
+.background-Applepie { background-image: url('../images/Apple pie.png'); }
+.background-Bread { background-image: url('../images/Bread.png'); }
+.background-Doughnut { background-image: url('../images/Doughnut.png'); }
+.background-Nuggets { background-image: url('../images/Nuggets.png'); }
+.background-Sugarcookie { background-image: url('../images/Sugar cookie.png'); }
+.background-bird { background-image: url('../images/bird.jpg'); }
+.background-sea { background-image: url('../images/sea.jpg'); }
+.background-seaview { background-image: url('../images/seaview.jpg'); }
+.background-snow { background-image: url('../images/snow.jpg'); }
+.background-snowfall { background-image: url('../images/snowfall.jpg'); }

@@ -24,3 +24,8 @@
 .default-timeline-section .intermediate.e-connector::after {
     border-style: dashed;
 }
+
+.fluent2-highcontrast {
+    background: #000000;
+    color: #ffffff;
+}

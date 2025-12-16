@@ -98,6 +98,7 @@ import { EmptyPointChartComponent } from './empty-point.component';
 import { NodataTemplateChartComponent } from './no-data-template.component';
 import { PrintChartComponent } from './print.component';
 import { SmartAxisLabelsChartComponent } from './smart-axis-labels.component';
+import { AxisLabelTemplateChartComponent } from './axis-label-template.component';
 import { ErrorBarChartComponent } from './error-bar.component';
 import { TrendLineChartComponent } from './trend-lines.component';
 import { InversedSplineChartComponent } from './spline-inversed.component';
@@ -283,6 +284,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/strip-line', component: StripLineChartComponent, name: 'Stripline', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the strip lines in charts.", order: '13', category: 'Chart Axes' },
     { path: ':theme/chart/strip-line-recurrence', component: StripLineRecurrenceChartComponent, name: 'Strip Line Recurrence', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the strip line recurrence in charts.", order: '13', category: 'Chart Axes' },
     { path: ':theme/chart/smart-axis-labels', component: SmartAxisLabelsChartComponent, name: 'Smart Labels', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to arrange the labels smartly without overlapping with each other.", order: '13', category: 'Chart Axes' },
+    { path: ':theme/chart/axis-label-template', component: AxisLabelTemplateChartComponent, name: 'Axis Label Template', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the axis label template in charts.", order: '13', category: 'Chart Axes', type: 'new' },
     { path: ':theme/chart/multi-level-label', component: MultiLevelLabelsChartComponent, name: 'Multi Level Labels', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to group the axis labels.", order: '13', category: 'Chart Axes' },
     { path: ':theme/chart/axes-crossing', component: AxisCrossingChartComponent, name: 'Axes Crossing', description: "This demo for Essential<sup>®</sup> JS2 Chart control demonstrates the axis crossing behavior in chart.", order: '13', category: 'Chart Axes' },
 
@@ -295,7 +297,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/tooltip-template', component: TooltipTemplateComponent, name: 'Tooltip Template', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the tooltip template.", order: '14', category: 'Chart Customization' },
     { path: ':theme/chart/vertical', component: VerticalChartComponent, name: 'Vertical Chart', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the vertical type charts.", order: '14', category: 'Chart Customization' },
     { path: ':theme/chart/empty-point', component: EmptyPointChartComponent, name: 'Empty Points', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the empty points.", order: '14', category: 'Chart Customization'},
-    { path: ':theme/chart/no-data-template', component: NodataTemplateChartComponent, name: 'No Data Template', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the no data template.", order: '14', category: 'Chart Customization', type: 'new' },
+    { path: ':theme/chart/no-data-template', component: NodataTemplateChartComponent, name: 'No Data Template', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the no data template.", order: '14', category: 'Chart Customization' },
     { path: ':theme/chart/range-color-mapping', component: RangeColorMappingComponent, name: 'Range Color Mapping', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the range color mapping.", order: '14', category: 'Chart Customization'},
     { path: ':theme/chart/series-animation', component: SeriesAnimationComponent, name: 'Animation', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure series animation.", order: '14', category: 'Chart Customization'},
 

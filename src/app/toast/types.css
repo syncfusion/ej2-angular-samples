@@ -31,7 +31,11 @@
 
   #toast_type .e-toast-icon.e-icons {
     height: auto;
-    font-size: 30px;
+  }
+
+  .bootstrap5\.3 #toast_type .e-toast-icon.e-icons,
+  .bootstrap5\.3-dark #toast_type .e-toast-icon.e-icons {
+    top: -3px;
   }
 
   .bootstrap5 #toast_type .e-toast-icon.e-icons,

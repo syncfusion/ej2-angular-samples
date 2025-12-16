@@ -3,6 +3,13 @@
   grid-template-columns: 5fr 1fr;
 }
 
+.grid-to-schedule .e-drag-clone,
+.grid-to-schedule .e-schedule-event-clone {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .content-wrapper.grid-to-schedule .schedule-container .schedule-content,
 .content-wrapper.grid-to-schedule .schedule-container .grid-content {
   height: 500px;

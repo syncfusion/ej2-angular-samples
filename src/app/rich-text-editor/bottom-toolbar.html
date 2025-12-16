@@ -1,6 +1,6 @@
 <div class="control-section chat-ui" #chatContainer>
     <div class="loadonDemand-chatui">
-        <div id="loadOnDemand" ejs-chatui headerText='Michale Suyama' headerIconCss="chat_user2_avatar"
+        <div id="loadOnDemand" ejs-chatui #defaultChatUI headerText='Michale Suyama' headerIconCss="chat_user2_avatar"
             [messages]="chatMessages" [user]="currentUserModel" showTimeBreak="true" loadOnDemand="true"
             [messageToolbarSettings]="toolbarSettings" footerTemplate="footerTemplate">
             <ng-template #footerTemplate>
