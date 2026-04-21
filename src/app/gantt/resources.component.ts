@@ -135,14 +135,14 @@ export class GanttResourcesComponent implements OnInit {
     };
     public cellEdit (args: any): void {
       // Restrict editing based on row data
-      if (args.rowData.TaskID === 1 || args.rowData.TaskID === 5) { // Example: Prevent editing Task ID 1
+      if (args.rowData.hasChildRecords) { // Example: Prevent editing Task ID 1
         args.cancel = true; // Cancel editing for this specific cell
       }
     }
     public actionBegin (args: any): void {
         if (args.requestType === 'beforeOpenEditDialog' || args.requestType === 'beforeOpenAddDialog') {
           // Restrict editing based on row data for dialog
-          if (args.rowData.TaskID === 1 || args.rowData.TaskID === 5) {
+          if (args.rowData.hasChildRecords) {
             args.cancel = true; // Cancel editing for this specific row dialog
           }
           args.Resources.selectionSettings = {};

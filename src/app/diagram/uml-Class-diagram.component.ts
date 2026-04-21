@@ -15,14 +15,14 @@ import {
 import { ExpandMode } from '@syncfusion/ej2-navigations';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-
+import { paletteIconClick } from './script/diagram-common';
 /**
  * Sample for class diagram
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'uml-Class-diagram.html',
-    styleUrls: ['diagram-style.css'],
+    styleUrls: ['diagram-style.css', 'diagram-common.style.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [SBActionDescriptionComponent, SymbolPaletteModule, DiagramModule, SBDescriptionComponent]
@@ -457,6 +457,7 @@ export class UmlClassDiagramComponent {
   }
   public created(): void {
     this.diagram.fitToPage();
+    paletteIconClick();
   }
     // Set the default values of connectors.
     public getConnectorDefaults(connector: ConnectorModel): ConnectorModel {

@@ -16,7 +16,7 @@ table.box-table td.formtext {
     color:#f8fc08;
 }
 #formId{
-    width: 300px;
+    max-width: 300px;
     margin: 0 auto;
     padding-top: 10px;
 }

@@ -1,0 +1,76 @@
+<div id='container'>
+    <div id="assistive-grid">
+        <ejs-dialog #dialog id="ai-assist-dialog" target="#ai-grid" width="500px" height="500px" [visible]="false"
+            [position]="{ X: 0, Y: 0 }" [footerTemplate]="footerTemplate">
+            <div id="ai-grid-aiassistview" ejs-aiassistview #assistView [toolbarSettings]="toolbarSettings"
+                (promptRequest)="onPromptRequest($event)" promptSuggestionsHeader="Suggestions"
+                [responseItemTemplate]="responseItemTemplate">
+                <e-views>
+                    <e-view type="Assist" name="Ask AI"></e-view>
+                </e-views>
+            </div>
+        </ejs-dialog>
+        <ejs-grid #grid id="ai-grid" [dataSource]="data" height="860" [allowFiltering]="true" [allowSorting]="true"
+            [allowPaging]="true" [allowGrouping]="true" [pageSettings]="pageSettings" [filterSettings]="filterSettings"
+            [toolbar]="toolbarOptions" (toolbarClick)="toolbarClick($event)">
+            <e-columns>
+                <e-column field="TransactionID" headerText="Transaction ID" width="160"></e-column>
+                <e-column field="CustomerName" headerText="Customer Name" width="220" textAlign="Center">
+                    <ng-template #template let-data>
+                        <div>
+                            <p>{{data.CustomerName}}</p>
+                            <p class="email">{{data.Email}}</p>
+                        </div>
+                    </ng-template>
+                </e-column>
+                <e-column field="ProductName" headerText="Product" width="208" textAlign="Left">
+                    <ng-template #template let-data>
+                        <div class="product-items">
+                            <img class="rounded" [src]="'src/sales-transactions-table/' + data.ProductImage" width="40"
+                                height="40" alt="product image" />
+                            <p>{{data.ProductName}}</p>
+                        </div>
+                    </ng-template>
+                </e-column>
+                <e-column field="Quantity" headerText="Quantity" width="140" textAlign="Right"></e-column>
+                <e-column field="Amount" headerText="Amount" width="130" format="c2" textAlign="Right"></e-column>
+                <e-column field="PurchaseDate" headerText="Purchase Date" width="180" format="MM/dd/yyyy"
+                    textAlign="Right"></e-column>
+                <e-column field="PaymentMethod" headerText="Payment Method" width="200"></e-column>
+                <e-column field="Status" headerText="Status" width="120" textAlign="Right">
+                    <ng-template #template let-data>
+                        <div>
+                            <span [class]="'e-badge !px-2 ' + 
+              (data.Status === 'Completed' ? 'e-badge-success' : 
+               data.Status === 'Pending' ? 'e-badge-info' : 
+               data.Status === 'Processing' ? 'e-badge-warning' : 
+               data.Status === 'Failed' ? 'e-badge-danger' : '')">
+                                {{data.Status}}
+                            </span>
+                        </div>
+                    </ng-template>
+                </e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+    <ng-template #footerTemplate>
+        <div class="e-suggestions">
+            <div class="e-suggestion-header">Suggestions</div>
+            <div class="e-suggestion-list">
+                <ul>
+                    <li *ngFor="let suggestion of suggestions" (click)="onSuggestionClick(suggestion)">
+                        {{suggestion}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template #responseItemTemplate let-data>
+        <div class="response-item-content">
+            <div class="response-header">
+                <span class="e-icons e-assistview-icon"></span>
+            </div>
+            <div class="assist-response-content" [innerHTML]='data.response'></div>
+        </div>
+    </ng-template>
+</div>

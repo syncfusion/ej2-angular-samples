@@ -6,7 +6,10 @@
     [selectedDate]="selectedDate" [eventSettings]="eventSettings">
     <ng-template #resourceHeaderTemplate let-data>
       <div class='template-wrap'>
-        <div class="airline-image {{getAirlineImage(data)}}"></div>
+        <div>
+          <img class="airline-image" src="./assets/schedule/images/{{getAirlineImage(data)}}.svg"
+            alt="{{ getAirlineName(data) }}" />
+        </div>
         <div class="airline-details">
           <div class="airline-name">{{getAirlineName(data)}}</div>
           <div class="airline-model">Model no: {{getAirlineModel(data)}}</div>

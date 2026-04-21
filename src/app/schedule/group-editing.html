@@ -3,7 +3,10 @@
     [selectedDate]="selectedDate" [eventSettings]="eventSettings" [currentView]="currentView">
     <ng-template #resourceHeaderTemplate let-data>
       <div class='template-wrap'>
-        <div class="resource-image {{getEmployeeImage(data)}}"></div>
+        <div>
+          <img class="resource-image" src="./assets/schedule/images/{{getEmployeeImage(data)}}.png"
+            alt="{{ getEmployeeName(data) }}" />
+        </div>
         <div class="resource-details">
           <div class="resource-name">{{getEmployeeName(data)}}</div>
           <div class="resource-designation">{{getEmployeeDesignation(data)}}</div>

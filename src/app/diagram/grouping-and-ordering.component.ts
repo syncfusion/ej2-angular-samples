@@ -24,7 +24,7 @@ Diagram.Inject(UndoRedo);
 @Component({
   selector: 'control-content', // Angular component selector
   templateUrl: 'grouping-and-ordering.html', // HTML template file for the component
-  styleUrls: ['default-functionalities.css'], // CSS styles specific to the component
+  styleUrls: ['default-functionalities.css', 'diagram-common.style.css'], // CSS styles specific to the component
   encapsulation: ViewEncapsulation.None,// No view encapsulation
   standalone: true,  // Indicates it's a standalone component
   imports: [SBActionDescriptionComponent, ToolbarModule, ComboBoxModule, NumericTextBoxModule, ColorPickerModule, SymbolPaletteModule, DiagramModule, SBDescriptionComponent] // Importing necessary Angular modules and components

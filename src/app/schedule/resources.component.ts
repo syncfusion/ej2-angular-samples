@@ -45,13 +45,13 @@ export class ResourcesComponent {
     template: '<div class="template-wrapper">' +
       '<div class="fare-detail">$${Fare}</div>' +
       '<div class="airline-name" style="display:flex;padding-left:5px;">' +
-      '<div class="airline-logo ${getAirwaysImage(data.AirlineId)}"></div>' +
+      '<div><img class="airline-logo" src="./assets/schedule/images/${getAirwaysImage(data.AirlineId)}.svg" alt="${ getAirwaysName(data) }" /></div>' +
       '<div class="airway-name">${getAirwaysName(data.AirlineId)}</div>' +
       '</div></div>',
     enableTooltip: true,
     tooltipTemplate: '<div class="event-tooltip">' +
       '<div class="airline-header">' +
-      '<div class="airline-logo ${getAirwaysImage(data.AirlineId)}"></div>' +
+      '<div><img class="airline-logo" src="./assets/schedule/images/${getAirwaysImage(data.AirlineId)}.svg" alt="${ getAirwaysName(data) }" /></div>' +
       '<div class="airline-name">${getAirwaysName(data.AirlineId)}</div>' +
       '</div>' +
       '<div class="airline-details text-size">' +

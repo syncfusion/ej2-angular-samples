@@ -4,7 +4,7 @@ import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     templateUrl: 'api.html',
-    standalone: true,
+    
     imports: [PagerComponent, GridModule, SBDescriptionComponent, SBActionDescriptionComponent]
 })
 export class ApiComponent implements OnInit {

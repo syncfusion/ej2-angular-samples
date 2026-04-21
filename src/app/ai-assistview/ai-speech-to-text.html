@@ -5,7 +5,10 @@
           #assistView
           (promptRequest)="onPromptRequest($event)"
           [toolbarSettings]="toolbarSettings"
-          [promptToolbarSettings]="promptToolbarSettings"
+          [footerToolbarSettings] ="footerToolbarSettings"
+          [enableAttachments] = "enableAttachments"
+          [attachmentSettings]="attachmentSettings"
+          [speechToTextSettings] = "speechToTextSettings"
           (stopRespondingClick)="stopRespondingClick()"
         >
           <ng-template #bannerTemplate>
@@ -14,38 +17,6 @@
             <h3>Speech To Text</h3>
             <i>Click the below mic-button to convert your voice to text.</i>
         </div>
-          </ng-template>
-          <ng-template #footerTemplate>
-            <div class="e-footer-wrapper">
-              <div
-                #contentEditor
-                id="assistview-footer"
-                class="content-editor"
-                contenteditable="true"
-                placeholder="Click to speak or start typing..."
-                (input)="onContentChanged()"
-                (keydown.enter)="onEditorKeyDown($event)"
-              ></div>
-              <div class="option-container">
-                <button
-                  ejs-speechtotext
-                  #speechToText
-                  id="speechToText"
-                  cssClass="e-flat"
-                  (onStart)="onListeningStart()"
-                  (onStop)="onListeningStop()"
-                  (transcriptChanged)="onTranscriptChange($event)"
-                  [class.visible]="!hasTextInEditor || isListening"
-                ></button>
-                <button
-                  id="assistview-sendButton"
-                  class="e-assist-send e-icons"
-                  role="button"
-                  (click)="sendIconClicked()"
-                  [class.visible]="hasTextInEditor && !isListening"
-                ></button>
-              </div>
-            </div>
           </ng-template>
         </div>
       </div>
@@ -57,17 +28,20 @@
   </div>
   <div id="description">
     <p>
-      In this example, the AI AssistView component is integrated with the <code>SpeechToText</code> component to enable voice-based interaction.
+      In this example, the AI AssistView component is integrated with the built-in <code>SpeechToText</code> component to enable voice-based interaction.
     </p>
     <p>
       The sample demonstrates the following features:
     </p>
     <ul>
       <li>
-        The <code>SpeechToText</code> component captures voice input and transcribes it into text, which is then passed to the AI AssistView for generating contextual responses.
+        The <code>footerToolbarSettings</code> to customize the footer options with speech to text, attachments and a send icon.
       </li>
       <li>
-        The <code>footerTemplate</code> includes a content-editable area and a microphone button for initiating voice input.
+        The <code>speechToTextSettings</code> adds the speech to text button at the footer to captures voice input and transcribes it into text.
+      </li>
+      <li>
+        The <code>attachmentSettings</code> to allow file uploads for the attached files.
       </li>
       <li>
         The <code>toolbarSettings</code> adds a right-aligned <code>Refresh</code> button to clear previous prompts.

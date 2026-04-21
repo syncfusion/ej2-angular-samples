@@ -1,0 +1,69 @@
+<div class="control-section">
+      <ejs-sankey
+        id="sankey-orientation"
+        align="center"
+        width="90%"
+        height="650" 
+        background="transparent"              
+        [linkStyle]="linkStyle"
+        [nodeStyle]="nodeStyle"
+        [labelSettings]="labelSettings"
+        [legendSettings]="legendSettings"
+        [tooltip]="tooltip"
+        [title]="title"
+        [subTitle]="subTitle"
+        [orientation]="orientation"     
+        (load)="load($event)"
+      >
+        
+        <e-sankey-nodes>
+          <e-sankey-node id="Transportation"></e-sankey-node>
+          <e-sankey-node id="Industry"></e-sankey-node>
+          <e-sankey-node id="Commercial"></e-sankey-node>
+          <e-sankey-node id="Residential"></e-sankey-node>
+          <e-sankey-node id="Agriculture"></e-sankey-node>
+          <e-sankey-node id="Road (Cars/Trucks)"></e-sankey-node>
+          <e-sankey-node id="Aviation & Other Transport"></e-sankey-node>
+          <e-sankey-node id="Direct Emissions"></e-sankey-node>
+          <e-sankey-node id="Indirect Electricity Use"></e-sankey-node>
+          <e-sankey-node id="Atmosphere (Gross Emissions)"></e-sankey-node>
+        </e-sankey-nodes>
+
+        <e-sankey-links>
+          <e-sankey-link sourceId="Transportation" targetId="Road (Cars/Trucks)" [value]="1482"></e-sankey-link>
+          <e-sankey-link sourceId="Transportation" targetId="Aviation & Other Transport" [value]="326"></e-sankey-link>
+          <e-sankey-link sourceId="Industry" targetId="Direct Emissions" [value]="1416"></e-sankey-link>
+          <e-sankey-link sourceId="Industry" targetId="Indirect Electricity Use" [value]="457"></e-sankey-link>
+          <e-sankey-link sourceId="Commercial" targetId="Indirect Electricity Use" [value]="600"></e-sankey-link>
+          <e-sankey-link sourceId="Residential" targetId="Indirect Electricity Use" [value]="500"></e-sankey-link>
+          <e-sankey-link sourceId="Agriculture" targetId="Direct Emissions" [value]="664"></e-sankey-link>
+          <e-sankey-link sourceId="Road (Cars/Trucks)" targetId="Atmosphere (Gross Emissions)" [value]="1482"></e-sankey-link>
+          <e-sankey-link sourceId="Aviation & Other Transport" targetId="Atmosphere (Gross Emissions)" [value]="326"></e-sankey-link>
+          <e-sankey-link sourceId="Direct Emissions" targetId="Atmosphere (Gross Emissions)" [value]="2080"></e-sankey-link>
+          <e-sankey-link sourceId="Indirect Electricity Use" targetId="Atmosphere (Gross Emissions)" [value]="1557"></e-sankey-link>
+        </e-sankey-links>
+      </ejs-sankey>
+  </div>
+
+  <div id="action-description" style="margin-top: 12px">
+    <p>
+     Explore U.S. greenhouse gas emissions by economic sector (2022) in a vertical Sankey chart measured in MMT CO₂e (million metric tons of CO₂ equivalent). 
+     Trace top‑to‑bottom flows from sectors—Transportation, Industry, Commercial, Residential, and Agriculture—through direct and indirect electricity use to total atmospheric emissions.
+    </p>
+  </div>
+  <div id="description">
+    <p>
+      This vertical Sankey chart visualizes U.S. GHG emissions in MMT CO₂e, showing how sector sources split into road, aviation, direct emissions, and indirect electricity use before reaching total atmospheric emissions.
+      Hover or tap nodes and links to see precise MMT CO₂e values and relationships.
+    </p>
+    <p><strong>Key features:</strong></p>
+    <ul>
+      <li>Break down emissions by sector and pathway (direct vs. indirect electricity)</li>
+      <li>Follow top-to-bottom flows to the atmosphere for clear attribution</li>
+      <li>Interactive tooltips reveal exact MMT CO₂e values per node and link</li>
+    </ul>
+  </div>
+
+<style>
+  #sankey-orientation { display: block; }
+</style>

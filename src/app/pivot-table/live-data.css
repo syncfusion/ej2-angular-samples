@@ -3,14 +3,6 @@
     height: 100%;
 }
 
-.sb-sample-content-area {
-    min-height: 255px !important;
-}
-
-.control-section {
-    min-height: 255px !important;
-}
-
 #PivotView-LiveData_chart {
     margin-top: 15px;
 }

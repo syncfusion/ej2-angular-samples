@@ -48,7 +48,11 @@ export class TemplateDrivenComponent {
  public onFileSelect: EmitType<Object> = (args: any) => {
   this.uploadInput = args.filesData[0].name;
  }
-
+  public onFailure(args: any): void {
+    if (args.response && args.response.statusText !== '') {
+        args.statusText = args.response.statusText;
+    }
+  }
  public onFormSubmit(): void {
    this.dialogObj.show();
  }

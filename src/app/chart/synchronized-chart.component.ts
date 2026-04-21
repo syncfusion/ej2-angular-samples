@@ -126,7 +126,7 @@ export class SynchronizedChartsComponent {
 
     public tooltip4: Object = { enable: true, fadeOutDuration: Browser.isDevice ? 2500 : 1000, showNearestTooltip: true, header:'', format: '<b>₹${point.y}</b><br>${point.x} 2023', enableMarker: false };
 
-    public crosshair: Object = { enable: true, lineType: 'Vertical', dashArray: '2,2' };
+    public crosshair: Object = { enable: true, lineType: 'Vertical', dashArray: '2,2', snapToData: true };
 
     public dataSource = synchronizedData;
 

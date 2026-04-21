@@ -193,6 +193,9 @@ export class PreviewUploaderComponent implements OnInit {
             EventHandler.remove(li.querySelector('#iconUpload'), 'click', this.uploadFile);
             (li.querySelector('.progressbar') as HTMLElement).style.visibility = 'hidden';
         }
+        if (args.response && args.response.statusText !== '') {
+            args.statusText = args.response.statusText;
+        }
     }
     public readURL(li: HTMLElement, args: any): void {
         let preview: HTMLImageElement = li.querySelector('.upload-image');

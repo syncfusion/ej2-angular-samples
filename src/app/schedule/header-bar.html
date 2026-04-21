@@ -11,8 +11,11 @@
         <e-toolbaritem name="Next" align="Left"></e-toolbaritem>
         <e-toolbaritem name="DateRangeText" align="Left"></e-toolbaritem>
         <e-toolbaritem name="Today" align="Right"></e-toolbaritem>
-        <e-toolbaritem align="Right" prefixIcon="user-icon" text="Nancy"
-          cssClass="e-schedule-user-icon"></e-toolbaritem>
+        <e-toolbaritem align="Right" text="Nancy" cssClass="e-schedule-user-icon">
+          <ng-template #template>
+            <img class="user-icon" src="./assets/schedule/images/nancy.png" alt="Nancy" />
+          </ng-template>
+        </e-toolbaritem>
       </e-toolbaritems>
     </ejs-schedule>
   </div>

@@ -84,7 +84,7 @@ export class FamilyTreeDiagramsComponent {
                 node.style = { fill: 'transparent', strokeColor: 'transparent' };
                 node.visible = false;
             } else {
-                raw.ImageUrl = `assets/diagram/Images/family-tree/${raw.Name}.png`;
+                raw.ImageUrl = `https://ej2.syncfusion.com/angular/demos/assets/diagram/Images/family-tree/${raw.Name}.png`;
                 node.shape = { type: 'HTML' }; // HTML node; content provided by setNodeTemplate
                 node.width = this.NODE_WIDTH;
                 node.height = this.NODE_HEIGHT;

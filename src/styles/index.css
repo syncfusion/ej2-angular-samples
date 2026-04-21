@@ -1065,13 +1065,6 @@ margin-right: 6px;
   line-height: 36px;
 }
 
-#search-input-wrapper .e-clear-icon {
-  /* display: none; */
-  /* margin-right: 12px; */
-   background-color: #111827 !important;
-  color: white;
-}
-
 #search-input-wrapper .e-input-focus:before,
 #search-input-wrapper .e-input-focus:after {
   background: transparent;
@@ -6223,4 +6216,48 @@ cursor: pointer;
 .bootstrap5\.3.e-bigger .ai-toast .e-toast .e-toast-message .e-toast-content {
     padding-left: 12px !important;
     padding-bottom: 12px !important;
+}
+
+/* iPhone SE and Samsung S8+ */
+@media screen and (max-width: 380px) {
+    .e-bigger .ai-toast.e-toast {
+        max-width: calc(100% - 8%) !important;
+    }
+    .e-bigger .ai-toast .e-toast {
+        width: 370px !important;
+    }
+    .e-bigger .ai-toast.e-toast .e-toast-message .e-toast-content .ai-toast-content {
+        width: 350px !important;
+    }
+}
+
+/* iPhone XR */
+@media screen and (max-width: 414px) {
+    .e-bigger .ai-toast.e-toast { max-width: calc(100% - 8%) !important; box-sizing: border-box; }
+}
+
+/* iPhone 12 Pro */
+@media screen and (max-width: 390px) {
+    .e-bigger .ai-toast.e-toast { max-width: calc(100% - 8%) !important; box-sizing: border-box; }
+    .e-bigger .ai-toast.e-toast .e-toast-message .e-toast-content .ai-toast-content {
+        width: 360px !important;
+    }
+}
+
+/* Pixel 7 and Samsung A51/71 */
+@media screen and (max-width: 412px) {
+    .e-bigger .ai-toast.e-toast { max-width: calc(100% - 8%) !important; box-sizing: border-box; }
+}
+
+/* Galaxy Z Fold5 (folded) */
+@media screen and (max-width: 344px) {
+    .e-bigger .ai-toast.e-toast { max-width: calc(100% - 8%) !important; box-sizing: border-box; }
+    .e-bigger .ai-toast.e-toast .e-toast-message .e-toast-content .ai-toast-content {
+        width: 330px !important;
+    }
+}
+
+/* Surface Duo (narrow pane) */
+@media screen and (max-width: 540px) {
+    .e-bigger .ai-toast.e-toast { max-width: calc(100% - 8%) !important; box-sizing: border-box; }
 }

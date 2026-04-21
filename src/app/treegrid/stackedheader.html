@@ -1,5 +1,5 @@
 <div class="control-section">
-        <ejs-treegrid id="TreeGrid" #stackedHeadertreegrid clipMode="EllipsisWithTooltip" [dataSource]='data' childMapping='subtasks' height='350' [treeColumnIndex]='1' [allowPaging]=true [toolbar]="toolbar" [showColumnChooser]="true">
+        <ejs-treegrid id="TreeGrid" #stackedHeadertreegrid clipMode="EllipsisWithTooltip" [dataSource]='data' childMapping='subtasks' height='350' [treeColumnIndex]='1' [allowPaging]=true [toolbar]="toolbar" [showColumnChooser]="true" (actionBegin)='actionBegin($event)'>
             <e-columns>
                 <e-column headerText='Order Details' [columns]='orderColumns' textAlign='Center'></e-column>
                 <e-column headerText='Shipment Details' [columns]='shipColumns' textAlign='Center'></e-column>
@@ -11,7 +11,7 @@
 
             <div *ngIf="!(data && data.columns && data.columns.length)" class="no-record-text">No Matches Found</div>
              <div *ngIf="(data && data.columns && data.columns.length)" id="transparent">
-            <ejs-treeview #treeview id="treeview" cssClass="no-border" [fields]="dataProcess(data)" (nodeClicked)="nodeCheck($event)" (keyPress)="nodeCheck($event)" [showCheckBox]="true"></ejs-treeview>
+            <ejs-treeview #treeview id="treeview" cssClass="no-border" [fields]="treeviewData" (nodeClicked)="nodeCheck($event)" (keyPress)="nodeCheck($event)" [showCheckBox]="true"></ejs-treeview>
             </div>
           </ng-template>
           

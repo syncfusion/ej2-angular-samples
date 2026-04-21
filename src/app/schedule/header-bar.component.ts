@@ -54,7 +54,8 @@ export class HeaderBarComponent {
       };
       const userContentEle: HTMLElement = createElement('div', { className: 'e-profile-wrapper' });
       scheduleElement.parentElement.appendChild(userContentEle);
-      const getDOMString: (data: Record<string, any>) => NodeList = compile('<div class="profile-container"><div class="profile-image">' +
+      const getDOMString: (data: Record<string, any>) => NodeList = compile('<div class="profile-container"><div>' +
+        '<img class="profile-image" src="./assets/schedule/images/nancy.png" alt="Nancy" />' +
         '</div><div class="content-wrap"><div class="name">Nancy</div>' +
         '<div class="destination">Product Manager</div><div class="status">' +
         '<div class="status-icon"></div>Online</div></div></div>');

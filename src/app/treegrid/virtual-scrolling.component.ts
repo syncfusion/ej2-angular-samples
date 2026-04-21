@@ -1,47 +1,88 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { VirtualScrollService, TreeGridComponent, EditService, ToolbarService } from '@syncfusion/ej2-angular-treegrid';
-import {dataSource, virtualData} from './jsontreegriddata';
+import { VirtualScrollService, TreeGridComponent, EditService, ToolbarService, RowDDService } from '@syncfusion/ej2-angular-treegrid';
+import { virtualDataSource, virtualScrollData } from './jsontreegriddata';
 import { TreeGridAllModule } from '@syncfusion/ej2-angular-treegrid';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-
+import { NgClass } from '@angular/common';
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'virtual-scrolling.html',
     encapsulation: ViewEncapsulation.None,
-    providers: [VirtualScrollService, ToolbarService, EditService],
+    providers: [VirtualScrollService, ToolbarService, EditService, RowDDService],
     standalone: true,
-    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
+    styleUrls: ['virtual-scrolling.style.css'],
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, NgClass]
 })
 export class VirtualScrollingComponent implements OnInit {
-    public vData: Object[] = [];
-    public editSettings: Object;
-    public toolbar:string[];
-
-    @ViewChild('treegrid')
+    @ViewChild('treegridvirtual')
     public treegrid: TreeGridComponent;
-    public tasknamerules: Object;
-    public taskidrules: Object;
-    public tmidrules: Object;
-    public stintrules: Object;
-    public yearrules: Object;
-      
-    public customFn_length: (args: { [key: string]: number }) => boolean = (args: { [key: string]: number }) => {
-        return (args['value'].toString().length==4);
-    }
-    
+    public data: any[];
+    public toolbar: string[] = [
+        'Add',
+        'Edit',
+        'Delete',
+        'Update',
+        'Cancel',
+        'Indent',
+        'Outdent',
+    ];
+    public getStatusClass(status: string | undefined): string {
+        if (!status) return 'rg-status-maintenance'; // fallback
 
-    public ngOnInit(): void {
-        if (virtualData.length === 0) {
-            dataSource();
+        const s = status.toLowerCase().trim();
+
+        if (s.startsWith('run')) {
+            return 'rg-status-running';
         }
-        this.vData = virtualData;
-        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode:"Row", newRowPosition: "Child"}; 
-        this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel','Indent', 'Outdent'];
-        this.tasknamerules = { required: true};
-        this.taskidrules = { required: true ,number: true};
-        this.tmidrules = { required: true ,number: true};
-        this.stintrules = { required:true ,number: true};
-        this.yearrules = { required:true, number: true, maxLength:[this.customFn_length ,'Please enter a four digit value']};        
+        if (s.startsWith('stop')) {
+            return 'rg-status-stopped';
+        }
+        if (s.startsWith('degrad')) {
+            return 'rg-status-degraded';
+        }
+        // fallback / default
+        return 'rg-status-maintenance';
+    }
+    public editSettings = {
+        allowAdding: true,
+        allowEditing: true,
+        allowDeleting: true,
+        mode: 'Row',
+        newRowPosition: 'Child',
+    };
+
+    public pageSettings = { pageSize: 50 };
+    
+    public ngOnInit(): void {
+        if (virtualScrollData.length === 0) {
+            virtualDataSource();
+        }
+        this.data = virtualScrollData;
+    }
+    public getComplianceWidth(val: any): number {
+        return Math.max(0, Math.min(100, parseInt(val || '0', 10)));
+    }
+
+    public getComplianceValue(val: any): number {
+        return this.getComplianceWidth(val);
+    }
+
+    public getPriorityClass(p: string | undefined): string {
+        const priority = (p || 'Medium').toLowerCase();
+        if (priority === 'low') return 'rg-priority-low';
+        if (priority === 'critical') return 'rg-priority-critical';
+        if (priority === 'high') return 'rg-priority-high';
+        return 'rg-priority-medium';
+    }
+    public actionBegin(args: any): void {
+        if(args.requestType === 'save') {
+            args.data.TaskID = 10000 + Math.floor(Math.random() * 10001);
+        }
+    }
+    public load(args: any) {
+        if (this.treegrid.enableVirtualization) {
+            args.enableSeamlessScrolling = true;
+        }
     }
 }

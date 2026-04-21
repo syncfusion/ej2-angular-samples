@@ -356,9 +356,9 @@ export class SBController {
         this.settingsPopup = new Popup(document.getElementById('settings-popup'), {
             offsetY: 5,
             relateTo: <any>select('.sb-setting-btn'),
-            position: { X: document.body.offsetWidth - 280, Y: 0 },
+            position: { X: 'right', Y: 'bottom' },
             collision: { X: 'flip', Y: 'flip' },
-            zIndex: 1002,
+            zIndex: 1001,
         });
 
         this.settingsPopup.hide();
@@ -399,6 +399,23 @@ export class SBController {
             filter((event: NavigationStart) => event instanceof NavigationStart)
         )
         .subscribe((event: any) => {
+               const parts = event.url.split('/').slice(1);
+            if (parts.length >= 2) {
+              const theme = parts[0];
+              const control = parts[1];
+              const controls: string[] = ['pdfviewer', 'spreadsheet', 'document-editor'];
+              if (controls.indexOf(control) !== -1) {
+                const folderMap: Record<string, string> = {
+                  pdfviewer: 'pdf-viewer',
+                  spreadsheet: 'spreadsheet-editor',
+                  'document-editor': 'docx-editor'
+                };
+                const folder: string = folderMap[control];
+                const newUrl: string = `https://document.syncfusion.com/demos/${folder}/angular/#/${theme}/${control}/default`;
+                window.location.href = newUrl;
+                return;
+              }
+            }
             this.hideShowSBLoader();
             this.tab.selectedItem = 0;
             this.tab.dataBind();
@@ -674,7 +691,7 @@ export class SBController {
     public doControls: string[] = [
         "Chart", "3D Chart", "3D Circular Chart", "Stock Chart", "Arc Gauge", "Circular Gauge",
         "Diagram", "HeatMap Chart", "Linear Gauge", "Maps", "Range Selector", "Smith Chart",
-        "Barcode", "Sparkline Charts", "TreeMap", "Bullet Chart"
+        "Barcode", "Sparkline Charts", "TreeMap", "Bullet Chart", "Sankey"
     ];
 
 
@@ -959,6 +976,7 @@ private updateStylesheet(theme: string): void {
     onOpenPreferenceButtonClick(e: Event) {
         document.querySelector('.e-search-overlay').classList.add('sb-hide');
         if (this.isMobile) {
+            this.settingsPopup.position = { X: document.body.offsetWidth - 280, Y: 0 };
             this.settingsPopup.show({
                 name: 'SlideRightIn',
                 duration: 400

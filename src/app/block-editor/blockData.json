@@ -928,7 +928,7 @@
         {
             "blockType": "Image",
             "properties": {
-                "src": "https://cdn.syncfusion.com/ej2/richtexteditor-resources/RTE-Overview.png",
+                "src": "./assets/block-editor/images/overview.png",
                 "alt": "Block Editor Image"
             }
         },
@@ -1162,12 +1162,19 @@
         },
         {
             "blockType": "Quote",
-            "content": [
-                {
-                    "contentType": "Text",
-                    "content": "“Quotes are perfect for highlighting key messages or testimonials.”"
-                }
-            ]
+            "properties": {
+                "children": [
+                    {
+                        "blockType": "Paragraph",       
+                        "content": [
+                            {
+                                "contentType": "Text",
+                                "content": "“Quotes are perfect for highlighting key messages or testimonials.”"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             "blockType": "Heading",

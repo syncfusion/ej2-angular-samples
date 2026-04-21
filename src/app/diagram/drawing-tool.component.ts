@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
-    NodeModel, ConnectorModel, DiagramTools, SnapSettingsModel, GridlinesModel, RulerSettingsModel
+    NodeModel, ConnectorModel, DiagramTools, SnapSettingsModel, GridlinesModel, RulerSettingsModel, SnapConstraints
 } from '@syncfusion/ej2-diagrams';
 import { DiagramComponent, DiagramModule } from '@syncfusion/ej2-angular-diagrams';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -76,6 +76,11 @@ export class DrawingToolDiagramComponent {
         }
 
         this.diagram.tool = this.continuousDraw ? DiagramTools.ContinuousDraw : DiagramTools.DrawOnce;
+        if (target.id == "freehand") {
+            this.diagram.snapSettings.constraints = SnapConstraints.ShowLines;
+        } else {
+            this.diagram.snapSettings.constraints = (SnapConstraints.SnapToObject | SnapConstraints.SnapToLines) | SnapConstraints.ShowLines;
+        }
         this.diagram.dataBind();
     }
     //  method for  shape IDs to drawing objects

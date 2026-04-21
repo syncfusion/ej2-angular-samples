@@ -31,7 +31,7 @@ L10n.load({
 });
 @Component({
     templateUrl: 'localization.html',
-    standalone: true,
+    
     imports: [SBActionDescriptionComponent, GridModule, SBDescriptionComponent, PagerComponent]
 })
 export class LocalizationComponent implements OnInit {

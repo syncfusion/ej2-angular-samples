@@ -1,0 +1,38 @@
+<div id='container'>
+    <div id="assistive-pivot">
+        <ejs-dialog #dialog id="ai-assist-dialog" width="500px" height="500px" [visible]="false"
+            [position]="{ X: 0, Y: 0 }" [footerTemplate]="footerTemplate">
+            <div id="ai-pivot-aiassistview" ejs-aiassistview #assistView [toolbarSettings]="toolbarSettings"
+                (promptRequest)="onPromptRequest($event)" promptSuggestionsHeader="Suggestions"
+                [responseItemTemplate]="responseItemTemplate">
+                <e-views>
+                    <e-view type="Assist" name="Ask AI"></e-view>
+                </e-views>
+            </div>
+        </ejs-dialog>
+        <ejs-pivotview #pivotview id='ai-pivot' [dataSourceSettings]=dataSourceSettings showToolbar='true'  width='100%' 
+            height='450' [gridSettings]='gridSettings' [displayOption]='displayOption' allowCalculatedField='true'
+            showFieldList='true' showGroupingBar='true' allowConditionalFormatting='true' allowNumberFormatting='true' [toolbar]='toolbarOptions' (toolbarRender)='beforeToolbarRender($event)'>
+        </ejs-pivotview>
+    </div>
+    <ng-template #footerTemplate>
+        <div class="e-suggestions">
+            <div class="e-suggestion-header">Suggestions</div>
+            <div class="e-suggestion-list">
+                <ul>
+                    <li *ngFor="let suggestion of suggestions" (click)="onSuggestionClick(suggestion)">
+                        {{suggestion}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template #responseItemTemplate let-data>
+        <div class="response-item-content">
+            <div class="response-header">
+                <span class="e-icons e-assistview-icon"></span>
+            </div>
+            <div class="assist-response-content" [innerHTML]='data.response'></div>
+        </div>
+    </ng-template>
+</div>

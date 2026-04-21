@@ -6,6 +6,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 import { TreeViewModule, TreeView } from '@syncfusion/ej2-angular-navigations';
 import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { NgIf } from '@angular/common';
+import { DataManager, Query } from '@syncfusion/ej2-data';
 
 @Component({
     selector: 'ej2-treegrid-container',
@@ -28,6 +29,11 @@ export class StackedHeaderComponent implements OnInit {
     @ViewChild('treeview')
     public treeview?:TreeView | any;
     public toolbar?: string[];
+    public treeviewData: any;
+    public columnChooserData(args: any) {
+      this.treeviewData =this.dataProcess(args.columns);
+      return this.treeviewData;
+    }    
     ngOnInit(): void {
         this.data = stackedData;
         this.toolbar = ['ColumnChooser'],
@@ -81,17 +87,15 @@ export class StackedHeaderComponent implements OnInit {
       treeGridInstance.grid.columnChooserModule.hideDialog();
     };
     
-  // Render TreeView in the column chooser's Content
-  dataProcess(args: any) {
-    
+  dataProcess(columns: any) {
     const parentNodes = [
       { id: 1, name: 'Order Details', hasChild: true, expanded: true },
       { id: 2, name: 'Shipping Details', hasChild: true, expanded: true },
       { id: 3, name: 'Price Details', hasChild: true, expanded: true },
     ];
     let treeData = [];
-    if (args.columns && args.columns.length) {
-      treeData = args.columns.map((column: any) => {
+    if (columns && columns.length) {
+      treeData = columns.map((column: any) => {
         let parentId: number = 0;
         switch (column.field) {
           case 'orderName':
@@ -144,4 +148,21 @@ export class StackedHeaderComponent implements OnInit {
       }
     }
   }
+  actionBegin(args: any) :void {
+      if (args.requestType === 'columnChooserSearch') {
+        debugger
+        const searchVal = (document.querySelector('.e-ccsearch') as any).value;
+        let searchedColumns: any
+        if (searchVal) { 
+            searchedColumns = new DataManager((args.columns as Object[]) as JSON[]).executeLocal(new Query()
+            .where('headerText', "startswith", searchVal, true, true)) as any;
+        } else {
+            searchedColumns = args.columns;
+        }
+        this.treeviewData = this.dataProcess(searchedColumns);
+      }
+    }
+  ngAfterViewInit(): void {
+    this.treegrid.grid.beforeOpenColumnChooser = this.columnChooserData.bind(this);
+  }    
 }

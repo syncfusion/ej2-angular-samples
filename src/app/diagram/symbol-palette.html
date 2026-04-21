@@ -66,7 +66,7 @@
         box-sizing: border-box;
     }
      .diagram-column {
-        padding-right: 10px;
+        padding-right: 0px;
      }
 
     #symbolpalette, #diagram {
@@ -74,22 +74,22 @@
         height: 100%;
         border: 1px solid #ccc;
     }
-    .palette-column {
-        flex: 1 1 170px; /* Grow, Shrink, Basis */
+    /* .palette-column {
+        flex: 1 1 170px;
         min-width: 170px;
     }
 
     .diagram-column {
         flex: 3 1 500px;
         min-width: 400px;
-    }
+    } */
 
     .property-panel-header {
         padding-left: 10px; 
         padding-top:  0px;
         font-weight: 500;
     }
-    .property-panel-section {
+    .property-section {
         flex: 1 1 200px;
         min-width: 180px;
     }
@@ -107,6 +107,46 @@
     .e-dropdownlist, .e-numeric {
         padding-top: 5px;
     }
+
+    .diagram-symbolpalette {
+        display: flex;
+        gap: 0px;
+        align-items: flex-start;
+    }
+    @media (max-width: 550px) {
+        /* Make the control section fill the full row width on mobile */
+        .diagram-symbolpalette .col-lg-10.control-section {
+            width: 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+            border-right: none;
+        }
+        /* Property panel: hidden by app shell (sb-hide class), shown as slide-in panel from right */
+        .diagram-symbolpalette .col-lg-2.property-section {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 230px;
+            height: 100%;
+            background: #fff;
+            z-index: 1000;
+            overflow-y: auto;
+            box-shadow: -2px 0 6px rgba(0,0,0,0.2);
+            padding: 10px;
+        }
+        /* Diagram fills full width */
+        .diagram-column {
+            width: 100%;
+            min-width: 0;
+            flex: 1 1 100%;
+        }
+        /* Palette overlay settings */
+        .sb-mobile-palette {
+            width: 195px;
+            height: 559px;
+            float: left;
+        }
+    }
 </style>
 <div id="action-description">
     <p>
@@ -115,23 +155,27 @@
     </p>
 </div>
  <div style="width: 100%; margin-top: 20px; margin-bottom:20px" class="diagram-symbolpalette">
-    <div class="palette-column"  style="min-width: 20%;" >
+
+    <div class="col-lg-10 control-section" style="border-right: 1px solid #D7D7D7">
+
         <div class="sb-mobile-palette-bar">
             <div id="palette-icon" style="float: right;" role="button" class="e-ddb-icons1 e-toggle-palette"></div>
         </div>
-        <ejs-symbolpalette #symbolpalette id="symbolpalette" [enableAnimation]='enableAnimation' [enableSearch]='enableSearch' [expandMode]='expandMode' [palettes]='palettes'
-            width="100%" height="900px" [symbolMargin]='symbolMargin' [getSymbolInfo]='getSymbolInfo'
-            [getNodeDefaults]='getSymbolDefaults' [getConnectorDefaults]='getConnectorDefaults'>
-        </ejs-symbolpalette>
-    </div>
+        <div id="palette-space" class="sb-mobile-palette">
+            <ejs-symbolpalette #symbolpalette id="symbolpalette" [enableAnimation]='enableAnimation' [enableSearch]='enableSearch' [expandMode]='expandMode' [palettes]='palettes'
+                width="100%" height="900px" [symbolMargin]='symbolMargin' [getSymbolInfo]='getSymbolInfo'
+                [getNodeDefaults]='getSymbolDefaults' [getConnectorDefaults]='getConnectorDefaults'>
+            </ejs-symbolpalette>
+        </div>
 
-    <div  id="diagram-space" class="diagram-column">
+    <div  id="diagram-space" class="sb-mobile-diagram diagram-column">
         <ejs-diagram #diagram id="diagram" width="100%" height="900px" (created)="created()" [getNodeDefaults]='getNodeDefaults'
         [scrollSettings] = "scrollSettings">
         </ejs-diagram>
     </div>
+    </div>
 
-    <div class="property-panel-section">
+    <div class="col-lg-2 property-section">
         <div class="property-panel-header">Properties</div>
         <div class="property-panel-content">
             <table id="property" class="property-panel-table" title="Properties" style="width: 100%;height:100%;">

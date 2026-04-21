@@ -24,9 +24,9 @@
                                 </e-item>
                                 <e-item type="Separator"></e-item>
                                 <e-item prefixIcon="e-icons e-pan" tooltipText="Pan Tool"
-                                    cssClass="tb-item-start pan-item"></e-item>
+                                    [cssClass]="activeTool === 'Pan Tool' ? 'tb-item-start pan-item tb-item-selected' : 'tb-item-start pan-item'"></e-item>
                                 <e-item prefixIcon="e-icons e-mouse-pointer" tooltipText="Select Tool"
-                                    cssClass="tb-item-middle tb-item-selected"></e-item>
+                                    [cssClass]="activeTool === 'Select Tool' ? 'tb-item-middle tb-item-selected' : 'tb-item-middle'"></e-item>
                                 <e-item type="Separator"></e-item>
                                 <e-item cssClass="tb-item-end tb-zoom-dropdown-btn" align="Right">
                                     <ng-template #template>

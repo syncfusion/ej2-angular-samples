@@ -96,6 +96,8 @@ import { AISchedulerAppRoutes } from '../ai-schedule/aischedule.module';
 import { AIDiagramAppRoutes } from '../ai-diagram/aidiagram.module';
 import { AIRichTextEditorAppRoutes } from '../ai-rich-text-editor/airichtexteditor.module';
 import { blockEditorAppRoutes } from '../block-editor/block-editor.module';
+import { sankeyAppRoutes } from '../sankey-chart/sankey-chart.module';
+import { inlineaiassistAppRoutes } from '../inline-ai-assist/inline-ai-assist.module';
 
 export let samplesList: any = [
     {
@@ -108,6 +110,9 @@ export let samplesList: any = [
         'name': 'Data Grid', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-grid', 'samples': AIGridAppRoutes
     },
     {
+        'name': 'Pivot Table', 'type': 'update', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-pivot-table', 'samples': AIPivotTableAppRoutes
+    },
+    {
         'name': 'Diagram', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-diagram', 'samples': AIDiagramAppRoutes
     },
     {
@@ -117,16 +122,13 @@ export let samplesList: any = [
         'name': 'ComboBox', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-combo-box', 'samples': AIComboBoxAppRoutes
     },
     {
-        'name': 'Rich Text Editor', 'type': 'update', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-rich-text-editor', 'samples': AIRichTextEditorAppRoutes
+        'name': 'Rich Text Editor', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-rich-text-editor', 'samples': AIRichTextEditorAppRoutes
     },
     {
         'name': 'Gantt Chart', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-gantt', 'samples': AIGanttAppRoutes
     },
     {
         'name': 'Image Editor', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-image-editor', 'samples': AIImageEditorAppRoutes
-    },
-    {
-        'name': 'Pivot Table', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-pivot-table', 'samples': AIPivotTableAppRoutes
     },
     {
         'name': 'Scheduler', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-schedule', 'samples': AISchedulerAppRoutes
@@ -141,10 +143,13 @@ export let samplesList: any = [
         'name': 'AI AssistView', 'type':'update', 'category': 'Interactive Chat', 'order': '06', 'path': 'ai-assistview', 'samples': aiassistviewAppRoutes, 'ftName': 'ai-assistview'
     },
     {
-        'name': 'Block Editor','category': 'File Viewers & Editors', 'type': 'preview','order': '06', 'path': 'block-editor', 'samples': blockEditorAppRoutes, 'ftName': 'block-editor'
+        'name': 'Block Editor','category': 'File Viewers & Editors', 'type': 'update','order': '06', 'path': 'block-editor', 'samples': blockEditorAppRoutes, 'ftName': 'block-editor'
     },
     {
-        'name': 'Chat UI', 'type':'update','category': 'Interactive Chat', 'order': '06', 'path': 'chat-ui', 'samples': chatUIAppRoutes, "ftName": "chat-ui"
+        'name': 'Chat UI', 'category': 'Interactive Chat', 'order': '06', 'path': 'chat-ui', 'samples': chatUIAppRoutes, "ftName": "chat-ui"
+    },
+    {
+        'name': 'Inline AI Assist', 'type': 'preview', 'category': 'Interactive Chat', 'order': '06', 'path': 'inline-ai-assist', 'samples': inlineaiassistAppRoutes, "ftName": "inline-ai-assist"
     },
     {
         'name': 'Pivot Table', 'category': 'Grids', 'order': '01', 'type': 'update', 'path': 'pivot-table', 'samples': pivottableRouteConfig
@@ -201,7 +206,7 @@ export let samplesList: any = [
         'name': 'Bullet Chart', 'category': 'Data visualization', 'order': '02', 'path': 'bullet-chart', 'samples': bulletChartAppRoutes
     },
     {
-        'name': 'Kanban', 'category': 'Data visualization', 'order': '02', 'path': 'kanban', 'samples': kanbanRouteConfig,'ftName': 'kanban', 'type': 'update'
+        'name': 'Kanban', 'category': 'Data visualization', 'order': '02', 'path': 'kanban', 'samples': kanbanRouteConfig,'ftName': 'kanban'
     },
     {
         'name': 'Form Validator', 'category': 'Forms', 'order': '03', 'path': 'form-validator', 'samples': formValidatorAppRoutes
@@ -213,7 +218,7 @@ export let samplesList: any = [
         'name': "Rich Text Editor", 'type':'update', 'category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "rich-text-editor", 'samples': rteAppRoutes
     },
     {
-        'name': "Markdown Editor", 'type':'update','category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "markdown-editor", 'samples': mdeAppRoutes
+        'name': "Markdown Editor",'category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "markdown-editor", 'samples': mdeAppRoutes
     },
     {
         "name": "Image Editor", 'category': 'File Viewers & Editors', 'ftName': 'image-editor', 'order': '03', 'path': 'image-editor', 'samples': ImageEditorAppRoutes
@@ -306,7 +311,7 @@ export let samplesList: any = [
         'name': 'TreeView', 'category': 'Navigation', 'order': '06', 'path': 'treeview', 'samples': treeAppRoutes, 'ftName': "treeview"
     },
     {
-        'name': 'File Manager', 'category': 'Navigation','type': 'update', 'order': '06', 'path': 'file-manager', 'samples': fileManagerAppRoutes
+        'name': 'File Manager', 'category': 'Navigation', 'order': '06', 'path': 'file-manager', 'samples': fileManagerAppRoutes
     },
     {
         'name': 'Ribbon', 'category': 'Navigation', 'order': '06', 'path': 'ribbon', 'samples': ribbonAppRoutes
@@ -330,16 +335,16 @@ export let samplesList: any = [
         'name': "Skeleton", 'category': 'Notifications',"ftName": "skeleton", 'order': '07', 'path': "skeleton", 'samples': skeletonAppRoutes
     },
     {
-        'name': 'TextBox', 'category': 'Inputs', 'order': '08', 'path': 'textboxes', 'samples': textboxesAppRoutes, 'ftName': 'textbox', 'type': 'update'
+        'name': 'TextBox', 'category': 'Inputs', 'order': '08', 'path': 'textboxes', 'samples': textboxesAppRoutes, 'ftName': 'textbox'
     },
     {
-        'name': 'TextArea', 'category': 'Inputs', 'order': '03', 'path': 'textarea', 'samples': textareasAppRoutes, 'ftName': 'textarea', 'type': 'update'
+        'name': 'TextArea', 'category': 'Inputs', 'order': '03', 'path': 'textarea', 'samples': textareasAppRoutes, 'ftName': 'textarea'
     },
     {
-        'name': 'Input Mask', 'category': 'Inputs', 'order': '08', 'path': 'maskedtextbox', 'samples': maskedTextBoxAppRoutes, 'ftName': "maskedtextbox", 'type': 'update'
+        'name': 'Input Mask', 'category': 'Inputs', 'order': '08', 'path': 'maskedtextbox', 'samples': maskedTextBoxAppRoutes, 'ftName': "maskedtextbox"
     },
     {
-        'name': 'Numeric Textbox', 'category': 'Inputs', 'order': '08', 'path': 'numerictextbox', 'samples': numericAppRoutes, 'ftName': "numerictextbox", 'type': 'update'
+        'name': 'Numeric Textbox', 'category': 'Inputs', 'order': '08', 'path': 'numerictextbox', 'samples': numericAppRoutes, 'ftName': "numerictextbox"
     },
     {
         'name': "Color Picker", 'category': "Inputs", 'order': '08', 'path': "color-picker", 'samples': colorPickerAppRoutes, 'ftName': "color-picker"
@@ -391,5 +396,8 @@ export let samplesList: any = [
     },
     {
         'name': 'Timeline', 'category': 'Layout', 'order': '10', 'path': 'timeline', 'samples': timelineAppRoutes, "ftName": "timeline"
+    },
+     {
+        'name': 'Sankey', 'category': 'Data visualization', 'order': '02', 'path': 'sankey-chart', 'samples': sankeyAppRoutes, 'type': 'preview'
     }
 ];

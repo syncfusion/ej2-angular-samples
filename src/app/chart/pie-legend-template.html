@@ -1,0 +1,34 @@
+
+<div class="control-section">
+		<ejs-accumulationchart #accumulation id="container" [title]="title" [series]="series" [tooltip]="tooltip"
+			[legendSettings]="legendSettings" [subTitle]="subTitle" [titleStyle]="titleStyle" (legendRender)="legendRender($event)"
+			(load)="load($event)" [enableBorderOnMouseMove]='false'>
+		</ejs-accumulationchart>
+</div>
+<div id="action-description">
+	<p>
+		This sample demonstrates custom legend templates in a pie chart visualizing the world's top 5 oil-producing countries — United States, Saudi Arabia, Russia, Canada, and China. Each pie segment reflects the percentage share of production, and the legend displays country flags and daily output in millions of barrels.
+	</p>
+</div>
+<div id="description">
+	<p>
+		This sample uses the
+	<a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/accumulation-chart/legendSettings/#template"
+		aria-label="Navigate to the documentation for template in legendSettings in the EJ2 Accumulation Chart control"><code>template</code></a> property of
+	<a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/accumulation-chart/legendSettings"
+		aria-label="Navigate to the documentation for LegendSettings in the EJ2 Accumulation Chart control"><code>legendSettings</code></a>
+	to fully customize legend items.
+		The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/accumulation-chart/iacclegendrendereventargs"
+			aria-label="Navigate to the documentation for legendRender event in the EJ2 Accumulation Chart control"><code>legendRender</code></a> event dynamically injects country-specific data — including flag images, color-matched labels, and production volumes — into the legend template at render time.
+	</p>
+	<p>
+		The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/accumulation-chart/iacclegendclickeventargs"
+			aria-label="Navigate to the documentation for legendClick event in the EJ2 Accumulation Chart control"><code>legendClick</code></a> event enables interactive toggling of data points, adjusting legend opacity to reflect visibility state of each pie segment.
+	</p>
+	<p>
+		More information on legend customization in accumulation charts can be found in the
+		<a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/legend/"
+			aria-label="Navigate to the documentation for Legend in TypeScript Accumulation Chart control">documentation</a>.
+	</p>
+</div>
+

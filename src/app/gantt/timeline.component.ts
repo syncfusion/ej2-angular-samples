@@ -1,16 +1,20 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import { ChangeEventArgs, CheckBoxAllModule } from '@syncfusion/ej2-angular-buttons';
 import { ChangedEventArgs, NumericTextBoxAllModule, NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 import { DropDownListComponent, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { projectData } from './data';
+import { isNullOrUndefined } from '@syncfusion/ej2-base';
 import { GanttComponent, TimelineViewMode, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { DateRangePickerComponent, DateRangePickerModule } from '@syncfusion/ej2-angular-calendars';
+
 @Component({
     selector: 'ej2-gantttimeline',
     templateUrl: 'timeline.html',
+    encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, NumericTextBoxAllModule, CheckBoxAllModule, DropDownListAllModule, SBDescriptionComponent]
+    imports: [SBActionDescriptionComponent, GanttAllModule, NumericTextBoxAllModule, CheckBoxAllModule, DropDownListAllModule, SBDescriptionComponent, DateRangePickerModule]
 })
 export class GanttTimelineComponent implements OnInit {
     @ViewChild('gantt')
@@ -68,6 +72,8 @@ export class GanttTimelineComponent implements OnInit {
     public bottomUnitDropdownObj: DropDownListComponent;
     @ViewChild('unitWidth')
     public unitWidthNumericObject: NumericTextBoxComponent;
+    @ViewChild('timelineDateRange')
+    public timelineDateRangeObject: DateRangePickerComponent;
     public data: object[];
     public taskSettings: object;
     public timelineSettings: object;
@@ -77,6 +83,8 @@ export class GanttTimelineComponent implements OnInit {
     public projectStartDate: Date;
     public projectEndDate: Date;
     public columns: object[];
+    public startDateValue: Date = new Date('02/05/2025');
+    public endDateValue: Date = new Date('03/23/2025');
     public ngOnInit(): void {
         this.data = projectData;
         this.taskSettings = {
@@ -119,24 +127,6 @@ export class GanttTimelineComponent implements OnInit {
     }
     public onUnitWidthChange(args: ChangedEventArgs): void {
         this.ganttObj.timelineSettings.timelineUnitSize = +args.value;
-    }
-    public onTopTierChange(args: ChangeEventArgs ): void {
-        if (args.checked) {
-            this.enableDisableTopTierInputs(true);
-            this.ganttObj.timelineSettings.topTier.unit = 'Week';
-        } else {
-            this.enableDisableTopTierInputs(false);
-            this.ganttObj.timelineSettings.topTier.unit = 'None';
-        }
-    }
-    public onBottomTierChange(args: ChangeEventArgs ): void {
-        if (args.checked) {
-            this.enableDisableBottomTierInputs(true);
-            this.ganttObj.timelineSettings.bottomTier.unit = 'Day';
-        } else {
-            this.enableDisableBottomTierInputs(false);
-            this.ganttObj.timelineSettings.bottomTier.unit = 'None';
-        }
     }
     public onTopCountChange(args: ChangedEventArgs ): void {
         let count: number = +args.value;
@@ -188,16 +178,6 @@ export class GanttTimelineComponent implements OnInit {
         let format: string = args.value;
         this.ganttObj.timelineSettings.bottomTier.format = format.toString();
     }
-    private enableDisableTopTierInputs(value: boolean): void {
-        this.topCountNumericObj.enabled = value;
-        this.topUnitDropdownObj.enabled = value;
-        this.topTierFormatObj.enabled = value;
-    }
-    private enableDisableBottomTierInputs(value: boolean): void {
-        this.bottomCountNumericObj.enabled = value;
-        this.bottomUnitDropdownObj.enabled = value;
-        this.bottomTierFormatObj.enabled = value;
-    }
     private updateUnitWidth(unit: string, tier: string): void {
         let topUnit: string = tier === 'top' ? unit : this.ganttObj.timelineSettings.topTier.unit;
         let bottomUnit: string = tier === 'bottom' ? unit : this.ganttObj.timelineSettings.bottomTier.unit;
@@ -234,6 +214,11 @@ export class GanttTimelineComponent implements OnInit {
         } else {
             this.ganttObj.enableMultiTaskbar = false;
         }
+    }
+
+    public changeDateRange = (args: any): void => {
+        this.ganttObj.timelineSettings.viewStartDate = isNullOrUndefined(args.startDate) ? 'auto' : args.startDate;;
+        this.ganttObj.timelineSettings.viewEndDate = isNullOrUndefined(args.endDate) ? 'auto' : args.endDate; ;
     }
 }
 

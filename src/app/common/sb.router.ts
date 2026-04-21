@@ -99,6 +99,8 @@ import { AISchedulerSampleModule } from '../ai-schedule/aischedule.module';
 import { AIDiagramSampleModule } from '../ai-diagram/aidiagram.module';
 import { AIRichTextEditorSampleModule } from '../ai-rich-text-editor/airichtexteditor.module';
 import { BlockEditorSampleModule } from '../block-editor/block-editor.module';
+import { SankeySampleModule } from '../sankey-chart/sankey-chart.module';
+import { InlineAIAssistSampleModule } from '../inline-ai-assist/inline-ai-assist.module';
 
 
 const appRoutes: any = [
@@ -140,6 +142,8 @@ const appRoutes: any = [
     { path: ':theme/ai-assistview/:sample', redirectTo: 'material/ai-assistview/default' },
     { path: 'chat-ui', loadChildren: import('../chat-ui/chat-ui.module').then(m=>m.ChatUISampleModule) },
     { path: ':theme/chat-ui/:sample', redirectTo: 'material/chat-ui/default' },
+    { path: 'inline-ai-assist', loadChildren: import('../inline-ai-assist/inline-ai-assist.module').then(m=>m.InlineAIAssistSampleModule) },
+    { path: ':theme/inline-ai-assist/:sample', redirectTo: 'material/inline-ai-assist/ai-overview' },
     // Data visualization
     { path: 'chart', loadChildren: import('../chart/chart.module').then(m=>m.ChartSampleModule) },
     { path: '', redirectTo: 'material/chart/overview-chart', pathMatch: 'full' },
@@ -163,6 +167,7 @@ const appRoutes: any = [
     { path: 'bulletchart', loadChildren: import('../bullet-chart/bullet-chart.module').then(m=>m.BulletChartSampleModule) },
     { path: 'kanban', loadChildren: import('../kanban/kanban.module').then(m=>m.KanbanSampleModule) },
     { path: ':theme/kanban/:sample', redirectTo: 'material/kanban/overview' },
+    { path: 'sankey', loadChildren: import('../sankey-chart/sankey-chart.module').then(m=>m.SankeySampleModule) },
     // Forms
     { path: 'form-validator', loadChildren: import('../form-validator/form-validator.module').then(m=>m.FormValidatorModule) },
     { path: 'query-builder', loadChildren: import('../query-builder/query-builder.module').then(m=>m.QueryBuilderSampleModule) },
@@ -308,6 +313,7 @@ const appRoutes: any = [
         TreemapSampleModule,
         BulletChartSampleModule,
         KanbanSampleModule,
+        SankeySampleModule,
         // Forms
         FormValidatorModule,
         QueryBuilderSampleModule,
@@ -333,6 +339,7 @@ const appRoutes: any = [
         //Interactive chat
         AIAssistSampleModule,
         ChatUISampleModule,
+        InlineAIAssistSampleModule,
         // Inputs
         TextboxesModule,
         TextAreasModule,

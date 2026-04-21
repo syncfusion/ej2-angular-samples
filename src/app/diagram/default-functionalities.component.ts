@@ -23,7 +23,7 @@ Diagram.Inject(UndoRedo);
 @Component({
   selector: 'control-content',
   templateUrl: 'default-functionalities.html',
-  styleUrls: ['default-functionalities.css'],
+  styleUrls: ['default-functionalities.css', 'diagram-common.style.css'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
   imports: [SBActionDescriptionComponent, ToolbarModule, SplitButtonModule, SymbolPaletteModule, DiagramModule, UploaderModule, SBDescriptionComponent]
@@ -327,7 +327,11 @@ export class FlowDiagramComponent {
     itemIds.forEach(itemId => {
       const item = this.toolbar.items.find(item => item.id === itemId);
       if (item) {
-        item.disabled = isSelectedItemLocked;
+        if (itemId === 'Lock') {
+          item.disabled = false;
+        } else {
+          item.disabled = isSelectedItemLocked;
+        }
       }
     });
   }

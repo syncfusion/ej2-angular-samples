@@ -22,8 +22,8 @@ export class PinnedRowsComponent implements OnInit {
     public contextMenuItems: ContextMenuItem[];
     public ngOnInit(): void {
         this.data = supportData;
+        this.pageSettings = { pageSize: 20},
         this.filterSettings = { type: 'Excel'};
-        this.pageSettings = { pageSize: 20 };
         this.contextMenuItems = ['PinRow', 'UnpinRow'];
     }
 

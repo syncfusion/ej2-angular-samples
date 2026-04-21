@@ -5,9 +5,9 @@
 
 .grid-to-schedule .e-drag-clone,
 .grid-to-schedule .e-schedule-event-clone {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .content-wrapper.grid-to-schedule .schedule-container .schedule-content,

@@ -92,6 +92,7 @@ export class ZoomingAndPanning {
                 break;
             // Pan tool action
             case 'Pan Tool':
+                this.diagram.clearSelection();
                 this.diagram.tool = DiagramTools.ZoomPan;
                 break;
             // Pointer action

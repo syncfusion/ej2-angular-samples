@@ -3,13 +3,7 @@
     width: 100%;
     height: 100%;
   }
-  
-  /* PivotView Layout Styles */
-  .sb-sample-content-area,
-  .control-section {
-    min-height: 255px !important;
-  }
-  
+
   /* Icon Styles */
   .e-connect-report::before,
   .e-save-report::before,

@@ -1,20 +1,18 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, NgZone, ChangeDetectorRef } from '@angular/core';
-import { SpeechToTextModule, SpeechToTextComponent, TranscriptChangedEventArgs } from '@syncfusion/ej2-angular-inputs';
-import { AIAssistViewModule, AIAssistViewComponent, ToolbarSettingsModel, ToolbarItemClickedEventArgs, PromptRequestEventArgs, PromptToolbarSettingsModel } from '@syncfusion/ej2-angular-interactive-chat';
+import { Component, ViewChild, ElementRef, NgZone, ChangeDetectorRef } from '@angular/core';
+import { AIAssistViewModule, AIAssistViewComponent, ToolbarSettingsModel, ToolbarItemClickedEventArgs, PromptRequestEventArgs, FooterToolbarSettingsModel,AttachmentSettingsModel,SpeechToTextSettingsModel } from '@syncfusion/ej2-angular-interactive-chat';
 import * as Marked from 'marked';
 import { getAzureOpenAIAssist, AzureOpenAIRequest } from './ai-openai-service';
 import {AIToastComponent} from '../common/ai-toast.component';
 
 @Component({
   standalone: true,
-  imports: [AIAssistViewModule, SpeechToTextModule, AIToastComponent],
+  imports: [AIAssistViewModule, AIToastComponent],
   selector: 'app-root',
   templateUrl: './ai-speech-to-text.html',
   styleUrl: './ai-speech-to-text.component.css'
   })
-export class SpeechToTextAssistComponent implements AfterViewInit {
+export class SpeechToTextAssistComponent {
    @ViewChild('assistView') assistViewInstance!: AIAssistViewComponent;
-  @ViewChild('speechToText') speechToTextInstance!: SpeechToTextComponent;
   @ViewChild('contentEditor') contentEditor!: ElementRef<HTMLDivElement>;
 
     // Azure OpenAI config (fill with your values)
@@ -33,24 +31,25 @@ export class SpeechToTextAssistComponent implements AfterViewInit {
     itemClicked: this.onToolbarItemClicked.bind(this),
   };
 
-  public promptToolbarSettings: PromptToolbarSettingsModel = {
-    itemClicked: (args: ToolbarItemClickedEventArgs) => {
-      if (args.item.iconCss === 'e-icons e-assist-edit') {
-        const editor = this.contentEditor?.nativeElement;
-        if (editor) {
-          editor.innerHTML = this.assistViewInstance.prompts[args.dataIndex].prompt;
-          this.onContentChanged();
-          this.blurMicButton();
-        }
-      }
+  public footerToolbarSettings: FooterToolbarSettingsModel= {
+        toolbarPosition: 'Bottom',
+        items: [
+            { iconCss: 'e-icons e-assist-send', align: 'Right' },
+            { iconCss: 'e-icons e-assist-attachment-icon', align: 'Left', tooltip: 'Attach File' },
+            { iconCss: 'e-icons e-assist-speech-to-text', align: 'Left'}
+        ]
     }
+
+  public enableAttachments: boolean = true;
+  public attachmentSettings : AttachmentSettingsModel = {
+    saveUrl: 'https://services.syncfusion.com/angular/production/api/FileUploader/Save',
+    removeUrl: 'https://services.syncfusion.com/angular/production/api/FileUploader/Remove'
   };
+  public speechToTextSettings: SpeechToTextSettingsModel = {
+        enable: true
+    }
 
   private stopStreaming = false;
-
-  ngAfterViewInit(): void {
-    this.onContentChanged(); // Initialize button visibility
-  }
 
   public async streamResponse(response: string) {
     let lastResponse = '';
@@ -66,7 +65,6 @@ export class SpeechToTextAssistComponent implements AfterViewInit {
       }
       await new Promise(resolve => setTimeout(resolve, 15));
     }
-    this.onContentChanged();
   }
 
 public async onPromptRequest(args: PromptRequestEventArgs): Promise<void> {
@@ -86,50 +84,7 @@ public async onPromptRequest(args: PromptRequestEventArgs): Promise<void> {
         '⚠️ Something went wrong while connecting to the OpenAI service. Please check your API key or try again later.'
       );
       this.stopStreaming = true;
-      this.onContentChanged();
     }
-  }
-
-  public onContentChanged(): void {
-    const editor = this.contentEditor?.nativeElement;
-    if (!editor) return;
-    // Treat only real text as content. Ignore non-breaking spaces or stray HTML
-    const text = (editor.textContent || '').replace(/\u00A0/g, ' ').trim();
-    this.hasTextInEditor = text.length > 0;
-    if (!this.hasTextInEditor && (editor.innerHTML.trim() === '' || editor.innerHTML === ' ')) {
-      editor.innerHTML = '';
-    }
-  }
-
-  public onEditorKeyDown(event: KeyboardEvent): void {
-    if (event.key === 'Enter' && !event.shiftKey) {
-      event.preventDefault();
-      event.stopPropagation();
-      this.sendIconClicked();
-    }
-  }
-
-  public onTranscriptChange(args: TranscriptChangedEventArgs): void {
-    const editor = this.contentEditor?.nativeElement;
-    if (!editor) return;
-    editor.innerText = args.transcript || '';
-    this.onContentChanged();
-  }
-
-  public onListeningStart(): void {
-    // Ensure state update is inside Angular zone
-    this.zone.run(() => {
-      this.isListening = true;
-      this.cdr.detectChanges();
-    });
-  }
-
-  public onListeningStop(): void {
-    this.zone.run(() => {
-      this.isListening = false;
-      this.onContentChanged();
-      this.cdr.detectChanges();
-    });
   }
 
   public onToolbarItemClicked(args: ToolbarItemClickedEventArgs): void {
@@ -139,44 +94,10 @@ public async onPromptRequest(args: PromptRequestEventArgs): Promise<void> {
       if (editor) {
         editor.innerText = '';
       }
-      this.stopListeningIfNeeded();
-      this.onContentChanged();
-    }
-  }
-
-  public sendIconClicked(): void {
-    const editor = this.contentEditor.nativeElement;
-    const promptText = editor.innerText;
-    if (promptText.trim()) {
-      // Ensure listening is stopped before sending
-      this.stopListeningIfNeeded();
-      this.assistViewInstance.executePrompt(promptText);
-      editor.innerText = '';
-      this.onContentChanged();
-      this.blurMicButton();
-      this.cdr.detectChanges();
     }
   }
 
   public stopRespondingClick(): void {
     this.stopStreaming = true;
-    this.stopListeningIfNeeded();
-    this.onContentChanged();
-  }
-
-  private stopListeningIfNeeded(): void {
-    if (this.isListening) {
-      this.speechToTextInstance?.stopListening?.();
-      // Make sure UI reflects the stop immediately
-      this.zone.run(() => {
-        this.isListening = false;
-        this.cdr.detectChanges();
-      });
-    }
-  }
-
-  private blurMicButton(): void {
-    // Prevent accidental re-triggering of mic due to focus/keyboard
-    (this.speechToTextInstance as any)?.element?.blur?.();
   }
 }

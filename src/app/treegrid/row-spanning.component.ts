@@ -7,7 +7,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
   selector: 'app-row-span',
-  templateUrl: './row-span.html',
+  templateUrl: './row-spanning.html',
   styleUrls: ['row-span.component.css'],
   standalone: true,
   imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent],

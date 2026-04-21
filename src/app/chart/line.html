@@ -9,11 +9,11 @@
         <ejs-chart style='display:block' align='center' id='chartcontainer' [title]='title' [subTitle]='subTitle' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
             [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' [width]='width' [legendSettings]='legend'>
             <e-series-collection>
-                <e-series [dataSource]='data' type='Line' xName='Period' yName='Viet_Growth' name='Vietnam' width=2 [marker]='circleMarker'> </e-series>
-                <e-series [dataSource]='data' type='Line' xName='Period' yName='Can_Growth' name='Indonesia' width=2 [marker]='triangleMarker'> </e-series>
-                <e-series [dataSource]='data' type='Line' xName='Period' yName='Mal_Growth' name='France' width=2 [marker]='diamondMarker'> </e-series>
-                <e-series [dataSource]='data' type='Line' xName='Period' yName='Egy_Growth' name='Poland' width=2 [marker]='rectangleMarker'> </e-series>
-                <e-series [dataSource]='data' type='Line' xName='Period' yName='Ind_Growth' name='Mexico' width=2 [marker]='pentagonMarker'> </e-series>    
+                <e-series [dataSource]='data' type='Line' xName='Period' yName='Viet_Growth' name='Vietnam' width=2 [marker]='circleMarker' [labelSettings]='labelSettings'> </e-series>
+                <e-series [dataSource]='data' type='Line' xName='Period' yName='Can_Growth' name='Indonesia' width=2 [marker]='triangleMarker' [labelSettings]='labelSettings'> </e-series>
+                <e-series [dataSource]='data' type='Line' xName='Period' yName='Mal_Growth' name='France' width=2 [marker]='diamondMarker' [labelSettings]='labelSettings'> </e-series>
+                <e-series [dataSource]='data' type='Line' xName='Period' yName='Egy_Growth' name='Poland' width=2 [marker]='rectangleMarker' [labelSettings]='labelSettings'> </e-series>
+                <e-series [dataSource]='data' type='Line' xName='Period' yName='Ind_Growth' name='Mexico' width=2 [marker]='pentagonMarker' [labelSettings]='labelSettings'> </e-series>    
             </e-series-collection>
         </ejs-chart>
     </div>
@@ -30,6 +30,9 @@
     <p>
         Chart component features are segregated into individual feature-wise modules. To use line series, we need to inject
         <code>LineSeriesService</code> into the <code>&#64;NgModule.providers</code> section.
+    </p>
+     <p>
+        <code>SeriesLabel</code> is enabled in this example to display the name of each line series.
     </p>
     <p>
         More information about the line series can be found in this

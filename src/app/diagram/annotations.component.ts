@@ -228,7 +228,7 @@ export class AnnotationDiagramComponent {
                         node.annotations[0].width = 25;
                         node.annotations[0].height = 25;
                         node.annotations[0].template =
-                            '<img src="./assets/diagram/Images/annotation/' + propertyValue + '.svg" style="width:100%;height:100%" />';
+                            '<img src="https://ej2.syncfusion.com/angular/demos/assets/diagram/Images/annotation/' + propertyValue + '.svg" style="width:100%;height:100%" />';
                     }
                 } else if (propertyName === 'interaction') {
                     node.annotations[0].constraints = node.annotations[0].constraints ^ AnnotationConstraints.Interaction;

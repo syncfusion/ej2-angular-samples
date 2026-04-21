@@ -4,18 +4,46 @@
     .diagram-scroll .e-symbolpalette {
         display: block;
     }
+    @media (max-width: 550px) {
+        /* Palette toggle bar: shown on mobile via shared diagram-common.style.css */
+        /* Diagram fills full width on mobile */
+        .diagram-scroll #diagram-space.sb-mobile-diagram {
+            width: 100% !important;
+        }
+        /* Property panel: hidden by app shell (sb-hide), shown as fixed slide-in panel */
+        .diagram-scroll #properties.property-section {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 260px !important;
+            height: 100%;
+            background: #fff;
+            z-index: 1000;
+            overflow-y: auto;
+            box-shadow: -2px 0 6px rgba(0,0,0,0.2);
+            padding: 10px;
+            float: none !important;
+        }
+        .diagram-scroll .sb-mobile-palette {
+            width: 30% !important;
+        }
+    }
 </style>
 
 <div style="width: 100%;">
-    <div id="palette-space" style="width:22%;float:left">
+    <div class="sb-mobile-palette-bar">
+        <div id="palette-icon" style="float: right;" role="button" class="e-ddb-icons1 e-toggle-palette"></div>
+    </div>
+
+    <div id="palette-space" style="width:22%;float:left" class="sb-mobile-palette">
         <ejs-symbolpalette id="symbolpalette" [expandMode]='expandMode' [palettes]='palettes' width="100%" height="700px" [symbolHeight]=60 [symbolWidth]=60 [getConnectorDefaults]='connectorDefaults' [symbolMargin]='symbolMargin' [getSymbolInfo]='getSymbolInfo' [getNodeDefaults]='getSymbolDefaults' [expandMode]="expandMode">
         </ejs-symbolpalette>
     </div>
-    <div id="diagram-space" style="width:55%;float:left">
+    <div id="diagram-space" style="width:55%;float:left"class="sb-mobile-diagram">
         <ejs-diagram #diagram id="diagram" width="100%" height="700px" [snapSettings]='snapSettings' (created)="created()" [getConnectorDefaults]='connectorDefaults' (dragEnter)="dragEnter($event)" (created)="diagramCreate($event)" [scrollSettings] = "scrollSettings">
         </ejs-diagram>
     </div>
-    <div id="properties" style="width:22%;float:right">
+    <div id="properties" class="property-section" style="width:22%;float:right">
         <div class="property-panel-header">
             Properties
         </div>

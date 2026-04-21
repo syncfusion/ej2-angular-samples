@@ -1,41 +1,140 @@
 <div id="action-description">
-    <p>This sample demonstrates the Tree Grid component with the virtual scrolling feature. Scroll the Tree Grid content vertically to load rows.
+    <p>This sample demonstrates row virtualization in the TreeGrid component, enabling smooth scrolling and efficient
+        rendering of large sets of self-referencing records with full CRUD support and custom cell templates.
     </p>
 </div>
 <div class="control-section">
-    <ejs-treegrid #treegrid [dataSource]='vData' [enableVirtualization]=true [enableVirtualMaskRow]=true childMapping='Crew' [treeColumnIndex]='1' [editSettings]='editSettings' [toolbar]='toolbar' height='400'>
+
+    <ejs-treegrid #treegridvirtual id="TreeGrid" [dataSource]="data" height="400" [enableVirtualization]="true"
+        [enableVirtualMaskRow]="true" [treeColumnIndex]="2" idMapping="TaskID" parentIdMapping="ParentID"
+        [editSettings]="editSettings" [toolbar]="toolbar" (actionBegin)="actionBegin($event)" (load)="load($event)" rowHeight="50">
         <e-columns>
-            <e-column field='TaskID' headerText='Player Jersey' [validationRules]='taskidrules' width='120' textAlign='Right' isPrimaryKey='true'></e-column>
-            <e-column field='FIELD1' headerText='Player Name' [validationRules]='tasknamerules' width='120'></e-column>
-            <e-column field='FIELD2' headerText='Year' width='100' textAlign='Right' [validationRules]='yearrules'></e-column>
-            <e-column field='FIELD3' headerText='Stint' width='120' textAlign='Right' [validationRules]='stintrules'></e-column>
-            <e-column field='FIELD4' headerText='TMID' width='120' textAlign='Right' [validationRules]='tmidrules'></e-column>
+            <e-column field="TaskID" headerText="ID" width="90" textAlign="Right" [isPrimaryKey]="true"
+                [visible]="false">
+            </e-column>
+            <e-column field="ParentID" headerText="Parent ID" width="90" textAlign="Right" [visible]="false"></e-column>
+
+            <e-column field="ResourceId" headerText="Resource" width="360"></e-column>
+            <e-column field="Name" headerText="Type" width="150" editType="dropdownedit"></e-column>
+
+            <e-column field="Status" headerText="Status" width="210" textAlign="Center" editType="dropdownedit">
+                <ng-template #template let-data>
+                    <div class="rg-badge" [ngClass]="getStatusClass(data.Status)">
+                        {{ data.Status || '' }}
+                    </div>
+                </ng-template>
+            </e-column>
+
+            <e-column field="Region" headerText="Region" width="180" editType="dropdownedit">
+                <ng-template #template let-data>
+                    <div class="rg-region" [attr.data-region]="data.Region">
+                        <span class="rg-region-flag"></span>
+                        <span class="rg-region-name">{{ data.Region || '' }}</span>
+                    </div>
+                </ng-template>
+            </e-column>
+
+            <e-column field="Environment" headerText="Environment" width="140" textAlign="Left">
+            </e-column>
+
+            <e-column field="MonthlyCost" headerText="Monthly Cost ($)" width="140" textAlign="Right"
+                editType="numericedit">
+                <ng-template #template let-data>
+                    <span class="rg-metric">${{ data.MonthlyCost || 0 }}</span>
+                </ng-template>
+            </e-column>
+
+            <e-column field="Cpu" headerText="CPU (%)" width="100" textAlign="Right" editType="numericedit">
+                <ng-template #template let-data>
+                    <span>{{ data.Cpu || 0 }}</span>
+                </ng-template>
+            </e-column>
+
+            <e-column field="Memory" headerText="Memory (%)" width="110" textAlign="Right" editType="numericedit">
+                <ng-template #template let-data>
+                    <span>{{ data.Memory || 0 }}</span>
+                </ng-template>
+            </e-column>
+
+            <e-column field="Disk" headerText="Disk (%)" width="100" textAlign="Right" editType="numericedit">
+                <ng-template #template let-data>
+                    <span>{{ data.Disk || 0 }}</span>
+                </ng-template>
+            </e-column>
+
+            <e-column field="NetworkMbps" headerText="Network (mbps)" width="130" textAlign="Right" format="N0"
+                editType="numericedit"></e-column>
+            <e-column field="RequestsPerSec" headerText="Requests (per sec)" width="150" textAlign="Right" format="N0"
+                editType="numericedit"></e-column>
+            <e-column field="ErrorRatePpm" headerText="Error Rate (ppm)" width="170" textAlign="Right" format="N0"
+                editType="numericedit"></e-column>
+            <e-column field="SecurityFindings" headerText="Security Findings" width="170" textAlign="Right" format="N0"
+                editType="numericedit">
+            </e-column>
+            <e-column field="StorageGb" headerText="Storage (GB)" width="120" textAlign="Right" format="N0"
+                editType="numericedit"></e-column>
+            <e-column field="InstanceCount" headerText="Instances" width="100" textAlign="Right" format="N0"
+                editType="numericedit"></e-column>
+            <e-column field="UptimeDays" headerText="Uptime (days)" width="150" textAlign="Right" format="N0"
+                editType="numericedit"></e-column>
+
+            <e-column field="Priority" headerText="Priority" width="130" textAlign="Center" editType="dropdownedit">
+                <ng-template #template let-data>
+                    <div class="rg-badge" [ngClass]="getPriorityClass(data.Priority)">
+                        {{ data.Priority || 'Medium' }}
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field="ComplianceScore" headerText="Compliance Score" width="180" textAlign="Left"
+                editType="numericedit">
+                <ng-template #template let-data>
+                    <div class="rg-compliance-wrapper">
+                        <div class="rg-compliance">
+                            <i [style.width.%]="getComplianceWidth(data.ComplianceScore)"></i>
+                        </div>
+                        <div class="rg-compliance-value">
+                            {{ getComplianceValue(data.ComplianceScore) }}
+                        </div>
+                    </div>
+                </ng-template>
+            </e-column>
         </e-columns>
     </ejs-treegrid>
 </div>
 
 <div id='description'>
     <p>
-        The Tree Grid UI virtualization allows you to render only rows visible within the view-port without buffering the entire datasource.
-        To enable the virtualization, set <code><a target="_blank" class="code"
+        Row virtualization in TreeGrid displays only the rows currently visible in the viewport, ensuring smooth
+        scrolling and optimal performance with large datasets.
+        TreeGrid virtualization is enabled by setting the <code><a target="_blank" class="code"
         href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#enablevirtualization">
-        enableVirtualization </a></code> property as true.
+        enableVirtualization </a></code> property to <code>true</code>. The <code>height</code> property must be
+        explicitly defined when virtualization is enabled.
     </p>
     <p>
-        By default, <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#enablevirtualmaskrow">
-        enableVirtualMaskRow </a></code> is set to true. we can change by setting <code>enableVirtualMaskRow</code> property to false.
+      For seamless scrolling, set <code><a target="_blank" class="code" 
+      href="https://ej2.syncfusion.com/angular/documentation/api/grid/loadeventargs#enableSeamlessScrolling">args.enableSeamlessScrolling = true</a></code> in the TreeGrid's <code><a target="_blank" class="code" 
+      href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/index-default#load">load</a></code> event. 
+      This ensures smooth vertical and horizontal transitions, providing a smoother experience during fast scrolling when virtualization is enabled.
     </p>
     <p>
-        Note: The <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#height">
-        height</a></code> property must be defined when enabling <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#enablevirtualization">
-        enableVirtualization </a></code>.
+        This demo showcases a self‑referential data source containing 10,000 records. In the TreeGrid, the hierarchical
+        relationship is established by mapping the <code>parentIdMapping</code> property to the "ParentID" field and the
+        <code>idMapping</code> property to the "TaskID" field in the data source.
+        The toolbar enables full CRUD operations along with hierarchy management options:
     </p>
-    <p>
-        In this demo, Tree Grid is enabled with row virtualization and also perform the CRUD (Add, Edit, Delete, Update) actions.
-    </p>  
-    <p style='font-weight: 500'>Injecting Module:</p>
-    <p>Tree Grid component features are segregated into individual feature-wise modules. To use Virtualscrolling feature, we need
+    <ul>
+        <li><code>Indent</code>: Moves the selected row to become the last child of the row directly above it.</li>
+        <li><code>Outdent</code>: Moves the selected row up one level, making it a sibling of its previous parent.</li>
+    </ul>
+    <p><strong>Injecting Module:</strong></p>
+    <p>Tree Grid features are organized into individual feature-specific modules.
+        To use the virtual scrolling functionality, we need
         to inject <code>VirtualScrollService</code> into the <code>&#64;NgModule.providers</code> section.</p>
+    <p>
+        More information on the Virtual Scrolling can be found in <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/treegrid/scrolling/virtual-scroll"
+            aria-label="Navigate to the documentation for virtual-scroll in TypeScript TreeGrid control">documentation</a>
+        section.
+    </p>
 </div>

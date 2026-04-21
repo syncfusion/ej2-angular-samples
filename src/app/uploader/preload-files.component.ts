@@ -34,7 +34,11 @@ export class PreloadFileUploaderComponent {
     public onFileRemove(args: RemovingEventArgs): void {
         args.postRawFile = false;
     }
-
+    public onFailure(args: any): void {
+        if (args.response && args.response.statusText !== '') {
+            args.statusText = args.response.statusText;
+        }
+    }
     public dropElement: HTMLElement = document.getElementsByClassName('control-fluid')[0] as HTMLElement;
 
     constructor(@Inject('sourceFiles') private sourceFiles: any) {

@@ -32,7 +32,7 @@
             <e-column field='AssetKit' headerText='Asset Kit' width='180'>
                 <ng-template #template let-data>
                     <div class="asset">
-                        <ejs-chiplist id="asset" [chips]="data.AssetKit.split(',')"></ejs-chiplist>
+                        <ejs-chiplist id="asset" class="grid-asset-kit" [chips]="data.AssetKit.split(',')"></ejs-chiplist>
                     </div>
                 </ng-template>
                 <ng-template #headerTemplate let-data>

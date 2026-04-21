@@ -31,7 +31,7 @@ export class ImageComponent {
 
     toolbarSettings: ToolbarModule = {
         image: [
-            'Replace', 'Align', 'Caption', 'Remove', 'InsertLink', 'OpenImageLink', '|',
+            'Replace', 'Align', 'Caption', 'Remove', 'WrapText', 'InsertLink', 'OpenImageLink', '|',
             'EditImageLink', 'RemoveImageLink', 'Display', 'AltText', 'Dimension',
             {
                 tooltipText: 'Rotate Left',

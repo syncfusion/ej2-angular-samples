@@ -27,7 +27,7 @@ export class AutoSaveComponent {
       items: ['Bold', 'Italic', 'Underline', '|', 'Formats', 'Alignments', 'Blockquote',
             'OrderedList', 'UnorderedList', '|', 'CreateLink', 'Image', '|', 'SourceCode', 'Undo', 'Redo']
     };
- public updateStatus() {
+public updateStatus() {
     document.getElementById('saving').style.display = 'block';
     document.getElementById('saved').style.display = 'none';
     setTimeout(() => {

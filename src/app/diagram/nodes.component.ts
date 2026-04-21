@@ -48,11 +48,9 @@ export class NodeDiagramComponent {
       let node: NodeModel = this.diagram.nodes[i];
       let isShadowEnabled: number = node.constraints & NodeConstraints.Shadow;
       if (args.checked) {
-        node.constraints =
-          NodeConstraints.AspectRatio | NodeConstraints.Default;
+        node.constraints |= NodeConstraints.AspectRatio;
       } else {
-        node.constraints =
-          NodeConstraints.Default & ~NodeConstraints.AspectRatio;
+        node.constraints &= ~NodeConstraints.AspectRatio;
       }
       if (isShadowEnabled) {
         node.constraints |= NodeConstraints.Shadow;

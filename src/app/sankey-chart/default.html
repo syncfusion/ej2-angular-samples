@@ -1,0 +1,80 @@
+<div class="control-section">
+    <ejs-sankey id="sankey-container" align="center" [title]="title" [subTitle]="subTitle" width="90%" [height]="height"
+      background="transparent" [linkStyle]="linkStyle" [labelSettings]="labelSettings" [legendSettings]="legendSettings"
+      [tooltip]="tooltip" (load)="load($event)">
+      <e-sankey-nodes>
+        <e-sankey-node id="Electricity Generation" [offset]="-120"></e-sankey-node>
+        <e-sankey-node id="Residential" [offset]="38"></e-sankey-node>
+        <e-sankey-node id="Commercial" [offset]="36"></e-sankey-node>
+        <e-sankey-node id="Industrial" [offset]="34"></e-sankey-node>
+        <e-sankey-node id="Transportation" [offset]="32"></e-sankey-node>
+        <e-sankey-node id="Rejected Energy" [offset]="-40"></e-sankey-node>
+        <e-sankey-node id="Energy Services"></e-sankey-node>
+        <e-sankey-node id="Solar"></e-sankey-node>
+        <e-sankey-node id="Nuclear"></e-sankey-node>
+        <e-sankey-node id="Wind"></e-sankey-node>
+        <e-sankey-node id="Geothermal"></e-sankey-node>
+        <e-sankey-node id="Natural Gas"></e-sankey-node>
+        <e-sankey-node id="Coal"></e-sankey-node>
+        <e-sankey-node id="Biomass"></e-sankey-node>
+        <e-sankey-node id="Petroleum" [offset]="-10"></e-sankey-node>
+      </e-sankey-nodes>
+
+      <e-sankey-links>
+        <e-sankey-link sourceId="Solar" targetId="Electricity Generation" [value]="454"></e-sankey-link>
+        <e-sankey-link sourceId="Nuclear" targetId="Electricity Generation" [value]="185"></e-sankey-link>
+        <e-sankey-link sourceId="Wind" targetId="Electricity Generation" [value]="47.8"></e-sankey-link>
+        <e-sankey-link sourceId="Geothermal" targetId="Electricity Generation" [value]="40"></e-sankey-link>
+        <e-sankey-link sourceId="Natural Gas" targetId="Electricity Generation" [value]="800"></e-sankey-link>
+        <e-sankey-link sourceId="Coal" targetId="Electricity Generation" [value]="28.7"></e-sankey-link>
+        <e-sankey-link sourceId="Biomass" targetId="Electricity Generation" [value]="50"></e-sankey-link>
+        <e-sankey-link sourceId="Electricity Generation" targetId="Residential" [value]="182"></e-sankey-link>
+        <e-sankey-link sourceId="Natural Gas" targetId="Residential" [value]="400"></e-sankey-link>
+        <e-sankey-link sourceId="Petroleum" targetId="Residential" [value]="50"></e-sankey-link>
+        <e-sankey-link sourceId="Electricity Generation" targetId="Commercial" [value]="351"></e-sankey-link>
+        <e-sankey-link sourceId="Natural Gas" targetId="Commercial" [value]="300"></e-sankey-link>
+        <e-sankey-link sourceId="Electricity Generation" targetId="Industrial" [value]="641"></e-sankey-link>
+        <e-sankey-link sourceId="Natural Gas" targetId="Industrial" [value]="786"></e-sankey-link>
+        <e-sankey-link sourceId="Biomass" targetId="Industrial" [value]="563"></e-sankey-link>
+        <e-sankey-link sourceId="Petroleum" targetId="Industrial" [value]="300"></e-sankey-link>
+        <e-sankey-link sourceId="Electricity Generation" targetId="Transportation" [value]="20"></e-sankey-link>
+        <e-sankey-link sourceId="Natural Gas" targetId="Transportation" [value]="51"></e-sankey-link>
+        <e-sankey-link sourceId="Biomass" targetId="Transportation" [value]="71"></e-sankey-link>
+        <e-sankey-link sourceId="Petroleum" targetId="Transportation" [value]="2486"></e-sankey-link>
+        <e-sankey-link sourceId="Residential" targetId="Rejected Energy" [value]="432"></e-sankey-link>
+        <e-sankey-link sourceId="Commercial" targetId="Rejected Energy" [value]="351"></e-sankey-link>
+        <e-sankey-link sourceId="Industrial" targetId="Rejected Energy" [value]="972"></e-sankey-link>
+        <e-sankey-link sourceId="Transportation" targetId="Rejected Energy" [value]="1920"></e-sankey-link>
+        <e-sankey-link sourceId="Residential" targetId="Energy Services" [value]="200"></e-sankey-link>
+        <e-sankey-link sourceId="Commercial" targetId="Energy Services" [value]="300"></e-sankey-link>
+        <e-sankey-link sourceId="Industrial" targetId="Energy Services" [value]="755"></e-sankey-link>
+        <e-sankey-link sourceId="Transportation" targetId="Energy Services" [value]="637"></e-sankey-link>
+      </e-sankey-links>
+    </ejs-sankey>
+  </div>
+
+  <div id="action-description">
+    <p>
+      Explore California’s 2023 energy consumption in TBtu (Trillion British Thermal Units) with an interactive Sankeychart based on Lawrence Livermore National Laboratory data.
+      Follow energy flows from generation sources to Residential, Commercial, Industrial, and Transportation sectors,highlighting useful energy services versus rejected energy.
+    </p>
+  </div>
+
+  <div id="description">
+    <p>
+      This Sankey chart illustrates energy flow across sources, carriers, and usage sectors, with labeled nodes and interactive tooltips that reveal detailed link and value information.
+    </p>
+    <p><strong>Key features:</strong></p>
+    <ul>
+      <li>Configure nodes to represent energy sources and consumption sectors</li>
+      <li>Define links to trace energy flow from generation through end use</li>
+      <li>Enable tooltips for exploring individual flow values and relationships</li>
+      <li>Hover over nodes or links for deeper insight into the energy distribution pattern</li>
+    </ul>
+  </div>
+
+<style>
+  #sankey-container {
+    display: block;
+  }
+</style>

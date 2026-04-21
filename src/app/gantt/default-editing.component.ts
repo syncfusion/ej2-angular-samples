@@ -10,7 +10,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
 })
 export class GanttEditingComponent implements OnInit {
-  public ganttObj: GanttComponent;
+    @ViewChild('ganttEdit')
+    public ganttObj: GanttComponent;
     public data: object[];
     public resources: object[];
     public resourceFields: object ;
@@ -83,7 +84,6 @@ export class GanttEditingComponent implements OnInit {
         this.splitterSettings = {
            columnIndex: 3
         };
-        
     }
     actionBegin(args): void {
         if (args.columnName === "EndDate" || args.requestType === "beforeOpenAddDialog" || args.requestType === "beforeOpenEditDialog") {

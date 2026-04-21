@@ -49,3 +49,12 @@ td.e-rowcell .statustxt.e-notavailablecolor {
 .fluent2-highcontrast .e-grid td.e-rowcell.e-selectionbackground.e-active .e-icons {
     color: black;
 }
+
+.fluent2-highcontrast .e-grid td.e-rowcell:hover .grid-asset-kit.e-chip-list .e-chip:hover,
+.fluent2-highcontrast .e-grid td.e-rowcell.e-selectionbackground.e-active .grid-asset-kit.e-chip-list .e-chip:hover, 
+.fluent2-highcontrast .e-grid .grid-asset-kit.e-chip-list .e-chip:active,
+.fluent2-highcontrast .e-grid .grid-asset-kit.e-chip-list .e-chip.e-focused {
+    background: #000;
+    border-color: #fff;
+    color: #fff;
+}

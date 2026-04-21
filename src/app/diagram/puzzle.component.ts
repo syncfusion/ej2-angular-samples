@@ -127,9 +127,9 @@ export class PuzzleDiagramComponent {
         for (let i = 1; i <= 16; i++) {
             const row = Math.ceil(i / 4);
             const col = ((i - 1) % 4) + 1;
-            bridgeTheme[i] = `./assets/diagram/Images/puzzle/bridge${col}x${row}.png`;
-            natureTheme[i] = `./assets/diagram/Images/puzzle/image${col}x${row}.png`;
-            manTheme[i] = `./assets/diagram/Images/puzzle/man${col}x${row}.png`;
+            bridgeTheme[i] = `https://ej2.syncfusion.com/angular/demos/assets/diagram/Images/puzzle/bridge${col}x${row}.png`;
+            natureTheme[i] = `https://ej2.syncfusion.com/angular/demos/assets/diagram/Images/puzzle/image${col}x${row}.png`;
+            manTheme[i] = `https://ej2.syncfusion.com/angular/demos/assets/diagram/Images/puzzle/man${col}x${row}.png`;
         }
 
         this.imageCollections = [bridgeTheme, natureTheme, manTheme];

@@ -1,0 +1,90 @@
+<script src="script/diagram-common.ts"></script>
+<style>
+    .e-symbolpalette {
+        display: block;
+    }
+</style>
+<div id="action-description">
+    <p>
+        This sample demonstrates how to import and export Visio diagrams using the Syncfusion<sup>®</sup> EJ2 Angular Diagram. Any Visio file (.vsdx) can be imported to visualize and edit workflows, and the customized diagram can then be exported back to Visio format (.vsdx) for seamless collaboration and interoperability.
+    </p>
+    <p>
+        <b>NOTE: This feature is currently experimental. Some functionalities may be limited or may not work as expected. We welcome you to try it out and share your <a href="https://www.syncfusion.com/feedback" target="_blank">feedback</a> as we continue to refine and improve it.</b>
+    </p>
+</div>
+<div class="control-section visio-import-container">
+    <div style="width: 100%">
+        <ejs-toolbar #toolbar overflowMode="Scrollable" id="toolbar" (clicked)="toolbarClicked($event)">
+            <e-items>
+                <e-item prefixIcon="e-icons e-circle-add" tooltipText="New Diagram" id="New_Diagram"></e-item>
+                <e-item prefixIcon="e-icons e-import" tooltipText="Import Visio (.vsdx)" id="Import"></e-item>
+                <e-item prefixIcon="e-icons e-export" tooltipText="Export as Visio (.vsdx)" id="Export"></e-item>
+
+                <e-item type="Separator"></e-item>
+
+                <e-item tooltipText="Draw Connectors" id="Draw_con">
+                    <ng-template #template>
+                        <ejs-splitbutton [items]="conTypeItems" iconCss="e-ddb-icons e-diagram-connector e-icons"
+                            (select)="onConnectorSelect($event)"></ejs-splitbutton>
+                    </ng-template>
+                </e-item>
+                <e-item tooltipText="Draw Shapes" id="Draw_shapes">
+                    <ng-template #template>
+                        <ejs-splitbutton [items]="shapesItems" iconCss="e-shapes e-icons"
+                            (select)="onShapesSelect($event)"></ejs-splitbutton>
+                    </ng-template>
+                </e-item>
+
+                <e-item type="Separator"></e-item>
+
+                <e-item prefixIcon="e-cut e-icons" tooltipText="Cut" cssClass="tb-item-middle tb-item-lock-category"
+                    disabled=true id="Cut"></e-item>
+                <e-item prefixIcon="e-copy e-icons" tooltipText="Copy" cssClass="tb-item-middle tb-item-lock-category"
+                    disabled=true id="Copy"></e-item>
+                <e-item prefixIcon="e-icons e-paste" tooltipText="Paste" disabled=true id="Paste"></e-item>
+
+                <e-item type="Separator"></e-item>
+
+                <e-item prefixIcon="e-icons e-undo tb-icons" tooltipText="Undo" disabled=true id="Undo"></e-item>
+                <e-item prefixIcon="e-icons e-redo tb-icons" tooltipText="Redo" disabled=true id="Redo"></e-item>
+
+                <e-item type="Separator"></e-item>
+
+                <e-item disabled=true prefixIcon="e-trash e-icons" tooltipText="Delete"
+                    cssClass="tb-item-middle tb-item-lock-category" id="Delete"></e-item>
+            </e-items>
+        </ejs-toolbar>
+        <div class="sb-mobile-palette-bar">
+            <div id="palette-icon" style="float: right;" role="button" class="e-ddb-icons1 e-toggle-palette"></div>
+        </div>
+        <div id="palette-space" class="sb-mobile-palette">
+            <ejs-symbolpalette id="symbolpalette" [expandMode]="expandMode" [palettes]="palettes" width="100%"
+                height="700px" [symbolHeight]=50 [symbolWidth]=50 [getSymbolInfo]='getSymbolInfo'
+                [getNodeDefaults]="nodeSymbolDefaults" [getConnectorDefaults]="connectorSymbolDefaults">
+            </ejs-symbolpalette>
+        </div>
+        <div id="diagram-space" class="sb-mobile-diagram">
+            <div class="content-wrapper">
+                <ejs-diagram #diagram id="diagram" width="100%" height="700px" [nodes]="nodes" [connectors]="connectors" (created)="created()"
+                    (dragEnter)="dragEnter($event)" (selectionChange)="selectionChange($event)" (historyChange)="historyChange()"
+                    (diagramImporting)="diagramImporting($event)" (diagramExporting)="diagramExporting($event)">
+                </ejs-diagram>
+            </div>
+            <div style="display:none;">
+                <ejs-uploader #defaultupload id="fileupload" (success)="onUploadSuccess($event)"
+                    [asyncSettings]="asyncSettings" [multiple]=false [allowedExtensions]="'.vsdx'"></ejs-uploader>
+            </div>
+            <ejs-toast #toast id="toast" [position]="toastPosition"></ejs-toast>
+        </div>
+    </div>
+</div>
+<div id="description">
+    <p>
+        The Visio file (.vsdx) can be imported through the "Import Visio" option in the toolbar using the <code>importFromVisio</code> method, and the customized file can be exported back to Visio format (.vsdx) through the "Export as Visio" option in the toolbar using the <code>exportToVisio</code> method. Once the file is imported, elements on the canvas can be edited using features such as <b>Cut</b>, <b>Copy</b>, <b>Paste</b>, <b>Drag</b>, <b>Resize</b>, <b>Delete</b>, <b>Draw Connectors and Shapes</b>, <b>Undo</b>, <b>Redo</b>, and other advanced options for complete customization.
+
+        <br>
+
+        Toast notifications are displayed during Visio file import and export operations to indicate statuses such as <b>started</b>, <b>completed</b>, or <b>failed</b>, using events like <code>diagramImporting</code> and <code>diagramExporting</code>.
+    </p>
+    <br>
+</div>

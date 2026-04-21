@@ -79,7 +79,7 @@ export class TrackBallChartComponent {
     public title: string = 'Average Sales per Person';
     public marker: Object = { visible: true, isFilled: true, width: 7, height: 7 };
     public tooltip: Object = { enable: true, shared: true };
-    public crosshair: Object = { enable: true, lineType: 'Vertical' };
+    public crosshair: Object = { enable: true, lineType: 'Vertical', snapToData: true };
     constructor() {
         //code
     };

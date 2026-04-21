@@ -2,6 +2,7 @@ import { Component, ViewChild, OnInit, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MarkdownConverter } from '@syncfusion/ej2-markdown-converter';
 import TurndownService from "turndown";
+import { gfm } from "turndown-plugin-gfm";
 import { ButtonComponent, ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
 import {
   SidebarModule,
@@ -44,7 +45,16 @@ export class MarkdownBlocksEditor implements OnInit, AfterViewInit {
   public mediaQuery: string = '(min-width: 600px)';
   public target: string = '.blockeditor-marked';
   public markdownContent: string = '';
-  public turndownService = new TurndownService();
+  public turndownService = (() => {
+    const service = new TurndownService({
+      codeBlockStyle: 'fenced',   
+      emDelimiter: '_',
+      bulletListMarker: '-',
+      headingStyle: 'atx',        
+    });
+    service.use(gfm);
+    return service;
+  })();
   public sidebarHeaderText: string = 'Markdown Templates';
   public breadcrumbItems: ItemModel[] = [{ text: 'Team' }];
   public editorBlocks: BlockModel[] = [];
@@ -81,6 +91,11 @@ export class MarkdownBlocksEditor implements OnInit, AfterViewInit {
     setTimeout(() => {
       this.loadContent('assets/block-editor/mdfiles/Team Sessions.md');
       this.breadcrumbItems = [{ text: 'Team' }, { text: 'Team Sessions' }];
+      
+      if (this.closeBtn?.element && window.innerWidth < 600) {
+        this.closeBtn.element.style.left = '18px';
+        this.closeBtn.element.classList.add('expand-mode');
+      }
     }, 100);
   }
 
@@ -224,7 +239,7 @@ export class MarkdownBlocksEditor implements OnInit, AfterViewInit {
     this.editorBlocks = [{
       id: 'fallback-block',
       blockType: 'Paragraph',
-      content: [{ id: 'fallback-t', contentType: 'Text', content: message }],
+      content: [{ contentType: 'Text', content: message }],
       properties: { placeholder: 'Fallback content' },
       indent: 0,
     }];

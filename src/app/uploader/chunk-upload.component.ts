@@ -46,6 +46,12 @@ export class ChunkUploadComponent {
         args.postRawFile = false;
     }
 
+    public onFailure(args: any): void {
+        if (args.response && args.response.statusText !== '') {
+            args.statusText = args.response.statusText;
+        }
+    }
+
     public isInteraction: boolean = false;
     // to update flag variable value for automatic pause and resume
     public onPausing(args: any): void {

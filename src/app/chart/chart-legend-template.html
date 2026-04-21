@@ -1,0 +1,50 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates customizable legend templates using all-time Summer Olympic medal data. It displays Gold, Silver, and Bronze medal counts for five countries — Argentina, Austria, Ethiopia, Iran, and India. Each legend entry features a medal icon rendered through a custom legend template to enhance visual clarity and data interpretation.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart #chart [width]="width" [chartArea]='chartArea' id='chartcontainer' style='display:block;' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [subTitle]='subTitle' [tooltip]='tooltip'
+            (load)='load($event)' [legendSettings]='legendSettings' (legendRender)='legendRender($event)'>
+            <e-series-collection>
+                <e-series [dataSource]='medalData' type='Column' xName='Country' yName='Gold' name='Gold' columnSpacing='0.1'> </e-series>
+                <e-series [dataSource]='medalData' type='Column' xName='Country' yName='Silver' name='Silver' columnSpacing='0.1'> </e-series>
+                <e-series [dataSource]='medalData' type='Column' xName='Country' yName='Bronze' name='Bronze' columnSpacing='0.1'> </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <p>
+        This sample shows how to render and configure a custom legend template in a Column chart. The legend items are customized using the
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/chart/legendSettings/#template"
+            aria-label="Navigate to the documentation for template in LegendSettings in the Angular Chart control"><code>template</code></a>
+        property of
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/chart/legendSettings/"
+            aria-label="Navigate to the documentation for LegendSettings in the Angular Chart control"><code>legendSettings</code></a>,
+        which allows embedding custom HTML content such as medal images and styled text into each legend item.
+    </p>
+    <p>
+        The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/chart/#legendrender"
+            aria-label="Navigate to the documentation for legendRender event in Angular Chart control"><code>legendRender</code></a>
+        event is used to dynamically update the template content for each series — setting the medal icon image and label text per series.
+    </p>
+    <p>
+        <code>Tooltip</code> is enabled in this example. To see a tooltip in action, hover over or tap on the chart.
+    </p>
+    <p><b>Injecting Module</b></p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use column series, we need to
+        inject
+        <code>ColumnSeries</code>, <code>Category</code>, <code>Tooltip</code>, and <code>Legend</code> modules using
+        the
+        <code>Chart.Inject(ColumnSeries, Category, Tooltip, Legend)</code> method or by importing <code>ChartAllModule</code> in your module.
+    </p>
+    <p>
+        More information on chart legends can be found in the
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/legend"
+            aria-label="Navigate to the documentation for Legend in Angular Chart control">documentation</a>.
+    </p>
+</div>
+

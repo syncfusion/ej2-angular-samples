@@ -36,7 +36,6 @@ export class AIAssistantEditorComponent {
 
     async onAIAssistantPromptRequest(args: AIAssistantPromptRequestArgs): Promise<void> {
         this.userID = await getUserID();
-        console.log(this.userID);
         try {
             this.abortController = new AbortController();
             const response: Response = await fetch(AI_SERVICE_URL + '/api/stream', {

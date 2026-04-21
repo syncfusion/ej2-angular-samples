@@ -3,7 +3,7 @@ export var data = [
         "Id": "parent",
         "Name": "Maria Anders",
         "Designation": "Managing Director",
-        "ImageUrl": "./assets/diagram/employees/image30.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image30.png",
         "IsExpand": "true",
         "RatingColor": "#C34444"
     },
@@ -11,7 +11,7 @@ export var data = [
         "Id": 1,
         "Name": "Ana Trujillo",
         "Designation": "Project Manager",
-        "ImageUrl": "./assets/diagram/employees/image2.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image2.png",
         "IsExpand": "false",
         "RatingColor": "#68C2DE",
         "ReportingPerson": "parent"
@@ -20,7 +20,7 @@ export var data = [
         "Id": 2,
         "Name": "Anto Moreno",
         "Designation": "Project Lead",
-        "ImageUrl": "./assets/diagram/employees/image1.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image1.png",
         "IsExpand": "false",
         "RatingColor": "#93B85A",
         "ReportingPerson": 1
@@ -29,7 +29,7 @@ export var data = [
         "Id": 3,
         "Name": "Thomas Hardy",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image3.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image3.png",
         "IsExpand": "false",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 2
@@ -38,7 +38,7 @@ export var data = [
         "Id": 4,
         "Name": "Christina kaff",
         "Designation": "S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image4.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image4.png",
         "IsExpand": "false",
         "RatingColor": "#93B85A",
         "ReportingPerson": 3
@@ -47,7 +47,7 @@ export var data = [
         "Id": 5,
         "Name": "Hanna Moos",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image6.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image6.png",
         "IsExpand": "true",
         "RatingColor": "#D46E89",
         "ReportingPerson": 4
@@ -56,7 +56,7 @@ export var data = [
         "Id": 6,
         "Name": "Peter Citeaux",
         "Designation": "S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image5.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image5.png",
         "IsExpand": "true",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 5
@@ -65,7 +65,7 @@ export var data = [
         "Id": 7,
         "Name": "Martín Kloss",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image18.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image18.png",
         "IsExpand": "false",
         "RatingColor": "#93B85A",
         "ReportingPerson": 6
@@ -74,7 +74,7 @@ export var data = [
         "Id": 8,
         "Name": "Elizabeth Mary",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image7.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image7.png",
         "IsExpand": "None",
         "RatingColor": "#93B85A",
         "ReportingPerson": 6
@@ -83,7 +83,7 @@ export var data = [
         "Id": 9,
         "Name": "Victoria Ash",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image8.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image8.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 5
@@ -92,7 +92,7 @@ export var data = [
         "Id": 10,
         "Name": "Francisco Yang",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image19.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image19.png",
         "IsExpand": "None",
         "RatingColor": "#93B85A",
         "ReportingPerson": 3
@@ -101,7 +101,7 @@ export var data = [
         "Id": 11,
         "Name": "Yang Wang",
         "Designation": "Project Manager",
-        "ImageUrl": "./assets/diagram/employees/image21.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image21.png",
         "IsExpand": "None",
         "RatingColor": "#EBB92E",
         "ReportingPerson": "parent"
@@ -110,7 +110,7 @@ export var data = [
         "Id": 12,
         "Name": "Lino Rodri",
         "Designation": "Project Manager",
-        "ImageUrl": "./assets/diagram/employees/image9.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image9.png",
         "IsExpand": "true",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 11
@@ -119,7 +119,7 @@ export var data = [
         "Id": 13,
         "Name": "Philip Cramer",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image23.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image23.png",
         "IsExpand": "true",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 24
@@ -128,7 +128,7 @@ export var data = [
         "Id": 14,
         "Name": "Pedro Afonso",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image10.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image10.png",
         "IsExpand": "true",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 15
@@ -137,7 +137,7 @@ export var data = [
         "Id": 15,
         "Name": "Elizabeth Roel",
         "Designation": "S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image11.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image11.png",
         "IsExpand": "false",
         "RatingColor": "#93B85A",
         "ReportingPerson": 13
@@ -146,7 +146,7 @@ export var data = [
         "Id": 16,
         "Name": "Janine Labrune",
         "Designation": "Project Lead",
-        "ImageUrl": "./assets/diagram/employees/image12.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image12.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 12
@@ -155,7 +155,7 @@ export var data = [
         "Id": 17,
         "Name": "Ann Devon",
         "Designation": "Project Manager",
-        "ImageUrl": "./assets/diagram/employees/image13.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image13.png",
         "IsExpand": "false",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 25
@@ -164,7 +164,7 @@ export var data = [
         "Id": 18,
         "Name": "Roland Mendel",
         "Designation": "Project Lead",
-        "ImageUrl": "./assets/diagram/employees/image24.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image24.png",
         "IsExpand": "true",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 17
@@ -173,7 +173,7 @@ export var data = [
         "Id": 19,
         "Name": "Aria Cruz",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image14.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image14.png",
         "IsExpand": "false",
         "RatingColor": "#93B85A",
         "ReportingPerson": 18
@@ -182,7 +182,7 @@ export var data = [
         "Id": 20,
         "Name": "Martine Rancé",
         "Designation": "S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image26.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image26.png",
         "IsExpand": "None",
         "RatingColor": "#93B85A",
         "ReportingPerson": 18
@@ -191,7 +191,7 @@ export var data = [
         "Id": 21,
         "Name": "Maria Larsson",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image15.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image15.png",
         "IsExpand": "false",
         "RatingColor": "#EBB92E",
         "ReportingPerson": 19
@@ -200,7 +200,7 @@ export var data = [
         "Id": 22,
         "Name": "Diego Roel",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image17.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image17.png",
         "IsExpand": "false",
         "RatingColor": "#D46E89",
         "ReportingPerson": 21
@@ -209,7 +209,7 @@ export var data = [
         "Id": 23,
         "Name": "Peter Franken",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image27.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image27.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 21
@@ -218,7 +218,7 @@ export var data = [
         "Id": 24,
         "Name": "Howard Snyder",
         "Designation": "Project Lead",
-        "ImageUrl": "./assets/diagram/employees/image20.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image20.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 16
@@ -227,7 +227,7 @@ export var data = [
         "Id": 25,
         "Name": "Carine Schmitt",
         "Designation": "Project Manager",
-        "ImageUrl": "./assets/diagram/employees/image22.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image22.png",
         "IsExpand": "None",
         "RatingColor": "#EBB92E",
         "ReportingPerson": "parent"
@@ -236,7 +236,7 @@ export var data = [
         "Id": 26,
         "Name": "Paolo Accorti",
         "Designation": "Project Lead",
-        "ImageUrl": "./assets/diagram/employees/image28.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image28.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 36
@@ -245,7 +245,7 @@ export var data = [
         "Id": 27,
         "Name": "Eduardo Roel",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image31.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image31.png",
         "IsExpand": "true",
         "RatingColor": "#93B85A",
         "ReportingPerson": 26
@@ -254,7 +254,7 @@ export var data = [
         "Id": 28,
         "Name": "José Pedro ",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image25.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image25.png",
         "IsExpand": "true",
         "RatingColor": "#D46E89",
         "ReportingPerson": 27
@@ -263,7 +263,7 @@ export var data = [
         "Id": 29,
         "Name": "André Fonseca",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image32.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image32.png",
         "IsExpand": "true",
         "RatingColor": "#EBB92E",
         "ReportingPerson": 28
@@ -272,7 +272,7 @@ export var data = [
         "Id": 30,
         "Name": "Howard Snyd",
         "Designation": "S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image33.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image33.png",
         "IsExpand": "false",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 29
@@ -281,7 +281,7 @@ export var data = [
         "Id": 31,
         "Name": "Manu Pereira",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image34.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image34.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 29
@@ -290,7 +290,7 @@ export var data = [
         "Id": 32,
         "Name": "Mario Pontes",
         "Designation": "S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image29.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image29.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 29
@@ -299,7 +299,7 @@ export var data = [
         "Id": 33,
         "Name": "Carlos Schmitt",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image30.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image30.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 29
@@ -308,7 +308,7 @@ export var data = [
         "Id": 34,
         "Name": "Yoshi Latimer",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image4.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image4.png",
         "IsExpand": "true",
         "RatingColor": "#D46E89",
         "ReportingPerson": 29
@@ -317,7 +317,7 @@ export var data = [
         "Id": 35,
         "Name": "Patricia Kenna",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image6.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image6.png",
         "IsExpand": "true",
         "RatingColor": "#EBB92E",
         "ReportingPerson": 29
@@ -326,7 +326,7 @@ export var data = [
         "Id": 36,
         "Name": "Helen Bennett",
         "Designation": "Project Lead",
-        "ImageUrl": "./assets/diagram/employees/image7.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image7.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 25
@@ -335,7 +335,7 @@ export var data = [
         "Id": 37,
         "Name": "Daniel Tonini",
         "Designation": "Project Manager",
-        "ImageUrl": "./assets/diagram/employees/image1.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image1.png",
         "IsExpand": "true",
         "RatingColor": "#93B85A",
         "ReportingPerson": "parent"
@@ -344,7 +344,7 @@ export var data = [
         "Id": 38,
         "Name": "Annette Roel",
         "Designation": "Project Lead",
-        "ImageUrl": "./assets/diagram/employees/image2.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image2.png",
         "IsExpand": "false",
         "RatingColor": "#93B85A",
         "ReportingPerson": 37
@@ -353,7 +353,7 @@ export var data = [
         "Id": 39,
         "Name": "Yoshi Wilson",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image8.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image8.png",
         "IsExpand": "false",
         "RatingColor": "#EBB92E",
         "ReportingPerson": 38
@@ -362,7 +362,7 @@ export var data = [
         "Id": 40,
         "Name": "John Steel",
         "Designation": "Project Lead",
-        "ImageUrl": "./assets/diagram/employees/image3.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image3.png",
         "IsExpand": "false",
         "RatingColor": "#93B85A",
         "ReportingPerson": 38
@@ -371,7 +371,7 @@ export var data = [
         "Id": 41,
         "Name": "Renate Jose",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image9.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image9.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 40
@@ -380,7 +380,7 @@ export var data = [
         "Id": 42,
         "Name": "Jaime Yorres",
         "Designation": "SR",
-        "ImageUrl": "./assets/diagram/employees/image10.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image10.png",
         "IsExpand": "None",
         "RatingColor": "#93B85A",
         "ReportingPerson": 41
@@ -389,7 +389,7 @@ export var data = [
         "Id": 43,
         "Name": "Carlos Nagy",
         "Designation": "SR",
-        "ImageUrl": "./assets/diagram/employees/image5.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image5.png",
         "IsExpand": "None",
         "RatingColor": "#93B85A",
         "ReportingPerson": 42
@@ -398,7 +398,7 @@ export var data = [
         "Id": 44,
         "Name": "Felipe Kloss",
         "Designation": "S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image16.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image16.png",
         "IsExpand": "false",
         "RatingColor": "#EBB92E",
         "ReportingPerson": 43
@@ -407,7 +407,7 @@ export var data = [
         "Id": 45,
         "Name": "Fran Wilson",
         "Designation": "SR",
-        "ImageUrl": "./assets/diagram/employees/image18.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image18.png",
         "IsExpand": "None",
         "RatingColor": "#93B85A",
         "ReportingPerson": 43
@@ -416,7 +416,7 @@ export var data = [
         "Id": 46,
         "Name": "John Rovelli",
         "Designation": "S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image19.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image19.png",
         "IsExpand": "None",
         "RatingColor": "#93B85A",
         "ReportingPerson": 43
@@ -425,7 +425,7 @@ export var data = [
         "Id": 47,
         "Name": "Catherine Kaff",
         "Designation": "SR",
-        "ImageUrl": "./assets/diagram/employees/image11.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image11.png",
         "IsExpand": "false",
         "RatingColor": "#93B85A",
         "ReportingPerson": 43
@@ -434,7 +434,7 @@ export var data = [
         "Id": 48,
         "Name": "Jean Fresnière",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image21.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image21.png",
         "IsExpand": "false",
         "RatingColor": "#D46E89",
         "ReportingPerson": 43
@@ -443,7 +443,7 @@ export var data = [
         "Id": 49,
         "Name": "Alex Feuer",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image23.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image23.png",
         "IsExpand": "None",
         "RatingColor": "#93B85A",
         "ReportingPerson": 43
@@ -452,7 +452,7 @@ export var data = [
         "Id": 50,
         "Name": "Simon Roel",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image24.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image24.png",
         "IsExpand": "None",
         "RatingColor": "#EBB92E",
         "ReportingPerson": 42
@@ -461,7 +461,7 @@ export var data = [
         "Id": 51,
         "Name": "Yvonne Wong",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image12.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image12.png",
         "IsExpand": "None",
         "RatingColor": "#93B85A",
         "ReportingPerson": 52
@@ -470,7 +470,7 @@ export var data = [
         "Id": 52,
         "Name": "Rene Phillips",
         "Designation": "S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image25.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image25.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 39
@@ -479,7 +479,7 @@ export var data = [
         "Id": 53,
         "Name": "Yoshi Kenna",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image14.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image14.png",
         "IsExpand": "false",
         "RatingColor": "#EBB92E",
         "ReportingPerson": 52
@@ -488,7 +488,7 @@ export var data = [
         "Id": 54,
         "Name": "Helen Marie",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image15.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image15.png",
         "IsExpand": "true",
         "RatingColor": "#EBB92E",
         "ReportingPerson": 52
@@ -497,7 +497,7 @@ export var data = [
         "Id": 55,
         "Name": "Joseph Kaff",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image26.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image26.png",
         "IsExpand": "None",
         "RatingColor": "#EBB92E",
         "ReportingPerson": 52
@@ -506,7 +506,7 @@ export var data = [
         "Id": 56,
         "Name": "Georg Pipps",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image27.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image27.png",
         "IsExpand": "None",
         "RatingColor": "#EBB92E",
         "ReportingPerson": 57
@@ -515,7 +515,7 @@ export var data = [
         "Id": 57,
         "Name": "Nardo Batista",
         "Designation": "Project Lead",
-        "ImageUrl": "./assets/diagram/employees/image17.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image17.png",
         "IsExpand": "true",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 12
@@ -524,7 +524,7 @@ export var data = [
         "Id": 58,
         "Name": "Lúcia Carvalho",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image20.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image20.png",
         "IsExpand": "false",
         "RatingColor": "#93B85A",
         "ReportingPerson": 57
@@ -533,7 +533,7 @@ export var data = [
         "Id": 59,
         "Name": "Horst Kloss",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image28.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image28.png",
         "IsExpand": "None",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 57
@@ -542,7 +542,7 @@ export var data = [
         "Id": 60,
         "Name": "Sergio roel",
         "Designation": "CSR",
-        "ImageUrl": "./assets/diagram/employees/image22.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image22.png",
         "IsExpand": "None",
         "RatingColor": "#EBB92E",
         "ReportingPerson": 57
@@ -551,7 +551,7 @@ export var data = [
         "Id": 61,
         "Name": "Paula Wilson",
         "Designation": "CSR",
-        "ImageUrl": "./assets/diagram/employees/image31.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image31.png",
         "IsExpand": "None",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 57
@@ -560,7 +560,7 @@ export var data = [
         "Id": 62,
         "Name": "Mauri Moroni",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image25.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image25.png",
         "IsExpand": "None",
         "RatingColor": "#93B85A",
         "ReportingPerson": 57
@@ -569,7 +569,7 @@ export var data = [
         "Id": 63,
         "Name": "Janete Limeira",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image29.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image29.png",
         "IsExpand": "None",
         "RatingColor": "#93B85A",
         "ReportingPerson": 57
@@ -578,7 +578,7 @@ export var data = [
         "Id": 64,
         "Name": "Michael Holz",
         "Designation": "S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image32.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image32.png",
         "IsExpand": "true",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 57
@@ -587,7 +587,7 @@ export var data = [
         "Id": 65,
         "Name": "Alej Camino",
         "Designation": "Project Manager",
-        "ImageUrl": "./assets/diagram/employees/image33.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image33.png",
         "IsExpand": "false",
         "RatingColor": "#93B85A",
         "ReportingPerson": "parent"
@@ -596,7 +596,7 @@ export var data = [
         "Id": 66,
         "Name": "Jonas Bergsen",
         "Designation": "Project Lead",
-        "ImageUrl": "./assets/diagram/employees/image34.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image34.png",
         "IsExpand": "None",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 65
@@ -605,7 +605,7 @@ export var data = [
         "Id": 67,
         "Name": "Jose Pavarotti",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image30.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image30.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 68
@@ -614,7 +614,7 @@ export var data = [
         "Id": 68,
         "Name": "Miguel Angel",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image4.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image4.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 66
@@ -623,7 +623,7 @@ export var data = [
         "Id": 69,
         "Name": "Jytte Petersen",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image1.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image1.png",
         "IsExpand": "true",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 68
@@ -632,7 +632,7 @@ export var data = [
         "Id": 70,
         "Name": "Kloss Perrier",
         "Designation": "Project Lead",
-        "ImageUrl": "./assets/diagram/employees/image2.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image2.png",
         "IsExpand": "None",
         "RatingColor": "#93B85A",
         "ReportingPerson": 72
@@ -641,7 +641,7 @@ export var data = [
         "Id": 71,
         "Name": "Art Nancy",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image6.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image6.png",
         "IsExpand": "true",
         "RatingColor": "#D46E89",
         "ReportingPerson": 27
@@ -650,7 +650,7 @@ export var data = [
         "Id": 72,
         "Name": "Pascal Cartrain",
         "Designation": "Project Lead",
-        "ImageUrl": "./assets/diagram/employees/image3.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image3.png",
         "IsExpand": "true",
         "RatingColor": "#EBB92E",
         "ReportingPerson": 65
@@ -659,7 +659,7 @@ export var data = [
         "Id": 73,
         "Name": "Liz Nixon",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image7.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image7.png",
         "IsExpand": "false",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 68
@@ -668,7 +668,7 @@ export var data = [
         "Id": 74,
         "Name": "Liu Wong",
         "Designation": "Project Manager",
-        "ImageUrl": "./assets/diagram/employees/image8.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image8.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": "parent"
@@ -677,7 +677,7 @@ export var data = [
         "Id": 75,
         "Name": "Karin Josephs",
         "Designation": "Project Lead",
-        "ImageUrl": "./assets/diagram/employees/image9.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image9.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 74
@@ -686,7 +686,7 @@ export var data = [
         "Id": 76,
         "Name": "Ruby Anabela ",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image10.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image10.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 75
@@ -695,7 +695,7 @@ export var data = [
         "Id": 77,
         "Name": "Helvetis Nagy",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image11.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image11.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 82
@@ -704,7 +704,7 @@ export var data = [
         "Id": 78,
         "Name": "Palle Ibsen",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image5.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image5.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 76
@@ -713,7 +713,7 @@ export var data = [
         "Id": 79,
         "Name": "Mary Saveley",
         "Designation": "SR",
-        "ImageUrl": "./assets/diagram/employees/image12.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image12.png",
         "IsExpand": "false",
         "RatingColor": "#93B85A",
         "ReportingPerson": 82
@@ -722,7 +722,7 @@ export var data = [
         "Id": 80,
         "Name": "Paul Henriot",
         "Designation": "SR",
-        "ImageUrl": "./assets/diagram/employees/image16.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image16.png",
         "IsExpand": "false",
         "RatingColor": "#D46E89",
         "ReportingPerson": 79
@@ -731,7 +731,7 @@ export var data = [
         "Id": 81,
         "Name": "Rita Müller",
         "Designation": "SR",
-        "ImageUrl": "./assets/diagram/employees/image13.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image13.png",
         "IsExpand": "None",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 79
@@ -740,7 +740,7 @@ export var data = [
         "Id": 82,
         "Name": "Pirkko King",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image18.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image18.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 78
@@ -749,7 +749,7 @@ export var data = [
         "Id": 83,
         "Name": "Paula Parente",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image19.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image19.png",
         "IsExpand": "None",
         "RatingColor": "#EBB92E",
         "ReportingPerson": 75
@@ -758,7 +758,7 @@ export var data = [
         "Id": 84,
         "Name": "Karl Jablonski",
         "Designation": "S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image14.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image14.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 83
@@ -767,7 +767,7 @@ export var data = [
         "Id": 34,
         "Name": "Matti Kenna",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image15.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image15.png",
         "IsExpand": "None",
         "RatingColor": "#93B85A",
         "ReportingPerson": 84
@@ -776,7 +776,7 @@ export var data = [
         "Id": 35,
         "Name": "Zbyszek Yang",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image21.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image21.png",
         "IsExpand": "None",
         "RatingColor": "#93B85A",
         "ReportingPerson": 84
@@ -785,7 +785,7 @@ export var data = [
         "Id": 85,
         "Name": "Nancy",
         "Designation": "Project Lead",
-        "ImageUrl": "./assets/diagram/employees/image17.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image17.png",
         "IsExpand": "None",
         "RatingColor": "#93B85A",
         "ReportingPerson": 74
@@ -794,7 +794,7 @@ export var data = [
         "Id": 86,
         "Name": "Robert King",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image23.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image23.png",
         "IsExpand": "true",
         "RatingColor": "#D46E89",
         "ReportingPerson": 85
@@ -803,7 +803,7 @@ export var data = [
         "Id": 87,
         "Name": "Laura Callahan",
         "Designation": "CSR",
-        "ImageUrl": "./assets/diagram/employees/image20.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image20.png",
         "IsExpand": "false",
         "RatingColor": "#D46E89",
         "ReportingPerson": 88
@@ -812,7 +812,7 @@ export var data = [
         "Id": 88,
         "Name": "Anne",
         "Designation": "CSR",
-        "ImageUrl": "./assets/diagram/employees/image24.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image24.png",
         "IsExpand": "false",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 86
@@ -821,7 +821,7 @@ export var data = [
         "Id": 89,
         "Name": "Georg Pipps",
         "Designation": "Senior S/w Engg",
-        "ImageUrl": "./assets/diagram/employees/image26.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image26.png",
         "IsExpand": "None",
         "RatingColor": "#EBB92E",
         "ReportingPerson": "parent"
@@ -830,7 +830,7 @@ export var data = [
         "Id": 30,
         "Name": "Isabel Castro",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image27.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image27.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 89
@@ -839,7 +839,7 @@ export var data = [
         "Id": 34,
         "Name": "Nardo Batista",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image28.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image28.png",
         "IsExpand": "None",
         "RatingColor": "#EBB92E",
         "ReportingPerson": 88
@@ -848,7 +848,7 @@ export var data = [
         "Id": 90,
         "Name": "Rene Phillips",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image22.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image22.png",
         "IsExpand": "false",
         "RatingColor": "#68C2DE",
         "ReportingPerson": 89
@@ -857,7 +857,7 @@ export var data = [
         "Id": 91,
         "Name": "Lúcia Carvalho",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image25.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image25.png",
         "IsExpand": "None",
         "RatingColor": "#93B85A",
         "ReportingPerson": 89
@@ -866,7 +866,7 @@ export var data = [
         "Id": 92,
         "Name": "Horst Kloss",
         "Designation": "Project Trainee",
-        "ImageUrl": "./assets/diagram/employees/image29.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image29.png",
         "IsExpand": "None",
         "RatingColor": "#D46E89",
         "ReportingPerson": 89
@@ -875,7 +875,7 @@ export var data = [
         "Id": 93,
         "Name": "Simon Roel",
         "Designation": "Project Lead",
-        "ImageUrl": "./assets/diagram/employees/image28.png",
+        "ImageUrl": "https://ej2.syncfusion.com/angular/demos/assets/diagram/employees/image28.png",
         "IsExpand": "true",
         "RatingColor": "#93B85A",
         "ReportingPerson": 98

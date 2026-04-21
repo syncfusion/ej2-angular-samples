@@ -21,7 +21,7 @@ Diagram.Inject(UndoRedo);
 @Component({
     selector: 'control-content',
     templateUrl: 'scrolling.html',
-    styleUrls: ['scrolling.component.css'],
+    styleUrls: ['scrolling.component.css', 'diagram-common.style.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [SymbolPaletteModule, DiagramModule, DropDownListModule, TextBoxModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
@@ -92,7 +92,7 @@ export class ScrollingComponent {
 
   //SymbolPalette Properties
   public symbolMargin: MarginModel = { left: 15, right: 15, top: 15, bottom: 15 };
-  public expandMode: ExpandMode = 'Single';
+  public expandMode: ExpandMode = 'Multiple';
   //Initialize the basicShapes for the symbol palatte
   private basicShapes: NodeModel[] = [
     {
@@ -207,14 +207,14 @@ export class ScrollingComponent {
     },
     {
       id: 'flow',
-      expanded: false,
+      expanded: true,
       symbols: this.flowshapes,
       iconCss: 'e-ddb-icons e-flow',
       title: 'Flow Shapes'
     },
     {
       id: 'connectors',
-      expanded: false,
+      expanded: true,
       symbols: this.connectorSymbols,
       iconCss: 'e-ddb-icons e-diagram-connector',
       title: 'Connectors'

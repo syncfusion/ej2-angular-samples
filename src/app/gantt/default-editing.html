@@ -10,7 +10,7 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-gantt id="ganttDefault" height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
+    <ejs-gantt id="ganttDefault" #ganttEdit height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
         [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" (created)="created()" [treeColumnIndex]="1"
         [allowSelection]="true" dateFormat="MMM dd, y" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
         [gridLines]="gridLines" [eventMarkers]="eventMarkers" [editSettings]="editSettings"  (actionBegin)="actionBegin($event)"

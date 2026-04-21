@@ -36,7 +36,11 @@ export class DefaultUploaderComponent {
         this.uploadObj.autoUpload = this.checkboxObj.checked;     
         this.uploadObj.clearAll();
     }
-
+    public onFailure(args: any): void {
+        if (args.response && args.response.statusText !== '') {
+            args.statusText = args.response.statusText;
+        }
+    }
     public changedHandler: EmitType<Object> = () => {
         this.uploadObj.sequentialUpload = this.checkboxObj1.checked;   
         this.uploadObj.clearAll();

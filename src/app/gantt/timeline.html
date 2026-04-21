@@ -4,7 +4,7 @@
 </div>
 
     <div class="col-lg-8 control-section">
-        <ejs-gantt id="ganttDefault" #gantt height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings"
+        <ejs-gantt id="ganttDefault" #gantt height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data" [taskFields]="taskSettings"
             [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [splitterSettings]="splitterSettings"
             [treeColumnIndex]="1"  [allowSelection]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
             [highlightWeekends]="true" [columns]="columns">
@@ -19,10 +19,20 @@
                     <table id="property" title="Properties" style="width: 100%">
                         <tbody>
                             <tr>
-                                <td style="width: 30%">
+                                <td style="width: 26%">
+                                    <div>Timeline Range</div>
+                                </td>
+                                <td>
+                                    <div>
+                                        <ejs-daterangepicker #timelineDateRange id="timelineDateRange" [startDate]="startDateValue" [endDate]="endDateValue" (change)="changeDateRange($event)"></ejs-daterangepicker>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 26%">
                                     <div>Unit width</div>
                                 </td>
-                                <td style="width: 70%;">
+                                <td>
                                     <div>
                                         <ejs-numerictextbox #unitWidth id="unitWidth" value="33"
                                             (change)="onUnitWidthChange($event)" [min]="10" format="n">
@@ -31,35 +41,29 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 30%">
-                                    <div><b>Top tier</b></div>
-                                </td>
-                                <td style="width: 70%;">
-                                    <div>
-                                        <ejs-checkbox [checked]="true" (change)="onTopTierChange($event)">
-                                        </ejs-checkbox>
-                                    </div>
+                                <td colspan="2" style="width: 26%">
+                                    <div><b>Top Tier</b></div>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 30%">
+                                <td style="width: 26%">
                                     <div>Count</div>
                                 </td>
-                                <td style="width: 70%">
+                                <td>
                                     <div id='numericbox'>
-                                        <ejs-numerictextbox #topCount id=" count" value="1"
+                                        <ejs-numerictextbox #topCount id="count" value="1"
                                             (change)="onTopCountChange($event)" format="n">
                                         </ejs-numerictextbox>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 30%">
+                                <td style="width: 26%">
                                     <div>
                                         Unit
                                     </div>
                                 </td>
-                                <td style="width: 70%">
+                                <td>
                                     <div>
                                         <ejs-dropdownlist #topUnit id='unit' [dataSource]='unit'
                                             (change)='onChangeUnit($event)' [value]='unitValue' [fields]='unitFields'>
@@ -68,12 +72,12 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 30%">
+                                <td style="width: 26%">
                                     <div>
                                         Format
                                     </div>
                                 </td>
-                                <td style="width: 70%">
+                                <td>
                                     <div>
                                         <ejs-dropdownlist #topFormatDropdown id='format' [dataSource]='weekformat'
                                             (change)='onChangeFormat($event)' [value]='topFormatValue'
@@ -83,22 +87,15 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 30%">
-                                    <div><b>Bottom tier</b></div>
-                                </td>
-                                <td style="width: 70%">
-                                    <div>
-                                        <ejs-checkbox [checked]="true" id="bottomTierCheck"
-                                            (change)="onBottomTierChange($event)">
-                                        </ejs-checkbox>
-                                    </div>
+                                <td colspan="2" style="width: 26%">
+                                    <div><b>Bottom Tier</b></div>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 30%">
+                                <td style="width: 26%">
                                     <div>Count</div>
                                 </td>
-                                <td style="width: 70%">
+                                <td>
                                     <div id='numericbox'>
                                         <ejs-numerictextbox #bottomCount id="btCount" value="1"
                                             (change)="onBottomCountChange($event)" format="n"></ejs-numerictextbox>
@@ -106,12 +103,12 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 30%">
+                                <td style="width: 26%">
                                     <div>
                                         Unit
                                     </div>
                                 </td>
-                                <td style="width: 70%">
+                                <td>
                                     <div>
                                         <ejs-dropdownlist #bottomUnit id='btUnit' [dataSource]='unit'
                                             (change)='onChangebtUnit($event)' [value]='bottomUnitValue'
@@ -121,12 +118,12 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 30%">
+                                <td style="width: 26%">
                                     <div>
                                         Format
                                     </div>
                                 </td>
-                                <td style="width: 70%">
+                                <td>
                                     <div>
                                         <ejs-dropdownlist #bottomFormatDropdown id='btFormat' [dataSource]='dayformat'
                                             (change)='onChangebtFormat($event)' [fields]='formatFields' [value]='bottomFormatValue'>
@@ -135,11 +132,11 @@
                                 </td>
                             </tr>
                           <tr>
-                                <td style="width: 30%">
-                                    <div>Enable multitaskbar</div>
+                                <td style="width: 26%">
+                                    <div>Multiple Taskbars</div>
                                 </td>
-                                <td style="width: 70%">
-                                    <div>
+                                <td>
+                                    <div id="multitaskbar">
                                         <ejs-checkbox [checked]="false" (change)="onMultitaskbarChange($event)">
                                         </ejs-checkbox>
                                     </div>
@@ -153,26 +150,25 @@
     </div>
 
 <div id="description">
+    <p>This demo illustrates how to customize the timeline settings in a Gantt Chart. It covers:</p>
+    <ul>
+        <li><b>Timeline Date Range:</b> Define the timeline view's start and end dates using <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/timelinesettings#viewstartdate">viewStartDate</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/timelinesettings#viewenddate">viewEndDate</a>.</li>
+        <li><b>Timeline Cell Width:</b> Adjusted using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/timelineSettingsModel/#timelineunitsize">timelineUnitSize</a> property.</li>
+        <li><b>Cell Combination:</b> Merge multiple timeline cells using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/timelineTierSettings/#count">count</a> property.</li>
+        <li><b>Timeline Units:</b> Supports minutes, hours, days, weeks, months, and years. Units can be configured for both top and bottom tiers.</li>
+        <li><b>Timeline Format:</b> Customizable by modifying the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/timelineTierSettings/#format">format</a> value for each tier.</li>
+        <li><b>Multiple Taskbars:</b> Enabled with <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#enablemultitaskbar">enableMultiTaskbar</a> to display multiple taskbars within a collapsed parent row.</li>
+    </ul>
+    <p>These settings highlight how the timeline can be customized to support different tiers, unit sizes, and ranges, while also enabling multiple task visualization within the same view.</p>
     <p>
-        This example demonstrates how to effectively customize the timeline settings of a Gantt Chart.
-        You can customize the timeline width by adjusting the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/timelineSettingsModel/#timelineunitsize">timelineunitsize</a> property
-        in <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/timelineSettingsModel/">timelineSettings</a>.
-        The Gantt Chart supports various timeline units such as <code>minutes</code>, <code>hours</code>, <code>days</code>, <code>weeks</code>, <code>months</code>, and <code>years</code>.
-        You can easily customize these units by changing the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/timelineTierSettings/#unit">unit</a> for both top tier and bottom tier in <code>timelineSettings</code>.
-        The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/timelineTierSettings/#format">format</a> of the timeline can be customized by modifying the format value for both the top and bottom tiers.
-        You can combine timeline cells in the top and bottom tiers using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/timelineTierSettings/#count">count</a> property in <code>timelineSettings</code>.
-      </p>
-      <p>
-        Tooltips are visible by default in the Gantt Chart timeline, You can customize the tooltip visiblity by using the  <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/timelineSettings/#showtooltip">showtooltip</a> property in the timeline settings.
-      </p>
-      <p>
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#enablemultitaskbar">enablemultitaskbar</a> allows you to display multiple taskbars within a parent row, ensuring a clear overview even in collapsed states.
-      </p>
-        
-    <p>
-        Gantt component features are segregated into individual feature-wise modules. To use a selection and markers support, inject the
-        <code>SelectionService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section respectively.
+        Gantt component features are segregated into individual feature-wise modules. To use selection and markers support, inject the
+        <code>SelectionService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section.
     </p>
-    <br>
-    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/data-binding#remote-data">documentation section</a>.</p>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/timeline/timeline">documentation section</a>.</p>
 </div>
+
+<style>
+    .fluent2 .property-panel-table #multitaskbar, .fluent2-dark .property-panel-table #multitaskbar, .fluent2-highcontrast .property-panel-table #multitaskbar  {
+        padding-left: 0px !important;
+    }
+</style>

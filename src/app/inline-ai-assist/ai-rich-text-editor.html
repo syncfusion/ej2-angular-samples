@@ -1,0 +1,27 @@
+<div class="control-section">
+    <div class="rte-integration-container">
+        <ejs-richtexteditor #rteEditor id="rte-editor" [value]="rteValue" [quickToolbarSettings]="quickToolbarSettings" (toolbarClick)="onToolbarClick($event)"></ejs-richtexteditor>
+        <ejs-inlineaiassist #rtePrompt id="inline-ai-assist" responseMode="Inline" [commandSettings]="commandSettings" [responseSettings]="responseSettings" [inlineToolbarSettings]="inlineToolbarSettings" (promptRequest)="promptRequest($event)" (close)="onClose()"></ejs-inlineaiassist>
+    </div>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates the integration of the Inline AI Assist component with the Syncfusion Rich Text Editor. It showcases advanced customization including command settings, response settings, and footer toolbar options for enhanced content editing experience.</p>
+<div id="description">
+    <p>
+        In this example, the Inline AI Assist component is seamlessly integrated with the Rich Text Editor, providing an advanced use-case scenario. 
+        This integration demonstrates how AI-powered assistance can enhance content creation and editing workflows.
+    </p>
+    <p>
+        Key features demonstrated:
+    </p>
+    <ul>
+        <li><code>CommandSettings</code> - Custom AI command buttons (Improve, Shorten, Elaborate, Summarize ) integrated into the interface</li>
+        <li><code>ResponseSettings</code> - Configured response behavior with dynamic suggestion updates based on user actions</li>
+        <li><code>ResponseMode</code> - Set to <code>'Inline'</code> mode where the AI response can be directly streamed or added into the editor area, allowing users to see real-time content changes</li>
+    </ul>
+</div>
+<style>
+    .e-inlineaiassist-selected-text {
+        display: inline-block;
+    }
+</style>

@@ -129,7 +129,7 @@ export const gridRouteConfig: Object[] = [
         'path': ':theme/grid/column/column-menu', component: ColumnMenuComponent, name: 'Column Menu', order: '03',description: 'This demo for Essential JS 2 grid component shows the usage of the various column functionalities of the column menu feature.',
         category: 'Columns'
     },
-    { 'path': ':theme/grid/column/auto-wrap', component: AutoWrapComponent, 'type': 'update', name: 'AutoWrap Column cells', description: 'This demo for Essential JS 2 grid component shows how the grid cell content is autowrapped to show large cell content.', order: '03', category: 'Columns' },
+    { 'path': ':theme/grid/column/auto-wrap', component: AutoWrapComponent, name: 'AutoWrap Column cells', description: 'This demo for Essential JS 2 grid component shows how the grid cell content is autowrapped to show large cell content.', order: '03', category: 'Columns' },
     {
         'path': ':theme/grid/column/column-chooser', component: ColumnChooserComponent, name: 'Column Chooser', order: '03',description: 'This demo for Essential JS 2 grid component shows how the column chooser feature can be used to show or hide columns dynamically.',
         category: 'Columns'
@@ -228,7 +228,7 @@ export const gridRouteConfig: Object[] = [
     },
     {
         'path': ':theme/grid/conditional-row-selection', component: ConditionalRowSelectionComponent,
-        name: 'Conditional Row Selection', description: 'This demo for Essential JS 2 grid component shows how the conditional row selection feature can be used to select grid rows.', 'type': 'new', order: '11', category: 'Selection'
+        name: 'Conditional Row Selection', description: 'This demo for Essential JS 2 grid component shows how the conditional row selection feature can be used to select grid rows.', order: '11', category: 'Selection'
     },
 
     { 'path': ':theme/grid/hierarchy', component: HierarchyComponent, name: 'Hierarchy Grid', description: 'This demo for Essential JS 2 grid component shows the hierarchical binding feature that helps to build multilevel parent-child relationships.', order: '12', category: 'Relational Binding' },
@@ -245,11 +245,11 @@ export const gridRouteConfig: Object[] = [
         category: 'Scrolling'
     },
     {
-        'path': ':theme/grid/pinned-rows', component: PinnedRowsComponent, name: 'Pinned Rows', 'type': 'new', order: '13',description: 'This demo for Essential JS 2 grid component shows how the rows and columns can be frozen or pinned.',
+        'path': ':theme/grid/pinned-rows', component: PinnedRowsComponent, name: 'Pinned Rows', order: '13',description: 'This demo for Essential JS 2 grid component shows how the rows and columns can be frozen or pinned.',
         category: 'Scrolling'
     },
     {
-        'path': ':theme/grid/virtualization', component: VirtualizationComponent, name: 'Virtual Scrolling', description: 'This demo demonstrates how to use Essential JS 2 grid to show a large data view without performance degradation by rendering only the required rows and columns.', order: '13',
+        'path': ':theme/grid/virtualization', component: VirtualizationComponent, name: 'Virtual Scrolling', 'type': 'update', description: 'This demo demonstrates how to use Essential JS 2 grid to show a large data view without performance degradation by rendering only the required rows and columns.', order: '13',
         category: 'Scrolling'
     },
 	{

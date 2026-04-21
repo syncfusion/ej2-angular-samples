@@ -1,9 +1,15 @@
 <style>
     /* Container for diagram and property panel */
+    .diagramFlowchart {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+    }
+
     .diagramFlowchart .control-section  {
-        width: 75%;
-        float: left; /* Keep the diagram section on the left */
+        flex: 3 1 0%;
         border-right: 1px solid #D5D5D5;
+        box-sizing: border-box;
     }
     .diagramFlowchart .property-panel-header {
         font-size: larger;
@@ -17,10 +23,10 @@
 
     /* Property panel style */
     .diagramFlowchart .property-section {
-        width: 24%; /* Adjusted to fill the remaining space */
-        float: right; /* Ensure the property panel is on the right */
-        padding: 10px;
-        background: white;
+        flex: 1 1 300px;
+        max-width: 320px;
+        box-sizing: border-box;
+        padding-left: 12px;
     }
 
     /* Align labels and inputs within the property panel */

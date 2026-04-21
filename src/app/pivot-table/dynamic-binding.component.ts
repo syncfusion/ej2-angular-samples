@@ -46,7 +46,7 @@ export class DynamicBindingComponent implements OnInit {
   public openMenuRef: Menu;
 
   @ViewChild('connectFile') connectFile!: ElementRef<HTMLInputElement>;
-  @ViewChild('reportFile') reportFile!: HTMLInputElement;
+  @ViewChild('reportFile') reportFile!: ElementRef<HTMLInputElement>;
 
   public isDialogOpen = false;
   public dialogType: any = '';
@@ -55,6 +55,7 @@ export class DynamicBindingComponent implements OnInit {
   public isErrorDialogOpen = false;
   public errorMessage = '';
   public currentData: any[] = data;
+  public lastRemote: { kind: 'CSV' | 'JSON'; url: string } | null = null;
   public olapProxyUrl = 'https://bi.syncfusion.com/olap/msmdpump.dll';
   public proxyBaseUrl = '';
   public olapConnected = false;
@@ -109,10 +110,8 @@ export class DynamicBindingComponent implements OnInit {
   }
 
   toolbarClicked = async (args?: any): Promise<void> => {
-    // Directly save without confirmation dialog
     await this.saveReport();
   };
-  // Execute actual save after user confirms
   async saveReport(): Promise<void> {
     const pivot = this.pivotObj;
     if (!pivot) return;
@@ -131,23 +130,17 @@ export class DynamicBindingComponent implements OnInit {
 
     try {
       const persisted = pivot.getPersistData();
-      let dataSourceSettingsOnly: any = {};
-      let parsed: any;
-      try {
-        parsed = JSON.parse(persisted);
-        var isOlapReport = parsed && parsed.dataSourceSettings && parsed.dataSourceSettings.providerType === 'SSAS';
-        if (!isOlapReport && parsed && parsed.dataSourceSettings) { 
-          this.dataSource = parsed.dataSourceSettings.dataSource;
-          parsed.dataSourceSettings.dataSource = []; 
-        }
-        parsed.pivotValues = [];
-        dataSourceSettingsOnly =
-          parsed?.dataSourceSettings ?? pivot.dataSourceSettings ?? {};
-      } catch {
-        dataSourceSettingsOnly = pivot.dataSourceSettings ?? {};
+      let parsed: any = JSON.parse(persisted);
+
+      const isOlapReport = parsed?.dataSourceSettings?.providerType === 'SSAS';
+      if (!isOlapReport && parsed?.dataSourceSettings) {
+        parsed.dataSourceSettings.dataSource = [];
       }
-      const json = JSON.stringify(parsed, null, 2);
-      download(json, 'application/json', 'pivot.json');
+      if (parsed && typeof parsed === 'object' && 'pivotValues' in parsed) {
+        delete parsed.pivotValues;
+      }
+
+      download(JSON.stringify(parsed, null, 2), 'application/json', 'pivot.json');
     } catch (err: any) {
       console.error('Save failed:', err);
       alert(`Failed to save: ${err.message}`);
@@ -159,7 +152,6 @@ export class DynamicBindingComponent implements OnInit {
     if (Browser.isDevice && pivot && pivot.enableRtl) {
       document.querySelector('.control-section')?.classList.add('e-rtl');
     }
-    // Initialize or re-initialize connect menu safely (destroy-before-create)
     const connectEl = document.getElementById('connect_menu');
     if (connectEl) {
       const menuItems = [
@@ -239,7 +231,6 @@ export class DynamicBindingComponent implements OnInit {
   }
 
   onEnginePopulated(args: any) {
-    // Open Field List only after engine is populated so it reflects latest fields
     if (this.shouldAutoConfig && this.pivotObj) {
       this.shouldAutoConfig = false;
       this.pivotObj.displayOption = { view: 'Both', primary: 'Table' };
@@ -253,7 +244,7 @@ export class DynamicBindingComponent implements OnInit {
   resetPivot() {
     const pivot = this.pivotObj;
     if (pivot && pivot.engineModule) {
-      (pivot.engineModule as any).fieldList = {}; // Clear field list cache
+      (pivot.engineModule as any).fieldList = {};
     }
     if (pivot) {
       pivot.dataSourceSettings.rows = [];
@@ -280,9 +271,6 @@ export class DynamicBindingComponent implements OnInit {
     }
   }
 
-  // Simple CSV parser: converts CSV string to 2D array (array of arrays)
-  // Note: This is a basic parser; if your CSV contains quoted commas/newlines,
-  // replace with a robust CSV parser library.
   parseCSV(csvString: string): string[][] {
     const lines = csvString.split(/\r?\n|\r/).filter((line) => line.trim());
     return lines.map((line) =>
@@ -292,7 +280,6 @@ export class DynamicBindingComponent implements OnInit {
     );
   }
 
-  // Detect if OLAP engine is active
   isOlapActive(): boolean {
     const pivot = this.pivotObj;
     if (!pivot) return false;
@@ -304,7 +291,6 @@ export class DynamicBindingComponent implements OnInit {
     );
   }
 
-  // Cleanly switch to relational mode by tearing down OLAP artifacts
   cleanOlapForRelational(): void {
     const pivot = this.pivotObj;
     if (!pivot) return;
@@ -320,7 +306,6 @@ export class DynamicBindingComponent implements OnInit {
     pivot.refresh();
   }
 
-  // Helper to bind data to Pivot in one place and request auto-config
   setPivotData(type: 'CSV' | 'JSON', data: any[] | string[][]): void {
     const pivot = this.pivotObj;
     if (!pivot) return;
@@ -329,11 +314,10 @@ export class DynamicBindingComponent implements OnInit {
     pivot.dataSourceSettings.dataSource = data as any;
     delete pivot.dataSourceSettings.url;
     this.currentData = data;
-    this.shouldAutoConfig = true; // request auto-config after binding
+    this.shouldAutoConfig = true;
     pivot.refresh();
   }
 
-  // Helper function to apply report settings with data source injection if needed
   async applyReportSettings(
     pivot: any,
     reportSettings: any,
@@ -345,73 +329,107 @@ export class DynamicBindingComponent implements OnInit {
       pivot.olapEngineModule = new OlapEngine();
       pivot.dataType = 'olap';
       pivot.loadPersistData(JSON.stringify(entireReportSettings));
-      this.shouldAutoConfig = false; 
-      pivot.refresh();
-    } else {
-      this.cleanOlapForRelational();
-      const maybeDataUrl: string | undefined =
-        reportSettings.dataUrl || reportSettings.url;
-      const maybeCsvUrl: string | undefined = reportSettings.csvUrl;
-
-      if (
-        !reportSettings.dataSource ||
-        reportSettings.dataSource.length === 0
-      ) {
-        try {
-          if (maybeDataUrl) {
-            const res = await fetch(maybeDataUrl, { cache: 'no-store' });
-            if (!res.ok)
-              throw new Error(`HTTP ${res.status}: ${res.statusText}`);
-            const jsonData: any = await res.json();
-            const arr = Array.isArray(jsonData)
-              ? jsonData
-              : jsonData?.data ?? jsonData;
-            if (
-              !Array.isArray(arr) ||
-              arr.length === 0 ||
-              typeof arr[0] !== 'object'
-            ) {
-              throw new Error(
-                'Invalid JSON at dataUrl: expected an array of objects (or under "data").'
-              );
-            }
-            reportSettings.type = 'JSON';
-            reportSettings.dataSource = arr;
-            this.currentData = arr;
-          } else if (maybeCsvUrl) {
-            const res = await fetch(maybeCsvUrl, { cache: 'no-store' });
-            if (!res.ok)
-              throw new Error(`HTTP ${res.status}: ${res.statusText}`);
-            const csvString = await res.text();
-            const csvArray = this.parseCSV(csvString);
-            if (!csvArray.length)
-              throw new Error('CSV at csvUrl appears empty.');
-            reportSettings.type = 'CSV';
-            reportSettings.dataSource = csvArray;
-            this.currentData = csvArray;
-          } else {
-            reportSettings.dataSource = this.currentData;
-            reportSettings.type = pivot.dataSourceSettings.type || 'JSON';
-          }
-        } catch (e) {
-          reportSettings.dataSource = this.currentData;
-          reportSettings.type = pivot.dataSourceSettings.type || 'JSON';
-        }
-      }
-      entireReportSettings.dataSourceSettings.dataSource = this.dataSource;
-      pivot.loadPersistData(JSON.stringify(entireReportSettings));
       this.shouldAutoConfig = false;
       pivot.refresh();
+      return;
+    }
+
+    this.cleanOlapForRelational();
+
+    const maybeDataUrl: string | undefined = reportSettings.dataUrl || reportSettings.url;
+    const maybeCsvUrl: string | undefined = reportSettings.csvUrl;
+
+    const isRemoteLoad = !!maybeDataUrl || !!maybeCsvUrl;
+
+    const finalize = () => {
+      const hasGlobalData = Array.isArray(this.currentData) ? this.currentData.length > 0 : !!this.currentData;
+
+      const hasInlineIncoming =
+        Array.isArray(reportSettings.dataSource) && reportSettings.dataSource.length > 0;
+
+      if (!isRemoteLoad && !hasInlineIncoming && hasGlobalData) {
+        if (reportSettings) {
+          reportSettings.dataSource = this.currentData;
+        }
+        if (entireReportSettings && entireReportSettings.dataSourceSettings) {
+          entireReportSettings.dataSourceSettings.dataSource = this.currentData;
+        }
+      }
+
+      const effectiveType = reportSettings.type || pivot.dataSourceSettings.type || 'JSON';
+
+      try {
+        if (entireReportSettings && entireReportSettings.dataSourceSettings) {
+          pivot.loadPersistData(JSON.stringify(entireReportSettings));
+        } else {
+          pivot.dataSourceSettings = { ...reportSettings, type: effectiveType, dataSource: reportSettings.dataSource };
+        }
+      } catch {
+        pivot.dataSourceSettings = reportSettings;
+      }
+
+      this.shouldAutoConfig = false;
+      pivot.refresh();
+    };
+
+    const hasInline = Array.isArray(reportSettings.dataSource) && reportSettings.dataSource.length > 0;
+
+    if (!hasInline) {
+      if (maybeDataUrl) {
+        try {
+          const res = await fetch(maybeDataUrl, { cache: 'no-store' });
+          if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+          const j = await res.json();
+          const arr = Array.isArray(j) ? j : j?.data ?? j;
+          if (!Array.isArray(arr) || arr.length === 0 || typeof arr[0] !== 'object') {
+            throw new Error('Invalid JSON at dataUrl.');
+          }
+          reportSettings.type = 'JSON';
+          reportSettings.dataSource = arr;
+          this.currentData = arr;
+          finalize();
+          return;
+        } catch {
+          reportSettings.dataSource = this.currentData;
+          reportSettings.type = pivot.dataSourceSettings.type || 'JSON';
+          finalize();
+          return;
+        }
+      } else if (maybeCsvUrl) {
+        try {
+          const res = await fetch(maybeCsvUrl, { cache: 'no-store' });
+          if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+          const t = await res.text();
+          const csvArray = this.parseCSV(t);
+          if (!csvArray.length) throw new Error('CSV appears empty.');
+          reportSettings.type = 'CSV';
+          reportSettings.dataSource = csvArray;
+          this.currentData = csvArray;
+          finalize();
+          return;
+        } catch {
+          reportSettings.dataSource = this.currentData;
+          reportSettings.type = pivot.dataSourceSettings.type || 'JSON';
+          finalize();
+          return;
+        }
+      } else {
+        reportSettings.dataSource = this.currentData;
+        reportSettings.type = pivot.dataSourceSettings.type || 'JSON';
+        finalize();
+      }
+    } else {
+      this.currentData = reportSettings.dataSource;
+      reportSettings.type = reportSettings.type || 'JSON';
+      finalize();
     }
   }
 
-  // File input change handler for local CSV/JSON
   async handleConnectFileChange(event: Event): Promise<void> {
     const input = event.target as HTMLInputElement;
     const file = input.files?.[0];
     if (!file) return;
 
-    // Detect CSV by dataset type or file extension
     const isCsv = input.dataset.type === 'csv' || /\.csv$/i.test(file.name);
     const reader = new FileReader();
 
@@ -422,7 +440,6 @@ export class DynamicBindingComponent implements OnInit {
           (pivot.engineModule as any).fieldList = {};
         }
 
-        // Clear axes for a clean start
         if (pivot) {
           pivot.dataSourceSettings.rows = [];
           pivot.dataSourceSettings.columns = [];
@@ -442,13 +459,18 @@ export class DynamicBindingComponent implements OnInit {
           const raw = String(evt.target?.result ?? '');
           const parsed = JSON.parse(raw);
 
-          // Unwrap common API envelopes like JSONBin { record: {...} }
-          const unwrappedData =
-            parsed && typeof parsed === 'object' && 'record' in parsed
-              ? (parsed as any).record
-              : parsed;
+          const unwrap = (obj: any) => {
+            if (!obj || typeof obj !== 'object') return obj;
+            if ('record' in obj) return obj.record;
+            if ('data' in obj) return obj.data;
+            if ('result' in obj) return obj.result;
+            if ('content' in obj) return obj.content;
+            if ('rows' in obj && Array.isArray(obj.rows)) return obj.rows;
+            return obj;
+          };
 
-          // Check if JSON looks like a saved PivotView report
+          const unwrappedData = unwrap(parsed);
+
           const looksLikeReport =
             !Array.isArray(unwrappedData) &&
             (unwrappedData?.dataSourceSettings ||
@@ -461,8 +483,21 @@ export class DynamicBindingComponent implements OnInit {
           if (looksLikeReport) {
             const reportSettings =
               (unwrappedData as any).dataSourceSettings ?? unwrappedData;
-            const isOlapReport =
-              (reportSettings as any)?.providerType === 'SSAS';
+            const isOlapReport = (reportSettings as any)?.providerType === 'SSAS';
+
+            if ((reportSettings as any).dataUrl) {
+              this.lastRemote = { kind: 'JSON', url: (reportSettings as any).dataUrl };
+              // remote dataUrl referenced by report — clear currentData so remote fetch will be used
+              this.currentData = [];
+            } else if ((reportSettings as any).csvUrl) {
+              this.lastRemote = { kind: 'CSV', url: (reportSettings as any).csvUrl };
+              // remote csvUrl referenced by report — clear currentData so remote fetch will be used
+              this.currentData = [];
+            } else {
+              // File-based load with inline or no-URL saved report: keep existing `currentData` so
+              // applyReportSettings can fall back to it (matches reference behavior).
+            }
+
             if (pivot) this.resetPivot();
             if (pivot) {
               await this.applyReportSettings(
@@ -475,10 +510,7 @@ export class DynamicBindingComponent implements OnInit {
             return;
           }
 
-          // Otherwise treat as raw data array
-          const dataArray = Array.isArray(unwrappedData)
-            ? unwrappedData
-            : unwrappedData?.data ?? unwrappedData;
+          const dataArray = Array.isArray(unwrappedData) ? unwrappedData : unwrappedData?.data ?? unwrappedData;
           if (
             !Array.isArray(dataArray) ||
             dataArray.length === 0 ||
@@ -497,8 +529,6 @@ export class DynamicBindingComponent implements OnInit {
     };
 
     reader.readAsText(file);
-
-    // Reset input so selecting the same file again triggers change
     input.value = '';
   }
 
@@ -506,7 +536,6 @@ export class DynamicBindingComponent implements OnInit {
     const itemId = args?.item?.id;
     if (!itemId) return;
     if (itemId === 'local_report') {
-      // Trigger local JSON report upload
       const input = this.connectFile.nativeElement;
       if (input) {
         input.onchange = null;
@@ -520,8 +549,7 @@ export class DynamicBindingComponent implements OnInit {
     }
 
     if (itemId === 'remote_report') {
-      // Open remote JSON report dialog
-      this.dialogType = 'JSON Report';
+      this.dialogType = 'JSON';
       this.remoteUrl = 'https://api.jsonbin.io/v3/b/6912d9ecd0ea881f40e12335';
       this.isDialogOpen = true;
       this.cdr.detectChanges();
@@ -555,7 +583,6 @@ export class DynamicBindingComponent implements OnInit {
     }
 
     if (itemId === 'olap') {
-      // Open OLAP dialog
       this.dialogType = 'OLAP';
       this.isDialogOpen = true;
       this.olapConnected = false;
@@ -573,7 +600,6 @@ export class DynamicBindingComponent implements OnInit {
     }
   };
 
-  // Apply/refresh OLAP binding on the Pivot with current selections.
   async applyOlapBinding(opts?: {
     url?: string;
     catalog?: string;
@@ -609,7 +635,6 @@ export class DynamicBindingComponent implements OnInit {
     pivot.refresh();
   }
 
-  // ========== XMLA helper functions (Discover over HTTP) ==========
   xmlaSoapEnvelope(
     requestType: string,
     restrictions: Record<string, string | number | boolean> = {},
@@ -636,7 +661,6 @@ export class DynamicBindingComponent implements OnInit {
 </soap:Envelope>`;
   }
 
-  // ✅ Resolve endpoint with optional proxy
   resolveEndpoint(endpoint: string): string {
     const trimmed = endpoint.trim();
     if (!this.proxyBaseUrl) return trimmed;
@@ -644,7 +668,6 @@ export class DynamicBindingComponent implements OnInit {
     return `${this.proxyBaseUrl}${sep}url=${encodeURIComponent(trimmed)}`;
   }
 
-  // ✅ Post XMLA request
   async postXMLA(endpoint: string, bodyXml: string): Promise<string> {
     const url = this.resolveEndpoint(endpoint);
     const res = await fetch(url, {
@@ -660,7 +683,6 @@ export class DynamicBindingComponent implements OnInit {
     return text;
   }
 
-  // ✅ Parse XML rowset
   parseRowset(xmlText: string): Record<string, string>[] {
     const parser = new DOMParser();
     const xml = parser.parseFromString(xmlText, 'text/xml');
@@ -681,7 +703,6 @@ export class DynamicBindingComponent implements OnInit {
     return result;
   }
 
-  // ✅ Discover Data Sources
   async discoverDataSources(endpoint: string): Promise<string[]> {
     const body = this.xmlaSoapEnvelope('DISCOVER_DATASOURCES');
     const xml = await this.postXMLA(endpoint, body);
@@ -689,7 +710,6 @@ export class DynamicBindingComponent implements OnInit {
     return rows.map((r) => r.DataSourceName).filter(Boolean);
   }
 
-  // ✅ Discover Catalogs
   async discoverCatalogs(
     endpoint: string,
     discoverCatalogs: string
@@ -700,7 +720,6 @@ export class DynamicBindingComponent implements OnInit {
     return rows.map((r) => r.CATALOG_NAME).filter(Boolean);
   }
 
-  // ✅ Discover Cubes
   async discoverCubes(endpoint: string, catalog: string): Promise<string[]> {
     const body = this.xmlaSoapEnvelope('MDSCHEMA_CUBES', {
       CATALOG_NAME: catalog,
@@ -731,13 +750,18 @@ export class DynamicBindingComponent implements OnInit {
       if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
       const jsonData: any = await res.json();
 
-      // Unwrap common API envelopes like JSONBin { record: {...} }
-      const unwrappedData =
-        jsonData && typeof jsonData === 'object' && 'record' in jsonData
-          ? jsonData.record
-          : jsonData;
+      const unwrap = (obj: any) => {
+        if (!obj || typeof obj !== 'object') return obj;
+        if ('record' in obj) return obj.record;
+        if ('data' in obj) return obj.data;
+        if ('result' in obj) return obj.result;
+        if ('content' in obj) return obj.content;
+        if ('rows' in obj && Array.isArray(obj.rows)) return obj.rows;
+        return obj;
+      };
 
-      // Check if remote JSON looks like a saved PivotView report
+      const unwrappedData = unwrap(jsonData);
+
       const looksLikeReport =
         !Array.isArray(unwrappedData) &&
         (unwrappedData?.dataSourceSettings ||
@@ -751,6 +775,18 @@ export class DynamicBindingComponent implements OnInit {
         const reportSettings =
           (unwrappedData as any).dataSourceSettings ?? unwrappedData;
         const isOlapReport = (reportSettings as any)?.providerType === 'SSAS';
+
+        if ((reportSettings as any).dataUrl) {
+          this.lastRemote = { kind: 'JSON', url: (reportSettings as any).dataUrl };
+        } else if ((reportSettings as any).csvUrl) {
+          this.lastRemote = { kind: 'CSV', url: (reportSettings as any).csvUrl };
+        } else {
+          this.lastRemote = { kind: 'JSON', url: cleanUrl };
+        }
+
+        // Clear currentData so applyReportSettings will not treat it as inline global data
+        this.currentData = [];
+
         this.resetPivot();
         const pivot = this.pivotObj;
         if (pivot) {
@@ -771,26 +807,24 @@ export class DynamicBindingComponent implements OnInit {
           'Invalid JSON: Provide a saved report or a non-empty array of objects (or under "data").'
         );
       }
+      this.lastRemote = { kind: 'JSON', url: cleanUrl };
+      this.resetPivot();
       this.setPivotData('JSON', arr);
     }
   }
-  // Update handleOpenRemote function (replace the existing one)
   handleOpenRemote = async (): Promise<void> => {
     if (!this.remoteUrl.trim()) {
       this.errorMessage = 'Please enter a valid URL.';
-      this.isDialogOpen = false; // Close input dialog
+      this.isDialogOpen = false;
       this.isErrorDialogOpen = true;
       this.cdr.detectChanges();
+      return;
     }
 
     try {
-      await this.loadRemoteAndBind(
-        this.dialogType as 'CSV' | 'JSON',
-        this.remoteUrl
-      );
+      await this.loadRemoteAndBind(this.dialogType as 'CSV' | 'JSON', this.remoteUrl);
       this.isDialogOpen = false;
       this.cdr.detectChanges();
-      // Keep remoteUrl so user can reopen and tweak quickly
     } catch (err: any) {
       this.errorMessage =
         `Failed to load remote ${this.dialogType}: ${err.message}\n\n` +
@@ -868,7 +902,6 @@ export class DynamicBindingComponent implements OnInit {
     const v = e.value;
     this.selectedCube = v;
 
-    // If user already bound OLAP, update live when cube changes
     const pivot = this.pivotObj;
     const isOlap =
       pivot && (pivot.dataSourceSettings as any)?.providerType === 'SSAS';
@@ -903,7 +936,6 @@ export class DynamicBindingComponent implements OnInit {
   }
 
   onEnterKey(event: KeyboardEvent): void {
-    debugger;
     if (event.key === 'Enter') {
       event.preventDefault();
       this.handleOpenRemote();

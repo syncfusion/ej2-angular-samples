@@ -158,15 +158,19 @@ export class SmartFlowchartComponent {
     this.diagram.print(options);
   }
 
+  public activeTool: string = 'Select Tool';
+
   // Toolbar actions
   public toolbarClick(args: ClickEventArgs): void {
     let item = args.item.tooltipText;
     switch (item) {
       case 'Select Tool':
+        this.activeTool = 'Select Tool';
         this.diagram.clearSelection();
         this.diagram.tool = DiagramTools.Default;
         break;
       case 'Pan Tool':
+        this.activeTool = 'Pan Tool';
         this.diagram.clearSelection();
         this.diagram.tool = DiagramTools.ZoomPan;
         break;

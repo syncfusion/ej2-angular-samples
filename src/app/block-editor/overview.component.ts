@@ -15,8 +15,13 @@ import blockData from './blockData.json';
 export class BlockEditorOverviewComponent {
     public blockDataOverview: BlockModel[] = blockData.blockDataOverview as BlockModel[];
     public users: BlockModel[] = blockData.users as BlockModel[];
-    public customToolbarItems: string[] = [ 'Bold', 'Italic', 'Underline', 'Strikethrough', 'Uppercase', 'Lowercase', 'Subscript', 'Superscript', 'Color', 'Backgroundcolor' ];
+    public customToolbarItems: string[] = [ 'Transform' ,'Bold', 'Italic', 'Underline', 'Strikethrough', 'Uppercase', 'Lowercase', 'Subscript', 'Superscript', 'InlineCode', 'Link', 'Color', 'Backgroundcolor' ];
     public inlineToolbar = {
         items: this.customToolbarItems,
+    }
+    
+    public imageBlockSettings: any = {
+        saveUrl: 'https://services.syncfusion.com/angular/production/api/RichTextEditor/SaveFile',
+        path: 'https://services.syncfusion.com/angular/production/RichTextEditor/'
     }
 }

@@ -1,0 +1,38 @@
+<div id="action-description">
+    <p>
+        This example visualizes the top revenue-generating companies in India for 2024. A horizontal bar chart with a left-to-right color gradient 
+        is used to highlight each company's revenue in USD Billions. Company names appear on the left axis, and revenue values are displayed at the 
+        end of each bar. Companies are ordered by revenue to emphasize ranking and relative contribution. Compare bar lengths to quickly identify the top 
+        contributors among India's leading corporations.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart id="charts" style='display:block;' [width]='width' align='center' [primaryXAxis]='primaryXAxis'
+            [primaryYAxis]='primaryYAxis' [title]='title' [subTitle]='subTitle' [tooltip]='tooltip' (load)='load($event)' [legendSettings]='legend' [chartArea]='chartArea'>
+            <e-series-collection>
+                <e-series [dataSource]='chartData' type='Bar' xName='Company' yName='Revenue' name='Revenue' legendShape='Rectangle' [cornerRadius]='cornerRadius' [linearGradient]='linearGradient' [marker]='marker' [columnSpacing]='columnSpacing' [columnWidth]='columnWidth'></e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure a horizontal bar chart with a linear gradient fill using the
+        <code>linearGradient</code> property of the series. The gradient is applied horizontally from left to right with multiple color stops
+        to create smooth color transitions across all bars, visually emphasizing the revenue comparison.
+    </p>
+    <p>
+        <code>Tooltip</code> is enabled in this example. To see the tooltip in action, hover over a bar or tap on a bar on touch-enabled devices.
+    </p>
+    <p>
+        More information on the bar series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/bar"
+            aria-label="Navigate to the documentation for Bar Chart in Angular Chart control">documentation section</a>.
+    </p>
+</div>
+<style>
+    #control-container {
+        padding: 0px !important;
+    }
+</style>

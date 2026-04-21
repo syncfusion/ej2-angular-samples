@@ -1,0 +1,45 @@
+<div id="action-description">
+    <p>
+        This example demonstrates a donut chart with radial gradient fills applied to each slice. The chart visualizes 
+        the share of e-commerce orders by country in 2025, with data labels displaying exact percentages and a legend 
+        showing country names with their respective shares. The radial gradient creates a three-dimensional visual effect 
+        that enhances the appearance of each slice.
+    </p>
+</div>
+<div class="control-section">
+    <ejs-accumulationchart id="container" [tooltip]="tooltip" [legendSettings]="legendSettings" 
+     (load)="load($event)" (pointRender)="pointRender($event)" (legendRender)="legendRender($event)"
+     [enableBorderOnMouseMove]="true" [enableSmartLabels]="true" [title]="title" [subTitle]="subTitle" [titleStyle]="titleStyle">
+        <e-accumulation-series-collection>
+            <e-accumulation-series name='Share by country' [dataSource]='GradientDonutData' xName='Country' yName='Share' [innerRadius]="innerRadius" [radius]="radius"
+            [dataLabel]="dataLabel" legendShape="Rectangle">
+            </e-accumulation-series>
+        </e-accumulation-series-collection>
+    </ejs-accumulationchart>
+</div>
+<div id="description">
+    <p>
+        In this example, each donut slice uses a radial gradient applied in the component's <a href="https://ej2.syncfusion.com/angular/documentation/api/chart/index-default#pointrender">pointRender</a> event 
+        using the <code>radialGradient</code> property. The gradient is defined with multiple color stops at different offsets, 
+        with brightness adjustments to create depth and a three-dimensional appearance. Each slice gets a unique base color 
+        from a predefined palette, and the gradient transitions from lighter to darker shades of that color.
+    </p>
+    <p>
+        Data labels are positioned outside the chart with connector lines, showing the exact percentage for each country. 
+        The legend also displays the full country name along with its percentage share.
+    </p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use pie series feature, we need to
+        inject
+        <code>PieService</code> into the <code>&#64;NgModule.providers</code> section.
+    </p>
+    <p>
+        More information about the donut series can be found in this 
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/pie-dough-nut/#doughnut-chart" aria-label="Navigate to the documentation for Doughnut Chart in Angular Accumulation Chart component">documentation section</a>.
+    </p>
+</div>
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

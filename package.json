@@ -1,6 +1,6 @@
 {
   "name": "ej2-angular-samples",
-  "version": "32.1.19",
+  "version": "33.2.3",
   "private": true,
   "dependencies": {
     "@angular/animations": "17.1.2",

@@ -21,7 +21,7 @@ export const chatUIAppRoutes: Object[] = [
         {displayName: 'loadOn-demand.html', path: './src/chat-ui/loadOn-demand.html'},
         {displayName: 'loadOn-demand.component.css', path: './src/chat-ui/loadOndemand.component.css'},
     ] },
-        { path: ':theme/chat-ui/attachments', component: AttachmentsComponent, name: 'File Attachments', description: 'Showcases the chat component integration with other Chat UI control', category: 'Chat UI', order: '01', type: 'new', sourceFiles: [
+        { path: ':theme/chat-ui/attachments', component: AttachmentsComponent, name: 'File Attachments', description: 'Showcases the chat component integration with other Chat UI control', category: 'Chat UI', order: '01', sourceFiles: [
         {displayName: 'attachments.component.ts', path: './src/chat-ui/attachments.component.ts'},
         {displayName: 'attachments.html', path: './src/chat-ui/attachments.html'},
         {displayName: 'attachments.component.css', path: './src/chat-ui/attachments.component.css'}

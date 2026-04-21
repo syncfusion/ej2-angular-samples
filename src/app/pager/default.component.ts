@@ -5,7 +5,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     templateUrl: 'default.html',
-    standalone: true,
+    
     imports: [SBActionDescriptionComponent, GridModule, SBDescriptionComponent]
 })
 export class DefaultPagerComponent {

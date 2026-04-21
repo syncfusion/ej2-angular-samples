@@ -19,6 +19,8 @@ import { SBDescriptionComponent } from '../common/dp.component';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { paletteIconClick } from './script/diagram-common';
+
 // Inject required modules and services into the Diagram component
 Diagram.Inject(UndoRedo, DiagramContextMenu, Snapping);
 
@@ -29,7 +31,7 @@ Diagram.Inject(UndoRedo, DiagramContextMenu, Snapping);
 @Component({
     selector: 'control-content',
     templateUrl: 'diagram-events.html',
-    styleUrls: ['diagram-style.css'],
+    styleUrls: ['diagram-style.css', 'diagram-common.style.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [SBActionDescriptionComponent, SymbolPaletteModule, DiagramModule, ListViewModule, ButtonModule, SBDescriptionComponent]
@@ -271,6 +273,7 @@ export class EventsDiagramComponent {
     }
     public created() {
         this.clearEventLog();
+        paletteIconClick();
 
     }
     // Method to clear the event log

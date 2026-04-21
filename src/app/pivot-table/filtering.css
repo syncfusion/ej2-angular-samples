@@ -13,13 +13,6 @@
     overflow: auto;
 }
 
-.sb-sample-content-area {
-    min-height: 255px !important;
-}
-.control-section {
-    min-height: 255px !important;
-}
-
 .pivottable-property-section .e-multiselect {
     padding: 0;
 }

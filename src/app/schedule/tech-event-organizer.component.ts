@@ -298,11 +298,11 @@ public onPopupClose(args: PopupCloseEventArgs): void {
       const startTime: Date = args.data.StartTime;
       const endTime: Date = args.data.EndTime;
       const capacity: number = args.data.Capacity;
-      const isAvailableTime  = startTime.getHours() >= 8 &&
+      const isAvailableTime = startTime.getHours() >= 8 &&
         (endTime.getHours() < 18 || (endTime.getHours() === 18 && endTime.getMinutes() === 0));
       const isCapacityAvailable = this.checkRoomCapacity(capacity, roomId);
 
-      if (!isAvailableTime ) {
+      if (!isAvailableTime) {
         const timeElement = args.element.querySelector('.e-start-end-row');
         if (!args.element.querySelector('.time-alert')) {
           const newDiv = document.createElement('div');
@@ -328,7 +328,7 @@ public onPopupClose(args: PopupCloseEventArgs): void {
         if (capAlert) capAlert.remove();
       }
 
-      if (!isAvailableTime  || !isCapacityAvailable) {
+      if (!isAvailableTime || !isCapacityAvailable) {
         args.cancel = true;
         return;
       }

@@ -54,7 +54,7 @@ export class AngleDiagramComponent {
   public selectedItems: SelectorModel = { constraints: SelectorConstraints.Rotate };
   public pageSettings: PageSettingsModel = {
     width: 1300, height: 820,
-    background: { source: './assets/diagram/Images/angle/background.png', scale: 'Meet' }
+    background: { source: 'https://ej2.syncfusion.com/angular/demos/assets/diagram/Images/angle/background.png', scale: 'Meet' }
   };
 
   // Solar calculation data
@@ -175,9 +175,9 @@ export class AngleDiagramComponent {
       // Ground
       this.createRectNode('groundLine', 500, 5, 489, 657, '#2E485F', '#2E485F', 2),
       // Support image
-      this.createImageNode('supportPost', 215, 185, 465, 565, './assets/diagram/Images/angle/panelSupport.png'),
+      this.createImageNode('supportPost', 215, 185, 465, 565, 'https://ej2.syncfusion.com/angular/demos/assets/diagram/Images/angle/panelSupport.png'),
       // Solar panel (rotatable)
-      this.createImageNode('solarPanelFrame', 260, 50, 478.25, 485, './assets/diagram/Images/angle/solarPanel.png', this.solarData.currentAngle, ((NodeConstraints.Default | NodeConstraints.ReadOnly) & ~NodeConstraints.Drag), 0.5, 0.8),
+      this.createImageNode('solarPanelFrame', 260, 50, 478.25, 485, 'https://ej2.syncfusion.com/angular/demos/assets/diagram/Images/angle/solarPanel.png', this.solarData.currentAngle, ((NodeConstraints.Default | NodeConstraints.ReadOnly) & ~NodeConstraints.Drag), 0.5, 0.8),
       // Pivot
       this.createEllipseNode('pivotPoint', 16, 16, 478.5, 488, '#FF5F1F', '#2E485F', 1),
       // Location HTML

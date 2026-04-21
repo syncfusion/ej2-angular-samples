@@ -62,7 +62,8 @@ export class LineChartComponent {
     public diamondMarker: Object = { visible: true, height: 7, width: 7 , shape: 'Diamond' , isFilled: true };
     public rectangleMarker: Object = { visible: true, height: 5, width: 5 , shape: 'Rectangle' , isFilled: true };
     public pentagonMarker: Object = { visible: true, height: 7, width: 7 , shape: 'Pentagon' , isFilled: true };
-
+    public labelSettings: Object = { visible: true};
+    
     public tooltip: Object = {
         enable: true,
         enableHighlight: true, 

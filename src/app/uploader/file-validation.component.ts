@@ -44,7 +44,11 @@ export class ValidateUploaderComponent {
         }
         args.isModified = true;
     }
-
+    public onFailure(args: any): void {
+        if (args.response && args.response.statusText !== '') {
+            args.statusText = args.response.statusText;
+        }
+    }
     public onFileRemove(args: RemovingEventArgs): void {
         args.postRawFile = false;
     }

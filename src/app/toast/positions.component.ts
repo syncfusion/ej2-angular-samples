@@ -172,8 +172,10 @@ export class PositionsController {
     }
 
     public onClose(e: ToastCloseArgs): void {
-        if (e.toastContainer.childElementCount === 0) {
-            this.hidebtn.element.style.display = 'none';
+        if (e && e.toastContainer && e.toastContainer.childElementCount === 0) {
+            if (this.hidebtn && this.hidebtn.element) {
+                this.hidebtn.element.style.display = 'none';
+            }
         }
     }
 

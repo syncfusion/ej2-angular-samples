@@ -26,7 +26,6 @@
           #diagramEventsControlSection .sb-mobile-palette {
             z-index: 19;
             position: absolute;
-            display: none;
             transition: transform 300ms linear, visibility 0s linear 300ms;
             width: 39%;
             height: 100%;
@@ -154,6 +153,9 @@
         }
 
       </style>
+    <div class="sb-mobile-palette-bar">
+      <div id="palette-icon" style="float: right;" role="button" class="e-ddb-icons1 e-toggle-palette"></div>
+    </div>
    <div id="diagramEventsControlSection" class="content-wrapper diagramEvents-controlSection" style="width:100%;background: white">
     <div id="palette-space" class="sb-mobile-palette">
         <ejs-symbolpalette #symbolpalette id="symbolpalette" [expandMode]="expandMode" [palettes]="palettes"

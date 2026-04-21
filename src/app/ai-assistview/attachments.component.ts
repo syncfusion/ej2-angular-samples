@@ -8,8 +8,8 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   imports: [RouterOutlet, AIAssistViewModule],
   standalone: true,
-  templateUrl: './attachments.html',
-  styleUrl: './attachments.component.css'
+  templateUrl: 'attachments.html',
+  styleUrls: ['attachments.component.css']
 })
 
 export class AIAssistAttachmentComponent {

@@ -1,0 +1,129 @@
+.rg-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  width: 100px;
+  line-height: 2;
+}
+
+.rg-status-running {
+  background: #66bb6a;
+  color: white;
+}
+
+.rg-status-stopped {
+  background: #ef5350;
+  color: white;
+}
+
+.rg-status-degraded {
+  background: #ffb74d;
+  color: white;
+}
+
+.rg-status-maintenance {
+  background: #0277bd;
+  color: white;
+}
+
+.rg-priority-low {
+  background-color: #ccffcc;
+  color: #00cc00;
+}
+
+.rg-priority-high {
+
+  background-color: #ffe5cc;
+  color: #cc6600;
+}
+
+.rg-priority-critical {
+  background-color: #ffcccc;
+  color: #cc0000;
+}
+
+.rg-compliance {
+  width: 100px;
+  height: 12px;
+  background: #f3f4f6;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.rg-compliance>i {
+  display: block;
+  height: 100%;
+  background: #2563eb;
+  border-radius: 20px;
+}
+
+.rg-compliance-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.rg-compliance-value {
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.rg-region {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.rg-region-flag {
+  display: inline-flex;
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.tailwind3-dark .rg-compliance-value,
+.fluent2-dark .rg-compliance-value,
+.bootstrap5\.3-dark .rg-compliance-value,
+.material3-dark .rg-compliance-value,
+.fluent2-highcontrast .rg-compliance-value {
+  color: #fff;
+}
+
+.rg-region[data-region='West US'] .rg-region-flag,
+.rg-region[data-region='East US'] .rg-region-flag {
+  background-image: url('data:image/svg+xml;utf8,<svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="%23B22234"/><rect y="0" width="20" height="2" fill="%23fff"/><rect y="4" width="20" height="2" fill="%23fff"/><rect y="8" width="20" height="2" fill="%23fff"/><rect y="12" width="20" height="2" fill="%23fff"/><rect width="8" height="8" fill="%233C3B6E"/></svg>');
+}
+
+.rg-region[data-region='EU West'] .rg-region-flag,
+.rg-region[data-region='EU Central'] .rg-region-flag {
+  background-image: url('data:image/svg+xml;utf8,<svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="%23003399"/><circle cx="10" cy="7" r="2" fill="%23FFCC00"/><circle cx="13" cy="7" r="0.6" fill="%23FFCC00"/><circle cx="7" cy="7" r="0.6" fill="%23FFCC00"/><circle cx="10" cy="4" r="0.6" fill="%23FFCC00"/><circle cx="10" cy="10" r="0.6" fill="%23FFCC00"/></svg>');
+}
+
+.rg-region[data-region='Canada Central'] .rg-region-flag {
+  background-image: url('data:image/svg+xml;utf8,<svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="%23fff"/><rect width="5" height="14" fill="%23FF0000"/><rect x="15" width="5" height="14" fill="%23FF0000"/><path d="M10,5 L10.5,7 L9,7.5 L10.5,8 L10,10 L11,8.5 L12,10 L11.5,8 L13,7.5 L11.5,7 L12,5 L11,6.5 Z" fill="%23FF0000"/></svg>');
+}
+
+.rg-region[data-region='Australia East'] .rg-region-flag {
+  background-image: url('data:image/svg+xml;utf8,<svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="%23012169"/><rect width="8" height="6" fill="%23012169"/><path d="M0,0 L8,6 M8,0 L0,6" stroke="%23fff" stroke-width="1.2"/><path d="M4,0 L4,6 M0,3 L8,3" stroke="%23fff" stroke-width="2"/><path d="M4,0 L4,6 M0,3 L8,3" stroke="%23C8102E" stroke-width="1.2"/><circle cx="15" cy="10" r="1" fill="%23fff"/><circle cx="13" cy="8" r="0.8" fill="%23fff"/><circle cx="17" cy="8" r="0.8" fill="%23fff"/></svg>');
+}
+
+.rg-region[data-region='Asia Pacific'] .rg-region-flag {
+  background-image: url('data:image/svg+xml;utf8,<svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="%23f97316"/><circle cx="10" cy="7" r="3" fill="%23fff"/><text x="10" y="10" font-size="6" text-anchor="middle" fill="%23f97316" font-weight="bold">AP</text></svg>');
+}
+
+.rg-region[data-region='South America'] .rg-region-flag {
+  background-image: url('data:image/svg+xml;utf8,<svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="%23009739"/><path d="M10,1 L18,7 L10,13 L2,7 Z" fill="%23FEDD00"/><circle cx="10" cy="7" r="2.5" fill="%23002776"/></svg>');
+}
+
+.rg-region-flag {
+  background-image: url('data:image/svg+xml;utf8,<svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" fill="%236b7280" rx="2"/><circle cx="10" cy="7" r="4" fill="none" stroke="%23fff" stroke-width="0.8"/><path d="M10,3 Q12,7 10,11 M10,3 Q8,7 10,11 M6,7 L14,7" stroke="%23fff" stroke-width="0.8" fill="none"/></svg>');
+}
+
+

@@ -4,7 +4,7 @@ import { MenuEventArgs } from '@syncfusion/ej2-splitbuttons';
 import { ExpandMode } from '@syncfusion/ej2-navigations';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-
+import { paletteIconClick } from './script/diagram-common';
 
 let pathData: string = 'M 120 24.9999 C 120 38.8072 109.642 50 96.8653 50 L 23.135' +
     ' 50 C 10.3578 50 0 38.8072 0 24.9999 L 0 24.9999 C' +
@@ -16,7 +16,7 @@ let pathData: string = 'M 120 24.9999 C 120 38.8072 109.642 50 96.8653 50 L 23.1
 @Component({
     selector: 'control-content',
     templateUrl: 'swimlane.html',
-    styleUrls: ['diagram-style.css'],
+    styleUrls: ['diagram-style.css', 'diagram-common.style.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [SymbolPaletteModule, DiagramModule, SBActionDescriptionComponent, SBDescriptionComponent]
@@ -265,7 +265,7 @@ export class SwimLaneDiagramComponent {
                     id: 'Verticalphase', addInfo: { tooltip: 'Vertical phase' },
                     shape: {
                         type: 'SwimLane',
-                        phases: [{ style: { strokeDashArray: '3,3'}, }],
+                        phases: [{ style: { strokeWidth: 1 }, }],
                         annotations: [{ text: '' }],
                         orientation: 'Vertical', isPhase: true
                     },
@@ -275,7 +275,7 @@ export class SwimLaneDiagramComponent {
                     id: 'Horizontalphase', addInfo: { tooltip: 'Horizontal phase' },
                     shape: {
                         type: 'SwimLane',
-                        phases: [{ style: {strokeDashArray: '3,3'} }],
+                        phases: [{ style: { strokeWidth: 1 } }],
                         annotations: [{ text: '' }],
                         orientation: 'Horizontal', isPhase: true
                     },
@@ -440,5 +440,8 @@ export class SwimLaneDiagramComponent {
         }else if (args.item.id === 'Paste') {
             this.diagram.paste();
         }
+    }
+    public diagramCreate(args: Object): void {
+        paletteIconClick();
     }
 }

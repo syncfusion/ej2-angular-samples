@@ -268,23 +268,23 @@
 
 /*Specifies the icon styles for the ListView*/
 .javascript {
-    background-image: url('/assets/sidebar/images/javascript.svg');
+    background-image: url('https://ej2.syncfusion.com/angular/demos/assets/sidebar/images/javascript.svg');
 }
 
 .typescript {
-    background-image: url('/assets/sidebar/images/typescript.svg')
+    background-image: url('https://ej2.syncfusion.com/angular/demos/assets/sidebar/images/typescript.svg')
 }
 
 .angular {
-    background-image: url('/assets/sidebar/images/angular.svg');
+    background-image: url('https://ej2.syncfusion.com/angular/demos/assets/sidebar/images/angular.svg');
 }
 
 .vue {
-    background-image: url('/assets/sidebar/images/vue.svg');
+    background-image: url('https://ej2.syncfusion.com/angular/demos/assets/sidebar/images/vue.svg');
 }
 
 .react {
-    background-image: url('/assets/sidebar/images/react.svg');
+    background-image: url('https://ej2.syncfusion.com/angular/demos/assets/sidebar/images/react.svg');
 }
 
 .material-dark #sidelistwrapper .content {

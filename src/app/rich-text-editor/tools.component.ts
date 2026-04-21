@@ -82,7 +82,7 @@ export class FullFeatureComponent {
     };
 
     public quickToolbarSettings: QuickToolbarSettingsModel = {
-        table: ['Tableheader', 'TableRemove', '|', 'TableRows', 'TableColumns', 'TableCell', '|', 'TableEditProperties', 'Styles', 'BackgroundColor', 'Alignments', 'TableCellVerticalAlign'],
+        table: ['Tableheader', 'TableRemove', '|', 'TableRows', 'TableColumns', 'TableCell', '|', 'TableEditProperties', 'TableCellProperties', 'Styles', 'BackgroundColor', 'Alignments', 'TableCellVerticalAlign'],
         text: ['Formats', '|', 'Bold', 'Italic', 'Fontcolor', 'BackgroundColor', '|', 'CreateLink', 'Image', 'CreateTable', 'Blockquote', '|' , 'Unorderedlist', 'Orderedlist', 'Indent', 'Outdent'],
         showOnRightClick: true,
     };
@@ -164,12 +164,16 @@ export class FullFeatureComponent {
             if (Browser.isDevice && Browser.isIos) {
                 addClass([sbCntEle, sbHdrEle], ['hide-header']);
             }
-            sideBar.hide();
+            if (sideBar){
+                sideBar.hide();
+            }
         } else if (e.targetItem === 'Minimize') {
             if (Browser.isDevice && Browser.isIos) {
                 removeClass([sbCntEle, sbHdrEle], ['hide-header']);
             }
-            sideBar.show();
+            if (sideBar) {
+                sideBar.show();
+            }
             if (!Browser.isDevice) {
                 addClass([leftBar], ['e-open']);
             }

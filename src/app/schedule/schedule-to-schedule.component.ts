@@ -1,4 +1,4 @@
-import { Component, ViewChild} from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation} from '@angular/core';
 import { extend, closest } from '@syncfusion/ej2-base';
 import { MonthService, GroupModel, EventSettingsModel, ResizeService, DragAndDropService, ScheduleModule, Schedule, DragEventArgs} from '@syncfusion/ej2-angular-schedule';
 import { timelineResourceData, resourceData } from './data';
@@ -12,7 +12,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     styleUrls: ['schedule-to-schedule.css'],
     providers: [ MonthService, ResizeService, DragAndDropService],
     standalone: true,
-    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent]
+    imports: [ScheduleModule, SBActionDescriptionComponent, SBDescriptionComponent],
+    encapsulation: ViewEncapsulation.None,
 })
 export class MultipleSchedulerComponent {
 

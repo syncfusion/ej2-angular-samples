@@ -670,3 +670,7 @@
   .highcontrast .e-leave::before {
     content: '\e607'!important;
 }
+
+.schedule-shift-management .agenda-toolbar.e-toolbar .e-toolbar-items .e-toolbar-left .e-toolbar-item:first-child {
+    width: 300px;
+}

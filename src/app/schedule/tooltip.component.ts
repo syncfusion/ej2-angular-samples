@@ -1,11 +1,20 @@
 import { Component, Inject, ViewEncapsulation, ViewChild } from '@angular/core';
 import { eventsData } from './data';
-import { extend } from '@syncfusion/ej2-base';
+import { extend, isNullOrUndefined } from '@syncfusion/ej2-base';
 import { ChangeEventArgs } from '@syncfusion/ej2-buttons';
-import { EventSettingsModel, View, EventRenderedArgs, ScheduleComponent, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, View, EventRenderedArgs, ScheduleComponent, DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService, ScheduleModule, CallbackFunction } from '@syncfusion/ej2-angular-schedule';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+
+(window as TemplateFunction).getImage = (image: string) => {
+  let imageUrl: string = './assets/schedule/images/';
+  return imageUrl + (isNullOrUndefined(image) ? 'public-event' : image) + '.png';
+};
+
+interface TemplateFunction extends Window {
+  getImage?: CallbackFunction;
+}
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -24,7 +33,7 @@ export class TooltipComponent {
   public selectedDate: Date = new Date(2021, 1, 15);
   public currentView: View = 'Week';
   public temp: string = '<div class="tooltip-wrap">' +
-    '<div class="image ${EventType}"></div>' +
+    '<div><img class="image" src="${ getImage(EventType) }" alt="${ EventType }" /></div>' +
     '<div class="content-area"><div class="name">${Subject}</></div>' +
     '${if(City !== null && City !== undefined)}<div class="city">${City}</div>${/if}' +
     '<div class="time">From&nbsp;:&nbsp;${StartTime.toLocaleString()} </div>' +

@@ -167,7 +167,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/event-markers', component: GanttEventMarkersComponent,
         description: 'This example demonstrates how to highlight the different stages in the project development cycle just like bookmark.',
-        name: 'Event Markers', order: '04', category: 'Scheduling Concepts', type: 'update'
+        name: 'Event Markers', order: '04', category: 'Scheduling Concepts'
     },
     {
         path: ':theme/gantt/indicators', component: GanttIndicatorsComponent,
@@ -177,7 +177,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/timeline', component: GanttTimelineComponent,
         description: 'This example demonstrates the various timeline mode options and properties available to customize the timeline in Gantt',
-        name: 'Timeline API', order: '05', category: 'Timeline'
+        name: 'Timeline API', order: '05', category: 'Timeline', type: 'update', 
     },
     {
         path: ':theme/gantt/zooming', component: GanttZoomingComponent,
@@ -222,7 +222,7 @@ export const GanttAppRoutes: Object[] = [
     {
         path:':theme/gantt/frozen-column', component: GanttFrozenColumnsComponent ,
         description: 'This example demonstrates how to pin columns to the left or right, keeping key fields in view during horizontal scrolling.',
-        name:'Frozen Columns', order: "06", category:'Columns', type: 'new'
+        name:'Frozen Columns', order: "06", category:'Columns'
     },
     {
         path: ':theme/gantt/resources', component: GanttResourcesComponent,

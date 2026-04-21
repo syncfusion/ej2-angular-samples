@@ -61,6 +61,11 @@
   font-size: 12px;
 }
 
+.schedule-resources.e-schedule.e-rtl .best-price:not(.e-work-cells) {
+  float: left;
+  margin-left: 3px;
+}
+
 .fluent-dark .schedule-resources.e-schedule .best-price:not(.e-work-cells),
 .bootstrap5-dark .schedule-resources.e-schedule .best-price:not(.e-work-cells),
 .bootstrap5\.3-dark .schedule-resources.e-schedule .best-price:not(.e-work-cells),
@@ -130,21 +135,6 @@
   width: 25px;
   height: 25px;
   background-repeat: no-repeat;
-}
-
-.e-schedule-event-tooltip .event-tooltip .airline-logo.airways-1,
-.schedule-resources.e-schedule .template-wrapper .airline-logo.airways-1 {
-  background-image: url('/assets/schedule/images/airways-1.svg');
-}
-
-.e-schedule-event-tooltip .event-tooltip .airline-logo.airways-2,
-.schedule-resources.e-schedule .template-wrapper .airline-logo.airways-2 {
-  background-image: url('/assets/schedule/images/airways-2.svg');
-}
-
-.e-schedule-event-tooltip .event-tooltip .airline-logo.airways-3,
-.schedule-resources.e-schedule .template-wrapper .airline-logo.airways-3 {
-  background-image: url('/assets/schedule/images/airways-3.svg');
 }
 
 .schedule-resources.e-schedule .fare-detail {

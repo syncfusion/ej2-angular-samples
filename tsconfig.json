@@ -10,6 +10,7 @@
     "sourceMap": true,
     "noEmitHelpers": false,
     "declaration": false,
+    "resolveJsonModule": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "moduleResolution": "node",

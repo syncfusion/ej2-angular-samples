@@ -5221,7 +5221,7 @@ export let quickInfoTemplateData: Record<string, any>[] = [
 
 export let holidayList: object[] = [
   {
-      Id: 1,
+      Id: 1001,
       Subject: "New Year's Day",
       StartTime: new Date(2024, 0, 1, 0, 0),
       EndTime: new Date(2024, 0, 1, 23, 59),
@@ -5231,7 +5231,7 @@ export let holidayList: object[] = [
       isHoliday: true,
   },
   {
-      Id: 2,
+      Id: 1002,
       Subject: 'Makar Sankranti',
       StartTime: new Date(2024, 0, 14, 0, 0),
       EndTime: new Date(2024, 0, 14, 23, 59),
@@ -5241,7 +5241,7 @@ export let holidayList: object[] = [
       IsReadonly: true,
   },
   {
-      Id: 3,
+      Id: 1003,
       Subject: 'Republic Day',
       StartTime: new Date(2024, 0, 26, 0, 0),
       EndTime: new Date(2024, 0, 26, 23, 59),
@@ -5251,7 +5251,7 @@ export let holidayList: object[] = [
       IsReadonly: true,
   },
   {
-      Id: 4,
+      Id: 1004,
       Subject: 'Maha Shivaratri',
       StartTime: new Date(2024, 2, 8, 0, 0),
       EndTime: new Date(2024, 2, 8, 23, 59),
@@ -5261,7 +5261,7 @@ export let holidayList: object[] = [
       IsReadonly: true,
   },
   {
-      Id: 5,
+      Id: 1005,
       Subject: 'Holi',
       StartTime: new Date(2024, 2, 25, 0, 0),
       EndTime: new Date(2024, 2, 25, 23, 59),
@@ -5271,7 +5271,7 @@ export let holidayList: object[] = [
       IsReadonly: true,
   },
   {
-      Id: 6,
+      Id: 1006,
       Subject: 'Good Friday',
       StartTime: new Date(2024, 2, 29, 0, 0),
       EndTime: new Date(2024, 2, 29, 23, 59),
@@ -5281,7 +5281,7 @@ export let holidayList: object[] = [
       IsReadonly: true,
   },
   {
-      Id: 7,
+      Id: 1007,
       Subject: 'Eid al-Fitr',
       StartTime: new Date(2024, 3, 10, 0, 0),
       EndTime: new Date(2024, 3, 10, 23, 59),
@@ -5291,7 +5291,7 @@ export let holidayList: object[] = [
       IsReadonly: true,
   },
   {
-      Id: 8,
+      Id: 1008,
       Subject: 'Buddha Purnima',
       StartTime: new Date(2024, 3, 23, 0, 0),
       EndTime: new Date(2024, 3, 23, 23, 59),
@@ -5301,7 +5301,7 @@ export let holidayList: object[] = [
       IsReadonly: true,
   },
   {
-      Id: 9,
+      Id: 1009,
       Subject: 'Raksha Bandhan',
       StartTime: new Date(2024, 7, 19, 0, 0),
       EndTime: new Date(2024, 7, 19, 23, 59),
@@ -5311,7 +5311,7 @@ export let holidayList: object[] = [
       IsReadonly: true,
   },
   {
-      Id: 10,
+      Id: 1010,
       Subject: 'Janmashtami',
       StartTime: new Date(2024, 7, 26, 0, 0),
       EndTime: new Date(2024, 7, 26, 23, 59),
@@ -5321,7 +5321,7 @@ export let holidayList: object[] = [
       IsReadonly: true,
   },
   {
-      Id: 11,
+      Id: 1011,
       Subject: 'Independence Day',
       StartTime: new Date(2024, 7, 15, 0, 0),
       EndTime: new Date(2024, 7, 15, 23, 59),
@@ -5331,7 +5331,7 @@ export let holidayList: object[] = [
       IsReadonly: true,
   },
   {
-      Id: 12,
+      Id: 1012,
       Subject: 'Ganesh Chaturthi',
       StartTime: new Date(2024, 8, 7, 0, 0),
       EndTime: new Date(2024, 8, 7, 23, 59),
@@ -5341,7 +5341,7 @@ export let holidayList: object[] = [
       IsReadonly: true,
   },
   {
-      Id: 13,
+      Id: 1013,
       Subject: 'Gandhi Jayanti',
       StartTime: new Date(2024, 9, 2, 0, 0),
       EndTime: new Date(2024, 9, 2, 23, 59),
@@ -5351,7 +5351,7 @@ export let holidayList: object[] = [
       IsReadonly: true,
   },
   {
-      Id: 14,
+      Id: 1014,
       Subject: 'Dussehra',
       StartTime: new Date(2024, 9, 13, 0, 0),
       EndTime: new Date(2024, 9, 13, 23, 59),
@@ -5361,7 +5361,7 @@ export let holidayList: object[] = [
       IsReadonly: true,
   },
   {
-      Id: 15,
+      Id: 1015,
       Subject: 'Diwali',
       StartTime: new Date(2024, 10, 1, 0, 0),
       EndTime: new Date(2024, 10, 1, 23, 59),
@@ -5371,7 +5371,7 @@ export let holidayList: object[] = [
       IsReadonly: true,
   },
   {
-      Id: 16,
+      Id: 1016,
       Subject: 'Christmas Day',
       StartTime: new Date(2024, 11, 25, 0, 0),
       EndTime: new Date(2024, 11, 25, 23, 59),

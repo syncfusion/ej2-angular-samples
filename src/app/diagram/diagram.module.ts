@@ -90,6 +90,7 @@ import { FunnelDiagramsComponent } from './funnel-diagrams.component';
 import { AngleDiagramComponent } from './angle-diagram.component';
 import { SerpentineDiagramComponent } from './serpentine-diagram.component';
 import { FamilyTreeDiagramsComponent } from './family-tree.component';
+import { VisioImportDiagramComponent } from './visio-import-export.component';
 
 export const diagramAppRoutes: Object[] = [
     {
@@ -311,148 +312,154 @@ export const diagramAppRoutes: Object[] = [
         description: 'This sample demonstrates binding remote data with the diagram using the Data Manager support.'
     },
     {
+        path: ':theme/diagram/visio-import-export', component: VisioImportDiagramComponent,
+        name: 'Visio',
+        category: 'File Format', order: '05', type:'preview',
+        description: 'Syncfusion® EJ2 Diagram: Import and export Visio (VSDX), then edit with drag‑drop, group/ungroup, cut/copy/paste, text, and undo/redo.',
+    },
+    {
         path: ':theme/diagram/virtualization', component: VirtualizationComponent,
         name: 'Virtualization',
-        category: 'Performance', order: '05',
+        category: 'Performance', order: '06',
         description: 'This sample demonstrates the default UI virtualization functionality. Scroll the diagram for UI virtualization.'
     },
     {
         path: ':theme/diagram/serialization', component: SerializationDiagramComponent,
         name: 'Serialization',
-        category: 'Save and Restore', order: '06',
+        category: 'Save and Restore', order: '07',
         description: 'This sample visualizes building diagrams interactively and editing the saved diagrams. Symbol Palette is used to easily build diagrams.'
     },
     {
         path: ':theme/diagram/print-export', component: PrintExportDiagramComponent,
         name: 'Export and Print',
-        category: 'Export and Print', order: '07',
+        category: 'Export and Print', order: '08',
         description: 'This sample demonstrates printing and exporting the diagram as images.',
     },
     {
         path: ':theme/diagram/bpmn-editor', component: BPMNShapesDiagramComponent,
-        name: 'BPMN Editor', category: 'Use Case Diagram', order: '08',
+        name: 'BPMN Editor', category: 'Use Case Diagram', order: '09',
         description: 'This sample visualizes the hotel booking reservation system and its built with readymade BPMN shapes.'
     },
     {
         path: ':theme/diagram/logic-circuit', component: LogicCircuitComponent,
         name: 'Logic Circuit Diagram',
-        category: 'Use Case Diagram', order: '08',
+        category: 'Use Case Diagram', order: '09',
         description: 'This sample visually represents a simple fishbone diagram (Ishikawa). Diagram nodes and annotations are used to define fishbone diagrams. Read-only mode is enabled here.',
     },
     {
         path: ':theme/diagram/uml-activity', component: UmlActivityComponent,
-        name: 'UML Activity Diagram', category: 'Use Case Diagram', order: '08',
+        name: 'UML Activity Diagram', category: 'Use Case Diagram', order: '09',
         description: 'This sample visually represents the hotel booking reservation system. It is built with readymade BPMN shapes.',
     },
     {
         path: ':theme/diagram/uml-sequence-diagram', component: UmlSequenceComponent,
-        name: 'UML Sequence Diagram', category: 'Use Case Diagram', order: '08',
+        name: 'UML Sequence Diagram', category: 'Use Case Diagram', order: '09',
         description: 'This sample presents a UML sequence diagram to depict interactions in a secure transaction process involving a user, transaction system, and fraud detection using diagram model.',
 
     },
     {
         path: ':theme/diagram/uml-Class-diagram', component: UmlClassDiagramComponent,
-        name: 'UML Class Diagram', category: 'Use Case Diagram', order: '08',
+        name: 'UML Class Diagram', category: 'Use Case Diagram', order: '09',
         description: 'This sample visualizes the class shapes in diagram.',
     },
     {
         path: ':theme/diagram/shortest-path', component: ShortestPathDiagramComponent,
-        name: 'Shortest Path Visualizer', category: 'Use Case Diagram', order: '08',
+        name: 'Shortest Path Visualizer', category: 'Use Case Diagram', order: '09',
         description: 'Visualize shortest paths using Dijkstra’s algorithm in Syncfusion EJ2 Angular Diagram. Interactive graph with animated connectors and dynamic node styling.',
     },
     {
         path: ':theme/diagram/tournament-bracket', component: TournamentBracketComponent,
-        name: 'Tournament Bracket', category: 'Use Case Diagram', order: '08',
+        name: 'Tournament Bracket', category: 'Use Case Diagram', order: '09',
         description: 'Follow the UEFA Champions League journey with Syncfusion EJ2 Angular Diagram. Interactive bracket with match details, animated progression, and champion highlights.',
     },
     {
         path: ':theme/diagram/seat-booking', component: SeatBookingComponent,
-        name: 'Ticket Booking', category: 'Use Case Diagram', order: '08',
+        name: 'Ticket Booking', category: 'Use Case Diagram', order: '09',
         description: 'Book cinema seats interactively with Syncfusion EJ2 Angular Diagram. Select seats by tier, view real-time pricing, and confirm bookings with dynamic updates and responsive design.',
     },
     {
         path: ':theme/diagram/spiral-diagram', component: SpiralDiagramComponent,
-        name: 'Spiral Diagram', category: 'Use Case Diagram', order: '08',
+        name: 'Spiral Diagram', category: 'Use Case Diagram', order: '09',
         description: 'Visualize the software development lifecycle with a spiral diagram in Syncfusion EJ2 Angular. Interactive nodes, custom icons, and tooltips illustrate iterative project stages from ideation to deployment.',
     },
     {
         path: ':theme/diagram/puzzle', component: PuzzleDiagramComponent,
-        name: 'Image Puzzle', category: 'Use Case Diagram', order: '08',
+        name: 'Image Puzzle', category: 'Use Case Diagram', order: '09',
         description: 'Play a sliding image puzzle with Syncfusion EJ2 Angular Diagram. Drag tiles, track moves and time, and enjoy multiple themes with pause and clue options.',
     },
     {
         path: ':theme/diagram/periodic-table', component: PeriodicTableComponent,
-        name: 'Periodic Table', category: 'Use Case Diagram', order: '08',
+        name: 'Periodic Table', category: 'Use Case Diagram', order: '09',
         description: 'Explore the Periodic Table interactively with Syncfusion EJ2 Angular Diagram. Color-coded elements, hover details, and dynamic highlighting by period and group make learning chemistry engaging.',
     },
     {
         path: ':theme/diagram/history-timeline', component: HistoryTimelineDiagramComponent,
-        name: 'History Timeline', category: 'Use Case Diagram', order: '08',
+        name: 'History Timeline', category: 'Use Case Diagram', order: '09',
         description: 'Explore Internet history with an interactive timeline built using Syncfusion EJ2 Angular Diagram. Add, edit, and visualize key milestones with color-coded segments.',
     },
     {
         path: ':theme/diagram/funnel-diagrams', component: FunnelDiagramsComponent,
         name: 'Funnel Diagram',
-        category: 'Use Case Diagram', order: '08', type:'new',
+        category: 'Use Case Diagram', order: '09',
         description: 'Infographic funnel diagram with customizable node shapes and colors, showing stage-wise conversion and cumulative rates to assess marketing performance.',
     },
     {
         path: ':theme/diagram/family-tree', component: FamilyTreeDiagramsComponent,
         name: 'Family Tree Diagram',
-        category: 'Use Case Diagram', order: '08', type:'new',
+        category: 'Use Case Diagram', order: '09',
         description: 'Visualize family relationships with Syncfusion® EJ2 Angular Diagram. Arrange members in a complex hierarchical layout, showing names, tenure, and clear connections between spouses and children.',
     },
     {
         path: ':theme/diagram/serpentine-diagram', component: SerpentineDiagramComponent,
-        name: 'Serpentine Diagram', category: 'Use Case Diagram', order: '08', type: 'new',
+        name: 'Serpentine Diagram', category: 'Use Case Diagram', order: '09',
         description: 'Visualizes a custom serpentine layout with the Diagram component, featuring 20 key medical breakthroughs that revolutionized healthcare (1796–1996).',
     },
     {
         path: ':theme/diagram/angle-diagram', component: AngleDiagramComponent,
-        name: 'Solar Panel Angle', category: 'Real-time Diagrams', order: '09', type:'new',
+        name: 'Solar Panel Angle', category: 'Real-time Diagrams', order: '10',
         description: 'Demonstrate a smart solar panel tilt system using Syncfusion® EJ2 Angular Diagram. Interactively adjust panel angles, track efficiency, and optimize based on sun position and location.',
     },
     {
         path: ':theme/diagram/pipeline-instrumentation-diagram', component: PipelineInstrumentationDiagramComponent,
-        name: 'P&ID Diagram', category: 'Real-time Diagrams', order: '09',
+        name: 'P&ID Diagram', category: 'Real-time Diagrams', order: '10',
         description: 'Simulate a real-time chemical reactor P&ID using Syncfusion EJ2 Angular Diagram. Control fluid flows, tank levels, and temperature with interactive elements and live animations.',
     },
     {
         path: ':theme/diagram/neural-network', component: NeuralNetworkComponent,
-        name: 'Neural Network', category: 'Real-time Diagrams', order: '09',
+        name: 'Neural Network', category: 'Real-time Diagrams', order: '10',
         description: 'Explore neural network architecture with Syncfusion EJ2 Angular Diagram. Visualize layers, weights, and data flow with nodes and connections.',
     },
     {
         path: ':theme/diagram/venn-diagram', component: VennDiagramComponent,
         name: 'Venn Diagram',
-        category: 'Real-time Diagrams', order: '09', type: 'update',
+        category: 'Real-time Diagrams', order: '10',
         description: 'This Angular Venn Diagram shows set relationships and overlapping data visualization for statistical analysis and logical comparisons.',
     },
     {
         path: ':theme/diagram/network-diagram', component: NetworkShapesDiagramComponent,
-        name: 'Network Diagram', category: 'Real-time Diagrams', order: '09',
+        name: 'Network Diagram', category: 'Real-time Diagrams', order: '10',
         description: 'This sample visualizes graphical layout of a network diagram using diagram `Native (SVG)` shapes.',
     },
     {
         path: ':theme/diagram/fishbone-diagram', component: FishboneDiagramComponent,
         name: 'Fishbone Diagram',
         description: 'This sample visually represents a simple fishbone diagram (Ishikawa). Diagram nodes and annotations are used to define fishbone diagrams. Read-only mode is enabled here.',
-        category: 'Real-time Diagrams', order: '09'
+        category: 'Real-time Diagrams', order: '10'
     },
     {
         path: ':theme/diagram/workflow-editor', component: WorkFlowDiagramComponent,
-        name: 'Workflow Diagram', category: 'Real-time Diagrams', order: '09',
+        name: 'Workflow Diagram', category: 'Real-time Diagrams', order: '10',
         description: 'This sample visually represents a simple Workflow of a Travel Request Agency using Syncfusion<sup>®</sup> EJ2 TypeScript. The diagram includes BPMN nodes, connectors, and annotations to represent various diagram objects.'
     },
     {
         path: ':theme/diagram/data-binding-with-treeview', component: DataBindingWithTreeviewComponent,
         name: 'Data Binding with TreeView',
         description: 'This example illustrates how to create a tree view and a diagram with a datasource. It provides support for selecting, adding, deleting, dragging and dropping, and editing annotations of the nodes during runtime. These actions will be reflected in the corresponding nodes of the tree view component.',
-        category: 'Real-time Diagrams', order: '09',
+        category: 'Real-time Diagrams', order: '10',
     },
     {
         path: ':theme/diagram/flow-execution', component: FlowExecutionDiagramComponent,
-        name: 'Flow Execution', category: 'Real-time Diagrams', order: '09',
+        name: 'Flow Execution', category: 'Real-time Diagrams', order: '10',
         description: 'This sample visualizes the hotel booking reservation system and its built with readymade BPMN shapes.'
     },
 

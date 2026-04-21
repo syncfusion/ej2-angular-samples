@@ -15,13 +15,10 @@
       <div innerHtml="{{ customFunction(data) }}" style="height:100%"></div>
     </ng-template>
     <ng-template #milestoneTemplate let-data>
-      <div style="margin-top: -7px;">
-        <div style="position: relative; left: 3px; top: -33px;">
-          <img class="moments" alt="Moments svg" style="z-index: 1; left: -8px; top: 40px; padding: 12px;"
-            role="presentation" />
-          <div class="e-gantt-milestone"
-            style="width: 41px; height: 41px; transform: rotate(45deg); background-color: #7ab748 !important; border: 0; left: -4px; top: 47px;">
-          </div>
+      <div class="e-gantt-milestone" style= "margin-top: 3px; width: 41px; height: 41px; background-color: #7ab748; 
+        border: 0;position: absolute;left: -2px; top: 4px;transform: rotate(45deg);">
+        <div style="position:absolute;top: 4px">
+          <img class="moments" height="24" width="48" style= "z-index: 1; top: 2.5px; left: -3px; transform: rotate(-45deg); position: absolute" alt="Moments svg"/>
         </div>
       </div>
     </ng-template>

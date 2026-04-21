@@ -3,7 +3,7 @@
 </div>
 
 <div class="control-section">
-    <ejs-gantt id="ganttDefault" height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true" 
+    <ejs-gantt id="ganttDefault" #ganttDefault height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true" 
 [splitterSettings]="splitterSettings"
 
         [labelSettings]="labelSettings" (created)="created()" [columns]="columns" [treeColumnIndex]="1"  [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"

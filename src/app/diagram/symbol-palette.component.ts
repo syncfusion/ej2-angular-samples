@@ -10,14 +10,14 @@ import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-
+import { paletteIconClick } from './script/diagram-common';
 /**
  * Sample for Symbol Palette
  */
 @Component({
     selector: 'control-content',
     templateUrl: 'symbol-palette.html',
-    styleUrls: ['diagram-style.css'],
+    styleUrls: ['diagram-style.css', 'diagram-common.style.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [SBActionDescriptionComponent, SymbolPaletteModule, DropDownListModule, NumericTextBoxModule, CheckBoxModule, SBDescriptionComponent, DiagramModule],
@@ -213,6 +213,7 @@ export class SymbolPaletteDiagramComponent {
         this.diagram.rulerSettings = {
             showRulers : true
         }
+        paletteIconClick();
     }
     public scrollSettings : ScrollSettingsModel = {
         scrollLimit : 'Infinity',

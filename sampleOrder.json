@@ -424,6 +424,7 @@
             "virtualization": "Virtualization",
             "serialization": "Serialization",
             "print-export": "Print and Export",
+            "visio-import": "Visio Import and Export",
             "local-data": "Local Data",
             "remote-data": "Remote Data",
             "crud": "CRUD",
@@ -837,6 +838,13 @@
             "chat-integration": "Use Case"
         }
     },
+    "inline-ai-assist": {
+        "ControlName": "Inline AI Assist",
+        "Samples": {
+            "ai-overview": "Overview",
+            "ai-rich-text-editor": "Rich Text Editor"
+        }
+    },
     "pager": {
         "ControlName": "Pager",
         "Samples": {
@@ -984,6 +992,15 @@
             "default-functionalities": "Default Functionalities",
             "custom-format": "Custom Format",
             "mention-integration": "Mention Integration"
+        }
+    },
+    "sankey-chart": {
+        "ControlName": "Sankey",
+        "Samples": {
+            "default": "Default",
+            "orientation": "Vertical",
+            "right-to-left": "RTL",
+            "print-export": "Print and Export"
         }
     },
     "schedule": {

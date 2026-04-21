@@ -328,8 +328,12 @@ public elementSelectableChange(args: { checked: any; }) {
     let node = this.diagram.nodes[i];
     // Check if the checkbox is checked
     if (args.checked) {
-      // Enable selection for the node
-      node.constraints = node.constraints | NodeConstraints.Select;
+      if (node.id === "rectangle") {
+        node.constraints = NodeConstraints.Default & ~NodeConstraints.Select;
+      }
+      else {
+        node.constraints = node.constraints | NodeConstraints.Select;
+      }
     } else {
       // Disable selection for the node
       node.constraints = node.constraints & ~NodeConstraints.Select;

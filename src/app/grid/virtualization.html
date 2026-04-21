@@ -1,73 +1,214 @@
 <div id="action-description">
-    <p>This sample demonstrates the Grid component with the virtual scrolling feature. Click the button at the top of the Grid
-        to load data source and scroll the Grid content vertically and horizontally to load rows and columns respectively.
+    <p>This sample highlights row and column virtualization in the Grid component, allowing efficient rendering and smooth scrolling of large datasets with excellent performance, along with full CRUD support and column templates.
     </p>
 </div>
-<div class="control-section">
+<div class='control-section'>
     <div class='div-button'>
-        <button ejs-button (click)='onClick($event)' cssClass='e-info'>Load 100K Data</button>
-        <span id="popup">
-            <span id="gif" class="image"></span>
+        <button #load id="load" ejs-button (click)='onClick($event)' cssClass='e-info'>Load 100K Data</button>
+        <span id='popup'>
+            <span id='gif' class='image'></span>
         </span>
-        <span id="performanceTime">Time Taken: 0 ms</span>
+        <span id='performanceTime'>Time Taken: 0 ms</span>
     </div>
-    <ejs-grid #grid [dataSource]='vData' [enableVirtualization]='true' [enableColumnVirtualization]='true' [editSettings]='editSettings' [toolbar]='toolbar' height='400' (dataBound)='hide()'>
+    <ejs-grid #grid [dataSource]='vData' (load)='onLoad($event)' [enableVirtualization]='true' clipMode="EllipsisWithTooltip" [enableColumnVirtualization]='true' [editSettings]='editSettings' [toolbar]='toolbar' height='400' rowHeight='50' (dataBound)='hide()'>
         <e-columns>
-            <e-column field='SNo' headerText='S.No' width='140' isPrimaryKey='true' [validationRules]='validationSno'></e-column>
-            <e-column field='FIELD1' headerText='Player Name' width='140' [validationRules]='validationRules'></e-column>
-            <e-column field='FIELD2' headerText='Year' width='100'></e-column>
-            <e-column field='FIELD3' headerText='Sports' width='160' editType='dropdownedit'></e-column>
-            <e-column field='FIELD4' headerText='Country' width='160' editType='dropdownedit'></e-column>
-            <e-column field='FIELD5' headerText='LGID' width='120'></e-column>
-            <e-column field='FIELD6' headerText='GP' width='120'></e-column>
-            <e-column field='FIELD7' headerText='GS' width='120'></e-column>
-            <e-column field='FIELD8' headerText='Minutes' width='120'></e-column>
-            <e-column field='FIELD9' headerText='Points' width='130'></e-column>
-            <e-column field='FIELD10' headerText='OREB' width='130'></e-column>
-            <e-column field='FIELD11' headerText='DREB' width='130'></e-column>
-            <e-column field='FIELD12' headerText='REB' width='130'></e-column>
-            <e-column field='FIELD13' headerText='Assists' width='130'></e-column>
-            <e-column field='FIELD14' headerText='Steals' width='120'></e-column>
-            <e-column field='FIELD15' headerText='Blocks' width='120'></e-column>
-            <e-column field='FIELD16' headerText='Turnovers' width='140'></e-column>
-            <e-column field='FIELD17' headerText='PF' width='100'></e-column>
-            <e-column field='FIELD18' headerText='FGA' width='150'></e-column>
-            <e-column field='FIELD19' headerText='FGM' width='120'></e-column>
-            <e-column field='FIELD20' headerText='FTA' width='150'></e-column>
-            <e-column field='FIELD21' headerText='FTM' width='120'></e-column>
-            <e-column field='FIELD22' headerText='Three Attempted' width='170'></e-column>
-            <e-column field='FIELD23' headerText='Three Made' width='140'></e-column>
-            <e-column field='FIELD24' headerText='Post GP' width='120'></e-column>
-            <e-column field='FIELD25' headerText='Post GS' width='120'></e-column>
-            <e-column field='FIELD26' headerText='Post Minutes' width='150'></e-column>
-            <e-column field='FIELD27' headerText='Post Points' width='120'></e-column>
-            <e-column field='FIELD28' headerText='Post OREB' width='150'></e-column>
-            <e-column field='FIELD29' headerText='Post DREB' width='150'></e-column>
-            <e-column field='FIELD30' headerText='Post REB' width='150' editType='numericedit' [validationRules]='validationRules'></e-column>
+            <e-column field='OrderID' headerText='Order ID' width='110' isPrimaryKey='true'
+                [validationRules]='validationRules'></e-column>
+            <e-column field='OrderDate' headerText='Order Date' width='140' format='yMd' textAlign='Right'
+                editType='datepickeredit'></e-column>
+            <e-column field='ShipDate' headerText='Ship Date' width='140' format='yMd' textAlign='Right'
+                editType='datepickeredit'></e-column>
+            <e-column field='OrderStatus' headerText='Order Status' width='140' textAlign='Center' editType='dropdownedit' [validationRules]='validationRules'>
+                <ng-template #template let-data>
+                    <div *ngIf="data.OrderStatus === 'Delivered'; else shipped"
+                        class='virtual-statustemp e-deliveredcolor'>
+                        <span class='virtual-statustxt e-deliveredcolor'>{{
+                            data.OrderStatus
+                            }}</span>
+                    </div>
+
+                    <ng-template #shipped>
+                        <div *ngIf="data.OrderStatus === 'Shipped'; else packed"
+                            class='virtual-statustemp e-shippedcolor'>
+                            <span class='virtual-statustxt e-shippedcolor'>{{
+                                data.OrderStatus
+                                }}</span>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #packed>
+                        <div *ngIf="data.OrderStatus === 'Packed'; else processing"
+                            class='virtual-statustemp e-packedcolor'>
+                            <span class='virtual-statustxt e-packedcolor'>{{
+                                data.OrderStatus
+                                }}</span>
+                        </div>
+                    </ng-template>
+                    <ng-template #processing>
+                        <div *ngIf="data.OrderStatus === 'Processing'; else canceled"
+                            class='virtual-statustemp e-processingcolor'>
+                            <span class='virtual-statustxt e-processingcolor'>{{
+                                data.OrderStatus
+                                }}</span>
+                        </div>
+                    </ng-template>
+                    <ng-template #canceled>
+                        <div *ngIf="data.OrderStatus === 'Canceled'; else returned"
+                            class='virtual-statustemp e-cancelcolor'>
+                            <span class='virtual-statustxt e-cancelcolor'>{{
+                                data.OrderStatus
+                                }}</span>
+                        </div>
+                    </ng-template>
+                    <ng-template #returned>
+                        <div *ngIf="data.OrderStatus === 'Returned'; else ordered"
+                            class='virtual-statustemp e-returnedcolor'>
+                            <span class='virtual-statustxt e-returnedcolor'>{{
+                                data.OrderStatus
+                                }}</span>
+                        </div>
+                    </ng-template>
+                    <ng-template #ordered>
+                        <div class='virtual-statustemp e-orderedcolor'>
+                            <span class='virtual-statustxt e-orderedcolor'>{{
+                                data.OrderStatus
+                                }}</span>
+                        </div>
+                    </ng-template>
+                </ng-template>
+            </e-column>
+            <e-column field='Priority' headerText='Priority' width='120' textAlign='Center' editType='dropdownedit' [validationRules]='validationRules'>
+                <ng-template #template let-data>
+                    <div *ngIf="data.Priority === 'High'; else low" class='virtual-statustemp e-highcolor'>
+                        <span class='virtual-statustxt e-highcolor'>{{ data.Priority }}</span>
+                    </div>
+
+                    <ng-template #low>
+                        <div *ngIf="data.Priority === 'Low'; else medium" class='virtual-statustemp e-lowcolor'>
+                            <span class='virtual-statustxt e-lowcolor'>{{ data.Priority }}</span>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #medium>
+                        <div *ngIf="data.Priority === 'Medium'; else critical" class='virtual-statustemp e-mediumcolor'>
+                            <span class='virtual-statustxt e-mediumcolor'>{{ data.Priority }}</span>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #critical>
+                        <div class='virtual-statustemp e-criticalcolor'>
+                            <span class='virtual-statustxt e-criticalcolor'>{{ data.Priority }}</span>
+                        </div>
+                    </ng-template>
+                </ng-template>
+            </e-column>
+            <e-column field='CustomerName' headerText='Customer Name' width='190'
+                [validationRules]='validationRules'></e-column>
+            <e-column field='CustomerID' headerText='Customer ID' width='110' [visible]='false'></e-column>
+            <e-column field='Email' headerText='Email' width='200'></e-column>
+            <e-column field='Phone' headerText='Phone Number' width='140' textAlign='Right'></e-column>
+            <e-column field='ShipAddress' headerText='Ship Address' width='180'></e-column>
+            <e-column field='ShipCity' headerText='Ship City' width='120'></e-column>
+            <e-column field='ShipState' headerText='Ship State Code' width='130'></e-column>
+            <e-column field='ShipPostalCode' headerText='Ship Postal Code' width='130'
+                textAlign='Right'></e-column>
+            <e-column field='ShipCountry' headerText='Ship Country' width='150'></e-column>
+            <e-column field='ProductName' headerText='Product Name' width='250'></e-column>
+            <e-column field='ProductID' headerText='Product ID' width='110' [visible]='false'></e-column>
+            <e-column field='Category' headerText='Category' width='120'></e-column>
+            <e-column field='Warehouse' headerText='Ware house' width='110' editType='dropdownedit' [visible]='false'></e-column>
+            <e-column field='InventoryCount' headerText='Inventory Count' width='150' textAlign='Right'
+                [visible]='false'></e-column>
+            <e-column field='Quantity' headerText='Quantity' width='100' textAlign='Right'
+                editType='numericedit' [edit]='editparams'></e-column>
+            <e-column field='UnitPrice' headerText='Unit Price' width='110' format='C2' textAlign='Right'
+                editType='numericedit' [edit]='editparams'></e-column>
+            <e-column field='Discount' headerText='Discount (%)' width='120' textAlign='Right'
+                editType='numericedit' [edit]='editparams'></e-column>
+            <e-column field='Tax' headerText='Tax (%)' width='100' textAlign='Right' editType='numericedit' [edit]='editparams'></e-column>
+            <e-column field='SubTotal' headerText='Sub Total' width='110' format='C2' textAlign='Right'
+                editType='numericedit' [edit]='editparams'></e-column>
+            <e-column field='TaxAmount' headerText='Tax Amount' width='110' format='C2' textAlign='Right'
+                editType='numericedit' [edit]='editparams'></e-column>
+            <e-column field='ShipFee' headerText='Ship Fee' width='120' format='C2' textAlign='Right'
+                editType='numericedit' [edit]='editparams'></e-column>
+            <e-column field='TotalAmount' headerText='Total Amount' width='120' format='C2' textAlign='Right'
+                editType='numericedit' [edit]='editparams'></e-column>
+            <e-column field='PaymentMethod' headerText='Payment Method' width='140' editType='dropdownedit' [validationRules]='validationRules'>
+                <ng-template #template let-data>
+                    <div class='e-payment-info'>
+                        <img src='./assets/grid/images/payment/{{ data.PaymentMethod }}.svg'
+                            [alt]='data.PaymentMethod' />
+                        <span>{{ data.PaymentMethod }}</span>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='PaymentStatus' headerText='Payment Status' width='140' textAlign='Center' editType='dropdownedit' [validationRules]='validationRules'>
+                <ng-template #template let-data>
+                    <div *ngIf="data.PaymentStatus === 'Paid'; else pending" class='virtual-statustemp e-paidcolor'>
+                        <span class='virtual-statustxt e-paidcolor'>{{ data.PaymentStatus }}</span>
+                    </div>
+
+                    <ng-template #pending>
+                        <div *ngIf="data.PaymentStatus === 'Pending'; else refunded"
+                            class='virtual-statustemp e-pendingcolor'>
+                            <span class='virtual-statustxt e-pendingcolor'>{{
+                                data.PaymentStatus
+                                }}</span>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #refunded>
+                        <div *ngIf="data.PaymentStatus === 'Refunded'; else failed"
+                            class='virtual-statustemp e-refundcolor'>
+                            <span class='virtual-statustxt e-refundcolor'>{{
+                                data.PaymentStatus
+                                }}</span>
+                        </div>
+                    </ng-template>
+
+                    <ng-template #failed>
+                        <div class='virtual-statustemp e-failedcolor'>
+                            <span class='virtual-statustxt e-failedcolor'>{{
+                                data.PaymentStatus
+                                }}</span>
+                        </div>
+                    </ng-template>
+                </ng-template>
+            </e-column>
+            <e-column field='Rating' headerText='Delivery Rating' [visible]='false' width='160' textAlign='Center'
+                editType='dropdownedit'>
+                <ng-template #template let-data>
+                    <div class='rate'>
+                        <div class='rating'>
+                            <input ejs-rating [readOnly]='true' value='{{ data.Rating }}' cssClass='custom-rating' />
+                        </div>
+                    </div>
+                </ng-template>
+            </e-column>
         </e-columns>
     </ejs-grid>
 </div>
 
 <div id='description'>
-    <p>
-        The Grid UI virtualization allows you to render only rows and columns visible within the view-port without buffering the entire datasource.
-        Grid supports row and column virtualization. To enable row virtualization, set <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/grid/#enablevirtualization">
-        enableVirtualization </a></code> property as true. For column virtualization, set <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/grid/#enablecolumnvirtualization">
-        enableColumnVirtualization</a></code> property as true.
+    <p>The virtual scrolling feature in the Grid renders only the rows and columns that are currently visible in the viewport, rather than loading the entire dataset into the DOM. This approach significantly improves performance when working with large data sources by reducing the number of DOM elements.</p>
+    <p>To enable row virtualization, set the
+        <code><a aria-label="API link for documentation" target="_blank"
+                        class="code" href="http://ej2.syncfusion.com/angular/documentation/api/grid/#enablevirtualization">enableVirtualization</a></code>
+        property to <code>true</code>. For column virtualization, set the
+        <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/api/grid/#enablecolumnvirtualization">enableColumnVirtualization</a></code> property to <code>true</code>. When using virtualization, it is essential to define the <code><a aria-label="API link for documentation" target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/api/grid/#height">height</a></code>
+        property so that the Grid
+        can accurately calculate the number of visible rows. For seamless scrolling, set <code><a target="_blank" class="code"
+        href="https://ej2.syncfusion.com/angular/documentation/api/grid/loadeventargs#enableSeamlessScrolling">args.enableSeamlessScrolling</a></code> as <code>true</code> in the Grid's <code><a target="_blank" class="code"
+        href="https://ej2.syncfusion.com/angular/documentation/api/grid/index-default#load">load</a></code> event. This ensures smooth vertical and horizontal transitions, providing a smoother experience during fast scrolling when virtualization is enabled.
     </p>
     <p>
-        Note: The <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/grid/#height">
-        height</a></code> property must be defined when enabling <code><a target="_blank" class="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/grid/#enablevirtualization">
-        enableVirtualization </a></code>.
+        In this example, click the "Load 100K Data" button to bind a dataset containing 100,000 rows and 30 columns. Then, scroll vertically and horizontally to experience the virtualized rendering in action. Full data editing support is available with the virtualization feature.
     </p>
-    <p>
-        In this demo, Grid enabled row and column virtualization. Click the Load 100K Data button to bind 100000 rows and 30 columns. You can also perform the Edit action in this sample.
-    </p>
-    <p style='font-weight: 500'>Injecting Module:</p>
-    <p>Grid component features are segregated into individual feature-wise modules. To use Virtualscrolling feature, we need
-        to inject <code>VirtualScrollService</code> into the <code>&#64;NgModule.providers</code> section.</p>
+    <p><strong>Injecting Module:</strong></p>
+    <p>Features of the Grid component are organized into individual, feature-specific modules. To use the virtual scrolling functionality, inject the <code>VirtualScrollService</code> into the <code>&#64;NgModule.providers</code> section.</p>
+    <p>For more detailed information about virtual scrolling, refer to this <a aria-label="API link for documentation" target="_blank"
+        href="https://ej2.syncfusion.com/angular/documentation/grid/scrolling/virtual-scrolling">documentation.</a></p>
 </div>

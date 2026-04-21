@@ -1,0 +1,62 @@
+<div class="control-section">
+    <div class="overview-inlineAIAssist">
+        <div class="email-container">
+            <div class="email-composer e-card">
+                <h3 class="demo-title">📧 Email Draft Assistant</h3>
+                <div class="email-field e-card-content">
+                    <label class="field-label">To:</label>
+                    <input type="text" class="field-input e-input" value="team@company.com" readonly />
+                </div>
+                
+                <div class="email-field e-card-content">
+                    <label class="field-label">Subject:</label>
+                    <input type="text" class="field-input e-input" value="Project Update - Q1 Deliverables" readonly />
+                </div>
+
+                <div class="email-field-vertical e-card-content">
+                    <div class="message-header">
+                        <button ejs-button iconCss="e-icons e-ai-chat" isPrimary="true" class="ai-assistant-btn" id="aiAssistantBtn" (click)="onAIAssistantClick($event)"> AI Assistant</button>
+                    </div>
+                    <div class="email-body" id="emailContent" contenteditable="true">
+                        <p>
+                            Dear Team,
+                        </p>
+                        <p>
+                            I hope this email finds you well. I wanted to provide you with an update on our current project status. We successfully completed Phase 1 last week, and I'm pleased to share that all deliverables were met according to schedule. The client presentation went well and they expressed satisfaction with our progress.
+                        </p>
+                        <p>
+                            As we move forward into Phase 2, I would appreciate it if everyone could submit their progress reports by Friday. Additionally, we should schedule a team meeting next week to discuss the upcoming timeline and address any questions or concerns you may have.
+                        </p>
+                        <p>
+                            Thank you for your continued dedication and hard work on this project.
+                        </p>
+                        <p>
+                            Best regards,<br>
+                            Project Management Team
+                        </p>
+                    </div>
+                    <button ejs-button id="sparkleBtn" iconCss="e-icons e-ai-chat" isPrimary="true" style="display: none;" (mouseenter)="onSparkleMouseEnter()" (mouseleave)="onSparkleMouseLeave()" (click)="onSparkleClick()"></button>
+                </div>
+                <div class="email-actions e-card-content">
+                    <button class="e-btn e-primary" id="sendEmailBtn" (click)="onSendEmailClick()">Send Email</button>
+                </div>
+            </div>
+        </div>
+        <ejs-inlineaiassist #overviewInlineAIAssist id="overviewInlineAIAssist" relateTo="#emailContent" [commandSettings]="commandSettings" [responseSettings]="responseSettings" (promptRequest)="promptRequest($event)" (open)="onOpen()" (close)="onClose()"></ejs-inlineaiassist>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the overview functionalities of the Inline AI Assist component in an email draft assistant scenario. Users can access AI assistance in two ways: hover over any paragraph to see a sparkle button for inline editing, or click the AI Assistant button to enhance the entire email content.</p>
+</div>
+<div id="description">
+    <p>In this example, the Inline AI Assist component showcases the following key features:</p>
+    <ul>
+        <li><code>commandSettings</code> - Defines predefined AI commands (Summarize, Fix Grammar, Make Professional, Make Friendly)</li>
+        <li><code>relateTo</code> - Positions the popup relative to the element provided in the relateTo property</li>
+        <li><code>promptRequest</code> - Processes AI requests and adds responses</li>
+        <li><code>responseSettings</code> - Handles Accept and Reject actions for AI responses</li>
+        <li><code>showPopup</code> - Programmatically opens the AI Assist popup</li>
+        <li><code>open</code> and <code>close</code> - Events for tracking popup state</li>
+    </ul>
+</div>

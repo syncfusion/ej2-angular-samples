@@ -11,9 +11,10 @@
                         <e-item prefixIcon="sf-icon-undo" tooltipText="Undo" [disabled]="true"></e-item>
                         <e-item prefixIcon="sf-icon-redo" tooltipText="Redo" [disabled]="true"></e-item>
                         <e-item type="Separator"></e-item>
+                        <e-item prefixIcon="sf-icon-pan tb-icons" tooltipText="Pan Tool"
+                            [cssClass]="activeTool === 'Pan Tool' ? 'tb-item-start pan-item tb-item-selected' : 'tb-item-start pan-item'"></e-item>
                         <e-item prefixIcon="sf-icon-pointer tb-icons" tooltipText="Select Tool"
-                            cssClass="tb-item-selected"></e-item>
-                        <e-item prefixIcon="sf-icon-Pan tb-icons" tooltipText="Pan Tool"></e-item>
+                            [cssClass]="activeTool === 'Select Tool' ? 'tb-item-middle tb-item-selected' : 'tb-item-middle'"></e-item>
                         <e-item type="Separator"></e-item>
                         <e-item prefixIcon="sf-icon-add-child" tooltipText="Add Child" [disabled]="true"></e-item>
                         <e-item prefixIcon="sf-icon-add-sibling" tooltipText="Add Sibling" [disabled]="true"></e-item>

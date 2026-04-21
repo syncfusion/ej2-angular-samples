@@ -2,26 +2,39 @@
     <p>This sample demonstrates client-side exporting of the pivot table to Excel, CSV and PDF formats.</p>
 </div>
 <div id="description">
-    <p>The pivot table supports client-side exporting and exports its data to the Excel, CSV and PDF formats data using
-        the
+    <p>
+        The pivot table supports client-side exporting and allows data to be exported in Excel, CSV, and PDF formats
+        using the
         <code>excelExport</code>,
-        <code>csvExport</code> and
+        <code>csvExport</code>, and
         <code>pdfExport</code> methods.
+        To perform an export, the desired document type can be selected from the dropdown list in the property panel,
+        followed by clicking the "Export" button.
     </p>
+
     <p>
-        Choose the export document type in the dropdown list available inside the property panel and click the export button to export
-        the component to the selected document format.
-    </p><br />
+        Headers and footers can also be added during export.
+        For Excel, the <code>header</code> and <code>footer</code> properties are defined in the
+        <code>excelExportProperties</code> object and passed to the <code>excelExport</code> method.
+        For PDF, the <code>header</code> and <code>footer</code> properties are defined in the
+        <code>pdfExportProperties</code> object and passed to the <code>pdfExport</code> method.
+    </p>
+
     <p>
-        More information on the exporting can be found in these <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/pivotview/excel-export">Excel Export</a> , <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/pivotview/excel-export#csv-export">CSV Export</a> & <a target="_blank"
-            href="https://ej2.syncfusion.com/angular/documentation/pivotview/pdf-export">PDF Export</a> documentation section.
+        More information on exporting is available in the corresponding
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/pivotview/excel-export">Excel
+            Export</a>,
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/pivotview/excel-export#export-data-to-a-csv-file">CSV Export</a>,
+        and
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/pivotview/pdf-export">PDF
+            Export</a>
+        documentation sections.
     </p>
 </div>
 <div>
     <div class="col-lg-8 control-section sb-property-border">
-        <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings showFieldList='true' width='100%' height='300' allowExcelExport='true' allowPdfExport='true' [gridSettings]='gridSettings'>
+        <ejs-pivotview #pivotview id='PivotView' [dataSourceSettings]=dataSourceSettings showFieldList='true' width='100%' height='350' allowExcelExport='true' allowPdfExport='true' [gridSettings]='gridSettings' allowConditionalFormatting='true'>
         </ejs-pivotview>
     </div>
     <div class="col-lg-4 property-section">
@@ -36,7 +49,7 @@
                         </td>
                         <td style="width: 60%;">
                             <div style="margin-left: -10px">
-                                <ejs-dropdownlist id='exporttype' #exporttype [dataSource]='options' index="0" width="160"></ejs-dropdownlist>
+                                <ejs-dropdownlist id='exporttype' #exporttype [dataSource]='options' index="0"></ejs-dropdownlist>
                             </div>
                         </td>
                     </tr>                   

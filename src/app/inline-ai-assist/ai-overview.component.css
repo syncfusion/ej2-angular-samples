@@ -1,0 +1,90 @@
+.overview-inlineAIAssist .email-container:has(.e-rtl).email-container,
+.overview-inlineAIAssist .email-container:has(.e-rtl) .e-input {
+    direction: rtl;
+    text-align: right;
+}
+
+.overview-inlineAIAssist #sparkleBtn,
+.e-bigger .overview-inlineAIAssist #sparkleBtn {
+    max-height: 30px;
+    max-width: 30px;
+    padding: 6px;
+    line-height: 100%;
+}
+
+.e-bigger .overview-inlineAIAssist #sparkleBtn .e-btn .e-btn-icon {
+    font-size: 16px;
+}
+
+.e-bigger .e-card .e-card-content, .e-bigger.e-card .e-card-content {
+    padding: 16px;
+}
+
+.overview-inlineAIAssist .e-card:hover,
+.overview-inlineAIAssist .e-card-content:hover {
+    background: none;
+}
+
+.overview-inlineAIAssist .demo-title {
+    margin: 0 0 15px 10px;
+}
+
+.overview-inlineAIAssist .email-composer {
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.overview-inlineAIAssist .email-field {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.overview-inlineAIAssist .email-field-vertical {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.overview-inlineAIAssist .field-label {
+    font-weight: 600;
+    min-width: 80px;
+}
+
+.overview-inlineAIAssist .email-body {
+    min-height: 300px;
+    margin-top: 15px;
+    padding: 10px 15px 10px 40px;
+    border: 1px solid;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.overview-inlineAIAssist .email-body > p {
+    padding: 10px;
+    border-radius: 6px;
+    position: relative;
+    cursor: text;
+}
+
+.overview-inlineAIAssist .email-body > *:hover {
+    background: #f8f9fa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.e-bigger.e-dark-mode .overview-inlineAIAssist .email-body > *:hover,
+.e-dark-mode .overview-inlineAIAssist .email-body > *:hover,
+.fluent2-highcontrast .overview-inlineAIAssist .email-body > *:hover,
+body[class*="dark"] .overview-inlineAIAssist .email-body > *:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.overview-inlineAIAssist .email-actions,
+.e-bigger .overview-inlineAIAssist .email-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 0;
+    padding-bottom: 0;
+}

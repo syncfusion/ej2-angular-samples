@@ -370,79 +370,82 @@ export class BPMNShapesDiagramComponent {
 
     //function context menu click
     public contextMenuClick(args: MenuEventArgs): void {
-        if (this.diagram.selectedItems.nodes.length > 0) {
-            let bpmnShape: BpmnShapeModel = this.diagram.selectedItems.nodes[0].shape as BpmnShapeModel;
-            if (args.item.iconCss.indexOf('e-adhocs') > -1) {
-                bpmnShape.activity.subProcess.adhoc = args.item.id === 'AdhocNone' ? false : true;
+      if (this.diagram.selectedItems.nodes.length > 0) {
+        let bpmnShape: BpmnShapeModel = this.diagram.selectedItems.nodes[0].shape as BpmnShapeModel;
+        if (args.item.iconCss) {
+          if (args.item.iconCss.indexOf('e-adhocs') > -1) {
+            bpmnShape.activity.subProcess.adhoc = args.item.id === 'AdhocNone' ? false : true;
+          }
+          if (args.item.iconCss.indexOf('e-event') > -1) {
+            bpmnShape.event.event = (args.item.id as BpmnEvents);
+          }
+          if (args.item.iconCss.indexOf('e-trigger') > -1) {
+            bpmnShape.event.trigger = (args.item.text as BpmnTriggers);
+          }
+          if (args.item.iconCss.indexOf('e-loop') > -1) {
+            let loop: string = (args.item.id === 'LoopNone' as BpmnLoops) ? 'None' : args.item.id;
+            if (bpmnShape.activity.activity === 'Task') {
+              bpmnShape.activity.task.loop = loop as BpmnLoops;
             }
-            if (args.item.iconCss.indexOf('e-event') > -1) {
-                bpmnShape.event.event = (args.item.id as BpmnEvents);
+            if (bpmnShape.activity.activity === 'SubProcess') {
+              bpmnShape.activity.subProcess.loop = loop as BpmnLoops;
             }
-            if (args.item.iconCss.indexOf('e-trigger') > -1) {
-                bpmnShape.event.trigger = (args.item.text as BpmnTriggers);
+          }
+          if (args.item.iconCss.indexOf('e-compensation') > -1) {
+            let compensation: boolean = (args.item.id === 'CompensationNone') ? false : true;
+            if (bpmnShape.activity.activity === 'Task') {
+              bpmnShape.activity.task.compensation = compensation;
             }
-            if (args.item.iconCss.indexOf('e-loop') > -1) {
-                let loop: string = (args.item.id === 'LoopNone' as BpmnLoops) ? 'None' : args.item.id;
-                if (bpmnShape.activity.activity === 'Task') {
-                    bpmnShape.activity.task.loop = loop as BpmnLoops;
-                }
-                if (bpmnShape.activity.activity === 'SubProcess') {
-                    bpmnShape.activity.subProcess.loop = loop as BpmnLoops;
-                }
+            if (bpmnShape.activity.activity === 'SubProcess') {
+              bpmnShape.activity.subProcess.compensation = compensation;
             }
-            if (args.item.iconCss.indexOf('e-compensation') > -1) {
-                let compensation: boolean = (args.item.id === 'CompensationNone') ? false : true;
-                if (bpmnShape.activity.activity === 'Task') {
-                    bpmnShape.activity.task.compensation = compensation;
-                }
-                if (bpmnShape.activity.activity === 'SubProcess') {
-                    bpmnShape.activity.subProcess.compensation = compensation;
-                }
+          }
+          if (args.item.iconCss.indexOf('e-call') > -1) {
+            let compensation: boolean = (args.item.id === 'CallNone') ? false : true;
+            if (bpmnShape.activity.activity === 'Task') {
+              bpmnShape.activity.task.call = compensation;
             }
-            if (args.item.iconCss.indexOf('e-call') > -1) {
-                let compensation: boolean = (args.item.id === 'CallNone') ? false : true;
-                if (bpmnShape.activity.activity === 'Task') {
-                    bpmnShape.activity.task.call = compensation;
-                }
+          }
+
+          if (args.item.iconCss.indexOf('e-boundry') > -1) {
+            let call: string = args.item.id;
+            if (args.item.id !== 'Default') {
+              call = (args.item.id === 'BoundryEvent') ? 'Event' : 'Call';
             }
-            if (args.item.id === 'CollapsedSubProcess' || args.item.id === 'ExpandedSubProcess') {
-                if (args.item.id === 'ExpandedSubProcess') {
-                    bpmnShape.activity.activity = 'SubProcess';
-                    bpmnShape.activity.subProcess.collapsed = false;
-                } else {
-                    bpmnShape.activity.activity = 'SubProcess';
-                    bpmnShape.activity.subProcess.collapsed = true;
-                }
+            bpmnShape.activity.subProcess.boundary = call as BpmnBoundary;
+          }
+          if (args.item.iconCss.indexOf('e-data') > -1) {
+            let call: string = args.item.id === 'DataObjectNone' ? 'None' : args.item.id;
+            bpmnShape.dataObject.type = call as BpmnDataObjects;
+          }
+          if (args.item.iconCss.indexOf('e-collection') > -1) {
+            let call: boolean = (args.item.id === 'Collectioncollection') ? true : false;
+            bpmnShape.dataObject.collection = call;
+          }
+          if (args.item.iconCss.indexOf('e-task') > -1) {
+            let task: string = args.item.id === 'TaskNone' ? 'None' : args.item.id;
+            if (bpmnShape.activity.activity === 'Task') {
+              bpmnShape.activity.task.type = task as BpmnTasks;
             }
-            if (args.item.iconCss.indexOf('e-boundry') > -1) {
-                let call: string = args.item.id;
-                if (args.item.id !== 'Default') {
-                    call = (args.item.id === 'BoundryEvent') ? 'Event' : 'Call';
-                }
-                bpmnShape.activity.subProcess.boundary = call as BpmnBoundary;
+          }
+          if (args.item.iconCss.indexOf('e-gate') > -1) {
+            let task: string = args.item.id.replace('Gateway', '');
+            if (bpmnShape.shape === 'Gateway') {
+              bpmnShape.gateway.type = task as BpmnGateways;
             }
-            if (args.item.iconCss.indexOf('e-data') > -1) {
-                let call: string = args.item.id === 'DataObjectNone' ? 'None' : args.item.id;
-                bpmnShape.dataObject.type = call as BpmnDataObjects;
-            }
-            if (args.item.iconCss.indexOf('e-collection') > -1) {
-                let call: boolean = (args.item.id === 'Collectioncollection') ? true : false;
-                bpmnShape.dataObject.collection = call;
-            }
-            if (args.item.iconCss.indexOf('e-task') > -1) {
-                let task: string = args.item.id === 'TaskNone' ? 'None' : args.item.id;
-                if (bpmnShape.activity.activity === 'Task') {
-                    bpmnShape.activity.task.type = task as BpmnTasks;
-                }
-            }
-            if (args.item.iconCss.indexOf('e-gate') > -1) {
-                let task: string = args.item.id.replace('Gateway', '');
-                if (bpmnShape.shape === 'Gateway') {
-                    bpmnShape.gateway.type = task as BpmnGateways;
-                }
-            }
-            this.diagram.dataBind();
+          }
         }
+        if (args.item.id === 'CollapsedSubProcess' || args.item.id === 'ExpandedSubProcess') {
+          if (args.item.id === 'ExpandedSubProcess') {
+            bpmnShape.activity.activity = 'SubProcess';
+            bpmnShape.activity.subProcess.collapsed = false;
+          } else {
+            bpmnShape.activity.activity = 'SubProcess';
+            bpmnShape.activity.subProcess.collapsed = true;
+          }
+        }
+        this.diagram.dataBind();
+      }
     }
 
     // Define a function to handle opening the context menu

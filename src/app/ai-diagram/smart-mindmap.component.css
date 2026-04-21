@@ -182,3 +182,14 @@
       padding: 3px;
       background-color: #b4ac61;
     }
+
+/* Toolbar Selected State - Start */
+.db-toolbar-container .e-toolbar .e-toolbar-items .e-toolbar-item.tb-item-selected .e-tbar-btn.e-btn,
+.db-toolbar-container .e-toolbar .e-toolbar-items .e-toolbar-item .e-dropdown-btn.tb-item-selected {
+    background: #0078D4;
+}
+
+.db-toolbar-container .e-toolbar .e-toolbar-items .e-toolbar-item.tb-item-selected .e-tbar-btn .e-icons.e-btn-icon,
+.db-toolbar-container .e-toolbar .e-toolbar-items .e-toolbar-item .e-dropdown-btn.tb-item-selected .e-btn-icon {
+    color: #ffffff;
+}

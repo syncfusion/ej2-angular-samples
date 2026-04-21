@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Inject, ViewChild } from '@angular/core';
 import {
   DiagramComponent, DiagramModule, NodeModel,
   IScrollChangeEventArgs, FileFormats, DiagramTools, PrintAndExportService,
@@ -23,6 +23,12 @@ import { exportItems, sequenceModel, zoomMenuItems } from './datasource';
   imports: [DiagramModule,ToolbarModule, ButtonModule, FabModule, UploaderModule, DialogModule, DropDownButtonModule, TextBoxModule],
 })
 export class SmartUmlSequenceDiagramComponent {
+  constructor(@Inject('sourceFiles') private sourceFiles: any) {
+    this.sourceFiles.files = [
+      'smart-umlSequenceDiagram.component.css',
+      'ai-umlSequenceDiagram.ts'
+    ];
+  }
   @ViewChild('diagram', { static: true }) public diagram!: DiagramComponent;
   @ViewChild('dialog', { static: true }) public dialog!: DialogComponent;
   @ViewChild('msgBtn1', { static: true }) public msgBtn1!: ButtonComponent;
@@ -105,15 +111,19 @@ export class SmartUmlSequenceDiagramComponent {
     this.diagram.print(options);
   }
 
+  public activeTool: string = 'Pan Tool';
+
   // Toolbar actions
   public toolbarClick(args: ClickEventArgs): void {
     let item = args.item.tooltipText;
     switch (item) {
       case 'Select Tool':
+        this.activeTool = 'Select Tool';
         this.diagram.clearSelection();
         this.diagram.tool = DiagramTools.Default;
         break;
       case 'Pan Tool':
+        this.activeTool = 'Pan Tool';
         this.diagram.clearSelection();
         this.diagram.tool = DiagramTools.ZoomPan;
         break;

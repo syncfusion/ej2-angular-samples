@@ -35005,3 +35005,197 @@ export let supportData: any[] = [
         CustomerEmail: 'user200@example.com',
     }
 ];
+
+export let virtualOrderData: any[] = [];  // or define proper interface if needed
+
+export function createVirtualOrderData(): void {
+    function pmRandom(seed: number) {
+        let t: any = (seed % 2147483647);
+        if (t <= 0) t += 2147483646;
+        return function () {
+            t = (t * 16807) % 2147483647;
+            return (t - 1) / 2147483646;
+        };
+    }
+  
+    const seed: number = 123456789;
+    const rand: any = pmRandom(seed);
+
+    function randInt(min: number, max: number): number {
+        return Math.floor(rand() * (max - min + 1)) + min;
+    }
+
+    function randChoice<T>(arr: T[]): T {
+        return arr[Math.floor(rand() * arr.length)];
+    }
+
+    function pickAvoidTriplet<T>(arr: T[], fieldName: string): T {
+        let v = randChoice(arr);
+
+        if (virtualOrderData.length >= 2) {
+            const prevItems = virtualOrderData as Array<Record<string, any>>;
+            const a = prevItems[virtualOrderData.length - 1][fieldName];
+            const b = prevItems[virtualOrderData.length - 2][fieldName];
+
+            if (a === b && a === v) {
+                const alt = arr.filter(s => s !== v);
+                if (alt.length > 0) {
+                    v = randChoice(alt);
+                }
+            }
+        }
+
+        return v;
+    }
+
+    const names: string[] = [
+        'Maria', 'Ana Trujillo', 'Antonio Moreno', 'Thomas Hardy', 'Christina Berglund',
+        'Hanna Moos', 'Frederique Citeaux', 'Martin Sommer', 'Laurence Lebihan', 'Elizabeth Lincoln',
+        'Victoria Ashworth', 'Patricio Simpson', 'Francisco Chang', 'Yang Wang', 'Pedro Afonso',
+        'Elizabeth Brown', 'Sven Ottlieb', 'Janine Labrune', 'Ann Devon', 'Roland Mendel',
+        'Aria Cruz', 'Diego Roel', 'Martine Rance', 'Maria Larsson', 'Peter Franken',
+        'Carine Schmitt', 'Paolo Accorti', 'Lino Rodriguez', 'Eduardo Saavedra', 'Jose Pedro Freyre',
+        'Andre Fonseca', 'Howard Snyder', 'Manuel Pereira', 'Mario Pontes', 'Carlos Hernández',
+        'Yoshi Latimer', 'Patricia McKenna', 'Helen Bennett', 'Philip Cramer', 'Daniel Tonini',
+        'Annette Roulet', 'Yoshi Tannamuri', 'John Steel', 'Renate Messner', 'Jaime Yorres',
+        'Carlos Gonzalez', 'Felipe Izquierdo', 'Fran Wilson', 'Giovanni Rovelli', 'Catherine Dewey',
+        'Jean Fresnière', 'Alexander Feuer', 'Simon Crowther', 'Yvonne Moncada', 'Rene Phillips',
+        'Henriette Pfalzheim', 'Marie Bertrand', 'Guillermo Fernandez', 'Georg Pipps', 'Isabel de Castro',
+        'Bernardo Batista', 'Lucia Carvalho', 'Horst Kloss', 'Sergio Gutierrez', 'Paula Wilson',
+        'Maurizio Moroni', 'Janete Limeira', 'Michael Holz', 'Alejandra Camino', 'Jonas Bergulfsen',
+        'Jose Pavarotti', 'Hari Kumar', 'Jytte Petersen', 'Dominique Perrier', 'Art Braunschweiger',
+        'Pascale Cartrain', 'Liz Nixon', 'Liu Wong', 'Karin Josephs', 'Miguel Angel Paolino',
+        'Anabela Domingues', 'Helvetius Nagy', 'Palle Ibsen', 'Mary Saveley', 'Paul Henriot',
+        'Rita Muller', 'Pirkko Koskitalo', 'Paula Parente', 'Karl Jablonski', 'Matti Karttunen',
+        'Zbyszek Piestrzeniewicz'
+    ];
+
+    const products: string[] = [
+        'Chai', 'Chang', 'Aniseed Syrup', "Chef Anton's Cajun Seasoning",
+        "Grandma's Boysenberry Spread", "Uncle Bob's Organic Dried Pears",
+        'Mishi Kobe Niku', 'Ikura', 'Queso Cabrales', 'Pavlova'
+    ];
+
+    const categories: string[] = [
+        'Beverages', 'Condiments', 'Confections', 'Dairy Products',
+        'Grains/Cereals', 'Meat/Poultry', 'Seafood'
+    ];
+
+    const paymentMethods: string[] = ['Card', 'Digital', 'Cash'];
+    const orderStatuses: string[] = ['Ordered', 'Processing', 'Packed', 'Shipped', 'Delivered', 'Canceled', 'Returned'];
+    const priorities: string[] = ['Low', 'Medium', 'High', 'Critical'];
+    const cities: string[] = ['Seattle', 'Austin', 'Boston', 'Chicago', 'San Francisco', 'New York'];
+    const states: string[] = ['WA', 'TX', 'MA', 'IL', 'CA', 'NY'];
+    const countries: string[] = ['USA', 'Canada', 'Mexico', 'UK', 'Germany', 'France'];
+    const warehouses: string[] = ['WH-A', 'WH-B', 'WH-C', 'WH-D'];
+
+    const productToCategory: Record<string, string> = {};
+    for (let k = 0; k < products.length; k++) {
+        productToCategory[products[k]] = categories[k % categories.length];
+    }
+
+    interface AmountResult {
+        subtotal: number;
+        taxAmount: number;
+        totalAmount: number;
+    }
+
+    function computeAmounts(
+        qty: number,
+        unitPrice: number,
+        discountPct: number,
+        taxPct: number,
+        shippingFee: number
+    ): AmountResult {
+        const gross: number = qty * unitPrice;
+        const discount: number = gross * (discountPct / 100);
+        const subtotal: number = gross - discount;
+        const tax: number = subtotal * (taxPct / 100);
+        const total: number = subtotal + tax + shippingFee;
+
+        return {
+            subtotal: Math.round(subtotal * 100) / 100,
+            taxAmount: Math.round(tax * 100) / 100,
+            totalAmount: Math.round(total * 100) / 100
+        };
+    }
+
+    const baseTime = new Date(2025, 0, 1).getTime();
+
+    for (let i = 1; i <= 100000; i++) {
+        const qty = randInt(1, 10);
+        const unitPrice = Math.round((rand() * 500 + 5) * 100) / 100;
+        const discountPct = randInt(0, 20);
+        const taxPct = randInt(0, 18);
+        const shippingFee = Math.round((rand() * 20) * 100) / 100;
+
+        const amounts = computeAmounts(qty, unitPrice, discountPct, taxPct, shippingFee);
+
+        const orderDate = new Date(baseTime - randInt(0, 90) * 24 * 3600 * 1000);
+        const shippedDate = new Date(orderDate.getTime() + randInt(1, 14) * 24 * 3600 * 1000);
+
+        const customerId = randInt(1000, 9999);
+        const custName = randChoice(names);
+        const email = custName.toLowerCase().replace(/\s+/g, '.') + '@example.com';
+
+        const paymentMethod = pickAvoidTriplet(paymentMethods, 'PaymentMethod');
+        const rating = randInt(1, 5);
+        const orderStatusVal = pickAvoidTriplet(orderStatuses, 'OrderStatus');
+        const priorityVal = pickAvoidTriplet(priorities, 'Priority');
+
+        const productName = randChoice(products);
+        const derivedCategory = productToCategory[productName] || randChoice(categories);
+
+        const warehouse = randChoice(warehouses);
+        const inventoryCount = randInt(0, 500);
+
+        let paymentStatus: string = 'Pending';
+
+        if (orderStatusVal === 'Delivered' || orderStatusVal === 'Shipped') {
+            paymentStatus = 'Paid';
+        } else if (orderStatusVal === 'Canceled' || orderStatusVal === 'Returned') {
+            if (rating <= 1) {
+                paymentStatus = 'Failed';
+            } else {
+                paymentStatus = (paymentMethod === 'Cash') ? 'Pending' : 'Refunded';  // assuming 'Cash' ≈ COD
+            }
+        } else if (orderStatusVal === 'Packed') {
+            paymentStatus = (paymentMethod === 'Cash') ? 'Pending' : 'Paid';
+        } else if (orderStatusVal === 'Ordered' || orderStatusVal === 'Processing') {
+            paymentStatus = 'Pending';
+        }
+
+        virtualOrderData.push({
+            OrderID: `ORD-${1000 + i}`,
+            OrderDate: orderDate,
+            ShipDate: shippedDate,
+            CustomerID: `CUS-${customerId}`,
+            CustomerName: custName,
+            Email: email,
+            Phone: `+1-${randInt(200, 999)}-${randInt(1000, 9999)}`,
+            ShipAddress: `${randInt(10, 999)} ${randChoice(['Main St', 'Market St', '1st Ave', 'Broadway'])}`,
+            ShipCity: randChoice(cities),
+            ShipState: randChoice(states),
+            ShipPostalCode: String(randInt(10000, 99999)),
+            ShipCountry: randChoice(countries),
+            ProductID: `PROD-${randInt(10000, 99999)}`,
+            ProductName: productName,
+            Category: derivedCategory,
+            Quantity: qty,
+            UnitPrice: unitPrice,
+            Discount: discountPct,
+            Tax: taxPct,
+            SubTotal: amounts.subtotal,
+            TaxAmount: amounts.taxAmount,
+            ShipFee: shippingFee,
+            TotalAmount: amounts.totalAmount,
+            PaymentMethod: paymentMethod,
+            PaymentStatus: paymentStatus,
+            Warehouse: warehouse,
+            InventoryCount: inventoryCount,
+            Priority: priorityVal,
+            OrderStatus: orderStatusVal,
+            Rating: rating,
+        });
+    }
+}

@@ -5,7 +5,10 @@
     [allowResizing]="allowResizing" [allowDragAndDrop]="allowDragDrop">
     <ng-template #resourceHeaderTemplate let-data>
       <div class='template-wrap'>
-        <div class="resource-image {{getDoctorImage(data)}}"></div>
+        <div>
+          <img class="resource-image" src="./assets/schedule/images/{{getDoctorImage(data)}}.png"
+            alt="{{ getDoctorName(data) }}" />
+        </div>
         <div class="resource-details">
           <div class="resource-name">{{getDoctorName(data)}}</div>
           <div class="resource-designation">{{getDoctorLevel(data)}}</div>

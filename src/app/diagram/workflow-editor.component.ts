@@ -719,6 +719,7 @@ export class WorkFlowDiagramComponent implements AfterViewInit {
         diagram.tool = DiagramTools.MultipleSelect;
         break;
       case 'Pan':
+        this.diagram.clearSelection();
         diagram.tool = DiagramTools.ZoomPan;
         break;
     }

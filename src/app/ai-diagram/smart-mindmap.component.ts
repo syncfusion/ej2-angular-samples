@@ -552,6 +552,8 @@ export class SmartMindmapComponent {
 
   }
 
+  public activeTool: string = 'Select Tool';
+
   toolbarClick(args: ClickEventArgs) {
     let item = args.item.tooltipText;
     switch (item) {
@@ -562,10 +564,12 @@ export class SmartMindmapComponent {
         this.diagram.redo();
         break;
       case 'Select Tool':
+        this.activeTool = 'Select Tool';
         this.diagram.clearSelection();
         this.diagram.tool = DiagramTools.Default;
         break;
       case 'Pan Tool':
+        this.activeTool = 'Pan Tool';
         this.diagram.clearSelection();
         this.diagram.tool = DiagramTools.ZoomPan;
         break;

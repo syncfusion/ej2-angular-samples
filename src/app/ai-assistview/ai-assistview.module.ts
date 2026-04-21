@@ -25,7 +25,7 @@ export const aiassistviewAppRoutes: Object[] = [
         {displayName: 'custom-views.component.css', path: './src/ai-assistview/custom-views.component.css'},
         {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
     ] },
-    { path: ':theme/ai-assistview/streaming', component: AIAssistStreamComponent, name: 'Streaming Response', description: 'Showcases the AiAssistView component with its streaming support.', category: 'AI AssistView', order: '01', sourceFiles: [
+    { path: ':theme/ai-assistview/streaming', component: AIAssistStreamComponent, name: 'Streaming Response', description: 'Showcases the AiAssistView component with its streaming support.', category: 'AI AssistView', order: '01', type: 'update', sourceFiles: [
         {displayName: 'streaming.component.ts', path: './src/ai-assistview/streaming.component.ts'},
         {displayName: 'streaming.html', path: './src/ai-assistview/streaming.html'},
         {displayName: 'streaming.component.css', path: './src/ai-assistview/streaming.component.css'},
@@ -49,19 +49,19 @@ export const aiassistviewAppRoutes: Object[] = [
         {displayName: 'dialog.component.css', path: './src/ai-assistview/dialog.component.css'},
         {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
     ] },
-    { path: ':theme/ai-assistview/ai-integrations', component: AIAsssitAISample, name: 'Multiple AI Models', description: 'Showcases the AiAssistView control to integrate with Gemini, OpenAI Sample', category: 'Use Cases', order: '02', type: 'new', sourceFiles: [
+    { path: ':theme/ai-assistview/ai-integrations', component: AIAsssitAISample, name: 'Multiple AI Models', description: 'Showcases the AiAssistView control to integrate with Gemini, OpenAI Sample', category: 'Use Cases', order: '02', sourceFiles: [
         {displayName: 'ai-integrations.component.ts', path: './src/ai-assistview/ai-integrations.component.ts'},
         {displayName: 'ai-integrations.html', path: './src/ai-assistview/ai-integrations.html'},
         {displayName: 'ai-integrations.component.css', path: './src/ai-assistview/ai-integrations.component.css'},
         {displayName: 'ai-services.ts', path: './src/ai-assistview/ai-services.ts'}
     ] },
-    { path: ':theme/ai-assistview/ai-speech-to-text', component: SpeechToTextAssistComponent, name: 'Speech To Text', description: 'Demonstrates the AI AssistView component integrated with Speech-to-Text functionality, enabling users to interact using voice input transcribed into text.', category: 'Speech', order: '03', type: 'new', sourceFiles: [
+    { path: ':theme/ai-assistview/ai-speech-to-text',type :"update", component: SpeechToTextAssistComponent, name: 'Speech To Text', description: 'Demonstrates the AI AssistView component integrated  the built-in Speech-to-Text functionality, enabling users to interact using voice input transcribed into text.', category: 'Speech', order: '03', sourceFiles: [
         {displayName: 'ai-speech-to-text.component.ts', path: './src/ai-assistview/ai-speech-to-text.component.ts'},
         {displayName: 'ai-speech-to-text.html', path: './src/ai-assistview/ai-speech-to-text.html'},
         {displayName: 'ai-speech-to-text.component.css', path: './src/ai-assistview/ai-speech-to-text.component.css'},
         {displayName: 'ai-services.ts', path: './src/ai-assistview/ai-openai-service.ts'}
     ] },
-        { path: ':theme/ai-assistview/ai-text-to-speech', component: TextToSpeechAssistComponent, name: 'Text To Speech', description: 'Demonstrates the AiAssistView component integrated with Text-to-Speech functionality, allowing AI-generated responses to be vocalized for voice-based interaction.', category: 'Speech', order: '03', type: 'new', sourceFiles: [
+        { path: ':theme/ai-assistview/ai-text-to-speech', component: TextToSpeechAssistComponent, name: 'Text To Speech', description: 'Demonstrates the AiAssistView component integrated with Text-to-Speech functionality, allowing AI-generated responses to be vocalized for voice-based interaction.', category: 'Speech', order: '03', sourceFiles: [
         {displayName: 'ai-text-to-speech.component.ts', path: './src/ai-assistview/ai-text-to-speech.component.ts'},
         {displayName: 'ai-text-to-speech.html', path: './src/ai-assistview/ai-text-to-speech.html'},
         {displayName: 'ai-text-to-speech.component.css', path: './src/ai-assistview/ai-text-to-speech.component.css'},
