@@ -36,7 +36,7 @@ export class FileUploadController {
     public ajaxSettings: object;
     public contextMenuSettings: object;
     public toolbarSettings: object;
-    public hostUrl = 'https://ej2-aspcore-service.azurewebsites.net/';
+    public hostUrl = 'https://physical-service.syncfusion.com/';
 
     public btnClick: EmitType<object> = () => {
         this.dialogObj.show();

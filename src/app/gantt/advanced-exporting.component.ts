@@ -4,8 +4,12 @@ import { ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
 import {
   GanttComponent,
   PdfExportProperties,
-  GanttAllModule,
+  GanttModule,
   CriticalPathService,
+  PdfExportService,
+  DayMarkersService,
+  SelectionService,
+  ToolbarService,
 } from '@syncfusion/ej2-angular-gantt';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SwitchAllModule } from '@syncfusion/ej2-angular-buttons';
@@ -20,13 +24,13 @@ import {
 @Component({
   selector: 'ej2-ganttadvancedexporting',
   templateUrl: 'advanced-exporting.html',
-  providers: [CriticalPathService],
+  providers: [CriticalPathService, PdfExportService, DayMarkersService, SelectionService, ToolbarService],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
   imports: [
     SBActionDescriptionComponent,
     SwitchAllModule,
-    GanttAllModule,
+    GanttModule,
     SBDescriptionComponent,
   ],
 })
@@ -48,13 +52,13 @@ export class GanttAdvancedExportingComponent implements OnInit {
   public eventMarkers: object[];
   public holidays: object[];
   public customFunction(data: any): string {
-    var container = document.createElement('div');
+    const container = document.createElement('div');
     if (data.ganttProperties.resourceNames) {
-      var resources = data.resources.split(',');
-      for (var i = 0; i < resources.length; i++) {
-        var subContainer = document.createElement('div');
-        var img = document.createElement('img');
-        var span = document.createElement('span');
+      const resources = data.resources.split(',');
+      for (let i = 0; i < resources.length; i++) {
+        const subContainer = document.createElement('div');
+        const img = document.createElement('img');
+        const span = document.createElement('span');
         span.className = 'labelClass';
         span.innerHTML = resources[i];
         img.src = 'assets/gantt/images/' + resources[i] + '.png';
@@ -121,16 +125,17 @@ export class GanttAdvancedExportingComponent implements OnInit {
         unit: 'Day',
         count: 1,
       },
+      viewEndDate: new Date('05/31/2025')
     };
     this.gridLines = 'Both';
-    this.projectStartDate = new Date('03/30/2025');
+    this.projectStartDate = new Date('03/25/2025');
     this.resources = editingResources;
     this.splitterSettings = {
       columnIndex: 3,
     };
     this.columns = [
       { field: 'TaskID', width: 80 },
-      { field: 'TaskName', width: 250 },
+      { field: 'TaskName', width: 280 },
       { field: 'StartDate' },
       { field: 'EndDate' },
       { field: 'Progress' },
@@ -138,10 +143,10 @@ export class GanttAdvancedExportingComponent implements OnInit {
   }
   toolbarClick(args?: ClickEventArgs): void {
     if (args.item.id === 'AdvancedGanttExport_pdfexport') {
-      var borderWidth = 1;
-      var borderColor = new PdfColor(227, 22, 91);
-      var pdfpen = new PdfPen(borderColor, borderWidth);
-      pdfpen.dashStyle = PdfDashStyle.Dash;
+      const borderWidth = 1;
+      const borderColor = new PdfColor(227, 22, 91);
+      const pdfPen = new PdfPen(borderColor, borderWidth);
+      pdfPen.dashStyle = PdfDashStyle.Dash;
       let exportProperties: PdfExportProperties = {
         pageSize: 'A2',
         fileName: 'Product Development Report.pdf.pdf',
@@ -152,7 +157,7 @@ export class GanttAdvancedExportingComponent implements OnInit {
               fontStyle: PdfFontStyle.Bold,
               backgroundColor: new PdfColor(253, 191, 100),
             },
-            lineStyle: pdfpen,
+            lineStyle: pdfPen,
           },
           holiday: {
             fontColor: new PdfColor(33, 33, 33),

@@ -20,8 +20,8 @@
  .tailwind3-dark #frozenColumns .e-columnheader .e-leftfreeze,
  .tailwind3-dark #frozenColumns .e-columnheader .e-rightfreeze,
  .tailwind3-dark #frozenColumns .e-columnheader .e-fixedfreeze {
+     /* Slightly lighter than content for depth */
      background-color: #2d2b55 !important;
-     /* slightly lighter than content for depth */
  }
 
  .fluent2 #frozenColumns .e-content .e-leftfreeze,
@@ -33,8 +33,8 @@
  .fluent2 #frozenColumns .e-columnheader .e-leftfreeze,
  .fluent2 #frozenColumns .e-columnheader .e-rightfreeze,
  .fluent2 #frozenColumns .e-columnheader .e-fixedfreeze {
+     /* Slightly lighter than content for depth */
      background-color: #e5f1ff !important;
-     /* slightly lighter than content for depth */
  }
 
  .fluent2-dark #frozenColumns .e-content .e-leftfreeze,
@@ -47,7 +47,6 @@
  .fluent2-dark #frozenColumns .e-columnheader .e-rightfreeze,
  .fluent2-dark #frozenColumns .e-columnheader .e-fixedfreeze {
      background-color: #082338 !important;
-     /* slightly lighter than content for depth */
  }
 
  .material3 #frozenColumns .e-content .e-leftfreeze,
@@ -62,7 +61,7 @@
      background-color: rgb(230, 216, 251) !important;
  }
 
- /* slightly lighter than content for depth */
+ /* Material3 Dark Theme */
  .material3-dark #frozenColumns .e-content .e-leftfreeze,
  .material3-dark #frozenColumns .e-content .e-rightfreeze,
  .material3-dark #frozenColumns .e-content .e-fixedfreeze {
@@ -84,8 +83,8 @@
  .bootstrap5\.3 #frozenColumns .e-columnheader .e-leftfreeze,
  .bootstrap5\.3 #frozenColumns .e-columnheader .e-rightfreeze,
  .bootstrap5\.3 #frozenColumns .e-columnheader .e-fixedfreeze {
+     /* Slightly lighter than content for depth */
      background-color: #e6e5e5 !important;
-     /* slightly lighter than content for depth */
  }
 
  .bootstrap5\.3-dark #frozenColumns .e-content .e-leftfreeze,
@@ -97,8 +96,8 @@
  .bootstrap5\.3-dark #frozenColumns .e-columnheader .e-leftfreeze,
  .bootstrap5\.3-dark #frozenColumns .e-columnheader .e-rightfreeze,
  .bootstrap5\.3-dark #frozenColumns .e-columnheader .e-fixedfreeze {
+     /* Slightly lighter than content for depth */
      background-color: rgb(62, 62, 62) !important;
-     /* slightly lighter than content for depth */
  }
 
  /* Fluent2 High Contrast - separate class as you said */
@@ -128,11 +127,15 @@
      margin-bottom: 0px !important;
  }
 
- .toolbar-items{
-    padding: 10px; display: flex; gap: 15px;
+ .toolbar-items {
+     padding: 10px;
+     display: flex;
+     gap: 15px;
  }
- .toolbar-items .columns, .toolbar-items .directions{
-    display: flex; 
-    align-items: center; 
-    gap: 15px;
+
+ .toolbar-items .columns,
+ .toolbar-items .directions {
+     display: flex;
+     align-items: center;
+     gap: 15px;
  }

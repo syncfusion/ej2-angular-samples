@@ -1,0 +1,70 @@
+<div id="action-description">
+    <p>
+        This example demonstrates a nested donut chart using multiple pie series to visualize the population of Qatar by nationality.
+        The outer ring represents individual countries, while the inner ring shows broader regional distribution with consistent color grouping.
+    </p>
+</div>
+
+<div class="control-section">
+    <ejs-accumulationchart id="container" [tooltip]="tooltip" [legendSettings]="legendSettings"
+        [centerLabel]="centerLabel" [enableBorderOnMouseMove]="false" [title]="title" (load)="load($event)">
+        <e-accumulation-series-collection>
+            <e-accumulation-series [dataSource]="countryData" type="Pie" xName="x" yName="y" pointColorMapping="color" radius="90%"
+                innerRadius="75%" [border]="border" [dataLabel]="outerDataLabel" [animation]="animation">
+            </e-accumulation-series>
+            <e-accumulation-series [dataSource]="regionData" type="Pie" xName="x" yName="y" pointColorMapping="color" radius="67%"
+                innerRadius="35%" [border]="border" [dataLabel]="innerDataLabel" [animation]="animation">
+            </e-accumulation-series>
+        </e-accumulation-series-collection>
+    </ejs-accumulationchart>
+</div>
+
+<div id="description">
+    <p>
+        In this example, multiple pie series are used to display hierarchical data in concentric rings. This approach makes it easy
+        to compare nationality-level population distribution alongside broader regional groupings within Qatar.
+    </p>
+    <p>
+        The
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/accumulation-chart/accumulationseries/#radius">
+            <code>radius</code>
+        </a>
+        and
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/accumulation-chart/accumulationseries/#innerradius">
+            <code>innerRadius</code>
+        </a>
+        properties control the size and thickness of each ring, enabling the nested donut appearance. The
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/accumulation-chart/accumulationseries/#pointcolormapping">
+            <code>pointColorMapping</code>
+        </a>
+        property ensures that countries and their corresponding regions share the same color for visual consistency.
+    </p>
+    <p>
+        The
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/accumulation-chart/tooltipsettings/#enable">
+            <code>Tooltip</code>
+        </a>
+        feature is enabled to provide additional information. Hover over a segment (or tap on touch devices) to view the nationality
+        and its population share percentage.
+    </p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use pie series feature, we need to inject
+        <code>PieService</code> into the <code>&#64;NgModule.providers</code> section.
+    </p>
+    <p>
+        More information about multiple pie series can be found in this
+        <a
+            target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/accumulation-chart/pie-dough-nut/#multiple-pie-series"
+            aria-label="Navigate to the documentation for Multiple Pie Series in Angular Accumulation Chart component"
+        >
+            documentation section
+        </a>.
+    </p>
+</div>
+
+<style>
+    .control-section {
+        min-height: 450px;
+    }
+</style>

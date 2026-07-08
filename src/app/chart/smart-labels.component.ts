@@ -34,7 +34,7 @@ export class SmartLabelsComponent {
         { x: 'Kenya', y: 4, text: Browser.isDevice ? 'KE: 4' : 'Kenya: 4' },
         { x: 'Georgia', y: 3, text: Browser.isDevice ? 'GE: 3' : 'Georgia: 3' },
         { x: 'North Korea', y: 2, text: Browser.isDevice ? 'NK: 2' : 'North Korea: 2' },
-        { x: 'Hong Kong', y: 2, text: Browser.isDevice ? 'HK: 2' : 'South Africa: 2' }
+        { x: 'South Africa', y: 2, text: Browser.isDevice ? 'HK: 2' : 'South Africa: 2' }
     ];
     //Initializing Legend
     public legendSettings: LegendSettingsModel = {

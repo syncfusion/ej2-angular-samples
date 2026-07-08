@@ -1,13 +1,20 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { labelData, editingResources } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, GanttModule, SelectionService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+
+interface TaskData {
+    ganttProperties?: { resourceNames?: string };
+    resources?: string;
+}
 @Component({
     selector: 'ej2-gantttasklabeltemplate',
     templateUrl: 'tasklabel-template.html',
+    styleUrls: ['tasklabel-template.component.css'],
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+    providers: [SelectionService, DayMarkersService],
+    imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 export class GanttTasklabelTemplateComponent implements OnInit {
     public data: object[];
@@ -19,28 +26,25 @@ export class GanttTasklabelTemplateComponent implements OnInit {
     public splitterSettings: object;
     public resources: object[];
     public resourceFields: object;
-    public customFunction(data: any): string {
-      var container = document.createElement('div');
-      if (data.ganttProperties.resourceNames) {
-        var resources = data.resources.split(',');
-        for (var i = 0; i < resources.length; i++) {
-          var subContainer = document.createElement('div');
-          var img = document.createElement('img');
-          var span = document.createElement('span');
-          span.className = 'labelClass';
-          span.innerHTML = resources[i];
-          img.src =
-            'assets/gantt/images/' +
-            resources[i] +
-            '.png';
-          img.height = 40;
-          img.alt = resources[i];
-          subContainer.append(img);
-          subContainer.append(span);
-          container.append(subContainer);
+    public customFunction(data: TaskData): string {
+        const container = document.createElement('div');
+        if (data?.ganttProperties?.resourceNames && data?.resources) {
+            const resources = data.resources.split(',');
+            for (const resource of resources) {
+                const subContainer = document.createElement('div');
+                const img = document.createElement('img');
+                const span = document.createElement('span');
+                span.className = 'labelClass';
+                span.textContent = resource;
+                img.src = 'assets/gantt/images/' + resource + '.png';
+                img.height = 40;
+                img.alt = resource;
+                subContainer.append(img);
+                subContainer.append(span);
+                container.append(subContainer);
+            }
         }
-      }
-      return container.innerHTML;
+        return container.innerHTML;
     }
     public ngOnInit(): void {
       this.data = labelData;
@@ -62,7 +66,7 @@ export class GanttTasklabelTemplateComponent implements OnInit {
       };
       this.columns = [
         { field: 'TaskID', width: 80 },
-        { field: 'TaskName', width: 250 },
+        { field: 'TaskName', width: 280 },
         { field: 'StartDate' },
         { field: 'EndDate' },
         { field: 'Duration' },
@@ -71,7 +75,7 @@ export class GanttTasklabelTemplateComponent implements OnInit {
         { field: 'resources' },
       ];
       this.splitterSettings = {
-        position: "35%"
+        columnIndex: 3
       };
       this.projectStartDate = new Date('03/24/2025');
       this.projectEndDate = new Date('06/10/2025');

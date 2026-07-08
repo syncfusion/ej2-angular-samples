@@ -1825,7 +1825,7 @@
             "content": [
                 {
                     "contentType": "Text",
-                    "content": "pasteCleanupSettings: {\n allowedStyles: ['color', 'font-weight'], // Styles to keep\n deniedTags: ['script', 'iframe'], // Tags to remove\n keepFormat: true, // Keep original formatting\n plainPaste: false // Force plain text paste\n};"
+                    "content": "pasteCleanupSettings: {\n deniedTags: ['script', 'iframe'], // Tags to remove\n keepFormat: true, // Keep original formatting\n plainPaste: false // Force plain text paste\n};"
                 }
             ]
         },
@@ -4047,5 +4047,394 @@
                 }
             ]
         }
-    ]
+    ],
+    "askAssistantData": [
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 4
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "✈️ Planning a Stress-Free Trip"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Create the perfect itinerary with our comprehensive travel planning guide. Get organized, stay focused, and enjoy every moment of your adventure!"
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 4
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "📋 5-Day Travel Itinerary"
+                }
+            ]
+        },
+        {
+            "blockType": "Table",
+            "properties": {
+                "columns": [
+                    {
+                        "headerText": "Day"
+                    },
+                    {
+                        "headerText": "Activity"
+                    },
+                    {
+                        "headerText": "Notes"
+                    }
+                ],
+                "rows": [
+                    {
+                        "cells": [
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Day 1"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Arrival & Check-in"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Explore nearby restaurants"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "cells": [
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Day 2"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Museum & Cultural Sites"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Book tickets in advance"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "cells": [
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Day 3-5"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Adventure & Relaxation"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Mix outdoor & leisure activities"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 4
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "✅ Pre-Trip Checklist"
+                }
+            ]
+        },
+        {
+            "blockType": "Checklist",
+            "properties": {
+                "isChecked": true
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Book flights and accommodation"
+                }
+            ]
+        },
+        {
+            "blockType": "Checklist",
+            "properties": {
+                "isChecked": true
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Check passport validity"
+                }
+            ]
+        },
+        {
+            "blockType": "Checklist",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Pack essentials and travel documents"
+                }
+            ]
+        },
+        {
+            "blockType": "Checklist",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Notify bank about trip dates"
+                }
+            ]
+        },
+        {
+            "blockType": "Checklist",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Download offline maps and guides"
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 4
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "🎒 Essential Packing Items"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "📱 Phone, charger & power bank"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "💳 Credit/debit cards & cash"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "🪪 Passport, ID & travel documents"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "🩺 Medications & first-aid kit"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "👕 Comfortable clothing & footwear"
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 4
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "📌 Travel Tips"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "🌍 Learn basic local phrases to connect with locals"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "💱 Exchange currency beforehand or use ATMs for better rates"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "📸 Research iconic spots & hidden gems for photography"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "🚕 Check public transportation or ride-sharing apps"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "⏰ Book accommodations & activities in advance during peak season"
+                }
+            ]
+        },
+        {
+            "blockType": "Callout",
+            "properties": {
+                "children": [
+                    {
+                        "blockType": "Paragraph",
+                        "content": [
+                            {
+                                "contentType": "Text",
+                                "content": "Pro Tip: Always keep a copy of important documents in cloud storage and share your itinerary with a trusted contact before departure!"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "blockType": "Paragraph"
+        }
+    ],
+    "notionSuggestions": [
+        "Summarize this page",
+        "Translate this page",
+        "Analyze for insights"
+    ],
+    "iconMapByIndex": {
+        "0": "e-icons e-collapse-2",
+        "1": "e-icons e-translate",
+        "2": "e-icons e-search",
+        "3": "e-icons e-changes-track"
+    }
 }

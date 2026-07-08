@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { WorkingTimeRangeData } from './data';
 import { ChangeEventArgs, NumericTextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, GanttComponent, GanttModule, SelectionService } from '@syncfusion/ej2-angular-gantt';
 import { NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -13,13 +12,15 @@ import { ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
     selector: 'ej2-ganttworkingtimerange',
     templateUrl: 'working-time-range.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, NumericTextBoxAllModule,ButtonAllModule,DropDownListAllModule, SBDescriptionComponent]
+    providers: [SelectionService, DayMarkersService],
+    imports: [SBActionDescriptionComponent, GanttModule, NumericTextBoxAllModule,ButtonAllModule,DropDownListAllModule, SBDescriptionComponent]
 })
 export class GanttWorkingTimeRangeComponent implements OnInit {
 
     public data: object[];
     public taskSettings: object;
     public splitterSettings: object;
+    public columns: object[];
     public timelineSettings: object;
     public labelSettings: object;
     public isTimeUpdated: boolean = false;
@@ -65,8 +66,17 @@ export class GanttWorkingTimeRangeComponent implements OnInit {
             dependency: 'Predecessor',
             child: 'subtasks'
         };
+        this.columns = [
+            { field: 'TaskID', visible: false },
+            { field: 'TaskName',headerText: 'Name', width: 280 },
+            { field: 'StartDate' },
+            { field: 'EndDate' },
+            { field: 'Duration' },
+            { field: 'Predecessor' },
+            { field: 'Progress' }
+        ];
         this.splitterSettings = {
-            columnIndex: 2
+            columnIndex: 1
         },
         this.timelineSettings = {
             topTier: {
@@ -77,70 +87,102 @@ export class GanttWorkingTimeRangeComponent implements OnInit {
             },
         };
         this.projectStartDate = new Date('04/02/2025');
-        this.projectEndDate = new Date('04/28/2025');
+        this.projectEndDate = new Date('04/15/2025');
         this.labelSettings = {
             leftLabel: 'TaskName',
         };
     }
-   change1(args: any) : void {
-        if (this.StartTimeObj.value >= this.EndTimeObj.value) {
-            if(this.StartTimeObj.value < 24) {
-               this.EndTimeObj.value = this.StartTimeObj.value + 1.00;
-            }
-            else {
-                this.EndTimeObj.value = 0.00;
+    private validateTimeRange(startInput: NumericTextBoxComponent, endInput: NumericTextBoxComponent): void {
+        if (startInput.value !== null && endInput.value !== null) {
+            if (startInput.value >= endInput.value) {
+                endInput.value = startInput.value < 24 ? startInput.value + 1.0 : 0.0;
             }
         }
     }
-    change2(args: any) : void {
-        if (this.StartTime.value >= this.EndTime.value) {
-            if(this.StartTime.value < 24) {
-               this.EndTime.value = this.StartTime.value + 1.00;
-            }
-            else {
-                this.EndTime.value = 0.00;
-            }
-        } 
+
+    change1(args: ChangeEventArgs): void {
+        this.validateTimeRange(this.StartTimeObj, this.EndTimeObj);
     }
-    select (args: any) : void {
-        var startTime = 8;
-            var endTime = 17;
-            for(let i=0;i<this.ganttObj.weekWorkingTime.length;i++) {
-                if(this.ganttObj.weekWorkingTime[i].dayOfWeek === args.item.innerText) {
-                    startTime = this.ganttObj.weekWorkingTime[i].timeRange[0].from;
-                    endTime = this.ganttObj.weekWorkingTime[i].timeRange[0].to;
-                    break;
-                }
+
+    change2(args: ChangeEventArgs): void {
+        this.validateTimeRange(this.StartTime, this.EndTime);
+    }
+    select(args: any): void {
+        if (!this.ganttObj?.weekWorkingTime || this.ganttObj.weekWorkingTime.length === 0) {
+            return;
+        }
+
+        let startTime = 8;
+        let endTime = 17;
+
+        for (let i = 0; i < this.ganttObj.weekWorkingTime.length; i++) {
+            if (this.ganttObj.weekWorkingTime[i].dayOfWeek === args?.item?.innerText) {
+                startTime = this.ganttObj.weekWorkingTime[i].timeRange[0].from;
+                endTime = this.ganttObj.weekWorkingTime[i].timeRange[0].to;
+                break;
             }
+        }
+
+        if (this.StartTime) {
             this.StartTime.value = startTime;
+        }
+        if (this.EndTime) {
             this.EndTime.value = endTime;
+        }
     }
-    perform () : void {
+    perform(): void {
+        if (!this.WorkingDaysObj?.value || !this.ganttObj?.weekWorkingTime) {
+            return;
+        }
+
         let selectedDay = this.WorkingDaysObj.value;
-        let startTime = this.StartTime.value;
-        let endTime = this.EndTime.value;
+        let startTime = this.StartTime?.value;
+        let endTime = this.EndTime?.value;
+
+        // Validate time range
+        if (startTime === null || endTime === null || startTime < 0 || endTime > 24 || startTime >= endTime) {
+            console.error('Invalid time range');
+            return;
+        }
+
         let workingTime = [];
         let weekWorkingTime = this.ganttObj.weekWorkingTime;
         let isUpdated = false;
+
+        // Copy existing working times
         for (let i = 0; i < weekWorkingTime.length; i++) {
             workingTime.push({ dayOfWeek: weekWorkingTime[i].dayOfWeek, timeRange: weekWorkingTime[i].timeRange });
         }
+
+        // Update or add the selected day's working time
         for (let i = 0; i < workingTime.length; i++) {
             if (workingTime[i].dayOfWeek === selectedDay) {
-                workingTime[i].dayOfWeek = workingTime[i].dayOfWeek;
-                workingTime[i].timeRange = [{ from: startTime, to: endTime }]
+                workingTime[i].timeRange = [{ from: startTime, to: endTime }];
                 isUpdated = true;
                 break;
             }
         }
+
         if (!isUpdated) {
             workingTime.push({ dayOfWeek: selectedDay, timeRange: [{ from: startTime, to: endTime }] });
         }
+
         this.ganttObj.weekWorkingTime = workingTime;
     }
-    update () : void {
-        let startTime = this.StartTimeObj.value;
-        let endTime = this.EndTimeObj.value;
+    update(): void {
+        if (!this.ganttObj) {
+            return;
+        }
+
+        let startTime = this.StartTimeObj?.value;
+        let endTime = this.EndTimeObj?.value;
+
+        // Validate time range
+        if (startTime === null || endTime === null || startTime < 0 || endTime > 24 || startTime >= endTime) {
+            console.error('Invalid time range');
+            return;
+        }
+
         let workingTime = [{ from: startTime, to: endTime }];
         this.ganttObj.dayWorkingTime = workingTime;
     }

@@ -110,7 +110,7 @@ export class MapsPieComponent {
                 },
                 {
                     visible: true,
-                    template: '<div id="pieChart6" style="top:5px;left:-65px;height:150px;width:200px;"></div>',
+                    template: '<div id="pieChart6" style="top:-7px;left:-90px;height:150px;width:200px;"></div>',
                     dataSource: [
                         { 'latitude': -23.725011735951796, 'longitude': 132.978515625 }
                     ],
@@ -120,6 +120,10 @@ export class MapsPieComponent {
         }
     ];
     public loaded(args: ILoadedEventArgs): void {
+            let markers = document.getElementById( args.maps.element.id + '_LayerIndex_0_Markers_Template_Group');
+            if (markers) {
+                markers.style.overflow = 'visible';
+            }
             let chart: AccumulationChart = new AccumulationChart({
                 background: 'transparent', width: '80', height: '70',
                 tooltip: { enable: true, format: '${point.x} : ${point.y}' },

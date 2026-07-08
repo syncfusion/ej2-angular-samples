@@ -2,9 +2,7 @@ import { Component, OnInit, ViewChild} from '@angular/core';
 import { projectNewData } from './data';
 import { extend } from '@syncfusion/ej2-base';
 import { ChangeEventArgs, CheckBoxAllModule } from '@syncfusion/ej2-angular-buttons';
-import { ButtonComponent } from '@syncfusion/ej2-angular-buttons';
-import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
-import { EJ2Instance } from '@syncfusion/ej2-schedule';
+import { DayMarkersService, GanttComponent, GanttModule, SelectionService } from '@syncfusion/ej2-angular-gantt';
 import { SelectEventArgs, RemoveEventArgs  } from '@syncfusion/ej2-dropdowns';
 import { MultiSelectAllModule, MultiSelectComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -14,7 +12,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     selector: 'ej2-ganttworkweek',
     templateUrl: 'work-week.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, MultiSelectAllModule, SBDescriptionComponent, CheckBoxAllModule]
+    providers: [SelectionService, DayMarkersService],
+    imports: [SBActionDescriptionComponent, GanttModule, MultiSelectAllModule, SBDescriptionComponent, CheckBoxAllModule]
 })
 export class GanttWorkWeekComponent implements OnInit {
 
@@ -56,11 +55,11 @@ export class GanttWorkWeekComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            parentID:'ParentId'
+            parentID:'ParentID'
         };
         this.columns =  [
             { field: 'TaskID',visible: false, headerText: 'ID', width: 80 },
-            { field: 'TaskName', headerText: 'Name', width: 150 },
+            { field: 'TaskName', headerText: 'Name', width: 280 },
             { field: 'StartDate' },
             { field: 'EndDate' },
             { field: 'Duration' },
@@ -76,32 +75,46 @@ export class GanttWorkWeekComponent implements OnInit {
             leftLabel: 'TaskName',
         };
     }
-    select (args: SelectEventArgs) : void {
-        let workingDays = Object[7];
-        workingDays = extend([], this.WorkingDaysObj.value, [], true);
-        workingDays.push(args.item.innerText);
+    select(args: SelectEventArgs): void {
+        if (!this.ganttObj || !this.WorkingDaysObj) {
+            return;
+        }
+        const workingDays: string[] = Array.isArray(this.WorkingDaysObj.value) ? [...(this.WorkingDaysObj.value as string[])] : [];
+        const selectedDay = args.item.innerText;
+        if (selectedDay && !workingDays.includes(selectedDay)) {
+            workingDays.push(selectedDay);
+        }
         this.ganttObj.workWeek = workingDays;
     }
-    remove (args: RemoveEventArgs) : void {
-        var index = this.ganttObj.workWeek.indexOf(args.item.innerText);
-            let workingDays = Object[7];
-            if (index !== -1) {
-                workingDays = this.WorkingDaysObj.value;
-                this.ganttObj.workWeek = workingDays;
-            }
+
+    remove(args: RemoveEventArgs): void {
+        if (!this.ganttObj || !this.WorkingDaysObj) {
+            return;
+        }
+        const workingDays: string[] = Array.isArray(this.WorkingDaysObj.value) ? [...(this.WorkingDaysObj.value as string[])] : [];
+        const removedDay = args.item.innerText;
+        const index = workingDays.indexOf(removedDay);
+        if (index !== -1) {
+            workingDays.splice(index, 1);
+        }
+        this.ganttObj.workWeek = workingDays;
     }
+    private updateGanttProperty(property: 'showWeekend' | 'highlightWeekends', value: boolean): void {
+        if (!this.ganttObj) {
+            return;
+        }
+        if (property === 'showWeekend') {
+            this.ganttObj.timelineSettings.showWeekend = value;
+        } else {
+            this.ganttObj.highlightWeekends = value;
+        }
+    }
+
     onshowWeekendsChange(args: ChangeEventArgs): void {
-        if (args.checked) {
-            this.ganttObj.timelineSettings.showWeekend = true;    
-        } else {
-            this.ganttObj.timelineSettings.showWeekend = false;
-        }
+        this.updateGanttProperty('showWeekend', args.checked ?? false);
     }
-    onshightlightWeekendsChange(args: ChangeEventArgs): void {
-        if (args.checked) {
-            this.ganttObj.highlightWeekends  = true;
-        } else {
-            this.ganttObj.highlightWeekends  = false;
-        }
+
+    onHighlightWeekendsChange(args: ChangeEventArgs): void {
+        this.updateGanttProperty('highlightWeekends', args.checked ?? false);
     }
 }

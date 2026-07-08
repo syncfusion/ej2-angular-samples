@@ -18,7 +18,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 })
 
 export class FileBrowserComponent {
-  hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
+  hostUrl: string = 'https://services.syncfusion.com/angular/production/';
 
   toolbarSettings: ToolbarSettingsModel = {
     items: ['FileManager', 'Image']
@@ -26,12 +26,11 @@ export class FileBrowserComponent {
 
   fileManagerSettings: FileManagerSettingsModel = {
     enable: true,
-    path: '/Pictures/Food',
     ajaxSettings: {
-      url: this.hostUrl + 'api/FileManager/FileOperations',
-      getImageUrl: this.hostUrl + 'api/FileManager/GetImage',
-      uploadUrl: this.hostUrl + 'api/FileManager/Upload',
-      downloadUrl: this.hostUrl + 'api/FileManager/Download'
+      url: this.hostUrl + 'api/RichTextEditor/FileOperations',
+      getImageUrl: this.hostUrl + 'api/RichTextEditor/GetImage',
+      uploadUrl: this.hostUrl + 'api/RichTextEditor/Upload',
+      downloadUrl: this.hostUrl + 'api/RichTextEditor/Download'
     }
   };
 }

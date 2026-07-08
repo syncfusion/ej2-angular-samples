@@ -1,15 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, EditService, FilterService, GanttComponent, GanttModule, SelectionService, SortService, ToolbarService, ContextMenuService } from '@syncfusion/ej2-angular-gantt';
 import { WBSData } from './data';
-import {  GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { ChangeEventArgs, SwitchAllModule } from '@syncfusion/ej2-angular-buttons';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { SwitchAllModule } from '@syncfusion/ej2-angular-buttons';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
   selector: 'ej2-ganttwbsview',
   templateUrl: 'wbs-column.html',
   standalone: true,
-  imports: [SBActionDescriptionComponent, SwitchAllModule, GanttAllModule, SBDescriptionComponent]
+  providers: [SelectionService, DayMarkersService, EditService, ToolbarService, FilterService, SortService, ContextMenuService],
+  imports: [SBActionDescriptionComponent, SwitchAllModule, GanttModule, SBDescriptionComponent]
   })
 export class GanttWbsViewComponent implements OnInit {
   @ViewChild('gantt')
@@ -21,8 +21,6 @@ export class GanttWbsViewComponent implements OnInit {
   public toolbar: string[];
   public editSettings: object;
   public splitterSettings: object;
-  public selectionSettings: object;
-  public tooltipSettings: object;
   public filterSettings: object;
   public timelineSettings: object;
   public labelSettings: object;
@@ -42,12 +40,12 @@ export class GanttWbsViewComponent implements OnInit {
       duration: 'Duration',
       progress: 'Progress',
       dependency: 'Predecessor',
-      parentID: 'ParentId'
+      parentID: 'ParentID'
     };
     this.columns = [
       { field: 'TaskID', headerText: 'Task ID', visible: false },
-      { field: 'WBSCode', headerText: 'WBS Code',width: '200px'  },
-      { field: 'TaskName', headerText: 'Task Name', allowReordering: false, width: '260px'  },
+      { field: 'WBSCode', headerText: 'WBS Code',width: '140px'  },
+      { field: 'TaskName', headerText: 'Task Name', allowReordering: false, width: '280px'  },
       { field: 'StartDate', headerText: 'Start Date', width: '140px'  },
       { field: 'WBSPredecessor', headerText: 'WBS Predecessor',width: '190px' },
       { field: 'Duration', headerText: 'Duration', allowEditing: false , width: '130px'},
@@ -68,8 +66,6 @@ export class GanttWbsViewComponent implements OnInit {
     };
     this.toolbar = ['Add', 'Edit', 'Update', 'Delete', 'Cancel', 'ExpandAll', 'CollapseAll'];
     this.splitterSettings = { columnIndex: 4 };
-    this.selectionSettings = { mode: 'Row', type: 'Single', enableToggle: false };
-    this.tooltipSettings = { showTooltip: true };
     this.filterSettings = { type: 'Menu' };
     this.timelineSettings = {
       showTooltip: true,
@@ -81,21 +77,29 @@ export class GanttWbsViewComponent implements OnInit {
     };
     
     this.allowUnscheduledTasks = true;
-    this.enableWBS = true;
-    this.enableAutoWbsUpdate = true;
     this.projectStartDate = new Date('03/30/2025');
     this.projectEndDate = new Date('05/30/2025');
   }
-    public autoUpdate(args): void {
-        if (args.checked) {
-            this.ganttObj.enableAutoWbsUpdate = true;
-        } else {
-            this.ganttObj.enableAutoWbsUpdate = false;
+    public autoUpdate(args: ChangeEventArgs): void {
+        if (!this.ganttObj) {
+            return;
         }
+        this.ganttObj.enableAutoWbsUpdate = args.checked ?? false;
     }
 
     public dataBound(): void {
-      this.ganttObj.element.getElementsByClassName('e-span-label')[0]['style'].top = '125px';
-      this.ganttObj.element.getElementsByClassName('e-gantt-right-arrow')[0]['style'].top = '131px';
+      if (!this.ganttObj?.element) {
+        return;
+      }
+
+      const spanLabel = this.ganttObj.element.querySelector('.e-span-label') as HTMLElement;
+      const arrow = this.ganttObj.element.querySelector('.e-gantt-right-arrow') as HTMLElement;
+
+      if (spanLabel) {
+        spanLabel.style.top = '125px';
+      }
+      if (arrow) {
+        arrow.style.top = '131px';
+      }
     }
 }

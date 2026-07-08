@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { projectNewData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, EditService, FilterService, GanttModule, SelectionService, ToolbarService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttkeynavigations',
     templateUrl: 'keyboard-interactions.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+    providers: [SelectionService, ToolbarService, EditService, DayMarkersService, FilterService],
+    imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 export class GanttKeyboardInteractionsComponent implements OnInit {
     public data: object[];
@@ -29,21 +30,21 @@ export class GanttKeyboardInteractionsComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            parentID: 'ParentId'
+            parentID: 'ParentID'
         };
         this.columns = [
             { field: 'TaskID', width: 80 },
-            { field: 'TaskName', width: 250 },
+            { field: 'TaskName', width: 280 },
             { field: 'StartDate' },
             { field: 'EndDate' },
             { field: 'Duration' },
             { field: 'Predecessor' },
-            { field: 'Progress' },
+            { field: 'Progress' }
         ];
         this.editSettings = {
             allowAdding: true,
             allowEditing: true,
-            allowDeleting: true,
+            allowDeleting: true
         };
         this.splitterSettings = {
             columnIndex: 2

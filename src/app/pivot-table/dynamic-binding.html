@@ -132,7 +132,7 @@
                     <div style="display: flex; flex: 1; gap: 8px; alignItems: center">
                         <ejs-textbox type="text" [(value)]="olapProxyUrl"
                             placeholder="Enter OLAP endpoint URL (e.g., https://bi.syncfusion.com/olap/msmdpump.dll)"
-                            cssClass="e-input" style="flex: 1;">
+                            style="flex: 1;">
                         </ejs-textbox>
                         <button ejs-button cssClass="e-primary" (click)="onConnectClick()" [disabled]="loadingSources">
                             {{ loadingSources ? 'Connecting…' : 'Connect' }}
@@ -144,7 +144,7 @@
                     <ejs-dropdownlist [dataSource]="olapDataSources" [(value)]="selectedDataSource"
                         [placeholder]="loadingSources ? 'Loading…' : 'Select data source'"
                         [enabled]="olapConnected && !loadingSources" (change)="onDataSourceChange($event)"
-                        cssClass="e-input" style="width: 100%;">
+                        style="width: 100%;">
                     </ejs-dropdownlist>
                 </div>
                 <div class="olap-row">
@@ -152,7 +152,7 @@
                     <ejs-dropdownlist [dataSource]="olapCatalogs" [(value)]="selectedCatalog"
                         [placeholder]="loadingCatalogs ? 'Loading…' : 'Select catalog'"
                         [enabled]="!!selectedDataSource && !loadingCatalogs" (change)="onCatalogChange($event)"
-                        cssClass="e-input" style="width: 100%;">
+                        style="width: 100%;">
                     </ejs-dropdownlist>
                 </div>
                 <div class="olap-row">
@@ -160,7 +160,7 @@
                     <ejs-dropdownlist [dataSource]="olapCubes" [(value)]="selectedCube"
                         [placeholder]="loadingCubes ? 'Loading…' : 'Select cube'"
                         [enabled]="!!selectedCatalog && !loadingCubes" (change)="onCubeChange($event)"
-                        cssClass="e-input" style="width: 100%;">
+                        style="width: 100%;">
                     </ejs-dropdownlist>
                 </div>
                 <div *ngIf="olapUiMessage" style="color: var(--e-error, #b00020); font-size: 14px;">

@@ -1,16 +1,19 @@
-import { Component, OnInit, ViewEncapsulation} from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { timelineTemplateData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { Internationalization } from '@syncfusion/ej2-base';
-import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { CommonModule } from '@angular/common';
+import { GanttModule, GanttComponent, SelectionService, DayMarkersService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { NgIf } from '@angular/common';
 @Component({
     selector: 'ej2-gantttimelinetemplate',
     templateUrl: 'timeline-template.html',
     styleUrls: ['timeline-template.component.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+    providers: [SelectionService, DayMarkersService],
+    imports: [SBActionDescriptionComponent, GanttModule,CommonModule, SBDescriptionComponent, NgIf]
 })
 export class GanttTimelineTemplateComponent implements OnInit {
     public data: object[];
@@ -22,51 +25,60 @@ export class GanttTimelineTemplateComponent implements OnInit {
     public columns: object[];
     public splitterSettings: object;
 
-    // Create an Internationalization instance
-    public intlObj = new Internationalization();
+    private intl: Internationalization = new Internationalization();
 
-    public weekDate(dateString: any) {
-      const gantt = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
-      const date = gantt.locale === 'ar' ? this.parseArabicDate(dateString) : this.parseDateString(dateString);
-      return this.intlObj.formatDate(date, { skeleton: 'E' });
-    }
-    public formatDate(dateString: any) {
-      const gantt = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
-      const date = gantt.locale === 'ar' ? this.parseArabicDate(dateString) : this.parseDateString(dateString);
-      return this.intlObj.formatDate(date, { skeleton: 'd' });
-    }
-    public imageString(date: any) {
-      const gantt = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
-      const imageDate = gantt.locale === 'ar' ? this.parseArabicDate(date) : this.parseDateString(date);
-      return './assets/gantt/images/'+ imageDate.getDay() +'.svg' ;
+    private getGanttInstance(): GanttComponent | null {
+        const ganttElement = document.getElementsByClassName('e-gantt')[0] as HTMLElement;
+        return ganttElement ? (ganttElement as any).ej2_instances?.[0] : null;
     }
 
-    public convertArabicNumeralsToWestern(arabicNumerals: any) {
-      const arabicToWesternMap: { [key: string]: string }  = { '٠': '0', '١': '1', '٢': '2', '٣': '3', '٤': '4', '٥': '5', '٦': '6', '٧': '7', '٨': '8', '٩': '9' };
-      return arabicNumerals.replace(/[\u0660-\u0669]/g, (match: string) => arabicToWesternMap[match]);
+    public weekDate(dateString: string): string {
+        const gantt = this.getGanttInstance();
+        const date = gantt?.locale === 'ar' ? this.parseArabicDate(dateString) : this.parseDateString(dateString);
+        return this.intl.formatDate(date, { skeleton: 'E' });
     }
 
-    public parseArabicDate(arabicDateString: any) {
-      // To convert the 'arabicDateString' Arabic Date to ISO Date format
-      const normalizedDate = this.convertArabicNumeralsToWestern(arabicDateString);
-      const parts = normalizedDate.split('/'); // Assuming "DD/MM/YYYY" format
-      const day = parseInt(parts[0], 10);
-      const month = parseInt(parts[1], 10) - 1; // Months are zero-based
-      const year = parseInt(parts[2], 10);
-      return new Date(year, month, day);
+    public formatDate(dateString: string): string {
+        const gantt = this.getGanttInstance();
+        const date = gantt?.locale === 'ar' ? this.parseArabicDate(dateString) : this.parseDateString(dateString);
+        return this.intl.formatDate(date, { skeleton: 'd' });
     }
 
-    public parseDateString(dateString: any) {
-      // Check if the date string is in the format "DD.MM.YYYY"
-      if (dateString.includes('.')) {
-        const parts = dateString.split('.');
+    public imageString(date: string): string {
+        const gantt = this.getGanttInstance();
+        const imageDate = gantt?.locale === 'ar' ? this.parseArabicDate(date) : this.parseDateString(date);
+        return './assets/gantt/images/' + imageDate.getDay() + '.svg';
+    }
+
+    private convertArabicNumeralsToWestern(arabicNumerals: string): string {
+        const arabicToWesternMap: { [key: string]: string } = {
+            '٠': '0', '١': '1', '٢': '2', '٣': '3', '٤': '4',
+            '٥': '5', '٦': '6', '٧': '7', '٨': '8', '٩': '9'
+        };
+        return arabicNumerals.replace(/[\u0660-\u0669]/g, (match: string) => arabicToWesternMap[match]);
+    }
+
+    private parseArabicDate(arabicDateString: string): Date {
+        // To convert the 'arabicDateString' Arabic Date to ISO Date format
+        const normalizedDate = this.convertArabicNumeralsToWestern(arabicDateString);
+        const parts = normalizedDate.split('/'); // Assuming "DD/MM/YYYY" format
         const day = parseInt(parts[0], 10);
-        const month = parseInt(parts[1], 10) - 1;
+        const month = parseInt(parts[1], 10) - 1; // Months are zero-based
         const year = parseInt(parts[2], 10);
         return new Date(year, month, day);
-      }
-      // Fallback to default date parsing
-      return new Date(dateString);
+    }
+
+    private parseDateString(dateString: string): Date {
+        // Check if the date string is in the format "DD.MM.YYYY"
+        if (dateString.includes('.')) {
+            const parts = dateString.split('.');
+            const day = parseInt(parts[0], 10);
+            const month = parseInt(parts[1], 10) - 1;
+            const year = parseInt(parts[2], 10);
+            return new Date(year, month, day);
+        }
+        // Fallback to default date parsing
+        return new Date(dateString);
     }
 
     public ngOnInit(): void {

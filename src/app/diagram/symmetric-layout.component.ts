@@ -15,7 +15,7 @@ Diagram.Inject(DataBinding, SymmetricLayout);
 
 /**
  * Component for displaying a Symmetric Layout sample.
- * Manages the presentation and behavior of the diagram using Syncfusion's Angular Diagram component.
+ * Manages the presentation and behavior of the diagram using Angular Diagram component.
  */
 @Component({
     selector: 'control-content', // Angular component selector
@@ -39,6 +39,9 @@ export class SymmetricLayoutDiagramComponent {
   public springfactor: number = 0.8;
   public maxiteration: number = 500;
 
+  public created(): void {
+    this.diagram.fitToPage();
+  }
   //Set the default values of Node
   public nodeDefaults(node: NodeModel): NodeModel {
     node.height = 20;

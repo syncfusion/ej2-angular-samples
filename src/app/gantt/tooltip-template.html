@@ -4,64 +4,60 @@
 </div>
 
 <div class="control-section">
-    <ejs-gantt id="TooltipTemplate" height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings"
-        [allowSelection]="true" [labelSettings]="labelSettings" [projectStartDate]="projectStartDate"
-        [projectEndDate]="projectEndDate" [allowSorting]="true" [labelSettings]="labelSettings" [treeColumnIndex]="1"
-        [columns]="columns" [splitterSettings]="splitterSettings" [projectStartDate]="projectStartDate"
-        [projectEndDate]="projectEndDate" [highlightWeekends]="true" [renderBaseline]="true"
-        [tooltipSettings]="tooltipSettings" [resourceFields] = "resourceFields"
-        [resources]="resources">
+    <ejs-gantt id="TooltipTemplate" height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data"
+      [taskFields]="taskSettings" [allowSelection]="true" [labelSettings]="labelSettings"
+      [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [allowSorting]="true"
+      [treeColumnIndex]="1" [columns]="columns" [splitterSettings]="splitterSettings"
+      [highlightWeekends]="true" [renderBaseline]="true" [tooltipSettings]="tooltipSettings"
+      [resourceFields]="resourceFields" [resources]="resources">
 
         <ng-template #tooltipSettingsTaskbar let-data>
-
-                <div>
-                    <table>
+          <div>
+            <table>
+              <tbody>
                 <ng-container *ngIf="data.ganttProperties.resourceNames">
-                    <tr>
-                        <td rowspan="3" style="padding:3px"><img src="assets/gantt/images/{{data.ganttProperties.resourceNames}}.png" height="40px" /></td>
-                        <td style="padding:3px">Task done By:</td>
-                        <td style="padding:3px">{{data.ganttProperties.resourceNames}}</td>
-                    </tr>
+                  <tr>
+                    <td rowspan="3" style="padding:3px"><img src="assets/gantt/images/{{data.ganttProperties.resourceNames}}.png" height="40px" /></td>
+                    <td style="padding:3px">Task done By:</td>
+                    <td style="padding:3px">{{data.ganttProperties.resourceNames}}</td>
+                  </tr>
                 </ng-container>
-                <ng-container>
-                        <tr>
-                            <td style="padding:3px">Starts On:</td>
-                            <td style="padding:3px">{{format(data.StartDate)}}</td>
-                        </tr>
-                        <tr>
-                            <td style="padding:3px">Ends On:</td>
-                            <td style="padding:3px">{{format(data.EndDate)}}</td>
-                        </tr>
-                    </ng-container>
-                </table>   
-                    </div>
+                <tr>
+                  <td style="padding:3px">Starts On:</td>
+                  <td style="padding:3px">{{format(data.StartDate)}}</td>
+                </tr>
+                <tr>
+                  <td style="padding:3px">Ends On:</td>
+                  <td style="padding:3px">{{format(data.EndDate)}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </ng-template>
 
         <ng-template #tooltipSettingsBaseline let-data>
-            <div>
-                <ng-container>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>Planned Start Date: </td>
-                                <td>{{format(data.BaselineStartDate)}}</td>
-                            </tr>
-                            <tr>
-                                <td>Planned End Date: </td>
-                                <td>{{format(data.BaselineEndDate)}}</td>
-                            </tr>
-                            <tr>
-                                <td>Current Start Date: </td>
-                                <td>{{format(data.StartDate)}}</td>
-                            </tr>
-                            <tr>
-                                <td>Current End Date: </td>
-                                <td>{{format(data.EndDate)}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </ng-container>
-            </div>
+          <div>
+            <table>
+              <tbody>
+                <tr>
+                  <td style="padding:3px">Planned Start Date:</td>
+                  <td style="padding:3px">{{format(data.BaselineStartDate)}}</td>
+                </tr>
+                <tr>
+                  <td style="padding:3px">Planned End Date:</td>
+                  <td style="padding:3px">{{format(data.BaselineEndDate)}}</td>
+                </tr>
+                <tr>
+                  <td style="padding:3px">Current Start Date:</td>
+                  <td style="padding:3px">{{format(data.StartDate)}}</td>
+                </tr>
+                <tr>
+                  <td style="padding:3px">Current End Date:</td>
+                  <td style="padding:3px">{{format(data.EndDate)}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </ng-template>
         <ng-template #tooltipSettingsTimeline let-data>
             <ng-container *ngIf="data.tier === 'topTier'; else bottomTierTemplate">
@@ -107,9 +103,7 @@
 </div>
 
 <div id="description">
-    <p>Tooltip can be enabled or disabled using <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/tooltipSettings/#showtooltip">tooltipSettings.showTooltip</a> property.In this demo, the
-        tooltip template is rendered for <code>taskbar</code> <code>timeline</code> and <code>baseline</code> using the
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/tooltipSettings/#taskbar">tooltipSettings.taskbar</a>, <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/tooltipSettings/#timeline">tooltipSettings.timeline</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/tooltipSettings/#baseline">tooltipSettings.baseline</a> properties.
+    <p>Tooltip can be enabled or disabled using <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/tooltipSettings/#showtooltip">tooltipSettings.showTooltip</a> property. In this demo, the tooltip template is rendered for <code>taskbar</code>, <code>timeline</code>, and <code>baseline</code> using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/tooltipSettings/#taskbar">tooltipSettings.taskbar</a>, <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/tooltipSettings/#timeline">tooltipSettings.timeline</a>, and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/tooltipSettings/#baseline">tooltipSettings.baseline</a> properties.
     </p>
     <p>
         The baseline feature enables the user to view the deviation between the planned dates and the actual dates of
@@ -120,9 +114,7 @@
     </p>
 
     <p>
-        Gantt control features are segregated into individual feature-wise modules.To use a selection and markers, inject the
-        <code>SelectionService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section respectively.
+      Gantt control features are segregated into individual feature-wise modules. To use a sort, selection and markers feature, inject the <code>SortService</code>, <code>SelectionService</code> and <code>DayMarkersService</code> by into the <code>&#64;NgModule.providers</code> section.
     </p>
-        <br>
-    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/data-binding#remote-data">documentation section</a>.</p>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/taskbar#customize-tooltip-templates">documentation section</a>.</p>
 </div>

@@ -94,7 +94,6 @@ import { AIPivotTableAppRoutes } from '../ai-pivot-table/aipivottable.module';
 import { AIMapsAppRoutes } from '../ai-maps/aimaps.module';
 import { AISchedulerAppRoutes } from '../ai-schedule/aischedule.module';
 import { AIDiagramAppRoutes } from '../ai-diagram/aidiagram.module';
-import { AIRichTextEditorAppRoutes } from '../ai-rich-text-editor/airichtexteditor.module';
 import { blockEditorAppRoutes } from '../block-editor/block-editor.module';
 import { sankeyAppRoutes } from '../sankey-chart/sankey-chart.module';
 import { inlineaiassistAppRoutes } from '../inline-ai-assist/inline-ai-assist.module';
@@ -107,34 +106,8 @@ export let samplesList: any = [
         'name': 'Smart TextArea', 'category': 'Smart Components', 'order': '01', 'path': 'ai-smart-textarea', 'samples': smartTextAreaAppRoutes,  'ftName': 'ai-smart-textarea'
     },
     {
-        'name': 'Data Grid', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-grid', 'samples': AIGridAppRoutes
-    },
-    {
-        'name': 'Pivot Table', 'type': 'update', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-pivot-table', 'samples': AIPivotTableAppRoutes
-    },
-    {
-        'name': 'Diagram', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-diagram', 'samples': AIDiagramAppRoutes
-    },
-    {
-        'name': 'Query Builder', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-querybuilder', 'samples': AIQueryBuilderAppRoutes
-    },
-    {
-        'name': 'ComboBox', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-combo-box', 'samples': AIComboBoxAppRoutes
-    },
-    {
-        'name': 'Rich Text Editor', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-rich-text-editor', 'samples': AIRichTextEditorAppRoutes
-    },
-    {
-        'name': 'Gantt Chart', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-gantt', 'samples': AIGanttAppRoutes
-    },
-    {
-        'name': 'Image Editor', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-image-editor', 'samples': AIImageEditorAppRoutes
-    },
-    {
-        'name': 'Scheduler', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-schedule', 'samples': AISchedulerAppRoutes
-    },
-    {
-        'name': 'Maps', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-maps', 'samples': AIMapsAppRoutes
+        'name': 'AI-Powered Samples', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-grid', 
+        'samples': (AIGridAppRoutes as any).concat(AIDiagramAppRoutes, AIComboBoxAppRoutes, AIGanttAppRoutes, AIImageEditorAppRoutes, AIMapsAppRoutes, AIPivotTableAppRoutes, AIQueryBuilderAppRoutes, AISchedulerAppRoutes )
     },
     {
         'name': 'Data Grid', 'type':'update', 'category': 'Grids', 'order': '01', 'path': 'grid', 'samples': gridRouteConfig, 'ftName': 'datagrid'
@@ -155,7 +128,7 @@ export let samplesList: any = [
         'name': 'Pivot Table', 'category': 'Grids', 'order': '01', 'type': 'update', 'path': 'pivot-table', 'samples': pivottableRouteConfig
     },
     {
-        'name': 'Tree Grid', 'category': 'Grids', 'order': '01', 'path': 'treegrid', 'samples': treegridRouteConfig, 'type':'update'
+        'name': 'Tree Grid', 'category': 'Grids', 'order': '01', 'path': 'treegrid', 'samples': treegridRouteConfig
     },
     {
         'name': 'Chart', 'category': 'Data visualization', 'order': '02', 'path': 'chart', 'samples': chartAppRoutes, 'type':'update'
@@ -224,7 +197,7 @@ export let samplesList: any = [
         "name": "Image Editor", 'category': 'File Viewers & Editors', 'ftName': 'image-editor', 'order': '03', 'path': 'image-editor', 'samples': ImageEditorAppRoutes
     },
     {
-        'name': 'Scheduler', 'category': 'Calendars', 'order': '04', 'path': 'schedule', 'samples': scheduleRouteConfig, 'ftName': 'scheduler'
+        'name': 'Scheduler', 'category': 'Calendars', 'order': '04', 'type':'update', 'path': 'schedule', 'samples': scheduleRouteConfig, 'ftName': 'scheduler'
     },
     {
         'name': 'Gantt Chart', 'category': 'Calendars', 'order': '04', 'type':'update', 'path': 'gantt', 'samples': GanttAppRoutes, 'ftName': 'gantt'
@@ -398,6 +371,6 @@ export let samplesList: any = [
         'name': 'Timeline', 'category': 'Layout', 'order': '10', 'path': 'timeline', 'samples': timelineAppRoutes, "ftName": "timeline"
     },
      {
-        'name': 'Sankey', 'category': 'Data visualization', 'order': '02', 'path': 'sankey-chart', 'samples': sankeyAppRoutes, 'type': 'preview'
+        'name': 'Sankey', 'category': 'Data visualization', 'order': '02', 'path': 'sankey-chart', 'samples': sankeyAppRoutes
     }
 ];

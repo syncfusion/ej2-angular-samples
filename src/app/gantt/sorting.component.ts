@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { editingData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import {  DayMarkersService, GanttModule, SelectionService, SortService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttsorting',
     templateUrl: 'sorting.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+    providers: [SortService, SelectionService, DayMarkersService],
+    imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 export class GanttSortingComponent implements OnInit {
     public data: object[];
@@ -28,15 +29,15 @@ export class GanttSortingComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-           parentID:'ParentId'
+            parentID: 'ParentID'
         };
         this.columns = [
-            { field: 'TaskID', visible:false },
+            { field: 'TaskID', visible: false },
             { field: 'TaskName', width: 250 },
             { field: 'StartDate' },
             { field: 'EndDate' },
             { field: 'Duration' },
-            { field: 'Progress' },
+            { field: 'Progress' }
         ];
         this.labelSettings = {
             leftLabel: 'TaskName',

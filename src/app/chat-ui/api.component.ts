@@ -139,7 +139,7 @@ export class ChatUIApiComponent {
             avatarUrl = './assets/chat-ui/images/laura.png';
         } else if (userName === 'Charlie') {
             avatarBgColor = '#e6cdde';
-            avatarUrl = './assets/chat-ui/images/charlie.png';
+            avatarUrl = 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/charlie.png';
         }
 
         return { user: userName, avatarBgColor, avatarUrl };

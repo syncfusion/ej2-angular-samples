@@ -1,0 +1,68 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates a <b>healthcare appointment management ER diagram</b> created using the
+        <a href="https://www.syncfusion.com/angular-components/angular-diagram" target="_blank">Angular Diagram</a>. It visualizes how core entities such as doctors, patients,
+        appointments, diagnoses, and prescriptions are structured and interconnected in a real-world hospital database
+        system.
+    </p>
+</div>
+
+<div class="control-section er-diagram-section">
+<script src="script/diagram-common.ts"></script>
+<style>
+    .er-diagram-section .e-symbolpalette {
+        display: block;
+    }
+    #erdiagram .sb-mobile-diagram {
+             height: 559px;
+             float: left;
+         }
+    @media (max-width: 550px) {
+        /* Palette toggle bar: shown on mobile via shared diagram-common.style.css */
+        /* Diagram fills full width on mobile */
+        .er-diagram-section #diagram-space.sb-mobile-diagram {
+            width: 100% !important;
+        }
+        /* Palette: hidden by default on mobile, shown when active */
+        .er-diagram-section .sb-mobile-palette {
+            width: 30% !important;
+        }
+    }
+</style>
+
+    <div style="width: 100%;" id="erdiagram" >
+        <div class="sb-mobile-palette-bar">
+            <div id="palette-icon" style="float: right;" role="button" class="e-ddb-icons1 e-toggle-palette"></div>
+        </div>
+            <div id="palette-space" class="sb-mobile-palette" style="width: 200px; height: 600px; margin-right: 10px;">
+                <ejs-symbolpalette id="symbolpalette" [palettes]='palettes' width="100%" height="500px" [symbolHeight]=70
+                    [symbolWidth]=70 [symbolMargin]='symbolMargin' [enableAnimation]='false'>
+                </ejs-symbolpalette>
+            </div>
+                <div id="diagram-space" class="sb-mobile-diagram">
+                    <ejs-diagram #diagram id="diagram" [nodes]='nodes' [connectors]='connectors' width="100%" height="600px"
+                            [constraints]='constraints' [tool]="tool" [snapSettings]='snapSettings'
+                            [contextMenuSettings]='contextMenu' (contextMenuOpen)="contextMenuOpen($event)"
+                            (contextMenuClick)="contextMenuClick($event)"
+                            (selectionChange)="selectionChange($event)" [getConnectorDefaults]="getConnectorDefaults"
+                            [selectedItems]='selectedItems' (onUserHandleMouseDown)="onUserHandleMouseDown($event)"
+                            (created)="created()" (load)="load()">
+                        </ejs-diagram>
+                </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        This sample showcases how to create and interact with an ER diagram using the Angular
+        Diagram. The diagram is built using nodes of <code>type: 'Er'</code> to represent database entities and their
+        fields, while connectors define relationships with cardinality between entities.
+    </p>
+    <p>
+        <b>User handles</b> allow adding or removing fields within entities. When an entity node is selected, a “+”
+        handle appears, enabling the addition of new fields. These fields can then be interactively reordered using
+        drag‑and‑drop actions. When an individual field is selected, a “−” handle is displayed to remove that specific
+        field. The diagram supports built‑in interactions such as selecting entities and editing their fields.
+    </p>
+    <br>
+</div>

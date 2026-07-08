@@ -96,7 +96,9 @@ export let Locale: Object = {
             "KB": "KB",
             "Access-Message": "{0} ist nicht zugänglich. Sie benötigen die Berechtigung, um die Aktion {1} auszuführen.",
             "Network-Error": "NetworkError: Fehler beim Senden auf XMLHTTPRequest: Fehler beim Laden",
-            "Server-Error": "ServerError: Ungültige Antwort von"
+            "Server-Error": "ServerError: Ungültige Antwort von",
+            "File": "Datei",
+            "Folder": "Ordner"
         },
         "colorpicker": {
             "Apply": "Anwenden",
@@ -856,7 +858,9 @@ export let Locale: Object = {
             "Pie": "Kreisdiagramm",
             "Scatter": "Streudiagramm",
             "PinRow": "Stecknadelreihe",
-            "UnpinRow": "Zeile lösen"
+            "UnpinRow": "Zeile lösen",
+            "Undo": "Rückgängig machen",
+            "Redo": "Wiederholen"
         },
         "checkboxFilter": {
             "Search": "Suche",
@@ -1268,6 +1272,7 @@ export let Locale: Object = {
             "SampleVar": "Stichprobenvarianz",
             "PopulationVar": "Bevölkerungsvarianz",
             "RunningTotals": "Laufende Summen",
+            "PercentageOfRunningTotals": "% der laufenden Summen",
             "Max": "Max",
             "Index": "Index",
             "SampleStDev": "Stichproben StDev",
@@ -1461,7 +1466,10 @@ export let Locale: Object = {
             "subTotalPosition": "Zwischensumme Position",
             "auto": "Auto",
             "loading": "Wird geladen...",
-            "add": "Hinzufügen"
+            "add": "Hinzufügen",
+            "Top": "Spitze",
+            "Bottom": "Unterseite",
+            "addCurrentSelection": "Füge die aktuelle Auswahl dem Filter hinzu."
         },
         "pivotfieldlist": {
             "staticFieldList": "Pivot-Feldliste",
@@ -1554,6 +1562,7 @@ export let Locale: Object = {
             "SampleVar": "Probenvar",
             "PopulationVar": "Bevölkerung Var",
             "RunningTotals": "Laufende Summen",
+            "PercentageOfRunningTotals": "% der laufenden Summen",
             "DifferenceFrom": "Unterschied von",
             "PercentageOfDifferenceFrom": "% der Differenz von",
             "PercentageOfGrandTotal": "% der Gesamtsumme",
@@ -1616,7 +1625,10 @@ export let Locale: Object = {
             "no": "Nein",
             "None": "Keiner",
             "qtr": "Viertel",
-            "grandTotal": "Gesamtsummen"
+            "grandTotal": "Gesamtsummen",
+            "Top": "Spitze",
+            "Bottom": "Unterseite",
+            "addCurrentSelection": "Füge die aktuelle Auswahl dem Filter hinzu."
         },
         "querybuilder": {
             "AddGroup": "Gruppe hinzufügen",
@@ -2200,7 +2212,9 @@ export let Locale: Object = {
             "KB": "كيلوبايت",
             "Access-Message": "{0} لا يمكن الوصول إليه. تحتاج إلى إذن لتنفيذ الإجراء {1}.",
             "Network-Error": "NetworkError: فشل الإرسال على XMLHTTPRequest: فشل التحميل",
-            "Server-Error": "ServerError: استجابة غير صالحة من"
+            "Server-Error": "ServerError: استجابة غير صالحة من",
+            "File": "ملف",
+            "Folder": "مجلد"
         },
         "colorpicker": {
             "Apply": "تطبيق",
@@ -2891,7 +2905,7 @@ export let Locale: Object = {
             "NumberFilter": "عدد المرشحات",
             "TextFilter": "مرشحات النص",
             "DateFilter": "مرشحات التاريخ",
-            "DateTimeFilter": "مرشحات DateTime",
+            "DateTimeFilter": "فلتر التاريخ والوقت",
             "MatchCase": "حالة مباراة",
             "CustomFilterPlaceHolder": "أدخل القيمة",
             "CustomFilterDatePlaceHolder": "اختيار موعد",
@@ -2960,7 +2974,9 @@ export let Locale: Object = {
             "Pie": "مخطط دائري",
             "Scatter": "مخطط التشتت",
             "PinRow": "صف الدبوس",
-            "UnpinRow": "إزالة تثبيت الصف"
+            "UnpinRow": "إزالة تثبيت الصف",
+            "Undo": "الغاء التحميل",
+            "Redo": "الإعادة"
         },
         "checkboxFilter": {
             "Search": "بحث",
@@ -3372,6 +3388,7 @@ export let Locale: Object = {
             "SampleVar": "عينة فار",
             "PopulationVar": "السكان فار",
             "RunningTotals": "تشغيل المجاميع",
+            "PercentageOfRunningTotals": "النسبة المئوية من الإجماليات الجارية",
             "Max": "ماكس",
             "Index": "فهرس",
             "SampleStDev": "عينة StDev",
@@ -3565,7 +3582,10 @@ export let Locale: Object = {
             "subTotalPosition": "موضع المجاميع الفرعية",
             "auto": "تلقاءي",
             "loading": "تحميل...",
-            "add": "يضيف"
+            "add": "يضيف",
+            "Top": "قِمّة",
+            "Bottom": "قاع",
+            "addCurrentSelection": "أضف التحديد الحالي إلى الفلتر."
         },
         "pivotfieldlist": {
             "staticFieldList": "قائمة الحقول المحورية",
@@ -3658,6 +3678,7 @@ export let Locale: Object = {
             "SampleVar": "عينة فار",
             "PopulationVar": "السكان فار",
             "RunningTotals": "تشغيل المجاميع",
+            "PercentageOfRunningTotals": "النسبة المئوية من الإجماليات الجارية",
             "DifferenceFrom": "الفرق من",
             "PercentageOfDifferenceFrom": "٪ من الفرق من",
             "PercentageOfGrandTotal": "٪ من المجموع الكلي",
@@ -3720,7 +3741,10 @@ export let Locale: Object = {
             "no": "لا",
             "None": "لا أحد",
             "qtr": "ربع",
-            "grandTotal": "المجموع الإجمالي"
+            "grandTotal": "المجموع الإجمالي",
+            "Top": "قِمّة",
+            "Bottom": "قاع",
+            "addCurrentSelection": "أضف التحديد الحالي إلى الفلتر."
         },
         "querybuilder": {
             "AddGroup": "إضافة مجموعة",
@@ -4304,7 +4328,9 @@ export let Locale: Object = {
             "KB": "KB",
             "Access-Message": "{0} is not accessible. You need permission to perform the {1} action.",
             "Network-Error": "NetworkError: Failed to send on XMLHTTPRequest: Failed to load",
-            "Server-Error": "ServerError: Invalid response from"
+            "Server-Error": "ServerError: Invalid response from",
+            "File": "File",
+            "Folder": "Folder"
         },
         "colorpicker": {
             "Apply": "Apply",
@@ -5064,7 +5090,9 @@ export let Locale: Object = {
             "Pie": "Pie Chart",
             "Scatter": "Scatter Chart",
             "PinRow": "Pin Row",
-            "UnpinRow": "Unpin Row"
+            "UnpinRow": "Unpin Row",
+            "Undo": "Undo",
+            "Redo": "Redo"
         },
         "checkboxFilter": {
             "Search": "Search",
@@ -5476,6 +5504,7 @@ export let Locale: Object = {
             "SampleVar": "Sample Var",
             "PopulationVar": "Population Var",
             "RunningTotals": "Running Totals",
+            "PercentageOfRunningTotals": "% of Running Totals",
             "Max": "Max",
             "Index": "Index",
             "SampleStDev": "Sample StDev",
@@ -5669,7 +5698,10 @@ export let Locale: Object = {
             "subTotalPosition": "Subtotals position",
             "auto": "Auto",
             "loading": "Loading...",
-            "add": "Add"
+            "add": "Add",
+            "Top": "Top",
+            "Bottom": "Bottom",
+            "addCurrentSelection": "Add current selection to filter"
         },
         "pivotfieldlist": {
             "staticFieldList": "Pivot Field List",
@@ -5762,6 +5794,7 @@ export let Locale: Object = {
             "SampleVar": "Sample Var",
             "PopulationVar": "Population Var",
             "RunningTotals": "Running Totals",
+            "PercentageOfRunningTotals": "% of Running Totals",
             "DifferenceFrom": "Difference From",
             "PercentageOfDifferenceFrom": "% of Difference From",
             "PercentageOfGrandTotal": "% of Grand Total",
@@ -5824,7 +5857,10 @@ export let Locale: Object = {
             "no": "No",
             "None": "None",
             "qtr": "Qtr",
-            "grandTotal": "Grand Total"
+            "grandTotal": "Grand Total",
+            "Top": "Top",
+            "Bottom": "Bottom",
+            "addCurrentSelection": "Add current selection to filter"
         },
         "querybuilder": {
             "AddGroup": "Add Group",
@@ -6408,7 +6444,9 @@ export let Locale: Object = {
             "KB": "KB",
             "Access-Message": "{0}無法訪問。您需要權限才能執行{1}操作。",
             "Network-Error": "NetworkError：无法在XMLHTTP上发送请求：无法加载",
-            "Server-Error": "ServerError：来自的无效响应"
+            "Server-Error": "ServerError：来自的无效响应",
+            "File": "文件",
+            "Folder": "文件夹"
         },
         "colorpicker": {
             "Apply": "应用",
@@ -7168,7 +7206,9 @@ export let Locale: Object = {
             "Pie": "饼图",
             "Scatter": "散点图",
             "PinRow": "别针排",
-            "UnpinRow": "解开行"
+            "UnpinRow": "解开行",
+            "Undo": "撤消",
+            "Redo": "重做"
         },
         "checkboxFilter": {
             "Search": "搜索",
@@ -7580,6 +7620,7 @@ export let Locale: Object = {
             "SampleVar": "樣本變量",
             "PopulationVar": "人口變量",
             "RunningTotals": "運行總計",
+            "PercentageOfRunningTotals": "運行總計的百分比",
             "Max": "最高",
             "Index": "指數",
             "SampleStDev": "樣本標準差",
@@ -7773,7 +7814,10 @@ export let Locale: Object = {
             "subTotalPosition": "小计位置",
             "auto": "汽車",
             "loading": "加载中...",
-            "add": "添加"
+            "add": "添加",
+            "Top": "顶部",
+            "Bottom": "底部",
+            "addCurrentSelection": "将当前选择添加到筛选器中"
         },
         "pivotfieldlist": {
             "staticFieldList": "樞軸字段列表",
@@ -7866,6 +7910,7 @@ export let Locale: Object = {
             "SampleVar": "樣本變量",
             "PopulationVar": "人口變量",
             "RunningTotals": "運行總計",
+            "PercentageOfRunningTotals": "運行總計的百分比",
             "DifferenceFrom": "區別於",
             "PercentageOfDifferenceFrom": "相差百分比",
             "PercentageOfGrandTotal": "佔總數的百分比",
@@ -7928,7 +7973,10 @@ export let Locale: Object = {
             "no": "沒有",
             "None": "没有任何",
             "qtr": "季度",
-            "grandTotal": "累计"
+            "grandTotal": "累计",
+            "Top": "顶部",
+            "Bottom": "底部",
+            "addCurrentSelection": "将当前选择添加到筛选器中"
         },
         "querybuilder": {
             "AddGroup": "添加组",
@@ -8513,7 +8561,9 @@ export let Locale: Object = {
             "KB": "Ko",
             "Access-Message": "{0} n'est pas accessible. Vous devez être autorisé à effectuer l'action {1}.",
             "Network-Error": "NetworkError: échec d'envoi sur XMLHTTPRequest: échec de chargement",
-            "Server-Error": "ServerError: réponse non valide de"
+            "Server-Error": "ServerError: réponse non valide de",
+            "File": "Tiedosto",
+            "Folder": "Dossier"
         },
         "colorpicker": {
             "Apply": "s'adresser à",
@@ -9273,7 +9323,9 @@ export let Locale: Object = {
             "Pie": "Graphique à secteurs",
             "Scatter": "Graphique de dispersion",
             "PinRow": "rangée d'épingles",
-            "UnpinRow": "Détacher la ligne"
+            "UnpinRow": "Détacher la ligne",
+            "Undo": "annuler",
+            "Redo": "Refaire"
         },
         "checkboxFilter": {
             "Search": "Chercher",
@@ -9685,6 +9737,7 @@ export let Locale: Object = {
             "SampleVar": "Échantillon Var",
             "PopulationVar": "Population Var",
             "RunningTotals": "Totaux en cours d'exécution",
+            "PercentageOfRunningTotals": "% des totaux en cours d'exécution",
             "Max": "Max",
             "Index": "Indice",
             "SampleStDev": "Exemple StDev",
@@ -9878,7 +9931,10 @@ export let Locale: Object = {
             "subTotalPosition": "Position des sous-totaux",
             "auto": "Auto",
             "loading": "Chargement...",
-            "add": "Ajouter"
+            "add": "Ajouter",
+            "Top": "Haut",
+            "Bottom": "Bas",
+            "addCurrentSelection": "Ajouter la sélection actuelle au filtre."
         },
         "pivotfieldlist": {
             "staticFieldList": "Liste des champs de pivot",
@@ -9971,6 +10027,7 @@ export let Locale: Object = {
             "SampleVar": "Échantillon Var",
             "PopulationVar": "Population Var",
             "RunningTotals": "Totaux en cours d'exécution",
+            "PercentageOfRunningTotals": "% des totaux en cours d'exécution",
             "DifferenceFrom": "Différence de",
             "PercentageOfDifferenceFrom": "% de différence par rapport à",
             "PercentageOfGrandTotal": "% du grand total",
@@ -10033,7 +10090,10 @@ export let Locale: Object = {
             "no": "Non",
             "None": "Aucun",
             "qtr": "trimestre",
-            "grandTotal": "Grand Total"
+            "grandTotal": "Grand Total",
+            "Top": "Haut",
+            "Bottom": "Bas",
+            "addCurrentSelection": "Ajouter la sélection actuelle au filtre."
         },
         "querybuilder": {
             "AddGroup": "ajouter un groupe",

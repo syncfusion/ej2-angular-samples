@@ -186,7 +186,7 @@ export class OverviewComponent implements OnInit {
             columnWidth: 120, allowSelection: true, rowHeight: 36,
             selectionSettings: { mode: 'Cell', type: 'Single', cellSelectionMode: 'Box' },
             excelQueryCellInfo: this.observable.subscribe(args  => {
-                if (((args as ExcelQueryCellInfoEventArgs).cell as IAxisSet).axis === 'value' && ((args as ExcelQueryCellInfoEventArgs).cell as IAxisSet).value === undefined) {
+                if (((args as ExcelQueryCellInfoEventArgs).cell as IAxisSet).axis === 'value' && (args as ExcelQueryCellInfoEventArgs).value === undefined) {
                     (args as ExcelQueryCellInfoEventArgs).style.numberFormat = undefined;
                 }
             }) as any

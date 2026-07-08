@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
-import { VirtualScroll, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { GanttModule, DayMarkersService, SelectionService, VirtualScrollService } from '@syncfusion/ej2-angular-gantt';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
@@ -8,7 +8,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     templateUrl: 'load-on-demand.html',
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+    providers: [SelectionService, DayMarkersService, VirtualScrollService],
+    imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 export class GanttLoadOnDemandComponent implements OnInit {
     public data: object;
@@ -22,9 +23,9 @@ export class GanttLoadOnDemandComponent implements OnInit {
     public ngOnInit(): void {
       this.data = new DataManager({
         url: 'https://services.syncfusion.com/angular/production/api/GanttLoadOnDemand',
-        adaptor: new WebApiAdaptor,
+        adaptor: new WebApiAdaptor(),
         crossDomain: true
-    });
+      });
         this.taskSettings = {
             id: 'taskId',
             name: 'taskName',
@@ -32,21 +33,21 @@ export class GanttLoadOnDemandComponent implements OnInit {
             endDate: 'endDate',
             duration: 'duration',
             progress: 'progress',
-            hasChildMapping: "isParent",
-            parentID: "parentID"
+            hasChildMapping: 'isParent',
+            parentID: 'parentID'
         };
-        this.tooltipSettings= {
-          showTooltip: true
+        this.tooltipSettings = {
+            showTooltip: true
         };
         this.splitterSettings = {
-          columnIndex: 3
+            columnIndex: 3
         };
-        this.columns =  [
-            { field: 'taskId', headerText: 'Task ID',width: 130 },
+        this.columns = [
+            { field: 'taskId', headerText: 'Task ID', width: 130 },
             { field: 'taskName', headerText: 'Name', width: '200', clipMode: 'EllipsisWithTooltip' },
             { field: 'startDate' },
             { field: 'duration' },
-            { field: 'progress' },
+            { field: 'progress' }
         ];
         this.projectStartDate = new Date('01/02/2000');
         this.projectEndDate = new Date('01/06/2002');

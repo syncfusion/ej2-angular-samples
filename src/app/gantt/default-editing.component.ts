@@ -1,17 +1,18 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { editingData, editingResources } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, EditService, GanttComponent, GanttModule, SelectionService, ToolbarService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttediting',
     templateUrl: 'default-editing.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+    providers: [ToolbarService, EditService, DayMarkersService, SelectionService],
+    imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 export class GanttEditingComponent implements OnInit {
-    @ViewChild('ganttEdit')
-    public ganttObj: GanttComponent;
+  @ViewChild('gantt')
+  public ganttObj: GanttComponent;
     public data: object[];
     public resources: object[];
     public resourceFields: object ;
@@ -26,7 +27,7 @@ export class GanttEditingComponent implements OnInit {
     public eventMarkers: object[];
     public toolbar: string[];
     public splitterSettings: object;
-    public startDate :any;
+    private startDate: Date;
     public ngOnInit(): void {
         this.data = editingData;
         this.taskSettings = {
@@ -37,7 +38,7 @@ export class GanttEditingComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            parentID:'ParentId',
+            parentID:'ParentID',
             notes: 'info',
             resourceInfo: 'resources'
         };
@@ -53,9 +54,9 @@ export class GanttEditingComponent implements OnInit {
             showDeleteConfirmDialog: true
         };
         this.toolbar = ['Add', 'Edit', 'Update', 'Delete', 'Cancel', 'ExpandAll', 'CollapseAll', 'Indent', 'Outdent'];
-        this.columns =  [
+        this.columns = [
             { field: 'TaskID', width: 80 },
-            { field: 'TaskName', headerText: 'Job Name', width: '250', clipMode: 'EllipsisWithTooltip', validationRules: { required: true, minLength: [5, 'Task name should have a minimum length of 5 characters'], } },
+            { field: 'TaskName', headerText: 'Job Name', width: 250, clipMode: 'EllipsisWithTooltip', validationRules: { required: true, minLength: [5, 'Task name should have a minimum length of 5 characters'] } },
             { field: 'StartDate' },
             { field: 'EndDate', validationRules: { required: [this.customFn.bind(this), 'Please enter a value greater than the start date.'] } },
             { field: 'Duration', validationRules: { required: true} },
@@ -84,16 +85,17 @@ export class GanttEditingComponent implements OnInit {
         this.splitterSettings = {
            columnIndex: 3
         };
+        
     }
-    actionBegin(args): void {
+    public actionBegin(args: any): void {
         if (args.columnName === "EndDate" || args.requestType === "beforeOpenAddDialog" || args.requestType === "beforeOpenEditDialog") {
             this.startDate = args.rowData.ganttProperties.startDate;
         }
         if (args.requestType === "taskbarediting" && args.taskBarEditAction === "ChildDrag") {
             this.startDate = args.data.ganttProperties.startDate;
-        }   
+        }
     }
-    public customFn(args) {
+    public customFn(args: any): boolean {
       var endDate;
       var gantt = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];
       if (args.element && args.value) {
@@ -108,11 +110,10 @@ export class GanttEditingComponent implements OnInit {
       }
       return this.startDate <= endDate;
     }
-    created(): void {
-       if(document.querySelector('.e-bigger'))
-                {
-                  this.ganttObj.rowHeight=48;
-                  this.ganttObj.taskbarHeight=28;
-                }
+    public created(): void {
+        if (document.querySelector('.e-bigger')) {
+            this.ganttObj.rowHeight = 48;
+            this.ganttObj.taskbarHeight = 28;
+        }
     }
 }

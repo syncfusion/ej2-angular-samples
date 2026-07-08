@@ -22,3 +22,7 @@
     padding-left: 8px !important;
     padding-right: 0px !important;
 }
+
+.e-bigger #dategroup .e-multi-select-wrapper.e-mob-wrapper .e-delim-view.e-delim-values.e-delim-total {
+    width: 87px !important;
+}

@@ -34,9 +34,7 @@ export class CommandComponent {
   }
 
   public created(): void {
-    this.diagram.rulerSettings = {
-      showRulers: true
-    };
+    this.diagram.fitToPage();
   }
   public createTextNode(content: string, offsetX: number, offsetY: number): NodeModel {
     return {

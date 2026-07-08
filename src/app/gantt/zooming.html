@@ -14,27 +14,33 @@
     <p>
 		The sample demonstrates the zooming support in Gantt Chart.
 		You can zoom in or zoom out the project timeline dynamically with following toolbar buttons.
-
+	</p>
+	<ul>
 		<li><code>ZoomIn</code> - To perform zoom in action on Gantt timeline.</li>
-		<li><code>ZoomOut </code> - To perform zoom out action on Gantt timeline.</li>
-		<li><code>ZoomToFit </code> - To show all tasks with timeline fit into available chart width.</li>
-		<br>
+		<li><code>ZoomOut</code> - To perform zoom out action on Gantt timeline.</li>
+		<li><code>ZoomToFit</code> - To show all tasks with timeline fit into available chart width.</li>
+	</ul>
+	<p>
 		The zooming feature enables you to view the tasks in the project clearly from minute to year timespan. You need
 		to include
-		<code>ZoomIn</code>, <code>ZoomOut </code> and <code>ZoomToFit </code> buttons in the toolbar for performing
+		<code>ZoomIn</code>, <code>ZoomOut</code> and <code>ZoomToFit</code> buttons in the toolbar for performing
 		zooming actions in Gantt Chart.
+	</p>
+	<ul>
 		<li><code>ZoomIn</code> - If the user clicks on the <code>ZoomIn</code> icon we have increased the timeline cell
 			width,
 			when the cell size exceeds the specified range then we have changed the timeline view mode.</li>
-		<li><code>ZoomOut </code> - If the user clicks on the <code>ZoomOut</code> icon we have decrease the timeline
+		<li><code>ZoomOut</code> - If the user clicks on the <code>ZoomOut</code> icon we have decrease the timeline
 			cell width, when the cell size falls
 			behind the specified range then we have changed the timeline view mode based on the zooming levels.</li>
-		<li><code>ZoomToFit </code> - In project, if the tasks are rendered in different time ranges, when the user
+		<li><code>ZoomToFit</code> - In project, if the tasks are rendered in different time ranges, when the user
 			clicks on the <code>ZoomToFit</code> icon,
 			then all the tasks are rendered within the current viewable chart container width.</li>
+	</ul>
+	<p>
+		Gantt component features are segregated into individual feature-wise modules. To use a zoom support related icons and selection feature, inject the <code>ToolbarService</code>, and <code>SelectionService</code> into the <code>&#64;NgModule.providers</code> section.
 	</p>
 	<p>
-		Gantt component features are segregated into individual feature-wise modules.To use a zoom support related icons, inject the <code>ToolbarService</code> into the <code>&#64;NgModule.providers</code> section.</p>
-    <br>
-    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/undo-redo">documentation section</a>.</p>
+		More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/timeline/zooming">documentation section</a>.
+	</p>
 </div>

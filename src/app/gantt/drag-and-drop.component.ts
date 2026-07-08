@@ -1,13 +1,14 @@
 import { Component, OnInit} from '@angular/core';
 import { projectNewData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, EditService, GanttModule, RowDDService, SelectionService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttdraganddrop',
     templateUrl: 'drag-and-drop.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+    providers: [RowDDService, DayMarkersService, EditService, SelectionService],
+    imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 export class GanttDragAndDropComponent implements OnInit {
     public data: object[];
@@ -36,11 +37,11 @@ export class GanttDragAndDropComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-             parentID: 'ParentId'
+            parentID: 'ParentID'
         };
         this.columns =  [
             { field: 'TaskID', headerText: 'ID', width: 80 },
-            { field: 'TaskName', headerText: 'Name', width: 250 },
+            { field: 'TaskName', headerText: 'Name', width: 280 },
             { field: 'StartDate' },
             { field: 'EndDate' },
             { field: 'Duration' },
@@ -53,8 +54,8 @@ export class GanttDragAndDropComponent implements OnInit {
         this.labelSettings = {
             leftLabel: 'TaskName'
         };
-        this.projectStartDate= new Date('03/26/2025');
-        this.projectEndDate=  new Date('07/20/2025');
+        this.projectStartDate = new Date('03/26/2025');
+        this.projectEndDate = new Date('07/20/2025');
         this.splitterSettings = {
             columnIndex: 3
         };

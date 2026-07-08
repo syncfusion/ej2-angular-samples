@@ -17,7 +17,7 @@ export class AzureController {
     public ajaxSettings: object;
     public toolbarSettings: object;
     public contextMenuSettings: object;
-    public hostUrl: string = 'https://ej2-azure-aspcore-service.azurewebsites.net/';
+    public hostUrl: string = 'https://azure-service.syncfusion.com/';
     public ngOnInit(): void {
         this.ajaxSettings = {
             url: this.hostUrl + 'api/AzureFileManager/AzureFileOperations',

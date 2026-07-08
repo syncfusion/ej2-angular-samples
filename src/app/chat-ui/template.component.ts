@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 export class ChatUITemplateComponent implements AfterViewInit {
   @ViewChild('chatTemplate') public chatTemplate: ChatUIComponent;
 
-  public user: UserModel = { id: 'admin', user: 'Admin', avatarUrl: './assets/chat-ui/images/bot.png' };
+  public user: UserModel = { id: 'admin', user: 'Admin', avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/bot.png' };
 
   public templateMessagedata = templateMessagedata;
 
@@ -28,7 +28,7 @@ export class ChatUITemplateComponent implements AfterViewInit {
     setTimeout(() => {
       const defaultResponse = "Unfortunately, I don't have information on that. Use any real-time data streaming service to provide chat updates.";
       const message = {
-        author: { id: 'bot', user: 'Bot', avatarUrl: './assets/chat-ui/images/bot.png' },
+        author: { id: 'bot', user: 'Bot', avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/bot.png' },
         text: defaultResponse
       };
       this.chatTemplate.addMessage(message);
@@ -47,7 +47,7 @@ export class ChatUITemplateComponent implements AfterViewInit {
       this.chatTemplate.addMessage(message.text);
       setTimeout(() => {
         const messageModel = {
-          author: { id: 'bot', user: 'Bot', avatarUrl: './assets/chat-ui/images/bot.png' },
+          author: { id: 'bot', user: 'Bot', avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/bot.png' },
           text: message.reply,
           suggestions: message.suggestions
         };
@@ -67,7 +67,7 @@ export class ChatUITemplateComponent implements AfterViewInit {
   private bindInitialBotMessage() {
     setTimeout(() => {
       const message = {
-        author: { id: 'bot', user: 'Bot', avatarUrl: './assets/chat-ui/images/bot.png' },
+        author: { id: 'bot', user: 'Bot', avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/bot.png' },
         text: this.templateMessagedata[0].text,
         suggestions: this.templateMessagedata[0].suggestions
       };

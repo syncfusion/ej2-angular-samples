@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy} from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy, ViewEncapsulation} from '@angular/core';
 import { stackedHeaderData } from './data';
 import { ColumnModel, ResizeService, SortService, GridModule, PageService, FilterService, ToolbarService, EditService, ColumnChooserService, GridComponent, Column} from '@syncfusion/ej2-angular-grids';
 import { SBDescriptionComponent } from '../../common/dp.component';
@@ -16,7 +16,8 @@ import { DataManager, Query } from '@syncfusion/ej2-data';
     providers: [ ResizeService, SortService, PageService, FilterService, ToolbarService, EditService, ColumnChooserService],
     standalone: true,
     imports: [SBActionDescriptionComponent, GridModule, ButtonModule, TreeViewModule, RatingModule, CommonModule, SBDescriptionComponent],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None
 })
 export class StackedHeaderComponent implements OnInit {
     @ViewChild('grid')

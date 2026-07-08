@@ -15,9 +15,8 @@ import { SidebarComponent, SidebarModule, ToolbarModule } from '@syncfusion/ej2-
 import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { ListViewComponent, ListViewModule, } from '@syncfusion/ej2-angular-lists';
 import { ToastComponent, ToastModule, } from '@syncfusion/ej2-angular-notifications';
-import { marked } from 'marked';
 import {AIToastComponent} from '../common/ai-toast.component';
-import { getGeminiAIAssit, getdeepSeekAIAssit, getAzureOpenAIAssist } from './ai-services';
+import { getAIResponse } from '../common/ai-service';
 @Component({
   selector: 'app-root',
   templateUrl: './ai-integrations.html',
@@ -57,29 +56,25 @@ export class AIAsssitAISample {
   @ViewChild('togglebtn')
   public togglebtn?: ButtonComponent;
   public suggestions: string[] = [
-    'How can AI help me plan my week?',
-    'What are good habits for continuous learning?'
+    'What are the best tools for organizing tasks?',
+    'How can I maintain work-life balance?'
   ];
   private selectedConvId: string = '';
   public listData: any[] = [];
-  private stopStreaming: boolean = false;
   private isMobile: boolean = false;
   public closeOnDocumentClick: boolean = false;
   public footerToolbarSettings = {
     toolbarPosition: 'Bottom'
   };
-  // Gemini AI model requirements
-  private geminiApiKey: string = '';
-  private geminiModel: string = '';
-  private deepseekApiKey: string = '';
 
   public models: any[] = [
+    { id: 'openai', name: 'GPT-4o-mini(Azure)' },
     { id: 'gemini', name: 'Gemini 2.5 Flash' },
-    { id: 'deepseek', name: 'DeepSeek-R1' },
-    { id: 'openai', name: 'GPT-4o-mini(Azure)' }
+    { id: 'deepseek', name: 'DeepSeek-R1' }
   ];
   public modelFields: object = { text: 'name', value: 'id' };
   public selectedModel: string = 'openai';
+  private abortController?: AbortController;
 
   // Updates responsive layout settings whenever the window is resized.
   @HostListener('window:resize')
@@ -113,12 +108,9 @@ export class AIAsssitAISample {
       content: `<div class="toast-content"><span class="e-icons e-magic-wand"> </span> <span>You are using <b>${modelName}</b> with standard access</span></div>`,
     });
   }
-  //Stops the streaming of AI responses for the current prompt.
-  public handleStopResponse = () => {
-    this.stopStreaming = true;
-  };
+
   // Processes user prompts by dispatching requests to the selected AI provider.
-  public promptRequest(args: PromptRequestEventArgs) {
+  public async promptRequest(args: PromptRequestEventArgs): Promise<void> {
     if (!args.prompt || !args.prompt.trim()) {
       return;
     }
@@ -130,15 +122,12 @@ export class AIAsssitAISample {
     this.updateBannerStyle();
     this.updateConversationName(args.prompt);
 
-    if (this.selectedModel === 'gemini') {
-      this.handleGeminiRequest(args);
-    } 
-    else if(this.selectedModel === 'deepseek'){
-      this.handleDeepSeekRequest(args);
-    }
-    else {
-      this.handleOpenAIRequest(args);
-    }
+    this.abortController = new AbortController();
+    const response = this.selectedModel === 'openai'
+      ? await getAIResponse(args, this.abortController)
+      : '⚠️ Something went wrong while connecting to the AI service. Please check your API key.';
+    this.aiAssistViewInst.addPromptResponse(response);
+    this.checkAndUpdateLocalStorage();
   }
   // Handles sidebar toggle behavior for mobile devices when the action button is clicked.
   btnClick() {
@@ -314,80 +303,4 @@ export class AIAsssitAISample {
   private InitializingApp(): void {
     this.checkInitialLocalStorage();
   }
-  // Streams AI responses character by character to simulate real-time output.
-  private async streamAIResponse(fullResponse: string): Promise<string> {
-    let streamedResponseText = '';
-    if (fullResponse) {
-      let i = 0;
-      while (i < fullResponse.length && !this.stopStreaming) {
-        streamedResponseText += fullResponse[i];
-        i++;
-        this.aiAssistViewInst.addPromptResponse(
-          marked.parse(streamedResponseText),
-          false
-        );
-        this.aiAssistViewInst.scrollToBottom();
-        await new Promise((resolve) => setTimeout(resolve, 10));
-      }
-    }
-    return streamedResponseText;
-  }
-  // Sends the user prompt to the Gemini service and handles the streamed response.
-  private handleGeminiRequest = async (args: PromptRequestEventArgs): Promise<void> => {
-    this.stopStreaming = false;
-    try {
-      const fullResponse = await getGeminiAIAssit(
-        this.geminiApiKey,
-        this.geminiModel,   // <-- model passed here
-        args.prompt!
-      );
-      const streamedText = await this.streamAIResponse(fullResponse);
-      if (!this.stopStreaming) {
-        this.aiAssistViewInst.addPromptResponse(marked.parse(streamedText), true);
-        this.checkAndUpdateLocalStorage();
-      }
-    } catch (error) {
-      const errorMessage = '⚠️ Something went wrong while connecting to the Gemini service. Please check your API key/model.';
-      this.aiAssistViewInst.addPromptResponse(marked.parse(errorMessage), true);
-      this.checkAndUpdateLocalStorage();
-    }
-  };
-
-  // Sends the user prompt to the DeepSeek service and processes the streamed response.
-  private handleDeepSeekRequest = async (args: PromptRequestEventArgs): Promise<void> => {
-    this.stopStreaming = false;
-    if (!this.aiAssistViewInst) return;
-    try {
-      const fullResponse = await getdeepSeekAIAssit(this.deepseekApiKey,args.prompt!);
-      const streamedText = await this.streamAIResponse(fullResponse);
-      if (!this.stopStreaming) {
-        this.aiAssistViewInst.addPromptResponse(marked.parse(streamedText),true);
-        this.checkAndUpdateLocalStorage();
-      }
-    } catch (error) {
-      const errorMessage =
-        '⚠️ Something went wrong while connecting to the DeepSeek service. Please check your API key.';
-      this.aiAssistViewInst.addPromptResponse(marked.parse(errorMessage), true);
-      this.checkAndUpdateLocalStorage();
-    }
-  };
-
-  private handleOpenAIRequest = async (args: PromptRequestEventArgs): Promise<void> => {
-    this.stopStreaming = false;
-    if (!this.aiAssistViewInst) return;
-    try {
-      const fullResponse = await getAzureOpenAIAssist({
-        messages: args.prompt!
-      });
-      const streamedText = await this.streamAIResponse(fullResponse);
-      if (!this.stopStreaming) {
-        this.aiAssistViewInst.addPromptResponse(marked.parse(streamedText), true);
-        this.checkAndUpdateLocalStorage();
-      }
-    } catch (error) {
-      const errorMessage = '⚠️ Something went wrong while connecting to the OpenAI service. Please check your Azure endpoint, key, deployment, and API version.';
-      this.aiAssistViewInst.addPromptResponse(marked.parse(errorMessage), true);
-      this.checkAndUpdateLocalStorage();
-    }
-  };
 }

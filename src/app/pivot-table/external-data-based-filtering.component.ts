@@ -33,6 +33,7 @@ export class ExternalDataBasedFilteringComponent implements OnInit {
     public observable = new Observable();
     public startDate: Date = new Date('2024-01-01');
     public endDate: Date = new Date('2024-12-01');
+    public formattedEndDate = new Date(this.endDate.getFullYear(), this.endDate.getMonth(), this.endDate.getDate());
     public minStartDate = new Date(2019, 0, 1);
     public maxStartDate = new Date(2024, 10, 31);
     public minEndDate = new Date(2019, 1, 1);
@@ -47,8 +48,8 @@ export class ExternalDataBasedFilteringComponent implements OnInit {
 
     applyDateFilter() {
         if (this.startDate && this.endDate) {
-            this.startDate.setHours(0, 0, 0, 0);
-            this.endDate.setHours(23, 59, 59, 999);
+            this.startDate = new Date(this.startDate.getFullYear(), this.startDate.getMonth(), 1);
+            this.endDate = new Date(this.endDate.getFullYear(), this.endDate.getMonth() + 1, 0, 23, 59, 59, 999);
             let pivotData = (Pivot_Data as any).map((item: any) => ({
                 ...item,
                 OrderDate: new Date(item.OrderDate),

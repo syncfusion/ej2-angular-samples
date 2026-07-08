@@ -1,0 +1,88 @@
+<div class="control-section">
+  <div class="generative-aiassistview">
+    <div id="aiAssistView" ejs-aiassistview
+      #generativeAIAssistView
+      [bannerTemplate]="bannerTemplate"
+      [promptSuggestionsHeader]="promptSuggestionsHeader"
+      [promptSuggestions]="promptSuggestions"
+      [enableStreaming]="enableStreaming"
+      [showClearButton]="showClearButton"
+      [prompts]="prompts"
+      [toolbarSettings]="assistViewToolbarSettings"
+      (promptRequest)="onPromptRequest($event)"
+      >
+    </div>
+
+    <!-- Banner Template -->
+    <ng-template #bannerTemplate>
+      <div class="banner-content">
+        <div class="e-icons e-assistview-icon"></div>
+        <h3>AI Assistance Generative UI</h3>
+        <i>Render interactive tools such as weather cards, charts, data grids etc directly inside AI responses.</i>
+      </div>
+    </ng-template>
+
+    <!-- Chart Template -->
+    <ng-template #responseChartTemplate let-data>
+    <div class="chartContainer">
+    <ejs-chart style='display:block;' [title]='currentChartConfig.title' [primaryXAxis]='primaryXAxis'
+          [primaryYAxis]='primaryYAxis' [tooltip]='tooltip' [legendSettings]='legend'>
+          <e-series-collection>
+              <e-series [type]='currentChartConfig.chartType' [dataSource]='currentChartConfig.dataSource' [xName]='currentChartConfig.xField' [yName]='currentChartConfig.yField' [marker]='marker1'> </e-series>
+          </e-series-collection>
+      </ejs-chart>
+      </div>
+    </ng-template>
+
+    <ng-template #responseGridTemplate let-data>
+      <div class="gridContainer">
+        <ejs-grid [dataSource]="currentGridConfig.data" [allowPaging]="false" [pageSettings]='pageOptions' width="fit-content">
+          <e-columns>
+            <e-column *ngFor="let col of currentGridConfig.columns" 
+                  [field]="col.field" 
+                  [headerText]="col.headerText" 
+                  [width]="col.width" 
+                  [textAlign]="col.textAlign">
+            </e-column>
+          </e-columns>
+        </ejs-grid>
+      </div>
+    </ng-template>
+
+    <ng-template #responseCardTemplate let-data>
+      <div tabindex="0" class="e-card" id="weather_card" role="button">
+        <div class="e-card-header">
+          <div class="e-card-header-caption">
+            <div class="e-card-header-title">{{data.location}}</div>
+            <div class="e-card-sub-title">{{data.condition}}</div>
+          </div>
+        </div>
+        <div class="e-card-header weather_report">
+          <div class="e-card-header-image"></div>
+          <div class="e-card-header-caption">
+            <div class="e-card-header-title">{{data.temperature}}</div>
+            <div class="e-card-sub-title">Humidity: {{data.humidity}}</div>
+            <div class="e-card-sub-title">Wind: {{data.windSpeed}}</div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+  </div>
+</div>
+
+<div id="action-description">
+  <p>This sample demonstrates how to render interactive generative UI tools directly within AI responses using user prompts in the AI AssistView control. By configuring an appropriate <code>system prompt</code>, the AI can generate well-structured prompts that automatically invoke the registered tools, enabling seamless integration of dynamic and interactive UI elements within responses.</p>
+</div>
+
+<div id="description">
+  <p>In this example, the AI AssistView is configured with the UI tools:</p>
+  <ul>
+    <li>The <code>[promptSuggestions]</code> property provides predefined prompts for weather forecasts, sales analysis, and economic trend data.</li>
+    <li>Tool rendering - Three registered tools deliver rich content: <code>weather-card</code> for forecast displays, <code>chart-tool</code> for GDP growth visualization, and <code>sales-grid</code> for regional performance data.</li>
+    <li><code>bannerTemplate</code> - Customizes the initial banner content with icon and heading using <code>&lt;ng-template&gt;</code>.</li>
+    <li><code>[enableStreaming]</code> - Enables real-time response streaming with simulated delay.</li>
+    <li><code>(promptRequest)</code> - Handles prompt execution and dynamically renders custom tools based on the prompt content.</li>
+    <li><code>[toolbarSettings]</code> - Configures toolbar with a refresh button to reset the conversation state.</li>
+  </ul>
+</div>

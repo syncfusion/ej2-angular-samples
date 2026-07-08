@@ -3,17 +3,18 @@
         In this sample, we have shown custom images in the Resources column.</p>
 </div>
 <div class="control-section">
-    <ejs-gantt id="columnTemplate" height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings"
-        [labelSettings]="labelSettings" [splitterSettings]="splitterSettings"  [treeColumnIndex]=1
-         [allowSelection]="true" [resourceFields] = "resourceFields" (queryCellInfo)="queryCellInfo($event)"
+    <ejs-gantt id="columnTemplate" height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data" [taskFields]="taskSettings"
+        [labelSettings]="labelSettings" [splitterSettings]="splitterSettings" [treeColumnIndex]="1"
+        [allowSelection]="true" [resourceFields]="resourceFields" (queryCellInfo)="queryCellInfo($event)"
         [resources]="resources" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true">
         <e-columns>
             <e-column field='TaskID' headerText='Task ID' textAlign='Left'></e-column>
-            <e-column field='TaskName' headerText='Task Name' width='250'></e-column>
+            <e-column field='TaskName' headerText='Task Name' width='280'></e-column>
             <e-column field='resources' headerText='Resources' width='250'>
                 <ng-template #template let-data>
-                   <div class="image" *ngIf = data.ganttProperties.resourceNames>
-                        <img src="assets/gantt/images/{{data.ganttProperties.resourceNames}}.png" style="height:40px;width:40px" alt="{{data.ganttProperties.resourceNames}}"/><div style="display:inline-block;width:100%;position:relative;">{{data.ganttProperties.resourceNames}}</div>
+                    <div class="image" *ngIf="data.ganttProperties.resourceNames">
+                        <img src="assets/gantt/images/{{data.ganttProperties.resourceNames}}.png" style="height:40px;width:40px" alt="{{data.ganttProperties.resourceNames}}" />
+                        <div style="display:inline-block;width:100%;position:relative;">{{data.ganttProperties.resourceNames}}</div>
                     </div>
                 </ng-template>
             </e-column>
@@ -30,8 +31,8 @@
 
 <div id="description">
     <p>The Gantt provides a way to use a custom layout for each cell using the column template feature. The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/columnModel/#template">columns -> template</a> property accepts the template for the cell.</p>
-    <p>In this demo, using column template, resource column has been presented with employee photoand the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/columnModel/#template">columns -> template</a> is assigned with the ID of a SCRIPT element whose content is used as the template.
+    <p>In this demo, using column template, the resource column is presented with employee photos. The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/columnModel/#template">columns -> template</a> property is used to customize the column display.
     </p>
-    <br>
+    <p>Gantt component features are segregated into individual feature-wise modules. To use selection, and markers feature, inject the <code>SelectionService</code>, and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section.</p>
     <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/columns/column-template">documentation section</a>.</p>
 </div>

@@ -15,7 +15,7 @@
             <e-column field="ParentID" headerText="Parent ID" width="90" textAlign="Right" [visible]="false"></e-column>
 
             <e-column field="ResourceId" headerText="Resource" width="360"></e-column>
-            <e-column field="Name" headerText="Type" width="150" editType="dropdownedit"></e-column>
+            <e-column field="Name" headerText="Type" width="150"  editType="dropdownedit"></e-column>
 
             <e-column field="Status" headerText="Status" width="210" textAlign="Center" editType="dropdownedit">
                 <ng-template #template let-data>
@@ -25,7 +25,7 @@
                 </ng-template>
             </e-column>
 
-            <e-column field="Region" headerText="Region" width="180" editType="dropdownedit">
+            <e-column field="Region" headerText="Region" width="180"  editType="dropdownedit">
                 <ng-template #template let-data>
                     <div class="rg-region" [attr.data-region]="data.Region">
                         <span class="rg-region-flag"></span>
@@ -137,4 +137,5 @@
             aria-label="Navigate to the documentation for virtual-scroll in TypeScript TreeGrid control">documentation</a>
         section.
     </p>
+    <p>Looking for the full Angular Tree Grid component overview, features, pricing, and documentation? Visit our <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-tree-grid">Angular Tree Grid component</a> page.</p>
 </div>

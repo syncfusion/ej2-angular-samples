@@ -3,16 +3,15 @@
 <div class="control-section">
     <ejs-gantt id="ganttBaseline" #ganttBaseline height="650px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
         [timelineSettings]="timelineSettings" [renderBaseline]="true" [treeColumnIndex]="1" rowHeight="46" taskbarHeight="25"
-        [allowSelection]="true" [includeWeekend]="true" [splitterSettings]="splitterSettings" [labelSettings]="labelSettings"[gridLines]="gridLines"
-        [tooltipSettings]="tooltipSettings" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"[allowResizing]="true"
+        [allowSelection]="true" [includeWeekend]="true" [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" [gridLines]="gridLines"
+        [tooltipSettings]="tooltipSettings" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [allowResizing]="true"
         [baselineColor]="themeColors[getCurrentTheme()].baseline" [enableUndoRedo]="true" undoRedoActions="['Add', 'Edit', 'Delete']"
         (queryCellInfo)="queryCellInfo($event)" (queryTaskbarInfo)="queryTaskbarInfo($event)">
        <ng-template #tooltipSettingsTaskbar let-data>
             <table class="e-gantt-tooltiptable">
                 <tbody>
                     <tr class="e-gantt-tooltip-rowcell">
-                    <tr>
-                        <td>{{TaskName}}</td>
+                        <td class="e-gantt-tooltip-label">{{data.TaskName}}</td>
                     </tr>
                     <tr>
                         <td class="e-gantt-tooltip-label"> Start Time </td>
@@ -46,14 +45,14 @@
     </ejs-gantt>
 </div>
 <div id="description">
-    <p> In this demo sample, the baseline feature in the Angular Gantt Chart, which helps visualize the variance between planned and actual task 
+    <p> In this demo sample, the baseline feature in the Angular Gantt Chart helps visualize the variance between planned and actual task 
         schedules. Baselines provide a clear reference for tracking project deviations and are rendered for all task types including child tasks, 
         parent tasks, and milestones.</p>
     <p>To enable baselines in the Angular Gantt Chart, set the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#renderbaseline">renderBaseline</a> property to <code>true</code> and define the planned schedule using the 
         <code>baselineStartDate</code> field. You can either specify the <code>baselineEndDate</code> directly or use the <code>baselineDuration</code> property to calculate it 
         automatically. Setting <code>baselineDuration</code> to zero is particularly useful for milestones, as it clearly marks a planned point in time. 
         The appearance of baselines can be customized using the <code><a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#baselinecolor">baselineColor</a></code> property to visually distinguish planned timelines from actual 
-        task progress.timelines from actual progress.</p>
-        <br>
+        task progress.</p>
+        <p>Gantt component features are segregated into individual feature-wise modules. To use UndoRedo, Resize, markers and selection feature, inject the <code>UndoRedoService</code>, <code>ResizeService</code>,  <code>DayMarkersService</code> and <code>SelectionService</code> into the <code>&#64;NgModule.providers</code> section.</p>
     <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/baseline">documentation section</a>.</p>
 </div>

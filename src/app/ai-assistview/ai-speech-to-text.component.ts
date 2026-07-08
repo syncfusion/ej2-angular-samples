@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef, NgZone, ChangeDetectorRef } from '@angular/core';
 import { AIAssistViewModule, AIAssistViewComponent, ToolbarSettingsModel, ToolbarItemClickedEventArgs, PromptRequestEventArgs, FooterToolbarSettingsModel,AttachmentSettingsModel,SpeechToTextSettingsModel } from '@syncfusion/ej2-angular-interactive-chat';
 import * as Marked from 'marked';
-import { getAzureOpenAIAssist, AzureOpenAIRequest } from './ai-openai-service';
+import { getAIResponse } from '../common/ai-service';
 import {AIToastComponent} from '../common/ai-toast.component';
 
 @Component({
@@ -15,12 +15,8 @@ export class SpeechToTextAssistComponent {
    @ViewChild('assistView') assistViewInstance!: AIAssistViewComponent;
   @ViewChild('contentEditor') contentEditor!: ElementRef<HTMLDivElement>;
 
-    // Azure OpenAI config (fill with your values)
-  private azureApiKey: string = ''; // Your_Azure_OpenAI_API_Key
-  private azureEndpoint: string = ''; // Your_Azure_OpenAI_Endpoint
-  private azureDeployment: string = ''; // Your_Deployment_Name
-  private azureApiVersion: string = ''; // Your_Azure_OpenAI_API_Version
-  
+  private abortController?: AbortController;
+  public enableStreaming: boolean = true;
   constructor(private zone: NgZone, private cdr: ChangeDetectorRef) {}
 
   public hasTextInEditor = false;
@@ -68,23 +64,10 @@ export class SpeechToTextAssistComponent {
   }
 
 public async onPromptRequest(args: PromptRequestEventArgs): Promise<void> {
-    this.stopStreaming = false;
-    if (!this.assistViewInstance) return;
-    try {
-      const responseText = await getAzureOpenAIAssist({
-        apiKey: this.azureApiKey,
-        endpoint: this.azureEndpoint,
-        deployment: this.azureDeployment,
-        apiVersion: this.azureApiVersion,
-        prompt: args.prompt || 'Hi',
-      } as AzureOpenAIRequest);
-      await this.streamResponse(responseText);
-    } catch (error: any) {
-      this.assistViewInstance.addPromptResponse(
-        '⚠️ Something went wrong while connecting to the OpenAI service. Please check your API key or try again later.'
-      );
-      this.stopStreaming = true;
-    }
+    if (!args?.prompt?.trim() || !this.assistViewInstance) return;
+    this.abortController = new AbortController();
+    const response = await getAIResponse(args as any, this.abortController);
+    this.assistViewInstance.addPromptResponse(response);
   }
 
   public onToolbarItemClicked(args: ToolbarItemClickedEventArgs): void {

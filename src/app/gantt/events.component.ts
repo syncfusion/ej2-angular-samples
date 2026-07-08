@@ -31,15 +31,15 @@ export class GanttEventsComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-             parentID: 'ParentId'
+            parentID: 'ParentID'
         };
         this.columns = [
             { field: 'TaskID', width: 100 },
-            { field: 'TaskName', width: 250 },
+            { field: 'TaskName', width: 280 },
             { field: 'StartDate' },
             { field: 'EndDate' },
             { field: 'Duration' },
-             { field: 'Predecessor', width: 190 },
+            { field: 'Predecessor', width: 190 },
             { field: 'Progress' },
         ];
         this.toolbar = ['Add', 'Edit', 'Update', 'Delete', 'Cancel', 'ExpandAll', 'CollapseAll', 'Search'];

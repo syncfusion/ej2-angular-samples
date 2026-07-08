@@ -12,7 +12,7 @@
                     <e-pane size='50%' [resizable]='true' cssClass='pane1' min='40%' >
                         <ng-template #content>
                             <div class="content">
-                                <ejs-richtexteditor id="defaultRTE" #defaultRTE height='447px' [toolbarSettings]='tools' saveInterval='10' [editorMode]='mode'
+                                <ejs-richtexteditor id="defaultRTE" #defaultRTE height='447px' [formatter]='formatter' [toolbarSettings]='tools' saveInterval='10' [editorMode]='mode'
                                     (created)='onCreate()' (change)='onChange()' (actionComplete)='updateValue()' [value]='value'>
                                     <ng-template #valueTemplate>
                                     </ng-template>
@@ -45,3 +45,11 @@
 
     <p>Syncfusion's <code>Markdown Converter</code> is used in this sample to convert markdown into HTML content.</p>
 </div>
+
+<style>
+    .splitter-default-content td,
+    .splitter-default-content th {
+        border: 1px solid;
+        padding: 2px 5px;
+    }
+</style>

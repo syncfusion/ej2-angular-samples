@@ -3,14 +3,15 @@ import { templateData, editingResources } from './data';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { NgIf } from '@angular/common';
-import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, GanttModule, SelectionService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-ganttcolumntemplate',
     templateUrl: 'column-template.html',
+    providers: [SelectionService, DayMarkersService],
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, NgIf, SBDescriptionComponent]
+    imports: [SBActionDescriptionComponent, GanttModule, NgIf, SBDescriptionComponent]
 })
 
 export class ColumnTemplateComponent implements OnInit {
@@ -42,13 +43,13 @@ export class ColumnTemplateComponent implements OnInit {
         };
         this.splitterSettings = {
             columnIndex: 3
-        },
+        };
         this.labelSettings = {
             rightLabel: 'TaskName'
         };
         this.resources = editingResources;
-        this.projectStartDate= new Date('03/24/2025');
-        this.projectEndDate= new Date('07/06/2025');
+        this.projectStartDate= new Date('03/31/2025');
+        this.projectEndDate= new Date('06/07/2025');
     }
     public queryCellInfo(args: any): void {
         let gantt = (document.getElementsByClassName('e-gantt')[0] as any).ej2_instances[0];

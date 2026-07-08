@@ -1,0 +1,109 @@
+.control-section.claude-clone {
+    min-height: 550px;
+}
+
+.claude-aiassist {
+    width: 60vw;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.claude-aiassist.middle-footer {
+    height: 350px; 
+    gap: 10px;
+}
+
+.claude-aiassist.bottom-footer {
+    height: 500px;
+}
+
+@media only screen and (max-width: 750px) {
+    .claude-aiassist {
+        width: 100%;
+    }
+}
+
+.claude-aiassist .claude-header img {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 12px;
+}
+
+.claude-aiassist .claude-header {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    text-align: center;
+    gap: 10px;
+    align-items: end;
+}
+
+.claude_model .model-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+
+.claude_model .model-item .model-description {
+    font-size: 11px;
+}
+
+.claude_model .model-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.claude_model.e-dropdown-popup ul .e-item {
+    line-height: 18px;
+    padding: 25px 20px 25px 12px;
+}
+ 
+.claude-aiassist .claude-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    flex-shrink: 0;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.claude-aiassist.bottom-footer .claude-buttons-container {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.claude-aiassist .claude-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.claude-aiassist #claude_aiassistview {
+    border: none;
+}
+
+.claude-aiassist .e-footer .e-dropdown-btn.e-btn:hover,
+.claude-aiassist .e-footer .e-dropdown-btn.e-btn:active {
+    color: var(--color-sf-icon-color);
+}
+
+.claude-aiassist .e-dropdown-btn, .claude-aiassist .e-dropdown-btn.e-btn {
+    box-shadow: none;
+}
+
+.claude-aiassist .e-btn.e-flat.e-active,
+.claude-aiassist .e-dropdown-btn:active,
+.claude-aiassist .e-dropdown-btn.e-btn:active,
+.claude-aiassist .e-dropdown-btn.e-btn:hover,
+.claude-aiassist .e-dropdown-btn:focus,
+.claude-aiassist .e-dropdown-btn.e-btn:focus {
+    background: unset;
+    border: 1px solid transparent;
+    box-shadow: none;
+    color: unset;
+}

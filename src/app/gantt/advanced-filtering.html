@@ -20,16 +20,8 @@
             <div class="title">Advanced Filters</div>
             <button id="close" class="e-close" (click)="handleClose()"></button>
           </div>
-          <ejs-querybuilder #querybuilder id="ganttquerybuilder" [dataSource]="data" allowValidation="true"
-                            [columns]="[
-                              { field: 'TaskID', label: 'Task ID', type: 'number' },
-                              { field: 'TaskName', label: 'Task Name', type: 'string' },
-                              { field: 'StartDate', label: 'Start Date', type: 'date', format: 'MM/dd/yyyy' },
-                              { field: 'Duration', label: 'Duration', type: 'number' },
-                              { field: 'EndDate', label: 'End Date', type: 'date', format: 'MM/dd/yyyy' },
-                              { field: 'Progress', label: 'Progress', type: 'number' },
-                              { field: 'Predecessor', label: 'Predecessor', type: 'string' }
-                            ]" (ruleChange)="updateRule($event)" (created)="created()">
+          <ejs-querybuilder #querybuilder id="ganttquerybuilder" [dataSource]="data" [columns]="queryBuilderColumns" allowValidation="true"
+                            (ruleChange)="updateRule($event)" (created)="created()">
           </ejs-querybuilder>
           <div class="ganttbtn-container">
             <button ejs-button type="button" id="apply" class="e-control e-btn apply-btn" [isPrimary]="true" (click)="onApplyClick()">Apply</button>
@@ -44,7 +36,7 @@
   <p>
     In this example, the process involves retrieving the complex query from the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/query-builder/getting-started">QueryBuilder</a> component and subsequently integrating it into the Gantt Chart by updating its <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#query">Query</a> Property. The QueryBuilder component tool is located in a <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/sidebar/getting-started">SideBar</a> component that appears when you click on the toolbar.
   </p>
-  <br>
+  <p>Gantt component features are segregated into individual feature-wise modules. To use filtering and selection feature, we need to inject <code>FilterService</code> and <code>SelectionService</code> into the <code>&#64;NgModule.providers</code> section.</p>
     <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/filtering/filtering">documentation section</a>.</p>
 </div>
 

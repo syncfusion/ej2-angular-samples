@@ -30,7 +30,7 @@ loadCldr(
     de, ar, frch, en, zh
 );
 
-registerLicense('{SyncfusionJSLicensekey}');
+registerLicense((window as any).syncfusion_license);
 
 interface DestroyMethod extends HTMLElement {
     destroy: Function;
@@ -76,6 +76,11 @@ declare let hljs: any;
 /**
  * App Controller
  */
+const PRODUCT_ROUTE_MAP: Record<string, string> = {
+  'pdf-editor': 'pdf-viewer/pdfviewer/default',
+  'spreadsheet-editor': 'spreadsheet-editor/spreadsheet/default',
+  'docx-editor': 'docx-editor/document-editor/default'
+};
 @Component({
     selector: 'ng-app',
     templateUrl: 'page.html',
@@ -83,6 +88,7 @@ declare let hljs: any;
     standalone: true,
     imports: [LPController, RouterOutlet]
 })
+
 export class SBController {
     public pathRoutes: string[] = [];
     public sampleName: string = '';
@@ -92,12 +98,14 @@ export class SBController {
     public sourceTab: Tab;
     public sourceTabItems: object[] = [];
     public themePopup: Popup;
+    public productsPopup: Popup;
     public settingsPopup: Popup;
     public switcherPopup: Popup;
     public themeDarkButton: HTMLElement = document.getElementById('sb-dark-theme');
     public darkButton: HTMLElement = document.getElementById('sb-dark-span');
     public themeModeDropDown: DropDownList;
     public themeDropDown: DropDownList;
+    public productsDropDown: DropDownList;
     public currencyDropDown: DropDownList;
     public cultureDropDown: DropDownList;
     public isTablet: boolean;
@@ -130,6 +138,18 @@ export class SBController {
 
     @ViewChild('leftPane')
     public leftControl: LPController;
+private navigateToProduct(productKey: string): void {
+  const route = PRODUCT_ROUTE_MAP[productKey];
+  if (!route) {
+    return;
+  }
+
+  const theme = location.hash.split('/')[1] || 'tailwind3';
+  const [productFolder, ...pathParts] = route.split('/');
+
+  const url = `https://document.syncfusion.com/demos/${productFolder}/angular/#/${theme}/${pathParts.join('/')}`;
+  window.open(url, '_blank');
+}
 
 
 
@@ -227,6 +247,17 @@ export class SBController {
             }
 
         });
+this.productsDropDown = new DropDownList({
+  index: 0,
+  zIndex: 1005,
+  change: (e: any) => {
+    this.navigateToProduct(e.value);
+
+    if (this.isMobile) {
+      this.removeOverlay();
+    }
+  }
+});
         this.currencyDropDown = new DropDownList({
             zIndex: 1005,
             index: 0,
@@ -353,6 +384,13 @@ export class SBController {
         });
         this.themePopup.hide();
 
+        this.productsPopup = new Popup(document.getElementById('products-switcher-popup'), {
+            offsetY: 2,
+            relateTo: <HTMLElement>document.querySelector('.products-wrapper'), position: { X: 'left', Y: 'bottom' },
+            collision: { X: 'flip', Y: 'flip' }
+        });
+        this.productsPopup.hide();
+
         this.settingsPopup = new Popup(document.getElementById('settings-popup'), {
             offsetY: 5,
             relateTo: <any>select('.sb-setting-btn'),
@@ -468,7 +506,6 @@ export class SBController {
             }))
             .subscribe((event: any) => {
                 this.updateSourceCode(location.hash);
-                this.setListItemSelect();
                 this.createOpenNewButton();
                 this.updateViewMode();
                 this.setPropertyBorder();
@@ -479,6 +516,7 @@ export class SBController {
                 if (this.currentControl !== this.prevControl) {
                     this.updateListViewDS();
                 }
+                this.setListItemSelect();
                 this.setScrollTop();
                 if (this.prevSampleName !== this.sampleName || this.currentControl !== this.prevControlName) {
                     this.updateDescription();
@@ -576,6 +614,7 @@ export class SBController {
         this.loader = select('.sb-body-overlay');
         this.themeDropDown.appendTo('#sb-setting-theme');
         this.themeModeDropDown.appendTo('#sb-theme-mode');
+        this.productsDropDown.appendTo('#sb-setting-products');
         this.cultureDropDown.appendTo('#sb-setting-culture');
         this.currencyDropDown.appendTo('#sb-setting-currency');
         this.searchBox.dataSource = this.leftControl.listData;
@@ -826,6 +865,7 @@ private updateStylesheet(theme: string): void {
 
     hideAllPopups() {
         this.themePopup.hide();
+        this.productsPopup.hide();
         this.settingsPopup.hide();
         this.switcherPopup.hide();
     }
@@ -852,6 +892,9 @@ private updateStylesheet(theme: string): void {
         if (closest(<Element>e.target, '.theme-wrapper') === null && this.themePopup.element.classList.contains('e-popup-open')) {
             this.themePopup.hide();
         }
+        if (closest(<Element>e.target, '.products-wrapper') === null && this.productsPopup.element.classList.contains('e-popup-open')) {
+            this.productsPopup.hide();
+        }
         if (closest(<Element>e.target, '.sb-setting-btn') === null &&
             this.settingsPopup.element.classList.contains('e-popup-open')) {
             if (this.isMobile) {
@@ -876,6 +919,7 @@ private updateStylesheet(theme: string): void {
 
     wireEvents() {
         select('#header-theme-switcher').addEventListener('click', this.onThemeButtonClick.bind(this));
+        select('#header-products-switcher').addEventListener('click', this.onProductsButtonClick.bind(this));
         select('.setting-responsive').addEventListener('click', this.onMouseTouchButtonClick.bind(this));
         select('#sb-switcher').addEventListener('click', this.onSwitcherClick.bind(this));
         select('.sb-header-text-right').addEventListener('click', this.onSwitcherClick.bind(this));
@@ -893,6 +937,7 @@ private updateStylesheet(theme: string): void {
         window.addEventListener('resize', this.onSBResize.bind(this));
         document.addEventListener('click', this.onDocClick.bind(this));
         document.getElementById('themelist').addEventListener('click', this.onChangeTheme.bind(this));
+        document.getElementById('productslist').addEventListener('click', this.onChangeProduct.bind(this));
         document.addEventListener('keydown',(e:KeyboardEvent)=> {
             if(e.keyCode==27){
                document.querySelector('.e-search-overlay').classList.add('sb-hide');
@@ -1002,6 +1047,11 @@ private updateStylesheet(theme: string): void {
         this.themePopup.show();
     }
 
+    onProductsButtonClick(e: Event) {
+        document.querySelector('.e-search-overlay').classList.add('sb-hide');
+        this.productsPopup.show();
+    }
+
     onChangeTheme(e: Event) {
         let target: Element = <HTMLElement>e.target;
         target = closest(target, '.e-list');
@@ -1010,7 +1060,28 @@ private updateStylesheet(theme: string): void {
         this.themePopup.hide();
     }
 
+onChangeProduct(e: Event): void {
+  if (!(e.target instanceof Element)) {
+    return;
+  }
+
+  const listItem = e.target.closest('.e-list');
+
+  if (!(listItem instanceof HTMLElement)) {
+    return;
+  }
+
+  const productKey = listItem.id.replace('syncfusion-', '');
+
+  this.navigateToProduct(productKey);
+
+  this.productsPopup.hide();
+}
+
     getComponentData(path: string): any {
+        if ( path && path.startsWith('ai-') && !['ai-assistview', 'ai-smart-paste', 'ai-smart-textarea'].includes(path)) {
+            path = 'ai-grid';
+        }
         let sList: any[] = samplesList;
         return sList.filter((data): boolean => {
             if (data.path == path) {

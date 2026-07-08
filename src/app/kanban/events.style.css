@@ -8,7 +8,8 @@
 }
 
 .property-section .evtbtn {
-  padding-bottom: 10px
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .property-section #EventLog b {

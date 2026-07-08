@@ -115,7 +115,7 @@ export class PipelineInstrumentationDiagramComponent implements AfterViewInit {
     { id: 'tank3cooler', offsetX: 750, offsetY: 490, height: 250, width: 185, shape: { type: 'Basic', shape: 'Rectangle', cornerRadius: 50 }, style: { fill: "#3D58B0" } },
     { id: 'Tank3Group', children: ['tank3cooler', 'tank3Top', 'tank3Bottom', 'tank3container'], style: { fill: 'transparent', strokeColor: 'transparent', strokeWidth: 0 }  },
     { id: 'coolantcontroller', offsetX: 500, offsetY: 650, height: 70, width: 150, annotations: [{ content: 'Coolant Controller', style: { color: 'Orange', fontSize: 15, italic: true, bold: true }, offset: { x: 0.5, y: 0.8 } }], shape: { type: 'Flow', shape: 'Card' }, style: { fill: "#656874" } },
-    { id: 'coolantValue', offsetX: 500, offsetY: 650, height: 60, width: 100, shape: { type: 'HTML', content: '<div><input id="numeric" type="text"/></div>' }, style: { fill: "#656874" } },
+    { id: 'coolantValue', offsetX: 500, offsetY: 650, height: 60, width: 105, shape: { type: 'HTML', content: '<div><input id="numeric" type="text"/></div>' }, style: { fill: "#656874" } },
     { id: 'thermometerNode', offsetX: 920, offsetY: 600, height: 100, width: 100, shape: { type: 'HTML', content: '<div style="width:100%;height:100%"><div id="thermometer"></div></div>' }, style: { fill: "#656874" } },
     // Control valve groups
     { id: 'controlvalve1', offsetX: 450, offsetY: 100, shape: { type: 'Flow', shape: 'Process' }, height: 20, width: 10, style: { fill: '#65B091' } },

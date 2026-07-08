@@ -58,7 +58,7 @@ export class SparklineComponent implements OnInit {
             let keys = Object.keys(obj);
             for (let i = 0; i < Object.keys(obj).length; i++) {
                 sparkline = new Sparkline({
-                    height: '55px',
+                    height: '60px',
                     lineWidth: 1,
                     type: chartType as any,
                     valueType: 'Category',

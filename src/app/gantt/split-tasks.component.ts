@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { ContextMenuService, DayMarkersService, EditService, GanttModule, SelectionService, ToolbarService } from '@syncfusion/ej2-angular-gantt';
 import { splitTasksData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -7,7 +7,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
   selector: 'ej2-ganttsplittasks',
   templateUrl: 'split-tasks.html',
   standalone: true,
-  imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+  providers: [EditService, SelectionService, ToolbarService, DayMarkersService, ContextMenuService],
+  imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 
 export class GanttSplitTasksComponent implements OnInit {
@@ -52,13 +53,12 @@ export class GanttSplitTasksComponent implements OnInit {
     this.toolbar = ['Add', 'Edit', 'Update', 'Delete', 'Cancel', 'ExpandAll', 'CollapseAll'];
     this.splitterSettings = {
       columnIndex: 3
-
     };
     this.labelSettings = {
       leftLabel: 'TaskName',
       taskLabel: '${Progress}%'
     };
     this.projectStartDate = new Date('01/29/2025');
-    this.projectEndDate = new Date('03/30/2025');
+    this.projectEndDate = new Date('04/25/2025');
   }
 }

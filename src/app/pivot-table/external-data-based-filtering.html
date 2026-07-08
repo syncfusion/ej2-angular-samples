@@ -29,7 +29,7 @@
             depth='Year' (change)="onStartDateChange($event)" cssClass='pivot-datepicker'></ejs-datepicker>
             <strong style="display: inline-block; font-size: 14px; margin-right: 5px;">End Date:</strong>
             <ejs-datepicker id="end-datepicker" 
-            placeholder="Choose an end date" [value]='endDate' [min]='minEndDate' [max]='maxEndDate' width='200' format='MMM yyyy'  start='Year'
+            placeholder="Choose an end date" [value]='formattedEndDate' [min]='minEndDate' [max]='maxEndDate' width='200' format='MMM yyyy'  start='Year'
             depth='Year' (change)="onEndDateChange($event)" cssClass='pivot-datepicker'></ejs-datepicker>
             <button ejs-button #export id="apply" [isPrimary]="true"  >Apply</button>
         </div>

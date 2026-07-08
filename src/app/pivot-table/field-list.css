@@ -1,4 +1,4 @@
-#PivotViewFieldList {
+#PivotViewFieldList:not(.e-device) {
     float: left;
     width: 58% !important;
     height: 100%;

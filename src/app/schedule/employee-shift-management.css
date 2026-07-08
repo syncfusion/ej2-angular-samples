@@ -451,7 +451,6 @@
                 display: flex;
                 align-items: center;
                 width: 95%;
-                float: left;
                 height: 100%;
                 padding: 0;
 
@@ -486,6 +485,16 @@
             }
         }
     }
+}
+
+.shift-management-treeview:not(.e-rtl) #waitdetails,
+.e-drag-item.shift-management-treeview:not(.e-rtl) #waitdetails {
+  float: left;
+}
+ 
+.shift-management-treeview.e-rtl #waitdetails,
+.e-drag-item.shift-management-treeview.e-rtl #waitdetails {
+  float: right;
 }
 
 .shift-management-treeview:not(.e-rtl) {

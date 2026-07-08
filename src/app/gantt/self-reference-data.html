@@ -4,21 +4,46 @@
 </div>
 
 <div class="control-section">
-    <ejs-gantt id="SelfData" height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
-        [labelSettings]="labelSettings" [treeColumnIndex]="1" [columns]="columns" [splitterSettings]="splitterSettings"
-        [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true">
+    <ejs-gantt 
+        id="SelfData" 
+        height="650px" 
+        rowHeight="46" 
+        taskbarHeight="25" 
+        [dataSource]="data" 
+        [taskFields]="taskSettings" 
+        [allowSelection]="true"
+        [labelSettings]="labelSettings" 
+        [treeColumnIndex]="1" 
+        [columns]="columns" 
+        [splitterSettings]="splitterSettings"
+        [projectStartDate]="projectStartDate" 
+        [projectEndDate]="projectEndDate" 
+        [highlightWeekends]="true"
+        role="table"
+        aria-label="Self-referential Gantt chart example"
+        [attr.aria-describedby]="'selfdata-description'">
     </ejs-gantt>
 </div>
 
 <div id="description">
-    <p>Gantt can be bound either to local or remote data services.
-        The <code>dataSource</code> property can be assigned either with the array of JavaScript objects or an instance of <code>DataManager</code>.</p>
-    <p>In this demo, the array of self-referential flat data with <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/taskFieldsModel/#parentid">parentID</a> is assigned as data source to the Gantt.</p>
+    <p>
+        This sample demonstrates how to bind self-referential flat data to the Gantt component. 
+        Self-referential data uses a <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/taskFieldsModel/#ParentID">parentID</a> 
+        field to establish hierarchical relationships between tasks, allowing flat data structures to be displayed as hierarchical task trees.
+    </p>
+    
+    <p>
+        In this example, an array of JavaScript objects with <code>ParentID</code> relationships is assigned as the data source to the Gantt. 
+        The <code>dataSource</code> property accepts array of objects or a <code>DataManager</code> instance for both local and remote data scenarios.
+    </p>
 
     <p>
         Gantt component features are segregated into individual feature-wise modules. To use a selection and markers, inject the
-        <code>SelectionService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section respectively.
+        <code>SelectionService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section.
     </p>
-    <br>
-    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/data-binding#remote-data">documentation section</a>.</p>
+    
+    <p>
+        More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this 
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/data-binding#self-referential-data-structure">documentation section</a>.
+    </p>
 </div>

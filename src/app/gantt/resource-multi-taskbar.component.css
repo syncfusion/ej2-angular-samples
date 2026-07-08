@@ -1,0 +1,11 @@
+/* Fluent2 theme styling for drag element */
+.fluent2 #drag,
+.fluent2-dark #drag,
+.fluent2-highcontrast #drag {
+  padding: 5px;
+}
+
+/* Bigger size variant for drag element */
+.e-bigger #drag {
+  margin: 5px 5px 0px 5px !important;
+}

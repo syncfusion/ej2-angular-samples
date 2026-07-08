@@ -7,7 +7,7 @@
 <div class="control-section">
    <ejs-gantt
     id="TasklabelTemplate"
-    height="650px" rowHeight="46" taskbarHeight ="25"
+    height="650px" rowHeight="46" taskbarHeight="25"
     [dataSource]="data"
     [taskFields]="taskSettings"
     [allowSelection]="true"
@@ -25,9 +25,7 @@
     </ng-template>
 
     <ng-template #labelSettingsRightLabel let-data>
-    <div
-        style="display:inline-flex"
-        innerHtml="{{ customFunction(data) }}"></div>
+      <div class="label-template-right" [innerHTML]="customFunction(data)"></div>
     </ng-template>
     </ejs-gantt>
     </div>
@@ -37,9 +35,8 @@
         In this demo, the label template is rendered using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/labelSettingsModel/#leftlabel">leftLabel</a>, <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/labelSettingsModel/#rightlabel">rightLabel</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/labelSettingsModel/#tasklabel">taskLabel</a> properties in <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#labelsettings">labelSettings</a>.
     </p>
 
-    <p>Gantt control features are segregated into individual feature-wise modules.To use a selection and markers, inject the
-        <code>SelectionService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section respectively.
+    <p>Gantt component features are segregated into individual feature-wise modules. To use selection and markers support, inject the 
+        <code>SelectionService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section.
     </p>
-    <br>
-    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/data-binding#remote-data">documentation section</a>.</p>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/labels#customize-labels-with-templates">documentation section</a>.</p>
 </div>

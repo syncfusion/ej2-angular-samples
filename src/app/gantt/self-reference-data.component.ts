@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { selfData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, GanttModule, SelectionService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttselfreference',
     templateUrl: 'self-reference-data.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+    providers: [SelectionService, DayMarkersService],
+    imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 export class GanttSelfDataComponent implements OnInit {
     public data: object[];
@@ -27,16 +28,16 @@ export class GanttSelfDataComponent implements OnInit {
             duration: 'duration',
             progress: 'progress',
             dependency: 'predecessor',
-            parentID: 'parentID'
+            parentID: 'ParentID'
         };
         this.columns = [
             { field: 'taskID', width: 80 },
             { field: 'taskName', width: 250 },
-            { field: 'startDate' },
-            { field: 'endDate' },
-            { field: 'duration' },
-            { field: 'predecessor' },
-            { field: 'progress' },
+            { field: 'startDate', width: 120 },
+            { field: 'endDate', width: 120 },
+            { field: 'duration', width: 120 },
+            { field: 'predecessor', width: 120 },
+            { field: 'progress', width: 120 }
         ];
         this.projectStartDate = new Date('01/28/2025');
         this.projectEndDate = new Date('03/30/2025');

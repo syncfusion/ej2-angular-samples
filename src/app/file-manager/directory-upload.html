@@ -4,7 +4,7 @@
         <e-toolbaritem name="NewFolder"></e-toolbaritem>
         <e-toolbaritem name="Upload">
           <ng-template #template>
-            <button ejs-dropdownbutton id="dropButton" #dropButtonObj [items]='items' cssClass="e-tbar-btn e-tbtn-txt" iconCss="e-icons e-fe-upload" (select)="onSelect($event)"><span class="e-tbar-btn-text">Upload</span></button>
+            <button ejs-dropdownbutton id="dropButton" #dropButtonObj [items]='items' cssClass="e-tbar-btn e-tbtn-txt" iconCss="e-icons e-fe-upload" (select)="onSelect($event)"><span class="e-tbar-btn-text">{{ uploadLabel }}</span></button>
           </ng-template>
         </e-toolbaritem>
         <e-toolbaritem name="SortBy"></e-toolbaritem>
@@ -36,4 +36,7 @@
   <p>To efficiently upload large files and folders to the server in manageable chunks, use the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/file-manager/uploadsettingsmodel/#chunksize">chunkSize</a> property to specify the desired chunk size.</p>
   <p><b>Note: </b>File Manager’s upload functionality is restricted in the online demos for security reasons. If you need to test upload functionality, please install
   <a target="_blank" href="https://www.syncfusion.com/downloads"> Syncfusion Essential Studio </a>on your machine and run the demo.</p>
+  <p>
+    Looking for the full Angular File Manager component overview, features, pricing, and documentation? Visit the <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-file-manager">Angular File Manager</a> page.
+  </p>
 </div>

@@ -69,8 +69,8 @@
                 <div style="display: table;height: 35px; padding-left: 0px" class="col-xs-6">
                     <div style="display: table-cell; vertical-align: middle">Stack Limit</div>
                 </div>
-                <div class="col-xs-6" style="padding-left: 0px; padding-right: 0px">
-                    <ejs-numerictextbox id="StackLimit" value="0" step="1" format="###.##" (change)="stackLimit($event)" [min]="0"></ejs-numerictextbox>
+                <div class="col-xs-6" style="padding-left: 0px; padding-right: 0px"> 
+                    <ejs-numerictextbox #stackLimitInput id="StackLimit" [value]="stackLimitValue" step="1" format="###.##" (change)="stackLimit($event)" [min]="0" (created)="textBoxCreated()"></ejs-numerictextbox>
                 </div>
             </div>
             <div class="row" style="padding-top: 10px">
@@ -97,4 +97,6 @@
                 option to group the action as the single entry by the help of the <code>startGroupAction</code> and <code>endGroupAction</code>        public Api. Also, we can add the custom entries to the diagram history. method can be used to print the diagrams.
             </p>
             <br>
+        
+            <p>Looking for the full Angular Diagram component overview, features, pricing, and documentation? Visit the <a href="https://www.syncfusion.com/angular-components/angular-diagram" target="_blank">Angular Diagram</a> page.</p>
         </div>

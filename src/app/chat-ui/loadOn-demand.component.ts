@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
 
 export class ChatUILoadOnDemandComponent {
     public currentUserModel: UserModel = { user: 'Albert', id: 'user1' };
-    public michaleUserModel: UserModel = { user: 'Michale Suyama', id: 'user2', avatarUrl: './assets/chat-ui/images/andrew.png'};
+    public michaleUserModel: UserModel = { user: 'Michale Suyama', id: 'user2', avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/michale.png'};
     public chatMessages: MessageModel[] = [];
     public baseDate = new Date();
     public dayIncrement = 24 * 60 * 60 * 1000;

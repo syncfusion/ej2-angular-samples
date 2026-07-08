@@ -109,6 +109,12 @@
     display: flex;
 }
 
+.event-calendar-control-section .event-resourceList {
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin: auto;
+}
+
 .event-calendar-control-section .calendar-list-item #calendar-edit-btn,
 .event-calendar-control-section .calendar-list-item #calendar-delete-btn {
     padding: 0 6px;

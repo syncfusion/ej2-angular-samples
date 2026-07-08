@@ -1,10 +1,9 @@
 <div id="action-description">
-    <p>This demo shows the way of binding an array of JavaScript objects (local JSON datasource) to Gantt.
-    </p>
+    <p>This demo shows the way of binding an array of JavaScript objects (local JSON datasource) to Gantt.</p>
 </div>
 
 <div class="control-section">
-    <ejs-gantt id="LocalData" height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
+    <ejs-gantt id="LocalData" height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
         [labelSettings]="labelSettings" [treeColumnIndex]="1" [columns]="columns" [splitterSettings]="splitterSettings"
         [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true">
     </ejs-gantt>
@@ -17,8 +16,7 @@
 
     <p>
         Gantt component features are segregated into individual feature-wise modules. To use a selection and markers, inject the
-        <code>SelectionService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section respectively.
+        <code>SelectionService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section.
     </p>
-    <br>
-    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/data-binding#local-data">documentation section</a>.</p>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/data-binding#local-data-binding-implementation">documentation section</a>.</p>
 </div>

@@ -1,7 +1,7 @@
 import { Component, Inject, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ButtonComponent, ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { extend } from '@syncfusion/ej2-base';
-import { MultiSelectChangeEventArgs, MultiSelectModule } from '@syncfusion/ej2-angular-dropdowns';
+import { MultiSelectChangeEventArgs, MultiSelectModule, CheckBoxSelectionService } from '@syncfusion/ej2-angular-dropdowns';
 import { ScheduleComponent, EventSettingsModel, View, DayService, WeekService, MonthService, EventRenderedArgs, TimelineViewsService, TimelineMonthService, WorkHoursModel, ResizeService, DragAndDropService, ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 import { employeeEventData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -14,7 +14,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     // tslint:disable-next-line:component-selector
     selector: 'control-content',
     templateUrl: 'hide-weekend.html',
-    providers: [DayService, WeekService, MonthService, TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService],
+    providers: [DayService, WeekService, MonthService, TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService, CheckBoxSelectionService],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [ScheduleModule, MultiSelectModule, ButtonModule, SBActionDescriptionComponent, SBDescriptionComponent]

@@ -24,7 +24,7 @@ export class TemplateController implements OnInit {
     public toolbarSettings: object;
     public contextMenuSettings: object;
     public detailsViewSettings: any;
-    private hostUrl = 'https://ej2-aspcore-service.azurewebsites.net/';
+    private hostUrl = 'https://physical-service.syncfusion.com/';
     private baseActionItems: ItemModel[] = [
         { text: 'Open', iconCss: 'e-icons e-folder-open' },
         { text: 'Download', iconCss: 'e-icons e-download' },
@@ -163,7 +163,7 @@ export class TemplateController implements OnInit {
         const ExtensionBackgrounds: Record<string, string> = {
             jpg: 'background-jpg', jpeg: 'background-jpg', png: 'background-png',
             pptx: 'background-pptx', pdf: 'background-pdf', mp4: 'background-video',
-            mp3: 'background-audio', docx: 'background-doc', txt: 'background-txt', xlsx: 'background-xlsx'
+            mp3: 'background-audio', docx: 'background-doc', txt: 'background-txt', xlsx: 'background-xlsx', zip: 'background-zip'
         };
         if (!item?.isFile) return 'file-icon background-folder';
         if (NamedFileBackgrounds[item.name]) return `file-icon ${NamedFileBackgrounds[item.name]}`;

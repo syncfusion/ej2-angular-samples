@@ -1,0 +1,32 @@
+.sorting-api-table {
+    width: 100%;
+}
+
+.table-cell-full-width {
+    width: 100%;
+}
+
+.table-cell-button {
+    width: 100%;
+}
+
+.label-text {
+    font-size: 15px;
+}
+
+.dropdown-container {
+    width: 150px;
+}
+
+.button-container {
+    display: flex;
+}
+
+.sort-button {
+    width: 80px;
+    margin-right: 5px;
+}
+
+.clear-button {
+    width: 80px;
+}

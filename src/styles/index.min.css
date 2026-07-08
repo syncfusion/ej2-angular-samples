@@ -156,6 +156,10 @@ table#property {
   font-size: 25px
 }
 
+.sb-icon-Products:before {
+  content: "\e92f"
+}
+
 .highcontrast .sb-mobile-setting:before {
   color: #fff
 }
@@ -433,7 +437,10 @@ body.bootstrap5\.3-dark,
 .bootstrap5\.3-dark .sb-switch-popup li:hover,
 .bootstrap5\.3-dark .theme-wrapper:hover,
 .bootstrap5\.3-dark .theme-wrapper.active,
+.bootstrap5\.3-dark .products-wrapper:hover,
+.bootstrap5\.3-dark .products-wrapper.active,
 .bootstrap5\.3-dark .sb-theme-popup li:hover,
+.bootstrap5\.3-dark .sb-products-popup li:hover,
 .bootstrap5\.3-dark .sb-switch-btn:hover,
 .bootstrap5\.3-dark .sb-switch-btn.active,
 .bootstrap5\.3-dark .sb-search-result .e-list-item:hover,
@@ -502,6 +509,20 @@ body.bootstrap5\.3-dark,
   background: #212529
 }
 
+.bootstrap5\.3-dark .sb-products-popup {
+  background-color: #343a40;
+  border: 1px solid #495057;
+  color: #fff
+}
+
+.bootstrap5\.3-dark .sb-products-popup li {
+  color: #fff
+}
+
+.bootstrap5\.3-dark .sb-products-popup li:hover {
+  background-color: #363636
+}
+
 .bootstrap5\.3-dark .sb-mobilefooter>.e-btn.e-flat {
   background: #212529;
   color: #fff
@@ -545,17 +566,29 @@ body.bootstrap5\.3-dark,
 .bootstrap5\.3 .e-samplestatus.new.tree,
 .bootstrap5\.3 .e-samplestatus.update.tree,
 .bootstrap5\.3 .e-samplestatus.preview.tree {
-  margin: 0px !important;
+  margin: 6px 0;
   padding: 4px 5px;
+  height: 22px
+}
+
+.bootstrap5\.3 .e-samplestatus.new.tree,
+.bootstrap5\.3 .e-samplestatus.update.tree,
+.bootstrap5\.3 .e-samplestatus.preview.tree {
+  margin: 0px !important
+}
+
+.bootstrap5\.3-dark .e-samplestatus.new.tree,
+.bootstrap5\.3-dark .e-samplestatus.update.tree,
+.bootstrap5\.3-dark .e-samplestatus.preview.tree {
+  margin: 6px 2px;
+  padding: 4px;
   height: 22px
 }
 
 .bootstrap5\.3-dark .e-samplestatus.new.tree,
 .bootstrap5\.3-dark .e-samplestatus.update.tree,
 .bootstrap5\.3-dark .e-samplestatus.preview.tree {
-  margin: 0px !important;
-  padding: 4px;
-  height: 22px
+  margin: 0px !important
 }
 
 .bootstrap5\.3-dark.e-bigger .e-samplestatus.new,
@@ -762,6 +795,25 @@ body.bootstrap5\.3-dark,
   margin: 7px 3px !important
 }
 
+.fluent2-dark .sb-products-popup {
+  background-color: #1f1f1f;
+  border: unset;
+  color: #fff
+}
+
+.fluent2-dark .sb-products-popup li {
+  color: #fff
+}
+
+.fluent2-dark .sb-products-popup li:hover {
+  background-color: #333
+}
+
+.fluent2-dark .products-wrapper:hover,
+.fluent2-dark .products-wrapper.active {
+  background-color: #333
+}
+
 .sb-switch-popup {
   background-color: #FFF;
   border: 1px solid #CCC;
@@ -817,11 +869,11 @@ body.bootstrap5\.3-dark,
 }
 
 .sb-settings-wrapper {
-  padding: 0 20px 0 10px
+  padding: 0 5px 0 5px
 }
 
 .sb-search-wrapper {
-  padding: 0 10px 0 24px
+  padding: 0 9px 0 9px
 }
 
 .sb-header-preview {
@@ -973,6 +1025,86 @@ body.bootstrap5\.3-dark,
   padding-left: 3px;
   line-height: 32px;
   letter-spacing: .5px
+}
+
+.products-wrapper:hover,
+.products-wrapper.active {
+  background-color: #d8d8d8
+}
+
+.products-wrapper {
+  height: 32px;
+  margin-top: 5px;
+  margin-right: 10px;
+  cursor: default;
+  padding: 0 10px;
+  border-radius: 2px
+}
+
+.products-wrapper>div {
+  float: left;
+  padding-left: 3px;
+  line-height: 32px;
+  letter-spacing: .5px
+}
+
+.sb-products-text {
+  font-size: 13px;
+  font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif";
+  opacity: 54
+}
+
+.sb-products-switch,
+.sb-products-switcher-wrapper {
+  display: inline-block
+}
+
+.sb-products-switch {
+  font-size: 20px
+}
+
+.sb-products-popup {
+  background: #FFF;
+  border: 1px solid #CCC;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / .36);
+  border-radius: 4px;
+  padding-top: 23px;
+  width: 175px;
+  z-index: 1001
+}
+
+.sb-products-popup li {
+  padding-top: 4px;
+  padding-left: 15px;
+  line-height: 30px;
+  cursor: default
+}
+
+.sb-products-popup li:hover {
+  background: #eee
+}
+
+#products-switcher-popup {
+  z-index: 1003 !important
+}
+
+.products-wrapper,
+.theme-wrapper {
+  margin-right: 4px;
+  padding: 0 6px
+}
+
+.sb-switch-btn,
+.sb-search-btn,
+.sb-setting-btn {
+  margin-left: 4px;
+  margin-right: 4px
+}
+
+.sb-header-splitter,
+.sb-theme-splitter {
+  margin-right: 4px;
+  height: 28px
 }
 
 .sb-download-btn {
@@ -2228,6 +2360,14 @@ button#tab-navigation-prev {
     display: none
   }
 
+  #sb-dark-theme {
+    display: none
+  }
+
+  .sb-products-toggler-wrapper {
+    display: none
+  }
+
   .sb-setting-theme-section {
     display: block
   }
@@ -2398,8 +2538,16 @@ button#tab-navigation-prev {
     padding-right: 10px
   }
 
+  .sb-icon-Products {
+    padding-right: 10px
+  }
+
   .sb-icon-Palette:before {
     font-size: 25px
+  }
+
+  .sb-icon-Products:before {
+    font-size: 20px
   }
 
   .sb-setting-text {
@@ -2760,6 +2908,7 @@ button#tab-navigation-prev {
 .highcontrast .sb-src-code,
 .highcontrast .sb-api-section,
 .highcontrast .sb-theme-popup,
+.highcontrast .sb-products-popup,
 .highcontrast .copy-tooltip,
 .highcontrast #search-input-wrapper input,
 .highcontrast #search-input-wrapper input::placeholder {
@@ -2927,7 +3076,8 @@ body.highcontrast,
 }
 
 .sb-control-navigation .e-treeview .tree-text {
-  width: calc(100% - 69px);
+  max-width: 100%;
+  width: fit-content;
   text-overflow: ellipsis;
   overflow: hidden
 }
@@ -3768,6 +3918,8 @@ body.material-dark,
 .material-dark .sb-src-code,
 .material-dark .sb-api-section,
 .material-dark .sb-theme-popup,
+.material-dark .sb-products-popup,
+.material-dark .sb-products-popup,
 .material-dark .copy-tooltip,
 .material-dark .e-icons.copycode,
 .material-dark #search-input-wrapper input,
@@ -3784,7 +3936,10 @@ body.material-dark,
 .material-dark .sb-switch-popup li:hover,
 .material-dark .theme-wrapper:hover,
 .material-dark .theme-wrapper.active,
+.material-dark .products-wrapper:hover,
+.material-dark .products-wrapper.active,
 .material-dark .sb-theme-popup li:hover,
+.material-dark .sb-products-popup li:hover,
 .material-dark .sb-search-result .e-list-item:hover,
 .material-dark .sb-switch-btn:hover,
 .material-dark .sb-switch-btn.active,
@@ -3989,6 +4144,7 @@ body.fabric-dark,
 .fabric-dark .sb-src-code,
 .fabric-dark .sb-api-section,
 .fabric-dark .sb-theme-popup,
+.fabric-dark .sb-products-popup,
 .fabric-dark .copy-tooltip,
 .fabric-dark .e-icons.copycode,
 .fabric-dark #search-input-wrapper input,
@@ -4005,6 +4161,7 @@ body.fabric-dark,
 .fabric-dark .theme-wrapper:hover,
 .fabric-dark .theme-wrapper.active,
 .fabric-dark .sb-theme-popup li:hover,
+.fabric-dark .sb-products-popup li:hover,
 .fabric-dark .sb-switch-btn:hover,
 .fabric-dark .sb-switch-btn.active,
 .fabric-dark .sb-search-result .e-list-item:hover,
@@ -4188,6 +4345,7 @@ body.bootstrap-dark,
 .bootstrap-dark .sb-src-code,
 .bootstrap-dark .sb-api-section,
 .bootstrap-dark .sb-theme-popup,
+.bootstrap-dark .sb-products-popup,
 .bootstrap-dark .copy-tooltip,
 .bootstrap-dark .e-icons.copycode,
 .bootstrap-dark #search-input-wrapper input,
@@ -4203,7 +4361,10 @@ body.bootstrap-dark,
 .bootstrap-dark .sb-switch-popup li:hover,
 .bootstrap-dark .theme-wrapper:hover,
 .bootstrap-dark .theme-wrapper.active,
+.bootstrap-dark .products-wrapper:hover,
+.bootstrap-dark .products-wrapper.active,
 .bootstrap-dark .sb-theme-popup li:hover,
+.bootstrap-dark .sb-products-popup li:hover,
 .bootstrap-dark .sb-switch-btn:hover,
 .bootstrap-dark .sb-switch-btn.active,
 .bootstrap-dark .sb-search-result .e-list-item:hover,
@@ -4405,6 +4566,7 @@ body.bootstrap5-dark,
 .bootstrap5-dark .sb-src-code,
 .bootstrap5-dark .sb-api-section,
 .bootstrap5-dark .sb-theme-popup,
+.bootstrap5-dark .sb-products-popup,
 .bootstrap5-dark .copy-tooltip,
 .bootstrap5-dark .e-icons.copycode,
 .bootstrap5-dark #search-input-wrapper input,
@@ -4426,7 +4588,10 @@ body.bootstrap5-dark,
 .bootstrap5-dark .sb-switch-popup li:hover,
 .bootstrap5-dark .theme-wrapper:hover,
 .bootstrap5-dark .theme-wrapper.active,
+.bootstrap5-dark .products-wrapper:hover,
+.bootstrap5-dark .products-wrapper.active,
 .bootstrap5-dark .sb-theme-popup li:hover,
+.bootstrap5-dark .sb-products-popup li:hover,
 .bootstrap5-dark .sb-search-result .e-list-item:hover,
 .bootstrap5-dark .sb-switch-btn:hover,
 .bootstrap5-dark .sb-switch-btn.active,
@@ -4625,6 +4790,7 @@ body.tailwind-dark,
 .tailwind-dark .sb-src-code,
 .tailwind-dark .sb-api-section,
 .tailwind-dark .sb-theme-popup,
+.tailwind-dark .sb-products-popup,
 .tailwind-dark .copy-tooltip,
 .tailwind-dark .e-icons.copycode,
 .tailwind-dark #search-input-wrapper input,
@@ -4641,6 +4807,7 @@ body.tailwind-dark,
 .tailwind-dark .theme-wrapper:hover,
 .tailwind-dark .theme-wrapper.active,
 .tailwind-dark .sb-theme-popup li:hover,
+.tailwind-dark .sb-products-popup li:hover,
 .tailwind-dark .sb-switch-btn:hover,
 .tailwind-dark .sb-switch-btn.active,
 .tailwind-dark .sb-search-result .e-list-item:hover,
@@ -4729,6 +4896,11 @@ body.tailwind-dark,
   margin: 2px 0;
   height: 22px;
   margin-top: 0
+}
+
+.tailwind3-dark .products-wrapper:hover,
+.tailwind3-dark .products-wrapper.active {
+  background-color: #1A212F
 }
 
 .tailwind3-dark .sb-content,
@@ -4855,6 +5027,7 @@ body.tailwind3-dark,
 .tailwind3-dark .sb-src-code,
 .tailwind3-dark .sb-api-section,
 .tailwind3-dark .sb-theme-popup,
+.tailwind3-dark .sb-products-popup,
 .tailwind3-dark .copy-tooltip,
 .tailwind3-dark .e-icons.copycode,
 .tailwind3-dark #search-input-wrapper input,
@@ -4871,6 +5044,7 @@ body.tailwind3-dark,
 .tailwind3-dark .theme-wrapper:hover,
 .tailwind3-dark .theme-wrapper.active,
 .tailwind3-dark .sb-theme-popup li:hover,
+.tailwind3-dark .sb-products-popup li:hover,
 .tailwind3-dark .sb-switch-btn:hover,
 .tailwind3-dark .sb-switch-btn.active,
 .tailwind3-dark .sb-search-result .e-list-item:hover,
@@ -5311,6 +5485,8 @@ body.material3-dark,
 .material3-dark .sb-search-result,
 .material3-dark .sb-src-code,
 .material3-dark .sb-api-section,
+.material3-dark .sb-theme-popup,
+.material3-dark .sb-products-popup,
 .material3-dark .copy-tooltip,
 .material3-dark .e-icons.copycode,
 .material3-dark #search-input-wrapper input::placeholder {
@@ -5319,6 +5495,12 @@ body.material3-dark,
 }
 
 .material3-dark .sb-theme-popup {
+  color: #fff;
+  background: #2B2831;
+  border: unset
+}
+
+.material3-dark .sb-products-popup {
   color: #fff;
   background: #2B2831;
   border: unset
@@ -5343,7 +5525,10 @@ body.material3-dark,
 .material3-dark .sb-switch-popup li:hover,
 .material3-dark .theme-wrapper:hover,
 .material3-dark .theme-wrapper.active,
+.material3-dark .products-wrapper:hover,
+.material3-dark .products-wrapper.active,
 .material3-dark .sb-theme-popup li:hover,
+.material3-dark .sb-products-popup li:hover,
 .material3-dark .sb-search-result .e-list-item:hover,
 .material3-dark .sb-switch-btn:hover,
 .material3-dark .sb-switch-btn.active,
@@ -5652,6 +5837,7 @@ body.fluent2-dark,
 .fluent2-dark .theme-wrapper:hover,
 .fluent2-dark .theme-wrapper.active,
 .fluent2-dark .sb-theme-popup li:hover,
+.fluent2-dark .sb-products-popup li:hover,
 .fluent2-dark .sb-search-result .e-list-item:hover,
 .fluent2-dark .sb-switch-btn:hover,
 .fluent2-dark .sb-switch-btn.active,
@@ -6008,6 +6194,7 @@ body.fluent-dark,
 .fluent-dark .sb-src-code,
 .fluent-dark .sb-api-section,
 .fluent-dark .sb-theme-popup,
+.fluent-dark .sb-products-popup,
 .fluent-dark .copy-tooltip,
 .fluent-dark .e-icons.copycode,
 .fluent-dark #search-input-wrapper input,
@@ -6045,7 +6232,10 @@ body.fluent-dark,
 .fluent-dark .sb-switch-popup li:hover,
 .fluent-dark .theme-wrapper:hover,
 .fluent-dark .theme-wrapper.active,
+.fluent-dark .products-wrapper:hover,
+.fluent-dark .products-wrapper.active,
 .fluent-dark .sb-theme-popup li:hover,
+.fluent-dark .sb-products-popup li:hover,
 .fluent-dark .sb-search-result .e-list-item:hover,
 .fluent-dark .sb-switch-btn:hover,
 .fluent-dark .sb-switch-btn.active,
@@ -6482,6 +6672,10 @@ body.fluent2-highcontrast,
   border: unset
 }
 
+.fluent2-highcontrast .sb-products-popup {
+  border: unset
+}
+
 .fluent2-highcontrast .sb-icon-Hamburger,
 .fluent2-highcontrast .sb-footer-links a,
 .fluent2-highcontrast .description-section a {
@@ -6517,6 +6711,7 @@ body.fluent2-highcontrast,
 .fluent2-highcontrast .sb-src-code,
 .fluent2-highcontrast .sb-api-section,
 .fluent2-highcontrast .sb-theme-popup,
+.fluent2-highcontrast .sb-products-popup,
 .fluent2-highcontrast .copy-tooltip,
 .fluent2-highcontrast .e-icons.copycode,
 .fluent2-highcontrast #search-input-wrapper input,
@@ -6532,7 +6727,10 @@ body.fluent2-highcontrast,
 .fluent2-highcontrast .sb-switch-popup li:hover,
 .fluent2-highcontrast .theme-wrapper:hover,
 .fluent2-highcontrast .theme-wrapper.active,
+.fluent2-highcontrast .products-wrapper:hover,
+.fluent2-highcontrast .products-wrapper.active,
 .fluent2-highcontrast .sb-theme-popup li:hover,
+.fluent2-highcontrast .sb-products-popup li:hover,
 .fluent2-highcontrast .sb-search-result .e-list-item:hover,
 .fluent2-highcontrast .sb-left-pane .e-listview .e-list-item:hover {
   background-color: rgb(255 255 255 / .12)
@@ -6780,5 +6978,72 @@ body.fluent2-highcontrast,
 
 .bootstrap5\.3.e-bigger .ai-toast .e-toast .e-toast-message .e-toast-content {
   padding-left: 12px !important;
-  padding-bottom: 12px !important;
+  padding-bottom: 12px !important
+}
+
+@media screen and (max-width:380px) {
+  .e-bigger .ai-toast.e-toast {
+    max-width: calc(100% - 8%) !important
+  }
+
+  .e-bigger .ai-toast .e-toast {
+    width: 370px !important
+  }
+
+  .e-bigger .ai-toast.e-toast .e-toast-message .e-toast-content .ai-toast-content {
+    width: 350px !important
+  }
+}
+
+@media screen and (max-width:414px) {
+  .e-bigger .ai-toast.e-toast {
+    max-width: calc(100% - 8%) !important;
+    box-sizing: border-box
+  }
+}
+
+@media screen and (max-width:390px) {
+  .e-bigger .ai-toast.e-toast {
+    max-width: calc(100% - 8%) !important;
+    box-sizing: border-box
+  }
+
+  .e-bigger .ai-toast.e-toast .e-toast-message .e-toast-content .ai-toast-content {
+    width: 360px !important
+  }
+}
+
+@media screen and (max-width:412px) {
+  .e-bigger .ai-toast.e-toast {
+    max-width: calc(100% - 8%) !important;
+    box-sizing: border-box
+  }
+}
+
+@media screen and (max-width:344px) {
+  .e-bigger .ai-toast.e-toast {
+    max-width: calc(100% - 8%) !important;
+    box-sizing: border-box
+  }
+
+  .e-bigger .ai-toast.e-toast .e-toast-message .e-toast-content .ai-toast-content {
+    width: 330px !important
+  }
+}
+
+@media screen and (max-width:540px) {
+  .e-bigger .ai-toast.e-toast {
+    max-width: calc(100% - 8%) !important;
+    box-sizing: border-box
+  }
+}
+
+@media (min-width:851px) {
+  .sb-setting-products-section {
+    display: none !important
+  }
+}
+
+.fluent2-highcontrast .property-panel-section{
+    background: #1C1B1F !important;
 }

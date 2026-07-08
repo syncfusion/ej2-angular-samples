@@ -6,7 +6,7 @@
         searching option, using which you can filter the Gantt content across all the columns.</p>
 </div>
 <div class="col-lg-9 control-section">
-    <ejs-gantt id="ganttDefault" #gantt height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
+    <ejs-gantt id="ganttDefault" #gantt height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
         [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [allowFiltering]="true" [toolbar]="toolbar"
         [treeColumnIndex]="0"  [filterSettings]='filterSettings' [allowSelection]="true" dateFormat="MM/dd/yyyy hh:mm:ss"
         [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" (actionComplete)="onActionComplete($event)"
@@ -14,7 +14,7 @@
     </ejs-gantt>
     <div style="float: right; margin: 10px;">Source:
         <a href="https://en.wikipedia.org/wiki/Apollo_11#Launch_and_flight_to_lunar_orbit"
-            target='_blank'>https://en.wikipedia.org/</a>
+            target="_blank">https://en.wikipedia.org/wiki/Apollo_11</a>
     </div>
 </div>
 <div class="col-lg-3 property-section">
@@ -27,7 +27,7 @@
                </td>
                <td style="width: 50%;padding-right: 10px">
                      <div>
-                       <ejs-dropdownlist #dropdown1 id='typeelement'  width= '100px' [dataSource]='d1data' [fields]='typefields' value='Menu'  (change)="change($event)"></ejs-dropdownlist>
+                       <ejs-dropdownlist #dropdown1 id="filterTypeDropdown" width="100px" [dataSource]="d1data" [fields]="typefields" value="Menu" (change)="change($event)"></ejs-dropdownlist>
                      </div>
                </td>
            </tr>
@@ -37,7 +37,7 @@
             </td>
             <td style="width: 50%;padding-right: 10px">
                   <div>
-                    <ejs-dropdownlist #dropdown2 id='modeelement'  width= '100px' [dataSource]='d1data2' [fields]='typefields' value='Parent'  (change)="change1($event)"></ejs-dropdownlist>
+                    <ejs-dropdownlist #dropdown2 id="hierarchyModeDropdown" width="100px" [dataSource]="d1data2" [fields]="typefields" value="Parent" (change)="change1($event)"></ejs-dropdownlist>
                   </div>
             </td>
         </tr>
@@ -67,9 +67,8 @@
         </ul>
     <p>
         Gantt component features are segregated into individual feature-wise modules. To use filtering and toolbar feature, we need
-        to inject <code>FilterService</code> and <code>ToolbarService</code> into the <code>&#64;NgModule.providers</code> section respectively.
+        to inject <code>FilterService</code> and <code>ToolbarService</code> into the component's <code>&#64;NgModule.providers</code> section.
     </p>
-    <br>
     <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/filtering/filtering">documentation section</a>.</p>
     
 </div>

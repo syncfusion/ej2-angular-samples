@@ -76,7 +76,7 @@ export class VirtualScrollingComponent implements OnInit {
         return 'rg-priority-medium';
     }
     public actionBegin(args: any): void {
-        if(args.requestType === 'save') {
+        if(args.requestType === 'save' && args.action !== 'edit') {
             args.data.TaskID = 10000 + Math.floor(Math.random() * 10001);
         }
     }

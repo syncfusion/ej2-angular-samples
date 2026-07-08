@@ -1,15 +1,15 @@
 <div class="row">
   <div class="col-lg-12 control-section">
-    <div class="chart-toolbar" role="toolbar" aria-label="Chart actions">
-      <button id="btnPrint" class="toolbar-btn toolbar-btn--print" (keydown.enter)="onPrint()">
-        <span class="e-icons e-print-icon"></span>
-        <span class="btn-text">PRINT</span>
-      </button>
-      <button id="btnExport" class="toolbar-btn toolbar-btn--export" (keydown.enter)="openPanel()">
-        <span class="e-icons e-export-icon"></span>
-        <span class="btn-text">EXPORT</span>
-      </button>
-    </div>
+   <div class="chart-toolbar" role="toolbar" aria-label="Chart actions">
+  <button id="btnPrint" class="toolbar-btn toolbar-btn--print" type="button" (click)="onPrint()">
+    <span class="e-icons e-print-icon"></span>
+    <span class="btn-text">PRINT</span>
+  </button>
+  <button id="btnExport" class="toolbar-btn toolbar-btn--export" type="button" (click)="openPanel()">
+    <span class="e-icons e-export-icon"></span>
+    <span class="btn-text">EXPORT</span>
+  </button>
+</div>
 
     <div #chartShell class="chart-shell" id="chartShell">
       <div #chartHost class="chart-host" id="chartHost">
@@ -75,27 +75,29 @@
         </ejs-sankey>
       </div>
 
-      <aside #exportPanel id="exportPanel" class="export-panel" aria-hidden="true">
-        <div class="panel-header">
-          <span class="panel-header-left">
-            <span class="e-icons e-export-icon panel-header-icon"></span>
-            <span class="panel-title">Export</span>
-          </span>
-          <button id="btnClosePanel" class="panel-close" aria-label="Close export panel" (keydown.enter)="closePanel()">
-            <span class="e-icons e-close"></span>
-          </button>
-        </div>
-        <div class="panel-body">
-          <label class="panel-label" for="expFileName">File Name:</label>
-          <input #expFileName id="expFileName" class="panel-input" type="text" value="Sankey" placeholder="Enter file name" (keydown.escape)="closePanel()" />
-          <label class="panel-label" for="expType">File Type:</label>
-          <input id="expType" />
-          <div class="panel-footer" style="background: transparent">
-            <button id="btnDoExport" class="panel-action-btn panel-action-btn--export" (keydown.enter)="onExport()">EXPORT</button>
-            <button id="btnCancelExport" class="panel-action-btn panel-action-btn--cancel" (keydown.enter)="closePanel()">CANCEL</button>
-          </div>
-        </div>
-      </aside>
+     <aside #exportPanel id="exportPanel" class="export-panel" aria-hidden="true">
+  <div class="panel-header">
+    <span class="panel-header-left">
+      <span class="e-icons e-export-icon panel-header-icon"></span>
+      <span class="panel-title">Export</span>
+    </span>
+    <button id="btnClosePanel" class="panel-close" type="button" aria-label="Close export panel" (click)="closePanel()">
+      <span class="e-icons e-close"></span>
+    </button>
+  </div>
+  <div class="panel-body">
+    <label class="panel-label" for="expFileName">File Name:</label>
+    <input #expFileName id="expFileName" class="panel-input" type="text" value="Sankey" placeholder="Enter file name" />
+
+    <label class="panel-label" for="expType">File Type:</label>
+    <input id="expType"  tabindex="0"/>
+
+    <div class="panel-footer">
+      <button id="btnDoExport" class="panel-action-btn panel-action-btn--export" type="button" (click)="onExport()">EXPORT</button>
+      <button id="btnCancelExport" class="panel-action-btn panel-action-btn--cancel" type="button" (click)="closePanel()">CANCEL</button>
+    </div>
+  </div>
+</aside>
     </div>
   </div>
 </div>
@@ -296,7 +298,9 @@
   }
   .export-panel .e-ddl.e-input-group:focus-within,
   .export-panel .e-ddl.e-input-group.e-control-wrapper:focus-within {
-    box-shadow: none !important;
+    border-bottom: 2px solid #E3165B !important;
+    box-shadow: 0 1px 0 #E3165B !important;
+    outline: none !important;
   }
   .export-panel .e-input-group::before,
   .export-panel .e-input-group::after {
@@ -309,7 +313,7 @@
     justify-content: space-between;
     gap: 10px;
     padding-top: 20px;
-
+    border-top: 0px !important;
   }
   .panel-action-btn {
     flex: 1;

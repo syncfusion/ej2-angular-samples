@@ -9,7 +9,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 Diagram.Inject(DataBinding, MindMap, HierarchicalTree);
 
 /**
- *  Sample component for Mind Map Tree using Syncfusion Diagram.
+ *  Sample component for Mind Map Tree using Angular Diagram.
  */
 @Component({
     selector: 'control-content',

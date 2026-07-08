@@ -18,7 +18,7 @@ Diagram.Inject(BpmnDiagrams);
 
 /**
  * Component for displaying a BPMN Editor  sample.
- * Manages the presentation and behavior of the diagram using Syncfusion's Angular Diagram component.
+ * Manages the presentation and behavior of the diagram using Angular Diagram component.
  */
 @Component({
     selector: 'control-content', // Angular component selector

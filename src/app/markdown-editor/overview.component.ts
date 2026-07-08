@@ -4,7 +4,7 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';
 import { RichTextEditorComponent, ToolbarService, LinkService, EditorMode, ToolbarType, RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
-import { ImageService, MarkdownEditorService, TableService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ImageService, MarkdownEditorService, TableService, MarkdownFormatter } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, KeyboardEventArgs, isNullOrUndefined } from '@syncfusion/ej2-base';
 import { MarkdownConverter } from '@syncfusion/ej2-markdown-converter'
 import { ToolbarModule } from '@syncfusion/ej2-angular-navigations';
@@ -119,6 +119,7 @@ Inline code: Use \`npm install &#64;syncfusion/ej2-richtexteditor\``;
             this.updateValue();
         },0)
     }
+    public formatter: MarkdownFormatter = new MarkdownFormatter({ listTags: { 'OL': '1., 2., 3.' } });
     public onChange(): void {
         this.updateValue();
     }
@@ -126,7 +127,7 @@ Inline code: Use \`npm install &#64;syncfusion/ej2-richtexteditor\``;
         this.rteObj.refreshUI();
     }
     public updateValue(): void {
-        this.srcArea.innerHTML = MarkdownConverter.toHtml((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value) as string;
+        this.srcArea.innerHTML = MarkdownConverter.toHtml((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value, { lineBreak: true }) as string;
     }
     public updateOrientation(): void {
         if (Browser.isDevice) {

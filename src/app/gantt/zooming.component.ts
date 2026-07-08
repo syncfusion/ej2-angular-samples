@@ -1,20 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { zoomingData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { GanttModule, TaskFieldsModel, ColumnModel, LabelSettingsModel, SelectionService, ToolbarService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttzooming',
     templateUrl: 'zooming.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+    providers: [ToolbarService, SelectionService],
+    imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 export class GanttZoomingComponent implements OnInit {
     public data: object[];
-    public taskSettings: object;
-    public labelSettings: object;
+    public taskSettings: TaskFieldsModel;
+    public labelSettings: LabelSettingsModel;
     public toolbar: string[];
-    public columns: object[];
+    public columns: ColumnModel[];
     public projectStartDate: Date;
     public projectEndDate: Date;
     public splitterSettings: object;
@@ -36,7 +37,7 @@ export class GanttZoomingComponent implements OnInit {
         };
         this.columns = [
             { field: 'TaskID', width: 80 },
-            { field: 'TaskName', width: 250 },
+            { field: 'TaskName', width: 290 },
             { field: 'StartDate' },
             { field: 'EndDate' },
             { field: 'Duration' },

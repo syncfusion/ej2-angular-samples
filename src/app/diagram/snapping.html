@@ -4,7 +4,7 @@
     This sample shows how diagram objects snap to the nearest intersection of gridlines or objects while being dragged or resized.
     </p>
   </div>
-    <div class="col-lg-8 control-section">
+    <div class="col-lg-8 control-section" style="border-right: 1px solid #D7D7D7">
       
         <div class="content-wrapper" style="width: 100%;">
             <ejs-diagram #diagram id="diagram" width="100%" height="645px" [nodes]="nodes" [connectors]="connectors" [getNodeDefaults]='nodeDefaults' [getConnectorDefaults]='connectorDefaults'
@@ -13,10 +13,10 @@
             </ejs-diagram>
         </div>
     </div>
-    <div id="properties_Container" >
-        <span class="property-panel-header">
+    <div class="col-lg-4 property-section">
+        <div class="property-panel-header">
             Properties
-        </span>
+        </div>
         <div class="db-prop-row">
             <div class="db-prop-text-style">
                 <span class="db-prop-text-style text-content">Snapping Interval </span>
@@ -31,12 +31,11 @@
                 </div>
             </div>
             <div class="db-prop-text-style">
-                <span class="db-prop-text-style text-content" style="width: 50%;">Snapping Line Color</span>
-                <div class="db-text-input" style="float: right;width:50%">
+                <span class="db-prop-text-style text-content">Snapping Line Color</span>
+                <div style="float: right;margin-right: 10px;">
                     <input
                     ejs-colorpicker
                     id="color-picker"
-                    width="100%"
                     type="color"
                     (change)="colorChange($event)"
                   />
@@ -84,4 +83,6 @@
         
             <p>The <code>constraints</code> property controls the visibility of gridlines and enables or disables snapping.</p>
         
-          </div>
+          
+    <p>Looking for the full Angular Diagram component overview, features, pricing, and documentation? Visit the <a href="https://www.syncfusion.com/angular-components/angular-diagram" target="_blank">Angular Diagram</a> page.</p>
+</div>

@@ -1,14 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { projectNewData } from './data';
 import { DropDownListComponent, ChangeEventArgs, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
-import { GanttComponent, GridLine, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, GridLine, GanttModule, SelectionService, DayMarkersService } from '@syncfusion/ej2-angular-gantt';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttgridlines',
     templateUrl: 'grid-lines.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, DropDownListAllModule, SBDescriptionComponent]
+    providers: [SelectionService, DayMarkersService],
+    imports: [SBActionDescriptionComponent, GanttModule, DropDownListAllModule, SBDescriptionComponent]
 })
 export class GanttGridLinesComponent implements OnInit {
     public data: object[];
@@ -36,11 +37,11 @@ export class GanttGridLinesComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-           parentID: 'ParentId'
+            parentID: 'ParentID'
         };
         this.columns = [
             { field: 'TaskID', width: 80 },
-            { field: 'TaskName', width: 250 },
+            { field: 'TaskName', width: 280 },
             { field: 'StartDate' },
             { field: 'EndDate' },
             { field: 'Duration' },
@@ -65,7 +66,7 @@ export class GanttGridLinesComponent implements OnInit {
         this.dropDownGridLinesFields = { text: 'type', value: 'id' };
     }
     public changeLines(e: ChangeEventArgs): void {
-        let lines: GridLine = <GridLine>e.value;
+        let lines: GridLine = e.value as GridLine;
         this.ganttObj.gridLines = lines;
         this.ganttObj.refresh();
     }

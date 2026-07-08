@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewEncapsulation, Inject } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewEncapsulation, Inject, ChangeDetectorRef } from '@angular/core';
 import { compile, detach } from '@syncfusion/ej2-base';
 import { cardBook } from './data-source';
 import { MultiSelect, SelectEventArgs, RemoveEventArgs } from '@syncfusion/ej2-dropdowns';
@@ -120,8 +120,9 @@ export class TileViewCardComponent {
             this.DataList = [];
             errorContent.style.display = 'flex';
         }
+        this.cdr.detectChanges();
     }
-    constructor( @Inject('sourceFiles') private sourceFiles: any) {
+    constructor( @Inject('sourceFiles') private sourceFiles: any, private cdr: ChangeDetectorRef) {
         sourceFiles.files = ['card.component.css'];
     }
 }

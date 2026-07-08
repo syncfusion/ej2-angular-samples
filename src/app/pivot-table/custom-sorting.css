@@ -8,3 +8,7 @@
 .pivot-property-section table tr td:first-child {
     width: 20%;
 }
+
+.e-bigger #sorting-members .e-multi-select-wrapper.e-mob-wrapper .e-delim-view.e-delim-values.e-delim-total {
+    width: 85px !important;
+}

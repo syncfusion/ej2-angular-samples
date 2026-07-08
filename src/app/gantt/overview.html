@@ -132,15 +132,15 @@
         [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [treeColumnIndex]="0" height="650px"
         rowHeight="46" taskbarHeight="25" width="100%" [allowResizing]="true" [allowSelection]="true" [enableWBS]="true"
         [enableAutoWbsUpdate]="true" [highlightWeekends]="true" [gridLines]="gridLines" [allowExcelExport]="true"
-        [allowPdfExport]="true" (toolbarClick)="toolbarClick($event)" showColumnMenu=true [enableHover]= "true"
+        [allowPdfExport]="true" (toolbarClick)="toolbarClick($event)" showColumnMenu="true" [enableHover]="true"
         [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [eventMarkers]="eventMarkers"
         [toolbar]="toolbar" [allowFiltering]="true" [resourceFields]="resourceFields" [resources]="resources"
         [allowSorting]="true" [allowResizing]="true" [splitterSettings]="splitterSettings" (load)="load()"
         (pdfQueryCellInfo)="pdfQueryCellInfo($event)" (pdfQueryTaskbarInfo)="pdfQueryTaskbarInfo($event)">
 
         <e-columns>
-          <e-column field="WBSCode" headerText="WBS ID" width="120"></e-column>
-          <e-column field="TaskName" headerText="Product Release" width="200"></e-column>
+          <e-column field="WBSCode" headerText="WBS ID" width="110"></e-column>
+          <e-column field="TaskName" headerText="Product Release" width="230"></e-column>
 
           <e-column field="Assignee" headerText="Assignee" [allowSorting]="false" width="195">
             <ng-template #template let-data>
@@ -185,10 +185,10 @@
           </e-column>
 
           <e-column field="WBSPredecessor" headerText="WBS Predecessor" width="200"></e-column>
-          <e-column field="ConstraintType" headerText="Constraint Type" width="200"></e-column>
-          <e-column field="ConstraintDate" headerText="Constraint Date" width="200"></e-column>
-          <e-column field="Progress" headerText="Completion(%)" width="205"></e-column>
-          <e-column field="TimeLog" headerText="Work Log" width="150"></e-column>
+          <e-column field="ConstraintType" headerText="Constraint Type" width="180"></e-column>
+          <e-column field="ConstraintDate" headerText="Constraint Date" width="180"></e-column>
+          <e-column field="Progress" headerText="Completion(%)" width="170"></e-column>
+          <e-column field="TimeLog" headerText="Work Log" width="140"></e-column>
         </e-columns>
         
         <ng-template #labelSettingsRightLabel let-data>
@@ -353,10 +353,14 @@
 </div>
 <div id="description">
   <p>This demo presents an e-commerce platform redesign project, demonstrating key features such as task organization, customizable timeline views, 
-        resource management, and interactive controls. Users can <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/sorting">sort</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/filtering/filtering">filter tasks</a>, <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/columns/column-resizing"> resize</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/columns/column-reordering">reorder columns</a>, track progress with <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/baseline"> baselines</a>, 
-        and highlight key dates with <a target="_blank" href="https://ej2.syncfusion.com/documentation/gantt/event-markers">event markers</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/holidays"> holidays</a>. The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/tool-bar"> toolbar </a> offers intuitive options to add, edit, delete, search, and expand or 
+        resource management, and interactive controls. Users can <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/sorting">sort</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/filtering/filtering">filter tasks</a>, <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/columns/column-resizing"> resize</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/columns/column-reorder">reorder columns</a>, track progress with <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/baseline"> baselines</a>, 
+        and highlight key dates with <a target="_blank" href="https://ej2.syncfusion.com/documentation/gantt/event-markers">event markers</a> and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/holidays"> holidays</a>. The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/toolbar"> toolbar </a> offers intuitive options to add, edit, delete, search, and expand or 
         collapse tasks. Additionally, users can configure <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#workweek"> working days</a>, <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/scheduling-tasks#weekendnon-working-days"> highlight weekends</a>, set <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#projectstartdate"> project date ranges</a>.
 </p>
-<br>
+<p>
+  Gantt component features are segregated into individual feature-wise modules. To use a Filter, Edit, Toolbar, Sorting, Resize, pdf Export, Excel and CSV Export, Column menu, Selection and markers feature, inject the <code>FilterService</code>, <code>ToolbarService</code>, <code>SortService</code>, <code>ResizeService</code>, <code>PdfExportService</code>, <code>ExcelExportService</code>, <code>ColumnMenuService</code>, <code>SelectionService</code>, and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section.
+</p>
 <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/getting-started#add-gantt-component">documentation section</a>.</p>
+<br />
+<p>Looking for the full Angular Gantt Chart component overview, features, pricing, and documentation? Visit the <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-gantt-chart">Angular Gantt Chart</a> page.</p>
 </div>

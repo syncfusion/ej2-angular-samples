@@ -7,7 +7,7 @@
         <label class="h4">Template</label>
         <ejs-multiselect id='multi-template' [dataSource]='multidata' [fields]='multifields' [mode]='box' [placeholder]='multiwatermark'>
             <ng-template #headerTemplate>
-                <div class="multihead"> <span class="multiphoto">Photo</span> <span style="margin-left:17px;">Employee Info</span></div>
+                <div class="multiheader"> <span class="multiphoto">Photo</span> <span style="margin-left:17px;">Employee Info</span></div>
             </ng-template>
             <ng-template #itemTemplate let-data>
                 <div><img class="multiempImage" src="./assets/auto-complete/Employees/{{data.Eimg}}.png" alt="employee" />

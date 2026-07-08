@@ -2,7 +2,7 @@
   <div class="ai-models">
     <div id="aiAssistView" ejs-aiassistview #aiAssistViewInst [bannerTemplate]="bannerTemplate"
       [promptSuggestions]="suggestions" (promptRequest)="promptRequest($event)" [enableAttachments]="enableAttachments" [attachmentSettings]="attachmentSettings" [showHeader]="showHeader"
-      (stopRespondingClick)="handleStopResponse()" width="auto" [footerToolbarSettings]="footerToolbarSettings">
+      width="auto" [footerToolbarSettings]="footerToolbarSettings" [enableStreaming]="true">
       <div class="ai-assist-header">
         <button ejs-button id="close" #togglebtn (click)="toggleSidebar()" iconCss="e-icons e-menu"></button>
         <ejs-dropdownlist id="ai-model-dropdown" [dataSource]="models" [fields]="modelFields" [value]="selectedModel"
@@ -49,7 +49,7 @@
 
 <div id="action-description">
   <p>
-    This example demonstrates the <strong>AI AssistView</strong> designed to integrate multiple AI models: 
+    This example demonstrates the <strong>AI AssistView</strong> designed to integrate multiple AI conversation: 
     <code>Azure OpenAI</code>, <code>Gemini</code> and <code>DeepSeek</code>.
   </p>
 </div>

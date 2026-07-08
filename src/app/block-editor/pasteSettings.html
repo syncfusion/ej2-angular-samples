@@ -29,17 +29,6 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <div>Allowed Style Properties </div>
-                        </td>
-                        <td>
-                            <div>
-                                <ejs-textbox #allowedStyleProperties class="e-input" placeholder="'href', 'style'"
-                                    (blur)="allowStyleChange()"></ejs-textbox>
-                            </div>
-                        </td>
-                    </tr>
                 </tbody>
         </table>
     </div>
@@ -61,10 +50,6 @@
         <ul>
             <li><code>['a[!href]']</code> - paste the content by filtering anchor tags that don’t have the 'href' attribute.</li>
             <li><code>['a[href, target]']</code> - paste the content by filtering anchor tags that have the 'href' and 'target' attributes</li>
-        </ul>
-        <li>Fill the <code>allowed style</code> properties to paste the content by accepting these style attributes and removing other attributes. For example:</li>
-        <ul>
-            <li><code>['color', 'margin']</code> - This will allow only the style properties 'color' and 'margin' in each pasted element.</li>
         </ul>
     </ul>
 </div>

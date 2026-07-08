@@ -19,7 +19,7 @@ Diagram.Inject(UndoRedo);
 
 /**
  * Component for displaying a BPMN Editor  sample.
- * Manages the presentation and behavior of the diagram using Syncfusion's Angular Diagram component.
+ * Manages the presentation and behavior of the diagram using Angular Diagram component.
  */
 @Component({
   selector: 'control-content', // Angular component selector
@@ -52,11 +52,6 @@ export class GroupingAndOrderingComponent {
   constructor() {
   }
 
-  public created(): void {
-    this.diagram.rulerSettings = {
-      showRulers: true
-    };
-  }
   public drawingObject: any = { type: 'Orthogonal' };
 
 

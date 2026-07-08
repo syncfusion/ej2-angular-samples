@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import { editingData, editingResources } from './data';
-import { GanttComponent, ContextMenuOpenEventArgs, ContextMenuClickEventArgs, IGanttData, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, ContextMenuOpenEventArgs, ContextMenuClickEventArgs, IGanttData, GanttModule, EditService, ContextMenuService, DayMarkersService, ToolbarService, ResizeService, SelectionService, SortService } from '@syncfusion/ej2-angular-gantt';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
@@ -8,7 +8,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     selector: 'ej2-ganttcontextmenu',
     templateUrl: 'context-menu.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+    providers: [EditService, ToolbarService, ContextMenuService, DayMarkersService, SortService, ResizeService, SelectionService],
+    imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 export class GanttContextMenuComponent implements OnInit {
     @ViewChild('gantt')
@@ -38,7 +39,7 @@ export class GanttContextMenuComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            parentID: 'ParentId',
+            parentID: 'ParentID',
             notes: 'info',
             resourceInfo: 'resources'
         };
@@ -56,8 +57,8 @@ export class GanttContextMenuComponent implements OnInit {
         this.contextMenuItems = ['AutoFitAll', 'AutoFit', 'TaskInformation', 'DeleteTask', 'Save', 'Cancel',
         'SortAscending', 'SortDescending', 'Add', 'DeleteDependency', 'Convert', 'Indent', 'Outdent',
         { text: 'Collapse the Row', target: '.e-content', id: 'collapserow' },
-        { text: 'Expand the Row', target: '.e-content', id: 'expandrow' },
-        ],
+        { text: 'Expand the Row', target: '.e-content', id: 'expandrow' }
+        ];
         this.toolbar = ['Add', 'Edit', 'Update', 'Delete', 'Cancel', 'ExpandAll', 'CollapseAll'];
         this.columns =  [
             { field: 'TaskID', width:80 },
@@ -83,14 +84,14 @@ export class GanttContextMenuComponent implements OnInit {
             rightLabel: 'resources'
         };
         this.projectStartDate= new Date('03/25/2025');
-        this.projectEndDate=  new Date('09/01/2025');
+        this.projectEndDate=  new Date('09/08/2025');
         
         this.resources = editingResources;
         this.splitterSettings = {
-            columnIndex: "2"
+            columnIndex: 2
         };
     }
-    contextMenuClick (args?: ContextMenuClickEventArgs): void {
+    public contextMenuClick(args?: ContextMenuClickEventArgs): void {
         let record: IGanttData = args.rowData;
                 if ((args as any).item.id === 'collapserow') {
                     this.ganttObj.collapseByID(Number(record.ganttProperties.taskId));
@@ -99,7 +100,7 @@ export class GanttContextMenuComponent implements OnInit {
                     this.ganttObj.expandByID(Number(record.ganttProperties.taskId));
                 }
     }
-    contextMenuOpen (args?: ContextMenuOpenEventArgs): void {
+    public contextMenuOpen(args?: ContextMenuOpenEventArgs): void {
         let record: IGanttData = args.rowData;
         if (args.type !== 'Header' && record) {
             if (!record.hasChildRecords) {

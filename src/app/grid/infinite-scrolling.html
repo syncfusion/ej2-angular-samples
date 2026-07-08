@@ -1,81 +1,121 @@
 <div id="action-description">
-    <p>This sample demonstrates the Grid component with the infinite scrolling feature. You can use the scrollbar or navigation keys or the mouse wheel to perform the infinite scroll action.
+    <p>
+        This sample showcases the infinite scrolling capability of the Grid, designed to handle large datasets
+        seamlessly. Click the “Load 100K Data” button to populate the Grid with data, then scroll vertically and
+        horizontally to dynamically load rows and columns, ensuring smooth navigation.
     </p>
 </div>
 <div class="control-section">
-        <div class='div-button'>
-                <button ejs-button (click)='onClick($event)' cssClass='e-info'>Load 100K Data</button>
-                <span id="popup">
-                    <span id="gif" class="image"></span>
-                </span>
-            </div>
-    <ejs-grid #grid [dataSource]='vData' [enableInfiniteScrolling]='true' [enableColumnVirtualization]='true' height='400' [pageSettings]='pageSettings'>
+    <div class='div-button'>
+        <button #load ejs-button (click)='onClick()' cssClass='e-info'>Load 100K Data</button>
+        <span id="popup">
+            <span id="gif" class="image"></span>
+        </span>
+    </div>
+    <ejs-grid #grid id='InfiniteScroll' [dataSource]='vData' [enableInfiniteScrolling]='true'
+        [enableColumnVirtualization]='true' allowSorting='true' allowFiltering='true' 
+        [filterSettings]='filterSettings' height='400' rowHeight='40' footerRowHeight='40'
+        [pageSettings]='pageSettings' clipMode="EllipsisWithTooltip" (load)='onLoad($event)'>
         <e-columns>
-            <e-column field='SNo' headerText='S.No' width='140' isPrimaryKey='true'></e-column>
-            <e-column field='FIELD1' headerText='Player Name' width='140'></e-column>
-            <e-column field='FIELD2' headerText='Year' width='100'></e-column>
-            <e-column field='FIELD3' headerText='Sports' width='160'></e-column>
-            <e-column field='FIELD4' headerText='Country' width='160'></e-column>
-            <e-column field='FIELD5' headerText='LGID' width='120'></e-column>
-            <e-column field='FIELD6' headerText='GP' width='120'></e-column>
-            <e-column field='FIELD7' headerText='GS' width='120'></e-column>
-            <e-column field='FIELD8' headerText='Minutes' width='120'></e-column>
-            <e-column field='FIELD9' headerText='Points' width='130'></e-column>
-            <e-column field='FIELD10' headerText='OREB' width='130'></e-column>
-            <e-column field='FIELD11' headerText='DREB' width='130'></e-column>
-            <e-column field='FIELD12' headerText='REB' width='130'></e-column>
-            <e-column field='FIELD13' headerText='Assists' width='130'></e-column>
-            <e-column field='FIELD14' headerText='Steals' width='120'></e-column>
-            <e-column field='FIELD15' headerText='Blocks' width='120'></e-column>
-            <e-column field='FIELD16' headerText='Turnovers' width='140'></e-column>
-            <e-column field='FIELD17' headerText='PF' width='100'></e-column>
-            <e-column field='FIELD18' headerText='FGA' width='150'></e-column>
-            <e-column field='FIELD19' headerText='FGM' width='120'></e-column>
-            <e-column field='FIELD20' headerText='FTA' width='150'></e-column>
-            <e-column field='FIELD21' headerText='FTM' width='120'></e-column>
-            <e-column field='FIELD22' headerText='Three Attempted' width='170'></e-column>
-            <e-column field='FIELD23' headerText='Three Made' width='140'></e-column>
-            <e-column field='FIELD24' headerText='Post GP' width='120'></e-column>
-            <e-column field='FIELD25' headerText='Post GS' width='120'></e-column>
-            <e-column field='FIELD26' headerText='Post Minutes' width='150'></e-column>
-            <e-column field='FIELD27' headerText='Post Points' width='120'></e-column>
-            <e-column field='FIELD28' headerText='Post OREB' width='150'></e-column>
-            <e-column field='FIELD29' headerText='Post DREB' width='150'></e-column>
-            <e-column field='FIELD30' headerText='Post REB' width='150'></e-column>
+            <e-column field="ProductId" headerText="Product ID" width="130" textAlign="Right"
+                isPrimaryKey="true"></e-column>
+            <e-column field="ProductName" headerText="Product Name" width="210"></e-column>
+            <e-column field="GrossAmount" headerText="Gross Amount" width="180" textAlign="Right"
+                format="C2"></e-column>
+            <e-column field="NetAmount" headerText="Net Amount" width="180" textAlign="Right" format="C2"></e-column>
+            <e-column field="ProfitMargin" headerText="Profit (%)" width="180"> </e-column>
+            <e-column field="AchievementPercent" headerText="Achievement (%)" width="190"></e-column>
+            <e-column field="SalesQty" headerText="Sales Quantity" width="150" textAlign="Right"></e-column>
+            <e-column field="UnitPrice" headerText="Unit Price" width="120" textAlign="Right" format="C2"></e-column>
+            <e-column field="Month" headerText="Month" width="120"></e-column>
+            <e-column field="Category" headerText="Category" width="130"></e-column>
+            <e-column field="SubCategory" headerText="Sub Category" width="150" [visible]="false"></e-column>
+            <e-column field="Brand" headerText="Brand" width="120"></e-column>
+            <e-column field="City" headerText="City" width="130"></e-column>
+            <e-column field="State" headerText="State" width="120"></e-column>
+            <e-column field="Country" headerText="Country" width="160"></e-column>
+            <e-column field="Region" headerText="Region" width="130"></e-column>
+            <e-column field="Discount" headerText="Discount (%)" width="140" textAlign="Right" format="N0"></e-column>
+            <e-column field="Tax" headerText="Tax (%)" width="130" textAlign="Right" format="N2"></e-column>
+            <e-column field="ShippingCost" headerText="Shipping Cost" width="160" textAlign="Right"
+                format="C2"></e-column>
+            <e-column field="Profit" headerText="Profit" width="160" textAlign="Right" format="C2"></e-column>
+            <e-column field="Target" headerText="Target" width="120" textAlign="Right" format="C2"></e-column>
+            <e-column field="Forecast" headerText="Forecast" width="150" textAlign="Right" format="C2"></e-column>
+            <e-column field="SalesRep" headerText="Sales Reporter" width="150"></e-column>
+            <e-column field="Manager" headerText="Manager" width="140"></e-column>
+            <e-column field="Channel" headerText="Channel" width="120"> </e-column>
+            <e-column field="Quarter" headerText="Quarter" width="120" textAlign="Center"> </e-column>
+            <e-column field="Year" headerText="Year" width="100" textAlign="Right"></e-column>
+            <e-column field="ReturnQty" headerText="Return Quantity" width="160" textAlign="Right"></e-column>
+            <e-column field="ReturnAmount" headerText="Return Amount" width="160" textAlign="Right"
+                format="C2"></e-column>
+            <e-column field="Remarks" headerText="Remarks" width="220"></e-column>
         </e-columns>
+        <e-aggregates>
+            <e-aggregate>
+                <e-columns>
+                    <e-column field="SalesQty" type="Sum" format="N0">
+                        <ng-template #footerTemplate let-data>{{data.Sum}}</ng-template>
+                    </e-column>
+                    <e-column field="GrossAmount" type="Sum" format="C0">
+                        <ng-template #footerTemplate let-data>{{data.Sum}}</ng-template>
+                    </e-column>
+                    <e-column field="NetAmount" type="Sum" format="C0">
+                        <ng-template #footerTemplate let-data>{{data.Sum}}</ng-template>
+                    </e-column>
+                    <e-column field="ShippingCost" type="Sum" format="C0">
+                        <ng-template #footerTemplate let-data>{{data.Sum}}</ng-template>
+                    </e-column>
+                    <e-column field="Profit" type="Sum" format="C0">
+                        <ng-template #footerTemplate let-data>{{data.Sum}}</ng-template>
+                    </e-column>
+                    <e-column field="Forecast" type="Sum" format="C0">
+                        <ng-template #footerTemplate let-data>{{data.Sum}}</ng-template>
+                    </e-column>
+                    <e-column field="ReturnQty" type="Sum" format="N0">
+                        <ng-template #footerTemplate let-data>{{data.Sum}}</ng-template>
+                    </e-column>
+                    <e-column field="ReturnAmount" type="Sum" format="C0">
+                        <ng-template #footerTemplate let-data>{{data.Sum}}</ng-template>
+                    </e-column>
+                </e-columns>
+            </e-aggregate>
+        </e-aggregates>
     </ejs-grid>
 </div>
 
-<div id='description'>
+<div id="description">
     <p>
-        The Grid Infinite scrolling feature enables the loading of data using the lazy loading concept, where buffer data is loaded only when the scrollbar reaches the end of the scroller. 
-        To enable Infinite scrolling, set the <code><a target="_blank" className="code"
-        href="https://ej2.syncfusion.com/angular/documentation/api/grid/#enableinfinitescrolling">
-        enableInfiniteScrolling </a></code> property to true. Additionally, you can efficiently display a multiple columns without performance degradation using the clumn virtualization feature. 
-        Enable column virtualization by setting the <code><a target="_blank" className="code"
-        href="http://ej2.syncfusion.com/angular/documentation/api/grid/#enablecolumnvirtualization">
-        enableColumnVirtualization</a></code> property to true.
+        Infinite scrolling uses a lazy loading mechanism, where data is fetched automatically as the user scrolls to the
+        end of the Grid. This behavior is enabled by setting the
+        <code><a target="_blank" class="code"
+        href="https://ej2.syncfusion.com/angular/documentation/api/grid/#enableinfinitescrolling">enableInfiniteScrolling</a></code> property to <code>true</code> and defining
+        the Grid’s <code><a target="_blank" class="code"
+        href="https://ej2.syncfusion.com/angular/documentation/api/grid/#height">height</a></code> property.
     </p>
     <p>
-        Note: The <code><a target="_blank" className="code"
-            href="https://ej2.syncfusion.com/angular/documentation/api/grid/#height">
-            height</a></code> property must be defined when enabling the <code><a target="_blank" className="code"
-                href="https://ej2.syncfusion.com/angular/documentation/api/grid/#enableinfinitescrolling">
-                enableInfiniteScrolling </a></code>.
+        The Grid also supports column virtualization, which renders only the visible columns to improve performance when
+        working with a large number of columns. Column virtualization can be enabled by setting the
+        <code><a target="_blank" class="code"
+        href="http://ej2.syncfusion.com/angular/documentation/api/grid/#enablecolumnvirtualization">enableColumnVirtualization</a></code> property to <code>true</code>.
+        Additionally, column virtualization integrates seamlessly with aggregate operations, ensuring that calculations like
+        <code>Sum</code>, <code>Average</code>, etc., remain accurate and are displayed correctly during horizontal scrolling.
+    </p>
+    <p><strong>Injecting Module:</strong></p>
+    <p>
+        Features of the Grid component are organized into individual, feature-specific modules. To use infinite
+        scrolling and column virtualization with aggregates, inject the required modules using
+        <code>VirtualScrollService</code>, <code>InfiniteScrollService</code> and <code>AggregateService</code> into the <code>&#64;NgModule.providers</code> section.
     </p>
     <p>
-    This sample demonstrates the Grid component with the infinite scrolling feature.
-    </p>
-    <p style='font-weight: 500'>Injecting Module:</p>
-    <p>Grid component features are separated into feature-wise modules. To use Infinitescrolling feature, inject the <code>InfiniteScrollService</code> into the <code>&#64;NgModule.providers</code> section.</p>
-    <p>
-        To utilize column virtualization, inject the <code>VirtualScrollService</code>,
-        and for infinite scrolling, integrate the <code>InfiniteScrollService</code> into the <code>&#64;NgModule.providers</code> section.
+        More information on the infinite scrolling can be found in the
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/grid/scrolling/infinite-scrolling">
+            documentation section</a>.
     </p>
     <p>
-        More information on the infinite scrolling can be found in this
-        <a target="_blank" 
-        href="https://ej2.syncfusion.com/angular/documentation/grid/scrolling/infinite-scrolling">
-        documentation section</a>.
+        Looking for the full Angular Data Grid component overview, features, pricing, and documentation? Visit our
+        <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-data-grid">
+            Angular Data Grid component</a> page.
     </p>
 </div>

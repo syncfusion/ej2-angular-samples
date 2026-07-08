@@ -15,7 +15,7 @@ import { FileManagerComponent, NavigationPaneService, ToolbarService, DetailsVie
 export class SequentialUploadController {
     public ajaxSettings: any;
     public uploadSettings: any;
-    public hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
+    public hostUrl: string = 'https://physical-service.syncfusion.com/';
 
     public ngOnInit(): void {
         this.ajaxSettings = {

@@ -37,7 +37,7 @@ export const rangeNavigatorAppRoutes: Object[] = [
         name: 'Empty Points', order: '03', category: 'Customization'
     },
     {
-        path: ':theme/range-navigator/filter', component: FilterComponent, name: 'Filter',
+        path: ':theme/range-navigator/filter', ignoreOnBuild: true, component: FilterComponent, name: 'Filter',
         order: '03', category: 'Customization'
     },
     {

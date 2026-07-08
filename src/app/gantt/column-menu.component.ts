@@ -27,24 +27,24 @@ export class GanttColumnMenuComponent implements OnInit {
       duration: 'Duration',
       progress: 'Progress',
       dependency: 'Predecessor',
-      parentID: 'ParentId'
-    },
-      this.columns = [
-        { field: 'TaskID', headerText: 'ID', width: 100 },
-        { field: 'TaskName', headerText: 'Name', width: 250 },
-        { field: 'StartDate' },
-        { field: 'EndDate' },
-        { field: 'Duration' },
-        { field: 'Progress' },
-        { field: 'Predecessor', headerText: 'Dependency', width: 190 }
-      ];
+      parentID: 'ParentID'
+    };
+    this.columns = [
+      { field: 'TaskID', headerText: 'ID', width: 100 },
+      { field: 'TaskName', headerText: 'Name', width: 290 },
+      { field: 'StartDate' },
+      { field: 'EndDate' },
+      { field: 'Duration' },
+      { field: 'Progress' },
+      { field: 'Predecessor', headerText: 'Dependency', width: 190 }
+    ];
     this.splitterSettings = {
       columnIndex: 4
-    },
-      this.projectStartDate = new Date('03/26/2025');
+    };
+    this.projectStartDate = new Date('03/26/2025');
     this.projectEndDate = new Date('07/20/2025');
     this.labelSettings = {
-      leftLabel: 'TaskName',
+      leftLabel: 'TaskName'
     };
   }
 }

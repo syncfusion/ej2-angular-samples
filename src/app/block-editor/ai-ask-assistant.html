@@ -1,0 +1,101 @@
+<div class='control-section'>
+  <div class="ask-ai-editor e-card">
+    <div class="ask-ai-editor-container">
+      <div class="ask-ai-editor-page">
+        <div class="ask-ai-editor-content">
+          <ejs-blockeditor
+            height="600px"
+            id='ask-ai-block-editor'
+            [blocks]="askAssistantData"
+            [users]="users"
+            [imageBlockSettings]="imageBlockSettings"
+            #blockEditorRef>
+          </ejs-blockeditor>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dialog: holds assistviewWrapper on initial mount (Floating mode default) -->
+    <ejs-dialog
+      id="dialogElem"
+      target=".ask-ai-editor-page"
+      [position]="position"
+      [animationSettings]="animationSettings"
+      width="500px"
+      [visible]="false"
+      cssClass="custom-dialog"
+      #dialogRef>
+      <div id="assistviewWrapper" class="ask-ai-assistview">
+        <div id="aiAssistView" ejs-aiassistview 
+          [enableStreaming]="true"
+          [promptSuggestions]="notionSuggestions"
+          [promptSuggestionItemTemplate]="promptTemplate"
+          (promptRequest)="onPromptRequest($event)"
+          [bannerTemplate]="bannerTemplate"
+          [toolbarSettings]="toolbarSettings"
+          [footerToolbarSettings]="footerToolbarSettings"
+          [responseToolbarSettings]="responseToolbarSettings"
+          [enableAttachments]="enableAttachments"
+          [attachmentSettings]="attachmentSettings"
+          [speechToTextSettings]="speechToTextSettings"
+          (created)="onAssistViewCreated()"
+          #aiAssistView>
+          <e-views>
+            <e-view type='Assist' name='New AI chat'></e-view>
+          </e-views>
+        </div>
+      </div>
+    </ejs-dialog>
+    <ng-template #bannerTemplate>
+      <div class="banner-content">
+        <div class="e-icons e-assistview-icon"></div>
+        <h3>How can I help you today ?</h3>
+      </div>
+    </ng-template>
+
+    <ng-template #promptTemplate let-data>
+      <div class="suggestion-item active">
+        <span class="{{ iconMapByIndex[data.index] }} suggestion-icon"></span>
+        <span class="assist-suggestion-content">
+          {{ data.promptSuggestion }}
+        </span>
+      </div>
+    </ng-template>
+    <!-- Sidebar: empty on mount; wrapper DOM-moved here on Sidebar mode -->
+    <ejs-sidebar
+      id="askAiSidebar"
+      target=".ask-ai-editor-page"
+      width="400px"
+      position="Right"
+      [enableGestures]="false"
+      animate="false"
+      isOpen="false"
+      #sidebarRef>
+    </ejs-sidebar>
+
+    <button ejs-fab
+      id="fabElem"
+      iconCss="e-icons e-magic-wand"
+      target=".ask-ai-editor-page"
+      #fabRef>
+    </button>
+  </div>
+
+  <div id="action-description">
+      <p>This sample demonstrates an AI AssistView integrated with Block Editor, that supports multiple chat display modes, chat history management, file attachments, and voice-based input and output interactions.</p>
+  </div>
+  <div id="description">
+  <p>This sample demonstrates a AI assistant integrated with Block Editor for enhanced content creation.</p>
+  <ul>
+      <li>Block Editor component for rich content editing with various block types.</li>
+      <li>Floating and sidebar chat modes with seamless view switching.</li>
+      <li>Prompt suggestions rendered using a custom item template with contextual icons.</li>
+      <li>Chat session creation, persistence, and history navigation.</li>
+      <li>File upload and removal support using configured attachment endpoints.</li>
+      <li>Response toolbar with copy, add, like, dislike, and audio options.</li>
+      <li>Speech-to-text input and text-to-speech playback for hands-free interaction.</li>
+      <li>Toolbar actions for starting new chats, hiding the assistant, and resizing views.</li>
+      <li>Floating action button (FAB) to restore the assistant when hidden.</li>
+  </ul>
+  </div>
+</div>

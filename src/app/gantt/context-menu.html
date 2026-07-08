@@ -5,16 +5,16 @@
 	</p>
 </div>
 <div class="control-section">
-    <ejs-gantt id="contextMenu" #gantt height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns" [enableContextMenu]="true"
-        [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [treeColumnIndex]="1" 
-        [contextMenuItems]='contextMenuItems' (contextMenuOpen)="contextMenuOpen($event)" (contextMenuClick)="contextMenuClick($event)"
+    <ejs-gantt id="contextMenu" #gantt height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns" [enableContextMenu]="true"
+        [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [treeColumnIndex]="1"
+        [contextMenuItems]="contextMenuItems" (contextMenuOpen)="contextMenuOpen($event)" (contextMenuClick)="contextMenuClick($event)"
         [allowSelection]="true" dateFormat="MMM dd, y" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
         [gridLines]="gridLines" [eventMarkers]="eventMarkers" [editSettings]="editSettings" [allowResizing]="true" [allowSorting]="true"
-        [toolbar]="toolbar" [resourceFields] = "resourceFields" 
+        [toolbar]="toolbar" [resourceFields]="resourceFields"
         [resources]="resources" [splitterSettings]="splitterSettings">
     </ejs-gantt>
     <div style="float: right; margin: 10px;">Source:
-        <a href="https://en.wikipedia.org/wiki/Construction" target='_blank'>https://en.wikipedia.org/</a>
+        <a href="https://en.wikipedia.org/wiki/Construction" target="_blank" rel="noopener noreferrer">https://en.wikipedia.org/wiki/Construction</a>
     </div>
 </div>
 <div id="description">
@@ -29,8 +29,8 @@
 		<li><code>AutoFitAll</code> - Auto fit all columns.</li>
 		<li><code>AutoFit</code> - Auto fit the current column.</li>
 		<li><code>TaskInformation</code> - Edit the current record.</li>
-		<li><code>Indent</code> - Indent the selected record to one level</li>
-		<li><code>Outdent</code> - Outdent the selected record to one level</li>
+		<li><code>Indent</code> - Indent the selected record by one level</li>
+		<li><code>Outdent</code> - Outdent the selected record by one level</li>
 		<li><code>DeleteTask</code> - Delete the current record.</li>
 		<li><code>Save</code> - Save the edited record.</li>
 		<li><code>Cancel</code> - Cancel the edited state.</li>
@@ -50,15 +50,12 @@
 
 	<p style="font-weight: 500">Custom items:</p>
 	<p>
-		In this demo, custom menu items have been enabled in the context menu to perform expanding and collapsing the
-		parent rows,
-		<li><code>Expand the Row</code> - Used to expand the parent row and it will render where the row is in a
-			collapsed state.</li>
-		<li><code>Collapse the Row</code> - Used to collapse the parent row and it will render where the row is in a
-			expanded state.</li>
-	<br>
-        To use context menu feature, we need to inject <code>ContextMenu</code> module using the <code>Gantt.Inject(ContextMenu)</code> method.
-    </p>
-    <br>
-    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/context-menu">documentation section</a>.</p>
+		In this demo, custom menu items have been enabled in the context menu to expand and collapse parent rows:
+	</p>
+	<ul>
+		<li><code>Expand the Row</code> - Used to expand the parent row when it is in a collapsed state.</li>
+		<li><code>Collapse the Row</code> - Used to collapse the parent row when it is in an expanded state.</li>
+	</ul>
+	<p>Gantt component features are segregated into individual feature-wise modules. To use context menu, edit, toolbar, markers, sort, resize, and selection  feature, we need to inject <code>ContextMenuService</code>, <code>EditService</code>, <code>ToolbarService</code>, <code>DayMarkersService</code>, <code>SortService</code>, <code>ResizeService</code>, and <code>SelectionService</code>  into the <code>&#64;NgModule.providers</code> section.</p>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/context-menu" rel="noopener noreferrer">documentation section</a>.</p>
 </div>

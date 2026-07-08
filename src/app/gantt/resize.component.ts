@@ -1,16 +1,16 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { editingData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, GanttModule, ResizeService, SelectionService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
     selector: 'ej2-ganttresize',
     templateUrl: 'resize.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+    providers: [ResizeService, SelectionService, DayMarkersService],
+    imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
-
 export class ResizeComponent implements OnInit {
     public data: object[];
     public taskSettings: object;
@@ -22,31 +22,31 @@ export class ResizeComponent implements OnInit {
     public ngOnInit(): void {
         this.data = editingData;
         this.taskSettings = {
-            id: 'TaskID',
-            name: 'TaskName',
-            startDate: 'StartDate',
-            endDate: 'EndDate',
-            duration: 'Duration',
-            progress: 'Progress',
-            dependency: 'Predecessor',
-             parentID: 'ParentId'
+            id: "TaskID",
+            name: "TaskName",
+            startDate: "StartDate",
+            endDate: "EndDate",
+            duration: "Duration",
+            progress: "Progress",
+            dependency: "Predecessor",
+            parentID: "ParentID"
         };
-        this.columns =  [
-            { field: 'TaskID', headerText: 'ID', width: 80, minWidth: 8 },
-            { field: 'TaskName', headerText: 'Job Name', width: 250, minWidth: 120, maxWidth: 300 },
-            { field: 'StartDate', width: 135, minWidth: 8 },
-            { field: 'EndDate', width: 135, minWidth: 8 },
-            { field: 'Duration', allowResizing: false, width: 120 },
-            { field: 'Progress', headerText: 'Progress', textAlign: 'Right', width: 120 , minWidth: 8},
-            { field: 'Predecessor', headerText: 'Dependency', textAlign: 'Left', width: 135, minWidth: 8 }
+        this.columns = [
+            { field: "TaskID", headerText: "ID", width: 80, minWidth: 8 },
+            { field: "TaskName", headerText: "Job Name", width: 250, minWidth: 120, maxWidth: 300 },
+            { field: "StartDate", width: 135, minWidth: 8 },
+            { field: "EndDate", width: 135, minWidth: 8 },
+            { field: "Duration", allowResizing: false, width: 120 },
+            { field: "Progress", headerText: "Progress", textAlign: "Right", width: 120, minWidth: 8 },
+            { field: "Predecessor", headerText: "Dependency", textAlign: "Left", width: 135, minWidth: 8 }
         ];
         this.splitterSettings = {
             columnIndex: 6
-        },
-        this.labelSettings = {
-            rightLabel: 'TaskName'
         };
-        this.projectStartDate= new Date('03/30/2025');
-        this.projectEndDate= new Date('07/20/2025');
+        this.labelSettings = {
+            rightLabel: "TaskName"
+        };
+        this.projectStartDate = new Date("03/30/2025");
+        this.projectEndDate = new Date("09/10/2025");
     }
 }

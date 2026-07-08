@@ -24,8 +24,6 @@ export class BlockEditorPasteSettingsComponent {
     @ViewChild('deniedTags')
     public deniedTags?: TextBoxComponent;
 
-    @ViewChild('allowedStyleProperties')
-    public allowedStyleProperties?: TextBoxComponent;
 
     public blockDataPaste: BlockModel[] = blockData.blockDataPaste as BlockModel[];
 
@@ -64,24 +62,19 @@ export class BlockEditorPasteSettingsComponent {
     // update denied tags properties from a comma-separated textbox
     public deniedTagChange(): void {
         if (!this.deniedTags?.value) return;
-        this.onPasteCleanupSettingsChange(this.deniedTags.value, 'deniedTags');
+        this.onPasteCleanupSettingsChange(this.deniedTags.value);
     }
 
-    // update allowed style properties from a comma-separated textbox
-    public allowStyleChange(): void {
-        if (!this.allowedStyleProperties?.value) return;
-        this.onPasteCleanupSettingsChange(this.allowedStyleProperties.value, 'allowedStyles');
-    }
 
     // Update the specified paste settings property with parsed array value and rebind the editor
-    public onPasteCleanupSettingsChange(value: any, settingsProperty: string): void {
+    public onPasteCleanupSettingsChange(value: any): void {
         if (!this.blockEditorObj) {
             console.warn('BlockEditorComponent is not available yet.');
             return;
         }
         if (!isNullOrUndefined(value)) {
             const arrayValue = value.split(',').map((item: string) => item.trim().replace(/^['"]|['"]$/g, ''));
-            this.blockEditorObj.pasteCleanupSettings[settingsProperty] = arrayValue.filter((prop: string) => prop !== '');
+            this.blockEditorObj.pasteCleanupSettings.deniedTags = arrayValue.filter((prop: string) => prop !== '');
             this.blockEditorObj.dataBind();
         }
     }

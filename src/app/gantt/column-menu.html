@@ -3,34 +3,30 @@
 </div>
 
 <div class="control-section">
-    <ejs-gantt id="columnMenu" height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true"
-    [allowFiltering]="true" [allowSorting]="true" [allowResizing]="true" [treeColumnIndex]='1' showColumnMenu=true
-    [splitterSettings]="splitterSettings" [labelSettings]="labelSettings"  [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
-    [highlightWeekends]="true">
+    <ejs-gantt id="columnMenu" height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns" [allowSelection]="true"
+        [allowFiltering]="true" [allowSorting]="true" [allowResizing]="true" [treeColumnIndex]="1" [showColumnMenu]="true"
+        [splitterSettings]="splitterSettings" [labelSettings]="labelSettings" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+        [highlightWeekends]="true">
     </ejs-gantt>
 </div>
 
 <div id="description">
     <p>
-        Gantt has an option to show column menu while clicking multiple icon of each column. The column menu has an integrated option to interact with the features such as sorting, filtering, column chooser, and autoFit.  
+        Gantt has an option to show column menu while clicking the menu icon of each column. The column menu has an integrated option to interact with features such as sorting, filtering, column chooser, and autoFit.
         This feature can be enabled by setting <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#showcolumnmenu">showColumnMenu</a> to true.
-        The default items are,
-        <br>
+        The default menu items are:
     </p>
     <ul>
-            <li><code>SortAscending</code> - Sorts the current column in ascending order.</li>
-            <li><code>SortDescending</code> - Sorts the current column in descending order.</li>
-            <li><code>AutoFit</code> - Auto-fit current column.</li>
-            <li><code>AutoFitAll</code> - Auto-fit all columns.</li>
-            <li><code>ColumnChooser</code> - Chooses the column visibility.</li>
-            <li><code>Filter</code> - Filters the current column.
+        <li><code>SortAscending</code> - Sorts the current column in ascending order.</li>
+        <li><code>SortDescending</code> - Sorts the current column in descending order.</li>
+        <li><code>AutoFit</code> - Auto-fits the current column.</li>
+        <li><code>AutoFitAll</code> - Auto-fits all columns.</li>
+        <li><code>ColumnChooser</code> - Toggles the visibility of columns.</li>
+        <li><code>Filter</code> - Filters the current column.</li>
     </ul>
-    <br/>
     <p>
         In this demo, the column menu feature is enabled by setting <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#showcolumnmenu">showColumnMenu</a> to true with sorting, filtering, column chooser, and autoFit options.
     </p>
-    <p>Injecting Module:</p>
-        <p>Gantt component features are segregated into individual feature-wise modules. To use Column Menu feature, we need to inject <code>ColumnMenuService</code> into the <code>&#64;NgModule.providers</code> section.</p> 
-    <br>
+    <p>Gantt component features are segregated into individual feature-wise modules. To use Column Menu, selection, and markers feature, inject the <code>ColumnMenuService</code>, <code>SelectionService</code>, and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section.</p> 
     <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/columns/column-menu">documentation section</a>.</p>
 </div>

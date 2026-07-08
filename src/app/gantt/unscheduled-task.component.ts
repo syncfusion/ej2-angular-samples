@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { unscheduledData } from './data';
-import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { EditService, GanttComponent, GanttModule, SelectionService, ToolbarService, DayMarkersService } from '@syncfusion/ej2-angular-gantt';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
@@ -10,7 +10,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
   styleUrls: ['unscheduled.component.css'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
-  imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+  providers: [EditService, ToolbarService, SelectionService, DayMarkersService],
+  imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 export class GanttUnscheduledComponent implements OnInit {
   @ViewChild('unscheduleGantt')
@@ -37,15 +38,15 @@ export class GanttUnscheduledComponent implements OnInit {
       allowAdding: true,
       allowEditing: true
     };
-    this.toolbar = [{ text: 'Insert task', tooltipText: 'Insert task at top', id: 'toolbarAdd', prefixIcon: 'e-add-icon tb-icons' }],
-      this.labelSettings = {
+    this.toolbar = [{ text: 'Insert task', tooltipText: 'Insert task at top', id: 'toolbarAdd', prefixIcon: 'e-add-icon tb-icons' }];
+    this.labelSettings = {
         leftLabel: 'TaskName',
         rightLabel: 'TaskType'
       };
     this.columns = [
       { field: 'TaskId', width: 90 },
       { field: 'TaskName', width: 100 },
-      { field: 'StartDate', width: 180 },
+      { field: 'StartDate', width: 120 },
       { field: 'EndDate', width: 120 },
       { field: 'Duration', width: 150 }
     ];
@@ -53,16 +54,16 @@ export class GanttUnscheduledComponent implements OnInit {
       columnIndex: 4
     };
     this.projectStartDate = new Date('12/29/2024');
-    this.projectEndDate = new Date('02/08/2025');
+    this.projectEndDate = new Date('02/14/2025');
   }
-  public toolbarClickAction(args: object): void {
-    var data = {
+  public toolbarClickAction(args: any): void {
+    const newTaskData: { Duration: null; StartDate: null; EndDate: null; TaskType: string } = {
       Duration: null,
       StartDate: null,
       EndDate: null,
       TaskType: ''
     };
-    this.ganttObj.addRecord(data)
+    this.ganttObj.addRecord(newTaskData);
   }
 
 }

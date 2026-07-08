@@ -59,3 +59,34 @@
     border-top-color: #7ab748 !important;
     border-top:  1px solid #3f51b5;
 }
+
+.taskbar-template-content {
+    height: 100%;
+}
+
+.milestone-container {
+    margin-top: 3px;
+    width: 41px !important;
+    height: 41px !important;
+    background-color: #7ab748 !important;
+    border: 0;
+    position: absolute;
+    left: -2px;
+    top: 4px;
+    transform: rotate(45deg);
+}
+
+.milestone-inner {
+    position: absolute;
+    top: 4px;
+}
+
+.milestone-icon {
+    z-index: 1;
+    top: 2.5px;
+    left: -3px;
+    transform: rotate(-45deg);
+    position: absolute;
+    width: 48px;
+    height: 24px;
+}

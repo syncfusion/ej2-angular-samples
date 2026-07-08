@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, EditService, GanttComponent, GanttModule, ResizeService, SelectionService, ToolbarService } from '@syncfusion/ej2-angular-gantt';
 import { dialogData, dataResources } from './data'; // Assuming data is in a separate file
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -11,7 +11,8 @@ import { getUniqueID } from '@syncfusion/ej2-base';
   selector: 'ej2-ganttdialog',
   templateUrl: 'dialog-editing.html',
   standalone: true,
-  imports: [GanttAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
+  providers: [EditService, SelectionService, ToolbarService, DayMarkersService, ResizeService],
+  imports: [GanttModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class GanttDialogComponent implements OnInit {
   public data: object[] = dialogData;
@@ -27,10 +28,9 @@ export class GanttDialogComponent implements OnInit {
   public editDialogFields: object[];
   public splitterSettings: object;
   public timelineSettings: object;
-  public eventMarkers: object[];
   public labelSettings: object;
   public projectStartDate: Date = new Date('03/30/2025');
-  public projectEndDate: Date = new Date('08/07/2025');
+  public projectEndDate: Date = new Date('07/19/2025');
 
   @ViewChild('gantt')
   public ganttObj: GanttComponent;
@@ -182,22 +182,15 @@ export class GanttDialogComponent implements OnInit {
         count: 1
       }
     };
-    this.eventMarkers = [
-      {
-        day: '07/11/2025',
-        cssClass: 'e-custom-event-marker',
-        label: 'Project approval and kick-off'
-      }
-    ];
     this.labelSettings = {
       rightLabel: 'TaskName'
     };
   }
 
   public actionComplete(args: any): void {
-    const comboValue: string = '';
     if (args.requestType === 'openAddDialog' || args.requestType === 'openEditDialog') {
       const tabObj = (document.getElementById('Dialog_Tab') as any).ej2_instances[0];
+      const selectedTab = tabObj.selected;
       tabObj.selected = (selectArgs: any) => {
         if (selectArgs.selectedIndex === 1) {
           const gridObj = (document.getElementById('DialogDependencyTabContainer') as any).ej2_instances[0];
@@ -249,6 +242,9 @@ export class GanttDialogComponent implements OnInit {
             };
             gridObj.refresh();
         };
+        if (selectedTab) {
+          selectedTab.call(tabObj, selectArgs);
+        }
       }
     }
   }

@@ -26,8 +26,8 @@ export class ChatUIDefaultComponent {
 
     public chatMessage: MessageModel[] = chatMessagedata;
     public suggestions: string[] = defaultChatSuggestions;
-    public user1: UserModel = { id: 'user2', user: 'Reena', avatarUrl: './assets/chat-ui/images/reena.png' };
-    public user2: UserModel = { id: 'user1', user: 'Albert', avatarUrl: './assets/chat-ui/images/andrew.png' };
+    public user1: UserModel = { id: 'user2', user: 'Reena', avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/reena.png' };
+    public user2: UserModel = { id: 'user1', user: 'Albert', avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/andrew.png' };
     public headerToolbar1: ToolbarSettingsModel = {
         items: [
             { type: 'Input', template: '<button id="dduser1Menu" style="border: none; background: none !important;"></button>', align: 'Right' }

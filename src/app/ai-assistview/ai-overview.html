@@ -1,0 +1,41 @@
+<div class="control-section">
+    <div class="overview-aiassistview">
+        <div id="aiAssistView" ejs-aiassistview #overviewAIAssistView [enableStreaming]="enableStreaming" [promptSuggestions]="suggestions" [toolbarSettings]="toolbarSettings" [footerToolbarSettings]="footerToolbarSettings" [responseToolbarSettings]="responseToolbarSettings" [enableAttachments]="enableAttachments" [attachmentSettings]="attachmentSettings" [speechToTextSettings]="speechToTextSettings" [bannerTemplate]="bannerTemplate" (promptRequest)="promptRequest($event)"></div>
+    </div>
+    <ng-template #bannerTemplate>
+        <div class="banner-content">
+            <div class="e-icons e-assistview-icon"></div>
+            <h3>Let's get started</h3>
+            <i>Ask anything. Create faster. Work smarter with AI.</i>
+        </div>
+    </ng-template>
+
+    <!-- Chart Template -->
+    <ng-template #responseChartTemplate let-data>
+    <div class="chart-container">
+    <ejs-chart style='display:block;' [chartArea]='chartArea' [width]='width' [primaryXAxis]='primaryXAxis'
+          [primaryYAxis]='primaryYAxis' [legendSettings]='legend' [title]='title' [tooltip]='tooltip' [axes]='axis'>
+          <e-series-collection>
+              <e-series [dataSource]='data.columnData' type='Column' xName='x' yName='y' name='Germany' width=2 [marker]="marker1" > </e-series>
+              <e-series [dataSource]='data.splineData' type='Spline' xName='x' yName='y' name='Japan' width=2 yAxisName="yAxis" [marker]="marker2"> </e-series>
+          </e-series-collection>
+      </ejs-chart>
+      </div>
+    </ng-template>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates an Overview UI that integrates streaming responses, generative UI responses, thinking workflow visualization, file attachments, speech-to-text input, text-to-speech playback and regenerate controls.</p>
+</div>
+<div id="description">
+    <p>The Overview sample composes multiple features from other samples into a single, reusable layout:</p>
+    <ul>
+        <li><code>Generative UI</code> for rendering structured AI responses including text, and tools in a conversational layout.</li>
+        <li><code>Thinking blocks</code> to visualize AI workflow stages such as searching, processing, analyzing, and summarizing in real time.</li>
+        <li><code>Streaming</code> responses rendered in real time using `addPromptResponse`.</li>
+        <li><code>File attachments</code> via the built-in attachment settings.</li>
+        <li><code>Speech-to-text</code> voice input using the browser SpeechRecognition wrapper.</li>
+        <li><code>Text-to-speech</code> playback using the audio controls and synthetic speech.</li>
+        <li><code>Regenerate</code> control to retry AI responses for a selected prompt.</li>
+    </ul>
+</div>

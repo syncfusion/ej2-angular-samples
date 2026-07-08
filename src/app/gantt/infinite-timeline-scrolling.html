@@ -1,0 +1,34 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the infinite timeline scrolling feature in the Gantt Chart,
+        allowing users to navigate across project timelines without fixed date boundaries.
+    </p>
+</div>
+
+<div class="control-section">
+    <ejs-gantt id="InfiniteScroll" #gantt height="650px" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
+        [enableInfiniteTimelineScroll] = "true" [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [treeColumnIndex]="1"
+        [allowSelection]="true" [highlightWeekends]="true" rowHeight="46"
+        [gridLines]="gridLines" [editSettings]="editSettings" 
+        [splitterSettings]="splitterSettings">
+    </ejs-gantt>
+</div>
+
+<div id="description">
+    <p>
+        By enabling the
+        <a target="_blank" rel="noopener noreferrer"
+            href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#enableinfinitetimelinescroll">
+            enableInfiniteTimelineScroll
+        </a> property, the timeline dynamically generates additional date ranges as you scroll horizontally.
+        When the scroll position reaches the edges of the visible timeline, new segments are rendered automatically,
+        ensuring uninterrupted navigation in either direction.
+    </p>
+
+    <p>
+        More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in the 
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/timeline/timeline">
+            timeline
+        </a> documentation section.
+    </p>
+</div>

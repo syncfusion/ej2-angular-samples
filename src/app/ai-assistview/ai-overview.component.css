@@ -1,0 +1,40 @@
+.overview-aiassistview {
+    height: 620px;
+    width: 65vw;
+    margin: 0 auto;
+}
+
+.overview-aiassistview .banner-content .e-assistview-icon:before {
+    font-size: 35px;
+}
+
+.overview-aiassistview .banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 330px;
+    text-align: center;
+}
+
+.overview-aiassistview .banner-content i {
+    font-size: 16px;
+    margin-top: 10px;
+}
+.overview-aiassistview .chart-container {
+    width: fit-content;
+}
+
+.overview-aiassistview .chart-container svg text {
+    fill: rgba(0, 0, 0, 1);
+}
+
+body[class*="highcontrast"] .overview-aiassistview .chart-container svg text,
+body[class*="dark"] .overview-aiassistview .chart-container svg text {
+    fill: white;
+}
+
+@media only screen and (max-width: 750px) {
+    .overview-aiassistview {
+        width: 100%;
+    }
+}

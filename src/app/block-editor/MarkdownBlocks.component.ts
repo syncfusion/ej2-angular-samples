@@ -39,7 +39,7 @@ export class MarkdownBlocksEditor implements OnInit, AfterViewInit {
   @ViewChild('closeBtn', { static: false }) public closeBtn?: ButtonComponent;
   @ViewChild('download') public downloadbtn?: ButtonComponent;
 
-  public width: string = '220px';
+  public width: string = '240px';
   public enableDock: boolean = true;
   public dockSize: string = '33px';
   public mediaQuery: string = '(min-width: 600px)';
@@ -248,7 +248,7 @@ export class MarkdownBlocksEditor implements OnInit, AfterViewInit {
   public onOpen() {
     (this.treeviewInstance).expandAll();
     if (this.closeBtn?.element) {
-      this.closeBtn.element.style.left = '207px';
+      this.closeBtn.element.style.left = '225px';
       this.closeBtn.element.classList.remove('expand-mode');
     }
     if (this.treeviewInstance) {

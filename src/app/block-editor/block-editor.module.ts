@@ -8,6 +8,7 @@ import { BlockEditorEventsComponent } from './events.component';
 import { BlockEditorPasteSettingsComponent } from './pasteSettings.component';
 import { MarkdownBlocksEditor } from "./MarkdownBlocks.component";
 import { TemplateGalleryblock } from "./template-gallery.component";
+import { AskAIAssistantComponent } from './ai-ask-assistant.component';
 
 export const blockEditorAppRoutes: Object[] = [
     { path: ':theme/block-editor/overview', component: BlockEditorOverviewComponent, name: 'Overview', description: 'This demo describes basic and advanced features of the Block Editor control with all its tools and functionalities.', category: 'Block Editor', type: 'update', order: '01', sourceFiles: [
@@ -44,6 +45,12 @@ export const blockEditorAppRoutes: Object[] = [
         {displayName: 'MarkdownBlocks.component.ts', path: './src/block-editor/MarkdownBlocks.component.ts'},
         {displayName: 'MarkdownBlocks.html', path: './src/block-editor/MarkdownBlocks.html'},
         {displayName: 'MarkdownBlocks.component.css', path: './src/block-editor/MarkdownBlocks.component.css'},
+        {displayName: 'blockData.json', path: './src/block-editor/blockData.json'}
+    ] },
+    { path: ':theme/block-editor/ai-ask-assistant', component: AskAIAssistantComponent, name: 'Ask AI Assistant', description: 'Demonstrates an AI AssistView integrated with Block Editor with sidebar navigation and session management for advanced blockeditor workflows.', category: 'Smart AI Solutions', type: 'new', order: '03', sourceFiles: [
+        {displayName: 'ai-ask-assistant.component.ts', path: './src/block-editor/ai-ask-assistant.component.ts'},
+        {displayName: 'ai-ask-assistant.html', path: './src/block-editor/ai-ask-assistant.html'},
+        {displayName: 'ai-ask-assistant.component.css', path: './src/block-editor/ai-ask-assistant.component.css'},
         {displayName: 'blockData.json', path: './src/block-editor/blockData.json'}
     ] }
 ];

@@ -14,16 +14,25 @@
     height: auto !important;
 }
 
-.tabular-layout-switch {
+.switch-container {
+    display: flex;
+    gap: 50px;
+}
+
+.tabular-layout-switch, .repeat-label-switch {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.pivot-layout-switch, #layout-switch {
+.pivot-layout-switch, #layout-switch, .pivot-repeatlabel-switch, #repeatlabel-switch {
     margin-left: 10px;
 }
 
-#layout-label {
+#layout-label, #repeat-label {
     font-size: 20px;
+}
+
+.pivot-switch-label {
+    margin-bottom: 0px;
 }

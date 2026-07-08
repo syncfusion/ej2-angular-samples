@@ -12,13 +12,12 @@
     [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [eventMarkers]="eventMarkers"
     dateFormat="hh:mm a">
     <ng-template #taskbarTemplate let-data>
-      <div innerHtml="{{ customFunction(data) }}" style="height:100%"></div>
+      <div class="taskbar-template-content" [innerHTML]="customFunction(data)"></div>
     </ng-template>
     <ng-template #milestoneTemplate let-data>
-      <div class="e-gantt-milestone" style= "margin-top: 3px; width: 41px; height: 41px; background-color: #7ab748; 
-        border: 0;position: absolute;left: -2px; top: 4px;transform: rotate(45deg);">
-        <div style="position:absolute;top: 4px">
-          <img class="moments" height="24" width="48" style= "z-index: 1; top: 2.5px; left: -3px; transform: rotate(-45deg); position: absolute" alt="Moments svg"/>
+      <div class="e-gantt-milestone milestone-container">
+        <div class="milestone-inner">
+          <img class="moments milestone-icon" alt="Milestone marker"/>
         </div>
       </div>
     </ng-template>
@@ -57,9 +56,8 @@
     is assigned with the ID of a SCRIPT element whose content is used as the template.
   </p>
   <p>
-    Gantt component features are segregated into individual feature-wise modules. To use markers, inject the
-    <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section respectively.
+    Gantt component features are segregated into individual feature-wise modules. To use markers and selection support, inject the
+    <code>DayMarkersService</code> and <code>SelectionService</code> into the <code>&#64;NgModule.providers</code> section.
   </p>
-  <br>
-    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/data-binding#remote-data">documentation section</a>.</p>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/taskbar#customize-taskbar-templates">documentation section</a>.</p>
 </div>

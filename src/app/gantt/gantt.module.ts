@@ -25,6 +25,7 @@ import { GanttBaselineComponent } from './baseline.component';
 import { GanttUnscheduledComponent } from './unscheduled-task.component';
 import { GanttTimelineComponent } from './timeline.component';
 import { GanttZoomingComponent } from './zooming.component';
+import { GanttInfiniteTimelineScrollingComponent } from './infinite-timeline-scrolling.component';
 import { GanttColumnMenuComponent } from './column-menu.component';
 import { ShowHideComponent } from './show-hide-column.component';
 import { ColumnReorderComponent } from './reorder.component';
@@ -53,14 +54,15 @@ import { GanttResourceMultiTaskbarComponent } from './resource-multi-taskbar.com
 import { GanttSplitTasksComponent } from './split-tasks.component';
 import { GanttVirtualScrollComponent } from './virtual-scroll.component';
 import { GanttTimezoneComponent } from './timezone.component';
-import { GanttCriticalPathComponent } from './critical-path.component'
+import { GanttCriticalPathComponent } from './critical-path.component';
 import { GanttLoadingAnimationComponent } from './loading-animation.component';
 import { GanttOverviewComponent } from './overview.component';
 import { GanttLoadOnDemandComponent } from './load-on-demand.component';
 import { GanttUndoRedoComponent } from './undo-redo.component';
-import {GanttWbsViewComponent} from "./wbs-column.component";
-import {GanttConstraintComponent} from "./constraints.component";
-import {GanttFrozenColumnsComponent} from "./frozen-column.component"
+import { GanttWbsViewComponent } from './wbs-column.component';
+import { GanttConstraintComponent } from './constraints.component';
+import { GanttFrozenColumnsComponent } from './frozen-column.component';
+import { GanttBaselineTemplateComponent } from './baseline-template.component';
 export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/overview', component: GanttOverviewComponent,
@@ -96,7 +98,7 @@ export const GanttAppRoutes: Object[] = [
     {
       path: ':theme/gantt/dialog-editing', component: GanttDialogComponent,
         description: 'This demo for Essential JS 2 gantt component shows the loading indicator when gantt loading, refreshing and performing other action.',
-        name: 'Dialog  Editing', order: '02', category: 'Editing'
+        name: 'Dialog Editing', order: '02', category: 'Editing'
     },
 
     {
@@ -151,7 +153,7 @@ export const GanttAppRoutes: Object[] = [
     },
     {
         path: ':theme/gantt/timezone', component: GanttTimezoneComponent,
-		description: 'This demo explains how the Gantt Chart schedules projects in different timezones.',
+        description: 'This demo explains how the Gantt Chart schedules projects in different timezones.',
         name: 'Timezone', order: '04', category: 'Scheduling Concepts'
     },
     {
@@ -177,12 +179,17 @@ export const GanttAppRoutes: Object[] = [
     {
         path: ':theme/gantt/timeline', component: GanttTimelineComponent,
         description: 'This example demonstrates the various timeline mode options and properties available to customize the timeline in Gantt',
-        name: 'Timeline API', order: '05', category: 'Timeline', type: 'update', 
+        name: 'Timeline API', order: '05', category: 'Timeline', 
     },
     {
         path: ':theme/gantt/zooming', component: GanttZoomingComponent,
         description: 'This example demonstrates the zooming support of the Gantt chart timeline and ZoomToFit support of the Gantt chart.',
         name: 'Zooming', order: '05', category: 'Timeline'
+    },
+    {
+        path: ':theme/gantt/infinite-timeline-scrolling', component: GanttInfiniteTimelineScrollingComponent,
+        description: 'This demo demonstrates infinite timeline scrolling, which enables smooth horizontal navigation across timelines without fixed boundaries.',
+        name: 'Infinite Timeline Scrolling', order: '05', type: 'new', category: 'Timeline'
     },
     {
         path: ':theme/gantt/column-template', component: ColumnTemplateComponent ,
@@ -215,14 +222,14 @@ export const GanttAppRoutes: Object[] = [
         name: 'Show or Hide Column', order: '06', category: 'Columns'
     },
     {
-        path:':theme/gantt/wbs-column', component: GanttWbsViewComponent ,
+        path: ':theme/gantt/wbs-column', component: GanttWbsViewComponent,
         description: 'This example demonstrates how to enable and automatically update the WBS (Work Breakdown Structure) column.',
-        name:'WBS Column', order: "06", category:"Columns",
+        name: 'WBS Column', order: '06', category: 'Columns'
     },
     {
-        path:':theme/gantt/frozen-column', component: GanttFrozenColumnsComponent ,
+        path: ':theme/gantt/frozen-column', component: GanttFrozenColumnsComponent,
         description: 'This example demonstrates how to pin columns to the left or right, keeping key fields in view during horizontal scrolling.',
-        name:'Frozen Columns', order: "06", category:'Columns'
+        name: 'Frozen Columns', order: '06', category: 'Columns'
     },
     {
         path: ':theme/gantt/resources', component: GanttResourcesComponent,
@@ -273,6 +280,11 @@ export const GanttAppRoutes: Object[] = [
         path: ':theme/gantt/toolbar-template', component: GanttToolbarTemplateComponent,
         description: 'This demo explains how to render custom toolbar elements in a toolbar, by which any custom operation can be performed in Syncfusion<sup>®</sup> Essential JS2 Gantt.',
         name: 'Toolbar Template', order: '09', category: 'Templates'
+    },
+    {
+        path: ':theme/gantt/baseline-template', component: GanttBaselineTemplateComponent,
+        description: 'This example demonstrates custom baseline rendering using the baselineTemplate property with support for multiple baselines and milestone baselines.',
+        name: 'Baseline Template', order: '09', category: 'Templates', type: 'new'
     },
     {
       path: ':theme/gantt/filtering', component: GanttFilteringComponent,

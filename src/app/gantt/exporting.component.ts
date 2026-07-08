@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { editingData, editingResources } from './data';
 import { ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
-import { GanttComponent, PdfExportProperties, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, PdfExportProperties, GanttModule, PdfExportService, ExcelExportService, ToolbarService, DayMarkersService, SelectionService } from '@syncfusion/ej2-angular-gantt';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SwitchAllModule } from '@syncfusion/ej2-angular-buttons';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -9,10 +9,11 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttexporting',
     templateUrl: 'exporting.html',
-    styleUrls: ['reasource-multi-taskbar.component.css'],
+    styleUrls: ['resource-multi-taskbar.component.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [SBActionDescriptionComponent, SwitchAllModule, GanttAllModule, SBDescriptionComponent]
+    providers: [PdfExportService, ExcelExportService, ToolbarService, DayMarkersService, SelectionService],
+    imports: [SBActionDescriptionComponent, SwitchAllModule, GanttModule, SBDescriptionComponent]
 })
 export class GanttExportingComponent implements OnInit {
     @ViewChild('ganttExcel')
@@ -40,7 +41,7 @@ export class GanttExportingComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            parentID: 'ParentId',
+            parentID: 'ParentID',
             resourceInfo: 'resources'
         };
         this.resourceFields = {
@@ -74,7 +75,6 @@ export class GanttExportingComponent implements OnInit {
         ];
     }
     toolbarClick(args?: ClickEventArgs): void {
-        debugger;
         if (args.item.id === 'GanttExport_excelexport') {
             this.ganttObj.excelExport();
         }

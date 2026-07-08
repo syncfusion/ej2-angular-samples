@@ -6,7 +6,7 @@ import { createElement } from '@syncfusion/ej2-base';
 import { RichTextEditorComponent, ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, TableService, ClipBoardCleanupService, AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
 import { DropDownListComponent, FieldSettingsModel, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { FloatLabelType } from '@syncfusion/ej2-angular-inputs';
-const CodeMirror = require('codemirror');
+import CodeMirror from 'codemirror';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import 'codemirror/mode/javascript/javascript';

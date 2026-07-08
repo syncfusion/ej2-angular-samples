@@ -1,0 +1,41 @@
+<div class="control-section">
+  <ejs-schedule #scheduleObj width="100%" height="650px" [selectedDate]="selectedDate" [eventSettings]="eventSettings" (eventRendered)="onEventRendered($event)" cssClass="action-event-buttons">
+    <e-views>
+      <e-view option="Day" [eventTemplate]="eventTemplate"></e-view>
+      <e-view option="Week" [eventTemplate]="eventTemplate"></e-view>
+    </e-views>
+  </ejs-schedule>
+</div>
+
+<ng-template #eventTemplate let-data>
+  <div class="custom-event">
+    <div class="event-subject">
+      <span class="event-title">{{data.Subject}}</span>
+    </div>
+    <div class="event-actions">
+      <button class="icon-btn" (click)="editEvent(data); $event.stopPropagation();">
+        <span class="e-icons e-edit"></span>
+      </button>
+      <button class="icon-btn" (click)="deleteEvent(data); $event.stopPropagation();">
+        <span class="e-icons e-trash"></span>
+      </button>
+    </div>
+  </div>
+  <div class="event-time">Time: {{getTimeString(data.StartTime)}} - {{getTimeString(data.EndTime)}}</div>
+</ng-template>
+
+<div id="action-description">
+  <p>
+    This demo showcases the event action buttons for editing and deleting events in day and week views. Click the edit or delete icons to manage your events.
+  </p>
+</div>
+
+<div id="description">
+  <p>
+    In this demo, we have implemented custom event templates with action buttons for each event displayed in the Scheduler. These action buttons allow users to edit or delete events directly from the event cells. When the Edit button is clicked, the event editor is opened using the <code>openEditor</code> method. When the Delete button is clicked, the selected event is removed using the <code>deleteEvent</code> method.
+  </p>
+  <p>
+    Looking for the full Angular Scheduler component overview, features, pricing, and documentation? Visit our <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-scheduler">Angular Scheduler</a> component page.
+  </p>
+</div>
+

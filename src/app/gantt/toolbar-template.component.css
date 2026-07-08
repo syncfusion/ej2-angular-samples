@@ -1,37 +1,42 @@
 #ToolbarTemplate .e-quickfilter::before {
-        content: '\e7ee';
+    content: '\e7ee';
+    font-family: e-icons;
 }
 .fabric #ToolbarTemplate .e-quickfilter::before,
 .fabric-dark #ToolbarTemplate .e-quickfilter::before,
 .highcontrast #ToolbarTemplate .e-quickfilter::before {
-        content: '\e21c';
+    content: '\e21c';
+    font-family: e-icons;
 }
 .bootstrap #ToolbarTemplate .e-quickfilter::before,
 .bootstrap-dark #ToolbarTemplate .e-quickfilter::before {
-        content: '\e946';
+    content: '\e946';
+    font-family: e-icons;
 }
 .bootstrap4 #ToolbarTemplate .e-quickfilter::before {
-        content: '\e714';
+    content: '\e714';
+    font-family: e-icons;
 }
 .tailwind #ToolbarTemplate .e-quickfilter::before,
 .tailwind-dark #ToolbarTemplate .e-quickfilter::before {
     content: '\e71b';
-    font-family: 'e-icons';
+    font-family: e-icons;
 }
 .bootstrap5 #ToolbarTemplate .e-quickfilter::before,
 .bootstrap5-dark #ToolbarTemplate .e-quickfilter::before,
-.fluent #ToolbarTemplate .e-quickfilter::before,.fluent2 #ToolbarTemplate .e-quickfilter::before,
-.fluent2-highcontrast #ToolbarTemplate .e-quickfilter::before,.fluent2-dark #ToolbarTemplate .e-quickfilter::before,
+.fluent #ToolbarTemplate .e-quickfilter::before,
 .fluent-dark #ToolbarTemplate .e-quickfilter::before,
-.tailwind #ToolbarTemplate  .e-quickfilter::before, .tailwind-dark #ToolbarTemplate .e-quickfilter::before,
+.fluent2 #ToolbarTemplate .e-quickfilter::before,
+.fluent2-highcontrast #ToolbarTemplate .e-quickfilter::before,
+.fluent2-dark #ToolbarTemplate .e-quickfilter::before,
 .bootstrap5\.3 #ToolbarTemplate .e-quickfilter::before,
 .bootstrap5\.3-dark-lite #ToolbarTemplate .e-quickfilter::before,
-.bootstrap5\.3-dark #ToolbarTemplate .e-quickfilter::before, 
+.bootstrap5\.3-dark #ToolbarTemplate .e-quickfilter::before,
 .bootstrap5\.3-lite #ToolbarTemplate .e-quickfilter::before,
-.tailwind3 #ToolbarTemplate  .e-quickfilter::before,
+.tailwind3 #ToolbarTemplate .e-quickfilter::before,
 .tailwind3-dark #ToolbarTemplate .e-quickfilter::before,
 .material3-dark #ToolbarTemplate .e-quickfilter::before,
 .material3 #ToolbarTemplate .e-quickfilter::before {
     content: '\e7f7';
-    font-family: 'e-icons';
+    font-family: e-icons;
 }

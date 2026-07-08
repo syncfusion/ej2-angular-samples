@@ -1,0 +1,54 @@
+<div class="control-section gemini-clone">
+  <div class="gemini-aiassist" [ngClass]="containerClass" id="geminiContainer">
+    <div id="gemini_aiassistview" ejs-aiassistview 
+      #geminiAIAssistViewRef
+      (promptRequest)="promptRequest($event)"
+      (promptChanged)="toggleButtons()"
+      [showHeader]="showHeader"
+      [promptPlaceholder]="promptPlaceholder"
+      [enableAttachments]="enableAttachments"
+      [speechToTextSettings]="speechToTextSettings"
+      [bannerTemplate]="bannerTemplate"
+      [attachmentSettings]="attachmentSettings"
+      [footerToolbarSettings]="footerToolbarSettings"
+      (created)="created()">
+    </div>
+    <ng-template #bannerTemplate>
+      <div class="banner-content">
+        <div class="gemini-header">
+          <h3>Meet Gemini, your personal AI assistant</h3>
+        </div>
+      </div>
+    </ng-template>
+
+    <div id="buttonsContainer" class="gemini-buttons-container">
+      <button ejs-button id="imgBtn" iconCss="e-icons e-image">Create image</button>
+      <button ejs-button id="iplBtn" iconCss="e-icons e-callout">Follow IPL</button>
+      <button ejs-button id="musicBtn" iconCss="e-icons e-play">Create Music</button>
+      <button ejs-button id="writeBtn">Write anything</button>
+    </div>
+  </div>
+</div>
+
+<div id="action-description">
+  <p>This sample demonstrates a Gemini-inspired AI AssistView that provides a focused conversational experience with attachment support, simulated AI responses, and a configurable AI model selector embedded within the chat footer.</p>
+</div>
+<div id="description">
+  <p>
+    The AI AssistView in this sample showcases how a branded, lightweight assistant interface can be
+    created using Syncfusion's <code>AIAssistView</code> control while offering essential interaction
+    features and UI customization options:
+  </p>
+  <ul>
+    <li>Minimal header-less chat layout for distraction-free conversations.</li>
+    <li>Custom banner template displaying branded assistant visuals and contextual messaging.</li>
+    <li>Simulated AI response handling using the <code>promptRequest</code> callback.</li>
+    <li>File attachment support with configurable save and remove endpoints.</li>
+    <li>Footer toolbar customization with attachment actions and a model selector.</li>
+    <li>Speech-to-text input for hands-free interaction.</li>
+    <li>Dropdown-based AI model switching (Fast, Thinking, Pro).</li>
+  </ul>
+  <p>
+    This example serves as a foundation for integrating real LLM services and building branded conversational interfaces with modular UI controls.
+  </p>
+</div>

@@ -38,36 +38,3 @@
         [gridSettings]='gridSettings' (dataBound)='ondataBound($event)' [virtualScrollSettings]='virtualScrollSettings'>
     </ejs-pivotview>
 </div>
-<style>
-    .image {
-       position: absolute;
-       background-repeat: no-repeat;
-       background-image: url('src/grid/images/spinner.gif');
-       background-position: center;
-       width: 16px;
-       height: 28px;
-   }
-
-   .e-bigger .image {
-       height: 36px;
-   }
-   
-   #popup {
-       position: absolute;
-       background-color: transparent;
-       display: none;
-       z-index: 100;
-   }
-   .div-button{
-       margin: 5px 5px 5px 0;
-   }
-   #performanceTime {
-       float: right;
-       margin-top: 3px;
-       margin-right: 27px;
-   }
-
-   .e-bigger #performanceTime{
-       margin-top: 8px;
-   }
-</style>

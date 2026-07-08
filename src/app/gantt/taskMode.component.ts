@@ -1,13 +1,14 @@
 import { Component, OnInit} from '@angular/core';
 import { taskModeData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, EditService, GanttModule, SelectionService, ToolbarService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
-    selector: 'ej2-ganttresources',
+    selector: 'ej2-gantttaskmode',
     templateUrl: 'taskMode.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+    providers: [SelectionService, DayMarkersService, EditService, ToolbarService],
+    imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 
 export class GanttTaskModeComponent implements OnInit {
@@ -18,7 +19,6 @@ export class GanttTaskModeComponent implements OnInit {
     public splitterSettings: object;
     public editSettings: object;
     public toolbar: string[];
-    public resourceFields: object ;
     public projectStartDate: Date;
     public projectEndDate: Date;
     public ngOnInit(): void {
@@ -34,10 +34,10 @@ export class GanttTaskModeComponent implements OnInit {
             child: 'Children',
             manual: 'isManual'
         };
-        this.columns =  [
-			{ field: 'TaskID', visible: false },
-            { field: 'TaskName', headerText: 'Task Name' },
-            { field: 'isManual', headerText: 'Task Mode' }
+        this.columns = [
+            { field: 'TaskID', visible: false },
+            { field: 'TaskName', headerText: 'Task Name', width: 130},
+            { field: 'isManual', headerText: 'Task Mode', width: 120 }
         ];
         this.editSettings = {
             allowAdding: true,
@@ -48,12 +48,12 @@ export class GanttTaskModeComponent implements OnInit {
         };
         this.toolbar = ['Add', 'Edit', 'Update', 'Delete', 'Cancel', 'ExpandAll', 'CollapseAll'];
         this.splitterSettings = {
-            position: "35%"
-        }
+            columnIndex: 2
+        };
         this.labelSettings = {
             leftLabel: 'TaskName'
         };
-        this.projectStartDate= new Date('02/20/2025');
-        this.projectEndDate= new Date('03/30/2025');
+        this.projectStartDate = new Date('02/20/2025');
+        this.projectEndDate = new Date('03/30/2025');
     }
 }

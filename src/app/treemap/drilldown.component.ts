@@ -37,12 +37,6 @@ export class TreemapDrillDownComponent {
             args.treemap.levels[2].showHeader = false;
         }
     }
-    tooltipRendering = (args: ITreeMapTooltipRenderEventArgs) => {
-        //tslint:disable-next-line
-        if (args.item['groupIndex'] !== 2 ) {
-            args.cancel = true;
-        }
-    }
         public palette: string[] = ['#9999ff', '#CCFF99', '#FFFF99', '#FF9999', '#FF99FF', '#FFCC66'];
         public titleSettings: object = {
             text: 'List of countries by population',

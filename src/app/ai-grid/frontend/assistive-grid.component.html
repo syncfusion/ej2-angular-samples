@@ -28,7 +28,7 @@
                         <e-column field="ProductName" headerText="Product" width="208" textAlign="Left">
                             <ng-template #template let-data>
                                 <div class="product-items">
-                                    <img class="rounded" [src]="'../assets/ai-grid/sales-transactions-table/' + data.ProductImage"
+                                    <img class="rounded" [src]="'./assets/ai-grid/sales-transactions-table/' + data.ProductImage"
                                         width="40" height="40" alt="product image" />
                                     <p>{{data.ProductName}}</p>
                                 </div>

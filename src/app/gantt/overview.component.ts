@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { GanttComponent, PdfExportProperties, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, PdfExportProperties, GanttModule, DayMarkersService, SelectionService, ToolbarService, PdfExportService, ExcelExportService, SortService, FilterService, ResizeService, ColumnMenuService } from '@syncfusion/ej2-angular-gantt';
 import { overviewData, editingResources } from './data';
-import { DropDownList } from '@syncfusion/ej2-angular-dropdowns';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { NgIf } from '@angular/common';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -22,7 +21,8 @@ import { PdfColor } from "@syncfusion/ej2-pdf-export";
   templateUrl: 'overview.html',
   encapsulation: ViewEncapsulation.None,
   standalone: true,
-  imports: [SBActionDescriptionComponent, GanttAllModule, NgIf, SBDescriptionComponent, ButtonModule, SidebarAllModule, SliderAllModule, MultiSelectAllModule, DropDownListAllModule, SwitchAllModule, NumericTextBoxAllModule]
+  providers: [DayMarkersService, SelectionService, ToolbarService, PdfExportService, ExcelExportService, SortService, FilterService, ResizeService, ColumnMenuService],
+  imports: [SBActionDescriptionComponent, GanttModule, NgIf, SBDescriptionComponent, ButtonModule, SidebarAllModule, SliderAllModule, MultiSelectAllModule, DropDownListAllModule, SwitchAllModule, NumericTextBoxAllModule]
 })
 
 export class GanttOverviewComponent implements OnInit {
@@ -43,7 +43,7 @@ export class GanttOverviewComponent implements OnInit {
   public projectEndDate: Date;
   public theme: any;
   public style: any;
-  public CurrentTheme: any;
+  public currentTheme: any;
   public statusStyleColor: any;
   public priorityStyle: any;
   public iconClass: any;
@@ -94,27 +94,28 @@ export class GanttOverviewComponent implements OnInit {
       constraintType: 'ConstraintType',
       constraintDate: 'ConstraintDate',
       dependency: 'Predecessor',
-      parentID: 'ParentId',
+      parentID: 'ParentID',
       resourceInfo: 'resource'
     };
     this.resourceFields = {
       id: 'resourceId',
       name: 'resourceName'
     };
-    this.toolbar = ['ExpandAll', 'CollapseAll', 'ZoomIn', 'ZoomOut', 'ZoomToFit', 'ExcelExport', 'CsvExport', 'PdfExport'],
-      this.timelineSettings = {
-        showTooltip: true,
-        topTier: {
-          unit: 'Month',
-          format: 'MMM yyyy'
-        },
-        bottomTier: {
-          unit: 'Day',
-          count: 4,
-          format: 'dd'
-        }
+    this.toolbar = ['ExpandAll', 'CollapseAll', 'ZoomIn', 'ZoomOut', 'ZoomToFit', 'ExcelExport', 'CsvExport', 'PdfExport'];
+    this.timelineSettings = {
+      timelineUnitSize: 60,
+      showTooltip: true,
+      topTier: {
+        unit: 'Month',
+        format: 'MMM yyyy'
       },
-      this.gridLines = 'Both';
+      bottomTier: {
+        unit: 'Day',
+        count: 4,
+        format: 'dd'
+      }
+    };
+    this.gridLines = 'Both';
     this.labelSettings = {
       rightLabel: 'Assignee',
       taskLabel: '${Progress}%'
@@ -143,21 +144,21 @@ export class GanttOverviewComponent implements OnInit {
     ];
     this.holidays = [
       {
-            from: new Date("01/01/2025"),
-            to: new Date("01/01/2025"),
-            label: "New Year holiday",
-            cssClass: "e-custom-holiday"
-        },
-        {
-            from: new Date("12/25/2024"),
-            to: new Date("12/26/2024"),
-            label: "Christmas holidays",
-            cssClass: "e-custom-holiday"
-        }
-  ],
-      this.resources = editingResources;
+        from: new Date("01/01/2025"),
+        to: new Date("01/01/2025"),
+        label: "New Year holiday",
+        cssClass: "e-custom-holiday"
+      },
+      {
+        from: new Date("12/25/2024"),
+        to: new Date("12/26/2024"),
+        label: "Christmas holidays",
+        cssClass: "e-custom-holiday"
+      }
+    ];
+    this.resources = editingResources;
     this.splitterSettings = {
-      columnIndex: 4,
+      columnIndex: 4
     };
     this.projectStartDate = new Date('01/25/2025');
     this.projectEndDate = new Date('01/30/2026');
@@ -165,98 +166,98 @@ export class GanttOverviewComponent implements OnInit {
   load(): void {
     let themeCollection: any = ['bootstrap5', 'bootstrap', 'bootstrap4', 'fluent', 'fabric', 'fusionnew', 'material3', 'material', 'highcontrast', 'tailwind', 'fluent2', 'tailwind3', 'bootstrap5.3'];
     let theme = document.body.className.split(' ').find(function(cls) { return themeCollection.includes(cls); }) || '';
-    this.CurrentTheme = theme ? true : false;
-  };
+    this.currentTheme = theme ? true : false;
+  }
 
   Status(status: any) {
     switch (status) {
       case 'In Progress':
-        this.statusStyleColor = this.CurrentTheme ? '#006AA6' : '#34B6FF';
+        this.statusStyleColor = this.currentTheme ? '#006AA6' : '#34B6FF';
         this.style = `display: flex; padding: 2px 10px; gap: 10px; width: 96px; height: 24px; border: solid 1px ${this.statusStyleColor}`;
         break;
       case 'Open':
         this.style = 'display: flex; justify-content: center; gap: 10px; width: 96px; height: 24px; border: solid 1px red';
         break;
       case 'On Hold':
-        this.statusStyleColor = this.CurrentTheme ? '#766B7C' : '#CDCBD7';
+        this.statusStyleColor = this.currentTheme ? '#766B7C' : '#CDCBD7';
         this.style = `display: flex; justify-content: center; gap: 10px; width: 96px; height: 24px; border: solid 1px ${this.statusStyleColor}`;
         break;
       case 'Completed':
-        this.statusStyleColor = this.CurrentTheme ? '#00A653' : '#92FFC8';
+        this.statusStyleColor = this.currentTheme ? '#00A653' : '#92FFC8';
         this.style = `display: flex; padding: 2px 10px; gap: 10px; width: 96px; height: 24px; border: solid 1px ${this.statusStyleColor}`;
         break;
     }
     return this.style;
-  };
+  }
 
   StatusContent(status: any) {
-   switch (status) {
+    switch (status) {
       case 'In Progress':
-        this.statusContentstyleColor = this.CurrentTheme ? 'rgb(0, 106, 166)' : 'rgb(52, 182, 255)';
+        this.statusContentstyleColor = this.currentTheme ? 'rgb(0, 106, 166)' : 'rgb(52, 182, 255)';
         this.style = `width: 72px; height: 22px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 20px; text-align: center; color: ${this.statusContentstyleColor}`;
         break;
       case 'Open':
         this.style = 'width: 54px; height: 22px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 22px; text-align: center; color: rgb(255,0,0)';
         break;
       case 'On Hold':
-        this.statusContentstyleColor = this.CurrentTheme ? 'rgb(118, 107, 124)' : 'rgb(205, 203, 215)';
+        this.statusContentstyleColor = this.currentTheme ? 'rgb(118, 107, 124)' : 'rgb(205, 203, 215)';
         this.style = `width: 54px; height: 22px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 22px; text-align: center; color: ${this.statusContentstyleColor}`;
         break;
       case 'Completed':
-        this.statusContentstyleColor = this.CurrentTheme ? 'rgb(0, 166, 83)' : 'rgba(146, 255, 200)';
+        this.statusContentstyleColor = this.currentTheme ? 'rgb(0, 166, 83)' : 'rgba(146, 255, 200)';
         this.style = `width: 74px; height: 22px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 20px; text-align: center; color: ${this.statusContentstyleColor}`;
         break;
       case 'High':
-        this.statusContentstyleColor = this.CurrentTheme ? 'rgb(243, 86, 32)' : 'rgb(255, 181, 184)';
+        this.statusContentstyleColor = this.currentTheme ? 'rgb(243, 86, 32)' : 'rgb(255, 181, 184)';
         this.style = `width: 31px; height: 22px; font-style: normal; font-weight: 400; font-size: 14px; line-height: 20px; text-align: center; color: ${this.statusContentstyleColor}`;
         break;
     }
     return this.style;
-  };
+  }
 
   PriorityIconStyle(priority: any) {
-   switch (priority) {
+    switch (priority) {
       case 'Low':
-        this.priorityStyle = this.CurrentTheme ? '#00A653' : '#FDFF88';
+        this.priorityStyle = this.currentTheme ? '#00A653' : '#FDFF88';
         this.style = `margin-top: 3px; color: ${this.priorityStyle} !important`;
         break;
       case 'Normal':
-        this.priorityStyle = this.CurrentTheme ? '#7100A6' : '#E3A9FF';
+        this.priorityStyle = this.currentTheme ? '#7100A6' : '#E3A9FF';
         this.style = `margin-top: 3px; color: ${this.priorityStyle} !important`;
         break;
       case 'Critical':
-        this.priorityStyle = this.CurrentTheme ? '#FF3740' : '#FFB5B8';
+        this.priorityStyle = this.currentTheme ? '#FF3740' : '#FFB5B8';
         this.style = `margin-top: 3px; color: ${this.priorityStyle} !important`;
         break;
       case 'High':
-        this.priorityStyle = this.CurrentTheme ? '#f35620' : '#FFB5B8';
+        this.priorityStyle = this.currentTheme ? '#f35620' : '#FFB5B8';
         this.style = `margin-top: 3px; color: ${this.priorityStyle} !important`;
         break;
     }
     return this.style;
-  };
+  }
 
   PriorityContent(priority: any) {
     switch (priority) {
       case 'Low':
-        this.priorityContentStyle = this.CurrentTheme ? 'rgb(0, 166, 83)' : 'rgb(253, 255, 136)';
+        this.priorityContentStyle = this.currentTheme ? 'rgb(0, 166, 83)' : 'rgb(253, 255, 136)';
         this.style = `width: 28px; height: 22px; font-style: normal; font-size: 14px; margin-left: 3px; line-height: 20px; text-align: center; color: ${this.priorityContentStyle}`;
         break;
       case 'Normal':
-        this.priorityContentStyle = this.CurrentTheme ? 'rgb(113, 0, 166)' : 'rgb(227, 169, 255)';
+        this.priorityContentStyle = this.currentTheme ? 'rgb(113, 0, 166)' : 'rgb(227, 169, 255)';
         this.style = `width: 28px; height: 22px; font-style: normal; margin-left: 3px; font-size: 14px; line-height: 20px; text-align: center; color: ${this.priorityContentStyle}`;
         break;
       case 'Critical':
-        this.priorityContentStyle = this.CurrentTheme ? 'rgb(255, 55, 64)' : 'rgb(255, 181, 184)';
+        this.priorityContentStyle = this.currentTheme ? 'rgb(255, 55, 64)' : 'rgb(255, 181, 184)';
         this.style = `width: 48px; height: 22px; font-style: normal; font-size: 14px; margin-left: 3px; line-height: 20px; text-align: center; color: ${this.priorityContentStyle}`;
         break;
       case 'High':
-        this.priorityContentStyle = this.CurrentTheme ? 'rgb(235, 99, 67)' : 'rgb(255, 181, 184)';
+        this.priorityContentStyle = this.currentTheme ? 'rgb(235, 99, 67)' : 'rgb(255, 181, 184)';
         this.style = `width: 31px; height: 22px; font-style: normal; font-size: 14px; margin-left: 3px; line-height: 20px; text-align: center; color: ${this.priorityContentStyle}`;
         break;
     }
     return this.style;
-  };
+  }
 
   PriorityIcon(priority: any) {
     switch (priority) {
@@ -337,7 +338,7 @@ export class GanttOverviewComponent implements OnInit {
   }
 
   dependencyChange(args: any) {
-    var ganttDependencyViewContainer = document.querySelector('.e-gantt-dependency-view-container');
+    const ganttDependencyViewContainer = document.querySelector('.e-gantt-dependency-view-container');
     if (args.checked) {
       if (ganttDependencyViewContainer) {
         (ganttDependencyViewContainer as HTMLElement).style.visibility = 'visible';
@@ -410,10 +411,10 @@ export class GanttOverviewComponent implements OnInit {
   ];
   public modeFields: any = { value: 'ID', text: 'Text' };
   modeChange(args: any) {
-    if (args.value == 'Grid') {
+    if (args.value === 'Grid') {
       this.gantt.setSplitterPosition('100%', 'position');
     }
-    else if (args.value == 'Chart') {
+    else if (args.value === 'Chart') {
       this.gantt.setSplitterPosition('0%', 'position');
     }
     else {
@@ -436,10 +437,10 @@ export class GanttOverviewComponent implements OnInit {
         }   
     }
   };
-  pdfQueryTaskbarInfo(args:any):void{
-    if(this.gantt.labelSettings.rightLabel && args.data.taskData.resourcesImage){
-      args.labelSettings.rightLabel.image= [{base64: args.data.taskData.resourcesImage, height: 25, width: 25}];
-      args.labelSettings.rightLabel.value=args.data.ganttProperties.resourceNames;
-  };
-}
+  pdfQueryTaskbarInfo(args: any): void {
+    if (this.gantt.labelSettings.rightLabel && args.data.taskData.resourcesImage) {
+      args.labelSettings.rightLabel.image = [{ base64: args.data.taskData.resourcesImage, height: 25, width: 25 }];
+      args.labelSettings.rightLabel.value = args.data.ganttProperties.resourceNames;
+    }
+  }
 }

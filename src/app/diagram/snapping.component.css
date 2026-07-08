@@ -1,6 +1,11 @@
 body{
     /* background: #e3e3e3; */
     }
+
+    .property-panel-header {
+        padding-left: 10px;
+    }
+
     .header_text{
         color: rgb(9, 9, 9);
         font-weight: bold;
@@ -9,44 +14,43 @@ body{
         margin-left: 5px;
         margin-top: 5px;
     }
-    .db-diagram-container {
-    width:calc(100% - 300px);
-    height: 100%;
-    float: left;
+
+    .content-wrapper {
+        border: 1px solid #D7D7D7;
     }
+
     .db-prop-row {
-    margin-top: 6px;
+        margin-top: 6px;
     }
+
     .db-col-left {
-    padding-left: 10px;
-    padding-right: 3px;
+        padding-left: 10px;
+        padding-right: 3px;
     }
 
     .db-prop-text-style {
-    font-size: 13px;
-    font-weight: normal;
-    font-family: 'Calibri';
-    margin-top: 25px;
+        font-size: 13px;
+        font-weight: normal;
+        font-family: 'Calibri';
+        margin-top: 25px;
     }
+
     .radio-text-style{
-    font-size: 13px;
-    font-weight: normal;
-    font-family: 'Calibri';
-    margin-top: 10px;
+        font-size: 13px;
+        font-weight: normal;
+        font-family: 'Calibri';
+        margin-top: 10px;
     }
+
     .text-content{
         margin-left: 10px;
     }
+
     .db-check-input{
         float: right;
         margin-right: 180px;
     }
+
     .db-text-input{
         height: 25px!important;
-    }
-    #properties_Container{
-    width: 300px;
-    float: left;
-    height: 600px;
-    margin-top: 30px;   
     }

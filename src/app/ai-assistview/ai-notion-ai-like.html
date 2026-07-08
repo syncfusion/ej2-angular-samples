@@ -1,0 +1,132 @@
+<div class="control-section">
+  <div class="notion-like-ui e-card">
+    <div class="notes-app-container">
+      <div class="notes-page">
+        <header class="notes-header">
+          <span class="page-icon">📘</span>
+          <h1 class="page-title">Product Planning Notes</h1>
+        </header>
+
+        <section class="notes-content">
+          <h3>Project: Website Revamp</h3>
+
+          <h4>Objectives</h4>
+          <ul>
+            <li>Improve page load performance</li>
+            <li>Simplify navigation for end users</li>
+            <li>Optimize mobile experience</li>
+            <li>Increase accessibility compliance</li>
+          </ul>
+
+          <h4>Discussion Points</h4>
+          <ul>
+            <li>Dashboard load time is slow on mobile devices</li>
+            <li>Export and reporting options are difficult to locate</li>
+            <li>Accessibility audit flagged missing ARIA labels</li>
+          </ul>
+
+          <h4>Ideas</h4>
+          <ul>
+            <li>Introduce lazy loading for charts and grids</li>
+            <li>Move advanced filters into a secondary panel</li>
+            <li>Add keyboard navigation and screen reader support</li>
+          </ul>
+        </section>
+
+        <footer class="notes-footer">
+          <span class="hint-icon">✨</span>
+          <span class="hint-text">
+            Use AI Assist to summarize notes, generate tasks, or get insights.
+          </span>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Dialog container -->
+    <ejs-dialog
+      #dialogRef
+      id="dialogElem"
+      [target]="'.notes-page'"
+      [position]="{ X: 'right', Y: 0 }"
+      [animationSettings]="{ effect: 'FadeZoom' }"
+      [width]="'500px'"
+      [visible]="false"
+      [cssClass]="'custom-dialog'">
+      <div id="assistviewWrapper" class="notion-aiassistview">
+        <div id="aiAssistView" ejs-aiassistview 
+          #aiAssistViewRef
+          [promptSuggestions]="promptSuggestions"
+          [promptSuggestionItemTemplate]="promptTemplate"
+          (promptRequest)="onPromptRequest($event)"
+          [bannerTemplate]="bannerTemplate"
+          (created)="created()"
+          [toolbarSettings]="toolbarSettings"
+          [footerToolbarSettings]="footerToolbarSettings"
+          [responseToolbarSettings]="responseToolbarSettings"
+          [enableAttachments]="enableAttachments"
+          [attachmentSettings]="attachmentSettings"
+          [speechToTextSettings]="speechToTextSettings"
+          [enableStreaming]="true">
+          <e-views>
+            <e-view type="Assist" name="New AI chat"></e-view>
+          </e-views>
+        </div>
+      </div>
+    </ejs-dialog>
+
+    <ng-template #bannerTemplate>
+      <div class="banner-content">
+        <div class="e-icons e-assistview-icon"></div>
+        <h3>How can I help you today ?</h3>
+      </div>
+    </ng-template>
+
+    <ng-template #promptTemplate let-data>
+      <div class="suggestion-item active">
+        <span class="{{ iconMapByIndex[data.index] }} suggestion-icon"></span>
+        <span class="assist-suggestion-content">
+          {{ data.promptSuggestion }}
+        </span>
+      </div>
+    </ng-template>
+
+    <!-- Sidebar container -->
+    <div id="notionSidebar"></div>
+
+    <!-- Fullscreen container -->
+    <div id="fullscreenContainer"></div>
+
+    <!-- FAB button -->
+    <button ejs-fab
+      #fabRef
+      id="fabElem"
+      [iconCss]="'e-icons e-magic-wand'"
+      [target]="'.notes-page'"
+      (click)="onFabClick()"
+      [style.display]="'none'">
+    </button>
+
+    <!-- Toast target -->
+    <div id="toastTarget"></div>
+  </div>
+</div>
+
+<div id="action-description">
+  <p>This sample demonstrates a configurable AI AssistView that supports multiple chat display modes, model selection, chat history management, file attachments, and voice-based input and output interactions.</p>
+</div>
+<div id="description">
+  <p>
+    The AI AssistView sample showcases how an interactive assistant experience can be embedded and managed
+    within different UI layouts while offering rich user controls and session persistence:
+  </p>
+  <ul>
+    <li>Floating, sidebar, and full-screen chat modes with seamless view switching.</li>
+    <li>Prompt suggestions rendered using a custom item template with contextual icons.</li>
+    <li>Multiple AI model selection via a dropdown, with dynamic icon updates.</li>
+    <li>Chat session creation, persistence, and history navigation.</li>
+    <li>File upload and removal support using configured attachment endpoints.</li>
+    <li>Speech-to-text input and text-to-speech playback for hands-free interaction.</li>
+    <li>Toolbar actions for starting new chats, sharing conversations, hiding the assistant, and resizing views.</li>
+    <li>Floating action button (FAB) to restore the assistant when hidden.</li>
+  </ul>
+</div>

@@ -94,6 +94,7 @@
             "SampleVar": "Stichprobenvarianz",
             "PopulationVar": "Bevölkerungsvarianz",
             "RunningTotals": "Laufende Summen",
+            "PercentageOfRunningTotals": "% der laufenden Summen",
             "Max": "Max",
             "Index": "Index",
             "SampleStDev": "Stichproben StDev",
@@ -287,7 +288,10 @@
             "subTotalPosition": "Zwischensumme Position",
             "auto": "Auto",
             "loading": "Wird geladen...",
-            "add": "Hinzufügen"
+            "add": "Hinzufügen",
+            "Top": "Spitze",
+            "Bottom": "Unterseite",
+            "addCurrentSelection": "Füge die aktuelle Auswahl dem Filter hinzu."
         },
         "pivotfieldlist": {
             "staticFieldList": "Pivot-Feldliste",
@@ -380,6 +384,7 @@
             "SampleVar": "Probenvar",
             "PopulationVar": "Bevölkerung Var",
             "RunningTotals": "Laufende Summen",
+            "PercentageOfRunningTotals": "% der laufenden Summen",
             "DifferenceFrom": "Unterschied von",
             "PercentageOfDifferenceFrom": "% der Differenz von",
             "PercentageOfGrandTotal": "% der Gesamtsumme",
@@ -442,7 +447,10 @@
             "no": "Nein",
             "None": "Keiner",
             "qtr": "Viertel",
-            "grandTotal": "Gesamtsummen"
+            "grandTotal": "Gesamtsummen",
+            "Top": "Spitze",
+            "Bottom": "Unterseite",
+            "addCurrentSelection": "Füge die aktuelle Auswahl dem Filter hinzu."
         }
     },
     "ar": {
@@ -540,6 +548,7 @@
             "SampleVar": "عينة فار",
             "PopulationVar": "السكان فار",
             "RunningTotals": "تشغيل المجاميع",
+            "PercentageOfRunningTotals": "النسبة المئوية من الإجماليات الجارية", 
             "Max": "ماكس",
             "Index": "فهرس",
             "SampleStDev": "عينة StDev",
@@ -733,7 +742,10 @@
             "subTotalPosition": "موضع المجاميع الفرعية",
             "auto": "تلقاءي",
             "loading": "تحميل...",
-            "add": "يضيف"
+            "add": "يضيف",
+            "Top": "قِمّة",
+            "Bottom": "قاع",
+            "addCurrentSelection": "أضف التحديد الحالي إلى الفلتر."
         },
         "pivotfieldlist": {
             "staticFieldList": "قائمة الحقول المحورية",
@@ -826,6 +838,7 @@
             "SampleVar": "عينة فار",
             "PopulationVar": "السكان فار",
             "RunningTotals": "تشغيل المجاميع",
+            "PercentageOfRunningTotals": "النسبة المئوية من الإجماليات الجارية",
             "DifferenceFrom": "الفرق من",
             "PercentageOfDifferenceFrom": "٪ من الفرق من",
             "PercentageOfGrandTotal": "٪ من المجموع الكلي",
@@ -888,7 +901,10 @@
             "no": "لا",
             "None": "لا أحد",
             "qtr": "ربع",
-            "grandTotal": "المجموع الإجمالي"
+            "grandTotal": "المجموع الإجمالي",
+            "Top": "قِمّة",
+            "Bottom": "قاع",
+            "addCurrentSelection": "أضف التحديد الحالي إلى الفلتر."
         }
     },
     "en": {
@@ -986,6 +1002,7 @@
             "SampleVar": "Sample Var",
             "PopulationVar": "Population Var",
             "RunningTotals": "Running Totals",
+            "PercentageOfRunningTotals": "% of Running Totals",
             "Max": "Max",
             "Index": "Index",
             "SampleStDev": "Sample StDev",
@@ -1179,7 +1196,10 @@
             "subTotalPosition": "Subtotals position",
             "auto": "Auto",
             "loading": "Loading...",
-            "add": "Add"
+            "add": "Add",
+            "Top": "Top",
+            "Bottom": "Bottom",
+            "addCurrentSelection": "Add current selection to filter"
         },
         "pivotfieldlist": {
             "staticFieldList": "Pivot Field List",
@@ -1272,6 +1292,7 @@
             "SampleVar": "Sample Var",
             "PopulationVar": "Population Var",
             "RunningTotals": "Running Totals",
+            "PercentageOfRunningTotals": "% of Running Totals",
             "DifferenceFrom": "Difference From",
             "PercentageOfDifferenceFrom": "% of Difference From",
             "PercentageOfGrandTotal": "% of Grand Total",
@@ -1334,7 +1355,10 @@
             "no": "No",
             "None": "None",
             "qtr": "Qtr",
-            "grandTotal": "Grand Total"
+            "grandTotal": "Grand Total",
+            "Top": "Top",
+            "Bottom": "Bottom",
+            "addCurrentSelection": "Add current selection to filter"
         }
     },
     "zh": {
@@ -1432,6 +1456,7 @@
             "SampleVar": "樣本變量",
             "PopulationVar": "人口變量",
             "RunningTotals": "運行總計",
+            "PercentageOfRunningTotals": "運行總計的百分比",
             "Max": "最高",
             "Index": "指數",
             "SampleStDev": "樣本標準差",
@@ -1625,7 +1650,10 @@
             "subTotalPosition": "小计位置",
             "auto": "汽車",
             "loading": "加载中...",
-            "add": "添加"
+            "add": "添加",
+            "Top": "顶部",
+            "Bottom": "底部",
+            "addCurrentSelection": "将当前选择添加到筛选器中"
         },
         "pivotfieldlist": {
             "staticFieldList": "樞軸字段列表",
@@ -1718,6 +1746,7 @@
             "SampleVar": "樣本變量",
             "PopulationVar": "人口變量",
             "RunningTotals": "運行總計",
+            "PercentageOfRunningTotals": "運行總計的百分比",
             "DifferenceFrom": "區別於",
             "PercentageOfDifferenceFrom": "相差百分比",
             "PercentageOfGrandTotal": "佔總數的百分比",
@@ -1780,7 +1809,10 @@
             "no": "沒有",
             "None": "没有任何",
             "qtr": "季度",
-            "grandTotal": "累计"
+            "grandTotal": "累计",
+            "Top": "顶部",
+            "Bottom": "底部",
+            "addCurrentSelection": "将当前选择添加到筛选器中"
         }
     },
     "fr-CH": {
@@ -1878,6 +1910,7 @@
             "SampleVar": "Échantillon Var",
             "PopulationVar": "Population Var",
             "RunningTotals": "Totaux en cours d'exécution",
+            "PercentageOfRunningTotals": "% des totaux en cours d'exécution",
             "Max": "Max",
             "Index": "Indice",
             "SampleStDev": "Exemple StDev",
@@ -2071,7 +2104,10 @@
             "subTotalPosition": "Position des sous-totaux",
             "auto": "Auto",
             "loading": "Chargement...",
-            "add": "Ajouter"
+            "add": "Ajouter",
+            "Top": "Haut",
+            "Bottom": "Bas",
+            "addCurrentSelection": "Ajouter la sélection actuelle au filtre."
         },
         "pivotfieldlist": {
             "staticFieldList": "Liste des champs de pivot",
@@ -2164,6 +2200,7 @@
             "SampleVar": "Échantillon Var",
             "PopulationVar": "Population Var",
             "RunningTotals": "Totaux en cours d'exécution",
+            "PercentageOfRunningTotals": "% des totaux en cours d'exécution",
             "DifferenceFrom": "Différence de",
             "PercentageOfDifferenceFrom": "% de différence par rapport à",
             "PercentageOfGrandTotal": "% du grand total",
@@ -2226,7 +2263,10 @@
             "no": "Non",
             "None": "Aucun",
             "qtr": "trimestre",
-            "grandTotal": "Grand Total"
+            "grandTotal": "Grand Total",
+            "Top": "Haut",
+            "Bottom": "Bas",
+            "addCurrentSelection": "Ajouter la sélection actuelle au filtre."
         }
     }
 }

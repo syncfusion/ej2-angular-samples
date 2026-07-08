@@ -3,9 +3,8 @@
     <ejs-gantt #selection id="Selection" height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data"
       [taskFields]="taskSettings" [allowSelection]="true" [labelSettings]="labelSettings" [treeColumnIndex]="1"
       [splitterSettings]="splitterSettings" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
-      [allowResizing]="true"
-      [enableHover]="true"
-      [highlightWeekends]="true" [selectionSettings]="selectionSettings">
+      [allowResizing]="true" [enableHover]="true" [highlightWeekends]="true" [columns]="columns"
+      [selectionSettings]="selectionSettings">
     </ejs-gantt>
   </div>
 
@@ -16,64 +15,88 @@
         <table id="property" class="property-panel-table" title="Properties">
          <tr>
             <td>
-              <div style="display: flex; align-items: center; gap: 25px;">
+              <label for="hover" class="hover-label">
                 Enable Hover
-                <input type="checkbox" id="hover" class="checkbox" [checked]="true" (change)="onHoverChange($event)" />
-              </div>
+                <input 
+                  type="checkbox" 
+                  id="hover" 
+                  class="checkbox" 
+                  [checked]="enableHover" 
+                  aria-label="Enable or disable hover effect"
+                  (change)="onHoverChange($event)" />
+              </label>
             </td>
           </tr>
           <tr>
-            <td style="width: 100%">
-              <div style="font-size: 15px;padding-bottom: 5px;">
+            <td class="property-label">
+              <div class="property-title">
                 Selection Mode
               </div>
             </td>
           </tr>
           <tr>
-            <td style="width: 100%;padding-right: 5px; padding-bottom: 5px;">
-              <div style="width: 150px">
-                <ejs-dropdownlist #SelectionModeList [dataSource]='dropDownModeListData'
-                  [fields]='dropDownModeListFields' value='Row'>
+            <td class="property-input">
+              <div class="dropdown-container">
+                <ejs-dropdownlist 
+                  #selectionModeList 
+                  [dataSource]='dropDownModeListData'
+                  [fields]='dropDownModeListFields' 
+                  [value]="defaultSelectionMode"
+                  aria-label="Select row or cell selection mode">
                 </ejs-dropdownlist>
               </div>
             </td>
           </tr>
           <tr>
-            <td style="width: 100%">
-              <div style="font-size: 15px;padding-bottom: 5px;">
+            <td class="property-label">
+              <div class="property-title">
                 Selection Type
               </div>
             </td>
           </tr>
           <tr>
-            <td style="width: 100%;padding-right: 5px;padding-bottom: 5px;">
-              <div style="width: 150px">
-                <ejs-dropdownlist #SelectionTypeList [dataSource]='dropDownTypeListData'
-                  [fields]='dropDownTypeListFields' value='Single'>
+            <td class="property-input">
+              <div class="dropdown-container">
+                <ejs-dropdownlist 
+                  #selectionTypeList 
+                  [dataSource]='dropDownTypeListData'
+                  [fields]='dropDownTypeListFields' 
+                  [value]="defaultSelectionType"
+                  aria-label="Select single or multiple selection type">
                 </ejs-dropdownlist>
               </div>
             </td>
           </tr>
           <tr>
-            <td style="width: 30%">
-              <div style="font-size: 15px;padding-bottom: 5px;">
+            <td class="property-label">
+              <div class="property-title">
                 Toggle Selection
               </div>
             </td>
           </tr>
           <tr>
-            <td style="width: 100%;padding-right: 5px ;padding-bottom: 5px;">
-              <div style="width: 150px">
-                <ejs-dropdownlist #SelectionToggleList [dataSource]='dropDownToggleListData'
-                  [fields]='dropDownToggleListFields' [value]='toggleValue'>
+            <td class="property-input">
+              <div class="dropdown-container">
+                <ejs-dropdownlist 
+                  #selectionToggleList 
+                  [dataSource]='dropDownToggleListData'
+                  [fields]='dropDownToggleListFields' 
+                  [value]="enableToggle"
+                  aria-label="Enable or disable toggle selection">
                 </ejs-dropdownlist>
               </div>
             </td>
           </tr>
           <tr>
-            <td style="width: 50%">
-              <div>
-                <button ejs-button id="perform" content="Perform" (click)="perform()">Perform</button>
+            <td class="button-cell">
+              <div class="button-container">
+                <button 
+                  ejs-button 
+                  id="perform" 
+                  aria-label="Apply selection settings"
+                  (click)="perform()">
+                  Perform
+                </button>
               </div>
             </td>
           </tr>
@@ -115,11 +138,9 @@
       href="https://ej2.syncfusion.com/angular/documentation/api/gantt/selectionSettingsModel/#enabletoggle">selectionSettings.enableToggle</a>
     property.
   </p>
-   <br>
+    <p>
+      Gantt component features are segregated into individual feature-wise modules. To use a selection, markers and resize feature, inject the
+      <code>SelectionService</code>, <code>DayMarkersService</code> and <code>ResizeService</code> into the <code>&#64;NgModule.providers</code> section.
+    </p>
     <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/selection/selection">documentation section</a>.</p>
 </div>
-<style>
-    #Selection .e-checkbox-wrapper{
-        padding: 0px !important;
-    }
-</style>

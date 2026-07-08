@@ -143,13 +143,14 @@ import { DonutWithGradient } from './donut-with-gradient.component';
 import { BarWithGradientComponent } from './bar-with-gradient.component';
 import { PieLegendTemplateComponent } from './pie-legend-template.component';
 import { ChartLegendTemplateComponent } from './chart-legend-template.component';
+import { NestedDonut } from './nested-donut.component';
 
 export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/overview-chart', component: OverViewChartComponent, name: 'Overview', description: "This demo for overview of Essential<sup>®</sup> JS2 Chart for data about the annual, monthly and product wise sales with different types of charts.",
  order: '01', category: 'Charts' },
  
     { path: ':theme/chart/line', component: LineChartComponent, name: 'Line', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the line series.",
- order: '02', category: 'Line Charts', type: 'update' },
+ order: '02', category: 'Line Charts' },
     { path: ':theme/chart/spline', component: SplineChartComponent, name: 'Spline', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the spline series.", order: '02', category: 'Line Charts' },
     { path: ':theme/chart/step-line', component: StepLineChartComponent, name: 'Step Line', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the step line series.", order: '02', category: 'Line Charts' },
     { path: ':theme/chart/dashed-line', component: DashedLineChartComponent, name: 'Dashed Line', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the dashed line series.", order: '02', category: 'Line Charts' },
@@ -182,7 +183,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/range-bar', component: RangeBarChartComponent, name: 'Inversed Range Column', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the inversed range column series.", order: '04', category: 'Bar Charts' },
     { path: ':theme/chart/cylindrical-column', component: CylindricalColumnChartComponent, name: 'Cylindrical Column', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the cylindrical column series.", order: '04', category: 'Bar Charts' },
     { path: ':theme/chart/bar', component: BarChartComponent, name: 'Bar', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render bar series.", order: '04', category: 'Bar Charts' },
-    { path: ':theme/chart/bar-with-gradient', component: BarWithGradientComponent, name: 'Bar with Gradient', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render bar series with gradient.", order: '04', category: 'Bar Charts', type: "new" },
+    { path: ':theme/chart/bar-with-gradient', component: BarWithGradientComponent, name: 'Bar with Gradient', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render bar series with gradient.", order: '04', category: 'Bar Charts' },
     { path: ':theme/chart/rounded-column', component: RoundedColumnChartComponent, name: 'Rounded Bar',description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the rounded bar series.", order: '04', category: 'Bar Charts' },
     { path: ':theme/chart/stacked-column', component: StackedColumnChartComponent, name: 'Stacked Column', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the stacking column series.", order: '04', category: 'Bar Charts' },
     { path: ':theme/chart/stacked-column-percent', component: PercentStackedColumnChartComponent, name: '100% Stacked Column', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the 100 percent stacking column series.", order: '04', category: 'Bar Charts' },
@@ -203,14 +204,15 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/default-pie', component: DefaultPieComponent, name: 'Pie', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the pie charts.", order: '07', category: 'Accumulation Charts' },
     { path: ':theme/chart/pie-radius', component: PieRadiusComponent, name: 'Pie with Various Radius', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the pie chart with different radius.", order: '07', category: 'Accumulation Charts' },
     { path: ':theme/chart/donut', component: DonutComponent, name: 'Donut', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the doughnut charts.", order: '07', category: 'Accumulation Charts' },
-    { path: ':theme/chart/donut-with-gradient', component: DonutWithGradient, name: 'Donut with Gradient', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the doughnut charts with gradient.", order: '07', category: 'Accumulation Charts', type: 'new' },
+    { path: ':theme/chart/donut-with-gradient', component: DonutWithGradient, name: 'Donut with Gradient', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the doughnut charts with gradient.", order: '07', category: 'Accumulation Charts' },
+     { path: ':theme/chart/nested-donut', component: NestedDonut, name: 'Nested Donut', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the nested donut charts with multiple series.", order: '07', category: 'Accumulation Charts', type: 'new' },
     { path: ':theme/chart/pyramid', component: PyramidComponent, name: 'Pyramid', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the pyramid charts.", order: '07', category: 'Accumulation Charts' },
     { path: ':theme/chart/funnel', component: FunnelComponent, name: 'Funnel', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the funnel charts.", order: '07', category: 'Accumulation Charts' },
     {
         path: ':theme/chart/pie-legend', component: DefaultDonutComponent, name: 'Pie with Legend', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the legends in pie charts.", order: '07', category: 'Accumulation Charts'
     },
     {
-        path: ':theme/chart/pie-legend-template', component: PieLegendTemplateComponent, name: 'Pie with Legend Template', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the legend template in pie charts.", order: '07', category: 'Accumulation Charts', type: 'new'
+        path: ':theme/chart/pie-legend-template', component: PieLegendTemplateComponent, name: 'Pie with Legend Template', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the legend template in pie charts.", order: '07', category: 'Accumulation Charts',
     },
     {
         path: ':theme/chart/semi-pie', component: SemiPieComponent, name: 'Semi Pie', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render semi-pie and doughnut charts.", order: '07', category: 'Accumulation Charts'
@@ -306,7 +308,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/tooltip-template', component: TooltipTemplateComponent, name: 'Tooltip Template', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the tooltip template.", order: '14', category: 'Chart Customization' },
     { path: ':theme/chart/vertical', component: VerticalChartComponent, name: 'Vertical Chart', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the vertical type charts.", order: '14', category: 'Chart Customization' },
     { path: ':theme/chart/empty-point', component: EmptyPointChartComponent, name: 'Empty Points', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the empty points.", order: '14', category: 'Chart Customization'},
-     { path: ':theme/chart/chart-legend-template', component: ChartLegendTemplateComponent, name: 'Legend Template', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the template in legendSettings of chart.", order: '14', category: 'Chart Customization', type: 'new'},
+     { path: ':theme/chart/chart-legend-template', component: ChartLegendTemplateComponent, name: 'Legend Template', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the template in legendSettings of chart.", order: '14', category: 'Chart Customization'},
     { path: ':theme/chart/no-data-template', component: NodataTemplateChartComponent, name: 'No Data Template', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the no data template.", order: '14', category: 'Chart Customization' },
     { path: ':theme/chart/range-color-mapping', component: RangeColorMappingComponent, name: 'Range Color Mapping', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the range color mapping.", order: '14', category: 'Chart Customization'},
     { path: ':theme/chart/series-animation', component: SeriesAnimationComponent, name: 'Animation', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure series animation.", order: '14', category: 'Chart Customization'},

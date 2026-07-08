@@ -3,7 +3,7 @@
  */
 import { Component, ViewChild } from '@angular/core';
 import { addClass, removeClass, Browser } from '@syncfusion/ej2-base';
-import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, EmojiPickerService, TableService, CodeBlockService, ImportExportService, ClipBoardCleanupService,AutoFormatService } from '@syncfusion/ej2-angular-richtexteditor';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorModule, QuickToolbarService, PasteCleanupService, VideoService, AudioService, EmojiPickerService, TableService, CodeBlockService, ImportExportService, ClipBoardCleanupService,AutoFormatService, FormatPainterService } from '@syncfusion/ej2-angular-richtexteditor';
 import { ExportWordModel, ExportPdfModel, ImportWordModel, QuickToolbarSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { RichTextEditorComponent, IFrameSettingsModel, FileManagerService } from '@syncfusion/ej2-angular-richtexteditor';
 import { FileManagerSettingsModel } from '@syncfusion/ej2-angular-richtexteditor';
@@ -13,7 +13,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'control-content',
     templateUrl: 'iframe.html',
-    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, FileManagerService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, EmojiPickerService, TableService, CodeBlockService, ImportExportService, ClipBoardCleanupService, AutoFormatService],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, FileManagerService, QuickToolbarService, PasteCleanupService, VideoService, AudioService, EmojiPickerService, TableService, CodeBlockService, ImportExportService, ClipBoardCleanupService, AutoFormatService, FormatPainterService],
     standalone: true,
     imports: [SBActionDescriptionComponent, RichTextEditorModule, SBDescriptionComponent]
 })
@@ -22,7 +22,7 @@ export class IFrameComponent {
     @ViewChild('iframeRTE')
     private iframeRTE: RichTextEditorComponent;
 
-    private hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
+    private hostUrl: string = 'https://services.syncfusion.com/angular/production/';
 
     public tools: ToolbarModule = {
         items: ['Undo', 'Redo', '|', 'ImportWord', 'ExportWord', 'ExportPdf', '|',
@@ -35,12 +35,11 @@ export class IFrameComponent {
 
     public fileManagerSettings: FileManagerSettingsModel = {
         enable: true,
-        path: '/Pictures/Food',
         ajaxSettings: {
-            url: this.hostUrl + 'api/FileManager/FileOperations',
-            getImageUrl: this.hostUrl + 'api/FileManager/GetImage',
-            uploadUrl: this.hostUrl + 'api/FileManager/Upload',
-            downloadUrl: this.hostUrl + 'api/FileManager/Download'
+            url: this.hostUrl + 'api/RichTextEditor/FileOperations',
+            getImageUrl: this.hostUrl + 'api/RichTextEditor/GetImage',
+            uploadUrl: this.hostUrl + 'api/RichTextEditor/Upload',
+            downloadUrl: this.hostUrl + 'api/RichTextEditor/Download'
         }
     };
 
@@ -78,7 +77,6 @@ export class IFrameComponent {
     };
 
     public iframe: IFrameSettingsModel = { enable: true };
-    public height: number = 500;
     public enableTabKey: boolean = true;
 
     public handleFullScreen(e: any) {

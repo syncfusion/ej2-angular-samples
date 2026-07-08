@@ -239,7 +239,7 @@ export const treegridRouteConfig: Object[] = [
     order: '09', category: 'Scrolling'},
     { 'path': ':theme/treegrid/virtual-scrolling', component: VirtualScrollingComponent, 'name': 'Virtual Scrolling',
     description: 'This demo demonstrates how to use Essential<sup>®</sup> JS 2 Tree Grid to show a large data view without performance degradation by rendering only the required rows.', 
-    order: '09', category: 'Scrolling', type: 'update'},
+    order: '09', category: 'Scrolling' },
      { 'path': ':theme/treegrid/remotevirtual', component: RemoteVirtualComponent, 'name': 'Load Child On Demand',
     description: "This example shows the binding of remote services by using the DataManager in the Syncfusion<sup>®</sup> Essential<sup>®</sup> JS2 Tree Grid", order: '09', category: 'Scrolling'},
     { 'path': ':theme/treegrid/infinite-scrolling', component: InfiniteScrollingComponent, 'name': 'Infinite Scrolling',

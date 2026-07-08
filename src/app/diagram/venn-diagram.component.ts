@@ -148,7 +148,7 @@ export class VennDiagramComponent implements OnInit {
     }
 
     /**
-     * Creates a node object for the Syncfusion EJ2 Diagram.
+     * Creates a node object for the Angular Diagram.
      * @param id The unique identifier for the node.
      * @param offsetX The x-coordinate of the node's position.
      * @param offsetY The y-coordinate of the node's position.

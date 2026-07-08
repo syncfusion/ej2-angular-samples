@@ -1,5 +1,5 @@
 <div class="control-section">
-    <ejs-treegrid #treegrid [dataSource]='data' rowHeight='20' height='400' childMapping='subtasks' [treeColumnIndex]='1' [toolbar]='toolbar' (toolbarClick)='clickHandler($event)'>
+    <ejs-treegrid id="TreeGridRowHeight" #treegrid [dataSource]='data' rowHeight='20' height='400' childMapping='subtasks' [treeColumnIndex]='1' [toolbar]='toolbar' (toolbarClick)='clickHandler($event)'>
         <e-columns>
             <e-column field='taskID' headerText='Task ID' width='70' textAlign='Right'></e-column>
             <e-column field='taskName' headerText='Task Name' width='200'></e-column>
@@ -23,6 +23,7 @@
         <p>
             In this sample, we have enabled an option in Toolbar to customize the row height of Tree Grid to 20px, 40px and 60px.        
         </p>
+        <p>Looking for the full Angular Tree Grid component overview, features, pricing, and documentation? Visit our <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-tree-grid">Angular Tree Grid component</a> page.</p>
     </div>
     
     <!-- custom code start -->
@@ -34,20 +35,17 @@
             font-weight: normal;
             font-style: normal;
         }
-    </style>
-<!-- custom code end -->
-        <style>
-        .e-grid .e-small-icon::before {
+        #TreeGridRowHeight .e-grid .e-small-icon::before {
         font-family: 'e-grid-rowheight';
         content: '\e707';
         }
 
-        .e-grid .e-medium-icon::before {
+        #TreeGridRowHeight .e-grid .e-medium-icon::before {
                 font-family: 'e-grid-rowheight';
                 content: '\e701';
             }
 
-            .e-grid .e-big-icon::before {
+            #TreeGridRowHeight .e-grid .e-big-icon::before {
                 font-family: 'e-grid-rowheight';
                 content: '\e702';
             }    

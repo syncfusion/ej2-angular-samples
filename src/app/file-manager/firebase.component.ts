@@ -17,7 +17,7 @@ export class FirebaseController {
     public ajaxSettings: object;
     public toolbarSettings: object;
     public contextMenuSettings: object;
-    public hostUrl: string = 'https://realtime-firebase.azurewebsites.net/';
+    public hostUrl: string = 'https://firebase-service.syncfusion.com/';
     public ngOnInit(): void {
         this.ajaxSettings = {
             url: this.hostUrl + 'api/FirebaseProvider/FirebaseRealtimeFileOperations',

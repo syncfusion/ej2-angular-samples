@@ -1,0 +1,84 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates how multiple baselines can be displayed within a single task
+        to highlight variations across different planning stages and improve visibility into project changes.
+    </p>
+</div>
+
+<div class="control-section">
+    <ejs-gantt #gantt height="650px" [rowHeight]="60" [taskbarHeight]="20" [dataSource]="data"
+        [taskFields]="taskSettings" [treeColumnIndex]="1" [splitterSettings]="splitterSettings" [labelSettings] ="labelSettings"
+        [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [renderBaseline]="true"
+        [columns]="columns" [gridLines]="gridLines" [tooltipSettings]="tooltipSettings">
+        <ng-template #baselineTemplate let-data>
+            <div *ngIf="!data.subtasks" style="position: relative; height: 100%;">
+
+                <div *ngIf="data.taskData.BaselineStartDate && data.taskData.BaselineDuration !== 0"
+                    class="e-baseline-bar" style="position:absolute; height:8px;"
+                    [style.left.px]="getLeft(data.taskData.BaselineStartDate, data)"
+                    [style.width.px]="getWidth(data.taskData.BaselineStartDate, data.taskData.BaselineDuration, data)"
+                    [style.marginTop.px]="getBaselineTop(0)">
+                </div>
+
+                <div *ngIf="data.taskData.BaselineStartDate1 && data.taskData.BaselineDuration1 !== 0"
+                    class="e-baseline-bar" style="position:absolute; height:8px;"
+                    [style.left.px]="getLeft(data.taskData.BaselineStartDate1, data)"
+                    [style.width.px]="getWidth(data.taskData.BaselineStartDate1, data.taskData.BaselineDuration1, data)"
+                    [style.marginTop.px]="getBaselineTop(1)">
+                </div>
+
+                <div *ngIf="data.taskData.BaselineStartDate2 && data.taskData.BaselineDuration2 !== 0"
+                    class="e-baseline-bar" style="position:absolute; height:8px;"
+                    [style.left.px]="getLeft(data.taskData.BaselineStartDate2, data)"
+                    [style.width.px]="getWidth(data.taskData.BaselineStartDate2, data.taskData.BaselineDuration2, data)"
+                    [style.marginTop.px]="getBaselineTop(2)">
+                </div>
+
+                <div *ngIf="data.taskData.BaselineStartDate && data.taskData.BaselineDuration === 0"
+                    class="e-baseline-gantt-milestone-container" style="position:absolute; transform: rotate(45deg);"
+                    [style.left.px]="getMilestoneLeft(data.taskData.BaselineStartDate, data)"
+                    [style.top.px]="getBaselineMilestoneTop(0)"
+                    [style.width.px]="ganttObj.chartRowsModule.taskBarHeight"
+                    [style.height.px]="ganttObj.chartRowsModule.taskBarHeight">
+                </div>
+
+                <div *ngIf="data.taskData.BaselineStartDate1 && data.taskData.BaselineDuration1 === 0"
+                    class="e-baseline-gantt-milestone-container" style="position:absolute; transform: rotate(45deg);"
+                    [style.left.px]="getMilestoneLeft(data.taskData.BaselineStartDate1, data)"
+                    [style.top.px]="getBaselineMilestoneTop(1)"
+                    [style.width.px]="ganttObj.chartRowsModule.taskBarHeight"
+                    [style.height.px]="ganttObj.chartRowsModule.taskBarHeight">
+                </div>
+
+                <div *ngIf="data.taskData.BaselineStartDate2 && data.taskData.BaselineDuration2 === 0"
+                    class="e-baseline-gantt-milestone-container" style="position:absolute; transform: rotate(45deg);"
+                    [style.left.px]="getMilestoneLeft(data.taskData.BaselineStartDate2, data)"
+                    [style.top.px]="getBaselineMilestoneTop(2)"
+                    [style.width.px]="ganttObj.chartRowsModule.taskBarHeight"
+                    [style.height.px]="ganttObj.chartRowsModule.taskBarHeight">
+                </div>
+            </div>
+        </ng-template>
+    </ejs-gantt>
+</div>
+
+<div id="description">
+    <p>
+        In this example, the Gantt Chart visualizes a product workflow where each task includes
+        multiple baseline bars using custom baseline fields. This allows to view different
+        planned schedules such as initial, revised, and final plans together.
+        The <a target="_blank" rel="noopener noreferrer"
+            href="https://ej2.syncfusion.com/angular/documentation/api/gantt/index-default#baselinetemplate">
+            baselineTemplate
+        </a> property is used to customize the appearance of each
+        baseline bar. It provides control over styling, colors, and positioning, making it easy
+        to distinguish between baseline representations.
+    </p>
+    <br>
+    <p>
+        More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in the
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/baseline">
+            baseline
+        </a> documentation section.
+    </p>
+</div>

@@ -71,10 +71,6 @@ public invalidInput(args: ValidateEvent): void {
 
   public MatrixSizeValue: { [key: string]: Object }[] = [
     { value: '0', text: 'Auto' },
-    { value: '1', text: 'Size10x10' },
-    { value: '2', text: 'Size12x12' },
-    { value: '3', text: 'Size14x14' },
-    { value: '4', text: 'Size16x16' },
     { value: '5', text: 'Size18x18' },
     { value: '6', text: 'Size20x20' },
     { value: '7', text: 'Size22x22' },

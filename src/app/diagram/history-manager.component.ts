@@ -13,9 +13,9 @@ import {
 import {
     DropDownList
 } from '@syncfusion/ej2-dropdowns';
+import { NumericTextBoxComponent, NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 Diagram.Inject(UndoRedo);
@@ -35,10 +35,22 @@ Diagram.Inject(UndoRedo);
 export class HistoryManagerDiagramComponent {
     @ViewChild('diagram')
     public diagram: DiagramComponent;
+    @ViewChild('stackLimitInput')
+    public stackLimitInput: NumericTextBoxComponent;
     public tool = DiagramTools.ZoomPan;
     public snapSettings = { constraints: SnapConstraints.None };
+    public stackLimitValue: number = 0;
+    private lastSyncedValue: number = 0;
+
     public created(): void {
         this.diagram.fitToPage();
+    }
+    
+    public textBoxCreated(): void {
+        if (this.stackLimitInput) {
+            this.stackLimitInput.value = this.stackLimitValue;
+            this.lastSyncedValue = this.stackLimitValue;
+        }
     }
 
     // Helper function to create a NodeModel with default parameters
@@ -158,8 +170,9 @@ export class HistoryManagerDiagramComponent {
     }
     // Sets stack limit for diagram history
     public stackLimit(args): void {
+        this.stackLimitValue = args.value;
+        this.lastSyncedValue = args.value;
         this.diagram.setStackLimit(args.value);
-
     }
     // Redoes the last action
     public redoButton(): void {

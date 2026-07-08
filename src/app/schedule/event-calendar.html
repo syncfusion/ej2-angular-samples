@@ -24,12 +24,12 @@
         </e-items>
       </ejs-toolbar>
     </div>
-    <ejs-sidebar #leftSidebar id="sidebar-left" #sidebar width="300px" target=".main-content">
+    <ejs-sidebar #leftSidebar id="sidebar-left" #sidebar width="300px" [enableGestures]="false" target=".main-content">
       <div class="table-content">
         <ejs-calendar #calendarObj id="calendar" cssClass="selected-date-calendar" [value]="selectedDate"
           (change)="onCalendarChange($event)"></ejs-calendar>
         <div class="calendar-list-container">
-          <ejs-listview #calendarsList id="listview-def" height="240px" [dataSource]="calendars"
+          <ejs-listview #calendarsList id="listview-def" height="240px" [dataSource]="calendars" class="event-resourceList"
             [fields]="calendarFields" [showCheckBox]="true" [showHeader]="true"
             (actionComplete)="listViewActionComplete()" (select)="listViewSelect($event)">
             <ng-template #headerTemplate let-data="">
@@ -54,7 +54,7 @@
       </div>
     </ejs-sidebar>
     <ejs-sidebar #rightSidebar id="sidebar-right" #sidebar width="300px" target=".main-content" position="Right"
-      type="Push" [isOpen]="false" (close)="rightSidebarClose()">
+      type="Push" [enableGestures]="false" [isOpen]="false" (close)="rightSidebarClose()">
       <ejs-toolbar cssClass="unplanned-events-toolbar">
         <e-items>
           <e-item prefixIcon="e-exit-full-screen" tooltipText="Open/Close Sidebar" cssClass="e-exit"
@@ -130,4 +130,7 @@
   <p>The Schedule component is configured to show the appointments in colors based on their type to identify
     the appointment type.</p>
   <p>The right sidebar displays the list of unplanned events, which can be useful for the user to plan them later.</p>
+  <p>
+    Looking for the full Angular Scheduler component overview, features, pricing, and documentation? Visit our <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-scheduler">Angular Scheduler</a> component page.
+  </p>
 </div>

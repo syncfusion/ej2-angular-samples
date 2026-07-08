@@ -1,15 +1,26 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { projectNewData } from './data';
 import { DropDownListComponent, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
-import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, GanttComponent, GanttModule, ResizeService, SelectionService } from '@syncfusion/ej2-angular-gantt';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
+
+// Type definitions for selection modes and types
+type SelectionMode = 'Row' | 'Cell';
+type SelectionType = 'Single' | 'Multiple';
+
+interface DropDownItem {
+  id: string | boolean;
+  type: string;
+}
 @Component({
   selector: 'ej2-ganttselection',
   templateUrl: 'selection.html',
+  styleUrls: ['selection.component.css'],
   standalone: true,
-  imports: [GanttAllModule, DropDownListAllModule, ButtonAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
+  providers: [SelectionService, DayMarkersService, ResizeService],
+  imports: [GanttModule, DropDownListAllModule, ButtonAllModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class GanttSelectionComponent implements OnInit {
   public data: object[];
@@ -20,21 +31,29 @@ export class GanttSelectionComponent implements OnInit {
   public projectStartDate: Date;
   public columns: object[];
   public projectEndDate: Date;
+
   @ViewChild('selection')
-  public ganttObj: GanttComponent;
-  @ViewChild('SelectionModeList')
-  public SelectionModeList: DropDownListComponent;
-  @ViewChild('SelectionTypeList')
-  public SelectionTypeList: DropDownListComponent;
-  @ViewChild('SelectionToggleList')
-  public SelectionToggleList: DropDownListComponent;
-  public dropDownModeListData: object[];
+  public ganttObj!: GanttComponent;
+
+  @ViewChild('selectionModeList')
+  public selectionModeList!: DropDownListComponent;
+
+  @ViewChild('selectionTypeList')
+  public selectionTypeList!: DropDownListComponent;
+
+  @ViewChild('selectionToggleList')
+  public selectionToggleList!: DropDownListComponent;
+
+  public dropDownModeListData: DropDownItem[];
   public dropDownModeListFields: object;
-  public dropDownTypeListData: object[];
+  public dropDownTypeListData: DropDownItem[];
   public dropDownTypeListFields: object;
-  public dropDownToggleListData: object[];
+  public dropDownToggleListData: DropDownItem[];
   public dropDownToggleListFields: object;
-  public toggleValue: boolean;
+  public enableHover: boolean;
+  public enableToggle: boolean;
+  public defaultSelectionMode: SelectionMode;
+  public defaultSelectionType: SelectionType;
   public ngOnInit(): void {
     this.data = projectNewData;
     this.taskSettings = {
@@ -45,11 +64,11 @@ export class GanttSelectionComponent implements OnInit {
       duration: 'Duration',
       progress: 'Progress',
       dependency: 'Predecessor',
-      parentID: 'ParentId'
+      parentID: 'ParentID'
     };
     this.columns = [
       { field: 'TaskID', width: 70 },
-      { field: 'TaskName', width: 250 },
+      { field: 'TaskName', width: 280 },
       { field: 'StartDate' },
       { field: 'EndDate' },
       { field: 'Duration' },
@@ -69,36 +88,60 @@ export class GanttSelectionComponent implements OnInit {
     };
     this.projectStartDate = new Date('03/26/2025');
     this.projectEndDate = new Date('07/20/2025');
+
+    // Initialize dropdown data
     this.dropDownModeListData = [
       { id: 'Row', type: 'Row' },
       { id: 'Cell', type: 'Cell' }
     ];
     this.dropDownModeListFields = { text: 'type', value: 'id' };
+
     this.dropDownTypeListData = [
       { id: 'Single', type: 'Single' },
       { id: 'Multiple', type: 'Multiple' }
     ];
     this.dropDownTypeListFields = { text: 'type', value: 'id' };
+
     this.dropDownToggleListData = [
       { id: true, type: 'Enable' },
       { id: false, type: 'Disable' }
     ];
     this.dropDownToggleListFields = { text: 'type', value: 'id' };
-    this.toggleValue = false;
+
+    // Initialize default values for UI controls
+    this.enableHover = true;
+    this.enableToggle = false;
+    this.defaultSelectionMode = 'Row';
+    this.defaultSelectionType = 'Single';
   }
   public perform(): void {
-    let mode: any = this.SelectionModeList.value;
-    let type: any = this.SelectionTypeList.value;
-    let toggle: boolean = this.SelectionToggleList.value as boolean;
-    this.ganttObj.selectionSettings.mode = mode;
-    this.ganttObj.selectionSettings.type = type;
-    this.ganttObj.selectionSettings.enableToggle = toggle;
-  };
+    // Validate that all required components are initialized
+    if (!this.selectionModeList || !this.selectionTypeList || !this.selectionToggleList || !this.ganttObj) {
+      console.error('Selection dropdowns or Gantt component not initialized');
+      return;
+    }
 
-  public onHoverChange(event: Event): void {
-    const checkbox = event.target as HTMLInputElement;
-    this.ganttObj.enableHover = checkbox.checked;
+    const mode = this.selectionModeList.value as SelectionMode;
+    const type = this.selectionTypeList.value as SelectionType;
+    const toggle = this.selectionToggleList.value as boolean;
+
+    // Apply selection settings to Gantt component
+    if (this.ganttObj.selectionSettings) {
+      this.ganttObj.selectionSettings.mode = mode;
+      this.ganttObj.selectionSettings.type = type;
+      this.ganttObj.selectionSettings.enableToggle = toggle;
+    }
   }
 
+  public onHoverChange(event: Event): void {
+    if (!this.ganttObj) {
+      console.error('Gantt component not initialized');
+      return;
+    }
 
+    const target = event.target as HTMLInputElement | null;
+    if (target && target.checked !== undefined) {
+      this.ganttObj.enableHover = target.checked;
+    }
+  }
 }

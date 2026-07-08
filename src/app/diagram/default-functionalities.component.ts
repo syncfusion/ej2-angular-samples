@@ -14,6 +14,7 @@ import { AsyncSettingsModel } from '@syncfusion/ej2-inputs';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { UploaderModule } from '@syncfusion/ej2-angular-inputs';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { DialogModule, DialogComponent } from '@syncfusion/ej2-angular-popups';
 Diagram.Inject(UndoRedo);
 
 /**
@@ -26,7 +27,7 @@ Diagram.Inject(UndoRedo);
   styleUrls: ['default-functionalities.css', 'diagram-common.style.css'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
-  imports: [SBActionDescriptionComponent, ToolbarModule, SplitButtonModule, SymbolPaletteModule, DiagramModule, UploaderModule, SBDescriptionComponent]
+  imports: [SBActionDescriptionComponent, ToolbarModule, SplitButtonModule, SymbolPaletteModule, DiagramModule, UploaderModule, SBDescriptionComponent, DialogModule]
 })
 export class FlowDiagramComponent {
   @ViewChild('diagram')
@@ -34,6 +35,9 @@ export class FlowDiagramComponent {
   public diagram: DiagramComponent;
   @ViewChild('toolbar')
   public toolbar: ToolbarComponent;
+  // Reference the Dialog element
+  @ViewChild('unsavedDialog')
+  unsavedDialog: DialogComponent | any;
   constructor(@Inject('sourceFiles') private sourceFiles: any) {
     sourceFiles.files = ['diagram-common.style.css'];
   }
@@ -80,9 +84,7 @@ export class FlowDiagramComponent {
       obj.targetDecorator = { shape: 'Arrow', width: 10, height: 10 };
     }
   }
-  public created(): void {
-    this.diagram.fitToPage();
-  }
+
   public interval: number[] = [
     1, 9, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25,
     9.75, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75, 0.25, 9.75
@@ -395,7 +397,11 @@ export class FlowDiagramComponent {
         this.diagram.tool = DiagramTools.ZoomPan;
         break;
       case 'New Diagram':
-        this.diagram.clear();
+        if (this.diagram.isModified) {
+          this.showConfirm(() => this.diagram.clear());
+        } else {
+          this.diagram.clear();
+        }
         this.historyChange(args as any);
         break;
       case 'Print Diagram':
@@ -685,7 +691,11 @@ export class FlowDiagramComponent {
   }
   //To load diagram
   public loadDiagram(event: ProgressEvent): void {
-    this.diagram.loadDiagram((event.target as FileReader).result.toString());
+    if (this.diagram.isModified) {
+      this.showConfirm(() => this.diagram.loadDiagram((event.target as FileReader).result.toString()));
+    } else {
+      this.diagram.loadDiagram((event.target as FileReader).result.toString());
+    }
   }
 
   public items: ItemModel[] = [
@@ -697,8 +707,64 @@ export class FlowDiagramComponent {
   }
 
   public diagramCreate(args: Object): void {
+    this.diagram.fitToPage();
     paletteIconClick();
+    this.addBeforeUnloadEvent();
   }
+
+  public buttons: Object = [
+    {
+      'click': this.saveButtonClick.bind(this),
+      // Accessing button component properties by buttonModel property
+      buttonModel: { content: 'Save', isPrimary: true }
+    },
+    {
+      'click': this.dontSaveButtonClick.bind(this),
+      buttonModel: { content: "Don't Save" }
+    },
+    {
+      'click': this.cancelButtonClick.bind(this),
+      buttonModel: { content: 'Cancel' }
+    }
+  ];
+  public pendingAction: (() => void) | null = null;
+
+  public showConfirm(action: (() => void)): void {
+    this.pendingAction = action;
+    this.unsavedDialog.isModal = true;
+    this.unsavedDialog.show();
+    document.getElementById('diagram-unsaved-dialog').style.display = 'flex';
+  }
+
+  public hideConfirm(): void {
+    this.unsavedDialog.hide();
+    document.getElementById('diagram-unsaved-dialog').style.display = 'none';
+  }
+  public saveButtonClick() {
+    this.download(this.diagram.saveDiagram());
+    this.hideConfirm();
+    if (this.pendingAction) {
+      this.pendingAction();
+    }
+  }
+  public dontSaveButtonClick() {
+    this.hideConfirm();
+    if (this.pendingAction) {
+      this.pendingAction();
+    }
+  }
+  public cancelButtonClick() {
+    this.hideConfirm();
+  }
+  public addBeforeUnloadEvent(): void {
+    window.addEventListener('beforeunload', (e: BeforeUnloadEvent) => {
+      if (this.diagram.isModified) {
+        e.preventDefault();
+        e.returnValue = 'You have unsaved changes.\n\nDo you want to continue without saving?';
+      }
+    });
+  }
+
 }
 //Create and add ports for node.
 function getPorts(obj: NodeModel): PointPortModel[] {

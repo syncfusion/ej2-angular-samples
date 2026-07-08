@@ -18,7 +18,7 @@ Diagram.Inject(UndoRedo, DataBinding, HierarchicalTree);
 
 /**
  * Component for displaying a Zoom and Pan sample.
- * Manages the presentation and behavior of the diagram using Syncfusion's Angular Diagram component.
+ * Manages the presentation and behavior of the diagram using Angular Diagram component.
  */
 @Component({
     selector: 'control-content', // Angular component selector

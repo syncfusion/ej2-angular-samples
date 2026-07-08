@@ -7,7 +7,7 @@
     margin: 6px 16px;
 }
 
-#multi-template_popup .multihead {
+#multi-template_popup .multiheader {
     font-weight: 600;
     height: 48px;
     padding: 15px 0 0 20px;
@@ -16,14 +16,14 @@
     background-color: #f5f5f5;
 }
 
-.fabric #multi-template_popup .multihead {
+.fabric #multi-template_popup .multiheader {
     background-color: #fff;
     border-bottom: 1px solid #ccc;
     color: #0078d7;
     font-weight: 400;
 }
 
-.bootstrap #multi-template_popup .multihead {
+.bootstrap #multi-template_popup .multiheader {
     background-color: #fff;
     border-bottom: 1px solid #ccc;
     color: #777;
@@ -35,16 +35,16 @@
     padding: 0 0 0 24px;
 }
 
-.highcontrast #multi-template_popup .multihead {
+.highcontrast #multi-template_popup .multiheader {
     color: #fff;
     background-color: #000;
 }
 
-.bootstrap4 #multi-template_popup .multihead {
+.bootstrap4 #multi-template_popup .multiheader {
     color: #6c757d;
 }
 
-.e-bigger.bootstrap #multi-template_popup .multihead {
+.e-bigger.bootstrap #multi-template_popup .multiheader {
     line-height: 44px;
     height: 44px;
     font-size: 13px;
@@ -331,40 +331,41 @@
     margin-top: 0px;
 }
 
-.fluent-dark .header,
-.fluent2-dark .header,
-.fluent2-highcontrast .header {
+.fluent-dark .multiheader,
+.fluent2-dark .multiheader,
+.fluent2-highcontrast .multiheader {
     background: #252423;
     color: #2899F5;
 }
 
-.bootstrap5-dark .header {
+.bootstrap5-dark .multiheader,
+.bootstrap5\.3-dark .multiheader {
     background: #343A40;
     color: #7B848D;
 }
 
-.fluent .header{
+.fluent .multiheader{
      color: #2899F5;
 }
 
-.tailwind-dark .header,
-.tailwind3-dark .header {
+.tailwind-dark .multiheader,
+.tailwind3-dark .multiheader {
     background: #374151;
     color: rgb(255, 255, 255);
 }
 
-.material3-dark .header,
-.material-dark .header {
+.material3-dark .multiheader,
+.material-dark .multiheader {
     background: rgb(66, 66, 66);
     color: rgb(255, 255, 255);
 }
 
-.fabric-dark .header {
+.fabric-dark .multiheader {
     background: rgb(40, 39, 39);
     color: rgb(255, 255, 255);
 }
 
-.bootstrap-dark .header {
+.bootstrap-dark .multiheader {
     background: rgb(49, 49, 49);
     color: rgb(255, 255, 255);
 }

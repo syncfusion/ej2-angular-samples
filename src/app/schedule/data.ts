@@ -1,7 +1,7 @@
 /**
  * Schedule datasource
  */
-
+export const currentYear: number = new Date().getFullYear();
 export let scheduleData: Record<string, any>[] = [
   {
     Id: 1,
@@ -171,6 +171,255 @@ export let scheduleData: Record<string, any>[] = [
     StartTime: new Date(2021, 0, 16, 12, 30),
     EndTime: new Date(2021, 0, 16, 14, 30),
     CategoryColor: '#7fa900'
+  }
+];
+
+export let overlappingData: Record<string, any>[] = [
+  {
+    Id: 1,
+    Subject: 'Quantum Computing Summit',
+    Location: 'Space Centre USA',
+    StartTime: new Date(2026, 5, 2, 9, 30),
+    EndTime: new Date(2026, 5, 2, 11, 0),
+    CategoryColor: '#1aaa55'
+  }, {
+    Id: 2,
+    Subject: 'AI Ethics Conference',
+    Location: 'Newyork City',
+    StartTime: new Date(2026, 4, 26, 12, 0),
+    EndTime: new Date(2026, 4, 26, 14, 0),
+    CategoryColor: '#357cd2'
+  }, {
+    Id: 3,
+    Subject: 'Blockchain Revolution',
+    Location: 'Space Centre USA',
+    StartTime: new Date(2026, 4, 19, 9, 30),
+    EndTime: new Date(2026, 4, 19, 11, 0),
+    CategoryColor: '#7fa900'
+  }, {
+    Id: 4,
+    Subject: 'Cybersecurity Forum',
+    Location: 'Space Centre USA',
+    StartTime: new Date(2026, 4, 28, 13, 0),
+    EndTime: new Date(2026, 4, 28, 14, 30),
+    CategoryColor: '#ea7a57'
+  }, {
+    Id: 5,
+    Subject: 'Robotics Expo 2026',
+    Location: 'Space Centre USA',
+    StartTime: new Date(2026, 4, 24, 15, 0),
+    EndTime: new Date(2026, 4, 24, 16, 0),
+    CategoryColor: '#00bdae'
+  }, {
+    Id: 6,
+    Subject: 'IoT Innovation Lab',
+    Location: 'Bermuda',
+    StartTime: new Date(2026, 5, 1, 9, 30),
+    EndTime: new Date(2026, 5, 1, 11, 0),
+    CategoryColor: '#f57f17'
+  }, {
+    Id: 7,
+    Subject: 'Cloud Computing Summit',
+    Location: 'Himalayas',
+    StartTime: new Date(2026, 4, 28, 11, 0),
+    EndTime: new Date(2026, 4, 28, 12, 30),
+    CategoryColor: '#1aaa55'
+  }, {
+    Id: 8,
+    Subject: 'Data Science Workshop',
+    Location: 'Space Centre USA',
+    StartTime: new Date(2026, 4, 29, 9, 0),
+    EndTime: new Date(2026, 4, 29, 10, 0),
+    CategoryColor: '#357cd2'
+  }, {
+    Id: 9,
+    Subject: 'Machine Learning Masterclass',
+    Location: 'Space Centre USA',
+    StartTime: new Date(2026, 4, 29, 11, 0),
+    EndTime: new Date(2026, 4, 29, 13, 0),
+    CategoryColor: '#7fa900'
+  }, {
+    Id: 10,
+    Subject: 'VR Development Conference',
+    Location: 'Africa',
+    StartTime: new Date(2026, 4, 29, 11, 0),
+    EndTime: new Date(2026, 4, 29, 13, 0),
+    CategoryColor: '#ea7a57'
+  }, {
+    Id: 11,
+    Subject: 'Edge Computing Summit',
+    Location: 'London',
+    StartTime: new Date(2026, 4, 18, 9, 30),
+    EndTime: new Date(2026, 4, 18, 11, 0),
+    CategoryColor: '#00bdae'
+  }, {
+    Id: 12,
+    Subject: 'Neural Networks Workshop',
+    Location: 'Sweden',
+    StartTime: new Date(2026, 4, 25, 10, 0),
+    EndTime: new Date(2026, 4, 25, 11, 30),
+    CategoryColor: '#f57f17'
+  }, {
+    Id: 13,
+    Subject: '5G Technology Forum',
+    Location: 'Space Centre USA',
+    StartTime: new Date(2026, 4, 25, 10, 30),
+    EndTime: new Date(2026, 4, 25, 12, 30),
+    CategoryColor: '#1aaa55'
+  }, {
+    Id: 14,
+    Subject: 'Quantum Encryption Lab',
+    Location: 'Research Centre of USA',
+    StartTime: new Date(2026, 4, 20, 10, 0),
+    EndTime: new Date(2026, 4, 20, 11, 30),
+    CategoryColor: '#357cd2'
+  }, {
+    Id: 15,
+    Subject: 'DevOps Best Practices',
+    Location: 'California',
+    StartTime: new Date(2026, 4, 29, 9, 30),
+    EndTime: new Date(2026, 4, 29, 11, 0),
+    CategoryColor: '#7fa900'
+  }, {
+    Id: 16,
+    Subject: 'Agile Methodology Summit',
+    Location: 'Alaska',
+    StartTime: new Date(2026, 4, 29, 11, 0),
+    EndTime: new Date(2026, 4, 29, 13, 0),
+    CategoryColor: '#ea7a57'
+  }, {
+    Id: 17,
+    Subject: 'Microservices Conference',
+    Location: 'Research Centre of USA',
+    StartTime: new Date(2026, 5, 3, 5, 30),
+    EndTime: new Date(2026, 5, 3, 7, 30),
+    CategoryColor: '#00bdae'
+  }, {
+    Id: 18,
+    Subject: 'Serverless Architecture Lab',
+    Location: 'Space Centre USA',
+    StartTime: new Date(2026, 4, 21, 17, 0),
+    EndTime: new Date(2026, 4, 21, 18, 30),
+    CategoryColor: '#f57f17'
+  }, {
+    Id: 19,
+    Subject: 'API Design Workshop',
+    Location: 'San Fransisco',
+    StartTime: new Date(2026, 5, 2, 6, 0),
+    EndTime: new Date(2026, 5, 2, 7, 30),
+    CategoryColor: '#7fa900'
+  }, {
+    Id: 20,
+    Subject: 'Container Orchestration Summit',
+    Location: 'Space Centre USA',
+    StartTime: new Date(2026, 4, 19, 16, 0),
+    EndTime: new Date(2026, 4, 19, 18, 0),
+    CategoryColor: '#ea7a57'
+  }, {
+    Id: 21,
+    Subject: 'CI/CD Pipeline Conference',
+    Location: 'Space Centre USA',
+    StartTime: new Date(2026, 5, 1, 14, 0),
+    EndTime: new Date(2026, 5, 1, 16, 0),
+    CategoryColor: '#ea7a57'
+  }, {
+    Id: 22,
+    Subject: 'Test Automation Summit',
+    Location: 'Research Centre of USA',
+    StartTime: new Date(2026, 4, 22, 14, 30),
+    EndTime: new Date(2026, 4, 22, 16, 0),
+    CategoryColor: '#00bdae'
+  }, {
+    Id: 23,
+    Subject: 'Performance Engineering Lab',
+    Location: 'Greenland',
+    StartTime: new Date(2026, 4, 18, 14, 30),
+    EndTime: new Date(2026, 4, 18, 16, 0),
+    CategoryColor: '#ea7a57'
+  }, {
+    Id: 24,
+    Subject: 'Code Review Workshop',
+    Location: 'California',
+    StartTime: new Date(2026, 4, 23, 10, 0),
+    EndTime: new Date(2026, 4, 23, 11, 30),
+    CategoryColor: '#7fa900'
+  }, {
+    Id: 25,
+    Subject: 'Big Data Analytics Summit',
+    Location: 'Space Centre USA',
+    StartTime: new Date(2026, 4, 27, 10, 0),
+    EndTime: new Date(2026, 4, 27, 11, 30),
+    CategoryColor: '#ff6f61'
+  }, {
+    Id: 26,
+    Subject: 'Digital Transformation Forum',
+    Location: 'Greenland',
+    StartTime: new Date(2026, 4, 20, 6, 30),
+    EndTime: new Date(2026, 4, 20, 8, 0),
+    CategoryColor: '#6b5b95'
+  }, {
+    Id: 27,
+    Subject: 'Tech Leadership Summit',
+    Location: 'Space Centre USA',
+    StartTime: new Date(2026, 4, 27, 10, 0),
+    EndTime: new Date(2026, 4, 27, 11, 30),
+    CategoryColor: '#88b04b'
+  }, {
+    Id: 28,
+    Subject: 'Product Management Workshop',
+    Location: 'NASA Lab',
+    StartTime: new Date(2026, 4, 27, 15, 0),
+    EndTime: new Date(2026, 4, 27, 16, 30),
+    CategoryColor: '#f7cac9'
+  }, {
+    Id: 29,
+    Subject: 'UX Design Conference',
+    Location: 'Pacific Ocean',
+    StartTime: new Date(2026, 4, 28, 13, 30),
+    EndTime: new Date(2026, 4, 28, 15, 0),
+    CategoryColor: '#92a8d1'
+  }, {
+    Id: 30,
+    Subject: 'Security Operations Summit',
+    Location: 'Chile Observatory',
+    StartTime: new Date(2026, 4, 24, 14, 30),
+    EndTime: new Date(2026, 4, 24, 16, 0),
+    CategoryColor: '#955251'
+  }, {
+    Id: 31,
+    Subject: 'Full Stack Development Lab',
+    Location: 'Hawaii',
+    StartTime: new Date(2026, 4, 28, 10, 30),
+    EndTime: new Date(2026, 4, 28, 12, 0),
+    CategoryColor: '#b565a7'
+  }, {
+    Id: 32,
+    Subject: 'Database Architecture Summit',
+    Location: 'Space Centre USA',
+    StartTime: new Date(2026, 4, 28, 15, 30),
+    EndTime: new Date(2026, 4, 28, 17, 30),
+    CategoryColor: '#009b77'
+  }, {
+    Id: 33,
+    Subject: 'Mobile Development Conference',
+    Location: 'Research Centre of USA',
+    StartTime: new Date(2026, 4, 28, 6, 30),
+    EndTime: new Date(2026, 4, 28, 8, 30),
+    CategoryColor: '#dd4124'
+  }, {
+    Id: 34,
+    Subject: 'Tech Innovation Summit',
+    Location: 'Alaska',
+    StartTime: new Date(2026, 4, 28, 10, 30),
+    EndTime: new Date(2026, 4, 28, 12, 0),
+    CategoryColor: '#45b8ac'
+  }, {
+    Id: 35,
+    Subject: 'Software Architecture Lab',
+    Location: 'Himalayas',
+    StartTime: new Date(2026, 4, 28, 11, 15),
+    EndTime: new Date(2026, 4, 28, 13, 0),
+    CategoryColor: '#e94b3c'
   }
 ];
 
@@ -10454,5 +10703,1438 @@ export let cloudSecurityEventData = [
     TargetAudience: "Developers, Customer Service Managers",
     EventLevel: "Intermediate",
     EventTags: ["AI", "Chatbots", "Automation"]
+  }
+];
+export let taskData: Record<string, any>[] = [
+  {
+    Id: 1,
+    Subject: 'Frontend Architecture Design',
+    StartTime: new Date(2026, 3, 21, 9, 0),
+    EndTime: new Date(2026, 3, 21, 10, 30),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Design React component architecture'
+  },
+  {
+    Id: 2,
+    Subject: 'UI Component Development',
+    StartTime: new Date(2026, 3, 21, 11, 0),
+    EndTime: new Date(2026, 3, 21, 13, 0),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Build reusable UI component library'
+  },
+  {
+    Id: 13,
+    Subject: 'Code Review & Testing',
+    StartTime: new Date(2026, 3, 21, 14, 0),
+    EndTime: new Date(2026, 3, 21, 15, 30),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Peer code review and testing'
+  },
+  {
+    Id: 3,
+    Subject: 'API Gateway Configuration',
+    StartTime: new Date(2026, 3, 21, 9, 30),
+    EndTime: new Date(2026, 3, 21, 11, 0),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Setup API gateway with authentication'
+  },
+  {
+    Id: 4,
+    Subject: 'Database Migration',
+    StartTime: new Date(2026, 3, 21, 11, 30),
+    EndTime: new Date(2026, 3, 21, 13, 0),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Execute production database migration'
+  },
+  {
+    Id: 14,
+    Subject: 'Performance Monitoring',
+    StartTime: new Date(2026, 3, 21, 14, 30),
+    EndTime: new Date(2026, 3, 21, 16, 0),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Setup monitoring and alerts'
+  },
+  {
+    Id: 5,
+    Subject: 'Component Testing Suite',
+    StartTime: new Date(2026, 3, 21, 9, 0),
+    EndTime: new Date(2026, 3, 21, 11, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Write unit tests for all components'
+  },
+  {
+    Id: 6,
+    Subject: 'E2E Integration Testing',
+    StartTime: new Date(2026, 3, 21, 12, 0),
+    EndTime: new Date(2026, 3, 21, 13, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'review',
+    Progress: 99,
+    Description: 'End-to-end test automation setup'
+  },
+  {
+    Id: 15,
+    Subject: 'Test Documentation',
+    StartTime: new Date(2026, 3, 21, 14, 0),
+    EndTime: new Date(2026, 3, 21, 16, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Document test cases and scenarios'
+  },
+  {
+    Id: 7,
+    Subject: 'Performance Optimization',
+    StartTime: new Date(2026, 3, 21, 9, 30),
+    EndTime: new Date(2026, 3, 21, 12, 0),
+    EmployeeId: 4,
+    EmployeeName: 'Michael',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Optimize bundle size and loading'
+  },
+  {
+    Id: 8,
+    Subject: 'Documentation & Deployment',
+    StartTime: new Date(2026, 3, 21, 14, 0),
+    EndTime: new Date(2026, 3, 21, 16, 0),
+    EmployeeId: 4,
+    EmployeeName: 'Michael',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Complete documentation and CI/CD setup'
+  },
+  {
+    Id: 9,
+    Subject: 'Security Audit & Review',
+    StartTime: new Date(2026, 3, 21, 9, 0),
+    EndTime: new Date(2026, 3, 21, 11, 30),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'done',
+    Progress: 100,
+    Description: 'OWASP security compliance review'
+  },
+  {
+    Id: 10,
+    Subject: 'Accessibility Compliance Check',
+    StartTime: new Date(2026, 3, 21, 12, 0),
+    EndTime: new Date(2026, 3, 21, 13, 0),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'review',
+    Progress: 99,
+    Description: 'WCAG 2.1 AA compliance verification'
+  },
+  {
+    Id: 16,
+    Subject: 'Compliance Report',
+    StartTime: new Date(2026, 3, 21, 14, 30),
+    EndTime: new Date(2026, 3, 21, 16, 0),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Generate compliance documentation'
+  },
+  {
+    Id: 11,
+    Subject: 'Sprint Planning & Coordination',
+    StartTime: new Date(2026, 3, 21, 10, 0),
+    EndTime: new Date(2026, 3, 21, 11, 30),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Sprint planning and backlog refinement'
+  },
+  {
+    Id: 12,
+    Subject: 'Release Management & QA',
+    StartTime: new Date(2026, 3, 21, 12, 0),
+    EndTime: new Date(2026, 3, 21, 13, 0),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Final QA and release coordination'
+  },
+  {
+    Id: 17,
+    Subject: 'Team Sync & Standup',
+    StartTime: new Date(2026, 3, 21, 14, 0),
+    EndTime: new Date(2026, 3, 21, 15, 0),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Daily standup and team sync'
+  },
+  {
+    Id: 18,
+    Subject: 'User Experience Testing',
+    StartTime: new Date(2026, 3, 21, 16, 0),
+    EndTime: new Date(2026, 3, 21, 18, 0),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'review',
+    Progress: 99,
+    Description: 'User acceptance testing phase'
+  },
+  {
+    Id: 19,
+    Subject: 'Production Deployment Review',
+    StartTime: new Date(2026, 3, 21, 16, 0),
+    EndTime: new Date(2026, 3, 21, 17, 30),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Final production deployment review'
+  },
+  {
+    Id: 20,
+    Subject: 'Performance Analysis & Reporting',
+    StartTime: new Date(2026, 3, 21, 16, 30),
+    EndTime: new Date(2026, 3, 21, 18, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Analyze performance metrics and generate reports'
+  },
+  {
+    Id: 21,
+    Subject: 'System Integration Testing',
+    StartTime: new Date(2026, 3, 21, 16, 30),
+    EndTime: new Date(2026, 3, 21, 17, 30),
+    EmployeeId: 4,
+    EmployeeName: 'Michael',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Comprehensive system integration testing'
+  },
+  {
+    Id: 22,
+    Subject: 'Final Security Sign-off',
+    StartTime: new Date(2026, 3, 21, 17, 0),
+    EndTime: new Date(2026, 3, 21, 18, 0),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Final security approval and sign-off'
+  },
+  {
+    Id: 23,
+    Subject: 'Release Deployment & Handoff',
+    StartTime: new Date(2026, 3, 21, 15, 0),
+    EndTime: new Date(2026, 3, 21, 16, 30),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Production release deployment and team handoff'
+  },
+  {
+    Id: 24,
+    Subject: 'Post-Deployment Monitoring',
+    StartTime: new Date(2026, 3, 21, 17, 0),
+    EndTime: new Date(2026, 3, 21, 18, 0),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Monitor system post-deployment'
+  },
+  {
+    Id: 25,
+    Subject: 'Project Scope Finalization',
+    StartTime: new Date(2026, 3, 20, 9, 0),
+    EndTime: new Date(2026, 3, 20, 10, 30),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Finalize project scope and objectives'
+  },
+  {
+    Id: 26,
+    Subject: 'UI Design Sign-off',
+    StartTime: new Date(2026, 3, 20, 11, 0),
+    EndTime: new Date(2026, 3, 20, 13, 0),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Approve final UI designs'
+  },
+  {
+    Id: 27,
+    Subject: 'UX Review Session',
+    StartTime: new Date(2026, 3, 20, 14, 0),
+    EndTime: new Date(2026, 3, 20, 15, 30),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review UX flow and interactions'
+  },
+  {
+    Id: 28,
+    Subject: 'Service Endpoint Finalization',
+    StartTime: new Date(2026, 3, 20, 9, 30),
+    EndTime: new Date(2026, 3, 20, 11, 0),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Finalize backend service endpoints'
+  },
+  {
+    Id: 29,
+    Subject: 'Database Constraint Validation',
+    StartTime: new Date(2026, 3, 20, 11, 30),
+    EndTime: new Date(2026, 3, 20, 13, 0),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Validate database constraints'
+  },
+  {
+    Id: 30,
+    Subject: 'Infrastructure Checklist Review',
+    StartTime: new Date(2026, 3, 20, 14, 30),
+    EndTime: new Date(2026, 3, 20, 15, 30),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review infrastructure readiness checklist'
+  },
+  {
+    Id: 31,
+    Subject: 'Unit Test Completion',
+    StartTime: new Date(2026, 3, 20, 9, 0),
+    EndTime: new Date(2026, 3, 20, 11, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Complete unit test implementation'
+  },
+  {
+    Id: 32,
+    Subject: 'Automation Report Review',
+    StartTime: new Date(2026, 3, 20, 12, 0),
+    EndTime: new Date(2026, 3, 20, 13, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Review automation execution report'
+  },
+  {
+    Id: 33,
+    Subject: 'Regression Planning',
+    StartTime: new Date(2026, 3, 20, 14, 0),
+    EndTime: new Date(2026, 3, 20, 15, 30),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'pending',
+    Progress: 67,
+    Description: 'Plan regression testing cycle'
+  },
+  {
+    Id: 34,
+    Subject: 'Build Optimization Completion',
+    StartTime: new Date(2026, 3, 20, 9, 30),
+    EndTime: new Date(2026, 3, 20, 12, 0),
+    EmployeeId: 4,
+    EmployeeName: 'Michael',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Complete build optimization tasks'
+  },
+  {
+    Id: 35,
+    Subject: 'Deployment Script Validation',
+    StartTime: new Date(2026, 3, 20, 14, 0),
+    EndTime: new Date(2026, 3, 20, 16, 0),
+    EmployeeId: 4,
+    EmployeeName: 'Michael',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Validate deployment scripts'
+  },
+  {
+    Id: 36,
+    Subject: 'Security Controls Verification',
+    StartTime: new Date(2026, 3, 20, 9, 0),
+    EndTime: new Date(2026, 3, 20, 11, 30),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Verify implemented security controls'
+  },
+  {
+    Id: 37,
+    Subject: 'Compliance Evidence Submission',
+    StartTime: new Date(2026, 3, 20, 12, 0),
+    EndTime: new Date(2026, 3, 20, 13, 0),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Submit compliance evidence'
+  },
+  {
+    Id: 38,
+    Subject: 'Audit Observation Review',
+    StartTime: new Date(2026, 3, 20, 14, 30),
+    EndTime: new Date(2026, 3, 20, 15, 30),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review audit observations'
+  },
+  {
+    Id: 39,
+    Subject: 'Sprint Closure Meeting',
+    StartTime: new Date(2026, 3, 20, 10, 0),
+    EndTime: new Date(2026, 3, 20, 11, 30),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Conduct sprint closure meeting'
+  },
+  {
+    Id: 40,
+    Subject: 'Release Checklist Completion',
+    StartTime: new Date(2026, 3, 20, 12, 0),
+    EndTime: new Date(2026, 3, 20, 13, 0),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Complete release checklist'
+  },
+  {
+    Id: 41,
+    Subject: 'Team Sync Preparation',
+    StartTime: new Date(2026, 3, 20, 14, 0),
+    EndTime: new Date(2026, 3, 20, 15, 0),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'pending',
+    Progress: 12,
+    Description: 'Prepare agenda for team sync'
+  },
+  {
+    Id: 42,
+    Subject: 'UAT Sign-off',
+    StartTime: new Date(2026, 3, 20, 16, 0),
+    EndTime: new Date(2026, 3, 20, 18, 0),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'done',
+    Progress: 100,
+    Description: 'User acceptance testing sign-off'
+  },
+  {
+    Id: 43,
+    Subject: 'Production Review',
+    StartTime: new Date(2026, 3, 20, 16, 0),
+    EndTime: new Date(2026, 3, 20, 17, 30),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Production readiness review'
+  },
+  {
+    Id: 44,
+    Subject: 'Performance Validation',
+    StartTime: new Date(2026, 3, 20, 16, 30),
+    EndTime: new Date(2026, 3, 20, 18, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Validate performance metrics'
+  },
+  {
+    Id: 45,
+    Subject: 'System Integration Approval',
+    StartTime: new Date(2026, 3, 20, 16, 0),
+    EndTime: new Date(2026, 3, 20, 18, 0),
+    EmployeeId: 4,
+    EmployeeName: 'Michael',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Approve system integration'
+  },
+  {
+    Id: 46,
+    Subject: 'Final Security Clearance',
+    StartTime: new Date(2026, 3, 20, 17, 0),
+    EndTime: new Date(2026, 3, 20, 18, 0),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Provide final security clearance'
+  },
+  {
+    Id: 47,
+    Subject: 'Release Execution',
+    StartTime: new Date(2026, 3, 20, 15, 0),
+    EndTime: new Date(2026, 3, 20, 16, 30),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Execute production release'
+  },
+  {
+    Id: 48,
+    Subject: 'Post-release Monitoring Setup',
+    StartTime: new Date(2026, 3, 20, 17, 0),
+    EndTime: new Date(2026, 3, 20, 18, 0),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Setup post-release monitoring'
+  },
+  {
+    Id: 49,
+    Subject: 'Feature Requirement Freeze',
+    StartTime: new Date(2026, 3, 22, 9, 0),
+    EndTime: new Date(2026, 3, 22, 10, 30),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Freeze feature requirements for release'
+  },
+  {
+    Id: 50,
+    Subject: 'UI Consistency Verification',
+    StartTime: new Date(2026, 3, 22, 11, 0),
+    EndTime: new Date(2026, 3, 22, 13, 0),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Verify UI consistency across modules'
+  },
+  {
+    Id: 51,
+    Subject: 'Design Review Validation',
+    StartTime: new Date(2026, 3, 22, 14, 0),
+    EndTime: new Date(2026, 3, 22, 15, 30),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Validate final design changes'
+  },
+  {
+    Id: 52,
+    Subject: 'Service Health Check',
+    StartTime: new Date(2026, 3, 22, 9, 30),
+    EndTime: new Date(2026, 3, 22, 11, 0),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Run backend service health checks'
+  },
+  {
+    Id: 53,
+    Subject: 'Data Integrity Confirmation',
+    StartTime: new Date(2026, 3, 22, 11, 30),
+    EndTime: new Date(2026, 3, 22, 13, 0),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Confirm migrated data integrity'
+  },
+  {
+    Id: 54,
+    Subject: 'Metrics Review',
+    StartTime: new Date(2026, 3, 22, 14, 30),
+    EndTime: new Date(2026, 3, 22, 16, 0),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Review collected performance metrics'
+  },
+  {
+    Id: 55,
+    Subject: 'Test Execution Closure',
+    StartTime: new Date(2026, 3, 22, 9, 0),
+    EndTime: new Date(2026, 3, 22, 11, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Close remaining test executions'
+  },
+  {
+    Id: 56,
+    Subject: 'Automation Result Review',
+    StartTime: new Date(2026, 3, 22, 12, 0),
+    EndTime: new Date(2026, 3, 22, 13, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review automation test results'
+  },
+  {
+    Id: 57,
+    Subject: 'Test Report Finalization',
+    StartTime: new Date(2026, 3, 22, 14, 0),
+    EndTime: new Date(2026, 3, 22, 16, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Finalize overall test report'
+  },
+  {
+    Id: 58,
+    Subject: 'Build Artifact Validation',
+    StartTime: new Date(2026, 3, 22, 9, 30),
+    EndTime: new Date(2026, 3, 22, 12, 0),
+    EmployeeId: 4,
+    EmployeeName: 'Michael',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Validate generated build artifacts'
+  },
+  {
+    Id: 59,
+    Subject: 'Deployment Dry Run',
+    StartTime: new Date(2026, 3, 22, 14, 0),
+    EndTime: new Date(2026, 3, 22, 16, 0),
+    EmployeeId: 4,
+    EmployeeName: 'Michael',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Perform deployment dry run'
+  },
+  {
+    Id: 60,
+    Subject: 'Security Control Confirmation',
+    StartTime: new Date(2026, 3, 22, 9, 0),
+    EndTime: new Date(2026, 3, 22, 11, 30),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Confirm applied security controls'
+  },
+  {
+    Id: 61,
+    Subject: 'Compliance Evidence Review',
+    StartTime: new Date(2026, 3, 22, 12, 0),
+    EndTime: new Date(2026, 3, 22, 13, 0),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review submitted compliance evidence'
+  },
+  {
+    Id: 62,
+    Subject: 'Audit Closure Documentation',
+    StartTime: new Date(2026, 3, 22, 14, 30),
+    EndTime: new Date(2026, 3, 22, 16, 0),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Prepare audit closure documents'
+  },
+  {
+    Id: 63,
+    Subject: 'Sprint Metrics Review',
+    StartTime: new Date(2026, 3, 22, 10, 0),
+    EndTime: new Date(2026, 3, 22, 11, 30),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Review sprint performance metrics'
+  },
+  {
+    Id: 64,
+    Subject: 'Release Checklist Validation',
+    StartTime: new Date(2026, 3, 22, 12, 0),
+    EndTime: new Date(2026, 3, 22, 13, 0),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Validate release readiness checklist'
+  },
+  {
+    Id: 65,
+    Subject: 'Team Sync Review',
+    StartTime: new Date(2026, 3, 22, 14, 0),
+    EndTime: new Date(2026, 3, 22, 15, 0),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review team sync outcomes'
+  },
+  {
+    Id: 66,
+    Subject: 'UAT Result Verification',
+    StartTime: new Date(2026, 3, 22, 16, 0),
+    EndTime: new Date(2026, 3, 22, 18, 0),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Verify UAT results'
+  },
+  {
+    Id: 67,
+    Subject: 'Production Approval',
+    StartTime: new Date(2026, 3, 22, 16, 0),
+    EndTime: new Date(2026, 3, 22, 17, 30),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Approve production deployment'
+  },
+  {
+    Id: 68,
+    Subject: 'Performance Summary Report',
+    StartTime: new Date(2026, 3, 22, 16, 30),
+    EndTime: new Date(2026, 3, 22, 18, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Prepare performance summary report'
+  },
+  {
+    Id: 69,
+    Subject: 'Integration Sign-off',
+    StartTime: new Date(2026, 3, 22, 16, 30),
+    EndTime: new Date(2026, 3, 22, 17, 30),
+    EmployeeId: 4,
+    EmployeeName: 'Michael',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Provide integration sign-off'
+  },
+  {
+    Id: 70,
+    Subject: 'Security Closure Approval',
+    StartTime: new Date(2026, 3, 22, 17, 0),
+    EndTime: new Date(2026, 3, 22, 18, 0),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Approve security closure'
+  },
+  {
+    Id: 71,
+    Subject: 'Release Execution Review',
+    StartTime: new Date(2026, 3, 22, 15, 0),
+    EndTime: new Date(2026, 3, 22, 16, 30),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Review release execution'
+  },
+  {
+    Id: 72,
+    Subject: 'Post-release Health Check',
+    StartTime: new Date(2026, 3, 22, 16, 30),
+    EndTime: new Date(2026, 3, 22, 18, 0),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Perform post-release system health check'
+  },
+  {
+    Id: 73,
+    Subject: 'Architecture Validation Session',
+    StartTime: new Date(2026, 3, 23, 9, 0),
+    EndTime: new Date(2026, 3, 23, 10, 30),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Validate overall system architecture'
+  },
+  {
+    Id: 74,
+    Subject: 'UI Regression Assessment',
+    StartTime: new Date(2026, 3, 23, 11, 0),
+    EndTime: new Date(2026, 3, 23, 13, 0),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Assess UI regressions after fixes'
+  },
+  {
+    Id: 75,
+    Subject: 'UX Feedback Consolidation',
+    StartTime: new Date(2026, 3, 23, 14, 0),
+    EndTime: new Date(2026, 3, 23, 15, 30),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'pending',
+    Progress: 22,
+    Description: 'Consolidate UX feedback items'
+  },
+  {
+    Id: 76,
+    Subject: 'Gateway Performance Review',
+    StartTime: new Date(2026, 3, 23, 9, 30),
+    EndTime: new Date(2026, 3, 23, 11, 0),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review API gateway performance metrics'
+  },
+  {
+    Id: 77,
+    Subject: 'Data Consistency Audit',
+    StartTime: new Date(2026, 3, 23, 11, 30),
+    EndTime: new Date(2026, 3, 23, 13, 0),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Audit data consistency across services'
+  },
+  {
+    Id: 78,
+    Subject: 'Alert Threshold Planning',
+    StartTime: new Date(2026, 3, 23, 14, 30),
+    EndTime: new Date(2026, 3, 23, 16, 0),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'pending',
+    Progress: 0,
+    Description: 'Plan alert threshold values'
+  },
+  {
+    Id: 79,
+    Subject: 'Test Result Review',
+    StartTime: new Date(2026, 3, 23, 9, 0),
+    EndTime: new Date(2026, 3, 23, 11, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review executed test results'
+  },
+  {
+    Id: 80,
+    Subject: 'Automation Gap Analysis',
+    StartTime: new Date(2026, 3, 23, 12, 0),
+    EndTime: new Date(2026, 3, 23, 13, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Analyze gaps in test automation'
+  },
+  {
+    Id: 81,
+    Subject: 'Test Scenario Backlog',
+    StartTime: new Date(2026, 3, 23, 14, 0),
+    EndTime: new Date(2026, 3, 23, 16, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'pending',
+    Progress: 35,
+    Description: 'Prepare backlog of missing scenarios'
+  },
+  {
+    Id: 82,
+    Subject: 'Build Stability Verification',
+    StartTime: new Date(2026, 3, 23, 9, 30),
+    EndTime: new Date(2026, 3, 23, 12, 0),
+    EmployeeId: 4,
+    EmployeeName: 'Michael',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Verify build stability'
+  },
+  {
+    Id: 83,
+    Subject: 'Deployment Risk Assessment',
+    StartTime: new Date(2026, 3, 23, 14, 0),
+    EndTime: new Date(2026, 3, 23, 16, 0),
+    EmployeeId: 4,
+    EmployeeName: 'Michael',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Assess deployment risks'
+  },
+  {
+    Id: 84,
+    Subject: 'Security Finding Review',
+    StartTime: new Date(2026, 3, 23, 9, 0),
+    EndTime: new Date(2026, 3, 23, 11, 30),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review identified security findings'
+  },
+  {
+    Id: 85,
+    Subject: 'Compliance Gap Analysis',
+    StartTime: new Date(2026, 3, 23, 12, 0),
+    EndTime: new Date(2026, 3, 23, 13, 0),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Analyze compliance gaps'
+  },
+  {
+    Id: 86,
+    Subject: 'Policy Update Draft',
+    StartTime: new Date(2026, 3, 23, 14, 30),
+    EndTime: new Date(2026, 3, 23, 16, 0),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'pending',
+    Progress: 10,
+    Description: 'Draft security policy updates'
+  },
+  {
+    Id: 87,
+    Subject: 'Sprint Review Meeting',
+    StartTime: new Date(2026, 3, 23, 10, 0),
+    EndTime: new Date(2026, 3, 23, 11, 30),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Conduct sprint review meeting'
+  },
+  {
+    Id: 88,
+    Subject: 'Release Risk Evaluation',
+    StartTime: new Date(2026, 3, 23, 12, 0),
+    EndTime: new Date(2026, 3, 23, 13, 0),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Evaluate release risks'
+  },
+  {
+    Id: 89,
+    Subject: 'Standup Action Items',
+    StartTime: new Date(2026, 3, 23, 14, 0),
+    EndTime: new Date(2026, 3, 23, 15, 0),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'pending',
+    Progress: 0,
+    Description: 'Track standup action items'
+  },
+  {
+    Id: 90,
+    Subject: 'UAT Defect Verification',
+    StartTime: new Date(2026, 3, 23, 16, 0),
+    EndTime: new Date(2026, 3, 23, 18, 0),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Verify UAT reported defects'
+  },
+  {
+    Id: 91,
+    Subject: 'Production Rollback Readiness',
+    StartTime: new Date(2026, 3, 23, 16, 0),
+    EndTime: new Date(2026, 3, 23, 17, 30),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Ensure rollback readiness'
+  },
+  {
+    Id: 92,
+    Subject: 'Performance Anomaly Review',
+    StartTime: new Date(2026, 3, 23, 16, 30),
+    EndTime: new Date(2026, 3, 23, 18, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review performance anomalies'
+  },
+  {
+    Id: 93,
+    Subject: 'Integration Approval Review',
+    StartTime: new Date(2026, 3, 23, 16, 30),
+    EndTime: new Date(2026, 3, 23, 17, 30),
+    EmployeeId: 4,
+    EmployeeName: 'Michael',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review integration approval status'
+  },
+  {
+    Id: 94,
+    Subject: 'Security Exception Closure',
+    StartTime: new Date(2026, 3, 23, 17, 0),
+    EndTime: new Date(2026, 3, 23, 18, 0),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Close security exceptions'
+  },
+  {
+    Id: 95,
+    Subject: 'Release Decision Review',
+    StartTime: new Date(2026, 3, 23, 15, 0),
+    EndTime: new Date(2026, 3, 23, 16, 30),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review go/no-go release decision'
+  },
+  {
+    Id: 96,
+    Subject: 'Post-release Issue Tracking',
+    StartTime: new Date(2026, 3, 23, 16, 30),
+    EndTime: new Date(2026, 3, 23, 18, 0),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Track post-release issues'
+  },
+  {
+    Id: 97,
+    Subject: 'Final Architecture Confirmation',
+    StartTime: new Date(2026, 3, 24, 9, 0),
+    EndTime: new Date(2026, 3, 24, 10, 30),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'done',
+    Progress: 100,
+    Description: 'Confirm final frontend architecture'
+  },
+  {
+    Id: 98,
+    Subject: 'UI Review Follow‑ups',
+    StartTime: new Date(2026, 3, 24, 11, 0),
+    EndTime: new Date(2026, 3, 24, 13, 0),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Address UI review comments'
+  },
+  {
+    Id: 99,
+    Subject: 'UX Improvement Implementation',
+    StartTime: new Date(2026, 3, 24, 14, 0),
+    EndTime: new Date(2026, 3, 24, 15, 30),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'in-progress',
+    Progress: 62,
+    Description: 'Implement UX improvements'
+  },
+  {
+    Id: 100,
+    Subject: 'API Stability Validation',
+    StartTime: new Date(2026, 3, 24, 9, 30),
+    EndTime: new Date(2026, 3, 24, 11, 0),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Validate API stability'
+  },
+  {
+    Id: 101,
+    Subject: 'Database Health Review',
+    StartTime: new Date(2026, 3, 24, 11, 30),
+    EndTime: new Date(2026, 3, 24, 13, 0),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review database health metrics'
+  },
+  {
+    Id: 102,
+    Subject: 'Runtime Monitoring Adjustment',
+    StartTime: new Date(2026, 3, 24, 14, 30),
+    EndTime: new Date(2026, 3, 24, 16, 0),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'in-progress',
+    Progress: 55,
+    Description: 'Adjust runtime monitoring thresholds'
+  },
+  {
+    Id: 103,
+    Subject: 'Regression Result Review',
+    StartTime: new Date(2026, 3, 24, 9, 0),
+    EndTime: new Date(2026, 3, 24, 11, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review regression test results'
+  },
+  {
+    Id: 104,
+    Subject: 'Automation Failure Analysis',
+    StartTime: new Date(2026, 3, 24, 12, 0),
+    EndTime: new Date(2026, 3, 24, 13, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Analyze automation failures'
+  },
+  {
+    Id: 105,
+    Subject: 'Bug Verification Cycle',
+    StartTime: new Date(2026, 3, 24, 14, 0),
+    EndTime: new Date(2026, 3, 24, 16, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'in-progress',
+    Progress: 48,
+    Description: 'Verify fixed bugs'
+  },
+  {
+    Id: 106,
+    Subject: 'Build Consistency Check',
+    StartTime: new Date(2026, 3, 24, 9, 30),
+    EndTime: new Date(2026, 3, 24, 12, 0),
+    EmployeeId: 4,
+    EmployeeName: 'Michael',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Check build consistency'
+  },
+  {
+    Id: 107,
+    Subject: 'Deployment Readiness Review',
+    StartTime: new Date(2026, 3, 24, 14, 0),
+    EndTime: new Date(2026, 3, 24, 16, 0),
+    EmployeeId: 4,
+    EmployeeName: 'Michael',
+    Status: 'in-progress',
+    Progress: 60,
+    Description: 'Review deployment readiness'
+  },
+  {
+    Id: 108,
+    Subject: 'Security Verification Review',
+    StartTime: new Date(2026, 3, 24, 9, 0),
+    EndTime: new Date(2026, 3, 24, 11, 30),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review security verification results'
+  },
+  {
+    Id: 109,
+    Subject: 'Compliance Observation Review',
+    StartTime: new Date(2026, 3, 24, 12, 0),
+    EndTime: new Date(2026, 3, 24, 13, 0),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review compliance observations'
+  },
+  {
+    Id: 110,
+    Subject: 'Risk Mitigation Execution',
+    StartTime: new Date(2026, 3, 24, 14, 30),
+    EndTime: new Date(2026, 3, 24, 16, 0),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'in-progress',
+    Progress: 44,
+    Description: 'Execute risk mitigation steps'
+  },
+  {
+    Id: 111,
+    Subject: 'Sprint Outcome Review',
+    StartTime: new Date(2026, 3, 24, 10, 0),
+    EndTime: new Date(2026, 3, 24, 11, 30),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Review sprint outcomes'
+  },
+  {
+    Id: 112,
+    Subject: 'Release Decision Discussion',
+    StartTime: new Date(2026, 3, 24, 12, 0),
+    EndTime: new Date(2026, 3, 24, 13, 0),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'review',
+    Progress: 99,
+    Description: 'Discuss release decision'
+  },
+  {
+    Id: 113,
+    Subject: 'Release Coordination',
+    StartTime: new Date(2026, 3, 24, 14, 0),
+    EndTime: new Date(2026, 3, 24, 15, 0),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'in-progress',
+    Progress: 58,
+    Description: 'Coordinate final release activities'
+  },
+  {
+    Id: 114,
+    Subject: 'UAT Follow‑up Planning',
+    StartTime: new Date(2026, 3, 24, 16, 0),
+    EndTime: new Date(2026, 3, 24, 18, 0),
+    EmployeeId: 1,
+    EmployeeName: 'Sarah',
+    Status: 'pending',
+    Progress: 0,
+    Description: 'Plan UAT follow‑ups'
+  },
+  {
+    Id: 115,
+    Subject: 'Production Checklist Prep',
+    StartTime: new Date(2026, 3, 24, 16, 0),
+    EndTime: new Date(2026, 3, 24, 17, 30),
+    EmployeeId: 2,
+    EmployeeName: 'John',
+    Status: 'pending',
+    Progress: 0,
+    Description: 'Prepare production checklist'
+  },
+  {
+    Id: 116,
+    Subject: 'Performance Review Notes',
+    StartTime: new Date(2026, 3, 24, 16, 30),
+    EndTime: new Date(2026, 3, 24, 18, 0),
+    EmployeeId: 3,
+    EmployeeName: 'Emma',
+    Status: 'pending',
+    Progress: 0,
+    Description: 'Prepare performance review notes'
+  },
+  {
+    Id: 117,
+    Subject: 'Integration Follow‑ups',
+    StartTime: new Date(2026, 3, 24, 16, 30),
+    EndTime: new Date(2026, 3, 24, 17, 30),
+    EmployeeId: 4,
+    EmployeeName: 'Michael',
+    Status: 'pending',
+    Progress: 0,
+    Description: 'Track integration follow‑ups'
+  },
+  {
+    Id: 118,
+    Subject: 'Security Closure Prep',
+    StartTime: new Date(2026, 3, 24, 17, 0),
+    EndTime: new Date(2026, 3, 24, 18, 0),
+    EmployeeId: 5,
+    EmployeeName: 'Lisa',
+    Status: 'pending',
+    Progress: 0,
+    Description: 'Prepare security closure'
+  },
+  {
+    Id: 119,
+    Subject: 'Release Retrospective Planning',
+    StartTime: new Date(2026, 3, 24, 15, 0),
+    EndTime: new Date(2026, 3, 24, 16, 30),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'pending',
+    Progress: 0,
+    Description: 'Plan release retrospective'
+  },
+  {
+    Id: 120,
+    Subject: 'Post‑release Monitoring Setup',
+    StartTime: new Date(2026, 3, 24, 17, 0),
+    EndTime: new Date(2026, 3, 24, 18, 0),
+    EmployeeId: 6,
+    EmployeeName: 'David',
+    Status: 'pending',
+    Progress: 0,
+    Description: 'Setup post‑release monitoring'
+  }
+];
+export let actionEventData: Record<string, any>[] = [
+  {
+    Id: 1,
+    Subject: 'Story Time for Kids',
+    StartTime: new Date(currentYear, 0, 12, 10, 0, 0),
+    EndTime: new Date(currentYear, 0, 12, 11, 30, 0),
+    CategoryColor: '#1aaa55'
+  }, {
+    Id: 2,
+    Subject: 'Camping with Turtles',
+    StartTime: new Date(currentYear, 0, 13, 12, 0, 0),
+    EndTime: new Date(currentYear, 0, 13, 14, 0, 0),
+    CategoryColor: '#357cd2'
+  }, {
+    Id: 3,
+    Subject: 'Wildlife Warriors',
+    StartTime: new Date(currentYear, 0, 14, 10, 0, 0),
+    EndTime: new Date(currentYear, 0, 14, 11, 30, 0),
+    CategoryColor: '#7fa900'
+  }, {
+    Id: 4,
+    Subject: 'Parrot Talk',
+    StartTime: new Date(currentYear, 0, 15, 9, 0, 0),
+    EndTime: new Date(currentYear, 0, 15, 10, 0, 0),
+    CategoryColor: '#ea7a57'
+  }, {
+    Id: 5,
+    Subject: 'Birds of Prey',
+    StartTime: new Date(currentYear, 0, 16, 10, 0, 0),
+    EndTime: new Date(currentYear, 0, 16, 11, 30, 0),
+    CategoryColor: '#00bdae'
+  }, {
+    Id: 6,
+    Subject: 'Croco World',
+    StartTime: new Date(currentYear, 0, 17, 12, 0, 0),
+    EndTime: new Date(currentYear, 0, 17, 14, 0, 0),
+    CategoryColor: '#f57f17'
+  }, {
+    Id: 7,
+    Subject: 'Venomous Snake Hunt',
+    StartTime: new Date(currentYear, 0, 18, 10, 0, 0),
+    EndTime: new Date(currentYear, 0, 18, 11, 30, 0),
+    CategoryColor: '#1aaa55'
+  }, {
+    Id: 8,
+    Subject: 'Face Painting & Drawing Events',
+    StartTime: new Date(currentYear, 0, 20, 9, 30, 0),
+    EndTime: new Date(currentYear, 0, 20, 11, 0, 0),
+    CategoryColor: '#357cd2'
+  }, {
+    Id: 9,
+    Subject: 'Pony Rides',
+    StartTime: new Date(currentYear, 0, 22, 11, 0, 0),
+    EndTime: new Date(currentYear, 0, 22, 13, 0, 0),
+    CategoryColor: '#7fa900'
+  }, {
+    Id: 10,
+    Subject: 'Feed the Giants',
+    StartTime: new Date(currentYear, 0, 23, 9, 30, 0),
+    EndTime: new Date(currentYear, 0, 23, 11, 0, 0),
+    CategoryColor: '#ea7a57'
+  }, {
+    Id: 11,
+    Subject: 'Jungle Treasure Hunt',
+    StartTime: new Date(currentYear, 0, 10, 10, 0, 0),
+    EndTime: new Date(currentYear, 0, 10, 11, 30, 0),
+    CategoryColor: '#00bdae'
+  }, {
+    Id: 12,
+    Subject: 'Endangered Species Program',
+    StartTime: new Date(currentYear, 0, 8, 10, 30, 0),
+    EndTime: new Date(currentYear, 0, 8, 12, 30, 0),
+    CategoryColor: '#f57f17'
+  }, {
+    Id: 13,
+    Subject: 'Black Cockatoos Playtime',
+    StartTime: new Date(currentYear, 0, 6, 10, 0, 0),
+    EndTime: new Date(currentYear, 0, 6, 11, 30, 0),
+    CategoryColor: '#1aaa55'
+  }, {
+    Id: 14,
+    Subject: 'Walk with Jungle King',
+    StartTime: new Date(currentYear, 0, 15, 12, 0, 0),
+    EndTime: new Date(currentYear, 0, 15, 14, 0, 0),
+    CategoryColor: '#357cd2'
+  }, {
+    Id: 15,
+    Subject: 'Trained Climbers',
+    StartTime: new Date(currentYear, 0, 20, 13, 0, 0),
+    EndTime: new Date(currentYear, 0, 20, 14, 30, 0),
+    CategoryColor: '#7fa900'
+  }, {
+    Id: 16,
+    Subject: 'Playtime with Chimpanzees',
+    StartTime: new Date(currentYear, 0, 23, 13, 0, 0),
+    EndTime: new Date(currentYear, 0, 23, 14, 30, 0),
+    CategoryColor: '#ea7a57'
+  }, {
+    Id: 17,
+    Subject: 'Story Time for Kids',
+    StartTime: new Date(currentYear, 0, 14, 14, 30, 0),
+    EndTime: new Date(currentYear, 0, 14, 16, 0, 0),
+    CategoryColor: '#1aaa55'
+  }, {
+    Id: 18,
+    Subject: 'Black Cockatoos Playtime',
+    StartTime: new Date(currentYear, 0, 16, 14, 30, 0),
+    EndTime: new Date(currentYear, 0, 16, 16, 0, 0),
+    CategoryColor: '#7fa900'
   }
 ];

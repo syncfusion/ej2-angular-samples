@@ -805,15 +805,21 @@
     "ai-assistview": {
         "ControlName": "AI AssistView",
         "Samples": {
-            "default": "Default Functionalities",
-            "custom-views": "Custom Views",
-            "streaming": "Streaming Response",
-            "attachments": "File Attachments",
-            "template": "Template",
-            "dialog": "Notes Assistant",
-            "ai-integrations": "Multiple AI Models",
+            "ai-overview": "Overview",
+            "ai-default": "Default Functionalities",
+            "ai-custom-views": "Custom Views",
+            "ai-streaming": "Streaming Response",
+            "ai-attachments": "File Attachments",
+            "ai-generative-ui":"Generative UI Responses",
+            "ai-thinking":"Chain of Thoughts",
+            "ai-template": "Template",
             "ai-speech-to-text": "Speech To Text",
-            "ai-text-to-speech": "Text To Speech"
+            "ai-text-to-speech": "Text To Speech",
+            "ai-notion-ai-like": "Notion AI-like",
+            "ai-claude-like": "Claude AI-like",
+            "ai-gemini-like": "Gemini AI-like",
+            "ai-dialog": "Notes Assistant",
+            "ai-integrations": "Multiple AI Conversation"
         }
     },
     "block-editor": {
@@ -824,7 +830,8 @@
             "api": "API",
             "events": "Events",
             "template-gallery": "Template Gallery",
-            "MarkdownBlocks": "Markdown Blocks"
+            "MarkdownBlocks": "Markdown Blocks",
+            "ai-ask-assistant": "Ask AI Assistant"
         }
     },
     "chat-ui": {

@@ -51,7 +51,7 @@ export const circulargaugeAppRoutes: Object[] = [
     { path: ':theme/circular-gauge/direction-compass', component: DirectionComponent, name: 'Direction Compass', order: '08', category: 'Use Cases', description: 'This demo for Essential<sup>®</sup> JS2 Circular Gauge control illustrates how to make a direction compass by using the circular gauge.'},
     { path: ':theme/circular-gauge/speedometer', component: SpeedometerComponent , name: 'Speedometer', order: '08', category: 'Use Cases', description: 'This demo for Essential<sup>®</sup> JS2 Circular Gauge control demonstrates live data, along with the data grid control.'},
     { path: ':theme/circular-gauge/sleep-tracker', component: SleepTrackerComponent , name: 'Sleep Tracker',  order: '08', category: 'Use Cases', description: 'This demo for Essential<sup>®</sup> JS2 Circular Gauge control to design sleep tracker by using circular gauge.'},
-    { path: ':theme/circular-gauge/data-sample', component: SampleDataComponent , name: 'Data Sample', order: '08', category: 'Use Cases', description: 'This demo for Essential<sup>®</sup> JS2 Circular Gauge control demonstrates live data, along with the data grid control.'},
+    { path: ':theme/circular-gauge/data-sample', ignoreOnBuild: true, component: SampleDataComponent , name: 'Data Sample', order: '08', category: 'Use Cases', description: 'This demo for Essential<sup>®</sup> JS2 Circular Gauge control demonstrates live data, along with the data grid control.'},
     { path: ':theme/circular-gauge/apple-watch-rings', component: AppleWatchComponent, name: 'Apple Watch Rings',  order: '08', category: 'Use Cases', description: 'This demo for Essential<sup>®</sup> JS2 Circular Gauge control demonstrates live data, along with the apple watch rings.'}
 ];
 

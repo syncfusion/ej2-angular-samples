@@ -1,0 +1,223 @@
+#DOMVirtualGrid .customer-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+  width: 100%;
+}
+
+#DOMVirtualGrid .customer-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#DOMVirtualGrid .customer-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+#DOMVirtualGrid .customer-name {
+  margin: 0 0 2px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #202124;
+}
+
+#DOMVirtualGrid .customer-email {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.2;
+  color: #5f6368;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Avatar pastel color variants */
+#DOMVirtualGrid .avatar-red {
+  color: rgb(217, 48, 37);
+  background-color: rgb(252, 232, 230);
+}
+
+#DOMVirtualGrid .avatar-blue {
+  color: rgb(26, 115, 232);
+  background-color: rgb(232, 240, 254);
+}
+
+#DOMVirtualGrid .avatar-green {
+  color: rgb(19, 115, 51);
+  background-color: rgb(230, 244, 234);
+}
+
+#DOMVirtualGrid .avatar-orange {
+  color: rgb(234, 134, 0);
+  background-color: rgb(254, 247, 224);
+}
+
+#DOMVirtualGrid .avatar-purple {
+  color: rgb(147, 51, 234);
+  background-color: rgb(243, 232, 255);
+}
+
+/* Dark theme overrides */
+.fabric-dark #DOMVirtualGrid .customer-name,
+.material-dark #DOMVirtualGrid .customer-name,
+.bootstrap-dark #DOMVirtualGrid .customer-name,
+.tailwind-dark #DOMVirtualGrid .customer-name,
+.tailwind3-dark #DOMVirtualGrid .customer-name,
+.bootstrap5-dark #DOMVirtualGrid .customer-name,
+.bootstrap5\.3-dark #DOMVirtualGrid .customer-name,
+.material3-dark #DOMVirtualGrid .customer-name,
+.fluent-dark #DOMVirtualGrid .customer-name,
+.fluent2-dark #DOMVirtualGrid .customer-name,
+.fluent2-highcontrast #DOMVirtualGrid .customer-name,
+.highcontrast #DOMVirtualGrid .customer-name {
+  color: rgb(232, 234, 237);
+}
+
+.fabric-dark #DOMVirtualGrid .customer-email,
+.material-dark #DOMVirtualGrid .customer-email,
+.bootstrap-dark #DOMVirtualGrid .customer-email,
+.tailwind-dark #DOMVirtualGrid .customer-email,
+.tailwind3-dark #DOMVirtualGrid .customer-email,
+.bootstrap5-dark #DOMVirtualGrid .customer-email,
+.bootstrap5\.3-dark #DOMVirtualGrid .customer-email,
+.material3-dark #DOMVirtualGrid .customer-email,
+.fluent-dark #DOMVirtualGrid .customer-email,
+.fluent2-dark #DOMVirtualGrid .customer-email,
+.fluent2-highcontrast #DOMVirtualGrid .customer-email,
+.highcontrast #DOMVirtualGrid .customer-email {
+  color: rgb(154, 160, 166);
+}
+
+.fabric-dark #DOMVirtualGrid .avatar-red,
+.material-dark #DOMVirtualGrid .avatar-red,
+.bootstrap-dark #DOMVirtualGrid .avatar-red,
+.tailwind-dark #DOMVirtualGrid .avatar-red,
+.tailwind3-dark #DOMVirtualGrid .avatar-red,
+.bootstrap5-dark #DOMVirtualGrid .avatar-red,
+.bootstrap5\.3-dark #DOMVirtualGrid .avatar-red,
+.material3-dark #DOMVirtualGrid .avatar-red,
+.fluent-dark #DOMVirtualGrid .avatar-red,
+.fluent2-dark #DOMVirtualGrid .avatar-red,
+.fluent2-highcontrast #DOMVirtualGrid .avatar-red {
+  color: rgb(242, 139, 130);
+  background-color: rgb(89, 53, 50);
+}
+
+.fabric-dark #DOMVirtualGrid .avatar-blue,
+.material-dark #DOMVirtualGrid .avatar-blue,
+.bootstrap-dark #DOMVirtualGrid .avatar-blue,
+.tailwind-dark #DOMVirtualGrid .avatar-blue,
+.tailwind3-dark #DOMVirtualGrid .avatar-blue,
+.bootstrap5-dark #DOMVirtualGrid .avatar-blue,
+.bootstrap5\.3-dark #DOMVirtualGrid .avatar-blue,
+.material3-dark #DOMVirtualGrid .avatar-blue,
+.fluent-dark #DOMVirtualGrid .avatar-blue,
+.fluent2-dark #DOMVirtualGrid .avatar-blue,
+.fluent2-highcontrast #DOMVirtualGrid .avatar-blue {
+  color: rgb(138, 180, 248);
+  background-color: rgb(52, 65, 85);
+}
+
+.fabric-dark #DOMVirtualGrid .avatar-green,
+.material-dark #DOMVirtualGrid .avatar-green,
+.bootstrap-dark #DOMVirtualGrid .avatar-green,
+.tailwind-dark #DOMVirtualGrid .avatar-green,
+.tailwind3-dark #DOMVirtualGrid .avatar-green,
+.bootstrap5-dark #DOMVirtualGrid .avatar-green,
+.bootstrap5\.3-dark #DOMVirtualGrid .avatar-green,
+.material3-dark #DOMVirtualGrid .avatar-green,
+.fluent-dark #DOMVirtualGrid .avatar-green,
+.fluent2-dark #DOMVirtualGrid .avatar-green,
+.fluent2-highcontrast #DOMVirtualGrid .avatar-green {
+  color: rgb(129, 201, 149);
+  background-color: rgb(46, 73, 58);
+}
+
+.fabric-dark #DOMVirtualGrid .avatar-orange,
+.material-dark #DOMVirtualGrid .avatar-orange,
+.bootstrap-dark #DOMVirtualGrid .avatar-orange,
+.tailwind-dark #DOMVirtualGrid .avatar-orange,
+.tailwind3-dark #DOMVirtualGrid .avatar-orange,
+.bootstrap5-dark #DOMVirtualGrid .avatar-orange,
+.bootstrap5\.3-dark #DOMVirtualGrid .avatar-orange,
+.material3-dark #DOMVirtualGrid .avatar-orange,
+.fluent-dark #DOMVirtualGrid .avatar-orange,
+.fluent2-dark #DOMVirtualGrid .avatar-orange,
+.fluent2-highcontrast #DOMVirtualGrid .avatar-orange {
+  color: rgb(253, 214, 99);
+  background-color: rgb(83, 69, 44);
+}
+
+.fabric-dark #DOMVirtualGrid .avatar-purple,
+.material-dark #DOMVirtualGrid .avatar-purple,
+.bootstrap-dark #DOMVirtualGrid .avatar-purple,
+.tailwind-dark #DOMVirtualGrid .avatar-purple,
+.tailwind3-dark #DOMVirtualGrid .avatar-purple,
+.bootstrap5-dark #DOMVirtualGrid .avatar-purple,
+.bootstrap5\.3-dark #DOMVirtualGrid .avatar-purple,
+.material3-dark #DOMVirtualGrid .avatar-purple,
+.fluent-dark #DOMVirtualGrid .avatar-purple,
+.fluent2-dark #DOMVirtualGrid .avatar-purple,
+.fluent2-highcontrast #DOMVirtualGrid .avatar-purple {
+  color: rgb(197, 138, 249);
+  background-color: rgb(79, 55, 91);
+}
+
+/* Status template styles */
+#DOMVirtualGrid .statustemp.e-inactivecolor {
+  background-color: #ffd7cc;
+  width: 64px;
+}
+
+#DOMVirtualGrid .statustemp.e-activecolor {
+  background-color: #ccffcc;
+  width: 57px;
+}
+
+#DOMVirtualGrid .statustxt.e-activecolor {
+  color: #00cc00;
+}
+
+#DOMVirtualGrid .statustxt.e-inactivecolor {
+  color: #e60000;
+}
+
+#DOMVirtualGrid .statustemp {
+  position: relative;
+  height: 19px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#DOMVirtualGrid td.e-rowcell .statustxt.e-activecolor {
+  color: #00cc00;
+  position: relative;
+  top: 9px;
+}
+
+#DOMVirtualGrid td.e-rowcell .statustxt.e-inactivecolor {
+  color: #e60000;
+  position: relative;
+  top: 9px;
+}
+
+.bootstrap5 #DOMVirtualGrid td.e-rowcell .statustxt.e-inactivecolor,
+.bootstrap5 #DOMVirtualGrid td.e-rowcell .statustxt.e-activecolor {
+  top: 8px;
+}
+
+.e-bigger #DOMVirtualGrid.e-grid .statustxt {
+  position: relative;
+  top: -2px;
+}

@@ -1,0 +1,153 @@
+  #CellEdit .badge {
+      padding: 4px 10px;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 500;
+  }
+
+  #CellEdit .booked {
+      background-color: #28a745;
+  }
+
+  #CellEdit .canceled {
+      background-color: #dc3545;
+  }
+
+  #CellEdit .completed {
+      background-color: #007bff;
+  }
+
+  #CellEdit .waiting {
+      background-color: #fd7e14;
+  }
+
+  .material3-dark #CellEdit .booked,
+  .bootstrap5\.3-dark #CellEdit .booked,
+  .fluent2-dark #CellEdit .booked,
+  .tailwind3-dark #CellEdit .booked,
+  .fluent2-highcontrast #CellEdit .booked,
+  .fluent-dark #CellEdit .booked,
+  .highcontrast #CellEdit .booked {
+      background-color: #14532d;
+  }
+
+  .material3-dark #CellEdit .canceled,
+  .bootstrap5\.3-dark #CellEdit .canceled,
+  .fluent2-dark #CellEdit .canceled,
+  .tailwind3-dark #CellEdit .canceled,
+  .fluent2-highcontrast #CellEdit .canceled,
+  .fluent-dark #CellEdit .canceled,
+  .highcontrast #CellEdit .canceled {
+      background-color: #7f1d1d;
+  }
+
+  .material3-dark #CellEdit .completed,
+  .bootstrap5\.3-dark #CellEdit .completed,
+  .fluent2-dark #CellEdit .completed,
+  .tailwind3-dark #CellEdit .completed,
+  .fluent2-highcontrast #CellEdit .completed,
+  .fluent-dark #CellEdit .completed,
+  .highcontrast #CellEdit .completed {
+      background-color: #1e3a8a;
+  }
+
+  .material3-dark #CellEdit .waiting,
+  .bootstrap5\.3-dark #CellEdit .waiting,
+  .fluent2-dark #CellEdit .waiting,
+  .tailwind3-dark #CellEdit .waiting,
+  .fluent2-highcontrast #CellEdit .waiting,
+  .fluent-dark #CellEdit .waiting,
+  .highcontrast #CellEdit .waiting {
+      background-color: #7c2d12;
+  }
+
+  #CellEdit .type {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 13px;
+      font-weight: 500;
+  }
+
+  #CellEdit .emergency {
+      color: #dc3545;
+  }
+
+  #CellEdit .lab {
+      color: #6f42c1;
+  }
+
+  #CellEdit .follow {
+      color: #fd7e14;
+  }
+
+  #CellEdit .routine {
+      color: #17a2b8;
+  }
+
+  #CellEdit .consult {
+      color: #28a745;
+  }
+
+  .material3-dark #CellEdit .emergency,
+  .bootstrap5\.3-dark #CellEdit .emergency,
+  .fluent2-dark #CellEdit .emergency,
+  .tailwind3-dark #CellEdit .emergency,
+  .fluent2-highcontrast #CellEdit .emergency,
+  .fluent-dark #CellEdit .emergency,
+  .highcontrast #CellEdit .emergency {
+      color: #f87171;
+  }
+
+  .material3-dark #CellEdit .lab,
+  .bootstrap5\.3-dark #CellEdit .lab,
+  .fluent2-dark #CellEdit .lab,
+  .tailwind3-dark #CellEdit .lab,
+  .fluent2-highcontrast #CellEdit .lab,
+  .fluent-dark #CellEdit .lab,
+  .highcontrast #CellEdit .lab {
+      color: #c3d31b;
+  }
+
+  .material3-dark #CellEdit .follow,
+  .bootstrap5\.3-dark #CellEdit .follow,
+  .fluent2-dark #CellEdit .follow,
+  .tailwind3-dark #CellEdit .follow,
+  .fluent2-highcontrast #CellEdit .follow,
+  .fluent-dark #CellEdit .follow,
+  .highcontrast #CellEdit .follow {
+      color: #fb923c;
+  }
+
+  .material3-dark #CellEdit .routine,
+  .bootstrap5\.3-dark #CellEdit .routine,
+  .fluent2-dark #CellEdit .routine,
+  .tailwind3-dark #CellEdit .routine,
+  .fluent2-highcontrast #CellEdit .routine,
+  .fluent-dark #CellEdit .routine,
+  .highcontrast #CellEdit .routine {
+      color: #a0169f;
+  }
+
+  .material3-dark #CellEdit .consult,
+  .bootstrap5\.3-dark #CellEdit .consult,
+  .fluent2-dark #CellEdit .consult,
+  .tailwind3-dark #CellEdit .consult,
+  .fluent2-highcontrast #CellEdit .consult,
+  .fluent-dark #CellEdit .consult,
+  .highcontrast #CellEdit .consult {
+      color: #37b317;
+  }
+
+  #CellEdit .doctor-cell {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+  }
+
+  #CellEdit .doctor-img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+  }

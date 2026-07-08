@@ -32,7 +32,7 @@ export class DefaultFileController {
     public navigationPaneSettings: object;
     public items: string[] = ['NewFolder', 'SortBy', 'Cut', 'Copy', 'Paste', 'Download', 'Delete', 'Refresh', 'Selection', 'View', 'Details'];
     public waterMark: string = 'Select item';
-    public hostUrl: string = 'https://ej2-aspcore-service.azurewebsites.net/';
+    public hostUrl: string = 'https://physical-service.syncfusion.com/';
     public ngOnInit(): void {
         this.ajaxSettings = {
             url: this.hostUrl + 'api/FileManager/FileOperations',

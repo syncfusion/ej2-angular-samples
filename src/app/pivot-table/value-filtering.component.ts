@@ -28,7 +28,7 @@ let Pivot_Data: IDataSet[] = require('./Pivot_Data.json');
 export class ValueFilterComponent implements OnInit {
     public fieldCollections: { [key: string]: FilterModel } = {};
     public operators: string[] = ['Equals', 'DoesNotEquals', 'GreaterThan', 'GreaterThanOrEqualTo',
-        'LessThan', 'LessThanOrEqualTo', 'Between', 'NotBetween'];
+        'LessThan', 'LessThanOrEqualTo', 'Between', 'NotBetween', 'Top', 'Bottom'];
     public fields: string[] = ['Country', 'Products', 'Year'];
     public measures: { [key: string]: Object }[] = [
         { value: 'In_Stock', text: 'In Stock' },
@@ -86,7 +86,7 @@ export class ValueFilterComponent implements OnInit {
 
     changeMeasuresddl (args: ChangeEventArgs) {
         this.setFilters(this.fieldsddl.value as string,
-            args.value as string, this.operatorddl.value as Operators, this.valueInput1.value.toString(), this.valueInput2.value.toString());
+            args.value as string, this.operatorddl.value as Operators, this?.valueInput1?.value?.toString(), this?.valueInput2?.value?.toString());
     }
 
     changeOperatorddl (args: ChangeEventArgs) {
@@ -96,17 +96,17 @@ export class ValueFilterComponent implements OnInit {
             (document.querySelector('.input2cls') as HTMLElement).style.display = 'none';
         }
         this.setFilters(this.fieldsddl.value as string,
-            this.measuresddl.value as string, args.value as Operators, this.valueInput1.value.toString(), this.valueInput2.value.toString());
+            this.measuresddl.value as string, args.value as Operators, this?.valueInput1?.value?.toString(), this?.valueInput2?.value?.toString());
     }
 
     changeValue1 (e: NumericEventArgs) {
         this.setFilters(this.fieldsddl.value as string,
-            this.measuresddl.value as string, this.operatorddl.value as Operators, e.value.toString(), this.valueInput2.value.toString());
+            this.measuresddl.value as string, this.operatorddl.value as Operators, e?.value?.toString(), this?.valueInput2?.value?.toString());
     }
 
     changeValue2 (e: NumericEventArgs) {
         this.setFilters(this.fieldsddl.value as string,
-            this.measuresddl.value as string, this.operatorddl.value as Operators, this.valueInput1.value.toString(), e.value.toString());
+            this.measuresddl.value as string, this.operatorddl.value as Operators, this?.valueInput1?.value?.toString(), e?.value?.toString());
     }
 
     ngOnInit(): void {
@@ -133,8 +133,8 @@ export class ValueFilterComponent implements OnInit {
                 type: 'Value',
                 measure: this.measuresddl.value as string,
                 condition: this.operatorddl.value as Operators,
-                value1: this.valueInput1.value === null ? '1' : this.valueInput1.value.toString(),
-                value2: this.valueInput2.value === null ? '1' : this.valueInput2.value.toString()
+                value1: this.valueInput1.value === null ? '1' : this.valueInput1?.value?.toString(),
+                value2: this.valueInput2.value === null ? '1' : this.valueInput2?.value?.toString()
             }];
             this.pivotObj.dataSourceSettings.filterSettings = filterOptions;
         };

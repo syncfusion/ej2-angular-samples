@@ -11,7 +11,7 @@ export const inlineaiassistAppRoutes: Object[] = [
         {displayName: 'ai-overview.html', path: './src/inline-ai-assist/ai-overview.html'},
         {displayName: 'ai-overview.component.css', path: './src/inline-ai-assist/ai-overview.component.css'}
     ] },
-    { path: ':theme/inline-ai-assist/ai-rich-text-editor', component: InlineAIAssistRTEComponent, name: 'Rich Text Editor', description: 'Showcases the usecase of the InlineAIAssist component.', category: 'Integration', order: '02', sourceFiles: [
+    { path: ':theme/inline-ai-assist/ai-rich-text-editor', ignoreOnBuild: true, component: InlineAIAssistRTEComponent, name: 'Rich Text Editor', description: 'Showcases the usecase of the InlineAIAssist component.', category: 'Integration', order: '02', sourceFiles: [
         {displayName: 'ai-rich-text-editor.component.ts', path: './src/inline-ai-assist/ai-rich-text-editor.component.ts'},
         {displayName: 'ai-rich-text-editor.html', path: './src/inline-ai-assist/ai-rich-text-editor.html'},
         {displayName: 'service.ts', path: './src/inline-ai-assist/service.ts'}

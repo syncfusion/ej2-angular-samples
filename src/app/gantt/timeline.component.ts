@@ -1,20 +1,21 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ChangeEventArgs, CheckBoxAllModule } from '@syncfusion/ej2-angular-buttons';
 import { ChangedEventArgs, NumericTextBoxAllModule, NumericTextBoxComponent } from '@syncfusion/ej2-angular-inputs';
 import { DropDownListComponent, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
 import { projectData } from './data';
-import { isNullOrUndefined } from '@syncfusion/ej2-base';
-import { GanttComponent, TimelineViewMode, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, TimelineViewMode, GanttModule, SelectionService, DayMarkersService } from '@syncfusion/ej2-angular-gantt';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { DateRangePickerComponent, DateRangePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { isNullOrUndefined } from '@syncfusion/ej2-base';
 
 @Component({
     selector: 'ej2-gantttimeline',
     templateUrl: 'timeline.html',
-    encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, NumericTextBoxAllModule, CheckBoxAllModule, DropDownListAllModule, SBDescriptionComponent, DateRangePickerModule]
+    encapsulation: ViewEncapsulation.None,
+    providers: [SelectionService, DayMarkersService],
+    imports: [SBActionDescriptionComponent, GanttModule, NumericTextBoxAllModule, CheckBoxAllModule, DropDownListAllModule, SBDescriptionComponent, DateRangePickerModule]
 })
 export class GanttTimelineComponent implements OnInit {
     @ViewChild('gantt')
@@ -35,7 +36,7 @@ export class GanttTimelineComponent implements OnInit {
         { id: 'EEE MMM dd', format: 'Mon Jan 01' },
     ];
     public dayformat: { [key: string]: Object }[] = [
-        { id: 'EEE, dd', format: 'Mon, 01' },
+        { id: '', format: 'M' },
         { id: 'E', format: 'Mon' },
         { id: 'dd', format: '01' },
     ];
@@ -56,7 +57,7 @@ export class GanttTimelineComponent implements OnInit {
     public unitFields: Object = { text: 'unit', value: 'id' };
     public unitValue: string = 'Week';
     public topFormatValue: string = 'MMM dd, yyyy';
-    public bottomFormatValue: string = 'EEE, dd';
+    public bottomFormatValue: string = '';
     public bottomUnitValue: string = 'Day';
     @ViewChild('topFormatDropdown')
     public topTierFormatObj: DropDownListComponent;
@@ -106,6 +107,8 @@ export class GanttTimelineComponent implements OnInit {
                 unit: 'Day',
                 count: 1
             },
+            viewStartDate: new Date('02/09/2025'),
+            viewEndDate: new Date('03/23/2025')
         };
         this.labelSettings = {
             rightLabel: 'taskName',
@@ -122,17 +125,33 @@ export class GanttTimelineComponent implements OnInit {
         this.splitterSettings = {
             columnIndex: 1
         };
-        this.projectStartDate = new Date('02/05/2025'),
-        this.projectEndDate = new Date('03/23/2025')
     }
     public onUnitWidthChange(args: ChangedEventArgs): void {
         this.ganttObj.timelineSettings.timelineUnitSize = +args.value;
     }
-    public onTopCountChange(args: ChangedEventArgs ): void {
+    public onTopTierChange(args: ChangeEventArgs): void {
+        if (args.checked) {
+            this.enableDisableTopTierInputs(true);
+            this.ganttObj.timelineSettings.topTier.unit = 'Week';
+        } else {
+            this.enableDisableTopTierInputs(false);
+            this.ganttObj.timelineSettings.topTier.unit = 'None';
+        }
+    }
+    public onBottomTierChange(args: ChangeEventArgs): void {
+        if (args.checked) {
+            this.enableDisableBottomTierInputs(true);
+            this.ganttObj.timelineSettings.bottomTier.unit = 'Day';
+        } else {
+            this.enableDisableBottomTierInputs(false);
+            this.ganttObj.timelineSettings.bottomTier.unit = 'None';
+        }
+    }
+    public onTopCountChange(args: ChangedEventArgs): void {
         let count: number = +args.value;
         this.ganttObj.timelineSettings.topTier.count = count;
     }
-    public onChangeUnit(args: ChangedEventArgs ): void {
+    public onChangeUnit(args: ChangedEventArgs): void {
         let unit: string = args.value;
         if (unit === 'Year') {
             this.topTierFormatObj.dataSource = this.yearformat;
@@ -153,11 +172,11 @@ export class GanttTimelineComponent implements OnInit {
         let format: string = args.value;
         this.ganttObj.timelineSettings.topTier.format = format.toString();
     }
-    public onBottomCountChange(args: ChangedEventArgs ): void {
+    public onBottomCountChange(args: ChangedEventArgs): void {
         let count: number = +args.value;
         this.ganttObj.timelineSettings.bottomTier.count = count;
     }
-    public onChangebtUnit(args: ChangedEventArgs ): void {
+    public onChangebtUnit(args: ChangedEventArgs): void {
         let unit: string = args.value;
         if (unit === 'Year') {
             this.bottomTierFormatObj.dataSource = this.yearformat;
@@ -177,6 +196,16 @@ export class GanttTimelineComponent implements OnInit {
     public onChangebtFormat(args: ChangedEventArgs): void {
         let format: string = args.value;
         this.ganttObj.timelineSettings.bottomTier.format = format.toString();
+    }
+    private enableDisableTopTierInputs(value: boolean): void {
+        this.topCountNumericObj.enabled = value;
+        this.topUnitDropdownObj.enabled = value;
+        this.topTierFormatObj.enabled = value;
+    }
+    private enableDisableBottomTierInputs(value: boolean): void {
+        this.bottomCountNumericObj.enabled = value;
+        this.bottomUnitDropdownObj.enabled = value;
+        this.bottomTierFormatObj.enabled = value;
     }
     private updateUnitWidth(unit: string, tier: string): void {
         let topUnit: string = tier === 'top' ? unit : this.ganttObj.timelineSettings.topTier.unit;
@@ -216,10 +245,9 @@ export class GanttTimelineComponent implements OnInit {
         }
     }
 
-    public changeDateRange = (args: any): void => {
-        this.ganttObj.timelineSettings.viewStartDate = isNullOrUndefined(args.startDate) ? 'auto' : args.startDate;;
-        this.ganttObj.timelineSettings.viewEndDate = isNullOrUndefined(args.endDate) ? 'auto' : args.endDate; ;
+    public changeDateRange(args: any): void {
+        this.ganttObj.timelineSettings.viewStartDate = isNullOrUndefined(args.startDate) ? this.startDateValue : args.startDate;
+        this.ganttObj.timelineSettings.viewEndDate = isNullOrUndefined(args.endDate) ? this.endDateValue : args.endDate;
     }
 }
-
 

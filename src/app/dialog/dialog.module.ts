@@ -35,7 +35,7 @@ export const dialogAppRoutes: Object[] = [
     { path: ':theme/dialog/position', component: PositioningDialogComponent, name: 'Positioning', category: 'Dialog', description: 'This example demonstrates how to display the Angular dialog component at various built-in and custom positions.' },
     { path: ':theme/dialog/animation', component: AnimationDialogComponent, name: 'Animation', category: 'Dialog', description: 'This example demonstrates how to open or close the Angular dialog with various animation effects, and how to customize the animation duration and delay.' },
     { path: ':theme/dialog/multiple-dialogs', component: MultipleDialogsDialogComponent, name: 'Multiple Dialogs', category: 'Dialog', description: 'This example shows how to display multiple dialogs sequentially and open multiple dialogs simultaneously for both modal and modeless Angular dialogs.' },
-    { path: ':theme/dialog/multiple-components', component: DialogMultipleComponent, name: 'Components inside Dialog', category: 'Dialog', description: 'This example demonstrates how to render other Javascript Syncfusion components inside the dialog component.' }
+    { path: ':theme/dialog/multiple-components', component: DialogMultipleComponent, name: 'Components inside Dialog', ignoreOnBuild: true, category: 'Dialog', description: 'This example demonstrates how to render other Javascript Syncfusion components inside the dialog component.' }
 ];
 
 export const DialogSampleModule: ModuleWithProviders<any> = RouterModule.forChild(dialogAppRoutes);

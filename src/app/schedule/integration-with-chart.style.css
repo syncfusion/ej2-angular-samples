@@ -1,0 +1,523 @@
+
+  /* Modern Container Styling */
+  .schedule-with-chart .control-section {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    overflow: hidden;
+  }
+
+  .schedule-with-chart .modern-layout {
+    display: flex;
+    gap: 16px;
+    align-items: stretch !important;
+  }
+
+  .schedule-with-chart .scheduler-wrapper {
+    flex: 1;
+    min-width: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .schedule-with-chart .chart-section {
+    width: 420px;
+    height: 650px;
+    border: 2px solid #e9ecef;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .schedule-with-chart .chart-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #667eea, transparent);
+    opacity: 0.3;
+  }
+
+  .schedule-with-chart .chart-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+    border-bottom: 2px solid #e9ecef;
+    flex-shrink: 0;
+  }
+
+  .schedule-with-chart .chart-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .schedule-with-chart .chart-title::before {
+    content: '';
+    width: 3px;
+    height: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+  }
+
+  .schedule-with-chart .dropdown-wrapper {
+    width: 100%;
+    position: relative;
+  }
+
+  .schedule-with-chart .dropdown-wrapper label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  
+  .schedule-with-chart .dropdown-wrapper .e-ddl {
+    border-radius: 10px;
+    border: 2px solid #e0e3e8;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    color: var(--text-primary);
+  }
+  
+  .schedule-with-chart .dropdown-wrapper .e-ddl:hover {
+    border-color: #667eea;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.12);
+  }
+  
+  .schedule-with-chart .dropdown-wrapper .e-ddl:focus,
+  .schedule-with-chart .dropdown-wrapper .e-ddl.e-active {
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1), 0 4px 12px rgba(102, 126, 234, 0.15);
+    outline: none;
+  }
+
+  .schedule-with-chart .chart-area {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.02) 0%,
+    rgba(118, 75, 162, 0.02) 100%
+  );
+  border-radius: 10px;
+  overflow: visible;
+}
+
+  .chart-area svg {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .schedule-with-chart .e-schedule .e-timeline-view .e-resource-left-td,
+  .schedule-with-chart .e-schedule .e-timeline-month-view .e-resource-left-td {
+    vertical-align: bottom;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+  }
+
+  .schedule-with-chart .e-schedule.e-device .e-timeline-view .e-resource-left-td,
+  .schedule-with-chart .e-schedule.e-device .e-timeline-month-view .e-resource-left-td {
+    width: 75px;
+  }
+
+  .schedule-with-chart .e-schedule .e-timeline-view .e-resource-left-td .e-resource-text,
+  .schedule-with-chart .e-schedule .e-timeline-month-view .e-resource-left-td .e-resource-text {
+    display: flex;
+    font-weight: 500;
+    padding: 0;
+  }
+
+  .schedule-with-chart .e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+  .schedule-with-chart .e-schedule .e-timeline-month-view .e-resource-left-td .e-resource-text>div {
+    flex: 0 0 33.333%;
+    font-weight: 500;
+    height: 36px;
+    line-height: 34px;
+    padding-left: 5px;
+    font-size: 12px;
+  }
+
+  .schedule-with-chart .e-schedule .e-timeline-month-view .e-resource-left-td .e-resource-text>div {
+    border-top: 0;
+  }
+
+  .schedule-with-chart .e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div:last-child,
+  .schedule-with-chart .e-schedule .e-timeline-month-view .e-resource-left-td .e-resource-text>div:last-child {
+    border-right: 0;
+  }
+
+  .schedule-with-chart .e-schedule .template-wrap {
+    display: flex;
+    height: 100%;
+    text-align: left;
+  }
+
+  .schedule-with-chart .e-schedule .template-wrap>div {
+    border-right: 1px solid #0000001f;
+    flex: 0 0 33.333%;
+    font-weight: 500;
+    overflow: hidden;
+    padding-left: 8px;
+    text-overflow: ellipsis;
+    font-size: 13px;
+  }
+
+  .schedule-with-chart .e-schedule .template-wrap:not(.header-indent)>div {
+    line-height: 58px;
+  }
+
+  .schedule-with-chart .e-schedule .header-indent>div {
+    line-height: 35px;
+  }
+
+  .schedule-with-chart .e-schedule .template-wrap>div:last-child {
+    border-right: 0;
+  }
+
+  .schedule-with-chart .e-schedule .e-timeline-view .e-resource-cells,
+  .schedule-with-chart .e-schedule .e-timeline-month-view .e-resource-cells {
+    padding-left: 0;
+  }
+
+  .schedule-with-chart .e-schedule .e-timeline-view .e-date-header-wrap table col,
+  .schedule-with-chart .e-schedule .e-timeline-view .e-content-wrap table col {
+    width: 500px;
+  }
+
+  /* Event Styling */
+  .schedule-with-chart .e-appointment {
+    border-radius: 6px;
+    transition: var(--transition);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .schedule-with-chart .e-rtl .e-resource-text,
+  .schedule-with-chart .e-rtl .template-wrap,
+  .schedule-with-chart .e-rtl .header-indent {
+    flex-direction: row-reverse;
+  }
+  
+  ::ng-deep .schedule-with-chart .e-rtl .e-resource-text>div,
+  ::ng-deep .schedule-with-chart .e-rtl .template-wrap>div {
+    direction: rtl;
+    text-align: right;
+  }
+  
+  ::ng-deep .schedule-with-chart .e-schedule:not(.e-rtl) .e-timeline-view .e-resource-left-td .e-resource-text>div:last-child {
+    border-right: 0;
+  }
+  
+  ::ng-deep .schedule-with-chart .e-schedule.e-rtl .e-timeline-view .e-resource-cells,
+  ::ng-deep .schedule-with-chart .e-schedule.e-rtl .e-timeline-month-view .e-resource-cells {
+    padding-right: 0;
+  }
+  
+  ::ng-deep .schedule-with-chart .e-schedule.e-rtl .template-wrap {
+    text-align: right;
+  }
+  
+  ::ng-deep .schedule-with-chart .e-schedule:not(.e-rtl) .template-wrap>div:last-child {
+    border-right: 0;
+  }
+
+  /* Responsive Design */
+  @media (min-width: 1440px) {
+    .schedule-with-chart .chart-section {
+      width: 480px;
+      height: 650px;
+    }
+    .schedule-with-chart .chart-title {
+      font-size: 19px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .schedule-with-chart .chart-section {
+      width: 380px;
+      height: 650px;
+      padding: 16px;
+    }
+    .schedule-with-chart .chart-title {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .schedule-with-chart .modern-layout {
+      flex-direction: column;
+    }
+
+    .schedule-with-chart .schedule-with-chart .scheduler-wrapper {
+      width: 100%;
+    }
+
+    .schedule-with-chart .chart-section {
+      width: 100%;
+    }
+
+    .schedule-with-chart #scheduler {
+      height: 500px !important;
+      width: 100% !important;
+    }
+
+    .schedule-with-chart .e-schedule {
+      width: 100% !important;
+      height: 500px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .schedule-with-chart .control-section {
+      padding: 12px;
+      margin: 12px;
+    }
+
+    .schedule-with-chart .modern-layout {
+      gap: 12px;
+    }
+
+    .schedule-with-chart .chart-section {
+      width: 100%;
+      height: 650px;
+      padding: 12px;
+    }
+
+    .schedule-with-chart .e-schedule .e-timeline-view .e-resource-left-td,
+    .schedule-with-chart .e-schedule .e-timeline-month-view .e-resource-left-td {
+      width: 100px;
+    }
+
+    .schedule-with-chart .e-schedule .e-timeline-view .e-resource-left-td .e-resource-text>div,
+    .schedule-with-chart .e-schedule .e-timeline-month-view .e-resource-left-td .e-resource-text>div,
+    .schedule-with-chart .e-schedule .template-wrap>div {
+      flex: 0 0 100%;
+    }
+
+    .schedule-with-chart .e-schedule .template-wrap>div:first-child,
+    .schedule-with-chart .e-schedule .template-wrap>div:nth-child(2) {
+      border-right: 0;
+    }
+
+    .schedule-with-chart .e-schedule .truck-type,
+    .schedule-with-chart .e-schedule .capacity {
+      display: none;
+    }
+
+    .schedule-with-chart .e-schedule .e-timeline-view .e-resource-left-td,
+    .schedule-with-chart .e-schedule .e-timeline-month-view .e-resource-left-td {
+      width: 230px;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .schedule-with-chart .control-section {
+      padding: 8px;
+      margin: 8px;
+    }
+
+    .schedule-with-chart .chart-title {
+      font-size: 12px;
+    }
+
+    .schedule-with-chart #scheduler {
+      height: 400px !important;
+      width: 100% !important;
+    }
+
+    .schedule-with-chart .e-schedule {
+      width: 100% !important;
+      height: 400px !important;
+    }
+
+    .schedule-with-chart .chart-area {
+      min-height: 350px;
+    }
+  }
+
+::ng-deep .schedule-with-chart .e-schedule .template-wrap {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+/* 3 equal columns */
+::ng-deep .schedule-with-chart .e-schedule .template-wrap > div {
+  flex: 0 0 33.33%;
+  padding-left: 8px;
+  box-sizing: border-box;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* ✅ correct divider */
+}
+
+::ng-deep .schedule-with-chart .e-schedule .template-wrap > div:last-child {
+  box-shadow: none;
+}
+
+::ng-deep .schedule-with-chart .e-schedule .header-indent {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+::ng-deep .schedule-with-chart .e-schedule .header-indent > div {
+  flex: 0 0 33.33%;
+  padding-left: 8px;
+}
+
+::ng-deep .schedule-with-chart .e-schedule .header-indent > div:last-child {
+  box-shadow: none;
+}
+
+::ng-deep .schedule-with-chart .e-schedule .e-resource-cells {
+  padding-left: 0 !important;
+}
+
+/* ===== Fluent2 Dark ===== */
+::ng-deep .fluent2-dark .schedule-with-chart .e-schedule .template-wrap > div {
+  box-shadow: inset -1px 0 0 #525252 !important;
+}
+
+/* ===== Material3 Dark ===== */
+::ng-deep .material3-dark .schedule-with-chart .e-schedule .template-wrap > div {
+  box-shadow: inset -1px 0 0 #444746 !important;
+}
+
+/* ===== Material Dark ===== */
+::ng-deep .material-dark .schedule-with-chart .e-schedule .template-wrap > div {
+  box-shadow: inset -1px 0 0 #616161 !important;
+}
+
+/* ===== Fabric Dark ===== */
+::ng-deep .fabric-dark .schedule-with-chart .e-schedule .template-wrap > div {
+  box-shadow: inset -1px 0 0 #414040 !important;
+}
+
+/* ===== Fluent Dark ===== */
+::ng-deep .fluent-dark .schedule-with-chart .e-schedule .template-wrap > div {
+  box-shadow: inset -1px 0 0 #292827 !important;
+}
+
+/* ===== Bootstrap Dark ===== */
+::ng-deep .bootstrap-dark .schedule-with-chart .e-schedule .template-wrap > div,
+::ng-deep .bootstrap4 .schedule-with-chart .e-schedule .template-wrap > div,
+::ng-deep .bootstrap5 .schedule-with-chart .e-schedule .template-wrap > div,
+::ng-deep.bootstrap5-dark .schedule-with-chart .e-schedule .template-wrap > div,
+::ng-deep .bootstrap5\.3-dark .schedule-with-chart .e-schedule .template-wrap > div {
+  box-shadow: inset -1px 0 0 #505050 !important;
+}
+
+/* ===== Tailwind Dark ===== */
+::ng-deep .tailwind-dark .schedule-with-chart .e-schedule .template-wrap > div,
+::ng-deep .tailwind3-dark .schedule-with-chart .e-schedule .template-wrap > div {
+  box-shadow: inset -1px 0 0 #4b5563 !important;
+}
+
+/* ===== Tailwind header fix ===== */
+::ng-deep .tailwind-dark .schedule-with-chart .e-resource-left-td .e-resource-text > div,
+::ng-deep .tailwind3-dark .schedule-with-chart .e-resource-left-td .e-resource-text > div {
+  background-color: #374151 !important;
+  box-shadow: inset -1px 0 0 #4b5563 !important;
+}
+
+/* ===== Fluent2 High Contrast ===== */
+::ng-deep .fluent2-highcontrast .schedule-with-chart .e-schedule .template-wrap > div {
+  box-shadow: inset -1px 0 0 #ffffff !important;
+}
+
+/* ===== Chart Section Border ===== */
+::ng-deep .material-dark .schedule-with-chart .chart-section,
+::ng-deep .material3-dark .schedule-with-chart .chart-section,
+::ng-deep .fluent-dark .schedule-with-chart .chart-section,
+::ng-deep .fluent2-dark .schedule-with-chart .chart-section,
+::ng-deep .bootstrap-dark .schedule-with-chart .chart-section,
+::ng-deep .bootstrap4 .schedule-with-chart .chart-section,
+::ng-deep .bootstrap5 .schedule-with-chart .chart-section,
+::ng-deep.bootstrap5-dark .schedule-with-chart .chart-section,
+::ng-deep .bootstrap5\.3-dark .schedule-with-chart .chart-section,
+::ng-deep .fabric-dark .schedule-with-chart .chart-section,
+::ng-deep .tailwind-dark .schedule-with-chart .chart-section,
+::ng-deep .tailwind3-dark .schedule-with-chart .chart-section {
+  border: 2px solid #4b5563 !important;
+}
+
+
+/* ===== Chart Header Bottom Border ===== */
+::ng-deep .material-dark .schedule-with-chart .chart-header,
+::ng-deep .material3-dark .schedule-with-chart .chart-header,
+::ng-deep .fluent-dark .schedule-with-chart .chart-header,
+::ng-deep .fluent2-dark .schedule-with-chart .chart-header,
+::ng-deep .bootstrap-dark .schedule-with-chart .chart-header,
+::ng-deep .bootstrap4 .schedule-with-chart .chart-header,
+::ng-deep .bootstrap5 .schedule-with-chart .chart-header,
+::ng-deep.bootstrap5-dark .schedule-with-chart .chart-header,
+::ng-deep .bootstrap5\.3-dark .schedule-with-chart .chart-header,
+::ng-deep .fabric-dark .schedule-with-chart .chart-header,
+::ng-deep .tailwind-dark .schedule-with-chart .chart-header,
+::ng-deep .tailwind3-dark .schedule-with-chart .chart-header {
+  border-bottom: 2px solid #4b5563 !important;
+}
+
+
+/* ===== Dropdown Border ===== */
+::ng-deep .material-dark .schedule-with-chart .dropdown-wrapper .e-ddl,
+::ng-deep .material3-dark .schedule-with-chart .dropdown-wrapper .e-ddl,
+::ng-deep .fluent-dark .schedule-with-chart .dropdown-wrapper .e-ddl,
+::ng-deep .fluent2-dark .schedule-with-chart .dropdown-wrapper .e-ddl,
+::ng-deep .bootstrap-dark .schedule-with-chart .dropdown-wrapper .e-ddl,
+::ng-deep .bootstrap4 .schedule-with-chart .dropdown-wrapper .e-ddl,
+::ng-deep .bootstrap5 .schedule-with-chart .dropdown-wrapper .e-ddl,
+::ng-deep.bootstrap5-dark .schedule-with-chart .dropdown-wrapper .e-ddl,
+::ng-deep .bootstrap5\.3-dark .schedule-with-chart .dropdown-wrapper .e-ddl,
+::ng-deep .fabric-dark .schedule-with-chart .dropdown-wrapper .e-ddl,
+::ng-deep .tailwind-dark .schedule-with-chart .dropdown-wrapper .e-ddl,
+::ng-deep .tailwind3-dark .schedule-with-chart .dropdown-wrapper .e-ddl {
+  border: 2px solid #4b5563 !important;
+}
+
+
+/* ===== Fix White Line Under Dropdown ===== */
+::ng-deep .material-dark .schedule-with-chart .dropdown-wrapper .e-input-group,
+::ng-deep .material3-dark .schedule-with-chart .dropdown-wrapper .e-input-group,
+::ng-deep .bootstrap-dark .schedule-with-chart .dropdown-wrapper .e-input-group,
+::ng-deep .bootstrap4 .schedule-with-chart .dropdown-wrapper .e-input-group,
+::ng-deep .bootstrap5 .schedule-with-chart .dropdown-wrapper .e-input-group,
+::ng-deep.bootstrap5-dark .schedule-with-chart .dropdown-wrapper .e-input-group,
+::ng-deep .bootstrap5\.3-dark .schedule-with-chart .dropdown-wrapper .e-input-group,
+::ng-deep .fabric-dark .schedule-with-chart .dropdown-wrapper .e-input-group,
+::ng-deep .tailwind-dark .schedule-with-chart .dropdown-wrapper .e-input-group,
+::ng-deep .tailwind3-dark .schedule-with-chart .dropdown-wrapper .e-input-group,
+::ng-deep .fluent-dark .schedule-with-chart .dropdown-wrapper .e-input-group,
+::ng-deep .fluent2-dark .schedule-with-chart .dropdown-wrapper .e-input-group {
+  border: 2px solid #4b5563 !important;
+}

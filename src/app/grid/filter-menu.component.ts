@@ -35,6 +35,9 @@ export class FilteringMenuComponent implements OnInit {
     @ViewChild('checkbox')
     public checkBoxInstance: CheckBoxComponent;
 
+    @ViewChild('immediateFilter')
+    public immediateFilterInstance: CheckBoxComponent;
+
     ngOnInit(): void {
         this.data = new DataManager({ url: SERVICE_URI + 'api/UrlDataSource', adaptor: new UrlAdaptor });
         this.query = new Query().addParams('dataCount', '10000');
@@ -44,16 +47,23 @@ export class FilteringMenuComponent implements OnInit {
     }
     public onChange(e: ChangeEventArgs): void {
         this.checkBoxInstance.checked = false;
+        this.immediateFilterInstance.checked = false;
         this.grid.filterSettings.enableInfiniteScrolling = false;
         this.grid.filterSettings.type = <FilterType>e.value;
         this.grid.clearFiltering();
         if (this.grid.filterSettings.type === 'Excel' || this.grid.filterSettings.type === 'CheckBox') {
             this.checkBoxInstance.disabled = false;
+            this.immediateFilterInstance.disabled = false;
         } else {
             this.checkBoxInstance.disabled = true;
+            this.immediateFilterInstance.disabled = true;
         }
     }
     public changeHandler(e: any): void {
         this.grid.filterSettings.enableInfiniteScrolling = e.checked;
+    }
+
+    public immediatechangeHandler(e: any): void {
+        this.grid.filterSettings.mode = e.checked ? 'Immediate' : 'Default';
     }
 }

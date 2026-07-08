@@ -109,8 +109,12 @@
 }
 
 .e-filemanager.e-fm-template-sample .e-large-icons .e-list-item {
-    height: 240px;
-    width: 210px;
+    height: 230px;
+    width: 200px;
+}
+
+ #filemanager.e-fm-template-sample .e-layout-content {
+    overflow: hidden;
 }
 
 .e-filemanager.e-fm-template-sample .e-large-icons .e-list-parent .e-list-item .file-icon {
@@ -156,3 +160,4 @@
 .background-seaview { background-image: url('../images/seaview.jpg'); }
 .background-snow { background-image: url('../images/snow.jpg'); }
 .background-snowfall { background-image: url('../images/snowfall.jpg'); }
+.background-zip { background-image: url('../images/zip.svg'); }

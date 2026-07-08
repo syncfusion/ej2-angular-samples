@@ -1,0 +1,83 @@
+<div class="schedule-control-section">
+  <div class="col-lg-12 control-section">
+    <div class="control-wrapper">
+      <ejs-schedule
+        #scheduleObj
+        cssClass="event-customization-schedule"
+        width="100%"
+        height="550px"
+        [selectedDate]="selectedDate"
+        [currentView]="currentView"
+        (popupOpen)="onPopupOpen($event)"
+        [allowOverlap]="overlap"
+        [startHour]="startHour"
+        [endHour]="endHour"
+        [showWeekend]="showWeekend"
+        [group]="group"
+        [eventSettings]="eventSettings"
+      >
+        <e-views>
+          <e-view option="TimelineWeek">
+            <ng-template #eventTemplate let-data>
+              <div
+                class="custom-event"
+                [style.--status-color]="getStatusConfig(data.Status).color"
+                [title]="data.Subject || 'Task'"
+              >
+                <div class="event-header">
+                  <div class="event-subject">{{ data.Subject || 'Task' }}</div>
+                  <div class="event-progress-percent">{{ getProgressText(data.Progress) }}</div>
+                </div>
+                <div class="event-footer">
+                  <div class="label-wrapper">
+                    <span class="e-icons {{ getStatusConfig(data.Status).icon }} status-icon"></span>
+                    <span class="status-label">{{ getStatusLabel(data.Status) }}</span>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </e-view>
+        </e-views>
+
+        <e-resources>
+          <e-resource
+            field="EmployeeId"
+            title="Employees"
+            name="Employees"
+            [dataSource]="employeeData"
+            textField="Text"
+            idField="Id"
+            colorField="Color"
+          ></e-resource>
+        </e-resources>
+      </ejs-schedule>
+    </div>
+  </div>
+
+  <div id="action-description">
+    <p>
+      This demo showcases an advanced task progress tracker in the Scheduler with elegant event customization, vibrant status indicators, real-time progress visualization, and interactive editing. Track and manage team task assignments with visual status icons and completion percentage indicators.
+    </p>
+  </div>
+
+  <div id="description">
+    <p>
+      The Task Progress Tracker displays team tasks with a refined visual design. Each event shows the task subject on the left and completion percentage on the right, while the status indicator icon is positioned at the bottom left with a colored background matching the task status.
+    </p>
+    <p><b>Status Tracking</b></p>
+    <p>
+      Tasks are displayed with visual status indicators: clock icon for pending tasks, play icon for in-progress work, eye icon for tasks under review, and checkmark icon for completed tasks. Each status has a distinct color for quick visual identification.
+    </p>
+    <p><b>Progress Visualization</b></p>
+    <p>
+      Each event displays the completion percentage in real-time. The progress indicator updates dynamically as tasks advance through different status states.
+    </p>
+    <p><b>Interactive Editing</b></p>
+    <p>
+      Edit task details directly from the Scheduler using the editor. Customize task status and progress percentage with automatic validation rules ensuring data consistency based on the selected status.
+    </p>
+    <p>
+      Looking for the full Angular Scheduler component overview, features, pricing, and documentation? Visit our <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-scheduler">Angular Scheduler</a> component page.
+    /p>
+  </div>
+</div>

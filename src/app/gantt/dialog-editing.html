@@ -6,9 +6,9 @@
       [toolbar]="toolbar" [taskMode]="taskMode"
       [addDialogFields]="addDialogFields" [editDialogFields]="editDialogFields" [allowSelection]="true"
       [splitterSettings]="splitterSettings" [gridLines]="gridLines" [highlightWeekends]="true"
-      [timelineSettings]="timelineSettings" [eventMarkers]="eventMarkers" [labelSettings]="labelSettings"
+      [timelineSettings]="timelineSettings" [labelSettings]="labelSettings"
       [allowResizing]="true" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
-     (actionComplete)="actionComplete($event)">
+      (actionComplete)="actionComplete($event)">
     </ejs-gantt>
   </div>
 </div>
@@ -20,13 +20,13 @@
 
 <div id="description">
   <p>This sample demonstrates how to fully customize the dialog editing interface in the Angular Gantt Chart using the <code><a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/addDialogFieldSettings/">addDialogFields</a></code> and <code><a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/editDialogFieldSettings/">editDialogFields</a></code> properties along with <code><a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/editDialogFieldSettings/#additionalparams">additionalParams</a></code>. It showcases how to override default input and grid components within each tab and organize custom fields across multiple tabs for a structured editing experience.
-        The following tab-level customizations are included:</p>
-		 <ul>
-			<li><b>Dependency Tab</b> - Includes additional toolbar items and improved task naming to simplify task relationship management.</li>
-            <li><b>Resource Tab</b> - Combines resource images and names, introduces a Role column, and supports column menu options for flexible configuration.</li>
-            <li><b>Segments Tab</b> - Enhanced with extra toolbar options for efficient segment editing and control.</li>
-            <li><b>Advanced Tab</b> - Organizes Work and Task Mode input fields for quick access and improved clarity.</li>
-		</ul>
-    <br>
-    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/managing-tasks/editing-tasks#dialog-editing">documentation section</a>.</p>
+    The following tab-level customizations are included:</p>
+    <ul>
+      <li><b>Dependency Tab</b> - Includes additional toolbar items and improved task naming to simplify task relationship management.</li>
+      <li><b>Resource Tab</b> - Combines resource images and names, introduces a Role column, and supports column menu options for flexible configuration.</li>
+      <li><b>Segments Tab</b> - Enhanced with extra toolbar options for efficient segment editing and control.</li>
+      <li><b>Advanced Tab</b> - Organizes Work and Task Mode input fields for quick access and improved clarity.</li>
+    </ul>
+        <p>Gantt component features are segregated into individual feature-wise modules. To use edit, resize, toolbar, markers and selection feature, we need to inject <code>EditService</code>, <code>ResizeService</code>, <code>ToolbarService</code>, <code>DayMarkersService </code> and <code>SelectionService</code> into the <code>&#64;NgModule.providers</code> section.</p>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/managing-tasks/editing-tasks#edit-tasks-via-dialog">documentation section</a>.</p>
 </div>

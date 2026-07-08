@@ -4,14 +4,14 @@
 </div>
 <div class="control-section">
   <div class="content-wrapper">
-    <ejs-gantt #ganttundoredo id="ganttundoredo" height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data"
-      [taskFields]="taskSettings" [allowSelection]="true" [allowFiltering]="true" [allowSorting]="true"
-      [allowResizing]="true" [allowReordering]="true" [enableContextMenu]="true" [treeColumnIndex]="1"
-      showColumnMenu="true" [splitterSettings]="splitterSettings" [labelSettings]="labelSettings"
-      [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
-      [enableUndoRedo]="true" [toolbar]="toolbar" [editSettings]="editSettings" [undoRedoActions]="undoRedoActions"
-      [columns]="columns" (dataBound)="dataBound()" (toolbarClick)="toolbarClick($event)"
-      (actionComplete)="actionComplete()" (resizeStop)="resizeStop()">
+    <ejs-gantt #ganttundoredo id="ganttundoredo" height="650px" rowHeight="46" taskbarHeight="25"
+      [dataSource]="data" [taskFields]="taskSettings" [allowSelection]="true" [allowFiltering]="true"
+      [allowSorting]="true" [allowResizing]="true" [allowReordering]="true" [enableContextMenu]="true"
+      [treeColumnIndex]="1" [showColumnMenu]="true" [splitterSettings]="splitterSettings"
+      [labelSettings]="labelSettings" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+      [highlightWeekends]="true" [enableUndoRedo]="true" [toolbar]="toolbar" [editSettings]="editSettings"
+      [undoRedoActions]="undoRedoActions" [columns]="columns" (dataBound)="dataBound()"
+      (toolbarClick)="toolbarClick($event)" (actionComplete)="actionComplete()" (resizeStop)="resizeStop()">
     </ejs-gantt>
   </div>
 </div>
@@ -19,7 +19,7 @@
 <div id="description">
   <p>The undo feature lets users reverse the most recent changes made to tasks, dependencies, columns, or timeline
     settings. The redo feature restores actions that were previously undone. Both can be triggered using keyboard
-    shortcuts (<code>Ctrl + Z</code> for Undo, <code>Ctrl + Y</code> for Redo) or via toolbar buttons.</p>
+    shortcuts (<code>Ctrl + Z</code> for Undo, <code>Ctrl + Y</code> for Redo on Windows/Linux or <code>Cmd + Z</code> / <code>Cmd + Shift + Z</code> on Mac) or via toolbar buttons.</p>
   <p>
     You can configure which actions are tracked using the <a target="_blank"
       href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#undoredoactions">undoRedoActions</a> property.
@@ -34,10 +34,11 @@
     defaults to 10.</p>
   <p>
     In this demo, the undo-redo feature is enabled by setting <a target="_blank"
-      href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#enableundoredo">
-      enableUndoRedo</a> to <code>true</code>
+      href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#enableundoredo">enableUndoRedo</a> to <code>true</code>.
   </p>
-  <br>
+  <p>
+      Gantt control features are segregated into individual feature-wise modules. To use a UndoRedo, Filter, Edit, Toolbar, Sorting, Resize, Reorder, Selection and markers feature, inject the <code>UndoRedoService</code>,  <code>FilterService</code>,  <code>EditService</code>,  <code>ToolbarService</code>, <code>SortService</code>, <code>ResizeService</code>, <code>ReorderService</code>, <code>SelectionService</code>, and <code>DayMarkersService</code> by into the <code>&#64;NgModule.providers</code> section.
+    </p>
   <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank"
       href="https://ej2.syncfusion.com/angular/documentation/gantt/undo-redo">documentation section</a>.</p>
 </div>

@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { localData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, GanttModule, SelectionService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+
 @Component({
     selector: 'ej2-ganttlocaldata',
     templateUrl: 'local-data.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+    providers: [DayMarkersService, SelectionService],
+    imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 export class GanttLocalDataComponent implements OnInit {
     public data: object[];
@@ -31,17 +33,17 @@ export class GanttLocalDataComponent implements OnInit {
         };
         this.columns = [
             { field: 'TaskID', width: 80 },
-            { field: 'TaskName', width: 250 },
+            { field: 'TaskName', width: 280 },
             { field: 'StartDate' },
             { field: 'EndDate' },
             { field: 'Duration' },
             { field: 'Predecessor' },
-            { field: 'Progress' },
+            { field: 'Progress' }
         ];
         this.projectStartDate = new Date('03/26/2025');
         this.projectEndDate = new Date('07/20/2025');
         this.labelSettings = {
-            leftLabel: 'TaskName',
+            leftLabel: 'TaskName'
         };
         this.splitterSettings = {
             columnIndex: 2

@@ -19,7 +19,7 @@ export class AmazonS3Controller {
     public contextMenuSettings: object;
     public toolbarSettings: ToolbarSettingsModel;    
     public searchSettings: SearchSettingsModel;
-    public hostUrl: string = 'https://amazons3.azurewebsites.net/api/';
+    public hostUrl: string = 'https://amazon-service.syncfusion.com/api/';
     public ngOnInit(): void {
         this.ajaxSettings = {
             url: this.hostUrl + 'AmazonS3Provider/AmazonS3FileOperations',

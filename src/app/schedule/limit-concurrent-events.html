@@ -1,0 +1,84 @@
+<div class="control-section">
+  <div class="col-lg-8 content-wrapper">
+    <ejs-schedule #scheduleObj cssClass='schedule-limit-concurrent' width='100%' height='650px'
+      [selectedDate]="selectedDate" [eventSettings]="eventSettings" [currentView]="currentView"
+      (navigating)="onNavigating($event)">
+      <e-views>
+        <e-view option="Day" [maxEventStack]="getMaxStack()"></e-view>
+        <e-view option="Week" [maxEventStack]="getMaxStack()"></e-view>
+        <e-view option="WorkWeek" [maxEventStack]="getMaxStack()"></e-view>
+      </e-views>
+    </ejs-schedule>
+  </div>
+  <div class="col-lg-4 property-section">
+    <div class="property-panel-section">
+      <div class="property-panel-header">Properties</div>
+      <div class="property-panel-content">
+        <div id="property" class="property-panel-table" title="Properties">
+          <table id="property" title="Properties" style="width: 100%">
+            <tbody>
+              <tr style="height: 50px">
+                <td style="width: 100%;">
+                  <div style="display: flex; align-items: center;">
+                    <ejs-radiobutton cssClass='schedule-radio-button' name="eventDisplay" value="all"
+                      [checked]="displayMode === 'all'" (change)="onDisplayModeChange('all')">
+                    </ejs-radiobutton>
+                    <span style="font-size: 16px; margin-left: 30px;">
+                      <b>Show all events</b>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr style="height: 50px">
+                <td style="width: 100%;">
+                  <div style="display: flex; align-items: center;">
+                    <ejs-radiobutton cssClass='schedule-radio-button' name="eventDisplay" value="limited"
+                      [checked]="displayMode === 'limited'" (change)="onDisplayModeChange('limited')">
+                    </ejs-radiobutton>
+                    <span style="display: flex; align-items: center; font-size: 16px; margin-left: 30px; gap: 6px;">
+                      <b>Show up to</b>
+                      <ejs-numerictextbox [value]="maxEventsLimit" [min]="1" [width]="'110px'" [format]="'n0'"
+                        [enabled]="displayMode === 'limited'" (change)="onLimitChange($event.value)">
+                      </ejs-numerictextbox>
+                      <b>labels</b>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="action-description">
+  <p>
+    This demo illustrates how to limit the number of concurrent events displayed within a single time slot on the
+    Scheduler component.
+  </p>
+</div>
+<div id="description">
+  <p>
+    In this demo, the <code>maxEventStack</code> property allows you to control how many events are visible at a time
+    within each time slot. When multiple events overlap and exceed the specified limit, a "+N" indicator appears,
+    showing how many additional events exist. Users can click on this indicator to view remaining events in a popup
+    window.
+  </p>
+  <p>
+    Use the options below to customize the event display:
+  </p>
+  <ul>
+    <li>Select <strong>"Show all events"</strong> to display all events</li>
+    <li>Select <strong>"Show up to N labels"</strong> to set a maximum limit for visible events per time slot</li>
+    <li>Modify the numeric value to adjust how many events display before the "+N" indicator appears</li>
+  </ul>
+  <p>
+    The <code>maxEventStack</code> property is applicable only with Day, Week, and WorkWeek views when the timeScale
+    option is enabled.
+  </p>
+  <p>
+    Looking for the full Angular Scheduler component overview, features, pricing, and documentation? Visit our <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-scheduler">Angular Scheduler</a> component page.
+  </p>
+</div>

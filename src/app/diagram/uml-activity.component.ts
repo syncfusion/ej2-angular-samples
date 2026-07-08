@@ -17,7 +17,7 @@ Diagram.Inject(UndoRedo, DiagramContextMenu);
 
 /**
  * Component for displaying a Symmetric Layout sample.
- * Manages the presentation and behavior of the diagram using Syncfusion's Angular Diagram component.
+ * Manages the presentation and behavior of the diagram using Angular Diagram component.
  */
 @Component({
     selector: 'control-content', // Angular component selector
@@ -73,6 +73,10 @@ export class UmlActivityComponent {
     public diagramCreate(args: Object): void {
         // Function to add mobile events
         this.addEvents();
+        let isMobile: boolean = window.matchMedia('(max-width:550px)').matches;
+        if (isMobile) {
+            this.diagram.fitToPage();
+        }
     };
 
     // Symbol margin

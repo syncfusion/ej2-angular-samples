@@ -1,9 +1,8 @@
-import { Component, OnInit, ViewChild,ViewEncapsulation } from '@angular/core';
-import { GanttAllModule, GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { GanttModule, GanttComponent, UndoRedoService, EditService, ResizeService, ToolbarService, SelectionService, FilterService, ReorderService, SortService, ColumnMenuService, DayMarkersService, ContextMenuService } from '@syncfusion/ej2-angular-gantt';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { projectNewData } from './data';
-import { ToolbarItem } from '@syncfusion/ej2-angular-grids';
 
 @Component({
   selector: 'ej2-ganttundoredo',
@@ -11,7 +10,8 @@ import { ToolbarItem } from '@syncfusion/ej2-angular-grids';
   styleUrls:['undo-redo.component.css'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
-  imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+  providers: [UndoRedoService, EditService, ResizeService, ToolbarService, SelectionService, FilterService, ReorderService, SortService, ColumnMenuService, DayMarkersService, ContextMenuService],
+  imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 export class GanttUndoRedoComponent implements OnInit {
   @ViewChild('ganttundoredo') public ganttObj: GanttComponent;
@@ -37,7 +37,7 @@ export class GanttUndoRedoComponent implements OnInit {
       duration: 'Duration',
       progress: 'Progress',
       dependency: 'Predecessor',
-      parentID: 'parentId'
+      parentID: 'ParentID'
     };
     this.editSettings = {
       allowAdding: true,
@@ -60,7 +60,7 @@ export class GanttUndoRedoComponent implements OnInit {
     
     this.columns = [
       { field: 'TaskID', headerText: 'ID', width: 100 },
-      { field: 'TaskName', headerText: 'Name', width: 250 },
+      { field: 'TaskName', headerText: 'Name', width: 280 },
       { field: 'StartDate' },
       { field: 'EndDate' },
       { field: 'Duration' },
@@ -77,7 +77,7 @@ export class GanttUndoRedoComponent implements OnInit {
     };
   }
 
-  public toolbarClick(args: any): void {
+  public toolbarClick(args: { item: { id: string } }): void {
     if (args.item.id === 'Undo') {
       this.ganttObj.undo();
     } else if (args.item.id === 'Redo') {
@@ -92,26 +92,27 @@ export class GanttUndoRedoComponent implements OnInit {
   public dataBound(): void {
     this.updateBadges();
   }
-  public resizeStop(): void{
+  public resizeStop(): void {
     this.updateBadges();
   }
 
 
 
   private updateBadges(): void {
-    const undoBtn = document.querySelector('[aria-label="Undo"]');
-    const redoBtn = document.querySelector('[aria-label="Redo"]');
-    undoBtn['style'].position = 'relative'
-    undoBtn['style'].overflow = 'visible'
-    if (undoBtn) {
-      undoBtn.classList.add("e-overlay");
-    }
-    if (redoBtn) {
-      redoBtn.classList.add("e-overlay");
-    }
-    redoBtn['style'].position = 'relative'
-    redoBtn['style'].overflow = 'visible'
+    const undoBtn = document.querySelector('[aria-label="Undo"]') as HTMLElement | null;
+    const redoBtn = document.querySelector('[aria-label="Redo"]') as HTMLElement | null;
 
+    if (undoBtn) {
+      undoBtn.style.position = 'relative';
+      undoBtn.style.overflow = 'visible';
+      undoBtn.classList.add('e-overlay');
+    }
+
+    if (redoBtn) {
+      redoBtn.style.position = 'relative';
+      redoBtn.style.overflow = 'visible';
+      redoBtn.classList.add('e-overlay');
+    }
 
     const undoCount = this.ganttObj.getUndoActions().length;
     const redoCount = this.ganttObj.getRedoActions().length;
@@ -120,59 +121,55 @@ export class GanttUndoRedoComponent implements OnInit {
     this.setBadge(redoBtn, redoCount, 'Redo');
   }
 
-  private setBadge(button: Element, count: number, type: string): void {
+  private setBadge(button: HTMLElement | null, count: number, type: string): void {
     if (!button) return;
-    let badge = button.querySelector('.e-badge.e-badge-danger.e-badge-notification.e-badge-overlap.e-badge-circle');
+
+    let badge = button.querySelector('.e-badge.e-badge-danger.e-badge-notification.e-badge-overlap.e-badge-circle') as HTMLElement | null;
     if (!badge) {
       badge = document.createElement('span');
       badge.className = 'e-badge e-badge-danger e-badge-notification e-badge-overlap e-badge-circle';
       button.appendChild(badge);
     }
-    const tailwind3 = document.body.classList.contains('tailwind3') || document.body.classList.contains('tailwind3-dark');
-    const bootstrap5 = document.body.classList.contains('bootstrap5.3') || document.body.classList.contains('bootstrap5.3-dark');
-    const material3 = document.body.classList.contains('material3') || document.body.classList.contains('material3-dark');
-    const fluent = document.body.classList.contains('fluent') || document.body.classList.contains('fluent-dark');
-    const fluent2 = document.body.classList.contains('fluent2') || document.body.classList.contains('fluent2-dark');
 
-    if (tailwind3) {
-      badge['style'].backgroundColor = '#c2410c';
-      badge['style'].color = '#fff';
-      badge['style'].marginTop = '3px';
-      badge['style'].paddingTop = '2px';
-    } else if (bootstrap5) {
-      badge['style'].backgroundColor = '#ffc107';
-      badge['style'].color = '#000';
-      badge['style'].paddingTop = '3px';
-      badge['style'].marginTop = '6px';
-    } else if (fluent2) {
-      badge['style'].backgroundColor = '#fde300';
-      badge['style'].color = '#000';
-      badge['style'].paddingTop = '4px';
-      badge['style'].marginTop = '6px';
-    } else if (fluent) {
-      badge['style'].backgroundColor = '#fde300';
-      badge['style'].color = '#000';
-      badge['style'].paddingTop = '2px';
-      badge['style'].marginTop = '8px';
-    } else if (material3) {
-      badge['style'].backgroundColor = '#b3261e';
-      badge['style'].color = '#fff';
-      badge['style'].paddingTop = '3px';
+    const themeStyles = this.getThemeStyles();
+    if (themeStyles) {
+      badge.style.backgroundColor = themeStyles.backgroundColor;
+      badge.style.color = themeStyles.color;
+      badge.style.marginTop = themeStyles.marginTop;
+      badge.style.paddingTop = themeStyles.paddingTop;
     }
 
     badge.textContent = count.toString();
-    badge['style'].display = count > 0 ? 'inline-block' : 'none';
+    badge.style.display = count > 0 ? 'inline-block' : 'none';
 
     if (count === 0) {
       button.classList.add('e-overlay');
-      button['style'].cursor = 'default';
-      button['style'].pointerEvents = 'none';
-      button['style'].boxShadow = '0 0 0 transparent';
+      button.style.cursor = 'default';
+      button.style.pointerEvents = 'none';
+      button.style.boxShadow = '0 0 0 transparent';
     } else {
       button.classList.remove('e-overlay');
-      button['style'].cursor = 'pointer';
-      button['style'].pointerEvents = 'auto';
-      button['style'].boxShadow = '';
+      button.style.cursor = 'pointer';
+      button.style.pointerEvents = 'auto';
+      button.style.boxShadow = '';
     }
+  }
+
+  private getThemeStyles(): { backgroundColor: string; color: string; marginTop: string; paddingTop: string } | null {
+    const bodyClasses = document.body.classList;
+
+    if (bodyClasses.contains('tailwind3') || bodyClasses.contains('tailwind3-dark')) {
+      return { backgroundColor: '#c2410c', color: '#fff', marginTop: '3px', paddingTop: '2px' };
+    } else if (bodyClasses.contains('bootstrap5.3') || bodyClasses.contains('bootstrap5.3-dark')) {
+      return { backgroundColor: '#ffc107', color: '#000', marginTop: '6px', paddingTop: '3px' };
+    } else if (bodyClasses.contains('fluent2') || bodyClasses.contains('fluent2-dark')) {
+      return { backgroundColor: '#fde300', color: '#000', marginTop: '6px', paddingTop: '4px' };
+    } else if (bodyClasses.contains('fluent') || bodyClasses.contains('fluent-dark')) {
+      return { backgroundColor: '#fde300', color: '#000', marginTop: '8px', paddingTop: '2px' };
+    } else if (bodyClasses.contains('material3') || bodyClasses.contains('material3-dark')) {
+      return { backgroundColor: '#b3261e', color: '#fff', marginTop: '3px', paddingTop: '3px' };
+    }
+
+    return null;
   }
 }

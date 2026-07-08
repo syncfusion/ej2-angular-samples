@@ -32,9 +32,7 @@ export class ConstraintComponent {
     
 }​​​​​​​
   public created(args: any) {
-    this.diagram.rulerSettings = {
-      showRulers : true
-    }
+    this.diagram.fitToPage();
   }
   //Initializes the nodes for the diagram
   public nodes : NodeModel[] = [

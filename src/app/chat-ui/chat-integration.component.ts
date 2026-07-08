@@ -28,7 +28,7 @@ export class ChatIntegrationComponent implements OnInit {
     team: teamsMessagedate,
     user4: suyamaMessagedata,
   };
-  public currentUser = { id: 'user1', user: 'Albert', avatarUrl: './assets/chat-ui/images/andrew.png' };
+  public currentUser = { id: 'user1', user: 'Albert', avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/andrew.png' };
   public currentMessages = this.chatMessages.user1;
   public currentSuggestions = [];
   public headerText = 'Albert';
@@ -58,11 +58,11 @@ export class ChatIntegrationComponent implements OnInit {
       return;
     }
     const userSettings = [
-      { headerText: 'Albert', headerIconCss: 'chat_user1_avatar', user: { id: 'user1', user: 'Albert', avatarUrl: './assets/chat-ui/images/andrew.png' }, messages: this.chatMessages.user1 },
-      { headerText: 'Decor bot', headerIconCss: 'chat_bot_avatar', user: { id: 'admin', user: 'Admin', avatarUrl: './assets/chat-ui/images/bot.png' }, messages: this.chatMessages.admin, suggestions: chatSuggestions },
-      { headerText: 'Charlie', headerIconCss: 'chat_user2_avatar', user: { id: 'user2', user: 'Charlie', avatarUrl: './assets/chat-ui/images/charlie.png' }, messages: this.chatMessages.user2 },
+      { headerText: 'Albert', headerIconCss: 'chat_user1_avatar', user: { id: 'user1', user: 'Albert', avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/andrew.png' }, messages: this.chatMessages.user1 },
+      { headerText: 'Decor bot', headerIconCss: 'chat_bot_avatar', user: { id: 'admin', user: 'Admin', avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/bot.png' }, messages: this.chatMessages.admin, suggestions: chatSuggestions },
+      { headerText: 'Charlie', headerIconCss: 'chat_user2_avatar', user: { id: 'user2', user: 'Charlie', avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/charlie.png' }, messages: this.chatMessages.user2 },
       { headerText: 'Laura Callahan', headerIconCss: 'chat_user3_avatar', user: { id: 'user3', user: 'Laura', avatarUrl: './assets/chat-ui/images/laura.png' }, messages: this.chatMessages.user3 },
-      { headerText: 'New Dev Team', headerIconCss: 'chat_team_avatar', user: { id: 'team', user: 'Admin', avatarUrl: './assets/chat-ui/images/calendar.png' }, messages: this.chatMessages.team },
+      { headerText: 'New Dev Team', headerIconCss: 'chat_team_avatar', user: { id: 'team', user: 'Admin', avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/calendar.png' }, messages: this.chatMessages.team },
       { headerText: 'Reena', headerIconCss: 'chat_user4_avatar', user: { id: 'user4', user: 'Albert' }, messages: this.chatMessages.user4 }
     ];
 
@@ -81,7 +81,7 @@ export class ChatIntegrationComponent implements OnInit {
         const foundMessage = botData.find(m => m.text === args.message.text);
         const defaultResponse = 'Your message text: ' + args.message.text + '</br></br>' + 'For real-time message processing, connect the Chat UI control to your preferred AI service, such as OpenAI or Azure Cognitive Services.';
         const message = {
-          author: { id: !foundMessage ? 'default' : 'bot', user: !foundMessage ? 'Default' : 'Bot', avatarUrl: !foundMessage ? '' : './assets/chat-ui/images/bot.png' },
+          author: { id: !foundMessage ? 'default' : 'bot', user: !foundMessage ? 'Default' : 'Bot', avatarUrl: !foundMessage ? '' : 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/bot.png' },
           text: foundMessage?.reply || defaultResponse
         };
         this.chatUI.addMessage(message);

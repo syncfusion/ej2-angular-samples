@@ -12,40 +12,37 @@
 <div class="col-lg-4 property-section">
     <div class="property-panel-section">
             <div class="property-panel-header">Properties </div>
-        <table id="property" class="property-panel-table" title="Properties" style="width: 100%">
+        <table class="property-panel-table">
             <tr>
-                <td style="width: 30%">
-                    <div>Working Days</div>
+                <td>
+                    <label for="WorkingDaysList">Working Days</label>
                 </td>
-                <td style="width: 70%;padding-right: 10px; padding-bottom: 10px;">
-                    <div id="WorkingDays" style="padding-left: 5px;width: 210px;">
-                        <ejs-multiselect id="checklist" #WorkingDaysObj style="padding: 2px" [dataSource]="dropDownData" 
+                <td>
+                    <ejs-multiselect id="WorkingDaysList" #WorkingDaysObj [dataSource]="dropDownData" 
                         (select)="select($event)" (removed)="remove($event)" [value]="workWeek" 
                         [fields]="dropDownFields" [mode]="mode" [showDropDownIcon]="true"
-                        popupHeight="350px"></ejs-multiselect>
-                    </div>
+                        popupHeight="350px" aria-label="Select working days">
+                    </ejs-multiselect>
                 </td>
             </tr> 
             <tr>
-                <td style="width: 30%; padding-top: 10px; padding-bottom: 10px;">
-                    <div>Show Weekends</div>
+                <td>
+                    <label for="showWeekends">Show Weekends</label>
                 </td>
-                <td style="width: 70%">
-                    <div>
-                        <ejs-checkbox [checked]="true" (change)="onshowWeekendsChange($event)">
-                        </ejs-checkbox>
-                    </div>
+                <td>
+                    <ejs-checkbox id="showWeekends" [checked]="true" (change)="onshowWeekendsChange($event)"
+                        aria-label="Show weekends in timeline">
+                    </ejs-checkbox>
                 </td>
             </tr>   
             <tr>
-                <td style="width: 30%; padding-top: 10px; padding-bottom: 10px;">
-                    <div>Highlight Weekends</div>
+                <td>
+                    <label for="highlightWeekends">Highlight Weekends</label>
                 </td>
-                <td style="width: 70%">
-                    <div>
-                        <ejs-checkbox [checked]="true" (change)="onshightlightWeekendsChange($event)">
-                        </ejs-checkbox>
-                    </div>
+                <td>
+                    <ejs-checkbox id="highlightWeekends" [checked]="true" (change)="onHighlightWeekendsChange($event)"
+                        aria-label="Highlight weekends in timeline">
+                    </ejs-checkbox>
                 </td>
             </tr>           
         </table>
@@ -54,22 +51,44 @@
 
 
 <style>
-    .property-panel-table div {
+    .property-panel-table {
+        width: 100%;
+    }
+
+    .property-panel-table #WorkingDaysList div {
         padding-top: 0px;
-    }              
+    }  
+
+    .property-panel-table td:first-child {
+        width: 30%;
+        padding-right: 10px;
+    }
+
+    .property-panel-table td:last-child {
+        width: 70%;
+    }
+
+    .property-panel-table tr:not(:first-child) {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .property-panel-table label {
+        display: block;
+        font-weight: 400;
+    }
 </style>
     <div id="description">
         <p>
-            In this example, you can customize which days of the week are considered working days using the <a target="_blank" href="https://helpej2.syncfusion.com/angular/documentation/api/gantt/#workweek">workWeek</a> property. 
-            Simply select your preferred working days from the dropdown list in the property panel, and they will be applied to the Gantt Chart. Weekends can be highlighted using the <a target="_blank" href="https://helpej2.syncfusion.com/angular/documentation/api/gantt/#highlightweekends">highlightweekends</a> property for easy identification.     
+            In this example, you can customize which days of the week are considered working days using the <a target="_blank" href="https://helpej2.syncfusion.com/angular/documentation/api/gantt/#workweek" rel="noopener noreferrer">workWeek</a> property. 
+            Simply select your preferred working days from the dropdown list in the property panel, and they will be applied to the Gantt Chart. Weekends can be highlighted using the <a target="_blank" href="https://helpej2.syncfusion.com/angular/documentation/api/gantt/#highlightweekends" rel="noopener noreferrer">highlightWeekends</a> property for easy identification.     
         </p>        
         <p>
-            Non-working days are visible by default in the Gantt Chart timeline, their visibility can be customized using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/timelineSettingsModel/#showWeekend">timelineSettings.showWeekend</a> property. Setting this to false will hide non-working days from the timeline.
+            Non-working days are visible by default in the Gantt Chart timeline, their visibility can be customized using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/timelineSettingsModel/#showWeekend" rel="noopener noreferrer">timelineSettings.showWeekend</a> property. Setting this to false will hide non-working days from the timeline.
         </p>
         <p>
             Gantt component features are segregated into individual feature-wise modules. To use a selection and markers, inject the
-            <code>SelectionService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section respectively.
+            <code>SelectionService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section.
         </p>
-        <br>
-    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/undo-redo">documentation section</a>.</p>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/task-scheduling#weekendnon-working-days" rel="noopener noreferrer">documentation section</a>.</p>
     </div>

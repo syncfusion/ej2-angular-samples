@@ -76,7 +76,7 @@ export class WorkFlowDiagramComponent implements AfterViewInit {
     {
       id: "start",
       offsetX: 100,
-      offsetY: 380,
+      offsetY: 280,
       shape: {
         type: "Bpmn",
         shape: "Event",
@@ -87,7 +87,7 @@ export class WorkFlowDiagramComponent implements AfterViewInit {
     {
       id: "liquidInput",
       offsetX: 300,
-      offsetY: 280,
+      offsetY: 180,
       shape: {
         type: "Bpmn",
         shape: "Activity",
@@ -98,7 +98,7 @@ export class WorkFlowDiagramComponent implements AfterViewInit {
     {
       id: "dryInput",
       offsetX: 300,
-      offsetY: 480,
+      offsetY: 380,
       shape: {
         type: "Bpmn",
         shape: "Activity",
@@ -109,7 +109,7 @@ export class WorkFlowDiagramComponent implements AfterViewInit {
     {
       id: "condensed",
       offsetX: 500,
-      offsetY: 180,
+      offsetY: 80,
       shape: {
         type: "Bpmn",
         shape: "Activity",
@@ -120,7 +120,7 @@ export class WorkFlowDiagramComponent implements AfterViewInit {
     {
       id: "cream",
       offsetX: 500,
-      offsetY: 260,
+      offsetY: 160,
       shape: {
         type: "Bpmn",
         shape: "Activity",
@@ -131,7 +131,7 @@ export class WorkFlowDiagramComponent implements AfterViewInit {
     {
       id: "caneSugar",
       offsetX: 500,
-      offsetY: 340,
+      offsetY: 240,
       shape: {
         type: "Bpmn",
         shape: "Activity",
@@ -142,7 +142,7 @@ export class WorkFlowDiagramComponent implements AfterViewInit {
     {
       id: "water",
       offsetX: 500,
-      offsetY: 420,
+      offsetY: 320,
       shape: {
         type: "Bpmn",
         shape: "Activity",
@@ -153,7 +153,7 @@ export class WorkFlowDiagramComponent implements AfterViewInit {
     {
       id: "ingredients",
       offsetX: 500,
-      offsetY: 500,
+      offsetY: 400,
       shape: {
         type: "Bpmn",
         shape: "Activity",
@@ -164,7 +164,7 @@ export class WorkFlowDiagramComponent implements AfterViewInit {
     {
       id: "flavour",
       offsetX: 500,
-      offsetY: 580,
+      offsetY: 480,
       shape: {
         type: "Bpmn",
         shape: "Activity",
@@ -175,7 +175,7 @@ export class WorkFlowDiagramComponent implements AfterViewInit {
     {
       id: "fruitsAndNuts",
       offsetX: 500,
-      offsetY: 660,
+      offsetY: 560,
       shape: {
         type: "Bpmn",
         shape: "Activity",
@@ -186,7 +186,7 @@ export class WorkFlowDiagramComponent implements AfterViewInit {
     {
       id: "blending",
       offsetX: 700,
-      offsetY: 380,
+      offsetY: 280,
       shape: {
         type: "Bpmn",
         shape: "Activity",
@@ -197,7 +197,7 @@ export class WorkFlowDiagramComponent implements AfterViewInit {
     {
       id: "coolingAging",
       offsetX: 840,
-      offsetY: 380,
+      offsetY: 280,
       shape: {
         type: "Bpmn",
         shape: "Activity",
@@ -208,7 +208,7 @@ export class WorkFlowDiagramComponent implements AfterViewInit {
     {
       id: "packaging",
       offsetX: 980,
-      offsetY: 380,
+      offsetY: 280,
       shape: {
         type: "Bpmn",
         shape: "Activity",
@@ -220,7 +220,7 @@ export class WorkFlowDiagramComponent implements AfterViewInit {
       id: "storageDistribution",
       width: 140,
       offsetX: 1130,
-      offsetY: 380,
+      offsetY: 280,
       shape: {
         type: "Bpmn",
         shape: "Activity",
@@ -231,7 +231,7 @@ export class WorkFlowDiagramComponent implements AfterViewInit {
     {
       id: "end",
       offsetX: 1260,
-      offsetY: 380,
+      offsetY: 280,
       shape: {
         type: "Bpmn",
         shape: "Event",

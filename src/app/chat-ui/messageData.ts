@@ -14,7 +14,7 @@ export let communityMessageUser1 = {
 export  let communityMessageUser2 = {
     user: 'Charlie',
     id: 'user2',
-    avatarUrl: "./assets/chat-ui/images/charlie.png",
+    avatarUrl: "https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/charlie.png",
     statusIconCss: 'e-icons e-user-away'
 };
 
@@ -35,31 +35,31 @@ export let communityMessageUser4 = {
 let chatMessageUser1 = {
     user: 'Albert',
     id: 'user1',
-    avatarUrl: './assets/chat-ui/images/andrew.png'
+    avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/andrew.png'
 };
 
 let chatMessageUser2 = {
     user: 'Reena',
     id: 'user2',
-    avatarUrl: './assets/chat-ui/images/reena.png'
+    avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/reena.png'
 };
 
 let integrationMessageUser1 = {
     user: 'Reena',
     id: 'user1',
-    avatarUrl: './assets/chat-ui/images/reena.png'
+    avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/reena.png'
 };
 
 let integrationMessageUser2 = {
     user: 'Albert',
     id: 'user2',
-    avatarUrl: './assets/chat-ui/images/andrew.png'
+    avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/andrew.png'
 };
 
 let botMessage = {
     user: 'Bot',
     id: 'bot',
-    avatarUrl: './assets/chat-ui/images/bot.png'
+    avatarUrl: 'https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/bot.png'
 };
 
 let walterMessageUser1 = {
@@ -71,7 +71,7 @@ let walterMessageUser1 = {
 let walterMessageUser2 = {
     user: 'Charlie',
     id: 'user5',
-    avatarUrl: "./assets/chat-ui/images/charlie.png",
+    avatarUrl: "https://ej2.syncfusion.com/angular/demos/assets/chat-ui/images/charlie.png",
 };
 
 let lauraMessageUser1 = {

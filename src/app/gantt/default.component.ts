@@ -2,13 +2,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { projectNewData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 
-import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, GanttComponent, GanttModule, SelectionService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
   selector: 'ej2-ganttdefault',
   templateUrl: 'default.html',
   standalone: true,
-  imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+  providers: [SelectionService, DayMarkersService],
+  imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 export class GanttDefaultComponent implements OnInit {
   @ViewChild('ganttDefault')
@@ -30,13 +31,13 @@ export class GanttDefaultComponent implements OnInit {
       duration: 'Duration',
       progress: 'Progress',
       dependency: 'Predecessor',
-      parentID: 'ParentId'
+      parentID: 'ParentID'
     };
     this.splitterSettings = { columnIndex: 3 };
 
     this.columns = [
       { field: 'TaskID', width: 80 },
-      { field: 'TaskName', headerText: 'Job Name', width: '250', clipMode: 'EllipsisWithTooltip' },
+      { field: 'TaskName', headerText: 'Job Name', width: '280', clipMode: 'EllipsisWithTooltip' },
       { field: 'StartDate' },
       { field: 'Duration' },
       { field: 'Progress' },
@@ -46,13 +47,12 @@ export class GanttDefaultComponent implements OnInit {
     this.projectStartDate = new Date('03/26/2025');
     this.projectEndDate = new Date('07/20/2025');
     this.labelSettings = {
-      leftLabel: 'TaskName',
+      leftLabel: 'TaskName'
     };
   }
-  created(): void {
 
+  public created(): void {
     if (document.querySelector('.e-bigger')) {
-
       this.ganttObj.rowHeight = 48;
       this.ganttObj.taskbarHeight = 28;
     }

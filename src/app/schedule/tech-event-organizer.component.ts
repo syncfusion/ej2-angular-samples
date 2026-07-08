@@ -1,4 +1,4 @@
-import { Component, Inject, ViewEncapsulation, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, Inject, ViewEncapsulation, ViewChild, ElementRef, OnInit, NgZone } from '@angular/core';
 import { addClass, extend, Internationalization, removeClass } from '@syncfusion/ej2-base';
 import { View, EventSettingsModel, EventRenderedArgs, ScheduleComponent, DayService, WeekService, ResizeService, DragAndDropService, ScheduleModule, AgendaService, ActionEventArgs, CellClickEventArgs, EventClickArgs, PopupOpenEventArgs, PopupCloseEventArgs, ResourcesModel, Print, ExcelExport } from '@syncfusion/ej2-angular-schedule';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
@@ -101,15 +101,21 @@ export class TechEventOrganizerComponent implements OnInit {
     { text: "Export", id: "export" },
   ];
 
-  constructor(@Inject('sourceFiles') private sourceFiles: any) {
+  constructor(@Inject('sourceFiles') private sourceFiles: any, private ngZone: NgZone) {
     sourceFiles.files = ['tech-event-organizer.html'];
   }
-   ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.scheduleRef.refresh();
+  ngAfterViewInit(): void {
+    const sub = this.ngZone.onStable.subscribe(() => {
+      const toolbar = this.scheduleRef?.element
+        ?.querySelector('.e-schedule-toolbar-container .e-toolbar') as any;
+      if (!toolbar) return;
+      const toolbarInstance = toolbar?.ej2_instances?.[0];
+      toolbarInstance.refreshOverflow?.();
+
+      sub.unsubscribe();
     });
   }
-    ngOnInit(): void {
+  ngOnInit(): void {
     this.unplannedEvent1TreeFields = {
       dataSource: this.unplannedEvent1Data,
       id: 'Id',

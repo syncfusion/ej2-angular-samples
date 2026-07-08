@@ -20,6 +20,7 @@ import { TreeViewComponent, TreeViewModule } from '@syncfusion/ej2-angular-navig
 import { SBDescriptionComponent } from '../common/dp.component';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { SBActionDescriptionComponent } from '../common/adp.component';
+import { paletteIconClick } from './script/diagram-common';
  Diagram.Inject(DataBinding, HierarchicalTree, LayoutAnimation);
 
  export interface EmployeeInfo {
@@ -29,7 +30,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
  @Component({
     selector: 'control-content',
     templateUrl: 'data-binding-with-treeview.html',
-    styleUrls: ['data-binding-with-treeview.component.css'],
+    styleUrls: ['data-binding-with-treeview.component.css', 'diagram-common.style.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [
@@ -137,6 +138,10 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
        this.remove();
    }
     }
+    //Initialize palette icon for mobile view
+    public diagramCreate(args: Object): void {
+      paletteIconClick();
+    }
     //click event handler
     public click(args : IClickEventArgs){
      if(args.element && (args.element as any).sourceID === undefined && (args.element as any).shape !==undefined) {
@@ -165,6 +170,28 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
      let diagram = this.diagram;
        setTimeout(() => {
           this.targetNodeId = args.target.id;
+          if (!this.targetNodeId) {
+            // Use the dropped node itself as parent
+            this.targetNodeId = args.element.id;
+            let droppedNodeName = args.element.annotations[0].content;
+            let item = {
+                Name: droppedNodeName, 
+                Id: this.targetNodeId, 
+                hasChild: true, 
+                expanded: true
+            };
+            // Add as root node to treeview
+            this.treeview.addNodes([item]);
+            this.data1.push(item);
+            
+            // Add node to diagram
+            diagram.add(args.element);
+            diagram.doLayout();
+            this.index++;
+            return;
+          }
+
+          // Process the dropped element (execute when target exists)
           tempData = (workingData as any).filter((a: any) => a.Id === this.targetNodeId);
           tempData[0].hasChild = true;
           tempData[0].expanded = true;

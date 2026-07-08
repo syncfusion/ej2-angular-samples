@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
-import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, EditService, GanttComponent, GanttModule, ResizeService, SelectionService, ToolbarService } from '@syncfusion/ej2-angular-gantt';
 import { resourcesData, resourceCollection } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -8,7 +8,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     selector: 'ej2-ganttresourceview',
     templateUrl: 'resource-view.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+    providers: [SelectionService, EditService, ResizeService, ToolbarService, DayMarkersService],
+    imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 
 export class GanttResourceViewComponent implements OnInit {
@@ -19,12 +20,12 @@ export class GanttResourceViewComponent implements OnInit {
     public labelSettings: object;
     public splitterSettings: object;
     public editSettings: object;
-    public toolbar: any;
+    public toolbar: (string | object)[];
     public resourceFields: object ;
     public projectStartDate: Date;
     public projectEndDate: Date;
     public taskType: string;
-    @ViewChild('resourceview')
+    @ViewChild('resourceview', { static: false })
     public ganttObj: GanttComponent;
     public ngOnInit(): void {
         this.data = resourcesData;
@@ -50,7 +51,7 @@ export class GanttResourceViewComponent implements OnInit {
         };
         this.columns =  [
 			{ field: 'TaskID', visible: false },
-            { field: 'TaskName', headerText: 'Name', width: 250 },
+            { field: 'TaskName', headerText: 'Name', width: 260 },
             { field: 'work', headerText: 'Work' },
             { field: 'Progress' },
             { field: 'resourceGroup', headerText: 'Group' },
@@ -78,7 +79,7 @@ export class GanttResourceViewComponent implements OnInit {
     }
     public toolbarClick(args: ClickEventArgs): void {
         if (args.item.id === 'showhidebar') {
-            this.ganttObj.showOverAllocation = this.ganttObj.showOverAllocation ? false : true;
+            this.ganttObj.showOverAllocation = !this.ganttObj.showOverAllocation;
         }
-};
+    }
 }

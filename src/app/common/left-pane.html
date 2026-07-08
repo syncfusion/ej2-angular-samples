@@ -14,7 +14,7 @@
     </div>
 </div>
 <div class="sb-control-navigation e-view">
-    <ejs-treeview id="controlTree" #controlTree class="e-view sb-hide" [nodeTemplate]="nodeTemplate" [fields]="fields" (nodeSelected)='onComponentSelect($event)'>
+    <ejs-treeview id="controlTree" #controlTree class="e-view sb-hide" [nodeTemplate]="nodeTemplate" [fields]="fields" (nodeSelected)='onComponentSelect($event)' (nodeClicked)='onTreeNodeClicked($event)'(created)='onTreeReady()'>
         <ng-template #nodeTemplate="" let-data="">
             <div>
                 <span class="tree-text">{{data.name}}</span>

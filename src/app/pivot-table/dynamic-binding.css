@@ -109,3 +109,7 @@
     white-space: pre-wrap;
     text-align: left;
   }
+  
+  #PivotViewcontainerwrapper {
+    height: auto !important;
+}

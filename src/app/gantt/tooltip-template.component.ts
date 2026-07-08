@@ -3,34 +3,37 @@ import { tooltipData, editingResources } from './data';
 import { Internationalization } from '@syncfusion/ej2-base';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { NgIf } from '@angular/common';
-import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, GanttModule, SelectionService, SortService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-let instance: Internationalization = new Internationalization();
+
+interface TooltipData {
+  activeTasks: number;
+  milestones: number;
+  overallProgress: string;
+}
 @Component({
   selector: 'ej2-gantttooltiptemplate',
   templateUrl: 'tooltip-template.html',
   standalone: true,
-  imports: [
-    SBActionDescriptionComponent,
-    GanttAllModule,
-    NgIf,
-    SBDescriptionComponent,
+  providers: [SelectionService, DayMarkersService, SortService],
+  imports: [SBActionDescriptionComponent, GanttModule, NgIf, SBDescriptionComponent,
   ],
 })
 export class GanttTooltipTemplateComponent implements OnInit {
+  private intl: Internationalization = new Internationalization();
   public data: object[];
   public resources: object[];
   public resourceFields: object;
   public taskSettings: object;
   public labelSettings: object;
-  public projectStartDate: Date;
-  public projectEndDate: Date;
+  public projectStartDate: Date = new Date();
+  public projectEndDate: Date = new Date();
   public columns: object[];
   public splitterSettings: object;
   public tooltipSettings: object;
-  public topTierData: any;
-  public bottomTierData: any;
-  public themeClass: string;
+  public topTierData: TooltipData = { activeTasks: 0, milestones: 0, overallProgress: '0' };
+  public bottomTierData: TooltipData = { activeTasks: 0, milestones: 0, overallProgress: '0' };
+  public themeClass: string = 'white';
   public ngOnInit(): void {
     this.data = tooltipData;
     this.resources = editingResources;
@@ -53,7 +56,7 @@ export class GanttTooltipTemplateComponent implements OnInit {
     };
     this.columns = [
       { field: 'TaskID', width: 80 },
-      { field: 'TaskName', width: 250 },
+      { field: 'TaskName', width: 290 },
       { field: 'StartDate' },
       { field: 'EndDate' },
       { field: 'Duration' },
@@ -77,33 +80,29 @@ export class GanttTooltipTemplateComponent implements OnInit {
     this.projectEndDate = new Date('06/01/2025');
   }
   public format(value: Date): string {
-    return instance.formatDate(value, { format: 'MM/dd/yyyy' });
-  }
-  public generateTopTierTooltip(value: any, date: Date, tier: string): string {
-    return `<div>Top Tier: ${tier}</div>`;
-  }
-  public generateBottomTierTooltip(date: Date, tier: string): string {
-    return `<div>Bottom Tier: ${tier}</div>`;
+    return this.intl.formatDate(value, { format: 'MM/dd/yyyy' });
   }
 
-  private getTooltipData(startDate: Date, endDate: Date, tier: string) {
-    let ganttElement = document.getElementsByClassName('e-gantt')[0] as any;
-    let gantt = ganttElement ? ganttElement.ej2_instances[0] : null;
-    if (!gantt) return { activeTasks: 0, milestones: 0, overallProgress: 0 };
+  private getTooltipData(startDate: Date, endDate: Date | undefined, tier: string): TooltipData {
+    const ganttElement = document.getElementsByClassName('e-gantt')[0] as any;
+    const gantt = ganttElement ? ganttElement.ej2_instances[0] : null;
+    if (!gantt || !endDate) {
+      return { activeTasks: 0, milestones: 0, overallProgress: '0' };
+    }
 
-    let activeTasks;
+    let activeTasks: any[] = [];
     if (tier === 'topTier') {
-      activeTasks = gantt.currentViewData.filter((task) => {
-        let taskStart = new Date(task.StartDate);
-        let taskEnd = new Date(task.EndDate);
+      activeTasks = gantt.currentViewData.filter((task: any) => {
+        const taskStart = new Date(task.StartDate);
+        const taskEnd = new Date(task.EndDate);
         taskStart.setHours(0, 0, 0, 0);
         taskEnd.setHours(0, 0, 0, 0);
         return taskStart >= startDate && taskEnd <= endDate;
       });
     } else {
-      activeTasks = gantt.currentViewData.filter((task) => {
-        let taskStart = new Date(task.StartDate);
-        let taskEnd = new Date(task.EndDate);
+      activeTasks = gantt.currentViewData.filter((task: any) => {
+        const taskStart = new Date(task.StartDate);
+        const taskEnd = new Date(task.EndDate);
         taskStart.setHours(0, 0, 0, 0);
         taskEnd.setHours(0, 0, 0, 0);
         return (
@@ -113,12 +112,12 @@ export class GanttTooltipTemplateComponent implements OnInit {
       });
     }
 
-    let milestones = activeTasks.filter((task) => task.Duration === 0);
-    let totalProgress = activeTasks.reduce(
+    const milestones = activeTasks.filter((task: any) => task.Duration === 0);
+    const totalProgress = activeTasks.reduce(
       (acc: number, task: any) => acc + (task.Progress || 0),
       0
     );
-    let overallProgress =
+    const overallProgress =
       activeTasks.length > 0
         ? (totalProgress / activeTasks.length).toFixed(2)
         : '0';
@@ -126,36 +125,36 @@ export class GanttTooltipTemplateComponent implements OnInit {
     return {
       activeTasks: activeTasks.length,
       milestones: milestones.length,
-      overallProgress: overallProgress,
+      overallProgress,
     };
   }
 
-  public topTierTooltip(value: string, date: Date, tier: string): string {
-    let ganttElement = document.getElementsByClassName('e-gantt')[0] as any;
-    let gantt = ganttElement ? ganttElement.ej2_instances[0] : null;
-    if (!gantt) return '';
+  private calculateTopTierTooltip(value: string, date: Date, tier: string): void {
+    const ganttElement = document.getElementsByClassName('e-gantt')[0] as any;
+    const gantt = ganttElement ? ganttElement.ej2_instances[0] : null;
+    if (!gantt) return;
 
-    let endDate;
-    let startdate = new Date(date);
-    if (gantt.timelineSettings.topTier.unit) {
-      endDate = new Date(startdate.getTime());
-      endDate.setDate(startdate.getDate() + 6);
+    let endDate: Date | undefined;
+    const startDate = new Date(date);
+    if (gantt.timelineSettings?.topTier?.unit) {
+      endDate = new Date(startDate.getTime());
+      endDate.setDate(startDate.getDate() + 6);
     }
-    this.topTierData = this.getTooltipData(startdate, endDate, tier);
+    this.topTierData = this.getTooltipData(startDate, endDate, tier);
     this.updateThemeClass();
   }
 
-  public bottomTierTooltip(date: string, tier: string): string {
-    let ganttElement = document.getElementsByClassName('e-gantt')[0] as any;
-    let gantt = ganttElement ? ganttElement.ej2_instances[0] : null;
-    if (!gantt) return '';
+  private calculateBottomTierTooltip(date: string, tier: string): void {
+    const ganttElement = document.getElementsByClassName('e-gantt')[0] as any;
+    const gantt = ganttElement ? ganttElement.ej2_instances[0] : null;
+    if (!gantt) return;
 
-    let startdate = new Date(date);
-    let endDate;
-    if (gantt.timelineSettings.bottomTier.unit) {
-      endDate = new Date(startdate.getTime());
+    const startDate = new Date(date);
+    let endDate: Date | undefined;
+    if (gantt.timelineSettings?.bottomTier?.unit) {
+      endDate = new Date(startDate.getTime());
     }
-    this.bottomTierData = this.getTooltipData(startdate, endDate, tier);
+    this.bottomTierData = this.getTooltipData(startDate, endDate, tier);
     this.updateThemeClass();
   }
 
@@ -167,20 +166,13 @@ export class GanttTooltipTemplateComponent implements OnInit {
       bodyClasses.contains('highcontrast');
     this.themeClass = themeIsDark ? 'black' : 'white';
   }
-  public executeTopTierTooltip(
-    value: string,
-    date: Date,
-    tier: string
-  ): boolean {
-    this.topTierTooltip(value, date, tier);
+  public executeTopTierTooltip(value: string, date: Date, tier: string): boolean {
+    this.calculateTopTierTooltip(value, date, tier);
     return true;
   }
 
   public executeBottomTierTooltip(date: string, tier: string): boolean {
-    this.bottomTierTooltip(date, tier);
+    this.calculateBottomTierTooltip(date, tier);
     return true;
   }
-}
-export interface DateFormat extends Window {
-  format?: Function;
 }

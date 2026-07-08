@@ -47,7 +47,8 @@
       </ejs-toolbar>
             <div class="content-wrapper">
                 <ejs-diagram #diagram id="diagram" width="100%" height="900px" (created)="created()" [nodes]="nodes"
-                (selectionChange)="selectionChange($event)" (historyChange)="historyChange($event)">
+                (selectionChange)="selectionChange($event)" (historyChange)="historyChange($event)"
+                [rulerSettings]="{showRulers: true}">
                 </ejs-diagram>
             </div>
     </div>
@@ -62,5 +63,7 @@
     <p>The <code>sendBackward</code> and <code>sendToBack</code> method allows you to send a selected object to the back of the z-order (the order in which objects are stacked on top of one another).</p>
 
    <p> The clipboard commands are used to cut, copy, or paste selected elements. The <code>cut</code> command removes the selected diagram elements and copies them to the clipboard; <code>copy</code> duplicates the selected diagram elements and copies them to the clipboard; and <code>paste</code> adds diagram elements from the clipboard to the diagram. The flip command is used to give a horizontal or vertical mirror image of the selected node. Use <code>flip</code> and <code>flipMode</code> properties to flip a node along with the port and label.</p>
-  </div>
+  
+    <p>Looking for the full Angular Diagram component overview, features, pricing, and documentation? Visit the <a href="https://www.syncfusion.com/angular-components/angular-diagram" target="_blank">Angular Diagram</a> page.</p>
+</div>
   

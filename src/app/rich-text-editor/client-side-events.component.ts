@@ -27,6 +27,8 @@ export class EventsComponent {
     @ViewChild('EventLog')
     public log: ElementRef;
 
+    hostUrl: string = 'https://services.syncfusion.com/angular/production/';
+
     public tools: ToolbarModule = {
         items: ['Bold', 'Italic', 'Underline', 'StrikeThrough', 'SuperScript', 'SubScript', '|',
             'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
@@ -38,15 +40,11 @@ export class EventsComponent {
     };
     public fileManagerSettings: FileManagerSettingsModel = {
         enable: true,
-        path: '/Pictures/Food',
         ajaxSettings: {
-          url: 'https://ej2-aspcore-service.azurewebsites.net/api/FileManager/FileOperations',
-          getImageUrl:
-            'https://ej2-aspcore-service.azurewebsites.net/api/FileManager/GetImage',
-          uploadUrl:
-            'https://ej2-aspcore-service.azurewebsites.net/api/FileManager/Upload',
-          downloadUrl:
-            'https://ej2-aspcore-service.azurewebsites.net/api/FileManager/Download',
+          url: this.hostUrl + 'api/RichTextEditor/FileOperations',
+          getImageUrl: this.hostUrl + 'api/RichTextEditor/GetImage',
+          uploadUrl: this.hostUrl + 'api/RichTextEditor/Upload',
+          downloadUrl: this.hostUrl + 'api/RichTextEditor/Download'
         },
       };
     // Display event log

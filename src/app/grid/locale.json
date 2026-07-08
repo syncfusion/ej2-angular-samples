@@ -161,7 +161,9 @@
             "Pie": "Kreisdiagramm",
             "Scatter": "Streudiagramm",
             "PinRow": "Stecknadelreihe",
-            "UnpinRow": "Zeile lösen"
+            "UnpinRow": "Zeile lösen",
+            "Undo": "Rückgängig machen",
+            "Redo": "Wiederholen"
         },
         "checkboxFilter": {
             "Search": "Suche",
@@ -373,7 +375,7 @@
             "NumberFilter": "عدد المرشحات",
             "TextFilter": "مرشحات النص",
             "DateFilter": "مرشحات التاريخ",
-            "DateTimeFilter": "مرشحات DateTime",
+            "DateTimeFilter": "فلتر التاريخ والوقت",
             "MatchCase": "حالة مباراة",
             "CustomFilterPlaceHolder": "أدخل القيمة",
             "CustomFilterDatePlaceHolder": "اختيار موعد",
@@ -442,7 +444,9 @@
             "Pie": "مخطط دائري",
             "Scatter": "مخطط التشتت",
             "PinRow": "صف الدبوس",
-            "UnpinRow": "إزالة تثبيت الصف"
+            "UnpinRow": "إزالة تثبيت الصف",
+            "Undo": "الغاء التحميل",
+            "Redo": "الإعادة"
         },
         "checkboxFilter": {
             "Search": "بحث",
@@ -723,7 +727,9 @@
             "Pie": "Pie Chart",
             "Scatter": "Scatter Chart",
             "PinRow": "Pin Row",
-            "UnpinRow": "Unpin Row"
+            "UnpinRow": "Unpin Row",
+            "Undo": "Undo",
+            "Redo": "Redo"
         },
         "checkboxFilter": {
             "Search": "Search",
@@ -1004,7 +1010,9 @@
             "Pie": "饼图",
             "Scatter": "散点图",
             "PinRow": "别针排",
-            "UnpinRow": "解开行"
+            "UnpinRow": "解开行",
+            "Undo": "撤消",
+            "Redo": "重做"
         },
         "checkboxFilter": {
             "Search": "搜索",
@@ -1285,7 +1293,9 @@
             "Pie": "Graphique à secteurs",
             "Scatter": "Graphique de dispersion",
             "PinRow": "rangée d'épingles",
-            "UnpinRow": "Détacher la ligne"
+            "UnpinRow": "Détacher la ligne",
+            "Undo": "annuler",
+            "Redo": "Refaire"
         },
         "checkboxFilter": {
             "Search": "Chercher",

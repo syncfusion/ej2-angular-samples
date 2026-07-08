@@ -25,7 +25,9 @@ export class IntegrationSpeechToTextComponent  {
   };
 
   ngAfterViewInit(): void {
-    this.setupFooterButtons();
+    setTimeout(() => { 
+      this.setupFooterButtons();
+    });
   }
 
   setupFooterButtons(): void {

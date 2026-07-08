@@ -1,18 +1,18 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { multiTaskbarData, resources } from './data';
-import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, EditService, GanttComponent, GanttModule, ResizeService, SelectionService, ToolbarService, RowDDService } from '@syncfusion/ej2-angular-gantt';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SwitchAllModule } from '@syncfusion/ej2-angular-buttons';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
     selector: 'ej2-ganttresources',
     templateUrl: 'resource-multi-taskbar.html',
-    styleUrls: ['reasource-multi-taskbar.component.css'],
+    styleUrls: ['resource-multi-taskbar.component.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [SBActionDescriptionComponent, SwitchAllModule, GanttAllModule, SBDescriptionComponent]
+    providers: [SelectionService, EditService, ToolbarService, DayMarkersService, ResizeService, RowDDService],
+    imports: [SBActionDescriptionComponent, SwitchAllModule, GanttModule, SBDescriptionComponent]
 })
-
 export class GanttResourceMultiTaskbarComponent implements OnInit {
     public data: object[];
     public resources: object[];
@@ -22,7 +22,7 @@ export class GanttResourceMultiTaskbarComponent implements OnInit {
     public splitterSettings: object;
     public editSettings: object;
     public toolbar: string[];
-    public resourceFields: object ;
+    public resourceFields: object;
     public projectStartDate: Date;
     public projectEndDate: Date;
     public taskType: string;
@@ -31,34 +31,34 @@ export class GanttResourceMultiTaskbarComponent implements OnInit {
     public ngOnInit(): void {
         this.data = multiTaskbarData;
         this.resources = resources;
-        this.taskType = 'FixedWork';
+        this.taskType = "FixedWork";
         this.taskSettings = {
-            id: 'TaskID',
-            name: 'TaskName',
-            startDate: 'StartDate',
-            endDate: 'EndDate',
-            duration: 'Duration',
-            dependency: 'Predecessor',
-            progress: 'Progress',
-            resourceInfo: 'resources',
-            work:'work',
-            expandState: 'isExpand',
-            child: 'subtasks'
+            id: "TaskID",
+            name: "TaskName",
+            startDate: "StartDate",
+            endDate: "EndDate",
+            duration: "Duration",
+            dependency: "Predecessor",
+            progress: "Progress",
+            resourceInfo: "resources",
+            work: "work",
+            expandState: "isExpand",
+            child: "subtasks"
         };
         this.resourceFields = {
-            id: 'resourceId',
-            name: 'resourceName',
-            unit: 'unit',
-            group: 'resourceGroup'
+            id: "resourceId",
+            name: "resourceName",
+            unit: "unit",
+            group: "resourceGroup"
         };
-        this.columns =  [
-			{ field: 'TaskID', visible: false },
-            { field: 'TaskName', headerText: 'Task Name', width: '250' },
-            { field: 'work', headerText: 'Work' },
-            { field: 'Progress'},
-            { field: 'resourceGroup', headerText: 'Group' },
-            { field: 'StartDate'},
-            { field: 'Duration' }
+        this.columns = [
+            { field: "TaskID", visible: false },
+            { field: "TaskName", headerText: "Task Name", width: "280" },
+            { field: "work", headerText: "Work" },
+            { field: "Progress" },
+            { field: "resourceGroup", headerText: "Group" },
+            { field: "StartDate" },
+            { field: "Duration" }
         ];
         this.editSettings = {
             allowAdding: true,
@@ -67,24 +67,25 @@ export class GanttResourceMultiTaskbarComponent implements OnInit {
             allowTaskbarEditing: true,
             showDeleteConfirmDialog: true
         };
-        this.toolbar = ['Add', 'Edit', 'Update', 'Delete', 'Cancel', 'ExpandAll', 'CollapseAll'];
+        this.toolbar = ["Add", "Edit", "Update", "Delete", "Cancel", "ExpandAll", "CollapseAll"];
         this.splitterSettings = {
             columnIndex: 2
-        }
-        this.labelSettings = {
-            taskLabel: 'TaskName'
         };
-        this.projectStartDate= new Date('03/26/2025');
-        this.projectEndDate= new Date('05/30/2025');
+        this.labelSettings = {
+            taskLabel: "TaskName"
+        };
+        this.projectStartDate = new Date("03/26/2025");
+        this.projectEndDate = new Date("05/30/2025");
     }
-    public dragDropChange(args): any {
+    public dragDropChange(args: any): void {
         if (args.checked) {
             this.ganttObj.allowTaskbarDragAndDrop = true;
         } else {
             this.ganttObj.allowTaskbarDragAndDrop = false;
         }
     }
-    public overlapChange(args): any {
+
+    public overlapChange(args: any): void {
         if (args.checked) {
             this.ganttObj.allowTaskbarOverlap = true;
         } else {

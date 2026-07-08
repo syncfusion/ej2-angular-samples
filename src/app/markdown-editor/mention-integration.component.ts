@@ -75,7 +75,7 @@ export class MarkdownMentionComponent {
         this.mdsource = document.getElementById('preview-code');
         this.mdsource.addEventListener('click', (e: MouseEvent) => {
             this.fullPreview();
-            if ((e.target as HTMLElement).parentElement.classList.contains('e-active')) {
+            if ((e.target as HTMLElement).parentElement.querySelector('.e-md-codeview')) {
                 this.rteObj.disableToolbarItem(['Bold', 'Italic', 'StrikeThrough', 'Formats', 'Blockquote', 'OrderedList',
                     'UnorderedList', 'CreateTable', 'SuperScript', 'SubScript', 'CreateLink', 'Image']);
             } else {
@@ -85,23 +85,27 @@ export class MarkdownMentionComponent {
         });
     }
     public markdownConversion(): void {
-        if (this.mdsource.classList.contains('e-active')) {
+        if (this.mdsource.firstElementChild.classList.contains('e-md-codeview')) {
             const id: string = this.rteObj.getID() + 'html-view';
             const htmlPreview: Element = this.rteObj.element.querySelector('#' + id);
-            htmlPreview.innerHTML = MarkdownConverter.toHtml((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value) as string;
+            htmlPreview.innerHTML = MarkdownConverter.toHtml((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value, { lineBreak: true }) as string;
         }
     }
     public fullPreview(): void {
         const id: string = this.rteObj.getID() + 'html-preview';
         let htmlPreview: HTMLElement = this.rteObj.element.querySelector('#' + id) as HTMLElement;
         const previewTextArea: HTMLElement = this.rteObj.element.querySelector('.e-rte-content') as HTMLElement;
-        if (this.mdsource.classList.contains('e-active')) {
-            this.mdsource.classList.remove('e-active');
+        if (this.mdsource.firstElementChild.classList.contains('e-md-codeview')) {
+            this.mdsource.parentElement.setAttribute('data-content', 'Preview');
+            this.mdsource.firstElementChild.classList.remove('e-md-codeview');
+            this.mdsource.firstElementChild.classList.add('e-md-preview');
             this.textArea.style.display = 'block';
             htmlPreview.style.display = 'none';
             previewTextArea.style.overflow = 'hidden';
         } else {
-            this.mdsource.classList.add('e-active');
+            this.mdsource.parentElement.setAttribute('data-content', 'Code View');
+            this.mdsource.firstElementChild.classList.remove('e-md-preview');
+            this.mdsource.firstElementChild.classList.add('e-md-codeview');
             if (!htmlPreview) {
                 htmlPreview = createElement('div', { className: 'e-content e-pre-source' });
                 htmlPreview.id = id;
@@ -113,7 +117,7 @@ export class MarkdownMentionComponent {
             }
             this.textArea.style.display = 'none';
             htmlPreview.style.display = 'block';
-            htmlPreview.innerHTML = MarkdownConverter.toHtml((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value) as string;
+            htmlPreview.innerHTML = MarkdownConverter.toHtml((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value, { lineBreak: true }) as string;
         }
     }
 }

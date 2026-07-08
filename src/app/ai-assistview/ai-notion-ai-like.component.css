@@ -1,0 +1,289 @@
+#notionSidebar .notion-aiassistview {
+        height: 100%;
+    }
+    #notionSidebar .notion-aiassistview .e-footer {
+        width: 95%;
+    }
+    #notionSidebar .notion-aiassistview .banner-content {
+        height: 200px;
+    }
+    .notion-aiassistview {
+        width: auto;
+        height: 500px;
+    }
+
+    .notion-like-ui.e-card:hover {
+        background-color: unset;
+    }
+    #dialogElem .notion-aiassistview .e-aiassistview,
+    #notionSidebar .notion-aiassistview .e-aiassistview {
+        border: none;
+    }
+  .notion-aiassistview .e-aiassistview .e-suggestions ul {
+      flex-direction: column;
+      justify-content: flex-start;
+  }
+
+  .notion-aiassistview .e-aiassistview .e-suggestions li {
+      align-self: baseline;
+      padding-left: 5px;
+  }
+
+  .notion-aiassistview
+  .e-aiassistview
+  .e-suggestions.e-suggestion-item-template
+  li {
+      padding: 7px 10px;
+  }
+  .notion-aiassistview .e-suggestion-item-template {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      align-items: center;
+  }
+
+  #dialogElem .notion-aiassistview .e-aiassistview .e-suggestion-list,
+  #notionSidebar .notion-aiassistview .e-aiassistview .e-suggestion-list {
+    width: 100%;
+  }
+
+  #dialogElem .notion-aiassistview .e-aiassistview .e-suggestions li,
+  #notionSidebar .notion-aiassistview .e-aiassistview .e-suggestions li {
+    box-shadow: none;
+    border: none;
+  }
+
+  #notionSidebar .notion-aiassistview .e-aiassistview .e-suggestions li {
+    width: 95%;
+  }
+
+  #dialogElem .notion-aiassistview .e-aiassistview .e-suggestions li {
+    width: max(80%, 425px);
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .notion-aiassistview .e-aiassistview .e-suggestions li:hover {
+    background-color: var(--color-sf-content-bg-color-hover);
+    border: none;
+  }
+
+  .notion-aiassistview .assist-suggestion-content {
+      padding-left: 5px;
+  }
+
+  .notion-aiassistview .banner-content .e-assistview-icon:before {
+      font-size: 35px;
+  }
+
+  .notion-aiassistview .banner-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 120px;
+      text-align: left;
+  }
+
+  .ai-assist-banner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 400px;
+      font-size: 18px;
+      align-items: center;
+      text-align: center;
+  }
+  .ai-assist-banner h2 {
+      margin: 0;
+  }
+
+  .ai-assist-banner .e-icons:before {
+      font-size: 40px;
+  }
+  /* Default icon container */
+  .model-icon:not(.e-icons) {
+      height: 16px;
+      align-self: center;
+      width: 16px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  /* Individual models */
+  .model-sonet {
+      background-image: url('/assets/ai-assistview/images/Claude.svg');
+  }
+  .model-opus {
+      background-image: url('/assets/ai-assistview/images/Claude.svg');
+  }
+  .model-gemini {
+      background-image: url('/assets/ai-assistview/images/Gemini.svg');
+  }
+  .model-gpt {
+      background-image: url('/assets/ai-assistview/images/GPT.svg');   
+  }
+
+  #custombtn .model-icon:not(.e-icons) {
+      margin-right: 5px;
+      margin-top: 0;
+      height: 20px;
+      width: 20px;
+  }
+
+  #dialogElem.e-dialog .e-dlg-content {
+    border-radius: 0;
+  }
+  .e-dialog .e-dlg-content {
+      padding: 0;
+  }
+
+  .settings-item {
+      display: flex;
+      align-items: center;
+      width: 100%;
+  }
+  .settings-item .e-switch-wrapper {
+      margin: unset;
+      margin-left: auto;
+      width: 42px;
+  }
+  .notion-aiassistview .e-toolbar .e-toolbar-item .e-tbar-btn:focus,
+  .notion-aiassistview .e-toolbar .e-toolbar-item .e-tbar-btn:active,
+  .notion-aiassistview .e-dropdown-btn:active,
+  .e-dropdown-btn.e-btn:active {
+      box-shadow: none;
+  }
+
+  .notion-aiassistview.e-dropdown-btn, .e-dropdown-btn.e-btn {
+      box-shadow: none;
+  }
+
+  .notion-aiassistview .e-btn.e-flat.e-active,
+  .notion-aiassistview .e-dropdown-btn:active,
+  .e-dropdown-btn.e-btn:active,
+  .notion-aiassistview .e-dropdown-btn:active,
+  .e-dropdown-btn.e-btn:hover,
+  .notion-aiassistview .e-dropdown-btn:focus,
+  .e-dropdown-btn.e-btn:focus {
+      background: unset;
+      border: 1px solid transparent;
+      box-shadow: none;
+      color: unset;
+  }
+
+  .e-aiassistview
+  .e-view-header
+  .e-dropdown-btn.e-toolbar-item.e-active::after {
+      background-color: unset;
+  }
+
+  .notion-aiassistview
+  .e-footer-icons-wrapper
+  .e-toolbar
+  .e-toolbar-item.settings-icon
+  .e-tbar-btn.e-btn:hover,
+  .notion-aiassistview .e-footer .e-dropdown-btn.e-btn:hover,
+  .notion-aiassistview .e-footer .e-dropdown-btn.e-btn:active {
+      color: var(--color-sf-icon-color);
+  }
+
+  .notion-like-ui.e-card, .notion-like-ui.e-card:hover {
+    border: none;
+    box-shadow: none;
+  }
+
+  .notion-like-ui .notes-app-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .notion-like-ui .notes-page {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 32px 36px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-sf-border-light);
+  }
+  .custom-dialog.e-dialog {
+    top: auto !important;
+    bottom: 0px !important;
+  }
+
+  /* Header */
+  .notion-like-ui .notes-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 24px;
+  }
+
+  .notion-like-ui .page-icon {
+    font-size: 24px;
+  }
+
+  .notion-like-ui .page-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* Content */
+  .notion-like-ui .notes-content h3 {
+    font-size: 18px;
+    margin: 20px 0 12px;
+  }
+
+  .notion-like-ui .notes-content h4 {
+    font-size: 15px;
+    margin: 18px 0 8px;
+    font-weight: 600;
+  }
+
+  .notion-like-ui .notes-content ul {
+    padding-left: 20px;
+    margin: 0 0 12px;
+  }
+
+  .notion-like-ui .notes-content li {
+    margin-bottom: 6px;
+    line-height: 1.6;
+  }
+
+  /* Task list */
+  .notion-like-ui .task-list li {
+    list-style: none;
+    padding-left: 0;
+    cursor: default;
+  }
+
+  /* Footer hint */
+  .notion-like-ui .notes-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+    font-size: 13px;
+  }
+
+  .notion-like-ui .hint-icon {
+    font-size: 16px;
+  }
+  
+  .notion-like-ui .e-aiassistview .e-footer .e-toolbar-items {
+    line-height: 0;
+  }
+
+  body[class*="fluent2-highcontrast"] .notion-like-ui.e-card:hover {
+    background-color: black;
+  }
+
+  body[class*="fluent2-dark"] .notion-like-ui.e-card:hover {
+    background-color: rgb(41, 41, 41);
+  }

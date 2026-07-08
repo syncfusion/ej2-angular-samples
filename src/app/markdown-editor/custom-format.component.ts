@@ -75,7 +75,7 @@ export class MarkdownCustomComponent {
         if (this.mdsource.classList.contains('e-active')) {
             const id: string = this.rteObj.getID() + 'html-view';
             const htmlPreview: Element = this.rteObj.element.querySelector('#' + id);
-            htmlPreview.innerHTML = MarkdownConverter.toHtml((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value) as string;
+            htmlPreview.innerHTML = MarkdownConverter.toHtml((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value, { lineBreak: true }) as string;
         }
     }
     public fullPreview(): void {
@@ -95,7 +95,7 @@ export class MarkdownCustomComponent {
             }
             this.textArea.style.display = 'none';
             htmlPreview.style.display = 'block';
-            htmlPreview.innerHTML = MarkdownConverter.toHtml((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value) as string;
+            htmlPreview.innerHTML = MarkdownConverter.toHtml((this.rteObj.contentModule.getEditPanel() as HTMLTextAreaElement).value, { lineBreak: true }) as string;
             this.tooltipObj.content = "Codeview";
         }
     }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GanttComponent, VirtualScroll, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, GanttModule, VirtualScrollService, SelectionService, DayMarkersService } from '@syncfusion/ej2-angular-gantt';
 import { virtualData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -7,7 +7,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     selector: 'ej2-ganttvirtualscroll',
     templateUrl: 'virtual-scroll.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+    providers: [VirtualScrollService, SelectionService, DayMarkersService],
+    imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 
 export class GanttVirtualScrollComponent implements OnInit {
@@ -27,11 +28,11 @@ export class GanttVirtualScrollComponent implements OnInit {
             endDate: 'EndDate',
             duration: 'Duration',
             progress: 'Progress',
-            parentID: 'parentID'
+            parentID: 'ParentID'
         };
 		this.columns = [
                 { field: 'TaskID' },
-                { field: 'TaskName', width: '200px' },
+                { field: 'TaskName', width: '300px' },
                 { field: 'StartDate' },
                 { field: 'Duration' },
                 { field: 'Progress' }

@@ -156,6 +156,10 @@ table#property {
   font-size: 25px;
 }
 
+.sb-icon-Products:before {
+  content: "\e92f";
+}
+
 .highcontrast .sb-mobile-setting:before {
   color: #fff;
 }
@@ -390,7 +394,10 @@ body.bootstrap5\.3-dark,
 .bootstrap5\.3-dark .sb-switch-popup li:hover,
 .bootstrap5\.3-dark .theme-wrapper:hover,
 .bootstrap5\.3-dark .theme-wrapper.active,
+.bootstrap5\.3-dark .products-wrapper:hover,
+.bootstrap5\.3-dark .products-wrapper.active,
 .bootstrap5\.3-dark .sb-theme-popup li:hover,
+.bootstrap5\.3-dark .sb-products-popup li:hover,
 .bootstrap5\.3-dark .sb-switch-btn:hover,
 .bootstrap5\.3-dark .sb-switch-btn.active,
 .bootstrap5\.3-dark .sb-search-result .e-list-item:hover,
@@ -451,7 +458,22 @@ body.bootstrap5\.3-dark,
 .bootstrap5\.3-dark .sb-body-overlay {
     background: #212529;
 }
+/* FIX: Bootstrap 5.3 Dark - Products popup */
+.bootstrap5\.3-dark .sb-products-popup {
+  background-color: #343a40;
+  border: 1px solid #495057;
+  color: #ffffff;
+}
 
+/* List items */
+.bootstrap5\.3-dark .sb-products-popup li {
+  color: #ffffff;
+}
+
+/* Hover state */
+.bootstrap5\.3-dark .sb-products-popup li:hover {
+  background-color: #363636;
+}
 .bootstrap5\.3-dark .sb-mobilefooter>.e-btn.e-flat {
     background: #212529;
     color: #fff;
@@ -671,8 +693,27 @@ margin-right: 6px;
     height: 24px;
     margin: 7px 3px !important;
 }
+/* FIX: Fluent2 Dark - Products popup (match Choose Theme) */
+.fluent2-dark .sb-products-popup {
+  background-color: #1f1f1f;
+  border: unset;
+  color: #ffffff;
+}
 
+/* List items text */
+.fluent2-dark .sb-products-popup li {
+  color: #ffffff;
+}
 
+/* Hover behavior – same as theme popup */
+.fluent2-dark .sb-products-popup li:hover {
+  background-color: #333333;
+}
+/* Fluent2 Dark – fix Other Products hover (match Choose Theme) */
+.fluent2-dark .products-wrapper:hover,
+.fluent2-dark .products-wrapper.active {
+  background-color: #333333;
+}
 /**sb-switcher*/
 
 .sb-switch-popup {
@@ -732,11 +773,11 @@ margin-right: 6px;
 }
 
 .sb-settings-wrapper {
-  padding: 0 20px 0px 10px;
+  padding: 0 5px 0px 5px;
 }
 
 .sb-search-wrapper {
-  padding: 0px 10px 0px 24px;
+  padding: 0px 9px 0px 9px;
 }
 
 .sb-header-preview {
@@ -888,6 +929,85 @@ margin-right: 6px;
   padding-left: 3px;
   line-height: 32px;
   letter-spacing: .5px;
+}
+
+/* Products wrapper styles - matching theme-wrapper for desktop alignment */
+.products-wrapper:hover,
+.products-wrapper.active {
+  background-color: rgb(216, 216, 216);
+}
+
+.products-wrapper {
+  height: 32px;
+  margin-top: 5px;
+  margin-right: 10px;
+  cursor: default;
+  padding: 0px 10px;
+  border-radius: 2px;
+}
+
+.products-wrapper>div {
+  float: left;
+  padding-left: 3px;
+  line-height: 32px;
+  letter-spacing: .5px;
+}
+
+.sb-products-text {
+  font-size: 13px;
+  font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif";
+  opacity: 54;
+}
+
+.sb-products-switch,
+.sb-products-switcher-wrapper {
+  display: inline-block;
+}
+
+.sb-products-switch {
+  font-size: 20px;
+}
+
+.sb-products-popup {
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.36);
+  border-radius: 4px;
+  padding-top: 23px;
+  width: 175px;
+  z-index: 1001;
+}
+
+.sb-products-popup li {
+  padding-top: 4px;
+  padding-left: 15px;
+  line-height: 30px;
+  cursor: default;
+}
+
+.sb-products-popup li:hover {
+  background: rgb(238, 238, 238);
+}
+
+#products-switcher-popup {
+  z-index: 1003 !important;
+}
+/* Reduce spacing between header action items */
+.products-wrapper,
+.theme-wrapper {
+  margin-right: 4px;          /* was 10px */
+  padding: 0 6px;             /* was 0 10px */
+}
+.sb-switch-btn,
+.sb-search-btn,
+.sb-setting-btn {
+  margin-left: 4px;           /* reduce inter-button space */
+  margin-right: 4px;
+}
+.sb-header-splitter,
+.sb-theme-splitter {
+  margin-right: 4px;          /* was ~22px */
+  height: 28px;
 }
 
 .sb-download-btn {
@@ -2159,6 +2279,13 @@ propertye pane
   .theme-wrapper {
     display: none;
   }
+  #sb-dark-theme {
+    display: none;
+  }
+
+  .sb-products-toggler-wrapper {
+    display: none;
+  }
 
   .sb-setting-theme-section {
     display: block;
@@ -2330,6 +2457,14 @@ propertye pane
 
   .sb-icon-Palette {
     padding-right: 10px;
+  }
+
+  .sb-icon-Products {
+    padding-right: 10px;
+  }
+
+  .sb-icon-Products:before{
+    font-size: 22px;
   }
 
   .sb-icon-Palette:before {
@@ -2709,6 +2844,7 @@ propertye pane
 .highcontrast .sb-src-code,
 .highcontrast .sb-api-section,
 .highcontrast .sb-theme-popup,
+.highcontrast .sb-products-popup,
 .highcontrast .copy-tooltip,
 .highcontrast #search-input-wrapper input,
 .highcontrast #search-input-wrapper input::placeholder {
@@ -2876,7 +3012,8 @@ body.highcontrast,
 }
 
 .sb-control-navigation .e-treeview .tree-text {
-  width: calc(100% - 69px);
+  max-width: 100%;
+  width: fit-content;
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -3638,6 +3775,8 @@ color:white;
 .material-dark .sb-src-code,
 .material-dark .sb-api-section,
 .material-dark .sb-theme-popup,
+.material-dark .sb-products-popup,
+.material-dark .sb-products-popup,
 .material-dark .copy-tooltip,
 .material-dark .e-icons.copycode,
 .material-dark #search-input-wrapper input,
@@ -3653,7 +3792,10 @@ color:white;
 .material-dark .sb-switch-popup li:hover,
 .material-dark .theme-wrapper:hover,
 .material-dark .theme-wrapper.active,
+.material-dark .products-wrapper:hover,
+.material-dark .products-wrapper.active,
 .material-dark .sb-theme-popup li:hover,
+.material-dark .sb-products-popup li:hover,
 .material-dark .sb-search-result .e-list-item:hover,
 .material-dark .sb-switch-btn:hover,
 .material-dark .sb-switch-btn.active,
@@ -3828,6 +3970,7 @@ color:white;
 .fabric-dark .sb-src-code,
 .fabric-dark .sb-api-section,
 .fabric-dark .sb-theme-popup,
+.fabric-dark .sb-products-popup,
 .fabric-dark .copy-tooltip,
 .fabric-dark .e-icons.copycode,
 .fabric-dark #search-input-wrapper input,
@@ -3843,6 +3986,7 @@ color:white;
 .fabric-dark .theme-wrapper:hover,
 .fabric-dark .theme-wrapper.active,
 .fabric-dark .sb-theme-popup li:hover,
+.fabric-dark .sb-products-popup li:hover,
 .fabric-dark .sb-switch-btn:hover,
 .fabric-dark .sb-switch-btn.active,
 .fabric-dark .sb-search-result .e-list-item:hover,
@@ -4002,6 +4146,7 @@ body.bootstrap-dark,
 .bootstrap-dark .sb-src-code,
 .bootstrap-dark .sb-api-section,
 .bootstrap-dark .sb-theme-popup,
+.bootstrap-dark .sb-products-popup,
 .bootstrap-dark .copy-tooltip,
 .bootstrap-dark .e-icons.copycode,
 .bootstrap-dark #search-input-wrapper input,
@@ -4016,7 +4161,10 @@ body.bootstrap-dark,
 .bootstrap-dark .sb-switch-popup li:hover,
 .bootstrap-dark .theme-wrapper:hover,
 .bootstrap-dark .theme-wrapper.active,
+.bootstrap-dark .products-wrapper:hover,
+.bootstrap-dark .products-wrapper.active,
 .bootstrap-dark .sb-theme-popup li:hover,
+.bootstrap-dark .sb-products-popup li:hover,
 .bootstrap-dark .sb-switch-btn:hover,
 .bootstrap-dark .sb-switch-btn.active,
 .bootstrap-dark .sb-search-result .e-list-item:hover,
@@ -4191,6 +4339,7 @@ body.bootstrap5-dark,
 .bootstrap5-dark .sb-src-code,
 .bootstrap5-dark .sb-api-section,
 .bootstrap5-dark .sb-theme-popup,
+.bootstrap5-dark .sb-products-popup,
 .bootstrap5-dark .copy-tooltip,
 .bootstrap5-dark .e-icons.copycode,
 .bootstrap5-dark #search-input-wrapper input,
@@ -4210,7 +4359,10 @@ body.bootstrap5-dark,
 .bootstrap5-dark .sb-switch-popup li:hover,
 .bootstrap5-dark .theme-wrapper:hover,
 .bootstrap5-dark .theme-wrapper.active,
+.bootstrap5-dark .products-wrapper:hover,
+.bootstrap5-dark .products-wrapper.active,
 .bootstrap5-dark .sb-theme-popup li:hover,
+.bootstrap5-dark .sb-products-popup li:hover,
 .bootstrap5-dark .sb-search-result .e-list-item:hover,
 .bootstrap5-dark .sb-switch-btn:hover,
 .bootstrap5-dark .sb-switch-btn.active,
@@ -4386,6 +4538,7 @@ color:white;
 .tailwind-dark .sb-src-code,
 .tailwind-dark .sb-api-section,
 .tailwind-dark .sb-theme-popup,
+.tailwind-dark .sb-products-popup,
 .tailwind-dark .copy-tooltip,
 .tailwind-dark .e-icons.copycode,
 .tailwind-dark #search-input-wrapper input,
@@ -4401,6 +4554,7 @@ color:white;
 .tailwind-dark .theme-wrapper:hover,
 .tailwind-dark .theme-wrapper.active,
 .tailwind-dark .sb-theme-popup li:hover,
+.tailwind-dark .sb-products-popup li:hover,
 .tailwind-dark .sb-switch-btn:hover,
 .tailwind-dark .sb-switch-btn.active,
 .tailwind-dark .sb-search-result .e-list-item:hover,
@@ -4472,7 +4626,11 @@ color:white;
   height: 22px;
   margin-top: 0px;
 }
-
+/* Tailwind3 Dark – fix Other Products hover */
+.tailwind3-dark .products-wrapper:hover,
+.tailwind3-dark .products-wrapper.active {
+  background-color: #1A212F;
+}
 /* tailwind3-dark */
 .tailwind3-dark .sb-content,
 .tailwind3-dark textarea#ruleContent {
@@ -4585,6 +4743,7 @@ color:white;
 .tailwind3-dark .sb-src-code,
 .tailwind3-dark .sb-api-section,
 .tailwind3-dark .sb-theme-popup,
+.tailwind3-dark .sb-products-popup,
 .tailwind3-dark .copy-tooltip,
 .tailwind3-dark .e-icons.copycode,
 .tailwind3-dark #search-input-wrapper input,
@@ -4600,6 +4759,7 @@ color:white;
 .tailwind3-dark .theme-wrapper:hover,
 .tailwind3-dark .theme-wrapper.active,
 .tailwind3-dark .sb-theme-popup li:hover,
+.tailwind3-dark .sb-products-popup li:hover,
 .tailwind3-dark .sb-switch-btn:hover,
 .tailwind3-dark .sb-switch-btn.active,
 .tailwind3-dark .sb-search-result .e-list-item:hover,
@@ -4973,7 +5133,7 @@ body.material3-dark,
 .material3-dark .sample-navigation{
     line-height: 43px;
 }
-.material3-dark code, .material3-dark .sb-switch-popup, .material3-dark .sb-setting-popup, .material3-dark .sb-search-result, .material3-dark .sb-src-code, .material3-dark .sb-api-section, .material3-dark .copy-tooltip, .material3-dark .e-icons.copycode, .material3-dark #search-input-wrapper input::placeholder {
+.material3-dark code, .material3-dark .sb-switch-popup, .material3-dark .sb-setting-popup, .material3-dark .sb-search-result, .material3-dark .sb-src-code, .material3-dark .sb-api-section, .material3-dark .sb-theme-popup, .material3-dark .sb-products-popup, .material3-dark .copy-tooltip, .material3-dark .e-icons.copycode, .material3-dark #search-input-wrapper input::placeholder {
     color: #ffffff;
     background: #2B2831;
 }
@@ -4981,6 +5141,11 @@ body.material3-dark,
     color: #ffffff;
     background: #2B2831;
     border: unset;   
+}
+.material3-dark .sb-products-popup {
+    color: #ffffff;
+    background: #2B2831;
+    border: unset;
 }
 .material3-dark .sb-setting-popup {
     border: unset;
@@ -4998,7 +5163,10 @@ body.material3-dark,
 .material3-dark .sb-switch-popup li:hover,
 .material3-dark .theme-wrapper:hover,
 .material3-dark .theme-wrapper.active,
+.material3-dark .products-wrapper:hover,
+.material3-dark .products-wrapper.active,
 .material3-dark .sb-theme-popup li:hover,
+.material3-dark .sb-products-popup li:hover,
 .material3-dark .sb-search-result .e-list-item:hover,
 .material3-dark .sb-switch-btn:hover,
 .material3-dark .sb-switch-btn.active,
@@ -5260,6 +5428,7 @@ color:white;
 .fluent2-dark .theme-wrapper:hover,
 .fluent2-dark .theme-wrapper.active,
 .fluent2-dark .sb-theme-popup li:hover,
+.fluent2-dark .sb-products-popup li:hover,
 .fluent2-dark .sb-search-result .e-list-item:hover,
 .fluent2-dark .sb-switch-btn:hover,
 .fluent2-dark .sb-switch-btn.active,
@@ -5559,6 +5728,7 @@ body.fluent-dark,
 .fluent-dark .sb-src-code,
 .fluent-dark .sb-api-section,
 .fluent-dark .sb-theme-popup,
+.fluent-dark .sb-products-popup,
 .fluent-dark .copy-tooltip,
 .fluent-dark .e-icons.copycode,
 .fluent-dark #search-input-wrapper input,
@@ -5590,7 +5760,10 @@ body.fluent-dark,
 .fluent-dark .sb-switch-popup li:hover,
 .fluent-dark .theme-wrapper:hover,
 .fluent-dark .theme-wrapper.active,
+.fluent-dark .products-wrapper:hover,
+.fluent-dark .products-wrapper.active,
 .fluent-dark .sb-theme-popup li:hover,
+.fluent-dark .sb-products-popup li:hover,
 .fluent-dark .sb-search-result .e-list-item:hover,
 .fluent-dark .sb-switch-btn:hover,
 .fluent-dark .sb-switch-btn.active,
@@ -5954,6 +6127,9 @@ body.fluent2-highcontrast,
 .fluent2-highcontrast .sb-theme-popup {
     border: unset;
 }
+.fluent2-highcontrast .sb-products-popup {
+    border: unset;
+}
 .fluent2-highcontrast .sb-icon-Hamburger,
 .fluent2-highcontrast .sb-footer-links a,
 .fluent2-highcontrast .description-section a
@@ -5985,6 +6161,7 @@ color:white;
 .fluent2-highcontrast .sb-src-code,
 .fluent2-highcontrast .sb-api-section,
 .fluent2-highcontrast .sb-theme-popup,
+.fluent2-highcontrast .sb-products-popup,
 .fluent2-highcontrast .copy-tooltip,
 .fluent2-highcontrast .e-icons.copycode,
 .fluent2-highcontrast #search-input-wrapper input,
@@ -5999,7 +6176,10 @@ color:white;
 .fluent2-highcontrast .sb-switch-popup li:hover,
 .fluent2-highcontrast .theme-wrapper:hover,
 .fluent2-highcontrast .theme-wrapper.active,
+.fluent2-highcontrast .products-wrapper:hover,
+.fluent2-highcontrast .products-wrapper.active,
 .fluent2-highcontrast .sb-theme-popup li:hover,
+.fluent2-highcontrast .sb-products-popup li:hover,
 .fluent2-highcontrast .sb-search-result .e-list-item:hover,
 .fluent2-highcontrast .sb-left-pane .e-listview .e-list-item:hover {
     background-color: rgba(255, 255, 255, 0.12);
@@ -6260,4 +6440,11 @@ cursor: pointer;
 /* Surface Duo (narrow pane) */
 @media screen and (max-width: 540px) {
     .e-bigger .ai-toast.e-toast { max-width: calc(100% - 8%) !important; box-sizing: border-box; }
+}
+
+/* Hide Other Products section in desktop mode */
+@media (min-width: 851px) {
+    .sb-setting-products-section {
+        display: none !important;
+    }
 }

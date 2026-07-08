@@ -1,0 +1,150 @@
+<div class="col-lg-12 schedule-with-chart control-section">
+  <div class="content-wrapper">
+    <div class="modern-layout" style="display: flex; gap: 10px;">
+
+      <!-- Scheduler Wrapper -->
+      <div id="scheduler" class="scheduler-wrapper">
+        <ejs-schedule
+          #scheduler
+          height="650px"
+          [selectedDate]="selectedDate"
+          [allowOverlap]="allowOverlap"
+          [views]="views"
+          [currentView]="currentView"
+          [timeScale]="timeScale"
+          [group]="group"
+          [eventSettings]="eventSettings"
+          [resourceHeaderTemplate]="resourceTemplate"
+          [headerIndentTemplate]="headerIndentTemplate"
+          (actionComplete)="onScheduleActionComplete()">
+
+          <ng-template #groupHeaderTooltipTemplate let-data>
+            <div class="template-wrap">
+              <div class="tooltip-header">
+                <span class="label1">Name:</span>
+                <span class="value">{{ data.resourceData.driver }}</span>
+              </div>
+          
+              <div class="tooltip-row">
+                <span class="label1">Truck:</span>
+                <span class="value">{{ data.resourceData.truck }}</span>
+              </div>
+          
+              <div class="tooltip-row">
+                <span class="label1">Capacity:</span>
+                <span class="value">{{ data.resourceData.capacity }} t</span>
+              </div>
+            </div>
+          </ng-template>
+
+          <e-resources>
+            <e-resource
+              field="DriverID"
+              name="TruckDetails"
+              title="Driver"
+              [dataSource]="driversMaster"
+              textField="driver"
+              idField="id"
+              colorField="color">
+            </e-resource>
+          </e-resources>
+
+        </ejs-schedule>
+      </div>
+
+      <!-- Chart Container -->
+      <div id="chart-container" class="chart-section">
+        <div class="chart-header">
+          <h4 class="chart-title">Analytics</h4>
+
+          <div id="chart-ddl" class="dropdown-wrapper">
+            <ejs-dropdownlist
+              [dataSource]="ddlData"
+              [fields]="fields"
+              value="tripcount"
+              (change)="onModeChange($event)">
+            </ejs-dropdownlist>
+          </div>
+        </div>
+
+        <div id="chart" class="chart-area">
+          <ejs-chart
+            #chart
+            width="100%"
+            height="100%"
+            [primaryXAxis]="primaryXAxis"
+            [primaryYAxis]="primaryYAxis"
+            [title]="chartTitle"
+            [tooltip]="{ enable: true, enableHighlight: true }"
+            (load)='load($event)'
+            (tooltipRender)="onTooltipRender($event)"
+            (pointRender)="onPointRender($event)">
+
+            <e-series-collection>
+              <e-series
+                type="Column"
+                [xName]="chartXName"
+                yName="Value"
+                [dataSource]="chartDataSet"
+                [animation]="{ enable: true, duration: 600 }">
+              </e-series>
+            </e-series-collection>
+
+          </ejs-chart>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<ng-template #resourceTemplate let-data>
+  <div class="template-wrap">
+    <div class="room-name">{{ data.resourceData.driver }}</div>
+    <div class="truck-type">{{ data.resourceData.truck }}</div>
+    <div class="capacity">{{ data.resourceData.capacity }}</div>
+  </div>
+</ng-template>
+
+
+<ng-template #tooltipTemplate let-data>
+  <div class="template-wrap">
+    <div>Name : {{ data.resourceData.driver }}</div>
+    <div>Truck : {{ data.resourceData.truck }}</div>
+    <div>Capacity : {{ data.resourceData.capacity }}</div>
+  </div>
+</ng-template>
+
+
+<ng-template #headerIndentTemplate>
+  <div class="template-wrap header-indent">
+    <div class="name">Driver</div>
+    <div class="type">Truck</div>
+    <div class="capac">Capacity</div>
+  </div>
+</ng-template>
+<div id="action-description">
+  <p>
+    <strong>Fleet Management Dashboard:</strong> A modern timeline scheduler with real-time analytics visualization.
+    Manage driver schedules and monitor fleet metrics through an integrated analytics dashboard.
+  </p>
+</div>
+<div id="description">
+  <p>
+    This sample demonstrates a fleet-management solution that pairs a <strong>Timeline Month Scheduler</strong>
+    with a real-time <strong>Analytics Chart</strong>. The left panel shows driver routes grouped by resource; the
+    right panel delivers analytics for quick insights and decision-making.
+  </p>
+ 
+  <p><strong>Key components</strong></p>
+  <ul>
+    <li><strong>Timeline Scheduler:</strong> Monthly timeline with resource grouping for drivers and routes.</li>
+    <li><strong>Analytics Dashboard:</strong> Three switchable views — <em>Trip Count</em>, <em>Truck Capacity</em>, and <em>Longest Trips</em>.</li>
+    <li><strong>Real-time sync:</strong> Charts update immediately on event create/edit/delete.</li>
+    <li><strong>Visual consistency:</strong> Chart bars inherit scheduler resource colors.</li>
+  </ul>
+  <p>
+    Looking for the full Angular Scheduler component overview, features, pricing, and documentation? Visit our <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-scheduler">Angular Scheduler</a> component page.
+  </p>
+</div>

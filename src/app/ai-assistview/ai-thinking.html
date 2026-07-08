@@ -1,0 +1,36 @@
+<div class="control-section">
+    <div class="thinking-aiassistview">
+        <div id="aiAssistView" 
+            ejs-aiassistview 
+            #thinkingAIAssistView
+            [bannerTemplate]="bannerTemplate"
+            [promptSuggestions]="promptSuggestions"
+            (promptRequest)="promptRequest($event)"
+            [enableStreaming]="true">
+            <ng-template #bannerTemplate>
+                <div class="banner-content">
+                    <div class="e-icons e-brain"></div>
+                    <h3>💭 Thinking Support</h3>
+                    <i>Break down complex problems and think through decisions.</i>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the thinking support of the AI AssistView control.</p>
+</div>
+<div id="description">
+    <p>
+        In this example, the
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/ai-assistview/#bannertemplate">bannerTemplate</a>
+        customizes the banner content, and
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/ai-assistview/#toolbarsettings">toolbarSettings</a>
+        adds custom toolbar items like a right-aligned <code>Refresh</code> button. The
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/ai-assistview/#promptsuggestions">promptSuggestions</a>
+        provides AI prompt suggestions, and the
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/ai-assistview/#promptrequest">promptRequest</a>
+        handles prompt requests when triggered.
+    </p>
+</div>

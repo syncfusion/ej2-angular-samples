@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, EditService, GanttComponent, GanttModule, SelectionService, ToolbarService } from '@syncfusion/ej2-angular-gantt';
 import { constraintData } from './data';
 
 @Component({
   selector: 'ej2-ganttconstraint',
   templateUrl: 'constraints.html',
+  providers: [EditService, SelectionService, DayMarkersService, ToolbarService],
   standalone: true,
-  imports: [GanttAllModule]
+  imports: [GanttModule]
 })
 export class GanttConstraintComponent implements OnInit {
   @ViewChild('gantt') ganttObj: GanttComponent;
@@ -29,10 +30,8 @@ export class GanttConstraintComponent implements OnInit {
   public highlightWeekends: boolean;
   public allowSelection: boolean;
 
-
   ngOnInit(): void {
     this.data = constraintData;
-
     this.taskSettings = {
       id: 'TaskID',
       name: 'TaskName',
@@ -43,23 +42,21 @@ export class GanttConstraintComponent implements OnInit {
       constraintType: 'ConstraintType',
       constraintDate: 'ConstraintDate',
       dependency: 'Predecessor',
-      parentID: 'parentID',
+      parentID: 'ParentID',
       notes: 'info',
       resourceInfo: 'resources'
     };
-
     this.columns = [
       { field: 'TaskID', visible: false },
-      { field: 'TaskName', headerText: 'Job Name', width: '200', clipMode: 'EllipsisWithTooltip' },
+      { field: 'TaskName', headerText: 'Job Name', width: 230, clipMode: 'EllipsisWithTooltip' },
       { field: 'StartDate' },
       { field: 'Duration' },
-      { field: 'ConstraintType',width: '180' },
-      { field: 'ConstraintDate', width: 200 }, 
+      { field: 'ConstraintType', width: 180 },
+      { field: 'ConstraintDate', width: 200 },
       { field: 'EndDate' },
       { field: 'Predecessor' },
       { field: 'Progress' }
     ];
-
     this.editSettings = {
       allowAdding: true,
       allowEditing: true,
@@ -67,29 +64,25 @@ export class GanttConstraintComponent implements OnInit {
       allowTaskbarEditing: true,
       showDeleteConfirmDialog: true
     };
-
     this.toolbar = ['Add', 'Edit', 'Update', 'Delete', 'Cancel', 'ExpandAll', 'CollapseAll', 'Indent', 'Outdent'];
     this.splitterSettings = { columnIndex: 4 };
     this.labelSettings = {
       leftLabel: 'TaskName',
       rightLabel: this.rightLabelTemplate
-    }
+    };
     this.timelineSettings = {
       topTier: { unit: 'Week', format: 'MMM dd, y' },
       bottomTier: { unit: 'Day' }
     };
-
     this.projectStartDate = new Date('03/25/2025');
-    this.projectEndDate = new Date('09/10/2025');
+    this.projectEndDate = new Date('09/06/2025');
     this.eventMarkers = [
       { day: new Date('03/25/2025'), label: 'Project StartDate' },
-      { day: new Date('08/31/2025'), label: 'Project EndDate' }
+      { day: new Date('09/06/2025'), label: 'Project EndDate' }
     ];
-
     this.gridLines = 'Both';
     this.highlightWeekends = true;
     this.allowSelection = true;
-
   }
 
   public getConstraintText(value: number): string {

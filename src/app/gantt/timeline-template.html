@@ -1,12 +1,12 @@
 <div id="action-description">
-    <p>This sample explains the way of rendering timeline template by mapping template elements to the<a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#timelineTemplate">
+    <p>This sample explains the way of rendering timeline template by mapping template elements to the<a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/index-default#timelinetemplate">
         timelineTemplate</a> property.</p>
 </div>
 
 <div class="control-section">
    <ejs-gantt
     id="TimelineTemplate"
-    height="650px" rowHeight="46" taskbarHeight ="25"
+    height="650px" rowHeight="46" taskbarHeight="25"
     [dataSource]="data"
     [taskFields]="taskSettings"
     [allowSelection]="true"
@@ -19,34 +19,34 @@
     [projectEndDate]="projectEndDate"
    >
     <ng-template #timelineTemplate let-data>
-      <ng-container [ngIf]="data.tier === 'topTier'">
-      <div class="e-header-cell-label e-gantt-top-cell-text" 
-           style="width:100%;font-weight: bold;height: 100%;display: flex; justify-content: center; align-items: center;" 
-           [title]="data.date">
-        <div style="width:100%; height: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-          <div style="line-height: initial; font-weight: normal;">
-            {{ weekDate(data.date) }}
-          </div>
-          <div style="line-height: normal; padding-top: 5px; padding-bottom: 2px; font-weight: normal;">
-            {{ formatDate(data.date) }}
-          </div>
-          <div style="width:20px; height: 20px; line-height: normal;">
-            <img style="width:100%; height:100%;" [src]="imageString(data.date)">
+      <ng-container *ngIf="data.tier === 'topTier'">
+        <div class="timeline-content timeline-header-cell e-header-cell-label e-gantt-top-cell-text" [title]="data.date" [attr.aria-label]="'Timeline cell for ' + data.date">
+          <div class="timeline-content">
+            <div class="timeline-week-date">
+              {{ weekDate(data.date) }}
+            </div>
+            <div class="timeline-format-date">
+              {{ formatDate(data.date) }}
+            </div>
+            <div class="timeline-image-container">
+              <img [src]="imageString(data.date)" alt="Timeline weather icon">
+            </div>
           </div>
         </div>
-      </div>
-    </ng-container>
-  </ng-template>
+      </ng-container>
+    </ng-template>
     </ejs-gantt>
     </div>
 
 <div id="description">
-    <p>In this demo, the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#timelineTemplate">
+    <p>In this demo, the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/index-default#timelinetemplate">
         timelineTemplate</a> property enables the customization of timeline cells with any HTML content, allowing for enhanced visual appeal and personalized functionality.</p>
         <p>The template contains these context properties to design the timeline cells.</p>
+      <ul>
         <li><code>date</code>: Defines the date of timeline date.</li>
         <li><code>value</code>: Defines the date value to display in the timeline.</li>
         <li><code>tier</code>: Defines the tier of timeline.</li>
-      <br>
-    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/data-binding#remote-data">documentation section</a>.</p>
+      </ul>
+      <p>Gantt component features are segregated into individual feature-wise modules. To use selection, and marker features, inject the <code>SelectionService</code>, and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section.</p>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/timeline/timeline#timeline-template">documentation section</a>.</p>
 </div>

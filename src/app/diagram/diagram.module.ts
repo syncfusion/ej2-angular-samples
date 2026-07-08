@@ -59,6 +59,7 @@ import { UmlActivityComponent } from './uml-activity.component';
 import { NetworkShapesDiagramComponent } from './network-diagram.component';
 import { CRUDDiagramComponent } from './crud.component';
 import { UmlClassDiagramComponent } from './uml-Class-diagram.component';
+import { ErDiagramComponent } from './entity-relationship-diagram.component';
 import { PeriodicTableComponent } from './periodic-table.component';
 import { DialogAllModule } from '@syncfusion/ej2-angular-popups';
 import { FlowExecutionDiagramComponent } from 'src/app/diagram/flow-execution.component';
@@ -95,7 +96,7 @@ import { VisioImportDiagramComponent } from './visio-import-export.component';
 export const diagramAppRoutes: Object[] = [
     {
         path: ':theme/diagram/default-functionalities', component: FlowDiagramComponent,
-        name: 'Flow Chart', order: '01', category: 'Getting Started',
+        name: 'Flow Chart', order: '01', category: 'Getting Started', type:'update',
         description: 'This sample visualizes the processing of an order placed using credit card with built-in flow shapes.',
     },
     {
@@ -112,6 +113,7 @@ export const diagramAppRoutes: Object[] = [
     {
         path: ':theme/diagram/custom-shapes', component: ComplexShapesDiagramComponent,
         name: 'HTML Shapes',
+        ignoreOnBuild: true,
         category: 'Getting Started', order: '01',
         description: 'This sample demonstrates how to host a HTML element inside a node. In this example, a Gauge control is hosted inside a HTML Node.'
     },
@@ -308,6 +310,7 @@ export const diagramAppRoutes: Object[] = [
     {
         path: ':theme/diagram/remote-data', component: RemoteDataDiagramComponent,
         name: 'Remote Data',
+        ignoreOnBuild: true,
         category: 'Data Binding', order: '04',
         description: 'This sample demonstrates binding remote data with the diagram using the Data Manager support.'
     },
@@ -347,13 +350,18 @@ export const diagramAppRoutes: Object[] = [
         description: 'This sample visually represents a simple fishbone diagram (Ishikawa). Diagram nodes and annotations are used to define fishbone diagrams. Read-only mode is enabled here.',
     },
     {
+        path: ':theme/diagram/entity-relationship-diagram', component: ErDiagramComponent,
+        name: 'Entity Relationship Diagram', category: 'Use Case Diagram', order: '09', type: 'new',
+        description: 'This sample demonstrates a healthcare appointment management ER diagram created using the Syncfusion® Angular Diagram.',
+    },
+    {
         path: ':theme/diagram/uml-activity', component: UmlActivityComponent,
         name: 'UML Activity Diagram', category: 'Use Case Diagram', order: '09',
         description: 'This sample visually represents the hotel booking reservation system. It is built with readymade BPMN shapes.',
     },
     {
         path: ':theme/diagram/uml-sequence-diagram', component: UmlSequenceComponent,
-        name: 'UML Sequence Diagram', category: 'Use Case Diagram', order: '09',
+        name: 'UML Sequence Diagram', category: 'Use Case Diagram', order: '09', type:'update',
         description: 'This sample presents a UML sequence diagram to depict interactions in a secure transaction process involving a user, transaction system, and fraud detection using diagram model.',
 
     },
@@ -369,7 +377,7 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/tournament-bracket', component: TournamentBracketComponent,
-        name: 'Tournament Bracket', category: 'Use Case Diagram', order: '09',
+        name: 'Tournament Bracket', ignoreOnBuild: true, category: 'Use Case Diagram', order: '09',
         description: 'Follow the UEFA Champions League journey with Syncfusion EJ2 Angular Diagram. Interactive bracket with match details, animated progression, and champion highlights.',
     },
     {
@@ -411,7 +419,7 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/serpentine-diagram', component: SerpentineDiagramComponent,
-        name: 'Serpentine Diagram', category: 'Use Case Diagram', order: '09',
+        name: 'Serpentine Diagram', ignoreOnBuild: true, category: 'Use Case Diagram', order: '09',
         description: 'Visualizes a custom serpentine layout with the Diagram component, featuring 20 key medical breakthroughs that revolutionized healthcare (1796–1996).',
     },
     {

@@ -6,7 +6,7 @@
 
 <div class="control-section">
     <div class="col-lg-9 control-section">
-        <ejs-gantt id="KeyboardNavigation" height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data"
+        <ejs-gantt id="KeyboardNavigation" height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data"
             [taskFields]="taskSettings" [allowSelection]="true" [labelSettings]="labelSettings"
             [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
             [treeColumnIndex]="1" [columns]="columns" [editSettings]="editSettings"
@@ -173,7 +173,7 @@
                     <b>Ctrl + Shift + F</b>
                 </td>
                 <td style="width: 50%">
-                    Focus Search TextBox
+                    Focus Search Textbox
                 </td>
             </tr>
             <tr style="height:50px;">
@@ -240,10 +240,6 @@
     <p>
         All the Gantt actions can be controlled via keyboard keys and are availed using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#allowkeyboard">allowKeyboard</a>
         property, which is set to true by default. The applicable key combinations and their relative functionalities are listed below.
-    </p>
-    <p>
-        Gantt component features are segregated into individual feature-wise modules. To use a selection, toolbar, edit and markers inject the
-        <code>SelectionService</code> , <code>ToolbarService</code> , <code>EditService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section respectively.
     </p>
     <table>
         <tr>
@@ -324,7 +320,7 @@
         </tr>
         <tr>
             <td><code>Ctrl + Shift + F</code></td>
-            <td>Focus Search Textbox</td>
+            <td>Focus Search TextBox</td>
         </tr>
         <tr>
             <td><code>Shift + F5</code></td>
@@ -356,6 +352,10 @@
       </tr>
     </table>
     <br>
+    <p>
+        Gantt component features are segregated into individual feature-wise modules. To use a selection, toolbar, edit, filter and markers inject the
+        <code>SelectionService</code>, <code>ToolbarService</code>, <code>EditService</code>, <code>FilterService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section respectively.
+    </p>
     <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/accessibility#keyboard-navigation">documentation section</a>.</p>
     
 </div>

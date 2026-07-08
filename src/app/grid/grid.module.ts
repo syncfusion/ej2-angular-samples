@@ -85,6 +85,8 @@ import { ChartComponent } from './chart.component';
 import { RowSpanningComponentAPI} from './row-spanning-api.component';
 import { ConditionalRowSelectionComponent } from './conditional-row-selection.component';
 import { PinnedRowsComponent } from './pinned-rows.component';
+import { CellEditComponent } from './cell-editing.component';
+import { DomVirtualizationComponent } from './domvirtualization.component';
 
 export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/over-view', component: OverViewComponent, 'name': 'Overview', description: 'This demo for Essential JS 2 grid component is an overview of how to display and manipulate large data with configuration options.', order: '01', category: 'Data Grid' },
@@ -131,7 +133,7 @@ export const gridRouteConfig: Object[] = [
     },
     { 'path': ':theme/grid/column/auto-wrap', component: AutoWrapComponent, name: 'AutoWrap Column cells', description: 'This demo for Essential JS 2 grid component shows how the grid cell content is autowrapped to show large cell content.', order: '03', category: 'Columns' },
     {
-        'path': ':theme/grid/column/column-chooser', component: ColumnChooserComponent, name: 'Column Chooser', order: '03',description: 'This demo for Essential JS 2 grid component shows how the column chooser feature can be used to show or hide columns dynamically.',
+        'path': ':theme/grid/column/column-chooser', component: ColumnChooserComponent, name: 'Column Chooser', 'type': 'update', order: '03',description: 'This demo for Essential JS 2 grid component shows how the column chooser feature can be used to show or hide columns dynamically.',
         category: 'Columns'
     },
     { 'path': ':theme/grid/column/show-hide', component: ShowHideComponent, 'name': 'Show or Hide Column', description: 'This demo for Essential JS 2 grid component demonstrates the dynamic show and hide columns feature.', order: '03', category: 'Columns' },
@@ -145,7 +147,7 @@ export const gridRouteConfig: Object[] = [
         name: 'Row Template', description: 'This demo for Essential JS 2 grid component shows the usage of the row template feature.', order: '04', category: 'Rows'
     },
     {
-        'path': ':theme/grid/detail-template', component: DetailTemplateComponent, name: 'Detail Template', order: '04',description: 'This demo for Essential JS 2 grid component shows the usage of the detail template feature.',
+        'path': ':theme/grid/detail-template', component: DetailTemplateComponent, name: 'Detail Template', ignoreOnBuild: true, order: '04',description: 'This demo for Essential JS 2 grid component shows the usage of the detail template feature.',
         category: 'Rows'
     },
     {
@@ -177,7 +179,11 @@ export const gridRouteConfig: Object[] = [
         category: 'Editing'
     },
     {
-        'path': ':theme/grid/batch-editing', component: BatchEditComponent, name: 'Batch Editing', description: 'This demo for Essential JS 2 grid component shows how to perform bulk changes to the grid content using batch edit mode.', order: '05',
+        'path': ':theme/grid/batch-editing', component: BatchEditComponent, name: 'Batch Editing', 'type': 'update', description: 'This demo for Essential JS 2 grid component shows how to perform bulk changes to the grid content using batch edit mode.', order: '05',
+        category: 'Editing'
+    },
+    {
+        'path': ':theme/grid/cell-editing', component: CellEditComponent, name: 'Cell Editing', 'type': 'new', description: 'This demo for Essential JS 2 grid component shows how to perform cell editing', order: '05',
         category: 'Editing'
     },
     {
@@ -198,69 +204,72 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/filtering', component: FilterComponent, name: 'Default Filtering', description: 'This demo for Essential JS 2 grid component shows how to place a filter bar row in the header to filter grid rows.', order: '07', category: 'Filtering' },
     { 'path': ':theme/grid/filter-template', component: FilterTemplateComponent, name: 'Filter Template', description: 'This demo for Essential JS 2 grid control shows how to filter a data using custom component in the filter bar.', order: '07', category: 'Filtering' },
     {
-        'path': ':theme/grid/filter-menu', component: FilteringMenuComponent,  name: 'Filter Menu',
+        'path': ':theme/grid/filter-menu', component: FilteringMenuComponent,  name: 'Filter Menu', 'type': 'update',
         description: 'This demo for Essential JS 2 grid component demonstrates a way of filtering rows using a menu, check box, and Excel filter UI.', order: '07', category: 'Filtering'
     },
     { 'path': ':theme/grid/searching', component: SearchComponent, name: 'Search', description: 'This demo for Essential JS 2 grid component shows the content searching feature.', order: '07', category: 'Filtering' },
 
-    { 'path': ':theme/grid/paging', component: PageComponent, name: 'Paging', description: 'This demo for Essential JS 2 grid component shows how you can display the contents of the grid in page segments using the paging feature.', order: '08', category: 'Paging' },
-
-    { 'path': ':theme/grid/grouping', component: GroupComponent, name: 'Grouping', description: 'This demo for Essential JS 2 grid component demonstrates the grouping feature of the grid component. The grid component has options to group records based on columns.', order: '09', category: 'Grouping' },
+    { 'path': ':theme/grid/grouping', component: GroupComponent, name: 'Grouping', description: 'This demo for Essential JS 2 grid component demonstrates the grouping feature of the grid component. The grid component has options to group records based on columns.', order: '08', category: 'Grouping' },
 
     {
         'path': ':theme/grid/aggregate-default', component: AggregateComponent,
-        name: 'Default Aggregate', description: 'This demo for Essential JS 2 grid component shows how the row values can be aggregated and shown in a column footer.', order: '10', category: 'Aggregate'
+        name: 'Default Aggregate', description: 'This demo for Essential JS 2 grid component shows how the row values can be aggregated and shown in a column footer.', order: '09', category: 'Aggregate'
     },
     {
         'path': ':theme/grid/aggregate-group', component: AggregateGroupComponent,
-        name: 'Group and Caption Aggregate', description: 'This demo for Essential JS 2 grid component shows how the row values can be aggregated for each group of items and shown in a group caption and footer.', order: '10', category: 'Aggregate'
+        name: 'Group and Caption Aggregate', description: 'This demo for Essential JS 2 grid component shows how the row values can be aggregated for each group of items and shown in a group caption and footer.', order: '09', category: 'Aggregate'
     },
     {
         'path': ':theme/grid/reactive-aggregate', component: ReactiveAggregateComponent,
-        name: 'Reactive Aggregate', description:'This demo for Essential JS 2 grid component shows how aggregate values are updated while the row is modified.', order: '10', category: 'Aggregate',
+        name: 'Reactive Aggregate', description:'This demo for Essential JS 2 grid component shows how aggregate values are updated while the row is modified.', order: '09', category: 'Aggregate',
     },
 
-    { 'path': ':theme/grid/selection', component: SelectionComponent, name: 'Default Selection', description: 'This demo for Essential JS 2 grid component shows how to select rows or cells through simple mouse down or keyboard interaction using the selection feature.', order: '11', category: 'Selection' },
-    { 'path': ':theme/grid/selection-api', component: SelectionApiComponent,  name: 'Selection (API)', description: 'This demo for Essential JS 2 grid component shows how to perform selection programmatically.', order: '11', category: 'Selection' },
+    { 'path': ':theme/grid/selection', component: SelectionComponent, name: 'Default Selection', description: 'This demo for Essential JS 2 grid component shows how to select rows or cells through simple mouse down or keyboard interaction using the selection feature.', order: '10', category: 'Selection' },
+    { 'path': ':theme/grid/selection-api', component: SelectionApiComponent,  name: 'Selection (API)', description: 'This demo for Essential JS 2 grid component shows how to perform selection programmatically.', order: '10', category: 'Selection' },
     {
         'path': ':theme/grid/checkbox-selection', component: CheckboxSelectionComponent,
-        name: 'Checkbox Selection', description: 'This demo for Essential JS 2 grid component shows how the check box selection feature can be used to select grid rows.', order: '11',   category: 'Selection'
+        name: 'Checkbox Selection', description: 'This demo for Essential JS 2 grid component shows how the check box selection feature can be used to select grid rows.', order: '10',   category: 'Selection'
     },
     {
         'path': ':theme/grid/conditional-row-selection', component: ConditionalRowSelectionComponent,
-        name: 'Conditional Row Selection', description: 'This demo for Essential JS 2 grid component shows how the conditional row selection feature can be used to select grid rows.', order: '11', category: 'Selection'
+        name: 'Conditional Row Selection', description: 'This demo for Essential JS 2 grid component shows how the conditional row selection feature can be used to select grid rows.', order: '10', category: 'Selection'
     },
 
-    { 'path': ':theme/grid/hierarchy', component: HierarchyComponent, name: 'Hierarchy Grid', description: 'This demo for Essential JS 2 grid component shows the hierarchical binding feature that helps to build multilevel parent-child relationships.', order: '12', category: 'Relational Binding' },
-    { 'path': ':theme/grid/master-detail', component: MasterdetailComponent, name: 'Master/Detail', description: 'This demo for  Essential JS 2 grid component shows usage of master/detail in which the details of a Master Grid record, is viewed in a separate Grid(Detail Grid) by clicking the particular row.', order: '12', category: 'Relational Binding' },
-
-    { 'path': ':theme/grid/scrolling', component: ScrollComponent, name: 'Default Scrolling', description: 'This demo for Essential JS 2 grid component shows the usage of the horizontal and vertical scrollbars to view grid content that exceeds the grid area.', order: '13', category: 'Scrolling' },
-    { 'path': ':theme/grid/sticky-header', component: StickyHeaderComponent, name: 'Sticky Header', description: 'This sample demonstrates the Grid component with the stciky header feature.', order: '13', category: 'Scrolling' },
+    { 'path': ':theme/grid/scrolling', component: ScrollComponent, name: 'Default Scrolling', description: 'This demo for Essential JS 2 grid component shows the usage of the horizontal and vertical scrollbars to view grid content that exceeds the grid area.', order: '11', category: 'Scrolling' },
+    { 'path': ':theme/grid/sticky-header', component: StickyHeaderComponent, name: 'Sticky Header', description: 'This sample demonstrates the Grid component with the stciky header feature.', order: '11', category: 'Scrolling' },
     {
-        'path': ':theme/grid/frozen-rows-columns', component: FrozenRowsColumnsComponent, name: 'Frozen Rows and Columns', order: '13', description: 'This demo for Essential JS 2 grid component shows how the rows and columns can be frozen or pinned.',
+        'path': ':theme/grid/frozen-rows-columns', component: FrozenRowsColumnsComponent, name: 'Frozen Rows and Columns', order: '11', description: 'This demo for Essential JS 2 grid component shows how the rows and columns can be frozen or pinned.',
         category: 'Scrolling'
     },
     {
-        'path': ':theme/grid/frozen-api', component: FrozenApiComponent, name: 'Frozen (API)', order: '13',description: 'This demo for Essential JS 2 grid component shows how the rows and columns can be frozen or pinned.',
+        'path': ':theme/grid/frozen-api', component: FrozenApiComponent, name: 'Frozen (API)', order: '11',description: 'This demo for Essential JS 2 grid component shows how the rows and columns can be frozen or pinned.',
+        category: 'Scrolling', hideOnDevice:true
+    },
+    {
+        'path': ':theme/grid/pinned-rows', component: PinnedRowsComponent, name: 'Pinned Rows', order: '11',description: 'This demo for Essential JS 2 grid component shows how the rows and columns can be frozen or pinned.',
         category: 'Scrolling'
     },
     {
-        'path': ':theme/grid/pinned-rows', component: PinnedRowsComponent, name: 'Pinned Rows', order: '13',description: 'This demo for Essential JS 2 grid component shows how the rows and columns can be frozen or pinned.',
-        category: 'Scrolling'
+        'path': ':theme/grid/domvirtualization', component: DomVirtualizationComponent, name: 'DOM Virtualization', "type": "new", description: 'This demo demonstrates how to use Essential JS 2 grid to show a large data view without performance degradation by rendering only the required rows and columns.', order: '12',
+        category: 'Performance'
     },
     {
-        'path': ':theme/grid/virtualization', component: VirtualizationComponent, name: 'Virtual Scrolling', 'type': 'update', description: 'This demo demonstrates how to use Essential JS 2 grid to show a large data view without performance degradation by rendering only the required rows and columns.', order: '13',
-        category: 'Scrolling'
+        'path': ':theme/grid/virtualization', component: VirtualizationComponent, name: 'Virtual Scrolling', description: 'This demo demonstrates how to use Essential JS 2 grid to show a large data view without performance degradation by rendering only the required rows and columns.', order: '12',
+        category: 'Performance'
     },
 	{
-        'path': ':theme/grid/infinite-scrolling', component: InfiniteScrollingComponent, name: 'Infinite Scrolling', description: 'This sample demonstrates the Grid component with the infinite scrolling feature.', order: '13',
-        category: 'Scrolling'
+        'path': ':theme/grid/infinite-scrolling', component: InfiniteScrollingComponent, name: 'Infinite Scrolling', 'type': 'update', description: 'This sample demonstrates the Grid component with the infinite scrolling feature.', order: '12',
+        category: 'Performance'
     },
+    { 'path': ':theme/grid/paging', component: PageComponent, name: 'Pagination', description: 'This demo for Essential JS 2 grid component shows how you can display the contents of the grid in page segments using the paging feature.', order: '12', category: 'Performance' },
 
-    { 'path': ':theme/grid/lazy-load-grouping-with-paging', component: LazyLoadGroupingWithPagingComponent, name: 'Grouping with Paging', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature.', order: '14', category: 'Lazy Load Grouping' },
-    { 'path': ':theme/grid/lazy-load-grouping-with-infinite-scrolling', component: LazyLoadGroupingWithInfiniteScrollingComponent, name: 'Grouping with Infinite Scrolling', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature with infinite scrolling', order: '14', category: 'Lazy Load Grouping' },
-    { 'path': ':theme/grid/lazy-load-grouping-with-virtual-scrolling', component: LazyLoadGroupingWithVirtualScrollingComponent, name: 'Grouping with Virtual Scrolling', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature with virtual scrolling', order: '14', category: 'Lazy Load Grouping' },
- 
+    { 'path': ':theme/grid/lazy-load-grouping-with-paging', component: LazyLoadGroupingWithPagingComponent, name: 'Grouping with Paging', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature.', order: '13', category: 'Lazy Load Grouping' },
+    { 'path': ':theme/grid/lazy-load-grouping-with-infinite-scrolling', component: LazyLoadGroupingWithInfiniteScrollingComponent, name: 'Grouping with Infinite Scrolling', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature with infinite scrolling', order: '13', category: 'Lazy Load Grouping' },
+    { 'path': ':theme/grid/lazy-load-grouping-with-virtual-scrolling', component: LazyLoadGroupingWithVirtualScrollingComponent, name: 'Grouping with Virtual Scrolling', description: 'This demo for Essential JS 2 grid control demonstrates the usage of the lazy load grouping feature with virtual scrolling', order: '13', category: 'Lazy Load Grouping' },
+
+    { 'path': ':theme/grid/hierarchy', component: HierarchyComponent, name: 'Hierarchy Grid', description: 'This demo for Essential JS 2 grid component shows the hierarchical binding feature that helps to build multilevel parent-child relationships.', order: '14', category: 'Relational Binding' },
+    { 'path': ':theme/grid/master-detail', component: MasterdetailComponent, name: 'Master/Detail', description: 'This demo for  Essential JS 2 grid component shows usage of master/detail in which the details of a Master Grid record, is viewed in a separate Grid(Detail Grid) by clicking the particular row.', order: '14', category: 'Relational Binding' },
+
     {
         'path': ':theme/grid/default-exporting', component: ExportingComponent, name: 'Default Exporting', description: 'This demo for Essential JS 2 grid component shows the client-side exporting of grid content to Excel, PDF, and CSV formats.', order: '15',
         category: 'Exporting'

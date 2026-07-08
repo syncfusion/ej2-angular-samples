@@ -40,6 +40,7 @@ export class AggregationComponent implements OnInit {
         { value: 'PopulationVar', text: 'Population Var' },
         { value: 'SampleVar', text: 'Sample Var' },
         { value: 'RunningTotals', text: 'Running Totals' },
+        { value: 'PercentageOfRunningTotals', text: '% of Running Totals' },
         { value: 'DifferenceFrom', text: 'Difference From' },
         { value: "PercentageOfDifferenceFrom", text: "% of Difference From" },
         { value: "PercentageOfGrandTotal", text: "% of Grand Total" },

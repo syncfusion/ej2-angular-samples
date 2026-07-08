@@ -1,0 +1,152 @@
+#BatchEdit .e-category-badge {
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
+    min-width: 80px;
+    font-size: 11px;
+    font-weight: 500;
+    color: white;
+}
+
+#BatchEdit .e-category-badge.e-cat-it-asset {
+    background-color: #4f46e5;
+}
+
+#BatchEdit .e-category-badge.e-cat-it-infrastructure {
+    background-color: #10b981;
+}
+
+#BatchEdit .e-category-badge.e-cat-admin {
+    background-color: #facc15;
+    color: #1f2937;
+}
+
+#BatchEdit .e-category-badge.e-cat-security {
+    background-color: #ef4444;
+}
+
+#BatchEdit .e-category-badge.e-cat-facilities {
+    background-color: #64748b;
+}
+
+#BatchEdit .e-category-badge.e-cat-finance {
+    background-color: #8b5cf6;
+}
+
+#BatchEdit .e-category-badge.e-cat-sales {
+    background-color: #ec4899;
+}
+
+#BatchEdit .e-category-badge.e-cat-marketing {
+    background-color: #f97316;
+}
+
+#BatchEdit .e-category-badge.e-cat-training {
+    background-color: #06b6d4;
+}
+
+#BatchEdit .e-category-badge.e-cat-default {
+    background-color: #6b7280;
+}
+
+.material3-dark #BatchEdit .e-category-badge.e-cat-it-asset,
+.bootstrap5\.3-dark #BatchEdit .e-category-badge.e-cat-it-asset,
+.fluent2-dark #BatchEdit .e-category-badge.e-cat-it-asset,
+.tailwind3-dark #BatchEdit .e-category-badge.e-cat-it-asset,
+.fluent2-highcontrast #BatchEdit .e-category-badge.e-cat-it-asset,
+.fluent-dark #BatchEdit .e-category-badge.e-cat-it-asset,
+.highcontrast #BatchEdit .e-category-badge.e-cat-it-asset {
+    background-color: #818cf8;
+}
+
+.material3-dark #BatchEdit .e-category-badge.e-cat-it-infrastructure,
+.bootstrap5\.3-dark #BatchEdit .e-category-badge.e-cat-it-infrastructure,
+.fluent2-dark #BatchEdit .e-category-badge.e-cat-it-infrastructure,
+.tailwind3-dark #BatchEdit .e-category-badge.e-cat-it-infrastructure,
+.fluent2-highcontrast #BatchEdit .e-category-badge.e-cat-it-infrastructure,
+.fluent-dark #BatchEdit .e-category-badge.e-cat-it-infrastructure,
+.highcontrast #BatchEdit .e-category-badge.e-cat-it-infrastructure {
+    background-color: #2dd4bf;
+}
+
+.material3-dark #BatchEdit .e-category-badge.e-cat-admin,
+.bootstrap5\.3-dark #BatchEdit .e-category-badge.e-cat-admin,
+.fluent2-dark #BatchEdit .e-category-badge.e-cat-admin,
+.tailwind3-dark #BatchEdit .e-category-badge.e-cat-admin,
+.fluent2-highcontrast #BatchEdit .e-category-badge.e-cat-admin,
+.fluent-dark #BatchEdit .e-category-badge.e-cat-admin,
+.highcontrast #BatchEdit .e-category-badge.e-cat-admin {
+    background-color: #7c3aed;
+    color: #1f2937;
+}
+
+.material3-dark #BatchEdit .e-category-badge.e-cat-security,
+.bootstrap5\.3-dark #BatchEdit .e-category-badge.e-cat-security,
+.fluent2-dark #BatchEdit .e-category-badge.e-cat-security,
+.tailwind3-dark #BatchEdit .e-category-badge.e-cat-security,
+.fluent2-highcontrast #BatchEdit .e-category-badge.e-cat-security,
+.fluent-dark #BatchEdit .e-category-badge.e-cat-security,
+.highcontrast #BatchEdit .e-category-badge.e-cat-security {
+    background-color: #f87171;
+}
+
+.material3-dark #BatchEdit .e-category-badge.e-cat-facilities,
+.bootstrap5\.3-dark #BatchEdit .e-category-badge.e-cat-facilities,
+.fluent2-dark #BatchEdit .e-category-badge.e-cat-facilities,
+.tailwind3-dark #BatchEdit .e-category-badge.e-cat-facilities,
+.fluent2-highcontrast #BatchEdit .e-category-badge.e-cat-facilities,
+.fluent-dark #BatchEdit .e-category-badge.e-cat-facilities,
+.highcontrast #BatchEdit .e-category-badge.e-cat-facilities {
+    background-color: #94a3b8;
+}
+
+.material3-dark #BatchEdit .e-category-badge.e-cat-finance,
+.bootstrap5\.3-dark #BatchEdit .e-category-badge.e-cat-finance,
+.fluent2-dark #BatchEdit .e-category-badge.e-cat-finance,
+.tailwind3-dark #BatchEdit .e-category-badge.e-cat-finance,
+.fluent2-highcontrast #BatchEdit .e-category-badge.e-cat-finance,
+.fluent-dark #BatchEdit .e-category-badge.e-cat-finance,
+.highcontrast #BatchEdit .e-category-badge.e-cat-finance {
+    background-color: #a78bfa;
+}
+
+.material3-dark #BatchEdit .e-category-badge.e-cat-sales,
+.bootstrap5\.3-dark #BatchEdit .e-category-badge.e-cat-sales,
+.fluent2-dark #BatchEdit .e-category-badge.e-cat-sales,
+.tailwind3-dark #BatchEdit .e-category-badge.e-cat-sales,
+.fluent2-highcontrast #BatchEdit .e-category-badge.e-cat-sales,
+.fluent-dark #BatchEdit .e-category-badge.e-cat-sales,
+.highcontrast #BatchEdit .e-category-badge.e-cat-sales {
+    background-color: #f472b6;
+}
+
+.material3-dark #BatchEdit .e-category-badge.e-cat-marketing,
+.bootstrap5\.3-dark #BatchEdit .e-category-badge.e-cat-marketing,
+.fluent2-dark #BatchEdit .e-category-badge.e-cat-marketing,
+.tailwind3-dark #BatchEdit .e-category-badge.e-cat-marketing,
+.fluent2-highcontrast #BatchEdit .e-category-badge.e-cat-marketing,
+.fluent-dark #BatchEdit .e-category-badge.e-cat-marketing,
+.highcontrast #BatchEdit .e-category-badge.e-cat-marketing {
+    background-color: #fb923c;
+}
+
+.material3-dark #BatchEdit .e-category-badge.e-cat-training,
+.bootstrap5\.3-dark #BatchEdit .e-category-badge.e-cat-training,
+.fluent2-dark #BatchEdit .e-category-badge.e-cat-training,
+.tailwind3-dark #BatchEdit .e-category-badge.e-cat-training,
+.fluent2-highcontrast #BatchEdit .e-category-badge.e-cat-training,
+.fluent-dark #BatchEdit .e-category-badge.e-cat-training,
+.highcontrast #BatchEdit .e-category-badge.e-cat-training {
+    background-color: #22d3ee;
+}
+
+.material3-dark #BatchEdit .e-category-badge.e-cat-default,
+.bootstrap5\.3-dark #BatchEdit .e-category-badge.e-cat-default,
+.fluent2-dark #BatchEdit .e-category-badge.e-cat-default,
+.tailwind3-dark #BatchEdit .e-category-badge.e-cat-default,
+.fluent2-highcontrast #BatchEdit .e-category-badge.e-cat-default,
+.fluent-dark #BatchEdit .e-category-badge.e-cat-default,
+.highcontrast #BatchEdit .e-category-badge.e-cat-default {
+    background-color: #9ca3af;
+}

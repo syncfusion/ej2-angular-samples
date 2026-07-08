@@ -1,0 +1,46 @@
+.resource-badge-container {
+  display: flex;
+  align-items: center;
+}
+
+.resource-badge {
+  width: 150px;
+  height: 24px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.resource-name {
+  color: white;
+  font-weight: 500;
+}
+
+/* Resource-specific colors */
+.resource-badge.rose-fuller {
+  background-color: #1c5d8e;
+}
+
+.resource-badge.van-jack {
+  background-color: #b24531;
+}
+
+.resource-badge.bergs-anton {
+  background-color: #a53576;
+}
+
+.resource-badge.fuller-king {
+  background-color: #4a7537;
+}
+
+.resource-badge.tamer-vinet {
+  background-color: #635688;
+}
+
+/* Hover effect for better UX */
+.resource-badge:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { IDataOptions, PivotView, PivotViewModule,FieldListService, IDataSet } from '@syncfusion/ej2-angular-pivotview';
-import { ChangeEventArgs, MultiSelect, MultiSelectModule, SelectEventArgs, RemoveEventArgs,DropDownListModule, PopupEventArgs, DropDownListComponent } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs, MultiSelect, MultiSelectModule, SelectEventArgs, RemoveEventArgs,DropDownListModule, PopupEventArgs, DropDownListComponent, MultiSelectComponent } from '@syncfusion/ej2-angular-dropdowns';
 import { CheckBoxSelection } from '@syncfusion/ej2-angular-dropdowns';
 import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
 import { enableRipple } from '@syncfusion/ej2-base';
@@ -46,6 +46,8 @@ export class SummaryCustomizationComponent implements OnInit {
     public pivotObj: PivotView;
     @ViewChild('options')
     public optionsdll: DropDownListComponent;
+    @ViewChild('summaryValues')
+    public multiSelect: MultiSelectComponent;
 
     /* tslint:disable */
     onChange(args: any) {
@@ -153,6 +155,9 @@ export class SummaryCustomizationComponent implements OnInit {
             (document.getElementById('grandsum') as HTMLElement).style.display = '';
         } else if (args.value == 'subTotals') {
             (document.getElementById('subsum') as HTMLElement).style.display = '';
+            if (this && this.multiSelect && !this.multiSelect.showSelectAll) {
+              this.multiSelect.showSelectAll = true;
+            }
         }
     }
     ngOnInit(): void {

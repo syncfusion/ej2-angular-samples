@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { projectNewData } from './data';
-import { GanttComponent, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, FilterService, GanttComponent, GanttModule, SelectionService, ToolbarService } from '@syncfusion/ej2-angular-gantt';
 import { ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -10,7 +10,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     styleUrls: ['toolbar-template.component.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+    providers: [SelectionService, DayMarkersService, FilterService, ToolbarService],
+    imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 export class GanttToolbarTemplateComponent implements OnInit {
     public data: object[];
@@ -33,18 +34,23 @@ export class GanttToolbarTemplateComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            parentID: 'ParentId'
+            parentID: 'ParentID'
         };
         this.columns = [
-                { field: 'TaskID', width: 100 },
-            { field: 'TaskName', width: 250 },
-            { field: 'StartDate' },
-            { field: 'EndDate' },
-            { field: 'Duration' },
-                { field: 'Predecessor', width: 190 },
-            { field: 'Progress' },
+          { field: 'TaskID', width: 100 },
+          { field: 'TaskName', width: 290 },
+          { field: 'StartDate' },
+          { field: 'EndDate' },
+          { field: 'Duration' },
+          { field: 'Predecessor', width: 190 },
+          { field: 'Progress' }
         ];
-        this.toolbar = ['ExpandAll', 'CollapseAll', { text: 'Quick Filter', tooltipText: 'Quick Filter', id: 'Quick Filter', prefixIcon: 'e-quickfilter' },{ text: 'Clear Filter', tooltipText: 'Clear Filter', id: 'Clear Filter' }];
+        this.toolbar = [
+          'ExpandAll',
+          'CollapseAll',
+          { text: 'Quick Filter', tooltipText: 'Quick Filter', id: 'Quick Filter', prefixIcon: 'e-quickfilter' },
+          { text: 'Clear Filter', tooltipText: 'Clear Filter', id: 'Clear Filter' }
+        ];
         this.labelSettings = {
             leftLabel: 'TaskName',
         };
@@ -55,10 +61,11 @@ export class GanttToolbarTemplateComponent implements OnInit {
         this.projectEndDate = new Date('07/20/2025');
     }
     public toolbarClick(args: ClickEventArgs): void {
+        if (!this.ganttObj) return;
+
         if (args.item.text === 'Quick Filter') {
             this.ganttObj.filterByColumn('TaskName', 'startswith', 'Identify');
-        }
-        if (args.item.text === 'Clear Filter') {
+        } else if (args.item.text === 'Clear Filter') {
             this.ganttObj.clearFiltering();
         }
     }

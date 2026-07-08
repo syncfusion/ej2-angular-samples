@@ -1,0 +1,114 @@
+<div class="control-section">
+  <ejs-grid #grid id='CellEdit' height="400" rowHeight="40" [dataSource]='data' allowPaging='true' [allowSorting]='true'
+    [allowFiltering]='true' [filterSettings]='filterSettings' [editSettings]='editSettings' [toolbar]='toolbar'
+    (actionComplete)='actionComplete($event)' (actionBegin)='actionBegin($event)' clipMode="EllipsisWithTooltip">
+    <e-columns>
+      <e-column field="ApptID" headerText="Appointment ID" isPrimaryKey="true" width="140" [visible]="false"></e-column>
+      <e-column field="Patient" headerText="Patient" width="150" [validationRules]="{ required: true }"></e-column>
+      <e-column field="Doctor" headerText="Doctor" width="160" editType="dropdownedit" [validationRules]="{ required: true }">
+        <ng-template #template let-data>
+          <div class="doctor-cell">
+            <img class="doctor-img" [src]="'./assets/grid/images/' + (doctorList.indexOf(data.Doctor) + 1) + '.png'"
+              [alt]="data.Doctor" />
+            <span>{{ data.Doctor }}</span>
+          </div>
+        </ng-template>
+      </e-column>
+      <e-column field="AppointmentTime" headerText="Appointment Time" width="200" editType="datetimepickeredit"
+        format="M/d/y hh:mm a"
+        [validationRules]="{ required: true, timeRule: [validateAppointmentTime, 'Appointment allowed only between 9AM – 9PM'] }"></e-column>
+      <e-column field="Type" headerText="Type" width="150" editType="dropdownedit" [validationRules]="{ required: true }">
+        <ng-template #template let-data>
+          <div *ngIf="data.Type === 'Emergency'; else labTest">
+            <span class="type emergency">{{ data.Type }}</span>
+          </div>
+
+          <ng-template #labTest>
+            <div *ngIf="data.Type === 'Lab Test'; else followUp">
+              <span class="type lab">{{ data.Type }}</span>
+            </div>
+          </ng-template>
+
+          <ng-template #followUp>
+            <div *ngIf="data.Type === 'Follow-up'; else routineCheck">
+              <span class="type follow">{{ data.Type }}</span>
+            </div>
+          </ng-template>
+
+          <ng-template #routineCheck>
+            <div *ngIf="data.Type === 'Routine Check'; else consult">
+              <span class="type routine">{{ data.Type }}</span>
+            </div>
+          </ng-template>
+
+          <ng-template #consult>
+            <div>
+              <span class="type consult">{{ data.Type }}</span>
+            </div>
+          </ng-template>
+        </ng-template>
+      </e-column>
+      <e-column field="Status" headerText="Status" width="130" editType="dropdownedit" [validationRules]="{ required: true }">
+        <ng-template #template let-data>
+          <div *ngIf="data.Status === 'Booked'; else canceled">
+            <span class="badge booked">{{ data.Status }}</span>
+          </div>
+
+          <ng-template #canceled>
+            <div *ngIf="data.Status === 'Canceled'; else completed">
+              <span class="badge canceled">{{ data.Status }}</span>
+            </div>
+          </ng-template>
+
+          <ng-template #completed>
+            <div *ngIf="data.Status === 'Completed'; else waiting">
+              <span class="badge completed">{{ data.Status }}</span>
+            </div>
+          </ng-template>
+
+          <ng-template #waiting>
+            <div>
+              <span class="badge waiting">{{ data.Status }}</span>
+            </div>
+          </ng-template>
+        </ng-template>
+      </e-column>
+      <e-column field="Room" headerText="Room No" width="120" editType="dropdownedit"></e-column>
+      <e-column field="Fee" headerText="Fee" width="90" textAlign="Right" format="C2" editType="numericedit"
+        [edit]="{ params: { showSpinButton: false } }"
+        [validationRules]="{ required: true, min: 50, max: 500 }"></e-column>
+      <e-column field="Notes" headerText="Notes" width="260"></e-column>
+    </e-columns>
+  </ejs-grid>
+
+  <div id="action-description">
+    <p>This sample demonstrates cell editing for quick and efficient data updates. It provides a seamless editing
+      experience for modifying individual cell values within the Grid.</p>
+  </div>
+  <div id="description">
+    <p>
+      Cell editing allows users to modify a single cell’s value directly. This mode is enabled by setting <code><a target="_blank" class="code"
+    href="https://ej2.syncfusion.com/angular/documentation/api/grid/editSettings/#mode">editSettings.mode</a></code> to
+      <code>Cell</code>. Users can enter edit mode by double‑clicking a cell and then changing its value. The update is
+      applied when the user presses "Enter" key or moves to another cell.
+    </p>
+    <p>
+      This editing mode works seamlessly with other Grid features such as validation, formatting, and more, ensuring a consistent and efficient editing experience.
+    </p>
+    <p><strong>Injecting Module:</strong></p>
+    <p>
+      Features of the Grid component are organized into individual, feature-specific modules. To use the editing
+      and toolbar functionality, inject the required modules by <code>EditService</code> and <code>ToolbarService</code> into the <code>&#64;NgModule.providers</code> section.
+    </p>
+    <p>
+      More information on edit configuration can be found in the <a target="_blank"
+        href="https://ej2.syncfusion.com/angular/documentation/grid/editing">
+        documentation section</a>.
+    </p>
+    <p>
+      Looking for the full Angular Data Grid component overview, features, pricing, and documentation? Visit our
+      <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-data-grid">
+        Angular Data Grid component</a> page.
+    </p>
+  </div>
+</div>

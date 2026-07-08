@@ -1,8 +1,8 @@
-import { Component, OnInit,ViewEncapsulation} from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { customizedData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { NgIf } from '@angular/common';
-import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { DayMarkersService, GanttModule, SelectionService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
 @Component({
@@ -11,7 +11,8 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     styleUrls: ['taskbar-template.component.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, NgIf, SBDescriptionComponent]
+    providers: [SelectionService, DayMarkersService],
+    imports: [SBActionDescriptionComponent, GanttModule, NgIf, SBDescriptionComponent]
 })
 export class GanttTaskbarTemplateComponent implements OnInit {
     public data: object[];
@@ -170,7 +171,7 @@ export class GanttTaskbarTemplateComponent implements OnInit {
         this.labelSettings = {
             leftLabel: 'TaskName',
         };
-        this.projectStartDate = new Date('03/05/2025 06:00 PM'),
-        this.projectEndDate = new Date('03/05/2025 09:50 PM')
+        this.projectStartDate = new Date('03/05/2025 06:00 PM');
+        this.projectEndDate = new Date('03/05/2025 09:50 PM');
     }
 }

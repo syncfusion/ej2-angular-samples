@@ -104,53 +104,53 @@
         <ejs-diagram #diagram id="diagram" width="100%" height="100%" [snapSettings]=snapSettings (created)="diagramCreate($event)"
             [getConnectorDefaults]='getConnectorDefaults' [getNodeDefaults]='getNodeDefaults'>
             <e-nodes>
-                <e-node id='Start' [height]=40 [width]=40 [offsetX]=300 [offsetY]=20 [shape]=initialNode>
+                <e-node id='Start' [height]=40 [width]=40 [offsetX]=550 [offsetY]=20 [shape]=initialNode>
                 </e-node>
-                <e-node id='ReceiveCall' [height]=40 [width]=105 [shape]=action [offsetX]=300 [offsetY]=100>
+                <e-node id='ReceiveCall' [height]=40 [width]=105 [shape]=action [offsetX]=550 [offsetY]=100>
                     <e-node-annotations>
                         <e-node-annotation content='Receive Customer Call'>
                         </e-node-annotation>
                     </e-node-annotations>
                 </e-node>
-                <e-node id='ForkNode' [height]=10 [width]=70 [shape]=forkNode [offsetX]=300 [offsetY]=170>
+                <e-node id='ForkNode' [height]=10 [width]=70 [shape]=forkNode [offsetX]=550 [offsetY]=170>
                 </e-node>
-                <e-node id='Determine' [height]=40 [width]=105 [shape]=action [offsetX]=190 [offsetY]=250>
+                <e-node id='Determine' [height]=40 [width]=105 [shape]=action [offsetX]=440 [offsetY]=250>
                     <e-node-annotations>
                         <e-node-annotation content='Determine Type of Call'>
                         </e-node-annotation>
                     </e-node-annotations>
                 </e-node>
-                <e-node id='Log' [height]=40 [width]=105 [shape]=action [offsetX]=410 [offsetY]=250>
+                <e-node id='Log' [height]=40 [width]=105 [shape]=action [offsetX]=660 [offsetY]=250>
                     <e-node-annotations>
                         <e-node-annotation content='Customer Logging a Call'>
                         </e-node-annotation>
                     </e-node-annotations>
                 </e-node>
-                <e-node id='Decision' [height]=50 [width]=50 [shape]=decision [offsetX]=190 [offsetY]=350>
+                <e-node id='Decision' [height]=50 [width]=50 [shape]=decision [offsetX]=440 [offsetY]=350>
                 </e-node>
-                <e-node id='transfer_sales' [height]=40 [width]=105 [shape]=action [offsetX]=100 [offsetY]=450>
+                <e-node id='transfer_sales' [height]=40 [width]=105 [shape]=action [offsetX]=350 [offsetY]=450>
                     <e-node-annotations>
                         <e-node-annotation content='Transfer the Call to Sales'>
                         </e-node-annotation>
                     </e-node-annotations>
                 </e-node>
-                <e-node id='transfer_desk' [height]=40 [width]=105 [shape]=action [offsetX]=280 [offsetY]=450>
+                <e-node id='transfer_desk' [height]=40 [width]=105 [shape]=action [offsetX]=530 [offsetY]=450>
                     <e-node-annotations>
                         <e-node-annotation content='Transfer the Call to Help Desk'>
                         </e-node-annotation>
                     </e-node-annotations>
                 </e-node>
-                <e-node id='MergeNode' [height]=50 [width]=50 [shape]=mergeNode [offsetX]=190 [offsetY]=540>
+                <e-node id='MergeNode' [height]=50 [width]=50 [shape]=mergeNode [offsetX]=440 [offsetY]=540>
                 </e-node>
-                <e-node id='JoinNode' [height]=10 [width]=70 [shape]=joinNode [offsetX]=300 [offsetY]=630>
+                <e-node id='JoinNode' [height]=10 [width]=70 [shape]=joinNode [offsetX]=550 [offsetY]=630>
                 </e-node>
-                <e-node id='CloseCall' [height]=40 [width]=105 [shape]=action [offsetX]=300 [offsetY]=710>
+                <e-node id='CloseCall' [height]=40 [width]=105 [shape]=action [offsetX]=550 [offsetY]=710>
                     <e-node-annotations>
                         <e-node-annotation content='Close Call'>
                         </e-node-annotation>
                     </e-node-annotations>
                 </e-node>
-                <e-node id='FinalNode' [height]=40 [width]=40 [shape]=finalNode [offsetX]=300 [offsetY]=800>
+                <e-node id='FinalNode' [height]=40 [width]=40 [shape]=finalNode [offsetX]=550 [offsetY]=800>
                 </e-node>
             </e-nodes>
             <e-connectors>
@@ -207,4 +207,6 @@
         <code>shape</code> can be used to create <code>UMLActivity</code> nodes. The <code>shape</code> property of the shape allows you to create UML
         activity shapes.
     </p>
+
+    <p>Looking for the full Angular Diagram component overview, features, pricing, and documentation? Visit the <a href="https://www.syncfusion.com/angular-components/angular-diagram" target="_blank">Angular Diagram</a> page.</p>
 </div>

@@ -7,21 +7,21 @@
 </div>
 
 <div class="control-section">
-  <div style="display: flex; padding: 5px;">
-    <div style="display: flex;">
-      <label id="drag" for="unchecked" style="margin:0px 5px 0px 5px;font-size: 15px; "> Auto Update WBS
-      </label>
-      <div>
-        <ejs-switch style="margin:0px" id="EnableWBS"  (change)="autoUpdate($event)" [checked]="true"></ejs-switch>
-      </div>
+  <fieldset class="wbs-control-group">
+    <legend class="sr-only">WBS Configuration</legend>
+    <label for="EnableWBS" class="wbs-label">Auto Update WBS</label>
+    <div>
+    <ejs-switch id="EnableWBS" (change)="autoUpdate($event)" [checked]="true" 
+      aria-label="Enable automatic WBS code updates">
+    </ejs-switch>
     </div>
-  </div>
+  </fieldset>
   <div>
     <ejs-gantt id="ganttWbs" #gantt height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
       [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [editSettings]="editSettings"
       [allowFiltering]="true" [allowSorting]="true" [toolbar]="toolbar" [treeColumnIndex]="2"
       [filterSettings]="filterSettings" [allowSelection]="true" [projectStartDate]="projectStartDate"
-      [projectEndDate]="projectEndDate" [enableWBS]="true" [enableAutoWbsUpdate]="true"
+      [projectEndDate]="projectEndDate" [enableWBS]="true" [enableAutoWbsUpdate]="true" [enableContextMenu]="true"
       [splitterSettings]="splitterSettings" 
       [allowUnscheduledTasks]="allowUnscheduledTasks" [eventMarkers]="eventMarkers" (dataBound)="dataBound()">
     </ejs-gantt>
@@ -31,12 +31,12 @@
 <div id="description">
   <p>
     The <strong>Work Breakdown Structure (WBS)</strong> is a hierarchical numbering system used to represent each tasks position within the overall project structure. 
-    By enabling the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#enablewbs">enableWBS</a> property, the Gantt Chart generates WBS codes and WBS predecessors for all tasks.
+    By enabling the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#enablewbs" rel="noopener noreferrer">enableWBS</a> property, the Gantt Chart generates WBS codes and WBS predecessors for all tasks.
   </p>
 
   <p>
     By default, the <a target="_blank"
-      href="https://ej2.syncfusion.com/angular/documentation/api/gantt#enableautowbsupdate">enableAutoWbsUpdate</a>
+      href="https://ej2.syncfusion.com/angular/documentation/api/gantt#enableautowbsupdate" rel="noopener noreferrer">enableAutoWbsUpdate</a>
     property is set to <code>false</code>.
     To ensure WBS codes remain accurate after actions such as sorting, filtering, editing, or drag and drop, set this
     property to <code>true</code>.
@@ -52,24 +52,56 @@
     This example showcases how enabling WBS along with automatic updates enhances task tracking and provides a clear,
     organized project view.
   </p>
-  <br>
-    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/undo-redo">documentation section</a>.</p>
+  <p>
+    Gantt component features are segregated into individual feature-wise modules. To use a Filter, Edit, Toolbar, Sorting, Selection and markers feature, inject the 
+    <code>FilterService</code>,  <code>EditService</code>,  <code>ToolbarService</code>, <code>SortService</code>, <code>SelectionService</code>, and <code>DayMarkersService</code> by into the <code>&#64;NgModule.providers</code> section.
+  </p>
+  <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/columns/wbs-column" rel="noopener noreferrer">documentation section</a>.</p>
 
 </div>
 <style>
-  .fluent2 #EnableWBS, .fluent2-dark #EnableWBS, .fluent2-highcontrast #EnableWBS{ 
+  /* WBS Control Group - Semantic fieldset for form controls */
+  .wbs-control-group {
+    border: none;
     padding: 5px;
-    font-size: 15px !important;
-    margin-right: -5px !important;
-    margin-top: 0px !important;
+    display: flex;
+    gap: 10px;
   }
-  .bootstrap5\.3 #checkboxes{
-    margin-top: 0px !important;
+
+  /* Hide legend visually but keep it for screen readers */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
   }
-  .e-bigger.fluent2 #EnableWBS, .e-bigger.fluent2-dark #EnableWBS, .e-bigger.fluent2-highcontrast #EnableWBS {
-    margin: 5px -5px 0px 5px !important;
+
+  /* WBS Label styling */
+  .wbs-label {
+    margin: 0;
+    font-size: 15px;
   }
-  .e-bigger:not(.bootstrap5\.3) #EnableWBS {
-        margin: 5px 5px 0px 5px !important;
+
+  /* Theme-specific adjustments for Fluent2 */
+  .fluent2 #EnableWBS,
+  .fluent2-dark #EnableWBS,
+  .fluent2-highcontrast #EnableWBS {
+    padding: 5px;
+  }
+
+  /* Larger size mode adjustments */
+  .e-bigger.fluent2 #EnableWBS,
+  .e-bigger.fluent2-dark #EnableWBS,
+  .e-bigger.fluent2-highcontrast #EnableWBS {
+    margin: 5px 0 0 5px;
+  }
+
+  .e-bigger:not(.bootstrap5_3) #EnableWBS {
+    margin: 5px 5px 0 5px;
   }
 </style>

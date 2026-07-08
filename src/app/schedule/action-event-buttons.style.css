@@ -1,0 +1,71 @@
+.action-event-buttons.e-schedule .custom-event {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 2px 4px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.action-event-buttons.e-schedule .event-subject {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.action-event-buttons.e-schedule .event-title {
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.action-event-buttons.e-schedule .event-time {
+  font-size: 12px;
+  text-wrap: auto;
+}
+
+.action-event-buttons.e-schedule .event-actions {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+}
+
+.action-event-buttons.e-schedule .icon-btn {
+  background: transparent;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.action-event-buttons.e-schedule .icon-btn .e-icons {
+  font-size: 12px;
+}
+
+.action-event-buttons.e-schedule .e-vertical-view .e-all-day-appointment-wrapper .e-appointment .event-time {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .action-event-buttons.e-schedule .event-title {
+    font-size: 10px;
+  }
+
+  .action-event-buttons.e-schedule .icon-btn .e-icons {
+    font-size: 10px;
+  }
+
+  .action-event-buttons.e-schedule .event-time {
+    font-size: 10px;
+  }
+
+  .action-event-buttons.e-schedule .event-actions {
+    gap: 2px;
+    padding: 0px;
+  }
+
+  .action-event-buttons.e-schedule .custom-event {
+    display: contents;
+  }
+}

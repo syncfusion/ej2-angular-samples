@@ -1,51 +1,82 @@
+/* Default Theme */
 #Indicators .okIcon::before {
     content: '\ea84';
-    }
-    #Indicators .description::before {
+}
+
+#Indicators .description::before {
     content: '\e30d';
-    }   
-    .bootstrap4 #Indicators .okIcon::before {
+}
+
+/* Bootstrap4 Theme */
+.bootstrap4 #Indicators .okIcon::before {
     content: '\e7d9';
-    }
-    .bootstrap4 #Indicators .description::before {
+}
+
+.bootstrap4 #Indicators .description::before {
     content: '\e7cb';
-    }
-    .bootstrap5-dark #Indicators .okIcon::before {
+}
+
+/* Bootstrap5 Dark Theme */
+.bootstrap5-dark #Indicators .okIcon::before {
     content: '\e72b';
-    }
-    .bootstrap5-dark #Indicators .description::before {
+}
+
+.bootstrap5-dark #Indicators .description::before {
     content: '\e7c0';
-    }
-    .bootstrap5 #Indicators .okIcon::before,
-    .tailwind #Indicators .okIcon::before, .tailwind-dark #Indicators .okIcon::before,
-    .fluent #Indicators .okIcon::before,.fluent2 #Indicators .okIcon::before,.fluent2-highcontrast #Indicators .okIcon::before,
-    .fluent2-dark #Indicators .okIcon::before, .fluent-dark #Indicators .okIcon::before,
-    .bootstrap5\.3 #Indicators .okIcon::before,
-    .bootstrap5\.3-dark-lite #Indicators .okIcon::before,
-    .bootstrap5\.3-dark #Indicators .okIcon::before, 
-    .bootstrap5\.3-lite #Indicators .okIcon::before,
-    .tailwind3 #Indicators .okIcon::before,
-    .tailwind3-dark #Indicators .okIcon::before{
+}
+/* Bootstrap5, Tailwind, Fluent, Bootstrap5.3, Tailwind3 - okIcon */
+.bootstrap5 #Indicators .okIcon::before,
+.tailwind #Indicators .okIcon::before,
+.tailwind-dark #Indicators .okIcon::before,
+.fluent #Indicators .okIcon::before,
+.fluent2 #Indicators .okIcon::before,
+.fluent2-highcontrast #Indicators .okIcon::before,
+.fluent2-dark #Indicators .okIcon::before,
+.fluent-dark #Indicators .okIcon::before,
+.bootstrap5\.3 #Indicators .okIcon::before,
+.bootstrap5\.3-dark-lite #Indicators .okIcon::before,
+.bootstrap5\.3-dark #Indicators .okIcon::before,
+.bootstrap5\.3-lite #Indicators .okIcon::before,
+.tailwind3 #Indicators .okIcon::before,
+.tailwind3-dark #Indicators .okIcon::before {
     content: '\e72b';
-    }
-    .bootstrap5 #Indicators .description::before,
-    .tailwind #Indicators .description::before, .tailwind-dark #Indicators .description::before,
-    .fluent #Indicators .description::before,.fluent2 #Indicators .description::before,.fluent2-highcontrast #Indicators .description::before,
-    .fluent2-dark #Indicators .description::before, .fluent-dark #Indicators .description::before,
-    .material3-dark #Indicators .okIcon::before,.material3 #Indicators .okIcon::before,
-    .material3-dark #Indicators .description::before,.material3 #Indicators .description::before,
-    .bootstrap5\.3 #Indicators .description::before,
-    .bootstrap5\.3-dark-lite #Indicators .description::before,
-    .bootstrap5\.3-dark #Indicators .description::before, 
-    .bootstrap5\.3-lite #Indicators .description::before,
-    .tailwind3 #Indicators .description::before,
-    .tailwind3-dark #Indicators .description::before{
+}
+/* Bootstrap5, Tailwind, Fluent, Bootstrap5.3, Tailwind3 - description */
+.bootstrap5 #Indicators .description::before,
+.tailwind #Indicators .description::before,
+.tailwind-dark #Indicators .description::before,
+.fluent #Indicators .description::before,
+.fluent2 #Indicators .description::before,
+.fluent2-highcontrast #Indicators .description::before,
+.fluent2-dark #Indicators .description::before,
+.fluent-dark #Indicators .description::before,
+.bootstrap5\.3 #Indicators .description::before,
+.bootstrap5\.3-dark-lite #Indicators .description::before,
+.bootstrap5\.3-dark #Indicators .description::before,
+.bootstrap5\.3-lite #Indicators .description::before,
+.tailwind3 #Indicators .description::before,
+.tailwind3-dark #Indicators .description::before {
     content: '\e7c0';
-    }
-    .fabric #Indicators .description::before,
-    .fabric-dark #Indicators .description::before {
+}
+
+/* Material3 Theme - okIcon */
+.material3 #Indicators .okIcon::before,
+.material3-dark #Indicators .okIcon::before {
+    content: '\e72b';
+}
+
+/* Material3 Theme - description */
+.material3 #Indicators .description::before,
+.material3-dark #Indicators .description::before {
+    content: '\e7c0';
+}
+/* Fabric Theme - description */
+.fabric #Indicators .description::before,
+.fabric-dark #Indicators .description::before {
     content: '\e310';
-    }
-    .highcontrast #Indicators .description::before {
+}
+
+/* High Contrast Theme - description */
+.highcontrast #Indicators .description::before {
     content: '\e310';
-    }
+}

@@ -29,7 +29,8 @@ declare let window: MyWindow;
     ],
 })
 export class LPController {
-
+    public treeReady: boolean = false;
+    public isProgrammaticSelection: boolean = false;
     public controlSampleData: { [key: string]: object } = {};
     public listData: any = [];
     public fields: Object = { dataSource: this.getTreeviewList(this.getDataSource()), id: 'id', parentID: 'pid', text: 'name', hasChildren: 'hasChild', htmlAttributes: 'url', child: 'samples', query: new Query().sortBy('order') };
@@ -52,8 +53,32 @@ export class LPController {
 
     onAllControlClick(e: MouseEvent) {
         this.viewSwitch(this.ngEle.nativeElement.querySelector("#controlSamples"), this.ngEle.nativeElement.querySelector("#controlTree"), true)
+            setTimeout(() => {
+            this.setTreeActiveItem();
+        }, 0);
     }
+    onTreeReady(): void {
+        this.treeReady = true;
+        setTimeout(() => {
+            this.setTreeActiveItem();
+        }, 0);
+    }
+    setTreeActiveItem(): void {
+        const control = location.hash.split('/')[2];
+        if (!control || !this.treeComponent) return;
+        const nodes = this.treeComponent.getTreeData();
+        const match = nodes.find((node: any) => {
+            return node.url && node.url['control-name'] === control;
+        });
 
+        if (match && match.id !== undefined) {
+            this.isProgrammaticSelection = true;
+            this.treeComponent.selectedNodes = [String(match.id)];
+            setTimeout(() => {
+                this.isProgrammaticSelection = false;
+            });
+        }
+    }
     getDataSource(): { [key: string]: Object; }[] {
         if (Browser.isDevice) {
             let tempSample: any[] = [];
@@ -113,7 +138,7 @@ export class LPController {
                                 'control-name': list[k].path,
                             }
                         });
-                    this.controlSampleData[list[k].path] = this.getSamples(list[k].samples, list[k].name);
+                    this.controlSampleData[list[k].path] = this.getSamples(list[k].samples, list[k].name, list[k].path);
                     this.listData = this.listData.concat(this.controlSampleData[list[k].path]);
                 }
             }
@@ -121,11 +146,20 @@ export class LPController {
         return tempList;
     }
 
-    getSamples(samples: any, controlName: string): any {
+    getSamples(samples: any, controlName: string, groupPath?: string): any {
         let tempSamples: any = [];
+        let groupName: string = '';
+        let sampleNameAttr: string = '';
+        let isAISample: boolean = !!groupPath && groupPath.startsWith('ai-') && ['ai-assistview', 'ai-smart-paste', 'ai-smart-textarea'].indexOf(groupPath) === -1;
         for (let i: number = 0; i < samples.length; i++) {
             tempSamples[i] = samples[i];
+            groupName = tempSamples[i].path.split('/')[1];
+            sampleNameAttr = samples[i].name.toLowerCase().replace(/ /g, '-');
             tempSamples[i].data = { 'sample-name': samples[i].name, 'data-path': '/' + samples[i].path };
+            if (isAISample) {
+                tempSamples[i].data['group-name'] = groupName;
+                tempSamples[i].data['ai-sample-name'] = sampleNameAttr;
+            }
             tempSamples[i].uid = '' + i;
             tempSamples[i].cName = controlName;
             tempSamples[i].searchValue = controlName + ' ' + samples[i].name;
@@ -146,11 +180,32 @@ export class LPController {
         anim.animate(to, { name: reverse ? 'SlideLeftIn' : 'SlideRightIn' });
     }
 
+    updateGroupItemAttributes(): void {
+        const groupItems: NodeListOf<Element> = document.querySelectorAll('#controlList .e-list-group-item.e-level-1');
+        groupItems.forEach((groupItem: Element) => {
+            let sibling: Element = groupItem.nextElementSibling;
+            while (sibling && !sibling.classList.contains('e-list-group-item')) {
+                if (!groupItem.hasAttribute('group-name')) {
+                    const groupName: string = sibling.getAttribute('group-name');
+                    if (groupName) {
+                        groupItem.setAttribute('group-name', groupName);
+                    }
+                }
+                sibling.removeAttribute('group-name');
+                sibling = sibling.nextElementSibling;
+            }
+        });
+    }
+
     afterListviewRendered(e: any): void {
+        this.updateGroupItemAttributes();
         this.app.setListItemSelect();
     }
 
     onComponentSelect(e: NodeSelectEventArgs) {
+        if (this.isProgrammaticSelection) {
+            return;
+        }
         let path: string = e.node.getAttribute('data-path');
         if (path && location.hash.replace('/#', '') !== path) {
             this.navigateSample(path.replace(':theme', this.getCurrentTheme()));
@@ -184,7 +239,11 @@ export class LPController {
     }
 
     updateListViewDataSource() {
-        this.listComponent.dataSource = <any>(this.controlSampleData[location.hash.split('/')[2]] || this.controlSampleData['grid']);
+        let sampleName: string= location.hash.split('/')[2];
+        if ( sampleName && sampleName.startsWith('ai-') && !['ai-assistview', 'ai-smart-paste', 'ai-smart-textarea'].includes(sampleName)) {
+            sampleName = 'ai-grid';
+        }
+        this.listComponent.dataSource = <any>(this.controlSampleData[sampleName] || this.controlSampleData['grid']);
     }
 
     ngAfterViewInit(): void {
@@ -208,6 +267,13 @@ export class LPController {
         if (this.navElement.classList.contains('e-view')) {
             this.navElement.classList.add('e-view');
         }
+    }
+    onTreeNodeClicked(e: any): void {
+        const node = e.node;
+        if (!node) return;
+        this.onComponentSelect({
+            node: node
+        } as any);
     }
 
 }

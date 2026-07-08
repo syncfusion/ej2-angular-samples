@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { EventmarkerData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
-import { GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { GanttModule, EventMarkerModel, DayMarkersService, SelectionService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
   selector: 'ej2-gantteventmarker',
   templateUrl: 'event-markers.html',
   standalone: true,
-  imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+  providers: [DayMarkersService, SelectionService],
+  imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 export class GanttEventMarkersComponent implements OnInit {
   public data: object[];
@@ -17,7 +18,7 @@ export class GanttEventMarkersComponent implements OnInit {
   public projectStartDate: Date;
   public projectEndDate: Date;
   public timelineSettings: object;
-  public eventMarkers: object[];
+  public eventMarkers: EventMarkerModel[];
   public splitterSettings: object;
   public ngOnInit(): void {
     this.data = EventmarkerData;
@@ -29,11 +30,11 @@ export class GanttEventMarkersComponent implements OnInit {
       duration: 'Duration',
       progress: 'Progress',
       dependency: 'Predecessor',
-      parentID: 'ParentId'
+      parentID: 'ParentID'
     };
     this.columns = [
       { field: 'TaskID', width: 80 },
-      { field: 'TaskName', width: 250 },
+      { field: 'TaskName', width: 290 },
       { field: 'StartDate' },
       { field: 'EndDate' },
       { field: 'Duration' },

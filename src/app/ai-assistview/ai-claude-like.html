@@ -1,0 +1,54 @@
+<div class="control-section claude-clone">
+    <div class="claude-aiassist" [ngClass]="containerClass" id="claudeContainer">
+        <div id="claude_aiassistview" 
+            ejs-aiassistview 
+            #claudeAIAssistView
+            [showHeader]="false"
+            [promptPlaceholder]="'How can i help you today?'"
+            [enableAttachments]="true"
+            [bannerTemplate]="bannerTemplate"
+            [attachmentSettings]="attachmentSettings"
+            [footerToolbarSettings]="footerToolbarSettings"
+            (promptRequest)="promptRequest($event)"
+            (created)="onCreate()"
+            [enableStreaming]="true">
+            <ng-template #bannerTemplate>
+                <div class="banner-content">
+                    <div class="claude-header">
+                        <img src="https://freepnglogo.com/images/all_img/claude-ai-icon-65aa.png" alt="Claude">
+                        <h2>Golden hour thinking</h2>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+        <div id="buttonsContainer" class="claude-buttons-container">
+            <button ejs-button id="codeBtn" iconCss="e-icons e-code-view">Code</button>
+            <button ejs-button id="writeBtn" iconCss="e-icons e-edit">Write</button>
+            <button ejs-button id="choiceBtn" iconCss="e-icons e-stamp">Claude's Choice</button>
+            <button ejs-button id="learnBtn" iconCss="e-icons e-layers">Learn</button>
+            <button ejs-button id="lifeBtn" iconCss="e-icons e-activities">Life stuff</button>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates a Claude-inspired AI AssistView that provides a focused conversational experience with attachment support, simulated AI responses, and a configurable AI model selector embedded within the chat footer.</p>
+</div>
+<div id="description">
+    <p>
+        The AI AssistView in this sample showcases how a branded, lightweight assistant interface can be
+        created using Syncfusion's <code>AIAssistView</code> component while offering essential interaction
+        features and UI customization options:
+    </p>
+    <ul>
+        <li>Minimal header-less chat layout for distraction-free conversations.</li>
+        <li>Custom banner template displaying branded assistant visuals and contextual messaging.</li>
+        <li>Simulated AI response handling using the <code>promptRequest</code> callback.</li>
+        <li>File attachment support with configurable save and remove endpoints.</li>
+        <li>Footer toolbar customization with attachment actions and a model selector.</li>
+        <li>Dropdown-based AI model switching (Opus, Sonnet, Haiku, Extended thinking).</li>
+    </ul>
+    <p>
+        This example serves as a foundation for integrating real LLM services and building branded conversational interfaces with modular UI controls.
+    </p>
+</div>

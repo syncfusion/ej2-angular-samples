@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { editingData } from './data';
 import { DropDownListComponent, DropDownListAllModule } from '@syncfusion/ej2-angular-dropdowns';
-import { GanttComponent, SortDirection, GanttAllModule } from '@syncfusion/ej2-angular-gantt';
+import { GanttComponent, SortDirection, GanttModule, SelectionService, SortService, DayMarkersService } from '@syncfusion/ej2-angular-gantt';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { ButtonAllModule } from '@syncfusion/ej2-angular-buttons';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -9,7 +9,9 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     selector: 'ej2-ganttdynamicsort',
     templateUrl: 'sorting-api.html',
     standalone: true,
-    imports: [SBActionDescriptionComponent, GanttAllModule, DropDownListAllModule, ButtonAllModule, SBDescriptionComponent]
+    styleUrls: ['sorting-api.component.css'],
+    providers: [SelectionService, SortService, DayMarkersService],
+    imports: [SBActionDescriptionComponent, GanttModule, DropDownListAllModule, ButtonAllModule, SBDescriptionComponent]
 })
 export class GanttSortingAPIComponent implements OnInit {
     public data: object[];
@@ -41,10 +43,10 @@ export class GanttSortingAPIComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            parentID:'ParentId'
+            parentID: 'ParentID'
         };
         this.columns = [
-            { field: 'TaskID',visible:false, headerText: 'ID', width: 80 },
+            { field: 'TaskID', visible: false, headerText: 'ID', width: 80 },
             { field: 'TaskName', headerText: 'TaskName', width: 250 },
             { field: 'StartDate', headerText: 'StartDate' },
             { field: 'EndDate', headerText: 'EndDate' },
@@ -77,8 +79,8 @@ export class GanttSortingAPIComponent implements OnInit {
         let columnName: string = <string>this.dropDownColumnList.value;
         let sortType: SortDirection = <SortDirection>this.dropDownDirectionList.value;
         this.ganttObj.sortModule.sortColumn(columnName, sortType, false);
-    };
+    }
     public clearSort(): void {
         this.ganttObj.clearSorting();
-    };
+    }
 }

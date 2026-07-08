@@ -13,7 +13,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
 
 /**
  * Component for displaying a Fishbone Diagram.
- * Manages the presentation and behavior of the diagram using Syncfusion's Angular Diagram component.
+ * Manages the presentation and behavior of the diagram using Angular Diagram component.
  */
 @Component({
     selector: 'control-content',  // Angular component selector

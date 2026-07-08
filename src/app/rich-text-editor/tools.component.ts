@@ -7,7 +7,7 @@ import { ToolbarService, LinkService, ImageService, HtmlEditorService, EmojiPick
 import { RichTextEditorComponent, TableService, FileManagerService, SlashMenuService, ImportExportService } from '@syncfusion/ej2-angular-richtexteditor';
 import { FileManagerSettingsModel, QuickToolbarSettingsModel, SlashMenuSettingsModel, ExportPdfModel, ExportWordModel, ImportWordModel } from '@syncfusion/ej2-angular-richtexteditor';
 import { createElement, addClass, removeClass, Browser, getComponent  } from '@syncfusion/ej2-base';
-const CodeMirror = require('codemirror');
+import CodeMirror from 'codemirror';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/css/css.js';
 import 'codemirror/mode/htmlmixed/htmlmixed.js';
@@ -72,12 +72,11 @@ export class FullFeatureComponent {
 
     public fileManagerSettings: FileManagerSettingsModel = {
         enable: true,
-        path: '/Pictures/Food',
         ajaxSettings: {
-            url: 'https://ej2-aspcore-service.azurewebsites.net/api/FileManager/FileOperations',
-            getImageUrl: 'https://ej2-aspcore-service.azurewebsites.net/api/FileManager/GetImage',
-            uploadUrl: 'https://ej2-aspcore-service.azurewebsites.net/api/FileManager/Upload',
-            downloadUrl: 'https://ej2-aspcore-service.azurewebsites.net/api/FileManager/Download'
+            url: this.hostUrl + 'api/RichTextEditor/FileOperations',
+            getImageUrl: this.hostUrl + 'api/RichTextEditor/GetImage',
+            uploadUrl: this.hostUrl + 'api/RichTextEditor/Upload',
+            downloadUrl: this.hostUrl + 'api/RichTextEditor/Download'
         }
     };
 

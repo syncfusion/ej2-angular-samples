@@ -1,0 +1,192 @@
+#askAiSidebar .ask-ai-assistview {
+    height: 100%;
+}
+
+#askAiSidebar .ask-ai-assistview .e-footer {
+    width: 95%;
+}
+
+.ask-ai-assistview .e-aiassistview .e-footer .e-toolbar-items {
+    line-height: 0;
+}
+
+#askAiSidebar .ask-ai-assistview .banner-content {
+    height: 200px;
+}
+
+.ask-ai-assistview {
+    width: auto;
+    height: 500px;
+}
+
+.ask-ai-editor.e-card:hover {
+    background-color: unset;
+}
+
+.ask-ai-assistview .e-aiassistview .e-suggestions ul {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.ask-ai-assistview .e-aiassistview .e-suggestions li {
+    align-self: baseline;
+    padding-left: 5px;
+}
+
+.ask-ai-assistview .e-aiassistview .e-suggestions.e-suggestion-item-template li {
+    padding: 7px 10px;
+}
+
+.ask-ai-assistview .e-suggestion-item-template {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+#dialogElem .ask-ai-assistview .e-aiassistview .e-suggestion-list,
+#askAiSidebar .ask-ai-assistview .e-aiassistview .e-suggestion-list {
+    width: 100%;
+}
+
+#dialogElem .ask-ai-assistview .e-aiassistview .e-suggestions li,
+#askAiSidebar .ask-ai-assistview .e-aiassistview .e-suggestions li {
+    box-shadow: none;
+    border: none;
+}
+
+#askAiSidebar .ask-ai-assistview .e-aiassistview .e-suggestions li {
+    width: 95%;
+}
+
+#dialogElem .ask-ai-assistview .e-aiassistview .e-suggestions li {
+    width: max(80%, 425px);
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.ask-ai-assistview .e-aiassistview .e-suggestions li:hover {
+    background-color: var(--color-sf-content-bg-color-hover);
+    border: none;
+}
+
+.ask-ai-assistview .assist-suggestion-content {
+    padding-left: 5px;
+}
+
+.ask-ai-assistview .banner-content .e-assistview-icon:before {
+    font-size: 35px;
+}
+
+.ask-ai-assistview .banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 120px;
+    text-align: left;
+}
+
+/* Default icon container */
+.model-icon:not(.e-icons) {
+    height: 16px;
+    align-self: center;
+    width: 16px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Individual models */
+.model-sonet {
+    background-image: url('/src/assets/ai-assistview/images/Claude.svg');
+}
+
+.model-opus {
+    background-image: url('/src/assets/ai-assistview/images/Claude.svg');
+}
+
+.model-gemini {
+    background-image: url('/src/assets/ai-assistview/images/Gemini.svg');
+}
+
+.model-gpt {
+    background-image: url('/src/assets/ai-assistview/images/GPT.svg');
+}
+
+#custombtn .model-icon:not(.e-icons) {
+    margin-right: 5px;
+    margin-top: 0;
+    height: 20px;
+    width: 20px;
+}
+
+#dialogElem.e-dialog .e-dlg-content {
+    border-radius: 0;
+}
+
+.e-dialog .e-dlg-content {
+    padding: 0;
+}
+
+.ask-ai-assistview .e-toolbar .e-toolbar-item .e-tbar-btn:focus,
+.ask-ai-assistview .e-toolbar .e-toolbar-item .e-tbar-btn:active,
+.ask-ai-assistview .e-dropdown-btn:active,
+.e-dropdown-btn.e-btn:active {
+    box-shadow: none;
+}
+
+.ask-ai-assistview.e-dropdown-btn, .e-dropdown-btn.e-btn {
+    box-shadow: none;
+}
+
+.ask-ai-assistview .e-btn.e-flat.e-active,
+.ask-ai-assistview .e-dropdown-btn:active,
+.e-dropdown-btn.e-btn:active,
+.ask-ai-assistview .e-dropdown-btn:active,
+.e-dropdown-btn.e-btn:hover,
+.ask-ai-assistview .e-dropdown-btn:focus,
+.e-dropdown-btn.e-btn:focus {
+    background: unset;
+    border: 1px solid transparent;
+    box-shadow: none;
+    color: unset;
+}
+
+.e-aiassistview .e-view-header .e-dropdown-btn.e-toolbar-item.e-active::after {
+    background-color: unset;
+}
+
+.ask-ai-assistview .e-footer-icons-wrapper .e-toolbar .e-toolbar-item.settings-icon .e-tbar-btn.e-btn:hover,
+.ask-ai-assistview .e-footer .e-dropdown-btn.e-btn:hover,
+.ask-ai-assistview .e-footer .e-dropdown-btn.e-btn:active {
+    color: var(--color-sf-icon-color);
+}
+
+.ask-ai-editor .notes-app-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.ask-ai-editor .notes-page {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 32px 36px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-sf-border-light);
+}
+
+.custom-dialog.e-dialog {
+    top: auto !important;
+    bottom: 0px !important;
+}
+
+/* Fix: model dropdown button text and popup item text visibility in React context */
+.e-assist-footer .e-toolbar-item .e-dropdown-btn.e-caret-hide.e-flat,
+.e-assist-footer .e-toolbar-item .e-dropdown-btn.e-caret-hide.e-flat .e-btn-content {
+    color: inherit;
+    opacity: 1;
+}

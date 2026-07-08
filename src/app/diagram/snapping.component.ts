@@ -49,7 +49,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     }
     // Specifies that the diagram has infinite scroll
     public scrollSettings : ScrollSettingsModel = {
-    scrollLimit : 'Infinity'
+    scrollLimit : 'Diagram'
     }
     // Defines the type of drawing object as 'Orthogonal'
     public drawingObject : any = { type : 'Orthogonal'};

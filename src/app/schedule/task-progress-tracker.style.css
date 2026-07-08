@@ -1,0 +1,96 @@
+.event-customization-schedule.e-schedule .e-appointment .e-appointment-details {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+}
+
+.event-customization-schedule.e-schedule .e-event-resize.e-right-handler {
+    background: #F3F4F6;
+}
+
+.event-customization-schedule.e-schedule .custom-event {
+    background: #F3F4F6;
+    height: 100%;
+    width: 100%;
+    box-shadow: none;
+    padding: 2px 8px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.event-customization-schedule.e-schedule .custom-event .event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    padding: 1px 0;
+}
+
+.event-customization-schedule.e-schedule .custom-event .event-header .event-subject {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 11px;
+    font-weight: 600;
+    color: #1F2937;
+    line-height: 1.1;
+}
+
+.event-customization-schedule.e-schedule .custom-event .event-header .event-progress-percent {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 9px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.event-customization-schedule.e-schedule .custom-event .event-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3px;
+    width: 100%;
+    line-height: 1;
+    padding: 1px 0;
+}
+
+.event-customization-schedule.e-schedule .custom-event .event-footer .label-wrapper {
+    color: #ffffff;
+    background-color: var(--status-color, #DC2626);
+    padding: 2px 4px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 8px;
+    font-weight: 500;
+}
+
+.event-customization-schedule.e-schedule .custom-event .event-footer .label-wrapper .status-label {
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+.event-customization-schedule.e-schedule .e-timeline-view .e-resource-left-td {
+    width: 150px;
+}
+
+.event-customization-schedule.e-schedule .e-timeline-view .e-date-header-wrap table col,
+.event-customization-schedule.e-schedule .e-timeline-view .e-content-wrap table col {
+    width: 90px;
+}
+
+.e-field-group.e-custom-row {
+    margin-top: 16px;
+}

@@ -1,0 +1,124 @@
+<div class="control-section">
+    <ejs-grid #grid id='DOMVirtualGrid' [dataSource]='data' [query]='query' rowHeight='50' clipMode='EllipsisWithTooltip' [allowSelection]='true'
+        height='400' [pageSettings]='pageSettings' [filterSettings]='filterSettings' [allowSorting]='true'
+        [allowFiltering]='true' [enableVirtualization]='true' [enableDomVirtualization]='true' [domVirtualizationSettings]='domVirtualizationSettings'>
+        <e-columns>
+            <e-column field='EmployeeID' headerText='Employee ID' width='150' [isPrimaryKey]='true' textAlign='Right'></e-column>
+            <e-column field='Employees' headerText='Employee Name' width='260'>
+
+                <ng-template #template let-data>
+
+                    <div class="customer-details">
+                        <div class="customer-avatar" [ngClass]="getAvatarClass(data.Employees)">
+                            {{ getInitials(data.Employees) }}
+                        </div>
+                        <div class="customer-info">
+                            <p class="customer-name">{{ data.Employees }}</p>
+                            <p class="customer-email">{{ data.Mail }}</p>
+                        </div>
+
+                    </div>
+
+                </ng-template>
+
+            </e-column>
+            <e-column field='Designation' headerText='Designation'
+                width='170'></e-column>
+            <e-column field='Status' headerText='Status' width='150'>
+                <ng-template #template let-data>
+                    <div *ngIf="data.Status === 'Active';else login" class="statustemp e-activecolor">
+                        <span class="statustxt e-activecolor">{{data.Status}}</span>
+                    </div>
+                    <ng-template #login>
+                        <div class="statustemp e-inactivecolor">
+                            <span class="statustxt e-inactivecolor">{{data.Status}}</span>
+                        </div>
+                    </ng-template>
+                </ng-template>
+            </e-column>
+            <e-column field='Trustworthiness' headerText='Trustworthiness' width='200' [visible]='false'>
+                <ng-template #template let-data>
+                    <div class="trust">
+                        <img style="width: 31px; height: 24px"
+                            src="https://ej2.syncfusion.com/angular/demos/assets/grid/images/{{data.Trustworthiness}}.png"
+                            alt="" />
+                        <span id="Trusttext">{{data.Trustworthiness}}</span>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='Rating' [allowFiltering]='false' headerText='Rating' width='160' [visible]='false'>
+                <ng-template #template let-data>
+                    <div class="rate">
+                        <div class="rating">
+                            <input ejs-rating [readOnly]="true" value={{data.Rating}} cssClass='custom-rating' />
+                        </div>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='Software' headerText='Software' [allowSorting]='false' [allowFiltering]='false' width='180'
+                [visible]='false'>
+                <ng-template #template let-data>
+                    <div id="myProgress" class="pbar">
+                        <div id="myBar" *ngIf="data.Status === 'Inactive';"
+                            [style.width.%]='softwareValue(data.Software)' class="bar progressdisable">
+                            <div id="pbarlabel" class="barlabel">{{softwareValue(data.Software)}}%</div>
+                        </div>
+                        <div id="myBar" *ngIf="data.Status === 'Active';" [style.width.%]='softwareValue(data.Software)'
+                            class="bar">
+                            <div id="pbarlabel" class="barlabel">{{softwareValue(data.Software)}}%</div>
+                        </div>
+                    </div>
+                </ng-template>
+            </e-column>
+            <e-column field='CurrentSalary' headerText='Current Salary' format='C2'
+                width='160' textAlign='Right'></e-column>
+            <e-column field='Location' headerText='Location' width='140'>
+            </e-column>
+            <e-column field='Address' headerText='Address' width='240'></e-column>
+        </e-columns>
+    </ejs-grid>
+    <div id="action-description">
+        <p>This demo showcases the DOM Virtualization feature in the Grid, enabling efficient handling of large
+            datasets. Instead of rendering all records at once, the Grid intelligently displays only the rows visible
+            within the viewport, ensuring smooth scrolling and responsive performance.</p>
+    </div>
+    <div id="description">
+        <p>
+            DOM virtualization is a performance optimization feature that renders only the visible rows within the Grid
+            viewport instead of rendering the entire dataset. This significantly improves performance when working with
+            large volumes of data.
+        </p>
+        <p>
+            With this feature enabled, the Grid calculates the content height and renders only the necessary
+            <code>tr</code> elements required for the visible portion of the Grid. As the user scrolls, previously
+            rendered rows are replaced with newly required rows, ensuring that only a minimal number of DOM elements are
+            maintained at any time. This behavior improves both rendering speed and memory usage, making the Grid highly
+            efficient for large datasets.
+        </p>
+        <p>
+            DOM virtualization can be enabled by setting the <code>enableDomVirtualization</code> property to
+            <code>true</code>. In this demo, the Grid is loaded with "100k" records using both DOM virtualization and
+            row virtualization features. Row virtualization is enabled using the <code>enableVirtualization</code>
+            property.
+        </p>
+        <p>
+            <strong>Injecting Module</strong>
+        </p>
+        <p>
+            Features of the Grid component are organized into individual, feature-specific modules. To use DOM
+            virtualization, inject the module by <code>DomVirtualizationService</code> into the <code>&#64;NgModule.providers</code> section.
+        </p>
+        <br />
+        <p>
+            More information on DOM virtualization can be found in this
+            <a target="_blank" aria-label="API link for documentation"
+                href="https://ej2.syncfusion.com/documentation/grid/getting-started">
+                documentation section</a>.
+        </p>
+        <p>
+            Looking for the full Angular Data Grid component overview, features, pricing, and documentation? Visit our
+            <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-data-grid">
+                Angular Data Grid component</a> page.
+        </p>
+    </div>
+</div>

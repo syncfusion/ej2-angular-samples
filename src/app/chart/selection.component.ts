@@ -157,7 +157,7 @@ export class SelectionChartComponent {
                 mode: 'Palette',
                 change: (args: ColorPickerEventArgs) => {
                     this.chart.highlightColor = args.currentValue.hex;
-                    this.chart.dataBind();
+                    this.chart.refresh();
                 }
             });
         colorPicker.appendTo('#color-picker');

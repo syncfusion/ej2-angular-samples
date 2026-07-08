@@ -1,91 +1,115 @@
 <script src="script/diagram-common.ts"></script>
+<script src="https://cdn.syncfusion.com/ej2/syncfusion-helper.js" type="text/javascript"></script>
 <style>
-      .e-symbolpalette {
+    .e-symbolpalette {
         display: block;
+    }
+
+    #diagram-unsaved-dialog .e-footer-content {
+        padding: 10px 0px 10px 0px;
+        text-align: center;
     }
 </style>
 <div id="action-description">
     <p>
-        This sample visualizes the processing of an order placed using credit card with built-in flow shapes.
+        This sample demonstrates a credit card order-processing workflow created using built-in flow shapes in the
+        <a href="https://www.syncfusion.com/angular-components/angular-diagram" target="_blank">Angular Diagram</a>.
     </p>
 </div>
 <div class="control-section">
     <div style="width: 100%">
-        <ejs-toolbar #toolbar overflowMode='Scrollable' id="toolbar_scrollable" (clicked) = "clicked($event)">
+        <ejs-toolbar #toolbar overflowMode='Scrollable' id="toolbar_scrollable" (clicked)="clicked($event)">
             <e-items>
-                <e-item prefixIcon='e-icons e-circle-add' tooltipText='New Diagram'  id='New_Diagram' ></e-item>
+                <e-item prefixIcon='e-icons e-circle-add' tooltipText='New Diagram' id='New_Diagram'></e-item>
                 <e-item prefixIcon='e-icons e-folder-open' tooltipText='Open Diagram' id='Open_diagram'>
                 </e-item>
-                <e-item prefixIcon='e-icons e-save' tooltipText='Save Diagram' id='Save' ></e-item>
+                <e-item prefixIcon='e-icons e-save' tooltipText='Save Diagram' id='Save'></e-item>
                 <e-item prefixIcon='e-print e-icons' tooltipText='Print Diagram' id='Print'></e-item>
                 <e-item type='Input' tooltipText='Export Diagram' id='Export'>
                     <ng-template #template>
-                        <ejs-splitbutton [items]='items' iconCss="e-export e-icons" (select)='addDisabled($event)'></ejs-splitbutton>
+                        <ejs-splitbutton [items]='items' iconCss="e-export e-icons"
+                            (select)='addDisabled($event)'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
                 <e-item type='Separator'></e-item>
-                <e-item prefixIcon='e-cut e-icons' tooltipText='Cut' cssClass="tb-item-middle tb-item-lock-category" disabled=true  id='Cut'></e-item>
-                <e-item prefixIcon='e-copy e-icons' tooltipText='Copy' cssClass="tb-item-middle tb-item-lock-category" disabled=true  id='Copy'></e-item>
-                <e-item prefixIcon='e-icons e-paste' tooltipText='Paste' disabled=true  id='Paste'></e-item>
+                <e-item prefixIcon='e-cut e-icons' tooltipText='Cut' cssClass="tb-item-middle tb-item-lock-category"
+                    disabled=true id='Cut'></e-item>
+                <e-item prefixIcon='e-copy e-icons' tooltipText='Copy' cssClass="tb-item-middle tb-item-lock-category"
+                    disabled=true id='Copy'></e-item>
+                <e-item prefixIcon='e-icons e-paste' tooltipText='Paste' disabled=true id='Paste'></e-item>
                 <e-item type='Separator'></e-item>
                 <e-item prefixIcon='e-icons e-undo tb-icons' tooltipText='Undo' disabled=true id='Undo'></e-item>
-                <e-item prefixIcon='e-icons e-redo tb-icons' tooltipText='Redo' disabled=true  id='Redo'></e-item>
+                <e-item prefixIcon='e-icons e-redo tb-icons' tooltipText='Redo' disabled=true id='Redo'></e-item>
                 <e-item type='Separator'></e-item>
-                <e-item prefixIcon='e-pan e-icons' tooltipText='Pan Tool' cssClass ='tb-item-start pan-item' id='Pan_tool'></e-item>
-                <e-item prefixIcon='e-mouse-pointer e-icons' tooltipText='Select Tool' cssClass ='tb-item-middle tb-item-selected' id='Select_tool'></e-item>
-                <e-item  tooltipText='Draw Connectors' id='Draw_con'>
+                <e-item prefixIcon='e-pan e-icons' tooltipText='Pan Tool' cssClass='tb-item-start pan-item'
+                    id='Pan_tool'></e-item>
+                <e-item prefixIcon='e-mouse-pointer e-icons' tooltipText='Select Tool'
+                    cssClass='tb-item-middle tb-item-selected' id='Select_tool'></e-item>
+                <e-item tooltipText='Draw Connectors' id='Draw_con'>
                     <ng-template #template>
-                        <ejs-splitbutton [items]='conTypeItems' iconCss="e-ddb-icons e-diagram-connector e-icons" (select)='onConnectorSelect($event)'></ejs-splitbutton>
+                        <ejs-splitbutton [items]='conTypeItems' iconCss="e-ddb-icons e-diagram-connector e-icons"
+                            (select)='onConnectorSelect($event)'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
-                <e-item  tooltipText='Draw Shapes' id='Draw_shapes'>
+                <e-item tooltipText='Draw Shapes' id='Draw_shapes'>
                     <ng-template #template>
-                        <ejs-splitbutton [items]='shapesItems' iconCss="e-shapes e-icons" (select)='onShapesSelect($event)'></ejs-splitbutton>
+                        <ejs-splitbutton [items]='shapesItems' iconCss="e-shapes e-icons"
+                            (select)='onShapesSelect($event)'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
-                <e-item prefixIcon='e-caption e-icons' tooltipText='Text Tool' cssClass='tb-item-end' id='Text_tool'></e-item>
+                <e-item prefixIcon='e-caption e-icons' tooltipText='Text Tool' cssClass='tb-item-end'
+                    id='Text_tool'></e-item>
                 <e-item type='Separator'></e-item>
-                <e-item disabled=true  prefixIcon= 'e-icons e-lock' tooltipText= 'Lock' cssClass='tb-item-middle tb-item-lock-category' id='Lock' ></e-item>
-                <e-item disabled=true  prefixIcon= 'e-trash e-icons' tooltipText= 'Delete'cssClass='tb-item-middle tb-item-lock-category' id='Delete'></e-item>
+                <e-item disabled=true prefixIcon='e-icons e-lock' tooltipText='Lock'
+                    cssClass='tb-item-middle tb-item-lock-category' id='Lock'></e-item>
+                <e-item disabled=true prefixIcon='e-trash e-icons' tooltipText='Delete'
+                    cssClass='tb-item-middle tb-item-lock-category' id='Delete'></e-item>
                 <e-item type='Separator'></e-item>
-                <e-item disabled=true  type= 'Input' tooltipText= 'Align Objects' id='Align_objects'>
+                <e-item disabled=true type='Input' tooltipText='Align Objects' id='Align_objects'>
                     <ng-template #template>
-                        <ejs-splitbutton [items]='alignItems' iconCss="sf-icon-align-center-1" (select)='onSelectAlignObjects($event)'></ejs-splitbutton>
+                        <ejs-splitbutton [items]='alignItems' iconCss="sf-icon-align-center-1"
+                            (select)='onSelectAlignObjects($event)'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
-                <e-item disabled=true  type= 'Input' tooltipText= 'Distribute Objects' id='Distribute_objects' >
+                <e-item disabled=true type='Input' tooltipText='Distribute Objects' id='Distribute_objects'>
                     <ng-template #template>
-                        <ejs-splitbutton [items]='distributeItems' iconCss="sf-icon-distribute-vertical" (select)='onSelectDistributeObjects($event)'></ejs-splitbutton>
-                    </ng-template>
-                </e-item>
-                <e-item type='Separator'></e-item>
-                <e-item disabled=true  type= 'Input' tooltipText= 'Order Commands'  id='Order' >
-                    <ng-template #template>
-                        <ejs-splitbutton [items]='orderItems' iconCss="e-icons e-order" (select)='onSelectOrder($event)'></ejs-splitbutton>
-                    </ng-template>
-                </e-item>
-                <e-item type='Separator'></e-item>
-                <e-item disabled=true  type= 'Input' tooltipText= 'Group/Ungroup'  id='Group'  >
-                    <ng-template #template>
-                        <ejs-splitbutton [items]='groupItems' iconCss="e-icons e-group-1" (select)='onSelectGroup($event)'></ejs-splitbutton>
+                        <ejs-splitbutton [items]='distributeItems' iconCss="sf-icon-distribute-vertical"
+                            (select)='onSelectDistributeObjects($event)'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
                 <e-item type='Separator'></e-item>
-                <e-item disabled=true  type= 'Input' tooltipText= 'Rotate' id='Rotate'>
+                <e-item disabled=true type='Input' tooltipText='Order Commands' id='Order'>
                     <ng-template #template>
-                        <ejs-splitbutton [items]='rotateItems' iconCss="e-icons e-repeat" (select)='onSelectRotate($event)'></ejs-splitbutton>
+                        <ejs-splitbutton [items]='orderItems' iconCss="e-icons e-order"
+                            (select)='onSelectOrder($event)'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
                 <e-item type='Separator'></e-item>
-                <e-item disabled=true  type= 'Input' tooltipText= 'Flip' id='Flip' >
+                <e-item disabled=true type='Input' tooltipText='Group/Ungroup' id='Group'>
                     <ng-template #template>
-                        <ejs-splitbutton [items]='flipItems' iconCss="e-icons e-flip-horizontal" (select)='onSelectFlip($event)'></ejs-splitbutton>
+                        <ejs-splitbutton [items]='groupItems' iconCss="e-icons e-group-1"
+                            (select)='onSelectGroup($event)'></ejs-splitbutton>
+                    </ng-template>
+                </e-item>
+                <e-item type='Separator'></e-item>
+                <e-item disabled=true type='Input' tooltipText='Rotate' id='Rotate'>
+                    <ng-template #template>
+                        <ejs-splitbutton [items]='rotateItems' iconCss="e-icons e-repeat"
+                            (select)='onSelectRotate($event)'></ejs-splitbutton>
+                    </ng-template>
+                </e-item>
+                <e-item type='Separator'></e-item>
+                <e-item disabled=true type='Input' tooltipText='Flip' id='Flip'>
+                    <ng-template #template>
+                        <ejs-splitbutton [items]='flipItems' iconCss="e-icons e-flip-horizontal"
+                            (select)='onSelectFlip($event)'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
                 <e-item type='Separator'></e-item>
                 <e-item>
                     <ng-template #template>
-                        <ejs-splitbutton [items]='zoomMenuItems' [content]="zoomContent()" (select)='zoomChange($event)' id='Zoom'></ejs-splitbutton>
+                        <ejs-splitbutton [items]='zoomMenuItems' [content]="zoomContent()" (select)='zoomChange($event)'
+                            id='Zoom'></ejs-splitbutton>
                     </ng-template>
                 </e-item>
 
@@ -95,12 +119,18 @@
             <div id="palette-icon" style="float: right;" role="button" class="e-ddb-icons1 e-toggle-palette"></div>
         </div>
         <div id="palette-space" class="sb-mobile-palette">
-            <ejs-symbolpalette id="symbolpalette" [expandMode]='expandMode' [palettes]='palettes' width="100%" height="700px" [symbolHeight]=60 [symbolWidth]=60 [symbolMargin]='symbolMargin' [getSymbolInfo]='getSymbolInfo' [getNodeDefaults]='getSymbolDefaults' [enableSearch]='true'>
+            <ejs-symbolpalette id="symbolpalette" [expandMode]='expandMode' [palettes]='palettes' width="100%"
+                height="700px" [symbolHeight]=60 [symbolWidth]=60 [symbolMargin]='symbolMargin'
+                [getSymbolInfo]='getSymbolInfo' [getNodeDefaults]='getSymbolDefaults' [enableSearch]='true'>
             </ejs-symbolpalette>
         </div>
         <div id="diagram-space" class="sb-mobile-diagram">
-            <div class="content-wrapper">
-                <ejs-diagram #diagram id="diagram" width="100%" height="700px" [snapSettings]='snapSettings' (created)="created()" [getConnectorDefaults]='connectorDefaults' [getNodeDefaults]='nodeDefaults' (dragEnter)="dragEnter($event)" (created)="diagramCreate($event)" (selectionChange)="selectionChange($event)" (historyChange)="historyChange($event)" [drawingObject] ="drawingObject"  (textEdit)="textEdit($event)">
+            <div class="content-wrapper" id="diagramDiv">
+                <ejs-diagram #diagram id="diagram" width="100%" height="700px" [snapSettings]='snapSettings'
+                    [getConnectorDefaults]='connectorDefaults' [getNodeDefaults]='nodeDefaults'
+                    (dragEnter)="dragEnter($event)" (created)="diagramCreate($event)"
+                    (selectionChange)="selectionChange($event)" (historyChange)="historyChange($event)"
+                    [drawingObject]="drawingObject" (textEdit)="textEdit($event)">
                     <e-nodes>
                         <e-node id='NewIdea' [height]=60 [offsetX]=300 [offsetY]=80 [shape]='terminator'>
                             <e-node-annotations>
@@ -194,9 +224,11 @@
                         </e-connector>
                         <e-connector id='connector8' sourceID='transaction_completed' targetID='Database'>
                         </e-connector>
-                        <e-connector id='connector9' sourceID='Payment_method' targetID='Meeting' [segments]='segments' type= 'Orthogonal'>
+                        <e-connector id='connector9' sourceID='Payment_method' targetID='Meeting' [segments]='segments'
+                            type='Orthogonal'>
                         </e-connector>
-                        <e-connector id='connector10' sourceID='End' targetID='Payment_method' [segments]='segments1' type= 'Orthogonal'>
+                        <e-connector id='connector10' sourceID='End' targetID='Payment_method' [segments]='segments1'
+                            type='Orthogonal'>
                             <e-connector-annotations>
                                 <e-connector-annotation content='No' [style]=connAnnotStyle>
                                 </e-connector-annotation>
@@ -208,39 +240,51 @@
                                 </e-connector-annotation>
                             </e-connector-annotations>
                         </e-connector>
-                        <e-connector id='connector12' sourceID='transcation_entered' targetID='Reconcile_entries' [style]=strokeStyle>
+                        <e-connector id='connector12' sourceID='transcation_entered' targetID='Reconcile_entries'
+                            [style]=strokeStyle>
                         </e-connector>
                     </e-connectors>
                 </ejs-diagram>
+                <ejs-dialog id='diagram-unsaved-dialog' #unsavedDialog target="#diagram" [isModal]='false'
+                    header='Unsaved Changes' content='Do you want to save your changes?' [buttons]='buttons'
+                    width='300px' style="display: none;"></ejs-dialog>
             </div>
             <div style="display:none;">
-            <ejs-uploader #defaultupload id='fileupload' (success)='onUploadSuccess($event)' [asyncSettings]='asyncSettings'></ejs-uploader>
-        </div>
+                <ejs-uploader #defaultupload id='fileupload' (success)='onUploadSuccess($event)'
+                    [asyncSettings]='asyncSettings'></ejs-uploader>
+            </div>
         </div>
     </div>
 </div>
+
 <div id="description">
     <p>
-        This example shows how to create a simple flow chart using the diagram control. The
-        <code>nodes</code> property can be used to define different stages of a process. To define the flow between different stages, the
-        <code>connectors</code> property can be used. The
-        <code>getNodeDefaults</code> and
-        <code>getConnectorDefaults</code> properties define the default behavior of shapes and connectors.
+        This sample demonstrates how to create, edit, and manage a credit card order-processing workflow using the
+        <a href="https://www.syncfusion.com/angular-components/angular-diagram" target="_blank">Angular Diagram</a>. The workflow is designed with nodes and connectors, where
+        each node represents a specific stage in the order process and each connector defines the flow between stages.
     </p>
-
     <p>
-        To easily build flow diagrams, few shapes are predefined and added to symbol palette. You can drag-and-drop predefined shapes into the drawing area. The
-        <code>symbols</code> property allows you to add predefined symbols to the palette.
+        The <code>nodes</code> property is used to define the workflow stages, and the <code>connectors</code> property
+        is used to establish the relationships between these stages. The <code>getNodeDefaults</code> and
+        <code>getConnectorDefaults</code> properties are configured to apply common appearance and behavior settings to
+        nodes and connectors.
     </p>
-
     <p>
-        In this example, undo and redo support is enabled.
+        A symbol palette with predefined flowchart shapes and connectors is provided to help users build diagrams
+        through drag-and-drop interactions. The symbols displayed in the palette are configured using the
+        <code>symbols</code> property.
     </p>
-    <p style="font-weight: 500">Injecting Module</p>
     <p>
-        The diagram component’s features are segregated into individual feature-wise modules. To enable undo and redo support, inject
-        <code>UndoRedo</code> module into
-        <code>&#64;NgModule.providers</code> section.
+        The sample includes a toolbar with common diagram-editing actions, such as <strong>New</strong>,
+        <strong>Open</strong>, <strong>Save</strong>, <strong>Export</strong>, <strong>Print</strong>,
+        <strong>Cut</strong>, <strong>Copy</strong>, <strong>Paste</strong>, <strong>Undo</strong>, and
+        <strong>Redo</strong>. It also provides options for drawing shapes and connectors, panning, zooming, rotating,
+        flipping, grouping, aligning, and distributing diagram elements.
+    </p>
+    <p>
+        The read-only <code>isModified</code> property is used to track unsaved changes in the diagram. When users
+        attempt to click the <strong>New</strong> or <strong>Open</strong> button in the toolbar, or try to close the
+        browser tab without saving the current changes, a confirmation dialog is displayed.
     </p>
     <br>
 </div>

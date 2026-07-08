@@ -97,7 +97,6 @@ import { AIPivotTableSampleModule } from '../ai-pivot-table/aipivottable.module'
 import { AIMapsSampleModule } from '../ai-maps/aimaps.module';
 import { AISchedulerSampleModule } from '../ai-schedule/aischedule.module';
 import { AIDiagramSampleModule } from '../ai-diagram/aidiagram.module';
-import { AIRichTextEditorSampleModule } from '../ai-rich-text-editor/airichtexteditor.module';
 import { BlockEditorSampleModule } from '../block-editor/block-editor.module';
 import { SankeySampleModule } from '../sankey-chart/sankey-chart.module';
 import { InlineAIAssistSampleModule } from '../inline-ai-assist/inline-ai-assist.module';
@@ -124,8 +123,6 @@ const appRoutes: any = [
     { path: 'ai-image-editor', loadChildren: import('../ai-image-editor/aiimageeditor.module').then(m => m.AIImageEditorSampleModule) },
     // AI Pivot Table
     { path: 'ai-pivot-table', loadChildren: import('../ai-pivot-table/aipivottable.module').then(m => m.AIPivotTableSampleModule) },
-    // AI Rich Text Editor
-    { path: 'ai-rich-text-editor', loadChildren: import('../ai-rich-text-editor/airichtexteditor.module').then(m => m.AIRichTextEditorSampleModule) },
     // AI Maps
     { path: 'ai-maps', loadChildren: import('../ai-maps/aimaps.module').then(m => m.AIMapsSampleModule) },
     // AI Scheduler
@@ -139,7 +136,7 @@ const appRoutes: any = [
     { path: ':theme/pivot-table/:sample', redirectTo: 'material/pivot-table/default' },
     //Interactive chat
     { path: 'ai-assistview', loadChildren: import('../ai-assistview/ai-assistview.module').then(m=>m.AIAssistSampleModule) },
-    { path: ':theme/ai-assistview/:sample', redirectTo: 'material/ai-assistview/default' },
+    { path: ':theme/ai-assistview/:sample', redirectTo: 'material/ai-assistview/ai-default' },
     { path: 'chat-ui', loadChildren: import('../chat-ui/chat-ui.module').then(m=>m.ChatUISampleModule) },
     { path: ':theme/chat-ui/:sample', redirectTo: 'material/chat-ui/default' },
     { path: 'inline-ai-assist', loadChildren: import('../inline-ai-assist/inline-ai-assist.module').then(m=>m.InlineAIAssistSampleModule) },
@@ -273,22 +270,20 @@ const appRoutes: any = [
         SmartTextAreaSampleModule,
         //AI Data Grid
         AIGridSampleModule,
-        // AI Gantt
-        AIGanttSampleModule,
         // AI Diagram
         AIDiagramSampleModule,
-        // AI Query Builder
-        AIQueryBuilderSampleModule,
         // AI ComboBox
         AIComboBoxSampleModule,
+        // AI Gantt
+        AIGanttSampleModule,
         // AI Image Editor
         AIImageEditorSampleModule,
-        // AI Pivot Table
-        AIPivotTableSampleModule,
-        // AI Rich Text Editor
-        AIRichTextEditorSampleModule,
         // AI Maps
         AIMapsSampleModule,
+        // AI Pivot Table
+        AIPivotTableSampleModule,
+        // AI Query Builder
+        AIQueryBuilderSampleModule,
         // AI Scheduler
         AISchedulerSampleModule,
         // Grids

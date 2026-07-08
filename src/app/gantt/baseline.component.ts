@@ -1,15 +1,16 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { GanttAllModule, GanttComponent } from '@syncfusion/ej2-angular-gantt';
+import { GanttModule, GanttComponent, DayMarkersService, SelectionService, UndoRedoService, ResizeService } from '@syncfusion/ej2-angular-gantt';
 import { baselineData } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
   selector: 'ganttBaseline',
   templateUrl: 'baseline.html',
+  providers: [DayMarkersService, SelectionService, UndoRedoService, ResizeService],
   styleUrls: ['baseline-component.css'],
   encapsulation: ViewEncapsulation.None,
   standalone: true,
-  imports: [SBActionDescriptionComponent, GanttAllModule, SBDescriptionComponent]
+  imports: [SBActionDescriptionComponent, GanttModule, SBDescriptionComponent]
 })
 export class GanttBaselineComponent implements OnInit {
   public data: Object[] = baselineData;
@@ -105,7 +106,7 @@ export class GanttBaselineComponent implements OnInit {
       baselineStartDate: 'BaselineStartDate',
       baselineEndDate: 'BaselineEndDate',
       baselineDuration: 'baselineDur',
-      parentID: 'ParentId',
+      parentID: 'ParentID',
       duration: 'Duration',
       dependency: 'Predecessor',
       progress: 'Progress'
@@ -133,13 +134,16 @@ export class GanttBaselineComponent implements OnInit {
     this.labelSettings = {
       rightLabel: 'TaskName'
     };
+    this.tooltipSettings = {
+      taskbar: '#tooltipSettingsTaskbar'
+    };
     this.splitterSettings = {
       columnIndex: 4
     };
     this.projectStartDate = new Date('07/02/2025');
     this.projectEndDate = new Date('09/15/2025');
   }
-  dataBound() {
+  public dataBound(): void {
     this.ganttObj.autoFitColumns(['TaskId', 'TaskName', 'StartDate', 'Duration', 'BaselineStartDate', 'baselineDur', 'variance']);
   }
   public format(value: Date): string {

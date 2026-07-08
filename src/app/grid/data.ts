@@ -35199,3 +35199,692 @@ export function createVirtualOrderData(): void {
         });
     }
 }
+
+export let salesDataSource: any[] = [];
+export function createSalesDataSource(): void {
+    const months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+    ];
+    const productCatalog = [
+        {
+            name: 'Smart Pro Laptop',
+            category: 'Electronics',
+            subCategory: 'Computing',
+            brand: 'Apex Tech',
+            basePrice: 1800,
+            country: 'USA',
+            state: 'California',
+            city: 'San Jose',
+            region: 'North America'
+        },
+        {
+            name: 'Ergo Desk Monitor',
+            category: 'Electronics',
+            subCategory: 'Displays',
+            brand: 'Vision Core',
+            basePrice: 780,
+            country: 'Germany',
+            state: 'Bavaria',
+            city: 'Munich',
+            region: 'Europe'
+        },
+        {
+            name: 'Office Chair X',
+            category: 'Furniture',
+            subCategory: 'Seating',
+            brand: 'Comfort Line',
+            basePrice: 450,
+            country: 'Singapore',
+            state: 'Central',
+            city: 'Singapore',
+            region: 'Asia'
+        },
+        {
+            name: 'Wireless Keyboard',
+            category: 'Accessories',
+            subCategory: 'Input Devices',
+            brand: 'Key Wave',
+            basePrice: 200,
+            country: 'USA',
+            state: 'Texas',
+            city: 'Austin',
+            region: 'North America'
+        },
+        {
+            name: '4K Business Display',
+            category: 'Electronics',
+            subCategory: 'Displays',
+            brand: 'Vision Core',
+            basePrice: 1400,
+            country: 'Brazil',
+            state: 'São Paulo',
+            city: 'São Paulo',
+            region: 'South America'
+        },
+        {
+            name: 'Ergonomic Mouse Pro',
+            category: 'Accessories',
+            subCategory: 'Input Devices',
+            brand: 'Key Wave',
+            basePrice: 90,
+            country: 'United Kingdom',
+            state: 'England',
+            city: 'London',
+            region: 'Europe'
+        },
+        {
+            name: 'Conference Speaker Set',
+            category: 'Audio',
+            subCategory: 'Conference Gear',
+            brand: 'Sound Sphere',
+            basePrice: 750,
+            country: 'Australia',
+            state: 'NSW',
+            city: 'Sydney',
+            region: 'Oceania'
+        },
+        {
+            name: 'Cloud Backup License',
+            category: 'Software',
+            subCategory: 'Subscription',
+            brand: 'Cloud Nexus',
+            basePrice: 300,
+            country: 'Canada',
+            state: 'Ontario',
+            city: 'Toronto',
+            region: 'North America'
+        },
+        {
+            name: 'Smart Docking Hub',
+            category: 'Electronics',
+            subCategory: 'Accessories',
+            brand: 'Apex Tech',
+            basePrice: 260,
+            country: 'Netherlands',
+            state: 'North Holland',
+            city: 'Amsterdam',
+            region: 'Europe'
+        },
+        {
+            name: 'Premium Standing Desk',
+            category: 'Furniture',
+            subCategory: 'Desks',
+            brand: 'Comfort Line',
+            basePrice: 950,
+            country: 'USA',
+            state: 'Washington',
+            city: 'Seattle',
+            region: 'North America'
+        },
+        {
+            name: 'Noise Cancel Headset',
+            category: 'Audio',
+            subCategory: 'Headphones',
+            brand: 'Sound Sphere',
+            basePrice: 220,
+            country: 'Japan',
+            state: 'Tokyo',
+            city: 'Tokyo',
+            region: 'Asia'
+        },
+        {
+            name: 'Security Suite License',
+            category: 'Software',
+            subCategory: 'License',
+            brand: 'Cloud Nexus',
+            basePrice: 480,
+            country: 'India',
+            state: 'Karnataka',
+            city: 'Bengaluru',
+            region: 'Asia'
+        },
+    ];
+    const salesReps = [
+        'Maya Chen',
+        'Lena Fischer',
+        'Arun Patel',
+        'Noah Davis',
+        'Camila Souza',
+        'Emma Clark',
+        'Ethan Brown',
+        'Sophia Martin',
+        'Daniel Moore',
+        'Priya Nair',
+        'Liam Wilson',
+        'Olivia Brooks',
+        'Marco Klein',
+        'Ava Johnson',
+        'Rafael Lima',
+        'Isabella Rossi',
+        'Hiro Tanaka',
+        'Fatima Khan',
+    ];
+    const managers = [
+        'Olivia Brooks',
+        'Marco Klein',
+        'Sofia Lim',
+        'Priya Nair',
+        'Rafael Lima',
+        'Daniel Reed',
+        'Ava Johnson',
+        'Liam Wilson',
+        'Grace Bennett',
+        'Kunal Mehta',
+        'Noah Turner',
+        'Mila Carter',
+    ];
+    const channels = ['Online', 'Retail', 'Partner', 'Distributor', 'Direct'];
+    const remarkPool = [
+        'Top seller in the region',
+        'Stable demand',
+        'Exceeded quota',
+        'High repeat orders',
+        'Important account',
+        'Low-risk replenishment',
+        'Need follow-up on renewal',
+        'Expansion opportunity',
+        'Seasonal spike observed',
+        'Pending contract signature',
+        'Bulk order secured',
+        'Watch for shipping delay',
+    ];
+    const round2 = (value: any) => Math.round(value * 100) / 100;
+    const pick = (arr: any[]) => 
+    arr[Math.floor(Math.random() * arr.length)];
+    const productVersionMap: { [key: string]: number } = {};
+    for (let index: number = 0; index < 100000; index++) {
+        const product = productCatalog[Math.floor(Math.random() * productCatalog.length)];
+        if (!productVersionMap[product.name]) {
+            productVersionMap[product.name] = 1;
+        }
+        const version = `V${productVersionMap[product.name]}`;
+        productVersionMap[product.name]++;
+        const salesQty = Math.floor(5 + Math.random() * 100);
+        const unitPrice = round2(
+            product.basePrice * (0.8 + Math.random() * 0.4)
+        );
+        const grossAmount = round2(salesQty * unitPrice);
+        const discount = round2(2 + Math.random() * 18);
+        const discountAmount = round2((grossAmount * discount) / 100);
+        const shippingCost = round2(25 + Math.random() * 150);
+        const tax = round2(5 + Math.random() * 15);
+        const netAmount = round2(
+            grossAmount - discountAmount + shippingCost * 0.15
+        );
+        const profit = round2(
+            grossAmount - discountAmount - shippingCost - grossAmount * (0.3 + Math.random() * 0.2)
+        );
+        const target = round2(
+            grossAmount * (1.2 + Math.random() * 1.5)
+        );
+        const forecast = round2(
+            target * (0.8 + Math.random() * 0.4)
+        );
+        const profitMargin =
+            grossAmount === 0 ? 0 : round2((profit / grossAmount) * 100);
+        const achievementPercent = round2(20 + Math.random() * 80);
+        const isZero = Math.random() < 0.05;
+        const returnQty = isZero
+            ? 0
+            : Math.floor(1 + Math.random() * 5);
+        const returnAmount = returnQty > 0
+            ? round2(returnQty * unitPrice * (0.5 + Math.random() * 0.3))
+            : 0;
+        salesDataSource.push({
+            ProductId: 100001 + index,
+            ProductName: `${product.name} ${version}`,
+            Region: product.region,
+            SalesQty: salesQty,
+            GrossAmount: grossAmount,
+            NetAmount: netAmount,
+            ProfitMargin: profitMargin,
+            AchievementPercent: achievementPercent,
+            UnitPrice: unitPrice,
+            Month: pick(months),
+            Category: product.category,
+            SubCategory: product.subCategory,
+            Brand: product.brand,
+            Country: product.country,
+            State: product.state,
+            City: product.city,
+            Discount: discount,
+            Tax: tax,
+            ShippingCost: shippingCost,
+            Profit: profit,
+            Target: target,
+            Forecast: forecast,
+            SalesRep: pick(salesReps),
+            Manager: pick(managers),
+            Channel: pick(channels),
+            Quarter: `Q${Math.floor(Math.random() * 4) + 1}`,
+            Year: 2023 + Math.floor(Math.random() * 3),
+            ReturnQty: returnQty,
+            ReturnAmount: returnAmount,
+            Remarks: pick(remarkPool)
+        });
+    }
+}
+
+export let OrderedData: any[] = [
+    { OrderID: 10001, CustomerName: 'John Miller', OrderDate: new Date('2025-01-15'), Freight: 45.50, ShippedDate: new Date('2025-01-20'), ShipCountry: 'USA' },
+    { OrderID: 10002, CustomerName: 'Sarah Johnson', OrderDate: new Date('2025-02-03'), Freight: 62.75, ShippedDate: new Date('2025-02-08'), ShipCountry: 'Canada' },
+    { OrderID: 10003, CustomerName: 'Michael Davis', OrderDate: new Date('2025-02-18'), Freight: 38.25, ShippedDate: new Date('2025-02-23'), ShipCountry: 'UK' },
+    { OrderID: 10004, CustomerName: 'Emily Brown', OrderDate: new Date('2025-03-05'), Freight: 55.00, ShippedDate: new Date('2025-03-10'), ShipCountry: 'Germany' },
+    { OrderID: 10005, CustomerName: 'James Wilson', OrderDate: new Date('2025-03-22'), Freight: 41.30, ShippedDate: new Date('2025-03-28'), ShipCountry: 'France' },
+    { OrderID: 10006, CustomerName: 'Lisa Anderson', OrderDate: new Date('2025-04-10'), Freight: 73.90, ShippedDate: new Date('2025-04-16'), ShipCountry: 'Australia' },
+    { OrderID: 10007, CustomerName: 'David Martinez', OrderDate: new Date('2025-04-25'), Freight: 52.15, ShippedDate: new Date('2025-05-02'), ShipCountry: 'Spain' },
+    { OrderID: 10008, CustomerName: 'Jennifer Garcia', OrderDate: new Date('2025-05-08'), Freight: 39.60, ShippedDate: new Date('2025-05-14'), ShipCountry: 'Italy' },
+    { OrderID: 10009, CustomerName: 'Robert Taylor', OrderDate: new Date('2025-05-20'), Freight: 68.40, ShippedDate: new Date('2025-05-27'), ShipCountry: 'Japan' },
+    { OrderID: 10010, CustomerName: 'Amanda White', OrderDate: new Date('2025-06-03'), Freight: 44.85, ShippedDate: new Date('2025-06-09'), ShipCountry: 'Mexico' },
+    { OrderID: 10011, CustomerName: 'Christopher Harris', OrderDate: new Date('2025-06-18'), Freight: 57.20, ShippedDate: new Date('2025-06-25'), ShipCountry: 'Brazil' },
+    { OrderID: 10012, CustomerName: 'Rachel Martin', OrderDate: new Date('2025-07-01'), Freight: 48.70, ShippedDate: new Date('2025-07-08'), ShipCountry: 'India' },
+    { OrderID: 10013, CustomerName: 'Daniel Thompson', OrderDate: new Date('2025-07-15'), Freight: 61.45, ShippedDate: new Date('2025-07-22'), ShipCountry: 'China' },
+    { OrderID: 10014, CustomerName: 'Jessica Lee', OrderDate: new Date('2025-08-02'), Freight: 35.80, ShippedDate: new Date('2025-08-08'), ShipCountry: 'Singapore' },
+    { OrderID: 10015, CustomerName: 'Matthew Clark', OrderDate: new Date('2025-08-17'), Freight: 66.30, ShippedDate: new Date('2025-08-24'), ShipCountry: 'Netherlands' },
+    { OrderID: 10016, CustomerName: 'Ashley Rodriguez', OrderDate: new Date('2025-09-03'), Freight: 43.50, ShippedDate: new Date('2025-09-10'), ShipCountry: 'Belgium' },
+    { OrderID: 10017, CustomerName: 'Kevin Lewis', OrderDate: new Date('2025-09-19'), Freight: 59.15, ShippedDate: new Date('2025-09-26'), ShipCountry: 'Sweden' },
+    { OrderID: 10018, CustomerName: 'Nicole Walker', OrderDate: new Date('2025-10-04'), Freight: 47.65, ShippedDate: new Date('2025-10-11'), ShipCountry: 'Norway' },
+    { OrderID: 10019, CustomerName: 'Brandon Hall', OrderDate: new Date('2025-10-20'), Freight: 70.25, ShippedDate: new Date('2025-10-28'), ShipCountry: 'South Korea' },
+    { OrderID: 10020, CustomerName: 'Stephanie Allen', OrderDate: new Date('2025-11-02'), Freight: 51.90, ShippedDate: new Date('2025-11-09'), ShipCountry: 'Thailand' },
+    { OrderID: 10021, CustomerName: 'Ryan Young', OrderDate: new Date('2025-11-18'), Freight: 42.35, ShippedDate: new Date('2025-11-25'), ShipCountry: 'Malaysia' },
+    { OrderID: 10022, CustomerName: 'Victoria King', OrderDate: new Date('2025-12-01'), Freight: 64.80, ShippedDate: new Date('2025-12-08'), ShipCountry: 'Philippines' },
+    { OrderID: 10023, CustomerName: 'Joshua Wright', OrderDate: new Date('2026-01-05'), Freight: 37.45, ShippedDate: new Date('2026-01-12'), ShipCountry: 'Vietnam' },
+    { OrderID: 10024, CustomerName: 'Megan Scott', OrderDate: new Date('2026-01-20'), Freight: 69.50, ShippedDate: new Date('2026-01-27'), ShipCountry: 'Indonesia' },
+    { OrderID: 10025, CustomerName: 'Tyler Green', OrderDate: new Date('2026-02-08'), Freight: 46.25, ShippedDate: new Date('2026-02-15'), ShipCountry: 'Pakistan' },
+    { OrderID: 10026, CustomerName: 'Olivia Adams', OrderDate: new Date('2026-02-22'), Freight: 58.70, ShippedDate: new Date('2026-03-01'), ShipCountry: 'Egypt' },
+    { OrderID: 10027, CustomerName: 'Jacob Nelson', OrderDate: new Date('2026-03-10'), Freight: 40.15, ShippedDate: new Date('2026-03-17'), ShipCountry: 'South Africa' },
+    { OrderID: 10028, CustomerName: 'Sophia Baker', OrderDate: new Date('2026-03-25'), Freight: 72.60, ShippedDate: new Date('2026-04-02'), ShipCountry: 'Nigeria' },
+    { OrderID: 10029, CustomerName: 'Mason Carter', OrderDate: new Date('2026-04-12'), Freight: 49.35, ShippedDate: new Date('2026-04-19'), ShipCountry: 'Kenya' },
+    { OrderID: 10030, CustomerName: 'Isabella Mitchell', OrderDate: new Date('2026-04-28'), Freight: 63.45, ShippedDate: new Date('2026-05-05'), ShipCountry: 'UAE' }
+];
+
+export let inventoryStoreData = [
+  {
+    ID: 'ID-1001',
+    Product: 'MacBook Pro',
+    Category: 'IT Asset',
+    UnitPrice: 1200,
+    VendorA: 55,
+    VendorB: 40,
+    VendorC: 60,
+    VendorD: 35,
+  },
+  {
+    ID: 'ID-1002',
+    Product: 'Wireless Mouse',
+    Category: 'IT Asset',
+    UnitPrice: 25,
+    VendorA: 120,
+    VendorB: 95,
+    VendorC: 110,
+    VendorD: 80,
+  },
+  {
+    ID: 'ID-1003',
+    Product: '4K Monitor',
+    Category: 'IT Asset',
+    UnitPrice: 400,
+    VendorA: 45,
+    VendorB: 50,
+    VendorC: 38,
+    VendorD: 42,
+  },
+  {
+    ID: 'ID-1004',
+    Product: 'WiFi Router',
+    Category: 'IT Infrastructure',
+    UnitPrice: 120,
+    VendorA: 75,
+    VendorB: 68,
+    VendorC: 80,
+    VendorD: 72,
+  },
+  {
+    ID: 'ID-1005',
+    Product: 'SSD Drive',
+    Category: 'IT Asset',
+    UnitPrice: 150,
+    VendorA: 110,
+    VendorB: 90,
+    VendorC: 105,
+    VendorD: 88,
+  },
+  {
+    ID: 'ID-1006',
+    Product: 'Laser Printer',
+    Category: 'Admin',
+    UnitPrice: 300,
+    VendorA: 35,
+    VendorB: 30,
+    VendorC: 28,
+    VendorD: 25,
+  },
+  {
+    ID: 'ID-1007',
+    Product: 'Security Camera',
+    Category: 'Security',
+    UnitPrice: 120,
+    VendorA: 50,
+    VendorB: 45,
+    VendorC: 55,
+    VendorD: 48,
+  },
+  {
+    ID: 'ID-1008',
+    Product: 'HP Laptop',
+    Category: 'IT Asset',
+    UnitPrice: 750,
+    VendorA: 65,
+    VendorB: 58,
+    VendorC: 70,
+    VendorD: 62,
+  },
+  {
+    ID: 'ID-1009',
+    Product: 'UltraWide Monitor',
+    Category: 'IT Asset',
+    UnitPrice: 500,
+    VendorA: 48,
+    VendorB: 42,
+    VendorC: 50,
+    VendorD: 45,
+  },
+  {
+    ID: 'ID-1010',
+    Product: 'Network Switch',
+    Category: 'IT Infrastructure',
+    UnitPrice: 220,
+    VendorA: 60,
+    VendorB: 55,
+    VendorC: 65,
+    VendorD: 58,
+  },
+  {
+    ID: 'ID-1011',
+    Product: 'External Hard Drive',
+    Category: 'IT Asset',
+    UnitPrice: 130,
+    VendorA: 95,
+    VendorB: 88,
+    VendorC: 100,
+    VendorD: 90,
+  },
+  {
+    ID: 'ID-1012',
+    Product: 'Standing Desk',
+    Category: 'Facilities',
+    UnitPrice: 350,
+    VendorA: 35,
+    VendorB: 30,
+    VendorC: 32,
+    VendorD: 28,
+  },
+  {
+    ID: 'ID-1013',
+    Product: 'Scanner',
+    Category: 'Finance',
+    UnitPrice: 150,
+    VendorA: 25,
+    VendorB: 22,
+    VendorC: 28,
+    VendorD: 20,
+  },
+  {
+    ID: 'ID-1014',
+    Product: 'Tablet Device',
+    Category: 'Sales',
+    UnitPrice: 220,
+    VendorA: 45,
+    VendorB: 40,
+    VendorC: 48,
+    VendorD: 42,
+  },
+  {
+    ID: 'ID-1015',
+    Product: 'Dell Laptop',
+    Category: 'IT Asset',
+    UnitPrice: 800,
+    VendorA: 70,
+    VendorB: 65,
+    VendorC: 75,
+    VendorD: 60,
+  },
+  {
+    ID: 'ID-1016',
+    Product: 'USB Hub',
+    Category: 'IT Asset',
+    UnitPrice: 20,
+    VendorA: 95,
+    VendorB: 85,
+    VendorC: 100,
+    VendorD: 88,
+  },
+  {
+    ID: 'ID-1017',
+    Product: 'LED Screen',
+    Category: 'Marketing',
+    UnitPrice: 300,
+    VendorA: 55,
+    VendorB: 50,
+    VendorC: 60,
+    VendorD: 52,
+  },
+  {
+    ID: 'ID-1018',
+    Product: 'Access Point',
+    Category: 'IT Infrastructure',
+    UnitPrice: 180,
+    VendorA: 58,
+    VendorB: 52,
+    VendorC: 60,
+    VendorD: 55,
+  },
+  {
+    ID: 'ID-1019',
+    Product: 'NAS Storage',
+    Category: 'IT Infrastructure',
+    UnitPrice: 600,
+    VendorA: 65,
+    VendorB: 60,
+    VendorC: 70,
+    VendorD: 62,
+  },
+  {
+    ID: 'ID-1020',
+    Product: 'Filing Cabinet',
+    Category: 'Facilities',
+    UnitPrice: 180,
+    VendorA: 45,
+    VendorB: 40,
+    VendorC: 50,
+    VendorD: 42,
+  },
+  {
+    ID: 'ID-1021',
+    Product: 'Projector',
+    Category: 'Training',
+    UnitPrice: 450,
+    VendorA: 20,
+    VendorB: 18,
+    VendorC: 22,
+    VendorD: 19,
+  },
+  {
+    ID: 'ID-1022',
+    Product: 'Smart Phone',
+    Category: 'IT Asset',
+    UnitPrice: 700,
+    VendorA: 75,
+    VendorB: 70,
+    VendorC: 80,
+    VendorD: 68,
+  },
+  {
+    ID: 'ID-1023',
+    Product: 'Desktop Workstation',
+    Category: 'IT Asset',
+    UnitPrice: 950,
+    VendorA: 65,
+    VendorB: 60,
+    VendorC: 70,
+    VendorD: 55,
+  },
+  {
+    ID: 'ID-1024',
+    Product: 'Laptop Stand',
+    Category: 'IT Asset',
+    UnitPrice: 35,
+    VendorA: 85,
+    VendorB: 75,
+    VendorC: 90,
+    VendorD: 80,
+  },
+  {
+    ID: 'ID-1025',
+    Product: 'UltraWide Monitor',
+    Category: 'IT Asset',
+    UnitPrice: 520,
+    VendorA: 42,
+    VendorB: 38,
+    VendorC: 45,
+    VendorD: 40,
+  },
+  {
+    ID: 'ID-1026',
+    Product: 'WiFi Router',
+    Category: 'IT Infrastructure',
+    UnitPrice: 125,
+    VendorA: 80,
+    VendorB: 75,
+    VendorC: 85,
+    VendorD: 70,
+  },
+  {
+    ID: 'ID-1027',
+    Product: 'SSD Drive',
+    Category: 'IT Asset',
+    UnitPrice: 155,
+    VendorA: 100,
+    VendorB: 95,
+    VendorC: 105,
+    VendorD: 90,
+  },
+  {
+    ID: 'ID-1028',
+    Product: 'Docking Station',
+    Category: 'IT Asset',
+    UnitPrice: 150,
+    VendorA: 60,
+    VendorB: 55,
+    VendorC: 65,
+    VendorD: 50,
+  },
+  {
+    ID: 'ID-1029',
+    Product: 'Conference Speaker',
+    Category: 'Admin',
+    UnitPrice: 220,
+    VendorA: 30,
+    VendorB: 25,
+    VendorC: 28,
+    VendorD: 22,
+  },
+  {
+    ID: 'ID-1030',
+    Product: 'Biometric Device',
+    Category: 'Security',
+    UnitPrice: 180,
+    VendorA: 40,
+    VendorB: 35,
+    VendorC: 45,
+    VendorD: 38,
+  },
+];
+
+export let appointmentData: any[] = [
+    { ApptID: "APT-1001", AppointmentTime: new Date('2025-12-10T11:30:00'), Patient: "John Miller", Doctor: "Dr. Martinez", Room: "R7", Type: "Consultation", Status: "Booked", Fee: 50, Notes: "Requires follow-up in 2 weeks" },
+    { ApptID: "APT-1002", AppointmentTime: new Date('2025-12-10T12:00:00'), Patient: "Emma Wilson", Doctor: "Dr. Smitha", Room: "R1", Type: "Follow-up", Status: "Canceled", Fee: 75, Notes: "Prescribed medication after evaluation" },
+    { ApptID: "APT-1003", AppointmentTime: new Date('2025-12-10T14:00:00'), Patient: "Liam Davis", Doctor: "Dr. Garcia", Room: "R6", Type: "Emergency", Status: "Completed", Fee: 70, Notes: "Vitals are stable and normal" },
+    { ApptID: "APT-1004", AppointmentTime: new Date('2025-12-10T14:30:00'), Patient: "Olivia Brown", Doctor: "Dr. Brianna", Room: "R4", Type: "Routine Check", Status: "Pending", Fee: 150, Notes: "Lab test recommended for further diagnosis" },
+
+    { ApptID: "APT-1005", AppointmentTime: new Date('2025-12-11T11:30:00'), Patient: "Noah Taylor", Doctor: "Dr. Davis", Room: "R8", Type: "Lab Test", Status: "Booked", Fee: 200, Notes: "Under observation for short duration" },
+    { ApptID: "APT-1006", AppointmentTime: new Date('2025-12-11T12:00:00'), Patient: "Ava Anderson", Doctor: "Dr. Johnson", Room: "R2", Type: "Consultation", Status: "Completed", Fee: 125, Notes: "Follow-up completed successfully" },
+    { ApptID: "APT-1007", AppointmentTime: new Date('2025-12-11T14:00:00'), Patient: "James Thomas", Doctor: "Dr. Williams", Room: "R3", Type: "Emergency", Status: "Booked", Fee: 300, Notes: "Patient condition improving steadily" },
+    { ApptID: "APT-1008", AppointmentTime: new Date('2025-12-11T15:00:00'), Patient: "Sophia Jackson", Doctor: "Dr. Smitha", Room: "R1", Type: "Routine Check", Status: "Pending", Fee: 120, Notes: "Initial diagnosis recorded" },
+
+    { ApptID: "APT-1009", AppointmentTime: new Date('2025-12-12T11:30:00'), Patient: "Lucas White", Doctor: "Dr. Brianna", Room: "R4", Type: "Follow-up", Status: "Completed", Fee: 180, Notes: "Further evaluation needed" },
+    { ApptID: "APT-1010", AppointmentTime: new Date('2025-12-12T12:00:00'), Patient: "Mia Harris", Doctor: "Dr. Davis", Room: "R8", Type: "Consultation", Status: "Booked", Fee: 220, Notes: "Routine check completed" },
+    { ApptID: "APT-1011", AppointmentTime: new Date('2025-12-12T14:00:00'), Patient: "Ethan Martin", Doctor: "Dr. Garcia", Room: "R6", Type: "Lab Test", Status: "Pending", Fee: 90, Notes: "Medication adjusted" },
+    { ApptID: "APT-1012", AppointmentTime: new Date('2025-12-12T15:30:00'), Patient: "Amelia Thompson", Doctor: "Dr. Martinez", Room: "R7", Type: "Emergency", Status: "Canceled", Fee: 160, Notes: "Diet plan suggested" },
+
+    { ApptID: "APT-1013", AppointmentTime: new Date('2025-12-13T11:30:00'), Patient: "Daniel Garcia", Doctor: "Dr. Johnson", Room: "R2", Type: "Consultation", Status: "Booked", Fee: 210, Notes: "Symptoms reduced" },
+    { ApptID: "APT-1014", AppointmentTime: new Date('2025-12-13T12:00:00'), Patient: "Harper Martinez", Doctor: "Dr. Williams", Room: "R3", Type: "Follow-up", Status: "Completed", Fee: 260, Notes: "Referred to specialist" },
+    { ApptID: "APT-1015", AppointmentTime: new Date('2025-12-13T14:30:00'), Patient: "Henry Robinson", Doctor: "Dr. Smitha", Room: "R1", Type: "Routine Check", Status: "Pending", Fee: 80, Notes: "Scheduled for scan" },
+    { ApptID: "APT-1016", AppointmentTime: new Date('2025-12-13T16:00:00'), Patient: "Ella Clark", Doctor: "Dr. Joanna", Room: "R5", Type: "Lab Test", Status: "Booked", Fee: 140, Notes: "Test results reviewed" },
+
+    { ApptID: "APT-1017", AppointmentTime: new Date('2025-12-10T15:00:00'), Patient: "Alexander Rodriguez", Doctor: "Dr. Garcia", Room: "R6", Type: "Emergency", Status: "Completed", Fee: 170, Notes: "Condition stable" },
+    { ApptID: "APT-1018", AppointmentTime: new Date('2025-12-10T16:30:00'), Patient: "Grace Lewis", Doctor: "Dr. Martinez", Room: "R7", Type: "Consultation", Status: "Booked", Fee: 230, Notes: "Recovery in progress" },
+    { ApptID: "APT-1019", AppointmentTime: new Date('2025-12-10T17:30:00'), Patient: "Michael Lee", Doctor: "Dr. Davis", Room: "R8", Type: "Follow-up", Status: "Pending", Fee: 270, Notes: "Minor symptoms present" },
+
+    { ApptID: "APT-1020", AppointmentTime: new Date('2025-12-11T15:30:00'), Patient: "Chloe Walker", Doctor: "Dr. Smitha", Room: "R1", Type: "Routine Check", Status: "Canceled", Fee: 60, Notes: "Follow-up next month" },
+
+    { ApptID: "APT-1021", AppointmentTime: new Date('2025-12-11T16:30:00'), Patient: "Benjamin Hall", Doctor: "Dr. Brianna", Room: "R4", Type: "Lab Test", Status: "Booked", Fee: 110, Notes: "Observation continued" },
+    { ApptID: "APT-1022", AppointmentTime: new Date('2025-12-11T17:30:00'), Patient: "Zoe Allen", Doctor: "Dr. Johnson", Room: "R2", Type: "Consultation", Status: "Completed", Fee: 190, Notes: "Treatment ongoing" },
+
+    { ApptID: "APT-1023", AppointmentTime: new Date('2025-12-12T16:30:00'), Patient: "Jacob Young", Doctor: "Dr. Williams", Room: "R3", Type: "Emergency", Status: "Pending", Fee: 240, Notes: "Improvement noted" },
+
+    { ApptID: "APT-1024", AppointmentTime: new Date('2025-12-12T17:30:00'), Patient: "Lily King", Doctor: "Dr. Garcia", Room: "R6", Type: "Routine Check", Status: "Booked", Fee: 280, Notes: "Discharge planned" },
+
+    { ApptID: "APT-1025", AppointmentTime: new Date('2025-12-13T15:00:00'), Patient: "Logan Wright", Doctor: "Dr. Martinez", Room: "R7", Type: "Follow-up", Status: "Completed", Fee: 130, Notes: "Checkup completed" },
+
+    { ApptID: "APT-1026", AppointmentTime: new Date('2025-12-13T16:30:00'), Patient: "Aria Scott", Doctor: "Dr. Smitha", Room: "R1", Type: "Consultation", Status: "Booked", Fee: 155, Notes: "Additional tests advised" },
+
+    { ApptID: "APT-1027", AppointmentTime: new Date('2025-12-13T17:30:00'), Patient: "David Green", Doctor: "Dr. Brianna", Room: "R4", Type: "Lab Test", Status: "Pending", Fee: 205, Notes: "Rest recommended" },
+
+    { ApptID: "APT-1028", AppointmentTime: new Date('2025-12-12T15:00:00'), Patient: "Scarlett Adams", Doctor: "Dr. Davis", Room: "R8", Type: "Emergency", Status: "Canceled", Fee: 225, Notes: "Fluid intake increased" },
+
+    { ApptID: "APT-1029", AppointmentTime: new Date('2025-12-10T16:00:00'), Patient: "Joseph Baker", Doctor: "Dr. Johnson", Room: "R2", Type: "Routine Check", Status: "Booked", Fee: 265, Notes: "Short-term medication given" },
+
+    { ApptID: "APT-1030", AppointmentTime: new Date('2025-12-10T17:00:00'), Patient: "Layla Nelson", Doctor: "Dr. Williams", Room: "R3", Type: "Follow-up", Status: "Completed", Fee: 295, Notes: "Monitoring advised" }
+];
+export let stackedHeaderData: Object[] = [];
+
+   const customerName: string[] = ["VINET", "TOMSP", "HANAR", "VICTE", "SUPRD", "CHOPS", "RICSU", "WELLI", "HILAA", "ERNSH", "CENTC", "OTTIK", "QUEDE"];
+   const shipCities: string[] = ["Reims", "Münster", "Rio de Janeiro", "Lyon", "Charleroi", "Bern", "Genève", "Resende", "San Cristóbal", "Graz", "México D.F.", "Köln", "Rio de Janeiro"];
+   const shipCountries: string[] = ["France", "Germany", "Brazil", "Belgium", "Switzerland", "Austria", "Mexico", "Venezuela"];
+   const statusOptions: string[] = ["Delivered", "Delivered", "In-progress", "Delivered", "In-progress", "In-progress", "Delivered", "Delivered", "In-progress", "Delivered"];
+   const date: Date[] = [new Date(1704067200000), new Date(1706745600000), new Date(1730467200000), new Date(1727788800000), new Date(1725206400000), new Date(1722528000000), new Date(1719849600000),
+      new Date(1717312000000), new Date(1714720000000), new Date(1712041600000), new Date(1709459200000), new Date(1706781000000), new Date(1704288000000)];
+   const freightValues: number[] = [10.5, 20.75, 30.0, 40.25, 50.6, 60.85, 70.9, 80.1, 90.45, 100.55];
+   const feedbackValues: number[] = [1, 2, 3, 4, 5];
+   
+   for (let i = 1; i <= 830; i++) {
+   stackedHeaderData.push({
+      OrderID: 150000 + i,
+      CustomerID: 1000 + i,
+      CustomerName: customerName[i % customerName.length],
+      OrderDate: date[i % date.length],
+      ShippedDate: date[i % date.length],
+      Freight: freightValues[i % freightValues.length],
+      ShipName: customerName[i % customerName.length] + " Logistics",
+      ShipAddress: "Address " + i,
+      ShipCity: shipCities[i % shipCities.length],
+      ShipRegion: null,
+      ShipCountry: shipCountries[i % shipCountries.length],
+      Year: 2025,
+      Salary: Math.floor(Math.random() * 30000) + 25000,
+      Feedback: statusOptions[i % statusOptions.length] === "In-progress" ? 0 : feedbackValues[i % feedbackValues.length],
+      Status: statusOptions[i % statusOptions.length]
+   });
+}

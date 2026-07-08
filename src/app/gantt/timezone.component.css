@@ -1,4 +1,30 @@
-.e-bigger .previous-timespan, .e-bigger .next-timespan {
+.timezone-toolbar {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.timezone-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.timezone-selector label {
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.timeline-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.e-bigger .previous-timespan,
+.e-bigger .next-timespan {
     height: 38px !important;
     width: 38px !important;
     padding: 0 !important;
@@ -6,6 +32,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .previous-timespan,
 .next-timespan {
     height: 32px !important;

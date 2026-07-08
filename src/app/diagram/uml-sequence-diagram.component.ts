@@ -6,6 +6,7 @@ import {
 import {
   Diagram,
   UmlSequenceParticipant,
+  UmlSequenceParticipantStereotype,
   UmlSequenceActivationBox,
   UmlSequenceMessageType,
   UmlSequenceFragmentType,
@@ -26,11 +27,11 @@ Diagram.Inject(UndoRedo);
  */
 
 @Component({
-    selector: 'app-root',
-    templateUrl: 'uml-sequence-diagram.html',
-    encapsulation: ViewEncapsulation.None,
-    standalone: true,
-    imports: [SBActionDescriptionComponent, DiagramModule, SBDescriptionComponent]
+  selector: 'app-root',
+  templateUrl: 'uml-sequence-diagram.html',
+  encapsulation: ViewEncapsulation.None,
+  standalone: true,
+  imports: [SBActionDescriptionComponent, DiagramModule, SBDescriptionComponent]
 })
 export class UmlSequenceComponent implements OnInit {
   @ViewChild('diagram')
@@ -42,7 +43,7 @@ export class UmlSequenceComponent implements OnInit {
 
   public sequenceModel: any;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     // Define the sequence diagram model with participants, messages, and fragments
@@ -54,12 +55,13 @@ export class UmlSequenceComponent implements OnInit {
         {
           id: "User",
           content: "User",
-          // Indicates that User is an actor
-          isActor: true
+          // Indicates that User is an actor,
+          stereotype: UmlSequenceParticipantStereotype.Actor
         },
         {
           id: "Transaction",
           content: "Transaction",
+          stereotype: UmlSequenceParticipantStereotype.Control,
           // Activation periods for the Transaction participant
           activationBoxes: [
             { id: "act1", startMessageID: 'msg1', endMessageID: 'msg4' }
@@ -68,6 +70,7 @@ export class UmlSequenceComponent implements OnInit {
         {
           id: "FraudDetectionSystem",
           content: "Fraud Detection System",
+          stereotype: UmlSequenceParticipantStereotype.Entity,
           // Activation periods for the Fraud Detection System participant
           activationBoxes: [
             { id: "act2", startMessageID: 'msg2', endMessageID: 'msg3' },
@@ -131,14 +134,8 @@ public connectorDefaults(connector: Connector): void {
 
   // Default settings for nodes
   public nodeDefaults(node: any): void {
-    // participant node
-    if (node.data instanceof UmlSequenceParticipant) {
-      if (!node.data.isActor) {
-        node.annotations[0].style.color = 'white';
-      }
-    }
     // activation node
-    else if (node.data instanceof UmlSequenceActivationBox) {
+    if (node.data instanceof UmlSequenceActivationBox) {
       node.style = { fill: 'orange', strokeColor: 'orange' };
     }
   }

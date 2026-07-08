@@ -331,6 +331,7 @@ export class DynamicBindingComponent implements OnInit {
       pivot.loadPersistData(JSON.stringify(entireReportSettings));
       this.shouldAutoConfig = false;
       pivot.refresh();
+      pivot.engineModule = new PivotEngine();
       return;
     }
 
@@ -390,8 +391,10 @@ export class DynamicBindingComponent implements OnInit {
           finalize();
           return;
         } catch {
-          reportSettings.dataSource = this.currentData;
-          reportSettings.type = pivot.dataSourceSettings.type || 'JSON';
+          if (!(reportSettings.url !== '' && reportSettings.type === 'CSV')) {
+            reportSettings.dataSource = this.currentData;
+            reportSettings.type = pivot.dataSourceSettings.type || 'JSON';
+          }
           finalize();
           return;
         }
@@ -414,8 +417,12 @@ export class DynamicBindingComponent implements OnInit {
           return;
         }
       } else {
-        reportSettings.dataSource = this.currentData;
-        reportSettings.type = pivot.dataSourceSettings.type || 'JSON';
+        if (reportSettings.type === 'JSON' && !reportSettings.url) {
+          reportSettings.dataSource = data;
+        } else {
+          reportSettings.dataSource = this.currentData;
+          reportSettings.type = pivot.dataSourceSettings.type;
+        }
         finalize();
       }
     } else {
@@ -550,7 +557,7 @@ export class DynamicBindingComponent implements OnInit {
 
     if (itemId === 'remote_report') {
       this.dialogType = 'JSON';
-      this.remoteUrl = 'https://api.jsonbin.io/v3/b/6912d9ecd0ea881f40e12335';
+      this.remoteUrl = 'https://cdn.syncfusion.com/data/report.json';
       this.isDialogOpen = true;
       this.cdr.detectChanges();
     }
@@ -749,7 +756,6 @@ export class DynamicBindingComponent implements OnInit {
       const res = await fetch(cleanUrl, { cache: 'no-store' });
       if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
       const jsonData: any = await res.json();
-
       const unwrap = (obj: any) => {
         if (!obj || typeof obj !== 'object') return obj;
         if ('record' in obj) return obj.record;
@@ -759,7 +765,10 @@ export class DynamicBindingComponent implements OnInit {
         if ('rows' in obj && Array.isArray(obj.rows)) return obj.rows;
         return obj;
       };
-
+      if (jsonData?.chartSettings?.zoomSettings) {
+        jsonData.chartSettings.zoomSettings.toolbarPosition = {};
+        jsonData.chartSettings.zoomSettings.accessibility = {};
+      }
       const unwrappedData = unwrap(jsonData);
 
       const looksLikeReport =
@@ -775,7 +784,7 @@ export class DynamicBindingComponent implements OnInit {
         const reportSettings =
           (unwrappedData as any).dataSourceSettings ?? unwrappedData;
         const isOlapReport = (reportSettings as any)?.providerType === 'SSAS';
-
+        reportSettings.dataSource = data;
         if ((reportSettings as any).dataUrl) {
           this.lastRemote = { kind: 'JSON', url: (reportSettings as any).dataUrl };
         } else if ((reportSettings as any).csvUrl) {
@@ -838,6 +847,7 @@ export class DynamicBindingComponent implements OnInit {
   async onConnectClick(): Promise<void> {
     this.olapUiMessage = '';
     this.loadingSources = true;
+    this.cdr.detectChanges();
 
     try {
       const sources = await this.discoverDataSources(this.olapProxyUrl);
@@ -853,6 +863,7 @@ export class DynamicBindingComponent implements OnInit {
       this.olapDataSources = [];
     } finally {
       this.loadingSources = false;
+      this.cdr.detectChanges();
     }
   }
 
@@ -863,10 +874,12 @@ export class DynamicBindingComponent implements OnInit {
     this.selectedCube = '';
     this.olapCatalogs = [];
     this.olapCubes = [];
+    this.cdr.detectChanges();
 
     if (!v) return;
 
     this.loadingCatalogs = true;
+    this.cdr.detectChanges();
     try {
       const cats = await this.discoverCatalogs(this.olapProxyUrl, v);
       this.olapCatalogs = cats;
@@ -875,6 +888,7 @@ export class DynamicBindingComponent implements OnInit {
       this.olapUiMessage = `Load catalogs failed: ${err.message}`;
     } finally {
       this.loadingCatalogs = false;
+      this.cdr.detectChanges();
     }
   }
 
@@ -883,10 +897,12 @@ export class DynamicBindingComponent implements OnInit {
     this.selectedCatalog = v;
     this.selectedCube = '';
     this.olapCubes = [];
+    this.cdr.detectChanges();
 
     if (!v) return;
 
     this.loadingCubes = true;
+    this.cdr.detectChanges();
     try {
       const cubes = await this.discoverCubes(this.olapProxyUrl, v);
       this.olapCubes = cubes;
@@ -895,20 +911,14 @@ export class DynamicBindingComponent implements OnInit {
       this.olapUiMessage = `Load cubes failed: ${err.message}`;
     } finally {
       this.loadingCubes = false;
+      this.cdr.detectChanges();
     }
   }
 
   async onCubeChange(e: any): Promise<void> {
     const v = e.value;
     this.selectedCube = v;
-
-    const pivot = this.pivotObj;
-    const isOlap =
-      pivot && (pivot.dataSourceSettings as any)?.providerType === 'SSAS';
-
-    if (isOlap && v) {
-      await this.applyOlapBinding({ cube: v });
-    }
+    this.cdr.detectChanges();
   }
 
   async onOlapOk(): Promise<void> {
