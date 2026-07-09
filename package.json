@@ -48,7 +48,10 @@
     "@syncfusion/ej2-angular-image-editor": "*",
     "@syncfusion/ej2-angular-interactive-chat": "*",
     "@syncfusion/ej2-markdown-converter": "*",
-    "@syncfusion/ej2-angular-blockeditor": "*"
+    "@syncfusion/ej2-angular-blockeditor": "*",
+    "marked": "*",
+    "turndown": "*",
+    "turndown-plugin-gfm": "*"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "17.1.2",
