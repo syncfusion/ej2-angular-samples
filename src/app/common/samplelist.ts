@@ -1,6 +1,7 @@
 import { buttonAppRoutes } from '../button/button.module';
 import { chipsAppRoutes } from '../chips/chips.module';
 import { formValidatorAppRoutes } from '../form-validator/form-validator.module';
+import { formRendererAppRoutes } from '../form-renderer/form-renderer.module';
 import { listAppRoutes } from '../listview/listview.module';
 import { gridRouteConfig } from '../grid/grid.module';
 import { treegridRouteConfig } from '../treegrid/treegrid.module';
@@ -183,6 +184,9 @@ export let samplesList: any = [
     },
     {
         'name': 'Form Validator', 'category': 'Forms', 'order': '03', 'path': 'form-validator', 'samples': formValidatorAppRoutes
+    },
+    {
+        'name': 'Form Renderer', 'category': 'Forms', 'order': '04', 'path': 'form-renderer', 'samples': formRendererAppRoutes, 'type': 'preview'
     },
     {
         'name': "Query Builder", 'category': "Forms", 'order': '10', 'path': "query-builder", 'samples': QueryBuilderAppRoutes

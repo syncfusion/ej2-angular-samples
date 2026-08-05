@@ -63,6 +63,7 @@ import { PivotTableSampleModule } from '../pivot-table/pivot-table.module';
 import { RTESampleModule } from '../rich-text-editor/rich-text-editor.module';
 import { MDESampleModule } from '../markdown-editor/markdown-editor.module';
 import { FormValidatorModule } from '../form-validator/form-validator.module';
+import { FormRendererSampleModule } from '../form-renderer/form-renderer.module';
 import { QueryBuilderSampleModule } from '../query-builder/query-builder.module';
 import { GanttSampleModule } from '../gantt/gantt.module';
 import { FileSampleModule } from '../file-manager/file-manager.module';
@@ -167,6 +168,7 @@ const appRoutes: any = [
     { path: 'sankey', loadChildren: import('../sankey-chart/sankey-chart.module').then(m=>m.SankeySampleModule) },
     // Forms
     { path: 'form-validator', loadChildren: import('../form-validator/form-validator.module').then(m=>m.FormValidatorModule) },
+    { path: 'form-renderer', loadChildren: import('../form-renderer/form-renderer.module').then(m=>m.FormRendererSampleModule) },
     { path: 'query-builder', loadChildren: import('../query-builder/query-builder.module').then(m=>m.QueryBuilderSampleModule) },
     { path: ':theme/query-builder/:sample', redirectTo: 'material/query-builder/default' },
     // File Viewers & Editors
@@ -311,6 +313,7 @@ const appRoutes: any = [
         SankeySampleModule,
         // Forms
         FormValidatorModule,
+        FormRendererSampleModule,
         QueryBuilderSampleModule,
         // Editors & Viewers
         RTESampleModule,

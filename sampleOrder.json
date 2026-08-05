@@ -509,6 +509,12 @@
             "default": "Reactive FormValidator"
         }
     },
+    "form-renderer": {
+        "ControlName": "Form Renderer",
+        "Samples": {
+            "default": "Default Functionalities"
+        }
+    },
     "gantt": {
         "ControlName": "Gantt",
         "Samples": {

@@ -1,6 +1,6 @@
 {
   "name": "ej2-angular-samples",
-  "version": "34.1.29",
+  "version": "34.2.2",
   "private": true,
   "dependencies": {
     "@angular/animations": "17.1.2",
@@ -48,7 +48,8 @@
     "@syncfusion/ej2-angular-image-editor": "*",
     "@syncfusion/ej2-angular-interactive-chat": "*",
     "@syncfusion/ej2-markdown-converter": "*",
-    "@syncfusion/ej2-angular-blockeditor": "*"
+    "@syncfusion/ej2-angular-blockeditor": "*",
+    "@syncfusion/ej2-angular-form-renderer": "*"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "17.1.2",
@@ -69,10 +70,13 @@
     "karma-coverage": "2.2.0",
     "karma-jasmine": "5.1.0",
     "karma-jasmine-html-reporter": "2.0.0",
+    "marked": "12.0.2",
     "node-fetch": "2.6.7",
     "openai": "4.57.0",
     "shelljs": "0.8.5",
     "tslib": "2.3.0",
+    "turndown": "^7.1.1",
+    "turndown-plugin-gfm": "^1.0.2",
     "typescript": "5.3.3",
     "zone.js": "0.14.3"
   },

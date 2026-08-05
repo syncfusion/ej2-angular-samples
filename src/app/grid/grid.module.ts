@@ -87,6 +87,7 @@ import { ConditionalRowSelectionComponent } from './conditional-row-selection.co
 import { PinnedRowsComponent } from './pinned-rows.component';
 import { CellEditComponent } from './cell-editing.component';
 import { DomVirtualizationComponent } from './domvirtualization.component';
+import { ProductCatalogComponent } from './product.catalog.component';
 
 export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/over-view', component: OverViewComponent, 'name': 'Overview', description: 'This demo for Essential JS 2 grid component is an overview of how to display and manipulate large data with configuration options.', order: '01', category: 'Data Grid' },
@@ -96,7 +97,9 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/loading-animation', component: LoadingAnimationComponent, name: 'Loading Animation',  description: 'This demo for Essential JS 2 grid component shows the loading indicator when grid loading and refreshing.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/empty-record-template', component: EmptyRecordTemplateComponent, name: 'Empty Record Template',  description: 'This demo for Essential JS 2 grid component demonstrates usage of template in Grid to shown element or text or image or gif icon instead of displaying the empty record message.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/chart', component: ChartComponent, name: 'Integrate Chart in Grid',   description: 'This demo of the Essential JS 2 Grid component showcases the visual representation of data using a chart.', order: '01', category: 'Data Grid', hideOnDevice: true },
- { 'path': ':theme/grid/fifa-statistics', component: FIFAStatisticsComponent, name: 'FIFA Statistics',  description: 'This demo for Essential Studio Angular grid component show the Product Use Case of FIFA Statistics', order: '17', category: 'Product Use Case' },
+    
+    { 'path': ':theme/grid/fifa-statistics', component: FIFAStatisticsComponent, name: 'FIFA Statistics',  description: 'This demo for Essential Studio Angular grid component show the Product Use Case of FIFA Statistics', order: '17', category: 'Product Use Case' },
+    { 'path': ':theme/grid/product.catalog', component: ProductCatalogComponent, name: 'Product Category', type: 'new', order: '17', description: 'This demo for Essential JS 2 grid component shows a comprehensive product management dashboard with custom column templates, detail row expansion, and advanced filtering.', category: 'Product Use Case', api: '{"GridComponent":["dataSource","allowSorting","allowFiltering","filterSettings"]}', sourceFiles: [{ displayName: 'product.catalog.component.ts', path: 'src/app/grid/product.catalog.component.ts' }, { displayName: 'product.catalog.html', path: 'src/app/grid/product.catalog.html' }, { displayName: 'product.catalog.style.css', path: 'src/app/grid/product.catalog.style.css' }] },
 
     { 'path': ':theme/grid/local-data', component: LocalDataComponent, 'name': 'Local Data', description: 'This demo for Essential JS 2 grid component shows how to bind with a local data source.', order: '02', category: 'Data Binding' },
     { 'path': ':theme/grid/remote-data', component: DataBindingComponent, 'name': 'Remote Data', description: 'This demo for Essential JS 2 grid component shows how to consume data from a remote data service.', order: '02', category: 'Data Binding' },

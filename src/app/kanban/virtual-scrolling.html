@@ -1,6 +1,6 @@
 <div class="control-section">
     <div class="content-wrapper">
-        <ejs-kanban #kanbanObj id="KanbanVirtualScrolling" enableVirtualization="true" [dataSource]='kanbanData' keyField='Status' 
+        <ejs-kanban #kanbanObj id="KanbanVirtualScrolling" enableVirtualization="true" [dataSource]='kanbanData' keyField='Status' height='525px'
             enableTooltip="true" [columns]='columnsSettings' [cardSettings]='cardSettings' 
             [dialogSettings]="dialogSettings" (cardRendered)="cardRendered($event)">
            <ng-template #cardSettingsTemplate let-data>
