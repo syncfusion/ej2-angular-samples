@@ -78,7 +78,10 @@
     "turndown": "^7.1.1",
     "turndown-plugin-gfm": "^1.0.2",
     "typescript": "5.3.3",
-    "zone.js": "0.14.3"
+    "zone.js": "0.14.3",
+    "marked": "*",
+    "turndown": "*",
+    "turndown-plugin-gfm": "*"
   },
   "scripts": {
     "ng": "ng",
