@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild  } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, Inject  } from '@angular/core';
 import { SpeechToTextModule, SpeechToTextComponent, TranscriptChangedEventArgs, ErrorEventArgs, StopListeningEventArgs } from '@syncfusion/ej2-angular-inputs'
 import { ChatUIComponent, ChatUIModule, MessageModel, UserModel } from '@syncfusion/ej2-angular-interactive-chat';
 
@@ -14,6 +14,10 @@ export class UseCaseSpeechToTextComponent  {
 
   @ViewChild('speechToText') speechToTextInstance!: SpeechToTextComponent;
   @ViewChild('chatUI') chatUIInstance!: ChatUIComponent;
+
+  constructor(@Inject('sourceFiles') private sourceFiles: any) {
+                    sourceFiles.files = ['use-case.css'];
+  }
 
   public user: UserModel = { id: 'testing-user', user: 'Testing User' };
   private msgIdx: number = -1;

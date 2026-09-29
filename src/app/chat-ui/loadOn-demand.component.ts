@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Inject } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChatUIModule, UserModel, MessageModel } from '@syncfusion/ej2-angular-interactive-chat';
@@ -21,7 +21,9 @@ export class ChatUILoadOnDemandComponent {
     public baseDate = new Date();
     public dayIncrement = 24 * 60 * 60 * 1000;
     public authorNames = ["Albert", "Michale"];
-
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+            sourceFiles.files = ['loadOn-demand.component.css'];
+    }
     public ngOnInit(): void {
         this.baseDate.setDate(this.baseDate.getDate() - 3);
         for (let i = 1; i <= 200; i++) {

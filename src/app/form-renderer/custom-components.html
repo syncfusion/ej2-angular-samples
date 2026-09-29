@@ -1,0 +1,175 @@
+<main>
+<div>
+    <div class="col-lg-12 control-section">
+        <div id="form-control control-wrapper" style="padding-left: 100px; padding-right: 100px">
+
+            <ejs-form-renderer #formObj id="form-renderer-control" [schema]="formSchema">
+                <e-customwidgetsettings>
+
+                    <!-- Textbox template (by templateId) -->
+                    <e-customwidgetsetting templateId="textboxTemplate">
+                        <ng-template #template let-data>
+                            <input
+                                class="e-input"
+                                type="text"
+                                [id]="'form-renderer-control-' + (data.fieldData?.id || data.id)"
+                                [name]="data.fieldData?.name || data.name"
+                                [placeholder]="data.fieldData?.placeholder || data.placeholder || ''"
+                                [value]="data.value || ''"
+                                (change)="onInputChange($event, data, formObj)"
+                                (blur)="onInputChange($event, data, formObj)"
+                            />
+                        </ng-template>
+                    </e-customwidgetsetting>
+
+                    <!-- Email template (by templateId) -->
+                    <e-customwidgetsetting templateId="emailTemplate">
+                        <ng-template #template let-data>
+                            <input
+                                class="e-input"
+                                [type]="data.fieldData?.textboxType || data.textboxType || 'email'"
+                                [id]="'form-renderer-control-' + (data.fieldData?.id || data.id)"
+                                [name]="data.fieldData?.name || data.name"
+                                [placeholder]="data.fieldData?.placeholder || data.placeholder || ''"
+                                [value]="data.value || ''"
+                                (change)="onInputChange($event, data, formObj)"
+                                (blur)="onInputChange($event, data, formObj)"
+                            />
+                        </ng-template>
+                    </e-customwidgetsetting>
+
+                    <!-- Dropdown template (by type) -->
+                    <e-customwidgetsetting type="dropdown">
+                        <ng-template #template let-data>
+                            <select
+                                class="fr-dropdown"
+                                [id]="'form-renderer-control-' + (data.fieldData?.id || data.id)"
+                                [name]="data.fieldData?.name || data.name"
+                                (change)="onSelectChange($event, data, formObj)">
+                                <option
+                                    *ngFor="let opt of (data.fieldData?.options || data.options || [])"
+                                    [value]="opt.value">
+                                    {{ opt.text }}
+                                </option>
+                            </select>
+                        </ng-template>
+                    </e-customwidgetsetting>
+
+                    <!-- Textarea template (by type) -->
+                    <e-customwidgetsetting type="textarea">
+                        <ng-template #template let-data>
+                            <textarea
+                                class="e-input"
+                                [id]="'form-renderer-control-' + (data.fieldData?.id || data.id)"
+                                [name]="data.fieldData?.name || data.name"
+                                [placeholder]="data.fieldData?.placeholder || data.placeholder || ''"
+                                [minlength]="data.fieldData?.minLength || data.minLength"
+                                [maxlength]="data.fieldData?.maxLength || data.maxLength"
+                                [rows]="data.fieldData?.rows || data.rows || 3"
+                                (change)="onTextareaChange($event, data, formObj)"
+                                (blur)="onTextareaChange($event, data, formObj)">
+                            </textarea>
+                        </ng-template>
+                    </e-customwidgetsetting>
+
+                    <!-- Checkbox template (by type) -->
+                    <e-customwidgetsetting type="checkbox">
+                        <ng-template #template let-data>
+                            <label style="font-size: 14px; font-weight: 500;"
+                                [for]="'form-renderer-control-' + (data.fieldData?.id || data.id)">
+                                <input
+                                    type="checkbox"
+                                    style="margin-right: 10px; height: 15px; width: 15px;"
+                                    [id]="'form-renderer-control-' + (data.fieldData?.id || data.id)"
+                                    [name]="data.fieldData?.name || data.name"
+                                    [checked]="data.value || false"
+                                    (change)="onCheckboxChange($event, data, formObj)"
+                                />
+                                {{ data.fieldData?.label || data.label }}
+                            </label>
+                        </ng-template>
+                    </e-customwidgetsetting>
+
+                    <!-- Button template (by type) -->
+                    <e-customwidgetsetting type="button">
+                        <ng-template #template let-data>
+                            <button
+                                class="e-btn e-primary"
+                                [id]="'form-renderer-control-' + (data.fieldData?.id || data.id)"
+                                [name]="data.fieldData?.name || data.name"
+                                [type]="data.fieldData?.buttonType || data.buttonType || 'button'">
+                                {{ data.fieldData?.label || data.label }}
+                            </button>
+                        </ng-template>
+                    </e-customwidgetsetting>
+
+                </e-customwidgetsettings>
+            </ejs-form-renderer>
+
+        </div>
+    </div>
+</div>
+</main>
+
+<div id="action-description">
+    <p>
+        This sample demonstrates how to render custom components for individual form field components
+        in the Form Renderer control. Templates allow you to replace the built-in form components with
+        custom or third-party UI components, enabling greater flexibility and customization.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this sample, a "Contact Us" form is rendered using the Form Renderer control. The text box,
+        text area, drop-down list, checkbox, and button fields are customized using HTML templates.
+    </p>
+    <p>
+        Users can interactively fill out the form, benefit from built-in validation, and submit their
+        responses for data collection.
+    </p>
+    <p>
+        Design custom forms visually and export their schema in seconds with our interactive
+        <a href="https://ej2.syncfusion.com/angular/demos/#/bootstrap5/form-builder/default">Form Builder</a> — a powerful
+        no-code tool for building responsive forms through an intuitive drag-and-drop interface.
+    </p>
+</div>
+
+<!-- custom code start -->
+<style>
+    .fr-dropdown {
+        width: 100%;
+        height: 32px;
+        border-radius: 5px;
+        background-color: inherit;
+        color: inherit;
+    }
+    .bootstrap5\.3 .fr-dropdown, .bootstrap5\.3-dark .fr-dropdown,
+    .fluent2 .fr-dropdown, .fluent2-dark .fr-dropdown,
+    .fluent2-highcontrast .fr-dropdown,
+    .tailwind3 .fr-dropdown, .tailwind3-dark .fr-dropdown {
+        border-color: var(--color-sf-border);
+    }
+    .material3 .fr-dropdown, .material3-dark .fr-dropdown {
+        border-color: rgba(var(--color-sf-outline));
+    }
+    .bootstrap5\.3 .fr-dropdown option, .bootstrap5\.3-dark .fr-dropdown option,
+    .fluent2 .fr-dropdown option, .fluent2-dark .fr-dropdown option,
+    .fluent2-highcontrast .fr-dropdown option {
+        background-color: var(--color-sf-flyout-bg-color);
+        color: var(--color-sf-content-text-color);
+    }
+    .material3 .fr-dropdown option {
+        background-color: linear-gradient(0deg, rgba(var(--color-sf-surface), 1), rgba(var(--color-sf-surface), 1)), rgba(var(--color-sf-surface));
+        color: rgba(var(--color-sf-on-surface));
+    }
+    .material3-dark .fr-dropdown option { background-color: #000; color: #fff; }
+    .tailwind3 .fr-dropdown option, .tailwind3-dark .fr-dropdown option {
+        background-color: var(--color-sf-flyout-bg-color);
+        color: var(--color-sf-flyout-text-color);
+    }
+    .fluent2 #form-renderer-control-message,
+    .fluent2-dark #form-renderer-control-message,
+    .fluent2-highcontrast #form-renderer-control-message { height: auto; }
+    #form-renderer-control .form-group { margin-bottom: 0px; }
+</style>
+<!-- custom code end -->

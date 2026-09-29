@@ -12,6 +12,9 @@
             padding-top: 0px !important;
         }
     }
+    .diagram-key-board-functions .sample-border {
+        border-right: 1px solid #D5D5D5;
+    }
 </style>
 <div id="action-description">
     <p>
@@ -19,8 +22,8 @@
         interactions.
     </p>
 </div>
-<div class="control-section diagram-key-board-functions">
-    <div class="col-lg-8 control-section">
+<div class="control-section diagram-key-board-functions" style="padding-top: 0px;">
+    <div class="col-lg-8 control-section sample-border">
         <div class="content-wrapper">
             <ejs-diagram #diagram id="diagram" width="100%" height="645px" [getNodeDefaults]='nodeDefaults' [layout]='layout' [dataSourceSettings]='data'
                 [snapSettings]='snapSettings' [commandManager]='commandManager'>
@@ -143,6 +146,4 @@
         and the corresponding key gestures are listed in the property panel.
     </p>
     <br>
-
-    <p>Looking for the full Angular Diagram component overview, features, pricing, and documentation? Visit the <a href="https://www.syncfusion.com/angular-components/angular-diagram" target="_blank">Angular Diagram</a> page.</p>
 </div>

@@ -185,25 +185,65 @@ export class RestaurantMenuComponent {
   }
 
   printCart(): void {
-    var treeGridElement = this.treegrid;
-    var rect = treeGridElement.element.getBoundingClientRect();
-    var windowWidth = 400;
-    var windowHeight = 600;
-    var leftPosition = rect.left + window.scrollX + (rect.width / 2) - (windowWidth / 2);
-    var topPosition = rect.top + window.scrollY + (rect.height / 2) - (windowHeight / 2);
-    var printContents = document.querySelector('#cartDialog .e-dlg-content').innerHTML;
-    var printWindow = window.open('', '', `height=${windowHeight},width=${windowWidth},left=${leftPosition},top=${topPosition}`);
-    printWindow.document.write('<html><head><title>Cart Details</title>');
-    printWindow.document.write('<style>body{font-family:sans-serif;} ul{margin-bottom:16px;} div{margin-bottom:4px;}</style>');
-    printWindow.document.write('</head><body>');
-    printWindow.document.write(printContents);
-    printWindow.document.write('</body></html>');
+    const itemsInCart = this.foodOrderDetails.filter(function (item) {
+      return item.count > 0;
+      });
+    if (!itemsInCart.length) {
+        alert('There is no item selected.');
+        return;
+    }
+    var printContentsElement = document.querySelector('#cartDialog .e-dlg-content');
+    var printContents = printContentsElement
+        ? (printContentsElement as HTMLElement).innerHTML
+        : '';
+    var windowWidth = Math.floor(window.screen.availWidth * 0.9);
+    var windowHeight = Math.floor(window.screen.availHeight * 0.9);
+    var leftPosition = Math.floor((window.screen.availWidth - windowWidth) / 2);
+    var topPosition = Math.floor((window.screen.availHeight - windowHeight) / 2);
+    var printWindow = window.open(
+        '',
+        'CartPrintWindow',
+        'width=' + windowWidth +
+        ',height=' + windowHeight +
+        ',left=' + leftPosition +
+        ',top=' + topPosition +
+        ',resizable=yes,scrollbars=yes'
+        );
+    printWindow.document.open();
+    printWindow.document.write(
+        '<html>' +
+            '<head>' +
+                '<title>Cart Details</title>' +
+                '<style>' +
+                    'body {' +
+                        'font-family: sans-serif;' +
+                        'margin: 20px;' +
+                        'box-sizing: border-box;' +
+                    '}' +
+                    'ul {' +
+                        'margin-bottom: 16px;' +
+                    '}' +
+                    'div {' +
+                        'margin-bottom: 4px;' +
+                    '}' +
+                '</style>' +
+            '</head>' +
+            '<body>' +
+                  printContents +
+            '</body>' +
+            '</html>'
+        );
+    printWindow.document.close();
+    printWindow.onload = function () {
     printWindow.focus();
-    printWindow.addEventListener('afterprint', function (args) {
-      printWindow.close();
-      this.clearCart();
+    setTimeout(function () {
+        printWindow.print();
+    }, 300);
+    };
+    printWindow.addEventListener('afterprint', function () {
+        printWindow.close();
+        this.clearCart();
     }.bind(this));
-    printWindow.print();
   }
 
   onBeforeOpen(args: any): void {

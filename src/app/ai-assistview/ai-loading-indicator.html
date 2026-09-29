@@ -1,0 +1,63 @@
+
+<div class="control-section">
+    <div class="col-lg-8 control-section">
+        <div class="loading-indicator-aiassistview">
+            <ejs-aiassistview #loadingAIAssistView
+                [bannerTemplate]="bannerTemplate"
+                [toolbarSettings]="toolbarSettings"
+                [enableStreaming]="true"
+                [promptSuggestions]="promptSuggestions"
+                [responseAnimationTemplate]="currentAnimationTemplate"
+                (created)="created()"
+                (promptRequest)="promptRequest($event)">
+                <ng-template #bannerTemplate>
+                    <div class="banner-content">
+                        <div class="e-icons e-assistview-icon"></div>
+                        <h3>AI Assistance</h3>
+                        <i>Explore different loading indicator types displayed while AI-generated responses are being processed.</i>
+                    </div>
+                </ng-template>
+            </ejs-aiassistview>
+        </div>
+    </div>
+    <div class="col-lg-4 property-section loading-indicator-property-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+            <table class="property-panel-table" id="property" title="Properties">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div>Loading Types</div>
+                        </td>
+                        <td style="padding-right: 10px">
+                            <div>
+                                <ejs-dropdownlist
+                                      id="loadingType"
+                                      width="180px"
+                                      placeholder="Loading Type"
+                                      [dataSource]="loadingTypeOptions"
+                                      [fields]="loadingTypeFields"
+                                      value="dot"
+                                      (change)="onLoadingTypeChange($event)">
+                                </ejs-dropdownlist>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates the loading indicator styles that can be displayed while the AI AssistView is generating a response.</p>
+</div>
+<div id="description">
+    <p>In this example, a custom loading indicator can be rendered while the AI response is being generated. The selected loading type is shown before the actual response is rendered using the <code>responseAnimationTemplate</code> property and removed once the response is added.</p>
+    <ul>
+        <li><strong>Dot type:</strong> Three continuously blinking dots with a smooth scale and opacity animation.</li>
+        <li><strong>Spinner type:</strong> A single circular spinner rotating continuously until response is fetched.</li>
+        <li><strong>Text type:</strong> Status messages that cycle through three stages: "🧠 Understanding request..." → "✍️ Drafting response..." → "🚀 Almost ready...".</li>
+        <li><strong>Text with indicator type:</strong> "Generating" text by three animated dots a waiting indicator until AI response is received.</li>
+    </ul>
+    <p>Switch the dropdown items in the property pane to preview each loading animation and <a href="https://ej2.syncfusion.com/angular/documentation/ai-assistview/toolbar-items" target="_blank">toolbarSettings</a> adds custom toolbar items like a right-aligned Refresh button.</p>
+</div>

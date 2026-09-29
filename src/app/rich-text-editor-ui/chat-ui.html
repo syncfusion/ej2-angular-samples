@@ -1,0 +1,63 @@
+<div class="control-section">
+    <div class="sample-container">
+        <div class="chat-section">
+            <ejs-chatui
+                #defaultChatUI
+                class="chat-component"
+                [headerText]="headerText"
+                [headerIconCss]="headerIconCss"
+                [messages]="chatMessages"
+                [user]="currentUserModel"
+                [showTimeBreak]="showTimeBreak"
+                [loadOnDemand]="loadOnDemand"
+                [messageToolbarSettings]="messageToolbarSettings"
+                footerTemplate="footerTemplate">
+                <ng-template #footerTemplate>
+                    <div class="chat-editor-host">
+                        <ejs-richtexteditor-ui
+                            #editor
+                            id="editor"
+                            placeholder="Type a message..."
+                            [valueFormat]="'html'"
+                            [slashCommandSettings]="slashCommandSettings"
+                            [toolbarSettings]="toolbarSettings"
+                            (created)="onEditorCreated()">
+                        </ejs-richtexteditor-ui>
+                    </div>
+                </ng-template>
+            </ejs-chatui>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample demonstrates a chat interface built using the Angular
+        Chat UI component and Rich Text Editor UI as the message composer.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        The Chat UI component is rendered using Angular component integration
+        and the Rich Text Editor UI is used as the message composer.
+    </p>
+
+    <ul>
+        <li>
+            <code>Chat UI</code> is rendered declaratively using
+            <code>ejs-chatui</code>.
+        </li>
+        <li>
+            <code>Rich Text Editor UI</code> is used inside the Angular
+            footer template as the message composer.
+        </li>
+        <li>
+            <code>Reply</code> selects a message and attaches
+            <code>replyTo</code> metadata when sending.
+        </li>
+        <li>
+            <code>Slash Command</code> is enabled in the editor.
+        </li>
+    </ul>
+</div>

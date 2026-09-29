@@ -1,12 +1,12 @@
 <div class="control-section">
     <div class="views-aiassistview">
-        <div id="aiAssistView" ejs-aiassistview #viewsAIAssistView (created)="onCreate()">
+        <ejs-aiassistview #viewsAIAssistView (created)="onCreate()">
             <e-views>
                 <e-view type="Assist" name="Prompt" [viewTemplate]="promptViewContent()"></e-view>
                 <e-view type="Custom" name="Response" [viewTemplate]="responseViewContent()" iconCss="e-icons e-comment-show"></e-view>
                 <e-view type="Custom" name="Custom" [viewTemplate]="viewTemplate"></e-view>
             </e-views>
-        </div>
+        </ejs-aiassistview>
     </div>
 </div>
 

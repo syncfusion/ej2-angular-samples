@@ -1,0 +1,57 @@
+<div class="control-section">
+	<ejs-grid id="FormulaCell" height="400" [dataSource]="data" [editSettings]="editSettings"
+		 clipMode="EllipsisWithTooltip" [enableAutoFill]="true"
+		[selectionSettings]="selectionSettings">
+		<e-columns>
+			<e-column field="OrderID" headerText="Order ID" width="100" isPrimaryKey="true"
+				[validationRules]="{ required: true }"></e-column>
+			<e-column field="ProductName" headerText="Product Name" width="200"
+				[validationRules]="{ required: true }" [allowEditing]="false"></e-column>
+			<e-column field="Category" headerText="Category" width="150" [allowEditing]="false"></e-column>
+			<e-column field="Quantity" headerText="Quantity" width="120" textAlign="Right"
+				editType="numericedit" [edit]="{ params: { showSpinButton: false } }"></e-column>
+			<e-column field="PricePerUnit" headerText="Price Per Unit" width="140" textAlign="Right"
+				editType="numericedit" format="C2" [edit]="{ params: { showSpinButton: false } }"></e-column>
+			<e-column field="GrossAmount" headerText="Gross Amount" width="150" textAlign="Right"
+				[allowFormula]="true" format="C2"></e-column>
+			<e-column field="TaxAmount" headerText="Tax Amount" width="130" textAlign="Right"
+				[allowFormula]="true" format="C2" [allowEditing]="false"></e-column>
+			<e-column field="TotalAmount" headerText="Total Amount" width="150" textAlign="Right"
+				[allowFormula]="true" format="C2"></e-column>
+		</e-columns>
+
+	</ejs-grid>
+
+	<div id="action-description">
+		<p>This sample demonstrates the Formula Cell feature in the Data Grid, which brings spreadsheet-like calculations directly into grid cells. It enables formulas to be dynamically defined and evaluated based on the values of other cells within the same row.</p>
+	</div>
+	<div id="description">
+		<p>
+			In this demo, formulas are configured directly in the data source and are automatically evaluated during the initial rendering of the grid. Whenever the values of dependent cells change, the calculated fields are instantly recalculated and updated. Formula calculations are enabled for the Gross Amount, Tax Amount, and Total Amount columns by setting the <code>allowFormula</code> property to <code>true</code>.Double-click a cell to edit its value and recalculate formulas automatically.
+		</p>
+		<p>
+			The formulas used are:
+		</p>
+		<ul>
+			<li><b>Gross Amount</b> = Quantity × Price Per Unit</li>
+			<li><b>Tax Amount</b> = Gross Amount × 0.07</li>
+			<li><b>Total Amount</b> = Gross Amount + Tax Amount</li>
+		</ul>
+		<p>
+			When the "Quantity" or "Price Per Unit" values are modified, the Data Grid automatically recalculates the related formula-driven columns, ensuring that all computed values remain accurate and synchronized in real time.
+		</p>
+		 <p><strong>Injecting Module:</strong></p>
+		<p>
+			The Grid component organizes its features into separate, feature-specific modules. To enable the Formula Cell feature, inject the <code>FormulaService</code> and <code>EditService</code> into the <code>providers</code> section.
+		</p>
+		<p>
+			More information on formula cells can be found in the
+			<a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/grid/editing">
+				documentation section</a>.
+		</p>
+		<p>
+			Looking for the full Angular Data Grid component overview, features, pricing, and documentation? Visit our
+			<a target="_blank" href="https://www.syncfusion.com/angular-components/angular-data-grid">Angular Data Grid component</a> page.
+		</p>
+	</div>
+</div>

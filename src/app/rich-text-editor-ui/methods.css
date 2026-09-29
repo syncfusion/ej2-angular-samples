@@ -1,0 +1,63 @@
+.method-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+    gap: 8px;
+}
+
+.method-name {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.method-btn {
+    flex: 0 0 auto;
+    padding: 5px 14px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+#methods-output-panel {
+    margin-top: 16px;
+    padding: 16px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+#methods-output-panel h4 {
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+#methods-output {
+    margin: 0;
+    padding: 12px 14px;
+    background-color: #fff;
+    color: #333;
+    font-size: 13px;
+    line-height: 1.5;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    height: 200px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    box-sizing: border-box;
+}
+
+#methods-output.is-empty {
+    color: #888;
+    font-style: italic;
+}
+
+.e-rte-api-methods {
+    margin-bottom: 1em;
+}

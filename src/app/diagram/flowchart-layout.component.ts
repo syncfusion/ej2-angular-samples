@@ -2,14 +2,14 @@ import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { DiagramComponent, DiagramModule, DiagramTools } from '@syncfusion/ej2-angular-diagrams';
 import {
     Diagram, NodeModel, ConnectorModel, FlowShapeModel, LayoutModel,
-    RulerSettingsModel, FlowchartLayout, DataBinding,
+    RulerSettingsModel, FlowchartLayout, DataBinding, BranchDirection,
     ScrollSettingsModel
 } from '@syncfusion/ej2-diagrams';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { DataManager } from '@syncfusion/ej2-data';
-import { ChangeEventArgs, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
+import { ChangeEventArgs, DropDownListComponent, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 Diagram.Inject(FlowchartLayout, DataBinding);
 
@@ -28,6 +28,11 @@ export class FlowchartLayoutDiagramComponent {
     @ViewChild('diagram')
     //Diagram Properties
     public diagram: DiagramComponent;
+    //References for the Yes and No branch direction dropdowns
+    @ViewChild('yesBranchDirection')
+    public yesBranchDropDown: DropDownListComponent;
+    @ViewChild('noBranchDirection')
+    public noBranchDropDown: DropDownListComponent;
     constructor() {
 
     }
@@ -103,13 +108,30 @@ export class FlowchartLayoutDiagramComponent {
 
     public yesBranchChange(args: ChangeEventArgs): void {
         let value: string = args.value as string;
-        this.diagram.layout.flowchartLayoutSettings.yesBranchDirection = value === 'Same as flow' ? 'SameAsFlow' : value === 'Right in flow' ? 'RightInFlow' : 'LeftInFlow';
+        let yesValue: BranchDirection = value === 'Same as flow' ? 'SameAsFlow' : value === 'Right in flow' ? 'RightInFlow' : 'LeftInFlow';
+        this.diagram.layout.flowchartLayoutSettings.yesBranchDirection = yesValue;
+        if (yesValue !== 'SameAsFlow' && this.diagram.layout.flowchartLayoutSettings.noBranchDirection === yesValue) {
+            let flippedValue: BranchDirection = yesValue === 'LeftInFlow' ? 'RightInFlow' : 'LeftInFlow';
+            this.diagram.layout.flowchartLayoutSettings.noBranchDirection = flippedValue;
+            //Sync the No branch dropdown with the flipped value
+            if (this.noBranchDropDown) {
+                this.noBranchDropDown.index = flippedValue === 'LeftInFlow' ? 0 : 1;
+            }
+        }
         this.diagram.dataBind();
     };
 
     public noBranchChange(args: ChangeEventArgs): void {
         let value: string = args.value as string;
-        this.diagram.layout.flowchartLayoutSettings.noBranchDirection = value === 'Same as flow' ? 'SameAsFlow' : value === 'Right in flow' ? 'RightInFlow' : 'LeftInFlow';
+        let noValue: BranchDirection = value === 'Same as flow' ? 'SameAsFlow' : value === 'Right in flow' ? 'RightInFlow' : 'LeftInFlow';
+        this.diagram.layout.flowchartLayoutSettings.noBranchDirection = noValue;
+        if (noValue !== 'SameAsFlow' && this.diagram.layout.flowchartLayoutSettings.yesBranchDirection === noValue) {
+            let flippedValue: BranchDirection = noValue === 'LeftInFlow' ? 'RightInFlow' : 'LeftInFlow';
+            this.diagram.layout.flowchartLayoutSettings.yesBranchDirection = flippedValue;
+            if (this.yesBranchDropDown) {
+                this.yesBranchDropDown.index = flippedValue === 'LeftInFlow' ? 0 : 1;
+            }
+        }
         this.diagram.dataBind();
     };
 

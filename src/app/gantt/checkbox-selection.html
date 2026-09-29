@@ -1,0 +1,81 @@
+<div class="control-section">
+  <div class="col-lg-10 control-section">
+    <ejs-gantt #checkboxselection id="CheckboxSelection" height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data"
+      [taskFields]="taskSettings" hierarchyCheckboxMode="hierarchy" [allowSelection]="true" [allowFiltering]="true" [labelSettings]="labelSettings" [treeColumnIndex]="2"
+      [splitterSettings]="splitterSettings" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate"
+      [enableHover]="true" [highlightWeekends]="true" [toolbar]="toolbar" [columns]="columns"
+      [selectionSettings]="selectionSettings">
+    </ejs-gantt>
+  </div>
+
+  <div class="col-lg-2 property-section">
+    <div class="property-panel-section">
+      <div class="property-panel-content">
+        <table id="property" class="property-panel-table" title="Properties">
+          <tr>
+            <td class="property-label">
+              <div class="property-title">
+                Hierarchy Checkbox Mode
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="property-input">
+              <div class="dropdown-container">
+                <ejs-dropdownlist
+                  #selectionModeList
+                  [dataSource]='dropDownModeListData'
+                  [fields]='dropDownModeListFields'
+                  (change)="change($event)"
+                  [value]="defaultCheckboxSelectionMode"
+                  aria-label="Select hierarchy checkbox selection mode">
+                </ejs-dropdownlist>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="action-description">
+  <p>
+    This sample demonstrates hierarchy-based checkbox selection in the Gantt Chart. It allows configuring how checkbox selection is propagated across parent and child task records using different hierarchy modes.
+  </p>
+</div>
+
+<div id="description">
+  <p>
+    The hierarchy checkbox selection feature simplifies parent-child selection management by automatically handling descendant propagation and ancestor state calculations. It supports parent selection, child selection, and indeterminate checkbox states without requiring custom implementation. The hierarchy selection behavior can be configured using the
+    <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#hierarchycheckboxmode">hierarchyCheckboxMode</a>
+    property.
+  </p>
+
+  <p>
+    The following hierarchy checkbox modes are supported:
+  </p>
+  <ul>
+    <li>
+      <code>self</code> - Selecting or deselecting a checkbox affects only the current row. Parent and child records remain unchanged.
+    </li>
+    <li>
+      <code>hierarchy</code> - Selecting a parent record automatically selects all descendant records. Child selection updates the corresponding parent state and displays indeterminate states when applicable.
+    </li>
+    <li>
+      <code>filteredHierarchy</code> - Works similar to <code>hierarchy</code>, but checkbox propagation is applied only to the currently visible records after filtering or searching.
+    </li>
+  </ul>
+
+  <p style="font-weight: 500;">Injecting Module:</p>
+
+  <p>
+    Gantt component features are segregated into individual feature-wise modules. To use hierarchy checkbox selection, inject the
+    <code>SelectionService</code> <code>ToolbarService</code> <code>FilterService</code> module using the
+    <code>Gantt.Inject(SelectionService, ToolbarService, FilterService)</code> method.
+  </p>
+
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/selection/selection">selection</a> documentation section.</p>
+    <p>Looking for the full Angular Gantt Chart component overview, features, pricing, and documentation? Visit the <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-gantt-chart">Angular Gantt Chart</a> page.</p>
+</div>

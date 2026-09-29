@@ -1,4 +1,4 @@
-import { Component, ViewChild} from '@angular/core';
+import { Component, ViewChild, Inject} from '@angular/core';
 import { AIAssistViewModule, AIAssistViewComponent, ToolbarSettingsModel, ToolbarItemClickedEventArgs, PromptRequestEventArgs, PromptToolbarSettingsModel, ResponseToolbarSettingsModel, PromptModel } from '@syncfusion/ej2-angular-interactive-chat';
 import * as Marked from 'marked';
 import { getAIResponse } from '../common/ai-service';
@@ -20,6 +20,12 @@ import {AIToastComponent} from '../common/ai-toast.component';
     itemClicked: this.onToolbarItemClicked.bind(this),
   };
 
+  constructor(@Inject('sourceFiles') private sourceFiles: any) {
+          sourceFiles.files = [
+              'ai-text-to-speech.html', 
+              'ai-text-to-speech.component.css'
+          ];
+  }
   private abortController?: AbortController;
   public enableStreaming: boolean = true;
   private stopStreaming: boolean = false;

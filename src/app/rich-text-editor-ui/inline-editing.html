@@ -1,0 +1,27 @@
+<div class="control-section">
+    <div class="sample-container">
+        <div class="default-section">
+            <ejs-richtexteditor-ui
+                id='editor'
+                #editor
+                [value] = 'value'
+                [toolbarSettings]='tools'
+                [quickToolbarSettings]='quickToolbarSettings'
+                placeholder='Type something ...'>
+            </ejs-richtexteditor-ui>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the inline editing mode of the Rich Text Editor UI component. The top toolbar is hidden, and formatting tools are available through a quick toolbar that appears when text is selected.</p>
+</div>
+
+<div id="description">
+    <p>Inline mode can be achieved using the following configuration:</p>
+    <ul>
+        <li><code>toolbarSettings.enable</code> - Disables the main toolbar to provide an inline editing experience.</li>
+        <li><code>quickToolbarSettings.text</code> - Configures the text quicktoolbar that appears when text is selected.</li>
+    </ul>
+    <p>Additionally, the <code>placeholder</code> property is configured to display placeholder text when the editor is empty.</p>
+</div>

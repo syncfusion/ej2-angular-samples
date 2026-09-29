@@ -1,0 +1,61 @@
+<div class="col-lg-8 control-section sb-property-border">
+    <div class="control-wrapper">
+        <div class="sample-container">
+            <div class="default-section">
+                <ejs-richtexteditor-ui id='editor' #editor [placeholder]="'Type or paste content here to try the API methods...'" [toolbarSettings]='tools'></ejs-richtexteditor-ui>
+            </div>
+        </div>
+    </div>
+    <div id="methods-output-panel" class="e-rte-api-methods">
+        <h4>Method Result</h4>
+        <pre id="methods-output" aria-live="polite" [class.is-empty]="!methodResult">{{ methodResult || 'Method result will appear here.' }}</pre>
+    </div>
+</div>
+
+<div class="col-lg-4 property-section">
+    <div class="property-panel-header">API Methods</div>
+    <div id="property" class="property-panel">
+        <div class="property-content">
+            <div class="method-item">
+                <span class="method-name">getHtml</span>
+                <button ejs-button [isPrimary]='true' class="method-btn" (click)='onGetHtml()'>Invoke</button>
+            </div>
+            <div class="method-item">
+                <span class="method-name">getText</span>
+                <button ejs-button [isPrimary]='true' class="method-btn" (click)='onGetText()'>Invoke</button>
+            </div>
+            <div class="method-item">
+                <span class="method-name">getDocument</span>
+                <button ejs-button [isPrimary]='true' class="method-btn" (click)='onGetDocument()'>Invoke</button>
+            </div>
+            <div class="method-item">
+                <span class="method-name">focusIn</span>
+                <button ejs-button [isPrimary]='true' class="method-btn" (click)='onFocus()'>Invoke</button>
+            </div>
+            <div class="method-item">
+                <span class="method-name">focusOut</span>
+                <button ejs-button [isPrimary]='true' class="method-btn" (click)='onBlur()'>Invoke</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the public methods exposed by the Rich Text Editor UI component. Use the
+        property panel on the right to invoke each method and observe the resulting behavior.</p>
+</div>
+
+<div id="description">
+    <p>The Rich Text Editor UI exposes a rich set of public methods that allow you to programmatically interact
+        with the editor instance. The methods shown here are grouped into a single property panel for quick
+        access.</p>
+    <ul>
+        <li><code>getHtml()</code> &mdash; returns the editor content as an HTML string.</li>
+        <li><code>getText()</code> &mdash; returns the editor content as plain text.</li>
+        <li><code>getDocument()</code> &mdash; returns the document markup of the editor content area as a string.</li>
+        <li><code>focusIn()</code> &mdash; focuses the editor.</li>
+        <li><code>focusOut()</code> &mdash; removes focus from the editor.</li>
+    </ul>
+    <p>Type or paste some content into the editor, then click an <strong>Invoke</strong> button to see each
+        method in action. The result of the invoked method is displayed in the panel below the editor.</p>
+</div>

@@ -177,7 +177,7 @@
     font-weight: 700;
     font-size: 15px;
     vertical-align: bottom;
-} 
+}
 
 .content {
 overflow: auto;
@@ -207,7 +207,6 @@ top: 50px;
 #description {
     padding-bottom: 16px;
     padding-left: 20px;
-    opacity: 0.75;
     font-family: Roboto;
     font-size: 13px;
     color: #000000;

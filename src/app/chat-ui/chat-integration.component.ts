@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit,ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, OnInit,ViewEncapsulation, Inject } from '@angular/core';
 import { ChatUIComponent, ChatUIModule, ToolbarSettingsModel, MessageSendEventArgs } from '@syncfusion/ej2-angular-interactive-chat';
 import { ListViewComponent, ListViewModule, SelectEventArgs } from '@syncfusion/ej2-angular-lists';
 import { SplitterComponent, SplitterModule } from '@syncfusion/ej2-angular-layouts';
@@ -33,6 +33,13 @@ export class ChatIntegrationComponent implements OnInit {
   public currentSuggestions = [];
   public headerText = 'Albert';
   public headerIconCss = 'chat_user1_avatar';
+
+  constructor(@Inject('sourceFiles') private sourceFiles: any) {
+                  sourceFiles.files = [
+                    'chat-integration.component.css',
+                    'messageData.ts'
+                  ];
+  }
 
   public headerToolbar: ToolbarSettingsModel = {
     items: [ { iconCss: 'sf-icon-phone-call', align: 'Right', tooltip: 'Audio call' }]

@@ -19,6 +19,7 @@ import { DisabledNavigatorComponent } from './disabled-navigator.component';
 import { MultiPaneComponent } from './multi-pane.component';
 import {StockEventsComponent} from './stock-events.component';
 import { DateTimeCategoryComponent } from './datetime-category.component';
+import { LiveCandlestickComponent } from './live-candlestick.component';
 
 export const stockChartAppRoutes: Object[] = [
     { path: ':theme/stock-chart/default', component: DefaultComponent, name: 'Default', order: '01', category: 'Stock Chart' },
@@ -78,6 +79,10 @@ export const stockChartAppRoutes: Object[] = [
         path: ':theme/stock-chart/stock-events', component: StockEventsComponent,
         name: 'Stock Events', order: '01', category: 'Stock Chart'
     },
+    {
+        path: ':theme/stock-chart/live-candlestick', component: LiveCandlestickComponent,
+        name: 'Live Candlestick Chart', description: "This demo for Essential<sup>®</sup> JS2 Stock Chart control shows dynamic updates using a local in-memory array as the data source. The current candle is updated with series.setData() and a new candle is appended with series.addPoint() on each simulated one-minute tick.", order: '01', category: 'Stock Chart', type: 'new'
+    }
 ];
 
 export const StockChartSampleModule: ModuleWithProviders<any> = RouterModule.forChild(stockChartAppRoutes);

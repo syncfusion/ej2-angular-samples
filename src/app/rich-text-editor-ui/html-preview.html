@@ -1,0 +1,48 @@
+<div class="control-section">
+    <div class="html-preview-sample-view">
+        <ejs-splitter #splitter id='html-preview-splitter'
+            [height]='height'
+            [width]="'100%'"
+            [paneSettings]='paneSettings'
+            (created)='onSplitterCreated()'>
+            <div class="html-preview-editor-pane">
+                <ejs-richtexteditor-ui #editor
+                    id='editor'
+                    [height]="'100%'"
+                    [valueFormat]="'html'"
+                    [value]='value'
+                    [toolbarSettings]='toolbarSettings'
+                    [saveInterval]='1'
+                    (created)='onEditorCreated()'
+                    (actionComplete)='onActionComplete()'
+                    (change)='onChange()'>
+                </ejs-richtexteditor-ui>
+            </div>
+            <div class="html-preview-header">
+                <div class="html-preview-header-title">
+                    <div class="html-preview-header-content">
+                        <h6 class="html-preview-title"><b>HTML SOURCE</b></h6>
+                        <button ejs-button id="copyHtmlBtn" class="e-btn e-flat" title="Copy HTML to clipboard" (click)='onCopyHtml()'>
+                            <span class="e-icons e-btn-icon e-copy"></span> Copy
+                        </button>
+                    </div>
+                </div>
+                <div class="html-preview-source-pane" #sourcePane></div>
+            </div>
+        </ejs-splitter>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the HTML preview functionality of the Rich Text Editor UI. The editor is paired with a Splitter and a CodeMirror instance to show a live, two-way preview of the underlying HTML source. You can edit the content from either the WYSIWYG editor or the code view, and the changes are reflected in the other.</p>
+</div>
+
+<div id="description">
+    <p>The Rich Text Editor UI is combined with a Splitter and CodeMirror to provide a bi-directional HTML editing experience:</p>
+    <ul>
+        <li><code>Rich Text Editor UI</code> &mdash; Provides a WYSIWYG editing surface with formatting tools. The <code>change</code> and <code>actionComplete</code> events push the current HTML into CodeMirror.</li>
+        <li><code>Splitter</code> &mdash; Splits the view into two resizable panes so the editor and the code view can be displayed side by side. On small devices the orientation is automatically switched to <code>Vertical</code>.</li>
+        <li><code>CodeMirror</code> &mdash; Renders the live HTML source. Editing the source updates the Rich Text Editor through its <code>value</code> property and <code>dataBind</code>.</li>
+        <li><code>Copy</code> &mdash; Copies the current HTML source (from CodeMirror if available, otherwise directly from the editor) to the clipboard and shows a Toast notification.</li>
+    </ul>
+</div>

@@ -1,6 +1,7 @@
 <div class="control-section gemini-clone">
   <div class="gemini-aiassist" [ngClass]="containerClass" id="geminiContainer">
-    <div id="gemini_aiassistview" ejs-aiassistview 
+    <ejs-aiassistview
+      id="gemini_aiassistview" 
       #geminiAIAssistViewRef
       (promptRequest)="promptRequest($event)"
       (promptChanged)="toggleButtons()"
@@ -12,14 +13,14 @@
       [attachmentSettings]="attachmentSettings"
       [footerToolbarSettings]="footerToolbarSettings"
       (created)="created()">
-    </div>
-    <ng-template #bannerTemplate>
+      <ng-template #bannerTemplate>
       <div class="banner-content">
         <div class="gemini-header">
           <h3>Meet Gemini, your personal AI assistant</h3>
         </div>
       </div>
-    </ng-template>
+      </ng-template>
+    </ejs-aiassistview>
 
     <div id="buttonsContainer" class="gemini-buttons-container">
       <button ejs-button id="imgBtn" iconCss="e-icons e-image">Create image</button>

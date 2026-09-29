@@ -65,6 +65,7 @@ export class SparklineComponent implements OnInit {
                     dataSource: obj[keys[i]],
                     xName: 'xval',
                     yName: 'yval',
+                    enableRtl: this.pivotObj ? this.pivotObj.enableRtl : false,
                     markerSettings: {
                         visible: ['High', 'Low'],
                         size: 3,
@@ -106,6 +107,12 @@ export class SparklineComponent implements OnInit {
                     args.node.style.textAlign = 'right';
                     args.node.querySelector('.e-pivotcell-container').appendChild(input);
                     args.node.querySelector('.e-headertext').style.alignSelf = 'unset';
+                    if (this.pivotObj && this.pivotObj.enableRtl) {
+                        const headerText: HTMLElement = args.node.querySelector('.e-headertext') as HTMLElement;
+                        if (headerText) {
+                            headerText.style.textAlign = 'left';
+                        }
+                    }
                     args.node.querySelector('.e-headertext').innerText = 'Total Sales Comparison';
                     isDropDownExist = true;
                 }

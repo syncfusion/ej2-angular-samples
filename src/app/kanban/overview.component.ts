@@ -2,7 +2,7 @@ import { Component, ViewChild, ViewEncapsulation, Inject } from '@angular/core';
 import { extend, addClass } from '@syncfusion/ej2-base';
 import { KanbanComponent, ColumnsModel, CardSettingsModel, SwimlaneSettingsModel, DialogSettingsModel, CardRenderedEventArgs, KanbanModule } from '@syncfusion/ej2-angular-kanban';
 import { cardData } from './data';
-import { NgClass, NgFor } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
@@ -12,7 +12,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     styleUrls: ['overview.style.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [ KanbanModule, NgClass, NgFor, SBActionDescriptionComponent, SBDescriptionComponent]
+    imports: [ KanbanModule, NgFor, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class OverviewComponent {
     @ViewChild('kanbanObj') kanbanObj: KanbanComponent;

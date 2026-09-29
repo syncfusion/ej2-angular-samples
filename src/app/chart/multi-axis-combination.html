@@ -1,0 +1,149 @@
+<div id="action-description">
+    <p>
+        This example visualizes monthly global climate signals during 2025
+        using temperature anomaly, atmospheric CO₂, and Arctic sea ice extent
+        data. Multiple axes are used to compare measurements with different
+        units and value ranges in a single chart.
+    </p>
+</div>
+
+<div class="control-section">
+    <div class="climate-chart-container">
+        <div align="center">
+            <ejs-chart
+                id="container"
+                style="display: block;"
+                align="center"
+                [width]="width"
+                [title]="title"
+                [subTitle]="subTitle"
+                [titleStyle]="titleStyle"
+                [subTitleStyle]="subTitleStyle"
+                [primaryXAxis]="primaryXAxis"
+                [primaryYAxis]="primaryYAxis"
+                [axes]="axes"
+                [tooltip]="tooltip"
+                [crosshair]="crosshair"
+                [legendSettings]="legend"
+                [chartArea]="chartArea"
+                (legendRender)="legendRender($event)"
+                (load)="load($event)"
+                (loaded)="loaded($event)"
+            >
+                <e-annotations>
+                    <e-annotation
+                        [content]="co2Annotation"
+                        [x]="may2025"
+                        [y]="430.51"
+                        coordinateUnits="Point"
+                        region="Chart"
+                        yAxisName="CO2Axis"
+                    >
+                    </e-annotation>
+
+                    <e-annotation
+                        [content]="seaIceAnnotation"
+                        [x]="september2025"
+                        [y]="4.68"
+                        coordinateUnits="Point"
+                        region="Chart"
+                        yAxisName="SeaIceAxis"
+                    >
+                    </e-annotation>
+
+                    <e-annotation
+                        [content]="temperatureAnnotation"
+                        [x]="january2025"
+                        [y]="1.75"
+                        coordinateUnits="Point"
+                        region="Chart"
+                    >
+                    </e-annotation>
+                </e-annotations>
+
+                <e-series-collection>
+                    <e-series
+                        [dataSource]="climateData"
+                        type="Area"
+                        name="Arctic Sea Ice (million km²)"
+                        xName="Month"
+                        yName="SeaIceExtent"
+                        yAxisName="SeaIceAxis"
+                        fill="#10B981"
+                        [opacity]="1"
+                        [width]="2.5"
+                        [border]="seaIceBorder"
+                        [linearGradient]="seaIceGradient"
+                        [marker]="seaIceMarker"
+                        [animation]="seaIceAnimation"
+                    >
+                    </e-series>
+
+                    <e-series
+                        [dataSource]="climateData"
+                        type="Line"
+                        name="Temperature Anomaly (°C)"
+                        xName="Month"
+                        yName="TemperatureAnomaly"
+                        fill="#F97316"
+                        [width]="4"
+                        [linearGradient]="temperatureGradient"
+                        [marker]="temperatureMarker"
+                        [animation]="temperatureAnimation"
+                    >
+                    </e-series>
+
+                    <e-series
+                        [dataSource]="climateData"
+                        type="Spline"
+                        splineType="Natural"
+                        name="Atmospheric CO₂ (ppm)"
+                        xName="Month"
+                        yName="AtmosphericCO2"
+                        yAxisName="CO2Axis"
+                        fill="#2563EB"
+                        [width]="3.5"
+                        [linearGradient]="co2Gradient"
+                        [marker]="co2Marker"
+                        [animation]="co2Animation"
+                    >
+                    </e-series>
+                </e-series-collection>
+            </ejs-chart>
+        </div>
+    </div>
+</div>
+
+<div id="description">
+    <p>
+        The chart demonstrates how unrelated datasets with very different value ranges can be plotted together for a unified view of climate signals.
+    </p>
+
+    <p>
+       In this example, you can see how to render and configure multiple axes in a single chart. The combination chart is created with the following features:
+    </p>
+    <ul>
+        <li>An area series for Arctic sea ice extent on the outer-right Y axis</li>
+        <li>A line series for temperature anomalies on the primary Y axis</li>
+        <li>A spline series for atmospheric CO₂ on the inner-right Y axis</li>
+        <li>Distinct color-coded axes, labels, and legends for each measurement</li>
+        <li>Annotations that highlight the seasonal CO₂ peak and the annual sea ice low</li>
+    </ul>
+    <p><code>Tooltip</code> and <code>Crosshair</code> are enabled in this example. Hover over a point or tap on one on touch-enabled devices to see the shared tooltip, and move the cursor along the chart to track values across the three axes.</p>
+
+    <p>
+        <b>Injecting Module</b>
+    </p>
+
+    <p>
+        The Chart component features are segregated into individual feature
+        modules. To use line, spline, area, annotation, tooltip, legend,
+        crosshair, highlight, and date-time category axis features, inject the
+        corresponding services into the component providers.
+    </p>
+
+    <p>
+        More information on multiple axes can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/axis-customization#multiple-axis" aria-label="Navigate to the documentation for Multiple Axes in Angular Chart component">documentation section</a>.
+    </p>
+</div>

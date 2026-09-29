@@ -311,7 +311,6 @@ public editingChange(args: { checked: any; }) {
 public contextMenuChange(args: { checked: any; }){
   if (args.checked) {
   this.diagram.contextMenuSettings.show = true;
-  this.diagram.refresh();
     } 
 else {
   this.diagram.contextMenuSettings.show = false;

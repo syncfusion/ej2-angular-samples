@@ -1,0 +1,62 @@
+<div class="col-lg-8 control-section sb-property-border">
+    <div class="control-wrapper">
+        <div class="sample-container">
+            <div class="default-section">
+                <ejs-richtexteditor-ui id='editor' #editor [height]="'350px'" [value]='value' [toolbarSettings]='tools'></ejs-richtexteditor-ui>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4 property-section">
+    <div id="property" title="Properties" class="editor-toolbar-properties">
+        <div class="property-panel-header">Properties</div>
+        <div class="form-group">
+            <label class="form-label property-label">Toolbar Type</label>
+            <ejs-dropdownlist #toolbarTypeDropdown id='toolbarType'
+                [dataSource]='toolbarTypeData'
+                [fields]='{ text: "text", value: "value" }'
+                [value]='toolbarType'
+                [popupHeight]='200'
+                (change)='onToolbarTypeChange($event)'>
+            </ejs-dropdownlist>
+        </div>
+        <div class="form-group">
+            <label class="form-label property-label">Toolbar Position</label>
+            <ejs-dropdownlist #toolbarPositionDropdown id='toolbarPosition'
+                [dataSource]='toolbarPositionData'
+                [fields]='{ text: "text", value: "value" }'
+                [value]='toolbarPosition'
+                [popupHeight]='150'
+                (change)='onToolbarPositionChange($event)'>
+            </ejs-dropdownlist>
+        </div>
+        <div class="form-group">
+            <ejs-checkbox id='float' label='Enable Floating' [checked]='enableFloating' (change)='onEnableFloatingChange($event)'></ejs-checkbox>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the different toolbar configurations of the Rich Text Editor UI component. Use the dropdown controls to change the toolbar type and position dynamically.</p>
+</div>
+
+<div id="description">
+    <p>The Rich Text Editor UI toolbar can be configured using the <code>toolbarSettings</code> property. The toolbar supports different types, positions, and floating behavior:</p>
+    <ul>
+        <li><code>Toolbar Type</code> - Controls how toolbar items are displayed:
+            <ul>
+                <li><code>Expanded</code>: Hides overflowing items in the next row, with an expand arrow to view them</li>
+                <li><code>MultiRow</code>: Automatically wraps items to the next row</li>
+                <li><code>Scrollable</code>: Displays all items in a single row with horizontal scrolling</li>
+            </ul>
+        </li>
+        <li><code>Toolbar Position</code> - Controls where the toolbar is placed:
+            <ul>
+                <li><code>Top</code>: Toolbar appears above the editor (default)</li>
+                <li><code>Bottom</code>: Toolbar appears below the editor</li>
+            </ul>
+        </li>
+        <li><code>Enable Floating</code> - Allows the toolbar to float over the editor when scrolling, keeping formatting actions accessible at all times.</li>
+    </ul>
+</div>

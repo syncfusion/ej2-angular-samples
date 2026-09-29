@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, Inject, ViewEncapsulation } from '@angular/core';
 import { data } from './data';
 import { Browser, enableRipple } from '@syncfusion/ej2-base';
-import { PageService, FilterService, SortService, GroupService, ToolbarService, GroupSettingsModel, ResizeService, AggregateService, EditService, GridComponent, ExcelExportService, PdfExportService, ColumnChooserService, ColumnMenuService, GridModule } from '@syncfusion/ej2-angular-grids';
+import { PageService,InfiniteScrollService, FilterService, SortService, GroupService, ToolbarService, GroupSettingsModel, ResizeService, AggregateService, EditService, GridComponent, ExcelExportService, PdfExportService, ColumnChooserService, ColumnMenuService, GridModule } from '@syncfusion/ej2-angular-grids';
 import { ClickEventArgs } from '@syncfusion/ej2-angular-navigations';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -13,7 +13,7 @@ enableRipple(false);
     selector: 'ej2-adaptive',
     templateUrl: 'adaptive-layout.html',
     styleUrls: ['adaptive-layout.style.css'],
-    providers: [PageService, FilterService, GroupService, ToolbarService, SortService, ResizeService, AggregateService, EditService, ExcelExportService, PdfExportService, ColumnChooserService, ColumnMenuService],
+    providers: [PageService,InfiniteScrollService, FilterService, GroupService, ToolbarService, SortService, ResizeService, AggregateService, EditService, ExcelExportService, PdfExportService, ColumnChooserService, ColumnMenuService],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [NgIf, GridModule, CheckBoxModule, SBActionDescriptionComponent, SBDescriptionComponent]
@@ -41,7 +41,7 @@ export class AdaptiveLayoutComponent implements OnInit {
         this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel', 'Search', 'ColumnChooser', 'ExcelExport', 'PdfExport'];
         this.orderidrules = { required: true, number: true };
         this.customeridrules = { required: true };
-        this.pageSettings = { pageCount: 3, pageSizes: true };
+        this.pageSettings = { pageSizes: true, pageSize: 12 };
         this.groupOptions = { showGroupedColumn: true };
         this.rowMode = 'Vertical';
         this.filterSettings = { type: 'Excel' };

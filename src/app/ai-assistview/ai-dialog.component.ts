@@ -18,7 +18,11 @@ import { getAIResponse } from '../common/ai-service';
 })
 export class AIAssistDialogComponent {
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['ai-dialog.component.css'];
+        sourceFiles.files = [
+            'ai-dialog.component.css',
+            'ai-dialog.html', 
+            'promptResponseData.ts'
+        ];
     }
 
     @ViewChild('Fab')

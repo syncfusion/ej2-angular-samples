@@ -17,9 +17,13 @@ import { NotionAICloneAssistComponent } from './ai-notion-ai-like.component';
 import { AIAssistClaudeCloneComponent } from './ai-claude-like.component';
 import { AIAssistGeminiCloneComponent } from './ai-gemini-like.component';
 import { AIAssistThinkingComponent } from './ai-thinking.component';
+import { AIAssistChatGPTCloneComponent } from './ai-chatgpt-like.component';
+import { AIAssistLoadingIndicatorComponent } from './ai-loading-indicator.component';
+import { AIAssistMentionComponent } from './ai-mention.component';
+import { AIAssistTelemetryComponent } from './ai-telemetry.component';
 
 export const aiassistviewAppRoutes: Object[] = [
-    { path: ':theme/ai-assistview/ai-overview', type :"new", component: AIAssistOverviewComponent, name: 'Overview', description: 'Combines streaming, attachments, speech-to-text, text-to-speech and regenerate functionality in one overview UI.', category: 'AI AssistView', order: '01', sourceFiles: [
+    { path: ':theme/ai-assistview/ai-overview', component: AIAssistOverviewComponent, name: 'Overview', description: 'Combines streaming, attachments, speech-to-text, text-to-speech and regenerate functionality in one overview UI.', category: 'AI AssistView', order: '01', sourceFiles: [
         {displayName: 'ai-overview.component.ts', path: './src/ai-assistview/ai-overview.component.ts'},
         {displayName: 'ai-overview.html', path: './src/ai-assistview/ai-overview.html'},
         {displayName: 'ai-overview.component.css', path: './src/ai-assistview/ai-overview.component.css'},
@@ -49,19 +53,37 @@ export const aiassistviewAppRoutes: Object[] = [
         {displayName: 'ai-attachments.component.css', path: './src/ai-assistview/ai-attachments.component.css'},
         {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
     ] },
-    { path: ':theme/ai-assistview/ai-generative-ui', type :"new", component: AIAssistGenerativeUIComponent, name: 'Generative UI Responses', description: 'Demonstrates the AI generated UI responses in the AiAssistView component', category: 'AI AssistView', order: '01', sourceFiles: [
+    { path: ':theme/ai-assistview/ai-generative-ui', component: AIAssistGenerativeUIComponent, name: 'Generative UI Responses', description: 'Demonstrates the AI generated UI responses in the AiAssistView component', category: 'AI AssistView', order: '01', sourceFiles: [
         {displayName: 'ai-generative-ui.component.ts', path: './src/ai-assistview/ai-generative-ui.component.ts'},
         {displayName: 'ai-generative-ui.html', path: './src/ai-assistview/ai-generative-ui.html'},
         {displayName: 'ai-generative-ui.component.css', path: './src/ai-assistview/ai-generative-ui.component.css'},
         {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
     ] },
-    { path: ':theme/ai-assistview/ai-thinking', type :"new", component: AIAssistThinkingComponent, name: 'Chain of Thoughts', description: 'Demonstrates the AI generated thinking UI in the AiAssistView component', category: 'AI AssistView', order: '01', sourceFiles: [
+    { path: ':theme/ai-assistview/ai-thinking', component: AIAssistThinkingComponent, name: 'Chain of Thoughts', description: 'Demonstrates the AI generated thinking UI in the AiAssistView component', category: 'AI AssistView', order: '01', sourceFiles: [
         {displayName: 'ai-thinking.component.ts', path: './src/ai-assistview/ai-thinking.component.ts'},
         {displayName: 'ai-thinking.html', path: './src/ai-assistview/ai-thinking.html'},
         {displayName: 'ai-thinking.component.css', path: './src/ai-assistview/ai-thinking.component.css'},
         {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
     ] },
-    { path: ':theme/ai-assistview/ai-template', component: AIAssistTemplateComponent, name: 'Template', description: 'Showcases the template properties of the AiAssistView component.', category: 'AI AssistView', order: '01', sourceFiles: [
+    { path: ':theme/ai-assistview/ai-loading-indicator', type: "new", component: AIAssistLoadingIndicatorComponent, name: 'Loading Indicator', description: 'Demonstrates different AI response loading indicator styles that can be shown while the AI response is being generated in the AiAssistView component.', category: 'AI AssistView', order: '01', sourceFiles: [
+        {displayName: 'ai-loading-indicator.component.ts', path: './src/ai-assistview/ai-loading-indicator.component.ts'},
+        {displayName: 'ai-loading-indicator.html', path: './src/ai-assistview/ai-loading-indicator.html'},
+        {displayName: 'ai-loading-indicator.component.css', path: './src/ai-assistview/ai-loading-indicator.component.css'},
+        {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
+    ] },
+    { path: ':theme/ai-assistview/ai-mention', type: "new", component: AIAssistMentionComponent, name: 'Mention', description: 'Showcases the mention support of the AiAssistView component, enabling users to reference skills and tools directly inside prompts.', category: 'AI AssistView', order: '01', api: '{ "AIAssistView": ["mentions", "bannerTemplate", "promptSuggestions", "promptRequest", "toolbarSettings"] }', sourceFiles: [
+        {displayName: 'ai-mention.component.ts', path: './src/ai-assistview/ai-mention.component.ts'},
+        {displayName: 'ai-mention.html', path: './src/ai-assistview/ai-mention.html'},
+        {displayName: 'ai-mention.component.css', path: './src/ai-assistview/ai-mention.component.css'},
+        {displayName: 'mentionData.ts', path: './src/ai-assistview/mentionData.ts'}
+    ] },
+    { path: ':theme/ai-assistview/ai-telemetry', type: "new", component: AIAssistTelemetryComponent, name: 'Telemetry', description: 'Demonstrates per-turn telemetry metrics (response duration, streaming chunks, model identifier, and token usage) reported on every response in the AiAssistView component.', category: 'AI AssistView', order: '01', api: '{ "AIAssistView": ["bannerTemplate", "promptSuggestions", "promptRequest", "toolbarSettings", "stopRespondingClick", "telemetrySettings"] }', sourceFiles: [
+        {displayName: 'ai-telemetry.component.ts', path: './src/ai-assistview/ai-telemetry.component.ts'},
+        {displayName: 'ai-telemetry.html', path: './src/ai-assistview/ai-telemetry.html'},
+        {displayName: 'ai-telemetry.component.css', path: './src/ai-assistview/ai-telemetry.component.css'},
+        {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
+    ] },
+    { path: ':theme/ai-assistview/ai-template', type: "update", component: AIAssistTemplateComponent, name: 'Template', description: 'Showcases the template properties of the AiAssistView component.', category: 'AI AssistView', order: '01', sourceFiles: [
         {displayName: 'ai-template.component.ts', path: './src/ai-assistview/ai-template.component.ts'},
         {displayName: 'ai-template.html', path: './src/ai-assistview/ai-template.html'},
         {displayName: 'ai-template.component.css', path: './src/ai-assistview/ai-template.component.css'},
@@ -70,31 +92,35 @@ export const aiassistviewAppRoutes: Object[] = [
     { path: ':theme/ai-assistview/ai-speech-to-text', component: SpeechToTextAssistComponent, name: 'Speech To Text', description: 'Demonstrates the AI AssistView component integrated  the built-in Speech-to-Text functionality, enabling users to interact using voice input transcribed into text.', category: 'Speech', order: '02', sourceFiles: [
         {displayName: 'ai-speech-to-text.component.ts', path: './src/ai-assistview/ai-speech-to-text.component.ts'},
         {displayName: 'ai-speech-to-text.html', path: './src/ai-assistview/ai-speech-to-text.html'},
-        {displayName: 'ai-speech-to-text.component.css', path: './src/ai-assistview/ai-speech-to-text.component.css'},
-        {displayName: 'ai-services.ts', path: './src/ai-assistview/ai-openai-service.ts'}
+        {displayName: 'ai-speech-to-text.component.css', path: './src/ai-assistview/ai-speech-to-text.component.css'}
     ] },
-    { path: ':theme/ai-assistview/ai-text-to-speech', type :"update", component: TextToSpeechAssistComponent, name: 'Text To Speech', description: 'Demonstrates the AiAssistView component integrated with Text-to-Speech functionality, allowing AI-generated responses to be vocalized for voice-based interaction.', category: 'Speech', order: '02', sourceFiles: [
+    { path: ':theme/ai-assistview/ai-text-to-speech', component: TextToSpeechAssistComponent, name: 'Text To Speech', description: 'Demonstrates the AiAssistView component integrated with Text-to-Speech functionality, allowing AI-generated responses to be vocalized for voice-based interaction.', category: 'Speech', order: '02', sourceFiles: [
         {displayName: 'ai-text-to-speech.component.ts', path: './src/ai-assistview/ai-text-to-speech.component.ts'},
         {displayName: 'ai-text-to-speech.html', path: './src/ai-assistview/ai-text-to-speech.html'},
-        {displayName: 'ai-text-to-speech.component.css', path: './src/ai-assistview/ai-text-to-speech.component.css'},
-        {displayName: 'ai-services.ts', path: './src/ai-assistview/ai-openai-service.ts'}
+        {displayName: 'ai-text-to-speech.component.css', path: './src/ai-assistview/ai-text-to-speech.component.css'}
     ] },
-    { path: ':theme/ai-assistview/ai-notion-ai-like', type :"new", component: NotionAICloneAssistComponent, name: 'Notion AI-like', description: 'Notion-like AI Assist UI with multi-mode chat (floating, sidebar, fullscreen), model selection, chat history, streaming responses, attachments, speech-to-text, text-to-speech, and session management.', category: 'UI Customization', order: '03', sourceFiles: [
+    { path: ':theme/ai-assistview/ai-notion-ai-like', component: NotionAICloneAssistComponent, name: 'Notion AI-like', description: 'Notion-like AI Assist UI with multi-mode chat (floating, sidebar, fullscreen), model selection, chat history, streaming responses, attachments, speech-to-text, text-to-speech, and session management.', category: 'UI Customization', order: '03', sourceFiles: [
         {displayName: 'ai-notion-ai-like.component.ts', path: './src/ai-assistview/ai-notion-ai-like.component.ts'},
         {displayName: 'ai-notion-ai-like.html', path: './src/ai-assistview/ai-notion-ai-like.html'},
         {displayName: 'ai-notion-ai-like.component.css', path: './src/ai-assistview/ai-notion-ai-like.component.css'},
         {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
     ] },
-    { path: ':theme/ai-assistview/ai-claude-like', type :"new", component: AIAssistClaudeCloneComponent, name: 'Claude AI-like', description: 'Claude line UI appearance with ai assistview supported features with footer toolbar and banner template', category: 'UI Customization', order: '03', sourceFiles: [
+    { path: ':theme/ai-assistview/ai-claude-like', component: AIAssistClaudeCloneComponent, name: 'Claude AI-like', description: 'Claude line UI appearance with ai assistview supported features with footer toolbar and banner template', category: 'UI Customization', order: '03', sourceFiles: [
         {displayName: 'ai-claude-like.component.ts', path: './src/ai-assistview/ai-claude-like.component.ts'},
         {displayName: 'ai-claude-like.html', path: './src/ai-assistview/ai-claude-like.html'},
         {displayName: 'ai-claude-like.component.css', path: './src/ai-assistview/ai-claude-like.component.css'},
         {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
     ] },
-    { path: ':theme/ai-assistview/ai-gemini-like', type :"new", component: AIAssistGeminiCloneComponent, name: 'Gemini AI-like', description: 'Gemini-inspired UI appearance with ai assistview supported features with footer toolbar and banner template', category: 'UI Customization', order: '03', sourceFiles: [
+    { path: ':theme/ai-assistview/ai-gemini-like', component: AIAssistGeminiCloneComponent, name: 'Gemini AI-like', description: 'Gemini-inspired UI appearance with ai assistview supported features with footer toolbar and banner template', category: 'UI Customization', order: '03', sourceFiles: [
         {displayName: 'ai-gemini-like.component.ts', path: './src/ai-assistview/ai-gemini-like.component.ts'},
         {displayName: 'ai-gemini-like.html', path: './src/ai-assistview/ai-gemini-like.html'},
         {displayName: 'ai-gemini-like.component.css', path: './src/ai-assistview/ai-gemini-like.component.css'},
+        {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
+    ] },
+    { path: ':theme/ai-assistview/ai-chatgpt-like', type: 'new', component: AIAssistChatGPTCloneComponent, name: 'ChatGPT AI-like', description: 'Demonstrates a ChatGPT-inspired AI AssistView with attachment support, speech input, streaming responses, and an inline pill-shaped footer for a clean conversational experience.', category: 'UI Customization', order: '03', sourceFiles: [
+        {displayName: 'ai-chatgpt-like.component.ts', path: './src/ai-assistview/ai-chatgpt-like.component.ts'},
+        {displayName: 'ai-chatGPT-clone.html', path: './src/ai-assistview/ai-chatGPT-clone.html'},
+        {displayName: 'ai-chatGPT-clone.css', path: './src/ai-assistview/ai-chatGPT-clone.css'},
         {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
     ] },
     { path: ':theme/ai-assistview/ai-dialog', component: AIAssistDialogComponent, name: 'Notes Assistant', description: 'Showcases the default combinations of the AiAssistView component views.', category: 'Use Cases', order: '04', sourceFiles: [

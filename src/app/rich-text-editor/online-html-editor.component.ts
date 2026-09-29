@@ -97,12 +97,13 @@ export class OnlineHtmlEditorComponent {
           mirrorView.style.display = 'block';
         }
         let srcViewEle: HTMLElement = document.querySelector('#src-view');
-        let codemirrorEle: HTMLElement = document.querySelector('.CodeMirror-wrap');
-        if (codemirrorEle) {
-          codemirrorEle.remove();
+        if (!this.myCodeMirror) {
+            this.renderCodeMirror(srcViewEle, this.rteObj.value);
         }
-        if(this.rteObj.value){
-        this.renderCodeMirror(srcViewEle, this.rteObj.value);
+        else if (!this.myCodeMirror.hasFocus() && this.myCodeMirror.getValue() !== this.rteObj.value) {
+            const cursor = this.myCodeMirror.getCursor();
+            this.myCodeMirror.setValue(this.rteObj.value);
+            this.myCodeMirror.setCursor(cursor);
         }
     }
     public updateOrientation(): void {

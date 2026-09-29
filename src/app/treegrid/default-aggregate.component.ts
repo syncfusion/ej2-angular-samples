@@ -9,7 +9,6 @@ import {  AggregateService,
 import { FailureEventArgs } from '@syncfusion/ej2-grids';
 import { CheckBox, CheckBoxModule, ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
 import { TreeGridComponent, TreeGridModule } from '@syncfusion/ej2-angular-treegrid';
-import { NgClass } from '@angular/common';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { ClickEventArgs } from '@syncfusion/ej2-navigations';
@@ -24,7 +23,7 @@ import { DialogUtility } from '@syncfusion/ej2-popups/src/dialog';
     ExcelExportService,
     PdfExportService,],
     standalone: true,
-    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent, CheckBoxModule, NgClass]
+    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent, CheckBoxModule]
 })
 export class AggregateComponent implements OnInit {
     public data: Object[] = [];

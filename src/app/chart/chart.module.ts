@@ -45,6 +45,7 @@ import { PerformanceChartComponent } from './chart-performance.component';
 import { ZoomingChartComponent } from './zooming.component';
 import { LazyLoadingComponent } from './lazy-loading.component';
 import { PercentStackedColumnChartComponent } from './stacked-column-percent.component';
+import { StackedSmartLabelsComponent } from './stacked-smart-labels.component';
 import { PercentStackedBarChartComponent } from './stacked-bar-percent.component';
 import { PercentStackedAreaChartComponent } from './stacked-area-percent.component';
 import { DefaultPieComponent } from './default-pie.component';
@@ -144,11 +145,12 @@ import { BarWithGradientComponent } from './bar-with-gradient.component';
 import { PieLegendTemplateComponent } from './pie-legend-template.component';
 import { ChartLegendTemplateComponent } from './chart-legend-template.component';
 import { NestedDonut } from './nested-donut.component';
+import { MultiAxisCombinationComponent } from './multi-axis-combination.component';
 
 export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/overview-chart', component: OverViewChartComponent, name: 'Overview', description: "This demo for overview of Essential<sup>®</sup> JS2 Chart for data about the annual, monthly and product wise sales with different types of charts.",
  order: '01', category: 'Charts' },
- 
+
     { path: ':theme/chart/line', component: LineChartComponent, name: 'Line', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the line series.",
  order: '02', category: 'Line Charts' },
     { path: ':theme/chart/spline', component: SplineChartComponent, name: 'Spline', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the spline series.", order: '02', category: 'Line Charts' },
@@ -187,6 +189,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/rounded-column', component: RoundedColumnChartComponent, name: 'Rounded Bar',description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the rounded bar series.", order: '04', category: 'Bar Charts' },
     { path: ':theme/chart/stacked-column', component: StackedColumnChartComponent, name: 'Stacked Column', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the stacking column series.", order: '04', category: 'Bar Charts' },
     { path: ':theme/chart/stacked-column-percent', component: PercentStackedColumnChartComponent, name: '100% Stacked Column', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the 100 percent stacking column series.", order: '04', category: 'Bar Charts' },
+    { path: ':theme/chart/stacked-smart-labels', component: StackedSmartLabelsComponent, name: 'Stacked Smart Labels', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to arrange stacked column data labels smartly without overlapping with each other.", order: '04', category: 'Bar Charts', type: 'new' },
     { path: ':theme/chart/stacked-bar', component: StackedBarChartComponent, name: 'Stacked Bar', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the stacking bar series.", order: '04', category: 'Bar Charts' },
     { path: ':theme/chart/stacked-bar-percent', component: PercentStackedBarChartComponent, name: '100% Stacked Bar', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the 100 percent stacking bar series.", order: '04', category: 'Bar Charts' },
     { path: ':theme/chart/negative-stack', component: TornadoChartComponent, name: 'Negative Stack', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the bar charts.", order: '04', category: 'Bar Charts' },
@@ -205,7 +208,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/pie-radius', component: PieRadiusComponent, name: 'Pie with Various Radius', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the pie chart with different radius.", order: '07', category: 'Accumulation Charts' },
     { path: ':theme/chart/donut', component: DonutComponent, name: 'Donut', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the doughnut charts.", order: '07', category: 'Accumulation Charts' },
     { path: ':theme/chart/donut-with-gradient', component: DonutWithGradient, name: 'Donut with Gradient', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the doughnut charts with gradient.", order: '07', category: 'Accumulation Charts' },
-     { path: ':theme/chart/nested-donut', component: NestedDonut, name: 'Nested Donut', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the nested donut charts with multiple series.", order: '07', category: 'Accumulation Charts', type: 'new' },
+     { path: ':theme/chart/nested-donut', component: NestedDonut, name: 'Nested Donut', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the nested donut charts with multiple series.", order: '07', category: 'Accumulation Charts' },
     { path: ':theme/chart/pyramid', component: PyramidComponent, name: 'Pyramid', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the pyramid charts.", order: '07', category: 'Accumulation Charts' },
     { path: ':theme/chart/funnel', component: FunnelComponent, name: 'Funnel', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the funnel charts.", order: '07', category: 'Accumulation Charts' },
     {
@@ -298,6 +301,7 @@ export const chartAppRoutes: Object[] = [
     { path: ':theme/chart/axis-label-template', component: AxisLabelTemplateChartComponent, name: 'Axis Label Template', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render and configure the axis label template in charts.", order: '13', category: 'Chart Axes' },
     { path: ':theme/chart/multi-level-label', component: MultiLevelLabelsChartComponent, name: 'Multi Level Labels', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to group the axis labels.", order: '13', category: 'Chart Axes' },
     { path: ':theme/chart/axes-crossing', component: AxisCrossingChartComponent, name: 'Axes Crossing', description: "This demo for Essential<sup>®</sup> JS2 Chart control demonstrates the axis crossing behavior in chart.", order: '13', category: 'Chart Axes' },
+    { path: ':theme/chart/multi-axis-combination', component: MultiAxisCombinationComponent, name: 'Multi Axis Combination', description: "This demo for Essential<sup>®</sup> JS2 Chart control show how to render multiple axes in chart.", order: '13', category: 'Chart Axes', type: 'new' },
 
     { path: ':theme/chart/sorting', component: SortingChartComponent, name: 'Sorting', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to sort the series data in chart.", order: '14', category: 'Chart Customization' },
     { path: ':theme/chart/marker-chart', component: MarkerChartComponent, name: 'Marker Chart', description: "This demo for Essential<sup>®</sup> JS2 Chart control shows how to render the marker symbols for data points.", order: '14', category: 'Chart Customization' },

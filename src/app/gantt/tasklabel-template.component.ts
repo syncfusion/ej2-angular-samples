@@ -36,7 +36,7 @@ export class GanttTasklabelTemplateComponent implements OnInit {
                 const span = document.createElement('span');
                 span.className = 'labelClass';
                 span.textContent = resource;
-                img.src = 'assets/gantt/images/' + resource + '.png';
+                img.src = './assets/gantt/images/' + resource + '.png';
                 img.height = 40;
                 img.alt = resource;
                 subContainer.append(img);

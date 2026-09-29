@@ -17,7 +17,11 @@ import { getAIResponse } from '../common/ai-service';
 })
 export class AIAssistCustomViewsComponent{
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['ai-custom-views.component.css'];
+        sourceFiles.files = [
+            'ai-custom-views.component.css',
+            'ai-custom-views.html', 
+            'promptResponseData.ts'
+        ];
     }
 
     @ViewChild('viewsAIAssistView')

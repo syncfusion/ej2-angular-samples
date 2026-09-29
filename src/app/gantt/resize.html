@@ -1,5 +1,5 @@
 <div id="action-description">
-    <p>This sample demonstrates the Gantt column resizing feature. Click and drag at the right corner of each column header to resize the column.</p>
+    <p>This sample demonstrates column resizing in the Gantt Chart. Resize a column by dragging the right edge of its header to adjust the column width.</p>
 </div>
 <div class="control-section">
     <ejs-gantt id="columnResize" height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
@@ -11,16 +11,10 @@
     </div>
 </div>
 <div id="description">
-    <p>The Gantt columns can be resized by clicking and dragging at the right corner of columns header. Set the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#allowresizing">allowResizing</a> property to true to enable column resizing behavior in Gantt. 
-        You can also prevent the resize of a particular column 
-        by setting <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/columnModel/#allowresizing">columns -> allowResizing</a> to false in columns definition
-    </p>
-    <br/>
-    <p> In this demo, the allowResizing feature has been enabled by setting the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#allowresizing">allowResizing</a> property to true. 
-       Task Name column can be resized between a range of <code>minWidth (120 pixels)</code> and <code>maxWidth (300 pixels)</code>. 
-       The column resizing has been disabled in the <b>Duration</b> column 
-    </p>
+    <p>Columns can be resized interactively by dragging the right edge of a column header. Individual columns can also define <code>minWidth</code> and <code>maxWidth</code> values to restrict resizing within a specified range. To enable resizing, set the <code><a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/columnModel/#allowresizing">allowResizing</a></code> property to <code>true</code>.</p>
+    <p>In this sample, the <code>Task Name</code> column can be resized between 120 and 300 pixels, while resizing is disabled for the <code>Duration</code> column using the column-level <code><a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/columnModel/#allowresizing">allowResizing</a></code> property.</p>
     <p>Gantt component features are segregated into individual feature-wise modules. To use Resize, and markers feature, inject 
         <code>ResizeService</code>, and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section.</p>
-    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/columns/column-resizing">documentation section</a>.</p>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/columns/column-resizing">columns resizing</a> documentation section.</p>
+    <p>Looking for the full Angular Gantt Chart component overview, features, pricing, and documentation? Visit the <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-gantt-chart">Angular Gantt Chart</a> page.</p>
 </div>

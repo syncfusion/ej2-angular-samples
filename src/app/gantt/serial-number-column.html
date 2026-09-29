@@ -1,0 +1,49 @@
+<div id="action-description">
+  <p>
+    This sample demonstrates the auto-generated Serial Number column support in the Gantt Chart.
+    The component automatically generates sequential row numbers based on the current visible row order
+    and keeps them updated during operations such as filtering, editing, hierarchy changes,
+    and drag-and-drop actions.
+  </p>
+</div>
+
+<div class="control-section">
+  <div>
+    <ejs-gantt id="ganttSerial" #gantt height="650px" rowHeight="46" taskbarHeight ="25" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns"
+      [timelineSettings]="timelineSettings" [labelSettings]="labelSettings" [editSettings]="editSettings"
+      [allowFiltering]="true" [enableSerialNumber]="true" [allowSorting]="true" [toolbar]="toolbar" [treeColumnIndex]="2"
+      [filterSettings]="filterSettings" [allowSelection]="true" [projectStartDate]="projectStartDate"
+      [projectEndDate]="projectEndDate" [allowRowDragAndDrop]="true" [allowTaskbarDragAndDrop]="true" [enableContextMenu]="true"
+      [splitterSettings]="splitterSettings" [gridLines]="gridLines"
+      [allowUnscheduledTasks]="allowUnscheduledTasks">
+    </ejs-gantt>
+  </div>
+</div>
+
+<div id="description">
+  <p>
+    The serial number feature automatically generates sequential row numbers for records displayed in the Gantt Chart. When the <strong>
+    <a target="_blank"
+    href="https://ej2.syncfusion.com/angular/documentation/gantt/#enableserialnumber">enableSerialNumber</a>
+    </strong> property is enabled, serial numbers are assigned based on the current visible row order without requiring a dedicated field in the data source.
+  </p>
+
+  <p>
+    The numbering is automatically updated whenever the row order changes due to actions such as filtering, searching, expand and collapse, indent and outdent, CRUD operations, row drag-and-drop, and data refresh.
+  </p>
+
+  <p style="font-weight: 500;">Injecting Module:</p>
+
+  <p>
+    Gantt component features are segregated into individual feature-wise modules. To use selection, toolbar,
+    editing, filtering, sorting, row drag-and-drop, and virtualization features, inject the
+    <code>SelectionService</code>, <code>ToolbarService</code>, <code>EditService</code>, <code>FilterService</code>,
+    <code>SortService</code>, and <code>RowDDService</code> modules using the
+    <code>Gantt.Inject(SelectionService)</code>, <code>Gantt.Inject(ToolbarService)</code>,
+    <code>Gantt.Inject(EditService)</code>, <code>Gantt.Inject(FilterService)</code>,
+    <code>Gantt.Inject(SortService)</code>, and <code>Gantt.Inject(RowDDService)</code> methods.
+  </p>
+  <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/columns/serial-number-column" rel="noopener noreferrer">Serial number columns</a> documentation section.</p>
+  <p>Looking for the full Angular Gantt Chart component overview, features, pricing, and documentation? Visit the <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-gantt-chart">Angular Gantt Chart</a> page.</p>
+
+</div>

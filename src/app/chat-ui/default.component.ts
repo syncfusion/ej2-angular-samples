@@ -15,7 +15,10 @@ import { DropDownButton } from '@syncfusion/ej2-angular-splitbuttons';
 })
 export class ChatUIDefaultComponent {
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['default.component.css'];
+        sourceFiles.files = [
+            'default.component.css',
+            'messageData.ts'
+        ];
     }
 
     @ViewChild('defaultChatUI1')

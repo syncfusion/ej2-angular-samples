@@ -1,6 +1,6 @@
 <div class="control-section">
   <div class="ai-models">
-    <div id="aiAssistView" ejs-aiassistview #aiAssistViewInst [bannerTemplate]="bannerTemplate"
+    <ejs-aiassistview #aiAssistViewInst [bannerTemplate]="bannerTemplate"
       [promptSuggestions]="suggestions" (promptRequest)="promptRequest($event)" [enableAttachments]="enableAttachments" [attachmentSettings]="attachmentSettings" [showHeader]="showHeader"
       width="auto" [footerToolbarSettings]="footerToolbarSettings" [enableStreaming]="true">
       <div class="ai-assist-header">
@@ -9,7 +9,13 @@
           (change)="onModelChange($event)" popupHeight="200px">
         </ejs-dropdownlist>
       </div>
-    </div>
+      <ng-template #bannerTemplate>
+         <div class="banner-content e-no-content">
+         <div class="e-icons e-assistview-icon"></div>
+         <h3 class="ai-assist-banner-subtitle">How can I help you today?</h3>
+         </div>
+      </ng-template>
+    </ejs-aiassistview>
   </div>
   <ejs-sidebar id="assistantSidebar" #sideObj width="250px" target=".ai-models" position="Left"
     [enableDock]="enableDock" [dockSize]="dockSize" [enableGestures]="enableGesture" [type]="type"
@@ -38,12 +44,6 @@
       </ejs-listview>
     </div>
   </ejs-sidebar>
-  <ng-template #bannerTemplate>
-    <div class="banner-content e-no-content">
-      <div class="e-icons e-assistview-icon"></div>
-      <h3 class="ai-assist-banner-subtitle">How can I help you today?</h3>
-    </div>
-  </ng-template>
   <ejs-toast #toast [position]="toastPosition" target=".e-views" timeOut="1500" [showCloseButton]="true"></ejs-toast>
 </div>
 

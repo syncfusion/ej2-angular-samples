@@ -62,8 +62,8 @@ import { UmlClassDiagramComponent } from './uml-Class-diagram.component';
 import { ErDiagramComponent } from './entity-relationship-diagram.component';
 import { PeriodicTableComponent } from './periodic-table.component';
 import { DialogAllModule } from '@syncfusion/ej2-angular-popups';
-import { FlowExecutionDiagramComponent } from 'src/app/diagram/flow-execution.component';
-import { HistoryManagerDiagramComponent } from 'src/app/diagram/history-manager.component';
+import { FlowExecutionDiagramComponent } from './flow-execution.component';
+import { HistoryManagerDiagramComponent } from './history-manager.component';
 import { EventsDiagramComponent } from './diagram-events.component';
 import { TooltipDiagramComponent } from './tooltip.component';
 import { LineRoutingComponent } from './line-routing.component';
@@ -92,11 +92,12 @@ import { AngleDiagramComponent } from './angle-diagram.component';
 import { SerpentineDiagramComponent } from './serpentine-diagram.component';
 import { FamilyTreeDiagramsComponent } from './family-tree.component';
 import { VisioImportDiagramComponent } from './visio-import-export.component';
+import { PurchaseApprovalWorkflowDiagramComponent } from './purchase-approval-workflow.component';
 
 export const diagramAppRoutes: Object[] = [
     {
         path: ':theme/diagram/default-functionalities', component: FlowDiagramComponent,
-        name: 'Flow Chart', order: '01', category: 'Getting Started', type:'update',
+        name: 'Flow Chart', order: '01', category: 'Getting Started',
         description: 'This sample visualizes the processing of an order placed using credit card with built-in flow shapes.',
     },
     {
@@ -351,7 +352,7 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/entity-relationship-diagram', component: ErDiagramComponent,
-        name: 'Entity Relationship Diagram', category: 'Use Case Diagram', order: '09', type: 'new',
+        name: 'Entity Relationship Diagram', category: 'Use Case Diagram', order: '09',
         description: 'This sample demonstrates a healthcare appointment management ER diagram created using the Syncfusion® Angular Diagram.',
     },
     {
@@ -361,7 +362,7 @@ export const diagramAppRoutes: Object[] = [
     },
     {
         path: ':theme/diagram/uml-sequence-diagram', component: UmlSequenceComponent,
-        name: 'UML Sequence Diagram', category: 'Use Case Diagram', order: '09', type:'update',
+        name: 'UML Sequence Diagram', category: 'Use Case Diagram', order: '09',
         description: 'This sample presents a UML sequence diagram to depict interactions in a secure transaction process involving a user, transaction system, and fraud detection using diagram model.',
 
     },
@@ -421,6 +422,11 @@ export const diagramAppRoutes: Object[] = [
         path: ':theme/diagram/serpentine-diagram', component: SerpentineDiagramComponent,
         name: 'Serpentine Diagram', ignoreOnBuild: true, category: 'Use Case Diagram', order: '09',
         description: 'Visualizes a custom serpentine layout with the Diagram component, featuring 20 key medical breakthroughs that revolutionized healthcare (1796–1996).',
+    },
+    {
+        path: ':theme/diagram/purchase-approval-workflow', component: PurchaseApprovalWorkflowDiagramComponent,
+        name: 'Purchase Approval Workflow', category: 'Real-time Diagrams', order: '10', type: 'new',
+        description: 'This sample demonstrates an interactive purchase approval workflow created using the Syncfusion® Angular Diagram, validating budget, manager approval, and order processing stages.'
     },
     {
         path: ':theme/diagram/angle-diagram', component: AngleDiagramComponent,

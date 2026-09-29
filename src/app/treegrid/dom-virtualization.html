@@ -1,0 +1,62 @@
+<div id="action-description">
+    <p>DOM virtualization is a performance optimization feature that renders only the visible rows within the Tree Grid
+    viewport instead of rendering the entire dataset. This significantly improves performance when working with large
+    volumes of hierarchical data.</p>
+</div>
+<div class="control-section">
+    <ejs-treegrid id="TreeGrid" [dataSource]="data" height="400" [enableVirtualization]="true"
+        [enableDomVirtualization]="true" [domVirtualizationSettings]="{ rowBuffer: 20 }" [allowSorting]="true"
+        [enableVirtualMaskRow]="true" [treeColumnIndex]="2" idMapping="ItemID" parentIdMapping="ParentItemID"
+        clipMode="EllipsisWithTooltip" [pageSettings]="{ pageSize: 100 }"
+        rowHeight="50">
+         <e-columns>
+        <e-column field="ItemID" headerText="ID" width="110" textAlign="Right" [isPrimaryKey]="true"></e-column>
+        <e-column field="ParentItemID" headerText="Parent ID" width="110" textAlign="Right" [visible]="false"></e-column>
+        <e-column field="ItemName" headerText="Inventory Name" width="320"></e-column>
+        <e-column field="ItemType" headerText="Type" width="120" [visible]="false"></e-column>
+        <e-column field="Category" headerText="Category" width="200"></e-column>
+        <e-column field="Region" headerText="Location" width="200">
+            <ng-template #template let-data>
+                <div class="rg-region" [attr.data-region]="data.Country || data.Region">
+                    <span class="rg-region-flag"></span>
+                    <span class="rg-region-name">{{ data.Region }}</span>
+                </div>
+            </ng-template>
+        </e-column>
+        <e-column field="Supplier" headerText="Supplier" width="240"></e-column>
+        <e-column field="StockStatus" headerText="Stock Status" width="180">
+            <ng-template #template let-data>
+                <div class="rg-badge" [ngClass]="getStatusClass(data.StockStatus)">{{ data.StockStatus }}</div>
+            </ng-template>
+        </e-column>
+        <e-column field="Quantity" headerText="Quantity" width="120" textAlign="Right" editType="numericedit"></e-column>
+        <e-column field="UnitPrice" headerText="Unit Price" width="130" textAlign="Right" [format]="{ format: 'C2', currency: 'USD' }"   editType="numericedit"></e-column>
+    </e-columns>
+    </ejs-treegrid>
+</div>
+
+<div id="description">
+    <p>
+    With DOM virtualization enabled, the Tree Grid calculates the content height and renders only the necessary
+    <code>tr</code> elements for the visible portion of the control. As the user scrolls, previously rendered rows are
+    replaced with newly required rows, ensuring that only a minimal number of DOM elements are maintained at any time.
+    This improves rendering speed and memory usage for large datasets.
+  </p>
+  <p>
+    DOM virtualization is enabled by setting the <code>enableDomVirtualization</code> property to <code>true</code>. This
+    demo loads 100,000 hierarchical records using DOM virtualization. Row virtualization is enabled using the
+    <code>enableVirtualization</code> property.
+  </p>
+  <p>Injecting Module:</p>
+
+<p>Tree Grid component features are segregated into individual feature-wise modules. To use exporting feature, we need to inject <code>DomVirtualization</code>  into the <code>&#64;NgModule.providers</code> section.</p>
+
+  <p>
+    More information on DOM virtualization can be found in the
+    <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/treegrid/virtual-scroll"
+      aria-label="Navigate to the documentation for DOM virtualization in Angular Tree Grid control">documentation</a>
+    section.
+  </p>
+ <p>Looking for the full Angular Tree Grid component overview, features, pricing, and documentation? Visit our <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-tree-grid">Angular Tree Grid component</a> page.</p>
+
+</div>

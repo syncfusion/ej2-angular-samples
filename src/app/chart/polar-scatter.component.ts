@@ -61,7 +61,7 @@ export class PolarScatterChartComponent {
     public title: string = 'GDP by Countries';
     public tooltip: Object = {
         enable: true,
-        format: '${point.text} : <b>${point.y}%</b>',
+        format: '${point.text} : <b>${point.y}</b>',
         enableHighlight: true
     };
       // custom code start

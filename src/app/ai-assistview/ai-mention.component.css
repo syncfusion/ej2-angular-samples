@@ -1,0 +1,50 @@
+.mention-aiassistview {
+    height: 600px;
+    width: 60vw;
+    margin: 0 auto;
+}
+.mention-aiassistview .banner-content .e-assistview-icon:before {
+    font-size: 35px;
+}
+.mention-aiassistview .banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 330px;
+    text-align: center;
+}
+@media only screen and (max-width: 750px) {
+    .mention-aiassistview {
+        width: 100%;
+    }
+}
+/* Weather Card Layout Customization */
+.mention-aiassistview #weather_card.e-card {
+    background-image: url('https://ej2.syncfusion.com/javascript/demos/src/card/images/weather.png');
+    width: 420px;
+}
+.mention-aiassistview .material3-dark .e-card .e-card-header,
+.mention-aiassistview .material-dark .e-card .e-card-header {
+    padding: 10px;
+}
+.mention-aiassistview #weather_card.e-card .e-card-header-caption .e-card-header-title,
+.mention-aiassistview #weather_card.e-card .e-card-header-caption .e-card-sub-title {
+    color: white;
+}
+.mention-aiassistview .highcontrast #weather_card.e-card .e-card-header.weather_report .e-card-header-image {
+    border: none;
+}
+.mention-aiassistview #weather_card.e-card .weather_report .e-card-header-caption {
+    text-align: right;
+}
+.mention-aiassistview #weather_card.e-card .e-card-header.weather_report .e-card-header-image {
+    background-image: url('https://ej2.syncfusion.com/javascript/demos/src/card/images/rainy.svg');
+}
+.mention-aiassistview .col-xs-6.col-sm-6.col-lg-6.col-md-6 {
+    width: 100%;
+    padding: 10px;
+}
+.mention-aiassistview .card-layout {
+    margin: auto;
+    max-width: 400px;
+}

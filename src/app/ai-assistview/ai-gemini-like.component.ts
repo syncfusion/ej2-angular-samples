@@ -16,7 +16,11 @@ import { getAIResponse } from '../common/ai-service';
 })
 export class AIAssistGeminiCloneComponent {
   constructor(@Inject('sourceFiles') private sourceFiles: any) {
-    sourceFiles.files = ['ai-gemini-like.component.css'];
+    sourceFiles.files = [
+      'ai-gemini-like.component.css',
+      'ai-gemini-like.html',
+      'promptResponseData.ts'
+    ];
   }
 
   @ViewChild('geminiAIAssistViewRef')

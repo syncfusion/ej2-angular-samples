@@ -3,7 +3,7 @@
         <div *ngIf="isDeskTop" class="e-mobile-layout">
             <div class="e-mobile-content">
                 <ejs-grid #adaptive id="adaptivebrowser" [dataSource]='data' enableAdaptiveUI='true'
-                    [rowRenderingMode]="rowMode" height='100%' allowPaging='true' allowFiltering='true'
+                    [rowRenderingMode]="rowMode" height='100%' [allowPaging]='true' allowFiltering='true'
                     allowSorting='true' [allowGrouping]="false" [groupSettings]='groupOptions' showColumnChooser='true' showColumnMenu='true' [pageSettings]='pageSettings' [editSettings]='editSettings'
                     [filterSettings]='filterSettings' [toolbar]='toolbar' (load)='onLoad($event)' (toolbarClick)='toolbarClick($event)'
                     [allowExcelExport]='true' [allowPdfExport]='true'>
@@ -31,7 +31,7 @@
         </div>
         <div *ngIf="!isDeskTop" class="e-default">
             <ejs-grid #adaptive id="adaptivedevice" [dataSource]='data' enableAdaptiveUI='true'
-                [rowRenderingMode]="rowMode" height='100%' allowPaging='true' allowFiltering='true' allowSorting='true' [allowGrouping]="false" [groupSettings]='groupOptions'
+                [rowRenderingMode]="rowMode" height='100%' [allowPaging]='true' allowFiltering='true' allowSorting='true' [allowGrouping]="false" [groupSettings]='groupOptions'
                 [pageSettings]='pageSettings' showColumnChooser='true' showColumnMenu='true' [editSettings]='editSettings' [filterSettings]='filterSettings'
                 [toolbar]='toolbar' (load)='onLoad($event)' (toolbarClick)='toolbarClick($event)' [allowExcelExport]='true' [allowPdfExport]='true'>
                 <e-columns>
@@ -81,14 +81,13 @@
     </div>
 
     <div id="action-description">
-        <p>This sample demonstrates optimal viewing experience and improve usability on small screens.</p>
+         <p>This sample demonstrates optimal viewing experience and improve usability on small screens.</p>
     </div>
     <div id="description">
         <p>
             The <code><a target="_blank" class="code"
                 href="https://ej2.syncfusion.com/angular/documentation/api/grid/#enableadaptiveui">
-                enableAdaptiveUI</a></code> property is used to render the grid filter, sort, edit, pager and toolbars like column chooser, pdf export, excel export, etc... dialogs
-            adaptively and
+                enableAdaptiveUI</a></code> property is used to render the grid filter, sort, edit, and toolbars such as column chooser, PDF export, Excel export, etc., adaptively and
             <code><a target="_blank" class="code"
                     href="https://ej2.syncfusion.com/angular/documentation/api/grid/#rowrenderingmode"> rowRenderingMode</a></code>
             property is used to render the grid row elements in the following directions,
@@ -97,10 +96,8 @@
             <li><code>Horizontal</code> - Renders the grid row elements in the horizontal direction.</li>
             <li><code>Vertical</code> - Renders the grid row elements in the vertical direction.</li>
         </ul>
-        <p> In this sample, you can change the row elements rendering direction by using the properties panel checkbox
-        </p>
         <p> In this demo, the column menu feature is only supported for the Grid <code>rowRenderingMode</code> mode as <code>Vertical</code>. 
-            This feature includes grouping, sorting, autofit, filter, and column chooser feature.
+            This feature includes paging,grouping, sorting, autofit, filter, and column chooser feature.
         </p>
         <p>
             More information on the rowRenderingMode configuration can be found in this

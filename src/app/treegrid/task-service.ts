@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DataStateChangeEventArgs } from '@syncfusion/ej2-angular-treegrid';
 import { Observable, Subject } from 'rxjs';

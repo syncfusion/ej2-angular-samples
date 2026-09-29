@@ -1,0 +1,275 @@
+#control-container {
+    padding: 0 !important;
+}
+
+.climate-chart-container {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 18px 20px 8px;
+    background: transparent;
+    border: 1px solid #dce5ef;
+    border-radius: 18px;
+    box-shadow:
+        0 1px 2px rgba(15, 23, 42, 0.03),
+        0 10px 28px rgba(15, 23, 42, 0.06);
+}
+
+/* Annotation root positioned at the corresponding chart data point. */
+.climate-insight {
+    position: relative;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+/* Annotation marker that matches the related series marker. */
+.climate-insight-marker {
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    z-index: 3;
+    width: 14px;
+    height: 14px;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    background: currentColor;
+}
+
+.climate-insight-marker-circle {
+    border-radius: 50%;
+}
+
+.climate-insight-marker-diamond {
+    transform: rotate(45deg);
+}
+
+.climate-insight-marker-rectangle {
+    border-radius: 2px;
+}
+
+/* Line connecting the annotation marker and callout pill. */
+.climate-insight-leader {
+    position: absolute;
+    z-index: 2;
+    background: currentColor;
+    opacity: 0.55;
+}
+
+/* Annotation callout body. */
+.climate-insight-pill {
+    position: absolute;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 32px;
+    box-sizing: border-box;
+    padding: 6px 12px 6px 8px;
+    border: 1px solid #dbe4ee;
+    border-radius: 8px;
+    background: var(--sf-chart-bg, #fff);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+    color: #334155;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 14px;
+    white-space: nowrap;
+}
+
+/* Positions the callout below the corresponding data point. */
+.climate-insight-anchor-down .climate-insight-pill {
+    top: 34px;
+    left: 0;
+    transform: translate(-50%, 0);
+}
+
+.climate-insight-anchor-down .climate-insight-leader {
+    top: 9px;
+    left: 0;
+    width: 1.5px;
+    height: 23px;
+    transform: translateX(-50%);
+}
+
+/* Positions the callout above the corresponding data point. */
+.climate-insight-anchor-up .climate-insight-pill {
+    top: -34px;
+    left: 0;
+    transform: translate(-50%, -100%);
+}
+
+.climate-insight-anchor-up .climate-insight-leader {
+    top: -32px;
+    left: 0;
+    width: 1.5px;
+    height: 23px;
+    transform: translateX(-50%);
+}
+
+/* Positions the callout to the right of the corresponding data point. */
+.climate-insight-anchor-right .climate-insight-pill {
+    top: 0;
+    left: 34px;
+    transform: translate(0, -50%);
+}
+
+.climate-insight-anchor-right .climate-insight-leader {
+    top: 0;
+    left: 9px;
+    width: 23px;
+    height: 1.5px;
+    transform: translateY(-50%);
+}
+
+.climate-chart-rtl
+.climate-insight-anchor-right
+.climate-insight-pill {
+    right: 34px;
+    left: auto;
+    transform: translate(0, -50%);
+}
+
+.climate-chart-rtl
+.climate-insight-anchor-right
+.climate-insight-leader {
+    right: 9px;
+    left: auto;
+    width: 23px;
+    height: 1.5px;
+    transform: translateY(-50%);
+}
+
+/* Small marker displayed inside the annotation callout. */
+.climate-insight-pin {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
+}
+
+.climate-insight-pin-circle {
+    border-radius: 50%;
+}
+
+.climate-insight-pin-diamond {
+    transform: rotate(45deg);
+}
+
+.climate-insight-pin-rectangle {
+    border-radius: 1.5px;
+}
+
+/* Annotation text styles. */
+.climate-insight-label {
+    color: #334155;
+    font-weight: 600;
+}
+
+.climate-insight-value {
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: rgba(15, 23, 42, 0.04);
+    font-weight: 700;
+}
+
+/* Atmospheric CO2 annotation theme. */
+.climate-insight-blue {
+    color: #2563eb;
+}
+
+.climate-insight-blue .climate-insight-pin {
+    background: #2563eb;
+}
+
+.climate-insight-blue .climate-insight-value {
+    color: #1d4ed8;
+    background: rgba(37, 99, 235, 0.1);
+}
+
+/* Arctic sea ice annotation theme. */
+.climate-insight-green {
+    color: #059669;
+}
+
+.climate-insight-green .climate-insight-pin {
+    background: #059669;
+}
+
+.climate-insight-green .climate-insight-value {
+    color: #047857;
+    background: rgba(5, 150, 105, 0.1);
+}
+
+/* Temperature anomaly annotation theme. */
+.climate-insight-orange {
+    color: #ea580c;
+}
+
+.climate-insight-orange .climate-insight-pin {
+    background: #ea580c;
+}
+
+.climate-insight-orange .climate-insight-value {
+    color: #c2410c;
+    background: rgba(234, 88, 12, 0.1);
+}
+
+/* Responsive chart and annotation styles. */
+@media only screen and (max-width: 640px) {
+    .climate-chart-container {
+        padding: 12px 8px 6px;
+        border-radius: 12px;
+    }
+
+    .climate-insight-pill {
+        min-height: 26px;
+        gap: 5px;
+        padding: 4px 8px 4px 6px;
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .climate-insight-marker {
+        top: -6px;
+        left: -6px;
+        width: 12px;
+        height: 12px;
+    }
+
+    .climate-insight-pin {
+        width: 7px;
+        height: 7px;
+        flex-basis: 7px;
+    }
+
+    .climate-insight-anchor-down .climate-insight-pill {
+        top: 30px;
+    }
+
+    .climate-insight-anchor-down .climate-insight-leader {
+        top: 8px;
+        height: 20px;
+    }
+
+    .climate-insight-anchor-up .climate-insight-pill {
+        top: -30px;
+    }
+
+    .climate-insight-anchor-up .climate-insight-leader {
+        top: -28px;
+        height: 20px;
+    }
+
+    .climate-insight-anchor-right .climate-insight-pill {
+        left: 30px;
+    }
+
+    .climate-insight-anchor-right .climate-insight-leader {
+        left: 8px;
+        width: 20px;
+    }
+
+    .climate-insight-value {
+        display: none;
+    }
+}

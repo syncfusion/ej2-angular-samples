@@ -1,0 +1,93 @@
+.mail-composer {
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 16px;
+}
+
+.mail-composer .form-group {
+    margin-bottom: 28px;
+}
+
+.mail-composer .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.mail-composer .form-group .e-btn + .e-btn {
+    margin-left: 8px;
+}
+
+.mail-composer .e-multi-select,
+.mail-composer .e-input-group,
+.mail-composer .form-control {
+    width: 100% !important;
+}
+
+@media (max-width: 767px) {
+    .mail-composer .control-label {
+        padding-top: 0;
+        margin-bottom: 4px;
+    }
+}
+
+/* Recipient popup item (MultiSelect dropdown) */
+.mail-item {
+    border-collapse: collapse;
+}
+
+.mail-item td {
+    vertical-align: middle;
+    padding: 4px 6px;
+}
+
+.mail-item td:first-child {
+    width: 44px;
+}
+
+.mail-item-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.mail-item-name {
+    display: block;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.mail-item-email {
+    display: block;
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+/* Selected chip (MultiSelect box) */
+.mail-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    max-width: 200px;
+    height: 100%;
+    line-height: 1.1;
+}
+
+.mail-value-img {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex: 0 0 auto;
+}
+
+.mail-value-name {
+    font-weight: 500;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

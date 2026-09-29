@@ -1,0 +1,46 @@
+.editor-toolbar-properties {
+    padding: 0;
+}
+
+.editor-toolbar-properties .form-group {
+    padding: 10px 0;
+}
+
+.editor-toolbar-properties .form-label.property-label {
+    display: block;
+    font-weight: 500;
+    padding: 0 0 8px 0;
+    text-align: left;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin: 0;
+}
+
+#property {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#property tbody tr {
+    border: none;
+}
+
+#property tbody tr td {
+    padding: 15px 0;
+    vertical-align: middle;
+    border: none;
+}
+
+#property tbody tr td:first-child {
+    width: 50%;
+}
+
+#property tbody tr td:last-child {
+    padding-left: 15px;
+    width: 50%;
+}
+
+#toolbarType,
+#toolbarPosition {
+    width: 100%;
+}

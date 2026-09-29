@@ -87,19 +87,24 @@ import { ConditionalRowSelectionComponent } from './conditional-row-selection.co
 import { PinnedRowsComponent } from './pinned-rows.component';
 import { CellEditComponent } from './cell-editing.component';
 import { DomVirtualizationComponent } from './domvirtualization.component';
+import { AdvancedFilterComponent } from './advanced-filter.component';
 import { ProductCatalogComponent } from './product.catalog.component';
+import { RowNumberComponent } from './row-number.component';
+import { FormulaCellComponent } from './formula-cell.component';
+import { ResponsiveGridComponent } from './responsive-grid.component';
 
 export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/over-view', component: OverViewComponent, 'name': 'Overview', description: 'This demo for Essential JS 2 grid component is an overview of how to display and manipulate large data with configuration options.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/live-data', component: LiveDataComponent, name: 'Live Data', description: 'This demo for Essential JS 2 grid component shows how frequently the Grid cell is updated with real-time data.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/default', component: DefaultComponent, 'name': 'Default Functionalities', description: 'This demo for Essential JS 2 grid component shows the default rendering of the grid component with minimum configuration.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/adaptive-layout', component: AdaptiveLayoutComponent, name: 'Adaptive Layout', description: 'This demo for Essential JS 2 grid component shows the Grid row in vertical direction.', order: '01', category: 'Data Grid' },
+    { 'path': ':theme/grid/responsive-grid', component: ResponsiveGridComponent, name: 'Responsive Grid', type: 'new', description: 'This demo for the Essential JS 2 Grid component shows how the Grid adapts its layout from desktop to mobile devices for an optimized viewing experience.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/loading-animation', component: LoadingAnimationComponent, name: 'Loading Animation',  description: 'This demo for Essential JS 2 grid component shows the loading indicator when grid loading and refreshing.', order: '01', category: 'Data Grid' },
-    { 'path': ':theme/grid/empty-record-template', component: EmptyRecordTemplateComponent, name: 'Empty Record Template',  description: 'This demo for Essential JS 2 grid component demonstrates usage of template in Grid to shown element or text or image or gif icon instead of displaying the empty record message.', order: '01', category: 'Data Grid' },
+    { 'path': ':theme/grid/empty-record-template', component: EmptyRecordTemplateComponent, name: 'Empty Record Template','type': 'update',  description: 'This demo for Essential JS 2 grid component demonstrates usage of template in Grid to shown element or text or image or gif icon instead of displaying the empty record message.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/chart', component: ChartComponent, name: 'Integrate Chart in Grid',   description: 'This demo of the Essential JS 2 Grid component showcases the visual representation of data using a chart.', order: '01', category: 'Data Grid', hideOnDevice: true },
     
     { 'path': ':theme/grid/fifa-statistics', component: FIFAStatisticsComponent, name: 'FIFA Statistics',  description: 'This demo for Essential Studio Angular grid component show the Product Use Case of FIFA Statistics', order: '17', category: 'Product Use Case' },
-    { 'path': ':theme/grid/product.catalog', component: ProductCatalogComponent, name: 'Product Category', type: 'new', order: '17', description: 'This demo for Essential JS 2 grid component shows a comprehensive product management dashboard with custom column templates, detail row expansion, and advanced filtering.', category: 'Product Use Case', api: '{"GridComponent":["dataSource","allowSorting","allowFiltering","filterSettings"]}', sourceFiles: [{ displayName: 'product.catalog.component.ts', path: 'src/app/grid/product.catalog.component.ts' }, { displayName: 'product.catalog.html', path: 'src/app/grid/product.catalog.html' }, { displayName: 'product.catalog.style.css', path: 'src/app/grid/product.catalog.style.css' }] },
+    { 'path': ':theme/grid/product-catalog', component: ProductCatalogComponent, name: 'Product Category',order: '17', description: 'This demo for Essential JS 2 grid component shows a comprehensive product management dashboard with custom column templates, detail row expansion, and advanced filtering.', category: 'Product Use Case', api: '{"GridComponent":["dataSource","allowSorting","allowFiltering","filterSettings"]}', sourceFiles: [{ displayName: 'product.catalog.component.ts', path: 'src/app/grid/product.catalog.component.ts' }, { displayName: 'product.catalog.html', path: 'src/app/grid/product.catalog.html' }, { displayName: 'product.catalog.style.css', path: 'src/app/grid/product.catalog.style.css' }] },
 
     { 'path': ':theme/grid/local-data', component: LocalDataComponent, 'name': 'Local Data', description: 'This demo for Essential JS 2 grid component shows how to bind with a local data source.', order: '02', category: 'Data Binding' },
     { 'path': ':theme/grid/remote-data', component: DataBindingComponent, 'name': 'Remote Data', description: 'This demo for Essential JS 2 grid component shows how to consume data from a remote data service.', order: '02', category: 'Data Binding' },
@@ -136,7 +141,7 @@ export const gridRouteConfig: Object[] = [
     },
     { 'path': ':theme/grid/column/auto-wrap', component: AutoWrapComponent, name: 'AutoWrap Column cells', description: 'This demo for Essential JS 2 grid component shows how the grid cell content is autowrapped to show large cell content.', order: '03', category: 'Columns' },
     {
-        'path': ':theme/grid/column/column-chooser', component: ColumnChooserComponent, name: 'Column Chooser', 'type': 'update', order: '03',description: 'This demo for Essential JS 2 grid component shows how the column chooser feature can be used to show or hide columns dynamically.',
+        'path': ':theme/grid/column/column-chooser', component: ColumnChooserComponent, name: 'Column Chooser', order: '03',description: 'This demo for Essential JS 2 grid component shows how the column chooser feature can be used to show or hide columns dynamically.',
         category: 'Columns'
     },
     { 'path': ':theme/grid/column/show-hide', component: ShowHideComponent, 'name': 'Show or Hide Column', description: 'This demo for Essential JS 2 grid component demonstrates the dynamic show and hide columns feature.', order: '03', category: 'Columns' },
@@ -172,21 +177,29 @@ export const gridRouteConfig: Object[] = [
         'path': ':theme/grid/row-spanning-api', component: RowSpanningComponentAPI, name: 'Row Spanning (API)', description: 'This demo for Essential JS 2 grid control demonstrates the row and column spanning feature. In this sample, we have spanned row cells together.', order: '04',
         category: 'Rows',
     },
-
+    {
+        'path': ':theme/grid/row-number', component: RowNumberComponent, name: 'Row Number',type: 'new', description: 'This sample demonstrates how to display row numbers in the Grid using a row number column.', order: '04', category: 'Rows'
+    },
+    
     {
         'path': ':theme/grid/normal-edit', component: NormalEditComponent, name: 'Inline Editing', description: 'This demo for Essential JS 2 grid component shows the inline editing operation.', order: '05',
         category: 'Editing'
     },
+
     {
         'path': ':theme/grid/dialog-editing', component: DialogEditComponent, name: 'Dialog Editing', description: 'This demo for Essential JS 2 grid component shows how to edit grid rows using the Essential JS 2 dialog component.', order: '05',
         category: 'Editing'
     },
     {
-        'path': ':theme/grid/batch-editing', component: BatchEditComponent, name: 'Batch Editing', 'type': 'update', description: 'This demo for Essential JS 2 grid component shows how to perform bulk changes to the grid content using batch edit mode.', order: '05',
+        'path': ':theme/grid/batch-editing', component: BatchEditComponent, name: 'Batch Editing', description: 'This demo for Essential JS 2 grid component shows how to perform bulk changes to the grid content using batch edit mode.', order: '05',
         category: 'Editing'
     },
     {
-        'path': ':theme/grid/cell-editing', component: CellEditComponent, name: 'Cell Editing', 'type': 'new', description: 'This demo for Essential JS 2 grid component shows how to perform cell editing', order: '05',
+        'path': ':theme/grid/cell-editing', component: CellEditComponent, name: 'Cell Editing', description: 'This demo for Essential JS 2 grid component shows how to perform cell editing', order: '05',
+        category: 'Editing'
+    },
+    {
+        'path': ':theme/grid/formula-cell', component: FormulaCellComponent, type: 'new', name: 'Formula Cell', description: 'This sample demonstrates formula cells in the Grid and automatic recalculation when source values are edited.', order: '05',
         category: 'Editing'
     },
     {
@@ -207,9 +220,10 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/filtering', component: FilterComponent, name: 'Default Filtering', description: 'This demo for Essential JS 2 grid component shows how to place a filter bar row in the header to filter grid rows.', order: '07', category: 'Filtering' },
     { 'path': ':theme/grid/filter-template', component: FilterTemplateComponent, name: 'Filter Template', description: 'This demo for Essential JS 2 grid control shows how to filter a data using custom component in the filter bar.', order: '07', category: 'Filtering' },
     {
-        'path': ':theme/grid/filter-menu', component: FilteringMenuComponent,  name: 'Filter Menu', 'type': 'update',
+        'path': ':theme/grid/filter-menu', component: FilteringMenuComponent,  name: 'Filter Menu',
         description: 'This demo for Essential JS 2 grid component demonstrates a way of filtering rows using a menu, check box, and Excel filter UI.', order: '07', category: 'Filtering'
     },
+    { 'path': ':theme/grid/advanced-filter', component: AdvancedFilterComponent, name: 'Advanced Filtering', type: 'new', description: 'This sample demonstrates how to create complex filter criteria using the advanced filtering feature of the Grid.', order: '07', category: 'Filtering' },
     { 'path': ':theme/grid/searching', component: SearchComponent, name: 'Search', description: 'This demo for Essential JS 2 grid component shows the content searching feature.', order: '07', category: 'Filtering' },
 
     { 'path': ':theme/grid/grouping', component: GroupComponent, name: 'Grouping', description: 'This demo for Essential JS 2 grid component demonstrates the grouping feature of the grid component. The grid component has options to group records based on columns.', order: '08', category: 'Grouping' },
@@ -253,7 +267,7 @@ export const gridRouteConfig: Object[] = [
         category: 'Scrolling'
     },
     {
-        'path': ':theme/grid/domvirtualization', component: DomVirtualizationComponent, name: 'DOM Virtualization', "type": "new", description: 'This demo demonstrates how to use Essential JS 2 grid to show a large data view without performance degradation by rendering only the required rows and columns.', order: '12',
+        'path': ':theme/grid/domvirtualization', component: DomVirtualizationComponent, name: 'DOM Virtualization', description: 'This demo demonstrates how to use Essential JS 2 grid to show a large data view without performance degradation by rendering only the required rows and columns.', order: '12',
         category: 'Performance'
     },
     {
@@ -261,7 +275,7 @@ export const gridRouteConfig: Object[] = [
         category: 'Performance'
     },
 	{
-        'path': ':theme/grid/infinite-scrolling', component: InfiniteScrollingComponent, name: 'Infinite Scrolling', 'type': 'update', description: 'This sample demonstrates the Grid component with the infinite scrolling feature.', order: '12',
+        'path': ':theme/grid/infinite-scrolling', component: InfiniteScrollingComponent, name: 'Infinite Scrolling', description: 'This sample demonstrates the Grid component with the infinite scrolling feature.', order: '12',
         category: 'Performance'
     },
     { 'path': ':theme/grid/paging', component: PageComponent, name: 'Pagination', description: 'This demo for Essential JS 2 grid component shows how you can display the contents of the grid in page segments using the paging feature.', order: '12', category: 'Performance' },

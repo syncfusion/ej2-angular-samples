@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
-import { editingData, editingResources } from './data';
+import { contextMenuData, editingResources } from './data';
 import { GanttComponent, ContextMenuOpenEventArgs, ContextMenuClickEventArgs, IGanttData, GanttModule, EditService, ContextMenuService, DayMarkersService, ToolbarService, ResizeService, SelectionService, SortService } from '@syncfusion/ej2-angular-gantt';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -30,7 +30,7 @@ export class GanttContextMenuComponent implements OnInit {
     public contextMenuItems: string[] | Object[];
     public splitterSettings: object;
     public ngOnInit(): void {
-        this.data = editingData;
+        this.data = contextMenuData;
         this.taskSettings = {
             id: 'TaskID',
             name: 'TaskName',
@@ -39,7 +39,7 @@ export class GanttContextMenuComponent implements OnInit {
             duration: 'Duration',
             progress: 'Progress',
             dependency: 'Predecessor',
-            parentID: 'ParentID',
+            parentID: 'ParentId',
             notes: 'info',
             resourceInfo: 'resources'
         };
@@ -52,7 +52,8 @@ export class GanttContextMenuComponent implements OnInit {
             allowEditing: true,
             allowDeleting: true,
             allowTaskbarEditing: true,
-            showDeleteConfirmDialog: true
+            showDeleteConfirmDialog: true,
+            allowTaskbarDraw: true
         };
         this.contextMenuItems = ['AutoFitAll', 'AutoFit', 'TaskInformation', 'DeleteTask', 'Save', 'Cancel',
         'SortAscending', 'SortDescending', 'Add', 'DeleteDependency', 'Convert', 'Indent', 'Outdent',
@@ -61,9 +62,10 @@ export class GanttContextMenuComponent implements OnInit {
         ];
         this.toolbar = ['Add', 'Edit', 'Update', 'Delete', 'Cancel', 'ExpandAll', 'CollapseAll'];
         this.columns =  [
-            { field: 'TaskID', width:80 },
+            { field: 'TaskID', width:80, visible: false },
             { field: 'TaskName', headerText: 'Job Name', width: '250', clipMode: 'EllipsisWithTooltip' },
             { field: 'StartDate' },
+            { field: 'EndDate' },
             { field: 'Duration' },
             { field: 'Progress' },
             { field: 'Predecessor' }
@@ -88,7 +90,7 @@ export class GanttContextMenuComponent implements OnInit {
         
         this.resources = editingResources;
         this.splitterSettings = {
-            columnIndex: 2
+            columnIndex: 3
         };
     }
     public contextMenuClick(args?: ContextMenuClickEventArgs): void {

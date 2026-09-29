@@ -1,8 +1,5 @@
 <div id="action-description">
-    <p>This sample demonstrates the various phases involved in constructing a residential house, from testing
-		the soil to handing over the fully constructed property to the owner. This also demonstrates the usage of
-		default and custom context menu in Gantt component.
-	</p>
+    <p>This sample demonstrates the row drag-and-drop feature in the Gantt Chart. Tasks can be reordered by dragging the drag handle displayed in the left side of the Gantt row. Rows can be dropped at the required position to reorganize the task hierarchy and sequence.</p>
 </div>
 <div class="control-section">
     <ejs-gantt id="contextMenu" #gantt height="650px" rowHeight="46" taskbarHeight="25" [dataSource]="data" [taskFields]="taskSettings" [columns]="columns" [enableContextMenu]="true"
@@ -11,7 +8,7 @@
         [allowSelection]="true" dateFormat="MMM dd, y" [projectStartDate]="projectStartDate" [projectEndDate]="projectEndDate" [highlightWeekends]="true"
         [gridLines]="gridLines" [eventMarkers]="eventMarkers" [editSettings]="editSettings" [allowResizing]="true" [allowSorting]="true"
         [toolbar]="toolbar" [resourceFields]="resourceFields"
-        [resources]="resources" [splitterSettings]="splitterSettings">
+        [resources]="resources" [splitterSettings]="splitterSettings" [allowUnscheduledTasks]="true">
     </ejs-gantt>
     <div style="float: right; margin: 10px;">Source:
         <a href="https://en.wikipedia.org/wiki/Construction" target="_blank" rel="noopener noreferrer">https://en.wikipedia.org/wiki/Construction</a>
@@ -19,43 +16,39 @@
 </div>
 <div id="description">
     <p>
-		Gantt has an option to show the context menu while performing right click on it. You can configure the default
-		and custom menu items in the context menu using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/#columnmenuitems">contextMenuItems</a> property.
-		Each menu item will be displayed contextually based on its target. In this demo we have rendered following
-		default and custom menu items
+		The Gantt Chart provides a context menu that offers quick access to commonly used operations. Context menu support can be enabled by setting the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/index-default#contextmenuitems">contextMenuItems</a> property to <code>true</code>.
 	</p>
-	<p style="font-weight: 500">Default items:</p>
+	<p>Built-in context menu items are available for operations such as task editing, row addition and deletion, sorting, indentation, dependency management, and column auto-fitting. The displayed menu items are automatically adjusted based on the selected target element.</p>
+	<p>When <code>allowUnscheduledTasks</code> is enabled, tasks without StartDate, EndDate, or Duration are rendered without a taskbar. Enabling the <code>allowTaskbarDraw</code> property allows these tasks to be scheduled by drawing a taskbar directly in the chart area, which automatically updates the task's scheduling values</p>
+	<p>Default items:</p>
 	<ul>
 		<li><code>AutoFitAll</code> - Auto fit all columns.</li>
 		<li><code>AutoFit</code> - Auto fit the current column.</li>
 		<li><code>TaskInformation</code> - Edit the current record.</li>
-		<li><code>Indent</code> - Indent the selected record by one level</li>
-		<li><code>Outdent</code> - Outdent the selected record by one level</li>
+		<li><code>Indent</code> - Indent the selected record to one level</li>
+		<li><code>Outdent</code> - Outdent the selected record to one level</li>
 		<li><code>DeleteTask</code> - Delete the current record.</li>
 		<li><code>Save</code> - Save the edited record.</li>
 		<li><code>Cancel</code> - Cancel the edited state.</li>
 		<li><code>SortAscending </code> - Sort the current column in ascending order.</li>
 		<li><code>SortDescending </code> - Sort the current column in descending order.</li>
 		<li><code>DeleteDependency </code> - Delete the dependency of the current record.</li>
-		<li><code>Convert </code> - Convert the normal task into milestone task and vice versa.</li>
+		<li><code>Convert </code> - Convert the normal task in to milestone task and vice versa.</li>
 		<li><code>Add</code>
-			<ul>
-				<li><code>Above</code> - Add a new row above the selected row </li>
-				<li><code>Below</code> - Add a new row below the selected row</li>
-				<li><code>Child</code> - Add a new row as child to the selected row</li>
-				<li><code>Milestone</code> - Add a milestone task below to selected row</li>
-			</ul>
+		<ul>
+			<li><code>Above</code> - Add a new row above the selected row </li>
+			<li><code>Below</code> - Add a new row below the selected row</li>
+			<li><code>Child</code> - Add a new row as child to the selected row</li>
+			<li><code>Milestone</code> - Add a milestone task below to selected row</li>
+		</ul>
 		</li>
 	</ul>
-
-	<p style="font-weight: 500">Custom items:</p>
-	<p>
-		In this demo, custom menu items have been enabled in the context menu to expand and collapse parent rows:
-	</p>
+	<p>This sample also demonstrates how to add custom context menu items using the <code>contextMenuItems</code> property.</p>
 	<ul>
 		<li><code>Expand the Row</code> - Used to expand the parent row when it is in a collapsed state.</li>
 		<li><code>Collapse the Row</code> - Used to collapse the parent row when it is in an expanded state.</li>
 	</ul>
 	<p>Gantt component features are segregated into individual feature-wise modules. To use context menu, edit, toolbar, markers, sort, resize, and selection  feature, we need to inject <code>ContextMenuService</code>, <code>EditService</code>, <code>ToolbarService</code>, <code>DayMarkersService</code>, <code>SortService</code>, <code>ResizeService</code>, and <code>SelectionService</code>  into the <code>&#64;NgModule.providers</code> section.</p>
-    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/context-menu" rel="noopener noreferrer">documentation section</a>.</p>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/context-menu" rel="noopener noreferrer">context menu</a>  documentation section.</p>
+	<p>Looking for the full Angular Gantt Chart component overview, features, pricing, and documentation? Visit the <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-gantt-chart">Angular Gantt Chart</a> page.</p>
 </div>

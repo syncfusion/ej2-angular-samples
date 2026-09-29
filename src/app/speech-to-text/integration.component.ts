@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild  } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, Inject  } from '@angular/core';
 import { SpeechToTextModule, SpeechToTextComponent, TranscriptChangedEventArgs, ErrorEventArgs } from '@syncfusion/ej2-angular-inputs'
 import { AIAssistViewModule, AIAssistViewComponent, ToolbarSettingsModel, ToolbarItemClickedEventArgs } from '@syncfusion/ej2-angular-interactive-chat';
 import { ToastComponent, ToastModule } from '@syncfusion/ej2-angular-notifications';
@@ -16,6 +16,10 @@ export class IntegrationSpeechToTextComponent  {
   @ViewChild('assistView') assistViewInstance!: AIAssistViewComponent;
   @ViewChild('speechToText') speechToTextInstance!: SpeechToTextComponent;
   @ViewChild('toast') toastInstance!: ToastComponent;
+
+  constructor(@Inject('sourceFiles') private sourceFiles: any) {
+                    sourceFiles.files = ['integration.css'];
+  }
 
   public toastPosition = { X: 'Right'};
   public target = ".integration-control-section";

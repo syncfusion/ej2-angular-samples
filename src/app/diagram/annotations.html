@@ -42,6 +42,9 @@
         border-color: #006CE6;
         border-width: 2px;
     }
+    .diagram-annotations .sample-border {
+        border-right: 1px solid #D5D5D5;
+    }
 
     .diagram-annotations .col-xs-6 {
         padding-left: 0px;
@@ -100,8 +103,8 @@
         example.
     </p>
 </div>
-<div class="control-section diagram-annotations">
-    <div class="col-lg-8">
+<div class="control-section diagram-annotations" style="padding-top: 0px;">
+    <div class="col-lg-8 sample-border">
         <ejs-diagram #diagram id="diagram" width="100%" height="550px" [getConnectorDefaults]='connectorDefaults' [getNodeDefaults]='nodeDefaults' (selectionChange)="selectionChange($event)" (created)="diagramCreate($event)" [snapSettings]='snapSettings'(created)="created()">
             <e-nodes>
                 <e-node id='industry' [height]=60 [width]=150 [offsetX]=400 [offsetY]=250>
@@ -256,6 +259,4 @@
         To change the position of the descriptions, select a node and choose the template in the property panel.
     </p>
     <br>
-
-    <p>Looking for the full Angular Diagram component overview, features, pricing, and documentation? Visit the <a href="https://www.syncfusion.com/angular-components/angular-diagram" target="_blank">Angular Diagram</a> page.</p>
 </div>

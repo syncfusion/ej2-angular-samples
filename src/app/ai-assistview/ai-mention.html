@@ -1,0 +1,50 @@
+<div class="control-section">
+    <div class="mention-aiassistview">
+        <ejs-aiassistview
+            #mentionAIAssistView
+            id="aiAssistView"
+            [promptPlaceholder]="promptPlaceholder"
+            [bannerTemplate]="bannerTemplate"
+            [promptSuggestions]="promptSuggestions"
+            [enableStreaming]="enableStreaming"
+            [mentions]="mentions"
+            [toolbarSettings]="assistViewToolbarSettings"
+            (promptRequest)="onPromptRequest($event)"
+            (stopRespondingClick)="stopRespondingClick()">
+            <ng-template #bannerTemplate>
+                <div class="banner-content">
+                    <div class="e-icons e-assistview-icon"></div>
+                    <h3>AI Assistant with Mentions</h3>
+                    <i>Use mentions to quickly access contextual options and enhance prompts within the AI AssistView.</i>
+                </div>
+            </ng-template>
+
+            <!-- Weather card tool template -->
+            <ng-template #weatherCardTemplate let-data>
+                <div tabindex="0" class="e-card" id="weather_card" role="button">
+                    <div class="e-card-header">
+                        <div class="e-card-header-caption">
+                            <div class="e-card-header-title">{{data.location}}</div>
+                            <div class="e-card-sub-title">{{data.condition}}</div>
+                        </div>
+                    </div>
+                    <div class="e-card-header weather_report">
+                        <div class="e-card-header-image"></div>
+                        <div class="e-card-header-caption">
+                            <div class="e-card-header-title">{{data.temperature}}</div>
+                            <div class="e-card-sub-title">Humidity: {{data.humidity}}</div>
+                            <div class="e-card-sub-title">Wind: {{data.windSpeed}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </ejs-aiassistview>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the mention support capabilities of the AI AssistView control. Mentions can be referenced directly within prompts, enabling intelligent and context-aware interactions.</p>
+</div>
+<div id="description">
+    <p>In this example, the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/ai-assistview#mentions">mentions</a> property is used to configure multiple mention sources, enabling users to quickly access contextual actions within the AI AssistView. The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/ai-assistview#bannertemplate">bannerTemplate</a> customizes the banner content, and  <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/ai-assistview#toolbarsettings">toolbarSettings</a> adds custom toolbar items like a right-aligned <code>Refresh</code> button. The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/ai-assistview#promptrequest">promptRequest</a> event processes the selected mentions and generates responses based on the chosen skills and agents.</p>
+</div>

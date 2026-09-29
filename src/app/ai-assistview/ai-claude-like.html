@@ -1,7 +1,7 @@
 <div class="control-section claude-clone">
     <div class="claude-aiassist" [ngClass]="containerClass" id="claudeContainer">
-        <div id="claude_aiassistview" 
-            ejs-aiassistview 
+        <ejs-aiassistview 
+            id="claude_aiassistview"
             #claudeAIAssistView
             [showHeader]="false"
             [promptPlaceholder]="'How can i help you today?'"
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </ng-template>
-        </div>
+        </ejs-aiassistview>
         <div id="buttonsContainer" class="claude-buttons-container">
             <button ejs-button id="codeBtn" iconCss="e-icons e-code-view">Code</button>
             <button ejs-button id="writeBtn" iconCss="e-icons e-edit">Write</button>

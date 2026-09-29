@@ -1,0 +1,82 @@
+<div id="action-description">
+    <p>
+        The Gantt Chart supports dependency types to define relationships between tasks or features,
+        helping control execution order and project sequencing.
+    </p>
+</div>
+
+<div class="control-section">
+
+    <!-- Property Panel -->
+    <div class="property-panel" style="margin-bottom:12px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+            <label>Allowed Dependency Types:</label>
+
+            <ejs-multiselect
+                id="allowedDependencyType"
+                [dataSource]="dependencyTypeData"
+                [fields]="fields"
+                [value]="dependencyType"
+                mode="CheckBox"
+                popupHeight="220px"
+                [showDropDownIcon]="true"
+                [showClearButton]="false"
+                width="240px"
+                (change)="onDependencyTypeChange($event)">
+            </ejs-multiselect>
+        </div>
+    </div>
+
+    <!-- Gantt -->
+    <ejs-gantt
+        #ganttObj
+        id="DependencyTypes"
+        height="650px"
+        rowHeight="46"
+        taskbarHeight="25"
+        [dataSource]="data"
+        [taskFields]="taskSettings"
+        [allowSelection]="true"
+        [highlightWeekends]="true"
+        [toolbar]="toolbar"
+        [editSettings]="editSettings"
+        [splitterSettings]="splitterSettings"
+        [labelSettings]="labelSettings"
+        [treeColumnIndex]="1"
+        gridLines="Both"
+        [columns]="columns"
+        [projectStartDate]="projectStartDate"
+        [allowedDependencyTypes]="dependencyType">
+    </ejs-gantt>
+
+</div>
+
+<div id="description">
+
+    <p>
+        The Gantt chart supports various dependency relationship types to manage task links.
+        The <code>allowedDependencyTypes</code> property restricts the dependency types
+        available during task editing and dependency creation.
+    </p>
+
+    <p>The different types of dependency are:</p>
+
+    <ul>
+        <li><code>FS</code> - Finish to Start</li>
+        <li><code>SS</code> - Start to Start</li>
+        <li><code>FF</code> - Finish to Finish</li>
+        <li><code>SF</code> - Start to Finish</li>
+    </ul>
+
+    <p>
+        When the dependency type list is configured, the Gantt validates newly created
+        or modified links against the selected relationship types.
+    </p>
+
+    <p>
+        To use editing, toolbar, selection and MultiSelect checkbox functionality,
+        inject the corresponding services in the providers section.
+    </p>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/task-dependency">task dependency</a> documentation section.</p>
+    <p>Looking for the full Angular Gantt Chart component overview, features, pricing, and documentation? Visit the <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-gantt-chart">Angular Gantt Chart</a> page.</p>
+</div>

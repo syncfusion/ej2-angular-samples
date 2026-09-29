@@ -199,6 +199,72 @@ async function getFileContext(attachedFiles: any[]): Promise<any[]> {
   return fileContents;
 }
 
+export const getOpenAIModelAssistview = async (args: any, abortController?: AbortController): Promise<any> => {
+  try {
+    let fileContents: any[] = [];
+    let aiPrompt = args.prompt;
+    if (args.attachedFiles && args.attachedFiles.length > 0) {
+      fileContents = await getFileContext(args.attachedFiles);
+      let attachedFileContext = 'Attached Files:\n';
+      fileContents.forEach((file: any) => {
+        attachedFileContext += '\n--- File: ' + file.name + ' (Type: ' + file.type + ', File Type: ' + file.fileType + ') ---\n';
+        if (file.fileType === 'text') {
+          attachedFileContext += file.content + '\n';
+        } else if (file.fileType === 'image') {
+          attachedFileContext += '[Image file: ' + file.name + ' - Base64 encoded data available]\n';
+          attachedFileContext += file.content + '\n';
+        } else {
+          attachedFileContext += '[Binary file: ' + file.name + ' - Please process this file]\n';
+          attachedFileContext += file.content.substring(0, 500) + '...\n';
+        }
+      });
+      aiPrompt = attachedFileContext + '\n\nUser Prompt: ' + args.prompt;
+    }
+
+    const userID = await getUserID();
+    if (!userID) {
+      return { response: 'Failed to generate user ID. Please try again later.' };
+    }
+    const systemPrompt = args.systemPrompt || 'You are a helpful assistant.';
+    const requestBody: any = {
+      visitorId: userID,
+      messages: {
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: aiPrompt }
+        ]
+      }
+    };
+    if (fileContents && fileContents.length > 0) {
+      requestBody.fileContents = fileContents;
+    }
+    const response = await fetch(AI_SERVICE_URL + '/api/assistview', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestBody),
+      signal: abortController ? abortController.signal : undefined
+    });
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || ('HTTP Error ' + response.status));
+    }
+    const result = await response.json().catch(async () => {
+      return { response: await response.text() };
+    });
+    const aiResponse = result.response ? result.response.replace('END_INSERTION', '') : 'We could not reach the AI service; please try again later.';
+    return { response: aiResponse, model: result.model, usage: result.usage };
+  } catch (error: any) {
+    if (error.name === 'AbortError') {
+      return null;
+    } else if (error.message && error.message.indexOf('token limit') !== -1) {
+      return { response: error.message };
+    }
+    return { response: 'We could not reach the AI service; please try again later.' };
+  }
+};
+
 export async function getAIResponse(args: any, abortController?: AbortController): Promise<any> {
   try {
     let fileContents: any[] = [];

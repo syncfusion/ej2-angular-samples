@@ -3,13 +3,15 @@
     </p>
 </div>
 <div class="control-section">
-    <ejs-grid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' [toolbar]='toolbar'>
+    <ejs-grid [dataSource]='data' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' [toolbar]='toolbar' height='300' emptyRecordMode='Sticky'>
         <e-columns>
             <e-column field='OrderID' headerText='Order ID' width='140' textAlign='Right' isPrimaryKey='true' [validationRules]='orderidrules'></e-column>
             <e-column field='CustomerID' headerText='Customer ID' width='140' [validationRules]='customeridrules'></e-column>
             <e-column field='Freight' headerText='Freight' width='140' format='C2' textAlign='Right' editType='numericedit' [validationRules]='freightrules'></e-column>
             <e-column field='OrderDate' headerText='Order Date' width='120' editType='datetimepickeredit' [format]='formatoptions' textAlign='Right'></e-column>
             <e-column field='ShipCountry' headerText='Ship Country' width='150' editType='dropdownedit' [edit]='editparams'></e-column>
+            <e-column field='ShipCity' headerText='Ship City' width='150'></e-column>
+            <e-column field='ShipAddress' headerText='Ship Address' width='200'></e-column>
         </e-columns>
         
         <ng-template #emptyRecordTemplate>

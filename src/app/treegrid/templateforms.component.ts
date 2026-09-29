@@ -7,7 +7,7 @@ import { FormGroup, FormsModule } from '@angular/forms';
 import { DatePickerAllModule } from "@syncfusion/ej2-angular-calendars";
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { NumericTextBoxModule} from '@syncfusion/ej2-angular-inputs';
-import { NgClass, NgFor } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 @Component({
@@ -15,7 +15,7 @@ import { SBActionDescriptionComponent } from '../common/adp.component';
     templateUrl: 'templateforms.html',
     providers: [ToolbarService, EditService, PageService],
     standalone: true,
-    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, FormsModule, NgClass, NgFor, DatePickerAllModule, DropDownListModule, NumericTextBoxModule]
+    imports: [TreeGridAllModule, SBActionDescriptionComponent, SBDescriptionComponent, FormsModule, NgClass, DatePickerAllModule, DropDownListModule, NumericTextBoxModule]
 })
 export class TemplateFormsComponent implements OnInit {
     public data: Object[] = [];

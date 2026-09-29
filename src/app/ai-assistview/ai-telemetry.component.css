@@ -1,0 +1,23 @@
+.telemetry-aiassistview {
+    height: 600px;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.telemetry-aiassistview .banner-content .e-assistview-icon:before {
+    font-size: 35px;
+}
+
+.telemetry-aiassistview .banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 330px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 750px) {
+    .telemetry-aiassistview {
+        width: 100%;
+    }
+}

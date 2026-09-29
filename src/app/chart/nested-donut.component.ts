@@ -70,7 +70,7 @@ export class NestedDonut {
         name: 'text',
         position: 'Inside'
     };
-    
+
     public tooltip: Object = {
         enable: true,
         format: '<b>${point.x}</b><br/>Population: <b>${point.y}%</b>',

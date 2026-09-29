@@ -115,17 +115,38 @@
 
 <div id="action-description">
     <p>
-        This sample demonstrates the usage of sorting cards in the Kanban board. You can change the sort options in the dropdown list to reflect the card ordering on the board.
+        This sample demonstrates the card sorting capabilities of the Kanban component, enabling workflow items to be organized and displayed based on different sorting criteria and orders.
     </p>
 </div>
 <div id="description">
     <p>
-      The sample is designed to showcase the sorting behavior of the Kanban board. It contains the <code>sortBy</code>, <code>field</code> and <code>direction</code> properties. The <code>sortBy</code> property provides the following options:
+        This sample demonstrates the card sorting capabilities of the Kanban component using the 
+        <a href="https://ej2.syncfusion.com/angular/documentation/kanban/sort" target="_blank">sortSettings</a> 
+        configuration. Cards can be organized based on data source order, index values, or custom fields, and displayed in ascending or descending order.
+    </p>
+    <p>
+        The <code>sortBy</code> property provides the following options:
     </p>
     <ul>
-        <li><code>DataSourceOrder</code>: Cards are aligned in the ascending or descending order based on the data source order and act accordingly when the user drag-and-drop the cards. Since the feature considers the default data source order, <code>field</code> mapping is not required to sort the cards.</li>
-        <li><code>Index</code>: The cards are aligned based on the index value. The index binds to the card based on the mapping field that must be an integer value. Cards will be dropped at the particular position where the user drag-and-drop the cards. The index of the cards will dynamically update its <code>field</code> value based on the dropped position.</li>
-        <li><code>Custom</code>: Users can map any field to sort the cards using this option, which accepts both string and integer <code>field</code> value.  It maintains the initial mapping key-value to drag and drop the cards and does not change their mapping value after dropping the cards.</li>
-    </ul>
-    <p>The <code>direction</code> property is used to align the cards either in the ascending or descending order on the Kanban board.</p>
+        <li>
+            <code>DataSourceOrder</code>: Cards are arranged according to their order in the data source. Since the original data order is used, no additional <code>field</code> mapping is required.
+        </li>
+        <li>
+            <code>Index</code>: Cards are sorted based on an integer field value, such as <code>RankId</code>. When cards are reordered through drag-and-drop, the mapped field value is automatically updated to reflect the new position.
+        </li>
+        <li>
+            <code>Custom</code>: Cards are sorted using a user-defined field. Both string and numeric fields can be used, such as <code>Priority</code>, <code>RankId</code>, or <code>Summary</code>. The original field values are preserved when cards are moved.
+        </li>
+    </ul> 
+    <p>
+        The <code>direction</code> property determines whether cards are displayed in ascending or descending order within each column.
+    </p>
+    <p>
+        More information on the Essential<sup>®</sup> JS2 Kanban board can be found in this 
+        <a href="https://ej2.syncfusion.com/angular/documentation/kanban/sort" target="_blank">sorting</a> documentation section.
+    </p>
+    <p>
+        Looking for the full Angular Kanban component overview, features, pricing and documentation?
+        Visit the <a href="https://www.syncfusion.com/gantt-sdk/angular-kanban-board" target="_blank">Angular Kanban</a> page.
+    </p>
 </div>

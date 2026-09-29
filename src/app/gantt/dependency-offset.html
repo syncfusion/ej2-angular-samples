@@ -1,0 +1,53 @@
+<div id="action-description">
+    <p>
+        This sample illustrates how lead and lag offsets are expressed in task
+        predecessor definitions. Offsets are used to delay or overlap dependent
+        tasks from their default relationship.
+    </p>
+</div>
+
+<div class="control-section">
+    <ejs-gantt
+        #ganttObj
+        id="DependencyOffset"
+        height="650px"
+        rowHeight="46"
+        taskbarHeight="25"
+        [dataSource]="data"
+        [taskFields]="taskSettings"
+        [allowSelection]="true"
+        [highlightWeekends]="true"
+        [editSettings]="editSettings"
+        [splitterSettings]="splitterSettings"
+        [labelSettings]="labelSettings"
+        [columns]="columns"
+        [treeColumnIndex]="1"
+        [projectStartDate]="projectStartDate"
+        gridLines="Both">
+
+    </ejs-gantt>
+</div>
+
+<div id="description">
+    <p>
+        The Gantt Chart supports dependency offsets to define lead or lag time
+        between linked tasks. These offsets adjust the start or finish dates of
+        dependent tasks relative to their predecessor tasks, enabling more
+        flexible and accurate project scheduling.
+    </p>
+
+    <p>
+        These offsets affect how the dependent task start and finish dates are
+        calculated relative to the linked task, enabling more complex scheduling
+        scenarios.
+    </p>
+
+    <p>
+        Gantt Chart component features are segregated into individual
+        feature-wise modules. To use edit and selection features, inject
+        <code>EditService</code> and <code>SelectionService</code> into the
+        <code>&#64;NgModule.providers</code> section.
+    </p>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/task-dependency#configure-predecessor-offsets-with-duration-units">task dependency</a> documentation section.</p>
+    <p>Looking for the full Angular Gantt Chart component overview, features, pricing, and documentation? Visit the <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-gantt-chart">Angular Gantt Chart</a> page.</p>
+</div>

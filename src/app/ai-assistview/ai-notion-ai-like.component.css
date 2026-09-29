@@ -112,16 +112,16 @@
 
   /* Individual models */
   .model-sonet {
-      background-image: url('/assets/ai-assistview/images/Claude.svg');
+      background-image: url('../../assets/ai-assistview/images/Claude.svg');
   }
   .model-opus {
-      background-image: url('/assets/ai-assistview/images/Claude.svg');
+      background-image: url('../../assets/ai-assistview/images/Claude.svg');
   }
   .model-gemini {
-      background-image: url('/assets/ai-assistview/images/Gemini.svg');
+      background-image: url('../../assets/ai-assistview/images/Gemini.svg');
   }
   .model-gpt {
-      background-image: url('/assets/ai-assistview/images/GPT.svg');   
+      background-image: url('../../assets/ai-assistview/images/GPT.svg');   
   }
 
   #custombtn .model-icon:not(.e-icons) {

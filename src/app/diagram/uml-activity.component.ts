@@ -17,7 +17,7 @@ Diagram.Inject(UndoRedo, DiagramContextMenu);
 
 /**
  * Component for displaying a Symmetric Layout sample.
- * Manages the presentation and behavior of the diagram using Angular Diagram component.
+ * Manages the presentation and behavior of the diagram using Syncfusion's Angular Diagram component.
  */
 @Component({
     selector: 'control-content', // Angular component selector

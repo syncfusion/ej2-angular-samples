@@ -3,7 +3,7 @@ import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { BlockModel, BlockEditorModule, BlockEditor, FocusEventArgs } from '@syncfusion/ej2-angular-blockeditor';
 import { CheckBoxModule, ChangeEventArgs } from '@syncfusion/ej2-angular-buttons';
-import blockData from './blockData.json';
+import blockData from './data/api.json';
 import { DialogUtility } from '@syncfusion/ej2-popups'; // Predefined dialogs
 
 @Component({

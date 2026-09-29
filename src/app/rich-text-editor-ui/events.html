@@ -1,0 +1,82 @@
+<div class="col-lg-9 control-section sb-property-border">
+    <div class="control-wrapper">
+        <div class="sample-container">
+            <div class="default-section">
+                <ejs-richtexteditor-ui id='editor' #editor [toolbarSettings]='tools' [slashCommandSettings]='slashCommandSettings'
+                    (created)='onCreated()'
+                    (destroyed)='onDestroyed()'
+                    (focus)='onFocused($event)'
+                    (blur)='onBlurred($event)'
+                    (actionBegin)='onActionBegin($event)'
+                    (actionComplete)='onActionComplete($event)'
+                    (change)='onChange($event)'
+                    (beforeDialogOpen)='onBeforeDialogOpen($event)'
+                    (beforeDialogClose)='onBeforeDialogClose($event)'
+                    (beforeFileUpload)='onBeforeFileUpload($event)'
+                    (beforeFileDrop)='onBeforeFileDrop($event)'>
+                </ejs-richtexteditor-ui>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 property-section">
+    <div class="property-panel-header">Event Trace</div>
+    <div id="property" class="property-panel">
+        <div class="eventarea">
+            <span class="EventLog">
+                <ng-container *ngFor="let entry of eventLog">
+                    <span class="log-entry">{{entry.prefix}}<b>{{entry.bold}}</b>{{entry.suffix}}</span>
+                    <hr>
+                </ng-container>
+            </span>
+        </div>
+        <div class="evtbtn">
+            <button ejs-button (click)='onClear()'>Clear</button>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the events that trigger on every action of the Rich Text Editor. The event details are showcased in the event trace panel.</p>
+</div>
+
+<div id="description">
+    <p>The Rich Text Editor triggers the events based on its actions.
+        The events can be used as an extension point to perform custom operations.</p>
+    <ul>
+        <li><code>change</code> - Triggers when the editor gets blurred and changes are made to the content.</li>
+        <li><code>focus</code> - Triggers when the editor is in focus.</li>
+        <li><code>blur</code> - Triggers when focused out of the editor.</li>
+        <li><code>actionBegin</code> - Triggers before the execution of command.</li>
+        <li><code>actionComplete</code> - Triggers after the execution of command.</li>
+        <li><code>created</code> - Triggers when the control is created.</li>
+        <li><code>beforeDialogOpen</code> – Event triggers when the dialog is being opened..</li>
+        <li><code>dialogOpen</code> – Event triggers when a dialog is opened.</li>
+        <li><code>dialogClose</code> – Event triggers after the dialog has been closed.</li>
+        <li><code>beforeQuickToolbarOpen</code> – Event triggers when the quick toolbar is being opened.</li>
+        <li><code>quickToolbarOpen</code> – Event triggers when a quick toolbar is opened.</li>
+        <li><code>quickToolbarClose</code> – Event triggers after the quick toolbar has been closed.</li>
+        <li><code>imageSelected</code> – Event triggers when the image is selected or dragged into the insert image
+            dialog</li>
+        <li><code>imageUploading</code> – Event triggers when the selected image begins to upload in the insert image
+            dialog</li>
+        <li><code>imageUploadSuccess</code> – Event triggers when the image is successfully uploaded to the server side
+        </li>
+        <li><code>imageUploadFailed</code> – Event triggers when there is an error in the image upload</li>
+        <li><code>imageRemoving</code> – Event triggers when the selected image is cleared from the insert image dialog
+        </li>
+        <li><code>destroyed</code> – Triggers when the control is destroyed.</li>
+        <li><code>beforeSanitizeHtml</code> – Event triggers before sanitize the value. It's only applicable to
+            editorMode as `HTML`</li>
+        <li><code>resizing</code> – Triggers only when resizing the image</li>
+        <li><code>resizeStart</code> –Triggers only when start resize the image</li>
+        <li><code>resizeStop</code> – Triggers only when stop resize the image</li>
+        <li><code>selectionChanged</code> – Triggers only when the selection within the editor is modified.</li>
+    </ul>
+    <p><b>Injecting Module</b></p>
+    <p>The above features built as modules have to be included in your application. For example, to use image and link,
+        inject the specific module using
+        <code>RichTextEditor.Inject (Toolbar, Link, Image, HtmlEditor, QuickToolbar, Table, EmojiPicker, PasteCleanup, Audio ,Video, FormatPainter, FileManager)</code>.
+    </p>
+</div>

@@ -15,6 +15,7 @@ import { ButtonSampleModule } from '../button/button.module';
 import { ChipsSampleModule } from '../chips/chips.module';
 import { ListViewSampleModule } from '../listview/listview.module';
 import { TreeViewSampleModule } from '../treeview/treeview.module';
+import { AIChartSampleModule } from '../ai-chart/aichart.module';
 import { GridSampleModule } from '../grid/grid.module';
 import { splitterSampleModule } from '../splitter/splitter.module';
 import { TreeGridSampleModule } from '../treegrid/treegrid.module'
@@ -101,7 +102,8 @@ import { AIDiagramSampleModule } from '../ai-diagram/aidiagram.module';
 import { BlockEditorSampleModule } from '../block-editor/block-editor.module';
 import { SankeySampleModule } from '../sankey-chart/sankey-chart.module';
 import { InlineAIAssistSampleModule } from '../inline-ai-assist/inline-ai-assist.module';
-
+import { FormBuilderSampleModule } from '../form-builder/form-builder.module';
+import { RTEUISampleModule } from '../rich-text-editor-ui/rich-text-editor-ui.module';
 
 const appRoutes: any = [
     //SmartPasteButton
@@ -110,6 +112,8 @@ const appRoutes: any = [
     //SmartTextArea
     { path: 'ai-smart-textarea', loadChildren: import('../ai-smart-textarea/smarttextarea.module').then(m => m.SmartTextAreaSampleModule) },
     { path: ':theme/ai-smart-textarea/:sample', redirectTo: 'fluent2/ai-smart-textarea/default' },
+    //AI Chart
+    { path: 'ai-chart', loadChildren: import('../ai-chart/aichart.module').then(m => m.AIChartSampleModule) },
     //AI Data Grid
     { path: 'ai-grid', loadChildren: import('../ai-grid/aigrid.module').then(m => m.AIGridSampleModule) },
     //AI Gantt
@@ -169,11 +173,14 @@ const appRoutes: any = [
     // Forms
     { path: 'form-validator', loadChildren: import('../form-validator/form-validator.module').then(m=>m.FormValidatorModule) },
     { path: 'form-renderer', loadChildren: import('../form-renderer/form-renderer.module').then(m=>m.FormRendererSampleModule) },
+    { path: 'form-builder', loadChildren: import('../form-builder/form-builder.module').then(m=>m.FormBuilderSampleModule)},
     { path: 'query-builder', loadChildren: import('../query-builder/query-builder.module').then(m=>m.QueryBuilderSampleModule) },
     { path: ':theme/query-builder/:sample', redirectTo: 'material/query-builder/default' },
     // File Viewers & Editors
     { path: 'rich-text-editor', loadChildren: import('../rich-text-editor/rich-text-editor.module').then(m=>m.RTESampleModule) },
     { path: ':theme/rich-text-editor/:sample', redirectTo: 'material/rich-text-editor/default' },
+    { path: 'rich-text-editor-ui', loadChildren: import('../rich-text-editor-ui/rich-text-editor-ui.module').then(m=>m.RTEUISampleModule) },
+    { path: ':theme/rich-text-editor-ui/:sample', redirectTo: 'tailwind/rich-text-editor-ui/basic-editing' },
     { path: 'markdown-editor', loadChildren: import('../markdown-editor/markdown-editor.module').then(m=>m.MDESampleModule) },
     { path: ':theme/markdown-editor/:sample', redirectTo: 'material/markdown-editor/overview' },
     { path: 'image-editor', loadChildren: import('../image-editor/image-editor.module').then(m=>m.ImageEditorSampleModule) },
@@ -270,6 +277,8 @@ const appRoutes: any = [
         // Smart Components
         SmartPasteSampleModule,
         SmartTextAreaSampleModule,
+        //AI Chart
+        AIChartSampleModule,
         //AI Data Grid
         AIGridSampleModule,
         // AI Diagram
@@ -314,9 +323,11 @@ const appRoutes: any = [
         // Forms
         FormValidatorModule,
         FormRendererSampleModule,
+        FormBuilderSampleModule,
         QueryBuilderSampleModule,
         // Editors & Viewers
         RTESampleModule,
+        RTEUISampleModule,
         MDESampleModule,
         ImageEditorSampleModule,
         BlockEditorSampleModule,

@@ -1,0 +1,120 @@
+.grid-auto-scheduling.e-schedule .skill-badge {
+  display: inline-block;
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 500;
+  margin: 1px 2px;
+  white-space: nowrap;
+}
+
+.grid-auto-scheduling.e-schedule .resource-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.grid-auto-scheduling.e-schedule .resource-header-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  flex: 0 0 40px;
+}
+
+.grid-auto-scheduling.e-schedule .resource-header-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.grid-auto-scheduling.e-schedule .resource-header-name {
+  font-weight: bold;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.grid-auto-scheduling.e-schedule .resource-header-skills {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.grid-auto-scheduling.e-schedule .resource-header-workload {
+  font-weight: bold;
+  font-size: 13px;
+  white-space: nowrap;
+  margin-right: 8px;
+  flex: 0 0 auto;
+}
+
+.grid-auto-scheduling.e-schedule .e-resource-cells .e-resource-text .resource-header-container {
+  display: flex;
+  align-items: center;
+}
+
+.grid-auto-scheduling.e-schedule .e-resource-cells .e-resource-text .resource-header-avatar {
+  margin-top: 0;
+}
+
+.grid-auto-scheduling.e-schedule .e-resource-left-td {
+  min-width: 280px;
+  width: 280px;
+  max-width: 280px;
+}
+
+
+.auto-scheduling .schedule-container {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+  padding: 16px 10px 10px;
+  height: 650px;
+  box-sizing: border-box;
+
+}
+
+.auto-scheduling .schedule-container .schedule-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.grid-auto-scheduling.e-schedule .e-timeline-view .e-resource-left-panel {
+  min-width: 280px;
+  width: 280px;
+  max-width: 280px;
+}
+
+.drag-grid-data .task-template {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.drag-grid-data .task-name {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.drag-grid-data .task-skill {
+  display: inline-block;
+  width: fit-content;
+  padding: 2px 8px;
+  border-radius: 3px;
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  font-size: 11px;
+  font-weight: 500;
+}

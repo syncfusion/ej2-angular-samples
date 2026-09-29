@@ -1,0 +1,368 @@
+{
+     "blockDataPaste": [
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 2
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Smart Paste Cleanup"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Pasting content from external sources often introduces unwanted styles and inconsistent formatting. The Block Editor provides a powerful cleanup mechanism with customization options to maintain consistency and security."
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Features"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Removes inline styles for cleaner markup."
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Preserves semantic structure like headings and paragraphs."
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Converts rich text into clean blocks for easy editing."
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Extracts links and mentions without clutter."
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Customization options"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "You can configure paste cleanup behavior using the following settings:"
+                }
+            ]
+        },
+        {
+            "blockType": "Code",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "pasteCleanupSettings: {\n deniedTags: ['script', 'iframe'], // Tags to remove\n keepFormat: true, // Keep original formatting\n plainPaste: false // Force plain text paste\n};"
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Events"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Hooks for before and after paste actions:"
+                }
+            ]
+        },
+        {
+            "blockType": "Code",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "afterPasteCleanup: (args: AfterPasteCleanupEventArgs) => { \n // Process pasted content or update UI \n } \n beforePasteCleanup: (args: BeforePasteCleanupEventArgs) => { \n // Modify content before cleanup if needed \n }"
+                }
+            ]
+        },
+        {
+            "blockType": "CollapsibleHeading",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Paste modes"
+                }
+            ],
+            "properties": {
+                "level": 4,
+                "isExpanded": true,
+                "children": [
+                    {
+                        "blockType": "BulletList",
+                        "content": [
+                            {
+                                "contentType": "Text",
+                                "content": "Keep Format: ",
+                                "properties": {
+                                    "styles": {
+                                        "bold": true
+                                    }
+                                }
+                            },
+                            {
+                                "contentType": "Text",
+                                "content": "Retains allowed styles and structure."
+                            }
+                        ]
+                    },
+                    {
+                        "blockType": "BulletList",
+                        "content": [
+                            {
+                                "contentType": "Text",
+                                "content": "Plain Paste: ",
+                                "properties": {
+                                    "styles": {
+                                        "bold": true
+                                    }
+                                }
+                            },
+                            {
+                                "contentType": "Text",
+                                "content": "Strips all styles and converts to plain text."
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Why cleanup matters"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Clean content improves:"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Readability: ",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "No distracting styles."
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Accessibility: ",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "Proper semantic tags."
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Consistency: ",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "Uniform styling across platforms."
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Security: ",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "Prevents malicious scripts or embeds."
+                }
+            ]
+        },
+        {
+            "blockType": "Callout",
+            "properties": {
+                "children": [
+                    {
+                        "blockType": "Paragraph",
+                        "content": [
+                            {
+                                "contentType": "Text",
+                                "content": "Tip: ",
+                                "properties": {
+                                    "styles": {
+                                        "bold": true,
+                                        "color": "#047857"
+                                    }
+                                }
+                            },
+                            {
+                                "contentType": "Text",
+                                "content": "Use paste cleanup to remove inline styles while retaining semantic structure."
+                            }
+                        ]
+                    },
+                    {
+                        "blockType": "Paragraph",
+                        "content": [
+                            {
+                                "contentType": "Text",
+                                "content": " Clean content is clear content.",
+                                "properties": {
+                                    "styles": {
+                                        "italic": true
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Workflow"
+                }
+            ]
+        },
+        {
+            "blockType": "NumberedList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Paste content from external sources."
+                }
+            ]
+        },
+        {
+            "blockType": "NumberedList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Review the cleaned output."
+                }
+            ]
+        },
+        {
+            "blockType": "NumberedList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Apply additional formatting if needed."
+                }
+            ]
+        },
+        {
+            "blockType": "NumberedList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Save and publish."
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph"
+        }
+    ]
+}

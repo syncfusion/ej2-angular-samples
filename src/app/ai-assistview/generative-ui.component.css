@@ -1,0 +1,92 @@
+/* Main Container Styles */
+.generative-aiassistview {
+  height: 600px;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+/* Banner Icon Styling */
+.generative-aiassistview .banner-content .e-assistview-icon:before {
+  font-size: 35px;
+}
+
+/* Banner Content Layout */
+.generative-aiassistview .banner-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 330px;
+  text-align: center;
+}
+
+/* Responsive Design for Smaller Screens */
+@media only screen and (max-width: 750px) {
+  .generative-aiassistview {
+    width: 100%;
+  }
+}
+
+/* Chart Container Styling */
+.generative-aiassistview .chartContainer {
+  width: max-content;
+}
+
+.generative-aiassistview .chartContainer svg text {
+  fill: rgba(0, 0, 0, 1);
+}
+
+body[class*="highcontrast"] .generative-aiassistview .chartContainer svg text,
+body[class*="dark"] .generative-aiassistview .chartContainer svg text {
+  fill: white;
+}
+
+/* Weather Card Layout Customization */
+.generative-aiassistview #weather_card.e-card {
+  background-image: url('https://ej2.syncfusion.com/javascript/demos/src/card/images/weather.png');
+  width: 420px;
+}
+
+/* Card Header Styling for Dark Themes */
+.generative-aiassistview .material3-dark .e-card .e-card-header,
+.generative-aiassistview .material-dark .e-card .e-card-header {
+  padding: 10px;
+}
+
+/* Weather Card Header Text Color */
+.generative-aiassistview #weather_card.e-card .e-card-header-caption .e-card-header-title,
+.generative-aiassistview #weather_card.e-card .e-card-header-caption .e-card-sub-title {
+  color: white;
+}
+
+/* High Contrast Mode Support */
+.generative-aiassistview .highcontrast #weather_card.e-card .e-card-header.weather_report .e-card-header-image {
+  border: none;
+}
+
+/* Weather Report Text Alignment */
+.generative-aiassistview #weather_card.e-card .weather_report .e-card-header-caption {
+  text-align: right;
+}
+
+/* Weather Report Icon */
+.generative-aiassistview #weather_card.e-card .e-card-header.weather_report .e-card-header-image {
+  background-image: url('https://ej2.syncfusion.com/javascript/demos/src/card/images/rainy.svg');
+}
+
+/* Responsive Card Layout */
+.generative-aiassistview .col-xs-6.col-sm-6.col-lg-6.col-md-6 {
+  width: 100%;
+  padding: 10px;
+}
+
+/* Card Layout Container */
+.generative-aiassistview .card-layout {
+  margin: auto;
+  max-width: 400px;
+}
+
+/* Grid Container Styling */
+.generative-aiassistview .gridContainer {
+  width: auto;
+  overflow-x: auto;
+}

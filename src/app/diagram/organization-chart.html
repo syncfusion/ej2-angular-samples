@@ -42,6 +42,9 @@
         padding-left: 0px;
         padding-right: 0px;
     }
+    .diagram-organizationalchart .sample-border {
+        border-right: 1px solid #D5D5D5;
+    }
 </style>
 <div id="action-description">
     <p>
@@ -49,8 +52,8 @@
         is illustrated in this example.
     </p>
 </div>
-<div class="control-section diagram-organizationalchart">
-    <div class="col-lg-8 control-section">
+<div class="control-section diagram-organizationalchart" style="padding-top: 0px;">
+    <div class="col-lg-8 control-section sample-border">
         <div class="content-wrapper">
             <ejs-diagram #diagram id="diagram" width="100%" height="700px" [getConnectorDefaults]='connectorDefaults' [getNodeDefaults]='nodeDefaults' [layout]='layout' [dataSourceSettings]='data' [tool]='tool' [snapSettings]='snapSettings'>
             </ejs-diagram>
@@ -71,11 +74,11 @@
                     </div>
                     <div class="image-pattern-style" id="bottomToTop" style="background-image: url(https://ej2.syncfusion.com/angular/demos/assets/diagram/Images/common-orientation/bottomtotop.png); margin: 0px 3px">
                     </div>
-                    <div class="image-pattern-style" id="leftToRight" style="background-image: url(https://ej2.syncfusion.com/angular/demos/assets/diagram/Images/common-orientation/lefttoright.png); margin-right:0px 3px">
+                    <div class="image-pattern-style" id="leftToRight" style="background-image: url(https://ej2.syncfusion.com/angular/demos/assets/diagram/Images/common-orientation/lefttoright.png); margin-left: 3px">
                     </div>
                 </div>
                 <div class="row sb-child-row">
-                    <div class="image-pattern-style" id="rightToLeft" style="background-image: url(https://ej2.syncfusion.com/angular/demos/assets/diagram/Images/common-orientation/righttoleft.png); margin: 0px 3px">
+                    <div class="image-pattern-style" id="rightToLeft" style="background-image: url(https://ej2.syncfusion.com/angular/demos/assets/diagram/Images/common-orientation/righttoleft.png);">
                     </div>
                 </div>
                 </div>
@@ -157,6 +160,4 @@
         <code>&#64;NgModule.providers</code> section.
     </p>
     <br>
-
-    <p>Looking for the full Angular Diagram component overview, features, pricing, and documentation? Visit the <a href="https://www.syncfusion.com/angular-components/angular-diagram" target="_blank">Angular Diagram</a> page.</p>
 </div>

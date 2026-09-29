@@ -1,3 +1,20 @@
+/* To apply default background color for left freeze content */
+#frozenColumns .e-content .e-leftfreeze {
+  background-color: #e0e7ff !important;
+}
+/* To apply default background color for left freeze columnheader */
+#frozenColumns .e-columnheader .e-leftfreeze {
+  background-color: #e0e7ff !important;
+}
+/* To apply default background color for right freeze content */
+#frozenColumns .e-content .e-rightfreeze {
+  background-color: #e0e7ff !important;
+}
+/* To apply default background color for right freeze columnheader */
+#frozenColumns .e-columnheader .e-rightfreeze {
+  background-color: #e0e7ff !important;
+}
+ 
  .tailwind3 #frozenColumns .e-content .e-leftfreeze,
  .tailwind3 #frozenColumns .e-content .e-rightfreeze,
  .tailwind3 #frozenColumns .e-content .e-fixedfreeze {

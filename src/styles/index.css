@@ -269,7 +269,7 @@ table#property {
     color:#ffffff
 }
 .bootstrap5\.3-dark .sb-left-pane .e-listview .e-list-item.e-active:hover,
-.bootstrap5\.3-dark .sb-home, 
+.bootstrap5\.3-dark .sb-home,
 .bootstrap5\.3-dark .sb-reset-icon,
 .bootstrap5\.3-dark .sb-left-pane .e-listview .e-list-item{
     color:#ffffff
@@ -281,6 +281,7 @@ body.bootstrap5\.3-dark,
     color: #fff;
 }
 .bootstrap5\.3-dark .sb-header,
+.bootstrap5\.3-dark .sdk-wrapper,
 .bootstrap5\.3-dark .sb-search-result .e-list-item,
 .bootstrap5\.3-dark .sb-search-result .e-list-group-item {
     background: #212529;
@@ -394,10 +395,10 @@ body.bootstrap5\.3-dark,
 .bootstrap5\.3-dark .sb-switch-popup li:hover,
 .bootstrap5\.3-dark .theme-wrapper:hover,
 .bootstrap5\.3-dark .theme-wrapper.active,
-.bootstrap5\.3-dark .products-wrapper:hover,
-.bootstrap5\.3-dark .products-wrapper.active,
+.bootstrap5\.3-dark .sdk-wrapper:hover,
+.bootstrap5\.3-dark .sdk-wrapper.active,
 .bootstrap5\.3-dark .sb-theme-popup li:hover,
-.bootstrap5\.3-dark .sb-products-popup li:hover,
+.bootstrap5\.3-dark .sb-sdk-popup li:hover,
 .bootstrap5\.3-dark .sb-switch-btn:hover,
 .bootstrap5\.3-dark .sb-switch-btn.active,
 .bootstrap5\.3-dark .sb-search-result .e-list-item:hover,
@@ -448,6 +449,7 @@ body.bootstrap5\.3-dark,
   color: #508cf5;
 }
 .bootstrap5\.3-dark .sb-header-item,
+.bootstrap5\.3-dark #sb-sdk-switcher,
 .bootstrap5\.3-dark .sb-icon-Popout,
 .bootstrap5\.3-dark .sample-navigation,
 .bootstrap5\.3-dark .sb-icon-Home {
@@ -458,21 +460,32 @@ body.bootstrap5\.3-dark,
 .bootstrap5\.3-dark .sb-body-overlay {
     background: #212529;
 }
-/* FIX: Bootstrap 5.3 Dark - Products popup */
-.bootstrap5\.3-dark .sb-products-popup {
+/* FIX: Bootstrap 5.3 Dark - SDK popup */
+.bootstrap5\.3-dark .sb-sdk-popup {
   background-color: #343a40;
   border: 1px solid #495057;
   color: #ffffff;
 }
 
 /* List items */
-.bootstrap5\.3-dark .sb-products-popup li {
+.bootstrap5\.3-dark .sb-sdk-popup li {
   color: #ffffff;
 }
 
 /* Hover state */
-.bootstrap5\.3-dark .sb-products-popup li:hover {
+.bootstrap5\.3-dark .sb-sdk-popup li:hover {
   background-color: #363636;
+}
+
+/* Hide the SDK select tick icon on hover for this dark theme */
+.bootstrap5\.3-dark .sb-sdk-popup li:hover .sb-sdk-select {
+    color: transparent !important;
+}
+
+/* Bootstrap 5.3 Dark – active SDK row tick uses Bootstrap blue */
+.bootstrap5\.3-dark .sb-sdk-popup li.active .sb-sdk-select,
+.bootstrap5\.3-dark .sb-sdk-popup li:hover.active .sb-sdk-select {
+    color: #0d6efd !important;
 }
 .bootstrap5\.3-dark .sb-mobilefooter>.e-btn.e-flat {
     background: #212529;
@@ -693,25 +706,36 @@ margin-right: 6px;
     height: 24px;
     margin: 7px 3px !important;
 }
-/* FIX: Fluent2 Dark - Products popup (match Choose Theme) */
-.fluent2-dark .sb-products-popup {
+/* FIX: Fluent2 Dark - SDK popup (match Choose Theme) */
+.fluent2-dark .sb-sdk-popup {
   background-color: #1f1f1f;
   border: unset;
   color: #ffffff;
 }
 
 /* List items text */
-.fluent2-dark .sb-products-popup li {
+.fluent2-dark .sb-sdk-popup li {
   color: #ffffff;
 }
 
 /* Hover behavior – same as theme popup */
-.fluent2-dark .sb-products-popup li:hover {
+.fluent2-dark .sb-sdk-popup li:hover {
   background-color: #333333;
 }
-/* Fluent2 Dark – fix Other Products hover (match Choose Theme) */
-.fluent2-dark .products-wrapper:hover,
-.fluent2-dark .products-wrapper.active {
+
+/* Fluent2 Dark – hide SDK select tick on hover */
+.fluent2-dark .sb-sdk-popup li:hover .sb-sdk-select {
+    color: transparent !important;
+}
+
+/* Fluent2 Dark – active SDK row tick uses Fluent 2 brand blue */
+.fluent2-dark .sb-sdk-popup li.active .sb-sdk-select,
+.fluent2-dark .sb-sdk-popup li:hover.active .sb-sdk-select {
+    color: #115ea3 !important;
+}
+/* Fluent2 Dark – fix SDK hover (match Choose Theme) */
+.fluent2-dark .sdk-wrapper:hover,
+.fluent2-dark .sdk-wrapper.active {
   background-color: #333333;
 }
 /**sb-switcher*/
@@ -931,69 +955,115 @@ margin-right: 6px;
   letter-spacing: .5px;
 }
 
-/* Products wrapper styles - matching theme-wrapper for desktop alignment */
-.products-wrapper:hover,
-.products-wrapper.active {
+/* SDK wrapper styles - matching theme-wrapper for desktop alignment */
+.sdk-wrapper:hover,
+.sdk-wrapper.active {
   background-color: rgb(216, 216, 216);
 }
 
-.products-wrapper {
+.sb-sdk-switcher-wrapper{
+    padding-top:3px;
+}
+
+.sdk-wrapper {
+  width: 200px;
   height: 32px;
   margin-top: 5px;
-  margin-right: 10px;
+  margin-left: 8px;
   cursor: default;
   padding: 0px 10px;
   border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #d9d9d9;
+  position: relative;
+  border-radius: 4px;
+  background: #fff;
+  color: #1f2937;
+  font-size: 14px;
+  cursor: pointer;
+  gap: 12px;
 }
 
-.products-wrapper>div {
-  float: left;
+.sdk-wrapper > div {
   padding-left: 3px;
   line-height: 32px;
   letter-spacing: .5px;
 }
 
-.sb-products-text {
+.sb-sdk-text {
   font-size: 13px;
   font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif";
-  opacity: 54;
+  white-space: nowrap;
 }
 
-.sb-products-switch,
-.sb-products-switcher-wrapper {
+.sb-sdk-switch,
+.sb-sdk-switcher-wrapper {
   display: inline-block;
 }
 
-.sb-products-switch {
+#sb-sdk-switcher {
+  z-index: 1003 !important;
   font-size: 20px;
 }
 
-.sb-products-popup {
+/* ===== SDK Samples Dropdown ===== */
+.sb-sdk-popup {
   background: #FFFFFF;
   border: 1px solid #CCCCCC;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.36);
   border-radius: 4px;
-  padding-top: 23px;
-  width: 175px;
-  z-index: 1001;
+  width: 195px;
+  z-index: 10012;
 }
 
-.sb-products-popup li {
-  padding-top: 4px;
-  padding-left: 15px;
+.sb-sdk-popup li {
   line-height: 30px;
   cursor: default;
+  padding-top: 4px;
 }
 
-.sb-products-popup li:hover {
+.sb-sdk-popup li:hover {
   background: rgb(238, 238, 238);
 }
 
-#products-switcher-popup {
-  z-index: 1003 !important;
+.sb-sdk-popup li.active .sb-sdk-select {
+  color: rgb(255, 109, 63);
 }
+
+
+.sb-sdk-popup li:hover.active .sb-sdk-select {
+  color: rgb(255, 109, 63);
+}
+
+.sb-sdk-select {
+  padding-left: 3px;
+  vertical-align: middle;
+  color: transparent;
+}
+
+/* Hide SDK button on mobile */
+@media (max-width: 550px) {
+  .sb-sdk-wrapper {
+    display: none !important;
+  }
+}
+
+/* Left pane SDK filter: hide non-matching tree nodes and list items */
+.sdk-filter-active [control-name].sdk-hidden {
+  display: none !important;
+}
+
+.sdk-filter-active .e-list-item.sdk-parent-hidden,
+.sdk-filter-active .e-list-item.sdk-sample-hidden,
+.sdk-filter-active .e-list-group-item.sdk-group-hidden {
+  display: none !important;
+}
+
+/* ===== End SDK Samples Dropdown ===== */
 /* Reduce spacing between header action items */
-.products-wrapper,
+.sdk-wrapper,
 .theme-wrapper {
   margin-right: 4px;          /* was 10px */
   padding: 0 6px;             /* was 0 10px */
@@ -1219,7 +1289,7 @@ margin-right: 6px;
   background-color: #007dd1;
 }
 
-/* 
+/*
 .sb-search-result {
     overflow-y: auto;
     max-height: 75%;
@@ -1671,6 +1741,15 @@ display: none;
   cursor: pointer;
 }
 
+.sb-left-pane .e-treeview .e-list-text > div {
+    display: flex;
+    gap: 8px;
+}
+
+.sb-left-pane .e-treeview .tree-text {
+    flex: 1;
+}
+
 .sb-adjust-juggle {
   top: 50px;
 }
@@ -2004,12 +2083,17 @@ button#mobile-prev-sample, button#mobile-next-sample {
   height: 100%;
 }
 
+.sb-navigation-prev.e-disabled,
+.sb-navigation-next.e-disabled {
+  color: #a8a4a4 !important;
+}
+
 .fluent2-dark button#mobile-prev-sample, .fluent2-dark button#mobile-next-sample {
   background: #292929;
   color: #fff;
 }
 
-.fluent2-dark button#mobile-prev-sample:hover, 
+.fluent2-dark button#mobile-prev-sample:hover,
 .fluent2-dark button#mobile-next-sample:hover {
   color: #ADADAD !important;
 }
@@ -2283,10 +2367,6 @@ propertye pane
     display: none;
   }
 
-  .sb-products-toggler-wrapper {
-    display: none;
-  }
-
   .sb-setting-theme-section {
     display: block;
   }
@@ -2545,7 +2625,7 @@ propertye pane
   }
 
   /*source tab header*/
-  
+
   .sb-desktop-setting {
     display: inline-flex;
   }
@@ -2561,7 +2641,7 @@ propertye pane
   .sb-plnr-section {
     display: none;
   }
-  
+
   .sb-right-pane {
     left: 0px;
     padding-bottom: 32px;
@@ -2702,7 +2782,7 @@ propertye pane
     color: #ffffff;
     border-radius: 2px;
   }
-  
+
   .sb-mobile-header-button:active {
     background-color: #1783FF;
   }
@@ -2844,7 +2924,7 @@ propertye pane
 .highcontrast .sb-src-code,
 .highcontrast .sb-api-section,
 .highcontrast .sb-theme-popup,
-.highcontrast .sb-products-popup,
+.highcontrast .sb-sdk-popup,
 .highcontrast .copy-tooltip,
 .highcontrast #search-input-wrapper input,
 .highcontrast #search-input-wrapper input::placeholder {
@@ -3001,10 +3081,6 @@ body.highcontrast,
 
 .sb-left-pane .e-treeview .e-list-text {
   width: 100%;
-}
-
-.sb-left-pane .e-treeview .e-text-content {
-  padding-right: 16px;
 }
 
 .tree-text {
@@ -3338,7 +3414,7 @@ body.highcontrast,
   }
 }
 
-@media only screen and (min-width: 850px) and (max-width: 949px) { 
+@media only screen and (min-width: 850px) and (max-width: 949px) {
   .banner-img {
       height: 256px;
   }
@@ -3369,7 +3445,7 @@ body.highcontrast,
   }
 }
 
-@media only screen and (min-width: 750px) and (max-width: 849px) { 
+@media only screen and (min-width: 750px) and (max-width: 849px) {
   .banner-img {
       height: 236px;
   }
@@ -3394,7 +3470,7 @@ body.highcontrast,
   }
 }
 
-@media only screen and (min-width: 650px) and (max-width: 749px) { 
+@media only screen and (min-width: 650px) and (max-width: 749px) {
   .banner-img {
       height: 236px;
   }
@@ -3419,7 +3495,7 @@ body.highcontrast,
   }
 }
 
-@media only screen and (min-width: 550px) and (max-width: 649px) { 
+@media only screen and (min-width: 550px) and (max-width: 649px) {
   .banner-img {
       height: 261px;
   }
@@ -3445,7 +3521,7 @@ body.highcontrast,
   }
 }
 
-@media only screen and (min-width: 450px) and (max-width: 549px) { 
+@media only screen and (min-width: 450px) and (max-width: 549px) {
   .banner-img {
       height: 261px;
   }
@@ -3471,7 +3547,7 @@ body.highcontrast,
   }
 }
 
-@media only screen and (min-width: 350px) and (max-width: 449px) { 
+@media only screen and (min-width: 350px) and (max-width: 449px) {
   .banner-img {
       height: 330px;
   }
@@ -3494,10 +3570,10 @@ body.highcontrast,
   }
   .banner-cnt-pt {
       display: flex;
-  }   
+  }
 }
 
-@media only screen and (min-width: 300px) and (max-width: 349px) { 
+@media only screen and (min-width: 300px) and (max-width: 349px) {
   .banner-img {
       height: 313px;
   }
@@ -3521,7 +3597,7 @@ body.highcontrast,
   }
   .banner-cnt-pt {
       display: flex;
-  }   
+  }
 }
 
 .sb-npm-btn:hover {
@@ -3548,7 +3624,7 @@ body.highcontrast,
     bottom: -0.9px;
     left: 4px;
     position: relative;
-}    
+}
 #icon-npm:before {
   content: "\e900";
   font-weight: 600;
@@ -3623,7 +3699,7 @@ body.highcontrast,
 
 .tailwind .e-samplestatus.new, .tailwind .e-samplestatus.update, .tailwind .e-samplestatus.preview {
     margin: 12px 0;
-    height: 22px; 
+    height: 22px;
     margin-top: 0px;
 }
 
@@ -3637,11 +3713,11 @@ body.highcontrast,
 .tailwind3 .sb-icon-Home, .tailwind3 .sb-home-text, .tailwind3 .sb-bread-crumb .sb-bread-crumb-text>div {
   color: #4b5563;
 }
- 
+
 .tailwind3 #sb-header-text, .tailwind3 #header-theme-switcher, .tailwind3 .sb-component-name, .tailwind3 .sb-action-description, .tailwind3 .e-list-item.e-level-1 .e-text-content .e-list-text {
   color: #111827 !important;
 }
- 
+
 .tailwind3 .sb-lang-toggler-wrapper, .tailwind3 .sb-theme-switcher, .tailwind3 .sb-search-btn, .tailwind3 .sb-icon-Settings-Preferences, .tailwind3 #sb-left-back, .tailwind3 .e-list-group-item.e-level-1 .e-text-content .e-list-text {
   color: #6b7280;
 }
@@ -3735,7 +3811,7 @@ background:#383838 ;
 .material-dark .sb-icon-Hamburger:active,
 .material-dark .sb-footer-logo-icon,
 .material-dark .sb-source-section .e-tab .e-tab-header .e-toolbar-item .e-tab-text {
-  
+
 color:white;
 }
 .material-dark .sb-content-section,
@@ -3775,8 +3851,8 @@ color:white;
 .material-dark .sb-src-code,
 .material-dark .sb-api-section,
 .material-dark .sb-theme-popup,
-.material-dark .sb-products-popup,
-.material-dark .sb-products-popup,
+.material-dark .sb-sdk-popup,
+.material-dark .sb-sdk-popup,
 .material-dark .copy-tooltip,
 .material-dark .e-icons.copycode,
 .material-dark #search-input-wrapper input,
@@ -3792,10 +3868,10 @@ color:white;
 .material-dark .sb-switch-popup li:hover,
 .material-dark .theme-wrapper:hover,
 .material-dark .theme-wrapper.active,
-.material-dark .products-wrapper:hover,
-.material-dark .products-wrapper.active,
+.material-dark .sdk-wrapper:hover,
+.material-dark .sdk-wrapper.active,
 .material-dark .sb-theme-popup li:hover,
-.material-dark .sb-products-popup li:hover,
+.material-dark .sb-sdk-popup li:hover,
 .material-dark .sb-search-result .e-list-item:hover,
 .material-dark .sb-switch-btn:hover,
 .material-dark .sb-switch-btn.active,
@@ -3842,7 +3918,7 @@ color:white;
 }
 .material-dark .sb-mobilefooter>.e-btn.e-flat {
   background: #383838;
-  color: #fff; 
+  color: #fff;
 }
 .material-dark .sb-mobilefooter>.e-btn.e-flat:hover {
   color: #56a4fd;
@@ -3854,7 +3930,7 @@ color:white;
 .material-dark .sb-header-text-left,.material-dark .sb-header-text-right,
 .material-dark .e-treeview .e-list-item.e-active > .e-text-content .e-list-text,
 .material-dark .sb-left-pane .e-listview .e-list-item:hover {
-  
+
   color:#ffffff;
 }
 
@@ -3970,7 +4046,7 @@ color:white;
 .fabric-dark .sb-src-code,
 .fabric-dark .sb-api-section,
 .fabric-dark .sb-theme-popup,
-.fabric-dark .sb-products-popup,
+.fabric-dark .sb-sdk-popup,
 .fabric-dark .copy-tooltip,
 .fabric-dark .e-icons.copycode,
 .fabric-dark #search-input-wrapper input,
@@ -3986,7 +4062,7 @@ color:white;
 .fabric-dark .theme-wrapper:hover,
 .fabric-dark .theme-wrapper.active,
 .fabric-dark .sb-theme-popup li:hover,
-.fabric-dark .sb-products-popup li:hover,
+.fabric-dark .sb-sdk-popup li:hover,
 .fabric-dark .sb-switch-btn:hover,
 .fabric-dark .sb-switch-btn.active,
 .fabric-dark .sb-search-result .e-list-item:hover,
@@ -4050,7 +4126,7 @@ color:white;
   color:#ffffff;
 }
 .bootstrap-dark .sb-left-pane .e-listview .e-list-item.e-active:hover,
-.bootstrap-dark .sb-home, 
+.bootstrap-dark .sb-home,
 .bootstrap-dark .sb-reset-icon{
   color:#ffffff;
 }
@@ -4146,7 +4222,7 @@ body.bootstrap-dark,
 .bootstrap-dark .sb-src-code,
 .bootstrap-dark .sb-api-section,
 .bootstrap-dark .sb-theme-popup,
-.bootstrap-dark .sb-products-popup,
+.bootstrap-dark .sb-sdk-popup,
 .bootstrap-dark .copy-tooltip,
 .bootstrap-dark .e-icons.copycode,
 .bootstrap-dark #search-input-wrapper input,
@@ -4161,10 +4237,10 @@ body.bootstrap-dark,
 .bootstrap-dark .sb-switch-popup li:hover,
 .bootstrap-dark .theme-wrapper:hover,
 .bootstrap-dark .theme-wrapper.active,
-.bootstrap-dark .products-wrapper:hover,
-.bootstrap-dark .products-wrapper.active,
+.bootstrap-dark .sdk-wrapper:hover,
+.bootstrap-dark .sdk-wrapper.active,
 .bootstrap-dark .sb-theme-popup li:hover,
-.bootstrap-dark .sb-products-popup li:hover,
+.bootstrap-dark .sb-sdk-popup li:hover,
 .bootstrap-dark .sb-switch-btn:hover,
 .bootstrap-dark .sb-switch-btn.active,
 .bootstrap-dark .sb-search-result .e-list-item:hover,
@@ -4259,7 +4335,7 @@ body.bootstrap-dark,
     color:#ffffff
 }
 .bootstrap5-dark .sb-left-pane .e-listview .e-list-item.e-active:hover,
-.bootstrap5-dark .sb-home, 
+.bootstrap5-dark .sb-home,
 .bootstrap5-dark .sb-reset-icon,
 .bootstrap5-dark .sb-left-pane .e-listview .e-list-item{
     color:#ffffff
@@ -4285,7 +4361,7 @@ body.bootstrap5-dark,
     color: #c2c0c0;
     background: #212529;
 }
- 
+
 .bootstrap5-dark #left-sidebar {
     border: none;
 }
@@ -4315,7 +4391,7 @@ body.bootstrap5-dark,
 {
     color: #0d6efd ;
 }
- 
+
 .bootstrap5-dark .sb-content-section,
 .bootstrap5-dark .sb-switch-popup .bootstrap5-dark .sb-content-tab-header,
 .bootstrap5-dark .sb-content-section .sb-content-tab-header {
@@ -4331,7 +4407,7 @@ body.bootstrap5-dark,
 .bootstrap5-dark .description-section a{
    color: #0d6efd;
 }
- 
+
 .bootstrap5-dark code,
 .bootstrap5-dark .sb-switch-popup,
 .bootstrap5-dark .sb-setting-popup,
@@ -4339,7 +4415,7 @@ body.bootstrap5-dark,
 .bootstrap5-dark .sb-src-code,
 .bootstrap5-dark .sb-api-section,
 .bootstrap5-dark .sb-theme-popup,
-.bootstrap5-dark .sb-products-popup,
+.bootstrap5-dark .sb-sdk-popup,
 .bootstrap5-dark .copy-tooltip,
 .bootstrap5-dark .e-icons.copycode,
 .bootstrap5-dark #search-input-wrapper input,
@@ -4359,10 +4435,10 @@ body.bootstrap5-dark,
 .bootstrap5-dark .sb-switch-popup li:hover,
 .bootstrap5-dark .theme-wrapper:hover,
 .bootstrap5-dark .theme-wrapper.active,
-.bootstrap5-dark .products-wrapper:hover,
-.bootstrap5-dark .products-wrapper.active,
+.bootstrap5-dark .sdk-wrapper:hover,
+.bootstrap5-dark .sdk-wrapper.active,
 .bootstrap5-dark .sb-theme-popup li:hover,
-.bootstrap5-dark .sb-products-popup li:hover,
+.bootstrap5-dark .sb-sdk-popup li:hover,
 .bootstrap5-dark .sb-search-result .e-list-item:hover,
 .bootstrap5-dark .sb-switch-btn:hover,
 .bootstrap5-dark .sb-switch-btn.active,
@@ -4538,7 +4614,7 @@ color:white;
 .tailwind-dark .sb-src-code,
 .tailwind-dark .sb-api-section,
 .tailwind-dark .sb-theme-popup,
-.tailwind-dark .sb-products-popup,
+.tailwind-dark .sb-sdk-popup,
 .tailwind-dark .copy-tooltip,
 .tailwind-dark .e-icons.copycode,
 .tailwind-dark #search-input-wrapper input,
@@ -4546,6 +4622,10 @@ color:white;
   color: #ffffff;
   background:  #1f2937;
 }
+
+
+/* Tailwind Dark – active SDK row tick uses Tailwind indigo */
+.tailwind-dark .sb-sdk-popup li.active .sb-sdk-select,
 .tailwind-dark .sb-search-btn:hover,
 .tailwind-dark .sb-search-btn.active,
 .tailwind-dark .sb-setting-btn:hover,
@@ -4554,7 +4634,7 @@ color:white;
 .tailwind-dark .theme-wrapper:hover,
 .tailwind-dark .theme-wrapper.active,
 .tailwind-dark .sb-theme-popup li:hover,
-.tailwind-dark .sb-products-popup li:hover,
+.tailwind-dark .sb-sdk-popup li:hover,
 .tailwind-dark .sb-switch-btn:hover,
 .tailwind-dark .sb-switch-btn.active,
 .tailwind-dark .sb-search-result .e-list-item:hover,
@@ -4620,15 +4700,15 @@ color:white;
   margin-bottom: 4.5px;
   margin-right: -7px;
   height: 22px;
-} 
+}
 .tailwind-dark .e-samplestatus.new,.tailwind-dark .e-samplestatus.update,.tailwind-dark .e-samplestatus.preview{
   margin: 2px 0;
   height: 22px;
   margin-top: 0px;
 }
-/* Tailwind3 Dark – fix Other Products hover */
-.tailwind3-dark .products-wrapper:hover,
-.tailwind3-dark .products-wrapper.active {
+/* Tailwind3 Dark – fix SDK hover */
+.tailwind3-dark .sdk-wrapper:hover,
+.tailwind3-dark .sdk-wrapper.active {
   background-color: #1A212F;
 }
 /* tailwind3-dark */
@@ -4648,12 +4728,14 @@ color:white;
 }
 body.tailwind3-dark,
 .tailwind3-dark #sb-header-text,
+.tailwind3-dark #sb-sdk-switcher,
 .tailwind3-dark .sample-navigation,
 .tailwind3-dark .sb-icon-Popout,
 .tailwind3-dark .sb-switch-popup a {
   color: #fff;
 }
 .tailwind3-dark .sb-header,
+.tailwind3-dark .sdk-wrapper,
 .tailwind3-dark .sb-search-result .e-list-item,
 .tailwind3-dark .sb-search-result .e-list-group-item {
   background:  #1D2432;
@@ -4743,7 +4825,7 @@ color:white;
 .tailwind3-dark .sb-src-code,
 .tailwind3-dark .sb-api-section,
 .tailwind3-dark .sb-theme-popup,
-.tailwind3-dark .sb-products-popup,
+.tailwind3-dark .sb-sdk-popup,
 .tailwind3-dark .copy-tooltip,
 .tailwind3-dark .e-icons.copycode,
 .tailwind3-dark #search-input-wrapper input,
@@ -4751,6 +4833,9 @@ color:white;
   color: #ffffff;
   background:  #111827;
 }
+
+/* Tailwind3 Dark – active SDK row tick uses Tailwind indigo */
+.tailwind3-dark .sb-sdk-popup li.active .sb-sdk-select,
 .tailwind3-dark .sb-search-btn:hover,
 .tailwind3-dark .sb-search-btn.active,
 .tailwind3-dark .sb-setting-btn:hover,
@@ -4759,7 +4844,7 @@ color:white;
 .tailwind3-dark .theme-wrapper:hover,
 .tailwind3-dark .theme-wrapper.active,
 .tailwind3-dark .sb-theme-popup li:hover,
-.tailwind3-dark .sb-products-popup li:hover,
+.tailwind3-dark .sb-sdk-popup li:hover,
 .tailwind3-dark .sb-switch-btn:hover,
 .tailwind3-dark .sb-switch-btn.active,
 .tailwind3-dark .sb-search-result .e-list-item:hover,
@@ -4826,7 +4911,7 @@ color:white;
   margin-bottom: 0px;
   margin-right: -7px;
   height: 22px;
-} 
+}
 .tailwind3-dark .e-samplestatus.new,.tailwind3-dark .e-samplestatus.update,.tailwind3-dark .e-samplestatus.preview{
   margin: 2px 0;
   height: 22px;
@@ -5020,7 +5105,7 @@ color:#ffffff;
   background-color: #636363 !important;
 }
 .material3-dark .sb-left-pane .e-listview .e-list-item.e-active:hover,
-.material3-dark .sb-home, 
+.material3-dark .sb-home,
 .material3-dark .sb-reset-icon{
     color:#000;
 }
@@ -5042,6 +5127,7 @@ color:#ffffff;
 
 body.material3-dark,
 .material3-dark #sb-header-text,
+.material3-dark #sb-sdk-switcher,
 .material3-dark .control-name,
 .material3-dark .sample-navigation,
 .material3-dark .sb-icon-Popout,
@@ -5054,6 +5140,7 @@ body.material3-dark,
     color: rgb(208, 188, 255);
 }
 .material3-dark .sb-header,
+.material3-dark .sdk-wrapper,
 .material3-dark .sb-search-result .e-list-item,
 .material3-dark .sb-search-result .e-list-group-item {
     background: linear-gradient(0deg, rgba(208, 188, 255, 0.08), rgba(208, 188, 255, 0.08)), #1C1B1F;
@@ -5125,6 +5212,17 @@ body.material3-dark,
 .material3-dark .sb-theme-popup li:hover.active .sb-theme-select {
     color: rgb(208, 188, 255);
 }
+
+/* Material3 Dark – hide SDK select tick on hover */
+.material3-dark .sb-sdk-popup li:hover .sb-sdk-select {
+    color: transparent !important;
+}
+
+/* Material3 Dark – active SDK row tick uses Material3 brand purple */
+.material3-dark .sb-sdk-popup li.active .sb-sdk-select,
+.material3-dark .sb-sdk-popup li:hover.active .sb-sdk-select {
+    color: rgb(208, 188, 255) !important;
+}
 .material3-dark .sb-plnr-section{
     line-height:30px;
     height:40px;
@@ -5133,16 +5231,16 @@ body.material3-dark,
 .material3-dark .sample-navigation{
     line-height: 43px;
 }
-.material3-dark code, .material3-dark .sb-switch-popup, .material3-dark .sb-setting-popup, .material3-dark .sb-search-result, .material3-dark .sb-src-code, .material3-dark .sb-api-section, .material3-dark .sb-theme-popup, .material3-dark .sb-products-popup, .material3-dark .copy-tooltip, .material3-dark .e-icons.copycode, .material3-dark #search-input-wrapper input::placeholder {
+.material3-dark code, .material3-dark .sb-switch-popup, .material3-dark .sb-setting-popup, .material3-dark .sb-search-result, .material3-dark .sb-src-code, .material3-dark .sb-api-section, .material3-dark .sb-theme-popup, .material3-dark .sb-sdk-popup, .material3-dark .copy-tooltip, .material3-dark .e-icons.copycode, .material3-dark #search-input-wrapper input::placeholder {
     color: #ffffff;
     background: #2B2831;
 }
 .material3-dark .sb-theme-popup {
     color: #ffffff;
     background: #2B2831;
-    border: unset;   
+    border: unset;
 }
-.material3-dark .sb-products-popup {
+.material3-dark .sb-sdk-popup {
     color: #ffffff;
     background: #2B2831;
     border: unset;
@@ -5163,10 +5261,10 @@ body.material3-dark,
 .material3-dark .sb-switch-popup li:hover,
 .material3-dark .theme-wrapper:hover,
 .material3-dark .theme-wrapper.active,
-.material3-dark .products-wrapper:hover,
-.material3-dark .products-wrapper.active,
+.material3-dark .sdk-wrapper:hover,
+.material3-dark .sdk-wrapper.active,
 .material3-dark .sb-theme-popup li:hover,
-.material3-dark .sb-products-popup li:hover,
+.material3-dark .sb-sdk-popup li:hover,
 .material3-dark .sb-search-result .e-list-item:hover,
 .material3-dark .sb-switch-btn:hover,
 .material3-dark .sb-switch-btn.active,
@@ -5278,7 +5376,7 @@ border: none;
 }
 
 .material3-dark #search-input-wrapper input {
-  height: 25px !important; 
+  height: 25px !important;
   color:#ffffff
 }
 /*fluent2*/
@@ -5322,6 +5420,9 @@ body.fluent2-dark,
 }
 .fluent2-dark .sb-header {
   background: #292929;
+}
+.fluent2-dark .sdk-wrapper {
+  background: #292929
 }
 .fluent2-dark .sb-search-result .e-list-item {
     background:  linear-gradient(0deg, rgba(208, 188, 255, 0.08), rgba(208, 188, 255, 0.08)), #1C1B1F;
@@ -5428,7 +5529,7 @@ color:white;
 .fluent2-dark .theme-wrapper:hover,
 .fluent2-dark .theme-wrapper.active,
 .fluent2-dark .sb-theme-popup li:hover,
-.fluent2-dark .sb-products-popup li:hover,
+.fluent2-dark .sb-sdk-popup li:hover,
 .fluent2-dark .sb-search-result .e-list-item:hover,
 .fluent2-dark .sb-switch-btn:hover,
 .fluent2-dark .sb-switch-btn.active,
@@ -5527,7 +5628,7 @@ color:white;
 .fluent2-dark #search-input_popup .e-list-group-item {
     background: #1f1f1f;
     color: #479EF5
-}  
+}
 .fluent2-dark #search-input_popup .e-fixed-head {
   color: #479EF5;
   background: #1f1f1f;
@@ -5606,7 +5707,7 @@ color:white;
     color:#ffffff
 }
 .fluent-dark .sb-left-pane .e-listview .e-list-item.e-active:hover,
-.fluent-dark .sb-home, 
+.fluent-dark .sb-home,
 .fluent-dark .sb-reset-icon{
     color:#ffffff
 }
@@ -5631,7 +5732,7 @@ color:white;
   border-right: none;
   text-transform: uppercase;
   font-weight: 500;
-}  
+}
 body.fluent-dark,
 .fluent-dark #sb-header-text,
 .fluent-dark .control-name,
@@ -5679,7 +5780,7 @@ body.fluent-dark,
 .fluent-dark #search-input_popup .e-list-group-item {
     color: #d2d0ce;
 }
- 
+
 .fluent-dark .sb-content-section,
 .fluent-dark .sb-switch-popup .fluent-dark .sb-content-tab-header,
 .fluent-dark .sb-content-section .sb-content-tab-header {
@@ -5728,7 +5829,7 @@ body.fluent-dark,
 .fluent-dark .sb-src-code,
 .fluent-dark .sb-api-section,
 .fluent-dark .sb-theme-popup,
-.fluent-dark .sb-products-popup,
+.fluent-dark .sb-sdk-popup,
 .fluent-dark .copy-tooltip,
 .fluent-dark .e-icons.copycode,
 .fluent-dark #search-input-wrapper input,
@@ -5742,7 +5843,7 @@ body.fluent-dark,
 .fluent-dark .sb-theme-popup {
     color: #ffffff;
     background: #252423;
-    border: 1px solid #484644;   
+    border: 1px solid #484644;
 }
 .fluent-dark .sb-setting-popup {
     border: 1px solid #484644;
@@ -5760,10 +5861,10 @@ body.fluent-dark,
 .fluent-dark .sb-switch-popup li:hover,
 .fluent-dark .theme-wrapper:hover,
 .fluent-dark .theme-wrapper.active,
-.fluent-dark .products-wrapper:hover,
-.fluent-dark .products-wrapper.active,
+.fluent-dark .sdk-wrapper:hover,
+.fluent-dark .sdk-wrapper.active,
 .fluent-dark .sb-theme-popup li:hover,
-.fluent-dark .sb-products-popup li:hover,
+.fluent-dark .sb-sdk-popup li:hover,
 .fluent-dark .sb-search-result .e-list-item:hover,
 .fluent-dark .sb-switch-btn:hover,
 .fluent-dark .sb-switch-btn.active,
@@ -5872,7 +5973,7 @@ body.fluent-dark,
 
 .fluent .e-bigger .sb-content-tab .e-tab .e-tab-header {
     min-height: 36px;
-    height: 36px; 
+    height: 36px;
 }
 
 .e-bigger .sb-content-tab .e-tab .e-tab-header .e-toolbar-item.e-active {
@@ -5902,7 +6003,7 @@ body.fluent-dark,
 
 .fluent-dark.e-bigger .sb-content-tab .e-tab .e-tab-header {
     min-height: 36px;
-    height: 36px; 
+    height: 36px;
 }
 .fluent-dark.e-bigger .sb-content-tab .e-tab .e-tab-header .e-toolbar-item.e-active {
     margin-left: 0px !important;
@@ -6064,6 +6165,7 @@ body.fluent-dark,
 
 body.fluent2-highcontrast,
 .fluent2-highcontrast #sb-header-text,
+.fluent2-highcontrast #sb-sdk-switcher,
 .fluent2-highcontrast .control-name,
 .fluent2-highcontrast .sample-navigation,
 .fluent2-highcontrast .sb-icon-Popout,
@@ -6076,6 +6178,7 @@ body.fluent2-highcontrast,
     color: #1aebff;
 }
 .fluent2-highcontrast .sb-header,
+.fluent2-highcontrast .sdk-wrapper,
 .fluent2-highcontrast .sb-search-result .e-list-item {
     background:  linear-gradient(0deg, rgba(208, 188, 255, 0.08), rgba(208, 188, 255, 0.08)), #1C1B1F;
 }
@@ -6086,6 +6189,10 @@ body.fluent2-highcontrast,
 .fluent2-highcontrast #left-sidebar {
     color: #c2c0c0;
     background:  #2B2831;
+}
+
+.fluent2-highcontrast .property-panel-section {
+    background: #1C1B1F !important;
 }
 
 .fluent2-highcontrast #left-sidebar {
@@ -6127,7 +6234,7 @@ body.fluent2-highcontrast,
 .fluent2-highcontrast .sb-theme-popup {
     border: unset;
 }
-.fluent2-highcontrast .sb-products-popup {
+.fluent2-highcontrast .sb-sdk-popup {
     border: unset;
 }
 .fluent2-highcontrast .sb-icon-Hamburger,
@@ -6161,7 +6268,7 @@ color:white;
 .fluent2-highcontrast .sb-src-code,
 .fluent2-highcontrast .sb-api-section,
 .fluent2-highcontrast .sb-theme-popup,
-.fluent2-highcontrast .sb-products-popup,
+.fluent2-highcontrast .sb-sdk-popup,
 .fluent2-highcontrast .copy-tooltip,
 .fluent2-highcontrast .e-icons.copycode,
 .fluent2-highcontrast #search-input-wrapper input,
@@ -6176,10 +6283,10 @@ color:white;
 .fluent2-highcontrast .sb-switch-popup li:hover,
 .fluent2-highcontrast .theme-wrapper:hover,
 .fluent2-highcontrast .theme-wrapper.active,
-.fluent2-highcontrast .products-wrapper:hover,
-.fluent2-highcontrast .products-wrapper.active,
+.fluent2-highcontrast .sdk-wrapper:hover,
+.fluent2-highcontrast .sdk-wrapper.active,
 .fluent2-highcontrast .sb-theme-popup li:hover,
-.fluent2-highcontrast .sb-products-popup li:hover,
+.fluent2-highcontrast .sb-sdk-popup li:hover,
 .fluent2-highcontrast .sb-search-result .e-list-item:hover,
 .fluent2-highcontrast .sb-left-pane .e-listview .e-list-item:hover {
     background-color: rgba(255, 255, 255, 0.12);
@@ -6267,7 +6374,7 @@ color:transparent
 .bootstrap5\.3-dark .sb-theme-select{
   color:transparent
  }
-  
+
 
 .fluent2-highcontrast .sb-badge {
 border-radius: 2px;
@@ -6442,9 +6549,68 @@ cursor: pointer;
     .e-bigger .ai-toast.e-toast { max-width: calc(100% - 8%) !important; box-sizing: border-box; }
 }
 
-/* Hide Other Products section in desktop mode */
-@media (min-width: 851px) {
-    .sb-setting-products-section {
-        display: none !important;
+/* Hide SDK settings section by default (desktop/tablet) */
+.sb-setting-sdk-section {
+    display: none;
+}
+
+/* Show only on mobile */
+@media (max-width: 550px) {
+    .sb-setting-sdk-section {
+        display: block;
     }
+}
+
+
+/* ===== WCAG Button Styles ===== */
+.sb-wcag-btn {
+    padding-right: 17px;
+    font-size: 14px;
+    height: 38px;
+    line-height: 35px;
+    color: #3C78EF;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.sb-wcag-btn:hover {
+    color: #1783ff;
+}
+
+.sb-wcag-btn:focus,
+.sb-wcag-btn:focus-visible {
+    color: #1783ff;
+    outline: none;
+}
+
+.sb-wcag-text {
+    font-size: 15px;
+}
+
+
+.sb-axe-tooltip .e-tip-content {
+    white-space: normal;
+    line-height: 1.45;
+    text-align: left;
+    font-size: 13px;
+}
+
+/* Dark mode styles for WCAG button */
+.e-dark-mode .sb-wcag-btn,
+.fluent2-highcontrast .sb-wcag-btn {
+    color: #b3e5fc;
+}
+
+.e-dark-mode .sb-wcag-btn:hover,
+.fluent2-highcontrast .sb-wcag-btn:hover {
+    color: #e3f2fd;
+}
+
+.e-dark-mode .sb-wcag-btn:focus,
+.e-dark-mode .sb-wcag-btn:focus-visible,
+.fluent2-highcontrast .sb-wcag-btn:focus,
+.fluent2-highcontrast .sb-wcag-btn:focus-visible {
+    color: #e3f2fd;
+    outline: none;
 }

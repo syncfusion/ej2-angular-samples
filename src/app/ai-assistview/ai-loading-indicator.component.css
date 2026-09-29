@@ -1,0 +1,271 @@
+.loading-indicator-aiassistview {
+    height: 600px;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+}
+.loading-indicator-property-section {
+    margin-top: 25px;
+}
+.loading-indicator-property-section .property-panel-content td {
+    padding: 10px 0px;
+}
+@media only screen and (max-width: 850px) {
+    .loading-indicator-aiassistview {
+        width: 80%;
+    }
+}
+/* Banner styling */
+.loading-indicator-aiassistview .banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 330px;
+}
+.loading-indicator-aiassistview .banner-content .e-assistview-icon:before {
+    font-size: 35px;
+}
+.assistview-loading-status {
+    display: flex;
+    gap: 10px;
+    color: #666;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+/* Icon + text loading */
+.assistview-icon-text-loading {
+    display: inline-flex;
+    gap: 8px;
+    color: #666;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+.assistview-icon-text-loading .e-icons {
+    font-size: 16px;
+    color: #0078d4;
+    animation: assistview-spin 1.6s linear infinite;
+}
+@keyframes assistview-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+/* animation type loading */
+.assistview-animation-loading {
+    display: inline-flex;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 16px;
+    background: linear-gradient(90deg, #f3f3f3 0%, #e7e7e7 50%, #f3f3f3 100%);
+    background-size: 200% 100%;
+    animation: assistview-shimmer 1.5s ease-in-out infinite;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #555;
+}
+.assistview-animation-dots {
+    display: inline-flex;
+    gap: 3px;
+    margin-left: 4px;
+}
+.assistview-animation-dots span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #6c63ff;
+    animation: assistview-bounce 1.2s ease-in-out infinite;
+}
+.assistview-animation-dots span:nth-child(1) { animation-delay: 0s; }
+.assistview-animation-dots span:nth-child(2) { animation-delay: 0.15s; }
+.assistview-animation-dots span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes assistview-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+@keyframes assistview-bounce {
+    0%, 80%, 100% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* Dot Type - Three continuously blinking dots */
+.assistview-dot-loading {
+    display: inline-flex;
+    gap: 4px;
+    padding: 4px 0;
+}
+.assistview-dot-loading span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #0078d4;
+    animation: assistview-dot-blink 1.4s infinite ease-in-out;
+}
+.assistview-dot-loading span:nth-child(1) {
+    animation-delay: 0s;
+}
+.assistview-dot-loading span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.assistview-dot-loading span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+@keyframes assistview-dot-blink {
+    0%, 80%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+/* Spinner type loading - Continuous rotation */
+.assistview-spinner-loading {
+    display: inline-flex;
+}
+.assistview-spinner-loading .spinner {
+    width: 25px;
+    height: 25px;
+    border: 3px solid #e5e5e5;
+    border-top-color: #0078d4;
+    border-radius: 50%;
+    animation: assistview-spinner-rotate 0.8s linear infinite;
+}
+@keyframes assistview-spinner-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* Text type loading - Status messages with emojis (cycle one at a time) */
+.assistview-status-loading {
+    position: relative;
+    display: inline-block;
+    min-width: 200px;
+    height: 22px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+.assistview-status-loading > span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    opacity: 0;
+}
+.assistview-status-loading > .status-1 {
+    animation: assistview-status-cycle-1 3s linear forwards;
+}
+.assistview-status-loading > .status-2 {
+    animation: assistview-status-cycle-2 3s linear forwards;
+}
+.assistview-status-loading > .status-3 {
+    animation: assistview-status-cycle-3 3s linear forwards;
+}
+@keyframes assistview-status-cycle-1 {
+    0%       { opacity: 1; }
+    33%, 100% { opacity: 0; }
+}
+@keyframes assistview-status-cycle-2 {
+    0%, 33%  { opacity: 0; }
+    34%, 66% { opacity: 1; }
+    67%, 100% { opacity: 0; }
+}
+@keyframes assistview-status-cycle-3 {
+    0%, 66%  { opacity: 0; }
+    67%, 100% { opacity: 1; }
+}
+/* Text with indicator type - Generating with animated dots */
+.assistview-text-indicator {
+    display: inline;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    line-height: 1;
+}
+.assistview-text-indicator > span:first-child {
+    animation: assistview-text-flash 1.2s infinite ease-in-out;
+}
+.assistview-dots {
+    display: inline;
+    line-height: 1;
+}
+.assistview-dots span {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #666;
+    animation: assistview-dot-wave 1.2s infinite;
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: baseline;
+}
+.assistview-dots span:nth-child(2) {
+    animation-delay: .2s;
+}
+.assistview-dots span:nth-child(3) {
+    animation-delay: .4s;
+}
+@keyframes assistview-dot-wave {
+    0%, 80%, 100% {
+        opacity: .3;
+        transform: translateY(0);
+    }
+    40% {
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+}
+@keyframes assistview-text-flash {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+/* Dark theme support */
+body[class*="dark"] .assistview-loading-status,
+body[class*="high"] .assistview-loading-status,
+body[class*="dark"] .assistview-icon-text-loading,
+body[class*="high"] .assistview-icon-text-loading,
+body[class*="dark"] .assistview-animation-loading,
+body[class*="high"] .assistview-animation-loading,
+body[class*="dark"] .assistview-status-loading,
+body[class*="high"] .assistview-status-loading,
+body[class*="dark"] .assistview-text-indicator,
+body[class*="high"] .assistview-text-indicator,
+body[class*="dark"] .assistview-text-indicator .assistview-dots span,
+body[class*="high"] .assistview-text-indicator .assistview-dots span {
+    color: #d0d0d0;
+}
+body[class*="dark"] .assistview-dot-loading span,
+body[class*="high"] .assistview-dot-loading span {
+    background: #6c9fd8;
+}
+body[class*="dark"] .assistview-spinner-loading .spinner,
+body[class*="high"] .assistview-spinner-loading .spinner {
+    border-color: #444;
+    border-top-color: #6c9fd8;
+}
+body[class*="dark"] .assistview-animation-loading,
+body[class*="high"] .assistview-animation-loading {
+    background: linear-gradient(90deg, #3a3a3a 0%, #2a2a2a 50%, #3a3a3a 100%);
+    background-size: 200% 100%;
+}

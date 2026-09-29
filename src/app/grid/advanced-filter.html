@@ -1,0 +1,40 @@
+<div class="control-section">
+    <div>
+        <ejs-grid #grid id='AdvancedFilter' [dataSource]='data' [allowAdvancedFiltering]='true' [allowSorting]='true' [enableVirtualization]='true' [pageSettings]='pageSettings' [advancedFilterSettings]='advancedFilterSettings' height='400' rowHeight='45' [editSettings]='editSettings' [toolbar]='toolbar' (load)='onLoad($event)'
+            (actionBegin)="actionBegin($event)">
+            <e-columns>
+                <e-column field='TicketID' headerText='Ticket ID' textAlign='Right' width='120' isPrimaryKey='true'></e-column>
+                <e-column field='Title' headerText='Title' width='260' [allowEditing]='false'></e-column>
+                <e-column field='TypeofRequest' headerText='Type' width='150'  [allowEditing]='false'></e-column>
+                <e-column field='Assignee' headerText='Assignee' width='150' editType='dropdownedit'></e-column>
+                <e-column field='Priority' headerText='Priority' width='130' editType='dropdownedit'></e-column>
+                <e-column field='Status' headerText='Status' width='130' editType='dropdownedit'></e-column>
+                <e-column field='CreatedDate' headerText='Created Date' width='140' textAlign='Right' type='date' format='yMd'></e-column>
+                <e-column field='DueDate' headerText='Due Date' width='140' textAlign='Right' type='date' format='yMd' editType='datepickeredit'></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates the Advanced Filter feature of the Data Grid, providing a Query Builder-based interface for creating complex filtering criteria. Users can filter records using multiple conditions and combine them with logical operators such as "AND" and "OR" to achieve precise results.</p>
+</div>
+<div id="description">
+    <p>
+        In this demo, the Advanced Filter dialog is opened from the toolbar by enabling the <code>allowAdvancedFiltering</code> property and adding <code>AdvancedFilter</code> to the toolbar items. The Query Builder interface allows users to filter records by defining conditions and rule groups, which are applied to the grid when the "Apply" action is performed.
+    </p>
+
+    <p><strong>Injecting Module:</strong></p>
+    <p>
+        Grid component features are segregated into individual feature-wise modules. To use the Advanced Filter feature, inject the <code>AdvancedFilterService</code> into the <code>providers</code> section.
+    </p>
+    <p>
+        More information on the filter configuration can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/grid/filtering/filtering">
+            documentation section</a>.
+    </p>
+    <p>
+        Looking for the full Angular Data Grid component overview, features, pricing, and documentation? Visit our
+        <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-data-grid">
+            Angular Data Grid component</a> page.
+    </p>
+</div>

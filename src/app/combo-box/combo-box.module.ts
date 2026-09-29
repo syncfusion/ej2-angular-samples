@@ -26,7 +26,7 @@ export const comboboxAppRoutes: Object[] = [
     	category: 'ComboBox' },
     { path: ':theme/combo-box/data-binding', component: DataBindingComboBoxComponent, name: 'Data Binding', description: 'This example demonstrates how to bind with local data source and fetch data from remote data service in the Angular combo box component.', order: '01',
     	category: 'ComboBox' },
-    { path: ':theme/combo-box/object-value-binding', component: ObjectComboBoxComponent, name: 'Oject Value Binding', description: 'This example demonstrates how to bind with data source in the Angular combo box component.', order: '01',
+    { path: ':theme/combo-box/object-value-binding', component: ObjectComboBoxComponent, name: 'Object Value Binding', description: 'This example demonstrates how to bind with data source in the Angular combo box component.', order: '01',
     category: 'ComboBox' },
     { path: ':theme/combo-box/disabled-items', component: DisabledItemsComboBoxComponent, name: 'Disabled Items', description: 'This example showcases the disabled items of Angular combo box component.', order: '01',
     	category: 'ComboBox' },

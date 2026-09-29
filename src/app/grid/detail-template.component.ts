@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { DetailRowService, SortService, FilterService, GridModule } from '@syncfusion/ej2-angular-grids';
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
+import { DetailRowService, SortService, FilterService, GridModule, GridComponent } from '@syncfusion/ej2-angular-grids';
 import { TabModule } from '@syncfusion/ej2-angular-navigations';
 import { employeeDetail, taskDetail } from './data';
 import { CardSettingsModel, KanbanModule } from '@syncfusion/ej2-angular-kanban';
@@ -26,6 +26,9 @@ export class DetailTemplateComponent implements OnInit {
   public headerText: Record<string, any>[] = [];
   public cardSettings: CardSettingsModel;
   public statusColumns: Object[];
+  public isRtl: boolean = false;
+  @ViewChild('grid')
+  public gridInstance : GridComponent ;
   constructor() {
 
   }
@@ -47,6 +50,7 @@ export class DetailTemplateComponent implements OnInit {
 
   public detailDataBound(args: any) {
     var rowData = args.data;
+    this.isRtl = this.gridInstance.enableRtl;
     this.taskDetail = taskDetail.filter((item: any) => item.Assignee === rowData.Name);
     this.salesData = this.generateData(this.taskDetail);
   }

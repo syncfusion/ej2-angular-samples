@@ -8,8 +8,8 @@
         </e-resource>
       </e-resources>
       <e-views>
-        <e-view option="TimelineMonth" enableLazyLoading='true'></e-view>
-        <e-view option="Month" enableLazyLoading='true'></e-view>
+        <e-view option="TimelineMonth" [overscanCount]="20" enableLazyLoading='true'></e-view>
+        <e-view option="Month" [overscanCount]="20" enableLazyLoading='true'></e-view>
       </e-views>
     </ejs-schedule>
   </div>
@@ -29,6 +29,6 @@
     To enable the on-demand loading of events in the Scheduler, set the <code>enableLazyLoading</code> property to <code>true</code> within the view-specific settings.
   </p>
   <p>
-    Looking for the full Angular Scheduler component overview, features, pricing, and documentation? Visit our <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-scheduler">Angular Scheduler</a> component page.
+    Looking for the full Angular Scheduler component overview, features, pricing, and documentation? Visit our <a target="_blank" href="https://www.syncfusion.com/scheduler-sdk/angular-scheduler">Angular Scheduler</a> component page.
   </p>
 </div>

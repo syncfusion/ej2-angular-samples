@@ -166,17 +166,17 @@
         gap: 8px;
         padding: 2px 0;
     }
- 
+
     #sample.leave-bar {
         display: flex;
         align-items: center;
         gap: 5px;
     }
- 
+
     #sample.leave-label {
         text-align: right;
     }
- 
+
     #sample.bar {
         width: 50px;
         height: 15px;
@@ -190,7 +190,7 @@
         color: #000000;
         padding: 6px 4px;
     }
- 
+
     #sample.barlabel {
         position: absolute;
         z-index: 1;
@@ -198,15 +198,15 @@
         font-size: 12px;
         font-weight: 500;
     }
- 
+
     #sample.bar-fill {
         height: 100%;
         position: absolute;
         top: 0;
         left: 0;
     } */
-   
-  
+
+
 #sample .leave-bar-container {
   display: flex;
   justify-content: center;
@@ -228,7 +228,7 @@
   width: 50px;
   height: 15px;
   background-color: #eee;
-  
+
   position: relative;
   overflow: hidden;
   display: flex;
@@ -257,10 +257,3 @@
   background-color: #ccc;
   margin: 0 8px;
 }
-
- 
-    @media (max-width: 1080px) {
-        .viewer-container .e-input-group {
-            width: 45% !important;
-        }
-    }

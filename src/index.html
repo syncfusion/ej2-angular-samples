@@ -30,14 +30,14 @@
 
     <link href="./styles/bootstrap.min.css" rel="stylesheet" />
     <link href="./styles/roboto.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
     <link href="./styles/tailwind3.css" rel="stylesheet" id="themelink" />
     <link href="./styles/index.min.css" rel="stylesheet" />
     <link href="./styles/codemirror/codemirror.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/highlight.css">
     <link href="./styles/app-styles.css" rel="stylesheet">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha512-iOOHRE9HrRga+nmGyk6fmAMTrtopFR907WWoD7XsoFuWxdnPtaYxopCyBWZiOBNFlv8qyHporbY49hyVWSSxHA==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/shim.min.js" integrity="sha512-KblIy3bBne8lyIvVdK5cSfalLHlqMmzgU5YP2yjeAiIaHChXgpk6qXWUCnBK9XRX5IGkVlBf3L9gaF1taUxovA==" 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/shim.min.js" integrity="sha512-KblIy3bBne8lyIvVdK5cSfalLHlqMmzgU5YP2yjeAiIaHChXgpk6qXWUCnBK9XRX5IGkVlBf3L9gaF1taUxovA=="
     crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reflect-metadata/0.1.10/Reflect.min.js" integrity="sha512-OYt1EpazBm0ORZtTDaECuDh4c3FkHOrspDpJPV5BstRc87qIfWfOUTe/CuzJaobGxlBinyhLEn7PjjuS947i0w=="
     crossorigin="anonymous"></script>
@@ -85,18 +85,18 @@
                 <div class="sb-header-item sb-table-cell sb-lang-toggler-wrapper" style="cursor:pointer;">
                     <span id="sb-switcher" class="sb-lang-toggler sb-icons sb-icon-Dropdown"></span>
                 </div>
-            </div>
-            <div class="sb-header-right sb-right sb-table">
-                <div class="sb-header-item sb-table-cell sb-products-toggler-wrapper" style="cursor:pointer;">
-                    <div id="header-products-switcher" role="button" tabindex="0" class="products-wrapper" title="Other Products">
-                        <div id="sb-products-text" class="sb-products-text">
-                            <span class="sb-header-text-left">OTHER PRODUCTS</span>
+                <div class="sb-header-item sb-table-cell sb-sdk-wrapper" style="cursor:pointer;">
+                    <div id="header-sdk-switcher" role="button" tabindex="0" class="sdk-wrapper" title="SDK Samples selection">
+                        <div id="sb-sdk-text" class="sb-sdk-text">
+                            <span class="sb-header-text-left">CHOOSE SDK</span>
                         </div>
-                        <div class="sb-products-switcher-wrapper">
-                            <span id="sb-products-switcher" class="sb-products-switch sb-icons sb-icon-Dropdown" role="presentation"></span>
+                        <div class="sb-sdk-switcher-wrapper">
+                            <span id="sb-sdk-switcher" class="sb-sdk-switch sb-icons sb-icon-Dropdown" role="presentation"></span>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="sb-header-right sb-right sb-table">
                 <div class="sb-header-item sb-table-cell">
                     <div id="header-theme-switcher" role="button" tabindex="0" class="theme-wrapper" title="Theme Selection" class="theme-wrapper">
                         <div id="sb-theme-text" class="sb-theme-text">
@@ -185,16 +185,51 @@
                     </li>
                 </ul>
             </div>
-            <div id="products-switcher-popup" class="sb-products-popup" style="padding-top: 0px;">
-                <ul id="productslist" class="options">
-                    <li class="e-list" id="syncfusion-pdf-editor">
-                        <span class="switch-text">PDF Viewer</span>
+            <div id="sdk-popup" class="sb-sdk-popup" style="padding-top: 0px;">
+                <ul id="sdklist" class="options">
+                    <li class="e-list sdk-all active" data-sdk="all">
+                        <span class="sb-icons sb-sdk-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">All Samples</span>
                     </li>
-                    <li class="e-list" id="syncfusion-spreadsheet-editor">
-                        <span class="switch-text">Spreadsheet Editor</span>
+                    <li class="e-list" data-sdk="grid">
+                        <span class="sb-icons sb-sdk-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Grid SDK</span>
                     </li>
-                    <li class="e-list" id="syncfusion-docx-editor">
-                        <span class="switch-text">Docx Editor</span>
+                    <li class="e-list" data-sdk="rich-text-editor">
+                        <span class="sb-icons sb-sdk-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Rich Text Editor SDK</span>
+                    </li>
+                    <li class="e-list" data-sdk="schedule">
+                        <span class="sb-icons sb-sdk-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Scheduler SDK</span>
+                    </li>
+                    <li class="e-list" data-sdk="chart">
+                        <span class="sb-icons sb-sdk-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Chart SDK</span>
+                    </li>
+                    <li class="e-list" data-sdk="gantt">
+                        <span class="sb-icons sb-sdk-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Gantt SDK</span>
+                    </li>
+                    <li class="e-list" data-sdk="file-manager">
+                        <span class="sb-icons sb-sdk-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">File Manager SDK</span>
+                    </li>
+                    <li class="e-list" data-sdk="diagram">
+                        <span class="sb-icons sb-sdk-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Diagram SDK</span>
+                    </li>
+                    <li class="e-list" data-sdk="pdf">
+                        <span class="sb-icons sb-sdk-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">PDF Viewer SDK</span>
+                    </li>
+                    <li class="e-list" data-sdk="spreadsheet">
+                        <span class="sb-icons sb-sdk-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Spreadsheet Editor SDK</span>
+                    </li>
+                    <li class="e-list" data-sdk="docx">
+                        <span class="sb-icons sb-sdk-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Docx Editor SDK</span>
                     </li>
                 </ul>
             </div>
@@ -241,16 +276,24 @@
                     </span>
                 </div>
                 <div class="sb-setting-content">
-                    <div class="sb-setting-item sb-setting-products-section">
+                    <div class="sb-setting-item sb-setting-sdk-section">
                         <div class="setting-label">
                             <div class="sb-icons sb-setting-icons sb-icon-Products"></div>
-                            <div class="sb-setting-text">Other Products</div>
+                            <div class="sb-setting-text">SDK Samples</div>
                         </div>
-                        <div class="setting-content setting-products-change">
-                            <select id="sb-setting-products" class="sb-setting-products-select">
-                                <option value="pdf-editor">PDF Viewer</option>
-                                <option value="spreadsheet-editor">Spreadsheet Editor</option>
-                                <option value="docx-editor">Docx Editor</option>
+                        <div class="setting-content setting-sdk-change">
+                            <select id="sb-setting-sdk" class="sb-setting-sdk-select">
+                                <option value="all">All Samples</option>
+                                <option value="grid">Grid SDK</option>
+                                <option value="rich-text-editor">Rich Text Editor SDK</option>
+                                <option value="schedule">Scheduler SDK</option>
+                                <option value="chart">Chart SDK</option>
+                                <option value="gantt">Gantt SDK</option>
+                                <option value="file-manager">File Manager SDK</option>
+                                <option value="diagram">Diagram SDK</option>
+                                <option value="pdf">PDF Viewer SDK</option>
+                                <option value="spreadsheet">Spreadsheet Editor SDK</option>
+                                <option value="docx">Docx Editor SDK</option>
                             </select>
                         </div>
                     </div>

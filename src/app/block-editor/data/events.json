@@ -1,0 +1,389 @@
+{
+    "blockDataEvents": [
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 2
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Block Editor Event Handling"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "The Block Editor provides a comprehensive event system that allows developers to track user interactions and customize workflows. Events are essential for implementing real-time updates, analytics, and advanced features."
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Why events matter"
+                }
+            ]
+        },
+        {
+            "blockType": "CollapsibleHeading",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Events enable you to:"
+                }
+            ],
+            "properties": {
+                "level": 4,
+                "isExpanded": true,
+                "children": [
+                    {
+                        "blockType": "BulletList",
+                        "content": [
+                            {
+                                "contentType": "Text",
+                                "content": "Respond to content changes instantly."
+                            }
+                        ]
+                    },
+                    {
+                        "blockType": "BulletList",
+                        "content": [
+                            {
+                                "contentType": "Text",
+                                "content": "Track user focus and engagement."
+                            }
+                        ]
+                    },
+                    {
+                        "blockType": "BulletList",
+                        "content": [
+                            {
+                                "contentType": "Text",
+                                "content": "Monitor block-level actions for better control."
+                            }
+                        ]
+                    },
+                    {
+                        "blockType": "BulletList",
+                        "content": [
+                            {
+                                "contentType": "Text",
+                                "content": "Implement custom behaviors and analytics."
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "blockType": "Callout",
+            "properties": {
+                "children": [
+                    {
+                        "blockType": "Paragraph",
+                        "content": [
+                            {
+                                "contentType": "Text",
+                                "content": "Tip: ",
+                                "properties": {
+                                    "styles": {
+                                        "bold": true,
+                                        "color": "#047857"
+                                    }
+                                }
+                            },
+                            {
+                                "contentType": "Text",
+                                "content": "Use events wisely — avoid unnecessary listeners to maintain optimal performance."
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Core events"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "blockChanged: ",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "Detect when blocks are added, removed, transformed or updated."
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "focus: ",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "Track active blocks when the editor gains focus."
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 4
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Basic usage"
+                }
+            ]
+        },
+        {
+            "blockType": "Code",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "focus: (args: FocusEventArgs) => { \n// Custom actions when the editor gains focus\n} \nblockChanged: (args: BlockChangedEventArgs) {\n //Custom actions on a block are added, removed, transformed, or updated. \n}\n"
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Event usage in the Block Editor"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Events are commonly used for:"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Autosave: ",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "Trigger blockChanged to save content periodically."
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Collaboration: ",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "Sync changes in real-time using blockChanged."
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Cases to avoid when binding events"
+                }
+            ]
+        },
+        {
+            "blockType": "NumberedList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "High-frequency events without throttling Example: ",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "Binding heavy logic to blockChanged without debouncing can cause performance issues."
+                }
+            ]
+        },
+        {
+            "blockType": "NumberedList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Duplicate listeners: ",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "Adding multiple listeners for the same event can lead to memory leaks and unexpected behavior."
+                }
+            ]
+        },
+        {
+            "blockType": "NumberedList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Unnecessary global listeners: ",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "Avoid binding events that are not relevant to your workflow."
+                }
+            ]
+        },
+        {
+            "blockType": "NumberedList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Complex operations inside event callbacks: ",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "Heavy DOM manipulation or API calls inside frequent events can degrade the user experience."
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Best practices"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Use debouncing for frequent events like blockChanged."
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Remove listeners when they are no longer needed."
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Keep event callbacks lightweight and efficient."
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Combine events for analytics without impacting UX."
+                }
+            ]
+        },
+        {
+            "blockType": "Quote",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "“Every interaction tells a story — listen carefully.”",
+                    "properties": {
+                        "styles": {
+                            "italic": true
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph"
+        }
+    ]
+}

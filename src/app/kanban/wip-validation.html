@@ -76,24 +76,49 @@
     </div>
 </div>
 <div id="action-description">
-  <p>This sample demonstrates how to limit the minimum and maximum number of cards to each column of the Kanban component.
-    Configured the options in the property panel to change the constraint type and related attributes.</p>
+    <p>
+        This sample demonstrates the work in progress validation capabilities of the Kanban component, enabling workflow constraints to be applied and monitored for improved task management and process control.
+    </p>
 </div>
 <div id="description">
-  <p>This sample validates the number of cards in the particular column or swimlane using the
-    <code>constraintType</code> property.
-    This property contains two types:</p>
-  <ul>
-    <li>Column: Validates the number of cards based on the particular column.
-      By default, column validation is applied to Kanban board.</li>
-    <li>Swimlane: Validation applies based on number of cards in a particular column cell and swimlane.</li>
-  </ul>
-  <p>This sample contains the following properties: </p>
-  <ul>
-    <li>Columns: You can choose a column and set maximum and minimum limit to the selected column.</li>
-    <li>minCount: Minimum limit of cards required for each column.
-      If the cards count do not reach the minimum limit, it will indicate the validation failed state.</li>
-    <li>maxCount: Maximum limit of cards per column. If the cards count exceeds the maximum limit, it will indicate the
-      validation failed state.</li>
-  </ul>
+    <p>
+        This sample demonstrates work in progress validation in the Kanban component using the 
+        <a href="https://ej2.syncfusion.com/angular/documentation/kanban/validation" target="_blank">constraintType</a>
+        property. WIP validation helps enforce workflow limits by controlling the minimum and maximum number of cards allowed within a column or swimlane.
+    </p>
+    <p>
+    The <code>constraintType</code> property supports the following validation modes:
+    </p>
+    <ul>
+        <li>
+            <code>Column</code>: Validates cards based on the total number of cards within a column. This is the default validation mode.
+        </li>
+        <li>
+            <code>Swimlane</code>: Validates cards based on the number of cards within a specific swimlane and column combination.
+        </li>
+        </ul>
+    <p>
+        This sample also demonstrates the following validation-related settings:
+    </p>
+    <ul>
+        <li>
+            <a href="https://ej2.syncfusion.com/angular/documentation/kanban/columns" target="_blank">columns</a>: Allows you to configure validation settings for a selected column.
+        </li>
+        <li>
+            <a href="https://ej2.syncfusion.com/angular/documentation/kanban/validation#minimum-card-limit" target="_blank">minCount</a>:
+            Specifies the minimum number of cards required in a column. A validation indicator is displayed when the card count falls below this limit.
+        </li>
+        <li>
+            <a href="https://ej2.syncfusion.com/angular/documentation/kanban/validation#maximum-card-limit" target="_blank">maxCount</a>:
+            Specifies the maximum number of cards allowed in a column. A validation indicator is displayed when the card count exceeds this limit.
+        </li>
+    </ul>
+    <p>
+        More information on the Essential<sup>®</sup> JS2 Kanban board can be found in this 
+        <a href="https://ej2.syncfusion.com/angular/documentation/kanan/validation" target="_blank">wip validation</a> documentation section.
+    </p>
+    <p>
+        Looking for the full Angular Kanban component overview, features, pricing and documentation?
+        Visit the <a href="https://www.syncfusion.com/gantt-sdk/angular-kanban-board" target="_blank">Angular Kanban</a> page.
+    </p>
 </div>

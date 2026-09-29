@@ -26,7 +26,11 @@ import { getAIResponse } from '../common/ai-service';
 })
 export class AIAssistClaudeCloneComponent {
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['ai-claude-like.component.css'];
+        sourceFiles.files = [
+            'ai-claude-like.component.css',
+            'ai-claude-like.html', 
+            'promptResponseData.ts'
+        ];
     }
 
     @ViewChild('claudeAIAssistView')

@@ -30,6 +30,9 @@
     .diagram-userhandle .sb-child-row {
         padding-top: 8px;
     }
+    .diagram-userhandle .sample-border {
+        border-right: 1px solid #D5D5D5;
+    }
 </style>
 
 <div id="action-description">
@@ -37,8 +40,8 @@
         This sample visualizes a simple flow diagram along with options to execute the frequently used commands using user handles.
     </p>
 </div>
-<div class="control-section diagram-userhandle">
-    <div class="col-lg-8 control-section">
+<div class="control-section diagram-userhandle" style="padding-top: 0px;">
+    <div class="col-lg-8 control-section sample-border">
         <div class="content-wrapper">
             <!-- Template reference variable for the diagram component instance -->
             <ejs-diagram #diagram id="diagram" width="100%" height="700px" [selectedItems]='selectedItems' [getNodeDefaults]='getNodeDefaults' [snapSettings]='snapSettings' [getCustomTool]='getCustomTool' [fixedUserHandleTemplate]='fixeduserhandleTemplate' (created)='create($event)' (fixedUserHandleClick)='fixedUserHandleClick($event)'>
@@ -160,6 +163,4 @@
         <code>selectedItems</code> can be used to add user handles to the diagram.<code> fixedUserHandleTemplate</code> property of the diagram provides template support for customizing fixed user handles and we provide the HTML  button to delete the node. Click the templates in the property panel, to customize the size, position, and appearance of the user handles.
     </p>
     <br>
-
-    <p>Looking for the full Angular Diagram component overview, features, pricing, and documentation? Visit the <a href="https://www.syncfusion.com/angular-components/angular-diagram" target="_blank">Angular Diagram</a> page.</p>
 </div>

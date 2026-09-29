@@ -1,0 +1,115 @@
+<div class="control-section">
+    <div class="sample-container">
+        <div class="default-section">
+            <div class="mail-composer container-fluid">
+                <div class="form-group">
+                    <button ejs-button id="sendMail" class="e-btn e-primary" (click)='onSend()'>
+                        Send
+                    </button>
+
+                    <button ejs-button id="discardMail" class="e-btn" (click)='onDiscard()'>
+                        Discard
+                    </button>
+                </div>
+
+                <div class="form-group row">
+                    <label for="toRecipient" class="col-xs-12 col-md-2 control-label">To</label>
+                    <div class="col-xs-12 col-md-10">
+                        <ejs-multiselect #toRecipient id="toRecipient"
+                            [dataSource]='emailData'
+                            [fields]='emailFields'
+                            mode='Box'
+                            [allowFiltering]='true'
+                            [allowCustomValue]='true'
+                            placeholder='Recipients'>
+                            <ng-template #itemTemplate let-data>
+                                <table class="mail-item"><tr>
+                                    <td><img class="mail-item-img" [src]="getItemImage(data)" [alt]="data.Name" /></td>
+                                    <td><span class="mail-item-name">{{data.Name}}</span>
+                                    <span class="mail-item-email">{{data.EmailId}}</span></td>
+                                </tr></table>
+                            </ng-template>
+                            <ng-template #valueTemplate let-data>
+                                <div class="mail-value">
+                                    <img class="mail-value-img" [src]="getItemImage(data)" [alt]="data.Name" />
+                                    <span class="mail-value-name">{{data.Name}}</span>
+                                </div>
+                            </ng-template>
+                        </ejs-multiselect>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="ccRecipient" class="col-xs-12 col-md-2 control-label">Cc</label>
+                    <div class="col-xs-12 col-md-10">
+                        <ejs-multiselect #ccRecipient id="ccRecipient"
+                            [dataSource]='emailData'
+                            [fields]='emailFields'
+                            mode='Box'
+                            [allowFiltering]='true'
+                            [allowCustomValue]='true'
+                            placeholder='Cc'>
+                            <ng-template #itemTemplate let-data>
+                                <table class="mail-item"><tr>
+                                    <td><img class="mail-item-img" [src]="getItemImage(data)" [alt]="data.Name" /></td>
+                                    <td><span class="mail-item-name">{{data.Name}}</span>
+                                    <span class="mail-item-email">{{data.EmailId}}</span></td>
+                                </tr></table>
+                            </ng-template>
+                            <ng-template #valueTemplate let-data>
+                                <div class="mail-value">
+                                    <img class="mail-value-img" [src]="getItemImage(data)" [alt]="data.Name" />
+                                    <span class="mail-value-name">{{data.Name}}</span>
+                                </div>
+                            </ng-template>
+                        </ejs-multiselect>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="subject" class="col-xs-12 col-md-2 control-label">Subject</label>
+                    <div class="col-xs-12 col-md-10">
+                        <input
+                            id="subject"
+                            type="text"
+                            class="e-input form-control"
+                            placeholder="Enter subject"
+                            [(ngModel)]='subject' />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <ejs-richtexteditor-ui #editor
+                        id='editor'
+                        placeholder='Compose your email...'
+                        [toolbarSettings]='toolbarSettings'
+                        [slashCommandSettings]='slashCommandSettings'>
+                    </ejs-richtexteditor-ui>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ejs-toast #mailToast id="mailToast"
+    [position]='{ X: "Right", Y: "Top" }'
+    [showProgressBar]='false'
+    [newestOnTop]='true'
+    [timeOut]='2500'
+    [showCloseButton]='true'>
+</ejs-toast>
+
+<div id="action-description">
+    <p>This sample demonstrates an email composer experience built with the Rich Text Editor UI. Recipients are picked using the MultiSelect component, a Subject field captures the email subject, and the editor provides a rich text area for composing the message. Slash Command support is enabled in the editor for quick formatting. Use the Send and Discard buttons to clear the composer and trigger a Toast notification.</p>
+</div>
+
+<div id="description">
+    <p>The Rich Text Editor UI provides the formatting tools needed to compose an email body. The Slash Command feature is enabled so users can quickly apply formatting or insert content by typing "/" inside the editor.</p>
+    <ul>
+        <li><code>MultiSelect (Box mode)</code> &mdash; Used to select multiple recipients for the <strong>To</strong> and <strong>Cc</strong> fields. Custom templates render each recipient with their avatar, name, and email.</li>
+        <li><code>Subject</code> &mdash; A simple text input bound to the component through Angular two-way binding (<code>[(ngModel)]</code>).</li>
+        <li><code>Rich Text Editor UI</code> &mdash; Provides a rich text area for composing the email body, with full formatting tools and Slash Command support.</li>
+        <li><code>Toast</code> &mdash; Displays a confirmation message when an email is sent or discarded.</li>
+    </ul>
+    <p>Click <strong>Send</strong> to clear the composer and show a success notification, or <strong>Discard</strong> to clear the composer and show a discard notification.</p>
+</div>

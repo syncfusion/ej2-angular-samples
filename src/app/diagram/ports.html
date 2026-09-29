@@ -21,6 +21,9 @@
     .diagram-ports .e-remove-selection .property-section-content {
         pointer-events: none;
     }
+    .diagram-ports .sample-border {
+        border-right: 1px solid #D5D5D5;
+    }
 </style>
 
 <div id="action-description">
@@ -30,8 +33,8 @@
         points is illustrated in this example.
     </p>
 </div>
-<div class="control-section diagram-ports">
-    <div class="col-lg-8">
+<div class="control-section diagram-ports" style="padding-top: 0px;">
+    <div class="col-lg-8 sample-border">
         <div class="content-wrapper">
             <ejs-diagram #diagram id="diagram" width="100%" height="580px" [getNodeDefaults]=nodeDefaults [snapSettings]=snapSettings
                 [getConnectorDefaults]=connectorDefaults (selectionChange)="selectChange($event)" (created)="diagramCreate($event)">
@@ -185,6 +188,4 @@
     <p>
         In this example, the appearance and visibility of the ports can be customized using the options added to the property panel.
     </p>
-
-    <p>Looking for the full Angular Diagram component overview, features, pricing, and documentation? Visit the <a href="https://www.syncfusion.com/angular-components/angular-diagram" target="_blank">Angular Diagram</a> page.</p>
 </div>

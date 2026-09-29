@@ -1,0 +1,181 @@
+<div class='schedule-control-section'>
+    <div class='col-lg-12 control-section'>
+        <div class='control-wrapper auto-scheduling'>
+            <div class='schedule-container'>
+                <div class='schedule-content'>
+                    <h5 style="text-align: center; margin: 0; position: relative; bottom: 10px;">Automated Appointment Assignment</h5>
+                    <ejs-schedule
+                        #scheduleObj
+                        id='Schedule'
+                        width='100%'
+                        height='100%'
+                        currentView='TimelineDay'
+                        [selectedDate]="selectedDate"
+                        [group]="group"
+                        [allowOverlap]="false"
+                        [allowResizing]="false"
+                        eventDragArea='.control-wrapper'
+                        [eventSettings]="eventSettings"
+                        [resourceHeaderTemplate]="resourceTemplate"
+                        cssClass='grid-auto-scheduling'
+                        (dragStart)="handleEventDragStart($event)"
+                        (dragStop)="handleEventDragStop($event)"
+                        (actionBegin)="onActionBegin($event)"
+                        (cellClick)="onCellClick($event)"
+                        (popupOpen)="onPopupOpen($event)">
+                        <e-views>
+                            <e-view option='TimelineDay'></e-view>
+                        </e-views>
+                        <e-toolbaritems>
+                            <e-toolbaritem
+                                name="Previous"
+                                align="Left">
+                            </e-toolbaritem>
+
+                            <e-toolbaritem
+                                name="Next"
+                                align="Left">
+                            </e-toolbaritem>
+
+                            <e-toolbaritem
+                                name="DateRangeText"
+                                align="Left">
+                            </e-toolbaritem>
+
+                            <e-toolbaritem
+                                name="Today"
+                                align="Right">
+                            </e-toolbaritem>
+
+                            <e-toolbaritem
+                                type="Input"
+                                align="Right">
+                                <ng-template #template>
+                                    <button
+                                        ejs-button
+                                        cssClass="e-primary"
+                                        (click)="handleAutoScheduling()">
+                                        Auto Scheduling
+                                    </button>
+                                </ng-template>
+                            </e-toolbaritem>
+                        </e-toolbaritems>
+                        <e-resources>
+                            <e-resource
+                                field='StaffId'
+                                title='Staff'
+                                name='Staff'
+                                [allowMultiple]="false"
+                                [dataSource]="resourceData"
+                                textField='text'
+                                idField='id'
+                                colorField='color'
+                                groupIDField='group'>
+                            </e-resource>
+                        </e-resources>
+                    </ejs-schedule>
+                </div>
+                <div class='grid-content'>
+                    <h5 style="text-align: center; margin: 0; position: relative; bottom: 10px;">Unplanned Appointments</h5>
+                    <ejs-grid
+                        #gridObj
+                        [dataSource]="gridData"
+                        cssClass='drag-grid-data'
+                        width='300px'
+                        height='100%'
+                        [allowRowDragAndDrop]="true"
+                        (rowDrop)="rowDrop($event)"
+                        (rowDrag)="rowDrag($event)"
+                        [editSettings]="editOptions"
+                        [rowDropSettings]="{ targetID: 'Schedule' }">
+                        <e-columns>
+                            <e-column field="Task" headerText="Task" width="170">
+                                <ng-template #template let-data>
+                                    <div class="task-template">
+                                        <div class="task-name">
+                                            {{ data.Task }}
+                                        </div>
+                                        <div class="task-skill">
+                                            {{ data.RequiredSkill }}
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </e-column>
+                            <e-column field='Duration' headerText='Duration' width=80></e-column>
+                        </e-columns>
+                    </ejs-grid>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='action-description'>
+        <p>
+            This demo showcases Auto Scheduling in the Scheduler with skill-based resource allocation, workload balancing, and automated appointment assignment. Automatically assign unplanned appointments to the most suitable doctor or nurse based on required skills, availability, and optimized time slot matching.
+        </p>
+    </div>
+
+    <div id='description'>
+        <p>
+            Auto Scheduling in the Scheduler helps healthcare teams efficiently assign patient appointments to qualified staff members. Unplanned appointments are listed in the grid with their required skills, while the Scheduler displays the current workload and availability of each resource.
+        </p>
+
+        <p>
+            <strong>Skill-Based Assignment</strong><br />
+            Appointments are automatically matched to doctors and nurses who possess the required skill. The scheduler ensures that only qualified resources can be assigned to specialized tasks such as Cardiology, Pediatrics, Surgery, ICU, ER, and Ward care.
+        </p>
+
+        <p>
+            <strong>Workload Balancing</strong><br />
+            The scheduling algorithm distributes appointments across available resources while respecting the configured daily workload limit. This helps prevent overbooking and promotes balanced utilization of staff members.
+        </p>
+
+        <p>
+            <strong>Automatic Scheduling</strong><br />
+            Clicking the <b>Auto Scheduling</b> button analyzes resource skills, workload capacity, and available schedule gaps to find the most appropriate time slot for each unplanned appointment.
+        </p>
+
+        <p>
+            <strong>Interactive Scheduling</strong><br />
+            Appointments can also be manually assigned by dragging records from the grid into the Scheduler. Skill matching, workload limits, and schedule conflict validation are automatically enforced during drag-and-drop operations.
+        </p>
+        <p>Looking for the full Angular Scheduler component overview, features, pricing, and documentation? Visit our <a href="https://www.syncfusion.com/scheduler-sdk/angular-scheduler" target="_blank">Angular Scheduler</a> page.</p>
+    </div>
+</div>
+
+<ng-template #resourceTemplate let-data>
+    <div class="resource-header-container">
+
+        <div
+            class="resource-header-avatar"
+            [style.background-color]="data.resourceData.color">
+
+            {{ data.resourceData.text.charAt(0) }}
+
+        </div>
+
+        <div class="resource-header-info">
+
+            <div class="resource-header-name">
+                {{ data.resourceData.text }}
+            </div>
+
+            <div class="resource-header-skills">
+
+                <span
+                    *ngFor="let skill of data.resourceData.skills"
+                    class="skill-badge">
+
+                    {{ skill }}
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="resource-header-workload">
+            {{ getResourceWorkloadForDate(data.resourceData.id, selectedDate) }}/8h
+        </div>
+
+    </div>
+</ng-template>

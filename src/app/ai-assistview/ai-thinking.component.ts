@@ -14,7 +14,12 @@ import { getUserID, AI_SERVICE_URL } from '../common/ai-service';
 
 export class AIAssistThinkingComponent {
   constructor(@Inject('sourceFiles') private sourceFiles: any) {
-    sourceFiles.files = ['ai-thinking.component.css'];
+    sourceFiles.files = [
+      'ai-thinking.component.css',
+      'ai-thinking.html', 
+      'promptResponseData.ts'
+    
+    ];
     AIAssistView.Inject(AssistThinking);
   }
   @ViewChild('thinkingAIAssistView')

@@ -1,0 +1,74 @@
+<div class="control-section">
+    <ejs-treegrid [dataSource]="data" idMapping="productId" parentIdMapping="parentId" [treeColumnIndex]="1"
+        [allowPaging]="true" [toolbar]="toolbar" [editSettings]="editSettings"
+        height="500">
+        <e-columns>
+            <e-column field="productId" headerText="Product ID" [isPrimaryKey]="true" textAlign="Right" width="100"
+                [validationRules]="requiredRules">
+            </e-column>
+
+            <e-column field="productName" headerText="Product Name" width="150" [validationRules]="requiredRules">
+            </e-column>
+
+            <e-column field="supplier" headerText="Supplier" width="180" [validationRules]="requiredRules"> </e-column>
+
+            <e-column field="stockQty" headerText="Stock Qty" textAlign="Right" width="90"
+                [validationRules]="numericRules">
+            </e-column>
+
+            <e-column field="unitPrice" headerText="Unit Price (₹)" textAlign="Right" width="90"
+                [validationRules]="numericRules">
+            </e-column>
+
+            <e-column field="status" headerText="Status" width="120" editType="dropdownedit"
+                [validationRules]="requiredRules">
+                <ng-template #template let-data>
+                    <span class="status-badge" [ngClass]="{
+            'status-active': data.status === 'Active',
+            'status-low-stock': data.status === 'Low Stock',
+            'status-pending': data.status === 'Pending Restock',
+            'status-out-stock': data.status === 'Out of Stock',
+            'status-discontinued': data.status === 'Discontinued'
+          }">
+                        {{ data.status }}
+                    </span>
+                </ng-template>
+            </e-column>
+        </e-columns>
+    </ejs-treegrid>
+</div>
+<div id="action-description">
+    <p>
+        This sample demonstrates cell editing in the TreeGrid, allowing users to quickly update individual field values
+        directly within the data view.
+    </p>
+</div>
+<div id="description">
+    <p>
+        Cell editing enables users to modify one cell at a time without opening a separate edit form. This mode is
+        enabled by setting
+        <code><a target="_blank" class="code"
+      href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/editsettings#mode">editSettings.mode</a></code>
+        double-clicking it, and changes are saved when the user presses the <strong>Enter</strong> key or shifts focus
+        to another cell.
+    </p>
+
+    <p>
+        This mode provides a streamlined way to update data while working within the TreeGrid. It can be used together
+        with features such as validation, custom editors, and formatting to deliver an efficient editing experience.
+    </p>
+
+    <p>Injecting Module:</p>
+
+    <p>
+        TreeGrid functionality is provided through individual feature modules. To enable editing and toolbar support, we
+        need to inject <code>EditService</code> into the <code>&#64;NgModule.providers</code> section.
+    </p>
+
+    <p>
+        More information about TreeGrid cell editing can be found in the
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/treegrid/editing/inline-editing#cell-editing">
+            documentation section</a>.
+    </p>
+</div>

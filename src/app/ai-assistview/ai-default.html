@@ -1,22 +1,22 @@
 <div class="control-section">
     <div class="default-aiassistview">
-        <div id="aiAssistView"
-             ejs-aiassistview 
+        <ejs-aiassistview 
              #defaultAIAssistView 
              [bannerTemplate]="bannerTemplate" 
              [promptSuggestions]="suggestions" 
              [toolbarSettings]="toolbarSettings" 
              (promptRequest)="promptRequest($event)"
              [enableStreaming]="true">
-        </div>
+             <ng-template #bannerTemplate>
+             <div class="banner-content">
+             <div class="e-icons e-assistview-icon"></div>
+                 <h3>AI Assistance</h3>
+                 <i>To get started, provide input or choose a suggestion.</i>
+            </div>
+            </ng-template>
+        </ejs-aiassistview>
     </div>
-    <ng-template #bannerTemplate>
-        <div class="banner-content">
-            <div class="e-icons e-assistview-icon"></div>
-            <h3>AI Assistance</h3>
-            <i>To get started, provide input or choose a suggestion.</i>
-        </div>
-    </ng-template>
+    
 </div>
 
 <div id="action-description">

@@ -1,0 +1,32 @@
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-low-stock {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-pending {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-out-stock {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status-discontinued {
+  background: #e5e7eb;
+  color: #374151;
+}

@@ -129,3 +129,11 @@ line-height: 1;
 .sf-icon-reuse:before { content: "\e70f"; }
 .sf-icon-editor:before { content: "\e70a"; }
 .sf-icon-word:before { content: "\e70d"; }
+
+.bootstrap5\.3.e-bigger #default-ribbonPlaceHolder #toast .e-toast-content:last-child {
+  padding: 0px;
+}
+
+.bootstrap5\.3.e-bigger #default-ribbonPlaceHolder #toast .e-toast-content:first-child {
+  padding: 10px;
+}

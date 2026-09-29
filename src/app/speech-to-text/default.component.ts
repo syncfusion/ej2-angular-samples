@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, Inject } from '@angular/core';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { SpeechToTextModule, TextAreaModule, SpeechToTextComponent, TextAreaComponent, ErrorEventArgs, StopListeningEventArgs, TranscriptChangedEventArgs } from '@syncfusion/ej2-angular-inputs';
@@ -21,6 +21,10 @@ export class DefaultSpeechToTextComponent {
     @ViewChild('interimSwitch') interimSwitch!: SwitchComponent;
     @ViewChild('tooltipSwitch') tooltipSwitch!: SwitchComponent;
     @ViewChild('iconWithTextSwitch') iconWithTextSwitch!: SwitchComponent;
+
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+                    sourceFiles.files = ['default.css'];
+    }
 
     private isSupportedBrowser: boolean = true;
     public colorsData: Object[] = [

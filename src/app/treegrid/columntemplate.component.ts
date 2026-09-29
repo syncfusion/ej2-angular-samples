@@ -6,13 +6,12 @@ import { Sparkline, SparklineModule,ISparklineLoadEventArgs, SparklineTheme } fr
 import { RowDataBoundEventArgs, getObject, GridModule } from '@syncfusion/ej2-angular-grids';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
-import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'ej2-treegrid-container',
     templateUrl: 'columntemplate.html',
     standalone: true,
-    imports: [NgClass, TreeGridModule, SparklineModule,  SBActionDescriptionComponent, SBDescriptionComponent, GridModule]
+    imports: [ TreeGridModule, SparklineModule,  SBActionDescriptionComponent, SBDescriptionComponent, GridModule]
 
 })
 export class ColumnTemplateComponent implements OnInit {

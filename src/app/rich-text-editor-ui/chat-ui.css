@@ -1,0 +1,53 @@
+.chat-section {
+    height: 600px;
+    width: 100%;
+    border: 1px solid #e2e4e8;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+}
+
+/* Angular Chat UI component */
+
+.chat-component {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom footer */
+
+.chat-editor-host {
+    width: 100%;
+    border-top: 1px solid #e2e4e8;
+    background: #fff;
+}
+
+#editor {
+    width: 100%;
+}
+
+/* Chat header avatar */
+
+:host ::ng-deep .chat-user2-avatar {
+    background-image:
+        url('https://ej2.syncfusion.com/demos/src/rich-text-editor/images/2.png')
+        !important;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent !important;
+}
+
+/* Send button */
+
+#send_tbar {
+    min-width: 36px;
+    height: 32px;
+}
+
+#send_tbar .e-icons {
+    font-size: 14px;
+}
+

@@ -1,0 +1,69 @@
+<div className='control-pane'>
+    <div className='control-section'>
+        <!-- Syncfusion Chart -->
+        <ejs-chart
+          #chart
+          id="ai-chart"
+          (load)='load($event)'
+          [chartArea]="chartArea"
+          [title]="title"
+          [subTitle]="subTitle"
+          [primaryXAxis]="primaryXAxis"
+          [primaryYAxis]="primaryYAxis"
+          [legendSettings]="legendSettings"
+          [tooltip]="tooltip"
+          height="520"
+        >
+          <e-series-collection>
+            <e-series
+              [dataSource]="chartData"
+              xName="time"
+              yName="visitors"
+              name="Visitors"
+              type="MultiColoredLine"
+              pointColorMapping="color"
+            >
+            </e-series>
+          </e-series-collection>
+        </ejs-chart>
+
+        <div id="chartSpinner" class="chart-spinner-overlay">
+          <div class="loader"></div>
+        </div>
+
+        <button ejs-button
+                class="chart-action-button"
+                isPrimary="true"
+                iconCss="e-icons e-ai-chat"
+                (click)="processChartData()"
+                title="AI Clean (fill missing values & resolve outliers)">
+        </button>
+    </div>
+
+    <div id="action-description">
+        <p> This sample demonstrates AI-powered data cleaning and preprocessing for an e-commerce website's hourly traffic data. Click the <strong>AI Clean</strong> button to automatically fill missing values and resolve outliers with the help of the AI assist service.</p>
+    </div>
+    <div id='description'>
+        <p>
+          The chart visualises hourly visitor counts for a single day. Several
+          hourly slots are intentionally left as <code>null</code> in the
+          original data so that the AI can impute them. The <strong>AI Clean</strong> action sends the dataset to the AI
+          service, which returns a cleaned version that fills the gaps and
+          smooths outliers. Originally missing slots are highlighted in
+          <code>#D84227</code> so they remain visually distinguishable from
+          real, observed values.
+        </p>
+        <p>
+          <strong>Injecting Module</strong>
+        </p>
+        <p>
+          To render a <code>MultiColoredLine</code> series, register the
+          <code>MultiColoredLineSeriesService</code>,
+          <code>LineSeriesService</code>, <code>DateTimeService</code>, and
+          <code>LegendService</code> in the component's
+          <code>providers</code> array. The colour of each point is
+          driven by a <code>pointColorMapping</code> field, so missing
+          values can be drawn in a distinct colour without a second series.
+        </p>
+    </div>
+</div>

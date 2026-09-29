@@ -1,0 +1,68 @@
+.control-section.chatgpt-clone {
+    min-height: 550px;
+}
+.chatgpt-aiassist {
+    width: 60vw;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+}
+.chatgpt-aiassist.middle-footer {
+    height: 350px;
+    gap: 10px;
+    justify-content: center;
+}
+.chatgpt-aiassist.middle-footer #chatgpt_aiassistview {
+    height: 220px;
+    flex: 0 0 220px;
+}
+.chatgpt-aiassist.bottom-footer {
+    height: 500px;
+}
+@media only screen and (max-width: 750px) {
+    .chatgpt-aiassist {
+        width: 100%;
+    }
+}
+.chatgpt-aiassist .chatgpt-header {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    align-items: end;
+}
+.chatgpt-aiassist .chatgpt-header h3 {
+    font-weight: 400;
+    font-size: 28px;
+}
+.chatgpt-aiassist #chatgpt_aiassistview {
+    border: none;
+    height: 80%;
+}
+.chatgpt-aiassist .e-footer-content:focus-within,
+.chatgpt-aiassist .e-footer.e-toolbar-inline:focus-within {
+    border-color: #b4b4c2;
+}
+.chatgpt-aiassist .e-footer .e-assist-prompt-textarea {
+    min-height: 28px;
+    padding: 8px 12px;
+}
+.chatgpt-aiassist .e-footer .e-assist-textarea {
+    padding: 8px 12px;
+}
+.chatgpt-aiassist .e-footer .e-toolbar {
+    background: transparent;
+    border: none;
+}
+.chatgpt-aiassist .e-footer .e-toolbar .e-btn.e-flat,
+.chatgpt-aiassist .e-footer .e-toolbar .e-btn.e-flat:hover {
+    background: transparent;
+    box-shadow: none;
+}
+body[class*="material3"] .chatgpt-aiassist .e-aiassistview .e-footer.e-footer-focus-wave-effect.e-footer-focused::before,
+body[class*="material3"] .chatgpt-aiassist .e-aiassistview .e-footer.e-footer-focus-wave-effect.e-footer-focused::after,
+body[class*="fluent2"] .chatgpt-aiassist .e-aiassistview .e-footer.e-footer-focus-wave-effect.e-footer-focused::before,
+body[class*="fluent2"] .chatgpt-aiassist .e-aiassistview .e-footer.e-footer-focus-wave-effect.e-footer-focused::after,
+body[class*="fluent2-highcontrast"] .chatgpt-aiassist .e-aiassistview .e-footer.e-footer-focus-wave-effect.e-footer-focused::before,
+body[class*="fluent2-highcontrast"] .chatgpt-aiassist .e-aiassistview .e-footer.e-footer-focus-wave-effect.e-footer-focused::after {
+    width: 46%;
+}

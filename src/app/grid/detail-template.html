@@ -8,12 +8,12 @@
         <ng-template #detailTemplate let-data>
             <div>
             <p style="text-align: center; font-size: 17px"><b>Sprint</b></p>
-            <ejs-tab id="element" #element>
+            <ejs-tab id="element" #element [enableRtl]="isRtl">
                 <e-tabitems>
                     <e-tabitem [header]='headerText[0]'>
                         <ng-template #content>
                             <div style="padding-top: 20px; padding-bottom: 20px;">
-                                <ejs-kanban #kanbanObj cssClass='kanban-swimlane' keyField="Status" [dataSource]='taskDetail' [cardSettings]='cardSettings' [columns]='statusColumns'>
+                                <ejs-kanban #kanbanObj cssClass='kanban-swimlane' keyField="Status" [dataSource]='taskDetail' [cardSettings]='cardSettings' [columns]='statusColumns' [enableRtl]="isRtl">
                                 <ng-template #cardSettingsTemplate let-data>
                                     <div class="card-template">
                                         <table class="card-template-wrap" style="width: 100%">
@@ -53,7 +53,7 @@
                     <e-tabitem [header]='headerText[1]'>
                         <ng-template #content>
                             <div>
-                                <ejs-chart height="302px" [tooltip]="{ enable: true }" [primaryXAxis]="{ valueType: 'Category', title: 'Month' }" title="Sales">
+                                <ejs-chart height="302px" [tooltip]="{ enable: true }" [primaryXAxis]="{ valueType: 'Category', title: 'Month' }" title="Sales" [enableRtl]="isRtl">
                                     <e-series-collection>
                                         <e-series [dataSource]='salesData' type="Line" xName="taskid" yName="estimatedHours" name="Estimated Hours" [marker]="{ visible: true, width: 10, height: 10 }"></e-series>
                                         <e-series [dataSource]='salesData' type="Line" xName="taskid" yName="spentHours" name="Spent Hours" [marker]="{ visible: true, width: 10, height: 10 }"></e-series>

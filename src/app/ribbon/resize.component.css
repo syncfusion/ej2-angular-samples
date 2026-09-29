@@ -148,3 +148,11 @@ line-height: 1;
 .ribbon-resize.e-rtl + #ribbonPlaceHolder .ribbonSliderWrapper{
   direction: rtl;
 }
+
+.bootstrap5\.3.e-bigger #ribbonPlaceHolder #toast .e-toast-content:last-child {
+  padding: 0px;
+}
+
+.bootstrap5\.3.e-bigger #ribbonPlaceHolder #toast .e-toast-content:first-child {
+  padding: 10px;
+}

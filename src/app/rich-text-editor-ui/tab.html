@@ -1,0 +1,20 @@
+<div class="control-section">
+    <div class="sample-container">
+        <div class="default-section">
+            <ejs-tab #tab id='tab-default' [items]='tabItems' (selected)='onTabSelected($event)'>
+            </ejs-tab>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates how to embed the Rich Text Editor UI inside one of the tabs of the Tab component. The Rich Text Editor is initialized in the Summary tab when it is first selected.</p>
+</div>
+
+<div id="description">
+    <p>The Tab component is combined with the Rich Text Editor UI to provide a tabbed interface where the editor lives inside the Summary tab. The other tabs (Remedies, Notes) display plain text content.</p>
+    <ul>
+        <li><code>Tab</code> &mdash; Provides the tabbed layout via the <code>[items]</code> input. The first item is selected by default.</li>
+        <li><code>Rich Text Editor UI</code> &mdash; Programmatically initialized inside the Summary tab on the <code>selected</code> event of the Tab, so the editor is created only when needed.</li>
+    </ul>
+</div>

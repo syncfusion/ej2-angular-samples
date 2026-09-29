@@ -28,17 +28,37 @@
   </div>
 </div>
 <div id="action-description">
-  <p>
-      This example demonstrates the workflow functionalities that defines the flow of transition between the columns. You can drag and drop the cards between Kanban columns to see the workflow restriction.
-  </p>
+    <p>
+        This sample demonstrates workflow customization in the Kanban component, enabling controlled card transitions between workflow stages based on predefined business rules.
+    </p>
 </div>
 <div id="description">
-  <p>
-       In this sample, you can drag the cards from the `Order` column and drop them into `Ready to Serve` and `Home Delivery` columns. Also, you couldn’t drag the cards from the `Delivered` column and drop the cards in the `Order` column.  The action is controlled using the below properties.
-  </p>
-  <ul>
-      <li>The <code>transitionColumns</code> property is used to allow the card transition to specified columns.</li>
-      <li>The <code>allowDrag</code> property is used to enable/disable the drag action of columns.</li>
-      <li>The <code>allowDrop</code> property is used to enable/disable the drop action of columns.</li>
-  </ul>
+    <p>
+        This sample demonstrates workflow validation in the Kanban component by restricting card movement between specific columns. Workflow rules help ensure that cards progress through predefined stages and follow the intended business process.
+    </p>
+    <p>
+        The following column properties are used to control card transitions:
+    </p>
+    <ul>
+        <li>
+            <a href="https://ej2.syncfusion.com/angular/documentation/api/kanban/columnsmodel#transitioncolumns" target="_blank">transitionColumns</a>: 
+            Specifies the columns to which cards can be moved from the current column.
+        </li>
+        <li>
+            <a href="https://ej2.syncfusion.com/angular/documentation/api/kanban/columnsmodel#allowdrag" target="_blank">allowDrag</a>: 
+            Enables or disables dragging cards from a column.
+        </li>
+        <li>
+            <a href="https://ej2.syncfusion.com/angular/documentation/api/kanban/columnsmodel#allowdrop" target="_blank">allowDrop</a>: 
+            Enables or disables dropping cards into a column.
+        </li>
+    </ul>
+    <p>
+        More information on the Essential<sup>®</sup> JS2 Kanban board can be found in this 
+        <a href="https://ej2.syncfusion.com/angular/documentation/api/kanban/columnsmodel#transitioncolumns" target="_blank">transition columns</a> documentation section.
+    </p>
+    <p>
+        Looking for the full Angular Kanban component overview, features, pricing and documentation?
+        Visit the <a href="https://www.syncfusion.com/gantt-sdk/angular-kanban-board" target="_blank">Angular Kanban</a> page.
+    </p>
 </div>

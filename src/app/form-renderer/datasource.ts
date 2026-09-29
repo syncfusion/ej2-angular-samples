@@ -17,8 +17,7 @@ export const customerService: Schema = {
       "type": "string",
       "label": "Phone Number",
       "textboxType": "number",
-      "required": true,
-      "widget": "textbox",
+      "widget": "inputMask",
       "labelPosition": "top",
       "size": "Bigger",
       "placeholder": "Enter your phone number"
@@ -44,12 +43,7 @@ export const customerService: Schema = {
       "widget": "textbox",
       "labelPosition": "top",
       "size": "Bigger",
-      "placeholder": "Enter your email",
-      "customValidation": [
-        {
-          "expression": "valid = (input && /^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(input)) ? true : 'Please enter a valid email address'"
-        }
-      ]
+      "placeholder": "Enter your email"
     },
     "category": {
       "id": "dropdown_1784806977213_757",
@@ -328,8 +322,7 @@ export const userRegistration: Schema = {
       "type": "string",
       "label": "Phone Number",
       "textboxType": "number",
-      "required": true,
-      "widget": "textbox",
+      "widget": "inputMask",
       "labelPosition": "top",
       "autocomplete": true,
       "size": "Bigger"
@@ -932,3 +925,136 @@ export const doctorsAppointment: any = {
   }
 };
 
+export const contactForm: Schema = {
+    "version": "1.0.0",
+    "properties": {
+        "formHeading": {
+            "id": "formHeading",
+            "name": "formHeading",
+            "widget": "staticHtml",
+            "hideLabel": true,
+            "defaultValue": "<div style='text-align:center;padding:12px 0;'><h2>Contact Us</h2><p>We would love to hear from you. Please fill out the form below and our team will get back to you.</p></div>"
+        },
+        "fullName": {
+            "id": "fullName",
+            "name": "fullName",
+            "type": "string",
+            "widget": "textbox",
+            "label": "Full Name",
+            "placeholder": "Enter your full name",
+            "required": true,
+            "minLength": 2,
+            "maxLength": 100,
+            "labelPosition": "top",
+            "templateId": 'textboxTemplate'
+        },
+        "email": {
+            "id": "email",
+            "name": "email",
+            "type": "string",
+            "widget": "textbox",
+            "label": "Email Address",
+            "placeholder": "Enter your email address",
+            "textboxType": "email",
+            "required": true,
+            "labelPosition": "top",
+            "templateId": 'emailTemplate',
+        },
+        "inquiryType": {
+            "id": "inquiryType",
+            "name": "inquiryType",
+            "type": "string",
+            "widget": "dropdown",
+            "label": "Inquiry Type",
+            "defaultValue": "",
+            "placeholder": "Select inquiry type",
+            "options": [
+                {
+                    "text": "General Inquiry",
+                    "value": "general"
+                },
+                {
+                    "text": "Sales",
+                    "value": "sales"
+                },
+                {
+                    "text": "Support",
+                    "value": "support"
+                },
+                {
+                    "text": "Partnership",
+                    "value": "partnership"
+                },
+                {
+                    "text": "Feedback",
+                    "value": "feedback"
+                }
+            ],
+            "labelPosition": "top"
+        },
+        "message": {
+            "id": "message",
+            "name": "message",
+            "type": "string",
+            "widget": "textarea",
+            "label": "Message",
+            "placeholder": "Enter your message",
+            "required": true,
+            "rows": 5,
+            "minLength": 10,
+            "maxLength": 1000,
+            "labelPosition": "top"
+        },
+        "consent": {
+            "id": "consent",
+            "name": "consent",
+            "type": "boolean",
+            "widget": "checkbox",
+            "label": "I agree to be contacted regarding my inquiry.",
+            "required": true,
+            "checked": false
+        },
+        "submit": {
+            "id": "submit",
+            "name": "submit",
+            "type": "button",
+            "label": "Submit",
+            "buttonType": "submit",
+            "widget": "button",
+            "style": "primary"
+        }
+    },
+    "layout": [
+        {
+            "type": "field",
+            "propertyId": "formHeading"
+        },
+        {
+            "type": "field",
+            "propertyId": "fullName"
+        },
+        {
+            "type": "field",
+            "propertyId": "email"
+        },
+        {
+            "type": "field",
+            "propertyId": "inquiryType"
+        },
+        {
+            "type": "field",
+            "propertyId": "message"
+        },
+        {
+            "type": "field",
+            "propertyId": "consent"
+        },
+        {
+            "type": "field",
+            "propertyId": "submit"
+        }
+    ],
+    "settings": {
+        "name": "Contact Us"
+    }
+};

@@ -61,7 +61,7 @@ export class GanttAdvancedExportingComponent implements OnInit {
         const span = document.createElement('span');
         span.className = 'labelClass';
         span.innerHTML = resources[i];
-        img.src = 'assets/gantt/images/' + resources[i] + '.png';
+        img.src = './assets/gantt/images/' + resources[i] + '.png';
         img.height = 20;
         img.alt = resources[i];
         subContainer.append(img);

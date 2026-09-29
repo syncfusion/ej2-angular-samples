@@ -3,7 +3,7 @@ import { ToolbarAllModule } from '@syncfusion/ej2-angular-navigations';
 import { BlockEditorModule, BlockEditorComponent } from '@syncfusion/ej2-angular-blockeditor';
 import { BlockModel } from '@syncfusion/ej2-angular-blockeditor';
 import { ElementRef } from '@angular/core';
-import blockData from './blockData.json';
+import blockData from './data/template-gallery.json';
 
 @Component({
   imports: [

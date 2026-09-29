@@ -1,0 +1,297 @@
+<div class="control-section">
+    <div class="local-stock-page">
+        <div class="app-header">
+            <div>
+                <h1 class="app-title">
+                    Real-Time Candlestick Chart
+                </h1>
+                <span class="app-subtitle">
+                    Syncfusion EJ2 StockChart &middot;
+                    Simulated one-minute OHLCV data streaming
+                </span>
+            </div>
+            <span
+                [class]='connectionClass'
+                role="status"
+                aria-live="polite">
+                {{ connectionMessage }}
+            </span>
+        </div>
+
+        <div
+            class="info-panel"
+            aria-label="Current candlestick OHLCV values">
+            <div class="info-cell">
+                <span class="info-label">Open</span>
+                <span class="info-value" aria-label="Current candle open value">{{ openValue }}</span>
+            </div>
+            <div class="info-cell">
+                <span class="info-label">High</span>
+                <span class="info-value" aria-label="Current candle high value">{{ highValue }}</span>
+            </div>
+            <div class="info-cell">
+                <span class="info-label">Low</span>
+                <span class="info-value" aria-label="Current candle low value">{{ lowValue }}</span>
+            </div>
+            <div class="info-cell">
+                <span class="info-label">Close</span>
+                <span class="info-value" aria-label="Current candle close value">{{ closeValue }}</span>
+            </div>
+            <div class="info-cell">
+                <span class="info-label">Volume</span>
+                <span class="info-value" aria-label="Current candle volume value">{{ volumeValue }}</span>
+            </div>
+        </div>
+
+        <div class="chart-shell">
+            <ejs-stockchart
+                id="liveCandlestickChart"
+                #stockChart
+                style="display:block;"
+                [chartArea]='chartArea'
+                [primaryXAxis]='primaryXAxis'
+                [primaryYAxis]='primaryYAxis'
+                [crosshair]='crosshair'
+                [tooltip]='tooltip'
+                [title]='title'
+                [periods]='periods'
+                [seriesType]='seriesType'
+                [indicatorType]='indicatorType'
+                [trendlineType]='trendlineType'
+                [enableCustomRange]='enableCustomRange'
+                (load)='load($event)'
+                (loaded)='loaded()'>
+
+                <e-stockchart-series-collection>
+                    <e-stockchart-series
+                        [dataSource]='stockData'
+                        type='Candle'
+                        xName='x'
+                        open='open'
+                        high='high'
+                        low='low'
+                        close='close'
+                        volume='volume'
+                        name='Local dynamic data'
+                        [bullFillColor]='bullFillColor'
+                        [bearFillColor]='bearFillColor'
+                        [enableSolidCandles]='enableSolidCandles'
+                        [border]='seriesBorder'
+                        [animation]='seriesAnimation'
+                        [lastValueLabel]='lastValueLabel'>
+                    </e-stockchart-series>
+                </e-stockchart-series-collection>
+            </ejs-stockchart>
+
+            <div class="status-row" aria-live="polite">
+                <span class="info-label">Last candle status</span>
+                <span class="status-value">{{ candleStatus }}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This
+        <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.syncfusion.com/angular-components/angular-stock-chart"
+            aria-label="Angular Stock Chart with simulated real-time local data">
+            Angular Stock Chart
+        </a>
+        example demonstrates a
+        <strong>real-time candlestick chart</strong> driven by continuously
+        updated local data. The chart starts with 120 simulated one-minute
+        OHLCV candles and then dynamically updates the active candle or
+        appends a new candle using <code>series.setData()</code> and
+        <code>series.addPoint()</code>.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        In this example, the chart uses a plain in-memory array as its data
+        source, so no network request is required. A timer simulates a
+        real-time stock data stream by generating frequent price updates for
+        one-minute OHLCV candles.
+    </p>
+    <p>
+        Each generated record is processed in one of the following ways:
+    </p>
+    <ul>
+        <li>
+            When the generated record has the
+            <strong>same timestamp</strong> as the latest candle, the existing
+            candle is updated using
+            <code>series.setData(candle, 0)</code>. Animation is disabled for
+            this operation because updates occur frequently.
+        </li>
+        <li>
+            When the generated record has a
+            <strong>newer timestamp</strong>, a new one-minute candlestick is
+            appended using
+            <code>series.addPoint(candle, 100)</code> with a short animation.
+        </li>
+    </ul>
+    <p>
+        The open, high, low, close, and volume values shown above the chart
+        represent the latest simulated candle. The values are refreshed
+        whenever the local data stream updates the active candle or adds a
+        new one.
+    </p>
+    <p>
+        You can replace the simulated data returned by the local data
+        generator with data from an API, WebSocket, or another local data
+        source. The same update logic can be used to build real-time stock
+        market visualizations, financial dashboards, and live trading charts.
+    </p>
+    <br>
+    <p style="font-weight: 500">
+        <strong>Injecting modules</strong>
+    </p>
+    <p>
+        The Stock Chart component features are divided into individual
+        feature modules. To use the date-time axis, inject the
+        <code>DateTimeService</code> into the <code>&#64;NgModule.providers</code> section.
+        To render the candlestick series, inject the
+        <code>CandleSeriesService</code>. To display the latest data value on
+        the chart axis, inject the <code>LastValueLabelService</code>. To
+        enable the export menu, inject the <code>ExportService</code>.
+    </p>
+    <p>
+        More information about configuring the Stock Chart component is
+        available in the
+        <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://ej2.syncfusion.com/angular/documentation/stock-chart/getting-started/"
+            aria-label="Navigate to the Angular Stock Chart getting started documentation">
+            Stock Chart documentation
+        </a>.
+    </p>
+</div>
+
+<style>
+    .local-stock-page {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .local-stock-page .app-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px 2px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .local-stock-page .app-title {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.4;
+    }
+
+    .local-stock-page .app-subtitle {
+        display: block;
+        margin-top: 2px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .local-stock-page .connection-status {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 12px;
+        border-radius: 14px;
+        font-size: 12px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    .local-stock-page .connection-status.connecting {
+        color: #92400e;
+    }
+
+    .local-stock-page .connection-status.error {
+        color: #991b1b;
+    }
+
+    .local-stock-page .info-panel {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 12px;
+        padding: 16px 20px;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+    }
+
+    .local-stock-page .info-cell {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        min-width: 0;
+    }
+
+    .local-stock-page .info-label {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+
+    .local-stock-page .info-value {
+        overflow: hidden;
+        font-size: 18px;
+        font-weight: 600;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .local-stock-page .chart-shell {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .local-stock-page .status-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0 2px;
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+
+    .local-stock-page .status-value {
+        font-weight: 500;
+    }
+
+    @media (max-width: 720px) {
+        .local-stock-page .app-header {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .local-stock-page .info-panel {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            padding: 12px 16px;
+        }
+
+        .local-stock-page .info-value {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 420px) {
+        .local-stock-page .info-panel {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

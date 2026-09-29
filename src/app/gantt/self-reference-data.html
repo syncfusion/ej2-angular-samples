@@ -1,6 +1,5 @@
 <div id="action-description">
-    <p>This sample demonstrates the way of binding self-referential flat data to the Gantt component.
-    </p>
+    <p>This sample demonstrates binding self-referential data to the Gantt Chart using the <code>parentID</code> field to define parent-child task relationships.</p>
 </div>
 
 <div class="control-section">
@@ -28,15 +27,12 @@
 <div id="description">
     <p>
         This sample demonstrates how to bind self-referential flat data to the Gantt component. 
-        Self-referential data uses a <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/taskFieldsModel/#ParentID">parentID</a> 
-        field to establish hierarchical relationships between tasks, allowing flat data structures to be displayed as hierarchical task trees.
+        Self-referential data uses a <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/taskFieldsModel/#parentid">parentID</a> field to establish hierarchical relationships between tasks, allowing flat data structures to be displayed as hierarchical task trees.
     </p>
-    
     <p>
-        In this example, an array of JavaScript objects with <code>ParentID</code> relationships is assigned as the data source to the Gantt. 
-        The <code>dataSource</code> property accepts array of objects or a <code>DataManager</code> instance for both local and remote data scenarios.
+        In this example, a flat collection of task records is converted into a hierarchical structure by mapping the <code>ParentID</code> field. This enables the Gantt Chart to display parent and child tasks without requiring a nested data source. 
+        The Gantt Chart supports binding data from local collections or remote services through the <code>DataManager</code> property. Here, a local array of JavaScript objects is used as the data source.
     </p>
-
     <p>
         Gantt component features are segregated into individual feature-wise modules. To use a selection and markers, inject the
         <code>SelectionService</code> and <code>DayMarkersService</code> into the <code>&#64;NgModule.providers</code> section.
@@ -44,6 +40,6 @@
     
     <p>
         More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this 
-        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/data-binding#self-referential-data-structure">documentation section</a>.
-    </p>
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/data-binding#self-referential-data-structure">data binding</a> documentation section.</p>
+    <p>Looking for the full Angular Gantt Chart component overview, features, pricing, and documentation? Visit the <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-gantt-chart">Angular Gantt Chart</a> page.</p>
 </div>

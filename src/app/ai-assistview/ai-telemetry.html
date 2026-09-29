@@ -1,0 +1,28 @@
+<div class="control-section">
+    <div class="telemetry-aiassistview">
+        <ejs-aiassistview
+            #telemetryAIAssistView
+            id="aiAssistView"
+            [bannerTemplate]="bannerTemplate"
+            [promptSuggestions]="promptSuggestions"
+            [enableStreaming]="enableStreaming"
+            [toolbarSettings]="toolbarSettings"
+            [telemetrySettings]="telemetrySettings"
+            (promptRequest)="onPromptRequest($event)">
+            <ng-template #bannerTemplate>
+                <div class="banner-content">
+                    <div class="e-icons e-assistview-icon"></div>
+                    <h3>AI Telemetry</h3>
+                    <i>Send a prompt or pick a suggestion to see telemetry metrics for the turn.</i>
+                </div>
+            </ng-template>
+        </ejs-aiassistview>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the telemetry functionality in the AI AssistView. When enabled, it captures per-turn metrics such as response duration, streaming chunks, model identifier, and token usage, and reports them on every response.</p>
+</div>
+<div id="description">
+    <p>In this example, the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/ai-assistview#telemetrysettings">telemetrySettings</a> <code>enable</code> property is set to <code>true</code>, so each prompt/response turn automatically reports its metrics. Additionally, the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/ai-assistview#bannertemplate">bannerTemplate</a> customizes the banner content, and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/ai-assistview#toolbarsettings">toolbarSettings</a> adds custom toolbar items like a right-aligned <code>Refresh</code> button. The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/ai-assistview#promptsuggestions">promptSuggestions</a> provides AI prompt suggestions, and <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/ai-assistview#promptrequest">promptRequest</a> handles prompt requests when triggered. Hover the duration chip shown in the response toolbar to inspect the metric breakdown for that turn.</p>
+</div>

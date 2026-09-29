@@ -1,0 +1,111 @@
+.para {
+    padding-top: 5px;
+}
+
+.stock-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-left: 10px;
+}
+
+#MSFT,
+#GOOG,
+#AMZN,
+#TSLA {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.e-logo-msft::before,
+.e-logo-goog::before,
+.e-logo-amzn::before,
+.e-logo-tsla::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 2px 2px 2px 2px;
+    vertical-align: middle;
+    position: relative;
+}
+
+.e-logo-msft::before {
+    background-image: url("https://cdn.syncfusion.com/blazor/images/chart/microsoft.png");
+}
+
+.e-logo-goog::before {
+    background-image: url("https://cdn.syncfusion.com/blazor/images/chart/google.png");
+}
+
+.e-logo-amzn::before {
+    background-image: url("https://cdn.syncfusion.com/blazor/images/chart/amazon.png");
+}
+
+.e-logo-tsla::before {
+    background-image: url("https://cdn.syncfusion.com/blazor/images/chart/tesla.png");
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chart-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.button-and-chart-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.chart-action-button {
+    width: 40px;
+    height: 30px;
+}
+
+.chart-action-button .e-icons {
+    color: white;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    font-size: large;
+}
+
+.chart-spinner-overlay {
+    position: absolute;
+    inset: 0;
+    display: none;
+    place-content: center;
+    background: rgba(0, 0, 0, 0.08);
+    z-index: 20;
+}
+
+.chart-spinner-overlay.visible {
+    display: grid;
+}
+
+.loader {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 4px solid #ccc;
+    border-top-color: #0078d4;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -67,7 +67,9 @@ export class FileUploadController {
     }
 
     public ngOnInit(): void {
-        document.querySelector('.sb-demo-section').classList.add('upload-dialog');
+        if (document.querySelector('.sb-demo-section')) {
+          document.querySelector('.sb-demo-section').classList.add('upload-dialog');
+        }
         this.ajaxSettings = {
             url: this.hostUrl + 'api/FileManager/FileOperations',
             getImageUrl: this.hostUrl + 'api/FileManager/GetImage',
@@ -84,7 +86,7 @@ export class FileUploadController {
     }
 
     public ngOnDestroy(): void {
-        if (document.querySelector('.sb-demo-section').classList.contains('upload-dialog')) {
+        if (document.querySelector('.sb-demo-section') && document.querySelector('.sb-demo-section').classList.contains('upload-dialog')) {
             document.querySelector('.sb-demo-section').classList.remove('upload-dialog');
         }
     }

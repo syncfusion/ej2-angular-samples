@@ -48,23 +48,23 @@ export class ExternalDataBasedFilteringComponent implements OnInit {
 
     applyDateFilter() {
         if (this.startDate && this.endDate) {
-            this.startDate = new Date(this.startDate.getFullYear(), this.startDate.getMonth(), 1);
-            this.endDate = new Date(this.endDate.getFullYear(), this.endDate.getMonth() + 1, 0, 23, 59, 59, 999);
+            const filterStartDate = new Date(this.startDate.getFullYear(), this.startDate.getMonth(), 1);
+            const filterEndDate = new Date(this.endDate.getFullYear(), this.endDate.getMonth() + 1, 0, 23, 59, 59, 999);
             let pivotData = (Pivot_Data as any).map((item: any) => ({
                 ...item,
                 OrderDate: new Date(item.OrderDate),
             }));
             new DataManager({ json: pivotData, adaptor: new JsonAdaptor() }).executeQuery(
                 new Query()
-                    .where('OrderDate', 'greaterthanorequal', this.startDate)
-                    .where('OrderDate', 'lessthanorequal', this.endDate)
+                    .where('OrderDate', 'greaterthanorequal', filterStartDate)
+                    .where('OrderDate', 'lessthanorequal', filterEndDate)
             )
             .then((e) => {
                 this.pivotObj.dataSourceSettings.dataSource = (e as any).result;
             });
         }
     };
-    
+
     onStartDateChange(args: any) {
         this.startDate = args.value as Date;
     }

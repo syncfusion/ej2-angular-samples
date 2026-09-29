@@ -17,7 +17,11 @@ import { getAIResponse } from '../common/ai-service';
 })
 export class AIAssistTemplateComponent {
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['ai-template.component.css'];
+        sourceFiles.files = [
+            'ai-template.component.css',
+            'ai-template.html', 
+            'promptResponseData.ts'
+        ];
     }
 
     @ViewChild('templateAiAssistView')

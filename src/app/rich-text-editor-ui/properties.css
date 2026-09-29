@@ -1,0 +1,49 @@
+.editor-properties {
+    padding: 0;
+}
+
+.editor-properties div {
+    padding-left: 0;
+}
+
+.editor-properties .form-group {
+    padding: 10px 0;
+}
+
+.editor-properties .form-label {
+    display: block;
+    font-weight: 500;
+    padding: 0 0 8px 0;
+    margin: 0;
+    text-align: left;
+}
+
+#valueFormat {
+    width: 100%;
+}
+
+#value-format-output-panel {
+    margin-top: 16px;
+}
+
+#value-format-output-panel h4 {
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+#value-format-output {
+    margin: 0;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.5;
+    min-height: 200px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    box-sizing: border-box;
+    background: transparent;
+}

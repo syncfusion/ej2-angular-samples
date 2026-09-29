@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, AfterViewInit, Inject } from '@angular/core';
 import { ChatUIComponent, ChatUIModule, UserModel, MessageSendEventArgs } from '@syncfusion/ej2-angular-interactive-chat';
 import { templateMessagedata } from './messageData';
 import { SBDescriptionComponent } from '../common/dp.component';
@@ -39,6 +39,13 @@ export class ChatUITemplateComponent implements AfterViewInit {
     this.chatTemplate.element.querySelectorAll('.suggestion-button').forEach(suggestion => {
       suggestion.addEventListener('click', () => this.handleSuggestionClick(suggestion as HTMLElement));
     });
+  }
+
+  constructor(@Inject('sourceFiles') private sourceFiles: any) {
+          sourceFiles.files = [
+              'template.component.css', 
+              'messageData.ts'
+          ];
   }
 
   private handleSuggestionClick(suggestion: HTMLElement) {

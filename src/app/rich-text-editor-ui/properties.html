@@ -1,0 +1,68 @@
+<div class="col-lg-8 control-section sb-property-border">
+    <div class="control-wrapper">
+        <div class="sample-container">
+            <div class="default-section">
+                <ejs-richtexteditor-ui
+                    id="editor"
+                    #editor
+                    [value]="value"
+                    [valueFormat]="valueFormat"
+                    [toolbarSettings]="tools"
+                    [enablePersistence]="enablePersistence"
+                    [saveInterval]="100"
+                    (change)="onEditorChange()">
+                </ejs-richtexteditor-ui>
+            </div>
+        </div>
+    </div>
+
+    <div id="value-format-output-panel" class="e-rte-api-methods">
+        <h4>Value Format Result</h4>
+        <pre id="value-format-output" aria-live="polite">{{ outputValue }}</pre>
+    </div>
+</div>
+
+<div class="col-lg-4 property-section">
+    <div id="property" title="Properties" class="editor-properties">
+        <div class="property-panel-header">Properties</div>
+        <div class="form-group">
+            <label class="form-label">Value Format</label>
+            <ejs-dropdownlist
+                id="valueFormat"
+                [dataSource]="valueFormatData"
+                [fields]="{ text: 'text', value: 'value' }"
+                [value]="valueFormat"
+                [popupHeight]="150"
+                (change)="onValueFormatChange($event)">
+            </ejs-dropdownlist>
+        </div>
+        <div class="form-group">
+            <ejs-checkbox id="enable" label="Enable" [checked]="true" (change)="onEnableChange($event)"></ejs-checkbox>
+        </div>
+        <div class="form-group">
+            <ejs-checkbox id="readonly" label="Readonly" [checked]="false" (change)="onReadOnlyChange($event)"></ejs-checkbox>
+        </div>
+        <div class="form-group">
+            <ejs-checkbox id="enableRTE" label="Enable RTE" [checked]="false" (change)="onEnableRtlChange($event)"></ejs-checkbox>
+        </div>
+        <div class="form-group">
+            <ejs-checkbox id="enablePersistence" label="Enable Persistence" [checked]="true" (change)="onEnablePersistenceChange($event)"></ejs-checkbox>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the properties of the Rich Text Editor UI component.</p>
+</div>
+
+<div id="description">
+    <p>The Rich Text Editor UI component demonstrates the following properties and APIs:</p>
+    <ul>
+        <li><code>valueFormat</code> - Set the content format (HTML or JSON). Choose from the dropdown to convert content format.</li>
+        <li><code>value</code> - Get or set the editor's content programmatically. Updates when the value format changes.</li>
+        <li><code>enabled</code> - Enable or disable the RTE component. Checked by default.</li>
+        <li><code>readOnly</code> - Set the RTE component as read-only, preventing user input.</li>
+        <li><code>enableRtl</code> - Enable right-to-left direction for the RTE component.</li>
+        <li><code>enablePersistence</code> - Enable persistence for maintaining the state of the RTE component.</li>
+    </ul>
+</div>

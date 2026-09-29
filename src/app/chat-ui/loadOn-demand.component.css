@@ -8,7 +8,7 @@
 }
 
 .loadonDemand-chatui .chat_user2_avatar {
-    background-image: url('/assets/chat-ui/images/andrew.png');
+    background-image: url('../../assets/chat-ui/images/andrew.png');
     background-color: unset;
 }
 

@@ -1,0 +1,65 @@
+<div class="control-section">
+    <div class="sample-container">
+
+        <button ejs-button *ngIf="openButtonVisible" id="dialogBtn" class="e-primary" (click)="onOpenDialog()">
+            Open Editor
+        </button>
+
+        <ejs-dialog
+            #dialog
+            id="editorDialog"
+            header="Compose Message"
+            target=".sample-container"
+            [position]="{ X: 'center', Y: 'center' }"
+            width="600px"
+            height="300px"
+            [zIndex]="10000"
+            [showCloseIcon]="true"
+            [buttons]="dialogButtons"
+            [visible]="true"
+            [animationSettings]="{ effect: 'None' }"
+            (open)="onDialogOpen()"
+            (close)="onDialogClose()">
+
+            <ng-template #content>
+                <ejs-richtexteditor-ui
+                    #editor
+                    id="dialogEditor"
+                    placeholder="Write your message..."
+                    [toolbarSettings]="toolbarSettings">
+                </ejs-richtexteditor-ui>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample demonstrates how to render the Rich Text Editor UI component
+        inside a Dialog component for composing messages or content.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        The Rich Text Editor UI is integrated with the Syncfusion Dialog component
+        to create a message composer. Click the "Open Editor" button to launch the
+        dialog with the RTE.
+    </p>
+    <ul>
+        <li><code>Dialog</code> — Centers itself within the
+            <code>.sample-container</code>.</li>
+        <li> <code>Rich Text Editor UI</code> — Rendered inside the Dialog content.</li>
+        <li><code>Send</code> — Reads the editor content, displays the message,
+            clears the editor, and closes the dialog.</li>
+        <li><code>Cancel</code> — Clears the editor and closes the dialog.</li>
+    </ul>
+</div>
+
+<style>
+    #editorDialog {
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+</style>

@@ -1,6 +1,6 @@
 <div id="action-description">
   <p>
-    This sample demonstrates a product catalog built using the Syncfusion® Angular Data Grid with column templates and a detail template. Each row displays product information through customized templates, including product details, sales trends, pricing, and stock status.
+   This sample demonstrates a product catalog built using the Syncfusion® Angular Data Grid with column templates and a detail template. Each row displays product information through customized templates, including product details, sales trends, pricing, and stock status.
   </p>
 </div>
 
@@ -27,7 +27,7 @@
                 <div class="sub-title">Technical Specifications</div>
                 <div class="info-row" *ngFor="let key of getSpecificationKeys(data.Specifications)">
                   <span>{{ key }}</span>
-                  <strong style="font-size: 12px">{{ data.Specifications[key] }}</strong>
+                  <span>{{ data.Specifications[key] }}</span>
                 </div>
               </div>
 
@@ -35,23 +35,23 @@
                 <div class="sub-title">Pricing Details</div>
                 <div class="info-row">
                   <span>Current Price</span>
-                  <strong class="current-price" style="font-size: 14px">{{ formatCurrency(data.Price) }}</strong>
+                  <span class="current-price">{{ formatCurrency(data.Price) }}</span>
                 </div>
                 <div class="info-row" *ngIf="data.OriginalPrice">
                   <span>Original Price</span>
-                  <strong class="original-price" style="font-size: 14px">{{ formatCurrency(data.OriginalPrice) }}</strong>
+                  <span class="original-price">{{ formatCurrency(data.OriginalPrice) }}</span>
                 </div>
                 <div class="info-row">
                   <span>Discount</span>
-                  <strong [class.discount-price]="getDiscount(data) > 0" style="font-size: 14px">{{ getDiscount(data) }}%</strong>
+                  <span [class.discount-price]="getDiscount(data) > 0">{{ getDiscount(data) }}%</span>
                 </div>
                 <div class="info-row">
                   <span>Cost Price</span>
-                  <strong style="font-size: 14px">{{ formatCurrency(data.CostPrice) }}</strong>
+                  <span class="cost-price">{{ formatCurrency(data.CostPrice) }}</span>
                 </div>
                 <div class="info-row">
                   <span>Profit Margin</span>
-                  <strong class="profit-price" style="font-size: 14px">{{ data.ProfitMargin || formatProfitMargin(data) }}</strong>
+                  <span class="profit-price">{{ data.ProfitMargin || formatProfitMargin(data) }}</span>
                 </div>
               </div>
             </div>
@@ -65,7 +65,7 @@
       <e-column field="ProductName" headerText="Product" width="260" textAlign="Center">
         <ng-template #template let-data>
           <div class="product-cell">
-            <img src="./assets/grid/images/product/{{data.ProductName}}.png" [alt]="data.ProductName" class="product-image" />
+            <img src="./assets/grid/images/products/{{data.ProductName}}.png" [alt]="data.ProductName" class="product-image" />
             <div class="product-copy">
               <div class="product-name">{{ data.ProductName }}</div>
               <div class="product-meta">
@@ -101,15 +101,12 @@
       </e-column>
     </e-columns>
   </ejs-grid>
-</div>
-
-<div id="description">
+  <div id="description">
     <p>
       The Syncfusion® React Data Grid demonstrates the use of detail and column templates to display product inventory. Custom templates are applied to columns such as "Product", "Sales", and "Status".
     </p>
     <p>
       Rows can be expanded to display a detail section using the Syncfusion® Card layout. This section presents product information including detailed descriptions, specifications, and pricing details.
-    </p>
     <p>
       <strong>Injecting Module:</strong>
     </p>
@@ -123,3 +120,4 @@
       Looking for the full Angular Data Grid component overview, features, pricing, and documentation? Visit the <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-data-grid">Angular Data Grid component</a> page.
     </p>
   </div>
+</div>

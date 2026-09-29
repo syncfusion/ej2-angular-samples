@@ -1,13 +1,12 @@
 <div class="control-section">
     <div class="integration-texttospeech-section">
-        <div
-            ejs-aiassistview
+        <ejs-aiassistview
             #assistView
             (promptRequest)="onPromptRequest($event)"
             [prompts]="promptsData"
             [responseToolbarSettings]="responseToolbarSettings"
             [toolbarSettings]="toolbarSettings">
-        </div>
+        </ejs-aiassistview>
     </div>
     <div id="action-description">
         <p>

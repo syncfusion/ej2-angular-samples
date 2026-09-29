@@ -1,0 +1,42 @@
+<div class="control-section chatgpt-clone">
+    <div class="chatgpt-aiassist" [ngClass]="containerClass" id="chatgptContainer">
+        <ejs-aiassistview
+            id="chatgpt_aiassistview"
+            #chatgptAIAssistView
+            [showHeader]="false"
+            [promptPlaceholder]="'Ask anything'"
+            [enableAttachments]="true"
+            [speechToTextSettings]="speechToTextSettings"
+            [bannerTemplate]="bannerTemplate"
+            [attachmentSettings]="attachmentSettings"
+            [footerToolbarSettings]="footerToolbarSettings"
+            (promptRequest)="promptRequest($event)"
+            [enableStreaming]="true">
+            <ng-template #bannerTemplate>
+                <div class="banner-content">
+                    <div class="chatgpt-header">
+                        <h3>Where should we begin?</h3>
+                    </div>
+                </div>
+            </ng-template>
+        </ejs-aiassistview>
+    </div>
+</div>
+<div id="action-description">
+    <p>This sample demonstrates a ChatGPT-inspired AI AssistView with a compact, distraction-free layout, attachment support, speech-to-text input, and a simulated AI response flow.</p>
+</div>
+<div id="description">
+    <p>
+        The AI AssistView in this sample showcases how a branded, lightweight assistant interface can be created using Syncfusion’s <code>AIAssistView</code> control while offering essential interaction features and UI customization options:
+    </p>
+    <ul>
+        <li>Configured the <code>footerToolbarSettings</code> property to add footer toolbar items on both the left and right sides of the footer.</li>
+        <li>Custom banner template that displays the welcoming "Where should we begin?" message.</li>
+        <li>Simulated AI response handling using the <code>promptRequest</code> event.</li>
+        <li>Attachment support with configurable save and remove endpoints.</li>
+        <li>Speech-to-text input for hands-free interaction.</li>
+    </ul>
+    <p>
+        This example serves as a foundation for integrating real LLM services and building conversational interfaces with modular UI controls.
+    </p>
+</div>

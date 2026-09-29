@@ -3104,7 +3104,7 @@ export let formatData = [
         }
 
     ];
-  
+
   export let summaryData: Object[] = [
     {
         ID: 'ORD-55721',
@@ -5566,7 +5566,7 @@ export let wrapData: object[] =
         ]
     }
 ];
-export let rowSpanData: object[] = 
+export let rowSpanData: object[] =
 [
   {
     activityName: 'Tower',
@@ -5851,7 +5851,7 @@ export let rowSpanData: object[] =
         ]
       }
     ]
-  }  
+  }
 ];
 
 export const virtualScrollData: any[] = [];
@@ -6156,3 +6156,1135 @@ export let virtualDataSource = function () {
     }
   }
 };
+
+export const domVirtualizationData: any[] = [];
+
+export function domVirtualizationDataSource(): void {
+    if (domVirtualizationData.length > 0) {
+        return;
+    }
+
+    // Use the complete arrays from your C# file
+    const warehouseNames: string[] = [ "Chicago Central Fulfillment Center",
+ "Dallas South Distribution Center",
+ "Newark East Coast Hub",
+ "Atlanta Regional Warehouse",
+ "Reno West Fulfillment Center",
+ "Seattle Pacific Hub",
+ "Columbus Midwest Distribution Center",
+ "Denver Mountain Warehouse",
+ "Phoenix Desert Logistics Center",
+ "Portland Northwest Terminal",
+ "Memphis River Valley Depot",
+ "Salt Lake City Intermountain Hub",
+ "Richmond Mid-Atlantic Warehouse",
+ "Kansas City Central Plains Center",
+ "Nashville Southeast Logistics",
+ "Detroit Great Lakes Facility",
+ "Houston Gulf Coast Terminal",
+ "Charlotte Southern Hub",
+ "Omaha Heartland Distribution",
+ "Tampa Bay Southeast Depot",
+ "Milwaukee North Central Warehouse",
+ "Louisville Derby City Logistics",
+ "San Antonio Alamo Distribution",
+ "Indianapolis Crossroads Hub",
+ "Oakland Bay Area Terminal",
+ "Raleigh Research Triangle Depot",
+ "Orlando Sunshine Warehouse",
+ "Hartford Northeast Logistics"];
+
+    const warehouseRegions: string[] = [
+        'United States', 'Canada', 'United Kingdom', 'France',
+        'Australia', 'Japan', 'Germany', 'Singapore',
+        'Brazil', 'Netherlands', 'South Korea', 'Switzerland',
+        'Sweden', 'Italy', 'Spain', 'India'
+    ];
+
+    const categories: string[] = [ "Consumer Electronics", "Home and Kitchen", "Office Supplies", "Travel Accessories",
+ "Fitness Equipment", "Audio and Entertainment", "Pet Supplies", "Automotive Accessories",
+ "Health and Personal Care", "Garden and Outdoor", "Baby and Kids", "Smart Home",
+ "Kitchen Appliances", "Sports Gear", "Storage and Organization"];
+
+    const suppliers: string[] = [ "Northstar Imports", "Blue Ridge Manufacturing", "Evergreen Consumer Goods",
+ "Summit Products", "Harbor Wholesale", "Pacific Rim Trading",
+ "Arrowhead Distributors", "Crestline Supply Co.", "Westbridge Logistics",
+ "Oakwood Merchandising", "Redwood Partners", "Silver Creek Enterprises",
+ "Ironclad Industrial", "Clearview Procurement", "Stonebridge Exports"];
+
+    const demandProfiles: string[] = [
+        'High Volume',
+        'Steady',
+        'Seasonal',
+        'Low Volume',
+        'Peak Season Only',
+        'Evergreen',
+        'Rapid Growth',
+        'Declining',
+        'New Product Launch',
+        'Promotional Only'
+    ];
+
+    const countryCities: { [key: string]: string[] } = {
+        'United States': ['New York', 'Chicago', 'Dallas', 'Newark', 'Atlanta', 'Reno', 'Seattle', 'Columbus', 'Denver', 'Phoenix', 'Portland', 'Memphis', 'Salt Lake City', 'Richmond', 'Kansas City', 'Nashville', 'Detroit', 'Houston', 'Charlotte', 'Omaha', 'Tampa', 'Milwaukee', 'Louisville', 'San Antonio', 'Indianapolis', 'Oakland', 'Raleigh', 'Orlando', 'Hartford'],
+        'Canada': ['Toronto', 'Montreal', 'Vancouver', 'Calgary', 'Edmonton', 'Ottawa', 'Winnipeg', 'Quebec City', 'Hamilton', 'Halifax'],
+        'United Kingdom': ['London', 'Birmingham', 'Manchester', 'Liverpool', 'Leeds', 'Glasgow', 'Edinburgh', 'Bristol'],
+        'France': ['Paris', 'Marseille', 'Lyon', 'Toulouse', 'Nice', 'Nantes'],
+        'Australia': ['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide'],
+        'Japan': ['Tokyo', 'Osaka', 'Kyoto', 'Yokohama', 'Nagoya'],
+        'Germany': ['Berlin', 'Hamburg', 'Munich', 'Cologne', 'Frankfurt'],
+        'Singapore': ['Singapore Central', 'Woodlands', 'Tampines', 'Jurong East'],
+        'Brazil': ['Sao Paulo', 'Rio de Janeiro', 'Brasilia', 'Salvador'],
+        'Netherlands': ['Amsterdam', 'Rotterdam', 'The Hague', 'Utrecht'],
+        'South Korea': ['Seoul', 'Busan', 'Incheon', 'Daegu'],
+        'Switzerland': ['Zurich', 'Geneva', 'Basel', 'Lausanne'],
+        'Sweden': ['Stockholm', 'Gothenburg', 'Malmo', 'Uppsala'],
+        'Italy': ['Rome', 'Milan', 'Naples', 'Turin'],
+        'Spain': ['Madrid', 'Barcelona', 'Valencia', 'Seville'],
+        'India': ['Mumbai', 'Delhi', 'Bengaluru', 'Hyderabad', 'Chennai']
+    };
+
+    let recordId: number = 10000;
+
+    for (let warehouseIndex = 1; warehouseIndex <= 25000; warehouseIndex++) {
+
+        const warehouseId = ++recordId;
+        const regionIndex =
+            (warehouseIndex - 1) % warehouseRegions.length;
+
+        const childRecords: any[] = [];
+
+        let warehouseQuantity = 0;
+        let warehouseReserved = 0;
+        let warehouseAvailable = 0;
+        let warehouseInventoryValue = 0;
+
+        let availableCount = 0;
+        let lowStockCount = 0;
+        let outOfStockCount = 0;
+        let discontinuedCount = 0;
+
+        for (let itemIndex = 1; itemIndex <= 3; itemIndex++) {
+
+            const itemId = ++recordId;
+
+            const region =
+                warehouseRegions[regionIndex];
+
+            const cities =
+                countryCities[region];
+
+            const childRegion =
+                cities[(warehouseIndex + itemIndex) % cities.length];
+
+            const childItemName =
+                childRegion + ' Facility';
+
+            const categoryIndex =
+                (warehouseIndex + itemIndex) % categories.length;
+
+            const supplierIndex =
+                (warehouseIndex + itemIndex) % suppliers.length;
+
+            const monthlyUnitsSold =
+                200 + ((warehouseIndex * (itemIndex + 9)) % 2500);
+
+            const unitPrice =
+                15 + ((warehouseIndex * itemIndex * 13) % 250);
+
+            let quantity =
+                100 + ((warehouseIndex * itemIndex * 29) % 3000);
+
+            let reservedQuantity = 0;
+            let availableQuantity = 0;
+            let reorderLevel = 0;
+            let stockStatus = '';
+
+            const statusSeed =
+                (warehouseIndex + itemIndex) % 20;
+
+            if (statusSeed === 0) {
+                stockStatus = 'Out of Stock';
+                quantity = 0;
+                reservedQuantity = 0;
+                availableQuantity = 0;
+                reorderLevel = 100;
+                outOfStockCount++;
+            }
+            else if (statusSeed <= 3) {
+                stockStatus = 'Low Stock';
+
+                availableQuantity =
+                    Math.max(
+                        10,
+                        Math.floor(quantity * 0.10)
+                    );
+
+                reservedQuantity =
+                    quantity - availableQuantity;
+
+                reorderLevel =
+                    availableQuantity + 150;
+
+                lowStockCount++;
+            }
+            else if (statusSeed === 4) {
+
+                stockStatus = 'Discontinued';
+
+                availableQuantity =
+                    Math.floor(quantity * 0.30);
+
+                reservedQuantity = 0;
+                reorderLevel = 0;
+
+                discontinuedCount++;
+            }
+            else {
+
+                stockStatus = 'Available';
+
+                reservedQuantity =
+                    Math.floor(quantity * 0.15);
+
+                availableQuantity =
+                    quantity - reservedQuantity;
+
+                reorderLevel =
+                    Math.floor(quantity * 0.25);
+
+                availableCount++;
+            }
+
+            warehouseQuantity += quantity;
+            warehouseReserved += reservedQuantity;
+            warehouseAvailable += availableQuantity;
+            warehouseInventoryValue += quantity * unitPrice;
+
+            childRecords.push({
+                ItemID: itemId,
+                ParentItemID: warehouseId,
+                ItemName: childItemName,
+                ItemType: 'Product',
+                SKU:
+                    'SKU-' +
+                    ('00000' + warehouseIndex).slice(-5) +
+                    '-' +
+                    ('00' + itemIndex).slice(-2),
+                Category: categories[categoryIndex],
+                Region: childRegion,
+                Country: region,
+                Supplier: suppliers[supplierIndex],
+                StockStatus: stockStatus,
+                Quantity: quantity,
+                ReservedQuantity: reservedQuantity,
+                AvailableQuantity: availableQuantity,
+                ReorderLevel: reorderLevel,
+                UnitPrice: unitPrice,
+                InventoryValue: quantity * unitPrice,
+                DailyOrders: Math.ceil(monthlyUnitsSold / 30),
+                MonthlyUnitsSold: monthlyUnitsSold,
+                FulfillmentRate:
+                    93 + ((warehouseIndex + itemIndex) % 7),
+                DemandProfile:
+                    demandProfiles[
+                        (warehouseIndex + itemIndex) %
+                        demandProfiles.length
+                    ],
+                LastRestocked: new Date(
+                    2025,
+                    ((warehouseIndex + itemIndex) % 12),
+                    ((warehouseIndex + itemIndex * 2) % 27) + 1
+                ),
+                NextDeliveryDate: new Date(
+                    2025,
+                    ((warehouseIndex + itemIndex + 1) % 12),
+                    ((warehouseIndex + itemIndex * 4) % 27) + 1
+                )
+            });
+        }
+
+        let warehouseStatus = 'Available';
+
+        if (discontinuedCount === childRecords.length) {
+            warehouseStatus = 'Discontinued';
+        }
+        else if (outOfStockCount === childRecords.length) {
+            warehouseStatus = 'Out of Stock';
+        }
+        else if (
+            lowStockCount > 0 ||
+            outOfStockCount > 0
+        ) {
+            warehouseStatus = 'Low Stock';
+        }
+
+        domVirtualizationData.push({
+            ItemID: warehouseId,
+            ParentItemID: null,
+            ItemName:
+                warehouseNames[regionIndex] +
+                ' ' +
+                (
+                    Math.floor(
+                        (warehouseIndex - 1) /
+                        warehouseNames.length
+                    ) + 1
+                ),
+            ItemType: 'Warehouse',
+            Category: 'Multi-category inventory',
+            Region: warehouseRegions[regionIndex],
+            Country: warehouseRegions[regionIndex],
+            Supplier: 'Regional supplier network',
+            StockStatus: warehouseStatus,
+            Quantity: warehouseQuantity,
+            ReservedQuantity: warehouseReserved,
+            AvailableQuantity: warehouseAvailable,
+            ReorderLevel:
+                Math.floor(warehouseQuantity * 0.20),
+            UnitPrice: null,
+            InventoryValue: warehouseInventoryValue,
+            DailyOrders:
+                500 + ((warehouseIndex * 23) % 2500),
+            MonthlyUnitsSold:
+                15000 + ((warehouseIndex * 97) % 55000),
+            FulfillmentRate:
+                95 + ((warehouseIndex % 10) / 10),
+            DemandProfile:
+                demandProfiles[
+                    warehouseIndex %
+                    demandProfiles.length
+                ],
+            StorageCapacity:
+                warehouseQuantity +
+                Math.floor(warehouseQuantity * 0.25),
+            LastRestocked: new Date(
+                2025,
+                ((warehouseIndex + 2) % 12),
+                ((warehouseIndex * 3) % 27) + 1
+            )
+        });
+
+        domVirtualizationData.push(...childRecords);
+    }
+}
+export const showCheckBoxData: object[] = [
+    {
+        "taskID": 1,
+        "taskName": "Project Planning",
+        "assignee": "Emma Wilson",
+        "designation": "Project Manager",
+        "priority": "High",
+        "status": "In Progress",
+        "progress": "85%",
+        "expanded": true,
+        "subTasks": [
+            {
+                "taskID": 2,
+                "taskName": "Requirements Discovery",
+                "assignee": "David Brown",
+                "designation": "Team Lead",
+                "priority": "High",
+                "status": "In Progress",
+                "progress": "90%",
+                "expanded": true,
+                "subTasks": [
+                    {
+                        "taskID": 3,
+                        "taskName": "Information Gathering",
+                        "assignee": "Ethan Walker",
+                        "designation": "Senior Business Analyst",
+                        "priority": "High",
+                        "status": "Completed",
+                        "progress": "100%"
+                    },
+                    {
+                        "taskID": 4,
+                        "taskName": "Stakeholder Workshops",
+                        "assignee": "Olivia Taylor",
+                        "designation": "Business Analyst",
+                        "priority": "Medium",
+                        "status": "Completed",
+                        "progress": "100%"
+                    },
+                    {
+                        "taskID": 5,
+                        "taskName": "Scope Definition",
+                        "assignee": "James Scott",
+                        "designation": "Junior Business Analyst",
+                        "priority": "Low",
+                        "status": "In Progress",
+                        "progress": "75%"
+                    }
+                ]
+            },
+            {
+                "taskID": 6,
+                "taskName": "Budget and Resources",
+                "assignee": "Michael Lee",
+                "designation": "Resource Planning Lead",
+                "priority": "Medium",
+                "status": "In Progress",
+                "progress": "80%",
+                "expanded": true,
+                "subTasks": [
+                    {
+                        "taskID": 7,
+                        "taskName": "Budget Approval",
+                        "assignee": "Charlotte Davis",
+                        "designation": "Senior Finance Analyst",
+                        "priority": "Medium",
+                        "status": "Completed",
+                        "progress": "100%"
+                    },
+                    {
+                        "taskID": 8,
+                        "taskName": "Team Allocation",
+                        "assignee": "Benjamin Clark",
+                        "designation": "Resource Coordinator",
+                        "priority": "Low",
+                        "status": "In Progress",
+                        "progress": "75%"
+                    },
+                    {
+                        "taskID": 9,
+                        "taskName": "Resource Planning",
+                        "assignee": "Ava Harris",
+                        "designation": "Junior Resource Analyst",
+                        "priority": "Low",
+                        "status": "In Progress",
+                        "progress": "60%"
+                    }
+                ]
+            },
+            {
+                "taskID": 10,
+                "taskName": "Planning Sign-off",
+                "assignee": "Emma Wilson",
+                "designation": "Project Manager",
+                "priority": "Low",
+                "status": "Not Started",
+                "progress": "0%"
+            }
+        ]
+    },
+    {
+        "taskID": 11,
+        "taskName": "Design and Review",
+        "assignee": "Sophia Clark",
+        "designation": "Design Manager",
+        "priority": "High",
+        "status": "In Progress",
+        "progress": "78%",
+        "expanded": true,
+        "subTasks": [
+            {
+                "taskID": 12,
+                "taskName": "Solution Design",
+                "assignee": "Liam Moore",
+                "designation": "Solution Design Lead",
+                "priority": "High",
+                "status": "In Progress",
+                "progress": "80%",
+                "expanded": true,
+                "subTasks": [
+                    {
+                        "taskID": 13,
+                        "taskName": "Architecture Design",
+                        "assignee": "Noah Hall",
+                        "designation": "Senior Solutions Architect",
+                        "priority": "High",
+                        "status": "Completed",
+                        "progress": "100%"
+                    },
+                    {
+                        "taskID": 14,
+                        "taskName": "Process Mapping",
+                        "assignee": "Mia Young",
+                        "designation": "Business Process Analyst",
+                        "priority": "Medium",
+                        "status": "In Progress",
+                        "progress": "70%"
+                    },
+                    {
+                        "taskID": 15,
+                        "taskName": "Design Review",
+                        "assignee": "Liam Moore",
+                        "designation": "Solution Design Lead",
+                        "priority": "Low",
+                        "status": "Under Review",
+                        "progress": "75%"
+                    }
+                ]
+            },
+            {
+                "taskID": 16,
+                "taskName": "Experience Design",
+                "assignee": "Ava Harris",
+                "designation": "UX Lead",
+                "priority": "Medium",
+                "status": "In Progress",
+                "progress": "75%",
+                "expanded": true,
+                "subTasks": [
+                    {
+                        "taskID": 17,
+                        "taskName": "Wireframe Design",
+                        "assignee": "Lucas King",
+                        "designation": "Senior UX Designer",
+                        "priority": "Medium",
+                        "status": "Completed",
+                        "progress": "100%"
+                    },
+                    {
+                        "taskID": 18,
+                        "taskName": "User Interface Design",
+                        "assignee": "Grace Allen",
+                        "designation": "UX Designer",
+                        "priority": "Low",
+                        "status": "In Progress",
+                        "progress": "75%"
+                    },
+                    {
+                        "taskID": 19,
+                        "taskName": "Design Approval",
+                        "assignee": "Henry Adams",
+                        "designation": "Junior UX Designer",
+                        "priority": "Low",
+                        "status": "Not Started",
+                        "progress": "0%"
+                    }
+                ]
+            },
+            {
+                "taskID": 20,
+                "taskName": "Design Sign-off",
+                "assignee": "Sophia Clark",
+                "designation": "Design Manager",
+                "priority": "Low",
+                "status": "Not Started",
+                "progress": "0%"
+            }
+        ]
+    },
+    {
+        "taskID": 21,
+        "taskName": "Execution",
+        "assignee": "Emma Wilson",
+        "designation": "Program Manager",
+        "priority": "Critical",
+        "status": "In Progress",
+        "progress": "60%",
+        "expanded": true,
+        "subTasks": [
+            {
+                "taskID": 22,
+                "taskName": "Workstream A",
+                "assignee": "Michael Lee",
+                "designation": "Delivery Manager",
+                "priority": "High",
+                "status": "In Progress",
+                "progress": "65%",
+                "expanded": true,
+                "subTasks": [
+                    {
+                        "taskID": 23,
+                        "taskName": "Delivery Package A",
+                        "assignee": "Benjamin Clark",
+                        "designation": "Technical Lead",
+                        "priority": "High",
+                        "status": "In Progress",
+                        "progress": "70%",
+                        "expanded": true,
+                        "subTasks": [
+                            {
+                                "taskID": 24,
+                                "taskName": "Core Implementation",
+                                "assignee": "Ethan Walker",
+                                "designation": "Senior Software Engineer",
+                                "priority": "High",
+                                "status": "In Progress",
+                                "progress": "65%"
+                            },
+                            {
+                                "taskID": 25,
+                                "taskName": "Data Configuration",
+                                "assignee": "Sophia Clark",
+                                "designation": "Software Engineer",
+                                "priority": "High",
+                                "status": "In Progress",
+                                "progress": "50%"
+                            },
+                            {
+                                "taskID": 26,
+                                "taskName": "Validation Review",
+                                "assignee": "Olivia Taylor",
+                                "designation": "Senior QA Engineer",
+                                "priority": "Medium",
+                                "status": "Under Review",
+                                "progress": "75%"
+                            },
+                            {
+                                "taskID": 27,
+                                "taskName": "Issue Resolution",
+                                "assignee": "James Scott",
+                                "designation": "Junior Software Engineer",
+                                "priority": "Medium",
+                                "status": "In Progress",
+                                "progress": "40%"
+                            },
+                            {
+                                "taskID": 28,
+                                "taskName": "Package Completion",
+                                "assignee": "David Parker",
+                                "designation": "Software Engineering Intern",
+                                "priority": "Low",
+                                "status": "Not Started",
+                                "progress": "0%"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "taskID": 29,
+                "taskName": "Workstream B",
+                "assignee": "Charlotte Davis",
+                "designation": "Delivery Manager",
+                "priority": "High",
+                "status": "In Progress",
+                "progress": "55%",
+                "expanded": true,
+                "subTasks": [
+                    {
+                        "taskID": 30,
+                        "taskName": "Delivery Package B",
+                        "assignee": "Noah Hall",
+                        "designation": "Technical Lead",
+                        "priority": "High",
+                        "status": "In Progress",
+                        "progress": "60%",
+                        "expanded": true,
+                        "subTasks": [
+                            {
+                                "taskID": 31,
+                                "taskName": "Core Implementation",
+                                "assignee": "Daniel Hill",
+                                "designation": "Senior Software Engineer",
+                                "priority": "High",
+                                "status": "In Progress",
+                                "progress": "60%"
+                            },
+                            {
+                                "taskID": 32,
+                                "taskName": "Data Configuration",
+                                "assignee": "Mia Young",
+                                "designation": "Software Engineer",
+                                "priority": "Medium",
+                                "status": "In Progress",
+                                "progress": "45%"
+                            },
+                            {
+                                "taskID": 33,
+                                "taskName": "Validation Review",
+                                "assignee": "Amelia Green",
+                                "designation": "QA Engineer",
+                                "priority": "Medium",
+                                "status": "Under Review",
+                                "progress": "50%"
+                            },
+                            {
+                                "taskID": 34,
+                                "taskName": "Issue Resolution",
+                                "assignee": "Lucas King",
+                                "designation": "Junior Software Engineer",
+                                "priority": "Low",
+                                "status": "Blocked",
+                                "progress": "20%"
+                            },
+                            {
+                                "taskID": 35,
+                                "taskName": "Package Completion",
+                                "assignee": "Harper Baker",
+                                "designation": "Software Engineering Intern",
+                                "priority": "Low",
+                                "status": "Not Started",
+                                "progress": "0%"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "taskID": 36,
+                "taskName": "Status Reporting",
+                "assignee": "Emma Wilson",
+                "designation": "Program Manager",
+                "priority": "Medium",
+                "status": "In Progress",
+                "progress": "50%"
+            }
+        ]
+    },
+    {
+        "taskID": 37,
+        "taskName": "Validation",
+        "assignee": "Olivia Taylor",
+        "designation": "Quality Manager",
+        "priority": "High",
+        "status": "In Progress",
+        "progress": "52%",
+        "expanded": true,
+        "subTasks": [
+            {
+                "taskID": 38,
+                "taskName": "Verification",
+                "assignee": "Amelia Green",
+                "designation": "Quality Lead",
+                "priority": "Medium",
+                "status": "In Progress",
+                "progress": "55%",
+                "expanded": true,
+                "subTasks": [
+                    {
+                        "taskID": 39,
+                        "taskName": "Quality Review",
+                        "assignee": "Ethan Walker",
+                        "designation": "Senior QA Engineer",
+                        "priority": "Medium",
+                        "status": "In Progress",
+                        "progress": "50%"
+                    },
+                    {
+                        "taskID": 40,
+                        "taskName": "Compliance Check",
+                        "assignee": "Benjamin Clark",
+                        "designation": "Compliance Analyst",
+                        "priority": "Medium",
+                        "status": "Under Review",
+                        "progress": "50%"
+                    },
+                    {
+                        "taskID": 41,
+                        "taskName": "Issue Resolution",
+                        "assignee": "Noah Hall",
+                        "designation": "Junior QA Engineer",
+                        "priority": "Low",
+                        "status": "In Progress",
+                        "progress": "50%"
+                    }
+                ]
+            },
+            {
+                "taskID": 42,
+                "taskName": "Acceptance Review",
+                "assignee": "Emma Wilson",
+                "designation": "Program Manager",
+                "priority": "Low",
+                "status": "Not Started",
+                "progress": "0%"
+            }
+        ]
+    },
+    {
+        "taskID": 43,
+        "taskName": "Closure",
+        "assignee": "Emma Wilson",
+        "designation": "Program Manager",
+        "priority": "Medium",
+        "status": "Not Started",
+        "progress": "10%",
+        "expanded": true,
+        "subTasks": [
+            {
+                "taskID": 44,
+                "taskName": "Knowledge Transfer",
+                "assignee": "Michael Lee",
+                "designation": "Operations Lead",
+                "priority": "Medium",
+                "status": "Not Started",
+                "progress": "0%"
+            },
+            {
+                "taskID": 45,
+                "taskName": "Operational Handover",
+                "assignee": "Charlotte Davis",
+                "designation": "Senior Operations Analyst",
+                "priority": "Medium",
+                "status": "Not Started",
+                "progress": "0%"
+            },
+            {
+                "taskID": 46,
+                "taskName": "Final Documentation",
+                "assignee": "James Scott",
+                "designation": "Documentation Specialist",
+                "priority": "Low",
+                "status": "Completed",
+                "progress": "100%"
+            }
+        ]
+    }
+]
+export const retailInventoryData: any[] = [
+  // Beverages
+  {
+    productId: 1001,
+    parentId: null,
+    productName: 'Beverages',
+    supplier: 'Prime Distributors',
+    stockQty: null,
+    reorderLevel: null,
+    unitPrice: null,
+    status: 'Active',
+  },
+  {
+    productId: 1002,
+    parentId: 1001,
+    productName: 'Cola Drink 500ml',
+    supplier: 'Metro Distribution',
+    stockQty: 250,
+    reorderLevel: 50,
+    unitPrice: 40,
+    status: 'Active',
+  },
+  {
+    productId: 1003,
+    parentId: 1001,
+    productName: 'Lemon Soda 500ml',
+    supplier: 'City Supply Partners',
+    stockQty: 180,
+    reorderLevel: 40,
+    unitPrice: 38,
+    status: 'Active',
+  },
+  {
+    productId: 1004,
+    parentId: 1001,
+    productName: 'Orange Soda 500ml',
+    supplier: 'West End Traders',
+    stockQty: 55,
+    reorderLevel: 60,
+    unitPrice: 40,
+    status: 'Low Stock',
+  },
+  {
+    productId: 1005,
+    parentId: 1001,
+    productName: 'Energy Drink 250ml',
+    supplier: 'Global Retail Supplies',
+    stockQty: 15,
+    reorderLevel: 30,
+    unitPrice: 125,
+    status: 'Pending Restock',
+  },
+  {
+    productId: 1006,
+    parentId: 1001,
+    productName: 'Orange Juice 1L',
+    supplier: 'North Region Suppliers',
+    stockQty: 0,
+    reorderLevel: 20,
+    unitPrice: 110,
+    status: 'Out of Stock',
+  },
+  {
+    productId: 1007,
+    parentId: 1001,
+    productName: 'Mixed Fruit Juice 1L',
+    supplier: 'Universal Traders',
+    stockQty: 140,
+    reorderLevel: 30,
+    unitPrice: 105,
+    status: 'Active',
+  },
+
+  // Dairy Products
+  {
+    productId: 1008,
+    parentId: null,
+    productName: 'Dairy Products',
+    supplier: 'Central Wholesale',
+    stockQty: null,
+    reorderLevel: null,
+    unitPrice: null,
+    status: 'Active',
+  },
+  {
+    productId: 1009,
+    parentId: 1008,
+    productName: 'Fresh Milk 1L',
+    supplier: 'South Region Suppliers',
+    stockQty: 320,
+    reorderLevel: 75,
+    unitPrice: 68,
+    status: 'Active',
+  },
+  {
+    productId: 1010,
+    parentId: 1008,
+    productName: 'Low Fat Milk 1L',
+    supplier: 'Prime Distributors',
+    stockQty: 45,
+    reorderLevel: 60,
+    unitPrice: 72,
+    status: 'Low Stock',
+  },
+  {
+    productId: 1011,
+    parentId: 1008,
+    productName: 'Butter 100g',
+    supplier: 'National Supply Chain',
+    stockQty: 155,
+    reorderLevel: 30,
+    unitPrice: 58,
+    status: 'Active',
+  },
+  {
+    productId: 1012,
+    parentId: 1008,
+    productName: 'Cheese Slices',
+    supplier: 'Metro Distribution',
+    stockQty: 120,
+    reorderLevel: 25,
+    unitPrice: 145,
+    status: 'Active',
+  },
+  {
+    productId: 1013,
+    parentId: 1008,
+    productName: 'Probiotic Drink',
+    supplier: 'Global Retail Supplies',
+    stockQty: 0,
+    reorderLevel: 15,
+    unitPrice: 95,
+    status: 'Out of Stock',
+  },
+  {
+    productId: 1014,
+    parentId: 1008,
+    productName: 'Curd 400g',
+    supplier: 'City Supply Partners',
+    stockQty: 170,
+    reorderLevel: 35,
+    unitPrice: 42,
+    status: 'Active',
+  },
+
+  // Snacks
+  {
+    productId: 1015,
+    parentId: null,
+    productName: 'Snacks',
+    supplier: 'Metro Distribution',
+    stockQty: null,
+    reorderLevel: null,
+    unitPrice: null,
+    status: 'Active',
+  },
+  {
+    productId: 1016,
+    parentId: 1015,
+    productName: 'Potato Chips Classic',
+    supplier: 'West End Traders',
+    stockQty: 350,
+    reorderLevel: 80,
+    unitPrice: 20,
+    status: 'Active',
+  },
+  {
+    productId: 1017,
+    parentId: 1015,
+    productName: 'Potato Chips Masala',
+    supplier: 'North Region Suppliers',
+    stockQty: 310,
+    reorderLevel: 70,
+    unitPrice: 20,
+    status: 'Active',
+  },
+  {
+    productId: 1018,
+    parentId: 1015,
+    productName: 'Triangle Corn Chips',
+    supplier: 'Universal Traders',
+    stockQty: 220,
+    reorderLevel: 50,
+    unitPrice: 25,
+    status: 'Active',
+  },
+  {
+    productId: 1019,
+    parentId: 1015,
+    productName: 'Nacho Chips',
+    supplier: 'Prime Distributors',
+    stockQty: 18,
+    reorderLevel: 30,
+    unitPrice: 55,
+    status: 'Pending Restock',
+  },
+  {
+    productId: 1020,
+    parentId: 1015,
+    productName: 'Spicy Mixture',
+    supplier: 'South Region Suppliers',
+    stockQty: 185,
+    reorderLevel: 40,
+    unitPrice: 48,
+    status: 'Active',
+  },
+  {
+    productId: 1021,
+    parentId: 1015,
+    productName: 'Crunchy Corn Snacks',
+    supplier: 'Central Wholesale',
+    stockQty: 45,
+    reorderLevel: 60,
+    unitPrice: 20,
+    status: 'Low Stock',
+  },
+
+  // Personal Care
+  {
+    productId: 1022,
+    parentId: null,
+    productName: 'Personal Care',
+    supplier: 'Universal Traders',
+    stockQty: null,
+    reorderLevel: null,
+    unitPrice: null,
+    status: 'Active',
+  },
+  {
+    productId: 1023,
+    parentId: 1022,
+    productName: 'Moisturizing Soap',
+    supplier: 'Global Retail Supplies',
+    stockQty: 140,
+    reorderLevel: 30,
+    unitPrice: 48,
+    status: 'Active',
+  },
+  {
+    productId: 1024,
+    parentId: 1022,
+    productName: 'Beauty Soap',
+    supplier: 'Metro Distribution',
+    stockQty: 190,
+    reorderLevel: 40,
+    unitPrice: 38,
+    status: 'Active',
+  },
+  {
+    productId: 1025,
+    parentId: 1022,
+    productName: 'Mint Toothpaste',
+    supplier: 'City Supply Partners',
+    stockQty: 210,
+    reorderLevel: 50,
+    unitPrice: 95,
+    status: 'Active',
+  },
+  {
+    productId: 1026,
+    parentId: 1022,
+    productName: 'Herbal Toothpaste',
+    supplier: 'West End Traders',
+    stockQty: 35,
+    reorderLevel: 50,
+    unitPrice: 88,
+    status: 'Low Stock',
+  },
+  {
+    productId: 1027,
+    parentId: 1022,
+    productName: 'Body Lotion',
+    supplier: 'National Supply Chain',
+    stockQty: 0,
+    reorderLevel: 0,
+    unitPrice: 225,
+    status: 'Discontinued',
+  },
+  {
+    productId: 1028,
+    parentId: 1022,
+    productName: 'Daily Care Shampoo',
+    supplier: 'South Region Suppliers',
+    stockQty: 130,
+    reorderLevel: 30,
+    unitPrice: 78,
+    status: 'Active',
+  },
+
+  // Household Essentials
+  {
+    productId: 1029,
+    parentId: null,
+    productName: 'Household Essentials',
+    supplier: 'National Supply Chain',
+    stockQty: null,
+    reorderLevel: null,
+    unitPrice: null,
+    status: 'Active',
+  },
+  {
+    productId: 1030,
+    parentId: 1029,
+    productName: 'Laundry Detergent',
+    supplier: 'Prime Distributors',
+    stockQty: 145,
+    reorderLevel: 35,
+    unitPrice: 265,
+    status: 'Active',
+  },
+  {
+    productId: 1031,
+    parentId: 1029,
+    productName: 'Premium Detergent',
+    supplier: 'Universal Traders',
+    stockQty: 25,
+    reorderLevel: 30,
+    unitPrice: 280,
+    status: 'Low Stock',
+  },
+  {
+    productId: 1032,
+    parentId: 1029,
+    productName: 'Dishwash Gel',
+    supplier: 'North Region Suppliers',
+    stockQty: 180,
+    reorderLevel: 40,
+    unitPrice: 75,
+    status: 'Active',
+  },
+  {
+    productId: 1033,
+    parentId: 1029,
+    productName: 'Toilet Cleaner',
+    supplier: 'City Supply Partners',
+    stockQty: 12,
+    reorderLevel: 20,
+    unitPrice: 115,
+    status: 'Pending Restock',
+  },
+  {
+    productId: 1034,
+    parentId: 1029,
+    productName: 'Floor Cleaner',
+    supplier: 'West End Traders',
+    stockQty: 110,
+    reorderLevel: 25,
+    unitPrice: 165,
+    status: 'Active',
+  },
+  {
+    productId: 1035,
+    parentId: 1029,
+    productName: 'Glass Cleaner',
+    supplier: 'Global Retail Supplies',
+    stockQty: 0,
+    reorderLevel: 10,
+    unitPrice: 95,
+    status: 'Out of Stock',
+  },
+];
+

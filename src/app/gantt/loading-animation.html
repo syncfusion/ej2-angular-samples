@@ -26,23 +26,21 @@
 </div>
 <div id="description">
     <p>
-        The Gantt has an option to show a loading indicator in-between the time of fetching the data and binding it to the gantt during initial rendering, refreshing or 
-        while performing action like sorting, filtering and more.
+        This example demonstrates the loading indicator functionality in the Gantt Chart. Loading indicators are displayed during initial rendering, data refreshing, virtual scrolling, and while performing operations such as sorting and filtering.
     </p>
     <p>
-        The Gantt support the following loading indicator types
+        The Gantt Chart supports the following loading indicator types:
     </p>
     <ul>
-        <li><code>Shimmer</code></li>
-        <li><code>Spinner</code></li>
+        <li><code>Shimmer</code> - Displays placeholder rows that mimic the layout of the content while data is loading.</li>
+        <li><code>Spinner</code> - Displays a loading spinner until the requested operation is completed</li>
     </ul>
+    <p>Use the <code><a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/loadingIndicatorModel/#indicatortype">Indicator Type</a></code> option in the property panel to switch between <code>Shimmer</code> and <code>Spinner</code> loading indicators. This behavior can also be configured using the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/loadingIndicatorModel/#indicatortype">loadingIndicator.indicatorType</a> property.</p>
     <p>
-        Use the loading indicator by setting the <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt/loadingIndicatorModel/#indicatortype">loadingIndicator.indicatorType</a> property as Spinner or Shimmer. The default value of the indicatorType is Spinner.
-    </p>
-    <p>
-        By default <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#enablevirtualmaskrow">enableVirtualMaskRow</a> is set to true which renders Shimmer during virtual scrolling.
+        When <code><a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/gantt#enablevirtualmaskrow">enableVirtualMaskRow</a></code> is enabled, shimmer placeholders are displayed during virtual scrolling to provide a smoother loading experience when working with large datasets
     </p>
     <p>Gantt component features are segregated into individual feature-wise modules. To use virtualscroll, Filter, markers and selection feature, we need to inject <code>VirtualScrollService</code>, <code>FilterService</code>, <code>DayMarkersService</code> and <code>SelectionService</code> into the <code>&#64;NgModule.providers</code> section.</p>
-    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/loading-animation">documentation section</a>.</p>
+    <p>More information on the Essential<sup>®</sup> Angular Gantt Chart can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/gantt/loading-animation">loading animation</a> documentation section.</p>
+    <p>Looking for the full Angular Gantt Chart component overview, features, pricing, and documentation? Visit the <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-gantt-chart">Angular Gantt Chart</a> page.</p>
     
 </div>

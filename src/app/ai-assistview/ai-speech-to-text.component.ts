@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, NgZone, ChangeDetectorRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, NgZone, ChangeDetectorRef, Inject } from '@angular/core';
 import { AIAssistViewModule, AIAssistViewComponent, ToolbarSettingsModel, ToolbarItemClickedEventArgs, PromptRequestEventArgs, FooterToolbarSettingsModel,AttachmentSettingsModel,SpeechToTextSettingsModel } from '@syncfusion/ej2-angular-interactive-chat';
 import * as Marked from 'marked';
 import { getAIResponse } from '../common/ai-service';
@@ -17,7 +17,15 @@ export class SpeechToTextAssistComponent {
 
   private abortController?: AbortController;
   public enableStreaming: boolean = true;
-  constructor(private zone: NgZone, private cdr: ChangeDetectorRef) {}
+  constructor(
+    private zone: NgZone, 
+    private cdr: ChangeDetectorRef,
+    @Inject('sourceFiles') private sourceFiles: any){
+        sourceFiles.files = [
+          'ai-speech-to-text.html', 
+          'ai-speech-to-text.component.css'
+        ];
+    }
 
   public hasTextInEditor = false;
   public isListening = false;

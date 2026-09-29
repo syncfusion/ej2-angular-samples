@@ -17,7 +17,7 @@ import { DialogComponent, DialogModule, PositionDataModel } from '@syncfusion/ej
 import { SidebarModule, Sidebar } from '@syncfusion/ej2-angular-navigations';
 import { BlockEditorComponent, BlockModel, BlockEditorModule } from '@syncfusion/ej2-angular-blockeditor';
 import { MarkdownConverter } from '@syncfusion/ej2-markdown-converter';
-import blockData from './blockData.json';
+import blockData from './data/ai-ask-assistant.json';
 import { getUserID, AI_SERVICE_URL } from '../common/ai-service';
 
 interface ChatSession {

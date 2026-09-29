@@ -3,7 +3,7 @@ import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 import { BlockModel, BlockEditorModule, ToolbarItemClickEventArgs, BlockAction, BlockChange, BlockChangedEventArgs } from '@syncfusion/ej2-angular-blockeditor';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
-import blockData from './blockData.json';
+import blockData from './data/events.json';
 
 @Component({
     selector: 'control-content',

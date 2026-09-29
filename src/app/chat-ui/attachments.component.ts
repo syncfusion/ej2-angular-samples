@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Inject } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Component, ViewChild } from '@angular/core';
 import { ChatUIComponent } from '@syncfusion/ej2-angular-interactive-chat';
@@ -20,6 +20,9 @@ export class AttachmentsComponent {
         user: 'Paul Wilson',
         avatarUrl: './assets/chat-ui/images/paul_wilson.png'
     };
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+                sourceFiles.files = ['attachments.component.css'];
+    }
     public enableAttachments: boolean = true;
     public attachmentSettings: any = {
         saveUrl: 'https://services.syncfusion.com/angular/production/api/FileUploader/Save',

@@ -1,0 +1,163 @@
+<div class="control-section ai-generate-chart">
+    <div class="smart-chart-layout">
+        <div class="assistview-pane">
+            <div class="default-aiassistview">
+                <div
+                    id="aiAssistView"
+                    ejs-aiassistview
+                    #aiAssistViewComponent
+                    [showHeader]="showHeader"
+                    [promptSuggestions]="promptSuggestions"
+                    [enableStreaming]="enableStreaming"
+                    [toolbarSettings]="toolbarSettings"
+                    [responseToolbarSettings]="responseToolbarSettings"
+                    [bannerTemplate]="bannerTemplate"
+                    (promptRequest)="onPromptRequest($event)">
+                </div>
+            </div>
+        </div>
+
+        <div
+            *ngIf="showHistory"
+            class="history-pane"
+            id="history-pane"
+            role="region"
+            aria-labelledby="history-heading">
+            <div class="history-header">
+                <h3 id="history-heading">Chat History</h3>
+                <button
+                    class="icon-btn"
+                    id="history-close-btn"
+                    type="button"
+                    title="Close"
+                    aria-label="Close chat history"
+                    (click)="closeHistory()">
+                    <span class="e-icons e-close" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <div class="history-scroll" id="history-scroll">
+                <div *ngIf="!histories.length" class="empty" id="history-empty">
+                    No history yet.
+                </div>
+
+                <div
+                    *ngFor="let session of histories; trackBy: trackHistoryEntry"
+                    class="history-item"
+                    [class.active]="currentHistoryId === session.id"
+                    role="button"
+                    tabindex="0"
+                    [attr.aria-label]="'Open ' + session.title"
+                    (click)="onHistoryItemClick(session)"
+                    (keydown.enter)="onHistoryItemClick(session)"
+                    (keydown.space)="onHistoryItemClick(session); $event.preventDefault()">
+                    <div class="history-text">
+                        <div class="history-title">{{ session.title }}</div>
+                        <div class="history-date">{{ formatHistoryDate(session.updatedAt) }}</div>
+                    </div>
+                    <button
+                        class="icon-btn danger"
+                        type="button"
+                        title="Delete history session"
+                        [attr.aria-label]="'Delete ' + session.title"
+                        (click)="deleteHistoryEntry(session, $event)">
+                        <span class="e-icons e-trash" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #bannerTemplate>
+        <div class="banner-content">
+            <div class="e-icons e-assistview-icon" aria-hidden="true"></div>
+            <h2>AI-Powered Chart Creation and Editing</h2>
+            <p>Generate chart code, create visual previews, and modify charts using natural language.</p>
+        </div>
+    </ng-template>
+
+    <!-- Response-local components are mounted into these tool hosts by the registered tool handlers. -->
+    <ng-template #changeSummaryTemplate>
+        <div class="change-summary-tool-host"></div>
+    </ng-template>
+
+    <ng-template #codeToolTemplate>
+        <div class="code-tool-host"></div>
+    </ng-template>
+
+    <ng-template #chartToolTemplate>
+        <div class="chart-tool-host"></div>
+    </ng-template>
+</div>
+
+<div id="action-description">
+    <p>
+        This sample demonstrates the Syncfusion <strong>Angular AI AssistView</strong> component as a
+        <strong>Chart Assist</strong> solution. Use natural-language prompts to create, visualize, modify, export,
+        and print charts. The assistant provides Angular TypeScript code, configuration changes, and interactive
+        chart previews directly within the conversation.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        The <strong>Chart Assist</strong> experience uses the Angular AI AssistView component to interpret
+        natural-language prompts and return structured chart configurations. The registered <code>chart-tool</code>
+        mounts an isolated Angular chart preview for each response and renders either the Angular Chart or Angular
+        Accumulation Chart component, depending on the requested visualization.
+    </p>
+    <ul>
+        <li>
+            The <code>[promptSuggestions]</code> property provides predefined prompts for trend, comparison, and
+            proportion visualizations.
+        </li>
+        <li>
+            The <code>chart-tool</code> displays response-specific Cartesian and accumulation chart previews from the
+            normalized <code>ChartConfig</code> response.
+        </li>
+        <li>
+            The <code>code-tool</code> displays complete standalone Angular TypeScript code or only the Angular
+            sections changed by a modification request. Each response maintains its own selected code view.
+        </li>
+        <li>
+            The <code>change-summary-tool</code> lists the configuration changes applied to its corresponding chart
+            response.
+        </li>
+        <li>
+            Chat history stores complete sessions. Selecting a session restores its responses and latest chart
+            configuration without changing charts rendered by other sessions.
+        </li>
+        <li>
+            Each chart preview owns its chart instance, Export control, Print button, status text, and active theme.
+        </li>
+        <li>
+            The <code>bannerTemplate</code> customizes the initial AI AssistView banner using an Angular
+            <code>ng-template</code>.
+        </li>
+        <li>
+            The <code>(promptRequest)</code> event handles chart creation, modification, code requests, and response
+            processing. Export and Print actions operate on the chart preview where the controls are selected.
+        </li>
+    </ul>
+    <p><strong>Injecting modules</strong></p>
+    <p>
+        The response-specific standalone Angular chart component imports <code>ChartModule</code> and
+        <code>AccumulationChartModule</code>. The required Cartesian, accumulation, financial, interaction,
+        annotation, data-label, error-bar, trendline, technical-indicator, and export services are registered in the
+        component's <code>providers</code> array.
+    </p>
+    <p>
+        Chart previews bind the active Syncfusion chart theme directly and refresh when the sample theme changes.
+        This supports light, dark, and high-contrast themes without overriding chart SVG text colors.
+    </p>
+    <p>
+        More information about the Angular AI AssistView component is available in the
+        <a
+            href="https://ej2.syncfusion.com/angular/documentation/ai-assistview/getting-started/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Navigate to the Angular AI AssistView getting started documentation">
+            documentation section
+        </a>.
+    </p>
+</div>

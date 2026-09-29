@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { textdata } from './jsontreegriddata';
 import { TreeGridComponent, TreeGridModule } from '@syncfusion/ej2-angular-treegrid';
 import { Internationalization } from '@syncfusion/ej2-base';
-import { NgClass } from '@angular/common';
+
 import { SBDescriptionComponent } from '../common/dp.component';
 import { SBActionDescriptionComponent } from '../common/adp.component';
 
@@ -14,7 +14,7 @@ let instance: Internationalization = new Internationalization();
     styleUrls: ['row-template.style.css'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent, NgClass]
+    imports: [TreeGridModule, SBActionDescriptionComponent, SBDescriptionComponent]
 })
 export class RowTemplateComponent implements OnInit {
     public data: Object[] = [];

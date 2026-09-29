@@ -24,7 +24,6 @@ import {
     NodeModel,
     SnapConstraints,
     SymbolPalette,
-    UndoRedo,
     UserHandleEventsArgs,
     MarginModel,
     SnapSettingsModel,
@@ -40,7 +39,7 @@ import {
 } from '@syncfusion/ej2-diagrams';
 import { MenuEventArgs } from '@syncfusion/ej2-navigations';
 
-Diagram.Inject(DataBinding, UndoRedo, LineRouting, AvoidLineOverlapping, ErDiagrams);
+Diagram.Inject(DataBinding, LineRouting, AvoidLineOverlapping, ErDiagrams);
 SymbolPalette.Inject(ErDiagrams);
 
 type ColorToken = 'primary' | 'secondary' | 'tertiary' | 'accent' | 'neutral' | 'warning';
@@ -496,7 +495,6 @@ export class ErDiagramComponent {
 
         return newField;
     }
-
     constructor() {
         this.initializeDiagram();
     }

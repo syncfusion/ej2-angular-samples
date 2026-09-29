@@ -1,6 +1,6 @@
 <div class="control-section">
   <div class="generative-aiassistview">
-    <div id="aiAssistView" ejs-aiassistview
+    <ejs-aiassistview
       #generativeAIAssistView
       [bannerTemplate]="bannerTemplate"
       [promptSuggestionsHeader]="promptSuggestionsHeader"
@@ -11,16 +11,15 @@
       [toolbarSettings]="assistViewToolbarSettings"
       (promptRequest)="onPromptRequest($event)"
       >
-    </div>
-
-    <!-- Banner Template -->
-    <ng-template #bannerTemplate>
-      <div class="banner-content">
-        <div class="e-icons e-assistview-icon"></div>
-        <h3>AI Assistance Generative UI</h3>
-        <i>Render interactive tools such as weather cards, charts, data grids etc directly inside AI responses.</i>
-      </div>
-    </ng-template>
+      <!-- Banner Template -->
+      <ng-template #bannerTemplate>
+        <div class="banner-content">
+          <div class="e-icons e-assistview-icon"></div>
+          <h3>AI Assistance Generative UI</h3>
+          <i>Render interactive tools such as weather cards, charts, data grids etc directly inside AI responses.</i>
+        </div>
+      </ng-template>
+    </ejs-aiassistview>
 
     <!-- Chart Template -->
     <ng-template #responseChartTemplate let-data>

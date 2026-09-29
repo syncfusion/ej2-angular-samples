@@ -21,6 +21,13 @@ export class AIAssistAttachmentComponent {
     saveUrl: 'https://services.syncfusion.com/angular/production/api/FileUploader/Save',
     removeUrl: 'https://services.syncfusion.com/angular/production/api/FileUploader/Remove'
   };
+  constructor(@Inject('sourceFiles') private sourceFiles: any) {
+        sourceFiles.files = [
+            'ai-attachments.html', 
+            'ai-attachments.component.css',
+            'promptResponseData.ts'
+        ];
+    }
   public toolbarSettings: ToolbarSettingsModel = {
     items: [{ iconCss: 'e-icons e-refresh', align: 'Right' }],
     itemClicked: (args: ToolbarItemClickedEventArgs) => {

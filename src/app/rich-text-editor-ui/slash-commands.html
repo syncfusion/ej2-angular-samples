@@ -1,0 +1,50 @@
+<div class="control-section">
+    <div class="sample-container">
+        <div class="default-section">
+            <ejs-richtexteditor-ui
+                id='editor'
+                #editor
+                [slashCommandSettings]='slashCommandSettings'
+                [placeholder]='placeholder'>
+            </ejs-richtexteditor-ui>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates the <code>SlashCommand</code> feature of the Rich Text Editor UI, which allows
+        users to apply formatting such as headings, lists, blockquotes, and tables, as well as execute custom
+        commands within the editor. The slash command menu can be triggered by typing the "/" character in the
+        editor.</p>
+</div>
+
+<div id="description">
+    <p>In this example, the slash command menu is enabled by setting the <code>enable</code> property within
+        <code>slashCommandSettings</code> to <code>true</code>.</p>
+    <p>This example includes two <strong>Custom Slash Command items</strong> that allow you to easily insert
+        meeting notes and a signature into the content.</p>
+    <p>The slash command menu is configured with the following properties:</p>
+    <ul>
+        <li><code>enable</code>: Enables or disables the slash command menu in the editor. The default value is
+            <code>false</code>.</li>
+        <li><code>items</code>: Defines the items displayed in the slash command popup. Custom items can also be
+            added, and their actions can be handled using the <code>slashCommanditemSelect</code> event.</li>
+    </ul>
+    <p><strong>Adding Custom Slash Command Items</strong></p>
+    <p>The custom items can be added to the slash command menu by defining the <code>items</code> child property
+        within <code>slashCommandSettings</code>. The <code>items</code> property accepts a string of built-in
+        items and also an array of objects, where each object represents a custom slash command item. These
+        objects can include the following properties:</p>
+    <ul>
+        <li><code>text</code> &mdash; Sets the text displayed for the slash command item.</li>
+        <li><code>command</code> &mdash; Specifies the action to be executed when the slash command item is
+            clicked.</li>
+        <li><code>type</code> &mdash; Groups related items within the slash command menu.</li>
+        <li><code>iconCss</code> &mdash; Sets the CSS class for the icon associated with the item.</li>
+        <li><code>description</code> &mdash; Provides a description for the slash command item.</li>
+    </ul>
+    <p><strong>Injecting the SlashCommand Module</strong></p>
+    <p>The <code>SlashCommand</code> feature is provided as an injectable module. To use it, register the
+        <code>SlashCommandService</code> in the component's <code>providers</code> array so the editor can
+        resolve the module through Angular's dependency injection.</p>
+</div>

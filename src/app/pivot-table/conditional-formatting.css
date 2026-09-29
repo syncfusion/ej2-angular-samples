@@ -3,6 +3,9 @@
     height: 100%;
     display: block;
 }
+.property-panel-content {
+    width: 100%;
+}
 #conditional-formatting-btn, #conditional-formatting-reset-btn {
     width: 80%;
     margin-left: 20px;

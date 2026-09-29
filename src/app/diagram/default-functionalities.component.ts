@@ -112,10 +112,12 @@ export class FlowDiagramComponent {
   //Sets the text color of node to transparent
   public textEdit(args: ITextEditEventArgs): void {
     let obj = args.element;
-    obj.annotations[0].style = {
+    if (obj && obj instanceof Node) {
+      obj.annotations[0].style = {
         color: 'white',
         fill: 'transparent',
-    };
+      };
+    }
   }
 
   //SymbolPalette Properties

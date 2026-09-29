@@ -328,6 +328,92 @@ export let editingData: Object[] = [
     { TaskID: 40, TaskName: "Begin next project planning", StartDate: new Date("08/10/2025"), EndDate: new Date("08/13/2025"), Duration: 4, Progress: 0, Predecessor: "39", resources: [8, 9] }
 ];
 
+export let defaultEditingData: Object[] = [
+    { TaskID: 1, TaskName: "Planning and permits", StartDate: new Date("04/02/2025"), EndDate: new Date("04/10/2025"), Duration: 7, Progress: 100, resources: [1, 2, 3] },
+    { TaskID: 2, TaskName: "Site evaluation", StartDate: new Date("04/02/2025"), EndDate: new Date("04/04/2025"), Duration: 2, Progress: 100, ParentId: 1, resources: [1] },
+    { TaskID: 3, TaskName: "Obtain permits", StartDate: new Date("04/07/2025"), EndDate: new Date("04/09/2025"), Duration: 3, Progress: 100, ParentId: 1, Predecessor: "2", resources: [2, 4] },
+    { TaskID: 4, TaskName: "Finalize planning", StartDate: new Date("04/10/2025"), EndDate: new Date("04/11/2025"), Duration: 1, DurationUnit: "week", Progress: 100, ParentId: 1, Predecessor: "3", resources: [3] },
+    { TaskID: 5, TaskName: "Site preparation", StartDate: new Date("04/14/2025"), EndDate: new Date("04/18/2025"), Duration: 5, DurationUnit: "month", Progress: 100, resources: [5, 6, 12] },
+    { TaskID: 6, TaskName: "Site clearing", StartDate: new Date("04/10/2025"), Duration: 0, Progress: 100, ParentId: 5, resources: [5] },
+    { TaskID: 7, TaskName: "Grading and excavation", StartDate: new Date("04/15/2025"), EndDate: new Date("04/17/2025"), Duration: 3, Progress: 100, ParentId: 5, Predecessor: "6", resources: [6, 7] },
+    { TaskID: 8, TaskName: "Foundation work", StartDate: new Date("04/18/2025"), EndDate: new Date("04/21/2025"), Duration: 3, DurationUnit: "week", Progress: 100, ParentId: 5, Predecessor: "7", resources: [12] },
+    { TaskID: 9, TaskName: "Foundation and basement", StartDate: new Date("04/22/2025"), EndDate: new Date("04/28/2025"), Duration: 5, Progress: 100, ParentId: 5, resources: [8, 9, 10] },
+    { TaskID: 10, TaskName: "Pour foundation", StartDate: new Date("04/08/2025"), EndDate: new Date("04/23/2025"), Duration: 1, DurationUnit: "week", Progress: 100, ParentId: 9, resources: [8] },
+    { TaskID: 11, TaskName: "Cure foundation", StartDate: new Date("04/24/2025"), EndDate: new Date("04/25/2025"), Duration: 2, Progress: 100, ParentId: 9, Predecessor: "10", resources: [9] },
+    { TaskID: 12, TaskName: "Basement walls", StartDate: new Date("04/28/2025"), EndDate: new Date("04/30/2025"), Duration: 3, Progress: 100, ParentId: 9, Predecessor: "11", resources: [10, 11] },
+    { TaskID: 13, TaskName: "Framing", StartDate: new Date("05/01/2025"), EndDate: new Date("05/07/2025"), Duration: 5, Progress: 100, resources: [11, 12, 1] },
+    { TaskID: 14, TaskName: "Frame floors", StartDate: new Date("05/01/2025"), EndDate: new Date("05/02/2025"), Duration: 2, Progress: 100, ParentId: 13, Predecessor: "12", resources: [11] },
+    { TaskID: 15, TaskName: "Frame walls", StartDate: new Date("05/05/2025"), EndDate: new Date("05/06/2025"), Duration: 2, Progress: 100, DurationUnit: "week", ParentId: 13, Predecessor: "14", resources: [12] },
+    { TaskID: 16, TaskName: "Install trusses", StartDate: new Date("05/07/2025"), EndDate: new Date("05/08/2025"), Duration: 2, Progress: 100, ParentId: 13, Predecessor: "15", resources: [1, 2] },
+    { TaskID: 17, TaskName: "Roofing", StartDate: new Date("05/09/2025"), EndDate: new Date("05/13/2025"), Duration: 3, Progress: 100, Predecessor: "16", resources: [3, 4] },
+    { TaskID: 18, TaskName: "Mechanical, Electrical, Plumbing", StartDate: new Date("05/14/2025"), EndDate: new Date("05/24/2025"), Duration: 9, Progress: 50, resources: [5, 6, 7] },
+    { TaskID: 19, TaskName: "HVAC installation", StartDate: new Date("05/14/2025"), EndDate: new Date("05/16/2025"), Duration: 3, Progress: 100, ParentId: 18, Predecessor: "17", resources: [5] },
+    { TaskID: 20, TaskName: "Plumbing installation", StartDate: new Date("05/19/2025"), EndDate: new Date("05/21/2025"), Duration: 3, Progress: 50, DurationUnit: "week", ParentId: 18, Predecessor: "19", resources: [6] },
+    { TaskID: 21, TaskName: "Electrical installation", StartDate: new Date("05/22/2025"), EndDate: new Date("05/24/2025"), Duration: 3, Progress: 0, ParentId: 18, Predecessor: "20", resources: [7, 8] },
+    { TaskID: 22, TaskName: "Interior finishing", StartDate: new Date("05/26/2025"), EndDate: new Date("06/17/2025"), Duration: 2, Progress: 0, DurationUnit: "month", Predecessor: "21", resources: [9, 10, 11] },
+    { TaskID: 23, TaskName: "Insulation and drywall", StartDate: new Date("05/26/2025"), EndDate: new Date("05/30/2025"), Duration: 5, Progress: 0, ParentId: 22, Predecessor: "21", resources: [9] },
+    { TaskID: 24, TaskName: "Interior painting", StartDate: new Date("06/02/2025"), EndDate: new Date("06/05/2025"), Duration: 4, Progress: 0, ParentId: 22, Predecessor: "23", resources: [10] },
+    { TaskID: 25, TaskName: "Flooring installation", StartDate: new Date("06/06/2025"), EndDate: new Date("06/09/2025"), Duration: 4, Progress: 0, DurationUnit: "week", ParentId: 22, Predecessor: "24", resources: [11] },
+    { TaskID: 26, TaskName: "Cabinet and fixture setup", StartDate: new Date("06/10/2025"), EndDate: new Date("06/12/2025"), Duration: 3, Progress: 0, ParentId: 22, Predecessor: "25", resources: [12] },
+    { TaskID: 27, TaskName: "Final fixture installation", StartDate: new Date("06/13/2025"), EndDate: new Date("06/15/2025"), Duration: 3, Progress: 0, ParentId: 22, Predecessor: "26", resources: [1] },
+    { TaskID: 28, TaskName: "Exterior finishing", StartDate: new Date("06/16/2025"), EndDate: new Date("06/19/2025"), Duration: 4, Progress: 0, Predecessor: "27", resources: [2, 3] },
+    { TaskID: 29, TaskName: "Landscaping", StartDate: new Date("06/20/2025"), EndDate: new Date("06/25/2025"), Duration: 5, Progress: 0, Predecessor: "28", resources: [4, 5] },
+    { TaskID: 30, TaskName: "Final inspection", StartDate: new Date("06/26/2025"), EndDate: new Date("06/30/2025"), Duration: 3, Progress: 0, Predecessor: "29", resources: [6] },
+    { TaskID: 31, TaskName: "Correction of issues", StartDate: new Date("07/01/2025"), EndDate: new Date("07/03/2025"), Duration: 3, Progress: 0, Predecessor: "30", resources: [7, 8] },
+    { TaskID: 32, TaskName: "Final walkthrough", StartDate: new Date("07/04/2025"), EndDate: new Date("07/07/2025"), Duration: 2, Progress: 0, Predecessor: "31", resources: [9] },
+    { TaskID: 33, TaskName: "Handover preparation", StartDate: new Date("07/08/2025"), EndDate: new Date("07/10/2025"), Duration: 3, Progress: 0, DurationUnit: "week", Predecessor: "32", resources: [10] },
+    { TaskID: 34, TaskName: "Client handover", StartDate: new Date("07/11/2025"), EndDate: new Date("07/12/2025"), Duration: 2, Progress: 0, Predecessor: "33", resources: [11] },
+    { TaskID: 35, TaskName: "Warranty period begins", StartDate: new Date("07/14/2025"), EndDate: new Date("07/15/2025"), Duration: 2, Progress: 0, DurationUnit: "week", Predecessor: "34", resources: [12] },
+    { TaskID: 36, TaskName: "Routine maintenance visits", StartDate: new Date("07/16/2025"), EndDate: new Date("07/25/2025"), Duration: 10, Progress: 0, Predecessor: "35", resources: [1, 2] },
+    { TaskID: 37, TaskName: "First year warranty review", StartDate: new Date("07/28/2025"), EndDate: new Date("08/01/2025"), Duration: 5, Progress: 0, Predecessor: "36", resources: [3, 4] },
+    { TaskID: 38, TaskName: "Final project documentation", StartDate: new Date("08/04/2025"), EndDate: new Date("08/06/2025"), Duration: 3, Progress: 0, Predecessor: "37", resources: [5] },
+    { TaskID: 39, TaskName: "Celebrate project completion", StartDate: new Date("08/07/2025"), EndDate: new Date("08/09/2025"), Duration: 3, Progress: 0, Predecessor: "38", resources: [6, 7] },
+    { TaskID: 40, TaskName: "Begin next project planning", StartDate: new Date("08/10/2025"), EndDate: new Date("08/13/2025"), Duration: 4, Progress: 0, Predecessor: "39", resources: [8, 9] }
+];
+
+export let contextMenuData: Object[] = [
+    { TaskID: 1, TaskName: "Planning and permits", StartDate: new Date("04/02/2025"), EndDate: new Date("04/10/2025"), Duration: 7, Progress: 100, resources: [1, 2, 3] },
+    { TaskID: 2, TaskName: "Site evaluation", StartDate: new Date("04/02/2025"), EndDate: new Date("04/04/2025"), Duration: 2, Progress: 100, ParentId: 1, resources: [1] },
+    { TaskID: 3, TaskName: "Obtain permits", StartDate: new Date("04/07/2025"), EndDate: new Date("04/09/2025"), Duration: 3, Progress: 100, ParentId: 1, Predecessor: "2", resources: [2, 4] },
+    { TaskID: 4, TaskName: "Finalize planning", ParentId: 1,  resources: [3] },
+    { TaskID: 5, TaskName: "Site preparation", StartDate: new Date("04/14/2025"), EndDate: new Date("04/18/2025"), Duration: 5, Progress: 100, resources: [5, 6, 12] },
+    { TaskID: 6, TaskName: "Site clearing", StartDate: new Date("04/04/2025"), Duration: 0, Progress: 100, ParentId: 5,  resources: [5] },
+    { TaskID: 7, TaskName: "Grading and excavation", StartDate: new Date("04/15/2025"), EndDate: new Date("04/17/2025"), Duration: 3, Progress: 100, ParentId: 5, Predecessor: "6", resources: [6, 7] },
+    { TaskID: 8, TaskName: "Foundation work", StartDate: new Date("04/18/2025"), EndDate: new Date("04/21/2025"), Duration: 3, Progress: 100, ParentId: 5, Predecessor: "7", resources: [12] },
+    { TaskID: 9, TaskName: "Foundation and basement", StartDate: new Date("04/22/2025"), EndDate: new Date("04/28/2025"), Duration: 4, Progress: 100, ParentId: 5, resources: [8, 9, 10] },
+    { TaskID: 10, TaskName: "Pour foundation", StartDate: new Date("04/07/2025"), EndDate: new Date("04/23/2025"), Duration: 2, Progress: 100, ParentId: 9,  resources: [8] },
+    { TaskID: 11, TaskName: "Cure foundation",  ParentId: 9, resources: [9] },
+    { TaskID: 12, TaskName: "Basement walls", StartDate: new Date("04/28/2025"), EndDate: new Date("04/30/2025"), Duration: 3, Progress: 100, ParentId: 9, resources: [10, 11] },
+    { TaskID: 13, TaskName: "Framing", StartDate: new Date("05/01/2025"), EndDate: new Date("05/07/2025"), Duration: 5, Progress: 100, resources: [11, 12, 1] },
+    { TaskID: 14, TaskName: "Frame floors", StartDate: new Date("04/07/2025"), EndDate: new Date("05/02/2025"), Duration: 2, Progress: 100, ParentId: 13, resources: [11] },
+    { TaskID: 15, TaskName: "Frame walls", StartDate: new Date("05/05/2025"), EndDate: new Date("05/06/2025"), Duration: 2, Progress: 100, ParentId: 13, Predecessor: "14", resources: [12] },
+    { TaskID: 16, TaskName: "Install trusses", StartDate: new Date("05/07/2025"), EndDate: new Date("05/08/2025"), Duration: 2, Progress: 100, ParentId: 13, Predecessor: "15", resources: [1, 2] },
+    { TaskID: 17, TaskName: "Roofing", StartDate: new Date("05/09/2025"), EndDate: new Date("05/13/2025"), Duration: 3, Progress: 100, Predecessor: "16", resources: [3, 4] },
+    { TaskID: 18, TaskName: "Mechanical, Electrical, Plumbing", StartDate: new Date("05/14/2025"), EndDate: new Date("05/24/2025"), Duration: 9, Progress: 50, resources: [5, 6, 7] },
+    { TaskID: 19, TaskName: "HVAC installation", StartDate: new Date("05/14/2025"), EndDate: new Date("05/16/2025"), Duration: 3, Progress: 100, ParentId: 18, Predecessor: "17", resources: [5] },
+    { TaskID: 20, TaskName: "Plumbing installation", StartDate: new Date("05/19/2025"), EndDate: new Date("05/21/2025"), Duration: 3, Progress: 50, ParentId: 18, Predecessor: "19", resources: [6] },
+    { TaskID: 21, TaskName: "Electrical installation", StartDate: new Date("05/22/2025"), EndDate: new Date("05/24/2025"), Duration: 3, Progress: 0, ParentId: 18, Predecessor: "20", resources: [7, 8] },
+    { TaskID: 22, TaskName: "Interior finishing", StartDate: new Date("05/26/2025"), EndDate: new Date("06/17/2025"), Duration: 15, Progress: 0, Predecessor: "21", resources: [9, 10, 11] },
+    { TaskID: 23, TaskName: "Insulation and drywall", StartDate: new Date("05/26/2025"), EndDate: new Date("05/30/2025"), Duration: 5, Progress: 0, ParentId: 22, Predecessor: "21", resources: [9] },
+    { TaskID: 24, TaskName: "Interior painting", StartDate: new Date("06/02/2025"), EndDate: new Date("06/05/2025"), Duration: 4, Progress: 0, ParentId: 22, Predecessor: "23", resources: [10] },
+    { TaskID: 25, TaskName: "Flooring installation", StartDate: new Date("06/06/2025"), EndDate: new Date("06/09/2025"), Duration: 4, Progress: 0, ParentId: 22, Predecessor: "24", resources: [11] },
+    { TaskID: 26, TaskName: "Cabinet and fixture setup", StartDate: new Date("06/10/2025"), EndDate: new Date("06/12/2025"), Duration: 3, Progress: 0, ParentId: 22, Predecessor: "25", resources: [12] },
+    { TaskID: 27, TaskName: "Final fixture installation", StartDate: new Date("06/13/2025"), EndDate: new Date("06/15/2025"), Duration: 3, Progress: 0, ParentId: 22, Predecessor: "26", resources: [1] },
+    { TaskID: 28, TaskName: "Exterior finishing", StartDate: new Date("06/16/2025"), EndDate: new Date("06/19/2025"), Duration: 4, Progress: 0, Predecessor: "27", resources: [2, 3] },
+    { TaskID: 29, TaskName: "Landscaping", StartDate: new Date("06/20/2025"), EndDate: new Date("06/25/2025"), Duration: 5, Progress: 0, Predecessor: "28", resources: [4, 5] },
+    { TaskID: 30, TaskName: "Final inspection", StartDate: new Date("06/26/2025"), EndDate: new Date("06/30/2025"), Duration: 3, Progress: 0, Predecessor: "29", resources: [6] },
+    { TaskID: 31, TaskName: "Correction of issues", StartDate: new Date("07/01/2025"), EndDate: new Date("07/03/2025"), Duration: 3, Progress: 0, Predecessor: "30", resources: [7, 8] },
+    { TaskID: 32, TaskName: "Final walkthrough", StartDate: new Date("07/04/2025"), EndDate: new Date("07/07/2025"), Duration: 2, Progress: 0, Predecessor: "31", resources: [9] },
+    { TaskID: 33, TaskName: "Handover preparation", StartDate: new Date("07/08/2025"), EndDate: new Date("07/10/2025"), Duration: 3, Progress: 0, Predecessor: "32", resources: [10] },
+    { TaskID: 34, TaskName: "Client handover", StartDate: new Date("07/11/2025"), EndDate: new Date("07/12/2025"), Duration: 2, Progress: 0, Predecessor: "33", resources: [11] },
+    { TaskID: 35, TaskName: "Warranty period begins", StartDate: new Date("07/14/2025"), EndDate: new Date("07/15/2025"), Duration: 2, Progress: 0, Predecessor: "34", resources: [12] },
+    { TaskID: 36, TaskName: "Routine maintenance visits", StartDate: new Date("07/16/2025"), EndDate: new Date("07/25/2025"), Duration: 10, Progress: 0, Predecessor: "35", resources: [1, 2] },
+    { TaskID: 37, TaskName: "First year warranty review", StartDate: new Date("07/28/2025"), EndDate: new Date("08/01/2025"), Duration: 5, Progress: 0, Predecessor: "36", resources: [3, 4] },
+    { TaskID: 38, TaskName: "Final project documentation", StartDate: new Date("08/04/2025"), EndDate: new Date("08/06/2025"), Duration: 3, Progress: 0, Predecessor: "37", resources: [5] },
+    { TaskID: 39, TaskName: "Celebrate project completion", StartDate: new Date("08/07/2025"), EndDate: new Date("08/09/2025"), Duration: 3, Progress: 0, Predecessor: "38", resources: [6, 7] },
+    { TaskID: 40, TaskName: "Begin next project planning", StartDate: new Date("08/10/2025"), EndDate: new Date("08/13/2025"), Duration: 4, Progress: 0, Predecessor: "39", resources: [8, 9] }
+];
+
 export let remoteData: Object[] = [
     {
         TaskID: 1,
@@ -2516,7 +2602,7 @@ export let overviewData: object[] = [
             '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',
          Department: "Engineering", Predecessor: "", ConstraintType: 4, ConstraintDate: new Date('2025-09-16') },
     { TaskId: 22, TaskName: "Sprint 8: Performance optimization", ParentID: 14, StartDate: new Date('2025-10-02'), EndDate: new Date('2025-10-15'), Progress: 0, Status: "Completed", Priority: "High", Assignee: "Van Jack",
-        
+
         resource: [6],
         resourcesImage:
             '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',
@@ -3783,7 +3869,7 @@ export let pdfExport: object[] = [
             }
         ]
     },
-   
+
 ];
 
 export let WorkingTimeRangeData: Object[] = [
@@ -5449,5 +5535,1114 @@ export let infiniteTimelineScrollData: Object[] = [
             { TaskID: 15, TaskName: 'Beta release', StartDate: new Date('06/21/2026'), Duration: 3 },
             { TaskID: 16, TaskName: 'Production deployment', StartDate: new Date('06/28/2026'), Duration: 0, Predecessor: "15" }
         ]
+    }
+];
+export let leadLagOffsetData: object[] = [
+  {
+    TaskID: 1,
+    TaskName: 'Site preparation',
+    StartDate: new Date('01/06/2026'),
+    EndDate: new Date('01/14/2026'),
+    ParentID: null,
+  },
+  {
+    TaskID: 2,
+    TaskName: 'Identify site location',
+    StartDate: new Date('01/06/2026'),
+    Duration: 2,
+    Progress: 100,
+    ParentID: 1,
+  },
+  {
+    TaskID: 3,
+    TaskName: 'Soil testing',
+    StartDate: new Date('01/08/2026'),
+    Duration: 3,
+    Progress: 100,
+    ParentID: 1,
+    Predecessor: '2FS+2days',
+  },
+  {
+    TaskID: 4,
+    TaskName: 'Site cleared',
+    StartDate: new Date('01/14/2026'),
+    Duration: 3,
+    Progress: 100,
+    ParentID: 1,
+  },
+  {
+    TaskID: 5,
+    TaskName: 'Site handoff',
+    StartDate: new Date('01/14/2026'),
+    Duration: 4,
+    Progress: 100,
+    ParentID: 1,
+    Predecessor: '4SF-2days',
+  },
+  {
+    TaskID: 6,
+    TaskName: 'Building construction',
+    StartDate: new Date('01/15/2026'),
+    EndDate: new Date('01/27/2026'),
+    ParentID: null,
+  },
+  {
+    TaskID: 7,
+    TaskName: 'Foundation work',
+    StartDate: new Date('01/15/2026'),
+    Duration: 2,
+    Progress: 100,
+    ParentID: 6,
+  },
+  {
+    TaskID: 8,
+    TaskName: 'Structural framing',
+    StartDate: new Date('01/16/2026'),
+    Duration: 2,
+    Progress: 100,
+    ParentID: 6,
+    Predecessor: '7SS-4days',
+  },
+  {
+    TaskID: 9,
+    TaskName: 'MEP installation',
+    StartDate: new Date('01/13/2026'),
+    Duration: 2,
+    Progress: 100,
+    ParentID: 6,
+  },
+  {
+    TaskID: 10,
+    TaskName: 'Interior finishing',
+    StartDate: new Date('01/23/2026'),
+    Duration: 2,
+    Progress: 100,
+    ParentID: 6,
+    Predecessor: '9FF-1day',
+  },
+  {
+    TaskID: 11,
+    TaskName: 'Construction closeout',
+    StartDate: new Date('01/25/2026'),
+    Duration: 2,
+    Progress: 100,
+    ParentID: 6,
+    Predecessor: '10FS',
+  },
+  {
+    TaskID: 12,
+    TaskName: 'Building handover',
+    StartDate: new Date('01/27/2026'),
+    Duration: 0,
+    Progress: 100,
+    ParentID: 6,
+    Predecessor: '11FF+1day',
+  },
+  {
+    TaskID: 13,
+    TaskName: 'Final inspections',
+    StartDate: new Date('01/28/2026'),
+    Duration: 3,
+    Progress: 100,
+    ParentID: null,
+  },
+  {
+    TaskID: 14,
+    TaskName: 'Structural inspection',
+    StartDate: new Date('01/28/2026'),
+    Duration: 1,
+    Progress: 100,
+    ParentID: 13,
+  },
+  {
+    TaskID: 15,
+    TaskName: 'Safety audit',
+    StartDate: new Date('01/29/2026'),
+    Duration: 1,
+    Progress: 100,
+    ParentID: 13,
+    Predecessor: '14FS+1day',
+  },
+  {
+    TaskID: 16,
+    TaskName: 'Punch list',
+    StartDate: new Date('01/30/2026'),
+    Duration: 1,
+    Progress: 100,
+    ParentID: 13,
+    Predecessor: '15FS+1day',
+  },
+  {
+    TaskID: 17,
+    TaskName: 'Client walkthrough',
+    StartDate: new Date('01/31/2026'),
+    Duration: 1,
+    Progress: 100,
+    ParentID: 13,
+    Predecessor: '16FS+1day',
+  },
+  {
+    TaskID: 18,
+    TaskName: 'Correct defects',
+    StartDate: new Date('02/01/2026'),
+    Duration: 2,
+    Progress: 100,
+    ParentID: 13,
+    Predecessor: '17FS+1day',
+  },
+  {
+    TaskID: 19,
+    TaskName: 'Final handover preparation',
+    StartDate: new Date('02/03/2026'),
+    Duration: 1,
+    Progress: 100,
+    ParentID: 13,
+    Predecessor: '18FS+1day',
+  },
+  {
+    TaskID: 20,
+    TaskName: 'Project completion',
+    StartDate: new Date('02/04/2026'),
+    Duration: 0,
+    Progress: 100,
+    ParentID: 13,
+    Predecessor: '19FS+1day',
+  },
+];
+export let dependencyData: object[] = [
+  {
+    TaskID: 1,
+    TaskName: 'Site preparation',
+    StartDate: new Date('01/06/2026'),
+    EndDate: new Date('01/14/2026'),
+    ParentID: null,
+  },
+  {
+    TaskID: 2,
+    TaskName: 'Identify site location',
+    StartDate: new Date('01/06/2026'),
+    Duration: 2,
+    Progress: 100,
+    ParentID: 1,
+  },
+  {
+    TaskID: 3,
+    TaskName: 'Soil testing',
+    StartDate: new Date('01/08/2026'),
+    Duration: 3,
+    Progress: 100,
+    ParentID: 1,
+    Predecessor: '2FS',
+  },
+  {
+    TaskID: 4,
+    TaskName: 'Site cleared',
+    StartDate: new Date('01/14/2026'),
+    Duration: 3,
+    Progress: 100,
+    ParentID: 1,
+  },
+  {
+    TaskID: 5,
+    TaskName: 'Site handoff',
+    StartDate: new Date('01/14/2026'),
+    Duration: 3,
+    Progress: 100,
+    ParentID: 1,
+    Predecessor: '4SF',
+  },
+  {
+    TaskID: 6,
+    TaskName: 'Building construction',
+    StartDate: new Date('01/15/2026'),
+    EndDate: new Date('01/27/2026'),
+    ParentID: null,
+  },
+  {
+    TaskID: 7,
+    TaskName: 'Foundation work',
+    StartDate: new Date('01/12/2026'),
+    Duration: 3,
+    Progress: 100,
+    ParentID: 6,
+  },
+  {
+    TaskID: 8,
+    TaskName: 'Structural framing',
+    StartDate: new Date('01/16/2026'),
+    Duration: 5,
+    Progress: 100,
+    ParentID: 6,
+    Predecessor: '7SS',
+  },
+  {
+    TaskID: 9,
+    TaskName: 'MEP installation',
+    StartDate: new Date('01/14/2026'),
+    Duration: 3,
+    Progress: 100,
+    ParentID: 6,
+  },
+  {
+    TaskID: 10,
+    TaskName: 'Interior finishing',
+    StartDate: new Date('01/24/2026'),
+    Duration: 2,
+    Progress: 100,
+    ParentID: 6,
+    Predecessor: '9FF',
+  },
+  {
+    TaskID: 11,
+    TaskName: 'Construction closeout',
+    StartDate: new Date('01/26/2026'),
+    Duration: 1,
+    Progress: 100,
+    ParentID: 6,
+    Predecessor: '10SF',
+  },
+  {
+    TaskID: 12,
+    TaskName: 'Building handover',
+    StartDate: new Date('01/27/2026'),
+    Duration: 0,
+    Progress: 100,
+    ParentID: 6,
+    Predecessor: '11FS',
+  },
+  {
+    TaskID: 13,
+    TaskName: 'Final inspections',
+    StartDate: new Date('01/28/2026'),
+    Duration: 3,
+    Progress: 100,
+    ParentID: null,
+  },
+  {
+    TaskID: 14,
+    TaskName: 'Structural inspection',
+    StartDate: new Date('01/13/2026'),
+    Duration: 3,
+    Progress: 100,
+    ParentID: 13,
+  },
+  {
+    TaskID: 15,
+    TaskName: 'Safety audit',
+    StartDate: new Date('01/16/2026'),
+    Duration: 2,
+    Progress: 100,
+    ParentID: 13,
+    Predecessor: '14FS',
+  },
+  {
+    TaskID: 16,
+    TaskName: 'Punch list',
+    StartDate: new Date('01/30/2026'),
+    Duration: 4,
+    Progress: 100,
+    ParentID: 13,
+    Predecessor: '15FS',
+  },
+  {
+    TaskID: 17,
+    TaskName: 'Client walkthrough',
+    StartDate: new Date('01/31/2026'),
+    Duration: 2,
+    Progress: 100,
+    ParentID: 13,
+    Predecessor: '16FS',
+  },
+  {
+    TaskID: 18,
+    TaskName: 'Correct defects',
+    StartDate: new Date('02/01/2026'),
+    Duration: 3,
+    Progress: 100,
+    ParentID: 13,
+    Predecessor: '17FS',
+  },
+  {
+    TaskID: 19,
+    TaskName: 'Final handover preparation',
+    StartDate: new Date('02/03/2026'),
+    Duration: 2,
+    Progress: 100,
+    ParentID: 13,
+    Predecessor: '18FS',
+  },
+  {
+    TaskID: 20,
+    TaskName: 'Project completion',
+    StartDate: new Date('02/04/2026'),
+    Duration: 0,
+    Progress: 100,
+    ParentID: 13,
+    Predecessor: '19FS',
+  },
+];
+export let ploMeetingsData: Object[] = [
+    {
+        TaskID: 1,
+        TaskName: 'PLO Kickoff',
+        StartDate: new Date('07/06/2026'),
+        EndDate: new Date('07/15/2026'),
+        subtasks: [
+            {
+                TaskID: 2,
+                TaskName: 'PLO Charter sign-off',
+                StartDate: new Date('07/05/2026'),
+                Duration: 4,
+                Progress: 100
+            },
+            {
+                TaskID: 3,
+                TaskName: 'Stakeholder mapping',
+                StartDate: new Date('07/05/2026'),
+                Duration: 4,
+                calendar: 'Steering-committee',
+                Progress: 80
+            },
+            {
+                TaskID: 4,
+                TaskName: 'Initial risk register',
+                StartDate: new Date('07/05/2026'),
+                Duration: 4,
+                calendar: 'Compliance-audit',
+                Progress: 60
+            }
+        ]
+    },
+    {
+        TaskID: 5,
+        TaskName: 'Architecture Review',
+        StartDate: new Date('07/13/2026'),
+        EndDate: new Date('07/23/2026'),
+        subtasks: [
+            {
+                TaskID: 6,
+                TaskName: 'Solution architecture draft',
+                StartDate: new Date('07/13/2026'),
+                Duration: 3,
+                calendar: 'Tech-review',
+                Progress: 70
+            },
+            {
+                TaskID: 7,
+                TaskName: 'Technical review board',
+                StartDate: new Date('07/16/2026'),
+                Duration: 2,
+                calendar: 'Tech-review',
+                Progress: 50,
+                Predecessor: '6'
+            },
+            {
+                TaskID: 8,
+                TaskName: 'Architecture sign-off',
+                StartDate: new Date('07/20/2026'),
+                Duration: 2,
+                calendar: 'Steering-committee',
+                Progress: 30
+            }
+        ]
+    },
+    {
+        TaskID: 9,
+        TaskName: 'Compliance & Audit',
+        StartDate: new Date('07/15/2026'),
+        EndDate: new Date('07/29/2026'),
+        subtasks: [
+            {
+                TaskID: 10,
+                TaskName: 'Audit readiness checklist',
+                StartDate: new Date('07/15/2026'),
+                Duration: 3,
+                calendar: 'Compliance-audit',
+                Progress: 65
+            },
+            {
+                TaskID: 11,
+                TaskName: 'Internal compliance walkthrough',
+                StartDate: new Date('07/20/2026'),
+                Duration: 4,
+                calendar: 'Compliance-audit',
+                Progress: 40,
+                Predecessor: '10'
+            },
+            {
+                TaskID: 12,
+                TaskName: 'External auditor session',
+                StartDate: new Date('07/27/2026'),
+                Duration: 2,
+                calendar: 'Compliance-audit',
+                Progress: 0,
+                Predecessor: '11'
+            }
+        ]
+    }
+];
+export let virtualTempData: any[] = [
+    {
+        TaskID: 1, TaskName: 'Product concept',
+        StartDate: new Date('03/31/2026'),
+        EndDate: new Date('04/09/2026'),
+        parentID: 0,
+        Progress: 32
+    },
+    {
+        TaskID: 2, TaskName: 'Defining the product and its usage',
+        StartDate: new Date('03/31/2026'),
+        Duration: 5, Progress: 30, parentID: 1
+    },
+    {
+        TaskID: 3, TaskName: 'Defining target audience',
+        StartDate: new Date('04/03/2026'),
+        Duration: 3, parentID: 1
+    },
+    {
+        TaskID: 4, TaskName: 'Prepare product sketch and notes',
+        StartDate: new Date('04/06/2026'),
+        Duration: 2, parentID: 1, Progress: 30
+    },
+    {
+        TaskID: 5, TaskName: 'Concept approval',
+        StartDate: new Date('04/09/2026'),
+        parentID: 0, Duration: 0
+    },
+    {
+        TaskID: 6, TaskName: 'Market research',
+        StartDate: new Date('04/11/2026'),
+        EndDate: new Date('04/24/2026'),
+        parentID: 0,
+        Progress: 34
+    },
+    {
+        TaskID: 7, TaskName: 'Demand analysis',
+        StartDate: new Date('04/11/2026'),
+        EndDate: new Date('04/19/2026'),
+        parentID: 6
+    },
+    {
+        TaskID: 8, TaskName: 'Customer strength',
+        StartDate: new Date('04/11/2026'),
+        Duration: 4, parentID: 7, Progress: 30
+    },
+    {
+        TaskID: 9, TaskName: 'Market opportunity analysis',
+        StartDate: new Date('04/16/2026'),
+        Duration: 4, parentID: 7
+    },
+    {
+        TaskID: 10, TaskName: 'Competitor analysis',
+        StartDate: new Date('04/19/2026'),
+        Duration: 4, parentID: 6, Progress: 30
+    },
+    {
+        TaskID: 11, TaskName: 'Product strength analsysis',
+        StartDate: new Date('04/19/2026'),
+        Duration: 4, parentID: 6
+    },
+    {
+        TaskID: 12, TaskName: 'Research complete',
+        StartDate: new Date('04/24/2026'),
+        Duration: 0, parentID: 6
+    },
+    {
+        TaskID: 13, TaskName: 'Product design and development',
+        StartDate: new Date('04/25/2026'),
+        EndDate: new Date('05/20/2026'),
+        parentID: 0,
+        Progress: 32
+    },
+    {
+        TaskID: 14, TaskName: 'Functionality design',
+        StartDate: new Date('04/25/2026'),
+        Duration: 3, parentID: 13, Progress: 30
+    },
+    {
+        TaskID: 15, TaskName: 'Quality design',
+        StartDate: new Date('04/28/2026'),
+        Duration: 3, parentID: 13
+    },
+    {
+        TaskID: 16, TaskName: 'Define reliability',
+        StartDate: new Date('04/30/2026'),
+        Duration: 2, Progress: 30, parentID: 13
+    },
+    {
+        TaskID: 17, TaskName: 'Identifying raw materials',
+        StartDate: new Date('05/01/2026'),
+        Duration: 2, parentID: 13
+    },
+    {
+        TaskID: 18, TaskName: 'Define cost plan',
+        StartDate: new Date('05/04/2026'),
+        EndDate: new Date('05/11/2026'),
+        parentID: 13,
+        Progress: 33
+    },
+    {
+        TaskID: 19, TaskName: 'Manufacturing cost',
+        StartDate: new Date('05/04/2026'),
+        Duration: 4, Progress: 30, parentID: 18
+    },
+    {
+        TaskID: 20, TaskName: 'Selling cost',
+        StartDate: new Date('05/08/2026'),
+        Duration: 4, parentID: 18
+    },
+    {
+        TaskID: 21, TaskName: 'Development of the final design',
+        StartDate: new Date('05/04/2026'),
+        EndDate: new Date('05/11/2026'),
+        parentID: 13,
+        Progress: 36
+    },
+    {
+        TaskID: 22, TaskName: 'Defining dimensions and package volume',
+        StartDate: new Date('05/04/2026'),
+        Duration: 2, parentID: 21, Progress: 30
+    },
+    {
+        TaskID: 23, TaskName: 'Develop design to meet industry standards',
+        StartDate: new Date('05/06/2026'),
+        Duration: 2, parentID: 21
+    },
+    {
+        TaskID: 24, TaskName: 'Include all the details',
+        StartDate: new Date('05/08/2026'),
+        Duration: 4, parentID: 21
+    },
+    {
+        TaskID: 25, TaskName: 'CAD computer-aided design',
+        StartDate: new Date('05/12/2026'),
+        Duration: 3, parentID: 13, Progress: 30
+    },
+    {
+        TaskID: 26, TaskName: 'CAM computer-aided manufacturing',
+        StartDate: new Date('05/16/2026'),
+        Duration: 3, parentID: 13
+    },
+    {
+        TaskID: 27, TaskName: 'Design complete',
+        StartDate: new Date('05/20/2026'),
+        Duration: 0, parentID: 13
+    },
+    {
+        TaskID: 28, TaskName: 'Prototype testing',
+        StartDate: new Date('05/22/2026'),
+        Duration: 4, Progress: 30, parentID: 0
+    },
+    {
+        TaskID: 29, TaskName: 'Include feedback',
+        StartDate: new Date('05/22/2026'),
+        Duration: 4, parentID: 0
+    },
+    {
+        TaskID: 30, TaskName: 'Manufacturing',
+        StartDate: new Date('05/27/2026'),
+        Duration: 5, Progress: 30, parentID: 0
+    },
+    {
+        TaskID: 31, TaskName: 'Assembling materials to finsihed goods',
+        StartDate: new Date('06/02/2026'),
+        Duration: 5, parentID: 0
+    },
+    {
+        TaskID: 32, TaskName: 'Feedback and testing',
+        StartDate: new Date('06/06/2026'),
+        EndDate: new Date('06/13/2026'),
+        parentID: 0,
+        Progress: 48
+    },
+    {
+        TaskID: 33, TaskName: 'Internal testing and feedback',
+        StartDate: new Date('06/06/2026'),
+        Duration: 3, parentID: 32, Progress: 45
+    },
+    {
+        TaskID: 34, TaskName: 'Customer testing and feedback',
+        StartDate: new Date('06/10/2026'),
+        Duration: 4, parentID: 32, Progress: 50
+    },
+    {
+        TaskID: 35, TaskName: 'Final product development',
+        StartDate: new Date('06/14/2026'),
+        EndDate: new Date('06/19/2026'),
+        parentID: 0,
+        Progress: 30
+    },
+    {
+        TaskID: 36, TaskName: 'Important improvements',
+        StartDate: new Date('06/14/2026'),
+        Duration: 4, Progress: 30, parentID: 35
+    },
+    {
+        TaskID: 37, TaskName: 'Address any unforeseen issues',
+        StartDate: new Date('06/16/2026'),
+        Duration: 4, Progress: 30, parentID: 35
+    },
+    {
+        TaskID: 38, TaskName: 'Final product',
+        StartDate: new Date('06/20/2026'),
+        EndDate: new Date('06/28/2026'),
+        parentID: 0,
+        Progress: 32
+    },
+    {
+        TaskID: 39, TaskName: 'Branding product',
+        StartDate: new Date('06/20/2026'),
+        Duration: 4, parentID: 38
+    },
+    {
+        TaskID: 40, TaskName: 'Marketing and presales',
+        StartDate: new Date('06/25/2026'),
+        EndDate: new Date('06/28/2026'),
+        Duration: 4,
+        Progress: 30, parentID: 38
+    }
+];
+
+
+/**
+ * Generate virtual data by repeating the base `virtualTempData` set.
+ * This is used by performance/render-optimization samples to create large datasets.
+ */
+export const generateVirtualData = (count: number): any[] => {
+    let virtualData: any[] = [];
+    for (let i: number = 0; virtualData.length < count; i++) {
+        let x: number = virtualData.length + 1;
+        let parent: any = {};
+        parent['TaskID'] = x;
+        parent['TaskName'] = 'Project ' + (i + 1);
+        parent['StartDate'] = virtualTempData[0].StartDate;
+        parent['EndDate'] = virtualTempData [virtualTempData.length - 1].EndDate;
+        parent['Progress'] = 30;
+        virtualData.push(parent);
+
+        for (let j: number = 0; j < virtualTempData.length && virtualData.length < count; j++) {
+            let subtasks: any = {};
+            subtasks['TaskID'] = virtualTempData[j].TaskID + x;
+            subtasks['TaskName'] = virtualTempData[j].TaskName;
+            subtasks['StartDate'] = virtualTempData[j].StartDate;
+            subtasks['EndDate'] = virtualTempData[j].EndDate;
+            subtasks['Duration'] = virtualTempData[j].Duration;
+            subtasks['Progress'] = virtualTempData[j].Progress;
+            subtasks['parentID'] = virtualTempData[j].parentID + x;
+            subtasks['Predecessor'] = virtualTempData[j].TaskID + x - 1;
+            virtualData.push(subtasks);
+        }
+    }
+    return virtualData;
+};
+export let SerialNumberData: Object[] = [
+    {
+        TaskID: 1,
+        TaskName: 'Product concept',
+        StartDate: new Date('04/02/2025'),
+        EndDate: new Date('04/21/2025')
+    },
+    {
+        TaskID: 2,
+        TaskName: 'Defining the product and its usage',
+        StartDate: new Date('04/02/2025'),
+        Duration: 3,
+        Progress: 30,
+        ParentId: 1
+    },
+    {
+        TaskID: 3,
+        TaskName: 'Defining target audience',
+        StartDate: new Date('04/02/2025'),
+        Duration: 3,
+        ParentId: 1
+    },
+    {
+        TaskID: 4,
+        TaskName: 'Prepare product sketch and notes',
+        StartDate: new Date('04/02/2025'),
+        Duration: 2,
+        Progress: 30,
+        Predecessor: '2FS+1',
+        ParentId: 1
+    },
+    {
+        TaskID: 5,
+        TaskName: 'Manufacturing cost',
+        StartDate: new Date('04/04/2025'),
+        Duration: 2,
+        Progress: 30,
+        ParentId: 4
+    },
+    {
+        TaskID: 6,
+        TaskName: 'Selling cost',
+        StartDate: new Date('04/04/2025'),
+        Duration: 2,
+        ParentId: 4
+    },
+    {
+        TaskID: 7,
+        TaskName: 'Selling items',
+        StartDate: new Date('04/04/2025'),
+        Duration: 2,
+        ParentId: 6
+    },
+    {
+        TaskID: 8,
+        TaskName: 'Market research',
+        StartDate: new Date('04/02/2025'),
+        EndDate: new Date('04/21/2025')
+    },
+    {
+        TaskID: 9,
+        TaskName: 'Demand analysis',
+        StartDate: new Date('04/04/2025'),
+        EndDate: new Date('04/21/2025'),
+        ParentId: 8
+    },
+    {
+        TaskID: 10,
+        TaskName: 'Customer strength',
+        StartDate: new Date('04/04/2025'),
+        Duration: 4,
+        Progress: 30,
+        ParentId: 9
+    },
+    {
+        TaskID: 11,
+        TaskName: 'Market opportunity analysis',
+        StartDate: new Date('04/04/2025'),
+        Duration: 4,
+        ParentId: 9
+    },
+    {
+        TaskID: 12,
+        TaskName: 'Competitor analysis',
+        StartDate: new Date('04/04/2025'),
+        Duration: 4,
+        Progress: 30,
+        ParentId: 8
+    },
+    {
+        TaskID: 13,
+        TaskName: 'Product strength analsysis',
+        StartDate: new Date('04/04/2025'),
+        Duration: 4,
+        ParentId: 8
+    },
+    {
+        TaskID: 14,
+        TaskName: 'Research complete',
+        StartDate: new Date('04/04/2025'),
+        Duration: 0,
+        ParentId: 8,
+        Indicators: [
+            {
+                'date': new Date('04/27/2025'),
+                'name': 'Research completed',
+                'tooltip': 'Research completed',
+                'iconClass': 'description e-icons'
+            }
+        ]
+    },
+    {
+        TaskID: 15,
+        TaskName: 'Product design and development',
+        StartDate: new Date('04/04/2025'),
+        EndDate: new Date('04/21/2025')
+    },
+    {
+        TaskID: 16,
+        TaskName: 'Functionality design',
+        StartDate: new Date('04/04/2025'),
+        Duration: 3,
+        Progress: 30,
+        Predecessor: '12',
+        ParentId: 15
+    },
+    {
+        TaskID: 17,
+        TaskName: 'Quality design',
+        StartDate: new Date('04/04/2025'),
+        Duration: 3,
+        ParentId: 15
+    },
+    {
+        TaskID: 18,
+        TaskName: 'Define reliability',
+        StartDate: new Date('04/04/2025'),
+        Duration: 2,
+        Progress: 30,
+        Predecessor: '15',
+        ParentId: 15
+    },
+    {
+        TaskID: 19,
+        TaskName: 'Identifying raw materials',
+        StartDate: new Date('04/04/2025'),
+        Duration: 2,
+        ParentId: 15
+    },
+    {
+        TaskID: 20,
+        TaskName: 'Define cost plan',
+        StartDate: new Date('04/04/2025'),
+        EndDate: new Date('04/21/2025'),
+        ParentId: 15
+    },
+    {
+        TaskID: 21,
+        TaskName: 'Manufacturing cost',
+        StartDate: new Date('04/04/2025'),
+        Duration: 2,
+        Progress: 30,
+        Predecessor: '17',
+        ParentId: 20
+    },
+    {
+        TaskID: 22,
+        TaskName: 'Selling cost',
+        StartDate: new Date('04/04/2025'),
+        Duration: 2,
+        ParentId: 20
+    },
+    {
+        TaskID: 23,
+        TaskName: 'Development of the final design',
+        StartDate: new Date('04/04/2025'),
+        EndDate: new Date('04/21/2025'),
+        ParentId: 15
+    },
+    {
+        TaskID: 24,
+        TaskName: 'Defining dimensions and package volume',
+        StartDate: new Date('04/04/2025'),
+        Duration: 2,
+         Predecessor: '19',
+        Progress: 30,
+        ParentId: 23
+    },
+    {
+        TaskID: 25,
+        TaskName: 'Develop design to meet industry standards',
+        StartDate: new Date('04/04/2025'),
+        Duration: 2,
+        ParentId: 23
+    },
+    {
+        TaskID: 26,
+        TaskName: 'Include all the details',
+        StartDate: new Date('04/04/2025'),
+        Duration: 3,
+        ParentId: 23
+    },
+    {
+        TaskID: 27,
+        TaskName: 'CAD computer-aided design',
+        StartDate: new Date('04/04/2025'),
+        Duration: 3,
+        Progress: 30,
+        ParentId: 15
+    },
+    {
+        TaskID: 28,
+        TaskName: 'CAM computer-aided manufacturing',
+        StartDate: new Date('04/04/2025'),
+        Duration: 3,
+        Predecessor: '25',
+        ParentId: 15
+    },
+    {
+        TaskID: 29,
+        TaskName: 'Design complete',
+        StartDate: new Date('04/04/2025'),
+        Duration: 0,
+        ParentId: 15
+    },
+    {
+        TaskID: 30,
+        TaskName: 'Prototype testing',
+        StartDate: new Date('04/04/2025'),
+        Duration: 4,
+        Progress: 30,
+        Predecessor: '27'
+    }
+];
+export let hierarchyCheckboxData: Object[] = [
+    {
+        TaskID: 1, TaskName: 'Project Planning',
+        StartDate: new Date('04/01/2025'), EndDate: new Date('04/10/2025'),
+        Duration: 8, Progress: 80
+    },
+    {
+        TaskID: 2, TaskName: 'Requirement Analysis',
+        ParentId: 1,
+        StartDate: new Date('04/01/2025'), EndDate: new Date('04/03/2025'),
+        Duration: 3, Progress: 100
+    },
+    {
+        TaskID: 3, TaskName: 'Business Requirements',
+        ParentId: 2,
+        StartDate: new Date('04/01/2025'), EndDate: new Date('04/02/2025'),
+        Duration: 2, Progress: 100
+    },
+    {
+        TaskID: 4, TaskName: 'Technical Requirements',
+        ParentId: 2,
+        StartDate: new Date('04/02/2025'), EndDate: new Date('04/03/2025'),
+        Duration: 2, Progress: 90, Predecessor: '3'
+    },
+    {
+        TaskID: 5, TaskName: 'Scope Definition',
+        ParentId: 1,
+        StartDate: new Date('04/04/2025'), EndDate: new Date('04/06/2025'),
+        Duration: 3, Progress: 80
+    },
+    {
+        TaskID: 6, TaskName: 'Project Approval',
+        ParentId: 1,
+        StartDate: new Date('04/07/2025'), EndDate: new Date('04/10/2025'),
+        Duration: 4, Progress: 70, Predecessor: '5'
+    },
+    {
+        TaskID: 7, TaskName: 'Design Phase',
+        StartDate: new Date('04/11/2025'), EndDate: new Date('04/20/2025'),
+        Duration: 8, Progress: 65, Predecessor: '6'
+    },
+    {
+        TaskID: 8, TaskName: 'UI Design',
+        ParentId: 7,
+        StartDate: new Date('04/11/2025'), EndDate: new Date('04/14/2025'),
+        Duration: 4, Progress: 70
+    },
+    {
+        TaskID: 9, TaskName: 'Wireframe Creation',
+        ParentId: 8,
+        StartDate: new Date('04/11/2025'), EndDate: new Date('04/12/2025'),
+        Duration: 2, Progress: 100
+    },
+    {
+        TaskID: 10, TaskName: 'Prototype Design',
+        ParentId: 9,
+        StartDate: new Date('04/13/2025'), EndDate: new Date('04/14/2025'),
+        Duration: 2, Progress: 60, Predecessor: '9'
+    },
+    {
+        TaskID: 11, TaskName: 'Database Design',
+        ParentId: 9,
+        StartDate: new Date('04/15/2025'), EndDate: new Date('04/17/2025'),
+        Duration: 3, Progress: 50, Predecessor: '10'
+    },
+    {
+        TaskID: 12, TaskName: 'Schema Review',
+        ParentId: 9,
+        StartDate: new Date('04/18/2025'), EndDate: new Date('04/20/2025'),
+        Duration: 3, Progress: 40, Predecessor: '11'
+    },
+    {
+        TaskID: 13, TaskName: 'Development Phase',
+        StartDate: new Date('04/21/2025'), EndDate: new Date('05/10/2025'),
+        Duration: 15, Progress: 55, Predecessor: '12'
+    },
+    {
+        TaskID: 14, TaskName: 'Frontend Development',
+        ParentId: 13,
+        StartDate: new Date('04/21/2025'), EndDate: new Date('04/28/2025'),
+        Duration: 6, Progress: 70
+    },
+    {
+        TaskID: 15, TaskName: 'Grid Module',
+        ParentId: 14,
+        StartDate: new Date('04/21/2025'), EndDate: new Date('04/24/2025'),
+        Duration: 4, Progress: 100
+    },
+    {
+        TaskID: 16, TaskName: 'Hierarchy Checkbox Module',
+        ParentId: 14,
+        StartDate: new Date('04/25/2025'), EndDate: new Date('04/28/2025'),
+        Duration: 4, Progress: 60, Predecessor: '15'
+    },
+    {
+        TaskID: 17, TaskName: 'Backend Development',
+        ParentId: 13,
+        StartDate: new Date('04/21/2025'), EndDate: new Date('04/30/2025'),
+        Duration: 8, Progress: 50
+    },
+    {
+        TaskID: 18, TaskName: 'API Development',
+        ParentId: 17,
+        StartDate: new Date('04/21/2025'), EndDate: new Date('04/25/2025'),
+        Duration: 5, Progress: 70
+    },
+    {
+        TaskID: 19, TaskName: 'Authentication Service',
+        ParentId: 17,
+        StartDate: new Date('04/26/2025'), EndDate: new Date('04/30/2025'),
+        Duration: 5, Progress: 40, Predecessor: '18'
+    },
+    {
+        TaskID: 20, TaskName: 'Testing Phase',
+        StartDate: new Date('05/01/2025'), EndDate: new Date('05/15/2025'),
+        Duration: 10, Progress: 45, Predecessor: '19'
+    },
+    {
+        TaskID: 21, TaskName: 'Unit Testing',
+        ParentId: 20,
+        StartDate: new Date('05/01/2025'), EndDate: new Date('05/05/2025'),
+        Duration: 5, Progress: 60
+    },
+    {
+        TaskID: 22, TaskName: 'Frontend Unit Testing',
+        ParentId: 21,
+        StartDate: new Date('05/01/2025'), EndDate: new Date('05/02/2025'),
+        Duration: 2, Progress: 90
+    },
+    {
+        TaskID: 23, TaskName: 'Backend Unit Testing',
+        ParentId: 21,
+        StartDate: new Date('05/03/2025'), EndDate: new Date('05/05/2025'),
+        Duration: 3, Progress: 75, Predecessor: '22'
+    },
+    {
+        TaskID: 24, TaskName: 'Integration Testing',
+        ParentId: 20,
+        StartDate: new Date('05/06/2025'), EndDate: new Date('05/10/2025'),
+        Duration: 5, Progress: 40
+    },
+    {
+        TaskID: 25, TaskName: 'User Acceptance Testing',
+        ParentId: 20,
+        StartDate: new Date('05/11/2025'), EndDate: new Date('05/15/2025'),
+        Duration: 5, Progress: 30, Predecessor: '24'
+    },
+    {
+        TaskID: 26, TaskName: 'Deployment Phase',
+        StartDate: new Date('05/16/2025'), EndDate: new Date('05/25/2025'),
+        Duration: 8, Progress: 20, Predecessor: '25'
+    },
+    {
+        TaskID: 27, TaskName: 'Staging Deployment',
+        ParentId: 26,
+        StartDate: new Date('05/16/2025'), EndDate: new Date('05/18/2025'),
+        Duration: 3, Progress: 50
+    },
+    {
+        TaskID: 28, TaskName: 'Production Deployment',
+        ParentId: 26,
+        StartDate: new Date('05/19/2025'), EndDate: new Date('05/21/2025'),
+        Duration: 3, Progress: 20, Predecessor: '27'
+    },
+    {
+        TaskID: 29, TaskName: 'Verification',
+        ParentId: 28,
+        StartDate: new Date('05/22/2025'), EndDate: new Date('05/23/2025'),
+        Duration: 2, Progress: 0, Predecessor: '28'
+    },
+    {
+        TaskID: 30, TaskName: 'Project Closure',
+        ParentId: 26,
+        StartDate: new Date('05/24/2025'), EndDate: new Date('05/25/2025'),
+        Duration: 2, Progress: 0, Predecessor: '29'
     }
 ];

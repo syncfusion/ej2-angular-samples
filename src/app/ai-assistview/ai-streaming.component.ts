@@ -15,7 +15,11 @@ import { getAIResponse } from '../common/ai-service';
 })
 export class AIAssistStreamComponent {
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = ['ai-streaming.component.css'];
+        sourceFiles.files = [
+            'ai-streaming.component.css',
+            'ai-streaming.html', 
+            'promptResponseData.ts'
+        ];
     }
 
     @ViewChild('streamAIAssistView')

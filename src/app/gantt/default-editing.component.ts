@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
-import { editingData, editingResources } from './data';
+import { defaultEditingData, editingResources } from './data';
 import { SBDescriptionComponent } from '../common/dp.component';
 import { DayMarkersService, EditService, GanttComponent, GanttModule, SelectionService, ToolbarService } from '@syncfusion/ej2-angular-gantt';
 import { SBActionDescriptionComponent } from '../common/adp.component';
@@ -29,16 +29,17 @@ export class GanttEditingComponent implements OnInit {
     public splitterSettings: object;
     private startDate: Date;
     public ngOnInit(): void {
-        this.data = editingData;
+        this.data = defaultEditingData;
         this.taskSettings = {
             id: 'TaskID',
             name: 'TaskName',
             startDate: 'StartDate',
             endDate: 'EndDate',
             duration: 'Duration',
+            durationUnit: 'DurationUnit',
             progress: 'Progress',
             dependency: 'Predecessor',
-            parentID:'ParentID',
+            parentID:'ParentId',
             notes: 'info',
             resourceInfo: 'resources'
         };
@@ -57,9 +58,9 @@ export class GanttEditingComponent implements OnInit {
         this.columns = [
             { field: 'TaskID', width: 80 },
             { field: 'TaskName', headerText: 'Job Name', width: 250, clipMode: 'EllipsisWithTooltip', validationRules: { required: true, minLength: [5, 'Task name should have a minimum length of 5 characters'] } },
+            { field: 'Duration', validationRules: { required: true} },
             { field: 'StartDate' },
             { field: 'EndDate', validationRules: { required: [this.customFn.bind(this), 'Please enter a value greater than the start date.'] } },
-            { field: 'Duration', validationRules: { required: true} },
             { field: 'Progress', validationRules: { required: true, min: 0, max: 100 } },
             { field: 'Predecessor' }
         ];

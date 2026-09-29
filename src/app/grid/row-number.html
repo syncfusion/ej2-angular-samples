@@ -1,0 +1,50 @@
+<div id="action-description">
+	<p>This sample demonstrates the Row Number feature in the Data Grid, which automatically displays sequential row numbers in a dedicated column. It provides a simple way to identify the position of records in the current grid view.</p>
+</div>
+
+<div class="control-section">
+	<ejs-grid #grid id="RowNumber" [dataSource]="data" [allowSorting]="true" [allowFiltering]="true" [pageSettings]="pageSettings" [allowPdfExport]="true"
+		[allowExcelExport]="true" [filterSettings]="filterSettings" [enableVirtualization]="true"
+		[toolbar]="toolbar" [editSettings]="editSettings" height="365" rowHeight="45" (load)="onLoad($event)"
+		(toolbarClick)="toolbarClick($event)" (actionBegin)="actionBegin($event)">
+		<e-columns>
+			<e-column type="RowNumber" textAlign="Center"></e-column>
+			<e-column field="ProductID" headerText="Product ID" width="120" [visible]="false" textAlign="Right"
+				isPrimaryKey="true" type="number"></e-column>
+			<e-column field="ProductName" headerText="Products" width="160" [validationRules]="productRules" [allowEditing]="false"></e-column>
+			<e-column field="Category" headerText="Category" width="140" [validationRules]="productRules" [allowEditing]="false"></e-column>
+			<e-column field="SellingPrice" headerText="Price" width="130" format="C" textAlign="Right"
+				editType="numericedit" [validationRules]="stockRules" [filter]="{ type: 'Menu' }"
+				[edit]="{ params: { showSpinButton: false } }"></e-column>
+			<e-column field="AvailableStock" headerText="In-Stock" width="150" textAlign="Right"
+				editType="numericedit" [validationRules]="stockRules" [filter]="{ type: 'Menu' }"
+				[edit]="{ params: { showSpinButton: false } }">
+				<ng-template #template let-data>
+					<span>{{ data.AvailableStock }} {{ data.Unit }}</span>
+				</ng-template>
+			</e-column>
+			<e-column field="SoldStock" headerText="Sold" width="150" textAlign="Right"
+				editType="numericedit" [validationRules]="stockRules" [filter]="{ type: 'Menu' }"
+				[edit]="{ params: { showSpinButton: false } }">
+				<ng-template #template let-data>
+					<span>{{ data.SoldStock }} {{ data.Unit }}</span>
+				</ng-template>
+			</e-column>
+		</e-columns>
+	</ejs-grid>
+
+	<div id="description">
+		<p>
+			In this demo, the row number column is enabled by setting the <code>columns->type</code> property to <code>RowNumber</code>. The grid automatically generates and maintains row numbers for all displayed records, updating them appropriately during operations such as paging, sorting, filtering, and grouping.
+		</p>
+		<p>
+			More information on row numbers can be found in this
+			<a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/grid/row">
+				documentation section</a>.
+		</p>
+		<p>
+			Looking for the full Angular Data Grid component overview, features, pricing, and documentation? Visit our
+			<a target="_blank" href="https://www.syncfusion.com/angular-components/angular-data-grid">Angular Data Grid component</a> page.
+		</p>
+	</div>
+</div>

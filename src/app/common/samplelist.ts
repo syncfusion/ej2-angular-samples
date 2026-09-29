@@ -98,6 +98,9 @@ import { AIDiagramAppRoutes } from '../ai-diagram/aidiagram.module';
 import { blockEditorAppRoutes } from '../block-editor/block-editor.module';
 import { sankeyAppRoutes } from '../sankey-chart/sankey-chart.module';
 import { inlineaiassistAppRoutes } from '../inline-ai-assist/inline-ai-assist.module';
+import { formBuilderAppRoutes } from '../form-builder/form-builder.module';
+import { rteUIAppRoutes } from '../rich-text-editor-ui/rich-text-editor-ui.module';
+import { AIChartAppRoutes } from '../ai-chart/aichart.module';
 
 export let samplesList: any = [
     {
@@ -107,8 +110,8 @@ export let samplesList: any = [
         'name': 'Smart TextArea', 'category': 'Smart Components', 'order': '01', 'path': 'ai-smart-textarea', 'samples': smartTextAreaAppRoutes,  'ftName': 'ai-smart-textarea'
     },
     {
-        'name': 'AI-Powered Samples', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-grid', 
-        'samples': (AIGridAppRoutes as any).concat(AIDiagramAppRoutes, AIComboBoxAppRoutes, AIGanttAppRoutes, AIImageEditorAppRoutes, AIMapsAppRoutes, AIPivotTableAppRoutes, AIQueryBuilderAppRoutes, AISchedulerAppRoutes )
+        'name': 'AI-Powered Samples', 'category': 'Smart AI Solutions', 'order': '01', 'path': 'ai-grid',
+        'samples': (AIGridAppRoutes as any).concat(AIDiagramAppRoutes, AIComboBoxAppRoutes, AIGanttAppRoutes, AIImageEditorAppRoutes, AIMapsAppRoutes, AIPivotTableAppRoutes, AIQueryBuilderAppRoutes, AISchedulerAppRoutes, AIChartAppRoutes )
     },
     {
         'name': 'Data Grid', 'type':'update', 'category': 'Grids', 'order': '01', 'path': 'grid', 'samples': gridRouteConfig, 'ftName': 'datagrid'
@@ -117,19 +120,19 @@ export let samplesList: any = [
         'name': 'AI AssistView', 'type':'update', 'category': 'Interactive Chat', 'order': '06', 'path': 'ai-assistview', 'samples': aiassistviewAppRoutes, 'ftName': 'ai-assistview'
     },
     {
-        'name': 'Block Editor','category': 'File Viewers & Editors', 'type': 'update','order': '06', 'path': 'block-editor', 'samples': blockEditorAppRoutes, 'ftName': 'block-editor'
+        'name': 'Block Editor','category': 'File Viewers & Editors','order': '06', 'path': 'block-editor', 'samples': blockEditorAppRoutes, 'ftName': 'block-editor'
     },
     {
         'name': 'Chat UI', 'category': 'Interactive Chat', 'order': '06', 'path': 'chat-ui', 'samples': chatUIAppRoutes, "ftName": "chat-ui"
     },
     {
-        'name': 'Inline AI Assist', 'type': 'preview', 'category': 'Interactive Chat', 'order': '06', 'path': 'inline-ai-assist', 'samples': inlineaiassistAppRoutes, "ftName": "inline-ai-assist"
+        'name': 'Inline AI Assist', 'type': 'update', 'category': 'Interactive Chat', 'order': '06', 'path': 'inline-ai-assist', 'samples': inlineaiassistAppRoutes, "ftName": "inline-ai-assist"
     },
     {
-        'name': 'Pivot Table', 'category': 'Grids', 'order': '01', 'type': 'update', 'path': 'pivot-table', 'samples': pivottableRouteConfig
+        'name': 'Pivot Table', 'category': 'Grids', 'order': '01', 'path': 'pivot-table', 'samples': pivottableRouteConfig
     },
     {
-        'name': 'Tree Grid', 'category': 'Grids', 'order': '01', 'path': 'treegrid', 'samples': treegridRouteConfig
+        'name': 'Tree Grid', 'type': 'update' , 'category': 'Grids', 'order': '01', 'path': 'treegrid', 'samples': treegridRouteConfig
     },
     {
         'name': 'Chart', 'category': 'Data visualization', 'order': '02', 'path': 'chart', 'samples': chartAppRoutes, 'type':'update'
@@ -141,7 +144,7 @@ export let samplesList: any = [
         'name': '3D Circular Chart', 'category': 'Data visualization', 'order': '02', 'path': 'three-dimension-circular-chart', 'samples': threeDimensionCircularChartAppRoutes
     },
     {
-        'name': 'Stock Chart', 'category': 'Data visualization', 'order': '02', 'path': 'stock-chart', 'samples': stockChartAppRoutes
+        'name': 'Stock Chart', 'category': 'Data visualization', 'order': '02', 'path': 'stock-chart', 'samples': stockChartAppRoutes, 'type':'update'
     },
     {
         'name': 'Arc Gauge', 'category': 'Data visualization', 'order': '02', 'path': 'arc-gauge', 'samples': arcgaugeAppRoutes
@@ -189,10 +192,16 @@ export let samplesList: any = [
         'name': 'Form Renderer', 'category': 'Forms', 'order': '04', 'path': 'form-renderer', 'samples': formRendererAppRoutes, 'type': 'preview'
     },
     {
+        'name': 'Form Builder', 'category': 'Forms', 'order': '05', 'path': 'form-builder', 'samples': formBuilderAppRoutes, 'type': 'preview'
+    },
+    {
         'name': "Query Builder", 'category': "Forms", 'order': '10', 'path': "query-builder", 'samples': QueryBuilderAppRoutes
     },
     {
-        'name': "Rich Text Editor", 'type':'update', 'category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "rich-text-editor", 'samples': rteAppRoutes
+        'name': "Rich Text Editor", 'category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "rich-text-editor", 'samples': rteAppRoutes
+    },
+    {
+        'name': "Modern Rich Text Editor", 'type': 'preview', 'category': "File Viewers & Editors", 'ftName': 'rich-text-editor-ui', 'order': '03', 'path': "rich-text-editor-ui", 'samples': rteUIAppRoutes
     },
     {
         'name': "Markdown Editor",'category': "File Viewers & Editors", 'ftName': 'wysiwyg-rich-text-editor', 'order': '03', 'path': "markdown-editor", 'samples': mdeAppRoutes
@@ -285,7 +294,7 @@ export let samplesList: any = [
         'name': 'Toolbar', 'category': 'Navigation', 'order': '06', 'path': 'toolbar', 'samples': toolbarAppRoutes, 'ftName': "toolbar"
     },
     {
-        'name': 'TreeView', 'category': 'Navigation', 'order': '06', 'path': 'treeview', 'samples': treeAppRoutes, 'ftName': "treeview"
+        'name': 'TreeView', 'type':'update', 'category': 'Navigation', 'order': '06', 'path': 'treeview', 'samples': treeAppRoutes, 'ftName': "treeview"
     },
     {
         'name': 'File Manager', 'category': 'Navigation', 'order': '06', 'path': 'file-manager', 'samples': fileManagerAppRoutes

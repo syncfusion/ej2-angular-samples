@@ -28,7 +28,7 @@ export class InlineEditing implements OnInit {
      public treegrid: TreeGridComponent;
     ngOnInit(): void {
         this.data = sampleData.slice(0);
-        this.editSettings ={ allowEditing: true, allowAdding: true, allowDeleting: true, mode:"Cell"}; 
+        this.editSettings ={ allowEditing: true, allowAdding: true, allowDeleting: true, mode:"Row"};
         this.toolbar = ['Add', 'Delete', 'Update', 'Cancel','Indent', 'Outdent'];
         this.taskidrules = { required: true , number: true};
         this.tasknamerules = { required: true};

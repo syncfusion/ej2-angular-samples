@@ -1,0 +1,199 @@
+<div class="control-section">
+            <div
+                id="responsive-layout-container"
+                style="display:flex;align-items:center;gap:10px;margin-bottom:10px"
+            >
+                <label for="responsive-layout-checkbox">Switch To Mobile View</label>
+                <ejs-checkbox
+                    id="responsive-layout-checkbox"
+                    (change)="onChange($event)"
+                    aria-label="Responsive Mobile Layout"
+                ></ejs-checkbox>
+            </div>
+
+            <div>
+                <div *ngIf="!isMobileLayout">
+                    <ejs-grid
+                        id="desktopgrid"
+                        [dataSource]="salesData"
+                        height="490px"
+                        [allowFiltering]="true"
+                        [allowSorting]="true"
+                        [showColumnChooser]="true"
+                        [enableInfiniteScrolling]="true"
+                        [filterSettings]="filterOptions"
+                        [toolbar]="toolbarOptions"
+                        [pageSettings]="pageSettings"
+                        [editSettings]="editSettingsDesktop"
+                    >
+                        <e-columns>
+                            <e-column
+                                field="ProductId"
+                                headerText="Product ID"
+                                [isPrimaryKey]="true"
+                                width="130"
+                                textAlign="Right"
+                                [validationRules]="orderidRules"
+                            ></e-column>
+                            <e-column field="ProductName" headerText="Product Name" width="200" [validationRules]="{ required: true }"></e-column>
+                            <e-column field="GrossAmount" headerText="Gross Amount" width="180" format="C2" textAlign="Right"  [defaultValue]="0"></e-column>
+                            <e-column field="NetAmount" headerText="Net Amount" width="180" editType="numericedit" format="C2" textAlign="Right"   [defaultValue]="0"></e-column>
+                            <e-column field="ProfitMargin" headerText="Profit (%)" [validationRules]="{ min: 0, max: 100 }"  textAlign="Right" editType="numericedit" width="180"></e-column>
+                            <e-column field="AchievementPercent" headerText="Achievement (%)" [validationRules]="{ min: 0, max: 100 }" textAlign="Right"  width="190" editType="numericedit"></e-column>
+                            <e-column field="SalesQty" headerText="Sales Quantity" width="150" [validationRules]="{ required: true, min: 1 }" editType="numericedit"  textAlign="Right" textAlign="Right" ></e-column>
+                            <e-column field="UnitPrice" headerText="Price" [defaultValue]="100" width="120" format="C2" textAlign="Right"></e-column>
+                            <e-column field="Month" headerText="Month" width="140" editType="dropdownedit" [defaultValue]="currentMonth"></e-column>
+                            <e-column field="Category" headerText="Category" width="140" editType="dropdownedit" [validationRules]="{ required: true }"></e-column>
+                            <e-column field="SubCategory" headerText="Sub Category" width="150" [visible]="false"></e-column>
+                            <e-column field="Brand" headerText="Brand" width="140" editType="dropdownedit"></e-column>
+                            <e-column field="City" headerText="City" width="130"></e-column>
+                            <e-column field="State" headerText="State" width="120"></e-column>
+                            <e-column field="Country" headerText="Country" width="160"></e-column>
+                            <e-column field="Region" headerText="Region" width="120"></e-column>
+                        </e-columns>
+                    </ejs-grid>
+                </div>
+
+                <div *ngIf="isMobileLayout">
+                    <style>
+                        /* The device with borders */
+                        .e-mobile-layout {
+                            position: relative;
+                            width: 360px;
+                            height: 640px;
+                            margin: auto;
+                            border: 16px #f4f4f4 solid;
+                            border-top-width: 60px;
+                            border-bottom-width: 60px;
+                            border-radius: 36px;
+                            box-shadow: 0 0px 2px rgb(144 144 144), 0 0px 10px rgb(0 0 0 / 16%);
+                        }
+
+                        .tailwind-dark .e-mobile-layout,
+                        .material-dark .e-mobile-layout,
+                        .fabric-dark .e-mobile-layout,
+                        .bootstrap-dark .e-mobile-layout,
+                        .bootstrap5-dark .e-mobile-layout {
+                            border: 16px rgb(255 255 255 / 10%) solid;
+                            border-top-width: 60px;
+                            border-bottom-width: 60px;
+                        }
+
+                        .e-mobile-layout:before {
+                            content: '';
+                            display: block;
+                            width: 60px;
+                            height: 5px;
+                            position: absolute;
+                            top: -30px;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            background: #ebebeb;
+                            border-radius: 10px;
+                        }
+
+                        .tailwind-dark .e-mobile-layout::before,
+                        .tailwind-dark .e-mobile-layout::after,
+                        .material-dark .e-mobile-layout::before,
+                        .material-dark .e-mobile-layout::after,
+                        .fabric-dark .e-mobile-layout::before,
+                        .fabric-dark .e-mobile-layout::after,
+                        .bootstrap-dark .e-mobile-layout::before,
+                        .bootstrap-dark .e-mobile-layout::after,
+                        .bootstrap5-dark .e-mobile-layout::before,
+                        .bootstrap5-dark .e-mobile-layout::after {
+                            background: rgb(255 255 255 / 20%);
+                        }
+
+                        .e-mobile-layout:after {
+                            content: '';
+                            display: block;
+                            width: 35px;
+                            height: 35px;
+                            position: absolute;
+                            left: 50%;
+                            bottom: -65px;
+                            transform: translate(-50%, -50%);
+                            background: #e8e8e8;
+                            border-radius: 50%;
+                        }
+
+                        .e-mobile-layout .e-mobile-content {
+                            overflow: hidden;
+                            height: 100%;
+                            background: transparent;
+                            border: 0px solid #dddddd;
+                        }
+
+                        .highcontrast .e-mobile-layout {
+                            border: 16px #000000 solid;
+                            border-top-width: 60px;
+                            border-bottom-width: 60px;
+                            box-shadow: -1px 2px white, -2px -2px white, 2px -2px white, 2px 1px white;
+                        }
+                    </style>
+
+                    <div class="e-mobile-layout">
+                        <div class="e-mobile-content e-bigger">
+                            <ejs-grid
+                            #adaptive
+                                id="adaptive"
+                                [dataSource]="salesData"
+                                height="100%"
+                                [editSettings]='editSettingsMobile'
+                                [enableAdaptiveUI]="true"
+                                rowRenderingMode="Vertical"
+                                [allowFiltering]="true"
+                                [allowSorting]="true"
+                                [showColumnChooser]="true"
+                                [enableInfiniteScrolling]="true"
+                                [filterSettings]="filterOptions"
+                                [toolbar]="toolbarOptionsMobile"
+                                [pageSettings]="pageSettings"
+                                (created)="onGridLoad()"
+                                clipMode="EllipsisWithTooltip"
+                            >
+                                <e-columns>
+                                    <e-column field="ProductId" headerText="Product ID" [isPrimaryKey]="true" width="130" [validationRules]="{ required: true }"></e-column>
+                                    <e-column field="ProductName" headerText="Product Name" width="200" [validationRules]="{ required: true }"></e-column>
+                                    <e-column field="UnitPrice" headerText="Price" [defaultValue]="100" width="120" format="C2" textAlign="Left"></e-column>
+                                    <e-column field="Category" headerText="Category" width="130" editType="dropdownedit" [validationRules]="{ required: true }"></e-column>
+                                    <e-column field="Brand" headerText="Brand" width="120" editType="dropdownedit"></e-column>
+                                    <e-column field="ProfitMargin" headerText="Profit (%)" [validationRules]="{ min: 0, max: 100 }" editType="numericedit" width="180"></e-column>
+                                    <e-column field="GrossAmount" headerText="Gross Amount" width="180" format="C2" textAlign="Left" [visible]='false'></e-column>
+                                    <e-column field="NetAmount" headerText="Net Amount" width="180" editType="numericedit" format="C2" textAlign="Left" [visible]='false'></e-column>
+                                    <e-column field="AchievementPercent" headerText="Achievement (%)" [validationRules]="{ min: 0, max: 100 }" [visible]='false' width="190" editType="numericedit"></e-column>
+                                    <e-column field="SalesQty" headerText="Sales Quantity" width="150" [visible]='false' [validationRules]="{ required: true, min: 1 }" editType="numericedit" textAlign="Left" ></e-column>                                   
+                                    <e-column field="Month" headerText="Month" width="120" [visible]='false' editType="dropdownedit"></e-column>             
+                                    <e-column field="SubCategory" headerText="Sub Category" width="150" [visible]="false"></e-column>
+                                    <e-column field="City" headerText="City" width="130" [visible]='false'></e-column>
+                                    <e-column field="State" headerText="State" width="120" [visible]='false'></e-column>
+                                    <e-column field="Country" headerText="Country" width="160" [visible]='false'></e-column>
+                                    <e-column field="Region" headerText="Region" width="120" [visible]='false'></e-column>
+                                </e-columns>
+                            </ejs-grid>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    <div id="action-description">
+        <p>This sample demonstrates how to render the Grid in desktop and mobile views, with the desktop displaying more columns and the mobile showing priority columns.</p>
+    </div>
+    <div id='description'>
+        <p> In this demo, the Grid initially renders in desktop view with all columns visible. Selecting <strong>Switch To Mobile View</strong> displays the Grid inside a simulated mobile device frame, showing only priority columns controlled by the <code>visible</code> property, with <code>enableAdaptiveUI</code> enabled and <code>rowRenderingMode</code> set to <code>Vertical</code>. Clearing the checkbox restores the standard desktop Grid layout.</p>
+        <p> Both layouts support sorting, filtering, and infinite scrolling, editing, column chooser through the Grid toolbar.</p>
+        <p>
+             <strong>Injecting Module:</strong>
+        </p>
+         <p>
+              Grid features are provided through individual modules. To enable filtering, sorting, editing, column chooser, and infinite scrolling, inject the <code>FilterService</code>, <code>SortService</code>, <code>EditService</code>, <code>ToolbarService</code>, <code>ColumnChooserService</code>, and <code>InfiniteScrollService</code>, modules into the component providers.
+            </p>
+        <p>
+			More information on row numbers can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/grid/adaptive"> documentation section</a>.
+		</p>
+		<p>
+			Looking for the full Angular Data Grid component overview, features, pricing, and documentation? Visit our
+			<a target="_blank" href="https://www.syncfusion.com/angular-components/angular-data-grid">Angular Data Grid component</a> page.
+		</p>
+    </div>

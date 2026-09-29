@@ -7,7 +7,7 @@
     gap: 50px;
 }
 .attachment-chatui .chat_user_avatar {
-    background-image: url('/assets/chat-ui/images/paul_wilson.png');
+    background-image: url('../../assets/chat-ui/images/paul_wilson.png');
     background-color: unset;
 }
 .attachment-chatui .emptyChatText {

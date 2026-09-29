@@ -23,7 +23,7 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
     public materialWomen: string = '<div style="background-color:#404041;border-radius: 3px;">' +
-        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
@@ -33,7 +33,7 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
     public fabricWomen: string = '<div style="background-color:#ed7d31;border-radius: 3px;">' +
-        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
@@ -43,7 +43,7 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y}M </span></div></div>';
     public bootstrapWomen: string = '<div style="background-color:#f7ce69;border-radius: 3px;">' +
-        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
@@ -53,7 +53,7 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
     public bootstrap5Women: string = '<div style="background-color:#6610F2;border-radius: 3px;">' +
-        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
@@ -63,7 +63,7 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
     public highcontrastWomen: string = '<div style="background-color:#E98272;border-radius: 3px;">' +
-        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
@@ -73,7 +73,7 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
     public tailwindWomen: string = '<div style="background-color:#65A30D;border-radius: 3px;">' +
-        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
@@ -83,7 +83,7 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
     public tailwind3Women: string = '<div style="background-color:#03B4B4;border-radius: 3px;">' +
-        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
@@ -93,7 +93,7 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
     public materialdarkWomen: string = '<div style="background-color:#56AEFF;border-radius: 3px;">' +
-        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
@@ -103,7 +103,7 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
     public fabricdarkWomen: string = '<div style="background-color:#ed7d31;border-radius: 3px;">' +
-        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
@@ -113,7 +113,7 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
     public bootstrapdarkWomen: string = '<div style="background-color:#f7ce69;border-radius: 3px;">' +
-        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
@@ -123,7 +123,7 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
     public tailwinddarkWomen: string = '<div style="background-color:#22D3EE;border-radius: 3px;">' +
-        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
@@ -133,7 +133,7 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
     public tailwind3darkWomen: string = '<div style="background-color:#1ABC9C;border-radius: 3px;">' +
-        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
@@ -143,7 +143,7 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
     public bootstrap5darkWomen: string = '<div style="background-color:#6610F2;border-radius: 3px;">' +
-        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
@@ -153,7 +153,7 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
     public fluentWomen: string = '<div style="background-color:#DA4CB2;border-radius: 3px;">' +
-        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
@@ -163,7 +163,7 @@ export class DataLabelComponent {
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';
     public fluentdarkWomen: string = '<div style="background-color:#DA4CB2;border-radius: 3px;">' +
-        '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+        '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
         '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
         + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
         '${point.y} </span></div></div>';   
@@ -173,7 +173,7 @@ export class DataLabelComponent {
     + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
     '${point.y} </span></div></div>';
     public material3Women: string = '<div style="background-color:#00AEE0;border-radius: 3px;">' +
-    '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+    '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
     '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
     + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
     '${point.y} </span></div></div>';
@@ -183,7 +183,7 @@ export class DataLabelComponent {
     + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
     '${point.y} </span></div></div>';
     public material3darkWomen: string = '<div style="background-color:#FA4EAB;border-radius: 3px;">' +
-    '<img src="./assets/chart/images/male.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
+    '<img src="./assets/chart/images/female.png" style="width: 24px; height: 24px; padding: 2px" alt="Female Icon"/>' +
     '<div style="color:white; font-family:Roboto; font-style: medium; font-size:14px; float: right;'
     + 'padding: 2px;line-height: 20px;text-align: center;padding-right: 6px;"><span>' +
     '${point.y} </span></div></div>';

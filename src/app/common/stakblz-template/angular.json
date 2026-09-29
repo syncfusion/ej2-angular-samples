@@ -11,11 +11,11 @@
         "schematics": {},
         "architect": {
           "build": {
-            "builder": "@angular-devkit/build-angular:browser",
+            "builder": "@angular-devkit/build-angular:application",
             "options": {
               "outputPath": "dist/demo",
               "index": "index.html",
-              "main": "main.ts",
+              "browser": "main.ts",
               "polyfills": "polyfills.ts",
               "tsConfig": "tsconfig.app.json",
               "assets": [
@@ -23,7 +23,7 @@
                 "assets"
               ],
               "styles": [
-                
+
               ],
               "scripts": []
             },
@@ -41,27 +41,25 @@
                 "extractCss": true,
                 "namedChunks": false,
                 "aot": true,
-                "extractLicenses": true,
-                "vendorChunk": false,
-                "buildOptimizer": true
+                "extractLicenses": true
               }
             }
           },
           "serve": {
             "builder": "@angular-devkit/build-angular:dev-server",
             "options": {
-              "browserTarget": "demo:build"
+              "buildTarget": "demo:build"
             },
             "configurations": {
               "production": {
-                "browserTarget": "demo:build:production"
+                "buildTarget": "demo:build:production"
               }
             }
           },
           "extract-i18n": {
             "builder": "@angular-devkit/build-angular:extract-i18n",
             "options": {
-              "browserTarget": "demo:build"
+              "buildTarget": "demo:build"
             }
           },
           "test": {
@@ -98,4 +96,4 @@
     },
     "defaultProject": "demo"
   }
-  
+

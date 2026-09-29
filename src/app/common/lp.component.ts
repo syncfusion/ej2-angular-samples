@@ -21,7 +21,7 @@ declare let window: MyWindow;
 @Component({
     selector: 'left-pane',
     templateUrl: 'left-pane.html',
-    standalone: true, 
+    standalone: true,
     imports: [
         TreeViewModule,
         NgIf,
@@ -40,7 +40,6 @@ export class LPController {
     public app: any;
     public navElement: Element;
     public copyRight: number = new Date().getFullYear();
-    
 
     @ViewChild('controlList')
     public listComponent: ListViewComponent;
@@ -200,6 +199,11 @@ export class LPController {
     afterListviewRendered(e: any): void {
         this.updateGroupItemAttributes();
         this.app.setListItemSelect();
+        const activeItem: Element | null =document.querySelector('#sdklist li.active');
+        if (activeItem) {
+        const sdkKey: string =activeItem.getAttribute('data-sdk') || 'all';
+        this.applySdkFilter(sdkKey);
+        }
     }
 
     onComponentSelect(e: NodeSelectEventArgs) {
@@ -207,6 +211,15 @@ export class LPController {
             return;
         }
         let path: string = e.node.getAttribute('data-path');
+        // Handle AI-Powered Samples redirect based on active SDK
+        if (path && path.includes('/ai-grid/') && this.app) {
+            const aiSample: string = typeof this.app.getAiSdkFirstSample === 'function'
+                ? this.app.getAiSdkFirstSample()
+                : '';
+            if (aiSample) {
+                path = aiSample;
+            }
+        }
         if (path && location.hash.replace('/#', '') !== path) {
             this.navigateSample(path.replace(':theme', this.getCurrentTheme()));
             this.listComponent.dataSource = <any>this.controlSampleData[path.split('/')[1]];
@@ -276,4 +289,128 @@ export class LPController {
         } as any);
     }
 
+    /**
+     * Apply SDK filter to the left pane tree and list views.
+     * Hides any tree node / list item whose control-name is not present in the
+     * currently selected SDK's allowed-controls list.
+     */
+    applySdkFilter(sdkKey: string): void {
+        const controlTree: HTMLElement | null = document.getElementById('controlTree');
+        const controlList: HTMLElement | null = document.getElementById('controlList');
+        const leftPane: HTMLElement | null = document.querySelector('.sb-left-pane');
+
+        if (!sdkKey || sdkKey === 'all') {
+            // Show everything – clear all hidden classes
+            if (controlTree) {
+                controlTree.querySelectorAll('[control-name]').forEach((item: Element) => {
+                    item.classList.remove('sdk-hidden');
+                });
+                controlTree.querySelectorAll('.e-list-item.e-level-1').forEach((item: Element) => {
+                    item.classList.remove('sdk-parent-hidden');
+                });
+            }
+            if (controlList) {
+                controlList.querySelectorAll('.e-list-item, .e-list-group-item').forEach((item: Element) => {
+                    item.classList.remove('sdk-hidden');
+                    item.classList.remove('sdk-sample-hidden');
+                    item.classList.remove('sdk-group-hidden');
+                });
+            }
+            if (leftPane) {
+                leftPane.classList.remove('sdk-filter-active');
+            }
+            return;
+        }
+
+
+        const allowedControls: string[] = (this.app && typeof this.app.getActiveSdkSampleOrder === 'function'
+            ? this.app.getAllowedControlsForSdk(sdkKey)
+            : []) || [];
+        if (leftPane) {
+            leftPane.classList.add('sdk-filter-active');
+        }
+
+        const ownedAiControls: string[] = allowedControls
+            .filter((c: string) => c.indexOf('ai-') === 0);
+
+        // 'ai-grid' umbrella tree node hides entirely when the SDK owns no
+        // ai-* control (e.g. file-manager, rich-text-editor).
+        const showAiNode: boolean = ownedAiControls.length > 0;
+
+        // Filter tree view nodes (child items with control-name)
+        if (controlTree) {
+            controlTree.querySelectorAll('[control-name]').forEach((item: Element) => {
+
+                const dataPath: string = item.getAttribute('data-path') || '';
+                const cn: string = dataPath.replace(/^\/+/, '').split('/')[1] || item.getAttribute('control-name') || '';
+
+                let visible: boolean;
+                if (cn === 'ai-grid') {
+                    visible = showAiNode;
+                } else if (cn.indexOf('ai-') === 0) {
+                    visible = ownedAiControls.indexOf(cn) !== -1;
+                } else {
+                    visible = allowedControls.indexOf(cn) !== -1;
+                }
+                if (!visible) {
+                    item.classList.add('sdk-hidden');
+                } else {
+                    item.classList.remove('sdk-hidden');
+                }
+            });
+
+            // Hide parent category nodes if all their children are hidden.
+            controlTree.querySelectorAll('.e-list-item.e-level-1').forEach((parent: Element) => {
+                const children: NodeListOf<Element> = parent.querySelectorAll('[control-name]');
+                let hasVisible: boolean = false;
+                children.forEach((child: Element) => {
+                    if (!child.classList.contains('sdk-hidden')) {
+                        hasVisible = true;
+                    }
+                });
+                if (!hasVisible) {
+                    parent.classList.add('sdk-parent-hidden');
+                } else {
+                    parent.classList.remove('sdk-parent-hidden');
+                }
+            });
+        }
+
+        // Filter list view items using data-path attribute
+        if (controlList) {
+            controlList.querySelectorAll('.e-list-item').forEach((item: Element) => {
+                const dataPath: string = item.getAttribute('data-path') || '';
+                const controlName: string = dataPath.replace(/^\//, '').split('/')[1] || '';
+                let isMatch: boolean;
+                if (controlName.indexOf('ai-') === 0) {
+                    isMatch = ownedAiControls.includes(controlName);
+                } else {
+                    isMatch = allowedControls.indexOf(controlName) !== -1;
+                }
+                if (!isMatch) {
+                    item.classList.add('sdk-sample-hidden');
+                } else {
+                    item.classList.remove('sdk-sample-hidden');
+                }
+            });
+
+            // Hide group headers that have no visible items
+            controlList.querySelectorAll('.e-list-group-item').forEach((groupItem: Element) => {
+                let sibling: Element | null = groupItem.nextElementSibling;
+                let hasVisible: boolean = false;
+                while (sibling && !sibling.classList.contains('e-list-group-item')) {
+                    if (!sibling.classList.contains('sdk-sample-hidden')) {
+                        hasVisible = true;
+                        break;
+                    }
+                    sibling = sibling.nextElementSibling;
+                }
+                if (!hasVisible) {
+                    groupItem.classList.add('sdk-group-hidden');
+                } else {
+                    groupItem.classList.remove('sdk-group-hidden');
+                }
+            });
+        }
+    }
 }

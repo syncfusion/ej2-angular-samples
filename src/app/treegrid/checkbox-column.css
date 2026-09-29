@@ -1,0 +1,51 @@
+.e-bigger.bootstrap5 .e-treegrid .e-hierarchycheckbox .e-frame,
+.e-bigger.bootstrap5-dark .e-treegrid .e-hierarchycheckbox .e-frame,
+.e-bigger.bootstrap4 .e-treegrid .e-hierarchycheckbox .e-frame {
+  height: 17px;
+  width: 17px;
+}
+.checkboxprop {
+  padding-bottom: 5px;
+}
+.checkboxmode {
+  display: inline-block;
+}
+.checkboxprop > .checkboxmode {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.checkboxprop > .checkboxmode > span {
+  white-space: nowrap;
+}
+.checkboxprop > .checkboxmode > .checkboxmode {
+  flex: 0 0 180px;
+  width: 180px;
+}
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+.completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+.in-progress {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+.not-started {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+.under-review {
+  background: #fef3c7;
+  color: #b45309;
+}
+.blocked {
+  background: #fee2e2;
+  color: #dc2626;
+}

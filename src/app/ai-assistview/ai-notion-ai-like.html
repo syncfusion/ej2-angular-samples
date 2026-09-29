@@ -53,7 +53,7 @@
       [visible]="false"
       [cssClass]="'custom-dialog'">
       <div id="assistviewWrapper" class="notion-aiassistview">
-        <div id="aiAssistView" ejs-aiassistview 
+        <ejs-aiassistview 
           #aiAssistViewRef
           [promptSuggestions]="promptSuggestions"
           [promptSuggestionItemTemplate]="promptTemplate"
@@ -67,19 +67,18 @@
           [attachmentSettings]="attachmentSettings"
           [speechToTextSettings]="speechToTextSettings"
           [enableStreaming]="true">
+          <ng-template #bannerTemplate>
+             <div class="banner-content">
+             <div class="e-icons e-assistview-icon"></div>
+             <h3>How can I help you today ?</h3>
+             </div>
+           </ng-template>
           <e-views>
             <e-view type="Assist" name="New AI chat"></e-view>
           </e-views>
-        </div>
+        </ejs-aiassistview>
       </div>
     </ejs-dialog>
-
-    <ng-template #bannerTemplate>
-      <div class="banner-content">
-        <div class="e-icons e-assistview-icon"></div>
-        <h3>How can I help you today ?</h3>
-      </div>
-    </ng-template>
 
     <ng-template #promptTemplate let-data>
       <div class="suggestion-item active">

@@ -3,7 +3,7 @@ import { BlockEditor, BlockEditorModule, BlockModel, PasteCleanupSettingsModel }
 import { DropDownListComponent, FieldSettingsModel, DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { TextBoxComponent, TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { isNullOrUndefined } from '@syncfusion/ej2-base';
-import blockData from './blockData.json';
+import blockData from './data/paste-settings.json';
 
 @Component({
     selector: 'app-root',

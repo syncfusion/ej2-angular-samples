@@ -1,59 +1,83 @@
-<div id="action-description">
-    <p>
-        This sample demonstrates the checkbox column selection functionality of Tree Grid. Click on any parent record
-        checkbox then the child record checkboxes will get selected and parent record checkbox will get selected while
-        checking all of its child items.
-    </p>
-</div>
 <div class="control-section">
-    <ejs-treegrid [dataSource]='data' height='400' autoCheckHierarchy='true' childMapping='subtasks'
-        [treeColumnIndex]='1'>
-        <e-columns>
-            <e-column field='taskID' headerText='Task ID' isPrimaryKey='true' width='70' textAlign='Right'></e-column>
-            <e-column field='taskName' headerText='Task Name' width='200' [showCheckbox]='true'></e-column>
-            <e-column field='startDate' headerText='Start Date' width='90' format="yMd" textAlign='Right'></e-column>
-            <e-column field='duration' headerText='Duration' width='80' textAlign='Right'></e-column>
-            <e-column field='progress' headerText='Progress' width='80' textAlign='Right'></e-column>
-            <e-column field='priority' headerText='Priority' width='90'></e-column>
-        </e-columns>
-    </ejs-treegrid>
+    <div class="content-wrapper">
+        <div class="checkboxprop">
+            <div class="checkboxmode">
+                <span>Hierarchy Checkbox Mode</span>
+                <div class="checkboxmode">
+                    <ejs-dropdownlist id="hierarchyModes" tabindex="1" width="180px" [dataSource]="hierarchyModeData"
+                        [fields]="hierarchyModeFields" value="Self" (change)="hierarchyModeChange($event)">
+                    </ejs-dropdownlist>
+                </div>
+            </div>
+        </div>
+        <ejs-treegrid #treegrid id="TreeGrid" aria-label="Tree Grid" [dataSource]="data" childMapping="subTasks"
+            [treeColumnIndex]="1" [toolbar]="toolbarOptions" [allowFiltering]="true" [height]="380" [editSettings]='editSettings'
+            [hierarchyCheckboxMode]="hierarchyCheckboxMode">
+            <e-columns>
+                <e-column field="taskID" [visible]="false" [isPrimaryKey]="true">
+                </e-column>
+                <e-column field="taskName" headerText="Task Name" width="270" [showCheckbox]="true">
+                </e-column>
+                <e-column field="assignee" headerText="Employee" width="180">
+                </e-column>
+                <e-column field="designation" headerText="Designation" width="220">
+                </e-column>
+                <e-column field="priority" headerText="Priority" width="140">
+                </e-column>
+                <e-column field="status" headerText="Status" width="120">
+                <ng-template #template let-data>
+                <span
+                [class]="'status-badge ' + getStatusClass(data.status)">
+                {{ data.status }}
+                </span>
+                </ng-template>
+                </e-column>
+                <e-column field="progress" headerText="Progress" width="120" textAlign="Right">
+                </e-column>
+            </e-columns>
+        </ejs-treegrid>
+    </div>
+</div>
+<div id="action-description">
+<p>
+    This sample demonstrates hierarchical checkbox selection in the TreeGrid
+    using the <code>hierarchyCheckboxMode</code> property.
+</p>
 </div>
 <div id="description">
-    <p>The Tree Grid component can be rendered with checkbox on existing column and also this can be enabled by
-        <code>showCheckbox</code> property as true in columns API.
-    </p>
     <p>
-        For hierarchy selection between the records, we need to enable the <code>autoCheckHierarchy</code> property.
+        Checkboxes are displayed in the Tree Grid tree column by enabling the
+        <code><a target="_blank" class="code"
+            href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/treegridcolumn#showcheckbox">showCheckbox</a></code>
+        property. The checkbox selection behavior across hierarchical records is controlled through the
+        <code><a target="_blank" class="code"
+            href="https://ej2.syncfusion.com/angular/documentation/api/treegrid/#hierarchycheckboxmode">hierarchyCheckboxMode</a></code>
+        property.
     </p>
+
     <p>
-        While using Tree Grid in a touch device, you have an option to select the checkboxes by tapping on the checkbox.
+        In <strong>self</strong> mode, selecting a checkbox affects only the clicked row.
+        In <strong>hierarchy</strong> mode, selecting a parent row automatically selects all its child rows, and changes made to child rows are reflected in their parent rows.
+        The <strong>filteredHierarchy</strong> mode behaves similarly to hierarchy mode but applies selection only to the rows currently visible after filtering or searching.
     </p>
+
     <p>
-        More information on the checkbox selection configuration can be found in this 
-        <a target="_blank" 
-        href="https://ej2.syncfusion.com/angular/documentation/treegrid/columns/columns#checkbox-column">
-        documentation section</a>.
+        On touch-enabled devices, checkboxes can be selected or cleared by tapping them directly.
     </p>
-    <p>Looking for the full Angular Tree Grid component overview, features, pricing, and documentation? Visit our <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-tree-grid">Angular Tree Grid component</a> page.</p>
+
+    <p>
+        More information on checkbox column can be found in this
+        <a target="_blank"
+            href="https://ej2.syncfusion.com/angular/documentation/treegrid/columns/columns#checkbox-column">
+            documentation section</a>.
+    </p>
+
+    <p>
+        Looking for the full Angular Tree Grid component overview, features, pricing, and documentation?
+        Visit our
+        <a target="_blank"
+            href="https://www.syncfusion.com/angular-components/angular-tree-grid">
+            Angular Tree Grid component</a>
+        page.
+    </p>
 </div>
-<!-- custom code start -->
-<style>
-    .e-bigger.bootstrap5 .e-treegrid .e-hierarchycheckbox .e-frame,
-    .e-bigger.bootstrap5-dark .e-treegrid .e-hierarchycheckbox .e-frame {
-        height: 17px;
-        width: 17px;
-    }
-
-    .e-bigger.bootstrap4 .e-treegrid .e-hierarchycheckbox .e-frame {
-        height: 18px;
-        width: 18px;
-    }
-
-    .fluent2 .e-grid .e-gridheader thead .e-icons,
-   .fluent2-dark .e-grid .e-gridheader thead .e-icons,
-   .fluent2-highcontrast .e-grid .e-gridheader thead .e-icons{
-        position: relative;
-    	bottom: 4px;
-    }
-</style>
-<!-- custom code end -->

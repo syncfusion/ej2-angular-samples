@@ -1,0 +1,294 @@
+<div class="control-section">
+  <div class="approval-sample">
+    <div class="approval-layout">
+      <div class="diagram-pane">
+        <ejs-diagram
+          #diagram
+          id="diagram"
+          width="100%"
+          height="100%"
+          [nodes]="nodes"
+          [connectors]="connectors"
+          [selectedItems]="selectedItems"
+          [tool]="tool"
+          [snapSettings]="snapSettings"
+          [getNodeDefaults]="getNodeDefaults"
+          (created)="created()"
+          (selectionChange)="selectionChange($event)"
+          (onUserHandleMouseDown)="onUserHandleMouseDown($event)"
+        >
+          <!--
+            Important:
+            data is used only to obtain the node ID.
+            Display values come from Angular-owned nodeViews.
+          -->
+          <ng-template #nodeTemplate let-data>
+            <ng-container
+              *ngIf="nodeView(data.id) as view"
+            >
+              <div
+                class="node-card"
+                [ngClass]="[
+                  'type-' + view.type,
+                  'state-' + view.status
+                ]"
+              >
+                <div class="node-kicker">
+                  {{ view.type }}
+                </div>
+
+                <div class="node-title">
+                  {{ view.title }}
+                </div>
+
+                <div class="node-metrics">
+                  <span>
+                    <small>{{ view.primaryLabel }}</small>
+                    <b>{{ view.primaryValue }}</b>
+                  </span>
+
+                  <span>
+                    <small>{{ view.secondaryLabel }}</small>
+                    <b>{{ view.secondaryValue }}</b>
+                  </span>
+                </div>
+
+                <div class="node-message">
+                  {{ view.message }}
+                </div>
+              </div>
+            </ng-container>
+          </ng-template>
+
+          <!--
+            Annotation data has an ID such as request-status.
+            The view is resolved using that annotation ID.
+          -->
+          <ng-template #annotationTemplate let-data>
+            <ng-container
+              *ngIf="annotationView(data.id) as view"
+            >
+              <div
+                class="node-note"
+                [ngClass]="'state-' + view.status"
+              >
+                {{ view.text }}
+              </div>
+            </ng-container>
+          </ng-template>
+
+          <ng-template #userHandleTemplate let-data>
+            <div
+              class="user-action"
+              [class.action-approve]="data.name === 'approve'"
+              [class.action-reject]="data.name === 'reject'"
+              [attr.title]="
+                data.name === 'approve'
+                  ? 'Approve request'
+                  : 'Reject request'
+              "
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  *ngIf="data.name === 'approve'; else rejectIcon"
+                  d="M4 10.5l3.5 3.5L16 5.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+
+                <ng-template #rejectIcon>
+                  <path
+                    d="M5.5 5.5l9 9M14.5 5.5l-9 9"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                  ></path>
+                </ng-template>
+              </svg>
+            </div>
+          </ng-template>
+        </ejs-diagram>
+      </div>
+
+      <aside
+        class="properties"
+        aria-label="Purchase request details"
+      >
+        <h3>Purchase request</h3>
+
+        <p class="intro">
+          Submit a valid equipment request. The budget is checked first,
+          then the workflow pauses at Manager Review for approval.
+        </p>
+
+        <label class="field">
+          <span>Equipment</span>
+          <input
+            [value]="request.item"
+            [disabled]="inputsDisabled"
+            (input)="updateTextField('item', $event)"
+          />
+        </label>
+
+        <label class="field">
+          <span>Requester</span>
+          <input
+            [value]="request.requester"
+            [disabled]="inputsDisabled"
+            (input)="updateTextField('requester', $event)"
+          />
+        </label>
+
+        <label class="field">
+          <span>Business reason</span>
+          <textarea
+            [value]="request.reason"
+            [disabled]="inputsDisabled"
+            (input)="updateTextField('reason', $event)"
+          ></textarea>
+        </label>
+
+        <div class="field-row">
+          <label class="field">
+            <span>Quantity</span>
+            <input
+              type="number"
+              min="1"
+              [value]="request.quantity"
+              [disabled]="inputsDisabled"
+              (input)="updateNumberField('quantity', $event)"
+            />
+          </label>
+
+          <label class="field">
+            <span>Unit price</span>
+            <input
+              type="number"
+              min="1"
+              [value]="request.unitPrice"
+              [disabled]="inputsDisabled"
+              (input)="updateNumberField('unitPrice', $event)"
+            />
+          </label>
+        </div>
+
+        <div
+          *ngIf="validationMessage"
+          class="validation"
+          role="alert"
+        >
+          {{ validationMessage }}
+        </div>
+
+        <div class="actions">
+          <button
+            type="button"
+            class="primary"
+            [disabled]="submitDisabled"
+            (click)="submitRequest()"
+          >
+            Submit request
+          </button>
+
+          <button
+            type="button"
+            class="secondary"
+            [disabled]="resetDisabled"
+            (click)="resetWorkflow()"
+          >
+            Reset
+          </button>
+        </div>
+
+        <div
+          class="workflow-message"
+          aria-live="polite"
+        >
+          {{ workflowMessage }}
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<div id="action-description">
+    <p>
+      This sample demonstrates an equipment purchase approval workflow using the Syncfusion<sup>®</sup> EJ2 Angular Diagram component. It visualizes the end-to-end process, from request submission and budget validation to manager approval, purchase order creation, and final outcome tracking.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+      This sample showcases an interactive equipment purchase approval workflow using the Syncfusion<sup>®</sup> EJ2 Angular Diagram component. HTML nodes display purchase details for each stage, while connectors represent the workflow path and annotation templates display the current status of each stage. The <code>refreshTemplate</code> API updates the node and annotation templates at runtime.    </p>
+    <p>
+        The workflow validates the equipment name, requester, business reason, quantity, and unit price before allowing a request to be submitted. When the user clicks the <b>Submit Request</b> button, the workflow first checks the available budget. If the request is within the available budget, the workflow pauses at <b>Manager Review</b> and displays <b>Approve</b> and <b>Reject</b> handles on the selected manager node. Approval creates a purchase order and moves the request toward completion, while rejection or an insufficient budget follows the red path to a rejected outcome. The <b>Reset</b> option clears the workflow and prepares it for a new request.
+    </p>
+
+    <br>
+</div>
+<style>
+    .approval-sample { width: 100%; height: 560px; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #f8fafc; }
+    .approval-sample .approval-layout { display: grid; grid-template-columns: minmax(0, 1fr) 220px; height: 100%; }
+    .approval-sample .diagram-pane { min-width: 0; background: #f8fafc; }
+    .approval-sample #diagram { width: 100%; height: 100%; }
+
+    .approval-sample .properties { padding: 14px; overflow: auto; border-left: 1px solid #e2e8f0; background: #fff; color: #1e293b; }
+    .approval-sample .properties h3 { margin: 0 0 4px; font-size: 17px; }
+    .approval-sample .properties .intro { margin: 0 0 14px; color: #64748b; font-size: 10px; line-height: 1.4; }
+    .approval-sample .field { display: block; margin-top: 10px; }
+    .approval-sample .field span { display: block; margin-bottom: 4px; color: #475569; font-size: 10px; font-weight: 650; }
+    .approval-sample .field input, .approval-sample .field textarea { box-sizing: border-box; width: 100%; border: 1px solid #cbd5e1; border-radius: 8px; padding: 8px 9px; color: #1e293b; background: #fff; font: inherit; font-size: 11px; font-weight: 400; }
+    .approval-sample .field textarea { min-height: 56px; resize: vertical; }
+    .approval-sample .field input:disabled, .approval-sample .field textarea:disabled { color: #64748b; background: #f1f5f9; }
+    .approval-sample .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .approval-sample .actions { display: grid; grid-template-columns: 1fr auto; gap: 7px; margin-top: 13px; }
+    .approval-sample .actions button { min-height: 36px; border-radius: 8px; padding: 8px 11px; cursor: pointer; font-size: 11px; font-weight: 700; }
+    .approval-sample .actions .primary { border: 0; color: #fff; background: #4f46e5; }
+    .approval-sample .actions .secondary { border: 1px solid #cbd5e1; color: #334155; background: #fff; }
+    .approval-sample .actions button:disabled { cursor: default; opacity: .55; }
+    .approval-sample .validation { margin-top: 10px; padding: 8px; border-radius: 7px; color: #991b1b; background: #fef2f2; font-size: 10px; line-height: 1.4; }
+    .approval-sample .workflow-message { margin-top: 12px; padding: 9px; border-radius: 8px; color: #475569; background: #f1f5f9; font-size: 10px; line-height: 1.45; }
+
+    .approval-sample .node-card { box-sizing: border-box; width: 100%; height: 100%; padding: 11px 12px; overflow: hidden; border: 1px solid #dbe3ec; border-radius: 13px; color: #1e293b; background: #fff; box-shadow: 0 7px 20px rgba(15, 23, 42, .07); text-align: left; }
+    .approval-sample .node-card.state-active { border-color: #818cf8; box-shadow: 0 7px 22px rgba(79, 70, 229, .15); }
+    .approval-sample .node-card.state-approved, .approval-sample .node-card.state-completed { border-color: #a7f3d0; }
+    .approval-sample .node-card.state-rejected { border-color: #fecaca; }
+    .approval-sample .node-kicker { color: #64748b; font-size: 8px; font-weight: 750; text-transform: uppercase; letter-spacing: .07em; }
+    .approval-sample .node-title { margin-top: 3px; font-size: 12px; font-weight: 750; }
+    .approval-sample .node-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 9px; }
+    .approval-sample .node-metrics span { min-width: 0; padding: 7px; border-radius: 7px; background: #f8fafc; }
+    .approval-sample .node-metrics small, .approval-sample .node-metrics b { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .approval-sample .node-metrics small { color: #94a3b8; font-size: 8px; }
+    .approval-sample .node-metrics b { margin-top: 2px; font-size: 10px; }
+    .approval-sample .node-message { margin-top: 7px; overflow: hidden; color: #64748b; font-size: 8.5px; line-height: 1.35; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+    .approval-sample .type-result { display: grid; align-content: center; text-align: center; }
+    .approval-sample .type-result .node-metrics { grid-template-columns: 1fr; margin-top: 7px; }
+    .approval-sample .type-result .node-metrics span:nth-child(2) { display: none; }
+
+    .approval-sample .node-note { display: inline-flex; align-items: center; justify-content: center; min-width: 92px; height: 22px; padding: 0 8px; border: 1px solid #dbe3ec; border-radius: 99px; color: #64748b; background: #fff; box-shadow: 0 2px 7px rgba(15,23,42,.06); font-size: 8px; font-weight: 700; }
+    .approval-sample .node-note.state-active { color: #4338ca; border-color: #c7d2fe; background: #eef2ff; }
+    .approval-sample .node-note.state-approved, .approval-sample .node-note.state-completed { color: #047857; border-color: #a7f3d0; background: #ecfdf5; }
+    .approval-sample .node-note.state-rejected { color: #b91c1c; border-color: #fecaca; background: #fef2f2; }
+
+    .approval-sample .user-action { display: grid; place-items: center; width: 100%; height: 100%; border: 2px solid #fff; border-radius: 50%; color: #fff; box-shadow: 0 4px 12px rgba(15,23,42,.2); font-size: 17px; font-weight: 800; cursor: pointer; }
+    .approval-sample .action-approve { background: #059669; }
+    .approval-sample .action-reject { background: #dc2626; }
+    .approval-sample .e-diagram-endpoint-handle.e-disabled, .approval-sample .e-diagram-bezier-control-handle.e-disabled, .approval-sample .e-diagram-resize-handle.e-disabled {
+        opacity: 0;
+    }
+
+    @media (max-width: 850px) {
+        .approval-sample .approval-layout { grid-template-columns: 1fr; grid-template-rows: 420px auto; }
+        .approval-sample { height: auto; }
+        .approval-sample .properties { border-top: 1px solid #e2e8f0; border-left: 0; }
+    }
+</style>

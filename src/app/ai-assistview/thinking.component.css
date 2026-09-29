@@ -1,0 +1,23 @@
+.thinking-aiassistview {
+    height: 600px;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.thinking-aiassistview .banner-content .e-brain:before {
+    font-size: 35px;
+}
+
+.thinking-aiassistview .banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 330px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 750px) {
+    .thinking-aiassistview {
+        width: 100%;
+    }
+}

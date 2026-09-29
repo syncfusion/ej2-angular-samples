@@ -11,7 +11,7 @@
   line-height: 50px;
 }
 .default-appbar-section .e-appbar.prominent-appbar {
-  background-image: url('/assets/appbar/images/prominent.png');
+  background-image: url('../../assets/appbar/images/prominent.png');
   background-size: 100% 400px;
   color: #ffffff;
   background-repeat: no-repeat;

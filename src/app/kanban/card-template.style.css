@@ -22,13 +22,11 @@
 }
 
 .kanban-card-template .e-card .e-clock::before {
-  content: '\e20c';
   color: #ffa500;
   font-size: 10px;
 }
 
-.kanban-card-template .e-card .e-done::before {
-  content: '\ea84';
+.kanban-card-template .e-card .e-circle-check::before {
   color: #008000;
   font-size: 16px;
 }

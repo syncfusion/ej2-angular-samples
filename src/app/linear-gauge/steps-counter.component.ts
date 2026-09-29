@@ -8,7 +8,14 @@ import { LinearGaugeModule, AnnotationsService } from '@syncfusion/ej2-angular-l
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [LinearGaugeModule],
-    providers: [AnnotationsService]
+    providers: [AnnotationsService],
+    styles: [`
+        @media screen and (max-width: 480px) {
+            .steps-counter-title {
+                margin-left: -30px;
+            }
+        }
+    `]
 })
 
 export class StepsCounterComponent {
@@ -49,7 +56,7 @@ export class StepsCounterComponent {
     }];
 
     public annotation: Object = [{
-        content: `<div style="width: 70px;"> <p align="center" style="font-size:10px;margin-left:56px;margin-top:18px;font-weight: 400;color:${this.textColor};">STEPS</p> <p align="center" style="font-size: 23px;margin-top:-15px;margin-left:46px;color: #0DC9AB;font-weight: 600;">8456</p></div>`,
+        content: `<div class="steps-counter-title" style="width: 70px;"> <p align="center" style="font-size:10px;margin-left:56px;margin-top:18px;font-weight: 400;color:${this.textColor};">STEPS</p> <p align="center" style="font-size: 23px;margin-top:-15px;margin-left:46px;color: #0DC9AB;font-weight: 600;">8456</p></div>`,
         axisIndex: 0,
         axisValue: 12000,
         x: 10,
@@ -71,11 +78,11 @@ export class StepsCounterComponent {
         args.gauge.theme = <LinearGaugeTheme>(selectedTheme.charAt(0).toUpperCase() +
             selectedTheme.slice(1)).replace(/-dark/i, 'Dark').replace(/contrast/i, 'Contrast').replace(/-high/i, 'High').replace(/5.3/i, '5');
         this.textColor = args.gauge.theme.indexOf('Dark') > -1 || args.gauge.theme.indexOf('HighContrast') > -1 ? '#FFFFFF' : '#000000';
-        args.gauge.annotations[0].content = `<div style="width: 70px;"> <p align="center" style="font-size:10px;margin-left:56px;margin-top:18px;font-weight: 400;color:${this.textColor};">STEPS</p> <p align="center" style="font-size: 23px;margin-top:-15px;margin-left:46px;color: #0DC9AB;font-weight: 600;">8456</p></div>`;
+        args.gauge.annotations[0].content = `<div class="steps-counter-title" style="width: 70px;"> <p align="center" style="font-size:10px;margin-left:56px;margin-top:18px;font-weight: 400;color:${this.textColor};">STEPS</p> <p align="center" style="font-size: 23px;margin-top:-15px;margin-left:46px;color: #0DC9AB;font-weight: 600;">8456</p></div>`;
         args.gauge.annotations[1].content = `<div style="width: 145px;font-size: 19px;margin-left:142px;color:${this.textColor};"> Sun, 7 February </div>`;
         // custom code end
     }
-    
+
     constructor() {
         // code
     };

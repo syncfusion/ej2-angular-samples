@@ -1,0 +1,245 @@
+{
+    "blockDataAPI": [
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 2
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Why Do We Need APIs for Web UI Components?"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "APIs (Application Programming Interfaces) are critical for modern web UI components because they:"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Enable Customization: ",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "Enable Customization: Developers can tailor components to match application requirements without altering the core code."
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Improve Maintainability: ",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "Clear APIs separate logic from presentation, making updates and debugging easier."
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Enhance Integration: ",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "APIs allow components to interact seamlessly with other parts of the application or external services."
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Boost Productivity: ",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "Predefined properties, methods, and events reduce development time by providing ready-to-use functionality."
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Usage of properties and methods"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "APIs in UI components typically expose properties and methods"
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 4
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Properties"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Properties define the state or configuration of the component."
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Example Use Cases:",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Set the editor’s read-only mode."
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Enable or disable persisting component’s state between page reloads."
+                }
+            ]
+        },
+        {
+            "blockType": "Code",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "blockEditor.readOnly = true;\nblockEditor.enablePersistence = true;"
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 4
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Methods"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Methods perform actions on the component dynamically."
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Example Use Cases:",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Add or remove blocks programmatically."
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Retrieve JSON data content from the editor."
+                }
+            ]
+        },
+        {
+            "blockType": "Code",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "const newBlock: BlockModel = {\nid: 'new-block', \nblockType: 'Paragraph',\ncontent: [ { \ncontentType: 'Text', content: 'This is a newly added block'}]\n};\neditor.addBlock(newBlock,'target-block-id');\nconst blockData = editor.getDataAsJson('new-block');"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph"
+        }
+    ]
+}

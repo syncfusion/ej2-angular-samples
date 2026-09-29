@@ -1,0 +1,64 @@
+<div class="control-section">
+    <div class="sample-container">
+        <div class="forum-section">
+            <div class="forum-header">
+                <span class="forum-icon">&#128172;</span>
+                <span class="forum-title">Discussion</span>
+            </div>
+
+            <div class="rte-container">
+                <img id="userAvatar" class="comment-avatar" [src]="userAvatar" [alt]="userName">
+                <div class="rte-input">
+                    <ejs-richtexteditor-ui #editor
+                        id='editor'
+                        placeholder='Write your comment...'
+                        [toolbarSettings]='toolbarSettings'>
+                    </ejs-richtexteditor-ui>
+                    <div class="button-group">
+                        <button ejs-button id="updateBtn" class="e-btn e-primary" (click)='onPost()'>Post</button>
+                        <button ejs-button id="discardBtn" class="e-btn e-outline" (click)='onDiscard()'>Discard</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comments-container">
+                <label class="comments-title">Comments</label>
+                <ejs-listview #commentsList id='commentsList'
+                    [dataSource]='comments'
+                    (click)='onCommentsClick($event)'>
+                    <ng-template #template let-data>
+                        <div class="comment-item">
+                            <img class="comment-avatar" [src]="data.avatar" [alt]="data.author">
+                            <div class="comment-body">
+                                <div class="comment-actions">
+                                    <button class="e-btn e-icons e-copy e-icon-btn e-flat e-small action-btn copy-btn" title="Copy"></button>
+                                    <button class="e-btn e-icons e-trash e-icon-btn e-flat e-small action-btn delete-btn" title="Delete"></button>
+                                </div>
+                                <div class="comment-header">
+                                    <span class="comment-author">{{data.author}}</span>
+                                    <span class="comment-time">commented on {{data.date}} at {{data.time}}</span>
+                                </div>
+                                <div class="comment-text" [innerHTML]="data.content"></div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="action-description">
+    <p>This sample demonstrates a forum discussion component with Rich Text Editor UI and ListView for displaying and managing comments.</p>
+</div>
+
+<div id="description">
+    <p>The Rich Text Editor UI is integrated with Syncfusion ListView component to create a forum discussion interface. Users can write formatted comments using the RTE, then submit them to display in the ListView. Each comment item shows the author's avatar, name, timestamp, and provides copy and delete action buttons.</p>
+    <ul>
+        <li><code>Rich Text Editor UI</code> &mdash; Used to compose formatted comments with a focused toolbar set.</li>
+        <li><code>ListView</code> &mdash; Displays the list of comments with a custom item template. Each item shows the avatar, author, timestamp, and content.</li>
+        <li><code>Post</code> &mdash; Adds the editor content as a new comment at the top of the list and clears the editor.</li>
+        <li><code>Discard</code> &mdash; Clears the editor without adding a comment.</li>
+        <li><code>Copy / Delete</code> &mdash; Action buttons on each comment let users copy the comment text to the clipboard or remove the comment from the list.</li>
+    </ul>
+</div>

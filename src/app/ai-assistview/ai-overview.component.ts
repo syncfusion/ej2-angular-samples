@@ -16,7 +16,11 @@ import { getAIResponse } from '../common/ai-service';
 })
 export class AIAssistOverviewComponent {
   constructor(@Inject('sourceFiles') private sourceFiles: any) {
-      sourceFiles.files = ['ai-overview.component.css'];
+      sourceFiles.files = [
+        'ai-overview.component.css',
+        'ai-overview.html', 
+        'promptResponseData.ts'
+      ];
       AIAssistView.Inject(AssistThinking);
   }
 

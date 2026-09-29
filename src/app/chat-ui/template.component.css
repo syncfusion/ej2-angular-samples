@@ -5,7 +5,7 @@
 }
 
 .template-chatui .chat-bot {
-    background-image: url('/assets/chat-ui/images/bot.png');
+    background-image: url('../../assets/chat-ui/images/bot.png');
     background-color: unset;
 }
 

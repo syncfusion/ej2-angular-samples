@@ -3,6 +3,7 @@ import {
   ViewChild,
   ViewEncapsulation,
   HostListener,
+  Inject
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
@@ -59,6 +60,12 @@ export class AIAsssitAISample {
     'What are the best tools for organizing tasks?',
     'How can I maintain work-life balance?'
   ];
+  constructor(@Inject('sourceFiles') private sourceFiles: any) {
+      sourceFiles.files = [
+        'ai-integrations.html', 
+        'ai-integrations.component.css'
+      ];
+    }
   private selectedConvId: string = '';
   public listData: any[] = [];
   private isMobile: boolean = false;

@@ -1,0 +1,4 @@
+body.tailwind3 #CheckboxSelection.e-gantt .e-gantt-tree-grid-pane .e-headercell,
+body.tailwind3-dark #CheckboxSelection.e-gantt .e-gantt-tree-grid-pane .e-headercell {
+  padding: 0px 8px !important;
+}

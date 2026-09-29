@@ -1,0 +1,238 @@
+.e-schedule.custom-scheduler .template-wrap {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.e-schedule.custom-scheduler .template-wrap>div:first-child {
+    flex: 0 0 65%;
+    display: flex;
+    align-items: center;
+    padding: 10px 8px;
+    box-sizing: border-box;
+}
+
+.e-schedule.custom-scheduler .template-wrap>div:last-child {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 10px 8px;
+    box-sizing: border-box;
+}
+
+.e-schedule.custom-scheduler .header-indent {
+    font-weight: 500;
+    padding-left: 7px;
+}
+
+.e-schedule.custom-scheduler .e-resource-left-td {
+    width: 224px !important;
+}
+
+.e-schedule.custom-scheduler .e-resource-cells {
+    vertical-align: middle;
+}
+
+.e-schedule.custom-scheduler .e-resource-cells>div {
+    padding: 6px 0;
+}
+
+.e-schedule.custom-scheduler .e-resource-text {
+    padding: 0 !important;
+}
+
+
+.e-schedule.custom-scheduler .e-resource-text {
+    display: flex !important;
+    align-items: center;
+    height: 100%;
+}
+
+.e-schedule.custom-scheduler .e-resource-cells {
+    vertical-align: middle;
+}
+
+.e-schedule.custom-scheduler .template-wrap {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.e-schedule.custom-scheduler {
+    margin-top: 12px;
+}
+
+.e-schedule.custom-scheduler .schedule-container {
+    padding: 16px 10px 10px;
+    /* top padding increased */
+    height: 650px;
+    box-sizing: border-box;
+}
+
+.e-schedule.custom-scheduler .template-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.e-schedule.custom-scheduler .template-wrap>div:first-child {
+    flex: 0 0 65%;
+    padding: 10px 8px;
+    box-sizing: border-box;
+
+}
+
+.e-schedule.custom-scheduler .template-wrap>div:last-child {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.e-schedule.custom-scheduler .e-resource-cells {
+    position: relative;
+}
+
+.e-schedule.custom-scheduler .e-resource-cells::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 65%;
+    width: 1px;
+    background-color: var(--color-sf-border-light, #dee2e6);
+}
+
+.e-schedule.custom-scheduler .template-wrap {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.e-schedule.custom-scheduler .e-resource-text {
+    padding-left: 0 !important;
+}
+
+.e-schedule.custom-scheduler .template-wrap>div:first-child {
+    padding-left: 0 !important;
+}
+
+.e-schedule.custom-scheduler .e-resource-left-td {
+    position: relative;
+}
+
+.e-schedule.custom-scheduler .e-resource-left-td::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 65%;
+    width: 1px;
+    background-color: var(--color-sf-border-light, #dee2e6);
+}
+
+.cascading-editor-dialog .e-dlg-content table tr {
+    height: auto;
+}
+
+.cascading-editor-dialog .e-field {
+    height: 36px !important;
+}
+
+.cascading-editor-dialog td:first-child {
+    padding-right: 12px;
+    vertical-align: middle;
+}
+
+.cascading-editor-dialog .e-dlg-content {
+    padding: 20px 24px !important;
+}
+
+.cascading-editor-dialog .e-footer-content {
+    padding: 12px 20px;
+}
+
+.cascading-editor-dialog table {
+    width: 100% !important;
+    border-collapse: collapse;
+}
+
+.cascading-editor-dialog table td {
+    padding: 6px 4px !important;
+    vertical-align: middle;
+}
+
+.cascading-editor-dialog table td:first-child {
+    width: 100px;
+    font-weight: 500;
+}
+
+.cascading-editor-dialog table td:last-child {
+    flex: 1;
+}
+
+.cascading-editor-dialog .e-field {
+    max-width: 350px;
+    padding: 8px 12px !important;
+    border: 1px solid;
+    border-radius: 4px !important;
+    font-size: 14px !important;
+}
+
+.e-schedule.custom-scheduler.e-rtl .template-wrap {
+    flex-direction: row-reverse;
+}
+
+.cascading-editor-dialog .e-field,
+.cascading-editor-dialog .e-control-wrapper {
+    max-width: 350px;
+    width: 100%;
+}
+
+.cascading-editor-dialog .e-input {
+    display: block;
+}
+
+.cascading-editor-dialog table td:last-child {
+    padding-right: 20px !important;
+}
+
+.cascading-editor-dialog .e-field,
+.cascading-editor-dialog .e-control-wrapper {
+    width: 100% !important;
+    max-width: 350px;
+}
+
+.cascading-editor-dialog input[name="Subject"] {
+    width: 100% !important;
+    max-width: 350px;
+    box-sizing: border-box;
+}
+
+/* Fix dropdown border to full box */
+.cascading-editor-dialog .e-input-group,
+.cascading-editor-dialog .e-control-wrapper {
+    border: 1px solid #d1d5db !important;
+    border-radius: 4px !important;
+}
+
+/* Remove underline */
+.cascading-editor-dialog .e-input-group:after,
+.cascading-editor-dialog .e-input-group:before {
+    display: none !important;
+}
+
+.material3-dark .e-schedule.custom-scheduler .e-resource-cells::after {
+    background-color: #444746;
+}
+
+.material-dark .e-schedule.custom-scheduler .e-resource-cells::after {
+    background-color: #616161;
+}
+
+.material3-dark .e-schedule.custom-scheduler .e-resource-left-td::after {
+    background-color: #444746;
+}
+
+.material-dark .e-schedule.custom-scheduler .e-resource-left-td::after {
+    background-color: #616161;
+}

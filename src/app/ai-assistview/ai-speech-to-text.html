@@ -1,7 +1,6 @@
 <div class="control-section">
     <div class="integration-speechtotext-section">
-        <div
-          ejs-aiassistview
+        <ejs-aiassistview
           #assistView
           (promptRequest)="onPromptRequest($event)"
           [toolbarSettings]="toolbarSettings"
@@ -18,7 +17,7 @@
             <i>Click the below mic-button to convert your voice to text.</i>
         </div>
           </ng-template>
-        </div>
+        </ejs-aiassistview>
       </div>
   </div>
   <div id="action-description">

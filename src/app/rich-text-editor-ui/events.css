@@ -1,0 +1,41 @@
+.eventarea {
+    height: 245px;
+    overflow: auto;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.EventLog {
+    display: block;
+}
+
+.EventLog .log-entry {
+    display: block;
+    word-break: normal;
+}
+
+.EventLog b {
+    color: #018607;
+}
+
+.material3-dark .EventLog b,
+.fluent-dark .EventLog b,
+.bootstrap5-dark .EventLog b,
+.bootstrap5\.3-dark .EventLog b,
+.bootstrap-dark .EventLog b,
+.tailwind-dark .EventLog b,
+.tailwind3-dark .EventLog b,
+.highcontrast .EventLog b,
+.material-dark .EventLog b,
+.fabric-dark .EventLog b {
+    color: #21A32E;
+}
+
+.EventLog hr {
+    margin: 1px 10px 1px 0;
+    border-top: 1px solid #eee;
+}
+
+.evtbtn {
+    padding-top: 10px;
+}

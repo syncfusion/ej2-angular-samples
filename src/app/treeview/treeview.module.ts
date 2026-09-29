@@ -8,6 +8,7 @@ import { EditTreeViewComponent } from './node-editing.component';
 import { MultiselectTreeViewComponent } from './multiple-selection.component';
 import { DragdropTreeViewComponent } from './drag-and-drop.component';
 import { TemplateTreeViewComponent } from './template.component';
+import { VirtualizationTreeViewComponent } from './virtualization.component';
 import { PlainTreeViewComponent } from './plain-data.component';
 import { RemoteTreeViewComponent } from './remote-data.component';
 import { CheckboxTreeViewComponent } from './treeview-checkbox.component';
@@ -24,6 +25,7 @@ export const treeAppRoutes: Object[] = [
     { path: ':theme/treeview/multiple-selection', component: MultiselectTreeViewComponent, name: 'Multiple Selection', order: '01', category: 'TreeView', hideOnDevice: true , description: "The TreeView component allows to select multiple nodes by pressing CTRL key, also can select the range of nodes by pressing SHIFT key."},
     { path: ':theme/treeview/drag-and-drop', component: DragdropTreeViewComponent, name: 'Drag and Drop', order: '01', category: 'TreeView', hideOnDevice: true, description: "The tree view nodes can be drag and drop from one position to another, also the drop can be done to another tree view or other external container." },
     { path: ':theme/treeview/template', component: TemplateTreeViewComponent, name: 'Template', order: '01', category: 'TreeView', description: "The tree view node can be customized through the template option. In this demo the tree view nodes are templated like an mail system." },
+    { path: ':theme/treeview/virtualization', component: VirtualizationTreeViewComponent, name: 'Virtualization', type: 'new', order: '01', category: 'TreeView', description: "This demo demonstrates the virtualization support of the tree view. The component has 8000 items bound to it including children; however, when you open the suggestion list, only few items are loaded based on the height specified, and the remaining items are loaded while scrolling." },
     { path: ':theme/treeview/plain-data', component: PlainTreeViewComponent, name: 'Local Data', order: '02', category: 'Data Binding', description: "This demo demonstrates the binding of local data to the tree view. The local data structure can be hierarchical data or list data." },
     { path: ':theme/treeview/remote-data', component: RemoteTreeViewComponent, name: 'Remote Data', order: '02', category: 'Data Binding', description: "This demo demonstrates the binding of data to the tree view from remote data source." },
 ];

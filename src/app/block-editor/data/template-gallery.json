@@ -1,0 +1,1938 @@
+{
+    "blockTemplate": [
+        {
+            "name": "Template Gallery",
+            "type": "page",
+            "page": [
+                {
+                    "icon": "📄",
+                    "name": "Blank Page",
+                    "subtitle": "Start from scratch",
+                    "type": "page",
+                    "blocks": [
+                        {
+                            "blockType": "Paragraph"
+                        }
+                    ]
+                },
+                {
+                    "icon": "📝️",
+                    "name": "Project Brief",
+                    "subtitle": "Plan, organize, and track",
+                    "type": "page",
+                    "blocks": [
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "💫 Overview"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Provide project background, core objectives, key stakeholders, and proposed timeline here — include an inspiring quote to set the tone."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "🎯 Goals"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "List the primary project goals and desired outcomes."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "NumberedList"
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "🧑‍💻 Team Members"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Table",
+                            "properties": {
+                                "columns": [
+                                    {
+                                        "headerText": "Name"
+                                    },
+                                    {
+                                        "headerText": "Role"
+                                    },
+                                    {
+                                        "headerText": "Location"
+                                    },
+                                    {
+                                        "headerText": "Core working hours"
+                                    }
+                                ],
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Full Name"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Designation"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "City, Country"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Timezone / Hours"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Full Name"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Designation"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "City, Country"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Timezone / Hours"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Full Name"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Designation"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "City, Country"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Timezone / Hours"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "🛠️ Project Deliverables"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Table",
+                            "properties": {
+                                "columns": [
+                                    {
+                                        "headerText": "Task / Deliverable"
+                                    },
+                                    {
+                                        "headerText": "Assigned to"
+                                    },
+                                    {
+                                        "headerText": "Due date"
+                                    },
+                                    {
+                                        "headerText": "Bucket / Status"
+                                    }
+                                ],
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "e.g., Finalize user flows"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "e.g., Lead Designer"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "e.g., 15 Dec"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "e.g., Design"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Add deliverable..."
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Owner"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Due date"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Bucket"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Add deliverable..."
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Owner"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Due date"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Bucket"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "🔗 Relevant Links & Resources"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "BulletList"
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        }
+                    ]
+                },
+                {
+                    "icon": "🦄",
+                    "name": "Team Decisions",
+                    "subtitle": "Ideate and decide",
+                    "type": "page",
+                    "blocks": [
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "List relevant stakeholders here."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "🐘 Question"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Add question for the group decision here."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "✨ Background context"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Provide concise background and why this decision matters now."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "🧊 Constraints"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "BulletList",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "List known limitations, risks, dependencies, or non-negotiables."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "BulletList"
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "🤔 Assumptions"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "BulletList",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "List anything we’re assuming to be true (or false) for this decision."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "BulletList"
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "🏓 Compare ideas"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Table",
+                            "properties": {
+                                "columns": [
+                                    {
+                                        "headerText": "Idea"
+                                    },
+                                    {
+                                        "headerText": "Pros"
+                                    },
+                                    {
+                                        "headerText": "Cons"
+                                    },
+                                    {
+                                        "headerText": "Votes"
+                                    }
+                                ],
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "e.g., Launch with MVP in 6 weeks"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "e.g., Faster feedback, lower cost"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "e.g., Missing key features"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "0"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "👟 Next Steps"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Table",
+                            "properties": {
+                                "columns": [
+                                    {
+                                        "headerText": "Task"
+                                    },
+                                    {
+                                        "headerText": "Assigned to"
+                                    },
+                                    {
+                                        "headerText": "Due date"
+                                    },
+                                    {
+                                        "headerText": "Bucket"
+                                    }
+                                ],
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Task description"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Assignee"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Date"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "To do"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Task description"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Assignee"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Date"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "To do"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "🎉 Final decision"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Add final decision here."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        }
+                    ]
+                },
+                {
+                    "icon": "💎",
+                    "name": "Project Planning",
+                    "subtitle": "Collaborate",
+                    "type": "page",
+                    "blocks": [
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Label",
+                                    "content": "Progress: In-progress",
+                                    "properties": {
+                                        "labelId": "progress"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "🏆 Roles"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Table",
+                            "properties": {
+                                "columns": [
+                                    {
+                                        "headerText": "Roles"
+                                    },
+                                    {
+                                        "headerText": "Assignees"
+                                    }
+                                ],
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Designation"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Name"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Designation"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Name"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "⭐ Background context"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Briefly explain the business need, user problem, or opportunity this project addresses — include key industry context or triggers."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Add an inspiring or strategic quote here to set the tone."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "☁️ Opportunity statement"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Clearly state the user/business problem, why it matters now, and the value or impact of solving it."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "✏️ Assignments"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Table",
+                            "properties": {
+                                "columns": [
+                                    {
+                                        "headerText": "Job/feature"
+                                    },
+                                    {
+                                        "headerText": "When customers"
+                                    },
+                                    {
+                                        "headerText": "They should"
+                                    },
+                                    {
+                                        "headerText": "So that"
+                                    }
+                                ],
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Feature or task name"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Trigger or user context"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Desired action or behavior"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Business/user value or outcome"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "🥅 Goals"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Define the measurable outcomes we want to achieve."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Table",
+                            "properties": {
+                                "columns": [
+                                    {
+                                        "headerText": "High priority"
+                                    },
+                                    {
+                                        "headerText": "Medium priority"
+                                    },
+                                    {
+                                        "headerText": "Low priority"
+                                    }
+                                ],
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "List critical must-achieve outcomes"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "List important but non-urgent outcomes"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "List nice-to-have or future outcomes"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "🚀 Milestones"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Table",
+                            "properties": {
+                                "columns": [
+                                    {
+                                        "headerText": "Work area"
+                                    },
+                                    {
+                                        "headerText": "Owner"
+                                    },
+                                    {
+                                        "headerText": "Progress"
+                                    },
+                                    {
+                                        "headerText": "End date"
+                                    },
+                                    {
+                                        "headerText": "Obstacles"
+                                    }
+                                ],
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "List major phase or deliverable"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Assign responsible person"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Current status or % complete"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Target completion date"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Note any blockers or risks"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "🌡️ Team temp check"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Quick pulse: On a scale of 1–5, how confident are you right now with our direction, workload, and collaboration? Plus one thing that’s working well and one thing we should adjust."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Table",
+                            "properties": {
+                                "columns": [
+                                    {
+                                        "headerText": "Feelings"
+                                    },
+                                    {
+                                        "headerText": "Reflection"
+                                    },
+                                    {
+                                        "headerText": "Votes"
+                                    }
+                                ],
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "How you feel (e.g. Happy Thumbs Up Worried)"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "One sentence on what’s driving that feeling"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "0"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "🔗 Relevant links"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Add relevant links here."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        }
+                    ]
+                },
+                {
+                    "icon": "✏️",
+                    "name": "Meeting Notes",
+                    "subtitle": "Sync and share",
+                    "type": "page",
+                    "blocks": [
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Add meeting date here."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "📌 Topic"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Add meeting topic here."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "👥 Attendees"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Table",
+                            "properties": {
+                                "columns": [
+                                    {
+                                        "headerText": "Name"
+                                    },
+                                    {
+                                        "headerText": "Role"
+                                    }
+                                ],
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Full Name"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Designation"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Full Name"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Designation"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "📃 Agenda"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "The agenda outlines the topics to be discussed and ensures the meeting stays focused and productive. Each item should have a clear purpose and expected outcome."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Example Agenda Structure:",
+                                    "properties": {
+                                        "styles": {
+                                            "bold": true
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "NumberedList",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Welcome & Objectives",
+                                    "properties": {
+                                        "styles": {
+                                            "bold": true
+                                        }
+                                    }
+                                },
+                                {
+                                    "contentType": "Text",
+                                    "content": " – Brief introduction and purpose of the meeting."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "NumberedList",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Project Updates",
+                                    "properties": {
+                                        "styles": {
+                                            "bold": true
+                                        }
+                                    }
+                                },
+                                {
+                                    "contentType": "Text",
+                                    "content": " – Status reports from team members."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "NumberedList",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Discussion Topics",
+                                    "properties": {
+                                        "styles": {
+                                            "bold": true
+                                        }
+                                    }
+                                },
+                                {
+                                    "contentType": "Text",
+                                    "content": " – Key issues or decisions to address."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "NumberedList",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Action Items Review",
+                                    "properties": {
+                                        "styles": {
+                                            "bold": true
+                                        }
+                                    }
+                                },
+                                {
+                                    "contentType": "Text",
+                                    "content": " – Check progress on previous tasks."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "NumberedList",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Next Steps & Closing",
+                                    "properties": {
+                                        "styles": {
+                                            "bold": true
+                                        }
+                                    }
+                                },
+                                {
+                                    "contentType": "Text",
+                                    "content": " – Summarize decisions and assign new tasks."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "✏️ Notes"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Use this section to capture additional details, observations, or important remarks that do not fall under specific agenda items."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Examples",
+                                    "properties": {
+                                        "styles": {
+                                            "bold": true
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "BulletList",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Clarifications provided during discussion"
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "BulletList",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Risks or concerns raised"
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "BulletList",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Suggestions for improvement"
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "🎊 Tasks"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Table",
+                            "properties": {
+                                "columns": [
+                                    {
+                                        "headerText": "Task"
+                                    },
+                                    {
+                                        "headerText": "Assigned to"
+                                    },
+                                    {
+                                        "headerText": "Due date"
+                                    },
+                                    {
+                                        "headerText": "Bucket"
+                                    }
+                                ],
+                                "rows": [
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Task description"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Assignee"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Date"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "To do"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "cells": [
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Task description"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Assignee"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "Date"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "blocks": [
+                                                    {
+                                                        "blockType": "Paragraph",
+                                                        "properties": {
+                                                            "placeholder": "To do"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        },
+                        {
+                            "blockType": "Heading",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "🔗 Relevant links"
+                                }
+                            ],
+                            "properties": {
+                                "level": 4,
+                                "placeholder": "Heading 4"
+                            }
+                        },
+                        {
+                            "blockType": "Paragraph",
+                            "content": [
+                                {
+                                    "contentType": "Text",
+                                    "content": "Add relevant links here."
+                                }
+                            ]
+                        },
+                        {
+                            "blockType": "Paragraph"
+                        }
+                    ]
+                }
+            ],
+            "blocks": [
+                {
+                    "blockType": "Paragraph"
+                }
+            ]
+        }
+    ]
+}

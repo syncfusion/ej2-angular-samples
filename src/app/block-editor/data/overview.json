@@ -1,0 +1,1119 @@
+{
+    "blockDataOverview": [
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 2
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Welcome to the Block Editor Demo!"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Welcome to the "
+                },
+                {
+                    "contentType": "Text",
+                    "content": "Block Editor",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "! This demo highlights all supported block types and inline formatting options. Each section below explains the purpose of the block and shows how it appears in the editor."
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Paragraph"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Paragraph blocks are used for writing regular text. They are the most common block type and support inline formatting to enhance readability and emphasis."
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Inline Formatting"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Use "
+                },
+                {
+                    "contentType": "Text",
+                    "content": "bold",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": ", "
+                },
+                {
+                    "contentType": "Text",
+                    "content": "italic",
+                    "properties": {
+                        "styles": {
+                            "italic": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": ", and "
+                },
+                {
+                    "contentType": "Text",
+                    "content": "underline",
+                    "properties": {
+                        "styles": {
+                            "underline": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": " for emphasis; or "
+                },
+                {
+                    "contentType": "Text",
+                    "content": "strikethrough",
+                    "properties": {
+                        "styles": {
+                            "strikethrough": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": " to indicate removals or outdated text."
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Math and chemistry: E = mc"
+                },
+                {
+                    "contentType": "Text",
+                    "content": "2",
+                    "properties": {
+                        "styles": {
+                            "superscript": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": ", H"
+                },
+                {
+                    "contentType": "Text",
+                    "content": "2",
+                    "properties": {
+                        "styles": {
+                            "subscript": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": "O - with superscript and subscript. Add inline code "
+                },
+                {
+                    "contentType": "Text",
+                    "content": "const x = 10;",
+                    "properties": {
+                        "styles": {
+                            "inlineCode": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": " and helpful "
+                },
+                {
+                    "contentType": "Link",
+                    "content": "links",
+                    "properties": {
+                        "url": "https://ej2.syncfusion.com/documentation/block-editor/getting-started"
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": " for quick references."
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Transform text to "
+                },
+                {
+                    "contentType": "Text",
+                    "content": "uppercase",
+                    "properties": {
+                        "styles": {
+                            "uppercase": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": " or "
+                },
+                {
+                    "contentType": "Text",
+                    "content": "LOWERCASE",
+                    "properties": {
+                        "styles": {
+                            "lowercase": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": ". Add "
+                },
+                {
+                    "contentType": "Text",
+                    "content": "color",
+                    "properties": {
+                        "styles": {
+                            "color": "green"
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": " or "
+                },
+                {
+                    "contentType": "Text",
+                    "content": "background highlights",
+                    "properties": {
+                        "styles": {
+                            "backgroundColor": "#FEF3C7",
+                            "color": "#92400E"
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": " as needed. Mention "
+                },
+                {
+                    "contentType": "Mention",
+                    "properties": {
+                        "userId": "user1"
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": " and tag with "
+                },
+                {
+                    "contentType": "Label",
+                    "properties": {
+                        "labelId": "progress"
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": " to add context."
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3,
+                "placeholder": "Heading 3"
+            },
+            "indent": 0,
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Table Block"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Table blocks organize data in rows and columns for easy comparison or presentation. They support headers and basic styling"
+                }
+            ]
+        },
+        {
+            "blockType": "Table",
+            "properties": {
+                "columns": [
+                    {
+                        "headerText": "Name"
+                    },
+                    {
+                        "headerText": "Age"
+                    },
+                    {
+                        "headerText": "Gender"
+                    },
+                    {
+                        "headerText": "Occupation"
+                    },
+                    {
+                        "headerText": "Mode of Transport"
+                    }
+                ],
+                "rows": [
+                    {
+                        "cells": [
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Selma Rose"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "30"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Female"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Engineer"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "🚴"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "cells": [
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Robert"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "28"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Male"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Graphic Designer"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "🚗"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "cells": [
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "William"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "35"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Male"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Teacher"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "🚗"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "cells": [
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Laura Grace"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "42"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Female"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Doctor"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "🚌"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "cells": [
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Andrew James"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "45"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Male"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "Lawyer"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "blocks": [
+                                    {
+                                        "blockType": "Paragraph",
+                                        "content": [
+                                            {
+                                                "contentType": "Text",
+                                                "content": "🚕"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Image Block"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Image blocks allow you to insert visuals to support or enhance your content."
+                }
+            ]
+        },
+        {
+            "blockType": "Image",
+            "properties": {
+                "src": "./src/block-editor/images/overview.png",
+                "alt": "Block Editor Image"
+            }
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Checklist"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Checklists help track tasks or steps:"
+                }
+            ]
+        },
+        {
+            "blockType": "Checklist",
+            "properties": {
+                "isChecked": true
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Apply inline formatting"
+                }
+            ]
+        },
+        {
+            "blockType": "Checklist",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Invite reviewer "
+                },
+                {
+                    "contentType": "Mention",
+                    "properties": {
+                        "userId": "user2"
+                    }
+                }
+            ]
+        },
+        {
+            "blockType": "Checklist",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Publish guide and share "
+                },
+                {
+                    "contentType": "Link",
+                    "content": "the link",
+                    "properties": {
+                        "url": "https://ej2.syncfusion.com/documentation/block-editor/getting-started"
+                    }
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Lists"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Lists organize information clearly:"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Unordered List",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "indent": 1,
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Concise points for quick scanning"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "indent": 1,
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Great for features or tips"
+                }
+            ]
+        },
+        {
+            "blockType": "BulletList",
+            "indent": 1,
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Easy to reorder and nest"
+                }
+            ]
+        },
+        {
+            "blockType": "NumberedList",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Ordered List",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "blockType": "NumberedList",
+            "indent": 1,
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Start a new document"
+                }
+            ]
+        },
+        {
+            "blockType": "NumberedList",
+            "indent": 1,
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Add structure with headings"
+                }
+            ]
+        },
+        {
+            "blockType": "NumberedList",
+            "indent": 1,
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Fill in content and review"
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Headings"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Headings help organize content into sections. Use different levels "
+                },
+                {
+                    "contentType": "Text",
+                    "content": "(h1, h2, h3 or h4)",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                },
+                {
+                    "contentType": "Text",
+                    "content": " to create a hierarchy:"
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Quote"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Use quote blocks to emphasize important statements or references."
+                }
+            ]
+        },
+        {
+            "blockType": "Quote",
+            "properties": {
+                "children": [
+                    {
+                        "blockType": "Paragraph",
+                        "content": [
+                            {
+                                "contentType": "Text",
+                                "content": "“Quotes are perfect for highlighting key messages or testimonials.”"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Callout"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Callouts are great for tips, warnings, or notes that need attention."
+                }
+            ]
+        },
+        {
+            "blockType": "Callout",
+            "properties": {
+                "children": [
+                    {
+                        "blockType": "Paragraph",
+                        "content": [
+                            {
+                                "contentType": "Text",
+                                "content": "Tip: ",
+                                "properties": {
+                                    "styles": {
+                                        "bold": true
+                                    }
+                                }
+                            },
+                            {
+                                "contentType": "Text",
+                                "content": "Use the "
+                            },
+                            {
+                                "contentType": "Text",
+                                "content": "/ ",
+                                "properties": {
+                                    "styles": {
+                                        "inlineCode": true
+                                    }
+                                }
+                            },
+                            {
+                                "contentType": "Text",
+                                "content": "command to quickly insert blocks like headings, lists, or code."
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Code Block"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Use code blocks to display syntax-highlighted code snippets for technical documentation or tutorials."
+                }
+            ]
+        },
+        {
+            "blockType": "Code",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "function greet(name) {\n return `Hello, ${name}!`;\n}"
+                }
+            ]
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Toggle Block"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Toggle blocks are interactive and help manage long or optional content."
+                }
+            ]
+        },
+        {
+            "blockType": "CollapsibleParagraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Click to expand",
+                    "properties": {
+                        "styles": {
+                            "bold": true
+                        }
+                    }
+                }
+            ],
+            "properties": {
+                "isExpanded": false,
+                "children": [
+                    {
+                        "blockType": "Paragraph",
+                        "content": [
+                            {
+                                "contentType": "Text",
+                                "content": "This is a toggle block. You can hide or show content as needed. Useful for FAQs or detailed sections."
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "blockType": "Heading",
+            "properties": {
+                "level": 3
+            },
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Divider"
+                }
+            ]
+        },
+        {
+            "blockType": "Paragraph",
+            "content": [
+                {
+                    "contentType": "Text",
+                    "content": "Dividers are horizontal lines used to separate sections or indicate a break in content."
+                }
+            ]
+        },
+        {
+            "blockType": "Divider"
+        },
+        {
+            "blockType": "Paragraph"
+        }
+    ],
+    "users": [
+        {
+            "avatarUrl": "./src/block-editor/images/andrew.png",
+            "id": "user1",
+            "user": "Andrews"
+        },
+        {
+            "avatarUrl": "./src/block-editor/images/charlie.png",
+            "id": "user2",
+            "user": "Charlie"
+        },
+        {
+            "avatarUrl": "./src/block-editor/images/laura.png",
+            "id": "user3",
+            "user": "Laura"
+        }
+    ]
+}

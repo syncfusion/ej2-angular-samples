@@ -26,7 +26,11 @@ import { getAIResponse } from '../common/ai-service';
 })
 export class AIAssistGenerativeUIComponent implements AfterViewInit {
   constructor(@Inject('sourceFiles') private sourceFiles: any) {
-    sourceFiles.files = ['ai-generative-ui.component.css'];
+    sourceFiles.files = [
+      'ai-generative-ui.component.css',
+      'ai-generative-ui.html', 
+      'promptResponseData.ts'
+    ];
   }
 
   @ViewChild('generativeAIAssistView')

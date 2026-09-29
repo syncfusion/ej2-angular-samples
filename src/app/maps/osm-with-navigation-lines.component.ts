@@ -99,7 +99,7 @@ export class MapsOsmWithNavigationComponent {
                         'International Airport</div></div>',
                         dataSource: [{
                                 name: 'Los Angeles City',
-                                latitude: 34.7000,
+                                latitude: 33.8000,
                                 longitude: -121.5000
                             }],
                     },

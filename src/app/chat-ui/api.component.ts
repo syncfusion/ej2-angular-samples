@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation,Inject } from '@angular/core';
 import { ChatUIComponent, ChatUIModule, MessageToolbarItemClickedEventArgs, MessageToolbarSettingsModel, UserModel, MessageModel } from '@syncfusion/ej2-angular-interactive-chat';
 import { ChangeEventArgs, SwitchModule } from '@syncfusion/ej2-angular-buttons';
 import { RemoveEventArgs, DropDownListModule, SelectEventArgs, MultiSelectModule, ChangeEventArgs as DDLChangeEventArgs } from '@syncfusion/ej2-angular-dropdowns';
@@ -32,6 +32,12 @@ export class ChatUIApiComponent {
         { text: 'Charlie', value: 'Charlie' },
         { text: 'Jordan', value: 'Jordan'}
     ];
+    constructor(@Inject('sourceFiles') private sourceFiles: any) {
+                    sourceFiles.files = [
+                        'api.component.css', 
+                        'messageData.ts'
+    ];
+    }
     public mentionUsers: UserModel[] = [
         communityMessageAdmin,
         communityMessageUser1,

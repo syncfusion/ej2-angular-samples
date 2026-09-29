@@ -16,7 +16,10 @@ import { AI_SERVICE_URL, getUserID } from "../common/ai-service";
 })
 export class InlineAIAssistRTEComponent {
     constructor(@Inject('sourceFiles') private sourceFiles: any) {
-        sourceFiles.files = [];
+        sourceFiles.files = [
+            'ai-rich-text-editor.html', 
+            'service.ts'
+        ];
     }
 
     @ViewChild('rteEditor')

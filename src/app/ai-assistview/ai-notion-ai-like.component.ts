@@ -39,7 +39,11 @@ import { getAIResponse } from '../common/ai-service';
 })
 export class NotionAICloneAssistComponent {
   constructor(@Inject('sourceFiles') private sourceFiles: any) {
-    sourceFiles.files = ['ai-notion-ai-like.component.css'];
+    sourceFiles.files = [
+      'ai-notion-ai-like.component.css',
+      'ai-notion-ai-like.html', 
+      'promptResponseData.ts'
+    ];
   }
 
   @ViewChild('aiAssistViewRef')
