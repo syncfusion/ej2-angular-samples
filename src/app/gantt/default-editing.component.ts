@@ -40,7 +40,6 @@ export class GanttEditingComponent implements OnInit {
             progress: 'Progress',
             dependency: 'Predecessor',
             parentID:'ParentId',
-            notes: 'info',
             resourceInfo: 'resources'
         };
         this.resourceFields = {
@@ -62,7 +61,8 @@ export class GanttEditingComponent implements OnInit {
             { field: 'StartDate' },
             { field: 'EndDate', validationRules: { required: [this.customFn.bind(this), 'Please enter a value greater than the start date.'] } },
             { field: 'Progress', validationRules: { required: true, min: 0, max: 100 } },
-            { field: 'Predecessor' }
+            { field: 'Predecessor' },
+            { field: 'info', disableHtmlEncode: true }
         ];
         this.timelineSettings = {
             topTier: {
@@ -81,12 +81,12 @@ export class GanttEditingComponent implements OnInit {
         };
         this.projectStartDate= new Date('03/26/2025');
         this.projectEndDate= new Date('09/10/2025');
-       
+
         this.resources = editingResources;
         this.splitterSettings = {
            columnIndex: 3
         };
-        
+
     }
     public actionBegin(args: any): void {
         if (args.columnName === "EndDate" || args.requestType === "beforeOpenAddDialog" || args.requestType === "beforeOpenEditDialog") {

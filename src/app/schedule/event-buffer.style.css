@@ -1,0 +1,112 @@
+.medical-resource {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    gap: 16px;
+    padding-left: 16px;
+    box-sizing: border-box;
+}
+
+.medical-scheduler.e-schedule .e-resource-cells {
+    height: 70px !important;
+}
+
+.medical-scheduler.e-schedule .e-buffer-app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.medical-scheduler.e-schedule img {
+    height: 35px;
+    width: 35px;
+}
+
+/* Buffer pill (before/after) */
+.buffer-minimal {
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+    overflow: hidden;
+}
+
+.e-day-wrapper .buffer-minimal {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.buffer-svg-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.buffer-duration {
+    font-size: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Small buffers: keep only the icon visible, but allow ellipsis on the duration */
+.buffer-minimal .buffer-duration {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buffer-info {
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Resource header (left panel) */
+.medical-resource-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.medical-resource-content {
+    min-width: 0;
+}
+
+.medical-resource-name {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+.medical-resource-specialty {
+    font-size: 11px;
+    line-height: 16px;
+}
+
+/* Empty header (top-left) */
+.resource-header-title {
+    padding: 12px 16px;
+}
+
+.resource-header-main {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.resource-header-sub {
+    margin-top: 2px;
+    font-size: 11px;
+}
+
+.buffer-svg-icon {
+    width: 14px;
+    height: 14px;
+}

@@ -93,7 +93,6 @@ export class PivotChartFieldListComponent implements OnInit {
     if (document.getElementById('displayOptionddl') && document.getElementById('displayOptionddl') && document.getElementById('toolbar-switch') && !this.isInitial) {
       this.isInitial = true;
       this.displayOptionDropDown = new DropDownList({
-        floatLabelType: 'Auto',
         width: 100,
         value: this.displayOptionItem,
         change: (args: any) => {
@@ -113,7 +112,6 @@ export class PivotChartFieldListComponent implements OnInit {
       });
       this.displayOptionDropDown.appendTo('#displayOptionddl');
       this.primaryViewDropDown = new DropDownList({
-        floatLabelType: 'Auto',
         width: 100,
         value: this.preference,
         change: (args: any) => {

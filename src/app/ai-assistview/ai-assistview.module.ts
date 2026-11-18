@@ -99,30 +99,6 @@ export const aiassistviewAppRoutes: Object[] = [
         {displayName: 'ai-text-to-speech.html', path: './src/ai-assistview/ai-text-to-speech.html'},
         {displayName: 'ai-text-to-speech.component.css', path: './src/ai-assistview/ai-text-to-speech.component.css'}
     ] },
-    { path: ':theme/ai-assistview/ai-notion-ai-like', component: NotionAICloneAssistComponent, name: 'Notion AI-like', description: 'Notion-like AI Assist UI with multi-mode chat (floating, sidebar, fullscreen), model selection, chat history, streaming responses, attachments, speech-to-text, text-to-speech, and session management.', category: 'UI Customization', order: '03', sourceFiles: [
-        {displayName: 'ai-notion-ai-like.component.ts', path: './src/ai-assistview/ai-notion-ai-like.component.ts'},
-        {displayName: 'ai-notion-ai-like.html', path: './src/ai-assistview/ai-notion-ai-like.html'},
-        {displayName: 'ai-notion-ai-like.component.css', path: './src/ai-assistview/ai-notion-ai-like.component.css'},
-        {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
-    ] },
-    { path: ':theme/ai-assistview/ai-claude-like', component: AIAssistClaudeCloneComponent, name: 'Claude AI-like', description: 'Claude line UI appearance with ai assistview supported features with footer toolbar and banner template', category: 'UI Customization', order: '03', sourceFiles: [
-        {displayName: 'ai-claude-like.component.ts', path: './src/ai-assistview/ai-claude-like.component.ts'},
-        {displayName: 'ai-claude-like.html', path: './src/ai-assistview/ai-claude-like.html'},
-        {displayName: 'ai-claude-like.component.css', path: './src/ai-assistview/ai-claude-like.component.css'},
-        {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
-    ] },
-    { path: ':theme/ai-assistview/ai-gemini-like', component: AIAssistGeminiCloneComponent, name: 'Gemini AI-like', description: 'Gemini-inspired UI appearance with ai assistview supported features with footer toolbar and banner template', category: 'UI Customization', order: '03', sourceFiles: [
-        {displayName: 'ai-gemini-like.component.ts', path: './src/ai-assistview/ai-gemini-like.component.ts'},
-        {displayName: 'ai-gemini-like.html', path: './src/ai-assistview/ai-gemini-like.html'},
-        {displayName: 'ai-gemini-like.component.css', path: './src/ai-assistview/ai-gemini-like.component.css'},
-        {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
-    ] },
-    { path: ':theme/ai-assistview/ai-chatgpt-like', type: 'new', component: AIAssistChatGPTCloneComponent, name: 'ChatGPT AI-like', description: 'Demonstrates a ChatGPT-inspired AI AssistView with attachment support, speech input, streaming responses, and an inline pill-shaped footer for a clean conversational experience.', category: 'UI Customization', order: '03', sourceFiles: [
-        {displayName: 'ai-chatgpt-like.component.ts', path: './src/ai-assistview/ai-chatgpt-like.component.ts'},
-        {displayName: 'ai-chatGPT-clone.html', path: './src/ai-assistview/ai-chatGPT-clone.html'},
-        {displayName: 'ai-chatGPT-clone.css', path: './src/ai-assistview/ai-chatGPT-clone.css'},
-        {displayName: 'promptResponseData.ts', path: './src/ai-assistview/promptResponseData.ts'}
-    ] },
     { path: ':theme/ai-assistview/ai-dialog', component: AIAssistDialogComponent, name: 'Notes Assistant', description: 'Showcases the default combinations of the AiAssistView component views.', category: 'Use Cases', order: '04', sourceFiles: [
         {displayName: 'ai-dialog.component.ts', path: './src/ai-assistview/ai-dialog.component.ts'},
         {displayName: 'ai-dialog.html', path: './src/ai-assistview/ai-dialog.html'},

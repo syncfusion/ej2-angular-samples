@@ -40,7 +40,6 @@ export class GanttContextMenuComponent implements OnInit {
             progress: 'Progress',
             dependency: 'Predecessor',
             parentID: 'ParentId',
-            notes: 'info',
             resourceInfo: 'resources'
         };
         this.resourceFields = {
@@ -68,7 +67,8 @@ export class GanttContextMenuComponent implements OnInit {
             { field: 'EndDate' },
             { field: 'Duration' },
             { field: 'Progress' },
-            { field: 'Predecessor' }
+            { field: 'Predecessor' },
+            { field: 'info', disableHtmlEncode: true }
         ];
         this.timelineSettings = {
             topTier: {
@@ -87,7 +87,7 @@ export class GanttContextMenuComponent implements OnInit {
         };
         this.projectStartDate= new Date('03/25/2025');
         this.projectEndDate=  new Date('09/08/2025');
-        
+
         this.resources = editingResources;
         this.splitterSettings = {
             columnIndex: 3

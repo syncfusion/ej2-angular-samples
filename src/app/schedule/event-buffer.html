@@ -1,0 +1,110 @@
+<div class="control-section">
+
+    <ejs-dialog #dialogObj [visible]="false" [isModal]="true" width="320px" header="Alert" [showCloseIcon]="true"
+        [buttons]="dialogButtons"
+        content="Events cannot be scheduled in this operating room because it does not match the required specialty.">
+    </ejs-dialog>
+    <ejs-schedule #scheduleObj cssClass="medical-scheduler" startHour="08:00" width="100%" height="650px"
+        [selectedDate]="selectedDate" [currentView]="currentView" [allowOverlap]="false" [workHours]="workHours"
+        [group]="group" [timeScale]="timeScale" [eventSettings]="eventSettings"
+        [resourceHeaderTemplate]="resourceTemplate" [headerIndentTemplate]="headerIndentTemplate"
+        (dragStop)="onDragStop($event)" (actionBegin)="onActionBegin($event)">
+
+        <e-views>
+            <e-view option="Day"></e-view>
+            <e-view option="TimelineDay"></e-view>
+            <e-view option="TimelineWeek"></e-view>
+        </e-views>
+        <e-resources>
+            <e-resource field="RoomId" title="Operating Room" name="Rooms" [dataSource]="roomData" textField="RoomText"
+                idField="RoomId" colorField="RoomColor">
+            </e-resource>
+        </e-resources>
+
+
+    </ejs-schedule>
+</div>
+
+<ng-template #bufferTemplate let-data>
+
+    <div *ngIf="showBuffer(data)" class="buffer-minimal">
+
+        <img *ngIf="showBufferIcon(data)" class="buffer-svg-icon" [src]="data.bufferType === 'before'
+                ? './assets/schedule/images/health-day.svg'
+                : './assets/schedule/images/cancer-day.svg'" alt="" />
+
+        <span *ngIf="showBufferText(data)" class="buffer-duration">
+
+            {{ getBufferDuration(data) }} min
+
+        </span>
+
+    </div>
+
+</ng-template>
+
+<ng-template #resourceTemplate let-data>
+
+    <div class="medical-resource">
+
+        <div class="medical-resource-icon">
+            {{ data.resourceData.Icon }}
+        </div>
+
+        <div class="medical-resource-content">
+
+            <div class="medical-resource-specialty">
+                {{ data.resourceData.Specialty }}
+            </div>
+
+        </div>
+
+    </div>
+
+</ng-template>
+
+<ng-template #headerIndentTemplate>
+
+    <ng-container *ngIf="showHeaderIndent()">
+
+        <div class="resource-header-title">
+
+            <div class="resource-header-main">
+                Operating Rooms
+            </div>
+
+            <div class="resource-header-sub">
+                Surgery Suites
+            </div>
+
+        </div>
+
+    </ng-container>
+
+</ng-template>
+
+<div id="action-description">
+     <p>
+        This surgery scheduling demo highlights efficient operating room management using configurable pre-procedure and post-procedure buffer times within the Scheduler. Plan surgeries with dedicated preparation and recovery periods, reduce scheduling overlaps, maximize operating room utilization, and streamline healthcare appointment coordination.
+    </p>
+</div>
+
+<div id="description">
+    <p>
+        The <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/schedule/eventSettings#enablebuffer">
+            <code>enableBuffer</code>
+        </a> property of <code>eventSettings</code> activates the buffer feature. The
+        <code>bufferBefore</code> and <code>bufferAfter</code> field mappings (in minutes) are configured
+        through <code>eventSettings.fields</code>, and a custom <code>bufferTemplate</code> renders an icon
+        and the buffer duration inside the buffer pill. Conflict detection with <code>allowOverlap=false</code>
+        also flags the buffered reserved range, and drag-and-drop is restricted to the room matching the
+        event&rsquo;s required specialty.
+    </p>
+    <p>
+        Buffers are supported across timeline and vertical time-grid views (Day, Week, WorkWeek, Timeline Day,
+        Timeline Week, Timeline WorkWeek) and re-anchor on the EVENT edges during drag and resize previews.
+    </p>
+    <p>
+        Looking for the full Angular Scheduler component overview, features, pricing, and documentation? Visit our <a target="_blank" href="https://www.syncfusion.com/scheduler-sdk/angular-scheduler">Angular Scheduler</a> component page.
+    </p>
+</div>

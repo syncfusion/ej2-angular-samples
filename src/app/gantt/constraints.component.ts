@@ -43,7 +43,6 @@ export class GanttConstraintComponent implements OnInit {
       constraintDate: 'ConstraintDate',
       dependency: 'Predecessor',
       parentID: 'ParentID',
-      notes: 'info',
       resourceInfo: 'resources'
     };
     this.columns = [
@@ -55,7 +54,8 @@ export class GanttConstraintComponent implements OnInit {
       { field: 'ConstraintDate', width: 200 },
       { field: 'EndDate' },
       { field: 'Predecessor' },
-      { field: 'Progress' }
+      { field: 'Progress' },
+      { field: 'info', disableHtmlEncode: true }
     ];
     this.editSettings = {
       allowAdding: true,

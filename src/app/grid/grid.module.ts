@@ -100,9 +100,9 @@ export const gridRouteConfig: Object[] = [
     { 'path': ':theme/grid/adaptive-layout', component: AdaptiveLayoutComponent, name: 'Adaptive Layout', description: 'This demo for Essential JS 2 grid component shows the Grid row in vertical direction.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/responsive-grid', component: ResponsiveGridComponent, name: 'Responsive Grid', type: 'new', description: 'This demo for the Essential JS 2 Grid component shows how the Grid adapts its layout from desktop to mobile devices for an optimized viewing experience.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/loading-animation', component: LoadingAnimationComponent, name: 'Loading Animation',  description: 'This demo for Essential JS 2 grid component shows the loading indicator when grid loading and refreshing.', order: '01', category: 'Data Grid' },
-    { 'path': ':theme/grid/empty-record-template', component: EmptyRecordTemplateComponent, name: 'Empty Record Template','type': 'update',  description: 'This demo for Essential JS 2 grid component demonstrates usage of template in Grid to shown element or text or image or gif icon instead of displaying the empty record message.', order: '01', category: 'Data Grid' },
+    { 'path': ':theme/grid/empty-record-template', component: EmptyRecordTemplateComponent, name: 'Empty Record Template', 'type': 'update',  description: 'This demo for Essential JS 2 grid component demonstrates usage of template in Grid to shown element or text or image or gif icon instead of displaying the empty record message.', order: '01', category: 'Data Grid' },
     { 'path': ':theme/grid/chart', component: ChartComponent, name: 'Integrate Chart in Grid',   description: 'This demo of the Essential JS 2 Grid component showcases the visual representation of data using a chart.', order: '01', category: 'Data Grid', hideOnDevice: true },
-    
+
     { 'path': ':theme/grid/fifa-statistics', component: FIFAStatisticsComponent, name: 'FIFA Statistics',  description: 'This demo for Essential Studio Angular grid component show the Product Use Case of FIFA Statistics', order: '17', category: 'Product Use Case' },
     { 'path': ':theme/grid/product-catalog', component: ProductCatalogComponent, name: 'Product Category',order: '17', description: 'This demo for Essential JS 2 grid component shows a comprehensive product management dashboard with custom column templates, detail row expansion, and advanced filtering.', category: 'Product Use Case', api: '{"GridComponent":["dataSource","allowSorting","allowFiltering","filterSettings"]}', sourceFiles: [{ displayName: 'product.catalog.component.ts', path: 'src/app/grid/product.catalog.component.ts' }, { displayName: 'product.catalog.html', path: 'src/app/grid/product.catalog.html' }, { displayName: 'product.catalog.style.css', path: 'src/app/grid/product.catalog.style.css' }] },
 
@@ -178,9 +178,9 @@ export const gridRouteConfig: Object[] = [
         category: 'Rows',
     },
     {
-        'path': ':theme/grid/row-number', component: RowNumberComponent, name: 'Row Number',type: 'new', description: 'This sample demonstrates how to display row numbers in the Grid using a row number column.', order: '04', category: 'Rows'
+        'path': ':theme/grid/row-number', component: RowNumberComponent, name: 'Row Number', type: 'new', description: 'This sample demonstrates how to display row numbers in the Grid using a row number column.', order: '04', category: 'Rows'
     },
-    
+
     {
         'path': ':theme/grid/normal-edit', component: NormalEditComponent, name: 'Inline Editing', description: 'This demo for Essential JS 2 grid component shows the inline editing operation.', order: '05',
         category: 'Editing'
@@ -199,7 +199,7 @@ export const gridRouteConfig: Object[] = [
         category: 'Editing'
     },
     {
-        'path': ':theme/grid/formula-cell', component: FormulaCellComponent, type: 'new', name: 'Formula Cell', description: 'This sample demonstrates formula cells in the Grid and automatic recalculation when source values are edited.', order: '05',
+        'path': ':theme/grid/formula-cell', component: FormulaCellComponent, name: 'Formula Cell', type: 'new', description: 'This sample demonstrates formula cells in the Grid and automatic recalculation when source values are edited.', order: '05',
         category: 'Editing'
     },
     {

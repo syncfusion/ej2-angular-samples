@@ -88,6 +88,7 @@ import { TaskProgressTrackerComponent } from './task-progress-tracker.component'
 import { ActionEventButtonsComponent } from './action-event-buttons.component';
 import { CascadingEventEditorComponent } from './cascading-event-editor.component';
 import { AutoSchedulingComponent } from './auto-scheduling.component';
+import { EventBufferComponent } from './event-buffer.component';
 
 // tslint:disable:max-line-length
 export const scheduleRouteConfig: Record<string, any>[] = [
@@ -108,6 +109,7 @@ export const scheduleRouteConfig: Record<string, any>[] = [
   { path: ':theme/schedule/realtime-binding', component: RealTimeBindingComponent, name: 'Real-Time Binding', order: '02', category: 'Appointments', description: 'This demo showcases the way of binding signalR services to Scheduler component. Here, the SignalR is used to bind the data with Scheduler.' },
   { path: ':theme/schedule/recurrence-events', component: RecurrenceComponent, name: 'Recurring Events', order: '03', category: 'Appointments', description: 'This demo shows how to define recurring events (appointments) with different patterns and rules that meet iCalendar specifications in the Angular Scheduler.' },
   { path: ':theme/schedule/block-events', component: BlockEventsComponent, name: 'Blocking Dates and Time', order: '03', category: 'Appointments', description: 'This example shows how to block specific days or time intervals on the Angular Scheduler that helps to mark unavailable time or days in Calendar. ' },
+  { path: ':theme/schedule/event-buffer', component: EventBufferComponent, name: 'Event Buffer', type: 'new', order: '03', category: 'Appointments', description: 'This demo shows how to render bufferBefore and bufferAfter alongside each appointment using a custom template on the Angular Scheduler.' },
   { path: ':theme/schedule/search-events', ignoreOnBuild: true, component: SearchEventsComponent, name: 'Search Events', order: '03', category: 'Appointments', description: 'This example shows how to filter the appointments or events of the Angular Scheduler based on a search string in a particular field or all fields.' },
   { path: ':theme/schedule/timezone-event', component: TimezoneComponent, name: 'Timezone', order: '03', category: 'Appointments', description: 'This demo shows how the Angular Scheduler works with different time zones. The events in the Scheduler automatically adapt to the selected time zone.' },
   { path: ':theme/schedule/inline-editing', component: InlineEditingComponent, name: 'Inline Editing', order: '03', category: 'Appointments', description: 'The example showcases the inline mode of the Angular Scheduler that is used to create an appointment or edit an existing appointments subject easily and quickly.' },

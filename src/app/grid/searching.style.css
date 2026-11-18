@@ -1,0 +1,19 @@
+.search-mode-section {
+    padding: 16px 0;
+}
+
+.search-mode-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.search-mode-label {
+    font-size: 14px;
+    font-weight: 500;
+    min-width: fit-content;
+}
+
+.search-mode-wrapper .e-ddl {
+    width: 200px !important;
+}

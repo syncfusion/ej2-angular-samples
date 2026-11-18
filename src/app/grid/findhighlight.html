@@ -1,0 +1,30 @@
+<div id="action-description">
+    <p>
+        This sample demonstrates the Grid find and highlight feature. Click Find in the toolbar and enter a value to highlight matching text in the Grid.
+    </p>
+</div>
+
+<div class="control-section">
+    <ejs-grid [dataSource]="data" height="400" allowPaging="true" [toolbar]="toolbar" [findSettings]="findSettings">
+        <e-columns>
+            <e-column field="CategoryName" headerText="Category Name" width="150"></e-column>
+            <e-column field="ProductName" headerText="Product Name" width="150"></e-column>
+            <e-column field="QuantityPerUnit" headerText="Quantity per unit" width="180" textAlign="Right"></e-column>
+            <e-column field="UnitsInStock" headerText="Units In Stock" width="150" textAlign="Right"></e-column>
+        </e-columns>
+    </ejs-grid>
+</div>
+
+<div id="description">
+    <p>
+        The Grid provides a find option to search its content and highlight matching text. In this demo, use the <code><a target="_blank" class="code" href="https://ej2.syncfusion.com/angular/documentation/api/grid">find</a></code> method with the toolbar Find option to locate records and highlight the matching values.
+    </p>
+    <p>
+        More information on the searching configuration can be found in this <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/api/grid/searchSettingsModel/">documentation section</a>.
+    </p>
+    <p>
+        Looking for the full Angular Data Grid component overview, features, pricing, and documentation? Visit our
+        <a target="_blank" href="https://www.syncfusion.com/angular-components/angular-data-grid">
+            Angular Data Grid component</a> page.
+    </p>
+</div>

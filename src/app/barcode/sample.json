@@ -1,0 +1,98 @@
+{
+  "name": "Barcode",
+  "directory": "barcode",
+  "category": "Data Visualization",
+  "ftName": "barcode",
+  "samples": [
+    {
+      "url": "default-functionalities",
+      "name": "EAN-8",
+      "description": "This sample visualizes the 8-digit Global Trade Identification Numbers. It was introduced for use on small packages where an EAN-8 barcode would be too large.",
+      "category": "Getting Started"
+    },
+    {
+      "url": "code128",
+      "name": "Code 128",
+      "description": "This sample visualizes a barcode image that presents alphanumeric combinations and it consist of start character, data digits etc.",
+      "category": "Getting Started"
+    },
+    {
+      "url": "code128A",
+      "name": "Code 128A",
+      "description": "This sample visualizes a barcode image that presents information with a combination of numbers, and control characters such as tab and new line.",
+      "category": "Getting Started"
+    },
+    {
+      "url": "code128B",
+      "name": "Code 128B",
+      "description": "This sample visualizes a barcode image that presents information with a combination of numbers, and control characters such as tab and new line.",
+      "category": "Getting Started"
+    },
+    {
+      "url": "code128C",
+      "name": "Code 128C",
+      "description": "This sample visualizes a barcode image that presents information with a combination of numbers, uppercase and lowercase letters, and some additional characters.",
+      "category": "Getting Started"
+    },
+    {
+      "url": "code93",
+      "name": "Code 93",
+      "description": "This sample has a native character set of 26 uppercase letters, 10 digits, and 7 special characters.",
+      "category": "Getting Started"
+    },
+    {
+      "url": "code32",
+      "name": "Code 32",
+      "description": "This sample visualizes the pharmaceutical code that encodes numeric data in a compressed format and supports all numeric digits and all uppercase letters",
+      "category": "Getting Started"
+    },
+    {
+      "url": "codabar",
+      "name": "Codabar",
+      "description": "This sample visualizes a barcode that is designed to be accurately read even when printed with dot matrix printers.",
+      "category": "Getting Started"
+    },
+    {
+      "url": "ean13",
+      "name": "EAN-13",
+      "description": "This sample visualizes the 13-digit Global Trade Identification Numbers.It comprises of 13 digits such as  manufacturer code, product code etc",
+      "category": "Getting Started"
+    },
+    {
+      "url": "upcA",
+      "name": "UPC-A",
+      "description": "A UPC-A barcode consists of four areas: number system, manufacturer code, product code, and check digit",
+      "category": "Getting Started"
+    },
+    {
+      "url": "upcE",
+      "name": "UPC-E",
+      "description": "This sample visualizes a product package identification number consist of 6 digits. It is mainly used for scanning products in small packages",
+      "category": "Getting Started"
+    },
+    {
+      "url": "code39",
+      "name": "Code39",
+      "description": "visualizes Code 39, a self-checking barcode symbology that consists of uppercase letters, and several special characters.",
+      "category": "Getting Started"
+    },
+    {
+      "url": "code39Extd",
+      "name": "Code 39 Extended",
+      "description": "This sample visualizes the model number of an item in the automotive industry.It supports both standard and extended Code 39 barcodes",
+      "category": "Getting Started"
+    },
+    {
+      "url": "qrCode",
+      "name": "QR Code",
+      "description": "This sample displays a machine-readable optical label that contains information about the item to which it is attached.",
+      "category": "Getting Started"
+    },
+    {
+      "url": "datamatrix",
+      "name": "Data Matrix",
+      "description": "This example shows how to display encoded text or numerical values as the label using the Barcode component",
+      "category": "Getting Started"
+    }
+  ]
+}

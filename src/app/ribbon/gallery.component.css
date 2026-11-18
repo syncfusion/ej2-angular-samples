@@ -215,37 +215,61 @@ line-height: 1;
   color: #333;
 }
 
+body.material { --ribbon-gallery-text-color: #3f51b5; }
+body.material-dark { --ribbon-gallery-text-color: #00b0ff; }
+body.material3 { --ribbon-gallery-text-color: #6750a4; }
+body.material3-dark { --ribbon-gallery-text-color: #d0bcff; }
+body.fabric { --ribbon-gallery-text-color: #0078d6; }
+body.fabric-dark { --ribbon-gallery-text-color: #dadada; }
+body.fluent { --ribbon-gallery-text-color: #2b88d8; }
+body.fluent-dark { --ribbon-gallery-text-color: #2b88d8; }
+body.fluent2 { --ribbon-gallery-text-color: #242424; }
+body.fluent2-dark { --ribbon-gallery-text-color: #fff; }
+body.bootstrap { --ribbon-gallery-text-color: #3071a9; }
+body.bootstrap-dark { --ribbon-gallery-text-color: #248aff; }
+body.bootstrap4 { --ribbon-gallery-text-color: #007bff; }
+body.bootstrap5 { --ribbon-gallery-text-color: #0B5ED7; }
+body.bootstrap5-dark { --ribbon-gallery-text-color: #86B7FE; }
+body.bootstrap5\.3 { --ribbon-gallery-text-color: #3367D1; }
+body.bootstrap5\.3-dark { --ribbon-gallery-text-color: #6EA8FE; }
+body.tailwind { --ribbon-gallery-text-color: #4f46e5; }
+body.tailwind-dark { --ribbon-gallery-text-color: #22d3ee; }
+body.tailwind3 { --ribbon-gallery-text-color: #4338ca; }
+body.tailwind3-dark { --ribbon-gallery-text-color: #818cf8; }
+body.highcontrast { --ribbon-gallery-text-color: #ffd939; }
+body.fluent2-highcontrast { --ribbon-gallery-text-color: #fff; }
+
 .e-ribbon-gallery-item.heading_1 .e-ribbon-gallery-text {
-  color: #2371de;
+  color: var(--ribbon-gallery-text-color);
   font-size: 16px;
   text-decoration: underline;
 }
 
 .e-ribbon-gallery-item.heading_2 .e-ribbon-gallery-text {
-  color: #2371de;
+  color: var(--ribbon-gallery-text-color);
   font-size: 14px;
   text-decoration: underline;
 }
 
 .e-ribbon-gallery-item.heading_3 .e-ribbon-gallery-text {
-  color: #2371de;
+  color: var(--ribbon-gallery-text-color);
   font-size: 13px;
   text-decoration: underline;
 }
 
 .e-ribbon-gallery-item.heading_4 .e-ribbon-gallery-text {
-  color: #2371de;
+  color: var(--ribbon-gallery-text-color);
   font-size: 12px;
   text-decoration: underline;
 }
 
 .e-ribbon-gallery-item.title .e-ribbon-gallery-text {
-  color: #2371de;
+  color: var(--ribbon-gallery-text-color);
   font-size: 14px;
 }
 
 .e-ribbon-gallery-item.total .e-ribbon-gallery-text {
-  color: #2371de;
+  color: var(--ribbon-gallery-text-color);
   font-size: 14px;
 }
 
